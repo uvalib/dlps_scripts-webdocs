@@ -1,0 +1,187 @@
+#!/usr/bin/perl -w
+
+# dlps_properties - adds/updates <?dlps ...?> properties using data
+# from the DLPS Tracking System (if available; otherwise, uses
+# supplied or default values)
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2006-02-22
+# Last modified: 2007-10-04
+
+# 2006-04-13: gpm2a: Added 'other' as a transcription type.
+#
+# 2007-10-04: gpm2a: Changed to use default values if no record is
+# available in DLPS Tracking System (useful for migration files).
+
+
+#======================================================================
+# main logic
+#======================================================================
+
+use strict;
+use Getopt::Std;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use TrackSys;
+
+my $DEFAULT_PAGE_IMAGES_TYPE = 'none';
+my $DEFAULT_HAS_FIGURE_IMAGES = 'no';
+my $DEFAULT_TRANSCRIPTION_TYPE = 'none';
+
+my ($me, $usage, %opts, $infile, @infile, $dlpsId, $c, $xmlDecl, %properties, $add);
+my ($pageImagesType, $hasFigureImages, $transcriptionType);
+
+$me = 'dlps_properties';
+$usage = <<EOD;
+
+$me - adds/updates <?dlps ...?> properties using data from
+  the DLPS Tracking System (if available; otherwise, uses supplied or
+  default values)
+
+Usage: $me [options] filenames
+  -p  Value to use for "page-images=..." if no database record is
+      available; must be 'none', 'bitonal', or 'color'
+  -f  Value to use for "figure-images=..." if no database record is
+      available; must be 'no' or 'yes'
+  -t  Value to use for "transcription=..." if no database record is
+      available; must be 'none', 'vendor', 'ocr', or 'other'
+
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file.
+
+Note: If no record exists for a given DLPS ID in the DLPS Tracking
+  System, the script uses the following default values UNLESS
+  overridden by the -p, -f, or -t options respectively:
+
+  Page images type:   $DEFAULT_PAGE_IMAGES_TYPE
+  Has figure images?  $DEFAULT_HAS_FIGURE_IMAGES
+  Transcription type: $DEFAULT_TRANSCRIPTION_TYPE
+
+EOD
+
+getopts('f:p:t:', \%opts) || die $usage;
+die $usage if (!@ARGV);
+
+TrackSys::connect();
+
+foreach $infile (@ARGV) {
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # check for XML declaration (since that's where the <?dlps?> lines will be added)
+    $c = 0; $xmlDecl = '';
+    foreach (@infile) {
+	$c++;
+        if ( $c == 1 && /^<\?xml/ ) {
+	    # first line is XML declaration
+	    $xmlDecl = $_;
+	} else {
+	    last;
+	}
+    }
+    if (! $xmlDecl) {
+	warn "$me: $infile: WARNING: Cannot process file '$infile': XML declaration is missing\n";
+	next;
+    }
+
+    # get DLPS ID
+    %properties = DlpsText::getProperties($infile);
+    $dlpsId = DlpsText::getDlpsId(\%properties, \@infile, $infile);
+    if (! $dlpsId) {
+	warn "$me: $infile: WARNING: Cannot process file '$infile': Cannot determine DLPS ID\n";
+	next;
+    }
+
+    # get record for this DLPS ID from tracking system database
+    my $sql = "SELECT pageImagesType, hasFigureImages, transcriptionType";
+    $sql .= " FROM textItems WHERE dlpsId ='$dlpsId'";
+    my $sthref = TrackSys::query($sql);
+    my $sth = $$sthref;
+    my @row = $sth->fetchrow_array();
+    $sth->finish;
+
+    if ( scalar(@row) ) {
+	$pageImagesType = $row[0];
+	$hasFigureImages = $row[1];
+	$transcriptionType = $row[2];
+
+	# translate database values to <?dlps ...?> equivalents
+	if ($pageImagesType == 0) {
+	    $pageImagesType = 'none';
+	} elsif ($pageImagesType == 1) {
+	    $pageImagesType = 'bitonal';
+	} elsif ($pageImagesType == 2) {
+	    $pageImagesType = 'color';
+	} else {
+	    warn "$me: $dlpsId: WARNING: Bad value '$pageImagesType' for field 'pageImagesType'\n";
+	    $pageImagesType = '';
+	}
+
+	if ($hasFigureImages == 0) {
+	    $hasFigureImages = 'no';
+	} elsif ($hasFigureImages == 1) {
+	    $hasFigureImages = 'yes';
+	} else {
+	    warn "$me: $dlpsId: WARNING: Bad value '$hasFigureImages' for field 'hasFigureImages'\n";
+	    $hasFigureImages = '';
+	}
+
+	if ($transcriptionType == 0) {
+	    $transcriptionType = 'none';
+	} elsif ($transcriptionType == 1) {
+	    $transcriptionType = 'vendor';
+	} elsif ($transcriptionType == 2) {
+	    $transcriptionType = 'ocr';
+	} elsif ($transcriptionType == 3) {
+	    $transcriptionType = 'other';
+	} else {
+	    warn "$me: $dlpsId: WARNING: Bad value '$transcriptionType' for field 'transcriptionType'\n";
+	    $transcriptionType = '';
+	}
+
+    } else {
+	# no record for this DLPS ID in database; use values supplied via options, or default values
+	$pageImagesType =    $opts{'p'} || $DEFAULT_PAGE_IMAGES_TYPE;
+	$hasFigureImages =   $opts{'f'} || $DEFAULT_HAS_FIGURE_IMAGES;
+	$transcriptionType = $opts{'t'} || $DEFAULT_TRANSCRIPTION_TYPE;
+    }
+
+    # build <?dlps?> string
+    $add = qq/<?dlps id="$dlpsId"?>\n/;
+    $add .= qq/<?dlps page-images="$pageImagesType" figure-images="$hasFigureImages"?>\n/;
+    $add .= qq/<?dlps transcription="$transcriptionType"?>\n/;
+
+    # make backup
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+
+    # make changes, overwriting input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@infile) {
+	if ( /^<\?xml/ ) {
+	    # XML declaration; add <?dlps?> PI lines here
+	    print OUT;
+	    print OUT "\n$add\n";
+	    next;
+	}
+
+	if ( /^<\?dlps [^\?>]*\?>\s*$/ ) {
+	    # <?dlps?> PI on its own line; exclude line from output
+	    next;
+	}
+	if ( /<\?dlps [^\?>]*\?>/ ) {
+	    # <?dlps?> PI; exclude from output
+	    s/<\?dlps [^\?>]*\?>//g;
+	}
+
+	print OUT;
+    }
+    close OUT;
+}
+
+TrackSys::disconnect();

@@ -1,0 +1,506 @@
+#!/usr/bin/perl -w
+#
+# @(#)meta_transform_and_validate			1.0		2006/07/20
+#
+# Copyright (c) 2006 Digital Library Production Services, University of Virginia Library
+# All rights reserved.
+#
+# This script will read a directory of GDMS XML files and perform the following tasks:
+# 1. Make a backup of the files before making any changes to them.
+# 2. Add a file size to the metadata if not found.
+# 3. Transform character entity references to numeric references.
+# 4. Parse each file and confirm it conforms to the DTD.
+# 5. Delete the backup file if no problems occurred.
+#
+# @version	1.0		2006/07/20
+# @author	Jack Kelly
+#
+# 2006/08/21 - (jlk4p) Finishing up script to properly record errors. Added deletion of backup
+#				file after successful transformation.
+
+#======================================================================
+# setup
+#======================================================================
+
+use strict;
+use Getopt::Std;
+use Cwd;
+use open IN => ":utf8", OUT => ":utf8";
+
+my (%opts, $error, $ok);
+my ($dir, $id, $infile);
+my (@errors, @progress, $msg);
+
+my $SAXON_PATH = "/shares/admin/bin/text/jars";
+my $transformationStyleSheetLocation = "/shares/admin/bin/image/";
+my $adminStyleSheet = "descmetaNumericEntities.xsl";
+my $gdmsStyleSheet = "gdmsNumericEntities.xsl";
+
+my $me = 'meta_transform_and_validate';
+my $startDir = cwd();
+my $group = 'dlpswg';
+my $mailFrom = 'jlk4p';
+my $mailTo = 'ul-dlpsscripts';
+$mailTo = 'jlk4p';
+
+my $usage = <<EOD;
+
+$me - Reading a directory of XML files, this script 
+transforms entity references and validates the XML against its DTD.
+
+Usage: $me [-v] [-G] directories
+  -v (verbose) Show status messages
+  -G when processing GDMS files, make sure to add the file size,
+     if not present.
+
+In:  Names of directories containing XML files to process
+Out: The script performs the following actions for each input directory:
+     - Optionally, add file size info to GDMS file if needed.
+     - Transform character entity references to numeric entity references.
+     - Validate the XML file against its DTD.
+     - Set group owner for files to dlpswg and set group permissions.
+     - Sends an email to ul-dlpsscripts regarding the success of the script.
+ 
+EOD
+
+getopts('Gv', \%opts) || die $usage;
+die $usage unless (@ARGV);
+
+$msg = "Started at "  . (scalar localtime) . "\n\n";
+push(@progress, $msg);
+
+#======================================================================
+# main logic
+#======================================================================
+foreach $dir (sort(@ARGV)) {
+    $error = 0;
+    $ok = 1;
+
+    $dir =~ s:/$::;  # remove final slash, if present
+    $id = $dir;
+    $id =~ s:^.*/::;  # remove leading path, if any
+
+    $msg = "$me: Processing directory '$dir' (ID $id)...\r\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+
+    if (-d $dir) {
+	unless ( -r $dir ) {
+	    $msg = "$me: ERROR: Need read permission for directory '$dir'\r\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+	unless ( -w $dir ) {
+	    $msg = "$me: ERROR: Need write permission for directory '$dir'\r\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+    } else {
+	$msg = "$me: ERROR: '$dir' is not a directory\r\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+    # change to input directory
+    if ( not chdir($dir) ) {
+	$msg = "$me: ERROR: Cannot change to directory '$dir': $!\r\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+
+    #------------------------------------------------------------------
+    # process XML files
+    #------------------------------------------------------------------
+
+	# read directory contents...
+	my @metaFiles = ();
+    if ( opendir(DIR, '.') ) {
+		while ( defined($infile = readdir(DIR)) ) {
+			if ( $infile =~ /^\./) {
+				next;	# ignore file as it starts with .
+			} elsif ($infile =~ /\.xml$/) {
+				# process xml file
+			} elsif ($infile =~ /\.XML$/) {
+				# process XML file
+			} else {
+				next;	# ignore non-XML files
+			}
+		    push(@metaFiles,$infile);
+		}
+		closedir DIR;
+    } else {
+		$msg = "$me: ERROR: Cannot read directory '$dir': $!\r\n";
+		warn $msg;
+		push(@errors, $msg);
+		$ok = 0; next;
+    }
+
+    if ( not scalar(@metaFiles) ) {
+		$msg = "$me: WARNING: No .xml files found in directory '$dir'\r\n";
+		print $msg;
+		push(@progress, $msg);
+		next;
+    }
+
+	# Back up each file before proceeding.
+	$msg = "$me:    Backing up files.\r\n";
+	print $msg if ($opts{'v'});
+	push(@progress, $msg);
+	foreach my $file (@metaFiles) {
+		if (not backupFile($file)) {
+			$ok = 0; next;
+		}
+	}
+		
+	# Transform and validate each file. Add filesize to GDMS header if desired and not found.
+	if ($ok) {
+		$msg = "$me:    Processing files.\r\n";
+		print $msg if ($opts{'v'});
+		push(@progress, $msg);
+		foreach my $file (@metaFiles) {
+			my ($type,$fileSize) = identifyFile($file);
+			# process gdms file
+			if ($type eq "GDMS") {
+				# if desired, add a file size to the header if it doesn't already exist.
+				if ($opts{'G'}) {
+					if (not $fileSize) {
+						addFileSize($file);
+					}
+				}
+				if (transformFile($file,$gdmsStyleSheet)) {
+					if (validateXmlFile($file)) {
+					} else {
+						$ok = 0;
+					}
+				} else {
+					$ok = 0;
+				}
+				
+			# proces image admin desc file
+			} elsif ($type eq "DESC") {
+				if (transformFile($file,$adminStyleSheet)) {
+					if (validateXmlFile($file)) {
+					} else {
+						$ok = 0;
+					}
+				} else {
+					$ok = 0;
+				}
+			
+			# ignore any other file
+			} else {
+				$msg = "$me: WARNING: Ignoring $file - it is not GDMS or ADMINMETA. \n";
+				push(@progress, $msg);
+			}
+			
+			# change permissions/group for each file
+			chmod(0664,$file);
+			system("chgrp $group $file");
+		}
+	}
+	
+	# if there were no errors in processing the directory then delete the backupfiles.
+	if ($ok) {
+		$msg = "$me:    Removing back up files.\r\n";
+		print $msg if ($opts{'v'});
+		push(@progress, $msg);
+		foreach my $file (@metaFiles) {
+			my $backupFileName = $file . '.bak';
+			if (unlink($backupFileName) ne 1) {
+				$msg = "$me: WARNING: Unable to delete $backupFileName!\n";
+				warn $msg;
+				push(@errors, $msg);
+			}
+		}
+	}
+	
+    if (not $ok) {
+	next;
+    }
+
+}
+continue {
+    if ($ok) {
+	$msg = "    Directory '$dir' was processed successfully.\r\n\r\n";
+	print $msg if ($opts{'v'});
+	push(@progress, $msg);
+    } else {
+	$msg = "$me: ERROR: Processing of directory '$dir' FAILED!\r\n\r\n";
+	warn $msg;
+	push(@errors, $msg);
+    }
+
+    # change to starting directory
+    if ( cwd() ne $startDir ) {
+		if ( not chdir($startDir) ) {
+		    $msg = "$me: FATAL ERROR: Cannot change to starting directory '$startDir': $!\r\n";
+		    push(@errors, $msg);
+		    Send_Mail();
+		    die $msg;
+		}
+    }
+}
+
+$msg = "\nFinished at "  . (scalar localtime) . "\n";
+push(@progress, $msg);
+
+Send_Mail();
+
+#======================================================================
+# subroutines
+#======================================================================
+
+#####
+# addFileSize - opens a file and adds the file size to the appropriate
+#			GDMS element.
+#
+# @param $fileName - the name of the file to be processed.
+#####
+sub addFileSize{
+	my ($fileName) = @_;
+	my $type;
+	my $value;
+	my $err = 1;
+	
+    # get file size in bytes
+    my @stat = stat($fileName);
+    my $bytes = $stat[7];
+
+    # convert to most convenient/readable unit of measure
+    if ($bytes >= 1048576) {
+		$type = 'megabytes';
+		$value = $bytes / 1048576;
+		$value = sprintf("%.1f", $value);   # round to 1 decimal place
+    } elsif ($bytes >= 1024) {
+		$type = 'kilobytes';
+		$value = $bytes / 1024;
+		$value = sprintf("%d", $value);     # round to integer
+    } else {
+		$type = 'bytes';
+		$value = $bytes;
+    }
+
+    # read input file
+	my @infile = ();
+    if (open(IN, $fileName)) {
+	    @infile = <IN>;
+    	close(IN);
+     	# overwrite the file adding the file size
+	    if (open(OUT, ">$fileName")) {
+		    my $in_fileDesc;
+		    my $sizeAdded = 0;
+    		foreach (@infile) {
+				if ( /<filedesc/ ) { $in_fileDesc = 1; }
+				if ( /<\/filedesc>/ ) { $in_fileDesc = 0; }
+				if ( /(<physdesc[^>]*>)(.*?)<\/physdesc>/) {
+				    if ($in_fileDesc) {
+						my $out = $1 . "ca. <num type=\"$type\">$value</num> $type</physdesc>";
+						$_ = $` . $out . $';
+						$sizeAdded = 1;
+					}
+			    }
+			    if ( /(<date[^>]*>)(.*?)<\/date>/ ) {
+			    	if ($in_fileDesc) {
+			    		if (not $sizeAdded) {
+			    			my $out = "<physdesc type=\"extent\">ca. <num type=\"$type\">$value</num> $type</physdesc>\n" . $1 . $2 . "</date>\n";
+			    			$_ = $` . $out . $';
+			    			$sizeAdded = 1;
+			    		}
+			    	}
+			    }
+				print(OUT);
+			}
+    		close(OUT);
+    	} else {
+			$msg = "$me: ERROR: Cannot write to '$fileName': $!\n";
+			warn $msg;
+			push(@errors, $msg);
+			$err = 0;
+	    }
+    } else {
+		$msg = "$me: ERROR: Cannot read '$fileName': $!\n";
+		warn $msg;
+		push(@errors, $msg);
+		$err = 0;
+	}
+	return $err;
+}
+
+#####
+# backupFile - opens a file and makes a backup of the file. Returns 1 if the
+#		backup file is successfully created. Otherwise zero is returned.
+#
+# @param $fileName - the name of the file to be backed up.
+#####
+sub backupFile{
+	my ($fileName) = @_;
+
+    # read input file
+	my @infile = ();
+    if (open(IN, $fileName)) {
+	    @infile = <IN>;
+    	close(IN);
+    	# make backup
+    	if (open(BAK, ">${fileName}.bak")) {
+		    foreach (@infile) {
+				print BAK;
+    		}
+    		close(BAK);
+    		return 1;
+    	} else {
+			$msg = "$me: ERROR: Cannot create backup of '$fileName': $!\n";
+			warn $msg;
+			push(@errors, $msg);
+			return 0;
+    	}
+    } else {
+		$msg = "$me: ERROR: Cannot read '$fileName': $!\n";
+		warn $msg;
+		push(@errors, $msg);
+		return 0;
+	}
+}
+
+#####
+# identifyFile - opens a file and determines if it a GDMS or DESC file. If it's
+#		a GDMS file it determines if there is an existing file size in the physdesc.
+#		Returns an array containing two items:
+#		$xmlType - value of GDMS or ADMIN 
+#		$fileSizeFound = 1 (true) or 0 (false).
+#
+# @param $fileName - the name of the file to be backed up.
+#####
+sub identifyFile{
+	my ($fileName) = @_;
+    my $xmlType = "";
+    my $fileSizeFound = 0;
+
+    # read input file
+	my @infile = ();
+	my $in_fileDesc;
+    if (open(IN, $fileName)) {
+	    @infile = <IN>;
+    	close(IN);
+    	# see if there is a file size
+    	foreach (@infile) {
+    		if ( /<gdmshead>/ ) { $xmlType = "GDMS"; }
+    		if ( /<descmeta>/ ) { $xmlType = "DESC"; }
+			if ( /<filedesc/ )	{ $in_fileDesc = 1; }
+			if ( /<\/filedesc>/ )	{ $in_fileDesc = 0; }
+			if ( /(<physdesc[^>]*>)(.*?)<\/physdesc>/) {
+			    if ($in_fileDesc) {
+					my $existingSize = $2;
+					if ($existingSize ne "") {
+						$fileSizeFound = 1;
+					}
+				}
+			}
+    	}
+    } else {
+		$msg = "$me: ERROR: Cannot read '$fileName': $!\n";
+		warn $msg;
+		push(@errors, $msg);
+	}
+	return ($xmlType,$fileSizeFound);
+}
+
+sub Send_Mail {
+
+    my @time = localtime(time);
+    my $today = $time[3];
+    my $month = (1,2,3,4,5,6,7,8,9,10,11,12)[(localtime)[4]];
+    my $year = $time[5];
+    $year = $year - 100;
+
+    $year = sprintf("%02d",$year);
+    $month = sprintf("%02d",$month);
+    $today = sprintf("%02d",$today);
+
+    my($date)="$month/$today/$year";
+    my($messageto) = $mailTo . "\@virginia.edu";
+
+    open(MAIL,"| /usr/sbin/sendmail -i -t");
+    print MAIL "To: $messageto\n"; 
+    print MAIL "From: $mailFrom\@virginia.edu\n";
+    if (@errors) {
+	print MAIL "Subject: Error processing images to add profile and/or resize\n\n";
+	print MAIL "There was an error from the $me script on $date:\n\n";
+    }
+    else {
+	print MAIL "Subject: Report on processing images to add profile and/or resize\n\n";
+	print MAIL "$me script completed with no errors on $date.\n\n";
+    }
+    foreach my $err (@errors) {
+	print MAIL "$err";
+    }
+    foreach my $noerr (@progress) {
+	print MAIL "$noerr" ;
+    }
+    print MAIL "-" x 75 . "\n\n";
+    close(MAIL);
+}
+
+#####
+# transformFile - Runs an XSLT tranformation to convert character entity references
+#		to numeric entities. Renames the file as a backup and then does the
+#		transformation on the renamed file. Returns 1 of no error occurred, zero otherwise.
+#
+# @param $fileName - the name of the file to be processed.
+#####
+sub transformFile{
+	my ($fileName,$styleSheet) = @_;
+	my $backupFileName = $fileName . ".tr";
+	my $err = 1;
+	
+    # Move the current file to the backup file.
+    if (rename($fileName,$backupFileName)) {
+    	# Transform the file using Saxon.
+		my $cp = "$SAXON_PATH/saxon_6.5.4/saxon.jar:$SAXON_PATH/saxon_6.5.4/saxon-xml-apis.jar";
+		my $command = "java -cp $cp com.icl.saxon.StyleSheet -o $fileName $backupFileName $transformationStyleSheetLocation$styleSheet 2>&1";
+		my $error = `$command`;
+		if ($error) {
+			$msg = "$me: ERROR: Cannot transform $backupFileName!\n";
+			warn $msg;
+			push(@errors, $msg);
+			$err = 0;
+		} else {
+			if (unlink($backupFileName) ne 1) {
+				$msg = "$me: WARNING: Unable to delete $backupFileName!\n";
+				warn $msg;
+				push(@errors, $msg);
+			}
+		}
+    } else {
+    	$msg = "$me: ERROR: Cannot rename $fileName to $backupFileName - transformation was not performed!\n";
+		warn $msg;
+		push(@errors, $msg);
+		$err = 0;
+    }
+    return $err;
+}
+
+#####
+# validateXmlFile - Runs the parse script created for text processing to validate
+#			that the GDMS file conforms to the DTD specifications. Returns 1 if succesful.
+#			Zero otherwise.
+#
+# @param $fileName - the name of the file to be processed.
+#####
+sub validateXmlFile{
+	my ($fileName) = @_;
+	my $err = 1;
+	
+	my $error = `parse $fileName 2>&1`;
+	if ($error) {
+		$msg = "$me: ERROR: $fileName is invalid XML!\n";
+		warn $msg;
+		push(@errors, $msg);
+		$err = 0;
+	}
+	return $err;
+}

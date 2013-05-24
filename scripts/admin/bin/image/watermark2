@@ -1,0 +1,238 @@
+#!/usr/bin/perl -w
+
+# This program is to place a watermark onto images scanned by Digitization Services for Faculty.
+
+
+#======================================================================
+# setup
+#======================================================================
+
+use strict;
+use Getopt::Std;
+use Cwd;
+use File::Copy;
+#use lib '/shares/admin/bin/text';
+#use DlpsText;
+#use TrackSys;
+
+my (%opts, $error, $ok, @outfiles, %infiles);
+my ($dir, $id, $infile, $outfile, $command, $gifOut, $tifOut);
+my (@errors, @progress, $msg);
+my ($sql, $affected);
+
+#my $LOG_DIR = '/shares/admin/bin/text/logs/eaf_proofreader/';
+my $Command = 'composite -gravity southeast /shares/admin/bin/image/stamp.png';  # path to ImageMagick binaries has been added to system-wide profile
+
+my $me = 'watermark';
+#my $finalDir = '/shares/image1/01bookscanning/52_CCITTCOMPRESS_OUT';
+my $startDir = '/shares/image2/02_processed/25_watermark';
+my $group = 'dlpswg';
+my $mailFrom = 'rpj2f';
+
+#my $gifDir = '/www/doc/dlps/uva-only/proofreader/images';
+
+my $usage = <<EOD;
+
+$me - this takes images and adds the watermark stamp.png from admin/bin/image
+
+Usage: $me [-v] directories
+  -v (verbose) Show status messages
+
+In:  Names of directories containing TIFF files (named with .tif) to
+     process
+Out: The script performs the following actions for each input directory:
+       - Modify each file by placing a watermark in the southeast corner
+
+EOD
+
+getopts('v', \%opts) || die $usage;
+die $usage unless (@ARGV);
+
+my $LD = 'LD_LIBRARY_PATH';
+if ( defined $ENV{$LD} ) {
+    $ENV{$LD} = '/usr/local/lib/:' . "$ENV{$LD}";
+} else {
+    $ENV{$LD} = '/usr/local/lib/';
+}
+
+
+
+
+#======================================================================
+# main logic
+#======================================================================
+
+chdir ($startDir); 
+foreach $dir (sort(@ARGV)) {
+    $error = 0;
+    $ok = 1;
+    @outfiles = ();
+    %infiles = ();
+    
+    $dir =~ s:/$::;  # remove final slash, if present
+    $id = $dir;
+    $id =~ s:^.*/::;  # remove leading path, if any
+
+    $msg = "\n$me: Processing directory '$dir' (ID $id)...\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+
+    if (-d $dir) {
+	unless ( -r $dir ) {
+	    $msg = "$me: ERROR: Need read permission for directory '$dir'\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+	unless ( -w $dir ) {
+	    $msg = "$me: ERROR: Need write permission for directory '$dir'\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+    } else {
+	$msg = "$me: ERROR: '$dir' is not a directory\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+    # change to input directory
+    if ( not chdir($dir) ) {
+	$msg = "$me: ERROR: Cannot change to directory '$dir': $!\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+
+    #------------------------------------------------------------------
+    # count input files and remove files created automatically when
+    # files are accessed on a Mac
+    #------------------------------------------------------------------
+
+    # read input directory; count input files and remove Mac-generated files
+    if ( opendir(DIR, '.') ) {
+	while ( defined($infile = readdir(DIR)) ) {
+	    if ( $infile =~ /^\.DS_Store/ || $infile =~ /^\._eaf/ || $infile =~ /\.ivc_\d$/ ) {
+		if ( unlink "./$infile" ) {
+		    $msg = "$me: Deleted file '$infile'\n";
+		    print $msg;
+			}
+	    }
+
+	    if ( $infile =~ /^\./ or not ($infile =~ /\.tif$/ or $infile =~ /\.jpg$/)) {
+		# filename starts with . or does not end with .tif or .jpg; skip
+		next;
+	    }
+	    $infiles{$infile} = $infile;
+	}
+	closedir DIR;
+    } else {
+	$msg = "$me: ERROR: Cannot read directory '$dir': $!\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+    if ( not scalar(keys(%infiles)) ) {
+	$msg = "$me: WARNING: No .tif or .jpg files found in directory '$dir'\n";
+	print $msg;
+	push(@progress, $msg);
+	next;
+    }
+
+
+    #------------------------------------------------------------------
+    # mogrify
+    #------------------------------------------------------------------
+
+   
+    # modify files
+    $msg = "    Modifying files...\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+
+    foreach $infile (keys %infiles){
+
+    
+       $error = system("$Command $infile $infile");
+   	    if ($error != 0) {
+	   	 $msg = "$me: ERROR: Error modifying $infile in directory '$dir'\n";
+		 warn $msg;
+		 push(@errors, $msg);
+        	 $ok = 0; next;
+  	    }
+	}
+
+
+}
+continue {
+    if ($ok) {
+	$msg = "    Directory '$dir' was processed successfully.\n\n";
+	print $msg if ($opts{'v'});
+	push(@progress, $msg);
+
+
+    } else {
+	$msg = "$me: ERROR: Processing of directory '$dir' FAILED!\n\n";
+	warn $msg;
+	push(@errors, $msg);
+    }
+
+    # change to starting directory
+    if ( cwd() ne $startDir ) {
+	if ( not chdir($startDir) ) {
+	    $msg = "$me: FATAL ERROR: Cannot change to starting directory '$startDir': $!\n";
+	    push(@errors, $msg);
+	    Send_Mail();
+	    die $msg;
+	}
+    }
+
+}
+
+
+Send_Mail();
+
+
+
+#======================================================================
+# subroutines
+#======================================================================
+
+sub Send_Mail {
+
+    my @time = localtime(time);
+    my $today = $time[3];
+    my $month = (1,2,3,4,5,6,7,8,9,10,11,12)[(localtime)[4]];
+    my $year = $time[5];
+    $year = $year - 100;
+
+    $year = sprintf("%02d",$year);
+    $month = sprintf("%02d",$month);
+    $today = sprintf("%02d",$today);
+
+    my($date)="$month/$today/$year";
+    my($messageto) = "ul-dlpsscripts\@virginia.edu";
+
+    open(MAIL,"| /usr/lib/sendmail -i -t");
+    print MAIL "To: $messageto\n"; 
+    print MAIL "From: $mailFrom\@virginia.edu\n";
+    if (@errors) {
+	print MAIL "Subject: Error watermarking DS4F images.\n\n";
+	print MAIL "There was an error from the $me script on $date:\n\n";
+    }
+    else {
+	print MAIL "Subject: Report on watermarking DS4F images\n\n";
+	print MAIL "$me script completed with no errors on $date.\n\n";
+    }
+    foreach my $err (@errors) {
+	print MAIL "$err\n";
+    }
+    foreach my $noerr (@progress) {
+	print MAIL "$noerr" ;
+    }
+    print MAIL "-" x 75 . "\n\n";
+    close(MAIL);
+}

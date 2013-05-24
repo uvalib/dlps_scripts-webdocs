@@ -1,0 +1,22 @@
+#!/bin/ksh
+
+progname=`basename $0`
+usage="USAGE: $progname files
+returns a list of files whose filesize equals zero."
+
+if [ $# -lt 1 ]
+then
+   echo "\n$usage\n"
+   exit
+fi
+
+for file in $*
+do
+   if [ -f $file ]
+   then
+      if [ ! -s $file ]
+      then
+         echo "$file has zero length!"
+      fi
+   fi
+done

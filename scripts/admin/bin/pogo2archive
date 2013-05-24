@@ -1,0 +1,516 @@
+#!/usr/bin/perl -w
+
+# pogo2archive - moves directories from the DLPS production server
+#   (pogo.lib) to the StorNext archive at /lib_archive
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2006-08-01
+# Last modified: 2006-09-13
+
+# 2006-09-12: gpm2a: Added call to 'cmp' command to perform
+# byte-by-byte comparison of original file to StorNext file.
+#
+# 2006-09-13: gpm2a: Added -T option (undocumented) for testing
+# purposes: copies data to /lib_archive/dlps/testing, does NOT delete
+# source files, does not update tracking system, and does not send
+# email notification.
+
+
+use strict;
+use Getopt::Std;
+use File::Copy;
+use File::Find;
+use Cwd;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use TrackSys;
+
+#----------------------------------------------------------------------
+# set constants
+my $LOG_TEXT = '/shares/admin/bin/text/logs/pogo2archive';
+my $LOG_IMAGE = '/shares/admin/bin/image/logs/pogo2archive';
+my $LOG_USAGE = '/shares/admin/bin/[image|text]/logs/pogo2archive';
+
+my $ARCHIVE_MAIN = '/lib_archive/dlps';
+my $ARCHIVE_TEXT = $ARCHIVE_MAIN . '/text';
+my $ARCHIVE_IMAGE = $ARCHIVE_MAIN . '/image';
+
+my $ARCHIVE_TESTING = $ARCHIVE_MAIN . '/testing';
+#----------------------------------------------------------------------
+
+my ($MODE, $LOG_DIR, $ARCHIVE_DIR);
+my ($me, $usage, %opts, $infile, $arg, $log, $msg);
+my ($new, %files, $hasError, @stats, $size);
+my ($sql, $rows, $id);
+my (%goodIDs, %badIDs, $key);
+my ($command, $status);
+
+my $indent = '   ';  # 3 spaces
+my $indent2 = $indent . $indent;
+
+my $processedCount = 0;
+my $goodCount = 0;
+my $badCount = 0;
+
+# get path of starting point
+my $startPath = cwd();
+
+# set up usage summary
+$me = 'pogo2archive';
+$usage = <<EOD;
+
+$me - moves directories from the DLPS production server
+  (pogo.lib) to the StorNext archive at /lib_archive
+
+Usage: $me (-i | -t) [-q | -v] dirnames
+  Mode options:
+    -i (image) Run in image-workflow mode: copy data to $ARCHIVE_IMAGE
+    -t (text)  Run in text-workflow mode: copy data to $ARCHIVE_TEXT
+  Feedback options:
+    -q (quiet)   Suppress status messages (only show warnings and errors);
+                 affects screen messages only; has no effect on log file
+    -v (verbose) Show status messages (in addition to warnings and errors);
+                 affects screen messages and log file
+  Arguments:
+    dirnames     Names of directories to archive
+
+One of the mode options, either -i or -t, is required.
+
+In:  Directory name(s)
+Out: Performs several processes for each input directory:
+  * Copies directory to archive under $ARCHIVE_MAIN
+  * Verifies the copied files (by checking that each file is present
+    and has the same byte size as the original file)
+  * If no errors:
+      - Deletes directory from original location
+      - If name of input directory is a DLPS ID in the DLPS tracking
+        system, updates tracking system --> Finalization workflow -->
+        $me = Done
+  * Logs all actions in a log file under $LOG_USAGE
+
+EOD
+
+getopts('iqtvT', \%opts) || die $usage;
+die $usage if (! @ARGV);
+
+if ($opts{'T'}) {
+    $ARCHIVE_TEXT = $ARCHIVE_TESTING . '/text';
+    $ARCHIVE_IMAGE = $ARCHIVE_TESTING . '/image';
+}
+
+if ( $opts{'i'} ) {
+    $MODE = 'image';
+    $LOG_DIR = $LOG_IMAGE;
+    $ARCHIVE_DIR = $ARCHIVE_IMAGE;
+} elsif ( $opts{'t'} ) {
+    $MODE = 'text';
+    $LOG_DIR = $LOG_TEXT;
+    $ARCHIVE_DIR = $ARCHIVE_TEXT;
+} else {
+    die "Usage error: One of -i or -t is required.\n$usage";
+}
+
+$LOG_DIR = DlpsText::normalize_path($LOG_DIR);
+$ARCHIVE_DIR = DlpsText::normalize_path($ARCHIVE_DIR);
+
+# verify required directories
+if ( not -d $LOG_DIR ) { die "$me: ERROR: Log directory '$LOG_DIR' is not a directory\n"; }
+if ( not -w $LOG_DIR ) { die "$me: ERROR: Log directory '$LOG_DIR' needs write permissions\n"; }
+
+if ( not -d $ARCHIVE_DIR ) { die "$me: ERROR: Archive directory '$ARCHIVE_DIR' is not a directory\n"; }
+if ( not -w $ARCHIVE_DIR ) { die "$me: ERROR: Archive directory '$ARCHIVE_DIR' needs write permissions\n"; }
+
+# set up log file
+$log = $LOG_DIR . DlpsText::getLogFileName($me . '_');
+# create log file and make sure you can write to it
+open(LOG, ">$log") || die "$me: ERROR: Cannot create log file '$log': $!\n";
+print LOG '';
+close LOG;
+# set permissions, including group write
+chmod 0664, $log;
+# open log file
+open(LOG, ">>$log") || die "$me: ERROR: Cannot write to log file '$log': $!\n";
+
+# start log
+printInfo("$me: Archive directory is $ARCHIVE_DIR");
+printInfo("***************************** TESTING *****************************") if ($opts{'T'});
+
+# connect to tracking system database; continue processing upon MySQL error
+my $tracksysConnected = 0;
+if ( TrackSys::connect(1) ) {
+    $tracksysConnected = 1;
+} else {
+    printWarning("Cannot connect to MySQL server for DLPS tracking system");
+}
+
+# process each input directory
+foreach $arg (@ARGV) {
+    $infile = $arg;
+    $infile =~ s:/$::;  # remove final slash, if any
+
+    $processedCount++;
+    $hasError = 0;
+    %files = ();
+    printInfo("\n");
+
+    #---------------------
+    # test input directory
+    #---------------------
+
+    if ( not -e $infile ) {
+	printError("Input name '$infile' does not exist. Skipping this name...");
+	next;
+    }
+    if ( not -d $infile ) {
+	printError("Input name '$infile' is not a directory. Skipping this name...");
+	next;
+    }
+    if ( not -r $infile ) {
+	printError("Input directory '$infile' needs read permissions. Skipping this directory...");
+	next;
+    }
+    if ( not -w $infile ) {
+	# need write permissions in order to delete from this directory after copying
+	printError("Input directory '$infile' needs write permissions. Skipping this directory...");
+	next;
+    }
+
+
+    #---------------------------------
+    # create this directory in archive
+    #---------------------------------
+
+    printInfo("$me: Processing directory $infile...");
+    printInfo($indent . "Copying directory contents...");
+
+    $new = $ARCHIVE_DIR . $infile;
+    if (-e $new) {
+	printError("'$infile' already exists in archive. Cannot copy to archive. Skipping this directory...");
+	next;
+    } else {
+	if (mkdir($new)) {
+	    chmod 0775, $new;
+	    printInfo($indent2 . "Created dir: $infile --> $new") if ($opts{'v'});
+	} else {
+	    printError("Cannot create directory '$new' - skipping directory '$infile'...");
+	    next;
+	}
+    }
+    $new = DlpsText::normalize_path($new);
+
+
+    #------------------------------------------
+    # read directory; copy each file to archive
+    #------------------------------------------
+
+    find \&copyToArchive, $infile;
+
+    if ($hasError) {
+	printError("Error occurred while copying - cannot continue processing directory $infile");
+	next;
+    }
+
+
+    #---------------------------------------
+    # compare source files to archive copies
+    #---------------------------------------
+
+    printInfo($indent . "Comparing archived files to original files...");
+
+    foreach $key (sort(keys(%files))) {
+	if (-e "$ARCHIVE_DIR$key") {
+	    # compare file sizes
+	    @stats = stat("$ARCHIVE_DIR$key");
+	    $size = $stats[7];
+	    if ($size == $files{$key}) {
+		# compare files using 'cmp' command
+		$command = "/usr/bin/cmp -s $key $ARCHIVE_DIR$key";
+		$status = system($command);
+		if ($status != 0) {
+		    printError("Source file '$key' is not identical to archived file", 1);
+		    $hasError = 1;
+		    last;
+		}
+	    } else {
+		printError("Size of source file '$key' ($size) does not equal size of archived file ($files{$key})", 1);
+		$hasError = 1;
+		last;
+	    }
+	} else {
+	    printError("Source file '$key' does not exist in archive", 1);
+	    $hasError = 1;
+	    last;
+	}
+    }
+
+    if ($hasError) {
+	printError("Error occurred during verification - cannot continue processing directory $infile");
+	next;
+    }
+
+    # log successful copying of this directory
+    printInfo($indent . "Directory $infile was archived successfully.");
+    $goodCount++;
+    $goodIDs{$infile} = '';
+
+
+    #--------------------
+    # delete source files
+    #--------------------
+
+    unless ($opts{'T'}) {
+	printInfo($indent . "Deleting original directory...");
+
+	finddepth \&deleteSourceFiles, $infile;
+
+	unless (rmdir $infile) {
+	    printWarning("Cannot delete directory '$infile': $!");
+	}
+    }
+
+    # Note: A problem deleting the source files does not constitute a
+    # failure to archive this directory; deletion problems are
+    # warnings, not errors.
+
+
+    #-----------------------
+    # update tracking system
+    #-----------------------
+
+    unless ($opts{'T'}) {
+	printInfo($indent . "Updating tracking system...");
+	$id = ''; $sql = '';
+
+	# determine whether directory name is a DLPS ID (text workflow) or project name (image workflow) in tracking system
+	if ($MODE eq 'text')  {
+	    $sql = "SELECT dlpsId FROM textItems WHERE dlpsId = '$infile'";
+	    $msg = "Cannot update DLPS tracking system: '$infile' is not a DLPS ID";
+	}
+	if ($MODE eq 'image') {
+	    $sql = "SELECT projectId FROM imageProjects WHERE projectName = '$infile'";
+	    $msg = "Cannot update DLPS tracking system: '$infile' is not a Project Name";
+	}
+	my $sthref = TrackSys::query($sql);
+	my $sth = $$sthref;
+	my @row = $sth->fetchrow_array();
+	$sth->finish;
+	if ( scalar(@row) ) {
+	    $id = $row[0];
+	} else {
+	    printWarning($msg);
+	}
+
+	# update DLPS tracking system for this ID
+	if ($id) {
+	    $rows = 0; $sql = '';
+	    if ($MODE eq 'text')  {
+		$sql = "UPDATE finalization SET pogo2archive = 1 WHERE dlpsId = '$id' LIMIT 1";
+	    }
+	    if ($MODE eq 'image') {
+		$sql = "UPDATE imageProjectsFinalization SET pogo2archive = 1 WHERE projectId = $id LIMIT 1";
+	    }
+	    if ($tracksysConnected) {
+		if ( $rows = TrackSys::query($sql) ) {
+		    if ($rows != 1) {
+			printWarning("Cannot update DLPS tracking system for record '$infile' ($id): Update manually");
+		    }
+		} else {
+		    printWarning("Cannot update DLPS tracking system for record '$infile' ($id): Update manually");
+		}
+	    } else {
+		printWarning("Not connected to DLPS tracking system: Cannot update record '$infile': Update manually");
+	    }
+	}
+    }  # END unless ($opts{'T'})
+}  # END foreach $arg (@ARGV)
+
+TrackSys::disconnect() if ($tracksysConnected);
+
+# print final status
+if ($goodCount > 0 or $badCount > 0) {
+    $msg = "\n$me: FINAL STATUS: ";
+    $msg .= "Attempted to archive a total of $processedCount item" . DlpsText::get_plural($processedCount) . ":\n";
+    if ($goodCount > 0) {
+	$msg .= $indent . "$goodCount item" . DlpsText::get_plural($goodCount) . " archived successfully:\n";
+	foreach $key (sort(keys(%goodIDs))) {
+	    $msg .= $indent2 . "$key\n";
+	}
+    }
+    if ($badCount > 0) {
+	$msg .= $indent . "$badCount item" . DlpsText::get_plural($badCount) . " FAILED to process completely:\n";
+	foreach $key (sort(keys(%badIDs))) {
+	    $msg .= $indent2 . "$key\n";
+	}
+    }
+    printInfo($msg);
+}
+printInfo("***************************** TESTING *****************************") if ($opts{'T'});
+
+# close log file
+close LOG;
+
+# send mail
+if ($goodCount > 0) {
+    sendMail() unless ($opts{'T'});
+}
+
+
+#======================================================================
+# subroutines
+#======================================================================
+
+sub copyToArchive {
+
+    my ($source, $dest);
+    my (@stats, $size);
+
+    # name of file/directory currently being processed by File::Find
+    my $name = $_;
+
+    # name of current directory
+    my $dir = $File::Find::dir;
+
+    # path to file/directory currently being processed by File::Find
+    # (equivalent to "File::Find::dir/$_")
+    my $path = $File::Find::name;
+
+    return if ($name =~ /^\./);            # do not copy files/dirs starting with . 
+    return if ($name eq ':2eDS_Store');    # do not copy :2eDS_Store files (created by MacOS)
+    return if ($path =~ /\.AppleDouble/);  # do not copy files under a .AppleDouble directory
+
+    if (-d $name) {
+	$dest = $ARCHIVE_DIR . $path;
+	if (mkdir($dest)) {
+	    chmod 0775, $dest;
+	    printInfo($indent2 . "Created dir: $path --> $dest") if ($opts{'v'});
+	} else {
+	    printError("Cannot create directory '$dest': $!", 1);
+	    $hasError = 1;
+	}
+    } else {
+	@stats = stat($name);
+	$size = $stats[7];
+	$files{$path} = $size;  # hold filename and size for later comparison
+
+	$source = $name;
+	$dest = $ARCHIVE_DIR . $path;
+	if (copy($source, $dest)) {
+	    chmod 0664, $dest;
+	    printInfo($indent2 . "Copied file: $path --> $dest") if ($opts{'v'});
+	} else {
+	    printError("Cannot copy '$source' to '$dest': $!", 1);
+	    $hasError = 1;
+	}
+    }
+}
+
+#----------------------------------------------------------------------
+
+sub deleteSourceFiles {
+
+    # name of file/directory currently being processed by File::Find
+    my $name = $_;
+
+    # name of current directory
+    my $dir = $File::Find::dir;
+
+    # path to file/directory currently being processed by File::Find
+    # (equivalent to "File::Find::dir/$_")
+    my $path = $File::Find::name;
+
+    return if ($name eq '.' || $name eq '..');
+
+    if (! -l $name && -d $name) {
+	# it's not a symbolic link, and it is a directory; use rmdir
+	unless (rmdir $name) {
+	    printWarning("Cannot delete directory '$name': $!");
+	}
+    } else {
+	# it's a file; use unlink
+	if ($name =~ /^\./) {
+	    # files starting with . were not copied to archive; if file is
+	    # known to be unnecessary, delete it; otherwise keep it
+
+	    # remove files created by MacOS
+	    if ($name eq ':2eDS_Store')   { unlink $name; }
+	    if ($name eq '.DS_Store')     { unlink $name; }
+	    if ($name eq '.Parent')       { unlink $name; }
+	    if ($dir =~ /\.AppleDouble$/) { unlink $name; }
+	} else {
+	    unless (unlink $name) {
+		printWarning("Cannot delete source file '$path'");
+	    }
+	}
+    }
+}
+
+#----------------------------------------------------------------------
+
+sub printError {
+    my $msg = shift || '';  # message to print
+    my $msgOnly = shift;    # whether to print message only, without incrementing counter
+    my $msgLeader = "$me: ERROR: ";
+
+    chomp $msg;
+    $msg = $msgLeader . $msg . "\n";
+
+    print STDERR $msg;
+    print LOG $msg;
+
+    unless ($msgOnly) {
+	$badCount++;
+	$badIDs{$infile} = '';
+    }
+}
+
+#----------------------------------------------------------------------
+
+sub printInfo {
+    my $msg = shift || '';
+
+    chomp $msg;
+    $msg = $msg . "\n";
+
+    print $msg unless $opts{'q'};
+    print LOG $msg;
+}
+
+#----------------------------------------------------------------------
+
+sub printWarning {
+    my $msg = shift || '';
+    my $msgLeader = "$me: WARNING: ";
+
+    chomp $msg;
+    $msg = $msgLeader . $msg . "\n";
+
+    print STDERR $msg;
+    print LOG $msg;
+}
+
+#----------------------------------------------------------------------
+
+sub sendMail {
+
+    # Sends email notification of directories successfully processed
+    # (does not notify of failures; the log contains notice of
+    # failures; the purpose of this notification is to "check off"
+    # fully completed items)
+
+    my $msg = "The '$me' script has successfully archived $goodCount item" . DlpsText::get_plural($goodCount)
+	. " to the StorNext archive directory for the $MODE workflow ($ARCHIVE_DIR):\n";
+    foreach $key (sort(keys(%goodIDs))) {
+	$msg .= "    $key\n";
+    }
+
+    open(MAIL,"| /usr/lib/sendmail -i -t");
+    print MAIL <<EOD;
+To: ul-dlpsscripts\@virginia.edu
+From: ul-dlpsscripts\@virginia.edu
+Subject: Items archived to StorNext
+
+$msg
+
+EOD
+    close(MAIL);
+}

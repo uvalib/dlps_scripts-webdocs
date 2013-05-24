@@ -1,0 +1,187 @@
+#!/usr/bin/perl -w -I /shares/admin/bin/text
+
+# report_figures_rend - generates an HTML report/form of <figure>
+# tags, for indicating whether figure is rendered as full-page, block,
+# or inline
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2003-01-20
+# Last modified: 2005-12-30
+
+# 2003-03-31: gpm2a: Last modification date before the 2005-12-30
+# change.
+#
+# 2005-12-30: gpm2a: Changed for use on pogo.
+
+use strict;
+##use DlpsText;
+use DlpsTextWorkreports;
+
+our ($me, $infile);  # declare these variables as 'our' to allow DlpsTextWorkreports to access them
+my ($usage, @infile);
+my ($report_type, $go, $msg, $c);
+my ($pagenumber, $pageimage, $id, $base_filename, $filename);
+my ($html1, $html2, $html3);
+my ($rend, $page_checked, $block_checked, $inline_checked);
+
+$report_type = 'figures_rend';
+
+$me = 'report_figures_rend';
+$usage = <<EOD;
+
+$me - generates an HTML report/form of <figure> tags, for indicating whether figure is rendered as full-page, block, or inline
+Usage: $me filenames
+In: TEI XML file(s)
+Out: For each input file, creates an HTML file named [filename].figures_rend.html
+
+EOD
+
+die $usage if (! @ARGV);
+foreach (@ARGV) {
+    die $usage if /^-/;   # this script has no switches
+}
+
+foreach $infile (@ARGV) {
+    if ( not DlpsTextWorkreports::init($infile, $report_type) ) {
+	next;
+    }
+
+    # test for existing changes file; if problem, skip to next input file; see DlpsTextWorkreports::changes_file_ok()
+    if ( not DlpsTextWorkreports::changes_file_ok() ) {
+	next;
+    }
+
+    # read input file into an array
+    open(IN, $infile) || die "$me: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # test whether any of this is necessary
+    $go = 0;
+    foreach (@infile) {
+	if ( /<figure/ ) {
+	    $go = 1;
+	    last;
+	}
+    }
+    if (! $go) {
+	$msg = "Contains no figures. No HTML report was generated.";
+	print "$me: $infile: $msg\n";
+	##DlpsText::log($me, $infile, $msg);
+	next;
+    }
+
+    $c = 0;
+    $pagenumber = '';
+    $pageimage = '';
+    $html2 = '';
+
+    foreach (@infile) {
+	if (/<pb.*>/i) {
+	    if (/<pb.+n=["'](\w+)["'].*>/i) {
+		$pagenumber = $1;
+	    } else {
+		$pagenumber = '';
+	    }
+
+	    if (/<pb.+entity=["'](\w+)["'].*>/i) {
+		$pageimage = $1;
+	    } else {
+		$pageimage = '';
+	    }
+	}
+
+	if ( /<figure/ ) {
+	    $c++;
+
+	    # get id attribute value
+	    if ( /<figure[^>]*id=["']([\w\.\-]+)["']/ ) {
+		$id = $1;
+	    } else {
+		$id = '';
+		warn "$me: $infile: WARNING: Contains a figure element with no id attribute. "
+		    . "Supply id attributes on all figure elements.\n";
+	    }
+
+            # get rend attribute, if already present
+            if ( /<figure[^>]*rend=["'](\w+)["']/ ) {
+                $rend = $1;
+            } else {
+                $rend = '';
+            }
+
+            $page_checked = ''; $block_checked = ''; $inline_checked = '';
+            if ($rend eq 'page') { $page_checked = ' checked'; }
+            elsif ($rend eq 'block') { $block_checked = ' checked'; }
+            elsif ($rend eq 'inline') { $inline_checked = ' checked'; }
+
+	    $html2 .= <<EOD;
+<tr>
+<td>$c<input type="hidden" name="id_$c" value="$id"></td>
+<td nowrap class="nowrap"><input type="radio" name="rend_$c" value="page"$page_checked>Full-page<br>
+<input type="radio" name="rend_$c" value="block"$block_checked>Block<br>
+<input type="radio" name="rend_$c" value="inline"$inline_checked>Inline</td>
+<td>Mark this item for further review:<br>
+Note:&nbsp;<input type="text" class="text" name="note_$c"></td>
+<td>$pagenumber<input type="hidden" name="pagenumber_$c" value="$pagenumber"><br>
+$pageimage<input type="hidden" name="pageimage_$c" value="$pageimage"></td>
+</tr>
+EOD
+	}
+    }
+
+    $html1 = <<EOD;
+<html>
+<head>
+<title>Figures: Rendering Report: $infile</title>
+<link rel="stylesheet" type="text/css" href="/dlps/css/workreports.css">
+</head>
+<body onLoad="document.frm.operator.focus();">
+<h3>Figures: Rendering Report: $infile</h3>
+<p><b>Summary:</b> $c items</p>
+<h4>Instructions</h4>
+<ol>
+<li>Enter your name.</li>
+<li>For each item, indicate how the figure is rendered <i>on the printed page</i>:
+
+<ul>
+<li>"Full-page" means that only one or more figure(s) (perhaps with
+captions) appears on the page; no text from the body of the work
+appears on the page.</li>
+<li>"Block" means that the figure is set off from the surrounding text
+by line breaks.</li>
+<li>"Inline" means that the figure is set within the flow of the
+surrounding text; the text flows around the figure on at least one
+side.</li>
+</ul>
+</li>
+
+<li>If the figure appears problematic in some way, mark it for further
+review by entering a brief note of explanation in the "Note"
+textbox.</li>
+<li>When finished with all items, click the "Save Data" button.</li>
+</ol>
+
+<form name="frm" method="post" action="$DlpsTextWorkreports::action">
+
+<table border="0" cellpadding="5">
+<tr>
+<td>Name <i>(required)</i>: <input type="text" class="text" name="operator"></td>
+</tr>
+</table>
+
+<table border="1" cellpadding="5">
+<tr><th>Item</th><th>Rendering</th><th>Review</th><th>Page number/image</th></tr>
+EOD
+
+    $html3 = DlpsTextWorkreports::html_end($c);
+
+    # write output file
+    DlpsTextWorkreports::write_outfile($html1, $html2, $html3);
+
+    # create empty .change and .review files
+    DlpsTextWorkreports::create_empties();
+
+    $msg = "No changes to input file. Generated HTML report: " . DlpsTextWorkreports::get_outfile();
+    ##DlpsText::log($me, $infile, $msg);
+}

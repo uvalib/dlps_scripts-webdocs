@@ -1,0 +1,45 @@
+#!/bin/ksh
+
+progname="checkpidname";
+usage="\nUSAGE: $progname extension file [... fileN]
+This program checks for the following syntax in filenames:
+   [dummy|uva-lib][:_]numericPID.extension\n"
+
+# must have at least 2 parameters
+if [ ! "$#" -ge 2 ]
+then
+   echo "$usage"
+   exit
+fi
+
+# first parameter is a file extension
+extension="$1"
+if [ -f "$extension" ]
+then
+   # this is a filename!
+   echo "$usage"
+   exit
+fi
+
+extension=`echo $extension | sed "s/^\.//"`
+shift
+
+# the remaining parameter[s] are filenames
+for file in $*
+do
+   base=`basename $file`
+   base=`echo $base |sed "s/\.$extension$//" |sed 's/dummy[:_]//' |sed 's/uva-lib[:_]//' |sed 's/^[0-9]*$//'`
+   if [ "$base" != "" ]
+   then
+      echo "File naming error: $file"
+      # echo "Correct syntax: [dummy|uva-lib][:_]numericPID.$extension"
+   else
+      exten=`echo $file | sed "s/.*\.//"`
+      if [ "$exten" != "$extension" ]
+      then
+         echo "File naming error: $file"
+         # echo "Correct syntax: [dummy|uva-lib][:_]numericPID.$extension"
+      fi
+   fi
+done
+

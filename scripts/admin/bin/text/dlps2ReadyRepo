@@ -1,0 +1,1775 @@
+#!/usr/bin/perl -w
+
+# dlps2ReadyRepo - copies finished electronic texts and associated
+# image files from the DLPS workspace to the repository ingestion
+# point (/cenrepo/ReadyRepo)
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2004-09-17
+# Last modified: 2008-12-18
+
+# See usage summary below for a list of steps this script performs.
+
+# Note: Error messages are printed to standard error and
+# logged. Messages with "ERROR: " indicate a fatal error for that
+# particular input file/ID, but because this is a batch script, the
+# script doesn't actually die unless there's a global problem.
+
+# Undocumented -D switch disables deletion of source files.
+# Undocumented -L switch disables logging.
+# Undocumented -M switch disables raw-metadata-file creation for images.
+
+# Revision history:
+# 2004-09-17: gpm2a: First production version
+#
+# 2005-01-13: gpm2a: Changed default log-file location to
+# /cenrepo/bin/cgi-dl/dlps/logs/dlps2ReadyRepo
+#
+# 2005-03-24: gpm2a: Changed permissions assigned to archived XML file
+# from 444 to 664.
+#
+# 2005-08-24: gpm2a: Fixed bug: Script was giving an error message if
+# <?dlps page-images="no" figure-images="no"?> which is not an error
+# condition.
+#
+# 2005-09-06: gpm2a: We are no longer copying bitonal TIFF page images
+# to the DLPS image archive directory (09archive) and then deleting
+# them. Instead, we are leaving bitonal TIFF page images where they
+# are; they will be deleted later in a separate cleanup step. The
+# reason for this change is that the bitonal TIFFs themselves (not
+# GIFs or any other derivative format) are being copied to ReadyRepo;
+# there is no need to keep a duplicate copy in the image archive
+# directory (09archive).
+#
+# 2005-09-14: gpm2a: Added -R (resume) option to allow continutation
+# of processing an ID that had previously been started.
+#
+# 2005-10-31: gpm2a: Removed "+profile icm +profile iptc" from
+# 'convert' ImageMagick commands for generating screen-size and
+# preview-size image derivatives, because (a) these options were
+# causing 'convert' to fail (return a non-zero value), and (b) these
+# options are only for removing metadata profiles from the header of
+# the output image, to reduce filesize, so it is harmless not to ask
+# 'convert' to remove them (especially when those profiles may not
+# even be present in the first place).
+#
+# 2006-03-13: gpm2a: Changed to allow <?dlps page-images="..."?> value
+# of "none" as well as "no" for negative, and to allow
+# <?dlps transcription="..."?> value of "none" as well as "no" for
+# negative and anything else (including "vendor" and "ocr") for
+# positive.
+#
+# 2006-04-06: gpm2a: Changed to update DLPS tracking system -->
+# Finalization Workflow --> Run dlps2ReadyRepo
+#
+# 2006-05-15: gpm2a: Changed the way the script connects to the DLPS
+# tracking system, so that a MySQL error does not cause dlps2ReadyRepo
+# to die (because updating the tracking system is not a crucial task
+# of this script).
+#
+# 2006-06-07: gpm2a: Added -d (directory) option to allow user to
+# specify directory to look in for page-image files.
+#
+# 2006-06-16: gpm2a: Added -a (archive) option to allow user to
+# specify archive directory (where source files get moved after
+# successful processing).
+#
+# 2006-09-22: gpm2a: Added "-density 72x72" to the system calls that
+# use the ImageMagick 'convert' command.
+#
+# 2008-12-18: gpm2a: Because this script is now being used for TEI
+# migration projects: changed logic (getFilenames sub) to allow
+# arbitrary filenames for image files -- that is, to stop
+# requiring/assuming that an image (page or figure) filename
+# necessarily begins with the ID (base filename) from the XML
+# file. For example, MyText.xml might have associated image files
+# named MyText_spine.tif, MyText_001.tif, etc., or arbitrary filenames
+# like abc123.tif, or both.
+
+
+#**********************************************************************
+# main logic
+#**********************************************************************
+
+use strict;
+use Getopt::Std;
+use File::Copy;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use TrackSys;
+
+my ($me, $usage, %opts, $log);
+my ($infile, @infile, %properties, $id, $msg, $project, $dir, $command);
+my (%files2do, $temp, $source, $dest, $imageIdDir, $metadataIdDir);
+my ($processedCount, $goodCount, $badCount, %goodIDs, %badIDs, $key);
+my ($basePageImageDir, $sourcePageImageDir, $sourceFigImageDir, $archiveDir);
+my ($destTextDir, $destPageImageDir, $destFigImageDir, $destPageMetadataDir, $destFigMetadataDir);
+my ($textContentModel, $pageImageContentModel, $figImageContentModel);
+my (%sourcePageImages, %destPageImages, %sourceFigImages, %destFigImages, %destPageMetadataFiles, %destFigMetadataFiles);
+my ($sql, $rows);
+
+#----------------------------------------------------------------------
+# set constants
+
+my $DEFAULT_LOG_DIR = '/shares/admin/bin/text/logs/dlps2ReadyRepo/';
+
+my $DEFAULT_SOURCE_PAGEIMAGE_DIR = '/shares/image1/01bookscanning/52_CCITTCOMPRESS_OUT/';
+#my $DEFAULT_SOURCE_PAGEIMAGE_DIR = '/cenrepo/image/cavdaily/';
+
+my $SOURCE_FIGIMAGE_DIR = '/shares/image1/03fig/83figs_final/';
+my $SOURCE_FIGIMAGE_ID_DIR_SUFFIX = '_fig';
+
+my $DEFAULT_ARCHIVE_DIR = '/shares/image1/09archive/';
+my $XML_ARCHIVE_DIR = '/shares/text/04xmlArchive/10final/';
+my $VENDOR_CHECKLISTS_ARCHIVE_DIR = '/shares/text/04xmlArchive/00vendorCheckLists/';
+
+my $DEST_TEXT_DIR = '/cenrepo/ReadyRepo/text/';
+my $DEST_IMAGE_DIR = '/cenrepo/ReadyRepo/image/';
+
+my $CONVERT    = 'convert';  # path to ImageMagick binaries has been added to system-wide profile
+my $IDENTIFY   = 'identify';
+my $SID_ENCODE = '/usr/local/GeoExpress/bin/mrsidgeoencoder';
+#----------------------------------------------------------------------
+
+$me = 'dlps2ReadyRepo';
+$usage = <<EOD;
+
+$me - copies finished electronic texts and associated image files from the
+  DLPS workspace to the repository ingestion point (/cenrepo/ReadyRepo)
+
+Usage: $me [-a dir] [-d dir] [-l logfile] [-p project | -P project] [-q] [-F] [-R] filenames
+  -a (archive)   Specify archive directory where images should be moved
+                 after processing; defaults to $DEFAULT_ARCHIVE_DIR
+  -d (directory) Specify directory for page images; defaults to
+                 $DEFAULT_SOURCE_PAGEIMAGE_DIR
+  -l (logfile)   Specify log file; if omitted, script will create a new
+                 logfile in $DEFAULT_LOG_DIR
+  -p (project)   Specify project name to be used if there is no 
+                 <?dlps project="..."?> property
+  -P (project)   Specify project name to be used for ALL input files,
+                 REGARDLESS of value of <?dlps project="..."?> property
+  -q (quiet)     Suppress status messages sent to standard output
+                 (has no effect on what gets logged to logfile)
+  -F (force)     Overwrite output files if they already exist. (By
+                 default, if an output file already exists, script will
+                 issue a message but will skip to next ID, without
+                 overwriting any existing file.)
+  -R (resume)    If an output file already exists, continue processing
+                 without overwriting the existing file. This has the
+                 effect of resuming processing of an ID previously
+                 started. (By default, if an output file already exists,
+                 script will issue a message but will skip to next ID,
+                 without overwriting any existing file.)
+
+In:  TEI XML file(s)
+Out: Performs several processes:
+  * Copies XML file to ReadyRepo
+  * If page images are bitonal
+      - copies TIFFs to ReadyRepo
+      - creates screen-size GIF derivatives in ReadyRepo
+      - creates preview-size GIF derivatives in ReadyRepo
+    If page images are color
+      - creates max-size MrSid derivatives in ReadyRepo
+      - creates screen-size JPEG derivatives in ReadyRepo
+      - creates preview-size JPEG derivatives in ReadyRepo
+  * If there are any figure images
+      - creates max-size MrSid derivatives in ReadyRepo
+      - creates screen-size JPEG derivatives in ReadyRepo
+      - creates preview-size JPEG derivatives in ReadyRepo
+  * Copies XML file to $XML_ARCHIVE_DIR and copies
+    master TIFF files to archive directory (defaults to
+    $DEFAULT_ARCHIVE_DIR)
+  * If entire process succeeds
+      - deletes page images, figure images, and XML file from their
+        original locations
+      - updates DLPS Tracking System to set "Run $me" to Done
+
+EOD
+
+
+#---------------
+# test arguments
+#---------------
+
+getopts('a:d:l:p:P:qFRDLM', \%opts) || die $usage;
+die $usage if (! @ARGV);
+
+$log = $opts{'l'} || $DEFAULT_LOG_DIR . DlpsText::getLogFileName($me . '_');
+
+$archiveDir = $opts{'a'} || $DEFAULT_ARCHIVE_DIR;
+$archiveDir = DlpsText::normalize_path($archiveDir);
+
+$basePageImageDir = $opts{'d'} || $DEFAULT_SOURCE_PAGEIMAGE_DIR;
+$basePageImageDir = DlpsText::normalize_path($basePageImageDir);
+
+if ($opts{'p'} and $opts{'P'}) { die "-p and -P options are mutually exclusive. $usage"; }
+if ($opts{'F'} and $opts{'R'}) { die "-F and -R options are mutually exclusive. $usage"; }
+
+# test logfile
+unless ($opts{'L'}) {
+    if ( -e $log ) {
+	# logfile already exists; it must be writable text file
+	if ( -T $log ) {
+	    if ( not -w $log ) {
+		die "$me: ERROR: No write permissions on file '$log'; cannot use it for log file.\n";
+	    }
+	} else {
+	    die "$me: ERROR: File '$log' is not a text file; cannot use it for log file.\n";
+	}
+    } else {
+	# create log file and make sure you can write to it
+	open(LOG, ">$log") || die "Cannot create log file '$log': $!\n";
+	print LOG '';
+	close LOG;
+	# set permissions, including group write
+	chmod 0664, $log;
+    }
+}
+
+# test each input file
+foreach $infile (@ARGV) {
+    # get DLPS ID
+    %properties = DlpsText::getProperties($infile);
+    @infile = ();
+    $id = DlpsText::getDlpsId(\%properties, \@infile, $infile);
+    if (! $id) {
+	die "$me: ERROR: Cannot get DLPS ID for file '$infile'\n";
+    }
+
+    # test that input file is a text file
+    if ( not -T $infile ) {
+	die "$me: ERROR: Input file '$infile' must be a text file.\n";
+    }
+
+    # test that input file is readable
+    if ( not -r $infile ) {
+	die "$me: ERROR: Input file '$infile' must be readable.\n";
+    }
+
+    $files2do{$infile} = $id;
+}
+
+
+#------------------------------------------------------------
+# verify global (not ID-specific) directories and executables
+#------------------------------------------------------------
+
+if ( not -d $basePageImageDir )    { die "$me: ERROR: '$basePageImageDir' is not a directory\n"; }
+if ( not -d $SOURCE_FIGIMAGE_DIR ) { die "$me: ERROR: '$SOURCE_FIGIMAGE_DIR' is not a directory\n"; }
+if ( not -d $archiveDir )          { die "$me: ERROR: '$archiveDir' is not a directory\n"; }
+if ( not -d $XML_ARCHIVE_DIR )     { die "$me: ERROR: '$XML_ARCHIVE_DIR' is not a directory\n"; }
+if ( not -d $DEST_TEXT_DIR )       { die "$me: ERROR: '$DEST_TEXT_DIR' is not a directory\n"; }
+if ( not -d $DEST_IMAGE_DIR )      { die "$me: ERROR: '$DEST_IMAGE_DIR' is not a directory\n"; }
+
+if ( not -r $basePageImageDir )    { die "$me: ERROR: No read permissions on '$basePageImageDir'\n"; }
+if ( not -r $SOURCE_FIGIMAGE_DIR ) { die "$me: ERROR: No read permissions on '$SOURCE_FIGIMAGE_DIR'\n"; }
+if ( not -w $archiveDir )          { die "$me: ERROR: No write permissions on '$archiveDir'\n"; }
+if ( not -w $XML_ARCHIVE_DIR )     { die "$me: ERROR: No write permissions on '$XML_ARCHIVE_DIR'\n"; }
+if ( not -w $DEST_TEXT_DIR )       { die "$me: ERROR: No write permissions on '$DEST_TEXT_DIR'\n"; }
+if ( not -w $DEST_IMAGE_DIR )      { die "$me: ERROR: No write permissions on '$DEST_IMAGE_DIR'\n"; }
+
+if ( not -e $SID_ENCODE ) { die "$me: ERROR: Command (executable file) '$SID_ENCODE' does not exist.\n"; }
+if ( not -x $SID_ENCODE ) { die "$me: ERROR: File '$SID_ENCODE' is not executable.\n"; }
+
+#if ( not -e $CONVERT ) { die "$me: ERROR: Command (executable file) '$CONVERT' does not exist.\n"; }
+#if ( not -x $CONVERT ) { die "$me: ERROR: File '$CONVERT' is not executable.\n"; }
+
+#if ( not -e $IDENTIFY ) { die "$me: ERROR: Command (executable file) '$IDENTIFY' does not exist.\n"; }
+#if ( not -x $IDENTIFY ) { die "$me: ERROR: File '$IDENTIFY' is not executable.\n"; }
+
+# make sure ImageMagick commands are in user's PATH; they should be,
+# since path to ImageMagick binaries has been added to system-wide profile
+if ( system("which convert >& /dev/null") != 0 ) { die "$me: ERROR: System cannot find 'convert' command.\n"; }
+if ( system("which identify >& /dev/null") != 0 ) { die "$me: ERROR: System cannot find 'identify' command.\n"; }
+
+
+#--------------------------------------------
+# set environment variables required by MrSID
+#--------------------------------------------
+
+# license key path
+#$ENV{LSERVRC} = '/usr/local/GeoExpress/lservrc';
+
+# data cartridge database
+#$ENV{LT_UMDB_PATH} = '/p0/usr/local/LizardTech/ECM/db';
+
+# general library path
+#$ENV{LD_LIBRARY_PATH} = '$LD_LIBRARY_PATH:/p0/usr/local/GeoExpress/libimg/usr/lib/sun4sol';
+
+# image path
+#$ENV{IMAGINE_HOME} = '/p0/usr/local/GeoExpress/libimg';
+
+
+#---------------------------
+# open logfile for appending
+#---------------------------
+
+unless ($opts{'L'}) {
+    open(LOG, ">>$log") || die "Cannot append to log file '$log': $!\n";
+}
+
+
+#------------------------
+# process each input file
+#------------------------
+
+$id = '';
+$processedCount = 0;
+$goodCount = 0;
+$badCount = 0;
+
+printInfo("\n$me: INITIAL STATUS: Script started at " . DlpsText::getDateTime() . ".\n");
+
+# connect to tracking system database; continue processing upon MySQL error
+my $tracksysConnected = 0;
+if ( TrackSys::connect(1) ) {
+    $tracksysConnected = 1;
+} else {
+    printWarning("Cannot connect to MySQL server for DLPS tracking system");
+}
+
+foreach $infile (sort(keys(%files2do))) {
+    $processedCount++;
+    %sourcePageImages = ();
+    %sourceFigImages = ();
+    %destPageImages = ();
+    %destFigImages = ();
+    %destPageMetadataFiles = ();
+    %destFigMetadataFiles = ();
+
+    $id = $files2do{$infile};
+    printInfo("\n$me: $id: Processing of ID '$id' started at " . DlpsText::getDateTime() . ".\n");
+
+    # get properties from <?dlps ...?> processing instructions
+    %properties = DlpsText::getProperties($infile);
+
+    # validate properties
+    if ( not DlpsText::validateProperties(\%properties, \$msg) ) { printError($msg); next; }
+
+    # display and log property values
+    $msg = "\t$id properties:\n";
+    $msg .= DlpsText::formatPropertyValues(\%properties, 12);
+    printInfo($msg);
+
+    # determine project name to use
+    if ($opts{'P'}) {
+	# user specified -P switch, which trumps any/all others
+	$project = $opts{'P'};
+    } else {
+	# use <?dlps project="..."?> property if available; otherwise use -p value if available
+	if ( $properties{'project'} ) {
+	    $project = $properties{'project'};
+	} elsif ( $opts{'p'} ) {
+	    # user specified -p switch; use -p value when no 'project' property
+	    $project = $opts{'p'};
+	} else {
+	    $msg = "No project name provided.";
+	    printError($msg);
+	    next;
+	}
+    }
+
+
+    #-------------------------
+    # determine content models
+    #-------------------------
+
+    # determine text content model
+    if ( $properties{'page-images'} eq 'no' || $properties{'page-images'} eq 'none') {
+        if ( $properties{'transcription'} eq 'no' || $properties{'transcription'} eq 'none' ) {
+            # no page images, no transcription
+            $msg = "No page images and no transcription; this situation makes no sense and is not allowed.";
+            printError($msg);
+            next;
+        } else {
+            # no page images; transcription only
+            $textContentModel = 'uvaGenText';
+        }
+    } else {
+        if ( $properties{'transcription'} eq 'no' || $properties{'transcription'} eq 'none' ) {
+            # page images only; no transcription
+            $textContentModel = 'uvaPageBook';
+        } else {
+            # page images and transcription
+            $textContentModel = 'uvaBook';
+        }
+    }
+
+    # determine page-image content model
+    if ( $properties{'page-images'} eq 'bitonal' ) {
+        $pageImageContentModel = 'uvaBitonal';
+    } elsif ( $properties{'page-images'} eq 'color' ) {
+        $pageImageContentModel = 'uvaHighRes';
+    } else {
+        $pageImageContentModel = '';
+    }
+
+    if ( $properties{'figure-images'} eq 'yes' ) {
+        $figImageContentModel = 'uvaHighRes';
+    } else {
+        $figImageContentModel = '';
+    }
+
+
+    #---------------------------------------
+    # verify existence of source image files
+    #---------------------------------------
+
+    # verify existence of source page-image files, if any
+    if ($pageImageContentModel) {
+	$dir = $basePageImageDir . $id . '/';
+	$sourcePageImageDir = $dir;
+	if ( not testDir($dir, 'read') ) { printError($msg); next; }
+	if ( not getFilenames($dir, \%sourcePageImages, '.tif') ) { printError($msg); next; }
+	if ( not scalar(keys(%sourcePageImages)) ) {
+	    $msg = "Directory '$dir' does not contain any .tif files.";
+	    printError($msg);
+	    next;
+	}
+    }
+
+    # verify existence of source figure-image files, if any
+    if ($figImageContentModel) {
+	$dir = $SOURCE_FIGIMAGE_DIR . $id . $SOURCE_FIGIMAGE_ID_DIR_SUFFIX . '/';
+	$sourceFigImageDir = $dir;
+	if ( not testDir($dir, 'read') ) { printError($msg); next; }
+	if ( not getFilenames($dir, \%sourceFigImages, '.tif') ) { printError($msg); next; }
+	if ( not scalar(keys(%sourceFigImages)) ) {
+	    $msg = "Directory '$dir' does not contain any .tif files.";
+	    printError($msg);
+	    next;
+	}
+    }
+
+
+    #========================
+    # copy files to ReadyRepo
+    #========================
+
+    #------------------------------------------
+    # verify or create directories in ReadyRepo
+    #------------------------------------------
+
+    # verify or create destination text project directory
+    $dir = $DEST_TEXT_DIR . $project . '/';
+    if ( not ensureDir($dir) ) { printError($msg); next; }
+    if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+    # verify or create destination text content-model directory
+    $dir .= $textContentModel . '/';
+    if ( not ensureDir($dir) ) { printError($msg); next; }
+    if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+    # verify or create destination text output directory
+    $dir .= 'tei/';
+    $destTextDir = $dir;
+    if ( not ensureDir($dir) ) { printError($msg); next; }
+    if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+    if ($pageImageContentModel or $figImageContentModel) {
+	if ($pageImageContentModel eq $figImageContentModel) {
+	    $msg = "Content models for page images ($pageImageContentModel)"
+		. " and figure images ($figImageContentModel) cannot be the same.";
+	    printError($msg);
+	    next;
+	}
+
+        # verify or create destination image project directory
+        $dir = $DEST_IMAGE_DIR . $project . '/';
+        if ( not ensureDir($dir) ) { printError($msg); next; }
+        if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+        # verify or create destination image ID directory
+        $dir .= $id . '/';
+        $imageIdDir = $dir;
+        if ( not ensureDir($dir) ) { printError($msg); next; }
+        if ( not testDir($dir, 'write') ) { printError($msg); next; }
+    }
+
+    if ($pageImageContentModel) {
+	# verify or create destination page-image content-model directory
+	$dir = $imageIdDir . $pageImageContentModel . '/';
+	$destPageImageDir = $dir;
+	$temp = $dir;
+	if ( not ensureDir($dir) ) { printError($msg); next; }
+	if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+	# verify or create destination page-image output directories
+	$dir = $temp . 'preview/';
+	if ( not ensureDir($dir) ) { printError($msg); next; }
+	if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+	$dir = $temp . 'screen/';
+	if ( not ensureDir($dir) ) { printError($msg); next; }
+	if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+	$dir = $temp . 'max/';
+	if ( not ensureDir($dir) ) { printError($msg); next; }
+	if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+	if (not $opts{'M'}) {
+	    # verify or create destination page-image 'metadata' directory
+	    $dir = $temp . 'metadata/';
+	    if ( not ensureDir($dir) ) { printError($msg); next; }
+	    if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+	    # verify or create destination page-image raw-metadata output directory
+	    $dir .= 'raw_meta/';
+	    $destPageMetadataDir = $dir;
+	    if ( not ensureDir($dir) ) { printError($msg); next; }
+	    if ( not testDir($dir, 'write') ) { printError($msg); next; }
+	}
+    }
+
+    if ($figImageContentModel) {
+	# verify or create destination figure-image content-model directory
+        $dir = $imageIdDir . $figImageContentModel . '/';
+        $destFigImageDir = $dir;
+        $temp = $dir;
+        if ( not ensureDir($dir) ) { printError($msg); next; }
+        if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+	# verify or create destination figure-image output directories
+        $dir = $temp . 'preview/';
+        if ( not ensureDir($dir) ) { printError($msg); next; }
+        if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+        $dir = $temp . 'screen/';
+        if ( not ensureDir($dir) ) { printError($msg); next; }
+        if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+        $dir = $temp . 'max/';
+        if ( not ensureDir($dir) ) { printError($msg); next; }
+        if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+	if (not $opts{'M'}) {
+	    # verify or create destination figure-image 'metadata' directory
+	    $dir = $temp . 'metadata/';
+	    if ( not ensureDir($dir) ) { printError($msg); next; }
+	    if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+	    # verify or create destination figure-image raw-metadata output directory
+	    $dir .= 'raw_meta/';
+	    $destFigMetadataDir = $dir;
+	    if ( not ensureDir($dir) ) { printError($msg); next; }
+	    if ( not testDir($dir, 'write') ) { printError($msg); next; }
+	}
+    }
+
+
+    #---------------------------------------------
+    # copy files to (or create files in) ReadyRepo
+    #---------------------------------------------
+
+    # copy XML file
+    $source = $infile;
+    $dest = $destTextDir . $infile;
+    if ( not copyXMLFile($source, $dest) ) { printError($msg); next; }
+
+    # page images
+    if ($pageImageContentModel eq 'uvaBitonal') {
+	# copy bitonal page-image files (TIFF masters) to ReadyRepo
+	if ( not copyImages($sourcePageImageDir, $destPageImageDir . 'max/', '.tif', 'page') ) { printError($msg); next; }
+
+	# make 'screen' derivatives (GIFs) from TIFF masters
+	if ( not makeScreenImages($sourcePageImageDir, $destPageImageDir . 'screen/', 'page') ) { printError($msg); next; }
+
+	# make 'preview' derivatives (GIFs) from 'screen' derivatives
+	if ( not makePreviewImages($destPageImageDir . 'screen/', $destPageImageDir . 'preview/', 'page') ) {
+	    printError($msg);
+	    next;
+	}
+
+    } elsif ($pageImageContentModel eq 'uvaHighRes') {
+	# make 'max' derivatives from TIFF masters
+	if ( not makeMaxImages($sourcePageImageDir, $destPageImageDir . 'max/', 'page') ) { printError($msg); next; }
+
+	# make 'screen' derivatives (JPEGs) from TIFF masters
+	if ( not makeScreenImages($sourcePageImageDir, $destPageImageDir . 'screen/', 'page') ) { printError($msg); next; }
+
+	# make 'preview' derivatives (JPEGs) from 'screen' derivatives
+	if ( not makePreviewImages($destPageImageDir . 'screen/', $destPageImageDir . 'preview/', 'page') ) {
+	    printError($msg);
+	    next;
+	}
+    }
+
+    # figure images
+    if ($figImageContentModel) {
+	# make 'max' derivatives from TIFF masters
+	if ( not makeMaxImages($sourceFigImageDir, $destFigImageDir . 'max/', 'figure') ) { printError($msg); next; }
+
+	# make 'screen' derivatives from TIFF masters
+	if ( not makeScreenImages($sourceFigImageDir, $destFigImageDir . 'screen/', 'figure') ) { printError($msg); next; }
+
+	# make 'preview' derivatives from 'screen' derivatives
+	if ( not makePreviewImages($destFigImageDir . 'screen/', $destFigImageDir . 'preview/', 'figure') ) {
+	    printError($msg);
+	    next;
+	}
+    }
+
+  if (not $opts{'M'}) {
+    # raw image metadata (TIFF header dumps)
+    if ($pageImageContentModel) {
+	if ( not makeImageMetadata($sourcePageImageDir, $destPageMetadataDir, 'page') ) { printError($msg); next; }
+    }
+    if ($figImageContentModel) {
+	if ( not makeImageMetadata($sourceFigImageDir, $destFigMetadataDir, 'figure') ) { printError($msg); next; }
+    }
+  }
+
+
+    #=============================================
+    # copy master image files to archive directory
+    #=============================================
+
+    #--------------------------------------------------
+    # verify or create directories in archive directory
+    #--------------------------------------------------
+
+    # verify or create ID directory
+    if ( ($pageImageContentModel and $pageImageContentModel ne 'uvaBitonal') or ($figImageContentModel) ) {
+	$dir = $archiveDir . "$id/";
+	if ( not ensureDir($dir) ) { printError($msg); next; }
+	if ( not testDir($dir, 'write') ) { printError($msg); next; }
+    }
+
+    # verify or create page-images directory
+    if ($pageImageContentModel and $pageImageContentModel ne 'uvaBitonal') {
+	$dir = $archiveDir . "${id}/${id}_pages/";
+	$destPageImageDir = $dir;
+	if ( not ensureDir($dir) ) { printError($msg); next; }
+	if ( not testDir($dir, 'write') ) { printError($msg); next; }
+    }
+
+    # verify or create figure-images directory
+    if ($figImageContentModel) {
+	$dir = $archiveDir . "${id}/${id}_figures/";
+	$destFigImageDir = $dir;
+	if ( not ensureDir($dir) ) { printError($msg); next; }
+	if ( not testDir($dir, 'write') ) { printError($msg); next; }
+    }
+
+    #--------------------------------
+    # copy files to archive directory
+    #--------------------------------
+
+    # copy master (TIFF) page images
+    if ($pageImageContentModel and $pageImageContentModel ne 'uvaBitonal') {
+	if ( not copyImages($sourcePageImageDir, $destPageImageDir, '.tif', 'page') ) { printError($msg); next; }
+    }
+
+    # copy master (TIFF) figure images
+    if ($figImageContentModel) {
+	if ( not copyImages($sourceFigImageDir, $destFigImageDir, '.tif', 'figure') ) { printError($msg); next; }
+    }
+
+
+    #=======================================
+    # copy XML file to XML archive directory
+    #=======================================
+
+    $source = $infile;
+    $dest = $XML_ARCHIVE_DIR . $infile;
+    if ( not copyXMLFile($source, $dest, 664) ) { printError($msg); next; }
+
+
+    #====================
+    # delete source files
+    #====================
+
+    # Note: failure to delete the source image directory and all its
+    # files generates a warning only; it is not a fatal error for
+    # processing this ID, so we do not skip to the next ID. By the
+    # time we get here, the ID has been processed successfully.
+
+    if ($pageImageContentModel) {
+	# archive the item's vendor checklist (Word document), if any
+	$source = $sourcePageImageDir . $id . '.doc';
+	if (-e $source) {
+	    $dest = $VENDOR_CHECKLISTS_ARCHIVE_DIR . $id . '.doc';
+	    if ( copy($source, $dest) ) {
+		unlink $source if ( not $opts{'D'} );
+	    }
+	}
+    }
+
+    if (not $opts{'D'}) {
+	if ($pageImageContentModel) {
+	    # delete minimal/vendor TEI header (.header) file, if any
+	    $source = $sourcePageImageDir . $id . '.header';
+	    if (-e $source) {
+		unlink $source;
+	    } else {
+		# sometimes these files have an added .txt extension
+		$source .= '.txt';
+		if (-e $source) {
+		    unlink $source;
+		}
+	    }
+
+	    # delete page images
+	    if ($pageImageContentModel ne 'uvaBitonal') {
+		if ( not deleteImages($sourcePageImageDir, \%sourcePageImages, 'page') ) {
+		    printWarning($msg);
+		}
+	    }
+	}
+
+	# delete figure images
+	if ($figImageContentModel) {
+	    if ( not deleteImages($sourceFigImageDir, \%sourceFigImages, 'figure') ) {
+		printWarning($msg);
+	    }
+	}
+
+	# delete XML file
+	if ( unlink($infile) != 1 ) {
+	    printWarning("Could not unlink XML file '$infile'.");
+	}
+    }
+
+
+    #==========================
+    # log completion of this ID
+    #==========================
+
+    $msg = "$me: $id: Processing of ID '$id' completed successfully. "
+	. "Finished at " . DlpsText::getDateTime() . ".\n";
+    printInfo($msg);
+    $goodCount++;
+    $goodIDs{$id} = '';
+
+    # update DLPS tracking system for this DLPS ID
+    $rows = 0;
+    $sql = "UPDATE finalization SET dlps2ReadyRepo = 1 WHERE dlpsId = '$id' LIMIT 1";
+    if ($tracksysConnected) {
+	if ( $rows = TrackSys::query($sql) ) {
+	    if ($rows != 1) {
+		printWarning("Cannot update DLPS tracking system for record '$id': Update manually");
+	    }
+	} else {
+	    printWarning("Cannot execute SQL statement to update DLPS tracking system for record '$id': Update manually");
+	}
+    } else {
+	printWarning("Not connected to DLPS tracking system: Cannot update record '$id': Update manually");
+    }
+}
+
+TrackSys::disconnect() if ($tracksysConnected);
+
+
+#-------------------
+# print final status
+#-------------------
+
+if ($goodCount > 0 or $badCount > 0) {
+    $msg = "\n$me: FINAL STATUS: Script ended at " . DlpsText::getDateTime()
+	. ". Attempted to process a total of $processedCount ID" . DlpsText::get_plural($processedCount) . ":\n";
+    $msg .= "\t$goodCount ID" . DlpsText::get_plural($goodCount) . " processed successfully";
+    if ($goodCount > 0) {
+	$msg .= ":\n";
+	foreach $key (sort(keys(%goodIDs))) {
+	    $msg .= "\t    $key\n";
+	}
+    } else {
+	$msg .= ".\n";
+    }
+
+    $msg .= "\t$badCount ID" . DlpsText::get_plural($badCount) . " FAILED to process completely";
+    if ($badCount > 0) {
+	$msg .= ":\n";
+	foreach $key (sort(keys(%badIDs))) {
+	    $msg .= "\t    $key\n";
+	}
+    } else {
+	$msg .= ".\n";
+    }
+
+    $msg .= "\n";
+    printInfo($msg);
+}
+
+#--------------
+# close logfile
+#--------------
+
+close LOG unless $opts{'L'};
+
+#----------
+# send mail
+#----------
+
+if ($goodCount > 0) {
+    sendMail();
+}
+
+
+#**********************************************************************
+# subroutines
+#**********************************************************************
+
+sub compareFilenames {
+
+    # compareFilenames - compares two hashes of base filenames for
+    #   equivalency (each basename from 'source' hash must exist in
+    #   'destination' hash, and number of elements in each hash must
+    #   be equal)
+
+    # In: reference to 'source' hash, reference to 'destination' hash
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $sourceRef = shift;
+    my $destRef = shift;
+    my ($basename, $sourceCount, $destCount);
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $sourceRef) { die "compareFilenames: Missing required parameter 'sourceRef'\n"; }
+    if (not $destRef)   { die "compareFilenames: Missing required parameter 'destRef'\n"; }
+
+    # each base filename from source files must exist in destination files
+    foreach $basename (sort(keys(%$sourceRef))) {
+	if ( not exists($$destRef{$basename}) ) {
+	    $msg = "FAILED to process file '$$sourceRef{$basename}'.";
+	    return 0;
+	}
+    }
+
+    # number of source files and number of destination files must match exactly
+    $sourceCount = scalar(keys(%$sourceRef));
+    $destCount = scalar(keys(%$destRef));
+    if ( $sourceCount == $destCount ) {
+	printInfo("\t$sourceCount source files = $destCount destination files."
+		  . " All $sourceCount files were processed successfully.");
+    } else {
+	$msg = "$sourceCount source files does NOT equal $destCount destination files."
+	    . " FAILED to process one or more files.";
+	return 0;
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub copyImages {
+
+    # copyImages - copies image files from source-directory specified
+    #   to destination-directory specified
+
+    # In: source directory, destination directory, filename suffix to
+    #   look for, image type ('page' or 'figure')
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $sourceDir = shift;
+    my $destDir = shift;
+    my $suffix = shift;
+    my $imageType = shift;
+    my $ok = 1;
+    my %filenames = ();
+    my ($filename, $basename, %test, $sourceCount);
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $sourceDir) { die "copyImages: Missing required parameter 'sourceDir'\n"; }
+    if (not $destDir)   { die "copyImages: Missing required parameter 'destDir'\n"; }
+    if (not $suffix)    { die "copyImages: Missing required parameter 'suffix'\n"; }
+    if (not $imageType) { die "copyImages: Missing required parameter 'imageType'\n"; }
+    if ( not $imageType =~ /^(page|figure)$/ ) {
+	die "copyImages: Bad parameter 'imageType': must be 'page' or 'figure'\n";
+    }
+
+    $suffix =~ s/^\.//;   # strip off initial . if present
+
+    if ( $imageType eq 'page' ) {
+	%test = %sourcePageImages;
+    } elsif ( $imageType eq 'figure' ) {
+	%test = %sourceFigImages;
+    } else {
+	%test = ();
+    }
+    $sourceCount = scalar(keys(%test));
+
+    if ( opendir(DIR, $sourceDir) ) {
+	printInfo("\tCopying $sourceCount $imageType-image files to $destDir...\n");
+	while ( defined($filename = readdir(DIR)) ) {
+	    if ( $filename =~ /^[^\.].*\.$suffix$/ ) {
+	        # filename does not begin with dot and ends with expected suffix
+		$source = $sourceDir . $filename;
+		$dest = $destDir . $filename;
+
+		$basename = $filename;
+		$basename =~ s/\.$suffix$//;
+
+		if ( -e $dest ) {
+		    if ($opts{'F'}) {
+			# continue processing; overwrite destination file
+		    } elsif ($opts{'R'}) {
+			# add base filename to hash, for later comparison against source filenames
+			$filenames{$basename} = $filename;
+			# do not overwrite destination file; skip to next source file and continue processing
+			next;
+		    } else {
+			$msg = "Could NOT copy to '$dest': file already exists.";
+			$ok = 0;  # indicate failure, so we will know to skip to the next input file/ID
+			last;     # don't process any more files
+		    }
+		}
+		if ( copy($source, $dest) ) {
+		    chmod 0664, $dest;
+
+		    # add base filename to hash, for later comparison against source filenames
+		    $filenames{$basename} = $filename;
+		} else {
+		    $msg = "FAILED to copy $imageType-image file '$source' to '$dest': $!.";
+		    $ok = 0;  # indicate failure, so we will know to skip to the next input file/ID
+		    last;     # don't attempt to copy any more files
+		}
+	    }
+	}
+	closedir DIR;
+	if ($ok) {
+	    # test for exact correspondence between source files and destination files
+	    if ( not compareFilenames(\%test, \%filenames) ) {
+		return 0;
+	    }
+	} else {
+	    return 0;
+	}
+    } else {
+	$msg = "Could not read directory '$sourceDir'.";
+	return 0;
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub copyXMLFile {
+
+    # copyXMLFile - copies file specified to destination specified
+
+    # In: source filename, destination filename, permissions to set
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $source = shift;
+    my $dest = shift;
+    my $perm = shift || 664;
+    my $doCopy = 1;
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $source) { die "copyXMLFile: Missing required parameter 'source'\n"; }
+    if (not $dest)   { die "copyXMLFile: Missing required parameter 'dest'\n"; }
+
+    if ( -e $dest ) {
+	if ($opts{'F'}) {
+	    # continue processing; overwrite destination file
+	} elsif ($opts{'R'}) {
+	    # continue processing without overwriting destination file
+	    $doCopy = 0;
+	} else {
+	    $msg = "Could NOT copy to '$dest': file already exists.";
+	    return 0;  # indicate failure, so we will know to skip to the next input file/ID
+	}
+    }
+
+    if ($doCopy) {
+	if ( copy($source, $dest) ) {
+	    if ($perm == 444) {
+		chmod 0444, $dest;
+	    } elsif ($perm == 644) {
+		chmod 0644, $dest;
+	    } else {
+		chmod 0664, $dest;
+	    }
+
+	    # double-check
+	    if ( -e $dest ) {
+		printInfo("\tCopied XML file '$source' to '$dest'\n");
+	    } else {
+		$msg = "FAILED to copy XML file '$source' to '$dest'.";
+		return 0;
+	    }
+	} else {
+	    $msg = "FAILED to copy XML file '$source' to '$dest': $!.";
+	    return 0;
+	}
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub deleteImages {
+
+    # deleteImages - attempts to delete image files specified and
+    #   directory containing them
+
+    # In: directory name, reference to hash containing filenames to
+    #   delete, image type ('page' or 'figure')
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $dir = shift;
+    my $hashRef = shift;
+    my $imageType = shift;
+    my $submsg = '';
+    my ($filename, $macDir, $macFile);
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $dir)       { die "deleteImages: Missing required parameter 'dir'\n"; }
+    if (not $hashRef)   { die "deleteImages: Missing required parameter 'hashRef'\n"; }
+    if (not $imageType) { die "deleteImages: Missing required parameter 'imageType'\n"; }
+    if ( not $imageType =~ /^(page|figure)$/ ) {
+	die "deleteImages: Bad parameter 'imageType': must be 'page' or 'figure'\n";
+    }
+
+    # remove all files listed in hash
+    foreach $filename (sort(values(%$hashRef))) {
+	if ( unlink($dir . $filename) != 1 ) {
+	    $submsg = "Cannot unlink file '$dir$filename'." if (not $submsg);
+	}
+
+	# also remove ._b00... files, if any
+	if (-e $dir . '._' . $filename) {
+	    unlink $dir . '._' . $filename;
+	}
+    }
+
+    # remove files created by MacOS, if any
+    $macFile = $dir . ':2eDS_Store';
+    if (-e $macFile) {
+	if ( unlink($macFile) != 1 ) {
+	    $submsg = "Cannot unlink file '$macFile'." if (not $submsg);
+	}
+    }
+    $macFile = $dir . '.DS_Store';
+    if (-e $macFile) {
+	if ( unlink($macFile) != 1 ) {
+	    $submsg = "Cannot unlink file '$macFile'." if (not $submsg);
+	}
+    }
+
+    $macDir = $dir . '.AppleDouble/';
+    if (-d $macDir) {
+	$macFile = $macDir . ':2eDS_Store';
+	if (-e $macFile) {
+	    if ( unlink($macFile) != 1 ) {
+		$submsg = "Cannot unlink file '$macFile'." if (not $submsg);
+	    }
+	}
+
+	if ( opendir(DIR, $macDir) ) {
+	    while ( defined($filename = readdir(DIR)) ) {
+		if ( $filename =~ /^(\.|\.\.)$/ ) { next; }  # skip filenames . and ..
+		$macFile = $macDir . $filename;
+		if ( unlink($macFile) != 1 ) {
+		    $submsg = "Cannot unlink file '$macFile'." if (not $submsg);
+		}
+	    }
+	    closedir DIR;
+	}
+
+	if ( not rmdir($macDir) ) {
+	    $submsg = "Cannot remove directory '$macDir'." if (not $submsg);
+	}
+    }
+
+    # remove ._b00... files
+    
+
+    # remove the directory itself
+    if ( not rmdir($dir) ) {
+	$msg = "Cannot remove $imageType-image directory '$dir': $!";
+	$msg .= " ($submsg)" if $submsg;
+	return 0;
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub ensureDir {
+
+    # ensureDir - if directory doesn't already exist, creates it
+
+    # In: directory name
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $dir = shift || die "ensureDir: Missing required parameter 'dir'\n";
+
+    if ( not -d $dir ) {
+	if ( mkdir($dir) ) {
+	    chmod 0775, $dir;
+	    printInfo("\tCreated directory '$dir'\n");
+	} else {
+	    $msg = "Cannot create directory '$dir': $!.";
+	    return 0;
+	}
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub getFilenames {
+
+    # getFilenames - builds hash of filenames, where key is base
+    #   filename (minus suffix) and value is actual filename
+
+    # In: Directory to read, reference to a hash, filename suffix
+    #   to look for
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $dir = shift;
+    my $hashRef = shift;
+    my $suffix = shift;
+    my ($filename, $basename);
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $dir)     { die "getFilenames: Missing required parameter 'dir'\n"; }
+    if (not $hashRef) { die "getFilenames: Missing required parameter 'hashRef'\n"; }
+    if (not $suffix)  { die "getFilenames: Missing required parameter 'suffix'\n"; }
+
+    $suffix =~ s/^\.//;   # strip off initial . if present
+
+    if ( opendir(DIR, $dir) ) {
+	while ( defined($filename = readdir(DIR)) ) {
+	    if ( $filename =~ /^[^\.].*\.$suffix$/ ) {
+	        # filename does not begin with dot and ends with expected suffix
+	        $basename = $filename;
+		$basename =~ s/\.$suffix$//;
+	        $$hashRef{$basename} = $filename;
+	    }
+	}
+	closedir DIR;
+    } else {
+	$msg = "Could not read directory '$dir'.";
+	return 0;
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub makeImageMetadata {
+
+    # makeImageMetadata - generates a raw image metadata file (TIFF
+    #   header dump) for each TIFF image in the source directory
+    #   specified, outputting to the destination directory specified
+
+    # In: source directory, destination directory, image type ('page' or 'figure')
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $sourceDir = shift;
+    my $destDir = shift;
+    my $imageType = shift;
+    my $ok = 1;
+    my %filenames = ();
+    my %test = ();
+    my ($filename, $basename, $destFilename, $command, $sourceCount);
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $sourceDir) { die "makeImageMetadata: Missing required parameter 'sourceDir'\n"; }
+    if (not $destDir)   { die "makeImageMetadata: Missing required parameter 'destDir'\n"; }
+    if (not $imageType) { die "makeImageMetadata: Missing required parameter 'imageType'\n"; }
+
+    if ($imageType eq 'page') {
+	%test = %sourcePageImages;
+    } elsif ($imageType eq 'figure') {
+	%test = %sourceFigImages;
+    } else {
+	die "makeImageMetadata: Bad parameter 'imageType': must be 'page' or 'figure'\n";
+    }
+
+    $sourceCount = scalar(keys(%test));
+
+    if ( opendir(DIR, $sourceDir) ) {
+	printInfo("\tGenerating $sourceCount $imageType-image metadata files (TIFF header dumps)...\n");
+	while ( defined($filename = readdir(DIR)) ) {
+	    if ( $filename =~ /^[^\.].*\.tiff?$/ ) {
+		$source = $sourceDir . $filename;
+		$dest = $destDir . $filename;
+		$dest =~ s/\.tiff?$/\.txt/;
+
+		$basename = $filename;
+		$basename =~ s/\.tiff?$//;
+		$destFilename = $filename;
+		$destFilename =~ s/\.tiff?$/\.txt/;
+
+		if ( -e $dest ) {
+		    if ($opts{'F'}) {
+			# continue processing; overwrite destination file
+		    } elsif ($opts{'R'}) {
+			# add base filename to hash, for later comparison against source filenames
+			$filenames{$basename} = $destFilename;
+			# do not overwrite destination file; skip to next source file and continue processing
+			next;
+		    } else {
+			$msg = "Could NOT create file '$dest': file already exists.";
+			$ok = 0;  # indicate failure, so we will know to skip to the next input file/ID
+			last;     # don't process any more files
+		    }
+		}
+
+		# run 'identify' command; redirect output to destination file
+		# ("identify -verbose" sends output to both standard output and standard error; capture both)
+		$command = "$IDENTIFY -verbose $source > ${dest}.stdout 2> ${dest}.stderr";
+		if ( system($command) == 0 ) {
+		    system("cat ${dest}.stderr ${dest}.stdout > $dest");
+		    if ( -e $dest ) {
+			chmod 0664, $dest;
+			unlink "${dest}.stdout";
+			unlink "${dest}.stderr";
+
+			# add base filename to hash, for later comparison against source filenames
+			$filenames{$basename} = $destFilename;
+		    } else {
+		        $msg = ucfirst($imageType) . "-image metadata creation FAILED for input file '$source'\n";
+			$ok = 0;
+			last;
+		    }
+		} else {
+		    $msg = ucfirst($imageType) . "-image metadata creation FAILED for input file '$source'\n";
+		    $ok = 0;
+		    last;
+		}
+	    }
+	}
+	closedir DIR;
+	if ($ok) {
+	    # test for exact correspondence between source files and destination files
+	    if ( not compareFilenames(\%test, \%filenames) ) {
+		return 0;
+	    }
+	} else {
+	    return 0;
+	}
+    } else {
+	$msg = "Could not read directory '$sourceDir'.";
+	return 0;
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub makeMaxImages {
+
+    # makeMaxImages - generates a 'max' size derivative image file for
+    #   each image file in the source (input) directory specified,
+    #   outputting to the destination (output) directory specified
+
+    # In: source directory, destination directory, image type ('page' or 'figure')
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $sourceDir = shift;
+    my $destDir = shift;
+    my $imageType = shift;
+    my $ok;
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $sourceDir) { die "makeMaxImages: Missing required parameter 'sourceDir'\n"; }
+    if (not $destDir)   { die "makeMaxImages: Missing required parameter 'destDir'\n"; }
+    if (not $imageType) { die "makeMaxImages: Missing required parameter 'imageType'\n"; }
+    if ( not $imageType =~ /^(page|figure)$/ ) {
+	die "makeMaxImages: Bad parameter 'imageType': must be 'page' or 'figure'\n";
+    }
+
+    $ok = makeMrSidImages($sourceDir, $destDir, $imageType);
+
+    # Note: For now, we are using MrSID for 'max' images; we may later
+    # move to JPEG 2000. If so, just write a makeJPEG2000Images sub
+    # and call it instead.
+
+    return $ok;
+}
+
+#----------------------------------------------------------------------
+
+sub makeMrSidImages {
+
+    # makeMrSidImages - generates a MrSID derivative image file for
+    #   each TIFF image in the source directory specified, outputting
+    #   to the destination directory specified
+
+    # In: source directory, destination directory, image type ('page' or 'figure')
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $sourceDir = shift;
+    my $destDir = shift;
+    my $imageType = shift;
+    my $ok = 1;
+    my %filenames = ();
+    my %test = ();
+    my ($filename, $basename, $destFilename, $sourceCount, $command);
+    my ($stats, @stats, $width, $height, $max, $nlev, $txt);
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $sourceDir) { die "makeMrSidImages: Missing required parameter 'sourceDir'\n"; }
+    if (not $destDir)   { die "makeMrSidImages: Missing required parameter 'destDir'\n"; }
+    if (not $imageType) { die "makeMrSidImages: Missing required parameter 'imageType'\n"; }
+
+    if ( $imageType eq 'page' ) {
+	%test = %sourcePageImages;
+    } elsif ( $imageType eq 'figure' ) {
+	%test = %sourceFigImages;
+    } else {
+	die "makeMrSidImages: Bad parameter 'imageType': must be 'page' or 'figure'\n";
+    }
+
+    $sourceCount = scalar(keys(%test));
+
+    if ( opendir(DIR, $sourceDir) ) {
+	printInfo("\tGenerating $sourceCount 'max' (MrSID) $imageType-image files...\n");
+	while ( defined($filename = readdir(DIR)) ) {
+	    if ( $filename =~ /^[^\.].*\.tiff?$/ ) {
+		$source = $sourceDir . $filename;
+		$dest = $destDir . $filename;
+		$dest =~ s/\.tiff?$/\.sid/;
+
+		$basename = $filename;
+		$basename =~ s/\.tiff?$//;
+		$destFilename = $filename;
+		$destFilename =~ s/\.tiff?$/\.sid/;
+
+		if ( -e $dest ) {
+		    if ($opts{'F'}) {
+			# MrSID will not overwrite an existing file
+			# (instead it appends a sequential number to
+			# the file name, writes the renamed file to
+			# disk successfully, then returns a non-zero
+			# (meaning "I failed") return value). So
+			# existing .sid files must be deleted first.
+			unlink $dest;
+			if ( -e $dest ) {
+			    $msg = "Could NOT delete existing file '$dest'. "
+				. "Could not replace existing file as specified by -F option.";
+			    $ok = 0;
+			    last;
+			}
+		    } elsif ($opts{'R'}) {
+			# add base filename to hash, for later comparison against source filenames
+			$filenames{$basename} = $destFilename;
+			# do not overwrite destination file; skip to next source file and continue processing
+			next;
+		    } else {
+			$msg = "Could NOT create file '$dest': file already exists.";
+			$ok = 0;  # indicate failure, so we will know to skip to the next input file/ID
+			last;     # don't process any more files
+		    }
+		}
+
+		# get dimensions (height and width) of source file using ImageMagick 'identify' command
+		$command = "$IDENTIFY $source";
+		# test 'identify' command on source file (TIFF image)
+		if ( system("$command >/dev/null") != 0 ) {
+		    $msg = "'identify' command FAILED. Cannot perform MrSID encoding on input file '$source'.";
+		    $ok = 0;
+		    last;
+		}
+		# run 'identify' command
+		$stats = `$command`;
+		@stats = split(/ /, $stats);
+		# get width and height
+		($width, $height) = split(/x/, $stats[2]);
+
+		# determine maximum dimension
+		if (($height - $width) >= 0) {
+		    $max = $height;
+		} else {
+		    $max = $width;
+		}
+
+		# determine encoding level to use
+		if (($max > 0) && ($max <= 800)) {
+		    $nlev = 2;
+		} elsif (($max > 800) && ($max <= 1600)) {
+		    $nlev = 3;
+		} elsif (($max > 1600) && ($max <= 3200)) {
+		    $nlev = 4;
+		} elsif (($max > 3200) && ($max <= 7000)) {
+		    $nlev = 5;
+		} elsif (($max > 7000) && ($max <= 10000)) {
+		    $nlev = 6;
+		} elsif (($max > 10000) && ($max <= 15000)) {
+		    $nlev = 7;
+		} elsif (($max > 15000) && ($max <= 20000)) {
+		    $nlev = 8;
+		} elsif (($max > 20000) && ($max <= 25000)) {
+		    $nlev = 9;
+		} else {
+		    $nlev = 10;
+		}
+
+		# perform MrSID encoding
+		#$command = "$SID_ENCODE -i $source -o $dest -s $nlev -progress none -tempdir /var/tmp 1>&2";
+		$command = "$SID_ENCODE -i $source -o $dest -s $nlev 1>&2";
+		if ( system($command) == 0 ) {
+		    # set permissions, including group write, on newly created file
+		    chmod 0664, $dest;
+
+		    # MrSID generates a .txt file for each .sid file; delete the .txt file
+		    $txt = $dest;
+		    $txt =~ s/\.sid$/\.txt/;
+		    unlink $txt;
+
+		    # add base filename to hash, for later comparison against source filenames
+		    $filenames{$basename} = $destFilename;
+		} else {
+		    $msg = "MrSID encoding FAILED for input file '$source'";
+		    $ok = 0;
+		    last;
+		}
+	    }
+	}
+	closedir DIR;
+        if ($ok) {
+            # test for exact correspondence between source files and destination files
+            if ( not compareFilenames(\%test, \%filenames) ) {
+                return 0;
+            }
+        } else {
+            return 0;
+        }
+    } else {
+	$msg = "Could not read directory '$sourceDir'.";
+	return 0;
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub makePreviewImages {
+
+    # makePreviewImages - generates a 'preview' size derivative image
+    #   file for each image file in the source directory specified,
+    #   outputting to the destination directory specified
+
+    # In: source directory, destination directory, image type ('page' or 'figure')
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $sourceDir = shift;
+    my $destDir = shift;
+    my $imageType = shift;
+    my $ok = 1;
+    my %filenames = ();
+    my ($filename, $basename, $destFilename, %test, $sourceCount, $command, $contentModel, $suffix);
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $sourceDir) { die "makePreviewImages: Missing required parameter 'sourceDir'\n"; }
+    if (not $destDir)   { die "makePreviewImages: Missing required parameter 'destDir'\n"; }
+    if (not $imageType) { die "makePreviewImages: Missing required parameter 'imageType'\n"; }
+
+    if ($imageType eq 'page') {
+	$contentModel = $pageImageContentModel;
+	%test = %sourcePageImages;
+    } elsif ($imageType eq 'figure') {
+	$contentModel = $figImageContentModel;
+	%test = %sourceFigImages;
+    } else {
+        die "makePreviewImages: Bad parameter 'imageType': must be 'page' or 'figure'\n";
+    }
+
+    $sourceCount = scalar(keys(%test));
+
+    if ( opendir(DIR, $sourceDir) ) {
+	printInfo("\tGenerating $sourceCount $contentModel preview-size (120x120) derivative image files...\n");
+	while ( defined($filename = readdir(DIR)) ) {
+	    if ($contentModel eq 'uvaBitonal') {
+		$suffix = 'gif';
+	    } else {
+		$suffix = 'jpg';
+	    }
+	    if ( $filename =~ /^[^\.].*\.$suffix$/ ) {
+		$source = $sourceDir . $filename;
+		$dest = $destDir . $filename;
+
+                $basename = $filename;
+                $basename =~ s/\.$suffix$//;
+                $destFilename = $filename;
+
+		if ( -e $dest ) {
+		    if ($opts{'F'}) {
+			# continue processing; overwrite destination file
+		    } elsif ($opts{'R'}) {
+			# add base filename to hash, for later comparison against source filenames
+			$filenames{$basename} = $destFilename;
+			# do not overwrite destination file; skip to next source file and continue processing
+			next;
+		    } else {
+			$msg = "Could NOT create file '$dest': file already exists.";
+			$ok = 0;  # indicate failure, so we will know to skip to the next input file/ID
+			last;     # don't process any more files
+		    }
+		}
+
+		# make preview images
+		$command = "$CONVERT -density 72x72 -geometry 120x120";
+		if ($contentModel eq 'uvaBitonal') {
+		    $command .= " -colors 16";
+		}
+		$command .= " $source $dest";
+
+		if ( system($command) == 0 ) {
+		    # set permissions, including group write, on newly created file
+		    chmod 0664, $dest;
+
+		    # add base filename to hash, for later comparison against source filenames
+		    $filenames{$basename} = $destFilename;
+		} else {
+		    $msg = "FAILED to create $contentModel preview image from input file '$source'.";
+		    $ok = 0;
+		    last;
+		}
+	    }
+	}
+	closedir DIR;
+        if ($ok) {
+            if ( not compareFilenames(\%test, \%filenames) ) {
+                return 0;
+            }
+        } else {
+            return 0;
+        }
+    } else {
+	$msg = "Could not read directory '$sourceDir'.";
+	return 0;
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub makeScreenImages {
+
+    # makeScreenImages - generates a 'screen' size derivative image
+    #   file for each image file in the source directory specified,
+    #   outputting to the destination directory specified
+
+    # In: source directory, destination directory, image type ('page' or 'figure')
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $sourceDir = shift;
+    my $destDir = shift;
+    my $imageType = shift;
+    my $ok = 1;
+    my %filenames = ();
+    my ($filename, $basename, $destFilename, %test, $sourceCount, $command, $contentModel);
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $sourceDir) { die "makeScreenImages: Missing required parameter 'sourceDir'\n"; }
+    if (not $destDir)   { die "makeScreenImages: Missing required parameter 'destDir'\n"; }
+    if (not $imageType) { die "makeScreenImages: Missing required parameter 'imageType'\n"; }
+
+    if ($imageType eq 'page') {
+	$contentModel = $pageImageContentModel;
+	%test = %sourcePageImages;
+    } elsif ($imageType eq 'figure') {
+	$contentModel = $figImageContentModel;
+	%test = %sourceFigImages;
+    } else {
+        die "makeScreenImages: Bad parameter 'imageType': must be 'page' or 'figure'\n";
+    }
+
+    $sourceCount = scalar(keys(%test));
+
+    if ( opendir(DIR, $sourceDir) ) {
+	printInfo("\tGenerating $sourceCount $contentModel screen-size (800x600) derivative image files...\n");
+	while ( defined($filename = readdir(DIR)) ) {
+	    if ( $filename =~ /^[^\.].*\.tiff?$/ ) {
+		$source = $sourceDir . $filename;
+		$dest = $destDir . $filename;
+		if ($contentModel eq 'uvaBitonal') {
+		    $dest =~ s/\.tiff?$/\.gif/;
+		} else {
+		    $dest =~ s/\.tiff?$/\.jpg/;
+		}
+
+                $basename = $filename;
+                $basename =~ s/\.tiff?$//;
+                $destFilename = $filename;
+		if ($contentModel eq 'uvaBitonal') {
+		    $destFilename =~ s/\.tiff?$/\.gif/;
+		} else {
+		    $destFilename =~ s/\.tiff?$/\.jpg/;
+		}
+
+		if ( -e $dest ) {
+		    if ($opts{'F'}) {
+			# continue processing; overwrite destination file
+		    } elsif ($opts{'R'}) {
+			# add base filename to hash, for later comparison against source filenames
+			$filenames{$basename} = $destFilename;
+			# do not overwrite destination file; skip to next source file and continue processing
+			next;
+		    } else {
+			$msg = "Could NOT create file '$dest': file already exists.";
+			$ok = 0;  # indicate failure, so we will know to skip to the next input file/ID
+			last;     # don't process any more files
+		    }
+		}
+
+		# make screen images
+		$command = "$CONVERT -density 72x72 -geometry 800x600";
+		if ($contentModel eq 'uvaBitonal') {
+		    $command .= " -format gif -colors 16";
+		} else {
+		    $command .= " -format jpg";
+		}
+		$command .= " $source $dest";
+
+		if ( system($command) == 0 ) {
+		    # set permissions, including group write, on newly created file
+		    chmod 0664, $dest;
+
+		    # add base filename to hash, for later comparison against source filenames
+		    $filenames{$basename} = $destFilename;
+		} else {
+		    $msg = "FAILED to create $contentModel screen image from input file '$source'.";
+		    $ok = 0;
+		    last;
+		}
+	    }
+	}
+	closedir DIR;
+        if ($ok) {
+            # test for exact correspondence between source files and destination files
+            if ( not compareFilenames(\%test, \%filenames) ) {
+                return 0;
+            }
+        } else {
+            return 0;
+        }
+    } else {
+	$msg = "Could not read directory '$sourceDir'.";
+	return 0;
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub printError {
+    my $msg = shift || '';
+    my $msgLeader = "$me: $id: ERROR: ";
+
+    chomp $msg;
+    $msg = $msgLeader . $msg . "\n";
+
+    print STDERR $msg;
+    print LOG $msg unless $opts{'L'};
+
+    $badCount++;
+    $badIDs{$id} = '';
+}
+
+#----------------------------------------------------------------------
+
+sub printInfo {
+    my $msg = shift || '';
+
+    chomp $msg;
+    $msg = $msg . "\n";
+
+    print $msg unless $opts{'q'};
+    print LOG $msg unless $opts{'L'};
+}
+
+#----------------------------------------------------------------------
+
+sub printWarning {
+    my $msg = shift || '';
+    my $msgLeader = "$me: $id: WARNING: ";
+
+    chomp $msg;
+    $msg = $msgLeader . $msg . "\n";
+
+    print STDERR $msg;
+    print LOG $msg unless $opts{'L'};
+}
+
+#----------------------------------------------------------------------
+
+sub sendMail {
+
+    # Sends email notification of DLPS IDs successfully processed
+    # (does not notify of failures; the log contains notice of
+    # failures; the purpose of this notification is to "check off"
+    # fully completed items)
+
+    my $msg = "The '$me' script has successfully moved $goodCount ID" . DlpsText::get_plural($goodCount)
+	. " to the central repository ingestion point (/cenrepo/ReadyRepo):\n";
+    foreach $key (sort(keys(%goodIDs))) {
+	$msg .= "    $key\n";
+    }
+
+    open(MAIL,"| /usr/lib/sendmail -i -t");
+    print MAIL <<EOD;
+To: ul-dlpsscripts\@virginia.edu
+From: ul-dlpsscripts\@virginia.edu
+Subject: Items moved to ReadyRepo
+
+$msg
+
+EOD
+    close(MAIL);
+}
+
+#----------------------------------------------------------------------
+
+sub testDir {
+
+    # testDir - tests existence and permissions of a directory
+
+    # In: directory name; 'read' or 'write' indicating permissions needed
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $dir = shift;
+    my $perm = shift || '';
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $dir)  { die "testDir: Missing required parameter 'dir'\n"; }
+
+    if ( not -d $dir ) {
+	$msg = "'$dir' is not a directory.";
+	return 0;
+    }
+
+    if ($perm eq 'read' or $perm eq 'write') {
+	if ( not -r $dir ) {
+	    $msg = "No read permissions on directory '$dir'.";
+	    return 0;
+	}
+    }
+
+    if ($perm eq 'write') {
+	if ( not -w $dir ) {
+	    $msg = "No write permissions on directory '$dir'.";
+	    return 0;
+	}
+    }
+
+    return 1;
+}

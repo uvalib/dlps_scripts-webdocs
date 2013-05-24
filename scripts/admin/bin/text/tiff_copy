@@ -1,0 +1,230 @@
+#!/usr/bin/perl -w
+
+# tiff_copy - copies TIFF images (using the tiffcp command),
+#   correcting internal TIFF format problems that prevent processing
+#   the files with ImageMagick
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2005-10-10
+# Last modified: 2006-08-21
+
+# 2006-08-21: Changed error-handling logic: instead of skipping to the
+# next directory when an error condition occurs, now the script raises
+# an error for the current file but continues processing the rest of
+# the files in the directory. Also changed the behavior of -v
+# (verbose) option, and added -q (quiet) option and -b (backup) option
+# (for making a .bak backup of each input file).
+
+
+# Note: The reason for using the 'tiffcp' command to copy the TIFFs
+# prior to processing with ImageMagick is that IM cannot process some
+# TIFF images (namely EAF page images) if their internal TIFF
+# structure contains unexpected oddities; tiffcp corrects weirdness in
+# the TIFF structure of the files, allowing IM to process the files.
+
+
+#======================================================================
+# setup
+#======================================================================
+
+use strict;
+use Getopt::Std;
+use Cwd;
+
+my (%opts, %infiles);
+my ($dir, $infile, $outfile, $command, $status);
+my (@log, $msg, $scriptError, $dirError);
+
+my $startDir = cwd();
+
+my $me = 'tiff_copy';
+my $usage = <<EOD;
+
+$me - copies TIFF images (using the tiffcp command),
+  correcting internal TIFF format problems that prevent processing
+  the files with ImageMagick
+
+Usage: $me [-b] [-q | -v] directories
+  -b (backup)  Make a .bak backup file of each input file
+  -q (quiet)   Suppress status messages; show only warnings and errors
+  -v (verbose) Show a status message for each file processed
+
+In:  Names of directories containing TIFF files to process
+Out: Copies input files using tiffcp, overwriting the input files
+
+EOD
+
+getopts('bqv', \%opts) || die $usage;
+die $usage unless (@ARGV);
+if ( $opts{'q'} && $opts{'v'} ) {
+    die "Options -q and -v are mutually exclusive.\n$usage";
+}
+
+my $LD = 'LD_LIBRARY_PATH';
+if ( defined $ENV{$LD} ) {
+    $ENV{$LD} = '/usr/local/lib/:' . "$ENV{$LD}";
+} else {
+    $ENV{$LD} = '/usr/local/lib/';
+}
+
+
+#======================================================================
+# main logic
+#======================================================================
+
+foreach $dir (sort(@ARGV)) {
+    %infiles = ();
+    $dirError = 0;
+
+    $dir =~ s:/$::;   # remove final slash, if present
+
+    $msg = "\n$me: Processing directory '$dir' ...\n";
+    print $msg unless ($opts{'q'});
+    push(@log, $msg);
+
+    if (-d $dir) {
+	unless (-r $dir) {
+	    $msg = "$me: ERROR: Need read permission for directory '$dir'\n";
+	    warn $msg;
+	    push(@log, $msg);
+	    $dirError = 1; $scriptError = 1; next;
+	}
+	unless (-w $dir) {
+	    $msg = "$me: ERROR: Need write permission for directory '$dir'\n";
+	    warn $msg;
+	    push(@log, $msg);
+	    $dirError = 1; $scriptError = 1; next;
+	}
+    } else {
+	$msg = "$me: ERROR: '$dir' is not a directory\n";
+	warn $msg;
+	push(@log, $msg);
+	$dirError = 1; $scriptError = 1; next;
+    }
+
+    # change to input directory
+    if ( not chdir($dir) ) {
+	$msg = "$me: ERROR: Cannot change to directory '$dir': $!\n";
+	warn $msg;
+	push(@log, $msg);
+	$dirError = 1; $scriptError = 1; next;
+    }
+
+    # read input directory and build hash of TIFF files
+    if ( opendir(DIR, '.') ) {
+	while ( defined($infile = readdir(DIR)) ) {
+	    if ( $infile =~ /^\./) {
+		next;	# skip filenames starting with .
+	    } elsif ($infile =~ /\.tiff?$/i) {
+		$infiles{$infile} = "tiffcp_$infile";
+	    } else {
+		next;	# skip non-TIFF files
+	    }
+	}
+	closedir DIR;
+    } else {
+	$msg = "$me: ERROR: Cannot read directory '$dir': $!\n";
+	warn $msg;
+	push(@log, $msg);
+	$dirError = 1; $scriptError = 1; next;
+    }
+
+    if ( not scalar(keys(%infiles)) ) {
+	$msg = "$me: WARNING: No .tif files found in directory '$dir'\n";
+	print $msg;
+	push(@log, $msg);
+	next;
+    }
+
+    #------------------------------------------------------------------
+    # tiffcp
+    #------------------------------------------------------------------
+
+    $msg = "   Copying TIFF files...\n";
+    print $msg unless ($opts{'q'});
+    push(@log, $msg);
+
+    # run tiffcp on each TIFF file
+    foreach $infile (sort(keys(%infiles))) {
+	$outfile = $infiles{$infile};
+	$command = "tiffcp $infile $outfile 2> /dev/null";
+	$status = system($command);
+	if ($status == 0) {
+	    if ($opts{'b'}) {
+		# back up input file
+		if ( rename($infile, "${infile}.bak") ) {
+		} else {
+		    $msg = "$me: ERROR: Cannot backup $infile to ${infile}.bak: $!\n";
+		    warn $msg;
+		    push(@log, $msg);
+		    $dirError = 1; $scriptError = 1; next;
+		}
+	    }
+
+	    # overwrite input file with new file
+	    if ( rename($outfile, $infile) ) {
+		$msg = "      $infile copied successfully\n";
+		print $msg if ($opts{'v'});
+		push(@log, $msg) if ($opts{'v'});
+	    } else {
+		$msg = "$me: ERROR: Cannot rename $outfile to $infile: $!\n";
+		warn $msg;
+		push(@log, $msg);
+		$dirError = 1; $scriptError = 1; next;
+	    }
+	} else {
+	    $msg = "$me: ERROR: Command failed: $command\n";
+	    warn $msg;
+	    push(@log, $msg);
+	    $dirError = 1; $scriptError = 1; next;
+	}
+    }
+}
+continue {
+    if (! $dirError) {
+	$msg = "   Directory '$dir' was processed successfully.\n";
+	print $msg unless ($opts{'q'});
+	push(@log, $msg);
+    }
+
+    # change to starting directory
+    if ( cwd() ne $startDir ) {
+	if ( not chdir($startDir) ) {
+	    $msg = "$me: FATAL ERROR: Cannot change to starting directory '$startDir': $!\n";
+	    push(@log, $msg);
+	    send_mail();
+	    die $msg;
+	}
+    }
+
+}
+
+send_mail();
+
+
+#======================================================================
+# subroutines
+#======================================================================
+
+sub send_mail {
+    my ($day, $month, $year) = (localtime)[3..5];
+    $year += 1900;
+    $month += 1;
+    my $date = "$month/$day/$year";
+
+    open(MAIL,"| /usr/lib/sendmail -i -t");
+    print MAIL "To: ul-dlpsscripts\@virginia.edu\n";
+    print MAIL "From: ul-dlpsscripts\@virginia.edu\n";
+    if ($scriptError) {
+	print MAIL "Subject: Error processing TIFF images\n\n";
+	print MAIL "There was an error from the $me script on $date:\n\n";
+    } else {
+	print MAIL "Subject: Report on processing TIFF images\n\n";
+	print MAIL "$me script completed with no errors on $date.\n\n";
+    }
+    foreach (@log) {
+	print MAIL;
+    }
+    print MAIL "-" x 75 . "\n\n";
+    close MAIL;
+}

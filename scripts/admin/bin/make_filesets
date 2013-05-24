@@ -1,0 +1,192 @@
+#!/usr/bin/perl -w
+
+# make_filesets - creates sets of related files; creates a directory
+# for each ID, and moves each input file to its appropriate directory
+
+# Greg Murray <gpm2a@virginia.edu>
+# 2004-04-09
+
+
+#===========
+# main logic
+#===========
+
+use File::Copy;
+use Getopt::Std;
+use strict;
+
+my ($me, $usage, %opts, $output_dir, $pattern);
+my ($arg, $source_dir, $filename, $id, @ids, @fileset, $prev_id, $test);
+my $infile_count = 0;
+my $outfile_count = 0;
+
+my $OUTPUT_DIR = '/shares/image1/01bookscanning/52_CCITTCOMPRESS_OUT';
+my $PATTERN = '[Cc]av[Dd]aily_\d{8}';
+
+$me = 'make_filesets';
+$usage = <<EOD;
+
+$me - creates sets of related files; creates a directory
+  for each ID, and moves each input file to its appropriate directory
+
+Usage: $me [-o output-directory] [-p pattern] [-v] names
+  -o (output) Name of directory in which to create ID directories;
+     defaults to $OUTPUT_DIR
+
+  -p (pattern) Perl regular expression pattern for determining a
+     file's ID; defaults to $PATTERN (CavDaily or cavdaily
+     plus underscore plus 8-digit date, for example cavdaily_19670901)
+
+  -v (verbose) Provides a status message for each directory created and
+     each file moved
+
+In:  Arguments can be either filenames of files to be moved, or name(s)
+     of one or more directories containing files to be moved (or a
+     combination of filenames and directory names).
+
+Out: Creates a directory for each ID, and moves each input file to its
+     appropriate directory; status messages are printed to standard
+     output.
+
+Examples:
+  $me *.tif                 <-- files to move
+  $me incoming1 incoming2   <-- names of directories containing files to move
+  $me -p '[bz]\\d{9}' *.tif  <-- use standard DLPS IDs instead of cavdaily IDs
+
+EOD
+
+getopts('o:p:v', \%opts) || die $usage;
+
+$output_dir = $opts{o} || $OUTPUT_DIR;
+$output_dir =~ s:/$::;
+if (not -d $output_dir) { die "$me: ERROR: '$output_dir' is not a directory.\n"; }
+
+$pattern = $opts{p} || $PATTERN;
+
+die $usage if (! @ARGV);
+
+foreach $arg (sort @ARGV) {
+    if (-d $arg) {
+	# argument is a directory name
+        $source_dir = $arg;
+
+	# read directory and process each file
+	if ( opendir(DIR, $arg) ) {
+	    while ( defined($filename = readdir(DIR)) ) {
+                next if ( $filename =~ /^\./ );  # skip hidden files
+                next if ( -d $filename );        # skip subdirectories
+		process($filename);
+	    }
+	    closedir DIR;
+	} else {
+	    die "$me: ERROR: Cannot read directory '$arg': $!\n";
+	}
+    } else {
+	# argument is a filename
+        $source_dir = '';
+	process($arg);
+    }
+}
+
+# end the last fileset
+end_fileset();
+
+# count output files, compare to number of input files
+foreach $id (@ids) {
+    $test = $output_dir . '/' . $id;
+    if ( opendir(DIR, $test) ) {
+	while ( defined($filename = readdir(DIR)) ) {
+            next if ( $filename =~ /^\./ );  # skip hidden files
+            next if ( -d $filename );        # skip subdirectories
+	    $outfile_count++ if ( $filename =~ /^$pattern/ );
+	}
+	closedir DIR;
+    } else {
+	die "$me: ERROR: Cannot read directory '$test': $!\n";
+    }
+}
+if ($outfile_count == $infile_count) {
+    print "$me: All $outfile_count files were moved successfully.\n";
+} else {
+    warn "$me: WARNING: $outfile_count output files does NOT equal $infile_count input files!\n";
+}
+
+
+#============
+# subroutines
+#============
+
+sub end_fileset {
+
+    my ($id_dir, $filename, $outfile, $source, $dest);
+
+    # hold this ID for later reference
+    push @ids, $prev_id;
+
+    # create ID directory (if it doesn't already exist)
+    $id_dir = $output_dir . '/' . $prev_id;
+    if ( not -d $id_dir ) {
+	if ( mkdir($id_dir) ) {
+	    if ( $opts{v} ) { print "Created directory '$id_dir'\n"; }
+	    chmod 0775, $id_dir;
+	} else {
+	    die "$me: ERROR: Cannot create directory '$id_dir': $!\n";
+	}
+    }
+
+    # move each file in this fileset to ID directory
+    foreach $filename (@fileset) {
+	if ($source_dir) {
+	    $source = $source_dir . '/' . $filename;
+	} else {
+	    $source = $filename;
+	}
+
+	$outfile = $filename;
+	$outfile =~ s/CavDaily/cavdaily/;  # for CavDaily files, convert to all lower-case
+	$dest = $id_dir . '/' . $outfile;
+
+	if (-e $dest) {
+	    warn "$me: WARNING: File skipped: Cannot move to '$dest': File exists\n";
+	    next;
+	} else {
+	    if ( move($source, $dest) ) {
+		if ( $opts{v} ) { print "    Moved $source --> $dest\n"; }
+		chmod 0664, $dest;
+	    } else {
+		warn "$me: WARNING: File skipped: Cannot move to '$dest': $!\n";
+	    }
+	}
+    }
+}
+
+#----------------------------------------------------------------------
+
+sub process {
+
+    my $filename = shift;
+
+    if ( $filename =~ /^($pattern)/ ) {
+	# filename starts with ID
+	$id = $1;
+	$id =~ s/CavDaily/cavdaily/;  # for CavDaily files, convert to all lower-case
+	$infile_count++;
+    } else {
+	warn "$me: WARNING: File skipped: Bad filename '$filename': Filenames must start with $pattern\n";
+	return;
+    }
+
+    if (not $prev_id) { $prev_id = $id; }
+
+    if ($id eq $prev_id) {
+	# add to set of files for this ID
+	push @fileset, $filename;
+    } else {
+	# end the current fileset
+	end_fileset();
+
+	# start a new fileset
+	@fileset = ($filename);
+	$prev_id = $id;
+    }
+}

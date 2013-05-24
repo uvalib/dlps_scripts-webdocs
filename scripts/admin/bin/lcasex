@@ -1,0 +1,36 @@
+#!/bin/sh
+
+progname=lcasex
+usage="USAGE: $progname file [...fileN]
+This program changes the case of the file extension from upper or mixed case to
+lower case."
+
+# if no arguments, return $usage and exit
+if [ "$#" -lt 1 ]
+then
+   echo ""
+   echo "$usage"
+   echo ""
+   exit 1
+fi
+
+# gather command-line options
+# if -h specified, exit with usage instructions
+while getopts h opt
+do
+   case "$opt"
+   in
+      h) echo ""
+         echo "$usage"
+         echo ""
+         exit;;
+   esac
+done
+
+for file in $*
+do
+  exten=`echo $file |sed 's/^.*\(\..*\)/\1/'`
+  lexten=`echo $exten |tr '[A-Z]' '[a-z]'`
+  basename=`basename $file $exten`
+  /bin/mv $file $basename$lexten
+done

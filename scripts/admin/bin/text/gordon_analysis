@@ -1,0 +1,316 @@
+#!/usr/bin/perl -w
+
+# gordon_analysis - will examine a directory of image files created for the Gordon project
+#                    and determine if there are any issues with the files before processing begins.
+
+# Andrew Curley <aec6v@virginia.edu>
+# Created: 2007-06-05
+#
+# 2007-06-05 - This is a copy of Jack Kelly's folder_analysis script but was specifically modified
+#              to distinguish it from the folder_analysis.  Major differences are the minimum dpi
+#              (changed from 400 to 600 dpi) and the parameters of the sendMail subroutine.
+# 
+#======================================================================
+# setup
+#======================================================================
+
+use strict;
+use Getopt::Std;
+use Cwd;
+use Image::Magick;
+
+my (%opts, $error, $ok, @outfiles, %infiles);
+my ($dir, $id, $infile, $outfile, $command);
+my (@errors, @progress, $msg);
+
+my $minimumDPI = 600;
+my $me = 'gordon_analysis';
+my $startDir = cwd();
+my $group = 'dlpswg';
+my $mailFrom = 'aec6v';
+my $mailto = 'aec6v';
+
+my $usage = <<EOD;
+
+$me - examines a directory of TIFF images to analyze the contents 
+    of it.
+
+Usage: $me [-v] [-m] directories
+  -v (verbose) Show status messages
+  -m (missing files) Only check the file names to determine if any are 
+     missing in the sequence. Do not check for corrupt files or DPI or
+     disk space usage.
+
+In:  Names of directories containing TIFF files to process
+Out: The script performs the following actions for each input directory:
+       - Missing files based on consecutive numerical file names.
+       - Attempts to identify corrupt files.
+       - Checks the resolution of each image to be at least 600 DPI.
+       - Determines the total space being used by the directory contents.
+
+EOD
+
+getopts('vm', \%opts) || die $usage;
+die $usage unless (@ARGV);
+
+$msg = "Started at "  . (scalar localtime) . "\n\n";
+push(@progress, $msg);
+
+#======================================================================
+# main logic
+#======================================================================
+
+foreach $dir (sort(@ARGV)) {
+    $error = 0;
+    $ok = 1;
+    @outfiles = ();
+    %infiles = ();
+
+    $dir =~ s:/$::;  # remove final slash, if present
+    $id = $dir;
+    $id =~ s:^.*/::;  # remove leading path, if any
+
+    $msg = "$me: Processing directory '$dir' (ID $id)...\r\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+
+    if (-d $dir) {
+	unless ( -r $dir ) {
+	    $msg = "$me: ERROR: Need read permission for directory '$dir'\r\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+	unless ( -w $dir ) {
+	    $msg = "$me: ERROR: Need write permission for directory '$dir'\r\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+    } else {
+	$msg = "$me: ERROR: '$dir' is not a directory\r\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+    # change to input directory
+    if ( not chdir($dir) ) {
+	$msg = "$me: ERROR: Cannot change to directory '$dir': $!\r\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+
+    #------------------------------------------------------------------
+    # analyze the files in the directory
+    #------------------------------------------------------------------
+    $msg = "    Identifying TIFF files...\r\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+	my @images = ();
+    if ( opendir(DIR, '.') ) {
+		while ( defined($infile = readdir(DIR)) ) {
+			if ( $infile =~ /^\./) {
+				next;	# ignore file as it starts with .
+			} elsif ($infile =~ /\.tif$/) {
+				# process tif file
+			} elsif ($infile =~ /\.TIF$/) {
+				# process TIF file
+			} else {
+				next;	# ignore non-TIFF files
+			}
+		    push(@images,$infile);
+		}
+		closedir DIR;
+    } else {
+		$msg = "$me: ERROR: Cannot read directory '$dir': $!\r\n";
+		warn $msg;
+		push(@errors, $msg);
+		$ok = 0; next;
+    }
+
+    if ( not scalar(@images) ) {
+		$msg = "$me: WARNING: No TIFF files found in directory '$dir'\r\n";
+		print $msg;
+		push(@progress, $msg);
+		next;
+    } else {
+    	$msg = "        Number of TIFF files found: " . scalar(@images) . "\r\n";
+    	push(@progress, $msg);
+    }
+
+	# Determine if there are any missing images based on the file name sequence
+    # after making sure that the files are sorted sequentially.
+    $msg = "    Checking TIFF sequential file names...\r\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+	@images = sort(@images);
+    my $lastNumber = 0;
+    my $bookPageCount = 0;
+    my $bookCoverCount = 0;
+    foreach $infile (@images) {
+		my @fileName = split(/\./,$infile);
+		# Ignore cover and spine page images.
+		if ($fileName[0] =~ /[0-9]$/) {
+			my $prefix = "";
+			my $suffix = "";
+			($prefix,$suffix) = split(/[-_]/,$fileName[0]);
+			$suffix = int($suffix);
+			if ($lastNumber == 0) {
+				# first page number in the volume
+				$lastNumber = $suffix;
+			} elsif (($lastNumber + 1) == $suffix) {
+				# it's valid as the next page
+				$lastNumber = $suffix;
+			} else { # there's a page missing
+				for (my $i=$lastNumber+1; $i<$suffix; $i++) {
+					$msg = "        Appears that page image $i is missing.\r\n";
+					push(@progress, $msg);
+				}
+				$lastNumber = $suffix;
+			}
+			$bookPageCount++;
+		} else {
+			$bookCoverCount++;
+		}
+    }
+    $msg = "    Number of book cover images: $bookCoverCount\r\n";
+    push(@progress, $msg);
+    $msg = "    Number of book page images: $bookPageCount\r\n";
+    push(@progress, $msg);
+    
+    # Determine if any of the image files are corrupt.
+    # While processing the directory of images, determine the DPI and space
+    # of the files.
+    # Only check for corrupt files and space needs if the user did not request
+    # to check for missing files only.
+	if (not $opts{'m'}) {
+	    $msg = "    Examining TIFF files...\r\n";
+    	print $msg if ($opts{'v'});
+	    push(@progress, $msg);
+		my ($exception1,$exception2);
+		my $totalDiskSpace = 0;
+		my %fileDPIs;
+    	foreach $infile (@images) {
+			# Read the image into memory.
+			my $image = Image::Magick->new;
+			$exception1 = $image->Read("$infile");
+			if (($exception1 eq "") or 
+				 ((($exception1 =~ m/unknown field with tag/) and 
+				 (($exception1 =~ m/ignored/) or ($exception1 =~ m/encountered/))) or 
+				 (($exception1 =~ m/incorrect count for field/) and ($exception1 =~ m/tag ignored/)))) {
+				# Confirm that the file format it TIFF
+				if ($image->Get('format') ne "Tagged Image File Format") {
+					$msg = "        File $infile is not a TIFF image.\r\n";
+					push(@progress, $msg);
+				}
+		
+				# Identify the space used by the file for determining total space needs.
+				$totalDiskSpace += $image->Get('filesize');
+				
+				# Identify resolution of the image. 
+				my $xResolution = $image->Get('x-resolution');
+				my $yResolution = $image->Get('y-resolution');
+				if ($xResolution == $yResolution) {
+					if ($xResolution < $minimumDPI) {
+						$msg = "        WARNING: $infile dpi ($xResolution) is below minimum requirements.\r\n";
+						push(@progress, $msg);
+					}
+					$fileDPIs{$xResolution}++;
+				} else {
+					$msg = "        WARNING: $infile contains non-square pixel size.\r\n";
+					push(@progress, $msg);
+					my $resolution = $xResolution . "x" . $yResolution;
+					$fileDPIs{$resolution}++;
+				}
+			} else {
+				$msg = "        Error reading file $infile\r\n";
+				push(@progress, $msg);
+				push(@progress, $exception1 . "\n");
+			}
+    	}
+    	# Output image DPI counts.
+    	foreach my $dpi (keys %fileDPIs) {
+    		$msg = "    Images with $dpi dpi: $fileDPIs{$dpi}\r\n";
+    		push(@progress, $msg);
+    	}
+    	# Output disk space utilization.
+    	my $gigabytes = $totalDiskSpace / 1073741824;
+    	$msg = sprintf("    Total disk space in use: %.2f GB\n",$gigabytes);
+    	push(@progress, $msg);
+    	
+    	if (not $ok) {
+		next;
+    	}
+    }
+}
+continue {
+    if ($ok) {
+	$msg = "    Directory '$dir' was processed successfully.\r\n\r\n";
+	print $msg if ($opts{'v'});
+	push(@progress, $msg);
+    } else {
+	$msg = "$me: ERROR: Processing of directory '$dir' FAILED!\r\n\r\n";
+	warn $msg;
+	push(@errors, $msg);
+    }
+
+    # change to starting directory
+    if ( cwd() ne $startDir ) {
+	if ( not chdir($startDir) ) {
+	    $msg = "$me: FATAL ERROR: Cannot change to starting directory '$startDir': $!\r\n";
+	    push(@errors, $msg);
+	    Send_Mail();
+	    die $msg;
+	}
+    }
+
+}
+
+$msg = "\nFinished at "  . (scalar localtime) . "\n";
+push(@progress, $msg);
+
+Send_Mail();
+
+
+#======================================================================
+# subroutines
+#======================================================================
+
+sub Send_Mail {
+
+    my @time = localtime(time);
+    my $today = $time[3];
+    my $month = (1,2,3,4,5,6,7,8,9,10,11,12)[(localtime)[4]];
+    my $year = $time[5];
+    $year = $year - 100;
+
+    $year = sprintf("%02d",$year);
+    $month = sprintf("%02d",$month);
+    $today = sprintf("%02d",$today);
+
+    my($date)="$month/$today/$year";
+    my($messageto) = $mailto. "\@virginia.edu";
+
+    open(MAIL,"| /usr/lib/sendmail -i -t");
+    print MAIL "To: $messageto\n"; 
+    print MAIL "From: $mailFrom\@virginia.edu\n";
+    if (@errors) {
+	print MAIL "Subject: Error on Gordon folder analysis\n\n";
+	print MAIL "There was an error from the $me script on $date:\n\n";
+    }
+    else {
+	print MAIL "Subject: Report on Gordon Folder Analysis\n\n";
+	print MAIL "$me script completed with no errors on $date.\n\n";
+    }
+    foreach my $err (@errors) {
+	print MAIL "$err";
+    }
+    foreach my $noerr (@progress) {
+	print MAIL "$noerr" ;
+    }
+    print MAIL "-" x 75 . "\n\n";
+    close(MAIL);
+}

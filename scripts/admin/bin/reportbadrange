@@ -1,0 +1,64 @@
+#!/bin/ksh
+
+mindefault=24000000  #bytes
+maxdefault=28000000  #bytes
+
+progname=`basename $0`
+usage="USAGE: $progname [-m minimum] [-x maximum] file [...fileN]
+This program returns a list of files whose filesize falls outside a
+given range.  Minimum and maximum filesize may be specified on the
+command line in bytes.  If they are not specified, the program uses
+uses its internal default sizes: Minimum=$mindefault  Maximum=$maxdefault"
+
+while getopts m:x: option
+do
+   case "$option"
+   in
+      m) min=$OPTARG;;
+      x) max=$OPTARG;;
+     \?) 
+         echo "\n$usage\n"
+         exit;;
+   esac
+done
+
+if [ $# -lt 1 ]
+then
+   echo "\n$usage\n"
+   exit
+fi
+
+if [ ! $min ]
+then
+   min=$mindefault
+fi
+
+if [ ! $max ]
+then
+   max=$maxdefault
+fi
+
+if [ "$min" -gt "$max" ]
+then
+   temp=$min
+   min=$max
+   max=$temp
+fi
+
+for file in $*
+do
+   if [ -f $file ]
+   then
+      size=`ls -al $file |tr -s ' ' '\t' |cut -f5`
+      name=`ls -al $file |tr -s ' ' '\t' |cut -f9`
+
+      if [ "$size" -lt $min ]
+      then
+         echo "$name too small"
+      fi
+      if [ "$size" -gt $max ]
+      then
+         echo "$name too large"
+      fi
+   fi
+done

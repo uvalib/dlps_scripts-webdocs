@@ -1,0 +1,82 @@
+#!/usr/bin/perl
+
+use Getopt::Std;
+
+$progname = `basename $0`; chop($progname);
+
+$usage = "\nUSAGE: $progname [-b] directory1 directory2
+prints a list of files found in the first directory but not in the second.
+Sub-directories are excluded.  The -b flag may be used to exclude trailing
+file name extensions.\n";
+
+getopts ('b', \%opts);
+ 
+$dir1path = $ARGV[0];
+$dir2path = $ARGV[1];
+
+if ($dir1path eq '' || $dir2path eq '') {
+   print "$usage\n";
+   exit;
+}
+
+if (! -e $dir1path) {
+  print "Cannot open $dir1path\n";
+  exit;
+} elsif (! -e $dir2path) {
+  print "Cannot open $dir2path\n";
+  exit;
+}
+
+# read directory 1
+# the path has to be appended to the front of the filename in
+# in order to get any output at all!
+opendir(DIR1, "$dir1path");
+@dir1list = grep (-f, map "$dir1path/$_", readdir(DIR1));
+closedir(DIR1);
+
+# remove path, leaving only the file name
+foreach $i (0..$#dir1list) {
+  $dir1list[$i] =~ s/.*\///;
+}
+
+# if -b switch, remove the last dot and any characters following it
+if ($opts{b}) {
+   foreach $i (0..$#dir1list) {
+      $dir1list[$i] =~ s/(.*)\..*$/$1/;
+   }
+}
+
+@dir1list = sort(@dir1list);
+#print "$dir1path: @dir1list\n";
+
+# read directory 2
+# the path has to be appended to the front of the filename in
+# in order to get any output at all!
+opendir(DIR2, "$dir2path");
+@dir2list = grep (-f, map "$dir2path/$_", readdir(DIR2));
+closedir(DIR2);
+
+# remove path, leaving only the file name
+foreach $i (0..$#dir2list) {
+  $dir2list[$i] =~ s/.*\///;
+}
+
+# if -b switch, remove the last dot and any characters following it
+if ($opts{b}) {
+   foreach $i (0..$#dir2list) {
+      $dir2list[$i] =~ s/(.*)\..*$/$1/;
+   }
+}
+
+@dir2list = sort(@dir2list);
+#print "$dir2path: @dir2list\n";
+
+%mark=();
+grep($mark{$_}++, @dir2list);
+@notfound = grep(!$mark{$_}, @dir1list);
+
+foreach $i (0..$#notfound) {
+   $notfound[$i] =~ s/$dir1path\///;
+   print "$notfound[$i] in $dir1path but not in $dir2path\n";
+}
+

@@ -1,0 +1,248 @@
+#!/usr/bin/perl -w -I /shares/admin/bin/text
+
+# pb_entities - adds or updates entity attribute on <pb/> tags
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2002-06-19
+# Last modified: 2006-01-27
+
+# 2003-04-08: gpm2a: Added -p (Proofreader) option, comparable to -f
+# mode but doesn't require user to specify path; instead, uses
+# Proofreader directory as base path and looks in subdirectory named
+# with ID.
+#
+# 2004-02-13: gpm2a: (a) Added -F option to always read directory
+# specified, regardless of whether directory name matches ID; doesn't
+# look for subdirectory named with ID. (b) Added -d (digits) option to
+# indicate number of digits to use for sequence number; defaults to 4
+# (as in [ID]_0001). (c) Removed requirement that filenames of input
+# files must begin with [bz]\d{9} Now using base filename as ID. This
+# makes script more flexible -- in short term to handle cavdaily_\d{8}
+# filenames, in long term to handle whatever naming conventions come
+# along later.
+#
+# 2004-06-08: gpm2a: Added -n (newspaper) switch to provide different
+# default options for newspapers than for books.
+#
+# 2004-07-12: gpm2a: Changed path to proofreader directory.
+#
+# 2006-01-27: gpm2a: Changed path to proofreader directory.
+
+
+use strict;
+use DlpsText;
+use Getopt::Std;
+
+my ($me, $usage, %opts, $d, $f, $F, $p, $dir);
+my ($infile, @infile);
+my ($filename, @filenames, $i, $pbcount, $id, $new, $warned_bad_filenames);
+
+#----------------------------------------------------------------------
+# 'constants'
+
+my $PROOFREADER = '/www/doc/dlps/uva-only/proofreader/images/';
+my $NEWSPAPER_IMAGES_DIR = '/shares/image1/01bookscanning/52_CCITTCOMPRESS_OUT/';
+#----------------------------------------------------------------------
+
+$me = 'pb_entities';
+$usage = <<EOD;
+
+$me - adds or updates entity attribute on <pb/> tags
+Usage: $me [-d number] [-f dirname | -F dirname | -p] filenames
+  -d (digits) Number of digits to use for sequence numbers; defaults
+     to 4 (as in ..._0001). Must be an integer from 1 through 5.
+
+  -f (filenames) Reads directory specified; uses actual image
+     filenames for entity values (rather than default behavior of
+     constructing entity values from ID and sequence number).
+     Directory name can be either named with ID (indicating a specific
+     directory of image files) or a directory containing
+     subdirectories named with IDs (useful for batch processing).
+
+  -F (filenames) Like -f, but instead of expecting directory to be
+     named with ID (and if it is not, looking for a subdirectory named
+     with ID), -F always reads directory specified, regardless of
+     directory name.
+
+  -n (newspaper) Provides defaults for processing newspapers: causes
+     -d to default to 2 and -f to default to $NEWSPAPER_IMAGES_DIR
+
+  -p (Proofreader) Like -f, but uses Proofreader directory
+     ($PROOFREADER) to find actual image filenames.
+
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+Examples:
+  Entity values based on ID and sequence number, without reference to image filenames:
+    $me *.xml
+
+  Entity values based on actual filenames of image files in directory b001234567:
+    $me -f /shares/image1/01bookscanning/54senttovendor/b001234567 b001234567.xml
+
+  Entity values based on actual filenames of image files in directory 54senttovendor/[ID]:
+    $me -f /shares/image1/01bookscanning/54senttovendor *.xml
+
+  Entity values based on actual filenames of image files in directory
+  foo where filenames start with cavdaily_19690403:
+    $me -F /shares/image1/.../foo cavdaily_19690403.xml
+
+  Entity values based on actual filenames of image files in Proofreader directory
+    $me -p *.xml
+
+EOD
+
+getopts('d:f:F:np', \%opts) || die $usage;
+if ( $opts{'d'} ) {
+    $d = $opts{'d'};
+} else {
+    if ( $opts{'n'} ) {
+	# default to 2 digits, as in ..._01 (newspapers)
+	$d = '2';
+    } else {
+	# default to 4 digits, as in ..._0001 (books)
+	$d = '4';
+    }
+}
+
+if ( $opts{'f'} ) {
+    $f = $opts{'f'};
+} else {
+    if ( $opts{'n'} ) {
+	# set default images directory for newspapers
+	$f = $NEWSPAPER_IMAGES_DIR;
+    }
+}
+$F = $opts{'F'};
+$p = $opts{'p'};
+
+if (not $d =~ /^[12345]$/) {die "Option -d must be an integer from 1 through 5.\n"; }
+if ($f and $p) { die "Options -f and -p are mutually exclusive.\n"; }
+if ($f and $F) { die "Options -f and -F are mutually exclusive.\n"; }
+if ($F and $p) { die "Options -F and -p are mutually exclusive.\n"; }
+die $usage if (! @ARGV);
+
+foreach $infile (@ARGV) {
+    $pbcount = 0;
+    @filenames = ();
+
+    # get id (base filename)
+    if ( $infile =~ /\.\w{3,4}$/ ) {
+	$id = $infile;
+	$id =~ s/\.\w{3,4}$//;  # remove filename extension
+    } else {
+	die "$me: ERROR: Bad filename: '$infile' (no filename extension)\n";
+    }
+
+    if ($f) {
+	$dir = $f;
+    } elsif ($F) {
+	$dir = $F;
+    } elsif ($p) {
+	if (-d $PROOFREADER) {
+	    $dir = $PROOFREADER;
+	} else {
+	    die "$me: ERROR: '$PROOFREADER' is not a directory\n";
+	}
+    }
+
+    if ($f or $p) {
+	if ( not $dir =~ m:$id/?$: ) {
+	    # directory name does not end with ID; use subdirectory named with ID
+	    $dir = DlpsText::normalize_path($dir);   # add final / if needed
+	    $dir .= $id;
+	}
+    }
+
+    if ($f or $F or $p) {
+	if (-d $dir) {
+	    # build array of image filenames
+	    $i = 0;
+	    opendir(DIR, $dir) || die "$me: ERROR: Cannot read directory '$dir': $!\n";
+	    while ( defined($filename = readdir(DIR)) ) {
+		next if (-d $filename);             # skip any subdirectories
+		next unless ($filename =~ /^$id/);  # skip filenames that do not begin with ID
+		if ( $filename =~ /\.(tiff?|jpe?g|gif|sid)$/ ) {
+		    # filename extension indicates image file
+		    $filename =~ s/\.\w{3,4}$//;  # remove filename extension
+		    $filenames[$i] = $filename;
+		    $i++;
+		}
+	    }
+	    closedir DIR;
+	    @filenames = sort(@filenames);
+	} else {
+	    die "$me: ERROR: '$dir' is not a directory\n";
+	}
+    }
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # make backup; count page breaks while you're at it
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+	if ( /<pb/ ) { $pbcount++; }
+    }
+    close BAK;
+
+    # make changes, overwriting input file
+    $pbcount = 0; $warned_bad_filenames = 0;
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@infile) {
+	if ( /<pb/ ) {
+	    $pbcount++;
+
+	    # construct entity value from ID and sequence number
+	    # pad sequence number with leading zeroes as needed to end up with length of 4 digits
+	    #$new = $id . '_' . sprintf("%04d", $pbcount);
+	    $new = $id . '_' . sprintf("%0${d}d", $pbcount);
+
+	    if ($f or $F or $p) {
+		# use image filename instead, if available
+		$i = $pbcount - 1;
+		if ( defined($filenames[$i]) ) {
+		    if ( $filenames[$i] =~ /^$new/ ) {
+			# filename matches with sequence number; use filename for entity value
+			$new = $filenames[$i];
+		    } else {
+			# use filename for entity value, but warn user, indicating where problem begins
+			if (not $warned_bad_filenames) {
+			    warn "$me: $infile: WARNING: Image files not named sequentially, starting at number $pbcount"
+				. " (filename $filenames[$i] does not match sequence number $new)\n";
+			    $warned_bad_filenames = 1;
+			}
+			$new = $filenames[$i];
+		    }
+		} else {
+		    $new = '';
+		    warn "$me: $infile: WARNING: No image file exists for <pb/> number $pbcount\n";
+		}
+	    }
+
+	    # add or update entity attribute
+	    if ( /<pb[^>]*\sentity=/ ) {
+		# pb with entity attribute; replace existing entity attribute
+		s/(<pb[^>]*?)\sentity=("|')[^\2]*?\2/$1 entity="$new"/;
+	    } else {
+		# add entity attribute
+		s#(<pb[^/>]*)(/?>)#$1 entity="$new"$2#;
+	    }
+	}
+
+	print OUT;
+    }
+    close OUT;
+
+    if ($f or $F or $p) {
+	if (not $pbcount == scalar(@filenames)) {
+	    warn "$me: $infile: WARNING: Number of <pb/> tags ($pbcount) "
+		. "does not equal number of image files (" . scalar(@filenames) . ")\n";
+	}
+    }
+
+    ##DlpsText::log($me, $infile, 'Added or updated entity attribute on <pb/> tags');
+}

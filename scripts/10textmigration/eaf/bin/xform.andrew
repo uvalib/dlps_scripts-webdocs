@@ -1,0 +1,28 @@
+#!/bin/sh
+
+if [ $# -lt 1 ]
+then
+   echo ""
+   echo "USAGE: $0 files"
+   echo ""
+else
+   for file in $*
+   do
+      # echo "Processing $file ..."
+      cat $file | xdoctype.pl | xblock.pl | xspaces.pl  | \
+      xpdel.pl | xsegdel.pl | xheaddel.pl | xrevdel.pl | xrespdel.pl | xtitledel.pl | xeddel.pl | \
+      xdivtypes.pl | xdivid.pl | xtitletypes.pl | \
+      xrendatt.pl | xhirend.pl | xlangid.pl | xdate.pl | \
+      reversefile.pl | xcollfw.pl | reversefile.pl | xspaces.pl | xmvpb.pl | xmccb.pl | \
+      xfront.pl | xdocimp.pl | \
+      xback.pl | xdivprelim.pl | \
+      xnote.pl | \
+      xkodak.pl | \
+      #xhyphprep.pl | xhyph.pl | xhyph2.pl | xhyph3.pl | \
+      #xhyph.pl | xhyph2.pl | xhyph3.pl | xhyph.pl | \
+      xqlet.pl | \
+      # /dlps_work/bin/notes_attach | /dlps_work/bin/multiline_tags | \
+      xptrref.pl | \
+      xcommdel.pl | xpretty.pl > $file.$0
+   done
+fi

@@ -1,0 +1,176 @@
+#!/usr/bin/perl -w
+
+# orig2reg - convert EAF <orig> to DLPS <reg> for end-of-line hyphenation
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2006-01-10
+# Last modified: 2006-03-13
+
+# 2006-03-13: gpm2a: Fixed bug occurring when file contained markup
+# such as 
+#   ... <orig reg="example">ex-</orig>
+#   <cb n="2"/><orig>ample</orig>
+# (column break immediately preceding second part of hyphenated word).
+
+
+use strict;
+
+my ($me, $usage, $infile, @infile, @buffer);
+my ($reg, $orig, $inOrig, $origStart, $origEnd, $hold, $cb);
+my ($match, $preMatch, $postMatch, $trailing, $replaceTrailing);
+
+$me = 'orig2reg';
+$usage = <<EOD;
+
+$me - convert EAF <orig> to DLPS <reg> for end-of-line hyphenation
+
+Usage: $me filenames
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+EOD
+
+die $usage if (! @ARGV);
+
+foreach $infile (@ARGV) {
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # make backup
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+
+    # make first pass through file;
+    # convert non-hyphenation <orig reg="..."> to <corr sic="...">
+    @buffer = ();
+    foreach (@infile) {
+	if ( m:<orig reg=("|')([^\1]+?)\1>([^<\-]+?)</orig>: ) {
+	    $reg = $2;
+	    $orig = $3;
+	    $match = $&;
+	    $preMatch = $`;
+	    $postMatch = $';
+	    $match =~ s:$match:<corr sic="$orig">$reg</corr>:;
+	    push @buffer, $preMatch . $match;
+	    $_ = $postMatch;
+	    redo;
+	} else {
+	    push @buffer, $_;
+	}
+    }
+
+    # make second pass through file
+    # fix cases of <orig reg="example">ex-<lb/>\n ample</orig>
+    @infile = ();  $inOrig = 0;
+    foreach (@buffer) {
+	if ( $inOrig ) {
+	    if ( m:^([^<]+)</orig>: ) {
+		$origEnd = $1;
+		$match = $&;
+		$postMatch = $';
+		if ( m:^[^<]+</orig>(\s): ) {
+		    $trailing = $1;
+		    $replaceTrailing = '';
+		    $match = $&;
+		    $postMatch = $';
+		} elsif ( m:^[^<]+</orig>(\S+)\s?: ) {
+		    $trailing = $1;
+		    $replaceTrailing = $1;
+		    $match = $&;
+		    $postMatch = $';
+		} else {
+		    $trailing = '';
+		}
+
+		$hold .= $match;
+		$hold =~ s:<orig reg=("|')$reg\1>$origStart:<reg orig="$origStart\|$origEnd">$reg</reg>$replaceTrailing:;
+		$hold =~ s:$origEnd</orig>\S*\s?::;
+		push @infile, $hold;
+
+		$_ = $postMatch;
+		$inOrig = 0;
+		redo;
+	    } else {
+		$hold .= $_;
+	    }
+	} elsif ( m:<orig reg=("|')([^\1]+?)\1>(.+?-)\s*<lb/>\s*$: ) {
+	    $reg = $2;
+	    $origStart = $3;
+	    $inOrig = 1;
+	    $hold = $_;
+	} else {
+	    push @infile, $_;
+	}
+    }
+
+    # make third pass through file;
+    # fix cases of <orig reg="example">ex-</orig><lb/>\n <pb.../>\n <orig>ample</orig>
+    @buffer = ();  $inOrig = 0;
+    foreach (@infile) {
+	if ( $inOrig ) {
+	    if ( m:^<orig>([^<]+)</orig>: ) {
+		$origEnd = $1;
+		$match = $&;
+		$postMatch = $';
+		if ( m:^<orig>[^<]+</orig>(\s): ) {
+		    $trailing = $1;
+		    $replaceTrailing = '';
+		    $match = $&;
+		    $postMatch = $';
+		} elsif ( m:^<orig>[^<]+</orig>(\S+)\s?: ) {
+		    $trailing = $1;
+		    $replaceTrailing = $1;
+		    $match = $&;
+		    $postMatch = $';
+		} else {
+		    $trailing = '';
+		}
+
+		$hold .= $match;
+		$hold =~ s:<orig reg=("|')$reg\1>$origStart</orig>:<reg orig="$origStart\|$origEnd">$reg</reg>$replaceTrailing:;
+		$hold =~ s:<orig>$origEnd</orig>\S*\s?::;
+		push @buffer, $hold;
+
+		$_ = $postMatch;
+		$inOrig = 0;
+		redo;
+	    } elsif ( m:^(<cb n=.\d+./>)<orig>: ) {
+		# this handles markup such as: <cb n="..."/><orig>...</orig>
+		$cb = $1;
+		$postMatch = $';
+		$hold .= "$cb\n";
+		$_ = '<orig>' . $postMatch;
+		redo;
+	    } else {
+		$hold .= $_;
+	    }
+	} elsif ( m:<orig reg=("|')([^\1]+)\1>(.+-)</orig>\s*<lb/>\s*$: ) {
+	    $reg = $2;
+	    $origStart = $3;
+	    $inOrig = 1;
+	    $hold = $_;
+	} else {
+	    push @buffer, $_;
+	}
+    }
+
+    # make fourth pass through file;
+    # clean up extraneous <lb/> tags caused by collapsing end-of-line hyphentation
+    @infile = ();
+    foreach (@buffer) {
+	s:</(p|cell|item|l)>\s*<lb/>:</$1>:;
+	push @infile, $_;
+    }
+
+    # make changes, overwriting input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@infile) {
+	print OUT;
+    }
+    close OUT;
+}

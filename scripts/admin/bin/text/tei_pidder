@@ -1,0 +1,203 @@
+#!/usr/bin/perl -w
+
+# Program: TEIpider.pl
+# Author:  Perry Roland pdr4h@virginia.edu
+# 
+# Requests a PID for the TEI file and each of its associated images,
+# then inserts those PIDs into the TEI file.  The PID for the TEI
+# file is written into the <teiHeader> while the PID for each image
+# is written into its entity declaration.  If the file or the images
+# already have a PID, a new one is *not* requested.
+
+# Revision history:
+#
+# 2005-03-24: Greg Murray <gpm2a@virginia.edu>: Changed input/output
+# behaviors of script for consistency with existing DLPS
+# text-production scripts. Changed from accepting path name as input
+# to accepting filenames. Changed from outputting a new file named
+# with process ID to making a backup file and then overwriting
+# original file. Also changed script name from 'TEIpider.pl' to
+# 'tei_pidder' for consistency with existing DLPS script names.
+#
+# 2005-10-28: gpm2a: Slight update for use on pogo.lib
+#
+# 2006-04-04: gpm2a: Changed to update DLPS tracking system -->
+# Finalization Workflow --> Add PIDs
+#
+# 2006-06-13: gpm2a: Added -t (test) option for requesting dummy
+# PIDs. Changed error handling to behave a bit more gracefully
+# (friendlier error message, skip making .bak files, etc.) if
+# PID-generation script is unavailable.
+
+
+use strict;
+use Getopt::Std;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use TrackSys;
+
+my $PID_SCRIPT_PATH = '/cenrepo/bin/fedora/pidgen';
+
+my ($me, $usage, %opts, $infile, @infile, $msg, $command);
+my (@subset, $in_subset, $pidcount, $file_pidded, $i, $pid, @pidlist, $pid_file, $in_sourceDesc);
+my (%properties, $dlpsId, $sql, $rows);
+
+$me = 'tei_pidder';
+$usage = <<EOD;
+
+$me - Requests a PID (persistent identifier) for the TEI file and
+  each of its associated images, then inserts those PIDs into the TEI file
+
+Usage: $me [-t] filenames
+  -t (test) Request "dummy" PIDs, not real ones; don't update tracking system
+
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites
+  original input file
+
+Description: Requests a PID for the TEI file and each of its
+  associated images, then inserts those PIDS into the TEI file.  The
+  PID for the TEI file is written into the <teiHeader> while the PID
+  for each image is written into its entity declaration.  If the file
+  or the images already have a PID, a new one is *not* requested.
+
+EOD
+
+getopts('t', \%opts) || die $usage;
+die $usage if (!@ARGV);
+
+TrackSys::connect();
+
+foreach $infile (@ARGV) {
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # get DLPS ID
+    %properties = DlpsText::getProperties($infile);
+    $dlpsId = DlpsText::getDlpsId(\%properties, \@infile, $infile);
+
+    # read the internal DTD subset and teiHeader into an array
+    @subset = (); $in_subset = 0;
+    foreach (@infile) {
+	if (/<!DOCTYPE/) {
+	    $in_subset = 1;
+	}
+
+	if ($in_subset) {
+	    push(@subset, $_);
+	    last if (/<\/teiHeader>/);
+	}
+    }
+
+    #----------------------------
+    # count number of pids needed
+    #----------------------------
+
+    # examine the subset/header array, counting the number of pids needed
+    $pidcount = 0; $file_pidded = '';
+    foreach $i (0 .. $#subset) {
+	if ($subset[$i] =~ (/<!ENTITY.*uvaBitonal>/) || ($subset[$i] =~ /<!ENTITY.*uvaHighRes>/) || ($subset[$i] =~ /<!ENTITY.*uvaLowRes>/)) {
+	    unless (($subset[$i] =~ /uva-lib:[0-9]+/) || ($subset[$i] =~ /dummy:[0-9]+/)) {
+		$pidcount = $pidcount + 1;
+	    }
+	}
+	if ($subset[$i] =~ /<idno type="uva-pid">/) {
+	    $file_pidded = 'yes';
+	}
+    }
+
+    # add a pid for the TEI file to the number of pids to be requested
+    # unless the file already has a pid
+    unless ($file_pidded eq 'yes') {
+	$pidcount++;
+    }
+
+    # skip to next input file if no pids are needed
+    next if ($pidcount == 0);
+
+    #-----------------
+    # request the PIDs
+    #-----------------
+
+    @pidlist = ();
+
+    # specify 'perl' rather than relying on shebang path to perl, which doesn't work on pogo.lib
+    if ($opts{'t'}) {
+	$command = "perl $PID_SCRIPT_PATH/getDummyPids.pl";
+    } else {
+	$command = "perl $PID_SCRIPT_PATH/getRealPids.pl";
+    }
+    $msg = "Unable to run the PID-generation script."
+	. " (The PID server may be unavailable. Please try again later.)";
+    open(GETPIDS, "$command $pidcount |") or die "$me: ERROR: $msg\n";
+    while (<GETPIDS>) {
+	#print;  # DEBUG
+	if (/<pid>(.*?)<\/pid>/) {
+	    $pid = $1;
+	    push(@pidlist, $pid);
+	}
+    }
+    close(GETPIDS);
+
+    if (@pidlist < 1) {
+	$msg = "Unable to obtain PID values."
+	    . " (The PID server may be unavailable. Please try again later.)";
+	die "$me: ERROR: $msg\n";
+    }
+
+    # if necessary, reserve the 1st pid for the TEI file
+    unless ($file_pidded eq 'yes') {
+	$pid_file = shift(@pidlist);
+    }
+
+    #---------------------------
+    # make changes to input file
+    #---------------------------
+
+    # make backup
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+
+    # make changes, overwriting input file
+    $in_sourceDesc = 0;
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@infile) {
+	# replace disk-file name of each image with pid
+	if ((/<!ENTITY.*uvaBitonal>/) || (/<!ENTITY.*uvaHighRes>/) || (/<!ENTITY.*uvaLowRes>/)) {
+	    unless ((/uva-lib:[0-9]+/) || (/dummy:[0-9]+/)) {
+		$pid = shift(@pidlist);
+		s/SYSTEM "[^"]*"\s+/SYSTEM "$pid" /;
+	    }
+	} else {
+	    if ( /<sourceDesc/ ) {
+		$in_sourceDesc = 1;
+	    }
+
+	    if ( /<\/publicationStmt/ and not $in_sourceDesc ) {
+		# unless the file already has one, add a pid
+		unless ($file_pidded eq 'yes') {
+		    s/(<\/publicationStmt)/<idno type="uva-pid">$pid_file<\/idno>\n$1/;
+		}
+	    }
+	}
+	print OUT;
+    }
+    close OUT;
+
+    # update tracking system
+    unless ($opts{'t'}) {
+	$rows = 0;
+	$sql = "UPDATE finalization SET addPids = 1 WHERE dlpsId = '$dlpsId' LIMIT 1";
+	$rows = TrackSys::query($sql);
+	if ($rows != 1) {
+	    warn "$me: WARNING: Cannot update DLPS tracking system for record '$dlpsId'. Update manually.\n";
+	}
+    }
+}
+
+TrackSys::disconnect();

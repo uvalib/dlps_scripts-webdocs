@@ -1,0 +1,79 @@
+#!/usr/bin/perl -w
+
+# qa_books - 'meta' script that runs a series of QA scripts on one or more TEI XML files
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2004-02-20
+# Last modified: 2006-03-31
+
+# 2006-03-31: gpm2a: Changed to update DLPS tracking system --> Markup
+# QA Workflow --> Run command-line programs
+
+
+use strict;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use TrackSys;
+
+my ($me, $usage, $infile, $error, %properties, @infile, $dlpsId, $sql, $rows);
+
+$me = 'qa_books';
+$usage = <<EOD;
+
+$me - runs a series of QA scripts on one or more TEI XML files
+Usage: $me filenames
+In: TEI XML file(s)
+Out: Prints messages to standard output
+
+EOD
+
+die $usage if (!@ARGV);
+foreach (@ARGV) {
+    die $usage if /^-/;   # this script has no switches
+}
+
+TrackSys::connect();
+
+foreach $infile (@ARGV) {
+    $error = 0;
+
+    # run QA scripts; check return value of system() to see if script
+    # died (not whether script generated QA error messages, which is
+    # normal script output and not a script error condition)
+
+    if (system("qa_xml $infile") != 0) {
+	$error = 1;
+    }
+
+    if (system("qa_properties $infile") != 0) {
+	$error = 1;
+    }
+
+    if (system("qa_dates $infile") != 0) {
+	$error = 1;
+    }
+
+    if (system("qa_figures $infile") != 0) {
+	$error = 1;
+    }
+
+    if ($error) {
+	warn "$me: WARNING: Cannot run one or more QA scripts for file '$infile': DLPS Tracking System was NOT updated\n";
+	next;
+    } else {
+	# get DLPS ID
+	%properties = DlpsText::getProperties($infile);
+	@infile = ();  # no need to provide file's contents; rely on <?dlps id="..."?> or filename
+	$dlpsId = DlpsText::getDlpsId(\%properties, \@infile, $infile);
+
+	# update DLPS tracking system
+	$rows = 0;
+	$sql = "UPDATE markupQA SET runCommandLinePrograms = 1 WHERE dlpsId = '$dlpsId' LIMIT 1";
+	$rows = TrackSys::query($sql);
+	if ($rows != 1) {  # this works because Perl DBI execute() returns 1 even if no fields of the record are actually changed
+	    warn "$me: WARNING: Cannot update DLPS tracking system for record '$dlpsId'. Update manually.\n";
+	}
+    }
+}
+
+TrackSys::disconnect();

@@ -1,0 +1,100 @@
+#!/usr/bin/perl -w
+
+# Program: TEIpider2.pl
+# Author:  Perry Roland pdr4h@virginia.edu
+#
+# Adds 'pid' attribute to <pb/> and <figure> elements.
+
+# Revision history:
+#
+# 2005-03-24: Greg Murray <gpm2a@virginia.edu>: Changed input/output
+# behaviors of script for consistency with existing DLPS
+# text-production scripts. Changed from accepting path name as input
+# to accepting filenames. Changed from printing to standard out to
+# making a backup file and then overwriting original file. Also
+# changed script name from 'TEIpider2.pl' to 'pid_attributes' for
+# consistency with existing DLPS script names.
+#
+# 2005-09-21: gpm2a: Also add 'pid' attribute as needed to
+# <frontispiece> and <ornament>.
+#
+# 2006-02-21: gpm2a: Added <page> to list of elements that can have an
+# 'entity' attribute. The <page> element is used in the OCR workflow.
+#
+# 2008-07-29: gpm2a: Fixed bug occurring when <!ENTITY declaration is
+# preceded by leading whitespace.
+#
+# 2008-10-10: gpm2a: Added -F (force) option to update existing pid=
+# attributes, if any.
+
+use strict;
+use Getopt::Std;
+
+my ($me, $usage, %opts, $infile, @infile);
+my ($entword, $entname, $sysword, $pid, $ndataword, $contentmodel, %pids, $tag, $q, $entity);
+my ($old, $new);
+
+$me = 'pid_attributes';
+$usage = <<EOD;
+
+$me - Adds 'pid' attribute to elements that have an 'entity'
+  attribute: <pb>, <figure>, <frontispiece>, <ornament>, and <page>
+
+Usage: $me [options] filenames
+  -F (force) Update existing pid= attributes, if any
+
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+EOD
+
+getopts('F', \%opts) || die $usage;
+die $usage if (! @ARGV);
+
+foreach $infile (@ARGV) {
+    %pids = ();
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # make backup
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+
+    # build hash of pids, by entity name; then make changes, overwriting input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@infile) {
+	if ( /<!ENTITY.*(uvaBitonal|uvaHighRes|uvaLowRes)>/ ) {
+	    ($entword, $entname, $sysword, $pid, $ndataword, $contentmodel) = split(/\s+/, $&);
+	    $pid =~ s/"//g;
+	    $pids{$entname} = $pid;
+	}
+	elsif ( /<(pb|figure|frontispiece|ornament|page)\s[^>]*?entity=("|')([^\2]*?)\2/ ) {
+	    $tag = $1;
+	    $q = $2;
+	    $entity = $3;
+	    if ( /<$tag[^>]*?\s+(pid=["'][^"']*["'])/ ) {
+		$old = $1;
+		if ( $opts{'F'} ) {
+		    # update existing value
+		    $new = qq/pid="$pids{$entity}"/;
+		    s/$old/$new/;
+		}
+	    } else {
+		# add pid= attribute
+		if ( exists($pids{$entity}) ) {
+		    s/<$tag([^>]*?)\sentity=$q([^$q]+?)$q/<$tag$1 entity="$entity" pid="$pids{$entity}"/;
+		} else {
+		    warn "$me: $infile: WARNING: No pid exists for entity '$entity'\n";
+		}
+	    }
+	}
+	print OUT;
+    }
+    close OUT;
+}

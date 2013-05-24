@@ -1,0 +1,241 @@
+#!/usr/bin/perl -w
+
+# make_tei_nontrans - creates a non-transcription (images-only) TEI XML
+#   file that conforms to the DLPS DTD (uva-dl-tei) in NONTRANS mode
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2003-11-10
+# Last modified: 2005-10-11
+
+# 2005-10-11: gpm2a: Updated script to comply with current practices
+# for non-transcription texts.
+
+
+#======================================================================
+# main logic
+#======================================================================
+
+use Getopt::Std;
+use strict;
+
+my ($me, $usage, %opts, $c, $o, $pageDir, $figureDir, $outputDir);
+my ($filename, %filenames, $baseFilename, $dir, $id, $key, $outfile);
+my ($pageImagesAtt, $figureImagesAtt, $figureNumber, $hasFigures);
+my ($pageImagesModel, $ndata, $rend);
+
+#----------------------------------------------------------------------
+# set constants
+#----------------------------------------------------------------------
+
+my $DEFAULT_PAGE_DIR = '/shares/image1/01bookscanning/52_CCITTCOMPRESS_OUT/';
+my $DEFAULT_FIGURE_DIR = '/shares/image1/03fig/83figs_final/';
+my $DEFAULT_OUTPUT_DIR = '/shares/text/04postkb/70being_fullheaders_added/';
+
+
+#----------------------------------------------------------------------
+# set usage summary
+#----------------------------------------------------------------------
+
+$me = 'make_tei_nontrans';
+$usage = <<EOD;
+
+$me - creates a non-transcription (images-only) TEI XML
+  file that conforms to the DLPS DTD (uva-dl-tei) in NONTRANS mode
+
+Usage: $me [-c] [-d page-images-dir] [-f figure-images-dir] [-o output-dir] dlps-id(s)
+  -c (color)   Page images are color, not bitonal; output <?dlps page-images="color"?>
+  -d (dir)     Path of page-images directory to use rather than default
+  -f (figures) Path of figure-images directory to use rather than default
+  -o (output)  Path of output directory to use rather than default
+
+Notes:
+  . Default page-images directory is $DEFAULT_PAGE_DIR -- looks for
+    a subdirectory named <dlps-id>/
+  . Default figure-images directory is $DEFAULT_FIGURE_DIR -- looks for
+    a subdirectory named <dlps-id>_fig/
+  . Default output directory is $DEFAULT_OUTPUT_DIR -- each output file
+    is named <dlps-id>.xml
+  . When reading a directory, filenames ending with .tif .tiff .jpg
+    .jpeg .gif or .sid are assumed to indicate image files.
+
+Example:
+  $me b001234567 b007654321
+
+EOD
+
+
+#----------------------------------------------------------------------
+# get arguments; test arguments and defaults
+#----------------------------------------------------------------------
+
+getopts('cd:f:o:', \%opts) || die $usage;
+$c = $opts{'c'};
+$pageDir = $opts{'d'} || $DEFAULT_PAGE_DIR;
+$figureDir = $opts{'f'} || $DEFAULT_FIGURE_DIR;
+$outputDir = $opts{'o'} || $DEFAULT_OUTPUT_DIR;
+
+$pageDir = normalizePathname($pageDir);
+$figureDir = normalizePathname($figureDir);
+$outputDir = normalizePathname($outputDir);
+
+if (! -d $pageDir) { die "'$pageDir' is not a directory\n$usage"; }
+if (! -r $pageDir) { die "Need read permission on page-images directory '$pageDir'\n"; }
+
+if (! -d $figureDir) { die "'$figureDir' is not a directory\n$usage"; }
+if (! -r $figureDir) { die "Need read permission on figure-images directory '$figureDir'\n"; }
+
+if (! -d $outputDir) { die "'$outputDir' is not a directory\n$usage"; }
+if (! -w $outputDir) { die "Need write permission on output directory '$outputDir'\n"; }
+
+die $usage if (! @ARGV);
+
+
+#----------------------------------------------------------------------
+# process each DLPS ID
+#----------------------------------------------------------------------
+
+foreach $id (@ARGV) {
+    %filenames = ();
+    $hasFigures = 0;
+
+    # build array of image filenames
+
+    # read page images directory
+    $dir = $pageDir . $id . '/';
+    opendir(PAGE_DIR, $dir) || die "$me: ERROR: Cannot read directory '$dir': $!\n";
+    while ( defined($filename = readdir(PAGE_DIR)) ) {
+	next if (-d $filename);  # skip any subdirectories
+	if ( $filename =~ /\.(tiff?|jpe?g|gif|sid)$/i ) {
+	    # filename extension indicates image file
+	    $filename =~ s/\.\w{3,4}$//;  # remove filename extension
+	    $filenames{$filename} = 'pb';
+	}
+    }
+    closedir PAGE_DIR;
+
+    # read figure images directory, if any
+    $dir = $figureDir . $id . '_fig/';
+    if (-e $dir and -d $dir) {
+        $hasFigures = 1;
+	opendir(FIGURE_DIR, $dir) || die "$me: ERROR: Cannot read directory '$dir': $!\n";
+	while ( defined($filename = readdir(FIGURE_DIR)) ) {
+	    next if (-d $filename);  # skip any subdirectories
+	    if ( $filename =~ /\.(tiff?|jpe?g|gif|sid)$/i ) {
+		# filename extension indicates image file
+		$filename =~ s/\.\w{3,4}$//;  # remove filename extension
+		$filenames{$filename} = 'figure';
+	    }
+	}
+	closedir FIGURE_DIR;
+    }
+
+    if ($c) {
+	$pageImagesAtt = 'color';
+	$pageImagesModel = 'uvaHighRes';
+    } else {
+	$pageImagesAtt = 'bitonal';
+	$pageImagesModel = 'uvaBitonal';
+    }
+    if ($hasFigures) {
+	$figureImagesAtt = 'yes';
+    } else {
+	$figureImagesAtt = 'no'; 
+    }
+
+    # write output file
+    $outfile = $outputDir . $id . '.xml';
+    open(OUT, ">$outfile") || die "$me: ERROR: Cannot write '$outfile': $!\n";
+    print OUT <<EOD;
+<?xml version="1.0"?>
+
+<?dlps id="$id"?>
+<?dlps page-images="$pageImagesAtt" figure-images="$figureImagesAtt"?>
+<?dlps transcription="none"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % NONTRANS "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+
+EOD
+
+    foreach $key ( sort(keys(%filenames)) ) {
+	if ($filenames{$key} eq 'figure') {
+	    $ndata = 'uvaHighRes';
+	} else {
+	    $ndata = $pageImagesModel;
+	}
+	print OUT "<!ENTITY $key SYSTEM \"$key\" NDATA $ndata>\n";
+    }
+
+    print OUT <<EOD;
+]>
+<TEI.2>
+<teiHeader>
+<fileDesc>
+<titleStmt><title/></titleStmt>
+<publicationStmt>
+<publisher>University of Virginia Library</publisher>
+<idno type="DLPS ID">$id</idno>
+</publicationStmt>
+<sourceDesc><bibl/></sourceDesc>
+</fileDesc>
+</teiHeader>
+<text>
+<body>
+<div1>
+EOD
+
+    foreach $key ( sort(keys(%filenames)) ) {
+	if ($filenames{$key} eq 'figure') {
+	    # figure image
+	    if ( $key =~ /(_\d)$/ ) {
+		$figureNumber = $1;
+		if ($figureNumber eq '_0') {
+		    # full-page figure
+		    $rend = 'page';
+		} else {
+		    $rend = 'block';
+		}
+	    } else {
+		$rend = 'block';
+	    }
+	    print OUT "<figure entity=\"$key\" rend=\"$rend\"/>\n";
+	} else {
+	    # page image
+	    print OUT "<pb entity=\"$key\"/>\n";
+	}
+    }
+
+    print OUT <<EOD;
+</div1>
+</body>
+</text>
+</TEI.2>
+EOD
+
+    close OUT;
+}
+
+
+
+#======================================================================
+# subroutines
+#======================================================================
+
+sub normalizePathname {
+    # normalizePathname - adds final "/" to pathname if path doesn't already end in slash or backslash
+
+    my $s = shift;
+
+    if (not $s =~ /(\\|\/)$/) {
+	$s = $s . '/';
+    }
+    return $s;
+}

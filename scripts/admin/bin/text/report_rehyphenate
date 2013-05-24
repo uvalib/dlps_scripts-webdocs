@@ -1,0 +1,345 @@
+#!/usr/bin/perl -w
+
+# report_rehyphenate - generates an HTML report/form of dehyphenated
+# words that the Unix 'spell' command reports as spelling errors,
+# indicating that they may need their hyphens restored
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2003-01-10
+# Last modified: 2006-07-06
+
+# 2004-02-26: gpm2a: Fixed bug whereby report did not include words
+# that originally contained two hyphens. For example, if original
+# markup was "18- <lb/> year-old", this would be collapsed to "<reg
+# orig="18-|year-old">18year-old</reg>". But the word "18year-old"
+# would not get reported as a candidate for re-hyphenation, because
+# spelling error list made by the Unix 'spell' command would not
+# include "18year-old"; it would include "18year", because 'spell'
+# considers a hyphenated word as two words. This was a subtle,
+# pernicious, long-standing bug. The fix is to report not only words
+# considered misspelled by 'spell', but also all words already
+# containing a hyphen.
+#
+# 2004-03-04: gpm2a: Changed output of two-lines-of-context to use
+# <code> rather than <pre>, so the context will wrap within the table
+# cell.
+#
+# 2005-12-30: gpm2a: Changed for use on pogo.
+#
+# 2006-02-27: gpm2a: Fixed bug occurring when more than one <reg>
+# element appeared on the same line (as can easily happen when using
+# <reg> to regularize something other than EOL hyphenation).
+#
+# 2006-04-18: gpm2a: Changed so that the report is not generated if
+# there are no entries.
+#
+# 2006-06-14: gpm2a: Add logic to check a list of known words that
+# never need the hyphen restored. If a word appears on that list, it
+# does not get added to the report.
+#
+# 2006-07-06: gpm2a: Changed logic so that checking against dictionary
+# words (known words that should be excluded from the report) is now
+# case insensitive. Changed layout of report so that "Restore ... to
+# its original form" checkbox and "Add ... to dictionary" checkbox
+# line up vertically (easier to check off; less mouse movement).
+
+use strict;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use DlpsTextWorkreports;
+
+our ($me, $infile);  # declare these variables as 'our' to allow DlpsTextWorkreports to access them
+my ($usage, @infile);
+my ($report_type, $go, $msg, $c);
+my ($pagenumber, $pageimage);
+my ($html1, $html2, $html3);
+my (%dehyphs, %spellerrs, $context, $prevline, $tempfile, $spellfile);
+my ($key, $value);
+my ($reg, $reg_unpunc, $reg_pattern, $reg_occurs, $reg_msg, $reg_qmark);
+my ($orig, $orig_pattern, $orig_occurs, $orig_msg, $orig_nobar, $orig_nobar_unpunc, $orig_qmark);
+my (%knownWords, $knownWordsFile, $knownWord);
+
+$report_type = 'rehyphenate';
+
+$me = 'report_rehyphenate';
+$usage = <<EOD;
+
+$me - generates an HTML report/form of dehyphenated
+    words that the Unix 'spell' command reports as spelling errors,
+    indicating that they may need their hyphens restored
+Usage: $me filenames
+In: TEI XML file(s)
+Out: For each input file, creates an HTML file named [filename].rehyphenate.html
+
+EOD
+
+die $usage if (! @ARGV);
+foreach (@ARGV) {
+    die $usage if /^-/;   # this script has no switches
+}
+
+# read list of known words into a hash
+%knownWords = ();
+$knownWordsFile = DlpsText::normalize_path( DlpsTextWorkreports::get_path() ) . 'hyphenation_dictionary.txt';
+if ( open(KNOWN, $knownWordsFile) ) {
+    while (<KNOWN>) {
+	next if (/^\s*$/);   # skip blank lines
+	next if (/^#/);      # skip comments
+	chomp;
+	$knownWord = lc($_); # add word as lower case, so we can check for this key later as lower case
+	$knownWords{$knownWord} = '';
+    }
+    close KNOWN;
+} else {
+    warn "$me: WARNING: Cannot open list of known words at '$knownWordsFile'."
+	. " This is harmless, but some words might appear on the report unnecessarily.\n";
+}
+
+# process each input file
+foreach $infile (@ARGV) {
+    %dehyphs = ();
+    %spellerrs = ();
+    $pagenumber = '';
+    $pageimage = '';
+
+    if ( not DlpsTextWorkreports::init($infile, $report_type) ) {
+	next;
+    }
+
+    # test for existing changes file; if problem, skip to next input file; see DlpsTextWorkreports::changes_file_ok()
+    if ( not DlpsTextWorkreports::changes_file_ok() ) {
+	next;
+    }
+
+    # read input file into an array, which will later be used to count
+    # (grep out) occurrences of regularized (dehyphenated) form
+    # vs. original (hyphenated) form (so user can more easily decide
+    # which is correct)
+    open(IN, $infile) || die "$me: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # build hash of dehyphenated words
+
+    # record regularized (dehyphenated) form (as hash key),
+    # unpunctuated form (for comparison with 'spell' command output),
+    # and original form (for display to user)
+
+    # also record page number (n attribute on pb) and page image (entity attribute on pb)
+
+    foreach (@infile) {
+	if (/<pb.*>/i) {
+	    if (/<pb.+n=["'](\w+)["'].*>/i) {
+		$pagenumber = $1;
+	    } else {
+		$pagenumber = '';
+	    }
+
+	    if (/<pb.+entity=["'](\w+)["'].*>/i) {
+		$pageimage = $1;
+	    } else {
+		$pageimage = '';
+	    }
+	}
+
+#	if ( /<reg orig=("|')([^\1]+)\1[^>]*>([^<]+)<\/reg>/ ) {
+	if ( /<reg orig="([^"\|]+?\-\|[^"\|]+?)"[^>]*?>([^<]+?)<\/reg>/ ) {
+	    $orig = $1;
+	    $reg = $2;
+
+            #$context = $prevline . $_;
+            $context = $_;  # use current line only; don't include previous line as part of context
+            $context =~ s/</&lt;/g;
+            $context =~ s/>/&gt;/g;
+	    $context =~ s/\|//g;
+            chomp $context;
+            $context =~ s/\n/<br>\n/g;
+
+	    $dehyphs{$reg} = "$orig^$pagenumber^$pageimage^$context";
+	}
+
+        $prevline = $_;
+    }
+
+    # write list of dehyphenated words to temp file
+    $tempfile = DlpsTextWorkreports::get_tempfile();
+    open(TEMP, ">$tempfile") || die "$me: Cannot write '$tempfile': $!\n";
+    foreach $reg (sort(keys(%dehyphs))) {
+	print TEMP "$reg\n";
+    }
+    close TEMP;
+
+    # spellcheck list of dehyphenated words
+    $spellfile = DlpsTextWorkreports::get_spellfile();
+    system("spell $tempfile >$spellfile");
+
+    # build hash of spelling errors
+    open(SPELL, $spellfile) || die "$me: Cannot read '$spellfile': $!\n";
+    while (<SPELL>) {
+	chomp;
+	$spellerrs{$_} = '';
+    }
+    close SPELL;
+
+    # remove temporary files
+    unlink $tempfile, $spellfile;
+
+    # generate report
+
+    # for each dehyphenated word, include it on report if it's in
+    # spelling-error list OR if it already contains a hyphen (in which
+    # case it won't be on spelling-error list because 'spell' command
+    # considers a hyphenated word to be two words)
+    $html2 = '';
+    $c = 0;
+    foreach $key (sort(keys(%dehyphs))) {
+	$value = $dehyphs{$key};
+	($orig, $pagenumber, $pageimage, $context) = split(/\^/, $value);
+	$reg = $key;
+
+	# remove surrounding punctuation before comparing to output of spell command
+	$reg_unpunc = $reg;
+	$reg_unpunc =~ s/^\W+//;   # remove leading non-word characters
+	$reg_unpunc =~ s/\W+$//;   # remove trailing non-word characters
+
+	if ( exists($spellerrs{$reg_unpunc}) or $reg_unpunc =~ /-/ ) {
+	    next if ( exists($knownWords{lc($reg_unpunc)}) );  # skip words known not to need the hyphen restored
+
+	    # get count of number of lines on which regularized form
+	    # occurs vs. original form, to help user decide which is correct
+	    $reg_pattern = $reg_unpunc;
+	    $reg_occurs = grep /$reg_pattern/i, @infile;
+
+	    # make pattern for reg exp match and count (grep out) occurences of original form
+	    $orig_pattern = $orig;
+	    $orig_pattern =~ s/^\W+//;     # remove leading non-word characters
+	    $orig_pattern =~ s/\W+$//;     # remove trailing non-word characters
+            $orig_pattern =~ s#\|#\\\|\?#; # replace | with \|? so pattern will catch all occurences, with or without |
+	    $orig_occurs = grep /$orig_pattern/i, @infile;
+
+	    if ($reg_occurs == 1) { $reg_msg = 'time'; } else { $reg_msg = 'times'; }
+	    if ($orig_occurs == 1) { $orig_msg = 'time'; } else { $orig_msg = 'times'; }
+
+	    # remove vertical bar from original form, for later display to user
+	    $orig_nobar = $orig;
+            $orig_nobar =~ s/\|//;   # remove vertical bar (if any) signifying where original line break was
+
+	    # remove punctuation surrounding original form, also for later display to user
+	    $orig_nobar_unpunc = $orig_nobar;
+	    $orig_nobar_unpunc =~ s/^\W+//;   # remove leading non-word characters
+	    $orig_nobar_unpunc =~ s/\W+$//;   # remove trailing non-word characters
+
+	    # determine what kind of quotation mark to use in quoting HTML attribute values
+	    if ( $reg =~ /"/ and not $reg =~ /'/ ) { $reg_qmark = "'"; } else { $reg_qmark = '"'; }
+	    if ( $orig =~ /"/ and not $orig =~ /'/ ) { $orig_qmark = "'"; } else { $orig_qmark = '"'; }
+
+            # preserve ampersands
+	    $reg  =~ s/&/&amp;/g;
+	    $orig =~ s/&/&amp;/g;
+
+	    next if ($reg eq $orig_nobar);  # skip words already equivalent to the proposed change
+
+	    $c++;
+	    $html2 .= <<EOD;
+<tr>
+<td>
+
+<table width="100%" border="1" cellpadding="5">
+<tr>
+<td rowspan="3">$c</td>
+<td width="50%"><input type="checkbox" name="change_$c" value="on"> 
+<span style="white-space: nowrap">Restore <span class="mono">$reg</span>
+<input type="hidden" name="reg_$c" value=$reg_qmark$reg$reg_qmark>
+to its original form: 
+<span class="mono">$orig_nobar</span>
+<input type="hidden" name="orig_$c" value=$orig_qmark$orig_nobar$orig_qmark>
+</span>
+<br>
+<span style="white-space: nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="mono">$reg_unpunc</span> occurs $reg_occurs $reg_msg; 
+<span class="mono">$orig_nobar_unpunc</span> occurs $orig_occurs $orig_msg
+</span></td>
+<td>To mark this word for further review, enter a note:
+<input type="text" name="note_$c"></td>
+<td>
+  <table>
+  <tr>
+  <td>page:</td><td>$pagenumber<input type="hidden" name="pagenumber_$c" value="$pagenumber"></td>
+  </tr>
+  <tr>
+  <td>image:</td><td>$pageimage<input type="hidden" name="pageimage_$c" value="$pageimage"></td>
+  </tr>
+  </table>
+</td>
+</tr>
+<tr>
+<td colspan="3"><input type="checkbox" name="dictionary_$c" value="on">
+Add <span class="mono">$reg</span> to dictionary so it won't appear on future reports</td>
+</tr>
+<tr>
+<td colspan="3"><code>$context</code></td>
+</tr>
+</table>
+
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+</tr>
+EOD
+	}
+    }
+
+    $html1 = <<EOD;
+<html>
+<head>
+<title>Rehyphenate Report: $infile</title>
+<link rel="stylesheet" type="text/css" href="/dlps/css/workreports.css">
+</head>
+<body onLoad="document.frm.operator.focus();">
+<h3>Rehyphenate Report: $infile</h3>
+<p><b>Summary:</b> $c items</p>
+<h4>Instructions</h4>
+<ol>
+<li>Enter your name.</li>
+<li>For each item, determine whether the word should be
+hyphenated. The number of occurences of each form (unhyphenated
+vs. hyphenated) will help you decide which is form is considered
+correct in this book. If in doubt, it is better to restore the
+hyphen.</li>
+<li>If the word should be hyphenated, check the "Restore"
+checkbox. (If the word is correct as it is, leave the "Restore"
+checkbox empty.)</li>
+<li>If the word appears odd, misspelled, or questionable, mark it for
+further review by entering a brief note of explanation in the "Note"
+textbox.</li>
+<li>When finished with all items, click the "Save Data" button.</li>
+</ol>
+
+<form name="frm" method="post" action="$DlpsTextWorkreports::action">
+
+<table border="0" cellpadding="5">
+<tr>
+<td>Name <i>(required)</i>: <input type="text" name="operator"></td>
+</tr>
+</table>
+
+<table border="0" cellpadding="5">
+<!--<tr><th>Item</th><th>Restore hyphen</th><th>Add to dictionary</th><th>Review</th><th>Page number/image</th></tr>-->
+EOD
+
+    $html3 = DlpsTextWorkreports::html_end($c);
+
+    if ($c) {
+	# write output (HTML) file
+	DlpsTextWorkreports::write_outfile($html1, $html2, $html3);
+
+	# create empty .change and .review files
+	DlpsTextWorkreports::create_empties();
+
+	$msg = "No changes to input file. Generated HTML report: " . DlpsTextWorkreports::get_outfile();
+	##DlpsText::log($me, $infile, $msg);
+    } else {
+	print "$me: $infile: Info: Report would contain zero items, so no report has been generated.\n";
+    }
+}

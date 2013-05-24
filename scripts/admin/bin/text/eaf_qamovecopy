@@ -1,0 +1,504 @@
+#!/usr/bin/perl -w
+
+# eaf_qamovecopy - takes page images and moves/copies them to image1 volume
+#       in two different directories.
+
+# Jack Kelly <jlk4p@virginia.edu>
+# Written: 2006-04-18
+
+# See usage summary below for a list of steps this script performs.
+
+# NOTE: This script is derived from the eaf_proofreader script that Greg set up.
+
+#======================================================================
+# setup
+#======================================================================
+
+use strict;
+use Getopt::Std;
+use Cwd;
+use File::Copy;
+
+my (%opts, $error, $ok, @outfiles, %infiles);
+my ($dir, $id, $infile, $outfile, $command);
+my (@errors, @progress, $msg);
+
+my $me = 'eaf_qamovecopy';
+my $moveDir = '/shares/image1/01bookscanning/10raw_migration_OUT/';
+my $copyDir = '/shares/image1/01bookscanning/50QAed_EAF_OUT/';
+my $finalShare = 'IMAGE1';
+my $startDir = cwd();
+my $group = 'dlpswg';
+my $mailFrom = 'jlk4p';
+my $mailTo = 'ul-dlps';
+my $gigaBytes = 0;
+my $bytesPerGig = 1073741824;
+
+if (not -d $copyDir) {
+    $msg = "$me: FATAL ERROR: Destination directory '$copyDir' does not exist\n";
+    push(@errors, $msg);
+    Send_Mail();
+    die $msg;
+}
+
+my $usage = <<EOD;
+
+$me - moves directories from image1 book workflow to
+      $moveDir
+      After completing the move, the directories are copied to 
+      $copyDir
+      Space requirements for each directory are displayed as well as
+      the available space on $finalShare. Then you are prompted as
+      to whether to continue with the move and copy. 
+
+Usage: $me [-v] directories
+  -v (verbose) Show status messages
+
+In:  Names of directories containing files to copy. These directories
+     must be located in the directory where the command is invoked.
+Out: Moves the contents of these directories to the migration OUT directory.
+     Then copies the contents to 50QAed_EAF_OUT directory.
+     Files beginning with period (.) are not copied.
+
+EOD
+
+getopts('v', \%opts) || die $usage;
+die $usage unless (@ARGV);
+
+#======================================================================
+# main logic
+#======================================================================
+
+# determine the amount of space needed for the directories to be moved/copied.
+$msg = "Calculating total space needed...\n";
+push(@progress, $msg);
+print $msg;
+
+my $totalSpaceNeeded = 0;
+foreach $dir (sort(@ARGV)) {
+    $error = 0;
+    $ok = 1;
+    @outfiles = ();
+    %infiles = ();
+
+    $dir =~ s:/$::;  # remove final slash, if present
+    $id = $dir;
+    $id =~ s:^.*/::;  # remove leading path, if any
+
+    if (-d $dir) {
+		unless ( -r $dir ) {
+		    $msg = "$me: ERROR: Need read permission for directory '$dir'\n";
+		    warn $msg;
+		    push(@errors, $msg);
+		    $ok = 0; next;
+		}
+		unless ( -w $dir ) {
+		    $msg = "$me: ERROR: Need write permission for directory '$dir'\n";
+		    warn $msg;
+		    push(@errors, $msg);
+		    $ok = 0; next;
+		}
+    } else {
+		$msg = "$me: ERROR: '$dir' is not a directory\n";
+		warn $msg;
+		push(@errors, $msg);
+		$ok = 0; next;
+    }
+
+    # change to input directory
+    if ( not chdir($dir) ) {
+	$msg = "$me: ERROR: Cannot change to directory '$dir': $!\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }    
+
+    my $dirSpaceNeeded = 0;
+    if ( opendir(DIR, '.') ) {
+	while ( defined($infile = readdir(DIR)) ) {
+	    if ( $infile =~ /^\./ ) {
+		# filename starts with . ; skip
+		next;
+	    }
+	    $dirSpaceNeeded += -s $infile;	#identify the space needed for the files
+	    $infiles{$infile} =  $infile;
+	}
+	closedir DIR;
+    } else {
+	$msg = "$me: ERROR: Cannot read directory '$dir': $!\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+    if ( not scalar(keys(%infiles)) ) {
+	$msg = "$me: WARNING: No files found in directory '$dir'\n";
+	print $msg;
+	push(@progress, $msg);
+	next;
+    }
+
+	$totalSpaceNeeded += $dirSpaceNeeded;
+	
+	# Convert space needed to gigabytes.
+    $gigaBytes = $dirSpaceNeeded / $bytesPerGig;
+    $msg = sprintf("     Space needed for directory '$dir': %.2f GB\n",$gigaBytes);
+    push(@progress, $msg);
+	print $msg;
+
+    if (not $ok) {
+	next;
+    }
+
+}
+continue {
+    if ($ok) {
+    } else {
+	$msg = "$me: ERROR: Processing of directory '$dir' FAILED!\n\n";
+	warn $msg;
+	push(@errors, $msg);
+    }
+
+    # change back to starting directory
+    if ( cwd() ne $startDir ) {
+	if ( not chdir($startDir) ) {
+	    $msg = "$me: FATAL ERROR: Cannot change to starting directory '$startDir': $!\n";
+	    push(@errors, $msg);
+	    Send_Mail();
+	    die $msg;
+	}
+    }
+
+}
+
+# Convert space needed to gigabytes.
+$gigaBytes = $totalSpaceNeeded / $bytesPerGig;
+$msg = sprintf("\nTotal space needed for these directories: %.2f GB\n",$gigaBytes);
+push(@progress, $msg);
+print $msg;
+$msg = sprintf("\nTotal space needed for move AND copy of directories: %.2f GB\n",2 * $gigaBytes);
+push(@progress, $msg);
+print $msg;
+
+# identify the available space on the final destination
+$gigaBytes = checkDiskSpace($copyDir) / $bytesPerGig;
+
+$msg = sprintf("\n\nAvailable disk space on $finalShare: %.2f GB\n\n",$gigaBytes);
+push(@progress, $msg);
+print $msg;
+
+# prompt the user to confirm that the move can proceed with the current space needs
+$msg = "Proceed to move and copy these directories on IMAGE1? (y/n): ";
+push(@progress, $msg);
+print $msg;
+my $char = getc;
+$msg = $char . "\n\n";
+push(@progress, $msg);
+
+if (($char ne "y") and ($char ne "Y")) {
+	$msg = "User cancelled move and copy.\n";
+	push(@progress, $msg);
+	print $msg;
+	Send_Mail();
+	exit(0);
+} 
+
+foreach $dir (sort(@ARGV)) {
+    $error = 0;
+    $ok = 1;
+    @outfiles = ();
+    %infiles = ();
+
+    $dir =~ s:/$::;  # remove final slash, if present
+    $id = $dir;
+    $id =~ s:^.*/::;  # remove leading path, if any
+
+    $msg = "$me: Processing directory '$dir' (ID $id)...\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+
+    if (-d $dir) {
+		unless ( -r $dir ) {
+		    $msg = "$me: ERROR: Need read permission for directory '$dir'\n";
+		    warn $msg;
+		    push(@errors, $msg);
+		    $ok = 0; next;
+		}
+		unless ( -w $dir ) {
+		    $msg = "$me: ERROR: Need write permission for directory '$dir'\n";
+		    warn $msg;
+		    push(@errors, $msg);
+		    $ok = 0; next;
+		}
+    } else {
+		$msg = "$me: ERROR: '$dir' is not a directory\n";
+		warn $msg;
+		push(@errors, $msg);
+		$ok = 0; next;
+    }
+
+    # change to input directory
+    if ( not chdir($dir) ) {
+	$msg = "$me: ERROR: Cannot change to directory '$dir': $!\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }    
+    
+    # create new directory in destination
+	my $newDir = $moveDir . $dir;
+    if (not -d $newDir) {
+		if (mkdir($newDir)) {
+		    # set group and permissions for output directory
+		    chmod 0775, $newDir;
+		    system("chgrp $group $newDir");
+		} else {
+		    $msg = "$me: ERROR: Cannot create directory '$newDir': $!\n";
+		    warn $msg;
+		    push(@errors, $msg);
+		    $ok = 0; next;
+		}
+    }
+
+    if ( opendir(DIR, '.') ) {
+	while ( defined($infile = readdir(DIR)) ) {
+	    if ( $infile =~ /^\./ ) {
+		# filename starts with . ; delete it
+		unlink($infile);
+		next;
+	    }
+	    $infiles{$infile} = $newDir . "/" . $infile;
+	}
+	closedir DIR;
+    } else {
+	$msg = "$me: ERROR: Cannot read directory '$dir': $!\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+    if ( not scalar(keys(%infiles)) ) {
+	$msg = "$me: WARNING: No files found in directory '$dir'\n";
+	print $msg;
+	push(@progress, $msg);
+	next;
+    }
+	
+    # read input directory and move contents
+    $msg = "    Moving files to $moveDir...\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+
+    foreach $infile (sort(keys(%infiles))) {
+	$outfile = $infiles{$infile};
+	$command = "mv $infile $outfile 2> /dev/null";
+	$error = system($command);
+	if ($error == 0) {
+	    chmod 0664, $outfile;
+	    system("chgrp $group $outfile");
+	} else {
+		$msg = "$me: ERROR: Command failed: $command\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; last;
+	}
+	push(@outfiles, $outfile);
+    }
+
+    if (not $ok) {
+	next;
+    }
+    
+    if ( scalar(keys(%infiles)) != scalar(@outfiles) ) {
+	$msg = "$me: ERROR: The number of moved files (" . scalar(@outfiles)
+	    . ") does not equal the number of source files (" . scalar(keys(%infiles)) . ")\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    } else {
+    	$msg = "    " . scalar(@outfiles) . " files moved.\n";
+    	push(@progress,$msg);
+    }
+
+    if (not $ok) {
+	next;
+    }
+    
+    # Now copy the files from the new location to the QAed directory.
+    # create new directory in destination
+    $msg = "    Copying files to $copyDir...\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+    
+	$newDir = $copyDir . $dir;
+    if (not -d $newDir) {
+		if (mkdir($newDir)) {
+		    # set group and permissions for output directory
+		    chmod 0775, $newDir;
+		    system("chgrp $group $newDir");
+		} else {
+		    $msg = "$me: ERROR: Cannot create directory '$newDir': $!\n";
+		    warn $msg;
+		    push(@errors, $msg);
+		    $ok = 0; next;
+		}
+    }
+    
+    @outfiles = ();
+    foreach $infile (sort(keys(%infiles))) {
+	my $movedfile = $moveDir . $dir . '/' . $infile;
+	my $copyfile = $copyDir . $dir . '/' . $infile;
+	$command = "cp $movedfile $copyfile 2> /dev/null";
+	$error = system($command);
+	if ($error == 0) {
+	    chmod 0664, $outfile;
+	    system("chgrp $group $copyfile");
+	} else {
+		$msg = "$me: ERROR: Command failed: $command\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; last;
+	}
+	push(@outfiles, $outfile);
+    }
+
+    if (not $ok) {
+	next;
+    }
+    
+    if ( scalar(keys(%infiles)) != scalar(@outfiles) ) {
+	$msg = "$me: ERROR: The number of copied files (" . scalar(@outfiles)
+	    . ") does not equal the number of moved files (" . scalar(keys(%infiles)) . ")\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    } else {
+    	$msg = "    " . scalar(@outfiles) . " files copied.\n";
+    	push(@progress,$msg);
+    }    
+
+}
+continue {
+    if ($ok) {
+		$msg = "    Directory '$dir' was processed successfully.\n\n";
+		print $msg if ($opts{'v'});
+		push(@progress, $msg);
+    } else {
+		$msg = "$me: ERROR: Processing of directory '$dir' FAILED!\n\n";
+		warn $msg;
+		push(@errors, $msg);
+    }
+	
+    # change back to starting directory
+    if ( cwd() ne $startDir ) {
+		if ( not chdir($startDir) ) {
+		    $msg = "$me: FATAL ERROR: Cannot change to starting directory '$startDir': $!\n";
+		    push(@errors, $msg);
+		    Send_Mail();
+		    die $msg;
+		}
+    }
+
+	# remove the directory from the starting location.
+	if ($ok) {
+		if (not rmdir($dir)) {
+			$msg = "$me: ERROR: Unable to remove directory '$dir'\n\n";
+			warn $msg;
+			push(@errors, $msg);
+			$ok = 0; next;
+		}
+	}
+}
+
+
+Send_Mail();
+
+
+#======================================================================
+# subroutines
+#======================================================================
+
+sub checkDiskSpace{  
+	my ($directory) = @_;
+	my @buf;
+	my $i;
+	my ($machine, $disk, $space, $blocks, $blocksize);
+  
+	# make sure there is sufficient space in the local directory...
+	$_ = `df $directory`;
+	@buf = split;
+	
+	if( @buf < 11 ){
+    	warn "$me: ERROR: Unix 'df' command returned a bad result!\n";
+    	return 0;
+	}
+   
+	# if the disk is remote, we may not have received the right
+	# information from "df".  So if a colon is present in the
+	# diskname go to that machine and check "df"...
+	$disk = $buf[7];
+	$i = index( $disk, ":");
+	if( $i >= 1){
+		$machine = substr( $disk, 0, $i);
+		$disk = substr( $disk, $i+1);
+		
+		# re-do the check...
+    	$_ = `rsh $machine df $disk`;
+		@buf = split;
+		if( @buf < 11 ){
+			warn "$me: ERROR: Unix 'df' command returned a bad result!\n";
+			return 0;
+		}
+	}
+	
+	$blocks = $buf[10];
+	
+	# determine the block size for the drive, if K is at the end then multiply to determine 
+	# actual bytes.
+	($blocksize,) = split(/-/,$buf[1]);
+	if ($blocksize =~ m/k$/i) {
+		$blocksize =~ s/k$//i;
+		$blocksize *= 1024;
+	}
+	
+	# return the amount of disk space available...
+	$space = 0 + ($blocks * $blocksize);
+	return $space;
+}
+
+sub Send_Mail {
+
+    my @time = localtime(time);
+    my $today = $time[3];
+    my $month = (1,2,3,4,5,6,7,8,9,10,11,12)[(localtime)[4]];
+    my $year = $time[5];
+    $year = $year - 100;
+
+    $year = sprintf("%02d",$year);
+    $month = sprintf("%02d",$month);
+    $today = sprintf("%02d",$today);
+
+    my($date)="$month/$today/$year";
+    my($messageto) = $mailTo . "\@virginia.edu";
+
+    open(MAIL,"| /usr/sbin/sendmail -i -t");
+#    open(MAIL,"| /usr/lib/sendmail -i -t");
+    print MAIL "To: $messageto\n"; 
+    print MAIL "From: $mailFrom\@virginia.edu\n";
+    if (@errors) {
+	print MAIL "Subject: Error moving/copying EAF images\n\n";
+	print MAIL "There was an error from the $me script on $date:\n\n";
+    }
+    else {
+	print MAIL "Subject: Report on moving/copying EAF images\n\n";
+	print MAIL "$me script completed with no errors on $date.\n\n";
+    }
+    foreach my $err (@errors) {
+	print MAIL "$err";
+    }
+    foreach my $noerr (@progress) {
+	print MAIL "$noerr" ;
+    }
+    print MAIL "-" x 75 . "\n\n";
+    close(MAIL);
+}

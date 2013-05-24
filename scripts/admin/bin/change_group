@@ -1,0 +1,145 @@
+#!/usr/bin/perl -w
+
+# change_group - finds files and directories owned by the current user and changes the group and/or permissions as specified
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2005-04-22
+# Last modified: 2005-04-22
+
+use Getopt::Std;
+use File::Find;
+use Cwd;
+use strict;
+
+my ($me, $usage, %opts, $startPath);
+
+$me = 'change_group';
+
+$usage = <<EOD;
+
+$me - finds files and directories owned by the current user and changes the group and/or permissions as specified
+
+Usage: $me [-g group] [-p] [-q | -v] filenames
+  g (group)        Name of group to assign to files/directories you own
+  p (permissions)  Grant group write permission (chmod g+w) to files/directories you own
+  q (quiet)        No status messages (default is to show a status message for each file/directory *changed*)
+  v (verbose)      Show a status message for *every* file/directory found (whether changed or not)
+  filenames        Names of one or more files/directories to process
+
+At least one main option (-g or -p) is required. Both are allowed.
+
+Examples:
+
+  Change group to 'dlpswg' for all files/directories you own in current working directory:
+  $me -g dlpswg *
+
+  Change group to 'dlpswg' and turn on group write for all files/dirs you own in 04postkb:
+  $me -g dlpswg -p /shares/text/04postkb
+
+  Change group to 'repo' and turn on group write for all files/dirs you own in ReadyRepo:
+  $me -g repo -p /cenrepo/ReadyRepo
+
+EOD
+
+getopts('g:pqv', \%opts) || die $usage;
+die $usage if (! $opts{g} and ! $opts{p});
+die $usage if (! @ARGV);
+
+# get path of starting point
+$startPath = cwd();
+
+# File::Find::find() recursively processes all files and subdirectories in
+# given directory; for each file or dir found, it calls sub 'process'
+find \&process, (@ARGV);
+
+
+#============
+# subroutines
+#============
+
+sub process {
+
+    # name of file or directory currently being processed by File::Find
+    my $name = $_;
+
+    my (@stats, $status, $group, $command, $path, $username);
+    my ($mode, @chars, $groupMode, $groupWriteOn, $newMode);
+
+    @stats = stat($name);
+
+    # get path, to display in status messages
+    if ($name eq '.') {
+	$path = cwd();
+    } else {
+	$path = cwd() . '/' . $name;
+    }
+
+    # make path relative (to current working directory when script was started)
+    $path =~ s#^$startPath/##;
+
+    if (-o $name) {
+	if ($opts{g}) {
+	    # get group name (based on group ID) for this file/directory
+	    $group = getgrgid( $stats[5] );
+
+	    # change group only if needed
+	    if ($group eq $opts{g}) {
+		# no change needed
+		print "$path: No change needed: Group already set ($group = $opts{g})\n" if $opts{v};
+	    } else {
+		# change group
+		$command = "chgrp $opts{g} $name";
+		$status = system($command);
+		if ($status == 0) {
+		    # group changed successfully
+		    print "$path: Changed group ($group --> $opts{g})\n" unless $opts{q};
+		} else {
+		    die "$me: ERROR: System error occurred (exit status $status) while executing '$command'\n";
+		}
+	    }
+	}
+
+	if ($opts{p}) {
+	    # determine whether or not group write is already granted
+	    $mode = $stats[2];            # get permissions for this file/directory
+	    $mode &= 07777;               # discard file type info
+	    $mode = sprintf("%o", $mode); # format as octal integers
+	    @chars = split(//, $mode);    # split into an array of individual characters
+	    $groupMode = $chars[1];       # get group permission value
+
+	    # change permissions only if needed
+	    if ($groupMode == 6 or $groupMode == 7 or $groupMode == 2 or $groupMode == 3) {
+		$groupWriteOn = 1;
+	    } else {
+		$groupWriteOn = 0;
+	    }
+
+	    if ($groupWriteOn) {
+		# group write already granted; no change needed
+		print "$path: No change needed: group write already granted ($mode)\n" if $opts{v};
+	    } else {
+		# grant group write
+		$command = "chmod g+w $name";
+		$status = system($command);
+		if ($status == 0) {
+		    # permissions changed successfully
+		    unless ($opts{q}) {
+			$newMode = (stat($name))[2];        # get permissions for this file/directory
+			$newMode &= 07777;                  # discard file type info
+			$newMode = sprintf("%o", $newMode); # format as octal integers
+
+			print "$path: Granted group write permission ($mode --> $newMode)\n";
+		    }
+		} else {
+		    die "$me: ERROR: System error occurred (exit status $status) while executing '$command'\n";
+		}
+	    }
+	}
+    } else {
+	if ($opts{v}) {
+	    # get user name (based on user ID) for this file/directory
+	    $username = getpwuid($stats[4]) || "user $stats[4]";
+	    print "$path: Can't change: Owned by $username\n";
+	}
+    }
+}

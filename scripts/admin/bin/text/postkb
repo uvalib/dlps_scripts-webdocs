@@ -1,0 +1,256 @@
+#!/usr/bin/perl -w
+
+# postkb - 'meta' script that runs a series of post-keyboarding scripts on one or more TEI XML files
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2002-09-04
+# Last modified: 2010-05-25
+
+# 2003-01-27: gpm2a: Removed call to mdash_spacing. Adding spaces
+# around em dashes is no longer necessary; that step was helpful only
+# for a spell-checking workflow we no longer follow.
+#
+# 2003-04-02: gpm2a: Added call to char2ent
+#
+# 2003-04-07: gpm2a: Removed call to pb_entities (which has become
+# first step of syncing page breaks). Removed call to figure_entities
+# (which can/should wait until after commit_figures_rend).
+#
+# 2003-04-22: gpm2a: Added calls to last_line, replace_xml_decl, and
+# declare_charents
+#
+# 2003-05-19: gpm2a: Removed call to declare_charents because it is
+# unnecessary; Apex follows our current guidelines of declaring only
+# the entity sets needed for the document. Removed call to
+# declare_entities, which is not needed now that pb_entities and
+# figure_entities are not being run here (see 2003-04-07 above).
+#
+# 2004-01-15: gpm2a: Changed replace_system_paths call to use the -u
+# option, which supplies URLs rather than disk paths when pointing to
+# DTD files. Using URLs rather than disk paths makes the resulting
+# file editable by oXygen and just generally much more portable.
+#
+# 2004-02-04: gpm2a: Added call to replace_regexp_chars, which
+# replaces ( ) [ ] characters with character entities, to facilitate
+# later processing of XML files with Perl regular expressions.
+#
+# 2004-02-05: gpm2a: Removed requirement that filenames begin with
+# DLPS ID (unnecessary and disallows processing CavDaily... files).
+#
+# 2004-02-12: gpm2a: Added call to 'cleanup_lb' script, which removes
+# extraneous <lb/> tags caused by collapsing end-of-line hyphenation.
+#
+# 2005-06-13: gpm2a: Added -f (foreign) option for skipping the
+# rehyphenate report for non-English texts. Also added -v (verbose)
+# option.
+#
+# 2005-10-14: gpm2a: Removed call to 'cleanup_lb' script; not needed
+# because 'dehyphenate' now handles all of its own line-break cleanup.
+#
+# 2005-10-20: gpm2a: Changed from 'flip -u' to 'dos2unix' for use on
+# pogo.lib (which doesn't have flip installed).
+#
+# 2005-11-04: gpm2a: Removed call to 'figure_ids', which is handled by
+# the 'run_reports' script.
+#
+# 2006-01-18: gpm2a: Changed to update DLPS tracking system -->
+# Post-keyboarding Workflow --> Run scripts
+#
+# 2006-02-22: gpm2a: Added dlps_properties script. Added -T (test)
+# option.
+#
+# 2009-10-02: ms3uf: Turned off old tracksys connect()
+# and added -h switch to skip dehyphenate where desired.
+#
+# 2010-05-18: gpm2a:
+#   * Added call to flipent, because some vendors prefer to use
+# numeric character entity references (as in &#x00A9;), but some
+# subsequent scripts aren't expecting them.
+#   * Added call to declare_charents, because scripts like flipent and
+# replace_regexp_chars insert named/mnemonic character entity
+# references (as in &copy;) that might not have been declared already.
+#   * Commented out code that updates DLPS tracking system, because no
+# longer needed; removed -T option accordingly.
+#   * -f option is unnecessary, because of the addition of -h (see
+#  2009-10-02 above), but I'm keeping it for backward compatibility.
+#
+# 2010-05-25: gpm2a: Removed call to char2ent. Instead we will treat
+# non-ASCII characters in the XML document as a QA issue and check for
+# them immediately after files are received from the vendor (see
+# "non-ascii" script).
+
+
+#======================================================================
+# main logic
+#======================================================================
+
+use strict;
+use Getopt::Std;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+#use TrackSys;
+
+my ($me, $usage, %opts, $infile, @infile);
+my (%properties, $id, $sql, $affected, $options);
+my $indent = '   ';  # 3 spaces
+
+$me = 'postkb';
+$usage = <<EOD;
+
+$me - runs a series of post-keyboarding scripts on one or more TEI XML files
+Usage: $me [-f][-h][-v] filenames
+  -f (foreign)  Indicates a foreign-language (non-English) text; skip dehyphenate script
+  -h (keep hyphenation)  Skip dehypenate script
+  -v (verbose)  Provide status messages
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+EOD
+
+getopts('fhv', \%opts) || die $usage;
+die $usage if (!@ARGV);
+$opts{h} = $opts{f} if $opts{f};  # these options have the same effect
+
+#TrackSys::connect() unless $opts{'T'};
+
+foreach $infile (@ARGV) {
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # get DLPS ID
+    %properties = ();
+    $id = DlpsText::getDlpsId(\%properties, \@infile, $infile);    
+
+    # make sure you'll be able to write a .bak file after scripts have run
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    print BAK "\n";
+    close BAK;
+
+    print "\n$me: $infile:\n" if $opts{v};
+
+    print "$indent Converting to Unix line endings...\n" if $opts{v};
+    system("/usr/bin/dos2unix -k -q $infile");  # -k = keep datestamp, -q = quiet
+
+    system("last_line $infile");  # add final newline if needed
+
+    print "$indent Converting vendor [UNK] indicators to &unknown; ...\n" if $opts{v};
+    if (system("UNK2unknown $infile") != 0) {
+	warn "$me: $infile: ERROR running 'UNK2unknown' script. Skipping to next input file.\n";
+	makeBackup($infile);
+	next;
+    }
+
+    print "$indent Replacing characters ( ) [ ] with character entities...\n" if $opts{v};
+    if (system("replace_regexp_chars $infile") != 0) {
+	warn "$me: $infile: ERROR running 'replace_regexp_chars' script. Skipping to next input file.\n";
+	makeBackup($infile);
+	next;
+    }
+
+    print "$indent Converting numeric character entity references (like &#x00A9;) to named/mnemonic ones (like &copy;)...\n" if $opts{v};
+    $options = ' -q'; $options = '' if $opts{v};
+    if (system("flipent$options $infile") != 0) {
+	warn "$me: $infile: ERROR running 'flipent' script. Skipping to next input file.\n";
+	makeBackup($infile);
+	next;
+    }
+
+    print "$indent Fixing tags broken across a line break...\n" if $opts{v};
+    if (system("multiline_tags $infile") != 0) {
+	warn "$me: $infile: ERROR running 'multiline_tags' script. Skipping to next input file.\n";
+	makeBackup($infile);
+	next;
+    }
+
+    print "$indent Replacing XML declaration...\n" if $opts{v};
+    if (system("replace_xml_decl $infile") != 0) {
+	warn "$me: $infile: ERROR running 'replace_xml_decl' script. Skipping to next input file.\n";
+	makeBackup($infile);
+	next;
+    }
+
+    print "$indent Adding <?dlps ...?> properties...\n" if $opts{v};
+    if (system("dlps_properties $infile") != 0) {
+	warn "$me: $infile: ERROR running 'dlps_properties' script. Skipping to next input file.\n";
+	makeBackup($infile);
+	next;
+    }
+
+    print "$indent Replacing SYSTEM paths...\n" if $opts{v};
+    if (system("replace_system_paths $infile") != 0) {
+	warn "$me: $infile: ERROR running 'replace_system_paths' script. Skipping to next input file.\n";
+	makeBackup($infile);
+	next;
+    }
+
+    print "$indent Converting vendor markup to standard TEI markup...\n" if $opts{v};
+    if (system("vendor2tei $infile") != 0) {
+	warn "$me: $infile: ERROR running 'vendor2tei' script. Skipping to next input file.\n";
+	makeBackup($infile);
+	next;
+    }
+
+    print "$indent Adding 'id' attribute on <div#> tags...\n" if $opts{v};
+    if (system("div_ids $infile") != 0) {
+	warn "$me: $infile: ERROR running 'div_ids' script. Skipping to next input file.\n";
+	makeBackup($infile);
+	next;
+    }
+
+    unless ( $opts{h} ) {
+	print "$indent Hiding end-of-line hyphentation...\n" if $opts{v};
+	if (system("dehyphenate $infile") != 0) {
+	    warn "$me: $infile: ERROR running 'dehyphenate' script. Skipping to next input file.\n";
+	    makeBackup($infile);
+	    next;
+	}
+    }
+    if ( $opts{h} && $opts{v} ) {
+	print "$indent (Skipping dehyphenation script)\n";
+    }
+
+    print "$indent Declaring character entity sets as needed...\n" if $opts{v};
+    if (system("declare_charents $infile") != 0) {
+	warn "$me: $infile: ERROR running 'declare_charents' script. Skipping to next input file.\n";
+	makeBackup($infile);
+	next;
+    }
+
+    # make backup of original input file, overwriting .bak file from last system() call
+    makeBackup($infile);
+
+    # update tracking system
+#    unless ($opts{'T'}) {
+#	print "$indent Updating DLPS Tracking System...\n" if $opts{v};
+#	$affected = 0;
+#	$sql = "UPDATE postkb SET runScripts = 1 WHERE dlpsId = '$id' LIMIT 1";
+#	$affected = TrackSys::query($sql);
+#	if ($affected != 1) {
+#	    warn "$me: WARNING: Cannot update DLPS tracking system for record '$id'. Update manually.\n";
+#	}
+#    }
+}
+
+#TrackSys::disconnect() unless $opts{'T'};
+
+
+#======================================================================
+# subroutines
+#======================================================================
+
+sub makeBackup {
+
+    # make backup of original input file, overwriting .bak file from last system() call
+
+    # input filename must be passed in, because $infile is only
+    # defined within 'foreach $infile (@ARGV)' loop
+    my $inputFilename = shift;
+
+    open(BAK, ">${inputFilename}.bak") || die "$me: ERROR: Cannot write '${inputFilename}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+}

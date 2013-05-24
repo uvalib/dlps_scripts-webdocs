@@ -1,0 +1,49 @@
+#!/usr/bin/perl -w
+
+# refresh_preview - copies input file(s) to TEI Preview directory
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2003-09-26
+# Last modified: 2006-01-03
+
+# 2004-05-14: gpm2a: Added 'chmod 664' to grant group write
+# permissions on file copied to TEI Preview directory
+#
+# 2006-01-03: gpm2a: Changed destination directory for pogo.lib
+
+use strict;
+use File::Copy;
+
+my ($me, $usage, $infile, $source_file, $dest_file);
+
+#----------------------------------------------------------------------
+# 'constants'
+
+my $DEST_DIR = "/www/doc/dlps/xml/";
+#----------------------------------------------------------------------
+
+$me = "refresh_preview";
+$usage = <<EOD;
+
+$me - copies input file(s) to TEI Preview directory
+Usage: $me filenames
+In: TEI XML file(s)
+Out: No direct output; copies input file(s)
+
+EOD
+
+die $usage if (! @ARGV);
+foreach (@ARGV) {
+    die $usage if /^-/;   # this script has no switches
+}
+
+foreach $infile (@ARGV) {
+    # copy XML file to destination directory
+    $source_file = $infile;
+    $dest_file = $DEST_DIR . $infile;
+    if ( copy($source_file, $dest_file) ) {
+	chmod 0664, $dest_file;
+    } else{
+	warn "$me: $infile: WARNING: Could not copy '$source_file' to '$dest_file': $!\n";
+    }
+}

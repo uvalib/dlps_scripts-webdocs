@@ -1,0 +1,299 @@
+#!/usr/bin/perl -w -I /shares/admin/bin/text
+
+# make_minheaders - creates minimal TEI header files using data from the DLPS Tracking System
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2006-02-15
+# Last modified: 2006-06-09
+
+# 2006-02-17: gpm2a: For the -v (vendor) option, added copying the
+# [ID].doc file from /shares/image1/01bookscanning/02bookhistory to
+# the ID directory, because we send this file to the vendor along with
+# the minimal TEI header.
+#
+# 2006-02-22: gpm2a: Stopped outputting <?dlps ...?> processing
+# instructions. These will now be added by a separate script
+# (dlps_properties). Also fixed a bug whereby an existing file would
+# not get overwritten even when using the -F (force) option. The -F
+# option now works as intended.
+#
+# 2006-06-09: gpm2a: Changed -q option to suppress all status
+# messages, including "Created file..." messages.
+
+
+#======================================================================
+# main logic
+#======================================================================
+
+use strict;
+use Getopt::Std;
+use File::Copy;
+use DlpsText;
+use TrackSys;
+
+my ($me, $usage, %opts, %inputDirs, $dir, $name, @subdirs, $dlpsId);
+
+my $outputSuffix = '.header';
+my $OCR_INPUT_DIR = '/shares/image1/01ocr_in';
+my $VENDOR_INPUT_DIR = '/shares/image1/01bookscanning/50QAed_OUT';
+my $DOC_FILE_DIR = '/shares/image1/01bookscanning/02bookhistory/';
+
+#------------------
+# set usage summary
+#------------------
+
+$me = 'make_minheaders';
+$usage = <<EOD;
+
+$me - creates minimal TEI header files using data from the DLPS Tracking System
+
+Usage: $me [-d directory] [-o] [-v] [-O directory] [-F] [-q] [DLPS IDs]
+  Input options:
+    -d (directory) Directory to read for subdirectories named with DLPS ID
+    -o (OCR workflow) Read $OCR_INPUT_DIR for subdirectories named with DLPS ID
+    -v (vendor workflow) Read $VENDOR_INPUT_DIR for
+       subdirectories named with DLPS ID. Also, after making $outputSuffix file,
+       copy .doc file to same directory.
+  Output options:
+    -O (output) Directory in which to write output files
+    -F (force) Overwrite output file if it already exists
+  Feedback options:
+    -q (quiet) Suppress status messages
+
+In:  DLPS IDs, or directory to read for subdirectories named with DLPS ID
+Out: For each DLPS ID, creates a minimal header file named [ID]$outputSuffix
+     If the DLPS ID was entered as an argument, output file is written
+     by default to current working directory; otherwise, output file
+     is written by default to subdirectory named with corresponding
+     DLPS ID. Use -O option to override default behavior.
+
+Examples:
+  $me b001234567
+  Creates b001234567$outputSuffix in current working directory
+
+  $me -o
+  Reads $OCR_INPUT_DIR for subdirectories named with DLPS ID;
+  creates each $outputSuffix file in subdirectory named with corresponding DLPS ID
+
+  $me -d /shares/image1/temp -O /shares/text/temp
+  Reads /shares/image1/temp for subdirectories named with DLPS ID;
+  creates $outputSuffix files in /shares/text/temp
+
+EOD
+
+
+#-----------------------
+# get and test arguments
+#-----------------------
+
+getopts('d:ovO:Fq', \%opts) || die $usage;
+if ( $opts{'d'} ) {
+    if (-d $opts{'d'}) {
+	$inputDirs{'d'} = $opts{'d'};
+    } else {
+	die "$me: ERROR: -d option: '$opts{d}' is not a directory\n";
+    }
+}
+if ( $opts{'o'} ) {
+    if (-d $OCR_INPUT_DIR) {
+	$inputDirs{'o'} = $OCR_INPUT_DIR;
+    } else {
+	die "$me: ERROR: -o option: '$OCR_INPUT_DIR' is not a directory\n";
+    }
+}
+if ( $opts{'v'} ) {
+    if (-d $VENDOR_INPUT_DIR) {
+	$inputDirs{'v'} = $VENDOR_INPUT_DIR;
+    } else {
+	die "$me: ERROR: -v option: '$VENDOR_INPUT_DIR' is not a directory\n";
+    }
+}
+
+if ( $opts{'O'} ) {
+    if (-d $opts{'O'}) {
+	if (-w $opts{'O'}) {
+	    $opts{'O'} = DlpsText::normalize_path($opts{'O'});
+	} else {
+	    die "$me: ERROR: -O option: Need write permission on output directory '$opts{O}'\n";
+	}
+    } else {
+	die "$me: ERROR: -O option: '$opts{O}' is not a directory\n";
+    }
+}
+
+die $usage if (! @ARGV && ! %inputDirs);
+
+
+#--------------------------------------
+# process DLPS IDs entered as arguments
+#--------------------------------------
+
+TrackSys::connect();
+
+foreach $dlpsId (@ARGV) {
+    if ($opts{'O'}) {
+	# write output file in specified output directory
+	makeOutputFile($dlpsId, $opts{'O'});
+    } else {
+	# write output file in current working directory
+	makeOutputFile($dlpsId);
+    }
+}
+
+
+#--------------------------
+# process input directories
+#--------------------------
+
+foreach $dir (values(%inputDirs)) {
+    @subdirs = ();
+    $dir = DlpsText::normalize_path($dir);
+
+    opendir(DIR, $dir) || die "$me: ERROR: Cannot read directory '$dir': $!\n";
+    print "Reading directory $dir ...\n" unless $opts{'q'};
+    while ( defined($name = readdir(DIR)) ) {
+	next if ($name =~ /^\./);
+	if (-d "$dir$name") {
+	    # add to an array for sorting
+	    push @subdirs, $name;
+	}
+    }
+    closedir DIR;
+
+    foreach $name (sort(@subdirs)) {
+	if ($opts{'O'}) {
+	    # write output file in specified output directory
+	    makeOutputFile($name, $opts{'O'});
+	} else {
+	    # write output file in subdirectory named with DLPS ID
+	    makeOutputFile($name, "$dir$name");
+	}
+    }
+}
+
+TrackSys::disconnect();
+
+
+#======================================================================
+# subroutines
+#======================================================================
+
+sub makeOutputFile {
+
+    my $dlpsId = shift || die "$me: makeOutputFile: Missing required parameter 'dlpsId'";
+    my $outputDir = shift || '';
+
+    my ($title, $volumeNumber, $authorNameLast, $authorNameFirst, $author, $virgoId, $titleControlNumber);
+    my $docFile;
+
+    #---------------------------------------
+    # get metadata from DLPS tracking system
+    #---------------------------------------
+
+    # get record for this DLPS ID
+    my $sql = "SELECT title, volumeNumber, authorNameLast, authorNameFirst, virgoId, titleControlNumber";
+    $sql .= " FROM textItems WHERE dlpsId ='$dlpsId'";
+    my $sthref = TrackSys::query($sql);
+    my $sth = $$sthref;
+    my @row = $sth->fetchrow_array();
+    $sth->finish;
+
+    if ( scalar(@row) ) {
+        $title = $row[0] || '';
+        $volumeNumber = $row[1] || '';
+	$authorNameLast = $row[2] || '';
+	$authorNameFirst = $row[3] || '';
+        $virgoId = $row[4] || '';
+        $titleControlNumber = $row[5] || '';
+    } else {
+        warn "$me: $dlpsId: WARNING: Cannot create header: DLPS ID '$dlpsId' not found in database\n";
+        return;
+    }
+
+    if ($volumeNumber) {
+	if ($volumeNumber =~ /^\d/) {
+	    $volumeNumber = "vol. $volumeNumber";
+	}
+	$title = "$title [$volumeNumber]";
+    }
+
+    if ($authorNameFirst) {
+	$author = "$authorNameLast, $authorNameFirst";
+    } else {
+	$author = $authorNameLast;
+    }
+
+    #------------------
+    # write output file
+    #------------------
+
+    # test output directory
+    if ($outputDir) {
+	$outputDir = DlpsText::normalize_path($outputDir);
+	if (! -d $outputDir) {
+	    warn "$me: $dlpsId: WARNING: Cannot write output file: '$outputDir' is not a directory\n";
+	    return;
+	}
+	if (! -w $outputDir) {
+	    warn "$me: $dlpsId: WARNING: Cannot write output file: "
+		. "Need write permission on output directory '$outputDir'\n";
+	    return;
+	}
+    }
+
+    my $outputFile = $outputDir . $dlpsId . $outputSuffix;
+
+    # test whether output file already exists
+    if (-e $outputFile && ! $opts{'F'}) {
+	print "$me: $dlpsId: Output file '$outputFile' already exists\n" unless $opts{'q'};
+    } else {
+	# write output file
+	open(OUT, ">$outputFile") || die "$me: $dlpsId: ERROR: Cannot write '$outputFile': $!\n";
+	print OUT <<EOD;
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>$title</title>
+<author>$author</author>
+</titleStmt>
+<publicationStmt>
+<publisher>University of Virginia Library</publisher>
+<idno type="DLPS ID">$dlpsId</idno>
+<idno type="Virgo ID">$virgoId</idno>
+<idno type="title control number">$titleControlNumber</idno>
+</publicationStmt>
+<sourceDesc><bibl/></sourceDesc>
+</fileDesc>
+</teiHeader>
+EOD
+	close OUT;
+
+	# set permissions, including group write
+	chmod 0664, $outputFile;
+
+	print "$me: $dlpsId: Created file: $outputFile\n" unless $opts{'q'};
+    }
+
+
+    #--------------------------------------------------------
+    # for vendor workflow, copy .doc file to output directory
+    #--------------------------------------------------------
+
+    if ($opts{'v'}) {
+	my $docFile = $DOC_FILE_DIR . $dlpsId . '.doc';
+	my $dest = $outputDir . $dlpsId . '.doc';
+	if (-e $docFile) {
+	    if (-e $dest) {
+		print "$me: $dlpsId: .doc file '$dest' already exists\n" unless $opts{'q'};
+	    } else {
+		if (copy $docFile, $dest) {
+		    chmod 0664, $dest;
+		} else {
+		    warn "$me: $dlpsId: WARNING: Failed to copy $docFile to $dest: $!\n";
+		}
+	    }
+	} else {
+	    print "$me: $dlpsId: Can't copy .doc file: '$docFile' doesn't exist\n" unless $opts{'q'};
+	}
+    }
+}

@@ -1,0 +1,81 @@
+#!/usr/bin/perl -w
+
+# strip_fw_pageno - removes <fw type="pageno">...</fw> from within
+# <pb> if <pb n="..."> value and <fw type="pageno"> value are the same
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2005-04-05
+# Last modified: 2005-04-05
+
+use strict;
+use Getopt::Std;
+
+my ($me, $usage, %opts, $infile, @infile);
+my ($pre, $match, $post, $n, $fw, $pageno);
+
+$me = 'strip_fw_pageno';
+$usage = <<EOD;
+
+$me - removes <fw type="pageno">...</fw> from within <pb> if
+  <pb n="..."> value and <fw type="pageno"> value are the same
+
+Usage: $me [-v] filenames
+    -v (verbose) Display info messages (in addition to warnings and errors)
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+EOD
+
+getopts('v', \%opts) || die $usage;
+die $usage if (! @ARGV);
+
+foreach $infile (@ARGV) {
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # make backup
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+
+    # make first pass
+    foreach (@infile) {
+	# for <pb/> tags with n attribute, remove <fw type="pageno">...</fw> if value is equal to <pb n="..."> value
+	if ( m:<pb[^>]*?\sn=("|')([^\1]+?)\1[^>]*?>.*?(<fw[^>]*?\stype=["']pageno["'][^>]*?>([^<]*?)</fw>).*?</pb>: ) {
+	    $pre = $`;
+	    $match = $&;
+	    $post = $';
+	    $n = $2;
+	    $fw = $3;
+	    $pageno = $4;
+
+	    if ( $n eq $pageno ) {
+		$match =~ s:$fw::;
+		$_ = $pre . $match . $post;
+	    } else {
+		print "Unique pageno value: $_" if ($opts{v});
+	    }
+	}
+    }
+
+    # make second pass, overwriting input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@infile) {
+	# convert <pb ...></pb> to <pb .../>
+	if ( m:<pb([^>]*?)></pb>: ) {
+	    $pre = $`;
+	    $match = $&;
+	    $post = $';
+
+	    $match =~ s:></pb>:/>:;
+	    $_ = $pre . $match . $post;
+	}
+
+	print OUT;
+    }
+    close OUT;
+}

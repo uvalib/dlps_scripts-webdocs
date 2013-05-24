@@ -1,0 +1,218 @@
+#!/bin/bash
+
+#move_xml - A bash shell script which moves and copies files to their appropriate directories depending on current stage of 
+#workflow.  Additionally, this script runs update_tracksys if necessary.  After script is run, the current directory is changed to #the next place on the workflow.
+
+#Written by: Andrew Curley (aec6v@virginia.edu)
+#Date Created:  2006-06-21
+#Last Modified: Never
+
+#20being_scripted
+if [ "$PWD" = "/shares/text/04postkb/20being_scripted/$LOGNAME" ]
+then
+mv *.bak /shares/text/04postkb/20being_scripted && cp *.xml /shares/text/04postkb/20scripted/ && mv *.xml /shares/text/04postkb/30being_pbsynced/$LOGNAME && cd /shares/text/04postkb/30being_pbsynced/$LOGNAME
+elif [ "$PWD" = "/shares/text/04postkb/20being_scripted/$LOGNAME" ]
+then
+mv *.bak /shares/text/04postkb/20being_scripted && cp *.xml /shares/text/04postkb/20scripted/ && mv *.xml /shares/text/04postkb/30being_pbsynced/$LOGNAME && cd /shares/text/04postkb/30being_pbsynced/$LOGNAME
+
+#30being_pbsynced
+elif [ "$PWD" = "/shares/text/04postkb/30being_pbsynced/$LOGNAME" ]
+then
+mv *.bak /shares/text/04postkb/30being_pbsynced && cp *.xml /shares/text/04postkb/30pbsynced/ && mv *.xml /shares/text/04postkb/40being_reports_run/$LOGNAME && cd /shares/text/04postkb/30pbsynced/ && update_tracksys *.xml && cd /shares/text/04postkb/40being_reports_run/$LOGNAME
+elif [ "$PWD" = "/shares/text/04postkb/30being_pbsynced/$LOGNAME" ]
+then
+mv *.bak /shares/text/04postkb/30being_pbsynced && cp *.xml /shares/text/04postkb/30pbsynced/ && mv *.xml /shares/text/04postkb/40being_reports_run/$LOGNAME && cd /shares/text/04postkb/30pbsynced/ && update_tracksys *.xml && cd /shares/text/04postkb/40being_reports_run/$LOGNAME
+
+#40being_reports_run
+elif [ "$PWD" = "/shares/text/04postkb/40being_reports_run/$LOGNAME" ]
+then
+mv *.bak /shares/text/04postkb/40being_reports_run && cp *.xml /shares/text/04postkb/40reports_run/ && mv *.xml /shares/text/04postkb/51being_rehyphenated/$LOGNAME && cd /shares/text/04postkb/51being_rehyphenated/$LOGNAME
+elif [ "$PWD" = "/shares/text/04postkb/40being_reports_run/$LOGNAME" ]
+then
+mv *.bak /shares/text/04postkb/40being_reports_run && cp *.xml /shares/text/04postkb/40reports_run/ && mv *.xml /shares/text/04postkb/51being_rehyphenated/$LOGNAME && cd /shares/text/04postkb/51being_rehyphenated/$LOGNAME
+
+#51being_rehyphenated
+elif [ "$PWD" = "/shares/text/04postkb/51being_rehyphenated/$LOGNAME" ]
+then
+echo 'Did you run the Unclears Report (Type y or n)'
+read answer_unclear
+case "$answer_unclear" in
+y)
+mv *.bak /shares/text/04postkb/51being_rehyphenated && cp *.xml /shares/text/04postkb/51rehyphenated && mv *.xml /shares/text/04postkb/52being_unclears_fixed/$LOGNAME && cd /shares/text/04postkb/52being_unclears_fixed/$LOGNAME
+;;
+n)
+echo 'Are there figure reports? (Type y or n)'
+read answer_fig_rend
+case "$answer_fig_rend" in 
+y)
+mv *.bak /shares/text/04postkb/51being_rehyphenated && cp *.xml /shares/text/04postkb/51rehyphenated  && mv *.xml  /shares/text/04postkb/53being_figures_rend/$LOGNAME && cd /shares/text/04postkb/53being_figures_rend/$LOGNAME 
+;;
+n)
+mv *.bak /shares/text/04postkb/51being_rehyphenated && cp *.xml /shares/text/04postkb/59processed/  && mv *.xml /shares/text/04postkb/60being_markup_checked/$LOGNAME && cd /shares/text/04postkb/59processed/ && update_tracksys *.xml && cd /shares/text/04postkb/60being_markup_checked/$LOGNAME
+;;
+*)
+echo "Your answer is not recognized"
+;;
+esac
+esac
+elif [ "$PWD" = "/shares/text/04postkb/51being_rehyphenated/$LOGNAME" ]
+then
+echo 'Did you run the Unclears Report (Type y or n)'
+read answer_unclear
+case "$answer_unclear" in
+y)
+mv *.bak /shares/text/04postkb/51being_rehyphenated && cp *.xml /shares/text/04postkb/51rehyphenated && mv *.xml /shares/text/04postkb/52being_unclears_fixed/$LOGNAME && cd /shares/text/04postkb/52being_unclears_fixed/$LOGNAME
+;;
+n)
+echo 'Are there figure reports? (Type y or n)'
+read answer_fig_rend
+case "$answer_fig_rend" in 
+y)
+mv *.bak /shares/text/04postkb/51being_rehyphenated && cp *.xml /shares/text/04postkb/51rehyphenated  && mv *.xml  /shares/text/04postkb/53being_figures_rend/$LOGNAME && cd /shares/text/04postkb/53being_figures_rend/$LOGNAME 
+;;
+n)
+mv *.bak /shares/text/04postkb/51being_rehyphenated && cp *.xml /shares/text/04postkb/59processed/  && mv *.xml /shares/text/04postkb/60being_markup_checked/$LOGNAME && cd /shares/text/04postkb/59processed/ && update_tracksys *.xml && cd /shares/text/04postkb/60being_markup_checked/$LOGNAME
+;;
+*)
+echo "Your answer is not recognized"
+;;
+esac
+esac
+
+#52being_unclears_fixed
+elif [ "$PWD" = "/shares/text/04postkb/52being_unclears_fixed/$LOGNAME" ]
+then
+echo 'Are there figure reports? (Type y or n)'
+read answer_fig_rend
+case "$answer_fig_rend" in 
+y)
+mv *.bak /shares/text/04postkb/52being_unclears_fixed && cp *.xml /shares/text/04postkb/53being_figures_rend/$LOGNAME && mv *.xml /shares/text/04postkb/52unclears_fixed && cd /shares/text/04postkb/53being_figures_rend/$LOGNAME 
+;;
+n)
+mv *.bak /shares/text/04postkb/52being_unclears_fixed && cp *.xml /shares/text/04postkb/59processed/  && mv *.xml /shares/text/04postkb/60being_markup_checked/$LOGNAME && cd /shares/text/04postkb/59processed/ && update_tracksys *.xml && cd /shares/text/04postkb/60being_markup_checked/$LOGNAME
+;;
+*)
+echo "Your answer is not recognized"
+;;
+esac
+elif [ "$PWD" = "/shares/text/04postkb/52being_unclears_fixed/$LOGNAME" ]
+then
+echo 'Are there figure reports? (Type y or n)'
+read answer_fig_rend
+case "$answer_fig_rend" in 
+y)
+mv *.bak /shares/text/04postkb/52being_unclears_fixed && cp *.xml /shares/text/04postkb/53being_figures_rend/$LOGNAME && mv *.xml /shares/text/04postkb/52unclears_fixed && cd /shares/text/04postkb/53being_figures_rend/$LOGNAME 
+;;
+n)
+mv *.bak /shares/text/04postkb/52being_unclears_fixed && cp *.xml /shares/text/04postkb/59processed/  && mv *.xml /shares/text/04postkb/60being_markup_checked/$LOGNAME && cd /shares/text/04postkb/59processed/ && update_tracksys *.xml && cd /shares/text/04postkb/60being_markup_checked/$LOGNAME
+;;
+*)
+echo "Your answer is not recognized"
+;;
+esac
+
+#53being_figures_rend
+elif [ "$PWD" = "/shares/text/04postkb/53being_figures_rend/$LOGNAME" ]
+then
+echo 'What type of TEI are these files? (Type apex, eaf, or text-only)'
+read answer
+case "$answer" in
+apex)
+mv *.bak /shares/text/04postkb/53being_figures_rend && cp *.xml /shares/text/04postkb/53figures_rend && mv *.xml /shares/text/04postkb/54being_figures_filenames/$LOGNAME && cd /shares/text/04postkb/54being_figures_filenames/$LOGNAME
+;;
+eaf)
+mv *.bak /shares/text/04postkb/53being_figures_rend && cp *.xml /shares/text/04postkb/53figures_rend && cp *.xml /shares/text/04postkb/59processed/ && mv *.xml /shares/text/04postkb/60being_markup_checked/$LOGNAME && cd /shares/text/04postkb/59processed/ && update_tracksys *.xml && cd /shares/text/04postkb/60being_markup_checked/$LOGNAME
+;;
+text-only)
+mv *.bak /shares/text/04postkb/53being_figures_rend && cp *.xml /shares/text/04postkb/53figures_rend && cp *.xml /shares/text/04postkb/59processed/  && mv *.xml /shares/text/04postkb/60being_markup_checked/$LOGNAME && cd /shares/text/04postkb/59processed/ && update_tracksys *.xml && cd /shares/text/04postkb/60being_markup_checked/$LOGNAME
+;;
+*)
+echo "Your answer is not recognized"
+;;
+esac
+elif [ "$PWD" = "/shares/text/04postkb/53being_figures_rend/$LOGNAME" ]
+then
+echo 'What type of TEI are these files? (Type apex, eaf, or text-only)'
+read answer
+case "$answer" in
+apex)
+mv *.bak /shares/text/04postkb/53being_figures_rend && cp *.xml /shares/text/04postkb/53figures_rend && mv *.xml /shares/text/04postkb/54being_figures_filenames/$LOGNAME && cd /shares/text/04postkb/54being_figures_filenames/$LOGNAME
+;;
+eaf)
+mv *.bak /shares/text/04postkb/53being_figures_rend && cp *.xml /shares/text/04postkb/53figures_rend && cp *.xml /shares/text/04postkb/59processed/ && mv *.xml /shares/text/04postkb/60being_markup_checked/$LOGNAME && cd /shares/text/04postkb/59processed/ && update_tracksys *.xml && cd /shares/text/04postkb/60being_markup_checked/$LOGNAME
+;;
+text-only)
+mv *.bak /shares/text/04postkb/53being_figures_rend && cp *.xml /shares/text/04postkb/53figures_rend && cp *.xml /shares/text/04postkb/59processed/  && mv *.xml /shares/text/04postkb/60being_markup_checked/$LOGNAME && cd /shares/text/04postkb/59processed/ && update_tracksys *.xml && cd /shares/text/04postkb/60being_markup_checked/$LOGNAME
+;;
+*)
+echo "Your answer is not recognized"
+;;
+esac
+
+#54being_figures_filenames
+elif [ "$PWD" = "/shares/text/04postkb/54being_figures_filenames/$LOGNAME" ]
+then
+mv *.bak /shares/text/04postkb/54being_figures_filenames && cp *.xml /shares/text/04postkb/54figures_filenames/ && cp *.xml /shares/text/04postkb/60being_markup_checked/$LOGNAME  && mv *.xml /shares/text/04postkb/59processed && cd /shares/text/04postkb/59processed/ && update_tracksys *.xml && cd /shares/text/04postkb/60being_markup_checked/$LOGNAME
+elif [ "$PWD" = "/shares/text/04postkb/54being_figures_filenames/$LOGNAME" ]
+then
+mv *.bak /shares/text/04postkb/54being_figures_filenames && cp *.xml /shares/text/04postkb/54figures_filenames/ && cp *.xml /shares/text/04postkb/60being_markup_checked/$LOGNAME && mv *.xml /shares/text/04postkb/59processed && cd /shares/text/04postkb/59processed/ && update_tracksys *.xml && cd /shares/text/04postkb/60being_markup_checked/$LOGNAME
+
+#60being_markup_checked
+elif [ "$PWD" = "/shares/text/04postkb/60being_markup_checked/$LOGNAME" ]
+then
+cp *.xml /shares/text/04postkb/69processed/ && mv *.xml /shares/text/04postkb/70being_fullheaders_added/$LOGNAME/ && mv *.bak /shares/text/04postkb/60being_markup_checked/ && cd /shares/text/04postkb/69processed/ && update_tracksys *.xml && cd /shares/text/04postkb/70being_fullheaders_added/$LOGNAME/
+elif [ "$PWD" = "/shares/text/04postkb/60being_markup_checked/$LOGNAME" ]
+then
+cp *.xml /shares/text/04postkb/69processed/ && mv *.xml /shares/text/04postkb/70being_fullheaders_added/$LOGNAME/ && mv *.bak /shares/text/04postkb/60being_markup_checked/ && cd /shares/text/04postkb/69processed/ && update_tracksys *.xml && cd /shares/text/04postkb/70being_fullheaders_added/$LOGNAME/
+
+#70being_fullheaders_added
+elif [ "$PWD" = "/shares/text/04postkb/70being_fullheaders_added/$LOGNAME" ]
+then
+cp *.xml /shares/text/04postkb/70fullheaders_added/ && mv *.xml /shares/text/04postkb/80being_finalized/$LOGNAME/ && mv *.bak /shares/text/04postkb/70being_fullheaders_added/ && cd /shares/text/04postkb/70fullheaders_added/ && update_tracksys *.xml && cd /shares/text/04postkb/80being_finalized/$LOGNAME/
+elif [ "$PWD" = "/shares/text/04postkb/70being_fullheaders_added/$LOGNAME" ]
+then
+cp *.xml /shares/text/04postkb/70fullheaders_added/ && mv *.xml /shares/text/04postkb/80being_finalized/$LOGNAME/ && mv *.bak /shares/text/04postkb/70being_fullheaders_added/ && cd /shares/text/04postkb/70fullheaders_added/ && update_tracksys *.xml && cd /shares/text/04postkb/80being_finalized/$LOGNAME/
+
+#80being_finalized
+elif [ "$PWD" = "/shares/text/04postkb/80being_finalized/$LOGNAME" ]
+then
+echo 'What type of TEI are these files? (Type apex, cavdaily, or eaf)'
+read answer
+case "$answer" in
+apex)
+mv *.bak /shares/text/04postkb/80being_finalized && mv *.xml /shares/text/04postkb/80final/apex
+;;
+cavdaily)
+mv *.bak /shares/text/04postkb/80being_finalized && mv *.xml /shares/text/04postkb/80final/cavdaily
+;;
+eaf)
+mv *.bak /shares/text/04postkb/80being_finalized && mv *.xml /shares/text/04postkb/80final/eaf
+;;
+*)
+echo "Your answer is not recognized"
+;;
+esac
+elif [ "$PWD" = "/shares/text/04postkb/80being_finalized/$LOGNAME" ]
+then
+echo 'What type of TEI are these files? (Type apex, cavdaily, or eaf)'
+read answer
+case "$answer" in
+apex)
+mv *.bak /shares/text/04postkb/80being_finalized && mv *.xml /shares/text/04postkb/80final/apex
+;;
+cavdaily)
+mv *.bak /shares/text/04postkb/80being_finalized && mv *.xml /shares/text/04postkb/80final/cavdaily
+;;
+eaf)
+mv *.bak /shares/text/04postkb/80being_finalized && mv *.xml /shares/text/04postkb/80final/eaf
+;;
+*)
+echo "Your answer is not recognized"
+;;
+esac
+
+else
+echo ""
+echo "This program does not recognize your current directory"
+echo ""
+fi

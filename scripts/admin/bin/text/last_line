@@ -1,0 +1,47 @@
+#!/usr/bin/perl -w
+
+# last_line - adds a newline to the last line of the file, if needed
+
+# Greg Murray <murray@virginia.edu>
+# 2002-12-19
+
+$0 = "last_line";
+$usage = "\n$0 - adds a newline to the last line of the file, if needed\n";
+$usage .= "Usage: $0 filenames\n";
+$usage .= "In: Any text file(s)\n";
+$usage .= "Out: Copies each input file to [filename].bak, then overwrites original input file\n\n";
+
+die $usage if (! @ARGV);
+foreach (@ARGV) {
+    die $usage if /^-/;   # this script has no switches
+}
+
+foreach $infile (@ARGV) {
+    # read file into array
+    open(IN, $infile) || die "$0: FATAL ERROR: Cannot read '$infile': $!\n";
+    @file = <IN>;
+    close IN;
+
+    # determine whether last line needs a final newline character
+    $length = scalar(@file);
+    $last_index = $length - 1;
+    $last_line = $file[$last_index];
+    if (not $last_line =~ /\n$/) {
+	# copy input file to .bak backup
+	open(BAK, ">${infile}.bak") || die "$0: FATAL ERROR: Cannot write '${infile}.bak': $!\n";
+	foreach $line (@file) {
+	    print BAK $line;
+	}
+	close BAK;
+
+	# add final newline
+	$file[$last_index] .= "\n";
+
+	# overwrite original input file
+	open(OUT, ">$infile") || die "$0: FATAL ERROR: Cannot write '$infile': $!\n";
+	foreach $line (@file) {
+	    print OUT $line;
+	}
+	close OUT;
+    }
+}

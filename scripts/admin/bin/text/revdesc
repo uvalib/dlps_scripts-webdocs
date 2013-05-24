@@ -1,0 +1,194 @@
+#!/usr/bin/perl -w
+
+# revdesc - adds/updates <revisionDesc> element in TEI header
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2006-03-30
+# Last modified: 2008-03-26
+
+# 2006-10-23: gpm2a: Added options to allow specifying the various
+# values of a revision description.
+#
+# 2008-03-26: gpm2a: Changed default name of department from DLPS to
+# simply "University of Virginia Library".
+
+# Undocumented -L switch disables logging/updating DLPS tracking system.
+
+
+use strict;
+use Getopt::Std;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use TrackSys;
+
+my ($me, $usage, %opts, $infile, @infile);
+my ($added, %properties, $dlpsId);
+my ($sql, $rows, $nameFirst, $nameLast);
+my ($dateISO, $dateContent, $nameID, $nameDept, $nameContent, $resp, $item, $change);
+
+$nameDept = ", University of Virginia Library";
+$resp = 'corrector';
+$item = 'Minor corrections to vendor markup.';
+
+$me = 'revdesc';
+$usage = <<EOD;
+
+$me - adds/updates <revisionDesc> element in TEI header
+
+Usage: $me [options] filenames
+  -d (date)    Text to use for content of <date> element
+  -v (value)   Machine-readable date in yyyy-mm-dd form, used for <date value="..."> attribute
+  -n (name)    Text to use for content of <name> element
+  -i (ID)      ID for <name> element, used for <name id="..."> attribute
+  -r (resp)    Description of responsibility, used for content of <resp> element
+  -c (changes) Description of the changes made, used for content of <item> element
+
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file.
+
+Note: By default (in the absence of any options), this script uses
+  today's date for the date, and relies on the user ID of the user
+  running the script to identify the corrector of the file. The
+  default <revisionDesc> entry looks like this:
+
+<change>
+<date value="2006-10-23">October 23, 2006</date>
+<respStmt>
+<name id="gpm2a">Greg Murray$nameDept</name>
+<resp>$resp</resp>
+</respStmt>
+<item>$item</item>
+</change>
+
+EOD
+
+getopts('c:d:i:n:r:v:L', \%opts) || die $usage;
+die $usage if (! @ARGV);
+
+if ( $opts{'d'} && ! $opts{'v'} ) {
+    die "$me: ERROR: When using option -d, option -v is also required.\n";
+}
+if ( $opts{'v'} && ! $opts{'d'} ) {
+    die "$me: ERROR: When using option -v, option -d is also required.\n";
+}
+
+if ( $opts{'n'} && ! $opts{'i'} ) {
+    die "$me: ERROR: When using option -n, option -i is also required.\n";
+}
+if ( $opts{'i'} && ! $opts{'n'} ) {
+    die "$me: ERROR: When using option -i, option -n is also required.\n";
+}
+
+if ( $opts{'d'} ) {
+    $dateISO = $opts{'v'};
+    $dateContent = $opts{'d'};
+} else {
+    # get today's date
+    $dateISO = DlpsText::getDate();
+    $dateContent = DlpsText::formatDateLong($dateISO);
+    if (! $dateContent || ! $dateISO) {
+	die "$me: ERROR: Unable to obtain and format today's date.\n";
+    }
+}
+
+TrackSys::connect();
+
+if ( $opts{'n'} ) {
+    $nameID = $opts{'i'};
+    $nameContent = $opts{'n'};
+} else {
+    # get username (UVa computing ID)
+    $nameID = getpwuid($>);
+
+    # get user's real name from tracking system
+    $sql = "SELECT nameFirst, nameLast FROM userAliases WHERE alias = '$nameID'";
+    my $sthref = TrackSys::query($sql);
+    my $sth = $$sthref;
+    my @row = $sth->fetchrow_array();
+    $sth->finish;
+    if ( scalar(@row) ) {
+	$nameFirst = $row[0];
+	$nameLast = $row[1];
+	$nameContent = "$nameFirst $nameLast$nameDept";
+    } else {
+	die "$me: ERROR: User ID '$nameID' not found in tracking system database\n";
+    }
+}
+
+if ( $opts{'r'} ) {
+    $resp = $opts{'r'};
+}
+
+if ( $opts{'c'} ) {
+    $item = $opts{'c'};
+}
+
+
+$change = <<EOD;
+<change>
+<date value="$dateISO">$dateContent</date>
+<respStmt>
+<name id="$nameID">$nameContent</name>
+<resp>$resp</resp>
+</respStmt>
+<item>$item</item>
+</change>
+EOD
+
+foreach $infile (@ARGV) {
+    $added = 0;
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # get DLPS ID
+    %properties = DlpsText::getProperties($infile);
+    $dlpsId = DlpsText::getDlpsId(\%properties, \@infile, $infile);
+
+    # make backup
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+
+    # make changes, overwriting input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@infile) {
+	if ( m:</revisionDesc>: ) {
+	    # add <change> element to existing <revisionDesc>
+	    print OUT $`;
+	    print OUT $change;
+	    print OUT $& . $';
+	    $added = 1;
+	    next;
+	}
+
+	if (m:</teiHeader>: && ! $added) {
+	    print OUT $`;
+	    print OUT "<revisionDesc>\n";
+	    print OUT $change;
+	    print OUT "</revisionDesc>\n";
+	    print OUT $& . $';
+	    $added = 1;
+	    next;
+	}
+
+	print OUT;
+    }
+    close OUT;
+
+    unless ( $opts{'L'} ) {
+	# update tracking system
+	$rows = 0;
+	$sql = "UPDATE markupQA SET addRevDesc = 1 WHERE dlpsId = '$dlpsId' LIMIT 1";
+	$rows = TrackSys::query($sql);
+	if ($rows != 1) {  # this works because Perl DBI execute() returns 1 even if no fields of the record are changed
+	    warn "$me: WARNING: Cannot update DLPS tracking system for record '$dlpsId'. Update manually.\n";
+	}
+    }
+}
+
+TrackSys::disconnect();

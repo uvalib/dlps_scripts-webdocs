@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE DLPSRimageConfig SYSTEM "DLPSRimageConfig.dtd">
+<DLPSRimageConfig copies="1" media="DVDR" isVerbose="false" imageOnly="false" productionOnly="false" deleteImages="true">
+    <options>
+        <clientID>DLPSRimageClient</clientID>
+        <directories>
+            <editlistDir>C:\Rimage\Editlist\</editlistDir>
+            <imageDir>K:\Images\</imageDir>
+            <logDir>C:\Rimage\Logs\</logDir>
+            <mergeDir>C:\Rimage\Merge\</mergeDir>
+        </directories>
+        <dtds>
+            <imageOrderDTD>C:\Rimage\XML\ImageOrder_1.1.dtd</imageOrderDTD>
+            <productionOrderDTD>C:\Rimage\XML\ProductionOrder_1.3.DTD</productionOrderDTD>
+        </dtds>
+        <labelTemplate>C:\Rimage\Labels\DEFAULT.btw</labelTemplate>
+    </options>
+    <orders>
+        <volumeID>050110_003</volumeID>
+    </orders>
+</DLPSRimageConfig>

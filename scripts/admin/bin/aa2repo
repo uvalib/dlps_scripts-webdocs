@@ -1,0 +1,256 @@
+#!/bin/sh
+
+# define constants
+progname=`basename $0`
+removeflag=0
+pogopath=/shares/image2/02_processed/60_copy2ReadyRepo
+repopath=/cenrepo/ReadyRepo
+#mailrecipients="rpj2f@Virginia.EDU"
+mailrecipients="rpj2f@Virginia.EDU, kwh8s@Virginia.EDU, emg2j@Virginia.EDU, rag9b@Virginia.EDU"
+usage="
+USAGE: $progname [-h] [-r] [projectdir]
+given the name of a projectdir in /shares/image2/02_processed, this program:
+
+1. creates appropriate directory structures in /cenrepo/ReadyRepo/text and
+   /cenrepo/ReadyRepo/image
+2. copies gdms files and their metadata to /cenrepo/ReadyRepo/text
+3. copies image files and their metadata to /cenrepo/ReadyRepo/image
+4. confirms the copy operation
+5. sends e-mail notification of the results of the copy operation
+
+If -r switch is supplied, the files are removed from their old location.
+Otherwise they are left in place.
+"
+
+# gather command-line options
+# if -h specified, exit with usage instructions
+# if -r specified, set removeflag
+while getopts hr opt
+do
+   case "$opt"
+   in
+      h) echo "$usage"
+         exit;;
+      r) removeflag=1;;
+   esac
+done
+
+# if no command-line parameters, exit with usage instructions
+if [ "$OPTIND" -gt "$#" ]
+then
+  echo "$usage"
+  exit
+fi
+
+# discard options
+shiftcount=`expr $OPTIND - 1`
+shift $shiftcount
+
+# remove trailing slash from project directory name
+project=`basename $1`
+
+# test existence of project directory
+# if non-existent, exit
+if [ ! -d $pogopath/$project ]
+then
+  echo "$pogopath/$project doesn't exist!"
+  exit
+fi
+
+echo "PROJECT $project"
+# go to the project directory
+cd $pogopath/$project
+
+# process GDMS files first
+cd text/uvaGDMS
+
+# count GDMS files
+newgdms=`howmany gdms/new/*.xml` 2> /dev/null
+if [ "$newgdms" -gt 0 ]
+then
+  # if there are new gdms files
+  # delete .bak files in gdms/new
+  /bin/rm gdms/new/*.bak 2> /dev/null
+
+  # delete existing directory in ReadyRepo
+  if [ -d "$repopath/text/$project" ]
+  then
+    echo "Removing existing $repopath/text/$project directory ..."
+    /bin/rm -rf $repopath/text/$project 2> /dev/null
+  fi
+
+  # make new directories in /cenrepo/ReadyRepo
+  echo "Making new project directory in ReadyRepo ..."
+  mkdir $repopath/text/$project
+  mkdir $repopath/text/$project/uvaGDMS
+  mkdir $repopath/text/$project/uvaGDMS/gdms
+  mkdir $repopath/text/$project/uvaGDMS/metadata
+  mkdir $repopath/text/$project/uvaGDMS/metadata/admin
+  mkdir $repopath/text/$project/uvaGDMS/metadata/desc
+
+  # copy files to ReadyRepo
+  echo "Copying GDMS files and their metadata to new project directory ..."
+  /bin/cp gdms/new/*.xml $repopath/text/$project/uvaGDMS/gdms
+  /bin/cp gdms/new/metadata/admin/*.xml $repopath/text/$project/uvaGDMS/metadata/admin
+  /bin/cp gdms/new/metadata/desc/*.xml $repopath/text/$project/uvaGDMS/metadata/desc
+  chmod -R g+w $repopath/text/$project
+
+  # confirm that the copy operations were successful
+  echo "Confirming copy ..."
+  diffdir=`diffdir $pogopath/$project/text/uvaGDMS/gdms/new $repopath/text/$project/uvaGDMS/gdms; \
+diffdir $pogopath/$project/text/uvaGDMS/gdms/new/metadata/admin $repopath/text/$project/uvaGDMS/metadata/admin; \
+diffdir $pogopath/$project/text/uvaGDMS/gdms/new/metadata/desc $repopath/text/$project/uvaGDMS/metadata/desc`
+  if [ "$diffdir" != "" ]
+  then
+    echo "GDMS files and their metadata were *NOT* successfully copied!"
+    echo "$diffdir"
+    exit
+  else
+    echo "Copy operation OK"
+    echo ""
+  fi
+fi
+
+updategdms=`howmany gdms/update/*.xml` 2> /dev/null
+#echo "UPDATEGDMS IS $updategdms"
+if [ "$updategdms" -gt 0 ]
+then
+  # if there are updated gdms files
+  # delete .bak files gdms/update
+  /bin/rm gdms/update/*.bak 2> /dev/null
+
+  # delete existing directory in ReadyRepo
+  if [ -d "$repopath/text/$project.update" ]
+  then
+    echo "Removing existing $repopath/text/$project.update directory..."
+    /bin/rm -rf $repopath/text/$project.update 2> /dev/null
+  fi
+
+  # make update directories in ReadyRepo
+  echo "Making updated project directory in ReadyRepo ..."
+  mkdir $repopath/text/$project.update
+  mkdir $repopath/text/$project.update/uvaGDMS
+  mkdir $repopath/text/$project.update/uvaGDMS/gdms
+  mkdir $repopath/text/$project.update/uvaGDMS/metadata
+  mkdir $repopath/text/$project.update/uvaGDMS/metadata/admin
+  mkdir $repopath/text/$project.update/uvaGDMS/metadata/desc
+
+  # copy files to ReadyRepo
+  echo "Copying updated GDMS files and their metadata to updated project directory ..."
+  /bin/cp gdms/update/*.xml $repopath/text/$project.update/uvaGDMS/gdms
+  /bin/cp gdms/update/metadata/admin/*.xml $repopath/text/$project.update/uvaGDMS/metadata/admin
+  /bin/cp gdms/update/metadata/desc/*.xml $repopath/text/$project.update/uvaGDMS/metadata/desc
+  chmod -R g+w $repopath/text/$project.update
+
+  # confirm that the copy operations were successful
+  echo "Confirming copy ..."
+  diffdir=`diffdir $pogopath/$project/text/uvaGDMS/gdms/update $repopath/text/$project.update/uvaGDMS/gdms; \
+diffdir $pogopath/$project/text/uvaGDMS/gdms/update/metadata/admin $repopath/text/$project.update/uvaGDMS/metadata/admin; \
+diffdir $pogopath/$project/text/uvaGDMS/gdms/update/metadata/desc $repopath/text/$project.update/uvaGDMS/metadata/desc`
+  if [ "$diffdir" != "" ]
+  then
+    echo "Updated GDMS files and their metadata were *NOT* successfully copied!"
+    echo "$diffdir"
+    exit
+  else
+    echo "Copy operation OK"
+    echo ""
+  fi
+fi
+
+# now process image files
+if [ -d "$pogopath/$project/image/uvaHighRes" ]
+then
+  # delete existing directory in ReadyRepo
+  /bin/rm -rf $repopath/image/$project 2> /dev/null
+
+  # remove pesky Apple files
+  /bin/rm $pogopath/$project/image/uvaHighRes/.DS_Store 2> /dev/null
+
+  # make new directory in ReadyRepo
+  echo "Making HighRes project directory ..."
+  mkdir $repopath/image/$project
+
+  # recursively copy from uvaHighRes directory to ReadyRepo
+  echo "Copying images and their metadata to HighRes directory ..."
+  /bin/cp -r $pogopath/$project/image/uvaHighRes $repopath/image/$project
+  chmod -R g+w $repopath/image/$project
+
+  # confirm that the copy operations were successful
+  echo "Confirming copy ..."
+  diffdir=`diffdir $pogopath/$project/image/uvaHighRes $repopath/image/$project/uvaHighRes`
+  if [ "$diffdir" ]
+  then
+    echo "Images were *NOT* successfuly copied!"
+    echo "$diffdir"
+    exit
+  else
+    echo "Copy operation OK"
+    echo ""
+  fi
+fi
+
+if [ -d "$pogopath/$project/image/uvaLowRes" ]
+then
+  # delete existing directory in ReadyRepo
+  /bin/rm -rf $repopath/image/$project 2> /dev/null
+
+  # remove pesky Apple files
+  /bin/rm $pogopath/$project/image/uvaLowRes/.DS_Store 2> /dev/null
+
+  # make new directory in ReadyRepo
+  echo "Making LowRes image project directory ..."
+  mkdir $repopath/image/$project
+
+  # recursively copy from uvaLowRes directory to ReadyRepo
+  echo "Copying images and their metadata to LowRes directory ..."
+  /bin/cp -r $pogopath/$project/image/uvaLowRes $repopath/image/$project
+  chmod -R g+w $repopath/image/$project
+
+  # confirm that the copy operations were successful
+  echo "Confirming copy ..."
+  diffdir=`diffdir $pogopath/$project/image/uvaLowRes $repopath/image/$project`
+  if [ "$diffdir" ]
+  then
+    echo "Images were *NOT* successfully copied!"
+    echo "$diffdir"
+    exit
+  else
+    echo "Copy operation OK"
+    echo ""
+  fi
+fi
+
+# change group ownership in ReadyRepo
+echo "Changing ownership to repo group ..."
+chgrp -R repo /cenrepo/ReadyRepo/text/$project
+chgrp -R repo /cenrepo/ReadyRepo/image/$project
+
+# if the -r option was specified and the copy operations
+# were successful, then remove the pogo files
+if [ "$removeflag" -ne 0 ]
+then
+  /bin/rm -rf $pogopath/$project 2> /dev/null
+  removalstatus="The files in $pogopath/$project were removed."
+  echo "$removalstatus"
+  echo ""
+else
+  removalstatus="The files in $pogopath/$project were *NOT* removed."
+  echo "$removalstatus"
+  echo ""
+fi
+
+message="To: $mailrecipients
+From: ul-dlpsscripts@virginia.edu
+Subject: $progname script
+
+PROJECT $project has been successfully copied to ReadyRepo.
+$removalstatus
+
+."
+
+# send email notification
+echo "$message" |/usr/sbin/sendmail -t
+echo "Notification sent to $mailrecipients."
+echo ""
+

@@ -1,0 +1,82 @@
+#!/usr/bin/perl -w
+
+# saxon - runs the Saxon XSLT processor
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2003-03-27
+# Last modified: 2009-05-19
+
+# For info on Saxon, see http://saxon.sourceforge.net/
+
+# 2004-06-25: gpm2a: Added -2 option for processing XSLT 2.0
+# stylesheets using Saxon 7.x or higher
+#
+# 2005-07-13: gpm2a: Added -l option for including line numbers in
+# output
+#
+# 2005-10-19: gpm2a: Added use of -cp (classpath) option when calling
+# 'java' executable, so users of this script will not need a CLASSPATH
+# environment variable.
+#
+# 2009-05-19: pdr4h: -2 option now invokes Saxon 9
+
+use strict;
+use Getopt::Std;
+
+my ($me, $usage, %opts, $o, $l);
+my ($source, $style, $params, $command, $cp);
+
+my $SAXON_PATH = '/shares/admin/bin/text/jars';
+
+$me = 'saxon';
+$usage = <<EOD;
+
+$me - invokes Saxon XSLT processor
+Usage: $me [-2] [-l] [-o outfile] stylesheet [param1=value1 param2=value2 etc.] sourcefile(s)
+  -2 (XSLT 2.0)     Use Saxon 7.x or higher, which can process XSLT 2.0 stylesheets
+  -l (line numbers) Include source-file line numbers in output
+  -o (output)       Send output to this file rather than to standard output
+Out: In absence of -o option, prints to standard output
+Examples:
+  $me styles.xsl source.xml
+  $me styles.xsl param1=value1 *.xml
+
+EOD
+
+getopts('2lo:', \%opts) || die $usage;
+
+$o = $opts{'o'} || '';
+if ($o) { $o = "-o $o "; }
+
+$l = $opts{'l'} || '';
+if ($l) { $l = '-l '; }
+
+$style = shift || die $usage;
+
+die "$me: ERROR: Saxon path '$SAXON_PATH' is not a directory.\n" if (not -d $SAXON_PATH);
+
+$params = '';
+foreach (@ARGV) {
+    if (/=/) {
+	$params .= ' ' . $_;
+    }
+}
+
+foreach (@ARGV) {
+    next if (/=/);  # stylesheet parameter, not a source file
+
+    if ( $opts{'2'} ) {
+	#$cp = "$SAXON_PATH/saxon_8.5.1/saxon8.jar";
+	#$command = "/usr/local/java -cp $cp net.sf.saxon.Transform $l";
+        #$cp = "$SAXON_PATH/saxon9/saxon9.jar:$SAXON_PATH/saxon9/saxon9-s9api.jar";
+        $cp = "$SAXON_PATH/saxon9-1-0-6/saxon9.jar:$SAXON_PATH/saxon9-1-0-6/saxon9-s9api.jar";
+        $command = "/usr/local/java -cp $cp net.sf.saxon.Transform $l";
+    } else {
+	$cp = "$SAXON_PATH/saxon_6.5.4/saxon.jar:$SAXON_PATH/saxon_6.5.4/saxon-xml-apis.jar";
+	$command = "/usr/local/java -cp $cp com.icl.saxon.StyleSheet $l";
+    }
+
+    $command .= "$o$_ $style$params";
+    #print "$me: Processing: $command\n";
+    system($command);
+}

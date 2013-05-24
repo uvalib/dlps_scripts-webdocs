@@ -1,0 +1,90 @@
+#!/usr/bin/perl -w
+
+# refresh_filesize - updates file size info in <teiHeader><fileDesc><extent>
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2002-12-18
+# Last modified: 2004-04-23
+
+# 2003-08-21: gpm2a: Added response message, so script prints
+# [old] --> [new] if making a change.
+#
+# 2004-04-23: gpm2a: Added -q (quiet) option to suppress info
+# messages. Added undocumented -B (no-backup) option to skip making
+# backup file.
+
+
+use strict;
+use Getopt::Std;
+
+my ($me, $usage, %opts, $infile, @infile);
+my (@stat, $bytes, $type, $value, $in_fileDesc, $in_sourceDesc, $out);
+
+$me = 'refresh_filesize';
+$usage = <<EOD;
+
+$me - updates file size info in <teiHeader><fileDesc><extent>
+Usage: $me [-q] filenames
+    -q (quiet) Suppress status messages
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+EOD
+
+getopts('qB', \%opts) || die $usage;
+die $usage if (! @ARGV);
+
+foreach $infile (@ARGV) {
+    # get file size in bytes
+    @stat = stat($infile);
+    $bytes = $stat[7];
+
+    # convert to most convenient/readable unit of measure
+    if ($bytes >= 1048576) {
+	$type = 'megabytes';
+	$value = $bytes / 1048576;
+	$value = sprintf("%.1f", $value);   # round to 1 decimal place
+    } elsif ($bytes >= 1024) {
+	$type = 'kilobytes';
+	$value = $bytes / 1024;
+	$value = sprintf("%d", $value);     # round to integer
+    } else {
+	$type = 'bytes';
+	$value = $bytes;
+    }
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # make backup file
+    unless ( $opts{B} ) {
+	open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+	foreach (@infile) {
+	    print BAK;
+	}
+	close BAK;
+    }
+
+    # make changes, overwriting input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@infile) {
+	if ( /<fileDesc/ )	{ $in_fileDesc = 1; }
+	if ( /<\/fileDesc>/ )	{ $in_fileDesc = 0; }
+
+	if ( /<sourceDesc/ )	{ $in_sourceDesc = 1; }
+	if ( /<\/sourceDesc>/ )	{ $in_sourceDesc = 0; }
+
+	if ( /(<extent[^>]*>).*?<\/extent>/) {
+	    if ($in_fileDesc and not $in_sourceDesc) {
+		$out = $1 . "ca. <num type=\"$type\">$value</num> $type</extent>";
+		$_ = $` . $out . $';
+
+		print "$me: $infile: $&  -->  $out\n" unless $opts{q};
+	    }
+	}
+	print OUT;
+    }
+    close OUT;
+}

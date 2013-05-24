@@ -1,0 +1,1091 @@
+#!/usr/bin/perl -w
+
+# qa_entities - compares NDATA declarations, entity attributes, and
+#   image files on disk
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2004-02-10
+# Last modified: 2009-07-24
+
+# 2004-06-03: gpm2a: Added -v (verbose) option
+#
+# 2004-10-26: gpm2a: Stopped assuming that an entity value of 'none'
+# means 'no figure image'; that's an outdated practice. We now use the
+# pb entity as the value of the figure entity to indicate no figure
+# image.
+#
+# 2005-07-19: gpm2a: Changed logic so that an ERROR does not terminate
+# script execution; it just moves on to the next input file
+# instead. Useful for batch processing. Also changed behavior of -p
+# and -f options so that if the directory specified contains a
+# directory named with the item ID, look for image files in that ID
+# subdirectory. This corresponds to the way the default directory
+# works and is useful for batch processing.
+#
+# 2005-09-16: gpm2a: Added -R (ReadyRepo) option and overhauled script
+# to incorporate functionality from qa_entities_ReadyRepo script,
+# including not only checking that each entity attribute has a
+# corresponding image file on disk (to catch missing images) but also
+# checking that each image file has a corresponding entity attribute
+# (to catch orphaned images). Also added several tests to check
+# ENTITY...NDATA declarations for reasonableness.
+#
+# 2005-09-21: gpm2a: Added test for multiple occurrence of same entity
+# attribute value for <pb> (error) or figure/frontispiece/ornament
+# (warning). Added -E (errors only) option.
+#
+# 2006-03-13: gpm2a: Changed to allow for <?dlps page-images="..."?>
+# value of "none".
+#
+# 2006-04-04: gpm2a: Changed to update DLPS tracking system as follows:
+#   * if -R: Finalization Workflow --> Verify image files (verifyImagesReadyRepo)
+#   * else:  Finalization Workflow --> Verify image files (verifyImages)
+#
+# 2006-10-20: gpm2a: Bug fixes. Also added test: If a <figure> entity
+# value matches a <pb> entity value (rather than pointing to an actual
+# figure image), then the <figure> entity value must be identical to
+# the entity value of the *immediately preceding* page break.
+#
+# 2008-12-08: gpm2a: When building hash of filenames, don't insist
+# that every filename begins with ID from TEI XML file. Instead,
+# accept any filename that ends with the expected extension (.tif,
+# etc.).
+#
+# 2009-01-08: gpm2a: Made same change as 2008-12-08 but this time
+# included the subroutines pertaining to -R option for checking files
+# in ReadyRepo.
+#
+# 2009-07-24: gpm2a: When building hash of filenames, allow .jpg in
+# addition to .tif filenames. (This change does not apply when using
+# -R option for checking files in ReadyRepo.)
+
+
+# Undocumented -L switch disables logging.
+
+
+#======================================================================
+# main logic
+#======================================================================
+
+use strict;
+use Getopt::Std;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use TrackSys;
+
+my $DEFAULT_PAGE_PATH = '/shares/image1/01bookscanning/52_CCITTCOMPRESS_OUT';
+my $DEFAULT_FIGURE_PATH = '/shares/image1/03fig/83figs_final';
+
+my $READYREPO_IMAGE_PATH = '/cenrepo/ReadyRepo/image';
+
+my ($me, $usage, %opts, $infile, @infile);
+my (%entities, %pageImages, %figureImages);
+my (%properties, %ndata);
+my ($id, $key, $value, $pbValue, $msg, $dir, $filename, $ok, $preface, $tag);
+my ($columnName, $sql, $rows);
+
+my $imageIdDir;
+my $pageImageType;
+my (%pageEntities, %figureEntities);
+my (%pageImagesMax, %pageImagesScreen, %pageImagesPreview);
+my (%pageImagesRawMeta, %pageImagesAdminMeta, %pageImagesDescMeta);
+my (%figureImagesMax, %figureImagesScreen, %figureImagesPreview);
+my (%figureImagesRawMeta, %figureImagesAdminMeta, %figureImagesDescMeta);
+my $hasRealMetadata;
+
+$me = 'qa_entities';
+$usage = <<EOD;
+
+$me - compares NDATA declarations, entity attributes, and
+  image files on disk
+
+Usage: $me [-p page-image-dir] [-f figure-image-dir] [-R project-dir] [-E] filenames
+  -p  Directory to look in for page-image files; defaults to
+      $DEFAULT_PAGE_PATH/[ID]
+  -f  Directory to look in for figure-image files; defaults to
+      $DEFAULT_FIGURE_PATH/[ID]_fig
+  -R  Look in specified project directory in ReadyRepo for page-image
+      and figure-images files, rather than default directories
+      (for example, -R 2005_Q3)
+  -v  Verbose feedback; provide status messages for each file processed
+  -E  Errors only; do not display warning messages
+
+In: TEI XML file(s)
+Out: Prints messages to standard output
+
+Notes: This script performs several tests:
+  - compares ENTITY...NDATA declarations to 'entity' attributes, and
+    vice versa, ensuring complete correspondence
+  - presence or absence of entity attributes must match
+    page-images="..." and figure-images="..." from <?dlps ...?>
+    properties
+  - tests ENTITY...NDATA declarations for inherent reasonableness:
+      - each NDATA declaration must use one of these values:
+        uvaBitonal, uvaHighRes, uvaLowRes
+      - if the entity is named as a figure (name ends with _ + digit),
+        then it must be declared as uvaHighRes
+      - if the entity is named as a page image and declared as
+        uvaBitonal, <?dlps page-images="bitonal"?> must be true
+      - if the entity is named as a page image and declared as
+        uvaHighRes or uvaLowRes, <?dlps page-images="color"?> must be
+        true
+  - compares entity attributes to image files on disk (to catch
+    missing images), and vice versa (to catch orphaned images)
+
+EOD
+
+getopts('f:p:R:vEL', \%opts) || die $usage;
+die $usage if (! @ARGV);
+
+if ($opts{'R'}) {
+    $opts{'R'} =~ s:/$::;  # remove final / if present
+}
+
+TrackSys::connect();
+
+foreach $infile (@ARGV) {
+    $ok = 1;
+    $preface = "$me: $infile: ERROR:";
+    $hasRealMetadata = 0;
+    %entities = ();
+    %pageEntities = ();
+    %figureEntities = ();
+    %pageImages = ();
+    %figureImages = ();
+    %pageImagesMax = ();
+    %pageImagesScreen = ();
+    %pageImagesPreview = ();
+    %pageImagesRawMeta = ();
+    %pageImagesAdminMeta = ();
+    %pageImagesDescMeta = ();
+    %figureImagesMax = ();
+    %figureImagesScreen = ();
+    %figureImagesPreview = ();
+    %figureImagesRawMeta = ();
+    %figureImagesAdminMeta = ();
+    %figureImagesDescMeta = ();
+    %ndata = ();
+
+    # read input file
+    if (not open(IN, $infile)) {
+	print "$preface Cannot read '$infile': $!\n";
+	$ok = 0; next;
+    }
+    @infile = <IN>;
+    close IN;
+
+    # get <?dlps ...?> properties
+    %properties = DlpsText::getProperties($infile);
+
+    # get DLPS ID
+    $id = DlpsText::getDlpsId(\%properties, \@infile, $infile);
+    if (!$id) {
+	print "$preface Cannot determine DLPS ID from file '$infile'\n";
+	$ok = 0; next;
+    }
+
+    if ($opts{'R'}) {
+	$imageIdDir = "$READYREPO_IMAGE_PATH/$opts{'R'}/$id";
+    }
+
+    # determine image content models
+    $pageImageType = '';
+    if ($properties{'page-images'} eq 'bitonal') {
+	$pageImageType = 'uvaBitonal';
+    } elsif ($properties{'page-images'} eq 'color') {
+	$pageImageType = 'uvaHighRes';
+    }
+
+    # build hash (%ndata) of all image-file (ENTITY ... NDATA) declarations
+    foreach (@infile) {
+	if ( /<!ENTITY\s+(\S+) .+? NDATA\s+([^>\s]+)>/ ) {
+	    $ndata{$1} = $2;
+	}
+	if ( /<TEI/ ) {
+	    last;
+	}
+    }
+
+    # build hashes of all 'entity' attribute values
+    # (%pageEntities for pages, %figureEntities for figures, and %entities for both)
+    foreach (@infile) {
+	if ( /<pb\s+[^>]*entity=["']([^"']+)["']/ ) {
+	    $value = $1;
+	    $pbValue = $value;  # used below to compare against figure entity value
+	    if ($value) {
+		$entities{$value} = '';
+		if ( exists($pageEntities{$value}) ) {
+		    print "$preface <pb> 'entity' attribute value '$value' occurs more than once\n";
+		    $ok = 0;
+		} else {
+		    $pageEntities{$value} = '';
+		}
+	    }
+	}
+
+	if ( /<(figure|ornament|frontispiece)\s+[^>]*entity=["']([^"']+)["']/ ) {
+	    $tag = $1;
+	    $value = $2;
+	    if ($value) {
+		#if ( $value =~ /_\d$/ ) {
+		if ( exists($pageEntities{$value}) ) {
+		    # this entity points to a page image, not a figure image;
+		    # figure value should be identical to immediately preceding pb value
+		    if ($value ne $pbValue) {
+			print "$preface <$tag> entity attribute value '$value' is not identical"
+			    . " to the immediately preceding <pb> entity attribute value '$pbValue'"
+			    . " (it matches a different <pb>)\n";
+		    }
+		} else {
+		    # this entity points to a figure image file (it's not a repeat of the pb entity value)
+		    $entities{$value} = '';
+		    if ( exists($figureEntities{$value}) ) {
+			unless ($opts{'E'}) {
+			    print "$me: $infile: WARNING: <$tag> entity attribute value '$value' occurs more"
+			      . " than once. Check page images to make sure this repetition is legitimate.\n";
+			}
+		    } else {
+			$figureEntities{$value} = '';
+		    }
+		}
+	    }
+	}
+    }
+
+
+    #------------------------------------------------------------------------
+    # compare NDATA declarations to 'entity' attribute values, and vice versa
+    #------------------------------------------------------------------------
+
+    foreach $key (sort(keys(%ndata))) {
+	if ( not exists($entities{$key}) ) {
+	    print "$preface NDATA declaration '$key' has no corresponding entity attribute\n";
+	    $ok = 0;
+	}
+    }
+
+    foreach $key (sort(keys(%entities))) {
+	if ( not exists($ndata{$key}) ) {
+	    print "$preface entity attribute '$key' has no corresponding NDATA declaration\n";
+	    $ok = 0;
+	}
+    }
+
+    # as an added measure, test number of NDATA declarations vs. number of entity attribute values
+    if ( scalar(keys(%ndata)) != scalar(keys(%entities)) ) {
+	print "$preface Number of NDATA declarations does not equal number of entity attribute values\n";
+	$ok = 0;
+    }
+
+    if (!$ok) {
+	next;
+    }
+
+
+    #--------------------------------------------
+    # test 'entity' attributes for reasonableness
+    #--------------------------------------------
+
+    if ( not scalar(keys(%pageEntities)) ) {
+	# no page 'entity' attributes
+	if ($properties{'page-images'} eq 'bitonal' || $properties{'page-images'} eq 'color') {
+	    print "$preface There are no page 'entity' attributes,"
+		. " but <?dlps page-images='...'?> does not indicate 'none'\n";
+	    $ok = 0;
+	}
+    }
+
+    if ( not scalar(keys(%figureEntities)) ) {
+	# no figure 'entity' attributes
+	if ($properties{'figure-images'} ne 'no') {
+	    print "$preface There are no figure 'entity' attributes,"
+		. " but <?dlps figure-images='...'?> does not indicate 'no'\n";
+	    $ok = 0;
+	}
+    }
+
+    if ( scalar(keys(%pageEntities)) ) {
+	# has page 'entity' attributes
+	if ($properties{'page-images'} eq 'no' || $properties{'page-images'} eq 'none') {
+	    print "$preface There are page 'entity' attributes present,"
+		. " but <?dlps page-images='...'?> indicates 'none'\n";
+	    $ok = 0;
+	}
+    }
+
+    foreach $key (sort(keys(%figureEntities))) {
+	if ($properties{'figure-images'} eq 'no') {
+	    print "$preface There are figure 'entity' attributes present,"
+		. " but <?dlps figure-images='...'?> indicates 'no'\n";
+	    $ok = 0;
+	    last;
+	}
+    }
+
+    if (!$ok) {
+	next;
+    }
+
+
+    #-------------------------------------------
+    # test NDATA declarations for reasonableness
+    #-------------------------------------------
+
+    foreach $key (sort(keys(%ndata))) {
+	if ($ndata{$key} ne 'uvaBitonal' and $ndata{$key} ne 'uvaHighRes' and $ndata{$key} ne 'uvaLowRes') {
+	    # every NDATA declaration must use one of the standard values
+	    print "$preface Unknown NDATA type '$ndata{$key}' for image declaration '$key'"
+		. " (must be 'uvaBitonal' or 'uvaHighRes' or 'uvaLowRes')\n";
+	    $ok = 0;
+	    last;
+	}
+
+	if ($key =~ /_\d$/) {
+	    # figure image IDs normally end with underscore + one digit;
+	    # figure-entity declarations should always be uvaHighRes
+	    if ($ndata{$key} ne 'uvaHighRes') {
+		print "$preface '$key' is named as a figure image, but it is not declared as uvaHighRes\n";
+		$ok = 0;
+	    }
+
+	    # test whether <?dlps figure-images="yes"?>
+	    if ($properties{'figure-images'} ne 'yes') {
+		print "$preface '$key' is named as a figure image,"
+		    . " but <?dlps figure-images='...'?> does not indicate 'yes'\n";
+		$ok = 0;
+	    }
+	} else {
+	    # page image; page-entity declarations should accord with <?dlps page-images="..."?>
+	    if ($ndata{$key} eq 'uvaBitonal') {
+		if ($properties{'page-images'} ne 'bitonal') {
+		    print "$preface '$key' is named as a page image and declared as uvaBitonal,"
+			. "but <?dlps page-images='...'?> does not indicate 'bitonal'\n";
+		    $ok = 0;
+		}
+	    } else {
+		if ($properties{'page-images'} ne 'color') {
+		    print "$preface '$key' is named as a page image and declared as '$ndata{$key}',"
+			. " but <?dlps page-images='...'?> does not indicate 'color'\n";
+		    $ok = 0;
+		}
+	    }
+	}
+    }
+
+    # run additional checks on all figure entities
+    foreach $key (sort(keys(%figureEntities))) {
+	# figure-entity declarations should always be uvaHighRes
+	if ($ndata{$key} ne 'uvaHighRes') {
+	    print "$preface '$key' is a figure entity, but it is not declared as uvaHighRes\n";
+	    $ok = 0;
+	}
+
+	# test whether <?dlps figure-images="yes"?>
+	if ($properties{'figure-images'} ne 'yes') {
+	    print "$preface '$key' is a figure entity, but <?dlps figure-images='...'?> does not indicate 'yes'\n";
+	    $ok = 0;
+	}
+    }
+
+    if (!$ok) {
+	next;
+    }
+
+
+    #-------------------------------------------------------------------
+    # test 'entity' attribute values against image files, and vice versa
+    #-------------------------------------------------------------------
+
+    if ( not scalar(keys(%entities)) ) {
+	next;
+    }
+
+    # build hash of page image filenames
+    if ( scalar(keys(%pageEntities)) ) {
+	if ($opts{'R'}) {
+	    if ( not getPageImageFilenames_ReadyRepo() ) {
+		$ok = 0; next;
+	    }
+	} else {
+	    if ( not getPageImageFilenames_DLPS() ) {
+		$ok = 0; next;
+	    }
+	}
+    }
+
+    # build hash of figure image filenames
+    if ( scalar(keys(%figureEntities)) ) {
+	if ($opts{'R'}) {
+	    if ( not getFigureImageFilenames_ReadyRepo() ) {
+		$ok = 0; next;
+	    }
+	} else {
+	    if ( not getFigureImageFilenames_DLPS() ) {
+		$ok = 0; next;
+	    }
+	}
+    }
+
+    # compare entity attributes to image files; each entity attribute
+    # value must have a corresponding image file on disk
+    if ($opts{'R'}) {
+	compareAttributesToFiles_ReadyRepo();
+    } else {
+	compareAttributesToFiles_DLPS();
+    }
+
+    # compare image files to entity attributes; each image file on
+    # disk must have a corresponding entity attribute value
+    if ($opts{'R'}) {
+	if ($pageImageType eq 'uvaHighRes') {
+	    # When page images are color (uvaHighRes) and when running
+	    # in ReadyRepo mode, we can't perform the
+	    # files-to-attributes check, because there are no figure
+	    # images (all image files are page images).
+	} else {
+	    compareFilesToAttributes_ReadyRepo();
+	}
+    } else {
+	compareFilesToAttributes_DLPS();
+    }
+}
+continue {
+    # log success or failure for this input file
+    if ($ok) {
+	$msg = 'Successfully verified NDATA declarations, entity attributes, and image files on disk.';
+	print "$me: $infile: $msg\n" if $opts{'v'};
+	##DlpsText::log($me, $infile, $msg) unless $opts{'L'};
+
+	# update DLPS tracking system
+	unless ( $opts{'L'} ) {
+	    if ($opts{'R'}) {
+		$columnName = 'verifyImagesReadyRepo';
+	    } else {
+		$columnName = 'verifyImages';
+	    }
+	    $rows = 0;
+	    $sql = "UPDATE finalization SET $columnName = 1 WHERE dlpsId = '$id' LIMIT 1";
+	    $rows = TrackSys::query($sql);
+	    if ($rows != 1) {
+		unless ( $opts{'E'} ) {
+		    warn "$me: WARNING: Cannot update DLPS tracking system for record '$id'. Update manually.\n";
+		}
+	    }
+	}
+    } else {
+	$msg = 'FAILED verification of NDATA declarations, entity attributes, and image files on disk.';
+	print "$me: $infile: $msg\n" if $opts{'v'};
+	##DlpsText::log($me, $infile, $msg) unless $opts{'L'};
+    }
+}
+
+TrackSys::disconnect();
+
+
+#======================================================================
+# subroutines
+#======================================================================
+
+sub compareAttributesToFiles_DLPS {
+
+    # compares entity attribute values to image filenames; each entity
+    # attribute in the XML must have a corresponding image file on
+    # disk; this catches missing image files
+
+    # in:  no parameters
+    # out: no return value
+
+    foreach $key (sort(keys(%pageEntities))) {
+	if ( not exists($pageImages{$key}) ) {
+	    print "$preface No image file for page-image entity '$key'\n";
+	    $ok = 0;
+	}
+    }
+
+    foreach $key (sort(keys(%figureEntities))) {
+	if ( not exists($figureImages{$key}) ) {
+	    print "$preface No image file for figure-image entity '$key'\n";
+	    $ok = 0;
+	}
+    }
+}
+
+#----------------------------------------------------------------------
+
+sub compareAttributesToFiles_ReadyRepo {
+
+    # compares entity attribute values to image filenames; each entity
+    # attribute in the XML must have a corresponding image file on
+    # disk; this catches missing image files
+
+    # in:  no parameters
+    # out: no return value
+
+    foreach $key (sort(keys(%pageEntities))) {
+	if ( $pageImageType eq 'uvaBitonal' or $pageImageType eq 'uvaHighRes' ) {
+	    if ( not exists($pageImagesMax{$key}) ) {
+		print "$preface No 'max' image file for page-image entity '$key'\n";
+		$ok = 0;
+	    }
+	}
+
+	if ( not exists($pageImagesScreen{$key}) ) {
+	    print "$preface No 'screen' image file for page-image entity '$key'\n";
+	    $ok = 0;
+	}
+
+	if ( not exists($pageImagesPreview{$key}) ) {
+	    print "$preface No 'preview' image file for page-image entity '$key'\n";
+	    $ok = 0;
+	}
+
+	if ($hasRealMetadata) {
+	    if ( not exists($pageImagesAdminMeta{$key}) ) {
+		print "$preface No 'admin' metadata file for page-image entity '$key'\n";
+		$ok = 0;
+	    }
+	    if ( not exists($pageImagesDescMeta{$key}) ) {
+		print "$preface No 'desc' metadata file for page-image entity '$key'\n";
+		$ok = 0;
+	    }
+	} else {
+	    if ( not exists($pageImagesRawMeta{$key}) ) {
+		print "$preface No 'raw' metadata file for page-image entity '$key'\n";
+		$ok = 0;
+	    }
+	}
+    }
+
+    foreach $key (sort(keys(%figureEntities))) {
+	if ( not exists($figureImagesMax{$key}) ) {
+	    print "$preface No 'max' image file for figure-image entity '$key'\n";
+	    $ok = 0;
+	}
+
+	if ( not exists($figureImagesScreen{$key}) ) {
+	    print "$preface No 'screen' image file for figure-image entity '$key'\n";
+	    $ok = 0;
+	}
+
+	if ( not exists($figureImagesPreview{$key}) ) {
+	    print "$preface No 'preview' image file for figure-image entity '$key'\n";
+	    $ok = 0;
+	}
+
+	if ($hasRealMetadata) {
+	    if ( not exists($figureImagesAdminMeta{$key}) ) {
+		print "$preface No 'admin' metadata file for figure-image entity '$key'\n";
+		$ok = 0;
+	    }
+	    if ( not exists($figureImagesDescMeta{$key}) ) {
+		print "$preface No 'desc' metadata file for figure-image entity '$key'\n";
+		$ok = 0;
+	    }
+	} else {
+	    if ( not exists($figureImagesRawMeta{$key}) ) {
+		print "$preface No 'raw' metadata file for figure-image entity '$key'\n";
+		$ok = 0;
+	    }
+	}
+    }
+}
+
+#----------------------------------------------------------------------
+
+sub compareFilesToAttributes_DLPS {
+
+    # compares image filenames to entity attribute values; each image
+    # file on disk must have a corresponding entity attribute in the
+    # XML; this catches orphaned images (image files not referred to
+    # in the XML -- that is, with no 'parent' XML file)
+
+    # in:  no parameters
+    # out: no return value
+
+    foreach $key (sort(keys(%pageImages))) {
+	if ( not exists($pageEntities{$key}) ) {
+	    print "$preface No declared entity for page-image file '$key'\n";
+	    $ok = 0;
+	}
+    }
+
+    foreach $key (sort(keys(%figureImages))) {
+	if ( not exists($figureEntities{$key}) ) {
+	    print "$preface No declared entity for figure-image file '$key'\n";
+	    $ok = 0;
+	}
+    }
+}
+
+#----------------------------------------------------------------------
+
+sub compareFilesToAttributes_ReadyRepo {
+
+    # compares image filenames to entity attribute values; each image
+    # file on disk must have a corresponding entity attribute in the
+    # XML; this catches orphaned images (image files not referred to
+    # in the XML -- that is, with no 'parent' XML file)
+
+    # in:  no parameters
+    # out: no return value
+
+    foreach $key (sort(keys(%pageImagesMax))) {
+	if ( not exists($pageEntities{$key}) ) {
+	    print "$preface No declared entity for 'max' page-image file '$key'\n";
+	    $ok = 0;
+	}
+    }
+    foreach $key (sort(keys(%pageImagesScreen))) {
+	if ( not exists($pageEntities{$key}) ) {
+	    print "$preface No declared entity for 'screen' page-image file '$key'\n";
+	    $ok = 0;
+	}
+    }
+    foreach $key (sort(keys(%pageImagesPreview))) {
+	if ( not exists($pageEntities{$key}) ) {
+	    print "$preface No declared entity for 'preview' page-image file '$key'\n";
+	    $ok = 0;
+	}
+    }
+    if ($hasRealMetadata) {
+	foreach $key (sort(keys(%pageImagesAdminMeta))) {
+	    if ( not exists($pageEntities{$key}) ) {
+		print "$preface No declared entity for page-image 'admin' metadata file '$key'\n";
+		$ok = 0;
+	    }
+	}
+	foreach $key (sort(keys(%pageImagesDescMeta))) {
+	    if ( not exists($pageEntities{$key}) ) {
+		print "$preface No declared entity for page-image 'desc' metadata file '$key'\n";
+		$ok = 0;
+	    }
+	}
+    } else {
+	foreach $key (sort(keys(%pageImagesRawMeta))) {
+	    if ( not exists($pageEntities{$key}) ) {
+		print "$preface No declared entity for page-image 'raw' metadata file '$key'\n";
+		$ok = 0;
+	    }
+	}
+    }
+
+    foreach $key (sort(keys(%figureImagesMax))) {
+	if ( not exists($figureEntities{$key}) ) {
+	    print "$preface No declared entity for 'max' figure-image file '$key'\n";
+	    $ok = 0;
+	}
+    }
+    foreach $key (sort(keys(%figureImagesScreen))) {
+	if ( not exists($figureEntities{$key}) ) {
+	    print "$preface No declared entity for 'screen' figure-image file '$key'\n";
+	    $ok = 0;
+	}
+    }
+    foreach $key (sort(keys(%figureImagesPreview))) {
+	if ( not exists($figureEntities{$key}) ) {
+	    print "$preface No declared entity for 'preview' figure-image file '$key'\n";
+	    $ok = 0;
+	}
+    }
+    if ($hasRealMetadata) {
+	foreach $key (sort(keys(%figureImagesAdminMeta))) {
+	    if ( not exists($figureEntities{$key}) ) {
+		print "$preface No declared entity for figure-image 'admin' metadata file '$key'\n";
+		$ok = 0;
+	    }
+	}
+	foreach $key (sort(keys(%figureImagesDescMeta))) {
+	    if ( not exists($figureEntities{$key}) ) {
+		print "$preface No declared entity for figure-image 'desc' metadata file '$key'\n";
+		$ok = 0;
+	    }
+	}
+    } else {
+	foreach $key (sort(keys(%figureImagesRawMeta))) {
+	    if ( not exists($figureEntities{$key}) ) {
+		print "$preface No declared entity for figure-image 'raw' metadata file '$key'\n";
+		$ok = 0;
+	    }
+	}
+    }
+}
+
+#----------------------------------------------------------------------
+
+sub getFigureImageFilenames_DLPS {
+
+    # builds a hash (%figureImages) of figure-image filenames from the
+    # appropriate DLPS figure-image directory
+
+    # in:  no parameters
+    # out: returns a boolean (1 or 0) indicating success or failure
+
+    if ( $opts{'f'} ) {
+	$dir = $opts{'f'};
+	$dir =~ s:/$::;  # remove final / if present
+	if (-d "$dir/$id") {
+	    # use subdirectory named with item ID
+	    $dir = "$dir/$id";
+	} elsif (-d "$dir/${id}_fig") {
+	    # use subdirectory named with item ID plus _fig
+	    $dir = "$dir/${id}_fig";
+	}
+    } else {
+	$dir = $DEFAULT_FIGURE_PATH . '/' . $id . '_fig';
+    }
+
+    if (not opendir(DIR, $dir)) {
+	print "$preface Cannot read directory '$dir': $!\n";
+	return 0;
+    }
+    while ( defined($filename = readdir(DIR)) ) {
+#	if ( $filename =~ /^($id.+?)\.(tiff?|jpe?g|gif|sid)$/ ) {
+#	if ( $filename =~ /^($id.+?)\.tiff?$/ ) {
+#	if ( $filename =~ /^(.+?)\.tiff?$/ ) {
+	if ( $filename =~ /^(.+?)\.(tiff?|jpe?g)$/ ) {
+	    $figureImages{$1} = $filename;
+	}
+    }
+    closedir DIR;
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub getFigureImageFilenames_ReadyRepo {
+
+    # builds 3 hashes of figure-image filenames from the appropriate
+    # ReadyRepo max/screen/preview figure-image directories
+
+    # in:  no parameters
+    # out: returns a boolean (1 or 0) indicating success or failure
+
+    $dir = $imageIdDir;
+    if (-d $dir) {
+	# build hash of max image files
+	$dir = $imageIdDir . '/uvaHighRes/max';
+	if (not opendir(DIR, $dir)) {
+	    print "$preface Cannot read directory '$dir': $!\n";
+	    return 0;
+	}
+	while ( defined($filename = readdir(DIR)) ) {
+#	    if ( $filename =~ /^($id.+?)\.sid$/ ) {
+	    if ( $filename =~ /^(.+?)\.sid$/ ) {
+		$figureImagesMax{$1} = $filename;
+	    }
+	}
+	closedir DIR;
+
+	# build hash of screen image files
+	$dir = $imageIdDir . '/uvaHighRes/screen';
+	if (not opendir(DIR, $dir)) {
+	    print "$preface Cannot read directory '$dir': $!\n";
+	    return 0;
+	}
+	while ( defined($filename = readdir(DIR)) ) {
+#	    if ( $filename =~ /^(${id}.+?)\.jpe?g$/ ) {
+	    if ( $filename =~ /^(.+?)\.jpe?g$/ ) {
+		$figureImagesScreen{$1} = $filename;
+	    }
+	}
+	closedir DIR;
+
+	# build hash of preview image files
+	$dir = $imageIdDir . '/uvaHighRes/preview';
+	if (not opendir(DIR, $dir)) {
+	    print "$preface Cannot read directory '$dir': $!\n";
+	    return 0;
+	}
+	while ( defined($filename = readdir(DIR)) ) {
+#	    if ( $filename =~ /^(${id}.+?)\.jpe?g$/ ) {
+	    if ( $filename =~ /^(.+?)\.jpe?g$/ ) {
+		$figureImagesPreview{$1} = $filename;
+	    }
+	}
+	closedir DIR;
+
+	# build hash of image metadata files
+	getImageMetaFilenames($imageIdDir . '/uvaHighRes/metadata', 'figure');
+    } else {
+	print "$preface '$dir' is not a directory\n";
+	return 0;
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub getPageImageFilenames_DLPS {
+
+    # builds a hash (%pageImages) of page-image filenames from the
+    # appropriate DLPS page-image directory
+
+    # in:  no parameters
+    # out: returns a boolean (1 or 0) indicating success or failure
+
+    if ($opts{'p'}) {
+	$dir = $opts{'p'};
+	$dir =~ s:/$::;  # remove final / if present
+	if (-d "$dir/$id") {
+	    # use subdirectory named with item ID
+	    $dir = "$dir/$id";
+	}
+    } else {
+	$dir = $DEFAULT_PAGE_PATH . '/' . $id;
+    }
+
+    if (not opendir(DIR, $dir)) {
+	print "$preface Cannot read directory '$dir': $!\n";
+	return 0;
+    }
+    while ( defined($filename = readdir(DIR)) ) {
+	next if ( $filename =~ /^\./ );
+#	if ( $filename =~ /^($id.+?)\.(tiff?|jpe?g|gif|sid)$/ ) {
+#	if ( $filename =~ /^($id.+?)\.tiff?$/ ) {
+#	if ( $filename =~ /^(.+?)\.tiff?$/ ) {
+	if ( $filename =~ /^(.+?)\.(tiff?|jpe?g)$/ ) {
+	    $pageImages{$1} = $filename;
+	}
+    }
+    closedir DIR;
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub getPageImageFilenames_ReadyRepo {
+
+    # builds hashes of page-image filenames from the appropriate
+    # ReadyRepo max/metadata/screen/preview page-image directories
+
+    # in:  no parameters
+    # out: returns a boolean (1 or 0) indicating success or failure
+
+    $dir = $imageIdDir;
+    if (-d $dir) {
+	if ( $pageImageType eq 'uvaBitonal' ) {
+	    # build hash of bitonal TIFF image files
+	    $dir = $imageIdDir . '/uvaBitonal/max';
+	    if (not opendir(DIR, $dir)) {
+		print "$preface Cannot read directory '$dir': $!\n";
+		return 0;
+	    }
+	    while ( defined($filename = readdir(DIR)) ) {
+#		if ( $filename =~ /^(${id}.+?)\.tiff?$/ ) {
+		if ( $filename =~ /^(.+?)\.tiff?$/ ) {
+		    $pageImagesMax{$1} = $filename;
+		}
+	    }
+	    closedir DIR;
+
+	    # build hash of screen image files
+	    $dir = $imageIdDir . '/uvaBitonal/screen';
+	    if (not opendir(DIR, $dir)) {
+		print "$preface Cannot read directory '$dir': $!\n";
+		return 0;
+	    }
+	    while ( defined($filename = readdir(DIR)) ) {
+#		if ( $filename =~ /^(${id}.+?)\.gif$/ ) {
+		if ( $filename =~ /^(.+?)\.gif$/ ) {
+		    $pageImagesScreen{$1} = $filename;
+		}
+	    }
+	    closedir DIR;
+
+	    # build hash of preview image files
+	    $dir = $imageIdDir . '/uvaBitonal/preview';
+	    if (not opendir(DIR, $dir)) {
+		print "$preface Cannot read directory '$dir': $!\n";
+		return 0;
+	    }
+	    while ( defined($filename = readdir(DIR)) ) {
+#		if ( $filename =~ /^(${id}.+?)\.gif$/ ) {
+		if ( $filename =~ /^(.+?)\.gif$/ ) {
+		    $pageImagesPreview{$1} = $filename;
+		}
+	    }
+	    closedir DIR;
+
+	    # build hash of image metadata files
+	    getImageMetaFilenames($imageIdDir . '/uvaBitonal/metadata', 'page');
+	} else {
+	    # check for uvaHighRes subdirectory first
+	    $dir = $imageIdDir . '/uvaHighRes';
+	    if (-d $dir) {
+		# build hash of max image files
+		$dir = $imageIdDir . '/uvaHighRes/max';
+		if (not opendir(DIR, $dir)) {
+		    print "$preface Cannot read directory '$dir': $!\n";
+		    return 0;
+		}
+		while ( defined($filename = readdir(DIR)) ) {
+#		    if ( $filename =~ /^(${id}.+?)\.sid$/ ) {
+		    if ( $filename =~ /^(.+?)\.sid$/ ) {
+			$pageImagesMax{$1} = $filename;
+		    }
+		}
+		closedir DIR;
+
+		# build hash of screen image files
+		$dir = $imageIdDir . '/uvaHighRes/screen';
+		if (not opendir(DIR, $dir)) {
+		    print "$preface Cannot read directory '$dir': $!\n";
+		    return 0;
+		}
+		while ( defined($filename = readdir(DIR)) ) {
+#		    if ( $filename =~ /^(${id}.+?)\.jpe?g$/ ) {
+		    if ( $filename =~ /^(.+?)\.jpe?g$/ ) {
+			$pageImagesScreen{$1} = $filename;
+		    }
+		}
+		closedir DIR;
+
+		# build hash of preview image files
+		$dir = $imageIdDir . '/uvaHighRes/preview';
+		if (not opendir(DIR, $dir)) {
+		    print "$preface Cannot read directory '$dir': $!\n";
+		    return 0;
+		}
+		while ( defined($filename = readdir(DIR)) ) {
+#		    if ( $filename =~ /^(${id}.+?)\.jpe?g$/ ) {
+		    if ( $filename =~ /^(.+?)\.jpe?g$/ ) {
+			$pageImagesPreview{$1} = $filename;
+		    }
+		}
+		closedir DIR;
+
+		# build hash of image metadata files
+		getImageMetaFilenames($imageIdDir . '/uvaHighRes/metadata', 'page');
+	    } else {
+		# try uvaLowRes
+		$dir = $imageIdDir . '/uvaLowRes';
+		if (-d $dir) {
+		    $pageImageType = 'uvaLowRes';
+		    # build hash of screen image files
+		    $dir = $imageIdDir . '/uvaLowRes/screen';
+		    if (not opendir(DIR, $dir)) {
+			print "$preface Cannot read directory '$dir': $!\n";
+			return 0;
+		    }
+		    while ( defined($filename = readdir(DIR)) ) {
+#			if ( $filename =~ /^(${id}.+?)\.jpe?g$/ ) {
+			if ( $filename =~ /^(.+?)\.jpe?g$/ ) {
+			    $pageImagesScreen{$1} = $filename;
+			}
+		    }
+		    closedir DIR;
+
+		    # build hash of preview image files
+		    $dir = $imageIdDir . '/uvaLowRes/preview';
+		    if (not opendir(DIR, $dir)) {
+			print "$preface Cannot read directory '$dir': $!\n";
+			return 0;
+		    }
+		    while ( defined($filename = readdir(DIR)) ) {
+#			if ( $filename =~ /^(${id}.+?)\.jpe?g$/ ) {
+			if ( $filename =~ /^(.+?)\.jpe?g$/ ) {
+			    $pageImagesPreview{$1} = $filename;
+			}
+		    }
+		    closedir DIR;
+
+		    # build hash of image metadata files
+		    getImageMetaFilenames($imageIdDir . '/uvaLowRes/metadata', 'page');
+		} else {
+		    print "$preface '$imageIdDir' contains neither 'uvaHighRes' nor 'uvaLowRes' subdirectory\n";
+		    return 0;
+		}
+	    }
+	}
+    } else {
+	print "$preface '$dir' is not a directory\n";
+	return 0;
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub getImageMetaFilenames {
+
+    # builds hashes of image metadata files
+    # checks for an 'admin' directory first; if not found, then tries 'raw_meta'
+
+    # in:  (1) path to 'metadata' directory -- such as
+    #      '.../uvaHighRes/metadata'; (2) string 'page' or 'figure' to
+    #      indicate which hash to add to
+    # out: returns a boolean (1 or 0) indicating success or failure
+
+    my $metadataDir = shift || die "$me: getImageMetaFilenames: missing required parameter 'metadataDir'";
+    my $type = shift || die "$me: getImageMetaFilenames: missing required parameter 'type'";
+    my $dir;
+
+    $dir = $metadataDir . '/admin';
+    # I am disabling the approach of checking for an 'admin' directory
+    # first; every DLPS ID should have a 'raw_meta' directory
+#    if (-d $dir) {
+    if (0) {
+	$hasRealMetadata = 1;
+	if (not opendir(DIR, $dir)) {
+	    print "$preface Cannot read directory '$dir': $!\n";
+	    return 0;
+	}
+	while ( defined($filename = readdir(DIR)) ) {
+#	    if ( $filename =~ /^($id.+?)\.xml$/ ) {
+	    if ( $filename =~ /^(.+?)\.xml$/ ) {
+		if ($type eq 'page') {
+		    $pageImagesAdminMeta{$1} = $filename;
+		} else {
+		    $figureImagesAdminMeta{$1} = $filename;
+		}
+	    }
+	}
+	closedir DIR;
+
+	$dir = $metadataDir . '/desc';
+	if (not opendir(DIR, $dir)) {
+	    print "$preface Cannot read directory '$dir': $!\n";
+	    return 0;
+	}
+	while ( defined($filename = readdir(DIR)) ) {
+#	    if ( $filename =~ /^($id.+?)\.xml$/ ) {
+	    if ( $filename =~ /^(.+?)\.xml$/ ) {
+		if ($type eq 'page') {
+		    $pageImagesDescMeta{$1} = $filename;
+		} else {
+		    $figureImagesDescMeta{$1} = $filename;
+		}
+	    }
+	}
+	closedir DIR;
+    } else {
+	# no 'admin' directory; use raw metadata
+	$dir = $metadataDir . '/raw_meta';
+	if (-d $dir) {
+	    if (not opendir(DIR, $dir)) {
+		print "$preface Cannot read directory '$dir': $!\n";
+		return 0;
+	    }
+	    while ( defined($filename = readdir(DIR)) ) {
+#		if ( $filename =~ /^($id.+?)\.txt$/ ) {
+		if ( $filename =~ /^(.+?)\.txt$/ ) {
+		    if ($type eq 'page') {
+			$pageImagesRawMeta{$1} = $filename;
+		    } else {
+			$figureImagesRawMeta{$1} = $filename;
+		    }
+		}
+	    }
+	    closedir DIR;
+	} else {
+	    print "$preface '$dir' is not a directory; neither 'admin' nor 'raw_meta' is present\n";
+	    return 0;
+	}
+    }
+
+    return 1;
+}

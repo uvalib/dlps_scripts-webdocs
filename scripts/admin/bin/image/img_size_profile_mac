@@ -1,0 +1,464 @@
+#!/usr/bin/perl -w
+#
+# @(#)img_size_profile			1.0		2006/02/07
+#
+# Copyright (c) 2006 Digital Library Production Services, University of Virginia Library
+# All rights reserved.
+#
+# This script will read a directory of images and use ImageMagick to modify the
+# color profile for the images and adjust the image sizes so that they are all
+# similar in size with relation to the smallest image.
+#
+# @version	1.0		2006/02/07
+# @author	Jack Kelly
+#
+# 2006/05/02 - (jlk4p) updated to include newer 350 exception message pattern matching so that
+#			comment will be added to header.
+# 2006/06/26 - (jlk4p) updated to include additional 350 exception message pattern to allow 
+#			processing of images.
+
+#======================================================================
+# setup
+#======================================================================
+
+use Image::Magick;
+use strict;
+use Getopt::Std;
+use Cwd;
+#use File::Copy;
+
+my (%opts, $error, $ok);
+my ($dir, $id, $infile);
+my (@errors, @progress, $msg);
+
+my $rgbProfileName = "/Users/jlk4p/scripts/eaf/AdobeRGB1998.icc";	#store in same location as script.
+my $imageHeaderComment = "This image was resized to correct aspect/ratio. The original TIFF was sized incorrectly.";
+my $me = 'img_size_profile';
+my $startDir = cwd();
+my $group = 'dlpswg';
+my $mailFrom = 'jlk4p';
+my $mailTo = 'ul-dlpsscripts';
+
+my $usage = <<EOD;
+
+$me - will change the profile of each image to be RGB 1998. It will
+resize the images so that they are all in the same height or width, depending
+on whether the book is portrait or landscape. The images are resized maintain-
+ing their aspect ratio. The image files are modified in place. If the original
+images need to be saved, make a copy of them before running this script.
+
+Usage: $me [-v] [-s|p] directories
+  -v (verbose) Show status messages
+  -s (size only) Change the size and header comment of the images only
+  -p (profile only) Change the color profile of the images only
+
+In:  Names of directories containing TIFF files to process
+Out: The script performs the following actions for each input directory:
+       - Updates each page image to contain the Adobe RGB1998 color profile.
+       - Updates each non-cover page image to be resized based on the smallest
+         page size. And the TIF header comment is updated to indicate that the
+         image was resized.
+ 
+EOD
+
+getopts('spv', \%opts) || die $usage;
+die $usage unless (@ARGV);
+
+# Identify the desktop folder for the Mac user account.
+my $desktop = $ENV{'HOME'} . '/Desktop/';
+
+my $LD = 'LD_LIBRARY_PATH';
+if ( defined $ENV{$LD} ) {
+    $ENV{$LD} = '/usr/local/lib/:' . "$ENV{$LD}";
+} else {
+    $ENV{$LD} = '/usr/local/lib/';
+}
+
+$msg = "Started at "  . (scalar localtime) . "\n\n";
+push(@progress, $msg);
+
+# Read the Adobe RGB profile into memory.
+my $profileBlob = getBinaryFileContents($rgbProfileName);
+
+#======================================================================
+# main logic
+#======================================================================
+foreach $dir (sort(@ARGV)) {
+    $error = 0;
+    $ok = 1;
+
+    $dir =~ s:/$::;  # remove final slash, if present
+    $id = $dir;
+    $id =~ s:^.*/::;  # remove leading path, if any
+
+    $msg = "$me: Processing directory '$dir' (ID $id)...\r\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+
+    if (-d $dir) {
+	unless ( -r $dir ) {
+	    $msg = "$me: ERROR: Need read permission for directory '$dir'\r\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+	unless ( -w $dir ) {
+	    $msg = "$me: ERROR: Need write permission for directory '$dir'\r\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+    } else {
+	$msg = "$me: ERROR: '$dir' is not a directory\r\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+    # change to input directory
+    if ( not chdir($dir) ) {
+	$msg = "$me: ERROR: Cannot change to directory '$dir': $!\r\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+
+    #------------------------------------------------------------------
+    # update images using imagemagick
+    #------------------------------------------------------------------
+
+	# read directory contents...
+	my @images = ();
+    if ( opendir(DIR, '.') ) {
+		while ( defined($infile = readdir(DIR)) ) {
+			if ( $infile =~ /^\./) {
+				next;	# ignore file as it starts with .
+			} elsif ($infile =~ /\.tif$/) {
+				# process tif file
+			} elsif ($infile =~ /\.TIF$/) {
+				# process TIF file
+			} else {
+				next;	# ignore non-TIFF files
+			}
+		    push(@images,$infile);
+		}
+		closedir DIR;
+    } else {
+		$msg = "$me: ERROR: Cannot read directory '$dir': $!\r\n";
+		warn $msg;
+		push(@errors, $msg);
+		$ok = 0; next;
+    }
+
+    if ( not scalar(@images) ) {
+		$msg = "$me: WARNING: No .tif files found in directory '$dir'\r\n";
+		print $msg;
+		push(@progress, $msg);
+		next;
+    }
+
+	# Update the color profile for images in the directory.
+	if (not $opts{'s'}) {
+	    $msg = "    Updating image profiles...\r\n";
+	    print $msg if ($opts{'v'});
+    	push(@progress, $msg);
+					
+		# Change the profile to RGB1998.
+		my $imageCount = 0;
+		my $errorCount = 0;
+		my ($exception1,$exception2);
+		foreach $infile (@images) {
+			# Read the image into memory.
+			my $image = Image::Magick->new;
+			$exception1 = $image->Read("$infile");
+			if (($exception1 eq "") or 
+				(($exception1 =~ m/^Exception 350/) and 
+				 ((($exception1 =~ m/unknown field with tag/) and 
+				 (($exception1 =~ m/ignored/) or ($exception1 =~ m/encountered/))) or 
+				 (($exception1 =~ m/incorrect count for field/) and ($exception1 =~ m/tag ignored/))) )) {
+				# Update the profile.
+				$image->Profile(name=>"ICC",profile=>$profileBlob);
+				# Save the image back to disk.
+				$exception2 = $image->Write("$infile");
+				if ($exception2 ne "") {
+					$msg = "$me: ERROR: Writing file $infile\r\n";
+					warn $msg;
+					push(@errors, $msg);
+					push(@errors, $exception2 . "\r\n");
+					$errorCount++;
+				    $ok = 0;
+				} else {
+					$imageCount++;
+				}
+			} else {
+				$msg = "$me: ERROR: Reading file $infile\r\n";
+				warn $msg;
+				push(@errors, $msg);
+				push(@errors, $exception1 . "\r\n");
+				$errorCount++;
+			    $ok = 0;
+			}
+			undef $image;
+		}
+		$msg = "    Image profiles updated: $imageCount\r\n";
+    	push(@progress, $msg);
+		if ($errorCount ne 0) {
+			$msg = "    Errors: $errorCount\r\n";
+    		push(@progress, $msg);
+		}
+	}
+
+	# Resize the images if needed.
+	if (not $opts{'p'}) {
+	    $msg = "    Resizing (and adding TIF header comment) images...\r\n";
+	    print $msg if ($opts{'v'});
+   		push(@progress, $msg);
+		
+		my ($exception1,$exception2);
+			
+		# Go through all the images and identify the orientation of
+		# the book page images and the shortest size for height and width.
+		my @widths = ();
+		my @heights = ();
+		my $errorCount = 0;
+		$msg = "        Checking image sizes\r\n";
+    	push(@progress, $msg);
+		foreach $infile (@images) {
+			my @fileName = split(/\./,$infile);
+			# Ignore cover and spine page images.
+			if ($fileName[0] =~ /[0-9]$/) {
+				# Read the image into memory.
+				my $image = Image::Magick->new;
+				$exception1 = $image->Read("$infile");
+				if (($exception1 eq "") or 
+					(($exception1 =~ m/^Exception 350/) and 
+					 ((($exception1 =~ m/unknown field with tag/) and 
+					 (($exception1 =~ m/ignored/) or ($exception1 =~ m/encountered/))) or 
+					 (($exception1 =~ m/incorrect count for field/) and ($exception1 =~ m/tag ignored/))) )) {
+					push(@widths,$image->Get("columns"));
+					push(@heights,$image->Get("height"));
+				} else {
+					$msg = "$me: ERROR: Reading file $infile\r\n";
+					warn $msg;
+					push(@errors, $msg);
+					push(@errors, $exception1 . "\r\n");
+					$errorCount++;
+				}
+				undef $image;
+			}
+		}
+		if ($errorCount ne 0) {
+			$msg = "        Errors: $errorCount\r\n";
+	    	push(@progress, $msg);
+		}
+		my @sortedWidths = sort(@widths);
+		my $numWidths = scalar(@sortedWidths);
+		my $minWidth = $sortedWidths[0];
+		my $maxWidth = $sortedWidths[$numWidths-1];
+		$msg = "        Widths range from $minWidth to $maxWidth pixels\r\n";
+    	push(@progress, $msg);
+		my @sortedHeights = sort(@heights);
+		my $numHeights = scalar(@sortedHeights);
+		my $minHeight = $sortedHeights[0];
+		my $maxHeight = $sortedHeights[$numHeights-1];
+		$msg = "        Heights range from $minHeight to $maxHeight pixels\r\n";
+    	push(@progress, $msg);
+		my $newHeight = 0;
+		my $newWidth = 0;
+		my $orientation = "";
+		if ($minWidth gt $minHeight) {
+			$newWidth = $minWidth;
+			$orientation = "landscape";
+			$msg = "        Orientation of images: $orientation\r\n";
+	    	push(@progress, $msg);
+			$msg = "        New width: $newWidth\r\n";
+	    	push(@progress, $msg);
+		} else {
+			$newHeight = $minHeight;
+			$orientation = "portrait";
+			$msg = "        Orientation of images: $orientation\r\n";
+	    	push(@progress, $msg);
+			$msg = "        New height: $newHeight\r\n";
+	    	push(@progress, $msg);
+		}
+			
+		# Resize the images appropriately 
+		my $imageCount = 0;
+		$errorCount = 0;
+		my $coverImageCount = 0;
+		my $noChangeCount = 0;
+		foreach $infile (@images) {
+			my @fileName = split(/\./,$infile);
+			# Ignore cover and spine page images.
+			if ($fileName[0] =~ /[0-9]$/) {
+				# Read the image into memory.
+				my $image = Image::Magick->new;
+				$exception1 = $image->Read("$infile");
+				if (($exception1 eq "") or 
+					(($exception1 =~ m/^Exception 350/) and 
+					 ((($exception1 =~ m/unknown field with tag/) and 
+					 (($exception1 =~ m/ignored/) or ($exception1 =~ m/encountered/))) or 
+					 (($exception1 =~ m/incorrect count for field/) and ($exception1 =~ m/tag ignored/))) )) {
+					# RESIZE IMAGE.
+					if ($orientation eq "portrait") {
+						if ($image->Get("height") gt $newHeight) {
+							my $newWidth = int(($newHeight/$image->Get("height")) * $image->Get("columns"));
+							$image->Scale(height=>$newHeight,width=>$newWidth);
+							$image->Comment($imageHeaderComment);
+							$exception2 = $image->Write("$infile");
+							if ($exception2 ne "") {
+								$msg = "$me: ERROR: Writing file $infile\r\n";
+								warn $msg;
+								push(@errors, $msg);
+								push(@errors, $exception2 . "\r\n");
+								$errorCount++;
+							    $ok = 0;
+							} else {
+								$imageCount++;
+							}
+						} else {
+							$noChangeCount++;
+						}
+					} else { #orientation eq landscape
+						if ($image->Get("width") gt $newWidth) {
+							my $newHeight = int(($newWidth/$image->Get("columns")) * $image->Get("height"));
+							$image->Scale(width=>$newWidth,height=>$newHeight);
+							$image->Comment($imageHeaderComment);
+							$exception2 = $image->Write("$infile");
+							if ($exception2 ne "") {
+								$msg = "$me: ERROR: Writing file $infile\r\n";
+								warn $msg;
+								push(@errors, $msg);
+								push(@errors, $exception2 . "\r\n");
+								$errorCount++;
+							    $ok = 0;
+							} else {
+								$imageCount++;
+							}
+						} else {
+							$noChangeCount++;
+						}
+					}
+				} else {
+					$msg = "$me: ERROR: Reading file $infile\r\n";
+					warn $msg;
+					push(@errors, $msg);
+					push(@errors, $exception1 . "\r\n");
+					$errorCount++;
+				    $ok = 0;
+				}
+				undef $image;
+			} else {
+				$coverImageCount++;
+			}
+		}
+		$msg = "        Cover images (not resized): $coverImageCount\r\n";
+		push(@progress, $msg);
+		$msg = "        Images not resized: $noChangeCount\r\n";
+		push(@progress, $msg);
+		$msg = "        Images resized: $imageCount\r\n";
+		push(@progress, $msg);
+		if ($errorCount ne 0) {
+			$msg = "        Errors: $errorCount\r\n";
+			push(@progress, $msg);
+		}
+	}
+	
+    if (not $ok) {
+	next;
+    }
+
+}
+continue {
+    if ($ok) {
+	$msg = "    Directory '$dir' was processed successfully.\r\n\r\n";
+	print $msg if ($opts{'v'});
+	push(@progress, $msg);
+    } else {
+	$msg = "$me: ERROR: Processing of directory '$dir' FAILED!\r\n\r\n";
+	warn $msg;
+	push(@errors, $msg);
+    }
+
+    # change to starting directory
+    if ( cwd() ne $startDir ) {
+		if ( not chdir($startDir) ) {
+		    $msg = "$me: FATAL ERROR: Cannot change to starting directory '$startDir': $!\r\n";
+		    push(@errors, $msg);
+		    Send_Mail();
+		    die $msg;
+		}
+    }
+}
+
+$msg = "\nFinished at "  . (scalar localtime) . "\n";
+push(@progress, $msg);
+
+Send_Mail();
+
+#======================================================================
+# subroutines
+#======================================================================
+
+# getBinaryFileContents - Reads a file as binary and returns the contents of
+#		that file in a string. If there is an error the return string will be
+#		empty.
+#
+# @param $pathFile - the current path and name of the file to read.
+sub getBinaryFileContents {
+	my ($pathFile) = @_;
+	my $contents = "";
+	
+	if (open(BIN,"<",$pathFile)) {
+		binmode(BIN);
+		my $buffer;
+		while (read(BIN,$buffer,1024)) {
+			$contents .= $buffer;
+		}
+		close(BIN);
+	} else {
+		$msg = "$me: ERROR: Cannot read binary file $pathFile\n";
+		warn $msg;
+		push(@errors, $msg);
+	}
+	return $contents;
+}
+
+sub Send_Mail {
+
+    my @time = localtime(time);
+    my $today = $time[3];
+    my $month = (1,2,3,4,5,6,7,8,9,10,11,12)[(localtime)[4]];
+    my $year = $time[5];
+    $year = $year - 100;
+
+    $year = sprintf("%02d",$year);
+    $month = sprintf("%02d",$month);
+    $today = sprintf("%02d",$today);
+
+    my($date)="$month/$today/$year";
+   my($messageto) = $mailTo . "\@virginia.edu";
+
+#    open(MAIL,"| /usr/lib/sendmail -i -t");
+	my $outputFile = $desktop . "img_size_profile_" . $month ."_" . $today . "_" . $year . ".txt";
+    open(MAIL,">$outputFile");
+    print MAIL "To: $messageto\n"; 
+    print MAIL "From: $mailFrom\@virginia.edu\n";
+    if (@errors) {
+	print MAIL "Subject: Error processing images to add profile and/or resize\n\n";
+	print MAIL "There was an error from the $me script on $date:\n\n";
+    }
+    else {
+	print MAIL "Subject: Report on processing images to add profile and/or resize\n\n";
+	print MAIL "$me script completed with no errors on $date.\n\n";
+    }
+    foreach my $err (@errors) {
+	print MAIL "$err";
+    }
+    foreach my $noerr (@progress) {
+	print MAIL "$noerr" ;
+    }
+    print MAIL "-" x 75 . "\n\n";
+    close(MAIL);
+}

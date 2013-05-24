@@ -1,0 +1,138 @@
+#!/usr/bin/perl -w
+
+# run_reports - runs a series of scripts to generate post-keyboarding HTML reports
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2003-01-31
+# Last modified: 2006-04-27
+
+# 2004-01-26: gpm2a: Commented out system call to unclears report. We
+# are not using the unclears report on all files, only on a
+# case-by-case basis, as a way of streamlining the process / reducing
+# processing time.
+#
+# 2004-04-20: gpm2a: Removed system call to figure_entities script
+# (and declare_entities). Because figure rendering (page, block, or
+# inline) is not yet known at this stage of post-keyboarding
+# processing, the entity attribute values added by figure_entities may
+# not be correct; also, they are not needed at this stage. So, it is
+# better to leave them out.
+#
+# 2005-06-13: gpm2a: Added -f (foreign) option for skipping the
+# rehyphenate report for non-English texts. Also added -v (verbose)
+# option.
+#
+# 2006-03-23: gpm2a: Changed to update DLPS tracking system -->
+# Post-keyboarding Workflow --> Generate reports
+#
+# 2006-04-27: gpm2a: Script now makes its own backup of the original
+# input file, rather than simply making system() calls resulting in a
+# .bak file for only the last system() call. This approach is the same
+# one used in 'postkb' script.
+
+
+use strict;
+use Getopt::Std;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use TrackSys;
+
+my ($me, $usage, %opts, $infile, $pad, $tempfile);
+my (@infile, %properties, $dlpsId, $sql, $rows);
+
+$me = "run_reports";
+$usage = <<EOD;
+
+$me - runs a series of scripts to generate post-keyboarding HTML reports
+Usage: $me [-f] [-v] filenames
+  -f (foreign)  Indicates a foreign-language (non-English) text; skip rehyphenate report
+  -v (verbose)  Provide status messages
+In: TEI XML file(s)
+Out: For each input file, makes changes to <figure> tags, then
+  generates HTML reports: figures_rend, rehyphenate
+
+EOD
+
+getopts('fv', \%opts) || die $usage;
+die $usage if (! @ARGV);
+
+TrackSys::connect();
+
+foreach $infile (@ARGV) {
+    print "\n$me: $infile:\n" if $opts{v};
+    $pad = "\t";
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # get DLPS ID
+    %properties = ();
+    $dlpsId = DlpsText::getDlpsId(\%properties, \@infile, $infile);    
+
+    # make sure you'll be able to write a .bak file after scripts have run
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    print BAK "\n";
+    close BAK;
+
+    # make temporary backup of original input file for added safety
+    $tempfile = DlpsText::getTempFileName($infile);
+    open(BAK, ">$tempfile") || die "$me: ERROR: Cannot write '$tempfile': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+
+    # prepare for figures report
+    print "$pad Adding 'id' attribute on <figure> tags...\n" if $opts{v};
+    if (system("figure_ids $infile") != 0) {
+	warn "$me: $infile: ERROR running 'figure_ids' script. Skipping to next input file.\n";
+	next;
+    }
+
+    # prepare for unclears report
+    print "$pad Adding 'id' attribute on <unclear> and <gap/> tags...\n" if $opts{v};
+    if (system("unclear_ids $infile") != 0) {
+	warn "$me: $infile: ERROR running 'unclear_ids' script. Skipping to next input file.\n";
+	next;
+    }
+
+    # make backup of original input file, overwriting .bak file from last system() call
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+
+    # delete temporary file
+    unlink $tempfile;
+
+    # run reports
+    print "$pad Generating 'figures_rend' HTML report...\n" if $opts{v};
+    if (system("report_figures_rend $infile") != 0) {
+	warn "$me: $infile: ERROR running 'report_figures_rend' script. Skipping to next input file.\n";
+	next;
+    }
+
+    unless ( $opts{f} ) {
+	print "$pad Generating 'rehyphenate' HTML report...\n" if $opts{v};
+	if (system("report_rehyphenate $infile") != 0) {
+	    warn "$me: $infile: ERROR running 'report_rehyphenate' script. Skipping to next input file.\n";
+	    next;
+	}
+    }
+
+#    system("report_unclears $infile");
+
+    # update tracking system upon success
+    print "$pad Updating DLPS Tracking System...\n" if $opts{v};
+    $rows = 0;
+    $sql = "UPDATE postkb SET generateReports = 1 WHERE dlpsId = '$dlpsId' LIMIT 1";
+    $rows = TrackSys::query($sql);
+    if ($rows != 1) {  # this works because Perl DBI execute() returns 1 even if no fields of the record are actually changed
+	warn "$me: WARNING: Cannot update DLPS tracking system for record '$dlpsId'. Update manually.\n";
+    }
+}
+
+TrackSys::disconnect();

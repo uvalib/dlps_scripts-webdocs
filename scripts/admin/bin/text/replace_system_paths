@@ -1,0 +1,109 @@
+#!/usr/bin/perl -w -I /shares/admin/bin/text
+
+# replace_system_paths - updates DTD and entity-file locations in DOCTYPE and ENTITY declarations
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2002-08-22
+# Last modified: 2005-11-03
+
+# 2003-08-11: gpm2a: Reworked -u (URL) option to simply replace
+# "/cenrepo/" with "http://text.lib.virginia.edu/"; a SYSTEM path
+# starting with anything other than "/cenrepo/" (that is not already
+# an absolute path) raises a warning.
+#
+# 2004-01-15: gpm2a: Added test for dlps-teiHeader.ent file, which
+# lives in a different directory from character entity files.
+#
+# 2004-02-03: gpm2a: Added separate test for local TEI mod files,
+# because the unmodified TEI files now live in directory "tei-p4"
+# while the DLPS mod files live in directory "uva-dl-tei". Also added
+# logic to change filenames of TEI mod files from "uvalib_kb" to
+# "uva-dl-tei" if necessary. Also added logic to add whitespace before
+# parameter entities for character set files, as in:
+#     ...iso-lat1.ent"> %ISOlat1;
+#
+# 2004-04-21: gpm2a: Changed paths of DTD files and related files, to
+# use new paths established by the Digital Library. The new paths
+# don't use the 'bin' directory -- e.g. /cenrepo/dtd rather than
+# /cenrepo/bin/dtd
+#
+# 2005-11-03: gpm2a: Changed for use on pogo.lib, where the
+# /cenrepo/dtd and /cenrepo/charent directories are not
+# accessible. For this reason, removed -u (URL) option and made
+# conversion to URLs the default behavior. Eliminated the need to
+# convert to /cenrepo... disk paths prior to converting to URLs.
+
+
+use strict;
+##use DlpsText;
+
+my ($me, $usage);
+my ($infile, @infile, $path, $filename);
+
+my $DTD_PATH =     'http://text.lib.virginia.edu/dtd/tei/tei-p4/';
+my $MOD_PATH =     'http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/';
+my $CHARENT_PATH = 'http://text.lib.virginia.edu/charent/';
+my $ENT_PATH =     'http://text.lib.virginia.edu/ent/';
+
+$me = 'replace_system_paths';
+$usage = <<EOD;
+
+$me - updates DTD and entity-file locations in DOCTYPE and ENTITY declarations
+Usage: $me filenames
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+EOD
+
+die $usage if (! @ARGV);
+
+foreach $infile (@ARGV) {
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # make backup
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+
+    # make changes, overwriting input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@infile) {
+	if ( /^(<!DOCTYPE|<!ENTITY %)/ ) {
+            s/("|')\[/$1 \[/;  # add space before [ if needed
+            s/>%/> %/;         # add space before parameter entity if needed, as in ...iso-lat1.ent"> %ISOlat1;
+	    s/uvalib_kb\.(ent|dtd)/uva-dl-tei\.$1/;  # change "uvalib_kb" to "uva-dl-tei"
+
+	    if ( m:SYSTEM ("|')([^\1]*?)([^/]+\.dtd|[^/]+\.ent)\1: ) {
+		$filename = $3;
+		if ( $filename =~ /^iso-/ or $filename =~ /^uva-supp\.ent/ ) {
+		    # character-entity file
+		    $path = $CHARENT_PATH;
+                } elsif ( $filename =~ /dlps-teiHeader\.ent/) {
+                    # DLPS entity file for TEI headers
+		    $path = $ENT_PATH;
+                } elsif ( $filename =~ /tei2\.dtd/ ) {
+                    # main TEI DTD driver file
+		    $path = $DTD_PATH;
+                } elsif ( $filename =~ /uva-dl-tei/ ) {
+		    # local TEI modification file
+		    $path = $MOD_PATH;
+		} else {
+		    $path = '';
+		}
+
+		# replace SYSTEM path
+		s:SYSTEM ("|')[^\1]*?$filename\1:SYSTEM "$path$filename":;
+	    }
+	}
+
+	print OUT;
+    }
+    close OUT;
+
+    ##DlpsText::log($me, $infile, "Replaced SYSTEM paths with URLs.");
+}

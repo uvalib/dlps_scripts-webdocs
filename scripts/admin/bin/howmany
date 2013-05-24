@@ -1,0 +1,25 @@
+#!/usr/bin/perl -w
+
+# howmany - display number of files
+
+$usage = <<EOD;
+
+howmany - display number of files
+Usage: howmany [filenames]
+Examples:
+  howmany              Counts all files and subdirectories in the current directory
+  howmany *.tif        Counts .tif files in the current directory
+  howmany temp/*.txt   Counts .txt files in directory 'temp'
+
+EOD
+
+foreach (@ARGV) {
+    die $usage if /^-/;   # this script has no switches
+}
+
+if (@ARGV) {
+    $args = join(' ', @ARGV);
+    system("/bin/ls -d $args | wc -l");
+} else {
+    system("/bin/ls | wc -l");
+}

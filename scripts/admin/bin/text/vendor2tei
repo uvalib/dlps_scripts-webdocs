@@ -1,0 +1,213 @@
+#!/usr/bin/perl -w -I /shares/admin/bin/text
+
+# vendor2tei - converts vendor markup to standard TEI markup
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2002-07-01
+# Last modified: 2005-10-18
+
+# 2003-04-22: gpm2a: Now enables POSTKB mode of DTD if custom DTD is
+# being used.
+#
+# 2003-05-13: gpm2a: Added conversion of <pb n="..."/> to <pb n="..."><fw type="pageno">...</fw></pb>
+#
+# 2003-07-03: gpm2a: Now adds a newline before <note... if
+# needed. (This is done because (a) it makes the file more
+# human-readable, but more important (b) it prevents problems that can
+# occur with the "dehyphenate" script.) Also adds a newline after
+# </note> if needed.
+#
+# 2003-10-21: gpm2a: Fixed bug whereby script was not testing whether
+# <fw type="pageno"> already existed, so if you ran script twice you'd
+# get two occurrences of <fw type="pageno"> within the <pb>
+# element. Fixed.
+#
+# 2003-12-19: gpm2a: Now adds a space after parameter entity
+# declarations if needed. (Microsoft's parser, and thus Internet
+# Explorer, chokes otherwise, causing confusion for anyone trying to
+# view the XML in IE.) So for example
+#   <!ENTITY % ISOlat1 SYSTEM "iso-lat1.ent">%ISOlat1;
+# becomes
+#   <!ENTITY % ISOlat1 SYSTEM "iso-lat1.ent"> %ISOlat1;
+#
+# 2004-02-04: gpm2a: Added logic for newspaper-related vendor
+# shortcuts.
+#
+# 2004-04-08: gpm2a: Added logic to convert empty paragraphs to
+# <ab type="empty" rend="none"/>
+#
+# 2005-04-05: gpm2a: Removed conversion of <pb n="..."/> to
+# <pb n="..."><fw type="pageno">...</fw></pb> (see 2003-05-13 above).
+#
+# 2005-10-12: gpm2a: These vendor-to-TEI markup conversions should not
+# be performed within <teiHeader>. Changed logic to skip over the
+# header. This is necessary when working with migrated texts that have
+# a legacy TEI header. Skipping over the header avoids unnecessary
+# validation errors that result from converting empty <p> to
+# <ab type='empty'/>, etc.
+#
+# 2005-10-18: gpm2a: Added test for <!ENTITY % POSTKB "INCLUDE">
+# declaration, so it only gets added if needed.
+
+# NOTE: I considered replacing | anywhere it occurs, not just at end
+# of line, like so:
+#    # replace | with <lb/> anywhere it occurs; normalize whitespace to a single space before <lb/>
+#    s:[ \t]*\|[ \t]*: <lb/>:g;
+# The problem with this is that | is used in <reg orig="ex-|ample">,
+# so if vendor2tei is ever run again, after dehyphenation, the file
+# would get seriously mangled.
+
+
+use strict;
+##use DlpsText;
+
+my ($me, $usage);
+my ($infile, @infile, $in_teiHeader, $POSTKB_found);
+my ($match, $atts, $atts1, $atts2, $n, $slash, $close_pb);
+
+$me = 'vendor2tei';
+$usage = <<EOD;
+
+$me - converts vendor markup to standard TEI markup
+Usage: $me filenames
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+EOD
+
+die $usage if (! @ARGV);
+foreach (@ARGV) {
+    die $usage if /^-/;   # this script has no switches
+}
+
+foreach $infile (@ARGV) {
+    $in_teiHeader = 0;
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # make backup
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+
+    # test for existence of <!ENTITY % POSTKB "INCLUDE"> declaration
+    $POSTKB_found = 0;
+    foreach (@infile) {
+	if ( /<!ENTITY % POSTKB/ ) {
+	    $POSTKB_found = 1;
+	    last;
+	}
+	if ( /<TEI.2/ ) {
+	    last;
+	}
+    }
+
+    # make changes, overwriting input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@infile) {
+	if ( /<!ENTITY % TEI.extensions.ent SYSTEM/ ) {
+	    # enable POSTKB mode of DLPS DTD
+	    print OUT '<!ENTITY % POSTKB "INCLUDE">' . "\n" unless ($POSTKB_found);
+	}
+
+	# add a space after parameter entity declarations if needed
+        s:>%:> %:;
+
+	if ( /<teiHeader/ ) {
+	    $in_teiHeader = 1;
+	}
+	if ( m:</teiHeader>: or m:<teiHeader\s*/>: ) {
+	    $in_teiHeader = 0;
+	}
+	if ($in_teiHeader) {
+	    next;
+	}
+
+	# replace | at end-of-line with <lb/>; normalize whitespace to a single space before <lb/>
+	s:\s*\|\s*$: <lb/>\n:;
+
+	# convert typographic convenience elements <i> <b> <u> <sup> <sub> <smcap> to <hi rend="...">
+	s:<i(>|\s[^>]*>):<hi rend="italic"$1:g;
+	s:<b(>|\s[^>]*>):<hi rend="bold"$1:g;
+	s:<u(>|\s[^>]*>):<hi rend="underline"$1:g;
+	s:<sup(>|\s[^>]*>):<hi rend="super"$1:g;
+	s:<sub(>|\s[^>]*>):<hi rend="sub"$1:g;
+	s:<smcap(>|\s[^>]*>):<hi rend="small-caps"$1:g;
+	s:</(i|b|u|sub|sup|smcap)>:</hi>:g;
+
+        # convert newspaper convenience elements (ad, cartoon, comicStrip,
+        # puzzle, wireArticle, wirePhoto) to <gap desc="..." reason="editorial"/>
+	s:<ad(/?>|\s[^>]*/?>):<gap desc="advertisement" reason="editorial"$1:g;
+	s:<cartoon(/?>|\s[^>]*/?>):<gap desc="cartoon" reason="editorial"$1:g;
+	s:<comicStrip(/?>|\s[^>]*/?>):<gap desc="comic strip" reason="editorial"$1:g;
+	s:<puzzle(/?>|\s[^>]*/?>):<gap desc="puzzle" reason="editorial"$1:g;
+	s:<wireArticle(/?>|\s[^>]*/?>):<gap desc="wire-service article" reason="editorial"$1:g;
+	s:<wirePhoto(/?>|\s[^>]*/?>):<gap desc="wire-service photo" reason="editorial"$1:g;
+	s:</(ad|cartoon|comicStrip|puzzle|wireArticle|wirePhoto)>:</gap>:g;
+
+	# convert type="ad" to type="advertisement"
+	s:<(div\d)([^>]*?)\stype=["']ad["']:<$1$2 type="advertisement":g;
+
+	# convert <quotedLetter>
+	s:<quotedLetter(>|\s[^>]*>):<q$1<text><body><div1 type="quotation">:g;
+	s:</quotedLetter>:</div1></body></text></q>:g;
+
+	# convert <ps> (postscript)
+	s:<ps(>|\s[^>]*>):<seg type="postscript" rend="block"$1:g;
+	s:</ps>:</seg>:g;
+
+	# convert <ns> (note symbol)
+	s:<ns(>|\s[^>]*>):<seg type="note-symbol"$1:g;
+	s:</ns>:</seg>:g;
+
+        # convert empty paragraphs to <ab type="empty" rend="none"/>
+        if ( m:<p(\s+[^>]*?)?(/>|></p>): ) {
+            if ( $1 ) {
+                $atts = $1;
+                # remove rend= attribute, since we will be adding rend="none"
+                if ( $atts =~ /rend=/ ) {
+                    $atts =~ s/\srend=("|')[^\1]*?\1//;
+                }
+            } else {
+                $atts = '';
+            }
+            s/<p(\s+[^>]*?)?(\/>|><\/p>)/<ab type="empty" rend="none"$atts\/>/;
+        }
+
+	# add newline before <note... and after </note> if needed
+	s:><note\s:>\n<note :g;
+	s:</note>:</note>\n:g unless ( m:</note>\s*$: );
+
+	# for <pb/> tags with n attribute, convert to <pb n="..."><fw type="pageno">...</fw></pb>
+#	if ( /<pb([^>]*?)\sn=("|')([^\2]+?)\2([^>]*?)(\/?)>/ ) {
+#	    $match = $&;
+#	    $atts1 = $1;
+#	    $n = $3;
+#	    $atts2 = $4;
+#	    $slash = $5;
+#	    if ($slash) {
+#		$close_pb = '</pb>';
+#	    } else {
+#		$close_pb = '';
+#	    }
+#
+#	    # make substitution only if <fw type="pageno"> does not already exist
+#	    if ( /<pb.+<fw type=["']pageno/ ) {
+#		# <fw type="pageno">...</fw> already exists
+#	    } else {
+#		s:$match:<pb$atts1 n="$n"$atts2><fw type="pageno">$n</fw>$close_pb:;
+#	    }
+#	}
+    }
+    continue {
+	print OUT;
+    }
+    close OUT;
+
+    ##DlpsText::log($me, $infile, 'Converted vendor markup to standard TEI markup');
+}

@@ -1,0 +1,185 @@
+#!/usr/bin/perl -w -I /shares/admin/bin/text
+
+# figure_entities - adds or updates entity attribute on <figure> tags
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2002-06-19
+# Last modified: 2004-04-20
+
+# 2003-04-08: gpm2a: Changed logic to check for <?dlps page-images="..."?>
+# instruction and take action accordingly. The rules are:
+#
+# If full-page figure:
+#     If bitonal page images:
+#         figure entity = pb entity + _0
+#     Else:
+#         figure entity = pb entity
+# Else:
+#     If bitonal page images:
+#         figure entity = pb entity + _1 (or _2, _3, etc. if more than one figure on page)
+#     Else:
+#         figure entity = pb entity
+#
+# 2003-10-08: gpm2a: Bug fix: Changed
+#	if ( /^<\?dlps [^>]*?page-images=("|')([^\1]*)\1/ ) {
+# to
+#	if ( /^<\?dlps [^>]*?page-images=("|')([^\1]*?)\1/ ) {
+# (note addition of question mark -- non-greedy reg exp qualifier)
+# so that page-images property would be correctly identified even if
+# processing intstruction contains more than one "attribute", as in
+# <?dlps page-images="bitonal" figure-images="yes"?>
+#
+# 2004-03-22: gpm2a: Changed so that _0 does NOT get appended to
+# entity attribute on pb. We no longer consider that a good idea.
+#
+# 2004-04-20: gpm2a: Changed to stop using "none" and instead use the
+# pb entity value. Using "none" makes XSLT processing cumbersome. If
+# there is a need to distinguish between full-page figures that refer
+# to the page image and non-full-page figures that refer to the page
+# image, you can simply look at the rend="..." value for "page"
+# vs. "block" or "inline".
+
+
+# NOTE: Undocumented -B option disables creation of backup file
+
+
+use strict;
+##use DlpsText;
+use Getopt::Std;
+
+my ($me, $usage, %opts);
+my ($infile, @infile);
+my ($page_images_type, $figcount, $prev_pb_entity, $pb_entity, $new, $old, $match, $hold, $msg, $go);
+
+$me = 'figure_entities';
+$usage = <<EOD;
+
+$me - adds or updates entity attribute on <figure> tags
+Usage: figure_entities filenames
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+EOD
+
+getopts('B', \%opts) || die $usage;
+die $usage if (! @ARGV);
+
+foreach $infile (@ARGV) {
+    $figcount = 0;
+    $prev_pb_entity = '';
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # test whether any of this is necessary
+    # test for presence of at least one <figure> tag
+    $go = 0;
+    foreach (@infile) {
+	if ( /<figure(\/?>|\s)/ ) {
+	    $go = 1;
+	    last;
+	}
+    }
+    if (not $go) {
+	$msg = "No figures found. No changes made.";
+	print "$me: $infile: $msg\n";
+	##DlpsText::log($me, $infile, $msg);
+	next;
+    }
+
+    # test for presence of entity= attribute on every pb tag
+    $go = 0;
+    foreach (@infile) {
+	if ( /<pb(\/?>|\s)/ ) {
+	    if ( /<pb[^>]*\sentity=["'](\w+)["']/ ) {
+	        $go = 1;
+            } else {
+                $go = 0;
+                last;
+            }
+	}
+    }
+    if (not $go) {
+	$msg = "One or more <pb/> tags do not have entity attributes. No changes made.";
+	print "$me: $infile: $msg\n";
+	##DlpsText::log($me, $infile, $msg);
+	next;
+    }
+
+    # make backup
+    unless ( $opts{B} ) {
+        open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+        foreach (@infile) {
+	    print BAK;
+        }
+        close BAK;
+    }
+
+    # look for <?dlps page-images"..."?> processing instruction
+    $page_images_type = '';
+    foreach (@infile) {
+	if ( /^<\?dlps [^>]*?page-images=("|')([^\1]*?)\1/ ) {
+            $page_images_type = $2;
+            last;
+        }
+    }
+    if (not $page_images_type) {
+        warn "$me: $infile: NOTE: <?dlps page-images='...'?> instruction not found. Defaulting to 'bitonal'.\n";
+        $page_images_type = 'bitonal';
+    }
+
+    # make changes
+    foreach (@infile) {
+	if ( /<pb[^>]*\sentity=["'](\w+)["']/ ) {
+	    $pb_entity = $1;
+	}
+
+	if ( /<figure(>|\s)/ ) {
+	    if ($prev_pb_entity eq $pb_entity) {
+		$figcount++;   # second or greater figure on page; increment figure count
+	    } else {
+		$figcount = 1;   # first figure on page; reset figure count to 1
+	    }
+	    $prev_pb_entity = $pb_entity;
+
+            if ( /<figure[^>]*?\srend=("|')page\1/ ) {
+                # full-page figure
+                if ( $page_images_type eq 'bitonal' ) {
+                    # bitonal page images: append _0, indicating full-page figure image
+                    $new = $pb_entity . '_0';
+                } else {
+                    # color page images: set figure entity = pb entity
+                    $new = $pb_entity;
+                }
+            } else {
+                # not full-page figure
+                if ( $page_images_type eq 'bitonal' ) {
+                    # bitonal page images: append sequence number, indicating block or inline figure image
+	            $new = $pb_entity . "_$figcount";
+                } else {
+                    # color page images: set figure entity = pb entity
+                    $new = $pb_entity;
+                }
+            }
+
+	    if ( /<figure[^>]*?\sentity=("|')[^\1]*?\1/ ) {
+		# figure with entity attribute; replace entity value
+		s/(<figure[^>]*?)\sentity=("|')[^\2]*?\2/$1 entity="$new"/;
+	    } else {
+		# add entity attribute
+		s:(<figure[^/>]*)(/?>):$1 entity="$new"$2:;
+	    }
+	}
+    }
+
+    # overwrite input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@infile) {
+        print OUT;
+    }
+    close OUT;
+
+    ##DlpsText::log($me, $infile, 'Added or updated entity attribute on <figure> tags');
+}

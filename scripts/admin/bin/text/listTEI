@@ -1,0 +1,325 @@
+#!/usr/bin/perl -w
+
+# listTEI - generates a tab-separated list of TEI XML files showing their titles and other info
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2002-07-09
+# Last modified: 2005-12-08
+
+# 2005-09-08: gpm2a: Added -I option for reporting ID from <TEI.2 id="...">
+#
+# 2005-12-05: gpm2a: Added -1 option for a custom, user-defined
+# regular expression
+#
+# 2005-12-08: gpm2a: Added -P option for publication year
+
+# This script expects TEI XML input files; it reads each file's
+# <teiHeader> and outputs a report of info such as the filename, DLPS
+# ID, title, etc. as specified by the script options.
+
+
+use Getopt::Std;
+use strict;
+
+my ($me, $usage, %opts, $d);
+my ($infile, $atts, $value, $close, $count, $key, $output);
+my ($in_header, $in_fileDesc, $in_sourceDesc, $in_publicationStmt, $in_biblScope_date);
+my ($id, $id2, $title, $volume, $call_number);
+my ($tcn, $seriality, $page_count, $pub_date, $custom1);
+my ($author, $name_last, $name_first, $in_author, $in_keywords, $author_found);
+my %files = ();
+
+$me = 'listTEI';
+$usage = <<EOD;
+
+$me - generates a tab-separated list of TEI XML files showing their titles and other info
+Usage: $me [options] filenames
+
+Output options:
+  -a (author)           Include author name
+  -b (bibliographic ID) Include title control number
+  -f (filename)         Include filename
+  -i (IDs)              Include DLPS IDs
+  -I (IDs)              Include ID from <TEI.2 id="...">
+  -n (call number)      Include Library of Congress call number
+  -p (page count)       Include number of pages
+  -P (publication year) Include year of publication
+  -S (seriality)        Include seriality term (monograph, monographic volume, newspaper issue, etc.)
+  -t (title)            Include title (truncated to 40 characters)
+  -T (title)            Include title (not truncated)
+  -1 (custom 1)         Include field indicated by start-tag provided (see example below)
+
+Other options:
+  -c (count)         Append a count of the number of files listed
+  -d (delimiter)     Specify delmiter character to use; defaults to tab
+  -M (non-monograph) Only output serial items (seriality term is not "monograph")
+  -s (sort)          Sort by first field of output rather than by filename
+
+In: TEI XML files
+Out: prints to standard output
+Note: If no options are specified, defaults to outputting DLPS ID, title, and author.
+Examples:
+  $me *.xml                             Output DLPS ID, title, and author for each XML file
+  $me -i -1 '<idno type="myID">' *.xml  Output DLPS ID and content of <idno type="myID"> element
+EOD
+
+getopts('abcd:fiIMnpPsStT1:', \%opts) || die $usage;
+$d = $opts{'d'} || "\t";
+die $usage if (! @ARGV);
+
+# read each file
+foreach $infile (@ARGV) {
+    $id=''; $id2=''; $title=''; $volume=''; $author=''; $name_last=''; $name_first=''; $call_number='';
+    $tcn=''; $seriality=''; $page_count=0; $pub_date=''; $custom1='';
+    $in_header=0; $in_fileDesc=0; $in_sourceDesc=0; $in_publicationStmt=0; $in_biblScope_date=0;
+    $in_author=0; $in_keywords=0; $author_found=0;
+
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    while (<IN>) {
+	# get ID from <TEI.2 id="...">
+	if ( m:<TEI.2\s[^>]*?id=("|')([^\1]+)\1: ) {
+	    $id2 = $2;
+	}
+
+	if ( m:<teiHeader: ) {
+	    $in_header = 1;
+	}
+	if ( m:</teiHeader>: ) {
+	    $in_header = 0;
+	    last if (not $opts{'p'});  # stop reading file if not counting page breaks
+	}
+
+	if ( m:<fileDesc: ) {
+	    $in_fileDesc = 1;
+	}
+	if ( m:</fileDesc>: ) {
+	    $in_fileDesc = 0;
+	}
+
+	if ( m:<sourceDesc: ) {
+	    $in_fileDesc = 0;
+	    $in_sourceDesc = 1;
+	}
+	if ( m:</sourceDesc>: ) {
+	    $in_sourceDesc = 0;
+	}
+
+	if ( m:<publicationStmt: ) {
+	    $in_publicationStmt = 1;
+	}
+	if ( m:</publicationStmt>: ) {
+	    $in_publicationStmt = 0;
+	}
+
+	if ($in_fileDesc) {
+	    # get title of work from first <title> tag
+	    if ( m:<title(\s[^>]+)?>([^<]+?)(</title>|\n): ) {
+		$atts = $1;
+		$value = $2;
+		$close = $3;
+		if ($title) {
+		    # title value already set; check for volume
+		    if ($atts and $value) {
+			if ( $atts =~ /type=["']volume/ ) {
+			    # get volume
+			    $volume = " ($value)";
+			}
+		    }
+		} else {
+		    # title not set yet; this is the first <title> tag; assume it's the main title
+		    $title = $value;
+		    if (not $close =~ m:</title>: ) { $title .= '...'; }
+		}
+	    }
+
+	    # get author of work from first <author> tag
+	    if ( m:<author(\s[^>]+)?>([^<]+?)(</author>|\n): ) {
+		# <author> element all on one line (minimal TEI header style)
+		$atts = $1; $value = $2;
+		if ($value and not $author_found) {
+		    $author = $value;
+		    $author_found = 1;
+		}
+	    } elsif ( m:<author(\s[^>]+)?>: ) {
+		# <author> start-tag with no closing tag on same line (assume contains <name> children, full TEI header style)
+		if (not $author_found) {
+		    # author name not set yet; this must be first author element
+		    $in_author = 1;
+		    $author_found = 1;
+		}
+	    }
+
+	    if ($in_author) {
+		if ( m:<name(\s[^>]+)?>([^<]*?)</name>: ) {
+		    $atts = $1; $value = $2;
+		    if ($atts and $value) {
+			if ( $atts=~ /type=["']last["']/ ) {
+			    $name_last = $value;
+			}
+			if ( $atts=~ /type=["']first["']/ ) {
+			    $name_first = $value;
+			}
+		    }
+		}
+
+		if ( m:</author>: ) {
+		    $in_author = 0;
+		}
+	    }
+
+	}  # end if ($in_fileDesc)
+
+
+        if ($in_sourceDesc) {
+            if ($in_publicationStmt) {
+                if ( m:<date [^>]*?value=("|')([^\1]+?)\1: ) {
+                    $pub_date = $2;
+                }
+            }
+
+            if ( m:<biblScope [^>]*?type=["']date["']>: ) {
+                $in_biblScope_date = 1;
+            }
+
+            if ( $in_biblScope_date and m:<date [^>]*?value=["'](\d{4}): ) {
+	        $pub_date = $1;
+            }
+
+            if ( m:</biblScope>: ) {
+                $in_biblScope_date = 0;
+            }
+        }  # end if ($in_sourceDesc)
+
+
+	if ($in_header) {
+	    # get seriality term from <keywords scheme="uva-form"><term>
+	    if ( m:<keywords: ) {
+		$in_keywords = 1;
+	    }
+
+	    if ($in_keywords) {
+		if ( m:<term(\s[^>]+)?>([^<]*?)</term>: ) {
+		    $value = $2;
+		    if ($value) {
+			$seriality = $2;
+		    }
+		}
+
+		if ( m:</keywords>: ) {
+		    $in_keywords = 0;
+		}
+	    }
+
+	    # get DLPS ID from <idno type="DLPS ID">
+	    # get LC call number from <idno type="LC call number">
+	    # get title control number from <idno type="UVa Title Control Number">
+	    if ( m:<idno(\s[^>]+)?>([^>]*?)</idno>: ) {
+		$atts = $1; $value = $2;
+		if ($atts and $value) {
+		    if ( $atts=~ /type=["']DLPS ID["']/ ) {
+			$id = $value;
+		    }
+		    if ( $atts=~ /type=["']call number["']/i ) {
+			$call_number = $value if (not $call_number);
+		    }
+		    if ( $atts=~ /type=["']UVa Title Control Number["']/i ) {
+			$tcn = $value;
+		    }
+		}
+	    }
+
+	    # get header field indicated by custom regular expression
+	    if ( $opts{'1'} ) {
+		if ( /$opts{'1'}([^<]+)/ ) {
+		    if ($2) {
+			if (not $custom1) {
+			    $custom1 = $2;
+			    chomp $custom1;
+			}
+		    }
+		}
+	    }
+
+	}  # end if ($in_header)
+
+	if ( m:<pb(\s|/?>): ) {
+	    $page_count++;
+	}
+    }
+    close IN;
+
+    # check for ID; if not found in teiHeader, try getting it from filename
+    if ($infile =~ /^[bz]\d{9}/ and not $id and not $id2) {
+	$id = $&;
+    }
+
+    # truncate title to 40 characters (unless -T option was used)
+    # (the following works whether title has an associated volume or $volume is empty string)
+    if ( not $opts{'T'} ) {
+	if ( length($title) + length($volume) > 40 ) {
+	    $title = substr($title, 0, 37 - length($volume)) . "..." . $volume;
+	} else {
+	    $title = $title . $volume;
+	}
+    } else {
+	$title = $title . $volume;
+    }
+
+    # format author name if applicable
+    if (not $author) {
+	if ($name_last and $name_first) {
+	    # format as last, first
+	    $author = "$name_last, $name_first";
+	} else {
+	    # either last name or first name (or both) is empty string
+	    $author = $name_last . $name_first;
+	}
+    }
+
+    # set output string for this file
+    $output = '';
+    if ( $opts{'a'} or $opts{'b'} or $opts{'f'} or $opts{'i'} or $opts{'I'} or $opts{'n'} or $opts{'p'} or $opts{'P'} or $opts{'S'} or $opts{'t'} or $opts{'T'} or $opts{'1'} ) {
+	# user specified at least one output field
+	$output .= $infile . $d if $opts{'f'};
+	$output .= $id . $d if $opts{'i'};
+	$output .= $id2 . $d if $opts{'I'};
+	$output .= $call_number . $d if $opts{'n'};
+	$output .= $tcn . $d if $opts{'b'};
+	$output .= $seriality . $d if $opts{'S'};
+	$output .= $title . $d if ($opts{'t'} or $opts{'T'});
+	$output .= $author . $d if $opts{'a'};
+	$output .= $page_count . $d if $opts{'p'};
+	$output .= $pub_date . $d if $opts{'P'};
+	$output .= $custom1 . $d if ($opts{'1'} and $custom1);
+    } else {
+	# no output fields specified; default to -ita (DLPS ID, title, author)
+	$output .= $id . $d;
+	$output .= $title . $d;
+	$output .= $author . $d;
+    }
+    chop $output;  # chop off final delimiter
+
+    # add this file's data to hash
+    if ( $opts{'M'} and $seriality eq 'monograph' ) {
+	# exclude from output
+    } else {
+	$files{$infile} = $output;
+    }
+}
+
+# print output
+$count = 0;
+if ( $opts{'s'} ) {
+    # sort by hash values (by first field of output)
+    foreach $key (sort { $files{$a} cmp $files{$b} } keys %files) {
+	$count += 1;
+	print "$files{$key}\n";
+    }
+} else {
+    # sort by hash keys
+    foreach $key (sort keys %files) {
+	$count += 1;
+	print "$files{$key}\n";
+    }
+}
+if ( $opts{'c'} ) { print "$count files\n"; }

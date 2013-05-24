@@ -1,0 +1,117 @@
+#!/usr/bin/perl -w
+
+# tif2sid - performs MrSID encoding on each TIFF input file
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2004-03-17
+# Last modified: 2006-10-17
+
+# 2006-10-17: gpm2a: Added -j option to allow using JPEG input files.
+
+
+use strict;
+use Getopt::Std;
+
+my (%opts, $command, $source, $dest, $stats, @stats, $width, $height, $max, $nlev, $txt);
+
+my $IDENTIFY   = 'identify';  # path to ImageMagick binaries has been added to system-wide profile
+my $SID_ENCODE = '/usr/local/GeoExpress/bin/mrsidgeoencoder';
+
+my $me = 'tif2sid';
+my $usage = <<EOD;
+
+$me - performs MrSID encoding on each TIFF input file
+
+Usage: $me [-j] filenames
+  -j (JPEG) Use JPEG input files
+
+In:  TIFF image files (named with .tif or .tiff suffix)
+     If using -j option, JPEG image files (named with .jpg or .jpeg suffix)
+Out: Generates one .sid output file for each input file
+
+EOD
+
+if (not -e $SID_ENCODE) { die "$me: ERROR: Required program '$SID_ENCODE' does not exist.\n"; }
+#if (not -e $IDENTIFY) { die "$me: ERROR: Required program '$IDENTIFY' does not exist.\n"; }
+
+# make sure ImageMagick commands are in user's PATH; they should be,
+# since path to ImageMagick binaries has been added to system-wide profile
+if ( system("which identify >& /dev/null") != 0 ) { die "$me: ERROR: System cannot find 'identify' command.\n"; }
+
+getopts('j', \%opts) || die $usage;
+die $usage if (! @ARGV);
+
+foreach $source (@ARGV) {
+    next if ( $source =~ /^\./ );
+
+    if ( $opts{'j'} ) {
+	next unless ( $source =~ /^[^\.].*\.jpe?g$/ );
+    } else {
+	next unless ( $source =~ /^[^\.].*\.tiff?$/ );
+    }
+
+    $dest = $source;
+    if ( $opts{'j'} ) {
+	$dest =~ s/\.jpe?g$/\.sid/;
+    } else {
+	$dest =~ s/\.tiff?$/\.sid/;
+    }
+
+    if ( -e $dest ) {
+	unlink $dest;
+    }
+
+#    print "Processing $source ...\n";
+
+    # get dimensions (height and width) of source file using ImageMagick 'identify' command
+    $command = "$IDENTIFY $source";
+    $stats = `$command`;
+#    print "$stats\n";
+    @stats = split(/ /, $stats);
+    ($width, $height) = split(/x/, $stats[2]);
+
+    # determine maximum dimension
+    if (($height - $width) >= 0) {
+	$max = $height;
+    } else {
+	$max = $width;
+    }
+
+    # determine encoding level to use
+    if (($max > 0) && ($max <= 800)) {
+	$nlev = 2;
+    } elsif (($max > 800) && ($max <= 1600)) {
+	$nlev = 3;
+    } elsif (($max > 1600) && ($max <= 3200)) {
+	$nlev = 4;
+    } elsif (($max > 3200) && ($max <= 7000)) {
+	$nlev = 5;
+    } elsif (($max > 7000) && ($max <= 10000)) {
+	$nlev = 6;
+    } elsif (($max > 10000) && ($max <= 15000)) {
+	$nlev = 7;
+    } elsif (($max > 15000) && ($max <= 20000)) {
+	$nlev = 8;
+    } elsif (($max > 20000) && ($max <= 25000)) {
+	$nlev = 9;
+    } else {
+	$nlev = 10;
+    }
+
+    # perform MrSID encoding
+    $command = "$SID_ENCODE -i $source -o $dest -s $nlev 1>&2";
+#    print "$command\n";
+
+    if ( system($command) == 0 ) {
+	# set permissions, including group write, on newly created file
+	chmod 0664, $dest;
+
+	# MrSID generates a .txt file for each .sid file; delete the .txt file
+	$txt = $dest;
+	$txt =~ s/\.sid$/\.txt/;
+#	unlink $txt;
+    } else {
+	warn "$me: $source: MrSID encoding FAILED. Cannot process input file '$source'.\n";
+	next;
+    }
+}

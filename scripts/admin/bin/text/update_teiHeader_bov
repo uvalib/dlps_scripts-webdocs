@@ -1,0 +1,109 @@
+#!/usr/bin/perl -w
+
+# update_teiHeader_bov - updates TEI header of texts representing
+#   individual meetings of Board of Visitors minutes with date and
+#   page count
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2005-08-02 (after update_teiHeader_cavdaily)
+# Last modified: 2006-04-10
+
+# 2006-04-10: gpm2a: Script was written for BOV migration; changed it
+# for BOV production. Also changed to update DLPS tracking system -->
+# Finalization Workflow --> Update issue data
+
+
+use strict;
+use Getopt::Std;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use TrackSys;
+
+my ($me, $usage, $infile, @infile);
+my (%properties, $id, $sql, $rows);
+my ($isoDate, $year, $month, $monthName, $day, $datestring, $pbcount);
+
+$me = 'update_teiHeader_bov';
+$usage = <<EOD;
+
+$me - updates TEI header of texts representing
+  individual meetings of Board of Visitors minutes with date and
+  page count
+
+Usage: $me filenames
+
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+EOD
+
+die $usage if (! @ARGV);
+foreach (@ARGV) {
+    die $usage if /^-/;   # this script has no switches
+}
+
+TrackSys::connect();
+
+foreach $infile (@ARGV) {
+    $pbcount = 0;
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # get DLPS ID
+    %properties = DlpsText::getProperties($infile);
+    $id = DlpsText::getDlpsId(\%properties, \@infile, $infile);
+    if (! $id) {
+	die "$me: ERROR: Cannot get DLPS ID for file '$infile'\n";
+    }
+
+    # get date from DLPS ID
+    if ( $id =~ /^bov_(\d\d\d\d)-?(\d\d)-?(\d\d)/ ) {
+	$year = $1; $month = $2; $day = $3;
+	$isoDate = $year . '-' . $month . '-' . $day;
+	$datestring = DlpsText::formatDateLong($isoDate);
+    } else {
+	die "$me: ERROR: Bad filename: '$infile' (not bov_YYYY-MM-DD or bov_YYYYMMDD)\n";
+    }
+
+    # make backup; count page breaks while you're at it
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	#if ( /<(pb|milestone[^>]* unit=["']consecutive["'])/ ) { $pbcount++; }  # for BOV migration (pb and milestone)
+	if ( /<pb[^>]* ed=["']consec["']/ )                     { $pbcount++; }  # for BOV production (more than one type of pb)
+	print BAK;
+    }
+    close BAK;
+
+    # make changes, overwriting input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@infile) {
+	if ( m:<date value="INSERT DATE VALUE">INSERT DATE VALUE</date>: ) {
+	    s:$&:<date value="$isoDate">$datestring</date>:;
+	}
+
+	if ( m:<extent n="300">INSERT NUMBER OF PAGE IMAGES</extent>: ) {
+	    s:$&:<extent n="300">$pbcount pages</extent>:;
+	}
+
+        # omit empty <idno> elements
+        if ( m:^<idno type="(DLPS|ETC) ID">INSERT ID</idno>\s*$: ) {
+            next;
+        }
+
+	print OUT;
+    }
+    close OUT;
+
+    # update tracking system
+    $rows = 0;
+    $sql = "UPDATE finalization SET updateIssueData = 1 WHERE dlpsId = '$id' LIMIT 1";
+    $rows = TrackSys::query($sql);
+    if ($rows != 1) {
+	warn "$me: WARNING: Cannot update DLPS tracking system for record '$id'. Update manually.\n";
+    }
+}
+
+TrackSys::disconnect();

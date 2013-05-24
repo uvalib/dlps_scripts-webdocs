@@ -1,0 +1,80 @@
+<!--
+	DLPSRimageConfig.dtd - a DTD for configuration files used by Java applications
+	created at DLPS for communicating with a Rimage system for burning CD and DVD
+	media.
+
+	Greg Murray <gpm2a@virginia.edu>
+	DLPS (Digital Library Production Services, University of Virginia Library)
+	2004-05-18
+	Last modified: 2004-07-30
+-->
+
+<!-- ======================================================================= -->
+<!-- Root element                                                            -->
+<!-- ======================================================================= -->
+
+<!-- A DLPSRimageConfig document consists of (a) a set of configuration
+     options and (b) a list of order IDs to be processed -->
+<!ELEMENT DLPSRimageConfig (options, orders)>
+
+<!ATTLIST DLPSRimageConfig
+	copies (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9) "1"
+	media (CDR | DVDR) "DVDR"
+	isVerbose (true | false) "false"
+	deleteImages (true | false) "false"
+	imageOnly (true | false) "false"
+	productionOnly (true | false) "false" >
+
+
+<!-- ======================================================================= -->
+<!-- Configuration options                                                   -->
+<!-- ======================================================================= -->
+
+<!ELEMENT options (clientID, host?, port?, directories, dtds, labelTemplate)>
+
+<!-- string used to identify the client application to the Rimage system;
+     any string will do; for example, DLPSRimageClient -->
+<!ELEMENT clientID (#PCDATA)>
+
+<!-- name of Rimage host computer; normally can be omitted, because Rimage
+     system uses the default host ("localhost") unless told otherwise -->
+<!ELEMENT host (#PCDATA)>
+
+<!-- name of port (presumably the port where the Rimage device is connected);
+     normally can be omitted, because Rimage system uses the default port
+     unless told otherwise -->
+<!ELEMENT port (#PCDATA)>
+
+<!ELEMENT directories (editlistDir, imageDir, logDir, mergeDir)>
+
+<!-- directory for editlist files; normally C:\Rimage\Editlist -->
+<!ELEMENT editlistDir (#PCDATA)>
+
+<!-- directory for disc image files; normally C:\Rimage\Images -->
+<!ELEMENT imageDir (#PCDATA)>
+
+<!-- directory for log files; normally C:\Rimage\Logs -->
+<!ELEMENT logDir (#PCDATA)>
+
+<!-- directory for merge files; normally C:\Rimage\Merge -->
+<!ELEMENT mergeDir (#PCDATA)>
+
+<!ELEMENT dtds (imageOrderDTD, productionOrderDTD)>
+
+<!-- path to image order DTD file; for example, C:\Rimage\XML\ImageOrder_1.1.dtd -->
+<!ELEMENT imageOrderDTD (#PCDATA)>
+
+<!-- path to production order DTD file; for example, C:\Rimage\XML\ProductionOrder_1.3.DTD -->
+<!ELEMENT productionOrderDTD (#PCDATA)>
+
+<!-- path to label template file; for example, C:\Rimage\Labels\DEFAULT.btw -->
+<!ELEMENT labelTemplate (#PCDATA)>
+
+
+<!-- ======================================================================= -->
+<!-- Orders to be processed                                                  -->
+<!-- ======================================================================= -->
+
+<!ELEMENT orders (volumeID+)>
+
+<!ELEMENT volumeID (#PCDATA)>

@@ -1,0 +1,286 @@
+#!/usr/bin/perl -w
+
+# notes_n - adds/updates n attribute (for-display note referencing
+# symbol) on ref/ptr and note elements, with options for numbering
+# sequentially within the entire document or specified div, or
+# preserving print source's note referencing symbols
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2003-03-18
+# Last modified: 2005-11-14
+
+# 2003-07-28: gpm2a: Added -p (print/preserve) option, for preserving
+# numbering of print source (rather than numbering sequentially); that
+# is, for copying note reference symbol to n= attribute on ref/ptr and
+# note elements.
+#
+# 2003-08-01: gpm2a: Added -s (scope) option, for limiting the scope
+# of the numbering to a particular structural division -- front, body,
+# back, or div#. This is useful for cases where numbering requirements
+# differ between, say, front matter and body, or within a specific
+# div.
+#
+# 2005-03-21: gpm2a: Fixed a bug affecting notes with two or more
+# references to the same note. In cases where note references are
+# interleaved -- e.g. reference-to-note-1, reference-to-note-2,
+# reference-to-note-1 -- the second reference-to-note-1 was being
+# assigned the same sequence number as the reference-to-note-2, rather
+# than being assigned the same sequence number as the ref with the
+# same target. Fixed this bug.
+#
+# 2005-07-21: gpm2a: Changed -p option logic; now, if a note has no
+# symbol, use sequence number (rather than throwing an error).
+#
+# 2005-11-14: gpm2a: Added -P option to preserve symbols from print
+# source, BUT if a note has no symbol, omit the 'n' attribute (rather
+# than using a sequence number, as -p option does).
+
+
+use strict;
+use Getopt::Std;
+
+my ($me, $usage, %opts, $d, $p, $P, $s);
+my ($infile, @infile, $go);
+my (%notes, %refs, $c, $id, $target, $key, $n, $in_scope, $scope_element);
+my ($test, $buffer, $match, $new, $orig, $symbol);
+
+$me = "notes_n";
+$usage = <<EOD;
+
+$me - adds/updates n attribute (for-display note referencing
+    symbol) on ref/ptr and note elements, with options for numbering
+    sequentially within the entire document or specified div, or
+    preserving print source's note referencing symbols
+Usage: $me [-d <div#>] [-s <ID>] [-p | -P] <filenames>
+    -d (div) Specify the kind of div# element at which to reset
+       sequential numbering; defaults to numbering sequentially
+       throughout entire document.
+    -p (preserve/print source) Preserve note numbers/symbols from
+       print source, where possible. Copy note reference symbol to n
+       attribute; if no symbol is present, supply a sequence number.
+    -P (preserve/print source) Preserve note numbers/symbols from
+       print source. Copy note reference symbol to n attribute; if no
+       symbol is present, omit n attribute.
+    -s (scope) Specify ID of structural element to which to limit the
+       scope of the note numbering. Notes/refs outside the specified
+       element will not be changed.
+
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+Examples:
+  $me -p *.xml             (preserve print source's numbers/symbols; copy note reference symbol to n attribute)
+  $me -d div1 *.xml        (number notes sequentially, starting over at each div1)
+  $me -d div1 -s d14 *.xml (number notes sequentially, starting over at each div1, but
+                                only within the front, body, back, or div# element with id="d14")
+
+EOD
+
+getopts('d:s:pP', \%opts) || die $usage;
+$d = $opts{'d'};
+$p = $opts{'p'};
+$P = $opts{'P'};
+$s = $opts{'s'};
+die $usage if (! @ARGV);
+
+foreach $infile (@ARGV) {
+    %notes = ();
+    %refs = ();
+    $c = 0;
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # make backup
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+
+    # build hash of <note> IDs
+    foreach (@infile) {
+	if ( m:<note[^>]*?\sid=("|')([^\1]+?)\1: ) {
+	    $id = $2;
+	    $notes{$id} = '';
+	}
+    }
+
+    # if using -s (scope) option, you're not in scope until you hit the specified structural element;
+    # if not using -s, you're always in scope
+    if ($s) {
+	$in_scope = 0;
+    } else {
+	$in_scope = 1;
+    }
+
+    # make changes, overwriting input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@infile) {
+	# test whether or not you're within the scope of the numbering
+	if ($s) {
+	    if ($in_scope) {
+		if ( /<\/$scope_element>/ ) {
+		    $in_scope = 0;
+		}
+	    } else {
+		if ( /<(front|body|back|div\d)[^>]*?\sid=["']$s["']/ ) {
+		    $scope_element = $1;
+		    $in_scope = 1;
+		} else {
+		    # not in scope; no changes to this line
+		    print OUT;
+		    next;
+		}
+	    }
+	}
+
+	# test whether to reset numbering
+	if ($d) {
+	    if ( /<$d(\s|>)/ ) {
+		# but don't reset if <div1 type="quotation"> (block quotation with opener/closer)
+		if ( /<div1[^>]*?\stype=("|')quotation\1/ or /<q><text><body><div1/ ) {
+		    # block quotation; don't reset
+		} else {
+		    $c = 0;
+		}
+	    }
+	}
+
+	# add/update n attribute on ref/ptr
+	if ( /<(ref|ptr)\s/ ) {
+	    $test = $_;
+	    $buffer = '';
+
+	    # handle all occurences of <ref>...</ref> and <ptr/> on this line
+	    while ($test =~ m:<ref\s[^>]*?>(<[^>]+?>)*?([^<]+?)(<[^>]+?>)*?</ref>: or $test =~ m:<ptr\s[^>]*?>(</ptr>)?:) {
+		$match = $&;
+		$buffer .= $`;
+		$test = $';
+		$symbol = $2;
+
+		if ( $match =~ m:<(ref|ptr)\s[^>]*?target=("|')([^\2]+?)\2: ) {
+		    $target = $3;
+		    if ( exists($notes{$target}) ) {
+			# this ref/ptr points to a note
+			if ( exists($refs{$target}) ) {
+			    # use sequence number for this target; do not increment sequence number
+			    $new = $refs{$target};
+			} else {
+			    if ($p or $P) {
+				if ($symbol) {
+				    $new = $symbol;
+				} else {
+				    if ($p) {
+					$c++;
+					$new = $c;
+				    } else {
+					$new = '';
+					warn "$me: WARNING: Referencing symbol unknown for '$target'\n";
+				    }
+				}
+			    } else {
+				$c++;
+				$new = $c;
+			    }
+
+			    # add this ref/ptr to hash of all refs
+			    $refs{$target} = $new;
+			}
+
+			# add, or replace existing, n attribute
+			if ( $match =~ m:<(ref|ptr)[^/>]*?\sn=("|')[^\2]+?\2: ) {
+			    # replace value of existing n attribute
+			    $match =~ s:<(ref|ptr)([^/>]*?)\sn=("|')[^\3]+?\3:<$1$2 n="$new":;
+			} else {
+			    # add n attribute
+			    $match =~ s:<(ref|ptr)([^/>]*?)(/?)>:<$1$2 n="$new"$3>:;
+			}
+		    } # end if this ref/ptr points to a note
+		} # end if ref/ptr has target attribute
+		$buffer .= $match;
+	    } # end while loop
+	    $buffer .= $test;
+	    $_ = $buffer;
+	} # end if line has ref/ptr
+
+	# add/update n attribute on note
+	if ( m:<note\s[^>]*?id=("|')([^\1]+?)\1[^>]*>: ) {
+	    $id = $2;
+	    if ( exists($refs{$id}) ) {
+		$new = $refs{$id};
+
+		# add, or replace existing, n attribute
+		if ( m:<note[^>]*?\sn=("|')([^\1]+?)\1: ) {
+		    # replace value of existing n attribute
+		    s:(<note[^>]*?)\sn=("|')[^\2]+?\2:$1 n="$new":;
+		} else {
+		    # add n attribute
+		    s:(<note[^>]*?)>:$1 n="$new">:
+		}
+	    }
+	}
+
+	print OUT;
+    }
+    close OUT;
+
+    #================================
+    # confirm accuracy of renumbering
+    #================================
+
+    # re-read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # build hash of ref/ptr numbers
+    foreach (@infile) {
+	if ( m:<(ref|ptr)\s[^>]*?target=("|')([^\2]+?)\2: ) {
+	    $target = $3;
+	    if ( m:<(ref|ptr)[^>]*?\sn=("|')([^\2]+?)\2: ) {
+		$n = $3;
+	    } else {
+		$n = '';
+	    }
+	    $refs{$target} = $n;
+	}
+    }
+
+    # build hash of note numbers
+    foreach (@infile) {
+	if ( m:<note[^>]*?\sid=("|')([^\1]+?)\1: ) {
+	    $id = $2;
+	    if ( m:<note[^>]*?\sn=("|')([^\1]+?)\1: ) {
+		$n = $2;
+	    } else {
+		$n = '';
+	    }
+	    $notes{$id} = $n;
+	}
+    }
+
+    foreach $key (keys(%refs)) {
+	if ( exists($notes{$key}) ) {
+	    if ( not $refs{$key} eq $notes{$key} ) {
+		warn "$me: $infile: WARNING: <ref> '$key' = '$refs{$key}' does not match " .
+		    "<note> '$key' = '$notes{$key}'\n";
+	    }
+	} else {
+	    warn "$me: $infile: WARNING: <ref> '$key' has no corresponding <note>.\n";
+	    next;
+	}
+    }
+
+    foreach $key (keys(%notes)) {
+	if ( exists($refs{$key}) ) {
+	    if ( not $notes{$key} eq $refs{$key} ) {
+		warn "$me: $infile: WARNING: <note> '$key' = '$notes{$key}' does not match " .
+		    "<ref> '$key' = '$refs{$key}'\n";
+	    }
+	} else {
+	    warn "$me: $infile: WARNING: <note> '$key' has no corresponding <ref>.\n";
+	}
+    }
+}

@@ -1,0 +1,84 @@
+#!/usr/bin/perl -w -I /shares/admin/bin/text
+
+# figure_ids - adds id attribute on <figure> tags (if not already present)
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2003-01-17
+# Last modified: 2005-07-20
+
+# 2005-07-20: gpm2a: Added -u switch to allow updating existing
+# IDs. Added -L switch to disable logging.
+
+# Undocumented -L switch disables logging.
+
+
+use strict;
+##use DlpsText;
+use Getopt::Std;
+
+my ($me, $usage, %opts, $infile, @infile, $c, $value, $att, $slash, $old, $temp);
+
+$me = 'figure_ids';
+$usage = <<EOD;
+
+$me - adds id attribute on <figure> tags (if not already present)
+Usage: $me [-u] filenames
+  -u (update) Updates existing IDs if they conform to the ID-naming
+              convention used by this script (namely "f" followed by
+              one or more digits). Any other existing IDs are
+              retained, since such IDs were likely added by the
+              keyboarding vendor and are the targets of references.
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+EOD
+
+getopts('uL', \%opts) || die $usage;
+die $usage if (! @ARGV);
+
+foreach $infile (@ARGV) {
+    $c = 0;
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # make backup
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+        print BAK;
+    }
+    close BAK;
+
+    # make changes, overwriting input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@infile) {
+	if ( /<figure/ ) {
+	    if ( /<figure[^>]*\s+(id=["'][^"']+["'])/ ) {
+		$old = $1;
+		if ($opts{u} and $old =~ /f\d+/) {
+		    # update existing value
+		    $c++;
+		    $value = "f$c";
+		    $att = "id=\"$value\"";
+		    s/$old/$att/;
+		}
+	    } else {
+		# add id attribute
+		$c++;
+		$value = "f$c";
+		$att = "id=\"$value\"";
+	        m:<figure[^>]*?(/?)>:;
+		if ($1) { $slash = '/'; } else { $slash = ''; }
+		s:(<figure[^>]*?)/?>:$1 $att$slash>:;
+	    }
+	}
+
+	print OUT;
+    }
+    close OUT;
+
+    if ($opts{u}) { $temp = 'Updated'; } else { $temp = 'Added'; }
+    ##DlpsText::log($me, $infile, "$temp id attribute on <figure> tags") unless $opts{L};
+}

@@ -1,0 +1,228 @@
+#!/usr/bin/perl -w
+#
+# @(#)mogrify_images			1.00		2006/09/27
+#
+# This script will traverse a directory and search for screen and preview directories with
+# JPEG images in them. If they are found then they will be modified using ImageMagick's 
+# mogrify command so that the density option can be used to update the image header so that
+# the image will be correctly sized when imported into desktop publishing software applica-
+# tions. This option does not modify the image itself - just the header.
+#
+# Copyright (c) 2006 Digital Library Production Services, University of Virginia Library
+# All rights reserved.
+#
+# @version	1.00	2006/09/27
+# @author	Jack Kelly
+#
+
+use strict;
+use Getopt::Long;
+use Cwd;
+
+my (%options,@progress,@errors,$msg,$error,$dir,$id,$ok);
+my $mailFrom = 'jlk4p@virginina.edu';
+my $startDir = cwd();
+my $MOGRIFY = '/usr/bin/mogrify';		# pogo location
+#my $MOGRIFY = '/usr/local/bin/mogrify';	# my laptop's location as well as iris.lib
+my $me = 'mogrify_images';
+my $usage = <<EOD;
+
+$me - traverses a directory (including any subdirectories) and 
+searches for screen and preview directories with JPEG images in them. If 
+they are found then they will be modified using ImageMagick's mogrify command 
+so that the density option can be used to update the image header. Then images 
+will be correctly sized when imported into desktop publishing software. This 
+option does not modify the image itself, just the header.
+
+Usage: $me [-v] [-e email_address] directories
+  -v (verbose) Show status messages.
+  -e (email)   If this option is specified the results of the script will be 
+               emailed to the address specified. To specify more than one email 
+               address, separate them using a comma not spaces.
+
+EOD
+
+# Make sure the command was called correctly before proceeding...
+GetOptions(\%options,'v', "e=s") || die $usage;
+die $usage unless (@ARGV);
+
+$msg = "Started at "  . (scalar localtime) . "\r\n";
+push(@progress,$msg);
+print $msg if ($options{'v'});
+
+#======================================================================
+# begin the script process
+#======================================================================
+foreach $dir (sort(@ARGV)) {
+    $error = 0;
+    $ok = 1;
+
+    $dir =~ s:/$::;  # remove final slash, if present
+    $id = $dir;
+    $id =~ s:^.*/::;  # remove leading path, if any
+
+    $msg = "$me: Processing directory '$dir' (ID $id)...\r\n";
+    print $msg if ($options{'v'});
+    push(@progress,$msg);
+
+    if (-d $dir) {
+		unless ( -r $dir ) {
+			$msg = "$me: ERROR: Need read permission for directory '$dir'\r\n";
+			warn $msg;
+			push(@errors,$msg);
+			$ok = 0; next;
+		}
+    } else {
+		$msg = "$me: ERROR: '$dir' is not a directory\r\n";
+		warn $msg;
+		push(@errors,$msg);
+		$ok = 0; next;
+    }
+
+    # change to input directory
+    if (not chdir($dir)) {
+		$msg = "$me: ERROR: Cannot change to directory '$dir': $!\r\n";
+		warn $msg;
+		push(@errors,$msg);
+		$ok = 0; next;
+    }
+    
+    # Traverse the directory looking for screen and preview folders with JPEG images to modify
+    searchForJpegImages("$startDir/$dir");
+	
+   	if (not $ok) {
+		next;
+   	}
+}
+continue {
+    if ($ok) {
+		$msg = "   Directory '$dir' was processed successfully.\r\n\r\n";
+		print $msg if ($options{'v'});
+		push(@progress,$msg);
+    } else {
+		$msg = "$me: ERROR: Processing of directory '$dir' FAILED!\r\n\r\n";
+		warn $msg;
+		push(@errors,$msg);
+    }
+
+    # change to starting directory
+    if (cwd() ne $startDir) {
+		if (not chdir($startDir)) {
+	    	$msg = "$me: FATAL ERROR: Cannot change to starting directory '$startDir': $!\r\n";
+	    	push(@errors,$msg);
+		}
+    }
+
+}
+
+$msg = "\r\nFinished at "  . (scalar localtime) . "\r\n";
+push(@progress,$msg);
+print $msg if ($options{'v'});
+
+# Email the results if an address was specified as an option.
+if (exists $options{'e'}) {
+	my $mailTo = $options{'e'};
+	sendMail($mailTo);
+}
+
+#======================================================================
+# subroutines
+#======================================================================
+
+sub searchForJpegImages {
+	my ($directoryPath) = @_;
+	my $numFilesModified = 0;
+	
+	# Open the directory for reading.
+	if (opendir(INDIR,$directoryPath)) {
+		
+		$msg = "   In directory  $directoryPath:\r\n";
+		print $msg if ($options{'v'});
+		push(@progress,$msg);
+		
+		# Read the contents of the directory in ascending order.
+		my @contents = sort(readdir(INDIR));
+		closedir(INDIR);
+		
+		# Exclude all . files.
+		@contents = grep(!/^\./,@contents);
+		
+		# Change to the directory being read before attempting to test if
+		# it's contents are files, otherwise the results are not accurate.
+		foreach my $entry (@contents) {
+			if (not chdir($directoryPath)) {
+				$msg = "   Failed to change to directory '$directoryPath': $!\r\n";
+				push(@progress,$msg);
+			} else {
+				# If this directory entry is a directory then check its contents.
+				if (-d $entry) {
+					# recursively check a subdirectory 
+					my $newDirectory = $directoryPath . "/" . $entry;
+					searchForJpegImages($newDirectory);
+				} else {
+				# otherwise this must be a file so determine if it should be modified.
+					# if it is located in a screen or preview directory ...
+					if (($directoryPath =~ m/screen$/) or ($directoryPath =~ m/preview$/)) {
+						# AND it is a jpeg image file...
+						if ($entry =~ m/\.jpg$/) {
+							# then modify the file.
+							my $command = "$MOGRIFY -density 72x72 -quality 100 $entry";
+							if (system($command) == 0) {
+								chmod(0664,$entry);
+								$numFilesModified++;
+							} else {
+								$msg = "   Failed to modify image header for file '$entry'.\r\n";
+								push(@progress,$msg);
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		if ($numFilesModified ne 0) {
+			$msg = "      Number of file headers modified = $numFilesModified\r\n";
+			print $msg if ($options{'v'});
+			push(@progress,$msg);
+		}
+	} else {
+		$msg = "   Cannot read $directoryPath!\r\n";
+		push(@progress,$msg);
+		$ok = 0;
+	}
+	
+} # end searchForJpegImages
+
+sub sendMail {
+	my ($address) = @_;
+	
+    my @time = localtime(time);
+    my $today = $time[3];
+    my $month = (1,2,3,4,5,6,7,8,9,10,11,12)[(localtime)[4]];
+    my $year = $time[5];
+    $year = $year - 100;
+
+    $year = sprintf("%02d",$year);
+    $month = sprintf("%02d",$month);
+    $today = sprintf("%02d",$today);
+
+    my($date)="$month/$today/$year";
+
+    open(MAIL,"| /usr/sbin/sendmail -i -t");
+    print MAIL "To: $address\n"; 
+    print MAIL "From: $mailFrom\n";
+    if (@errors) {
+		print MAIL "Subject: Error running script $me\n\n";
+		print MAIL "There was an error from the $me script on $date:\n\n";
+    } else {
+		print MAIL "Subject: Report from script $me\n\n";
+		print MAIL "$me script completed with no errors on $date.\n\n";
+    }
+    foreach my $err (@errors) {
+		print MAIL "$err";
+    }
+    foreach my $noerr (@progress) {
+		print MAIL "$noerr" ;
+    }
+    close(MAIL);
+}

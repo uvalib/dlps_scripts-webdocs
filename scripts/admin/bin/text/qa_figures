@@ -1,0 +1,219 @@
+#!/usr/bin/perl -w -I /shares/admin/bin/text
+
+# qa_figures - checks TEI XML document(s) for conformance to local
+#   encoding practices concerning <figure> elements
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2003-08-19
+# Last modified: 2006-03-08
+
+# Checks the following markup rules:
+#   - Attributes 'entity' and 'rend' are required, unless (a) there
+#     are no page or figure images associated with the text, or (b)
+#     it's a newspaper. (The DTD enforces the vocabulary for rend.)
+
+# 2003-11-13: gpm2a: Added tests for attributes 'entity' and 'rend';
+# at end of the post-keyboarding process, when markup QA is performed,
+# these attributes are required.
+#
+# 2004-04-20: gpm2a: Removed requirement that if rend="page", <figure>
+# 'entity' attribute value should end with _0, because this can occur
+# if there is simply no image file for the figure (no "figure scan";
+# the figure can be fully represented by the page image) -- which is
+# not an error condition. Similarly, removed requirement that if
+# rend="page", <pb/> 'entity' attribute value for that page must end
+# with _0, because that's a practice we no longer follow.
+#
+# 2005-01-12: gpm2a: Added -E (errors only) option.
+#
+# 2005-04-06: gpm2a: Added -N (newspaper) option.
+#
+# 2005-07-20: gpm2a: If <?dlps figure-images="no"?> then 'entity'
+# attribute is not required. If figure-images="no" and
+# page-images="bitonal" and document contains <figure> tag(s), then
+# issue a warning, because normally a text with bitonal page images
+# and figure tags should have figure-images="yes".
+#
+# 2005-08-01: gpm2a: Use standard output for QA error/warning/info
+# messages (since these are normal script output). Only use standard
+# error for fatal script errors.
+#
+# 2005-09-28: gpm2a: Formerly the 'entity' attribute was not required
+# if <?dlps figure-images="no"?> (see 2005-07-20 above). Now, 'entity'
+# is required unless there are no images whatsoever associated with
+# the text -- no figure images *and* no page images. (If there are
+# page images but no figure images, the 'entity' attribute on <figure>
+# should be present and should be the same as 'entity' on the
+# preceding <pb>.)
+#
+# 2006-03-08: gpm2a: Fixed bug that manifested itself only when there
+# was a very large number of errors to report.
+
+
+#***********
+# main logic
+#***********
+
+use strict;
+use DlpsText;
+use Getopt::Std;
+
+my ($me, $usage, %opts, $e, $infile, @infile, %properties);
+my ($c, @hits, $lc, $hasFigureTags);
+my ($match, $test, $pb_entity, $entity, $rend);
+my ($el, $id, $line, $type, $msg);
+
+$me = 'qa_figures';
+$usage = <<EOD;
+
+$me - checks TEI XML document(s) for conformance to local encoding practices concerning <figure> elements
+Usage: $me [-e number] [-E -N] filenames
+    -e  Maximum number of error/warning messages to display (defaults to 10)
+    -E  Only display error messages (suppress warnings)
+    -N  Run newspaper-specific QA checks
+In: XML file(s)
+Out: Prints messages to standard output
+
+EOD
+
+getopts('e:EN', \%opts) || die $usage;
+$e = $opts{'e'} || '10';
+die "-e must be a number.$usage" if (not $e =~ /\d+/);
+$e += 0;
+die $usage if (! @ARGV);
+
+INFILE: foreach $infile (@ARGV) {
+    @hits = ();
+    $c = 0;
+    $hasFigureTags = 0;
+
+    # get properties from <?dlps ...?> processing instructions
+    %properties = DlpsText::getProperties($infile);
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    #==========
+    # run tests
+    #==========
+
+    $lc = 0;
+    foreach (@infile) {
+	$lc++;
+	if ( /<figure/ ) { $hasFigureTags = 1; }
+
+	if ( /<pb[^>]*\sentity=["'](\w+)["']/ ) {
+	    $pb_entity = $1;
+	    if ( $pb_entity =~ /_0$/ ) {
+		hit($lc, 'E', "Outdated practice: pb entity value should never end with _0");
+	    }
+
+	    if ($pb_entity eq 'none') {
+		hit($lc, 'E', "Outdated practice: pb entity value should never be 'none'");
+	    }
+	}
+
+	$test = $_;
+	while ( $test =~ /<figure[^>]*>/ ) {
+	    $match = $&;
+	    $test = $';
+
+	    # get values of entity and rend attributes
+	    $entity = ''; $rend = '';
+	    if ( $match =~ /\sentity=("|')([^\1]+?)\1/ ) {
+		$entity = $2;
+	    }
+	    if ( $match =~ /\srend=("|')([^\1]+?)\1/ ) {
+		$rend = $2;
+	    }
+
+	    # attributes entity and rend are required
+	    if (! $entity) {
+		if ( ($properties{'figure-images'} eq 'no' and $properties{'page-images'} eq 'none') or ($opts{N}) ) {
+		    # entity attribute not required
+		} else {
+		    hit($lc, 'E', "Missing required attribute 'entity'");
+		}
+	    }
+	    if (! $rend) {
+		hit($lc, 'E', "Missing required attribute 'rend'") unless ($opts{N});
+	    }
+
+	    # entity value should not be "none"; that is an outdated practice
+	    if ($entity eq 'none') {
+		hit($lc, 'E', "Outdated practice: entity value should never be 'none'");
+	    }
+
+	    # if rend="page", entity value should end with _0 (unless
+	    # there is no image file for the figure, as is the case
+	    # whenever you have color page images)
+	    if ($rend eq 'page') {
+		unless ( $properties{'page-images'} eq 'color' ) {
+		    # figure entity should end with _0
+		    if ( not $entity =~ /_0$/ ) {
+			unless ($opts{E}) {
+			    #hit($lc, 'W', "Entity/rend mismatch: rend='page' but entity doesn't end with _0");
+			}
+		    }
+		}
+	    } else {
+		if ( $entity =~ /_0$/ ) {
+		    hit($lc, 'E', "Entity/rend mismatch: entity ends with _0 but rend doesn't equal 'page'");
+		}
+	    }
+	}
+    }
+
+    #===============
+    # print messages
+    #===============
+
+    if ($hasFigureTags and $properties{'page-images'} eq 'bitonal' and not $properties{'figure-images'} eq 'yes') {
+	$msg = <<EOD;
+
+This document contains <figure> tag(s), and it indicates that it has
+bitonal page images, but it does not indicate figure-images="yes". Are
+you sure there are no figure images? The only reason this can occur is
+if all figures are line art, graphs, etc. that can be fully
+represented by the bitonal page images.
+EOD
+	chomp $msg;
+	hit(0, 'W', $msg) unless ($opts{E});
+    }
+
+    # print messages, sorted by line number and column number
+    $c = 0;
+    foreach $el ( sort({$a cmp $b} @hits) ) {
+        $c++;
+	($id, $line, $type, $msg) = split(/\|/, $el);
+
+	if    ($type eq 'E')    { $type = 'ERROR'; }
+	elsif ($type eq 'W')    { $type = 'WARNING'; }
+	elsif ($type eq 'INFO') { $type = 'Info'; }
+
+        if ($line) { $line = "$line: "; } else { $line = ''; }
+	print "$infile: $line$type: $msg\n";
+
+        if ($c >= $e) {
+	    print "$infile: Info: maximum number of errors ($e) reached; change with -e option\n\n";
+            next INFILE;
+        }
+    }
+}
+
+
+#************
+# subroutines
+#************
+
+sub hit {
+    my $line = shift;
+    my $type = shift;
+    my $msg = shift;
+
+    my $id = sprintf("%05d", $line);
+    $hits[$c] = "$id|$line|$type|$msg";
+    $c++;
+}

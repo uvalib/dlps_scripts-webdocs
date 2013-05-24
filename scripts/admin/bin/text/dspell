@@ -1,0 +1,13 @@
+#!/usr/bin/perl -w
+
+# dspell - Checks spelling of newspaper items against a 
+#	customized dictionary saved to /shares/admin/bin/text/markup_qa_dictionary
+
+# Andrew Curley (aec6v@virginia.edu)
+# Written: 2006-06-19
+# Last modified: Never
+
+foreach $infile (@ARGV) {
+
+	exec "aspell --home-dir=/shares/admin/bin/text/markup_qa_dictionary/ -H -c $infile";
+}

@@ -1,0 +1,253 @@
+#!/usr/bin/perl -w
+
+# qa_super - runs numerous QA checks (Perl scripts and XSLT stylesheets) against DLPS TEI XML files
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2005-01-11
+# Last modified: 2008-01-15
+
+# 2005-02-03: gpm2a: Rather than always running qa_properties, it now
+# runs only if user opts to run XML checks.
+#
+# 2005-04-05: gpm2a: Added -Z option for "finalization" checks --
+# markup features (such as 'pid' attribute values) that are required
+# before going into ReadyRepo but not required/applicable during
+# production.
+#
+# 2005-06-13: gpm2a: Newspaper issues are not currently going into the
+# repository, so PIDs are not needed; do not call qa_pids for
+# newspaper files.
+#
+# 2005-07-13: gpm2a: Added -r (properties) option for running
+# qa_properties (previously run as part of the -x option XML checks).
+#
+# 2005-07-26: gpm2a: Added -m option for including qa_lib_misc.xsl -
+# stylesheet for miscellaneous/general requirements not handled by the
+# other qa_lib_*.xsl stylesheets.
+#
+# 2006-04-03: gpm2a: Changed to update DLPS tracking system as follows:
+#   * if -h (but not -a): Finalization Workflow --> QA TEI header
+#   * if -Z:              Finalization Workflow --> Run QA program
+#
+# 2006-04-14: gpm2a: Added call to qa_teiHeader_tracksys when checking
+# TEI header.
+#
+# 2007-02-12: gpm2a: Added 'finalization' parameter for
+# qa_tei_commandline.xsl.
+#
+# 2008-01-15: gpm2a: Added -D option for bypassing DLPS Tracking
+# System database. Useful for migration or other texts for which you
+# know there's no record in the tracking system, you don't want to get
+# repeated warnings to that effect, but you also don't want to turn
+# off warnings altogether.
+
+
+use strict;
+use Getopt::Std;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use TrackSys;
+
+my ($me, $usage, %opts, $infile, $all, $params);
+my (@infile, %properties, $dlpsId, $sql, $rows);
+my $indent = '    ';
+
+my $XSL_PATH = '/shares/admin/bin/text/xsl';
+
+$me = 'qa_super';
+$usage = <<EOD;
+
+$me - runs numerous QA checks (Perl scripts and XSLT stylesheets) against TEI XML files
+
+Usage: $me [-a | -c -d -e -f -g -h -m -n -p -r -s -t -x] [-D -E -N -V -Z] filenames
+
+Categories of QA checks:
+  -a (all)          Run all QA checks (equivalent to -cdefghmnprstx); true unless one or more of -cdefghmnprstx is specified
+  -c (corrections)  Run QA checks relating to corrections
+  -d (dates)        Run QA checks relating to <date> elements and 'value' attributes
+  -e (empty)        Run QA checks relating to empty elements and empty attribute values
+  -f (figures)      Run QA checks relating to <figure> elements
+  -g (foreign)      Run QA checks relating to foreign phrases
+  -h (header)       Run QA checks relating to the TEI header
+  -m (misc)         Run miscellaneous QA checks not handled by the other categories
+  -n (notes)        Run QA checks relating to notes and note-references
+  -p (page breaks)  Run QA checks relating to page breaks
+  -r (properties)   Run QA checks relating to the <?dlps ...?> 'property sheet'
+  -s (structure)    Run QA checks relating to structural elements
+  -t (tables)       Run QA checks relating to tables, lists and block quotations
+  -x (XML)          Run QA checks relating to local XML practices (encoding, etc.)
+
+Other options:
+  -D (database off) Do not update DLPS Tracking System database (Note: some QA checks might still use the database)
+  -E (errors only)  Only report errors (suppress warnings)
+  -N (newspapers)   Run newspaper-specific QA checks
+  -V (verbose)      Display status messages (in addition to warning and error messages)
+  -Z (finalization) Run QA checks relating to markup features required after the finalization workflow, but not during production
+
+In: TEI XML file(s)
+Out: Status messages are sent to standard output; warning and error messages are sent to standard error
+
+Examples:
+  $me *.xml       Run all categories of QA checks; skip newspaper-specific checks; report warnings and errors
+  $me -stE *.xml  Run checks relating to TEI structure and tables; skip newspaper-specific checks; report errors only
+  $me -nN *.xml   Run checks relating to TEI notes only; run newspaper-specific checks; report warnings and errors
+
+EOD
+
+getopts('acdefghmnprstxDENVZ', \%opts) || die $usage;
+die $usage if (! @ARGV);
+
+# set up options for qa_tei_commandline.xsl stylesheet
+if ($opts{a}) {
+    $all = 1;
+} else {
+    if ($opts{c} or $opts{d} or $opts{e} or $opts{f} or $opts{g} or $opts{h} or $opts{m} or $opts{n} or $opts{p} or $opts{r} or $opts{s} or $opts{t} or $opts{x}) {
+	$all = 0;
+    } else {
+	$all = 1;
+    }
+}
+
+# provide feedback on options selected
+if ($opts{V}) {
+    print "Options selected:\n";
+    if ($all) {
+	print "${indent}-a  All QA checks\n";
+    } else {
+	print "${indent}-c  Corrections\n" if $opts{c};
+	print "${indent}-d  Dates\n" if $opts{d};
+	print "${indent}-e  Empty elements and attributes\n" if $opts{e};
+	print "${indent}-f  <figure> elements\n" if $opts{f};
+	print "${indent}-g  Foreign phrases\n" if $opts{g};
+	print "${indent}-h  TEI header\n" if $opts{h};
+	print "${indent}-m  Miscellaneous\n" if $opts{m};
+	print "${indent}-n  Notes\n" if $opts{n};
+	print "${indent}-p  Page breaks\n" if $opts{p};
+	print "${indent}-r  <?dlps ...?> properties\n" if $opts{r};
+	print "${indent}-s  Structure\n" if $opts{s};
+	print "${indent}-t  Tables, lists and block quotations\n" if $opts{t};
+	print "${indent}-x  XML features and encoding\n" if $opts{x};
+    }
+    print "${indent}-D  Don't update DLPS Tracking System database\n" if $opts{D};
+    print "${indent}-E  Errors only\n" if $opts{E};
+    print "${indent}-N  Newspaper-specific checks\n" if $opts{N};
+    print "${indent}-Z  Finalization checks\n" if $opts{Z};
+}
+
+TrackSys::connect() unless $opts{D};
+
+foreach $infile (@ARGV) {
+    print "Processing $infile...\n" if $opts{V};
+
+    # run XML checks
+    if ($all or $opts{x}) {
+	if ($opts{E}) { $params = ' -E'; } else { $params = ''; }
+	system("qa_xml$params $infile");
+    }
+
+    # run <?dlps ...? properties checks
+    if ($all or $opts{r}) {
+	if ($opts{E}) { $params = ' -E'; } else { $params = ''; }
+	system("qa_properties$params $infile");
+    }
+
+    # run TEI header checks
+    if ($all or $opts{h}) {
+	# set up parameters for TEI header stylesheet
+	$params = "filename=$infile";
+	if ($opts{E}) { $params .= ' errorsOnly=1'; }
+
+	system("saxon -l $XSL_PATH/qa_teiHeader.xsl $params $infile");
+
+	if ($opts{E}) { $params = ' -E'; } else { $params = ''; }
+	system("qa_teiHeader_tracksys$params $infile") unless $opts{D};
+    }
+
+    # run <date> checks
+    if ($all or $opts{d}) {
+	if ($opts{E}) { $params = ' -E'; } else { $params = ''; }
+	system("qa_dates$params $infile");
+    }
+
+    # run <figure> checks
+    if ($all or $opts{f}) {
+	if ($opts{E}) { $params = ' -E'; } else { $params = ''; }
+	if ($opts{N}) { $params .= ' -N'; }
+	system("qa_figures$params $infile");
+    }
+
+    # set up parameters for qa_tei_commandline.xsl stylesheet
+    $params = "filename=$infile";
+    if ($all) {
+	$params .= ' all=1';
+    } else {
+	if ($opts{c}) { $params .= ' corr=1'; }
+	if ($opts{e}) { $params .= ' empty=1'; }
+	if ($opts{g}) { $params .= ' foreign=1'; }
+	if ($opts{m}) { $params .= ' misc=1'; }
+	if ($opts{n}) { $params .= ' notes=1'; }
+	if ($opts{p}) { $params .= ' pb=1'; }
+	if ($opts{s}) { $params .= ' structure=1'; }
+	if ($opts{t}) { $params .= ' tables=1'; }
+    }
+    if ($opts{E}) { $params .= ' errorsOnly=1'; }
+    if ($opts{Z}) { $params .= ' finalization=1'; }
+
+    # run qa_tei_commandline.xsl stylesheet
+    if ($all or $opts{c} or $opts{e} or $opts{g} or $opts{m} or $opts{n} or $opts{p} or $opts{s} or $opts{t}) {
+	system("saxon -l $XSL_PATH/qa_tei_commandline.xsl $params $infile");
+    }
+
+    if ($opts{N}) {
+	if ($all or $opts{p}) {
+	    system("saxon -l $XSL_PATH/qa_pb_newspapers.xsl filename=$infile $infile");
+	}
+    }
+
+    # run finalization checks
+    if ($opts{Z}) {
+	if ($opts{E}) { $params = ' -E'; } else { $params = ''; }
+
+	# check PIDs (except on newspapers, which are not currently
+	#   going into the repository, so PIDs are not needed)
+	system("qa_pids$params $infile") unless $opts{N};
+    }
+
+
+    #--------------------------------------
+    # update tracking system, if applicable
+    #--------------------------------------
+
+    unless ($opts{D}) {
+	# read input file
+	open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+	@infile = <IN>;
+	close IN;
+
+	# get DLPS ID
+	%properties = DlpsText::getProperties($infile);
+	$dlpsId = DlpsText::getDlpsId(\%properties, \@infile, $infile);
+
+	if ($opts{h} && ! $all) {
+	    # update "QA TEI header" step
+	    $rows = 0;
+	    $sql = "UPDATE finalization SET qaHeader = 1 WHERE dlpsId = '$dlpsId' LIMIT 1";
+	    $rows = TrackSys::query($sql);
+	    if ($rows != 1) {
+		warn "$me: WARNING: Cannot update DLPS tracking system for record '$dlpsId'. Update manually.\n" unless $opts{E};
+	    }
+	}
+
+	if ($opts{Z}) {
+	    # update "Run QA program" step
+	    $rows = 0;
+	    $sql = "UPDATE finalization SET qaProgram = 1 WHERE dlpsId = '$dlpsId' LIMIT 1";
+	    $rows = TrackSys::query($sql);
+	    if ($rows != 1) {
+		warn "$me: WARNING: Cannot update DLPS tracking system for record '$dlpsId'. Update manually.\n" unless $opts{E};
+	    }
+	}
+    }
+}
+
+TrackSys::disconnect() unless $opts{D};

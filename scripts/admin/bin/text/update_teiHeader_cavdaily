@@ -1,0 +1,188 @@
+#!/usr/bin/perl -w
+
+# update_teiHeader_cavdaily - updates TEI header of texts representing
+#   individual issues of the Cavalier Daily newspaper with
+#   issue-specific data like volume number, issue number, date, and DLPS ID
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2004-05-21
+# Last modified: 2006-04-03
+
+# 2004-12-23: gpm2a: Changed to put <biblScope> within <titleStmt>
+# (rather than outside it) to comply with change in practice as
+# determined by Metadata Steering Group.
+#
+# 2006-04-03: gpm2a: Changed to update DLPS tracking system -->
+# Finalization Workflow --> Update issue data (newspapers)
+
+
+# Undocumented switches: -B for no backup file and -L for no logging.
+
+
+use strict;
+use Getopt::Std;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use TrackSys;
+
+my ($me, $usage, %opts, $infile, @infile);
+my (%properties, $dlpsId, $sql, $rows);
+my ($vol, $vol_value, $issue, $issue_value, $date, $date_value);
+my ($in_fileDesc, $in_sourceDesc, $in_nameplate);
+my ($temp, $scope_added, $dlps_id_added);
+
+$me = 'update_teiHeader_cavdaily';
+$usage = <<EOD;
+
+$me - updates TEI header of texts representing individual issues of
+    the Cavalier Daily newspaper with issue-specific data like volume
+    number, issue number, date, and DLPS ID
+
+Usage: $me filenames
+
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+EOD
+
+getopts('BL', \%opts) || die $usage;
+die $usage if (! @ARGV);
+
+TrackSys::connect();
+
+foreach $infile (@ARGV) {
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # get DLPS ID
+    %properties = DlpsText::getProperties($infile);
+    $dlpsId = DlpsText::getDlpsId(\%properties, \@infile, $infile);
+    if (! $dlpsId) {
+	warn "$me: $infile: ERROR: Can't get DLPS ID.\n";
+	next;
+    }
+
+    # get volume number, issue number, and date
+    $in_nameplate=0; $vol=''; $vol_value=''; $issue=''; $issue_value=''; $date=''; $date_value='';
+    foreach (@infile) {
+	if ( $in_nameplate ) {
+	    if ( m:<num type="volume" value="([^"]*?)">(.*?)</num>: ) {
+		$vol_value = $1;
+		$vol = $2;
+	    }
+
+	    if ( m:<num type="number" value="([^"]*?)">(.*?)</num>: ) {
+		$issue_value = $1;
+		$issue = $2;
+	    }
+
+	    if ( m:<date value="([^"]*?)">(.*?)</date>: ) {
+		$date_value = $1;
+		$date = $2;
+	    }
+
+	    if ( m:</div: ) {
+		last;
+	    }
+
+	} elsif ( /<div\d[^>]*?\stype=["']nameplate/ ) {
+	    $in_nameplate = 1;
+	}
+    }
+
+    # strip markup (such as <hi> tags, etc.) from values
+    $vol   = DlpsText::strip_markup($vol);
+    $issue = DlpsText::strip_markup($issue);
+    $date  = DlpsText::strip_markup($date);
+
+    # convert to proper case
+    $vol   = DlpsText::proper_case( lc($vol) );
+    $issue = DlpsText::proper_case( lc($issue) );
+    $date  = DlpsText::proper_case( lc($date) );
+
+    # make backup file
+    unless ( $opts{B} ) {
+	open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+	foreach (@infile) {
+	    print BAK;
+	}
+	close BAK;
+    }
+
+    # make changes, overwriting input file
+    $scope_added = 0; $dlps_id_added = 0;
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@infile) {
+	if ( /<fileDesc/ )	{ $in_fileDesc = 1; }
+	if ( /<\/fileDesc>/ )	{ $in_fileDesc = 0; }
+
+	if ( /<sourceDesc/ )	{ $in_sourceDesc = 1; }
+	if ( /<\/sourceDesc>/ )	{ $in_sourceDesc = 0; }
+
+	if ( m:</titleStmt>: ) {
+	    # prepend volume number, issue number, and date before outputting
+            $temp = '';
+	    if ($vol) {
+		$temp .= qq:<biblScope type="volume"><num value="$vol_value">$vol</num></biblScope>\n:;
+	    } else {
+		warn "$me: $infile: WARNING: Volume number not found\n";
+	    }
+
+	    if ($issue) {
+		$temp .= qq:<biblScope type="issue"><num value="$issue_value">$issue</num></biblScope>\n:;
+	    } else {
+		warn "$me: $infile: WARNING: Issue number not found\n";
+	    }
+
+	    if ($date) {
+		$temp .= qq:<biblScope type="date"><date value="$date_value">$date</date></biblScope>\n:;
+	    } else {
+		warn "$me: $infile: WARNING: Date of issue not found\n";
+	    }
+
+            $_ = $temp . $_;
+	    $scope_added = 1;
+	}
+
+        # omit empty <idno> element for DLPS ID, if present
+        if ( m:<idno type=["']DLPS ID["']/>: ) {
+            next;
+        }
+
+	if ( m:</publicationStmt>: ) {
+	    if ($in_fileDesc and not $in_sourceDesc) {
+		# prepend DLPS ID before outputting
+		$_ = qq:<idno type="DLPS ID">$dlpsId</idno>\n: . $_;
+		$dlps_id_added = 1;
+	    }
+	}
+
+	print OUT;
+    }
+    close OUT;
+
+    if (not $scope_added) {
+	warn "$me: $infile: WARNING: Main title not found. Volume, issue, and date were NOT added to header.\n";
+    }
+    if (not $dlps_id_added) {
+	warn "$me: $infile: WARNING: End of publicationStmt not found. DLPS ID was NOT added to header.\n";
+    }
+
+    unless ( $opts{L} ) {
+	if ( $scope_added or $dlps_id_added ) {
+	    ##DlpsText::log($me, $infile, "Updated <teiHeader> with data specific to this issue of the Cavalier Daily");
+
+	    # update tracking system
+	    $rows = 0;
+	    $sql = "UPDATE finalization SET updateIssueData = 1 WHERE dlpsId = '$dlpsId' LIMIT 1";
+	    $rows = TrackSys::query($sql);
+	    if ($rows != 1) {
+	        warn "$me: WARNING: Cannot update DLPS tracking system for record '$dlpsId'. Update manually.\n";
+	    }
+	}
+    }
+}
+
+TrackSys::disconnect();

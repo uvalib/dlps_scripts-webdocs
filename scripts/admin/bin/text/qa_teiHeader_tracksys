@@ -1,0 +1,272 @@
+#!/usr/bin/perl -w
+
+# qa_teiHeader_tracksys - compares values in TEI header against corresponding values in DLPS tracking system
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2006-04-11
+# Last modified: 2006-04-11
+
+
+use strict;
+use Getopt::Std;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use TrackSys;
+
+my ($me, $usage, %opts, $infile, @infile);
+my (%properties, $dlpsId, $sql, $sthref, $sth, @row, $rows);
+my ($pageImagesRespId, $transcriptionRespId, $transcriptionType, $access);
+my ($resp_images, $resp_transcription, $resp_markup1, $resp_markup2, $resp_ocr, $availability);
+my ($error, $tracksys, $header);
+
+$me = 'qa_teiHeader_tracksys';
+$usage = <<EOD;
+
+$me - compares values in TEI header against corresponding values in DLPS tracking system
+
+Usage: $me [-E] filenames
+    -E  Only display error messages (suppress warnings)
+
+In: XML file(s)
+Out: Prints messages to standard output
+
+EOD
+
+getopts('E', \%opts) || die $usage;
+die $usage if (! @ARGV);
+
+TrackSys::connect();
+
+foreach $infile (@ARGV) {
+    $pageImagesRespId = ''; $transcriptionRespId = ''; $transcriptionType = ''; $access = '';
+    $resp_images = ''; $resp_transcription = ''; $resp_markup1 = '';
+    $resp_markup2 = ''; $resp_ocr = ''; $availability = '';
+
+    #=========
+    # get data
+    #=========
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # get DLPS ID
+    %properties = DlpsText::getProperties($infile);
+    $dlpsId = DlpsText::getDlpsId(\%properties, \@infile, $infile);
+
+    # get values from tracking system database
+    $sql = "SELECT pageImagesRespId, transcriptionRespId, transcriptionType, access";
+    $sql .= " FROM textItems WHERE dlpsId ='$dlpsId'";
+    $sthref = TrackSys::query($sql);
+    $sth = $$sthref;
+    @row = $sth->fetchrow_array();
+    $sth->finish;
+
+    if ( scalar(@row) ) {
+	$pageImagesRespId = $row[0];
+	$transcriptionRespId = $row[1];
+	$transcriptionType = $row[2];
+	$access = $row[3];
+    } else {
+	warn "$me: $infile: WARNING: Cannot verify TEI header values: DLPS ID '$dlpsId' not found in database\n" unless $opts{E};
+	next;
+    }
+
+    # DEBUG:
+    #print "tracksys: Page images: $pageImagesRespId\n";
+    #print "tracksys: Transcription: $transcriptionRespId\n";
+    #print "tracksys: Access: $access\n";
+
+    # get values from TEI header
+    foreach (@infile) {
+	if ( /&resp_images_(\w+);/ ) {
+	    $resp_images = $1;
+	}
+
+	if ( /&resp_transcription_(\w+);/ ) {
+	    $resp_transcription = $1;
+	}
+
+	if ( /&resp_markup1_(\w+);/ ) {
+	    $resp_markup1 = $1;
+	}
+
+	if ( /&resp_markup2_(\w+);/ ) {
+	    $resp_markup2 = $1;
+	}
+
+	if ( /&resp_ocr_(\w+);/ ) {
+	    $resp_ocr = $1;
+	}
+
+	if ( /<availability[^>]* status=["'](\w+)["']/ ) {
+	    $availability = $1;
+	}
+
+	if ( m:</teiHeader>: ) {
+	    last;
+	}
+    }
+
+    # DEBUG:
+    #print "teiHeader: Page images: $resp_images\n";
+    #print "teiHeader: Transcription: $resp_transcription\n";
+    #print "teiHeader: Markup 1: $resp_markup1\n";
+    #print "teiHeader: Markup 2: $resp_markup2\n";
+    #print "teiHeader: OCR: $resp_ocr\n";
+    #print "teiHeader: Availability: $availability\n";
+
+
+    #==========
+    # run tests
+    #==========
+
+    #------------------------
+    # test page image creator
+    #------------------------
+
+    $error = 0;
+    if ($pageImagesRespId == 0) {
+	if ($resp_images) {
+	    warn "$me: $infile: ERROR: When the DLPS tracking system indicates no page-image"
+		. " creator, the TEI header should not contain any &resp_images...; entity reference\n";
+	}
+    } elsif ($pageImagesRespId == 1) {
+	if ( $resp_images !~ /^dlps$/i ) {
+	    $error = 1; $tracksys = 'DLPS'; $header = '&resp_images_dlps;'
+	}
+    } elsif ($pageImagesRespId == 2) {
+	if ( $resp_images !~ /^acme$/i ) {
+	    $error = 1; $tracksys = 'ACME'; $header = '&resp_images_acme;'
+	}
+    } elsif ($pageImagesRespId == 3) {
+	if ( $resp_images !~ /^sc$/i ) {
+	    $error = 1; $tracksys = 'Special Collections'; $header = '&resp_images_sc;'
+	}
+    } elsif ($pageImagesRespId == 4) {
+	if ( $resp_images !~ /^Apex$/i ) {
+	    $error = 1; $tracksys = 'Apex'; $header = '&resp_images_Apex;'
+	}
+    } elsif ($pageImagesRespId == 5) {
+	if ( $resp_images !~ /^heckman$/i ) {
+	    $error = 1; $tracksys = 'Heckman'; $header = '&resp_images_heckman;'
+	}
+    }
+
+    if ($error) {
+	warn "$me: $infile: ERROR: When the DLPS tracking system has the page-image"
+	    . " creator as '$tracksys', the TEI header should contain '$header'\n";
+    }
+
+
+    #---------------------------
+    # test transcription creator
+    #---------------------------
+
+    $error = 0;
+    if ($transcriptionRespId == 0) {
+	if ($resp_transcription or $resp_markup1 or $resp_markup2 or $resp_ocr) {
+	    warn "$me: $infile: ERROR: When the DLPS tracking system indicates"
+		. " no transcription creator, the TEI header should not contain"
+		. " any '&resp_transcription...;' or '&resp_markup...;' or '&resp_ocr...;' entity references\n";
+	}
+    } elsif ($transcriptionRespId == TrackSys::TRANSCRIPTION_RESP_TECHBOOKS) {
+	if ( $resp_transcription !~ /^TechBooks$/i ) {
+	    $error = 1; $tracksys = 'TechBooks'; $header = '&resp_transcription_TechBooks;'
+	} elsif ( $resp_markup1 !~ /^TechBooks$/i ) {
+	    $error = 1; $tracksys = 'TechBooks'; $header = '&resp_markup1_TechBooks;'
+	} elsif ( $resp_markup2 !~ /^TechBooks/i ) {
+	    $error = 1; $tracksys = 'TechBooks'; $header = '&resp_markup2_TechBooks2DLPS;'
+	}
+
+	if (! $error) {
+	    if ($resp_ocr) {
+		warn "$me: $infile: ERROR: When the DLPS tracking system has the transcription"
+		    . " creator as 'TechBooks', the TEI header should not contain"
+		    . " a '&resp_ocr...;' entity reference\n";
+	    }
+	}
+    } elsif ($transcriptionRespId == TrackSys::TRANSCRIPTION_RESP_APEX) {
+	if ( $dlpsId =~ /^eaf/ ) {
+	    # EAF is a special case - has its own resp statements
+	} else {
+	    if ( $resp_transcription !~ /^Apex$/i ) {
+		$error = 1; $tracksys = 'Apex'; $header = '&resp_transcription_Apex;'
+	    } elsif ( $resp_markup1 !~ /^Apex$/i ) {
+		$error = 1; $tracksys = 'Apex'; $header = '&resp_markup1_Apex;'
+	    } elsif ( $resp_markup2 !~ /^Apex/i ) {
+		$error = 1; $tracksys = 'Apex'; $header = '&resp_markup2_Apex2DLPS;'
+	    }
+	}
+	if (! $error) {
+	    if ($resp_ocr) {
+		warn "$me: $infile: ERROR: When the DLPS tracking system has the transcription"
+		    . " creator as 'Apex', the TEI header should not contain"
+		    . " a '&resp_ocr...;' entity reference\n";
+	    }
+	}
+    } elsif ($transcriptionRespId == TrackSys::TRANSCRIPTION_RESP_DLPS) {
+	if ($transcriptionType == TrackSys::TRANSCRIPTION_TYPE_OCR) {
+	    if ( $resp_ocr !~ /^DLPS$/i ) {
+		$error = 1; $tracksys = 'DLPS'; $header = '&resp_ocr_DLPS;'
+	    }
+	} elsif ($transcriptionType == TrackSys::TRANSCRIPTION_TYPE_OTHER) {
+	    if ($resp_ocr) {
+		warn "$me: $infile: ERROR: When the DLPS tracking system has the transcription"
+		    . " type as 'other', the TEI header should not contain"
+		    . " a '&resp_ocr...;' entity reference\n";
+	    }
+	}
+
+	if (! $error) {
+	    if ($resp_transcription or $resp_markup1 or $resp_markup2) {
+		warn "$me: $infile: ERROR: When the DLPS tracking system has the transcription"
+		    . " creator as 'DLPS', the TEI header should not contain"
+		    . " any '&resp_transcription...;' or '&resp_markup...;' entity references\n";
+	    }
+	}
+    }
+
+    if ($error) {
+        if ($header =~ /markup\d/) {
+            # for 'markup1' and 'markup2' problems, raise a warning (not an error)
+	    warn "$me: $infile: WARNING: When the DLPS tracking system has the transcription"
+	        . " creator as '$tracksys', the TEI header should contain '$header'\n" unless $opts{E};
+        } else {
+	    warn "$me: $infile: ERROR: When the DLPS tracking system has the transcription"
+	        . " creator as '$tracksys', the TEI header should contain '$header'\n";
+        }
+    }
+
+
+    #------------------
+    # test access level
+    #------------------
+
+    $error = 0;
+    if ($access == 0) {
+	if ($availability ne 'public') {
+	    $error = 1; $tracksys = 'public'; $header = 'public';
+	}
+    } elsif ($access == 1) {
+	if ($availability ne 'viva') {
+	    $error = 1; $tracksys = 'VIVA only'; $header = 'viva';
+	}
+    } elsif ($access == 2) {
+	if ($availability ne 'uva') {
+	    $error = 1; $tracksys = 'UVA only'; $header = 'uva';
+	}
+    } elsif ($access == 3) {
+	if ($availability ne 'restricted') {
+	    $error = 1; $tracksys = 'restricted'; $header = 'restricted';
+	}
+    }
+
+    if ($error) {
+	warn "$me: $infile: ERROR: When the DLPS tracking system has the access level"
+	    . " as '$tracksys', the TEI header should contain <availability status='$header'>\n";
+    }
+}
+
+TrackSys::disconnect();

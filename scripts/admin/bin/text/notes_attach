@@ -1,0 +1,152 @@
+#!/usr/bin/perl -w
+
+# notes_attach - moves <note> elements (excpet endnotes) to their point of attachment (immediately after <ref> or <ptr/>)
+
+# Greg Murray <murray@virginia.edu>
+# 2003-03-14
+
+# 2003-06-09 ATTENTION: Script will not give entirely desirable
+# results if a <note> itself contains one or more nested <note>
+# elements, because the close </note> of the first nested note will be
+# assumed to be the close of the entire note.
+
+#use Getopt::Std;
+use strict;
+
+#my (%opts, $d);
+my ($usage, $infile, @infile, @outfile);
+my (%notes, %refs, %div_refs, $id, $target, $note, $inNote);
+my ($test, $buffer, $match, $out);
+
+$0 = "notes_attach";
+$usage = <<EOD;
+
+$0 - moves <note> elements (except endnotes) to their point of attachment (immediately after <ref> or <ptr/>)
+Usage: $0 filenames
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+EOD
+
+#getopts('d:', \%opts) || die $usage;
+#$d = $opts{'d'};
+die $usage if (! @ARGV);
+
+foreach $infile (@ARGV) {
+    @outfile = ();
+    %notes = ();
+    %refs = ();
+
+    # read input file
+    open(IN, $infile) || die "$0: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # make backup
+    open(BAK, ">${infile}.bak") || die "$0: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+
+    # buffer <note> elements, except endnotes
+    foreach (@infile) {
+	if ( $inNote ) {
+	    if ( m:</note>: ) {
+		$note .= $` . $&;
+		$notes{$id} = $note . "\n";
+		$out = $';
+		if ( $out =~ /^\s*$/ ) {
+		    # skip; don't leave blank lines behind
+		} else {
+		    push @outfile, $out;
+		}
+                $inNote = 0;
+	    } else {
+                $note .= $_;
+            }
+	} elsif ( m:<note[^>]*?\sid=("|')([^\1]+?)\1.+?</note>: ) {
+	    # single-line note
+            if ( m:<note[^>]*?\splace=("|')end\1: ) {
+                # end note; do not buffer this note
+                push @outfile, $_;
+            } else {
+                $id = $2; $note = $&;
+                $notes{$id} = $note . "\n";
+                $out = $` . $';
+		if ( $out =~ /^\s*$/ ) {
+		    # skip; don't leave blank lines behind
+		} else {
+		    push @outfile, $out;
+		}
+            }
+	} elsif ( m:<note[^>]*?\sid=("|')([^\1]+?)\1: ) {
+            # multi-line note
+            if ( m:<note[^>]*?\splace=("|')end\1: ) {
+                # end note; do not buffer this note
+                push @outfile, $_;
+            } else {
+                $id = $2; $note = $& . $';
+                $out = $`;
+		if ( $out =~ /^\s*$/ ) {
+		    # skip; don't leave blank lines behind
+		} else {
+		    push @outfile, $out;
+		}
+                $inNote = 1;
+            }
+        } else {
+            push @outfile, $_;
+        }
+    }
+
+    # make changes, overwriting input file
+    open(OUT, ">$infile") || die "$0: ERROR: Cannot write '$infile': $!\n";
+    foreach (@outfile) {
+	if ( /<ref(\s|>)/ or /<ptr(\s|\/?>)/ ) {
+	    $test = $_;
+	    $buffer = '';
+
+	    # handle all occurences of <ref>...</ref> or <ptr/> on this line
+	    while ( $test =~ m:<ref(>|\s[^>]*?>)(<[^>]+?>)*?[^<]+(<[^>]+?>)*?</ref>: or $test=~ m:<ptr[^>]*(/>|></ptr>): ) {
+		$match = $&;
+		$buffer .= $`;
+		$test = $';
+
+		if ( $match =~ m:<(ref|ptr)\s[^>]*?target=("|')([^\2]+?)\2: ) {
+	            $target = $3;
+		} else {
+		    $target = '';
+		}
+
+		if ( exists($notes{$target}) ) {
+		    # this ref/ptr points to a note
+		    if ( exists($refs{$target}) ) {
+			# duplicate reference to note; do not output note
+                        $buffer .= $match;
+		    } else {
+			$buffer .= $match . "\n" . $notes{$target};
+		    }
+
+		    # add this ref/ptr to hash of all refs
+		    $refs{$target} = '';
+		} else {
+                    # this ref/ptr doesn't point to a note
+                    $buffer .= $match;
+                }
+	    }
+	    $_ = $buffer . $test;
+	}
+	print OUT;
+    }
+
+    # check for notes not pointed to by any ref/ptr; append such notes to end of file
+    foreach $id (keys(%notes)) {
+	if ( not exists($refs{$id}) ) {
+	    warn "$0: $infile: WARNING: note '$id' has no corresponding ref/ptr; note appended to end of file.\n";
+	    print OUT $notes{$id};
+	}
+    }
+
+    close OUT;
+}

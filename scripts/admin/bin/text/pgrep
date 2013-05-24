@@ -1,0 +1,130 @@
+#!/usr/bin/perl -w
+
+# pgrep - grep utility that uses Perl's regular expression syntax
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2002-05-01
+# Last modified: 2005-10-24
+
+# 2003-03-18: gpm2a: Added -m switch for outputting the match itself,
+# rather than the entire line on which the match occurred.
+#
+# 2004-05-24: gpm2a: Added total count to output when using -c switch.
+#
+# 2004-11-30: gpm2a: Changed so that when using -m switch on multiple
+# input files, output does not include filename.
+#
+# 2005-07-27: gpm2a: Changed behavior of -c option so that files with
+# zero hits are excluded from the output.
+#
+# 2005-10-24: gpm2a: With -c option, number of files grepped is now
+# shown (in addition to total number of occurences of reg exp
+# pattern).
+
+
+use strict;
+use Getopt::Std;
+
+my ($usage, %opts);
+my ($regex, $op, @infiles, $infile, $hasArgs, $total, $count, $match, $label, $fileCount, $hit);
+
+$usage = <<EOD;
+
+pgrep - grep utility that uses Perl's regular expression syntax
+Usage: pgrep [options] 'regex' [filenames]
+    where regex is a Perl regular expression, which can be entered as 'regex', '/regex/', 'm/regex/', 'm:regex:', etc.
+    -c (count)   Suppress normal output; instead print number of matches in each file with one or more matches.
+    -m (match)   Output the match itself, rather than the entire line on which the match occurred.
+    -n (number)  Include line number in output.
+    -r (reverse) Lists filenames for which no match is found on any line of the file.
+
+EOD
+
+getopts('cmnr', \%opts) || die $usage;
+
+($regex = shift) || die $usage;
+
+if ($regex =~ m:^/.*/$:) {
+    # /.../ operator used
+} elsif ($regex =~ /^m(\W)/) {
+    $op = $1;
+    if ($regex =~ /$op$/) {
+	# m operator used
+	if ($op ne "/") {
+	    # standardize to m/.../
+	    $regex =~ s:/:\\/:g;   # escape slashes (replace / with \/)
+	    $regex =~ s:$op:/:g;   # replace operator character with /
+	}
+    }
+} else {
+    # no operator used; escape slashes
+    $regex =~ s:/:\\/:g;
+}
+
+# remove reg ex operator (m// or //) if any
+$regex =~ s:^m?/::;
+$regex =~ s:/$::;
+
+# test for presence of filename arguments
+if (@ARGV) {
+    @infiles = @ARGV;
+    $hasArgs = 1;
+} else {
+    # no filename arguments; use STDIN
+    $infiles[0] = "";
+    $hasArgs = 0;
+}
+
+$total = 0;
+$fileCount = 0;
+foreach $infile (@infiles) {
+    $fileCount++;
+    $count = 0;
+    $hit = 0;
+    if ($hasArgs) {
+	open(INFILE, "<$infile") || die "Cannot open file '$infile' for reading: $!\n";
+    } else {
+	# use STDIN
+	open(INFILE, "<&STDIN") || die "Cannot open STDIN for reading: $!\n";
+    }
+    while (<INFILE>) {
+	if (/$regex/) {
+	    $match = $&;
+	    $hit = 1;
+	    next if ($opts{r});
+	    $label = '';
+	    $label .= "$infile:" if (@infiles > 1 and not $opts{m});  # include filename in output if > 1 file
+	    $label .= "$.:" if ( $opts{n} );                          # include line number in output
+
+	    if ( $opts{c} ) {
+		$count++;
+		$total++;
+	    } else {
+		if ( $opts{m} ) {
+		    chomp $match;
+		    print $label . $match . "\n";
+		} else {
+		    print $label . $_;
+		}
+	    }
+	}
+    }
+    close INFILE;
+
+
+    if ( $opts{r} ) {
+	if ($hit == 0) {
+	    print "$infile\n";
+	}
+    }
+
+    if ( $opts{c} ) {
+	$label = '';
+	$label .= "$infile:" if (@infiles > 1);
+	print $label . "$count\n" unless ($count == 0);
+    }
+}
+
+if ( $opts{c} and @infiles > 1) {
+    print "TOTAL: $total in $fileCount files\n";
+}

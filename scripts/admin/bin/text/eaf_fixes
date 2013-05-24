@@ -1,0 +1,120 @@
+#!/usr/bin/perl -w
+
+# eaf_fixes - corrects minor problems in EAF files
+#   * changes language codes from 2-letter (ISO 639.1) to 3-letter (ISO 639.2)
+#     codes in <language> declarations and lang attributes
+#   * fixes n attribute on <pb/> tags for covers/spine/edges
+#   * removes leading zeros from <pb n="..."/> attribute values
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2005-11-15
+# Last modified: 2005-11-15
+
+
+use strict;
+
+my ($infile, @infile, $entity, $n);
+
+my $me = 'eaf_fixes';
+my $usage = <<EOD;
+
+$me - corrects minor problems in EAF files
+  * changes language codes from 2-letter (ISO 639.1) to 3-letter (ISO 639.2)
+    codes in <language> declarations and lang attributes
+  * fixes n attribute on <pb/> tags for covers/spine/edges
+  * removes leading zeros from <pb n="..."/> attribute values
+Usage: $me filenames
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+EOD
+
+die $usage if (! @ARGV);
+
+foreach $infile (@ARGV) {
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # make backup
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+
+    # make changes, overwriting input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@infile) {
+	# remove space before /> in self-closing tags
+	s: />:/>:g;
+
+	# add space before <lb/> if needed
+	s:([^ ])<lb/>:$1 <lb/>:;
+
+	# remove leading zeros from <pb n="..."/> attribute values
+	s/<pb([^>]*?) n=("|')0+/<pb$1 n=$2/;
+
+	# change language IDs from 2-letter to 3-letter codes
+	if ( /<language/ or / lang=/ ) {
+	    s/ (id|lang)=["']en["']/ $1="eng"/g;  # English
+	    s/ (id|lang)=["']fr["']/ $1="fre"/g;  # French
+	    s/ (id|lang)=["']de["']/ $1="ger"/g;  # German
+	    s/ (id|lang)=["']el["']/ $1="gre"/g;  # Greek
+	    s/ (id|lang)=["']he["']/ $1="heb"/g;  # Hebrew
+	    s/ (id|lang)=["']it["']/ $1="ita"/g;  # Italian
+	    s/ (id|lang)=["']la["']/ $1="lat"/g;  # Latin
+	    s/ (id|lang)=["']ru["']/ $1="rus"/g;  # Russian
+	    s/ (id|lang)=["']es["']/ $1="spa"/g;  # Spanish
+	}
+
+	# fix n attributes on pb tags for covers, spine, etc.
+	if ( /<pb[^>]*? entity=("|')([^\1]+?)\1/ ) {
+	    $entity = $2;
+	    if ( $entity =~ /_(spine|cover|back|head|tail|foredge)$/ ) {
+		# update n attribute
+		if ( /<pb[^>]*? n=("|')([^\1]+?)\1/ ) {
+		    $n = $2;
+		    if ( $entity =~ /_spine$/ ) {
+			if ($n ne 'Spine') {
+			    s/ n=("|')$n\1/ n="Spine"/;
+			}
+		    }
+
+		    if ( $entity =~ /_cover$/ ) {
+			if ($n ne 'Front Cover') {
+			    s/ n=("|')$n\1/ n="Front Cover"/;
+			}
+		    }
+
+		    if ( $entity =~ /_back$/ ) {
+			if ($n ne 'Back Cover') {
+			    s/ n=("|')$n\1/ n="Back Cover"/;
+			}
+		    }
+
+		    if ( $entity =~ /_head$/ ) {
+			if ($n ne 'Top Edge') {
+			    s/ n=("|')$n\1/ n="Top Edge"/;
+			}
+		    }
+
+		    if ( $entity =~ /_tail$/ ) {
+			if ($n ne 'Bottom Edge') {
+			    s/ n=("|')$n\1/ n="Bottom Edge"/;
+			}
+		    }
+
+		    if ( $entity =~ /_foredge$/ ) {
+			if ($n ne 'Front Edge') {
+			    s/ n=("|')$n\1/ n="Front Edge"/;
+			}
+		    }
+		}
+	    }
+	}
+	print OUT;
+    }
+    close OUT;
+}

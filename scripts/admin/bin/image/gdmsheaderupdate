@@ -1,0 +1,437 @@
+#!/usr/bin/perl -w
+
+# gdmsheaderupdate - will examine a directory of gdms files and look for certain
+#			image PID values to decide if the header needs to be updated to include
+#			a special note regarding special rescan file names.
+
+# Jack Kelly <jlk4p@virginia.edu>
+# Created: 2008-11-14
+#
+# 2008-11-17 - (jlk4p) Updated to use *.XML in grep too, since files on pogo
+# 				seem to have uppercase extension. Whitespace characters
+#				between note element and text removed to make searching
+#				easy when needing to find/update info.
+# 2008-12-08 - (jlk4p) Modified to adjust PID value to make sure it is a pid 
+#				and not a file reference. Combined XML and xml greps into a 
+#				single command execution.
+
+#======================================================================
+# setup
+#======================================================================
+
+use strict;
+use Getopt::Long;
+use Cwd;
+
+my (%opts, $error, $ok, @outfiles, %infiles);
+my ($csvfile, @gdms_dirs, $dir, $id, $infile, $outfile, $command);
+my (@errors, @progress, $msg);
+my (%rescanfilenames, %valleyfilenames, %xmlfilepids);
+
+my $minimumDPI = 400;
+my $me = 'gdmsheaderupdate';
+my $startDir = cwd();
+my $mailFrom = 'jlk4p';
+my $mailTo = "lsc6v\@virginia.edu";
+my $dir_prefix = "/shares/image2/02_processed/60_copy2ReadyRepo/";
+my $dir_gdms_xml = "/text/uvaGDMS/gdms/new";
+my $usage = <<EOD;
+
+$me - Examines directory of GDMS files to determine if any
+    image PIDs specified in the CSV file passed are found and adds
+    a note section to the GDMS header to document rescanned image
+    file names along with the Valley image file name.
+    NOTE: This script is ONLY for use with the Valley of the Shadow 
+    project migration to GDMS objects.
+
+Usage: $me [-v] [-a email[,email]...] csvfile directories
+  -v (verbose) Show status messages
+  -a (address) Email address(es) to send results of analysis. Default 
+     is lsc6v\@virginia.edu if not specified. Separate addresses using 
+     a comma, not spaces.
+
+In: 
+  csvfile - Comma separated file exported from Excel that contains
+     at least three columns of data labeled "Rescan name (tif)",
+     "Valley Name (jpg)", and "PID". Using for searching image PIDs
+     in GDMS files.
+  directories - Project directories where GDMS files should be searched.
+      Must be located on image2 in /02_processed/60_copy2ReadyRepo.
+Out: 
+  - Updates appropriate GDMS files to include a NOTE element at the 
+    end of the GDMSHEAD section for storing rescanned image file names.
+  - Sends email indicating results of the script.
+
+EOD
+
+GetOptions(\%opts,'v', "a=s") || die $usage;
+die $usage unless (@ARGV);
+
+$msg = "Started at "  . (scalar localtime) . "\n\n";
+push(@progress, $msg);
+
+# Change who the email gets sent to if this option was specified.
+if (exists $opts{'a'}) {
+	$mailTo = $opts{'a'};
+	$msg = "Alternate email address(es) specified for this script: $mailTo\r\n\r\n";
+	print $msg if ($opts{'v'});
+    push(@progress, $msg);
+	$msg = "If you are receiving this email and shoud not have, please forward it to ul-dlpsscripts\@virginia.edu\r\n\r\n";
+    push(@progress, $msg);
+}
+
+#======================================================================
+# main logic
+#======================================================================
+
+# Get the directory path and file name for the CSV file.
+$csvfile = $ARGV[0];
+# Open the file and read its contents saving the file names and PIDs for use later.
+$msg = "$me: Reading $csvfile for rescanned image file names...\r\n";
+print $msg if ($opts{'v'});
+push(@progress, $msg);
+my $endOfRecord = endOfLineChar("$csvfile");
+if (open(CSVIN,"<",$csvfile)) {
+	# Modify the default end of line character for reading lines from the
+	# text files. Since all files were generated from a Mac process they
+	# will have \r as the end of line rather than the Perl default of \n.
+	$/ = $endOfRecord;
+	# Read the first line containing the column headings.
+	my $line = <CSVIN>;
+print $., "\n" if ($opts{'v'}); # ms3uf added this	
+	# Remove control characters from being included with the data values.
+	$line =~ s/$endOfRecord//;
+	
+	# Parse this to identify the number of columns and what they are.
+	my @columns = split(/,/,$line);
+	my $columnCount = scalar(@columns);
+	
+	# Column locations for the fields needed for IRIS.
+	my $fileNameCol = -1;
+	my $valleyNameCol = -1;
+	my $pidNumCol = -1;
+				
+	# Identify which columns contain IRIS data.
+	for (my $i=0; $i < $columnCount; $i++) {
+		if ($columns[$i] eq "Rescan name (tif)") {
+			$fileNameCol = $i;
+		} elsif ($columns[$i] eq "Valley Name (jpg)") {
+			$valleyNameCol = $i;
+		} elsif ($columns[$i] eq "PID") {
+			$pidNumCol = $i;
+		}
+	}
+	
+	# Make sure that all the necessary fields were found in the Iview file.
+	if (($fileNameCol ne -1) and ($valleyNameCol ne -1) and ($pidNumCol ne -1)) {
+		# Read all the image records and write out the desired data into the
+		# new file.
+		my $rescancount = 0;
+		while ($line = <CSVIN>) {
+			$line =~ s/$endOfRecord//;
+			@columns = split(/,/,$line);
+			my $pid = '';
+			if (exists $columns[$pidNumCol]) {
+				$pid = $columns[$pidNumCol];
+				$pid =~ s/_/:/;
+				$pid =~ s/.tif$//i;
+			}
+			if ($pid ne '') {
+				#print "$pid\n";
+				# Only bother to identify pids that have rescanned file names.
+				if ((exists $columns[$fileNameCol]) and ($columns[$fileNameCol] ne '')) {
+					$rescanfilenames{$pid} = $columns[$fileNameCol];
+					$valleyfilenames{$pid} = $columns[$valleyNameCol];
+					$rescancount++;
+				}
+			}
+		}
+		$msg = "$me:   $rescancount rescanned images identified to be added to GDMS headers.\r\n";
+		push(@progress, $msg);
+	} else {
+		$msg = "$me: ERROR: '$csvfile' does not contain the required fields for mapping to IRIS.\r\n";
+		warn $msg;
+		push(@errors, $msg);
+	}
+	close(CSVIN);
+} else {
+	$msg = "$me: ERROR: Cannot open '$csvfile'\r\n";
+	warn $msg;
+	push(@errors, $msg);
+}
+
+# Get the rest of the directories passed to use as the GDMS directories.
+my $numdirs = scalar(@ARGV);
+for (my $i=1; $i < $numdirs; $i++) {
+	push(@gdms_dirs,$ARGV[$i]);
+}
+
+foreach $dir (sort(@gdms_dirs)) {
+	$error = 0;
+    $ok = 1;
+    @outfiles = ();
+    %infiles = ();
+
+    $dir =~ s:/$::;  # remove final slash, if present
+    $id = $dir;
+    $id =~ s:^.*/::;  # remove leading path, if any
+
+	# GDMS fully qualified path to process
+	my $gdmsdir = $dir_prefix . $dir . $dir_gdms_xml;
+	
+    $msg = "$me: Processing directory '$dir' (ID $id)...\r\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+    $msg = "     Full path: $gdmsdir\r\n";
+    push(@progress, $msg);
+
+    if (-d $gdmsdir) {
+	unless ( -r $dir ) {
+	    $msg = "$me: ERROR: Need read permission for directory '$dir'\r\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+	unless ( -w $gdmsdir ) {
+	    $msg = "$me: ERROR: Need write permission for directory '$dir'\r\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+    } else {
+	$msg = "$me: ERROR: '$dir' is not a directory (when i make it $gdmsdir)\r\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+    # change to gdms text new directory
+    if ( not chdir($gdmsdir) ) {
+	$msg = "$me: ERROR: Cannot change to directory '$gdmsdir': $!\r\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+	
+    #------------------------------------------------------------------
+    # Identify which xml files contain a rescanned image based on PID
+    #------------------------------------------------------------------
+    $msg = "$me:   Identifying GDMS XML files with rescanned images...\r\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+	my $pidcount = 0;
+	my $filecount = 0;
+	foreach my $pid (keys(%rescanfilenames)) {
+		# grep for the pid in all the xml files, should return a string of files
+		print "using grep to find string -->$pid<--\n";
+		print `pwd`;
+		my @result = `grep '$pid' *.[Xx][Mm][Ll]`;
+		if (scalar(@result) ne 0) {
+			$pidcount++;
+			# Break out the lines of text returned into any array for each xml 
+			# file in a separate line item
+			foreach my $item (@result) {
+				my @resultlines = split(/\n/,$item);
+				# for each line identify the xml file name which is the first 
+				# item in the line
+				foreach my $grepline (@resultlines) {
+					my @info = split(": ",$grepline);
+					my $xmlfile = $info[0];
+					if ($xmlfile ne '') {
+						# save pids associated with a file to identify which pid 
+						# info needs to go into the xml file header later
+						if (exists $xmlfilepids{$pid}) {
+							$xmlfilepids{$xmlfile} .= ",$pid";
+						} else {
+							$xmlfilepids{$xmlfile} = $pid;
+							$filecount++;
+						}
+					}
+				}
+			}
+		}
+	}
+	$msg = "$me:     $pidcount rescanned image PID references found in '$dir'\r\n";
+    push(@progress, $msg);
+	$msg = "$me:     $filecount GDMS files to be modified in '$dir'\r\n";
+    push(@progress, $msg);
+	
+    #------------------------------------------------------------------
+    # Now modify gdms files that have rescanned pids identified in them.
+    #------------------------------------------------------------------
+    $msg = "$me:   Modifying GDMS XML files with associated rescanned images...\r\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+    $filecount = 0;
+	foreach my $xmlfile (keys(%xmlfilepids)) {
+		my @pids = split(",",$xmlfilepids{$xmlfile});
+		# Create the note element's text to be added to the gdms
+		my $note = "<note>";
+		foreach my $pid (@pids) {
+			$note .= "DSSR filename: $rescanfilenames{$pid} = PID $pid  = Valley filename $valleyfilenames{$pid}\n";
+		}
+		$note .= "</note>\n";
+		# read the xml file into memory
+		my @input = ();
+	    if (open(IN, $xmlfile)) {
+		    @input = <IN>;
+	    	close(IN);
+	    } else {
+			$msg = "$me: ERROR: Unable to open $xmlfile for reading.\r\n";
+			push(@errors, $msg);
+		}
+		# backup the xml file
+	    if (open(BAK, ">${xmlfile}.bak")) {
+		    foreach (@input) {
+				print BAK;
+    		}
+    		close(BAK);
+    	} else {
+			$msg = "$me: ERROR: Cannot write '${xmlfile}.bak': $!\r\n";
+			push(@errors, $msg);
+    	}
+		# write the new xml file
+	    if (open(OUT, ">$xmlfile")) {
+		    my $in_gdmsHead;
+    		foreach (@input) {
+				if ( /<gdmshead/ )	{ $in_gdmsHead = 1; }
+				# insert the note before the closing gmdshead tag
+				if ( /(<\/gdmshead>)/) {
+				    if ($in_gdmsHead) {
+						my $out = $note . $1;
+						$_ = $` . $out . $';
+				    }
+				    $in_gdmsHead = 0;
+				}
+				print(OUT);
+    		}
+    		close(OUT);
+    		$filecount++;
+    		# Since the gdms file was successfully updated/written to we can
+    		# remove the backup file.
+    		if (unlink("${xmlfile}.bak") ne 1) {
+				$msg = "$me: ERROR: Cannot delete '${xmlfile}.bak': $!\r\n";
+				push(@errors, $msg);
+    		}
+    	} else {
+			$msg = "$me: ERROR: Cannot write '$xmlfile': $!\r\n";
+			push(@errors, $msg);
+    	}		
+	}
+	$msg = "$me:     $filecount GDMS files modified in '$dir'\r\n";
+    push(@progress, $msg);
+}
+continue {
+    if ($ok) {
+	$msg = "    Directory '$dir' was processed successfully.\r\n\r\n";
+	print $msg if ($opts{'v'});
+	push(@progress, $msg);
+    } else {
+	$msg = "$me: ERROR: Processing of directory '$dir' FAILED!\r\n\r\n";
+	warn $msg;
+	push(@errors, $msg);
+    }
+
+    # change to starting directory
+    if ( cwd() ne $startDir ) {
+	if ( not chdir($startDir) ) {
+	    $msg = "$me: FATAL ERROR: Cannot change to starting directory '$startDir': $!\r\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    Send_Mail();
+	    die $msg;
+	}
+    }
+
+}
+
+$msg = "\nFinished at "  . (scalar localtime) . "\n";
+push(@progress, $msg);
+
+Send_Mail();
+
+
+#======================================================================
+# subroutines
+#======================================================================
+
+#####
+# endOfLineChar - read the input file using the newline versus character return
+#			at the end of the line. If the line count is greater with one versus the
+#			other, then that is the appropriate end of line character and identifies
+#			if the file was born on a PC versus a Mac versus Unix.
+#
+# parameters:
+#	$filename - name of the file to check.
+#####
+sub endOfLineChar {
+	my ($filename) = @_;
+	my $macLineCount = 0;
+	my $winLineCount = 0;
+	
+	# Check to see if this is a Mac created file.
+	if (open(CHECK,"<",$filename)) {
+		$/ = "\r";
+		while (my $line = <CHECK>) {
+			$macLineCount++;
+		}
+		close(CHECK);
+	} else {
+		die("$me: ERROR: Cannot read '$filename': $!\n");
+	}
+	
+	# Check to see if this is a Windows created file.
+	if (open(CHECK,"<",$filename)) {
+		$/ = "\r\n";
+		while (my $line = <CHECK>) {
+			$winLineCount++;
+		}
+		close(CHECK);
+	} else {
+		die("$me: ERROR: Cannot read '$filename': $!\n");
+	}
+	
+	if (($winLineCount eq 1) and ($macLineCount gt $winLineCount)) {
+		return "\r";
+	} elsif ($winLineCount gt 1) {
+		return "\r\n";
+	} else {
+		return "\n";
+	}
+}
+
+sub Send_Mail {
+
+    my @time = localtime(time);
+    my $today = $time[3];
+    my $month = (1,2,3,4,5,6,7,8,9,10,11,12)[(localtime)[4]];
+    my $year = $time[5];
+    $year = $year - 100;
+
+    $year = sprintf("%02d",$year);
+    $month = sprintf("%02d",$month);
+    $today = sprintf("%02d",$today);
+
+    my($date)="$month/$today/$year";
+    my($messageto) = $mailTo;
+
+    open(MAIL,"| /usr/sbin/sendmail -i -t");
+    print MAIL "To: $messageto\n"; 
+    print MAIL "From: $mailFrom\n";
+    if (@errors) {
+	print MAIL "Subject: Error with gdmsheaderupdate\n\n";
+	print MAIL "There was an error from the $me script on $date:\n\n";
+    }
+    else {
+	print MAIL "Subject: Report for gdmsheaderupdate\n\n";
+	print MAIL "$me script completed with no errors on $date.\n\n";
+    }
+    foreach my $err (@errors) {
+	print MAIL "$err";
+    }
+    foreach my $noerr (@progress) {
+	print MAIL "$noerr" ;
+    }
+    print MAIL "-" x 75 . "\n\n";
+    close(MAIL);
+}

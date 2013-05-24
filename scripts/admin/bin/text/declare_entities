@@ -1,0 +1,251 @@
+#!/usr/bin/perl -w -I /shares/admin/bin/text
+
+# declare_entities - adds/updates ENTITY...NDATA declarations for
+#   'entity' attributes of <pb>, <figure>, and related elements
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2002-06-19
+# Last modified: 2008-10-10
+
+# 2004-02-10: gpm2a: Added <ornament> and <frontispiece> as tags that
+# can have an 'entity' attribute.
+#
+# 2004-02-12: gpm2a: Removed requirement that filenames of input files
+# must begin with [bz]\d{9} Now using base filename as ID. This makes
+# script more flexible -- in short term to handle cavdaily_\d{8}
+# filenames, in long term to handle whatever naming conventions come
+# along later.
+#
+# 2004-03-22: gpm2a: Changed to insert
+#   <!ENTITY none SYSTEM "none" ...
+# rather than
+#   <!ENTITY none SYSTEM "" ...
+# so that SYSTEM path would not be an empty string, which some XML
+# parsers seem to have a problem with.
+#
+# 2004-04-07: gpm2a: Instead of setting the NDATA value to 'tiff',
+# changed script to set NDATA value to the image content model
+# (uvaBitonal or uvaHighRes) as follows:
+#
+#   - for pb entities, use page-image content model as indicated by
+#     <?dlps page-images="..."?> value ('color' = 'uvaHighRes',
+#     otherwise 'uvaBitonal')
+#
+#   - for other entities (figure, ornament, frontispiece) use
+#     'uvaHighRes'
+#
+# 2004-09-07: gpm2a: Fixed bug: if a page contained a <figure> with
+# the same entity attribute value as the preceding <pb/> tag (as is
+# the case whenever there is no figure scan, i.e. for bitonal figures
+# like line art) the hash value of 'pb' would get overwritten as
+# 'figure' and so the entity would end up being declared incorrectly
+# as uvaHighRes. Fixed by simply adding "unless exists($entities{$2})"
+# test.
+#
+# 2005-11-16: gpm2a: Changed logic such that, instead of deleting
+# ENTITY...NDATA declarations only if they contain the file ID, the
+# script now deletes all existing ENTITY...NDATA declarations. This
+# change is mainly useful for migration projects, but I made it the
+# default behavior because it is more consistent with the script's
+# purpose -- to declare those entities actually used/referenced in the
+# markup. Also added logic to delete NOTATION declarations for common
+# image formats; we use "uvaBitonal" or "uvaHighRes", so other
+# NOTATION declarations for image formats will always be extraneous
+# and should be removed.
+#
+# 2005-11-21: gpm2a: Added a test for 'uva-lib:' PIDs in the SYSTEM
+# value of ENTITY...NDATA declarations. If the file contains PIDs, no
+# changes are made to the file; instead, a warning is displayed. We
+# don't want existing PIDs getting overwritten. This script is
+# intended to be used prior to insertion of PIDs.
+#
+# 2006-02-21: gpm2a: Added <page> to list of elements that can have an
+# 'entity' attribute. The <page> element is used in the OCR workflow.
+#
+# 2008-10-10: gpm2a: Added -F (force) option to clobber PIDs -- that
+# is, to update ENTITY...NDATA declarations even if SYSTEM value
+# contains a 'uva-lib:' PID (useful for migration projects).
+
+use strict;
+use Getopt::Std;
+use DlpsText;
+
+my ($me, $usage, %opts);
+my ($infile, @infile, @temp);
+my (%properties, $id, $model);
+my (%entities, $in_doctype, $has_internal_subset, $doctype, $key, $ndata, $pid_found);
+
+$me = 'declare_entities';
+$usage = <<EOD;
+
+$me - adds/updates ENTITY...NDATA declarations for
+  'entity' attributes of <pb>, <figure>, and related elements
+
+Usage: $me [options] filenames
+  -F (force) Update all ENTITY...NDATA declarations even if a SYSTEM
+     value contains a "uva-lib:..." PID
+
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+Note: Elements that can have an 'entity' attribute are: <pb>,
+<figure>, <ornament>, <frontispiece>, and <page> (which is used in the
+OCR workflow).
+
+EOD
+
+getopts('F', \%opts) || die $usage;
+die $usage if (!@ARGV);
+
+foreach $infile (@ARGV) {
+    %entities = ();
+    @temp = ();
+    $in_doctype = 0;
+    $has_internal_subset = 0;
+    $doctype = '';
+    $pid_found = 0;
+
+    # get properties from <?dlps ...?> processing instructions
+    %properties = DlpsText::getProperties($infile);
+
+    # get DLPS ID
+    $id = '';
+    if ( exists($properties{'id'}) ) {
+	if ($properties{'id'}) {
+	    $id = $properties{'id'};
+	}
+    }
+    if (not $id) {
+	# use base filename as id
+	if ( $infile =~ /\.\w{3,4}$/ ) {
+	    $id = $infile;
+	    $id =~ s/\.\w{3,4}$//;  # remove filename extension
+	} else {
+	    die "$me: ERROR: Bad filename: '$infile' (no filename extension)\n";
+	}
+    }
+
+    # get page-images type
+    $model = '';
+    if ( exists($properties{'page-images'}) ) {
+	if ( $properties{'page-images'} eq 'color' ) {
+	    $model = 'uvaHighRes';
+	}
+    }
+    if (not $model) {
+	$model = 'uvaBitonal';
+    }
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # build hash of all entity attributes
+    foreach (@infile) {
+	if ( /<(pb|figure|ornament|frontispiece|page)\s+[^>]*entity=["']([^"']+)["']/ ) {
+	    if ($2) {
+		$entities{$2} = $1 unless exists($entities{$2});
+	    }
+	}
+    }
+
+    if ( not scalar(keys(%entities)) ) {
+	# no changes to be made; skip to next input file
+	next;
+    }
+
+    foreach (@infile) {
+	# strip existing NDATA and NOTATION declarations, if any
+	#if ( /^<!ENTITY ($id|none)[^>]+NDATA[^>]+>\s*$/ ) {
+	if ( /^<!ENTITY [^>]+ SYSTEM ([^>]+) NDATA[^>]+>\s*$/ ) {
+	    # omit existing ENTITY...NDATA declarations
+            if ( $1 =~ /uva-lib:/ ) {
+		$pid_found = 1;
+	    }
+	} elsif ( /^<!NOTATION (jpe?g|gif|tiff?) SYSTEM [^>]+>\s*$/ ) {
+	    # omit NOTATION declarations for common image formats; we use "uvaBitonal" or "uvaHighRes"
+	} else {
+	    push @temp, $_;
+	}
+    }
+
+    if ($pid_found && !$opts{'F'}) {
+	warn "$me: $infile: WARNING: File cannot be processed because it contains PIDs\n";
+	next;
+    }
+
+    # make backup
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+
+    # make changes, overwriting input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@temp) {
+	if ( /<!DOCTYPE/ ) {
+	    $doctype = $_;
+	    if ( />/ ) {
+		# doctype declaration starts and ends on one line
+		$in_doctype = 0;
+		if ( /<!DOCTYPE[^>]*\[/ ) {
+		    $has_internal_subset = 1;
+		} else {
+		    $has_internal_subset = 0;
+		}
+	    } else {
+		# multi-line DOCTYPE declaration
+		$in_doctype = 1;
+	    }
+	} elsif ($in_doctype) {
+	    $doctype .= $_;
+	    if ($doctype =~ /\[/) {
+		$has_internal_subset = 1;
+		if ( /\]>/ ) {
+		    $in_doctype = 0;
+		}
+	    } else {
+		$has_internal_subset = 0;
+		if ( />/ ) {
+		    $in_doctype = 0;
+		}
+	    }
+	} elsif (not $in_doctype and $doctype) {
+	    # add entity declarations to doctype declaration
+	    if ($has_internal_subset) {
+		$doctype =~ s/\]>\r?\n?//;   # remove final ]>
+	    } else {
+		$doctype =~ s/>/\[/;   # replace final > with [ indicating beginning of internal subset
+	    }
+
+	    # write out 'none' entity first, if present
+	    if ( exists($entities{'none'}) ) {
+		$doctype .= qq:<!ENTITY none SYSTEM "none" NDATA none>\n:;
+		delete $entities{'none'};
+	    }
+	    foreach $key (sort(keys(%entities))) {
+		if ($entities{$key} =~ /(pb|page)/) {
+		    $ndata = $model;
+		} else {
+		    $ndata = 'uvaHighRes';
+		}
+		$doctype .= "<!ENTITY $key SYSTEM \"$key\" NDATA $ndata>\n";
+	    }
+	    $doctype .= "]>\n";   # close internal subset and doctype declaration
+
+	    # print doctype declaration and current line to output
+	    print OUT $doctype;
+	    print OUT;
+
+	    $doctype = '';
+	} else {
+	    # non-doctype-related line; just print to output
+	    print OUT;
+	}
+    }
+    close OUT;
+
+##    DlpsText::log($me, $infile, 'Added or updated ENTITY declarations in internal subset for <pb/> and <figure> entities');
+}

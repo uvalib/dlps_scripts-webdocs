@@ -1,0 +1,94 @@
+#!/usr/bin/perl -w -I /shares/admin/bin/text
+
+# div_ids - adds or updates id attributes on major structure elements (text, group, front, body, back, div# and titlePage)
+
+# Greg Murray <gpm2a@virginia.edu>
+# Re-written: 2003-03-21
+# Last modified: 2003-05-27
+
+# 2003-05-19: gpm2a: Script now adds an ID for front, body, and back
+# elements, and for titlePage as well, since structurally speaking
+# titlePage functions just like a div1 within front. (Having an ID on
+# these elements is useful for dynamically generating a table of
+# contents, where each entry is a hyperlink based on ID.)
+#
+# 2003-05-19: gpm2a: Added -D switch for deleting/overwriting existing
+# IDs regardless of whether or not they appear to have been created by
+# this script.
+#
+# 2003-05-27: gpm2a: Script now adds an ID for <group> and <text>
+# elements, for composite texts.
+
+
+use strict;
+##use DlpsText;
+use Getopt::Std;
+
+my ($me, $usage, %opts, $D, $pattern, $infile, @infile, $c, $value, $temp);
+
+$me = 'div_ids';
+$usage = <<EOD;
+
+$me - adds or updates id attributes on major structure elements (text, group, front, body, back, div# and titlePage)
+Usage: div_ids [-D] filenames
+    -D (delete) Deletes/overwrites existing IDs whether or not they
+                appear to have been created by this script
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file.
+Notes:
+  - The structural elements are simply numbered sequentially in order
+    of occurrence; the resulting IDs have no meaning (do not reflect
+    the name of the element or the nesting of the div hierarchy).
+  - By default, any existing IDs are retained if they do not conform
+    to the ID-naming convention used by this script (namely "d"
+    followed by one or more digits), since such IDs were likely added
+    by the keyboarding vendor and are the targets of references.
+
+EOD
+
+getopts('D', \%opts) || die $usage;
+$D = $opts{'D'};
+die $usage if (! @ARGV);
+
+$pattern = 'group|text|front|body|back|div\d|div|titlePage';
+
+foreach $infile (@ARGV) {
+    $c = 0;
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # make backup
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+
+    # make changes, overwriting input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@infile) {
+	if ( /<($pattern)[>\s]/ ) {
+	    $c++;
+	    $value = "d$c";
+	    if (/<($pattern)[^>]*?\sid=("|')([^\2]*?)\2/) {
+		# has existing id attribute
+		# if it's one of our own IDs or -D switch was used, replace existing ID; otherwise, retain existing ID
+		$temp = $3;
+		if ( $temp =~ /^d\d+$/ or $D ) {
+		    s:<($pattern)([^>]*?)\sid=("|')[^\3]*?\3:<$1$2 id="$value":;
+		}
+	    } else {
+		# no existing id attribute; add id attribute
+		s:<($pattern)([^>]*?)>:<$1$2 id="$value">:;
+	    }
+	}
+
+	print OUT;
+    }
+    close OUT;
+
+##    DlpsText::log($me, $infile, 'Added or updated id attribute on major structural elements');
+}

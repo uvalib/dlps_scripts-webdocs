@@ -1,0 +1,228 @@
+#!/usr/bin/perl -w
+
+# commit_figures_filenames - makes changes to <figure> start tags:
+# sets entity attribute to value of pb entity attribute if there is no
+# image file for the figure, based on instructions in a
+# 'figures_filenames.changes' file
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2003-01-21
+# Last modified: 2006-03-23
+
+# 2004-04-20: gpm2a: Instead of changing entity value to "none", we
+# are now changing it to the pb entity value.
+#
+# 2004-06-03: gpm2a: Allowed cavdaily_\d{8} filenames.
+#
+# 2004-09-01: gpm2a: Changed to allow any filename that begins with a
+# DLPS ID or ends with a 3-character extension.
+#
+# 2005-12-30: gpm2a: Changed for use on pogo.
+#
+# 2006-03-23: gpm2a: Changed to update DLPS tracking system -->
+# Post-keyboarding Workflow --> Commit figures-filenames changes
+
+
+use strict;
+use File::Copy;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use DlpsTextWorkreports;
+use TrackSys;
+
+our $me;  # declare this variable as 'our' to allow DlpsTextWorkreports to access it
+my ($usage, $msg, $report_type);
+my ($infile, @infile, %properties, $dlpsId, $sql, $rows);
+my ($html_file, $changes_file, $bakfile, $form_id);
+my ($quit, $files_changed, $operator, $datetime, $change, $changes, @changes, @temp);
+my ($line, $input, $id, $exists, $entity, $pre, $post, $match, $add, $destination);
+my  $pb_entity = '';
+
+$report_type = 'figures_filenames';
+
+$me = 'commit_figures_filenames';
+$usage = <<EOD;
+
+$me - makes changes to <figure> start tags: 
+  sets entity attribute to value of pb entity attribute if there is no
+  image file for the figure, based on instructions in a
+  'figures_filenames.changes' file
+
+Usage: $me filenames
+
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+EOD
+
+die $usage if (! @ARGV);
+foreach (@ARGV) {
+    die $usage if /^-/;   # this script has no switches
+}
+
+TrackSys::connect();
+
+$quit = 0;
+$files_changed = '';
+foreach $infile (@ARGV) {
+    if ($quit) {
+	print "$infile\n";
+	next;
+    }
+
+    # get location of changes file for this ID
+    if ( not DlpsTextWorkreports::init($infile, $report_type) ) {
+        next;
+    }
+    $changes_file = DlpsTextWorkreports::get_changes_file();
+
+    # make sure file exists
+    if (not -e $changes_file) {
+	warn "$me: WARNING: File not found: Required file '$changes_file' does not exist: " .
+	    "File '$infile' could NOT be processed.\n";
+	next;
+    }
+
+    # make sure file has data
+    if (-z $changes_file) {
+	warn "$me: WARNING: Empty file: Required file '$changes_file' contains no data: " .
+	    "File '$infile' could NOT be processed.\n";
+	next;
+    }
+
+    # read changes file into array for repeat access
+    open(CHANGES, $changes_file) || die "$me: ERROR: Cannot read '$changes_file': $!\n";
+    @temp = <CHANGES>;
+    close CHANGES;
+
+    # display list of changes to user for confirmation; filter comment lines from list of changes
+    $operator = '';
+    $changes = '';
+    @changes = ();
+    foreach $line (@temp) {
+	if ( $line =~ /^#/ ) {
+	    if ( $line =~ /^#operator=(.+)$/ ) {
+		$operator = $1;
+	    } elsif ( $line =~ /^#datetime=(.+)$/ ) {
+		$datetime = $1;
+	    } else {
+		# ignore
+	    }
+	} elsif ( $line =~ /^\s*$/ ) {
+	    # blank line; ignore
+	} else {
+	    push @changes, $line;
+
+	    chomp $line;
+	    ($id, $exists) = split(/\|/, $line);
+	    $changes .= "$id: $exists\n";
+	}
+    }
+    print "\nThe following changes have been propsed for $infile:\n\n";
+    print "Operator: $operator\n";
+    print "Date/time: $datetime\n\n";
+    print 'The following <figure> tags will be marked as having a corresponding'. "\n"
+	. 'image file (indicated by "true") or not having one (indicated by "false").' . "\n\n";
+    print $changes;
+    print "\nAre you sure you want to make these changes to $infile at this time? (y/n, or q to quit) ";
+    $input = <STDIN>;
+    chomp $input;
+    if ($input =~ /^(y|yes)$/i) {
+	print "$me: $infile: Processing...\n";
+    } elsif ($input =~ /^(q|quit)$/i) {
+	$quit = 1;
+	print "OK, the remaining files have NOT been processed:\n";
+	print "$infile\n";
+	next;
+    } else {
+	print "OK, $infile has NOT been processed.\n";
+	next;
+    }
+
+    # read input (TEI XML) file into array for repeat access
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # get DLPS ID
+    %properties = ();
+    $dlpsId = DlpsText::getDlpsId(\%properties, \@infile, $infile);
+
+    # copy input file to .bak backup
+    $bakfile = "${infile}.bak";
+    open(BAK, ">$bakfile") || die "$me: ERROR: Cannot write '$bakfile': $!\n";
+    foreach $line (@infile) {
+	print BAK $line;
+    }
+    close BAK;
+
+    # make changes to input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach $line (@infile) {
+	if ( $line =~ /<pb[^>]*\sentity=["'](\w+)["']/ ) {
+	    $pb_entity = $1;
+	}
+
+	# look for changes that need to be made to this line
+	if ( $line =~ /<figure/ ) {
+	    # loop through list of changes needed, looking for that ID on this line
+	    foreach $change (@changes) {
+		chomp $change;
+		($id, $exists) = split(/\|/, $change);
+                if ($exists eq 'false') {
+		    if ( $line =~ m:<figure[^>]*\sid=["']$id["'][^/>]*/?>: ) {
+			# figure start-tag with matching id found; add or update rend attribute
+			$pre = $`;
+			$post = $';
+			$match = $&;
+			if ( $match =~ m:<figure[^>]*\s(entity=["'][^"']*["']): ) {
+			    # figure start-tag has entity attribute; replace value with pb entity value
+			    print "Updating: $match  -->  ";   # DEBUG
+			    $entity = $1;
+			    $match =~ s:$entity:entity="$pb_entity":;
+			    print "$match\n"   # DEBUG
+			} else {
+			    # no entity attribute; add it (this is extremely unlikely to occur)
+			    print "Adding: $match  -->  ";   # DEBUG
+			    $add = "entity=\"$pb_entity\"";
+			    $match =~ s:(<figure[^/>]*)(/?>):$1 $add$2:;
+			    print "$match\n";   # DEBUG
+			}
+			$line = $pre . $match . $post;
+		    }
+		}
+	    }
+	}
+
+	# print every line, changed or unchanged, to output
+	print OUT $line;
+    }
+    close OUT;
+
+    $files_changed .= "$infile\n";
+
+    $msg = "Set value of entity attribute on <figure> to <pb/> entity value if there is no image file for the figure, as indicated in file '$changes_file'";
+##    DlpsText::log($me, $infile, $msg);
+
+    # update tracking system upon success
+    $rows = 0;
+    $sql = "UPDATE postkb SET commitFiguresFilenamesChanges = 1 WHERE dlpsId = '$dlpsId' LIMIT 1";
+    $rows = TrackSys::query($sql);
+    if ($rows != 1) {  # this works because Perl DBI execute() returns 1 even if no fields of the record are actually changed
+        warn "$me: WARNING: Cannot update DLPS tracking system for record '$dlpsId'. Update manually.\n";
+    }
+
+    # clean up
+    # move '.changes' file to 'Committed/' archive directory
+    $destination = DlpsTextWorkreports::get_changes_file_archive();
+    move($changes_file, $destination) ||
+        warn "$me: WARNING: Cannot move '$changes_file' to archive location '$destination': $!\n";
+
+    # delete HTML file
+    $html_file = DlpsTextWorkreports::get_outfile();
+    if (-e $html_file) {
+        unlink($html_file) || warn "$me: WARNING: Cannot remove file '$html_file': $!\n";
+    }
+}
+
+TrackSys::disconnect();

@@ -1,0 +1,384 @@
+#!/usr/bin/perl -w
+
+# qa_xml - checks XML document(s) for conformance to local XML-related practices
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2003-04-14
+# Last modified: 2005-03-17
+
+# 2004-02-23: gpm2a: Added tests relating to ENTITY declarations for
+# DTD feature selection (VENDOR, POSTKB, DICTIONARY, and NEWSPAPER)
+#
+# 2004-02-26: gpm2a: Added test for occurences of | (vertical bar)
+# outside of markup (where it is used in <reg orig="ex-|ample">),
+# because such occurence probably indicates a vendor line break
+# encoded in some unusual way such that it did not get translated to
+# <lb/>
+#
+# 2004-03-25: gpm2a: Added tests for vendor unknown character
+# indicators [UNK] and &lsqb;UNK&rsqb; and &unknown;
+#
+# 2004-04-07: gpm2a: Instead of requiring encoding="US-ASCII" in XML
+# declaration, encoding= must be either set to "UTF-8" or omitted
+# altogether. Also, standalone= must be either set to "no" or omitted.
+#
+# 2005-01-12: gpm2a: Added -E (errors only) option.
+#
+# 2005-08-01: gpm2a: Use standard output for QA error/warning/info
+# messages (since these are normal script output). Only use standard
+# error for fatal script errors. Added tests for MANUSCRIPT feature
+# selection switch.
+#
+# 2006-03-17: gpm2a: Fixed bug that manifested itself only when there
+# was a very large number of errors to report. Added additional checks
+# relating to the internal DTD subset.
+
+
+#***********
+# main logic
+#***********
+
+use strict;
+use Getopt::Std;
+
+my ($me, $usage, %opts, $e, $A, $infile, @infile);
+my (%switches, $switches);
+my ($c, @hits, $lc, $xml_decl, $i, $char, $dec, $hex);
+my ($el, $id, $line, $col, $type, $msg, $in_markup, $in_keywords);
+my ($has_unknown, $hasUNK, $hasUNK2);
+my ($dictionaryCount, $manuscriptCount, $newspaperCount, $nontransCount, $ocrCount, $postkbCount, $vendorCount);
+my ($teiEntCount, $teiDtdCount, $dlpsEntCount, $binCount);
+
+$me = 'qa_xml';
+$usage = <<EOD;
+
+$me - checks XML document(s) for conformance to local XML-related practices
+Usage: $me [-e number] [-A] [-E] filenames
+    -e (errors)      Maximum number of errors to display (defaults to 10)
+    -A (ASCII)       Skip ASCII test and vertical bar test
+    -E (errors only) Only display error messages (suppress warnings)
+In: XML file(s)
+Out: Prints messages to standard output
+Verifies these rules:
+    - XML declaration required
+    - In XML declaration, version="1.0" required
+    - In XML declaration, encoding= must be either set to "UTF-8" or omitted
+    - In XML declaration, standalone= must be either set to "no" or omitted
+    - URLs for DTD files should not contain "virginia.edu/bin/" (outdated path
+        for .dtd and .ent files)
+    - Parameter entities must be declared only once
+    - Parameter entities for DTD feature selection (VENDOR, POSTKB, DICTIONARY,
+        MANUSCRIPT, NEWSPAPER, etc.) must be set to either "INCLUDE" or "IGNORE"
+    - VENDOR and POSTKB cannot both be INCLUDE, and cannot both be IGNORE
+    - DICTIONARY and NEWSPAPER cannot both be INCLUDE
+    - ASCII characters only; no illegal control characters or super-ASCII characters
+    - No occurrences of | (vertical bar) outside of markup (except in <keywords>)
+    - No vendor unknown-character indicators
+
+EOD
+
+getopts('e:AE', \%opts) || die $usage;
+$e = $opts{'e'} || '10';
+$A = $opts{'A'};
+die "-e must be a number.$usage" if (not $e =~ /\d+/);
+$e += 0;
+die $usage if (! @ARGV);
+
+INFILE: foreach $infile (@ARGV) {
+    @hits = ();
+    $c = 0;
+    $lc = 0;
+    $xml_decl = 0;
+    $in_markup = 0;
+    $has_unknown = 0;
+    $hasUNK = 0;
+    $hasUNK2 = 0;
+
+    $dictionaryCount = 0;
+    $manuscriptCount = 0;
+    $newspaperCount = 0;
+    $nontransCount = 0;
+    $ocrCount = 0;
+    $postkbCount = 0;
+    $vendorCount = 0;
+
+    $teiEntCount = 0;
+    $teiDtdCount = 0;
+    $dlpsEntCount = 0;
+    $binCount = 0;
+    $switches = '';
+    %switches = ('DICTIONARY' => '',
+		 'MANUSCRIPT' => '',
+		 'NEWSPAPER'  => '',
+		 'NONTRANS'   => '',
+		 'OCR'        => '',
+		 'POSTKB'     => '',
+		 'VENDOR'     => '');
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    #==========
+    # run tests
+    #==========
+
+    #----------------------------------------------------
+    # perform tests relating to XML declaration, internal
+    # DTD subset, and unknown-character indicators
+    #----------------------------------------------------
+
+    foreach (@infile) {
+	$lc++;
+	if ( /^<\?xml[^>]*?\?>/ ) {
+	    $xml_decl = 1;
+
+	    if ($lc != 1) {
+		# xerces also reports this, but nsgmls does not, so go ahead and report this error
+		hit($lc, 0, 'E', 'XML declaration may appear only at very beginning of document');
+	    }
+
+	    if ( not /^<\?xml\s[^>]*?version=("|')1.0\1/ ) {
+		hit($lc, 0, 'E', 'In XML declaration, version= with value "1.0" is required');
+	    }
+
+	    if ( /^<\?xml\s[^>]*?encoding=("|')([^\1]*?)\1/ ) {
+		if ( not $2 eq 'UTF-8' ) {
+		    hit($lc, 0, 'E', qq/Bad value "$2": In XML declaration, encoding= must be either set to "UTF-8" or omitted/);
+		}
+	    }
+
+	    if ( /^<\?xml\s[^>]*?standalone=("|')([^\1]*?)\1/ ) {
+		if ( not $2 eq 'no' ) {
+		    hit($lc, 0, 'E', qq/Bad value "$2": In XML declaration, standalone= must be either set to "no" or omitted/);
+		}
+	    }
+	}
+
+	if ( /<!ENTITY % DICTIONARY\s+("|')([^\1]+)\1/ ) {
+	    $dictionaryCount++;
+	    $switches{'DICTIONARY'} = $2;
+	    $switches .= $_;
+	}
+
+	if ( /<!ENTITY % MANUSCRIPT\s+("|')([^\1]+)\1/ ) {
+	    $manuscriptCount++;
+	    $switches{'MANUSCRIPT'} = $2;
+	    $switches .= $_;
+	}
+
+	if ( /<!ENTITY % NONTRANS\s+("|')([^\1]+)\1/ ) {
+	    $nontransCount++;
+	    $switches{'NONTRANS'} = $2;
+	    $switches .= $_;
+	}
+
+	if ( /<!ENTITY % NEWSPAPER\s+("|')([^\1]+)\1/ ) {
+	    $newspaperCount++;
+	    $switches{'NEWSPAPER'} = $2;
+	    $switches .= $_;
+	}
+
+	if ( /<!ENTITY % OCR\s+("|')([^\1]+)\1/ ) {
+	    $ocrCount++;
+	    $switches{'OCR'} = $2;
+	    $switches .= $_;
+	}
+
+	if ( /<!ENTITY % POSTKB\s+("|')([^\1]+)\1/ ) {
+	    $postkbCount++;
+	    $switches{'POSTKB'} = $2;
+	    $switches .= $_;
+	}
+
+	if ( /<!ENTITY % VENDOR\s+("|')([^\1]+)\1/ ) {
+	    $vendorCount++;
+	    $switches{'VENDOR'} = $2;
+	    $switches .= $_;
+	}
+
+        if ( /<!ENTITY % TEI\.extensions\.ent/ ) { $teiEntCount++; }
+        if ( /<!ENTITY % TEI\.extensions\.dtd/ ) { $teiDtdCount++; }
+        if ( /<!ENTITY % dlps-teiHeader/ )       { $dlpsEntCount++; }
+
+	if ( /virginia\.edu\/bin/ ) { $binCount++; }
+
+	if ( /&unknown;/ )       { $has_unknown = 1; }
+	if ( /\[UNK\]/ )         { $hasUNK = 1; }
+	if ( /&lsqb;UNK&rsqb;/ ) { $hasUNK2 = 1; }
+    }
+
+    if (not $xml_decl) {
+	hit(0, 0, 'E', 'XML declaration is required');
+    }
+
+    if ($binCount) {
+	hit(0, 0, 'E', 'One or more URLs includes the outdated "bin" directory');
+    }
+
+    if ($dictionaryCount > 1) {
+	hit(0, 0, 'E', 'DICTIONARY entity is declared more than once');
+    }
+    if ($manuscriptCount > 1) {
+	hit(0, 0, 'E', 'MANUSCRIPT entity is declared more than once');
+    }
+    if ($newspaperCount > 1) {
+	hit(0, 0, 'E', 'NEWSPAPER entity is declared more than once');
+    }
+    if ($nontransCount > 1) {
+	hit(0, 0, 'E', 'NONTRANS entity is declared more than once');
+    }
+    if ($ocrCount > 1) {
+	hit(0, 0, 'E', 'OCR entity is declared more than once');
+    }
+    if ($postkbCount > 1) {
+	hit(0, 0, 'E', 'POSTKB entity is declared more than once');
+    }
+    if ($vendorCount > 1) {
+	hit(0, 0, 'E', 'VENDOR entity is declared more than once');
+    }
+
+    if ($teiEntCount > 1) {
+	hit(0, 0, 'E', 'TEI.extensions.ent entity is declared more than once');
+    }
+    if ($teiDtdCount > 1) {
+	hit(0, 0, 'E', 'TEI.extensions.dtd entity is declared more than once');
+    }
+    if ($dlpsEntCount > 1) {
+	hit(0, 0, 'E', 'dlps-teiHeader entity is declared more than once');
+    }
+
+    if ( $switches{'DICTIONARY'} ne '' and $switches{'DICTIONARY'} ne 'INCLUDE' and $switches{'DICTIONARY'} ne 'IGNORE') {
+	hit(0, 0, 'E', "If declared, DICTIONARY must be set to either INCLUDE or IGNORE\n$switches");
+    }
+    if ( $switches{'MANUSCRIPT'} ne '' and $switches{'MANUSCRIPT'} ne 'INCLUDE' and $switches{'MANUSCRIPT'} ne 'IGNORE') {
+	hit(0, 0, 'E', "If declared, MANUSCRIPT must be set to either INCLUDE or IGNORE\n$switches");
+    }
+    if ( $switches{'NEWSPAPER'} ne '' and $switches{'NEWSPAPER'} ne 'INCLUDE' and $switches{'NEWSPAPER'} ne 'IGNORE') {
+	hit(0, 0, 'E', "If declared, NEWSPAPER must be set to either INCLUDE or IGNORE\n$switches");
+    }
+    if ( $switches{'NONTRANS'} ne '' and $switches{'NONTRANS'} ne 'INCLUDE' and $switches{'NONTRANS'} ne 'IGNORE') {
+	hit(0, 0, 'E', "If declared, NONTRANS must be set to either INCLUDE or IGNORE\n$switches");
+    }
+    if ( $switches{'OCR'} ne '' and $switches{'OCR'} ne 'INCLUDE' and $switches{'OCR'} ne 'IGNORE') {
+	hit(0, 0, 'E', "If declared, OCR must be set to either INCLUDE or IGNORE\n$switches");
+    }
+    if ( $switches{'POSTKB'} ne '' and $switches{'POSTKB'} ne 'INCLUDE' and $switches{'POSTKB'} ne 'IGNORE') {
+	hit(0, 0, 'E', "If declared, POSTKB must be set to either INCLUDE or IGNORE\n$switches");
+    }
+    if ( $switches{'VENDOR'} ne '' and $switches{'VENDOR'} ne 'INCLUDE' and $switches{'VENDOR'} ne 'IGNORE') {
+	hit(0, 0, 'E', "If declared, VENDOR must be set to either INCLUDE or IGNORE\n$switches");
+    }
+
+    if ( $switches{'VENDOR'} eq 'INCLUDE' and $switches{'POSTKB'} eq 'INCLUDE' ) {
+	hit(0, 0, 'E', "VENDOR and POSTKB must not both be enabled; they are mutually exclusive\n$switches");
+    }
+    if ( $switches{'VENDOR'} eq 'IGNORE' and $switches{'POSTKB'} eq 'IGNORE' ) {
+	hit(0, 0, 'E', "VENDOR and POSTKB must not both be disabled; one or the other must be enabled\n$switches");
+    }
+    if ( $switches{'DICTIONARY'} eq 'INCLUDE' and $switches{'NEWSPAPER'} eq 'INCLUDE' ) {
+	hit(0, 0, 'E', "DICTIONARY and NEWSPAPER must not both be enabled; they are mutually exclusive\n$switches");
+    }
+
+    if ($has_unknown) {
+	hit(0, 0, 'W', 'Document contains unknown-character indicators in the form "&unknown;"') unless $opts{E};
+    }
+    if ($hasUNK) {
+	hit(0, 0, 'W', 'Document contains unknown-character indicators in the form "[UNK]"') unless $opts{E};
+    }
+    if ($hasUNK2) {
+	hit(0, 0, 'W', 'Document contains unknown-character indicators in the form "&lsqb;UNK&rsqb;"') unless $opts{E};
+    }
+
+
+    #----------------------------------------------
+    # verify that only ASCII characters are present
+    #----------------------------------------------
+
+    if (not $A) {
+	$lc = 0; $in_keywords = 0;
+
+	# read each line of this input file
+	foreach (@infile) {
+	    $lc++;
+	    if ( /<keywords\s/ )  { $in_keywords = 1; }
+	    if ( /<\/keywords>/ ) { $in_keywords = 0; }
+
+	    # read each character on this line
+	    for ($i = 0; $i < length($_); $i++) {
+		$char = substr($_, $i, 1);
+		$dec = ord($char);
+
+		if ( $dec == 9 or $dec == 10 or $dec == 13 or ($dec >= 32 and $dec <= 126) ) {
+		    # non-control ASCII character
+		    # tab (9), newline/linefeed (10), and carriage return (13) are legal in XML
+		} else {
+		    $hex = uc(sprintf "%lx", $dec);
+
+		    if ( $dec <= 31 ) {
+			# C0 control character (0 - 31) other than tab, newline, return
+			hit($lc, $i + 1, 'E', "Illegal control character (decimal '$dec', hex '$hex')");
+		    }
+
+		    if ( $dec >= 127 && $dec <= 159 ) {
+			# either DEL character (127) or C1 control character (128-159)
+			hit($lc, $i + 1, 'E', "Illegal control character (decimal '$dec', hex '$hex')");
+		    }
+
+		    if ( $dec >= 160 ) {
+			# super-ASCII non-control character
+			hit($lc, $i + 1, 'E', "Super-ASCII character (decimal '$dec', hex '$hex'):\n    $_");
+		    }
+		}
+
+		if ($char eq '<') { $in_markup = 1; }
+		if ($char eq '>') { $in_markup = 0; }
+		if ($char eq '|' and not $in_markup and not $in_keywords) {
+		    hit($lc, $i + 1, 'W', "Vertical bar character outside markup:\n    $_") unless $opts{E};
+		}
+	    }
+	}
+    }
+
+    #===============
+    # print messages
+    #===============
+
+    # print messages, sorted by line number and column number
+    $c = 0;
+    foreach $el ( sort({$a cmp $b} @hits) ) {
+	$c++;
+	($id, $line, $col, $type, $msg) = split(/~/, $el);
+
+	if    ($type eq 'E')    { $type = 'ERROR'; }
+	elsif ($type eq 'W')    { $type = 'WARNING'; }
+	elsif ($type eq 'INFO') { $type = 'Info'; }
+
+	if ($line) { $line = "$line: "; } else { $line = ''; }
+	if ($col)  { $col = "$col: ";   } else { $col = ''; }
+	print "$infile: $line$type: $msg\n";  # no need to print column number; it is more distracting than helpful
+
+	if ($c >= $e) {
+	    print "$infile: Info: Maximum number of errors ($e) reached; change with -e option\n\n";
+	    next INFILE;
+	}
+    }
+}
+
+
+#************
+# subroutines
+#************
+
+sub hit {
+    my $line = shift;
+    my $col = shift;
+    my $type = shift;
+    my $msg = shift;
+
+    chomp $msg;
+    my $id = sprintf("%05d", $line) . '.' . sprintf("%04d", $col);
+    $hits[$c] = "$id~$line~$col~$type~$msg";
+    $c++;
+}

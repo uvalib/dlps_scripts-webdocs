@@ -1,0 +1,260 @@
+
+progname=`basename $0`
+testflag=0
+
+usage="
+USAGE: $progname [-h] [-p] [projectdir]
+-h provides more detailed help
+-p parses input GDMS files and exits
+"
+
+help="
+USAGE: $progname [-h] [-p] [projectdir]
+given the name of a projectdir in /shares/image2/02_processed, this program
+
+1. performs preliminary checking of its input files
+   - parses all new and updated GDMS files and image DescMeta files
+   - counts new and updated GDMS files
+
+2. invokes /shares/admin/bin/text/saxon with the stylesheet located at
+/cenrepo/bin/fedora/utils/GDMSDesc.xsl to create descriptive metadata for
+the gdms files associated with the project
+
+3. invokes /cenrepo/bin/fedora/utils/GDMSAdmin.pl to create administrative
+metadata for the gdms files associated with the project
+
+4. invokes /cenrepo/bin/fedora/utils/imageadminmeta.pl to create administrative
+metadata for the image files associated with the project
+
+5. Reports
+     - number of new and updated GDMS files processed
+     - number of GDMS DescMeta and AdminMeta files generated
+     - number of image AdminMeta files generated
+
+** Existing metadata is overwritten by this program! **
+
+The -p option performs only the preliminary checking without actually creating
+any metadata.
+
+"
+
+if [ $# -lt 1 ]
+then
+   echo "$usage"
+   exit
+fi
+
+while getopts hp opt
+do
+   case "$opt"
+   in
+      h) echo "$help"
+         exit;;
+      p) testflag=1;;
+   esac
+done
+
+shiftcount=`expr $OPTIND - 1`
+shift $shiftcount
+if [ "$1" = "" ]
+then
+    echo "$usage"
+    exit
+fi
+
+saxon=/shares/admin/bin/text/saxon
+metadatadir=metadata
+descsheet=/cenrepo/bin/fedora/utils/GDMSDesc.xsl
+adminperl=/cenrepo/bin/fedora/utils/GDMSAdmin.pl
+imageadmin=/cenrepo/bin/fedora/utils/imageadminmeta.pl
+pogopath=/shares/image2/02_processed/60_copy2ReadyRepo
+project=`basename $1`
+
+# test existence of project directory
+if [ ! -d $pogopath/$project ]
+then
+  echo "$pogopath/$project doesn't exist!"
+  exit
+fi
+
+# go to the project directory
+cd $pogopath/$project
+
+echo ""
+echo "PROJECT $project"
+
+if [ "$testflag" -eq 1 ]
+then
+  # count the input files
+  echo ""
+  echo "Counting files ..."
+  newgdms=`howmany text/uvaGDMS/gdms/new/*.xml 2> /dev/null`
+  echo "$newgdms new GDMS files to be processed"
+  updategdms=`howmany text/uvaGDMS/gdms/update/*.xml 2> /dev/null`
+  echo "$updategdms updated GDMS files to be processed"
+fi
+
+# Parse all input files
+echo ""
+echo "Parsing new and updated GDMS and image descriptive metadata files ..."
+parseerrors=`parse text/uvaGDMS/gdms/new/*.xml text/uvaGDMS/gdms/update/*.xml image/uvaHighRes/metadata/desc/*.xml image/uvaLowRes/metadata/desc/*.xml`
+parseerrors2=`echo $parseerrors|grep -v "cannot find"`
+
+# always check for parsing errors regardless of -p switch
+if [ "$parseerrors2" != "" ]
+then
+  echo "ERROR -- parsing errors detected!"
+  echo "$parseerrors"
+  exit
+fi
+
+if [ "$testflag" -eq 1 ]
+then
+  # if -p option specified, we're done
+  exit
+else
+  # otherwise, continue
+  # process the gdms files first
+  cd text/uvaGDMS/gdms
+
+  newgdms=`howmany new/*.xml 2> /dev/null`
+  if [ "$newgdms" -gt 0 ]
+  then
+    # there are new gdms files
+    echo ""
+    echo "Creating DescMeta files for the new gdms files ..."
+
+    # make directories inside the new dir to hold the metadata
+    cd new
+    mkdir $metadatadir 2> /dev/null
+    mkdir $metadatadir/desc 2> /dev/null
+    mkdir $metadatadir/admin 2> /dev/null
+    chmod g+w $metadatadir
+    chmod g+w $metadatadir/desc
+    chmod g+w $metadatadir/admin
+
+    # generate the metadata
+    for file in `ls *.xml`
+    do
+      $saxon -2 $descsheet $file > $metadatadir/desc/$file
+      $adminperl $file > $metadatadir/admin/$file
+    done
+
+    # make all the metadata files write-able by the group
+    chmod g+w $metadatadir/desc/*.xml
+    chmod g+w $metadatadir/admin/*.xml
+
+    # count the files generated
+    newgdmsdesc=`howmany $metadatadir/desc/*.xml`
+    newgdmsadmin=`howmany $metadatadir/admin/*.xml`
+    cd ..
+  else
+    newgdms=0
+    newgdmsdesc=0
+    newgdmsadmin=0
+  fi
+  # report basic QA operations
+  echo "$newgdms new GDMS files processed"
+  echo "DescMeta files generated: $newgdmsdesc"
+  echo "AdminMeta files generated: $newgdmsadmin"
+
+  updategdms=`howmany update/*.xml 2> /dev/null`
+  if [ "$updategdms" -gt 0 ]
+  then
+    # there are updated gdms files
+    echo ""
+    echo "Creating DescMeta files for the updated gdms files ..."
+
+    # make directories inside the update dir to hold the metadata
+    cd update
+    mkdir $metadatadir 2> /dev/null
+    mkdir $metadatadir/desc 2> /dev/null
+    mkdir $metadatadir/admin 2> /dev/null
+    chmod g+w $metadatadir
+    chmod g+w $metadatadir/desc
+    chmod g+w $metadatadir/admin
+
+    # generate the metadata
+    for file in `ls *.xml`
+    do
+      $saxon -2 $descsheet $file > $metadatadir/desc/$file
+      $adminperl $file > $metadatadir/admin/$file
+    done
+
+    # make all the metadata files write-able by the group
+    chmod g+w $metadatadir/desc/*.xml
+    chmod g+w $metadatadir/admin/*.xml
+
+    # count the files generated
+    updategdmsdesc=`howmany $metadatadir/desc/*.xml`
+    updategdmsadmin=`howmany $metadatadir/admin/*.xml`
+    cd ..
+  else
+    updategdms=0
+    updategdmsdesc=0
+    updategdmsadmin=0
+  fi
+  # report basic QA operations
+  echo "$updategdms updated GDMS files processed"
+  echo "DescMeta files generated: $updategdmsdesc"
+  echo "AdminMeta files generated: $updategdmsadmin"
+
+  # return to project directory
+  cd $pogopath/$project
+
+  # now process the image files
+  if [ -d image/uvaHighRes/metadata ]
+  then
+    cd image/uvaHighRes/metadata
+    echo ""
+    echo "Creating AdminMeta files for HighRes images ..."
+    descdir=`pwd`
+    $imageadmin $descdir/desc
+
+    # count the image descmeta files
+    imagedesc=`howmany desc/*.xml`
+
+    # count the image technical data files
+    imageraw=`howmany raw_meta/*.txt`
+
+    # count the image adminmetadata files
+    imageadmin=`howmany admin/*.xml`
+
+    # make the newly-created metadata files write-able by the group
+    chmod g+w admin
+    chmod g+w admin/*.xml
+
+    # report basic QA operations
+    echo "$imagedesc image DescMeta files and $imageraw raw metadata files processed"
+    echo "AdminMeta files generated: $imageadmin"
+    echo ""
+  fi
+
+  if [ -d image/uvaLowRes/metadata ]
+  then
+    cd image/uvaLowRes/metadata
+    echo ""
+    echo "Creating AdminMeta files for LowRes images ..."
+    descdir=`pwd`
+    $imageadmin $descdir/desc
+
+    # count the image descmeta files
+    imagedesc=`howmany desc/*.xml`
+
+    # count the image technical data files
+    imageraw=`howmany raw_meta/*.txt`
+
+    # count the image adminmetadata files
+    imageadmin=`howmany admin/*.xml`
+
+    # make the newly-created metadata files write-able by the group
+    chmod g+w admin
+    chmod g+w admin/*.xml
+
+    # report basic QA operations
+    echo "$imagedesc image DescMeta files and $imageraw raw metadata files processed"
+    echo "AdminMeta files generated: $imageadmin"
+    echo ""
+  fi
+fi
+

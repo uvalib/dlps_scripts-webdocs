@@ -1,0 +1,25 @@
+#!/usr/bin/perl -w
+
+die "Usage: strip_blank_lines filenames\n" if (! @ARGV);
+
+foreach $infile (@ARGV) {
+    # copy input file to .bak backup
+    open(IN, $infile) || die "Cannot read '$infile': $!\n";
+    open(BAK, ">${infile}.bak") || die "Cannot write '${infile}.bak': $!\n";
+    while (<IN>) {
+	print BAK;
+    }
+    close BAK;
+    close IN;
+
+    # read backup file as input, overwrite input file
+    open(IN, "${infile}.bak") || die "Cannot read '${infile}.bak': $!\n";
+    open(OUT, ">$infile") || die "Cannot write '$infile': $!\n";
+    while (<IN>) {
+	if (not /^\s*$/) {
+	    print OUT;
+	}
+    }
+    close OUT;
+    close IN;
+}

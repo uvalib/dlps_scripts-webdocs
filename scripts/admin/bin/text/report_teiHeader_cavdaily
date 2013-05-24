@@ -1,0 +1,19 @@
+# report_teiHeader_cavdaily - shell script to generate a report of
+# volume, issue, date, and DLPS ID data for issues of Cav Daily
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2004-12-23
+# Last modified: 2006-04-03
+
+# 2006-04-03: gpm2a: Added call to update_tracksys
+
+for filename in "$@"
+do
+  echo "$filename:";
+  grep '<biblScope type="volume"' $filename;
+  grep '<biblScope type="issue"' $filename;
+  grep '<biblScope type="date"' $filename;
+  echo;
+done
+
+/shares/admin/bin/text/update_tracksys -I -s report $*

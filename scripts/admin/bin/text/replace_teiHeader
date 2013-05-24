@@ -1,0 +1,625 @@
+#!/usr/bin/perl -w
+
+# replace_teiHeader - merges <teiHeader> element in input file with
+#   <teiHeader> from a corresponding header file
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2002-11-11
+# Last modified: 2006-12-01
+
+# 2003-03-31: gpm2a: Now <language id="..."> elements will be buffered
+# and preserved if id does not equal "eng".
+#
+# 2003-04-21: gpm2a: Now <?dlps ...?> processing instructions will be
+# buffered and preserved.
+#
+# 2003-05-23: gpm2a: Now <revisionDesc> will be buffered and preserved
+# in its entirety. Also, the declaration for parameter entity
+# %dlps-teiHeader; for boilerplate header-related entities gets
+# inserted into the internal subset.
+#
+# 2003-07-16: gpm2a: Now any <notesStmt> will be buffered and inserted
+# in new header (in <fileDesc> immediately before <sourceDesc>). Also
+# added info/response messages and -q option for quiet mode.
+#
+# 2003-08-11: gpm2a: Removed code for preserving <?dlps ...?>
+# processing instructions. These should not be considered part of the
+# teiHeader.
+#
+# 2004-05-21: gpm2a: Removed requirement that filenames begin with b
+# or z plus 9 digits. Added -t (template) switch to allow using a
+# single header template, rather than looking in a directory for a
+# corresponding header file. This is useful for replacing minimal
+# headers with full headers for newspaper issues or other serial
+# items, where the full header is initially identical for all
+# issues but later updated to include issue-specific data.
+#
+# 2004-10-22: gpm2a: Enhanced buffering of language declarations so
+# that no language gets declared twice.
+#
+# 2005-01-24: gpm2a: Added -E (EAF) switch and logic for handling
+# special requirements for EAF headers.
+#
+# 2005-02-03: gpm2a: Made additional EAF-related changes.
+#
+# 2005-03-07: gpm2a: Added another EAF-related requirement: <sponsor>
+#
+# 2005-08-01: gpm2a: Added buffering of certain <idno> elements when
+# using a template (-t option). Added buffering of <handList> (for
+# manuscripts).
+#
+# 2005-08-23: gpm2a: Fixed bug caused by whitespace/"pretty printing"
+# at beginning of certain lines; allowed for lines beginning with
+# whitespace.
+#
+# 2005-11-16: gpm2a: Fixed bug with -E (EAF) option where <respStmt>
+# and <sponsor> elements were being inserted after <biblScope> rather
+# than before it. <biblScope> must be the last element in <titleStmt>.
+#
+# 2006-01-18: gpm2a: Exclude <term>LCSH</term> from the output (under
+# <keywords scheme="uva-etc">) at Erin Stalberg's request. 'LCSH' is a
+# scheme (as in <keywords scheme="LCSH">), not a term.
+#
+# 2006-04-03: gpm2a: Changed to update DLPS tracking system -->
+# Finalization Workflow --> Replace TEI header
+#
+# 2006-12-01: gpm2a: Added -N option to turn off feature that
+# preserves <notesStmt> from existing TEI header (i.e. notes will NOT
+# be preserved when -N is used). Normally useful only for migration
+# files.
+
+
+use strict;
+use Getopt::Std;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use TrackSys;
+
+my $DEFAULT_PATH = '/shares/text/05teiHeader/80final/';
+
+my ($me, $usage, %opts, $d, $q, $t, $infile, @infile, $filename, $newfile, @newfile);
+my ($dlpsId, %properties, $new_header, $in_header);
+my (%buffer_langs, $buffer_lang, $buffer_rev, $in_rev, $buffer_notes, $in_notes);
+my ($buffer_idno, $buffer_handList, $in_handList);
+my ($buffer_resp, $in_resp, $in_fileDesc, $in_titleStmt, $respStmt_inserted);
+my ($buffer_avail, $in_avail, $in_publicationStmt, $copyrightDate, $year);
+my (@buffer_keywords, $buffer_keywords, $in_keywords, $keyword, $term, $temp);
+my ($lang_id, $hold, $etext_id);
+my ($sql, $rows);
+
+my $eaf_sponsor = "<sponsor>Sponsored by the Andrew W. Mellon Foundation and the University of Virginia.</sponsor>\n";
+
+my $eaf_seriesStmt = <<EOD;
+<seriesStmt>
+<title>University of Virginia Library, Early American Fiction, 1789-1875</title>
+<idno type="uva-set">UVA-LIB-EarlyAmFict1789-1875</idno>
+</seriesStmt>
+EOD
+
+my $eaf_projectDesc = <<EOD;
+<projectDesc>
+<p>Prepared for the project Early American Fiction at the University
+of Virginia Library. Sponsored by the Andrew W. Mellon Foundation and
+the University of Virginia.</p>
+</projectDesc>
+EOD
+
+my $eaf_taxonomy = <<EOD;
+<taxonomy id="uva-etc">
+<bibl>UVa Electronic Text Center Categories</bibl>
+</taxonomy>
+EOD
+
+$me = 'replace_teiHeader';
+$usage = <<EOD;
+
+$me - merges <teiHeader> element in input file with <teiHeader> from a corresponding header file
+
+Usage: $me [-d directory-name] [-t filename] [-q] [-E] [-N] input-filenames
+    -d (directory) Directory in which to look for corresponding header
+                   files; defaults to $DEFAULT_PATH
+    -q (quiet)     Suppress info/status messages sent to standard output
+    -t (template)  File to use as header template for all input files,
+                   rather than looking in a directory for corresponding
+                   header files; useful for adding headers to newspaper issues
+    -E (EAF)       Handle special requirements of EAF headers
+    -N (notes)     Do NOT preserve <notesStmt> from existing TEI header
+                   (normally useful only for migration files)
+
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+Notes:
+  Some elements from the existing TEI header will be preserved and
+  merged with the new header:
+    - <notesStmt>
+    - <language>
+    - <handList>
+    - <revisionDesc>
+    - <idno> (when using a template (-t option) only)
+  For EAF headers, the following are also preserved:
+    - <fileDesc><titleStmt><respStmt>
+    - copyright/publication date
+    - <encodingDesc><projectDesc>
+    - <profileDesc><textClass><keywords>
+
+EOD
+
+getopts('d:qt:ELN', \%opts) || die $usage;
+$d = $opts{'d'} || $DEFAULT_PATH;
+$d = DlpsText::normalize_path($d);   # add final / if needed
+$q = $opts{'q'};
+$t = $opts{'t'};
+
+if ($t) {
+    if (not -f $t) { die "'$t' is not a file\n$usage"; }
+} else {
+    if (not -d $d) { die "'$d' is not a directory\n$usage"; }
+}
+
+die $usage if (! @ARGV);
+
+TrackSys::connect();
+
+foreach $infile (@ARGV) {
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # get DLPS ID
+    %properties = DlpsText::getProperties($infile);
+    $dlpsId = DlpsText::getDlpsId(\%properties, \@infile, $infile);
+
+    # determine filename of file containing new header
+    if ($t) {
+	$newfile = $t;
+    } else {
+	$newfile = '';
+	opendir(DIR, $d) || die "$me: ERROR: Cannot access directory '$d': $!\n";
+	while ( defined($filename = readdir(DIR)) ) {
+	    if ( $filename =~ /^$dlpsId/ and $filename ne $infile ) {
+		$newfile = $d . $filename;
+	    }
+	}
+	closedir DIR;
+    }
+
+    if ($newfile) {
+	print "$me: Replacing TEI header: $infile <-- $newfile\n" if (not $q);
+    } else {
+	# don't die, just warn; user may want to take a stab at it, see what does/doesn't have full headers
+	warn "$me: $infile: WARNING: No corresponding header file for DLPS ID '$dlpsId' in directory '$d'."
+	    . " No changes made.\n";
+	next;
+    }
+
+    # buffer any <language> elements from existing header where id is not 'eng' or 'en'
+    %buffer_langs = ();
+    foreach (@infile) {
+	if ( /<language(>|\s)/ ) {
+	    if ( /<language[^>]*?\sid=("|')([^\1]+?)\1/ ) {
+		$lang_id = $2;
+		$buffer_langs{$lang_id} = $& . $';
+	    }
+	} elsif ( m:</language>: ) {
+	    if ($lang_id) {
+		if ( exists($buffer_langs{$lang_id}) ) {
+		    $buffer_langs{$lang_id} .= $` . $&;
+		}
+	    }
+	}
+
+	if ( m:</TEI.2>: ) {
+	    last;
+	}
+    }
+
+    foreach $lang_id (keys(%buffer_langs)) {
+	$buffer_langs{$lang_id} =~ s:\s+</language>:</language>:;  # remove unnecessary whitespace
+	$buffer_langs{$lang_id} =~ s:</language>:</language>\n:;   # add newline
+    }
+
+    # buffer any <?dlps ...?> processing instructions from existing header
+#    $buffer_pi = '';
+#    foreach (@infile) {
+#	if ( /<\?dlps .*?\?>/ ) {
+#	    $buffer_pi .= $& . "\n";
+#	}
+#    }
+
+    # buffer any <revisionDesc> element from existing header
+    $buffer_rev = '';
+    $in_rev = 0;
+    foreach (@infile) {
+	if ( /<revisionDesc/ ) {
+	    $in_rev = 1;
+	    $buffer_rev .= $& . $';
+	} elsif ( /<\/revisionDesc>/ ) {
+	    $buffer_rev .= $` . $& . "\n";
+	    $in_rev = 0;
+	    last;
+	} elsif ($in_rev) {
+	    $buffer_rev .= $_;
+	} else {
+	    next;
+	}
+    }
+
+    # buffer any <notesStmt> element from existing header
+    $buffer_notes = '';
+    $in_notes = 0;
+    foreach (@infile) {
+	if ( /<notesStmt/ ) {
+	    $in_notes = 1;
+	    $buffer_notes .= $& . $';
+	} elsif ( /<\/notesStmt>/ ) {
+	    $buffer_notes .= $` . $& . "\n";
+	    $in_notes = 0;
+	    last;
+	} elsif ($in_notes) {
+	    $buffer_notes .= $_;
+	} else {
+	    next;
+	}
+    }
+
+    # buffer certain <idno> elements from existing header when using a header template (-t option)
+    $buffer_idno = '';
+    if ($t) {
+	foreach (@infile) {
+	    if ( /<idno type=["'](DLPS ID|ETC|ETC ID)["']>[^<]+<\/idno>/ ) {
+		$buffer_idno .= $& . "\n";
+	    }
+	}
+    }
+
+    # buffer any <handList> element from existing header
+    $buffer_handList = '';
+    $in_handList = 0;
+    foreach (@infile) {
+	if ( /<handList/ ) {
+	    $in_handList = 1;
+	    $buffer_handList .= $& . $';
+	} elsif ( /<\/handList>/ ) {
+	    $buffer_handList .= $` . $& . "\n";
+	    $in_handList = 0;
+	    last;
+	} elsif ($in_handList) {
+	    $buffer_handList .= $_;
+	} else {
+	    next;
+	}
+    }
+
+    # handle special requirements of EAF headers
+    if ( $opts{E} ) {
+	# buffer any fileDesc/titleStmt/respStmt element
+	$buffer_resp = '';
+	$in_fileDesc = 0; $in_titleStmt = 0; $in_resp = 0;
+	foreach (@infile) {
+	    if ( /<fileDesc/ ) {
+		$in_fileDesc = 1;
+	    }
+	    if ( /<titleStmt/ and $in_fileDesc ) {
+		$in_titleStmt = 1;
+	    }
+	    if ( /<respStmt/ and $in_titleStmt ) {
+		$in_resp = 1;
+		$buffer_resp .= $& . $';
+	    } elsif ( /<\/titleStmt>/ ) {
+		# end of <titleStmt> and thus end of <respStmt> element(s)
+		#$buffer_resp .= $` . $& . "\n";
+		$buffer_resp .= $`;
+		$in_resp = 0;
+		$buffer_resp =~ s/Operator:\s*at the University of Virginia Library/Special Collections Digital Center, University of Virginia Library/;
+		$buffer_resp =~ s:\r?\n</resp>:</resp>:g;
+		$buffer_resp =~ s:\r?\n</name>:</name>:g;
+		last;
+	    } elsif ($in_resp) {
+		$buffer_resp .= $_;
+	    } else {
+		next;
+	    }
+	}
+
+	# remove any empty <name> and/or <resp> elements within <respStmt>
+	if ( $buffer_resp =~ m:<name>\s*</name>\s*: ) {
+	    $buffer_resp =~ s:$&::g;
+	}
+	if ( $buffer_resp =~ m:<resp>\s*</resp>\s*: ) {
+	    $buffer_resp =~ s:$&::g;
+	}
+
+	# buffer copyright/publication date
+	$buffer_avail = '';
+	$in_avail = 0;
+	foreach (@infile) {
+	    if ( /<availability/ ) {
+		$in_avail = 1;
+		$buffer_avail .= $& . $';
+	    } elsif ( /<\/availability>/ ) {
+		$buffer_avail .= $` . $&;
+		$in_avail = 0;
+		last;
+	    } elsif ($in_avail) {
+		$buffer_avail .= $_;
+	    } else {
+		next;
+	    }
+	}
+	$copyrightDate = '';
+	if ( $buffer_avail =~ /&copy; (\d{4})/ ) {
+	    $copyrightDate = $1;
+	}
+
+	# remove certain boilerplate notes from original header
+	if ( $buffer_notes =~ m:<note>\s*Page images have been included from the print version.\s*</note>\s*: ) {
+	    $buffer_notes =~ s:$&::;
+	}
+	# remove empty notes
+	if ( $buffer_notes =~ m:<note[^>]*>\s*</note>: ) {
+	    $buffer_notes =~ s:$&::;
+	}
+	# remove <notesStmt> if it's empty
+	if ( $buffer_notes =~ m:<notesStmt[^>]*>\s*</notesStmt>: ) {
+	    $buffer_notes = '';
+	}
+
+	# buffer profileDesc/textClass/keywords/term elements
+	@buffer_keywords = ();
+	$in_keywords = 0;
+	foreach (@infile) {
+	    if ( /<textClass/ ) {
+		$in_keywords = 1;
+		$buffer_keywords = $_;
+		next;
+	    }
+
+	    if ( /<\/textClass>/ ) {
+		$in_keywords = 0;
+		$buffer_keywords .= $_;
+		last;
+	    }
+
+	    if ($in_keywords) {
+		$buffer_keywords .= $_;
+	    }
+	}
+
+	$buffer_keywords =~ s/\r//g;
+	$buffer_keywords =~ s/\n//g;
+
+	while ( $buffer_keywords =~ m:<term(\s[^>]*)?>([^<]+)</term>: ) {
+	    $term = $2;
+	    $buffer_keywords = $';
+	    unless ($term =~ /^\s*$/) {
+		push @buffer_keywords, $term;
+	    }
+	}
+
+	# remove any empty/template <change> elements within <revisionDesc>
+	if ( $buffer_rev =~ m:<change>(\s|<[^>]+>\s*)*</change>\s*: ) {
+	    $buffer_rev =~ s:$&::g;
+	}
+	# remove <revisionDesc> if it's empty
+	if ( $buffer_rev =~ m:<revisionDesc[^>]*>\s*</revisionDesc>: ) {
+	    $buffer_rev = '';
+	}
+
+    }  # end of EAF requirements
+
+    # read new <teiHeader> file
+    open(NEW, $newfile) || die "$me: ERROR: Cannot read '$newfile': $!\n";
+    @newfile = <NEW>;
+    close NEW;
+
+    if ( $opts{E} ) {
+	# for EAF, buffer Etext Center ID from new header
+	foreach (@newfile) {
+	    if ( /<idno type="ETC ID">([^<]+?)<\/idno>/ ) {
+		$etext_id = $1;
+	    }
+	}
+    }
+
+    # read new <teiHeader> into a string
+    $new_header = '';
+    $in_header = 0; $in_fileDesc = 0; $in_titleStmt = 0; $in_publicationStmt = 0;
+    $respStmt_inserted = 0;
+    foreach (@newfile) {
+	if ( /^\s*<teiHeader[^>]*>\s*$/ ) {
+	    $in_header = 1;
+	    $new_header .= $_;
+	    # insert <?dlps ...?> processing instructions, if any, from original header
+#	    $new_header .= $buffer_pi;
+	} elsif ( /<\/teiHeader>/ ) {
+	    # insert <revisionDesc>, if any, from original header
+	    $new_header .= $`;
+	    $new_header .= $buffer_rev;
+	    $new_header .= $& . "\n";
+	    $in_header = 0;
+	    last;
+	} elsif ($in_header) {
+	    if ( /<fileDesc/ ) {
+		$in_fileDesc = 1;
+	    }
+	    if ( m:</fileDesc>: ) {
+		$in_fileDesc = 0;
+	    }
+	    if ( /<sourceDesc/ ) {
+		$in_fileDesc = 0;
+	    }
+
+	    if ( $in_fileDesc and m:</publicationStmt>: ) {
+		# insert <idno> elements
+		$new_header .= $buffer_idno;
+	    }
+
+	    if ( /<language[^>]*?\sid=("|')([^\1]+?)\1/ ) {
+		$lang_id = $2;
+		if ( exists($buffer_langs{$lang_id}) ) {
+		    # use language declaration from full header; delete from language buffer
+		    delete $buffer_langs{$lang_id};
+		}
+	    }
+	    if ( /<\/langUsage>/ ) {
+		# insert other languages, if any, from original header
+		$buffer_lang = '';
+		foreach $lang_id (sort(keys(%buffer_langs))) {
+		    $buffer_lang .= $buffer_langs{$lang_id};
+		}
+		s/<\/langUsage>/$buffer_lang<\/langUsage>/;
+	    } elsif ( /(<sourceDesc>|&cavdaily_sourceDesc;)/ ) {
+		# insert notesStmt immediately before sourceDesc
+		$hold = $1;
+		s/$hold/$buffer_notes$hold/ unless ( $opts{'N'} );
+	    }
+
+	    if ( /<textClass/ ) {
+		# insert <handList>, if any, from original header
+		$_ = $buffer_handList . $_;
+	    }
+
+	    # handle EAF requirements
+	    if ( $opts{E} ) {
+		# use Etext ID as DLPS ID (if DLPS ID is empty)
+		if ( m:<idno type="DLPS ID"/?>(\s*</idno>)?: ) {
+		    if ($etext_id) {
+			s:$&:<idno type="DLPS ID">$etext_id</idno>:;
+		    }
+		}
+
+		if ( /<titleStmt/ and $in_fileDesc ) {
+		    $in_titleStmt = 1;
+		}
+		if ( m:<biblScope: and $in_titleStmt) {
+		    # insert <respStmt> element(s) from original header, plus <sponsor>
+		    s/$&/$buffer_resp$eaf_sponsor$&/;
+                    $respStmt_inserted = 1;
+		}
+		if ( m:</titleStmt>\s*: and $in_titleStmt ) {
+                    if (not $respStmt_inserted) {
+		        # insert <respStmt> element(s) from original header, plus <sponsor>
+		        s/$&/$buffer_resp$eaf_sponsor$&/;
+                    }
+		    $in_titleStmt = 0;
+		}
+		if ( /&resp_[^;]+;\s*/ and $in_titleStmt) {
+		    # remove DLPS &resp_...; entities
+		    s/$&//;
+		}
+
+		if ( /<publicationStmt/ and $in_fileDesc ) {
+		    $in_publicationStmt = 1;
+		}
+		if ( m:</publicationStmt>: ) {
+		    $in_publicationStmt = 0;
+		}
+		if ($in_publicationStmt and $copyrightDate) {
+		    if ( m:<date value="\d{4}">(\d{4})</date>: ) {
+			$year = $1;
+			s:$year:$copyrightDate:g;
+		    }
+		    if ( /<p n="copyright">Copyright &copy; (\d{4})/ ) {
+			$year = $1;
+			s:$year:$copyrightDate:;
+		    }
+		}
+
+		if ( m:</seriesStmt>: and $in_fileDesc ) {
+		    # insert additional series statement for EAF
+		    $_ .= $eaf_seriesStmt;
+		}
+
+		s#&projectDesc;\s*#$eaf_projectDesc#;
+
+		if ( m:</classDecl>: ) {
+		    # insert <taxonomy> for Etext Center
+		    s#$&#$eaf_taxonomy$&#;
+		}
+
+		if ( m:</textClass>: ) {
+		    # insert keywords from original header
+		    $temp = '<keywords scheme="uva-etc">'. "\n";
+		    foreach $keyword (@buffer_keywords) {
+			unless ($keyword eq 'LCSH') {  # exclude 'LCSH'; not a valid term
+			    $temp .= "<term>$keyword</term>\n";
+			}
+		    }
+		    $temp .= "</keywords>\n";
+		    s#$&#$temp$&#;
+		}
+
+	    }  # end of EAF requirements
+
+	    $new_header .= $_;
+	} else {
+	    next;
+	}
+    }
+
+    # make backup
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+
+    # make changes, overwriting input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    $in_header = 0;
+    foreach (@infile) {
+	if ( $opts{E} ) {
+	    # for EAF, use the DLPS DTD instead of TEI Lite
+	    if ( /^\s*<!DOCTYPE.+?teixlite.dtd["']\s*\[\s*$/ ) {
+		print OUT <<EOD;
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+EOD
+		next;
+	    }
+	}
+
+	if ( /<!ENTITY % TEI.extensions.dtd/ ) {
+	    # insert parameter entity for header-related boilerplate entities
+	    print OUT;
+	    print OUT "\n" . '<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent">';
+	    print OUT ' %dlps-teiHeader;' . "\n";
+
+	    # for cavdaily files, insert parameter entity for cavdaily-specific header boilerplate entities
+#	    if ( $dlpsId =~ /^cavdaily/ ) {
+#		print OUT '<!ENTITY % cavdaily-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/cavdaily-teiHeader.ent">';
+#		print OUT ' %cavdaily-teiHeader;' . "\n";
+#	    }
+	} elsif ( /^\s*<teiHeader[^>]*>\s*$/ ) {
+	    $in_header = 1;
+	    print OUT $new_header;
+	} elsif ( /<\/teiHeader>/ ) {
+	    $in_header = 0;
+	} elsif ($in_header) {
+	    next;
+	} else {
+	    print OUT;
+	}
+    }
+    close OUT;
+
+    unless ($opts{'L'}) {
+	##DlpsText::log($me, $infile, "Replaced <teiHeader> element with the one in file '$newfile'");
+    }
+
+    # update tracking system
+    $rows = 0;
+    $sql = "UPDATE finalization SET replaceHeader = 1 WHERE dlpsId = '$dlpsId' LIMIT 1";
+    $rows = TrackSys::query($sql);
+    if ($rows != 1) {  # this works because Perl DBI execute() returns 1 even if no fields of the record are actually changed
+        warn "$me: WARNING: Cannot update DLPS tracking system for record '$dlpsId'. Update manually.\n";
+    }
+}
+
+TrackSys::disconnect();

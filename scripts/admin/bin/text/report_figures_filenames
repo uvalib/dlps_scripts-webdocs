@@ -1,0 +1,227 @@
+#!/usr/bin/perl -w
+
+# report_figures_filenames - generates an HTML report/form of <figure>
+# tags; displays filename to be used for image file, and allows
+# indicating whether there is/will be an image file for the <figure>
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2003-01-21
+# Last modified: 2006-03-23
+
+# 2004-07-15: gpm2a: Because we are no longer using "none" as the
+# entity value for figure elements that have no corresponding figure
+# image (instead we are using the page image entity value), I changed
+# the logic so that instead of testing for figure entity being equal
+# to "none" it tests for equal to the pb entity value.
+#
+# 2005-12-30: gpm2a: Changed for use on pogo.
+
+# 2006-03-23: gpm2a: Changed to update DLPS tracking system -->
+# Post-keyboarding Workflow --> Generate figures-filenames report
+
+use strict;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use DlpsTextWorkreports;
+use TrackSys;
+
+our ($me, $infile);  # declare these variables as 'our' to allow DlpsTextWorkreports to access them
+my ($usage, @infile, %properties, $dlpsId, $sql, $rows);
+my ($report_type, $go, $msg, $c);
+my ($pagenumber, $pageimage, $id, $base_filename, $filename);
+my ($html1, $html2, $html3);
+
+$report_type = 'figures_filenames';
+
+$me = 'report_figures_filenames';
+$usage = <<EOD;
+
+$me - generates an HTML report/form of <figure>
+  tags; displays filename to be used for image file, and allows
+  indicating whether there is/will be an image file for the <figure>
+
+Usage: $me filenames
+
+In:  TEI XML file(s)
+Out: For each input file, creates an HTML file named
+     [filename].figures_filenames.html
+
+EOD
+
+die $usage if (! @ARGV);
+foreach (@ARGV) {
+    die $usage if /^-/;   # this script has no switches
+}
+
+TrackSys::connect();
+
+foreach $infile (@ARGV) {
+    if ( not DlpsTextWorkreports::init($infile, $report_type) ) {
+	next;
+    }
+
+    # test for existing changes file; if problem, skip to next input file; see DlpsTextWorkreports::changes_file_ok()
+    if ( not DlpsTextWorkreports::changes_file_ok() ) {
+	next;
+    }
+
+    # read input file into an array
+    open(IN, $infile) || die "$me: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # get DLPS ID
+    %properties = ();
+    $dlpsId = DlpsText::getDlpsId(\%properties, \@infile, $infile);
+
+    # test whether any of this is necessary
+    $go = 0;
+    foreach (@infile) {
+	if ( /<figure/ ) {
+	    $go = 1;
+	    last;
+	}
+    }
+    if (not $go) {
+	$msg = "Contains no figures. No HTML report was generated.";
+	print "$me: $infile: $msg\n";
+	##DlpsText::log($me, $infile, $msg);
+	next;
+    }
+
+    $c = 0;
+    $pagenumber = '';
+    $pageimage = '';
+    $html2 = '';
+
+    foreach (@infile) {
+	if (/<pb.*>/i) {
+	    if (/<pb.+n=["'](\w+)["'].*>/i) {
+		$pagenumber = $1;
+	    } else {
+		$pagenumber = '';
+	    }
+
+	    if (/<pb.+entity=["'](\w+)["'].*>/i) {
+		$pageimage = $1;
+	    } else {
+		$pageimage = '';
+	    }
+	}
+
+	if ( /<figure/ ) {
+	    $c++;
+
+	    # get id attribute value
+	    if ( /<figure[^>]*\sid=["']([\w\.\-]+)["']/ ) {
+		$id = $1;
+	    } else {
+		$id = '';
+		warn "$me: $infile: WARNING: Contains a figure element with no id attribute. "
+		    . "Supply id attributes on all figure elements.\n";
+	    }
+
+            # get entity attribute
+            if ( /<figure[^>]*\sentity=["'](\w+)["']/ ) {
+                $base_filename = $1;
+            } else {
+                $base_filename = '';
+            }
+            if ($base_filename) {
+                if ($base_filename eq $pageimage) {
+                    $filename = '[none]';
+                } else {
+                    $filename = $base_filename . '.tif';
+                }
+            } else {
+                $filename = '[unknown]';
+            }
+
+	    $html2 .= <<EOD;
+<tr>
+<td>$c<input type="hidden" name="id_$c" value="$id"></td>
+<td>Image file for this &lt;figure&gt;?<br>
+<input type="radio" name="exists_$c" value="true">Yes<br>
+<input type="radio" name="exists_$c" value="false">No<br></td>
+<td>Filename: <span class="mono">$filename</span></td>
+<td>Mark this item for further review:<br>
+Note:&nbsp;<input type="text" class="text" name="note_$c"></td>
+<td>$pagenumber<input type="hidden" name="pagenumber_$c" value="$pagenumber"><br>
+$pageimage<input type="hidden" name="pageimage_$c" value="$pageimage"></td>
+</tr>
+EOD
+	}
+    }
+
+    $html1 = <<EOD;
+<html>
+<head>
+<title>Figures: Filenames Report: $infile</title>
+<link rel="stylesheet" type="text/css" href="/dlps/css/workreports.css">
+</head>
+<body onLoad="document.frm.operator.focus();">
+<h3>Figures: Filenames Report: $infile</h3>
+<p><b>Summary:</b> $c items</p>
+<h4>Instructions</h4>
+<ol>
+<li>Enter your name.</li>
+<li>For each item, indicate whether or not a "figure scan" (a distinct
+image scanned separately from the page images) exists, or will be
+created, for this &lt;figure&gt;. This decision is based on (1) the
+bit depth of the page images, and (2) on the content of the printed
+illustration:
+  <ul>
+  <li>If the page images are bitonal:
+    <ul>
+    <li>If the illustration is grayscale or color: answer <b>Yes</b></li>
+    <li>If the illustration is line art (black-and-white): answer <b>No</b></li>
+    </ul>
+  </li>
+  <li>If the page images are color:
+    <ul>
+    <li>Always answer <b>No</b></li>
+    </ul>
+  </li>
+  </ul>
+</li>
+<li>If an image file exists, use the filename specified to rename the
+image file corresponding to this &lt;figure&gt;.</li>
+<li>If the item is problematic in some way, mark it for further
+review by entering a brief note of explanation in the "Note"
+textbox.</li>
+<li>When finished with all items, click the "Save Data" button.</li>
+</ol>
+
+<form name="frm" method="post" action="$DlpsTextWorkreports::action">
+
+<table border="0" cellpadding="5">
+<tr>
+<td>Name <i>(required)</i>: <input type="text" class="text" name="operator"></td>
+</tr>
+</table>
+
+<table border="1" cellpadding="5">
+<tr><th>Item</th><th>Image file?</th><th>Filename</th><th>Review</th><th>Page number/image</th></tr>
+EOD
+
+    $html3 = DlpsTextWorkreports::html_end($c);
+
+    # write output file
+    DlpsTextWorkreports::write_outfile($html1, $html2, $html3);
+
+    # create empty .change and .review files
+    DlpsTextWorkreports::create_empties();
+
+    $msg = "No changes to input file. Generated HTML report: " . DlpsTextWorkreports::get_outfile();
+    ##DlpsText::log($me, $infile, $msg);
+
+    # update tracking system upon success
+    $rows = 0;
+    $sql = "UPDATE postkb SET generateFiguresFilenamesReport = 1 WHERE dlpsId = '$dlpsId' LIMIT 1";
+    $rows = TrackSys::query($sql);
+    if ($rows != 1) {  # this works because Perl DBI execute() returns 1 even if no fields of the record are actually changed
+        warn "$me: WARNING: Cannot update DLPS tracking system for record '$dlpsId'. Update manually.\n";
+    }
+}
+
+TrackSys::disconnect();

@@ -1,0 +1,250 @@
+#!/usr/bin/perl -w
+
+# update_tracksys - updates the DLPS Tracking System for the DLPS IDs
+#   indicated by the input files; the field updated is based on the name
+#   of the current working directory
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2006-03-27
+# Last modified: 2006-04-06
+
+# Undocumented -I option disables interactive feature (doesn't ask for
+#   user confirmation, doesn't display status messages)
+
+
+use strict;
+use Getopt::Std;
+use Cwd;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use TrackSys;
+
+my ($me, $usage, %opts, %steps, $steps_usage, $key, $table, $column, $desc);
+my ($infile, @infile, %properties, $dlpsId, $sql, $rows, %dlpsIds);
+my ($cwd, $step, $temp, $input);
+
+# set up hash where key is name of current working directory and value
+# is in format: table~column~description
+%steps = (
+    '10being_received'          => 'postkb~download~Download',
+    '10received'                => 'postkb~download~Download',
+    '10parse'                   => 'postkb~validate~Validate',
+    '11being_postvendor_fixed'  => 'postkb~fixVendorProblems~Fix vendor problems',
+    '11postvendor_fixed'        => 'postkb~fixVendorProblems~Fix vendor problems',
+    '30being_pbsynced'          => 'postkb~syncPages~Sync pages',
+    '30pbsynced'                => 'postkb~syncPages~Sync pages',
+    '59processed'               => 'postkb~copyToDoneDir~Copy to 59processed',
+    '60being_markup_checked'    => 'markupQA~~(use -s option)',
+    '69processed'               => 'markupQA~copyToDoneDir~Copy to 69processed',
+    '70being_fullheaders_added' => 'finalization~~(use -s option)',
+    '70fullheaders_added'       => 'finalization~to70fullheaders_added~Move to 70fullheaders_added',
+    '80being_finalized'         => 'finalization~to80final~Move to 80final'
+);
+
+$steps_usage = '';
+foreach $key (sort(keys(%steps))) {
+    ($table, $column, $desc) = split(/~/, $steps{$key});
+    $steps_usage .= ' ' x 4 . "$key --> $desc\n";
+}
+chomp $steps_usage;
+
+$me = "update_tracksys";
+$usage = <<EOD;
+
+$me - updates the DLPS Tracking System for the DLPS IDs
+  indicated by the input files; the field updated is based on the
+  current working directory:
+$steps_usage
+
+Usage: $me [-s step] filenames
+  -s (step) Indicates which workflow step to update. Used when the
+            directory name does not specify the step. Allowed values are:
+              chars  (Markup QA --> Fix unknown characters)
+              divs   (Markup QA --> Fix div structure)
+              notes  (Markup QA --> Update notes)
+              web    (Markup QA --> Run web-based programs)
+              spell  (Markup QA --> Check spelling [newspapers])
+              report (Finalization --> Run & send TEI header report [newspapers])
+
+In:  TEI XML file(s)
+Out: For each input file, updates the record in the DLPS Tracking
+  System corresponding to the DLPS ID indicated in the input file
+
+Examples:
+  To update the DLPS IDs indicated by the input files to "Sync pages" = Done:
+    alioth: /shares/text/04postkb/30being_pbsynced \$ $me *.xml
+
+  Working in a subdirectory has the same effect:
+    alioth: /shares/text/04postkb/30being_pbsynced/my_work \$ $me *.xml
+
+  To update the DLPS IDs indicated by the input files to "Fix unknown characters" = Done:
+    alioth: /shares/text/04postkb/60being_markup_checked/my_work \$ $me -s chars *.xml
+
+EOD
+
+getopts('s:I', \%opts) || die $usage;
+die $usage if (! @ARGV);
+
+# get current working directory
+$cwd = cwd();
+
+# current working directory must include one of the expected workflow directory names (such as 30pbsynced, etc.)
+foreach $key (sort(keys(%steps))) {
+    $temp = DlpsText::normalize_path($cwd);
+    if ( $temp =~ m:/$key/: ) {
+	$step = $key;
+	last;
+    }
+}
+if (! $step) {
+    die "$me: Processing cancelled: Directory '$cwd' is not a recognized directory name.\n";
+}
+
+($table, $column, $desc) = split(/~/, $steps{$step});
+
+if (! $column) {
+    if (! $opts{'s'}) {
+	die "$me: Processing cancelled: When workflow step is '$step', the -s option is required.\n";
+    }
+
+    if ( $opts{'s'} =~ /^chars?$/ ) {
+	$column = 'fixUnknownChars';
+	$desc = 'Fix unknown characters';
+    } elsif ( $opts{'s'} =~ /^divs?$/ ) {
+	$column = 'fixDivStructures';
+	$desc = 'Fix div structure';
+    } elsif ( $opts{'s'} =~ /^notes?$/ ) {
+	$column = 'updateNotes';
+	$desc = 'Update notes';
+    } elsif ( $opts{'s'} =~ /^web$/ ) {
+	$column = 'runWebPrograms';
+	$desc = 'Run web-based programs';
+    } elsif ( $opts{'s'} =~ /^spell$/ ) {
+	$column = 'spellcheck';
+	$desc = 'Check spelling';
+    } elsif ( $opts{'s'} =~ /^report$/ ) {
+	$column = 'runHeaderReport';
+	$desc = 'Run & send TEI header report';
+    } else {
+	die "$me: Processing cancelled: '$opts{s}' is not a recognized value for the -s option.\n";
+    }
+}
+
+unless ($opts{'I'}) {
+    print "Current working directory: $cwd\n";
+    print "Workflow step: $step ($desc)\n";
+}
+
+
+#----------------------------------------------------------------------
+# get DLPS IDs for records to be updated
+#----------------------------------------------------------------------
+
+foreach $infile (@ARGV) {
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # get properties from <?dlps ...?> processing instructions
+    %properties = DlpsText::getProperties($infile);
+
+    # get DLPS ID
+    $dlpsId = DlpsText::getDlpsId(\%properties, \@infile, $infile);    
+
+    $dlpsIds{$dlpsId} = '';
+}
+
+
+#----------------------------------------------------------------------
+# get user confirmation
+#----------------------------------------------------------------------
+
+unless ($opts{'I'}) {
+    print "\nAre you sure you want to update the DLPS Tracking System as follows:\n";
+    print "  Set '$desc' to Done for the following IDs:\n";
+    foreach $dlpsId (sort(keys(%dlpsIds))) {
+	print "    $dlpsId\n";
+    }
+    print "Enter yes or no: ";
+    $input = <STDIN>;
+    chomp $input;
+    $input = DlpsText::trim($input);
+    if ($input =~ /^(yes)$/i) {
+	# proceed
+    } else {
+	# quit
+	print "OK, processing cancelled.\n";
+	exit;
+    }
+}
+
+
+#----------------------------------------------------------------------
+# update tracking system
+#----------------------------------------------------------------------
+
+TrackSys::connect();
+
+foreach $dlpsId (sort(keys(%dlpsIds))) {
+    # update record for this DLPS ID
+    $rows = 0;
+    $sql = "UPDATE $table SET $column = 1 WHERE dlpsId = '$dlpsId' LIMIT 1";
+    $rows = TrackSys::query($sql);
+    if ($rows == 1) {  # this works because Perl DBI execute() returns 1 even if no fields of the record are actually changed
+	print "$me: $dlpsId --> $desc = Done\n" unless $opts{'I'};
+    } else {
+	warn "$me: ERROR: Cannot update DLPS tracking system for record '$dlpsId'\n";
+    }
+}
+
+TrackSys::disconnect();
+
+
+#----------------------------------------------------------------------
+# send email notification, if applicable
+#----------------------------------------------------------------------
+
+if ($column eq 'to80final') {
+    print "$me: Sending email notification of items moved to 80final...\n" unless $opts{'I'};
+
+    # get list of DLPS IDs updated
+    my $list = '';
+    foreach $dlpsId (sort(keys(%dlpsIds))) {
+	$list .= "  $dlpsId\n";
+    }
+
+    # get username (UVa computing ID)
+    my $user = getpwuid($>);
+
+    my $to = 'Kristy Hibbs <kwh8s@virginia.edu>, Ray Johnson <rpj2f@virginia.edu>, Lorrie Chisholm <lsc6v@virginia.edu>';
+    my $from = 'ul-dlpsscripts@virginia.edu';
+
+    my $msg = <<EOD;
+To: $to
+From: $from
+Subject: DLPS Tracking System - Items moved to 80final
+
+User $user has updated the DLPS Tracking System to indicate that the
+following items have been moved to the '80final' directory:
+
+$list
+
+EOD
+
+    if ( open(MAIL,"| /usr/lib/sendmail -i -t") ) {
+	print MAIL $msg;
+	close MAIL;
+    } else {
+	warn "$me: WARNING: Cannot send email notification regarding 'Move to 80final' step. Message follows:\n\n$msg";
+    }
+
+    # The email notification needs to list only the files being moved
+    # to 80final at this time (not all files in 80final). For this
+    # reason, the script is intended to be run as 'update_tracksys
+    # *.xml' from within 80being_finalized, not from within
+    # 80final. Because of this special circumstance, print a reminder
+    # to the user that these files still need to be moved to 80final.
+
+    print "\n$me: IMPORTANT: Don't forget to move these files to 80final!\n" unless $opts{'I'};
+}

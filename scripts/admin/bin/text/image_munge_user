@@ -1,0 +1,566 @@
+#!/usr/bin/perl -w
+
+#######################################################################################
+# image_munge_user - read book directories from 50QAed_OUT and convert
+# to 600 dpi, make sure they're compressed and put them in
+# 52_CCITTCOMPRESS_OUT, zip 'em and put .zip file in 53zipforvendor
+# directory.
+#
+# Sue Munson <sjm8k@virginia.edu>
+# Date: 9/30/2003
+#
+# Steve Majewski <sdm7g@virginia.edu>
+# Date: 4-01-2004
+#
+#   modified from Sue's original script
+#   * checks resolution and compression with tiffinfo first so it
+#     doesn't do unnecessary conversions.
+#   * sets LD_LIBRARY_PATH to fix broken ImageMagick binaries.
+#   Changes to make it work when run from user crontab:
+#   * sets umask, gid (gid may be unnecessary for dlps_work directories)
+#   * does a copy instead of a move so script runner owns files
+#   Changed commented out 'as root' code blocks to conditional code
+#      if $ENV{'USER'} eq 'root' ( the copy instead of mv is the 
+#        alternate if not root. ) 
+#
+# Greg Murray <gpm2a@virginia.edu>
+# 2005-09-27: gpm2a: Changed to allow directory names and filenames
+# starting with any letter or number (rather than allowing only those
+# starting with 'b' or 'z').
+#
+# 2005-09-29: gpm2a: Added code to clean up additional extraneous
+# files from directories.
+#
+# 2005-10-05: gpm2a: Changed logic: perform conversion to 600 x 600 dpi
+# only if file is less than 500 x 500.
+#
+# 2006-02-27: gpm2a: Added logic to test for multi-page TIFFs. If
+# found, the directory is not processed.
+#
+#######################################################################################
+
+use strict;
+
+my $indir = "/shares/image1/01bookscanning/50QAed_OUT";
+my $workdir = "/shares/image1/01bookscanning/52_CCITTCOMPRESS_IN";
+my $outdir = "/shares/image1/01bookscanning/52_CCITTCOMPRESS_OUT";
+my $zipdir = "/shares/image1/01bookscanning/53zipforvendor";
+my $gifdir = "/www/doc/dlps/uva-only/proofreader/images";
+
+my $RM = '/bin/rm';
+my $MV = '/bin/mv';
+my $CHOWN = '/bin/chown';
+my $CHMOD = '/bin/chmod';
+my $ZIP = '/usr/bin/zip';
+my $MOGRIFY = 'mogrify';  # path to ImageMagick binaries has been added to system-wide profile
+my $CONVERT = 'convert';
+my $IDENTIFY = 'identify';
+my $TIFFINFO = '/usr/bin/tiffinfo';
+
+my ($bookdir, $error, $command, $msg);
+my ($x, $y, $image, $ti);
+my (@dirs, @errors, @progress)=();
+
+my $count = 0;
+my $total = 0;
+my @fcount;
+my $chownUserGroup = 'kwh8s:dlpswg';
+
+#my $LD = 'LD_LIBRARY_PATH';
+#if ( defined $ENV{$LD} ) {
+#    $ENV{$LD} = '/usr/local/lib/:' . "$ENV{$LD}";
+#} else {
+#    $ENV{$LD} = '/usr/local/lib/';
+#}
+
+my $gid = getgrnam( 'dlpswg' );
+umask( 0002 );
+
+my $asroot = ( $< == 0 );
+my $user= getpwuid($<);
+
+
+#======================================================================
+# main logic
+#======================================================================
+
+push(@progress, "(Running as $user ...)\n\n" );
+
+# clean up input directory (50QAed_OUT)
+if (chdir $indir) {
+    if (-e ":2eDS_Store") {
+	$error = system("$RM -f :2eDS_Store");
+	if ($error != 0) {
+	    $msg = "WARNING: Couldn't remove :2eDS_Store file in '$indir': $!\n";
+	    print $msg;
+	    push(@progress, $msg);
+	}
+    }
+    if (-e ".AppleDouble") {
+	$error = system("$RM -rf .AppleDouble");
+	if ($error != 0) {
+	    $msg = "WARNING: Couldn't remove .AppleDouble directory in '$indir': $!\n";
+	    print $msg;
+	    push(@progress, $msg);
+	}
+    }
+} else {
+    $msg = "FATAL: Couldn't change directory to '$indir': $!\n";
+    warn $msg;
+    push(@errors, $msg);
+    &Send_Mail() and die "Fatal errors detected - processing stopped\n";
+}
+
+# glob everything in input directory (50QAed_OUT)
+@dirs = glob("[A-Za-z0-9]*");
+
+# if no directories to process, then exit
+unless (@dirs) {
+    print "No new directories to process.\n";
+    exit;
+}
+
+
+#---------------------------------------------------------
+# copy all files from input directory to working directory
+#---------------------------------------------------------
+
+foreach $bookdir (sort(@dirs)) {
+    unless (-d $bookdir) {
+	next;
+    }
+
+    # clean up book directory
+    if (-e "$bookdir/.AppleDouble") {
+	$error = system("$RM -rf $bookdir/.AppleDouble");
+	if ($error != 0) {
+	    $msg = "WARNING: Couldn't remove .AppleDouble directory in '$bookdir'\n";
+	    print $msg;
+	    push(@progress, $msg);
+	}
+    }
+    if (-e "$bookdir/:2eDS_Store") {
+	$error = system("$RM -f $bookdir/:2eDS_Store");
+	if ($error != 0) {
+	    $msg = "WARNING: Couldn't remove :2eDS_Store file in '$bookdir'\n";
+	    print $msg;
+	    push(@progress, $msg);
+	}
+    }
+    if (-e "$bookdir/.DS_Store") {
+	$error = system("$RM -f $bookdir/.DS_Store");
+	if ($error != 0) {
+	    $msg = "WARNING: Couldn't remove .DS_Store file in '$bookdir'\n";
+	    print $msg;
+	    push(@progress, $msg);
+	}
+    }
+    if (-e "$bookdir/._$bookdir.header.rtf") {
+	$error = system("$RM -f $bookdir/._$bookdir.header.rtf");
+	if ($error != 0) {
+	    $msg = "WARNING: Couldn't remove ._$bookdir.header.rtf file in '$bookdir'\n";
+	    print $msg;
+	    push(@progress, $msg);
+	}
+    }
+
+    # remove working directory if it already exists
+    if ( -e "$workdir/$bookdir" ) {
+	system( "$RM -rf $workdir/$bookdir" );
+    }
+
+    if ($asroot) {
+	$error = system("$MV $bookdir $workdir");
+	if ($error != 0) {
+	    $msg = "FATAL: Couldn't move $bookdir to $workdir\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    &Send_Mail() and die "Fatal errors detected - processing stopped\n";
+	}
+    }  # end as root
+    else {  # as user...
+	$count = 0;
+	mkdir( "$workdir/$bookdir" );
+
+	# copy files from input directory to working directory, and delete from input directory
+	opendir( DIR, $bookdir );
+	while( my $file = readdir(DIR) ) {
+	    unless( $file =~ /^\..*/ ) {
+		# copy
+		$error = system( "cp $bookdir/$file $workdir/$bookdir/$file" );
+		if ($error != 0) {
+		    $msg = "FATAL: Couldn't copy $bookdir/$file to $workdir/$bookdir\n";
+		    warn $msg;
+		    push(@errors, $msg);
+		    &Send_Mail() and die "Fatal errors detected - processing stopped\n";
+		}
+		else {
+		    # delete
+		    $error = unlink "$bookdir/$file" ;
+		    $count += $error; 
+		    unless ( $error ) {
+			$msg = "WARNING: Couldn't delete file '$bookdir/$file': $!\n";
+			print $msg;
+			push(@progress, $msg);
+		    }
+		}
+	    }
+	}
+	closedir(DIR);
+	unless ( rmdir( $bookdir ) ) {
+	    $msg = "WARNING: Couldn't remove directory '$indir/$bookdir': $!\n";
+	    print $msg;
+	    push(@progress, $msg);
+	}
+
+    }  # END as user
+
+}  # END foreach $bookdir (sort(@dirs)) {
+
+unless (chdir $workdir) {
+    $msg = "FATAL: Couldn't change directory to '$workdir': $!\n";
+    warn $msg;
+    push(@errors, $msg);
+    &Send_Mail() and die "Fatal errors detected - processing stopped\n";
+}
+
+
+#--------------------
+# start the real work
+#--------------------
+
+LOOP1: foreach $bookdir (sort(@dirs)) {
+    $error="";
+    my(@files)=();
+    unless (opendir(DIR, "$bookdir")) {
+	$msg = "FATAL:  Couldn't read '$bookdir': $!\n";
+	warn $msg;
+	push(@errors, $msg);
+	&Send_Mail() and die "Fatal errors detected - processing stopped\n";
+    }
+    @files=grep( (/^[A-Za-z0-9].+\.tif$/),(readdir(DIR)));
+    closedir(DIR);
+
+    # test for presence of at least one .tif file
+    if (! scalar(@files)) {
+	$msg = "WARNING: Cannot process directory '$bookdir': No .tif files found\n";
+	print $msg;
+	push(@progress, $msg);
+    }
+
+    $msg = "$bookdir:\n";
+    print $msg;
+    push(@progress, $msg);
+
+    $total = @files;
+    $msg = "  $bookdir: $total TIFF files in WORKDIR $workdir\n";
+    print $msg;
+    push(@progress, $msg);
+    chdir $bookdir;
+
+    # change protection and group for files in $bookdir
+    $count = chmod(0664, @files); 
+    unless( $count == scalar(@files) ) {
+	$msg = "WARNING: chmod succeeded on only $count of " . scalar(@files) . " files\n";
+	print $msg;
+	push(@progress, $msg); 
+    }
+
+    $count = chown(-1, $gid, @files);
+    unless( $count == scalar(@files) ) {
+	$msg = "WARNING: chown succeeded on only $count of " . scalar(@files) . " files\n";
+	print $msg;
+	push(@progress, $msg);
+    }
+
+    chdir '..';
+
+    # test for multi-page TIFFs; if found, skip this directory
+    foreach $image (sort(@files)) {
+	my $info = `$IDENTIFY $bookdir/$image`;
+	if ($info =~ /$image\[1\]/) {
+	    $msg = "ERROR: Cannot process directory '$bookdir': File '$image' is a multi-page TIFF\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    next LOOP1;
+	}
+    }
+
+
+    #----------------------------------------------------------------
+    # create GIF derivatives for Proofreader (web-based image viewer)
+    #----------------------------------------------------------------
+
+    $error = system("$MOGRIFY -format gif -scale 480x1000 $bookdir/*.tif");
+    if ($error != 0) {
+	$msg = "ERROR creating .gif files for $bookdir: $!\n";
+	warn $msg;
+	push(@errors, $msg);
+	next LOOP1;
+    }
+
+    if ( -d "$gifdir/$bookdir" ) { 
+	$error = system( "$RM -rf $gifdir/$bookdir" );
+	if ($error != 0) {
+	    $msg = "ERROR: Couldn't delete existing directory '$gifdir/$bookdir': $!\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    next LOOP1;
+	}
+    }
+    if (mkdir("$gifdir/$bookdir")) {
+	$error = system("$MV $bookdir/*.gif $gifdir/$bookdir");
+	if ($error != 0) {
+	    $msg = "ERROR: Couldn't move .gif files to directory '$gifdir/$bookdir': $!\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    next LOOP1;
+	}
+    } else {
+	$msg = "ERROR: Couldn't make directory '$gifdir/$bookdir': $!\n";
+	warn $msg;
+	push(@errors, $msg);
+	next LOOP1;
+    }
+
+    @fcount = glob( "$gifdir/$bookdir/*.gif" );
+    unless( scalar(@fcount) == scalar(@files) ) {
+	$msg = "WARNING: " . scalar(@fcount) . " GIFs, " . scalar(@files) . " TIFFs\n";
+	print $msg;
+	push(@progress, $msg);
+    }
+
+    if ($asroot) {
+	$error = system("$CHOWN -R $chownUserGroup $gifdir/$bookdir");
+	if ($error != 0) {
+	    $msg = "WARNING: Couldn't change owner and/or group for '$gifdir/$bookdir': $!\n";
+	    print $msg;
+	    push(@progress, $msg);
+	}
+    } # end 'as root'
+
+    $error = system("$CHMOD 0775 $gifdir/$bookdir");
+    if ($error != 0) {
+	$msg = "WARNING: Couldn't change permissions on '$gifdir/$bookdir': $!\n";
+	print $msg;
+	push(@progress, $msg);
+    }
+
+    $error = system("$CHMOD 0664 $gifdir/$bookdir/*.gif");
+    if ($error != 0) {
+	$msg = "WARNING: Couldn't change permissions for .gif files in '$gifdir/$bookdir': $!\n";
+	print $msg;
+	push(@progress, $msg);
+    }
+
+
+    #---------------------------------
+    # convert to 600dpi (if necessary)
+    #---------------------------------
+
+    $count = 0;
+    foreach $image (sort(@files)) {
+	# convert image to 600 dpi, if currently less than 500 dpi
+	($x, $y) = resolution( tiffinfo( "$bookdir/$image" ));
+	if (($x < 500) or ($y < 500)) {
+	    $count++;
+	    $command = "$CONVERT -density 600x600 $bookdir/$image $bookdir/new$image";
+	    #print " > $command \n";
+	    #push(@progress, " > $command \n");
+	    $error = system($command);
+	    if ($error != 0) {
+		$msg = "ERROR: conversion to 600dpi failed for file '$bookdir/$image'\n";
+		warn $msg;
+		push(@errors, $msg);
+		next LOOP1;
+	    }
+
+	    $command = "$MV $bookdir/new$image $bookdir/$image";
+	    #print "$command \n";
+	    $error = system($command);
+	    if ($error != 0) {
+		$msg = "ERROR: Couldn't rename $bookdir/new$image to $bookdir/$image\n";
+		warn $msg;
+		push(@errors, $msg);
+		next LOOP1;
+	    }
+	}
+    }
+    $msg = "  $count of $total files required conversion to 600x600 dpi\n";
+    print $msg;
+    push(@progress, $msg);
+
+
+    #----------------------------------------------
+    # perform CCITT Group 4 compression (if needed)
+    #----------------------------------------------
+
+    $count = 0;
+    foreach $image (@files) {
+	$ti = tiffinfo( "$bookdir/$image" );
+	unless ( $ti->{'Compression Scheme'} =~ /CCITT Group 4/ ) {
+	    $count++;
+	    $command = "$MOGRIFY -compress Group4 $bookdir/$image";
+	    #print " > $command \n";
+	    #push(@progress, " > $command \n");
+	    $error = system($command);
+	    if ($error != 0) {
+		$msg = "ERROR: compression failed for $bookdir/$image";
+		warn $msg;
+		push(@errors, $msg);
+		next LOOP1;
+	    }
+	}
+    }
+    $msg = "  $count of $total files required Group 4 compression\n";
+    print $msg;
+    push(@progress, $msg) ;
+
+    if ( -d "$outdir/$bookdir" ) {
+	$error = system( "$RM -rf $outdir/$bookdir" );
+	if ( $error != 0 ) {
+	    $msg = "ERROR: Couldn't delete existing directory '$outdir/$bookdir'\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	}
+    }
+    $error = system("$MV $bookdir $outdir");
+    if ($error != 0) {
+	$msg = "ERROR: Couldn't move $bookdir to $outdir\n";
+	warn $msg;
+	push(@errors, $msg);
+	next LOOP1;
+    }
+
+    @fcount = glob( "$outdir/$bookdir/*.tif" );
+    $count = @fcount;
+    $msg = "  $bookdir: $count TIFFs in OUTDIR $outdir\n";
+    print $msg;
+    push(@progress, $msg);
+
+    if ( $asroot ) {
+	$error = system("$CHOWN -R $chownUserGroup $outdir/$bookdir");
+	if ($error != 0) {
+	    $msg = "WARNING: Couldn't change owner and/or group for $outdir/$bookdir\n";
+	    print $msg;
+	    push(@progress, $msg);
+	}
+    } # end 'as root'
+
+    $error = system("$CHMOD 0664 $outdir/$bookdir/*.tif");
+    if ($error != 0) {
+	$msg = "WARNING: Couldn't change permissions for .tif files in $outdir/$bookdir\n";
+	print $msg;
+	push(@progress, $msg);
+    }
+
+
+    #---------------------
+    # zip output directory
+    #---------------------
+
+    if ( -e "$zipdir/$bookdir.zip" ) { unlink "$zipdir/$bookdir.zip" }
+
+    $error = system("$ZIP -rqT $zipdir/$bookdir $outdir/$bookdir");
+    if  ($error != 0) {
+	$msg = "ERROR: Couldn't archive $outdir/$bookdir to $zipdir/$bookdir.zip\n";
+	warn $msg;
+	push(@errors, $msg);
+	next LOOP1;
+    }
+
+    if ($asroot ) { # can't change owner if not running as root
+	$error = system("$CHOWN $chownUserGroup $zipdir/$bookdir.zip");
+	if ($error != 0) {
+	    $msg = "WARNING: Couldn't change owner and/or group for $zipdir/$bookdir.zip\n";
+	    print $msg;
+	    push(@progress, $msg);
+	}
+    } # end 'as root'
+
+    $error = system("$CHMOD 0664 $zipdir/$bookdir.zip");
+    if ($error != 0) {
+	$msg = "WARNING: Couldn't change permissions for $zipdir/$bookdir.zip\n";
+	print $msg;
+	push(@progress, $msg);
+    }
+
+    $msg = "  $bookdir zipfile: $zipdir/$bookdir.zip\n\n";
+    print $msg;
+    push(@progress, $msg);
+
+}  # END OF LOOP1
+
+&Send_Mail();
+
+
+
+#======================================================================
+# subroutines
+#======================================================================
+
+sub Send_Mail {
+
+    my ($day, $month, $year) = (localtime)[3,4,5];
+    $month = $month + 1;
+    $year = sprintf("%02d", $year - 100);
+    my $date ="$month/$day/$year";
+
+    open(MAIL,"| /usr/lib/sendmail -i -t");
+    print MAIL "To: ul-dlpsscripts\@virginia.edu\n";
+    print MAIL "From: $user\@virginia.edu\n";
+    if (@errors) {
+	print MAIL "Subject: Error post processing images after QA\n\n";
+	print MAIL "There was an error from the image_munge_user script on $date:\n\n";
+    }
+    else {
+	print MAIL "Subject: Report on post processing of images after QA\n\n";
+	print MAIL "Completed with no errors on $date.\n\n";
+    }
+    foreach my $err (@errors) {
+	print MAIL "$err\n";
+    }
+    foreach my $noerr (@progress) {
+	print MAIL "$noerr" ;
+    }
+    print MAIL "-" x 75 . "\n\n";
+    close(MAIL);
+}
+
+#----------------------------------------------------------------------
+
+sub trim {
+    # trim spaces from front and tail of strings
+    for (@_) {
+        s/^\s*//; # trim leading spaces
+        s/\s*$//; # trim trailing spaces
+    }
+    return @_;
+}
+
+#----------------------------------------------------------------------
+
+sub tiffinfo {
+    # return tiffinfo results as a hash
+    # can access results as $dict{'Compression Scheme'}, for example.
+    my(%dict,$line);
+    open( TIF, "$TIFFINFO $_[0]  |" );
+    my(@lines) = <TIF>;
+    close( TIF );
+    shift( @lines );
+    foreach $line ( @lines ) {
+	my( $key, @vals ) = split( /:/, $line );
+	my($tmp) = join( ':', @vals );
+	chomp($tmp);
+	($tmp) = trim( $tmp );
+	($key) = trim( $key );
+	$dict{$key} = $tmp;
+    }
+    return \%dict;
+}
+
+#----------------------------------------------------------------------
+
+sub resolution { 
+    $_[0]->{'Resolution'} =~ /\s*(\d*),\s*(\d*)\s*.*/ ;
+}

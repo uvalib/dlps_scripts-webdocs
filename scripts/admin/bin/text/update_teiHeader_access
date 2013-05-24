@@ -1,0 +1,246 @@
+#!/usr/bin/perl -w
+
+# update_teiHeader_access - updates the TEI header <availability>
+# element with the access value from the DLPS Tracking System database
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2005-12-02
+# Last modified: 2010-05-27
+
+# 2006-04-03: gpm2a: Changed to update DLPS tracking system -->
+# Finalization Workflow --> Update access level
+#
+# 2010-05-27: gpm2a: Added -F (force) option to bypass DLPS Tracking
+# System and instead use value supplied by user.
+
+
+use strict;
+use Getopt::Std;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use TrackSys;
+
+my (%opts, $infile, @infile, %properties, $dlpsId, @row, $sql, $rows);
+my ($access, $accessStatus, $accessPhrase, $origStatus, $origPhrase);
+my ($go, $hasAvail, $inAvail, $hasP);
+my $sth;  # statement handle (object representing a database query)
+
+my $skipMsg = " Cannot update TEI header.";
+
+my $me = 'update_teiHeader_access';
+my $usage = <<EOD;
+
+$me - updates the TEI header <availability>
+  element with the access value from the DLPS Tracking System database
+Usage: $me [-F keyword] filenames
+  -F (force) Bypass DLPS Tracking System; use keyword specified for all input
+     files. Allowed values are: "public", "viva", "uva", "restricted"
+
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original file
+
+EOD
+
+getopts('F:', \%opts) || die $usage;
+die $usage if (! @ARGV);
+if ( ($opts{F}) && ($opts{F} !~ /^(public|viva|uva|restricted)$/i) ) {
+    die "-F must be one of these values: public, viva, uva, restricted\n"
+}
+
+TrackSys::connect() unless ($opts{F});
+
+foreach $infile ( sort(@ARGV) ) {
+
+    #----------------
+    # read input file
+    #----------------
+
+    if ( open(IN, $infile) ) {
+	@infile = <IN>;
+	close IN;
+    } else {
+	warn "$me: ERROR: Cannot read '$infile': $!: $skipMsg\n";
+	next;
+    }
+
+
+    #-----------------
+    # get access value
+    #-----------------
+
+    if ($opts{F}) {
+	$accessStatus = lc($opts{F});
+    } else {
+	# get DLPS ID
+	%properties = DlpsText::getProperties($infile);
+	$dlpsId = DlpsText::getDlpsId(\%properties, \@infile, $infile);
+	if (! $dlpsId) {
+	    warn "$me: $infile: ERROR: Can't get DLPS ID.$skipMsg\n";
+	    next;
+	}
+
+	# get access value for this DLPS ID
+	$sql = "SELECT access FROM textItems WHERE dlpsId ='$dlpsId'";
+	my $sthref = TrackSys::query($sql);
+	$sth = $$sthref;
+	@row = $sth->fetchrow_array();
+	$sth->finish;
+
+	if ( scalar(@row) ) {
+	    $access = $row[0];
+	} else {
+	    warn "$me: $infile: ERROR: DLPS ID '$dlpsId' not found in database.$skipMsg\n";
+	    next;
+	}
+
+	if ($access == 0) {
+	    $accessStatus = 'public';
+	} elsif ($access == 1) {
+	    $accessStatus = 'viva';
+	} elsif ($access == 2) {
+	    $accessStatus = 'uva';
+	} elsif ($access == 3) {
+	    $accessStatus = 'restricted';
+	} else {
+	    warn "$me: $infile: ERROR: Access value '$access' is not valid.$skipMsg\n";
+	    next;
+	}
+    }  # END if ($opts{F})
+
+    # determine human-readable access phrase
+    if ($accessStatus eq 'public') {
+	$accessPhrase = 'Publicly accessible';
+    } elsif ($accessStatus eq 'viva') {
+	$accessPhrase = 'VIVA only';
+    } elsif ($accessStatus eq 'uva') {
+	$accessPhrase = 'UVA only';
+    } elsif ($accessStatus eq 'restricted') {
+	$accessPhrase = 'Access restricted';
+    } else {
+	warn "$me: $infile: ERROR: Access status '$accessStatus' is not valid.$skipMsg\n";
+	next;
+    }
+
+
+    #-------------------------------------
+    # determine whether changes are needed
+    #-------------------------------------
+
+    $go = 0;  $hasAvail = 0;  $inAvail = 0;
+    $origStatus = '';  $origPhrase = '';
+    foreach (@infile) {
+	if ( /<availability/ ) {
+	    $hasAvail = 1;  $inAvail = 1;
+	    if ( /<availability[^>]*? status=("|')([^\1]+)\1/ ) {
+		$origStatus = $2;
+	    }
+	}
+
+        if ($inAvail) {
+            if ( m:<p n=["']access["']>([^<]+)</p>: ) {
+                $origPhrase = $1;
+            }
+        }
+
+	if ( m:</availability>: ) {
+	    $inAvail = 0;
+	}
+
+	if ( m:</teiHeader>: ) {
+	    last;
+	}
+    }
+
+    if ($hasAvail) {
+	if ($origStatus ne $accessStatus) {
+            # need to add or update 'status' attribute
+	    $go = 1;
+	}
+        if ($origPhrase ne $accessPhrase) {
+            # need to add or update <p n="access"> element
+            $go = 1;
+        }
+    } else {
+	warn "$me: $infile: ERROR: No <availability> element found.$skipMsg\n";
+	next;
+    }
+
+
+    #------------------
+    # update TEI header
+    #------------------
+
+    if ($go) {
+	# make backup
+	if ( open(BAK, ">${infile}.bak") ) {
+	    foreach (@infile) {
+		print BAK;
+	    }
+	    close BAK;
+	} else {
+	    warn "$me: ERROR: Cannot write '${infile}.bak': $!:$skipMsg\n";
+	    next;
+	}
+
+	# make changes, overwriting input file
+	$inAvail = 0;  $hasP = 0;
+	open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+	foreach (@infile) {
+	    if ( /<availability/ ) {
+		# print info message
+		if (not $origStatus) {
+		    $origStatus = '[unspecified]';
+		}
+		print "$me: $infile: Changing access status: $origStatus --> $accessStatus\n";
+
+		$inAvail = 1;
+		if ( /<availability[^>]*? status=("|')[^\1]+\1/ ) {
+		    # replace existing status attribute
+		    s/ status=("|')[^\1]+\1/ status="$accessStatus"/;
+	        } else {
+		    # add status attribute
+		    s/<availability([^>]*?)>/<availability$1 status="$accessStatus">/;
+	        }
+	    }
+
+	    if ($inAvail) {
+	        if ( m:<p n=["']access["']>[^<]+</p>: ) {
+                    # replace <p n="access"> element
+                    $hasP = 1;
+                    s:<p n=["']access["']>[^<]+<\/p>:<p n="access">$accessPhrase</p>:;
+	        }
+	    }
+
+	    if ( m:</availability>: ) {
+		$inAvail = 0;
+
+		if (not $hasP) {
+		    # add <p n="access"> element
+		  s:</availability>:<p n="access">$accessPhrase</p>\n</availability>:;
+		}
+	    }
+
+	    print OUT;
+	}
+	close OUT;
+    }  # END if ($go)
+
+    unless ($opts{F}) {
+
+	# technically, updating DLPS tracking system (below) is
+	# separate from getting the access value from it (above), but
+	# if you're using -F it's probably because there are no
+	# corresponding records in DLPS tracking system -- so just
+	# skip this if -F
+
+	# update tracking system
+	$rows = 0;
+	$sql = "UPDATE finalization SET updateAccess = 1 WHERE dlpsId = '$dlpsId' LIMIT 1";
+	$rows = TrackSys::query($sql);
+	if ($rows != 1) {  # this works because Perl DBI execute() returns 1 even if no fields of the record are actually changed
+	    warn "$me: WARNING: Cannot update DLPS tracking system for record '$dlpsId'. Update manually.\n";
+	}
+    }
+}
+
+TrackSys::disconnect() unless ($opts{F});

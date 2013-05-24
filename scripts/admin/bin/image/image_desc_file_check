@@ -1,0 +1,330 @@
+#!/usr/bin/perl -w
+
+# image_desc_file_check - Compares the directory contents of preview images to desc metadata
+# 			for external metadata files provided for image collections. Makes sure that there
+#			is a corresponding desc file for each image file. This script looks for project 
+#			directories located in /shares/image2/02_processed/60_copy2ReadyRepo
+#
+# Jack Kelly <jlk4p@virginia.edu>
+# Created: 2007-05-21
+#
+
+#======================================================================
+# setup
+#======================================================================
+
+use strict;
+use Getopt::Long;
+use Cwd;
+
+my (%opts, $error, $ok, @outfiles, %infiles);
+my ($project, $infile, $outfile, $command);
+my (@errors, @progress, $msg, $gigabytes);
+
+my $me = 'image_desc_file_check';
+my $startDir = '/shares/image2/02_processed/60_copy2ReadyRepo';
+my $contentModel = 'uvaHighRes';
+my $mailFrom = "jlk4p\@virginia.edu";
+my $mailTo = "ul-dlpsscripts\@virginia.edu";
+
+my $usage = <<EOD;
+
+$me - Compares the directory contents of preview images to
+    desc metadata for projects that have external metadata provided, making sure
+    there is a corresponding desc file for each image file. This script expects 
+    the project to be at the point where all files are located in the
+    /shares/image2/02_processed/60_copy2ReadyRepo folder.
+
+Usage: $me [-v] [-a email[,email]...] [-c content_model] projects 
+  -v (verbose) Show status messages
+  -a (address) Email address(es) to send results of analysis. Default is
+     ul-dlpsscripts\@virginia.edu if not specified. Separate addresses
+     using a comma, not spaces.
+  -c (content model) Identify the content model for the project(s) specified. If
+     no model is specified, the default is uvaHighRes.
+
+In:  Names of projects to process
+Out: An email message containing results of the comparison of image files to 
+     desc files.
+
+EOD
+
+GetOptions(\%opts,'v', "a=s", "c:s") || die $usage;
+die $usage unless (@ARGV);
+
+$msg = "Started at "  . (scalar localtime) . "\n\n";
+push(@progress, $msg);
+
+# Change who the email gets sent to if this option was specified.
+if (exists $opts{'a'}) {
+	$mailTo = $opts{'a'};
+	$msg = "Alternate email address(es) specified for this script: $mailTo\r\n\r\n";
+	print $msg if ($opts{'v'});
+    push(@progress, $msg);
+	$msg = "If you are receiving this email and shoud not have, please forward it to ul-dlpsscripts\@virginia.edu\r\n\r\n";
+    push(@progress, $msg);
+}
+
+# Change the content model if this option was specified.
+if (exists $opts{'c'}) {
+	if ($opts{'c'} ne '') {
+		$contentModel = $opts{'c'};
+	}
+	$msg = "Content model set to $contentModel\r\n\r\n";
+	print $msg if ($opts{'v'});
+	push(@progress, $msg);
+}
+
+#======================================================================
+# main logic
+#======================================================================
+
+foreach $project (sort(@ARGV)) {
+    $error = 0;
+    $ok = 1;
+    @outfiles = ();
+    %infiles = ();
+
+    $project =~ s:/$::;  # remove final slash, if present
+
+	# change to 60_copy2ReadyRepo
+	if ( not chdir($startDir) ) {
+	$msg = "$me: ERROR: Cannot change to directory '$startDir': $!\r\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+	}
+
+    $msg = "$me: Processing project '$project'...\r\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+
+    if (-d $project) {
+	unless ( -r $project ) {
+	    $msg = "$me: ERROR: Need read permission for project directory  '$project'\r\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+    } else {
+	$msg = "$me: ERROR: '$project' is not a directory\r\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+    # change to project/content model directory
+    if ( not chdir($project) ) {
+	$msg = "$me: ERROR: Cannot change to project directory '$project': $!\r\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+    if ( not chdir("image/$contentModel") ) {
+	$msg = "$me: ERROR: Cannot change to content model directory '$contentModel': $!\r\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+
+    #------------------------------------------------------------------
+    # Read the contents of the preview image directory
+    #------------------------------------------------------------------
+    $msg = "    Getting preview image file names...\r\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+	my %images = ();
+    if ( not chdir("preview") ) {
+	$msg = "$me: ERROR: Cannot change to image preview directory: $!\r\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+    if ( opendir(DIR, '.') ) {
+		while ( defined($infile = readdir(DIR)) ) {
+			if ( $infile =~ /^\./) {
+				if ($infile eq '.') {
+					# ignore space for this directory
+				} elsif ($infile eq '..') {
+					# ignore space for this directory
+				}
+				next;	# ignore file as it starts with .
+			} else {
+				my ($file,$extension);
+				($file,$extension) = split(/\./,$infile);
+		    	$images{$file} = $infile;
+			}
+		}
+		closedir DIR;
+    } else {
+		$msg = "$me: ERROR: Cannot read image preview directory: $!\r\n";
+		warn $msg;
+		push(@errors, $msg);
+		$ok = 0; next;
+    }
+
+    if ( not scalar(keys %images) ) {
+		$msg = "$me: WARNING: No image files found in preview directory\r\n";
+		print $msg;
+		push(@progress, $msg);
+		next;
+    } else {
+    	$msg = "        Number of preview image files found: " . scalar(keys %images) . "\r\n";
+    	push(@progress, $msg);
+    }
+
+    #------------------------------------------------------------------
+    # Read the contents of the desc metadata directory
+    #------------------------------------------------------------------
+    $msg = "    Getting desc metadata file names...\r\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+	my %metadata = ();
+    if ( not chdir('..') ) {
+	$msg = "$me: ERROR: Cannot change to content model directory: $!\r\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+    if ( not chdir("metadata/desc") ) {
+	$msg = "$me: ERROR: Cannot change to desc metadata directory: $!\r\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+    if ( opendir(DIR, '.') ) {
+		while ( defined($infile = readdir(DIR)) ) {
+			if ( $infile =~ /^\./) {
+				if ($infile eq '.') {
+					# ignore space for this directory
+				} elsif ($infile eq '..') {
+					# ignore space for this directory
+				}
+				next;	# ignore file as it starts with .
+			} else {
+				my ($file,$extension);
+				($file,$extension) = split(/\./,$infile);
+		    	$metadata{$file} = $infile;
+			}
+		}
+		closedir DIR;
+    } else {
+		$msg = "$me: ERROR: Cannot read desc metadata directory: $!\r\n";
+		warn $msg;
+		push(@errors, $msg);
+		$ok = 0; next;
+    }
+
+    if ( not scalar(keys %metadata) ) {
+		$msg = "$me: WARNING: No metadata files found in desc directory\r\n";
+		print $msg;
+		push(@progress, $msg);
+		next;
+    } else {
+    	$msg = "        Number of desc metadata files found: " . scalar(keys %metadata) . "\r\n";
+    	push(@progress, $msg);
+    }
+    
+    #------------------------------------------------------------------
+    #Identify any image files that do not have a metadata file.
+    #------------------------------------------------------------------
+    $msg = "    Checking for missing metadata files...\r\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+	foreach my $index (keys %images) {
+		if (exists($metadata{$index}) && defined($metadata{$index})) {
+			# item found so not a problem
+		} else {
+			$msg = "        ==> " . $images{$index} . " does not have a corresponding desc metadata file.\r\n";
+			push(@progress,$msg);
+		}
+	}
+	
+    #------------------------------------------------------------------
+    #Identify any metadata files that do not have an image file.
+    #------------------------------------------------------------------
+    $msg = "    Checking for missing image files...\r\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+	foreach my $index (keys %metadata) {
+		if (exists($images{$index}) && defined($images{$index})) {
+			# item found so not a problem
+		} else {
+			$msg = "        ==> " . $metadata{$index} . " does not have a corresponding image file.\r\n";
+			push(@progress,$msg);
+		}
+	}
+	
+   	if (not $ok) {
+		next;
+   	}
+}
+continue {
+    if ($ok) {
+	$msg = "    Project directory '$project' was processed successfully.\r\n\r\n";
+	print $msg if ($opts{'v'});
+	push(@progress, $msg);
+    } else {
+	$msg = "$me: ERROR: Processing of project directory '$project' FAILED!\r\n\r\n";
+	warn $msg;
+	push(@errors, $msg);
+    }
+
+    # change to starting directory
+    if ( cwd() ne $startDir ) {
+		if ( not chdir($startDir) ) {
+	    	$msg = "$me: FATAL ERROR: Cannot change to starting directory '$startDir': $!\r\n";
+	    	push(@errors, $msg);
+	    	Send_Mail();
+	    	die $msg;
+		}
+    }
+
+}
+
+$msg = "\nFinished at "  . (scalar localtime) . "\n";
+push(@progress, $msg);
+
+Send_Mail();
+
+
+#======================================================================
+# subroutines
+#======================================================================
+
+sub Send_Mail {
+
+    my @time = localtime(time);
+    my $today = $time[3];
+    my $month = (1,2,3,4,5,6,7,8,9,10,11,12)[(localtime)[4]];
+    my $year = $time[5];
+    $year = $year - 100;
+
+    $year = sprintf("%02d",$year);
+    $month = sprintf("%02d",$month);
+    $today = sprintf("%02d",$today);
+
+    my($date)="$month/$today/$year";
+    my($messageto) = $mailTo;
+
+    open(MAIL,"| /usr/sbin/sendmail -i -t");
+    print MAIL "To: $messageto\n"; 
+    print MAIL "From: $mailFrom\n";
+    if (@errors) {
+	print MAIL "Subject: Error on checking image/metadata file counts\n\n";
+	print MAIL "There was an error from the $me script on $date:\n\n";
+    }
+    else {
+	print MAIL "Subject: Report on checking image/metadata file counts\n\n";
+	print MAIL "$me script completed with no errors on $date.\n\n";
+    }
+    foreach my $err (@errors) {
+	print MAIL "$err";
+    }
+    foreach my $noerr (@progress) {
+	print MAIL "$noerr" ;
+    }
+    print MAIL "-" x 75 . "\n\n";
+    close(MAIL);
+}

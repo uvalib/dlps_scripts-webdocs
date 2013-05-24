@@ -1,0 +1,89 @@
+#!/usr/bin/perl -w
+
+# renumber_files - renames files named with DLPS ID and sequence
+# number by renumbering the sequence-number part of the filename
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2004-08-05
+# Last modified: 2006-05-12
+
+# 2006-05-12: gpm2a: If the new filename equals the input filename, no
+# renaming is needed; don't issue a warning that the new filename
+# already exists.
+
+
+use Getopt::Std;
+use strict;
+
+my ($me, $usage, %opts, $infile);
+my ($count, $id, $extension, $prefix, $suffix, $new);
+
+$me = 'renumber_files';
+$usage = <<EOD;
+
+$me - renames files named with DLPS ID and sequence number by renumbering the sequence-number part of the filename
+
+Usage: $me [-p prefix] [-s suffix] [-t] filenames
+  -p (prefix) Use specified string to start filename (defaults to using input file's filename up to the sequence number)
+  -s (suffix) Use specified filename extension (defaults to using input file's filename extension)
+  -t (test)   Do not rename files; only display proposed changes
+In: Any files named with DLPS ID, underscore, sequence number, dot, extension
+Out: Renames input files and displays how files were renamed
+
+EOD
+
+getopts('tp:s:', \%opts) || die $usage;
+die $usage if (! @ARGV);
+
+if ( $opts{p} ) {
+    $opts{p} =~ s/_$//;
+}
+
+if ( $opts{s} ) {
+    $opts{s} =~ s/^\.//;
+}
+
+$count = 0;
+
+foreach $infile (sort(@ARGV)) {
+    #if ( $infile =~ /^([bz]\d{9}|cavdaily_\d{8})_\d{3,4}\.(\w{3,4})/ ) {
+    if ( $infile =~ /^(.+?)_\w+?\.(\w{3,4})/ ) {
+	$id = $1;
+	$extension = $2;
+	$count++;
+
+	if ( $opts{p} ) {
+	    $prefix = $opts{p};
+	} else {
+	    $prefix = $id;
+	}
+
+	if ( $opts{s} ) {
+	    $suffix = $opts{s};
+	} else {
+	    $suffix = $extension;
+	}
+
+	$new = $prefix . '_' . sprintf("%04d", $count) . ".$suffix";
+
+	if (-e $new) {
+	    if ($new eq $infile) {
+		# no renaming needed; don't issue a warning that the file already exists
+	    } else {
+		warn "$me: WARNING: Cannot rename '$infile' to '$new': File '$new' already exists\n";
+	    }
+	} else {
+	    if ( $opts{t} ) {
+		print "$infile --> $new\n";
+	    } else {
+		if ( rename($infile, $new) ) {
+		    print "$infile --> $new\n";
+		} else {
+		    warn "$me: WARNING: Failed to rename '$infile' to '$new': $!\n";
+		}
+	    }
+	}
+    }
+}
+
+print "$count files\n";

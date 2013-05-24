@@ -1,0 +1,6 @@
+if xmllint --noout --postvalid $@
+then
+  echo "All files are valid"
+else
+  echo "*** One or more errors occurred ***"
+fi

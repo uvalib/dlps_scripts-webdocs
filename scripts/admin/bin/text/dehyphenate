@@ -1,0 +1,304 @@
+#!/usr/bin/perl -w
+
+# dehyphenate - hides all end-of-line hyphenation using <reg orig="ex-|ample">example</reg>
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2002-08-26
+# Last modified: 2007-03-16
+
+# 2003-04-22: gpm2a: Now backs up to [infile].bak rather than
+# [infile].dehyphenate.bak
+#
+# 2003-05-23: gpm2a: Can now handle hyphenation at end of page whether
+# page break is like <pb/> or like <pb>...</pb>; this accomodates use
+# of <fw> within <pb>
+#
+# 2003-05-26: gpm2a: If hyphenated line is last line of paragraph,
+# script will now exclude the line break, so the paragraph ends with
+# "</p>" not "</p> <lb/>"
+#
+# 2003-07-25: gpm2a: Better logic for moving non-word characters off
+# the beginning or end of hyphenated word, even if that word includes
+# an entity reference. Also, if hyphenated line is last line of table
+# cell, script will now exclude the line break, so the table cell now
+# ends with "</cell>" not "</cell> <lb/>"; same for list items.
+#
+# 2005-10-14: gpm2a: Added </l> to list of end-tags (p, cell, item)
+# for which the extraneous final line break is excluded (thus "</l>"
+# not "</l> <lb/>").
+#
+# 2005-06-15: gpm2a: Added logic to read a list of words known to
+# require a hyphen (black-eyed, two-thirds, twenty-five, etc.). If a
+# word is on the list, the hyphen is retained.
+#
+# 2006-07-06: gpm2a: Changed logic so that checking against dictionary
+# words is now case insensitive. Also changed to use a dictionary file
+# shared by the 'report_rehyphenate' script (which means that not all
+# words should be added to the hash -- only words containing a
+# hyphen).
+#
+# 2007-03-16: gpm2a: Fixed a major bug that would occur if (1) the
+# hyphenated word was skipped rather than getting collapsed, and (2)
+# there were cb, figure, milestone, or pb elements between the start
+# and end of the hyphenated word. In this scenario, the
+# cb/figure/milestone/pb elements would get buffered and never get
+# written to output. Fixed this so that the buffered content always
+# gets output. Also made the script aware of element <cols/>, so that
+# an occurrence of <cols/> between start and end of hyphenated word
+# results in successful dehyphenation, i.e. does not cause the
+# hyphenated word to get skipped.
+
+
+# Undocumented -D option deletes hyphenation entirely, rather than hiding it with <reg> markup
+
+
+use strict;
+use Getopt::Std;
+
+my ($me, $usage, %opts, $D, $infile, @infile, $msg);
+my ($basename, $found, $hold, $in_figure, $count, $skipped);
+my ($prehyphen, $posthyphen, $leading, $trailing, $buffer, $temp1, $temp2, $linebreak, $remainder, $q, $verb);
+
+my %dictionary = ();
+#my $dictionaryFile = '/shares/admin/bin/text/dehyphenate_dictionary.txt';
+my $dictionaryFile = '/www/doc/dlps/dlps-only/workreports/hyphenation_dictionary.txt';
+
+my $XML_NAME = '[\w\-\.]+';
+
+$me = 'dehyphenate';
+$usage = <<EOD;
+
+$me - hides all end-of-line hyphenation using <reg orig="ex-|ample">example</reg>
+Usage: $me filenames
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+EOD
+
+getopts('D', \%opts) || die $usage;
+$D = $opts{'D'};
+die $usage if (! @ARGV);
+
+# read dictionary file (list of words known to require a hyphen) into a hash
+open(DICT, $dictionaryFile) or die "$me: ERROR: Cannot open dictionary of hyphenated words at '$dictionaryFile'\n";
+while (<DICT>) {
+    chomp;
+    next if (/^\s*$/);  # skip blank lines
+    next if (/^#/);     # skip comments
+
+    # only add hyphenated words to dictionary hash (since we are
+    # interested in retaining the hyphen for words that require a
+    # hyphen; non-hyphenated words from the dictionary file are of no
+    # interest here)
+    next unless (/-/);
+
+    $dictionary{lc($_)} = '';
+}
+close DICT;
+
+# process each input file
+foreach $infile (@ARGV) {
+    $found = 0;
+    $hold = '';
+    $in_figure = 0;
+    $count = 0;
+    $skipped = 0;
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # make backup
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+
+    # make changes, overwriting input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach (@infile) {
+	if ($found) {
+	    # eol hyphen was found on previous line
+
+	    if ($in_figure) {
+		# inside a multi-line figure element
+		$hold .= $_;
+		if ( m:</figure>: ) {
+		    $in_figure = 0;
+		}
+		next;
+	    }
+
+	    # check whether current line contains only a <pb> element; if so, use next line as the "continuation" line
+	    if ( m:^<pb[^>]*?/>\s*$: or m:^<pb.+?</pb>\s*$: ) {
+		$hold .= $_;
+		next;
+	    }
+	    # check whether current line contains only a <cb/> tag; if so, use next line as the "continuation" line
+	    if ( /^<cb[^>]*>\s*$/ ) {
+		$hold .= $_;
+		next;
+	    }
+	    # check whether current line contains only a <milestone/> tag
+	    if ( /^<milestone[^>]*>\s*$/ ) {
+		$hold .= $_;
+		next;
+	    }
+	    # check whether current line contains only a <cols/> tag
+	    if ( /^<cols[^>]*>\s*$/ ) {
+		$hold .= $_;
+		next;
+	    }
+	    # check whether current line contains only an empty <figure/> tag
+	    if ( m:^<figure[^>/]*/>\s*$: ) {
+		$hold .= $_;
+		next;
+	    }
+	    # check whether current line contains only a <figure> start-tag (start of a multi-line figure element)
+	    if ( m:^<figure[^>/]*>\s*$: ) {
+		$hold .= $_;
+		$in_figure = 1;
+		next;
+	    }
+
+	    if ( /^\s*(\S+?)(\s|<)/ ) {
+		$posthyphen = $1;
+		$remainder = $2 . $';   # $' returns everything after the matched string
+
+		$trailing = "";
+		# test whether 'remainder' string begins with markup; if so that markup should immediately follow </reg>
+		if ( $remainder =~ /^(<[^>]+>)+\S*/ ) {
+		    $trailing .= $&;   # $& returns matched string
+		    $remainder = $';   # $' returns everything after the matched string
+		}
+
+		$remainder =~ s/^\s+//;   # trim leading spaces
+
+		if ($linebreak) {
+		    $trailing .= $linebreak . "\n";
+		} else {
+		    $trailing .= "\n";
+		}
+
+		if ($hold) {
+		    $trailing .= $hold;
+		}
+
+		$trailing .= $remainder;
+	    } else {
+		$posthyphen = '';
+		$trailing = $hold . $_;
+	    }
+
+	    if ($D) {
+		# delete (rather than hide) EOL hyphenation
+		if ( exists($dictionary{lc("$prehyphen-$posthyphen")}) ) {
+		    # retain hyphen
+		    $buffer = "$leading$prehyphen-$posthyphen$trailing";
+		} else {
+		    # remove hyphen
+		    $buffer = "$leading$prehyphen$posthyphen$trailing";
+		}
+		$count++;
+	    } else {
+		if ( $prehyphen =~ /^(<[^>]+>)/ ) {
+		    # prehyphen string begins with markup; move that markup to the 'leading' text
+		    $leading .= $1;
+		    $prehyphen = $';   # $' returns everything after the matched string
+		}
+		if ( $prehyphen =~ /^([^\w&]+)/ ) {
+		    # prehyphen string begins with non-word character(s); move them to the 'leading' text
+		    # here word-character includes & to allow for entity references
+		    $leading .= $1;
+		    $prehyphen = $';
+		}
+		if ( $posthyphen =~ /&$XML_NAME;$/ ) {
+		    # posthyphen string ends with entity ref; do not move semicolon to 'trailing' text
+		} elsif ( $posthyphen =~ /(&$XML_NAME;)(\W+)$/ ) {
+		    # posthyphen string ends with entity ref followed by non-word character(s)
+		    # move non-word characters to the 'trailing' text
+		    $trailing = $2 . $trailing;
+		    $posthyphen = $` . $1;
+		} elsif ( $posthyphen =~ /(\W+)$/ ) {
+		    # posthyphen string ends with non-word character(s); move them to the 'trailing' text
+		    $trailing = $1 . $trailing;
+		    $posthyphen = $`;
+		}
+
+		# if 'trailing' text ends with </p>, </cell>, </item>
+		# or </l> followed by <lb/>, exclude the <lb/>
+		$trailing =~ s:</(p|cell|item|l)>[ \t\r\f]*<lb/>[ \t\r\f]*$:</$1>:;
+
+		if ( $prehyphen =~ /[<>]/ || $posthyphen =~ /[<>]/ ) {
+		    # value of orig attribute will contain markup (which would cause a validation
+		    # error), so bail out: do not attempt to collapse the hyphenation
+		    $skipped++;
+		    $buffer .= $hold . $_;
+		} elsif ( $trailing =~ m:<[^>]+<lb/>: ) {
+		    # dehyphenation will result in a partial tag at end of line; do not attempt dehyphenation
+		    $skipped++;
+		    $buffer .= $hold . $_;
+		} else {
+		    # supply <reg orig="hyphen-ated">hyphenated</reg>
+		    if ( $prehyphen =~ /"/ || $posthyphen =~ /"/ ) {
+                        # value of orig attribute will contain double quotes; must use single quotes around it
+		        $q = "'";
+                        $prehyphen =~ s/'/&apos;/g;
+                        $posthyphen =~ s/'/&apos;/g;
+		    } else {
+		        $q = '"';
+		    }
+		    if ( exists($dictionary{lc("$prehyphen-$posthyphen")}) ) {
+			# retain hyphen
+			$buffer = "$leading<reg orig=$q$prehyphen-|$posthyphen$q>$prehyphen-$posthyphen<\/reg>$trailing";
+		    } else {
+			# remove hyphen
+			$buffer = "$leading<reg orig=$q$prehyphen-|$posthyphen$q>$prehyphen$posthyphen<\/reg>$trailing";
+		    }
+                    $count++;
+		}
+	    }
+	    if ( $buffer =~ /(>?)([^\s<>]+)-([ \t\r\f]*<lb\/>)?[ \t\r\f]*$/ ) {
+		# buffer also ends with a hyphen; do not print buffer to output yet
+		$leading = $` . $1;
+		$prehyphen = $2;
+		if ($3) {
+		    $linebreak = $3;
+		} else {
+		    $linebreak = '';
+		}
+		$hold = '';
+	    } else {
+		print OUT $buffer;   # print buffer to output
+		$found = 0;
+		$hold = '';
+	    }
+	} elsif ( /(>?)([^\s<>\-]+)-([ \t\r\f]*<lb\/>)?[ \t\r\f]*$/ ) {
+	    # eol hyphen found on current line; go to next line without printing to output
+	    $found = 1;
+	    $leading = $` . $1;   # $` returns everything before the matched string
+	    $prehyphen = $2;
+	    $buffer = $_;
+	    if ($3) {
+		$linebreak = $3;
+	    } else {
+		$linebreak = '';
+	    }
+	    $hold = '';
+	} else {
+	    # no eol hyphen found; print to output and move on
+	    print OUT;
+	}
+    }
+    close OUT;
+
+    # print result summary for this file
+    if ($D) { $verb = "deleted"; } else { $verb = "hidden"; }
+    $msg = "$count end-of-line hyphens were $verb; $skipped hyphens could not be $verb";
+    #print "$me: $infile: $msg\n";
+    if ($skipped) {
+	warn "$me: $infile: WARNING: $skipped hyphens could not be $verb\n";
+    }
+}

@@ -1,0 +1,153 @@
+#!/usr/bin/perl -w
+
+# non-ascii - displays error messages if the input file appears to
+# contain non-ASCII characters
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2010-05-24
+# Last modified:
+
+use strict;
+use Getopt::Std;
+
+my ($me, $usage, %opts);
+my ($max_errors, $error_count);
+my ($first_line, $msg, $infile, $char, $dec, @hits);
+my ($line, $c, $i, $temp, $string);
+
+my $DEFAULT_MAX_ERRORS = 10;
+
+$me = 'non-ascii';
+$usage = <<EOD;
+
+$me - displays error messages if the input file appears to
+    contain non-ASCII characters
+
+Usage: $me [-E #] [-F] [-v] <filenames>
+  -E (error count) maximum number of errors to report (defaults to $DEFAULT_MAX_ERRORS)
+  -F (force) operate on file even if it lacks XML declaration
+  -v (verbose) show status messages (defaults to showing errors only)
+
+In:  XML file(s) encoded in UTF-8
+Out: Displays messages on standard output (because that is the normal
+  output of the script, not an error condition). Makes no changes to
+  the input file.
+
+Notes:
+  * This script's purpose is to catch non-ASCII characters in XML
+    files, because some processing scripts in the post-keyboarding
+    workflow don't expect, and can't handle, Unicode characters above
+    the ASCII code block. We ask the keyboarding vendor to use
+    hexadecimal codes to represent non-ASCII characters - either
+    directly, as in &#x00E9; or by using entities, as in &eacute; -
+    but we need to QA that practice.
+
+  * The script only operates on UTF-8 XML documents. If the file
+    doesn't have an <?xml ... ?> declaration indicating UTF-8 encoding
+    (or not declaring an encoding, since UTF-8 is the default in XML),
+    the script will issue a warning and skip to the next input file.
+
+  * The script displays an error message for any of the following:
+      - a control character (illegal in XML)
+      - a character with a decimal character code greater than 127
+        (non-ASCII)
+      - an XML character reference given in decimal notation (as in
+        &#233;) rather than hexidecimal (as in &#x00E9;)
+
+EOD
+
+getopts('E:Fv', \%opts) || die $usage;
+die $usage if (! @ARGV);
+$max_errors = $opts{E} || $DEFAULT_MAX_ERRORS;
+
+# set output encoding to UTF-8, so non-ASCII characters can be
+# included correctly in error messages
+binmode STDOUT, ":utf8";
+
+foreach $infile ( sort(@ARGV) ) {
+    @hits = ();
+    $line = 0;
+    $msg = '';
+
+    # test for XML declaration indicating UTF-8
+    open(TEST, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    $first_line = <TEST>;
+    close TEST;
+    if ( $first_line =~ /^<\?xml/ ) {
+	if ( $first_line =~ /encoding=/ ) {
+	    unless ( $first_line =~ /encoding=["']utf-8["']/i ) {
+		$msg = 'File declares an encoding other than UTF-8; skipping this file';
+	    }
+	} else {
+	    # it's ok; UTF-8 is the default in XML and doesn't have to
+	    # be declared
+	}
+    } else {
+	$msg = "File doesn't begin with <?xml ...?> declaration; skipping this file" unless ( $opts{F} );
+    }
+    if ($msg) {
+	print "$me: $infile:\n  WARNING: $msg\n";
+	next;
+    }
+
+    # open input file as UTF-8
+    open(FILE, "<:utf8", $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+
+    # read each line of input file
+    while (<FILE>) {
+	$line++;
+	$c = 0;
+
+	# check this line for decimal character references, as in &#233;
+	if ( /&#\d+;/ ) {
+	    push @hits, "$line,$c,$&,";
+	}
+
+	# read each character on this line
+	for ($i = 0; $i < length($_); $i++) {
+	    $char = substr($_, $i, 1);
+	    $dec = ord($char);
+	    $c++;
+
+	    if ( ($dec >= 32 and $dec <= 126) or ($dec == 9 or $dec == 10 or $dec == 13)  ) {
+		# regular ASCII character or whitespace character
+		#
+		# tab (9), newline/linefeed (10), and carriage return
+		# (13) are legal in XML
+	    } else {
+		if ( ($dec <= 31) or ($dec >= 127 && $dec <= 159) ) {
+		    # found one the these:
+		    #   C0 control character (0 - 31) other than tab, newline, return
+		    #   C1 control character (128-159)
+		    #   DEL character (127)
+		    # don't display actual character in error message
+		    $temp = '[control character]';
+		} else {
+		    $temp = $char;
+		}
+		push @hits, "$line,$c,$temp,$dec";
+	    }
+	}
+    }
+
+    # print error messages for non-ASCII characters found, if any
+    if ( scalar(@hits) ) {
+	print "\n";
+	$error_count = 0;
+	foreach $string (@hits) {
+	    $error_count++;
+	    last if $error_count > $max_errors;
+	    ($line, $c, $char, $dec) = split(/,/, $string);
+	    if ($c) {
+		print "$me: $infile: line $line: character $c:\n  ERROR: Found non-ASCII character $char (decimal $dec)\n";
+	    } else {
+		print "$me: $infile: line $line:\n  ERROR: Found decimal character reference $char\n";
+	    }
+	}
+    } else {
+	print "\n$me: $infile: OK: All characters are ASCII\n" if $opts{v};
+    }
+
+    # close input file
+    close FILE;
+}

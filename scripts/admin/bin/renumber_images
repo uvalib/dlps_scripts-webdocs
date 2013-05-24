@@ -1,0 +1,73 @@
+#!/usr/bin/perl -w
+
+# This is Dan Gustafson's script for renumbering page image files. For
+# convenience I copied it from /dlps_work/cropped/renumber.pl to
+# /home/gpm2a/bin/renumber_images. --GPM 2002-07-09
+
+# GPM 2002-07-09: Added variable "$filesuffix" to more easily change
+# the code to work on .gif images rather than .tif images.
+
+print "what directory do you want to renumber:  ";
+$filedir = <>;
+chomp $filedir;
+
+print "what file prefix (for example b001234567_):  ";
+$fileprefix = <>;
+chomp $fileprefix;
+
+print "what file suffix (for example .tif or .gif):  ";
+$filesuffix = <>;
+chomp $filesuffix;
+
+print "display or rename:  ";
+$outcommand = <>;
+chomp $outcommand;
+
+$count = 0;
+
+opendir(DIRECTORY, $filedir) or die "Cannot open the directory $filedir\n";
+
+@listfiles = ();
+
+foreach $file (readdir(DIRECTORY)){  #reads the directory and puts the file names in an array
+	if ($file=~/$filesuffix$/) {
+		push (@listfiles, $file);
+	}
+}
+
+close(DIRECTORY);
+
+chdir($filedir);
+
+@listfiles = sort(@listfiles);
+
+foreach $elem (@listfiles){
+
+	$count++;
+
+	while (length $count < 3){
+		$count = "0"."$count";
+	}
+
+	$newfile = "$fileprefix" . "$count" . $filesuffix;
+	
+	
+	if($outcommand eq "display"){
+		print "$elem  $newfile\n";
+	}elsif($outcommand eq "rename"){
+		if (-e $newfile){
+			warn "can't rename file to $newfile : $newfile exists\n";
+		} elsif (rename $elem, $newfile){
+			# success, do nothing
+		} else {
+			warn "rename $ elem to $newfile failed: $!\n";
+		}
+	}else{
+		print "improper instructions\n";
+	}
+	
+}
+
+print "\ncount is " . ($#listfiles+1) ." \n";
+
+print "task complete\n";

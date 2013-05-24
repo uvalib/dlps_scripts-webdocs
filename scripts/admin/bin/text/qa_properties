@@ -1,0 +1,203 @@
+#!/usr/bin/perl -w
+
+# qa_properties - performs QA checks on <?dlps ...?> "properties" in
+#   DLPS TEI XML documents
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2003-08-19
+# Last modified: 2006-04-14
+
+# 2004-03-16: gpm2a: Added test for page-images="color" and
+# figure-images="yes" as a warning, because normally this should not
+# occur.
+#
+# 2004-04-13: gpm2a: Added test: <?dlps id="..."?> must equal
+# <idno type="DLPS ID">...</idno> in TEI header.
+#
+# 2004-12-21: gpm2a: Added warning if filename of input file does not
+# start with <?dlps id="..."?> value.
+#
+# 2005-01-12: gpm2a: Added -E (errors only) option.
+#
+# 2005-08-01: gpm2a: Use standard output for QA error/warning/info
+# messages (since these are normal script output). Only use standard
+# error for fatal script errors.
+#
+# 2005-09-20: gpm2a: Changed a mismatch of <?dlps id="..."?> and start
+# of filename from a warning to an error.
+#
+# 2005-12-01: gpm2a: Removed warning message that was being issued if
+# the intput file lacked <idno type="DLPS ID"> in the TEI header. This
+# warning was unnecessary, and was annoying for migration texts that
+# don't have a DLPS ID in the header yet. If the header has a DLPS ID,
+# it will still be checked against the <?dlps id="..."?> value. If
+# not, just move on, and proceed with checking the <?dlps id="..."?>
+# property against the start of the filename.
+#
+# 2006-04-14: gpm2a: Added comparison of property values against
+# corresponding values in DLPS tracking system.
+
+
+use strict;
+use Getopt::Std;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use TrackSys;
+
+my ($me, $usage, %opts);
+my ($infile, @infile, %properties, $msg, $id, $filename);
+my ($dlpsId, $sql, $sthref, $sth, @row, $rows);
+my ($pageImagesType, $hasFigureImages, $transcriptionType);
+my ($pageImagesTypeTest, $hasFigureImagesTest, $transcriptionTypeTest);
+
+$me = 'qa_properties';
+$usage = <<EOD;
+
+$me - performs QA checks on <?dlps ...?> "properties" in DLPS TEI XML documents
+
+Usage: $me [-E -v] filenames
+    -E (errors only) Only display error messages (suppress warnings)
+    -v (verbose)     Display property values (in addition to any error/warning messages)
+
+In: DLPS TEI XML file(s)
+Out: Prints messages to standard output
+
+EOD
+
+getopts('Ev', \%opts) || die $usage;
+die $usage if (! @ARGV);
+
+TrackSys::connect();
+
+foreach $infile (@ARGV) {
+    # get properties from <?dlps ...?> processing instructions
+    %properties = DlpsText::getProperties($infile);
+
+    # validate properties
+    if ( not DlpsText::validateProperties(\%properties, \$msg) ) {
+	print "$infile: ERROR: $msg\n";
+    }
+
+    if ( $properties{'page-images'} eq 'color' and $properties{'figure-images'} eq 'yes' ) {
+	print "$infile: ERROR: When page images are color, 'figure-images' property should *not* be set to 'yes'.\n";
+    }
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # test that <?dlps id="..."?> is same as <idno type="DLPS ID">...</idno> in TEI header
+    foreach (@infile) {
+	if ( m:<idno\s[^>]*?type=("|')DLPS ID\1[^>]*?>([^<]+?)</idno>: ) {
+	    $id = $2;
+	    if ( not $id eq $properties{id} ) {
+		print qq/$infile: ERROR: ID '$properties{id}' does not equal <idno type="DLPS ID"> value '$id'.\n/;
+	    }
+	    last;
+	}
+
+	if ( m:</teiHeader>: ) {
+	    # <idno type="DLPS ID"> not found; no need to issue a
+	    # warning for this; lack of DLPS ID in TEI header will be
+	    # caught as an error by the TEI header QA program;
+	    # besides, we check <?dlps id="..."?> value against start
+	    # of filename below
+	    last;
+	}
+    }
+
+    # test that <?dlps id="..."?> is same as start of filename of input file
+    if ($properties{id}) {
+	$filename = $infile;
+	if ($filename =~ /^.*\/(.*)$/) {
+	    $filename = $1;
+	}
+	if ( not $filename =~ /^$properties{id}/ ) {
+	    print qq/$infile: ERROR: Filename '$filename' does not begin with declared DLPS ID '$properties{id}'\n/;
+	}
+    }
+
+    # get DLPS ID
+    $dlpsId = DlpsText::getDlpsId(\%properties, \@infile, $infile);
+
+    # get values from tracking system database
+    $sql = "SELECT dlpsId, pageImagesType, hasFigureImages, transcriptionType";
+    $sql .= " FROM textItems WHERE dlpsId ='$dlpsId'";
+    $sthref = TrackSys::query($sql);
+    $sth = $$sthref;
+    @row = $sth->fetchrow_array();
+    $sth->finish;
+
+    # compare properties against tracking system values
+    if ( scalar(@row) ) {
+	$dlpsId = $row[0];
+	$pageImagesType = $row[1];
+	$hasFigureImages = $row[2];
+	$transcriptionType = $row[3];
+
+	# test DLPS ID
+	if ($properties{id} ne $dlpsId) {
+	    print "$infile: ERROR: Property 'id' value '$properties{id}' does not match tracking system value '$dlpsId'\n";
+	}
+
+	# test page images type
+	if ($pageImagesType == TrackSys::PAGE_IMAGES_TYPE_NONE) {
+	    $pageImagesTypeTest = 'none';
+	} elsif ($pageImagesType == TrackSys::PAGE_IMAGES_TYPE_BITONAL) {
+	    $pageImagesTypeTest = 'bitonal';
+	} elsif ($pageImagesType == TrackSys::PAGE_IMAGES_TYPE_COLOR) {
+	    $pageImagesTypeTest = 'color';
+	} else {
+	    $pageImagesTypeTest = '[unknown]';
+	}
+
+	if ($properties{'page-images'} ne $pageImagesTypeTest) {
+	    print "$infile: ERROR: Property 'page-images' value '" . $properties{'page-images'} . "'"
+		. " does not match tracking system value '$pageImagesType' ($pageImagesTypeTest)\n";
+	}
+
+	# test "has figure images"
+	if ($hasFigureImages == 0) {
+	    $hasFigureImagesTest = 'no';
+	} else {
+	    $hasFigureImagesTest = 'yes';
+	}
+
+	if ($properties{'figure-images'} ne $hasFigureImagesTest) {
+	    print "$infile: ERROR: Property 'figure-images' value '" . $properties{'figure-images'} . "'"
+		. " does not match tracking system value '$hasFigureImages' ($hasFigureImagesTest)\n";
+	}
+
+	# test transcription type
+	if ($transcriptionType == TrackSys::TRANSCRIPTION_TYPE_NONE) {
+	    $transcriptionTypeTest = 'none';
+	} elsif ($transcriptionType == TrackSys::TRANSCRIPTION_TYPE_VENDOR) {
+	    $transcriptionTypeTest = 'vendor';
+	} elsif ($transcriptionType == TrackSys::TRANSCRIPTION_TYPE_OCR) {
+	    $transcriptionTypeTest = 'ocr';
+	} elsif ($transcriptionType == TrackSys::TRANSCRIPTION_TYPE_OTHER) {
+	    $transcriptionTypeTest = 'other';
+	} else {
+	    $transcriptionTypeTest = '[unknown]';
+	}
+
+	if ($properties{'transcription'} ne $transcriptionTypeTest) {
+	    print "$infile: ERROR: Property 'transcription' value '" . $properties{'transcription'} . "'"
+		. " does not match tracking system value '$transcriptionType' ($transcriptionTypeTest)\n";
+	}
+
+    } else {
+	warn "$me: $infile: WARNING: Cannot verify properties against DLPS"
+	    . " tracking system: DLPS ID '$dlpsId' not found in database\n" unless $opts{E};
+    }
+
+    # in verbose mode, print properties
+    if ($opts{v}) {
+	print "$me: $infile:\n";
+	print DlpsText::formatPropertyValues(\%properties, 8);
+	print "\n";
+    }
+}
+
+TrackSys::disconnect();

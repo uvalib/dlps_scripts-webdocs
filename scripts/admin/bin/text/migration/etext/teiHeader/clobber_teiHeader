@@ -1,0 +1,155 @@
+#!/usr/bin/perl -w
+
+# clobber_teiHeader - completely replaces <teiHeader> element in input
+# file with <teiHeader> from a corresponding header file
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2008-01-16
+# Last modified: 2008-01-16
+
+
+use strict;
+use Getopt::Std;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+
+my ($me, $usage, %opts, $infile, @infile, $dir, $filename, $newfile, @newfile);
+my ($base, $id, $new_header, $in_header);
+
+$me = 'clobber_teiHeader';
+$usage = <<EOD;
+
+$me - completely replaces <teiHeader> element in input
+  file with <teiHeader> from a corresponding header file
+
+Usage: $me [-d directory-name] [-q] input-filenames
+  -d (directory) Directory in which to look for corresponding header
+                 files; defaults to current directory
+  -q (quiet)     Suppress info/status messages sent to standard output
+
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+Notes:
+  * The filename of each corresponding header file must begin with the
+    same base filename as the input file
+  * Script performs two tasks:
+      - Replace <teiHeader> with <teiHeader> from corresponding header
+        file
+      - Add 'id' attribute to <TEI.2> start tag, taken from
+        <TEI.2 id="..."> in corresponding header file; this is the
+        only change affecting anything outside the <teiHeader>
+        element
+
+EOD
+
+getopts('d:q', \%opts) || die $usage;
+die $usage if (! @ARGV);
+
+if ( $opts{d} ) {
+    unless (-d $opts{d}) { die "'$opts{d}' is not a directory\n"; }
+}
+
+foreach $infile (@ARGV) {
+    $newfile = '';
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # get base filename
+    unless ($infile =~ /\.xml$/) {
+	die "$me: ERROR: Input file '$infile' does not end with .xml filename extension\n";
+    }
+    $base = $infile;
+    $base =~ s/\.xml$//;
+
+    # determine filename of file containing new header
+    if ( $opts{d} ) {
+	$dir = DlpsText::normalize_path($opts{d});  # add final / if needed
+    } else {
+	$dir = '.'
+    }
+    opendir(DIR, $dir) || die "$me: ERROR: Cannot access directory '$dir': $!\n";
+    while ( defined($filename = readdir(DIR)) ) {
+	if ( $filename =~ /^$base/ and $filename ne $infile ) {
+	    if ( $opts{d} ) {
+		$newfile = $dir . $filename;
+	    } else {
+		$newfile = $filename;
+	    }
+	}
+    }
+    closedir DIR;
+
+    if (not $newfile) {
+	# no new-header file found
+	# don't die, just warn; user may want to take a stab at it, see what does/doesn't have new headers
+	warn "$me: WARNING: No changes made to file '$infile': No corresponding header file in directory '$dir'\n";
+	next;
+    }
+
+    # read new <teiHeader> file
+    open(NEW, $newfile) || die "$me: ERROR: Cannot read '$newfile': $!\n";
+    @newfile = <NEW>;
+    close NEW;
+
+    # read new <teiHeader> into a string
+    $id = '';  $new_header = '';  $in_header = 0;
+    foreach (@newfile) {
+	# get value of 'id' attribute on <TEI.2> or <TEI>
+	if ( /<TEI[^>]* id=["'](\w+)["']/ ) {
+	    $id = $1;
+	}
+
+	if ( /<teiHeader/ ) {
+	    $in_header = 1;
+	    $new_header .= $& . $';     # get the match + whatever follows
+	} elsif ( /<\/teiHeader>/ ) {
+	    $new_header .= $` . $&;     # get whatever precedes + the match
+	    $in_header = 0;
+	    last;
+	} elsif ($in_header) {
+	    $new_header .= $_;
+	} else {
+	    next;
+	}
+    }
+
+    # make backup
+    open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+    foreach (@infile) {
+	print BAK;
+    }
+    close BAK;
+
+    # make changes, overwriting input file
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    print "$me: Replacing TEI header: $infile <-- $newfile\n" unless $opts{q};
+    $in_header = 0;
+    foreach (@infile) {
+	if ( /<TEI/ and $id ) {
+	    if ( /<TEI[^>]* id=["']$id["']/ ) {
+		# input file already has same 'id' value
+	    } else {
+		# add 'id' attribute
+		s/<TEI(\.2)?/<TEI$1 id="$id"/;
+	    }
+	}
+
+	if ( /<teiHeader/ ) {
+	    $in_header = 1;
+	    print OUT $`;              # write out whatever precedes start of old header
+	    print OUT $new_header;     # write out new header
+	} elsif ( /<\/teiHeader>/ ) {
+	    print OUT $';              # write out whatever follows end of old header
+	    $in_header = 0;
+	} elsif ($in_header) {
+	    next;                      # skip old header entirely
+	} else {
+	    print OUT;
+	}
+    }
+    close OUT;
+}

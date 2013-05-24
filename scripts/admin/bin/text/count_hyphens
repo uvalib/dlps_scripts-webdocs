@@ -1,0 +1,36 @@
+#!/usr/bin/perl -w
+
+# count_hyphens - uses pgrep to count the number of end-of-line hyphens in a file
+
+# Usage: count_hyphens filenames
+# In: TEI XML file(s)
+# Out: Prints to standard output
+
+# Greg Murray <murray@virginia.edu>
+# Written: 2002-10-11
+
+$0 = "count_hyphens";
+$usage = "\n$0 - uses pgrep to count the number of end-of-line hyphens in a file\n";
+$usage .= "Usage: $0 filenames\n";
+$usage .= "In: TEI XML file(s)\n";
+$usage .= "Out: Prints to standard output\n\n";
+
+die $usage if (! @ARGV);
+
+foreach (@ARGV) {
+    die $usage if /^-/;   # this script has no switches
+}
+foreach (@ARGV) {
+    die "$0: '$_' is not a readable file.\n" if (! -f $_ || ! -r $_);   # each argument must be a readable file
+}
+
+$regex = '/-\s*(<lb\/>)?\s*$/';
+
+#$args = join(' ', @ARGV);
+#system("pgrep -c '$regex' $args");
+
+foreach $filename (@ARGV) {
+    $retval = `pgrep -c '$regex' $filename`;
+    chomp $retval;
+    print "$0: $filename: $retval\n";
+}

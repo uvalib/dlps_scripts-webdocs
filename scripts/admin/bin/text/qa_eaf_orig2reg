@@ -1,0 +1,52 @@
+#!/usr/bin/perl -w
+
+# qa_eaf_orig2reg - compare reg value to orig value in <reg orig="...">...</reg> markup
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2006-02-07
+# Last modified: 2006-02-07
+
+use strict;
+
+my ($infile, @infile, $c, $orig, $reg);
+
+my $me = 'qa_eaf_orig2reg';
+my $usage = <<EOD;
+
+$me - compare reg value to orig value in <reg orig="...">...</reg> markup
+
+Usage: $me filenames
+In: TEI XML file(s)
+Out: Prints warnings, if any, to standard error
+
+EOD
+
+die $usage if (! @ARGV);
+
+foreach $infile (@ARGV) {
+    $c = 0;
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    foreach (@infile) {
+	$c++;
+#	if ( m:<reg [^>]*?orig=("|')([^\1]+?)\1[^>]*?>(.+?)</reg>: ) {
+#	if ( m:<reg orig="([^"]+?)">([^<]+?)</reg> ?<lb: ) {
+	if ( m:<reg orig="([^"]+?)">([^<]+?)</reg>: ) {
+	    $orig = $1;
+	    $reg = $2;
+	    $orig =~ s/\|//;         # remove |
+	    $orig =~ s/-//g;         # remove -
+	    $orig =~ s/&longs;/s/g;  # convert &longs; to s
+	    $reg =~ s/-//g;          # remove -
+	    $reg =~ s/&longs;/s/g;   # convert &longs; to s
+	    if ($orig ne $reg) {
+		warn "$me: $infile: $c: $orig != $reg\n";
+		print $_ . "\n";  # DEBUG
+	    }
+	}
+    }
+}

@@ -1,0 +1,75 @@
+#!/usr/bin/perl -w
+
+# blank_lines - removes blank lines within <text>
+
+# Greg Murray <murray@virginia.edu>
+# 2003-03-17
+
+
+use strict;
+
+my ($usage, $infile, $c, @infile, $in_text, $go, $plural);
+
+$0 = "blank_lines";
+$usage = <<EOD;
+
+$0 - removes blank lines within <text>
+Usage: $0 filenames
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+EOD
+
+die $usage if (! @ARGV);
+foreach (@ARGV) {
+    die $usage if /^-/;   # this script has no switches
+}
+
+foreach $infile (@ARGV) {
+    $c = 0;
+
+    # read file into array
+    open(IN, $infile) || die "$0: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # determine whether any changes are needed
+    $in_text = 0; $go = 0;
+    foreach (@infile) {
+	if ( /<text(>|\s[^>]*>)/ ) {
+	    $in_text = 1;
+	}
+	if ( $in_text and /^\s*$/ ) {
+	    $go = 1;
+	    last;
+	}
+    }
+
+    if ($go) {
+	# copy input file to .bak backup
+	open(BAK, ">${infile}.bak") || die "$0: ERROR: Cannot write '${infile}.bak': $!\n";
+	foreach (@infile) {
+	    print BAK;
+	}
+	close BAK;
+
+	# overwrite original input file
+	open(OUT, ">$infile") || die "$0: ERROR: Cannot write '$infile': $!\n";
+	$in_text = 0; $go = 0;
+	foreach (@infile) {
+	    if ( /<text(>|\s[^>]*>)/ ) {
+		$in_text = 1;
+	    }
+	    if ( $in_text and /^\s*$/ ) {
+		# skip
+		$c++;
+	    } else {
+		print OUT;
+	    }
+	}
+	close OUT;
+    }
+
+    if ($c == 1) { $plural = ''; } else { $plural = 's'; }
+    print "$0: $infile: Removed $c blank line$plural\n";
+}

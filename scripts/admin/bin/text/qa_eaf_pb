@@ -1,0 +1,81 @@
+#!/usr/bin/perl -w
+
+# qa_eaf_pb - check page breaks in EAF files
+#   * check for <pb/> elements that are immediately followed by
+#     another <pb/>, indicating missing text content
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2005-11-18
+# Last modified: 2005-11-18
+
+
+use strict;
+
+my ($infile, @infile, $c, $prevLine, $prevN, $in_q);
+
+my $me = 'qa_eaf_pb';
+my $usage = <<EOD;
+
+$me - check page breaks in EAF files
+  * check for <pb/> elements that are immediately followed by
+    another <pb/>, indicating missing text content
+
+Usage: $me filenames
+In: TEI XML file(s)
+Out: Prints messages to standard output
+
+EOD
+
+die $usage if (! @ARGV);
+
+foreach $infile (@ARGV) {
+    $prevLine = ''; $prevN = ''; $c = 0; $in_q = 0;
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    foreach (@infile) {
+	$c++;
+	if ( /<q>/ ) {
+	    $in_q = 1;
+	}
+	if ( m:</q>: ) {
+	    $in_q = 0;
+	}
+
+	if ( /<pb/ ) {
+	    if ( $prevLine eq 'pb' ) {
+		if ( not $prevN =~ /(Spine|Cover|Edge|Blank|Book-?plate|End-?paper|Signature)/ ) {
+		    print "$me: $infile: $c: WARNING: Consecutive page breaks, which might indicate missing text content\n";
+		}
+	    }
+	} elsif ( /^\s*$/ ) {
+	    # blank line; do nothing
+	} elsif ( /<q>/ ) {
+
+	} else {
+	    if ( $prevLine eq 'div1' ) {
+		if ( not $in_q ) {
+#		    print "$me: $infile: $c: WARNING: <div1> does not begin with a page break\n";
+		}
+	    }
+	}
+
+	if ( /<pb/ ) {
+	    $prevLine = 'pb';
+	    if ( /<pb[^>]*? n=("|')([^\1]+?)\1/ ) {
+		$prevN = $2;
+	    } else {
+		$prevN = '';
+	    }
+	} elsif ( /<(div1|titlePage)/ ) {
+	    $prevLine = 'div1';
+	} elsif ( /^\s*$/ ) {
+	    # blank line; do nothing
+	} else {
+	    $prevLine = '';
+	}
+    }
+}

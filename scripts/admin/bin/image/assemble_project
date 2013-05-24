@@ -1,0 +1,1157 @@
+#!/usr/bin/perl -w
+
+# assemble_project - wraps up an image project by creating image
+#   derivatives, and the directory structure to hold them, in a
+#   predefined output directory on pogo.lib
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2006-02-16
+# Last modified: 2007-06-28
+
+# See usage summary below for a list of steps this script performs.
+
+# Note: Error messages are printed to standard error and
+# logged. Messages with "ERROR: " indicate a fatal error for that
+# particular project ID, but because this is a batch script, the
+# script doesn't actually die unless there's a global problem.
+
+# Undocumented -L switch disables logging.
+# Undocumented -T switch disables logging, uses test input/output
+#   directories, and disables email notification.
+# Undocumented -M switch disables raw-metadata-file creation for
+#   images.
+
+# 2006-04-20: gpm2a: Renamed from 'imageprojects2repo' to
+# 'assemble_project' and rewrote to create derivates in specified
+# directory on pogo.lib rather than in ReadyRepo. Added logic to
+# rename source files from uva-lib_... to uva-lib:... (change
+# underscore to colon) if needed.
+#
+# 2006-08-04: gpm2a: Changed paths to source directory and output
+# directory.
+#
+# 2006-08-08: gpm2a: Changed default behavior: instead of processing
+# all directories in the source directory, the script now requires (by
+# default) the user to specify which directories (project names) to
+# process. Added -a (all) option for processing all directories. Also
+# made a bug fix: changed getFilenames() sub so that it skips
+# filenames beginning with dot.
+#
+# 2006-09-22: gpm2a: Added "-density 72x72" to the system calls that
+# use the ImageMagick 'convert' command.
+#
+# 2007-01-24: gpm2a: Added -h (high) and -l (low) options for
+# specifying content model as uvaHighRes (previously the default and
+# only option) or uvaLowRes (only outputs 'screen' and 'preview'
+# derivatives; no 'max' output). Added -t (TIFF) and -j (JPEG) options
+# for specifying TIFF (previously the default and only option) or JPEG
+# files as input. Added undocumented -T (test) option, which disables
+# logging (same as -L) but also uses test input and output directories
+# and disables email notification.
+#
+# 2007-06-28: gpm2a: Changed getFilenames() sub: If a filename has the
+# expected suffix, but not in lower case (e.g. ".TIF" instead of
+# ".tif" as expected), rename the file to have the lowercase
+# suffix. Log the renaming (to the log file only, without logging it
+# to standard output). Similarly log the renaming of "uva-lib_" to
+# "uva-lib:" if applicable (which was previously not being logged).
+
+
+#======================================================================
+# main logic
+#======================================================================
+
+use strict;
+use Getopt::Std;
+use File::Copy;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+
+my ($me, $usage, %opts, $msg, $log);
+my (@inputDirs, $dir, $id, $projectDir, %sourceFiles, $sourceDir, %badIds, %goodIds);
+my ($contentModel, $suffix, $inputFormat);
+my ($temp, $key, $maxDir, $screenDir, $previewDir, $metadataDir);
+my ($filename, $source, $dest);
+
+my $processedCount = 0;
+my $goodCount = 0;
+my $badCount = 0;
+
+
+#----------------------------------------------------------------------
+# set constants
+#----------------------------------------------------------------------
+
+my $EMAIL_TO = 'ul-dlpsscripts@virginia.edu,lsc6v@virginia.edu, pdr4h@virginia.edu';
+
+my $LOG_DIR = '/shares/admin/bin/image/logs/assemble_project';
+
+my $SOURCE_DIR = '/shares/image2/02_processed/50_prep4ReadyRepo';
+
+my $OUTPUT_DIR = '/shares/image2/02_processed/60_copy2ReadyRepo';
+
+my $FINAL_DIR = '/shares/image2/02_processed/70_burn';
+
+my $CONVERT    = 'convert';  # path to ImageMagick binaries has been added to system-wide profile
+my $IDENTIFY   = 'identify';
+my $SID_ENCODE = '/usr/local/GeoExpress/bin/mrsidgeoencoder';
+
+
+#----------------------------------------------------------------------
+# set usage summary
+#----------------------------------------------------------------------
+
+$me = 'assemble_project';
+
+my $usageOptions = <<EOD;
+
+Usage: $me [-j | -t] [-h | -l] [-F | -R] (-a | dirnames)
+  dirnames    Names of directories to process; required unless using -a
+
+Input format options:
+  -j (JPEG)   Input files are JPEG format and are named with .jpg
+  -t (TIFF)   Input files are TIFF format and are named with .tif
+Output content-model options:
+  -h (high)   Use uvaHighRes content model
+  -l (low)    Use uvaLowRes content model (excludes 'max' derivatives)
+Processing options:
+  -a (all)    Process all directories in the source directory
+              ($SOURCE_DIR)
+  -F (force)  Overwrite output files if they already exist. (By
+              default, if an output file already exists, script will
+              issue a message but will skip to next project, without
+              overwriting any existing file.)
+  -R (resume) If an output file already exists, continue processing
+              without overwriting the existing file. This has the
+              effect of resuming processing of a project previously
+              started. (By default, if an output file already exists,
+              script will issue a message but will skip to next
+              project, without overwriting any existing file.)
+EOD
+
+# task list is used in usage summary and email notifications
+my $tasklist = <<EOD;
+  * Renames image files from uva-lib_ to uva-lib: if needed
+  * Creates derivatives under $OUTPUT_DIR
+      - max derivatives (MrSID) (-h option only)
+      - screen derivatives (JPEG, 800 x 600)
+      - preview derivatives (JPEG, 120 x 120)
+      - raw metadata text files (output of "identify -verbose")
+  * If process succeeds, moves project directory of image files to
+    $FINAL_DIR and sends email notification
+    to: $EMAIL_TO
+  * Logs all actions in a log file in
+    $LOG_DIR
+EOD
+
+$usage = <<EOD;
+
+$me - wraps up an image project by creating image
+  derivatives, and the directory structure to hold them, in a
+  predefined output directory on pogo.lib
+$usageOptions
+In: Names of directories (in the source directory
+  $SOURCE_DIR) to process. Each
+  directory must be named with the project name to be used in the
+  output directory ($OUTPUT_DIR)
+  and must contain the image files to process.
+Out: Performs several tasks:
+$tasklist
+EOD
+
+
+#----------------------------------------------------------------------
+# test arguments
+#----------------------------------------------------------------------
+
+getopts('ahjltFLMRT', \%opts) || die $usage;
+
+if ($opts{'a'}) {
+    die "$me: Either specify directories or use -a (all) option -- not both.\n$usageOptions\n" if (@ARGV);
+} else {
+    die $usage if (! @ARGV);
+}
+if ($opts{'h'} and $opts{'l'}) { die "$me: -h and -l options are mutually exclusive.\n$usageOptions\n"; }
+if ($opts{'j'} and $opts{'t'}) { die "$me: -j and -t options are mutually exclusive.\n$usageOptions\n"; }
+if ($opts{'F'} and $opts{'R'}) { die "$me: -F and -R options are mutually exclusive.\n$usageOptions\n"; }
+
+if ($opts{'h'}) {
+    $contentModel = 'uvaHighRes';
+} elsif ($opts{'l'}) {
+    $contentModel = 'uvaLowRes';
+} else {
+    die "$me: Either -h or -l is required.\n$usageOptions\n";
+}
+
+if ($opts{'t'}) {
+    $suffix = 'tif';
+    $inputFormat = 'TIFF';
+} elsif ($opts{'j'}) {
+    $suffix = 'jpg';
+    $inputFormat = 'JPEG';
+} else {
+    die "$me: Either -j or -t is required.\n$usageOptions\n";
+}
+
+if ($opts{'L'}) {
+    warn "$me: WARNING: ********** NO LOG FILE WILL BE CREATED **********\n";
+}
+
+if ($opts{'M'}) {
+    warn "$me: WARNING: ********** NO RAW METADATA FILES WILL BE CREATED **********\n";
+}
+
+if ($opts{'T'}) {
+    warn "$me: WARNING: ********** TEST MODE **********\n";
+    $opts{'L'} = 1;
+    $SOURCE_DIR = '/home/gpm2a/temp/test/assemble_project/source';
+    $OUTPUT_DIR = '/home/gpm2a/temp/test/assemble_project/output';
+    $FINAL_DIR  = '/home/gpm2a/temp/test/assemble_project/final';
+}
+
+
+#----------------------------------------------------------------------
+# verify global (not ID-specific) directories and executables
+#----------------------------------------------------------------------
+
+if ( not -d $LOG_DIR ) { die "$me: ERROR: '$LOG_DIR' is not a directory.\n"; }
+if ( not -w $LOG_DIR ) { die "$me: ERROR: Need write permissions on '$LOG_DIR'.\n"; }
+
+if ( not -d $SOURCE_DIR ) { die "$me: ERROR: '$SOURCE_DIR' is not a directory\n"; }
+if ( not -r $SOURCE_DIR ) { die "$me: ERROR: Need read permissions on '$SOURCE_DIR'\n"; }
+
+if ( not -d $OUTPUT_DIR ) { die "$me: ERROR: '$OUTPUT_DIR' is not a directory.\n"; }
+if ( not -w $OUTPUT_DIR ) { die "$me: ERROR: Need write permissions on '$OUTPUT_DIR'.\n"; }
+
+if ( not -d $FINAL_DIR ) { die "$me: ERROR: '$FINAL_DIR' is not a directory.\n"; }
+if ( not -w $FINAL_DIR ) { die "$me: ERROR: Need write permissions on '$FINAL_DIR'.\n"; }
+
+if ( not -e $SID_ENCODE ) { die "$me: ERROR: Command (executable file) '$SID_ENCODE' does not exist.\n"; }
+if ( not -x $SID_ENCODE ) { die "$me: ERROR: File '$SID_ENCODE' is not executable.\n"; }
+
+#if ( not -e $CONVERT )    { die "$me: ERROR: Command (executable file) '$CONVERT' does not exist.\n"; }
+#if ( not -x $CONVERT )    { die "$me: ERROR: File '$CONVERT' is not executable.\n"; }
+
+#if ( not -e $IDENTIFY )   { die "$me: ERROR: Command (executable file) '$IDENTIFY' does not exist.\n"; }
+#if ( not -x $IDENTIFY )   { die "$me: ERROR: File '$IDENTIFY' is not executable.\n"; }
+
+# make sure ImageMagick commands are in user's PATH; they should be,
+# since path to ImageMagick binaries has been added to system-wide profile
+if ( system("which convert >& /dev/null") != 0 ) { die "$me: ERROR: System cannot find 'convert' command.\n"; }
+if ( system("which identify >& /dev/null") != 0 ) { die "$me: ERROR: System cannot find 'identify' command.\n"; }
+
+
+#----------------------------------------------------------------------
+# open log file
+#----------------------------------------------------------------------
+
+unless ($opts{'L'}) {
+    # get log file name
+    $log = DlpsText::normalize_path($LOG_DIR) . DlpsText::getLogFileName($me . '_');
+
+    # open log file for appending
+    open(LOG, ">>$log") || die "Cannot write to log file '$log': $!\n";
+}
+
+
+#----------------------------------------------------------------------
+# read source directory for project directories to process
+#----------------------------------------------------------------------
+
+$SOURCE_DIR = DlpsText::normalize_path($SOURCE_DIR);
+$OUTPUT_DIR = DlpsText::normalize_path($OUTPUT_DIR);
+$FINAL_DIR = DlpsText::normalize_path($FINAL_DIR);
+
+if ($opts{'a'}) {
+    # process all directories in source directory
+    if ( opendir(DIR, $SOURCE_DIR) ) {
+	while( $filename = readdir(DIR) ) {
+	    next if ($filename =~ /^\./);
+	    if (-d "$SOURCE_DIR$filename") {
+		push @inputDirs, $filename;
+	    }
+	}
+	close DIR;
+    } else {
+	printError("Could not read directory '$SOURCE_DIR'");
+    }
+} else {
+    foreach $filename (@ARGV) {
+	$filename =~ s:/$::;  # remove final slash, if any
+	if (-d "$SOURCE_DIR$filename") {
+	    push @inputDirs, $filename;
+	} else {
+	    printWarning("'$SOURCE_DIR$filename' is not a directory; cannot process argument '$filename'");
+	}
+    }
+}
+
+if (@inputDirs) {
+    printInfo("\n$me: INITIAL STATUS: Script started at " . DlpsText::getDateTime() . ".\n");
+    printInfo("\tSource directory: $SOURCE_DIR\n");
+    printInfo("\tSource file format: $inputFormat\n");
+    printInfo("\tSource filename suffix: .$suffix\n");
+    printInfo("\tOutput directory: $OUTPUT_DIR\n");
+    printInfo("\tOutput content model: $contentModel\n");
+    printInfo("\tUpon successful completion, source files will be moved to: $FINAL_DIR\n");
+} else {
+    print "$me: No project directories found in $SOURCE_DIR\n";
+}
+
+
+#----------------------------------------------------------------------
+# process each project directory
+#----------------------------------------------------------------------
+
+foreach $projectDir (sort(@inputDirs)) {
+    $id = $projectDir;
+    $processedCount++;
+    %sourceFiles = ();
+    printInfo("\n$me: $id: Processing of ID '$id' started at " . DlpsText::getDateTime() . ".\n");
+
+    #---------------------------------------
+    # verify existence of source image files
+    #---------------------------------------
+
+    $dir = $SOURCE_DIR . $id . '/';
+    $sourceDir = $dir;
+    if ( not testDir($dir, 'read') ) { printError($msg); next; }
+    if ( not getFilenames($dir, \%sourceFiles, $suffix) ) { printError($msg); next; }
+    if ( not scalar(keys(%sourceFiles)) ) {
+	$msg = "Directory '$dir' does not contain any .$suffix files.";
+	printError($msg);
+	next;
+    }
+
+    #-----------------------------
+    # verify or create directories
+    #-----------------------------
+
+    # verify or create destination project directory
+    $dir = $OUTPUT_DIR . $id . '/';
+    if ( not ensureDir($dir) ) { printError($msg); next; }
+    if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+    # verify or create 'image' directory
+    $dir .= 'image/';
+    if ( not ensureDir($dir) ) { printError($msg); next; }
+    if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+    # verify or create destination content-model directory
+    $dir .= $contentModel . '/';
+    $temp = $dir;
+    if ( not ensureDir($dir) ) { printError($msg); next; }
+    if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+    # verify or create destination 'max' output directory
+    unless ($opts{'l'}) {
+	$dir = $temp . 'max/';
+	$maxDir = $dir;
+	if ( not ensureDir($dir) ) { printError($msg); next; }
+	if ( not testDir($dir, 'write') ) { printError($msg); next; }
+    }
+
+    # verify or create destination 'screen' output directory
+    $dir = $temp . 'screen/';
+    $screenDir = $dir;
+    if ( not ensureDir($dir) ) { printError($msg); next; }
+    if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+    # verify or create destination 'preview' output directory
+    $dir = $temp . 'preview/';
+    $previewDir = $dir;
+    if ( not ensureDir($dir) ) { printError($msg); next; }
+    if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+    # verify or create destination 'metadata' directory
+    $dir = $temp . 'metadata/';
+    if ( not ensureDir($dir) ) { printError($msg); next; }
+    if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+    # verify or create destination 'raw_meta' output directory
+    $dir .= 'raw_meta/';
+    $metadataDir = $dir;
+    if ( not ensureDir($dir) ) { printError($msg); next; }
+    if ( not testDir($dir, 'write') ) { printError($msg); next; }
+
+    #----------------------------------------
+    # create output files (image derivatives)
+    #----------------------------------------
+
+    # make 'max' derivatives (MrSIDs) from source files
+    unless ($opts{'l'}) {
+	if ( not makeMaxImages($sourceDir, $maxDir) ) { printError($msg); next; }
+    }
+
+    # make 'screen' derivatives (JPEGs) from source files
+    if ( not makeScreenImages($sourceDir, $screenDir) ) { printError($msg); next; }
+
+    # make 'preview' derivatives (JPEGs) from 'screen' derivatives
+    if ( not makePreviewImages($screenDir, $previewDir) ) { printError($msg); next; }
+
+    unless ($opts{'M'}) {
+	# make raw image metadata
+	if ( not makeImageMetadata($sourceDir, $metadataDir) ) { printError($msg); next; }
+    }
+
+    #----------------------
+    # move source directory
+    #----------------------
+
+    if ( move($sourceDir, "$FINAL_DIR$id") ) {
+	chmod 0775, "$FINAL_DIR$id";
+    } else {
+	warn "$me: $id: Failed to move project directory to '$FINAL_DIR': $!\n";
+    }
+
+    #--------------------------
+    # log completion of this ID
+    #--------------------------
+
+    $msg = "$me: $id: Processing of project ID '$id' completed successfully. "
+	. "Finished at " . DlpsText::getDateTime() . ".\n";
+    printInfo($msg);
+    $goodCount++;
+    $goodIds{$id} = '';
+}
+
+
+#----------------------------------------------------------------------
+# print final status
+#----------------------------------------------------------------------
+
+if ($goodCount > 0 or $badCount > 0) {
+    $msg = "\n$me: FINAL STATUS: Script ended at " . DlpsText::getDateTime()
+	. ". Attempted to process a total of $processedCount project ID" . DlpsText::get_plural($processedCount) . ":\n";
+    $msg .= "\t$goodCount ID" . DlpsText::get_plural($goodCount) . " processed successfully";
+    if ($goodCount > 0) {
+	$msg .= ":\n";
+	foreach $key (sort(keys(%goodIds))) {
+	    $msg .= "\t    $key\n";
+	}
+    } else {
+	$msg .= ".\n";
+    }
+
+    $msg .= "\t$badCount ID" . DlpsText::get_plural($badCount) . " FAILED to process completely";
+    if ($badCount > 0) {
+	$msg .= ":\n";
+	foreach $key (sort(keys(%badIds))) {
+	    $msg .= "\t    $key\n";
+	}
+    } else {
+	$msg .= ".\n";
+    }
+
+    $msg .= "\n";
+    printInfo($msg);
+}
+
+
+#----------------------------------------------------------------------
+# close log file
+#----------------------------------------------------------------------
+
+unless ($opts{'L'}) {
+    close LOG;
+
+    if (-s $log) {
+	chmod 0664, $log;
+    } else {
+	unlink $log;
+    }
+}
+
+
+#----------------------------------------------------------------------
+# send mail
+#----------------------------------------------------------------------
+
+if ($goodCount > 0) {
+    sendMail() unless ($opts{'T'});
+}
+
+
+#======================================================================
+# subroutines
+#======================================================================
+
+sub compareFilenames {
+
+    # compareFilenames - compares two hashes of base filenames for
+    #   equivalency (each basename from 'source' hash must exist in
+    #   'destination' hash, and number of elements in each hash must
+    #   be equal)
+
+    # In: reference to 'source' hash, reference to 'destination' hash
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $sourceRef = shift;
+    my $destRef = shift;
+    my ($basename, $sourceCount, $destCount);
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $sourceRef) { die "$me: compareFilenames: Missing required parameter 'sourceRef'"; }
+    if (not $destRef)   { die "$me: compareFilenames: Missing required parameter 'destRef'"; }
+
+    # each base filename from source files must exist in destination files
+    foreach $basename (sort(keys(%$sourceRef))) {
+	if ( not exists($$destRef{$basename}) ) {
+	    $msg = "FAILED to process file '$$sourceRef{$basename}'.";
+	    return 0;
+	}
+    }
+
+    # number of source files and number of destination files must match exactly
+    $sourceCount = scalar(keys(%$sourceRef));
+    $destCount = scalar(keys(%$destRef));
+    if ( $sourceCount == $destCount ) {
+	printInfo("\t$sourceCount source files = $destCount destination files."
+		  . " All $sourceCount files were processed successfully.");
+    } else {
+	$msg = "$sourceCount source files does NOT equal $destCount destination files."
+	    . " FAILED to process one or more files.";
+	return 0;
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub ensureDir {
+
+    # ensureDir - if directory doesn't already exist, creates it
+
+    # In: directory name
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $dir = shift || die "$me: ensureDir: Missing required parameter 'dir'";
+
+    if ( not -d $dir ) {
+	if ( mkdir($dir) ) {
+	    chmod 0775, $dir;
+	    printInfo("\tCreated directory '$dir'\n");
+	} else {
+	    $msg = "Cannot create directory '$dir': $!";
+	    return 0;
+	}
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub getFilenames {
+
+    # getFilenames - builds hash of filenames, where key is base
+    #   filename (minus suffix) and value is actual filename
+
+    # In: Directory to read, reference to a hash, filename suffix
+    #   to look for
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $dir = shift;
+    my $hashRef = shift;
+    my $suffix = shift;
+    my ($filename, $source, $dest, $basename);
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $dir)     { die "$me: getFilenames: Missing required parameter 'dir'\n"; }
+    if (not $hashRef) { die "$me: getFilenames: Missing required parameter 'hashRef'\n"; }
+    if (not $suffix)  { die "$me: getFilenames: Missing required parameter 'suffix'\n"; }
+
+    $suffix =~ s/^\.//;   # strip off initial . if present
+
+    if ( opendir(DIR, $dir) ) {
+	while ( defined($filename = readdir(DIR)) ) {
+	    if ( $filename =~ /^[^\.].*\.$suffix$/i ) {
+		# filename ends with expected suffix (but might be uppercase or mixed case)
+		unless ($filename =~ /\.$suffix$/) {
+		    # file needs to be renamed to use lowercase suffix
+		    $source = $dir . $filename;
+		    $filename =~ s/$suffix$/$suffix/i;
+		    $dest = $dir . $filename;
+		    if ( move($source, $dest) ) {
+			logOnly("\tRenamed $source --> $dest\n");
+		    } else {
+			$msg = "Could not rename image file '$source': $!";
+			closedir DIR; return 0;
+		    }
+		}
+
+		if ($filename =~ /^uva-lib_/) {
+		    # file needs to be renamed to use "uva-lib:"
+		    $source = $dir . $filename;
+		    $filename =~ s/^uva-lib_/uva-lib:/;
+		    $dest = $dir . $filename;
+		    if ( move($source, $dest) ) {
+			logOnly("\tRenamed $source --> $dest\n");
+		    } else {
+			$msg = "Could not rename image file '$source': $!";
+			closedir DIR; return 0;
+		    }
+		}
+
+		$basename = $filename;
+		$basename =~ s/\.$suffix$//;
+		$$hashRef{$basename} = $filename;
+	    }
+	}
+	closedir DIR;
+    } else {
+	$msg = "Could not read directory '$dir'.";
+	return 0;
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub logOnly {
+    # same as printInfo() but doesn't print to standard output; only
+    # prints to log file
+
+    my $msg = shift || '';
+
+    chomp $msg;
+    $msg = $msg . "\n";
+
+    print LOG $msg unless $opts{'L'};
+}
+
+#----------------------------------------------------------------------
+
+sub makeImageMetadata {
+
+    # makeImageMetadata - generates a raw image metadata file (output
+    #   of 'identify -verbose' command) for each image file in the
+    #   source directory specified, outputting to the destination
+    #   directory specified
+
+    # In: source directory, destination directory
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $sourceDir = shift;
+    my $destDir = shift;
+    my $ok = 1;
+    my %filenames = ();
+    my ($filename, $source, $dest, $basename, $destFilename, $command, $sourceCount);
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $sourceDir) { die "makeImageMetadata: Missing required parameter 'sourceDir'\n"; }
+    if (not $destDir)   { die "makeImageMetadata: Missing required parameter 'destDir'\n"; }
+
+    $sourceCount = scalar(keys(%sourceFiles));
+
+    printInfo("\tGenerating $sourceCount metadata files (running 'identify -verbose')...\n");
+
+    foreach $filename (sort(values(%sourceFiles))) {
+	$source = $sourceDir . $filename;
+	$dest = $destDir . $filename;
+	$dest =~ s/\.$suffix$/\.txt/;
+
+	$basename = $filename;
+	$basename =~ s/\.$suffix$//;
+	$destFilename = $filename;
+	$destFilename =~ s/\.$suffix$/\.txt/;
+
+	if ( -e $dest ) {
+	    if ($opts{'F'}) {
+		# continue processing; overwrite destination file
+	    } elsif ($opts{'R'}) {
+		# add base filename to hash, for later comparison against source filenames
+		$filenames{$basename} = $destFilename;
+		# do not overwrite destination file; skip to next source file and continue processing
+		next;
+	    } else {
+		$msg = "Could NOT create file '$dest': file already exists.";
+		$ok = 0;  # indicate failure, so we will know to skip to the next input file/ID
+		last;     # don't process any more files
+	    }
+	}
+
+	# run 'identify' command; redirect output to destination file
+	# ("identify -verbose" sends output to both standard output and standard error; capture both)
+	$command = "$IDENTIFY -verbose $source > ${dest}.stdout 2> ${dest}.stderr";
+	if ( system($command) == 0 ) {
+	    system("cat ${dest}.stderr ${dest}.stdout > $dest");
+	    if ( -e $dest ) {
+		chmod 0664, $dest;
+		unlink "${dest}.stdout";
+		unlink "${dest}.stderr";
+
+		# add base filename to hash, for later comparison against source filenames
+		$filenames{$basename} = $destFilename;
+	    } else {
+		$msg = "Metadata creation FAILED for input file '$source'\n";
+		$ok = 0;
+		last;
+	    }
+	} else {
+	    $msg = "Metadata creation FAILED for input file '$source'\n";
+	    $ok = 0;
+	    last;
+	}
+    }
+
+    if ($ok) {
+	# test for exact correspondence between source files and destination files
+	if ( not compareFilenames(\%sourceFiles, \%filenames) ) {
+	    return 0;
+	}
+    } else {
+	return 0;
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub makeMaxImages {
+
+    # makeMaxImages - generates a 'max' size derivative image file for
+    #   each image file in the source directory specified, outputting
+    #   to the destination directory specified
+
+    # In: source directory, destination directory
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $sourceDir = shift;
+    my $destDir = shift;
+    my $ok;
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $sourceDir) { die "$me: makeMaxImages: Missing required parameter 'sourceDir'"; }
+    if (not $destDir)   { die "$me: makeMaxImages: Missing required parameter 'destDir'"; }
+
+    $ok = makeMrSidImages($sourceDir, $destDir);
+
+    # Note: For now, we are using MrSID for 'max' images; we may later
+    # move to JPEG 2000. If so, just write a makeJPEG2000Images sub
+    # and call it instead.
+
+    return $ok;
+}
+
+#----------------------------------------------------------------------
+
+sub makeMrSidImages {
+
+    # makeMrSidImages - generates a MrSID derivative image file for
+    #   each image file in the source directory specified, outputting
+    #   to the destination directory specified
+
+    # In: source directory, destination directory
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $sourceDir = shift;
+    my $destDir = shift;
+    my $ok = 1;
+    my %filenames = ();
+    my ($filename, $source, $dest, $basename, $destFilename, $sourceCount, $command);
+    my ($stats, @stats, $width, $height, $max, $nlev, $txt);
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $sourceDir) { die "makeMrSidImages: Missing required parameter 'sourceDir'\n"; }
+    if (not $destDir)   { die "makeMrSidImages: Missing required parameter 'destDir'\n"; }
+
+    $sourceCount = scalar(keys(%sourceFiles));
+
+    printInfo("\tGenerating $sourceCount 'max' (MrSID) files...\n");
+
+    foreach $filename (sort(values(%sourceFiles))) {
+	$source = $sourceDir . $filename;
+	$dest = $destDir . $filename;
+	$dest =~ s/\.$suffix$/\.sid/;
+
+	$basename = $filename;
+	$basename =~ s/\.$suffix$//;
+	$destFilename = $filename;
+	$destFilename =~ s/\.$suffix$/\.sid/;
+
+	if ( -e $dest ) {
+	    if ($opts{'F'}) {
+		# MrSID will not overwrite an existing file (instead
+		# it appends a sequential number to the file name,
+		# writes the renamed file to disk successfully, then
+		# returns a non-zero (meaning "I failed") return
+		# value). So existing .sid files must be deleted
+		# first.
+		unlink $dest;
+		if ( -e $dest ) {
+		    $msg = "Could NOT delete existing file '$dest'. "
+			. "Could not replace existing file as specified by -F option.";
+		    $ok = 0;
+		    last;
+		}
+	    } elsif ($opts{'R'}) {
+		# add base filename to hash, for later comparison against source filenames
+		$filenames{$basename} = $destFilename;
+		# do not overwrite destination file; skip to next source file and continue processing
+		next;
+	    } else {
+		$msg = "Could NOT create file '$dest': file already exists.";
+		$ok = 0;  # indicate failure, so we will know to skip to the next input file/ID
+		last;     # don't process any more files
+	    }
+	}
+
+	# get dimensions (height and width) of source file using ImageMagick 'identify' command
+	$command = "$IDENTIFY $source";
+	# test 'identify' command on source image file
+	if ( system("$command >/dev/null") != 0 ) {
+	    $msg = "'identify' command FAILED. Cannot perform MrSID encoding on input file '$source'.";
+	    $ok = 0;
+	    last;
+	}
+	# run 'identify' command
+	$stats = `$command`;
+	@stats = split(/ /, $stats);
+	# get width and height
+	($width, $height) = split(/x/, $stats[2]);
+
+	# determine maximum dimension
+	if (($height - $width) >= 0) {
+	    $max = $height;
+	} else {
+	    $max = $width;
+	}
+
+	# determine encoding level to use
+	if (($max > 0) && ($max <= 800)) {
+	    $nlev = 2;
+	} elsif (($max > 800) && ($max <= 1600)) {
+	    $nlev = 3;
+	} elsif (($max > 1600) && ($max <= 3200)) {
+	    $nlev = 4;
+	} elsif (($max > 3200) && ($max <= 7000)) {
+	    $nlev = 5;
+	} elsif (($max > 7000) && ($max <= 10000)) {
+	    $nlev = 6;
+	} elsif (($max > 10000) && ($max <= 15000)) {
+	    $nlev = 7;
+	} elsif (($max > 15000) && ($max <= 20000)) {
+	    $nlev = 8;
+	} elsif (($max > 20000) && ($max <= 25000)) {
+	    $nlev = 9;
+	} else {
+	    $nlev = 10;
+	}
+
+	# perform MrSID encoding
+	$command = "$SID_ENCODE -i $source -o $dest -s $nlev 1>&2";
+	if ( system($command) == 0 ) {
+	    # set permissions, including group write, on newly created file
+	    chmod 0664, $dest;
+
+	    # MrSID generates a .txt file for each .sid file; delete the .txt file
+	    $txt = $dest;
+	    $txt =~ s/\.sid$/\.txt/;
+	    unlink $txt;
+
+	    # add base filename to hash, for later comparison against source filenames
+	    $filenames{$basename} = $destFilename;
+	} else {
+	    $msg = "MrSID encoding FAILED for input file '$source'";
+	    $ok = 0;
+	    last;
+	}
+    }
+
+    if ($ok) {
+	# test for exact correspondence between source files and destination files
+	if ( not compareFilenames(\%sourceFiles, \%filenames) ) {
+	    return 0;
+	}
+    } else {
+	return 0;
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub makePreviewImages {
+
+    # makePreviewImages - generates a 'preview' size derivative image
+    #   file for each image file in the source directory specified,
+    #   outputting to the destination directory specified
+
+    # In: source directory, destination directory
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $sourceDir = shift;
+    my $destDir = shift;
+    my $ok = 1;
+    my %filenames = ();
+    my ($filename, $source, $dest, $basename, $destFilename, $sourceCount, $command);
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $sourceDir) { die "$me: makePreviewImages: Missing required parameter 'sourceDir'"; }
+    if (not $destDir)   { die "$me: makePreviewImages: Missing required parameter 'destDir'"; }
+
+    $sourceCount = scalar(keys(%sourceFiles));
+
+    printInfo("\tGenerating $sourceCount preview-size (120x120) derivative image files...\n");
+
+    foreach $filename (sort(values(%sourceFiles))) {
+	$source = $sourceDir . $filename;
+	$source =~ s/\.$suffix$/\.jpg/;  # preview files are derived from the screen JPEG derivatives
+	$dest = $destDir . $filename;
+	$dest =~ s/\.$suffix$/\.jpg/;
+
+	$basename = $filename;
+	$basename =~ s/\.$suffix$//;
+	$destFilename = $filename;
+	$destFilename =~ s/\.$suffix$/\.jpg/;
+
+	if ( -e $dest ) {
+	    if ($opts{'F'}) {
+		# continue processing; overwrite destination file
+	    } elsif ($opts{'R'}) {
+		# add base filename to hash, for later comparison against source filenames
+		$filenames{$basename} = $destFilename;
+		# do not overwrite destination file; skip to next source file and continue processing
+		next;
+	    } else {
+		$msg = "Could NOT create file '$dest': file already exists.";
+		$ok = 0;  # indicate failure, so we will know to skip to the next input file/ID
+		last;     # don't process any more files
+	    }
+	}
+
+	# make preview images
+	$command = "$CONVERT -density 72x72 -geometry 120x120 $source $dest";
+
+	if ( system($command) == 0 ) {
+	    # set permissions, including group write, on newly created file
+	    chmod 0664, $dest;
+
+	    # add base filename to hash, for later comparison against source filenames
+	    $filenames{$basename} = $destFilename;
+	} else {
+	    $msg = "FAILED to create preview image from input file '$source'.";
+	    $ok = 0;
+	    last;
+	}
+    }
+
+    if ($ok) {
+	if ( not compareFilenames(\%sourceFiles, \%filenames) ) {
+	    return 0;
+	}
+    } else {
+	return 0;
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub makeScreenImages {
+
+    # makeScreenImages - generates a 'screen' size derivative image
+    #   file for each image file in the source directory specified,
+    #   outputting to the destination directory specified
+
+    # In: source directory, destination directory
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $sourceDir = shift;
+    my $destDir = shift;
+    my $ok = 1;
+    my %filenames = ();
+    my ($filename, $source, $dest, $basename, $destFilename, $sourceCount, $command);
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $sourceDir) { die "$me: makeScreenImages: Missing required parameter 'sourceDir'"; }
+    if (not $destDir)   { die "$me: makeScreenImages: Missing required parameter 'destDir'"; }
+
+    $sourceCount = scalar(keys(%sourceFiles));
+
+    printInfo("\tGenerating $sourceCount screen-size (800x600) derivative image files...\n");
+
+    foreach $filename (sort(values(%sourceFiles))) {
+	$source = $sourceDir . $filename;
+	$dest = $destDir . $filename;
+	$dest =~ s/\.$suffix$/\.jpg/;
+
+	$basename = $filename;
+	$basename =~ s/\.$suffix$//;
+	$destFilename = $filename;
+	$destFilename =~ s/\.$suffix$/\.jpg/;
+
+	if ( -e $dest ) {
+	    if ($opts{'F'}) {
+		# continue processing; overwrite destination file
+	    } elsif ($opts{'R'}) {
+		# add base filename to hash, for later comparison against source filenames
+		$filenames{$basename} = $destFilename;
+		# do not overwrite destination file; skip to next source file and continue processing
+		next;
+	    } else {
+		$msg = "Could NOT create file '$dest': file already exists.";
+		$ok = 0;  # indicate failure, so we will know to skip to the next input file/ID
+		last;     # don't process any more files
+	    }
+	}
+
+	# make screen images
+	$command = "$CONVERT -density 72x72 -geometry 800x600 -format jpg $source $dest";
+
+	if ( system($command) == 0 ) {
+	    # set permissions, including group write, on newly created file
+	    chmod 0664, $dest;
+
+	    # add base filename to hash, for later comparison against source filenames
+	    $filenames{$basename} = $destFilename;
+	} else {
+	    $msg = "FAILED to create screen image from input file '$source'.";
+	    $ok = 0;
+	    last;
+	}
+    }
+
+    if ($ok) {
+	# test for exact correspondence between source files and destination files
+	if ( not compareFilenames(\%sourceFiles, \%filenames) ) {
+	    return 0;
+	}
+    } else {
+	return 0;
+    }
+
+    return 1;
+}
+
+#----------------------------------------------------------------------
+
+sub printError {
+    my $msg = shift || '';
+    my $msgLeader;
+    if ($id) {
+	$msgLeader = "$me: $id: ERROR: ";
+    } else {
+	$msgLeader = "$me: ERROR: ";
+    }
+
+    chomp $msg;
+    $msg = $msgLeader . $msg . "\n";
+
+    print STDERR $msg;
+    print LOG $msg unless $opts{'L'};
+
+    $badCount++;
+    $badIds{$id} = '';
+}
+
+#----------------------------------------------------------------------
+
+sub printInfo {
+    my $msg = shift || '';
+
+    chomp $msg;
+    $msg = $msg . "\n";
+
+    print $msg;
+    print LOG $msg unless $opts{'L'};
+}
+
+#----------------------------------------------------------------------
+
+sub printWarning {
+    my $msg = shift || '';
+    my $msgLeader;
+    if ($id) {
+	$msgLeader = "$me: $id: WARNING: ";
+    } else {
+	$msgLeader = "$me: WARNING: ";
+    }
+
+    chomp $msg;
+    $msg = $msgLeader . $msg . "\n";
+
+    print STDERR $msg;
+    print LOG $msg unless $opts{'L'};
+}
+
+#----------------------------------------------------------------------
+
+sub sendMail {
+
+    # Sends email notification of project IDs successfully processed
+    # (does not notify of failures; the log file contains notice of
+    # failures; the purpose of this notification is to "check off"
+    # fully completed items)
+
+    my $msg = "The '$me' script has successfully processed $goodCount image project ID"
+	. DlpsText::get_plural($goodCount) . ":\n\n";
+    foreach $key (sort(keys(%goodIds))) {
+	$msg .= "    $key\n";
+    }
+    $msg .= "\nThis script performs the following tasks:\n$tasklist";
+    $msg .= "\nThe main output directory is '$OUTPUT_DIR'.\n";
+
+    open(MAIL,"| /usr/lib/sendmail -i -t");
+    print MAIL <<EOD;
+To: $EMAIL_TO
+From: ul-dlpsscripts\@virginia.edu
+Subject: $me script
+
+$msg
+
+EOD
+close(MAIL);
+}
+
+#----------------------------------------------------------------------
+
+sub testDir {
+
+    # testDir - tests existence and permissions of a directory
+
+    # In: directory name; 'read' or 'write' indicating permissions needed
+    # Out: returns boolean integer (0 for failure, 1 for success);
+    #   uses global variable $msg to indicate error message as needed
+
+    my $dir = shift;
+    my $perm = shift || '';
+
+    # test for required parameters; die on failure since this is a programming error
+    if (not $dir)  { die "$me: testDir: Missing required parameter 'dir'"; }
+
+    if ( not -d $dir ) {
+	$msg = "'$dir' is not a directory";
+	return 0;
+    }
+
+    if ($perm eq 'read' or $perm eq 'write') {
+	if ( not -r $dir ) {
+	    $msg = "Need read permissions on directory '$dir'";
+	    return 0;
+	}
+    }
+
+    if ($perm eq 'write') {
+	if ( not -w $dir ) {
+	    $msg = "Need write permissions on directory '$dir'";
+	    return 0;
+	}
+    }
+
+    return 1;
+}

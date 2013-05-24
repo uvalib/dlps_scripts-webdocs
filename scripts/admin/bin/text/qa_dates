@@ -1,0 +1,250 @@
+#!/usr/bin/perl -w
+
+# qa_dates - checks TEI XML document(s) for conformance to local encoding practices concerning date values
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2003-05-13
+# Last modified: 2008-06-30
+
+# Checks the following markup rules:
+#   - Standardized date formats: Checks all <date value="..."> and
+#     <dateRange from="..." to="..."> date values (it is smart enough
+#     to catch multiple occurences of these elements on the same line)
+#     for conformance to one of these formats: YYYY, YYYY-MM,
+#     YYYY-MM-DD, -MM-DD, --DD. Also checks the actual validity of
+#     month (must be 1 to 12) and day (must be 1 to max, based on
+#     month).
+
+# 2003-07-18: gpm2a: Added validation of year values, due to
+# TechBooks' predilection for using "0000" as a year. Any year value
+# not greater than zero numerically raises an error; any value not
+# greater than 1700 numerically raises a warning.
+#
+# 2005-01-04: gpm2a: Added conditions to test for empty strings (or
+# whitespace-only strings) for 'value', 'from' and 'to'. Also added
+# test for - (hyphen) or &ndash; (en dash) within <date>, which
+# probably indicates a date range that needs <dateRange> markup rather
+# than <date>.
+#
+# 2005-01-12: gpm2a: Added -E (errors only) option.
+#
+# 2005-08-01: gpm2a: Use standard output for QA error/warning/info
+# messages (since these are normal script output). Only use standard
+# error for fatal script errors.
+#
+# 2005-08-22: gpm2a: Don't issue an error for empty value=""
+# attributes. The qa_lib_empty.xsl stylesheet already tests for that,
+# and unlike this Perl script, that stylesheet is capable of ignoring
+# XML comments.
+#
+# 2006-03-17: gpm2a: Fixed bug that manifested itself only when there
+# was a very large number of errors to report.
+#
+# 2008-06-30: gpm2a: Added two new allowed formats: -MM-DD and --DD
+# These formats allow omitting the year, or year and month, for cases
+# where only part of a date is known/specified. Until now we have
+# disallowed such "left-truncated" formats, but realistically
+# (especially since this script is being used to QA manuscripts) we
+# need to allow this sort of thing:
+# <date value="-01-20">Jan. 20th</date>
+
+
+#***********
+# main logic
+#***********
+
+use Getopt::Std;
+use strict;
+
+my ($me, $usage, %opts, $e, $infile, @infile);
+my ($c, @hits, $lc, $problem);
+my ($match, $test, $name, $value, $to, $from);
+my ($el, $id, $line, $col, $type, $msg);
+
+$me = 'qa_dates';
+$usage = <<EOD;
+
+$me - checks TEI XML document(s) for conformance to local encoding practices concerning date values
+Usage: $me [-e number] [-E] filenames
+    -e  Maximum number of error/warning messages to display (defaults to 10)
+    -E  Only display error messages (suppress warnings)
+In: XML file(s)
+Out: Prints messages to standard output
+
+EOD
+
+getopts('e:E', \%opts) || die $usage;
+$e = $opts{'e'} || '10';
+die "-e must be a number.$usage" if (not $e =~ /\d+/);
+$e += 0;
+die $usage if (! @ARGV);
+
+INFILE: foreach $infile (@ARGV) {
+    @hits = ();
+    $c = 0;
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    #==========
+    # run tests
+    #==========
+
+    $lc = 0;
+    foreach (@infile) {
+	$lc++;
+
+	# check date formats as YYYY-MM-DD or YYYY-MM or YYYY
+	$test = $_;
+	while ( $test =~ /<(date|dateRange)\s+[^>]*?>/ ) {
+	    $match = $&;
+	    $test = $';
+	    $name = $1;
+	    $col = length($`) + 1;
+	    $problem = $match . $test; chomp $problem;
+
+	    $value = ''; $from = ''; $to = '';
+	    if ( $match =~ /\svalue=("|')([^\1]*?)\1/ ) {
+                $value = $2;
+            }
+	    if ( $match =~ /\sfrom=("|')([^\1]*?)\1/ ) {
+                $from = $2;
+            }
+	    if ( $match =~ /\sto=("|')([^\1]*?)\1/ ) {
+                $to = $2;
+            }
+
+	    if ($name eq 'date') {
+		if ( $value =~ /^\s*$/ ) {
+		    # ignore; let qa_lib_empty.xsl check for this
+		    #hit($lc, $col, 'E', "Date value is empty.");
+		} else {
+		    check_date($value);
+		}
+	    } else {
+		if ( $from =~ /^\s*$/ ) {
+		    # ignore; let qa_lib_empty.xsl check for this
+		    #hit($lc, $col, 'E', "Daterange 'from' value is empty.");
+		} else {
+		    check_date($from);
+		}
+		if ( $to =~ /^\s*$/ ) {
+		    unless ($opts{E}) {
+			# ignore; let qa_lib_empty.xsl check for this
+			#hit($lc, $col, 'W', "Daterange 'to' value is empty. This is allowed "
+			#    . "only for date ranges where the end date is unknown.");
+		    }
+		} else {
+		    check_date($to);
+		}
+	    }
+	}
+    }
+
+    # loop over the file again, this time checking for <date> elements
+    # containing a hyphen or dash, indicating a probable date range
+    $lc = 0;
+    foreach (@infile) {
+	$lc++;
+	$problem = $_; chomp $problem;
+	if ( m:(-|&ndash;)[^<>]+?</date>: ) {
+	    unless ($opts{E}) {
+		hit($lc, '0', 'W', '<date> element contains a hyphen or dash, indicating a date range; '
+		    . 'use <dateRange from="..." to="..."> instead.');
+	    }
+	}
+    }
+
+    #===============
+    # print messages
+    #===============
+
+    # print messages, sorted by line number and column number
+    $c = 0;
+    foreach $el ( sort({$a cmp $b} @hits) ) {
+	$c++;
+	($id, $line, $col, $type, $msg) = split(/~/, $el);
+
+        if    ($type eq 'E')    { $type = 'ERROR'; }
+        elsif ($type eq 'W')    { $type = 'WARNING'; }
+        elsif ($type eq 'INFO') { $type = 'Info'; }
+
+	if ($line) { $line = "$line: "; } else { $line = ''; }
+	if ($col)  { $col = "$col: ";   } else { $col = ''; }
+	print "$infile: $line$type: $msg\n";  # no need to print column number; it is more distracting than helpful
+
+	if ($c >= $e) {
+	    print "$infile: Info: Maximum number of errors ($e) reached; change with -e option\n\n";
+	    next INFILE;
+	}
+    }
+}
+
+
+#************
+# subroutines
+#************
+
+sub check_date {
+    my $date = shift;
+    my ($year, $month, $day, $max, $numericYear);
+
+    if ( $date =~ /^B?(\d{1,4}|\d{1,4}-\d\d|\d{1,4}-\d\d-\d\d|-\d\d-\d\d|--\d\d)$/ ) {
+	($year, $month, $day) = split(/-/, $date);
+
+	if ($year) {
+	    $numericYear = $year;
+	    $numericYear =~ s/^B//;
+
+	    if ($numericYear <= 0) {
+		hit($lc, $col, 'E', "Invalid year in date value: $year");
+		return;
+	    } elsif ($numericYear =~ /^\d{1,3}$/ and not $year =~ /^B/) {
+		unless ($opts{E}) {
+		    hit($lc, $col, 'W', "Year is less than four digits: $year");
+		    return;
+		}
+	    }
+	}
+
+	if ($month) {
+	    if ($month < 1 or $month > 12) {
+		hit($lc, $col, 'E', "Invalid month in date value: $date");
+	    } else {
+		if ($day) {
+		    if ($month == 2) {
+			if ( ($year) && ($numericYear % 4 == 0) ) {
+			    $max = 29;
+			} else {
+			    $max = 28;
+			}
+		    } elsif ($month == 4 or $month == 6 or $month == 9 or $month == 11) {
+			$max = 30;
+		    } else {
+			$max = 31;
+		    }
+		    if ($day < 1 or $day > $max) {
+			hit($lc, $col, 'E', "Invalid day in date value: $date");
+		    }
+		}
+	    }
+	}
+    } else {
+	hit($lc, $col, 'E', "Invalid date format: $date");
+    }
+}
+
+#----------------------------------------------------------------------
+
+sub hit {
+    my $line = shift;
+    my $col = shift;
+    my $type = shift;
+    my $msg = shift;
+
+    my $id = sprintf("%05d", $line) . '.' . sprintf("%04d", $col);
+    $hits[$c] = "$id~$line~$col~$type~$msg\n\tProblem: $problem\n";
+    $c++;
+}

@@ -1,0 +1,198 @@
+#!/usr/bin/perl -w
+
+# qa_ReadyRepo - performs automated QA checks on all TEI XML files in ReadyRepo
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2005-04-27
+# Last modified: 2007-08-06
+
+#------------------------------------------------------------------------
+# MODIFY HASH %dirs AS NEEDED to include all TEI directories in ReadyRepo
+#------------------------------------------------------------------------
+
+# 2005-09-15: gpm2a: Added 2005_Q3 to %dirs hash.
+#
+# 2005-11-02: gpm2a: Added 2005_Q4 to %dirs hash. Changed to use
+# 'parse' script for XML validation. Added -N option for checking
+# newspaper (cavdaily) XML files.
+#
+# 2006-01-12: gpm2a: Updated directories in %dirs hash.
+#
+# 2006-03-14: gpm2a: Updated directories in %dirs hash.
+#
+# 2006-06-06: gpm2a: Updated directories in %dirs hash.
+#
+# 2006-06-13: gpm2a: Updated directories in %dirs hash. Changed -N
+# option to use cavdaily directories in ReadyRepo (rather than
+# /cenrepo/text/cavdaily).
+#
+# 2006-09-27: gpm2a: Updated directories in %dirs hash.
+#
+# 2007-01-08: gpm2a: Updated directories in %dirs hash.
+#
+# 2007-08-06: gpm2a: Updated directories in %dirs hash.
+
+
+use strict;
+use Getopt::Std;
+
+my ($me, $usage, %opts, $all, $E, $N, %dirs, $dir, $glob, $command);
+
+#----------------------------------------------------------------------
+# hash of directories to check
+# hash key is directory path (unique), hash value is project name (not necessarily unique)
+
+$dirs{'/cenrepo/ReadyRepo/text/amstudies/uvaBook/tei/'} = 'amstudies';
+$dirs{'/cenrepo/ReadyRepo/text/amstudies/uvaPageBook/tei/'} = 'amstudies';
+
+$dirs{'/cenrepo/ReadyRepo/text/2003_Q3/uvaBook/tei/'} = '2003_Q3';
+$dirs{'/cenrepo/ReadyRepo/text/2003_Q4/uvaBook/tei/'} = '2003_Q4';
+$dirs{'/cenrepo/ReadyRepo/text/2003_Q4/uvaGenText/tei/'} = '2003_Q4';
+$dirs{'/cenrepo/ReadyRepo/text/2004_Q1/uvaBook/tei/'} = '2004_Q1';
+$dirs{'/cenrepo/ReadyRepo/text/2005_fall_tei_hold/uvaBook/tei/'} = '2005_fall_tei_hold';
+$dirs{'/cenrepo/ReadyRepo/text/2005_Q1/uvaBook/tei/'} = '2005_Q1';
+
+$dirs{'/cenrepo/ReadyRepo/text/2005_Q2_1/uvaBook/tei/'} = '2005_Q2_1';
+$dirs{'/cenrepo/ReadyRepo/text/2005_Q2_2/uvaBook/tei/'} = '2005_Q2_2';
+$dirs{'/cenrepo/ReadyRepo/text/2005_Q2_3/uvaBook/tei/'} = '2005_Q2_3';
+$dirs{'/cenrepo/ReadyRepo/text/2005_Q2_hold/uvaBook/tei/'} = '2005_Q2_hold';
+
+$dirs{'/cenrepo/ReadyRepo/text/2005_Q3_1/uvaBook/tei/'} = '2005_Q3_1';
+
+$dirs{'/cenrepo/ReadyRepo/text/2005_Q3_2/uvaBook/tei/'} = '2005_Q3_2';
+$dirs{'/cenrepo/ReadyRepo/text/2005_Q3_2/uvaGenText/tei/'} = '2005_Q3_2';
+$dirs{'/cenrepo/ReadyRepo/text/2005_Q3_2/uvaPageBook/tei/'} = '2005_Q3_2';
+
+$dirs{'/cenrepo/ReadyRepo/text/2005_Q4_1/uvaBook/tei/'} = '2005_Q4_1';
+$dirs{'/cenrepo/ReadyRepo/text/2005_Q4_2/uvaBook/tei/'} = '2005_Q4_2';
+$dirs{'/cenrepo/ReadyRepo/text/2005_Q4_3/uvaBook/tei/'} = '2005_Q4_3';
+$dirs{'/cenrepo/ReadyRepo/text/2005_Q4_rush/uvaBook/tei/'} = '2005_Q4_rush';
+
+$dirs{'/cenrepo/ReadyRepo/text/2006_01/uvaBook/tei/'} = '2006_01';
+$dirs{'/cenrepo/ReadyRepo/text/2006_01/uvaGenText/tei/'} = '2006_01';
+
+$dirs{'/cenrepo/ReadyRepo/text/2006_02/uvaBook/tei/'} = '2006_02';
+$dirs{'/cenrepo/ReadyRepo/text/2006_03/uvaBook/tei/'} = '2006_03';
+
+$dirs{'/cenrepo/ReadyRepo/text/2006_04/uvaBook/tei/'} = '2006_04';
+$dirs{'/cenrepo/ReadyRepo/text/2006_04/uvaGenText/tei/'} = '2006_04';
+$dirs{'/cenrepo/ReadyRepo/text/2006_04/uvaPageBook/tei/'} = '2006_04';
+
+$dirs{'/cenrepo/ReadyRepo/text/2006_05/uvaBook/tei/'} = '2006_05';
+$dirs{'/cenrepo/ReadyRepo/text/2006_05/uvaGenText/tei/'} = '2006_05';
+
+$dirs{'/cenrepo/ReadyRepo/text/2006_06/uvaBook/tei/'} = '2006_06';
+$dirs{'/cenrepo/ReadyRepo/text/2006_06/uvaGenText/tei/'} = '2006_06';
+
+$dirs{'/cenrepo/ReadyRepo/text/2006_07/uvaBook/tei/'} = '2006_07';
+$dirs{'/cenrepo/ReadyRepo/text/2006_07/uvaGenText/tei/'} = '2006_07';
+$dirs{'/cenrepo/ReadyRepo/text/2006_07/uvaPageBook/tei/'} = '2006_07';
+
+$dirs{'/cenrepo/ReadyRepo/text/2006_08/uvaBook/tei/'} = '2006_08';
+
+$dirs{'/cenrepo/ReadyRepo/text/2006_09/uvaBook/tei/'} = '2006_09';
+$dirs{'/cenrepo/ReadyRepo/text/2006_09/uvaGenText/tei/'} = '2006_09';
+
+$dirs{'/cenrepo/ReadyRepo/text/2006_10/uvaBook/tei/'} = '2006_10';
+$dirs{'/cenrepo/ReadyRepo/text/2006_10/uvaGenText/tei/'} = '2006_10';
+
+$dirs{'/cenrepo/ReadyRepo/text/2006_11/uvaBook/tei/'} = '2006_11';
+
+$dirs{'/cenrepo/ReadyRepo/text/2006_12/uvaBook/tei/'} = '2006_12';
+
+$dirs{'/cenrepo/ReadyRepo/text/2007_01/uvaBook/tei/'} = '2007_01';
+
+$dirs{'/cenrepo/ReadyRepo/text/2007_02/uvaBook/tei/'} = '2007_02';
+
+$dirs{'/cenrepo/ReadyRepo/text/2007_03/uvaBook/tei/'} = '2007_03';
+$dirs{'/cenrepo/ReadyRepo/text/2007_03/uvaGenText/tei/'} = '2007_03';
+
+$dirs{'/cenrepo/ReadyRepo/text/2007_04/uvaBook/tei/'} = '2007_04';
+$dirs{'/cenrepo/ReadyRepo/text/2007_04/uvaGenText/tei/'} = '2007_04';
+
+$dirs{'/cenrepo/ReadyRepo/text/2007_07/uvaBook/tei/'} = '2007_07';
+
+$dirs{'/cenrepo/ReadyRepo/text/2007_10/uvaBook/tei/'} = '2007_10';
+#----------------------------------------------------------------------
+
+$me = 'qa_ReadyRepo';
+$usage = <<EOD;
+
+$me - performs automated QA checks on all TEI XML files in ReadyRepo
+
+Usage: $me <options>
+  QA options:
+    -a (all)          Run all QA checks (equivalent to -isv)
+    -i (images)       Verify that image entities in XML file coincide with actual image files
+    -s (stylesheets)  Run XSLT stylesheets to perform QA checks not included in the DLPS DTD
+    -v (validate)     Validate XML file
+  Reporting options:
+    -E (errors only)  Only display error messages (suppress warnings)
+    -N (newspapers)   Include newspaper XML files
+    -V (verbose)      Display status messages (in addition to errors/warnings)
+
+Either -a, or one or more of -isv, is required.
+
+In: TEI XML file(s)
+Out: Prints status messages to standard output, errors/warnings to standard error
+
+EOD
+
+getopts('aisvENV', \%opts) || die $usage;
+
+if ($opts{a}) {
+    $all = 1;
+} else {
+    if ($opts{i} or $opts{s} or $opts{v}) {
+        $all = 0;
+    } else {
+	# either -a, or one or more of -isv, is required
+        die $usage;
+    }
+}
+
+if ($opts{N}) {
+    $dirs{'/cenrepo/ReadyRepo/text/cavdaily_1967-68/uvaBook/tei/'} = 'cavdaily_1967-68';
+    $dirs{'/cenrepo/ReadyRepo/text/cavdaily_1968-69/uvaBook/tei/'} = 'cavdaily_1968-69';
+    $dirs{'/cenrepo/ReadyRepo/text/cavdaily_1969-70/uvaBook/tei/'} = 'cavdaily_1969-70';
+    $dirs{'/cenrepo/ReadyRepo/text/cavdaily_1970-71/uvaBook/tei/'} = 'cavdaily_1970-71';
+    $dirs{'/cenrepo/ReadyRepo/text/cavdaily_1971-72/uvaBook/tei/'} = 'cavdaily_1971-72';
+    $dirs{'/cenrepo/ReadyRepo/text/cavdaily_1972-73/uvaBook/tei/'} = 'cavdaily_1972-73';
+}
+
+foreach $dir ( sort(keys(%dirs)) ) {
+    $glob = $dir . '*.xml';
+    if ($opts{E}) { $E = ' -E'; } else { $E = ''; }
+
+    # validate
+    if ($all or $opts{v}) {
+	$command = "parse $glob";
+	print "$command ...\n" if ($opts{V});
+	system($command);
+    }
+
+    # run QA stylesheets
+    if ($all or $opts{s}) {
+	if ($dirs{$dir} =~ /cavdaily/) {
+	    $N = ' -N';
+	} else {
+	    $N = '';
+	}
+	$command = "qa_super$E$N -Z $glob";
+	print "$command ...\n" if ($opts{V});
+	system($command);
+    }
+
+    # verify image entities
+    if ($all or $opts{i}) {
+#	if ($dirs{$dir} =~ /cavdaily/) {
+#	    # skip image verification for cavdaily XML files
+#	} else {
+	    $command = "qa_entities$E -L -R $dirs{$dir} $glob";
+	    print "$command ...\n" if ($opts{V});
+	    system($command);
+#	}
+    }
+
+    print "\n" if ($opts{V});
+}

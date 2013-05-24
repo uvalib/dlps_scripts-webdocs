@@ -1,0 +1,233 @@
+#!/usr/bin/perl -w
+
+#======================================================================
+# setup
+#======================================================================
+
+use strict;
+use Getopt::Std;
+use Cwd;
+use File::Copy;
+
+my (%opts, $error, $ok, @outfiles, %infiles, @gifs, %gifs);
+my ($dir, $id, $infile, $outfile, $command, $gif, $gifOut, $tifOut);
+my (@errors, @progress, $msg);
+
+my $me = 'rename_pid_files';
+my $startDir = cwd();
+my $group = 'dlpswg';
+my $mailFrom = 'jlk4p';
+
+
+my $usage = <<EOD;
+
+$me - takes a directory of image files and renames them so that the
+     underscore character in the filename is replaced with a colon.
+
+Usage: $me [-v] directories
+  -v (verbose) Show status messages
+
+In:  Names of directories containing images with the file name format
+     of uva-lib_999999
+Out: The script performs the following actions for each input directory:
+       - Copies input files to new file names
+       - If all files copied successfully, deletes old file names
+EOD
+
+getopts('v', \%opts) || die $usage;
+die $usage unless (@ARGV);
+
+my $LD = 'LD_LIBRARY_PATH';
+if ( defined $ENV{$LD} ) {
+    $ENV{$LD} = '/usr/local/lib/:' . "$ENV{$LD}";
+} else {
+    $ENV{$LD} = '/usr/local/lib/';
+}
+
+
+#======================================================================
+# main logic
+#======================================================================
+
+foreach $dir (sort(@ARGV)) {
+    $error = 0;
+    $ok = 1;
+    @outfiles = ();
+    %infiles = ();
+    %gifs = ();
+
+    $dir =~ s:/$::;  # remove final slash, if present
+    $id = $dir;
+    $id =~ s:^.*/::;  # remove leading path, if any
+
+    $msg = "$me: Processing directory '$dir' (ID $id)...\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+
+    if (-d $dir) {
+	unless ( -r $dir ) {
+	    $msg = "$me: ERROR: Need read permission for directory '$dir'\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+	unless ( -w $dir ) {
+	    $msg = "$me: ERROR: Need write permission for directory '$dir'\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+    } else {
+	$msg = "$me: ERROR: '$dir' is not a directory\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+    # change to input directory
+    if ( not chdir($dir) ) {
+	$msg = "$me: ERROR: Cannot change to directory '$dir': $!\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+
+    #------------------------------------------------------------------
+    # rename files
+    #------------------------------------------------------------------
+
+    # read input directory and run tiffcp on each TIFF file
+    $msg = "    Renaming files...\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+
+    if ( opendir(DIR, '.') ) {
+	while ( defined($infile = readdir(DIR)) ) {
+	    if ( $infile =~ /^\./) {
+		# filename starts with . ; skip
+		next;
+	    }
+	    my ($pidFront,$pidBack) = split(/\_/,$infile);
+	    $infiles{$infile} = $pidFront . ":" . $pidBack;
+	}
+	closedir DIR;
+    } else {
+	$msg = "$me: ERROR: Cannot read directory '$dir': $!\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+    if ( not scalar(keys(%infiles)) ) {
+	$msg = "$me: WARNING: No files found in directory '$dir'\n";
+	print $msg;
+	push(@progress, $msg);
+	next;
+    }
+
+    foreach $infile (sort(keys(%infiles))) {
+	$outfile = $infiles{$infile};
+	$command = "cp $infile $outfile 2> /dev/null";
+	$error = system($command);
+	if ($error != 0) {
+	    $msg = "$me: ERROR: Command failed: $command\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; last;
+	}
+	push(@outfiles, $outfile);
+    }
+
+    if (not $ok) {
+	next;
+    }
+    if ( scalar(keys(%infiles)) != scalar(@outfiles) ) {
+	$msg = "$me: ERROR: The number of output files (" . scalar(@outfiles)
+	    . ") does not equal the number of input files (" . scalar(keys(%infiles)) . ")\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+    # delete input files
+    foreach $infile (sort(keys(%infiles))) {
+	if ( unlink($infile) ) {
+	} else {
+	    $msg = "$me: ERROR: Cannot delete file '$infile'\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; last;
+	}
+    }
+
+    if (not $ok) {
+	next;
+    }
+
+}
+continue {
+    if ($ok) {
+	$msg = "    Directory '$dir' was processed successfully.\n\n";
+	print $msg if ($opts{'v'});
+	push(@progress, $msg);
+    } else {
+	$msg = "$me: ERROR: Processing of directory '$dir' FAILED!\n\n";
+	warn $msg;
+	push(@errors, $msg);
+    }
+
+    # change to starting directory
+    if ( cwd() ne $startDir ) {
+	if ( not chdir($startDir) ) {
+	    $msg = "$me: FATAL ERROR: Cannot change to starting directory '$startDir': $!\n";
+	    push(@errors, $msg);
+	    Send_Mail();
+	    die $msg;
+	}
+    }
+}
+
+Send_Mail();
+
+
+
+#======================================================================
+# subroutines
+#======================================================================
+
+sub Send_Mail {
+
+    my @time = localtime(time);
+    my $today = $time[3];
+    my $month = (1,2,3,4,5,6,7,8,9,10,11,12)[(localtime)[4]];
+    my $year = $time[5];
+    $year = $year - 100;
+
+    $year = sprintf("%02d",$year);
+    $month = sprintf("%02d",$month);
+    $today = sprintf("%02d",$today);
+
+    my($date)="$month/$today/$year";
+    my($messageto) = "ul-dlps\@virginia.edu";
+
+    open(MAIL,"| /usr/lib/sendmail -i -t");
+    print MAIL "To: $messageto\n"; 
+    print MAIL "From: $mailFrom\@virginia.edu\n";
+    if (@errors) {
+	print MAIL "Subject: Error processing image renames\n\n";
+	print MAIL "There was an error from the $me script on $date:\n\n";
+    }
+    else {
+	print MAIL "Subject: Report on processing image renames\n\n";
+	print MAIL "$me script completed with no errors on $date.\n\n";
+    }
+    foreach my $err (@errors) {
+	print MAIL "$err\n";
+    }
+    foreach my $noerr (@progress) {
+	print MAIL "$noerr" ;
+    }
+    print MAIL "-" x 75 . "\n\n";
+    close(MAIL);
+}

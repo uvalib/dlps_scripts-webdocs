@@ -1,0 +1,254 @@
+#!/usr/bin/perl -w
+
+# This program is to place a watermark onto images scanned by Digitization Services for Faculty.
+# 2008-02-05 - AC changes the $Command variable to explicitly keep the depth at 8 due to conflict with ImageMgacik upgrade.
+# 2008-02-12 - JLK4P changed the $Command variable to user convert which required the options to be split out since they go between the input file and output file
+## FOR USE AS A CRON JOB FOR FINE ARTS FOR IMAGES ON DROPBOX
+
+#======================================================================
+# setup
+#======================================================================
+
+use strict;
+use Getopt::Std;
+use Cwd;
+use File::Copy;
+#use lib '/shares/admin/bin/text';
+#use DlpsText;
+#use TrackSys;
+
+my (%opts, $error, $ok, @outfiles, %infiles);
+my ($dir, $id, $infile, $outfile, $command, $gifOut, $tifOut);
+my (@errors, @progress, $msg);
+my ($sql, $affected);
+
+#my $LOG_DIR = '/shares/admin/bin/text/logs/eaf_proofreader/';
+#my $Command = '/usr/local/ImageMagick-6.2.6/bin montage -frame 5 -geometry +0+0 -label "FOR TEACHING PURPOSES ONLY NO FURTHER 
+my $Command = '/usr/local/ImageMagick-6.2.6/bin/convert';
+my $CommandOptions = '-frame 5x15 -gravity south -annotate 0 "FOR TEACHING PURPOSES ONLY NO FURTHER DISTRIBUTION" -depth 8';
+  
+# path to ImageMagick binaries has been added to system-wide profile
+
+my $me = 'copyright-finearts';
+
+my $startDir = '/shares/dropbox/outbox/finearts/';
+my $group = 'dlpswg';
+my $mailFrom = 'jlk4p';
+
+
+my $usage = <<EOD;
+
+$me - this script takes the images in a specified directory and adds a border around all for sides and a label that says "FOR TEACHING PURPOSES ONLY NO FURTHER DISTRIBUTION"
+
+NOTE: This script is hard-wired to work with the dropbox/outbox/finearts directory.
+
+Usage: $me [-v] directories
+  -v (verbose) Show status messages
+
+In:  Names of directories containing image files (named with .tif or .jpg) to
+     process
+Out: The script performs the following actions for each input directory:
+       - Modify each file by placing a label at the bottom of each image
+       - Moves the file from watermark_in to watermark_out
+
+EOD
+
+getopts('v', \%opts) || die $usage;
+die $usage unless (@ARGV);
+
+my $LD = 'LD_LIBRARY_PATH';
+if ( defined $ENV{$LD} ) {
+    $ENV{$LD} = '/usr/local/lib/:' . "$ENV{$LD}";
+} else {
+    $ENV{$LD} = '/usr/local/lib/';
+}
+
+
+
+
+#======================================================================
+# main logic
+#======================================================================
+
+chdir ($startDir); 
+foreach $dir (sort(@ARGV)) {
+    $error = 0;
+    $ok = 1;
+    @outfiles = ();
+    %infiles = ();
+    
+    $dir =~ s:/$::;  # remove final slash, if present
+    $id = $dir;
+    $id =~ s:^.*/::;  # remove leading path, if any
+
+    $msg = "\n$me: Processing directory '$dir' (ID $id)...\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+
+    if (-d $dir) {
+	unless ( -r $dir ) {
+	    $msg = "$me: ERROR: Need read permission for directory '$dir'\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+	unless ( -w $dir ) {
+	    $msg = "$me: ERROR: Need write permission for directory '$dir'\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+    } else {
+	$msg = "$me: ERROR: '$dir' is not a directory\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+    # change to input directory
+    if ( not chdir($dir) ) {
+	$msg = "$me: ERROR: Cannot change to directory '$dir': $!\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+
+    #------------------------------------------------------------------
+    # count input files and remove files created automatically when
+    # files are accessed on a Mac
+    #------------------------------------------------------------------
+
+    # read input directory; count input files and remove Mac-generated files
+    if ( opendir(DIR, '.') ) {
+	while ( defined($infile = readdir(DIR)) ) {
+	    if ( $infile =~ /^\.DS_Store/ || $infile =~ /^\._eaf/ || $infile =~ /\.ivc_\d$/ ) {
+		if ( unlink "./$infile" ) {
+		    $msg = "$me: Deleted file '$infile'\n";
+		    print $msg;
+			}
+	    }
+
+	    if ( $infile =~ /^\./ or not ($infile =~ /\.tif$/ or $infile =~ /\.jpg$/)) {
+		# filename starts with . or does not end with .tif or .jpg; skip
+		next;
+	    }
+	    $infiles{$infile} = $infile;
+	}
+	closedir DIR;
+    } else {
+	$msg = "$me: ERROR: Cannot read directory '$dir': $!\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+    if ( not scalar(keys(%infiles)) ) {
+	$msg = "$me: WARNING: No .tif or .jpg files found in directory '$dir'\n";
+	print $msg;
+	push(@progress, $msg);
+	next;
+    }
+
+
+    #------------------------------------------------------------------
+    # convert and move images
+    #------------------------------------------------------------------
+
+   
+    # modify files
+    $msg = "    Modifying files...\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+
+    foreach $infile (keys %infiles){
+
+    
+       $error = system("$Command $infile $CommandOptions $infile");
+   	    if ($error != 0) {
+	   	 $msg = "$me: ERROR: Error modifying $infile in directory '$dir'\n";
+		 warn $msg;
+		 push(@errors, $msg);
+        	 $ok = 0; next;
+  	    }
+	# move the file
+	$error = system("mv $infile ../watermark_out");
+	if ($error != 0) {
+		$msg = "$me: ERROR: Error moving $infile to watermark_out\n";
+		warn $msg;
+		push(@errors, $msg);
+		$ok = 0; next;
+	}
+    }
+
+
+}
+continue {
+    if ($ok) {
+	$msg = "    Directory '$dir' was processed successfully.\n\n";
+	print $msg if ($opts{'v'});
+	push(@progress, $msg);
+
+
+    } else {
+	$msg = "$me: ERROR: Processing of directory '$dir' FAILED!\n\n";
+	warn $msg;
+	push(@errors, $msg);
+    }
+
+    # change to starting directory
+    if ( cwd() ne $startDir ) {
+	if ( not chdir($startDir) ) {
+	    $msg = "$me: FATAL ERROR: Cannot change to starting directory '$startDir': $!\n";
+	    push(@errors, $msg);
+	    Send_Mail();
+	    die $msg;
+	}
+    }
+
+}
+
+if (scalar(keys(%infiles)) ) {
+	Send_Mail();
+}
+
+
+#======================================================================
+# subroutines
+#======================================================================
+
+sub Send_Mail {
+
+    my @time = localtime(time);
+    my $today = $time[3];
+    my $month = (1,2,3,4,5,6,7,8,9,10,11,12)[(localtime)[4]];
+    my $year = $time[5];
+    $year = $year - 100;
+
+    $year = sprintf("%02d",$year);
+    $month = sprintf("%02d",$month);
+    $today = sprintf("%02d",$today);
+
+    my($date)="$month/$today/$year";
+    my($messageto) = "arb5w\@virginia.edu,emm3h\@virginia.edu,jlk4p\@virginia.edu";
+
+    open(MAIL,"| /usr/lib/sendmail -i -t");
+    print MAIL "To: $messageto\n"; 
+    print MAIL "From: $mailFrom\@virginia.edu\n";
+    if (@errors) {
+	print MAIL "Subject: Error watermarking DS4F images.\n\n";
+	print MAIL "There was an error from the $me script on $date:\n\n";
+    }
+    else {
+	print MAIL "Subject: Report on watermarking DS4F images\n\n";
+	print MAIL "$me script completed with no errors on $date.\n\n";
+    }
+    foreach my $err (@errors) {
+	print MAIL "$err\n";
+    }
+    foreach my $noerr (@progress) {
+	print MAIL "$noerr" ;
+    }
+    print MAIL "-" x 75 . "\n\n";
+    close(MAIL);
+}

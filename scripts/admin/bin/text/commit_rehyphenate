@@ -1,0 +1,206 @@
+#!/usr/bin/perl -w
+
+# commit_rehyphenate - restores hyphen to end-of-line words, based on
+# instructions in a 'rehyphenate.changes' file
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2003-01-15
+# Last modified: 2006-03-24
+
+# 2004-02-13: gpm2a: Made allowances for CavDaily_\d{8} IDs (in
+# addition to [bz]\d{9} ones).
+#
+# 2004-06-03: gpm2a: Allowed cavdaily_\d{8} (all lower case) as well.
+#
+# 2004-09-01: gpm2a: Changed to allow any filename that begins with a
+# DLPS ID or ends with a 3-character extension.
+#
+# 2005-12-30: gpm2a: Changed for use on pogo.
+#
+# 2006-03-24: gpm2a: Changed to update DLPS tracking system -->
+# Post-keyboarding Workflow --> Commit rehyphenate changes
+
+
+use strict;
+use File::Copy;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use DlpsTextWorkreports;
+use TrackSys;
+
+our $me;  # declare this variable as 'our' to allow DlpsTextWorkreports to access it
+my ($usage, $msg, $report_type);
+my ($infile, @infile, %properties, $dlpsId, $sql, $rows);
+my ($html_file, $changes_file, $bakfile, $form_id);
+my ($quit, $files_changed, $operator, $datetime, $change, $changes, @changes, @temp);
+my ($line, $new, $input, $destination);
+my ($lc, $orig);
+
+$report_type = 'rehyphenate';
+
+$me = 'commit_rehyphenate';
+$usage = <<EOD;
+
+$me - restores hyphen to end-of-line words, based on
+  instructions in a 'rehyphenate.changes' file
+
+Usage: $me filenames
+
+In: TEI XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+EOD
+
+die $usage if (not @ARGV);
+foreach (@ARGV) {
+    die $usage if /^-/;   # this script has no switches
+}
+
+TrackSys::connect();
+
+$quit = 0;
+$files_changed = '';
+foreach $infile (@ARGV) {
+    if ($quit) {
+	print "$infile\n";
+	next;
+    }
+
+    # get location of changes file for this ID
+    if ( not DlpsTextWorkreports::init($infile, $report_type) ) {
+        next;
+    }
+    $changes_file = DlpsTextWorkreports::get_changes_file();
+
+    # make sure file exists
+    if (not -e $changes_file) {
+	warn "$me: WARNING: File not found: Required file '$changes_file' does not exist: " .
+	    "File '$infile' could NOT be processed.\n";
+	next;
+    }
+
+    # make sure file has data
+    if (-z $changes_file) {
+	warn "$me: WARNING: Empty file: Required file '$changes_file' contains no data: " .
+	    "File '$infile' could NOT be processed.\n";
+	next;
+    }
+
+    # read changes file into array for repeat access
+    open(CHANGES, $changes_file) || die "$me: ERROR: Cannot read '$changes_file': $!\n";
+    @temp = <CHANGES>;
+    close CHANGES;
+
+    # display list of changes to user for confirmation; filter comment lines from list of changes
+    $operator = '';
+    $changes = '';
+    @changes = ();
+    foreach $line (@temp) {
+	if ( $line =~ /^#/ ) {
+	    if ( $line =~ /^#operator=(.+)$/ ) {
+		$operator = $1;
+	    } elsif ( $line =~ /^#datetime=(.+)$/ ) {
+		$datetime = $1;
+	    } else {
+		# commented line; ignore
+	    }
+	} elsif ( $line =~ /^\s*$/ ) {
+	    # blank line; ignore
+	} else {
+	    push @changes, $line;
+	    $changes .= $line;
+	}
+    }
+    print "\nThe following changes have been propsed for $infile:\n\n";
+    print "Operator: $operator\n";
+    print "Date/time: $datetime\n\n";
+    print "The following words will be restored to their original hyphenation:\n";
+    print $changes;
+    print "\nAre you sure you want to make these changes to $infile at this time? (y/n, or q to quit) ";
+    $input = <STDIN>;
+    chomp $input;
+    if ($input =~ /^(y|yes)$/i) {
+        print "$me: $infile: Processing...\n";
+    } elsif ($input =~ /^(q|quit)$/i) {
+	$quit = 1;
+	print "OK, the remaining files have NOT been processed:\n";
+	print "$infile\n";
+	next;
+    } else {
+	print "OK, $infile has NOT been processed.\n";
+	next;
+    }
+
+    # read input (TEI XML) file into array for repeat access
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # get DLPS ID
+    %properties = ();
+    $dlpsId = DlpsText::getDlpsId(\%properties, \@infile, $infile);
+
+    # copy input file to .bak backup
+    $bakfile = "${infile}.bak";
+    open(BAK, ">$bakfile") || die "$me: ERROR: Cannot write '$bakfile': $!\n";
+    foreach $line (@infile) {
+	print BAK $line;
+    }
+    close BAK;
+
+    # make changes to input file
+    $lc = 0;
+    open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+    foreach $line (@infile) {
+	$lc++;
+	# look for changes that need to be made to this line
+	if ($line =~ /<reg /) {   # we are only concerned with unhyphenated words, marked with reg element
+	    # loop through list of changes needed, looking for occurence of change-word as value of reg element
+	    foreach $change (@changes) {
+		chomp $change;
+		if ( $line =~ /<reg [^>]*?orig=("|')([^\1]+)\1[^>]*>$change<\/reg>/ ) {
+		    $orig = $2;
+		    $orig =~ s/\|//;   # remove vertical bar (if any) indicating where original line break was
+
+		    # restore hyphen: replace regularized (unhyphenated) form with original (hyphenated) form
+		    $line =~ s/$change<\/reg>/$orig<\/reg>/;
+                    print "$me: $infile: Line $lc: $change --> $orig\n";   # DEBUG
+
+		    # skip remaining changes; there will be only one change (one EOL hyphen situation) on any given line
+		    last;
+		}
+	    }
+	}
+
+	# print every line, changed or unchanged, to output
+	print OUT $line;
+    }
+    close OUT;
+
+    $files_changed .= "$infile\n";
+
+    $msg = "Restored hyphen to end-of-line words as indicated in file '$changes_file'";
+##    DlpsText::log($me, $infile, $msg);
+
+    # update tracking system upon success
+    $rows = 0;
+    $sql = "UPDATE postkb SET commitRehyphenateChanges = 1 WHERE dlpsId = '$dlpsId' LIMIT 1";
+    $rows = TrackSys::query($sql);
+    if ($rows != 1) {  # this works because Perl DBI execute() returns 1 even if no fields of the record are actually changed
+        warn "$me: WARNING: Cannot update DLPS tracking system for record '$dlpsId'. Update manually.\n";
+    }
+
+    # clean up
+    # move '.changes' file to 'Committed/' archive directory
+    $destination = DlpsTextWorkreports::get_changes_file_archive();
+    move($changes_file, $destination) ||
+        warn "$me: WARNING: Cannot move '$changes_file' to archive location '$destination': $!\n";
+
+    # delete HTML file
+    $html_file = DlpsTextWorkreports::get_outfile();
+    if (-e $html_file) {
+        unlink($html_file) || warn "$me: WARNING: Cannot remove file '$html_file': $!\n";
+    }
+}
+
+TrackSys::disconnect();

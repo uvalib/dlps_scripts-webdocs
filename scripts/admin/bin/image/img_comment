@@ -1,0 +1,243 @@
+#!/usr/bin/perl -w
+#
+# @(#)img_comment			1.0		2006/02/16
+#
+# Copyright (c) 2006 Digital Library Production Services, University of Virginia Library
+# All rights reserved.
+#
+# This script will read a directory of images and use ImageMagick to modify the
+# comment for the images.
+#
+# @version	1.0		2006/02/16
+# @author	Jack Kelly
+#
+# 2006/05/02 - (jlk4p) updated to include newer 350 exception message pattern matching so that
+#			comment will be added to header.
+# 2006/06/26 - (jlk4p) updated to include additional 350 exception message pattern to allow 
+#			processing of images.
+
+#======================================================================
+# setup
+#======================================================================
+
+use strict;
+use Image::Magick;
+use Getopt::Std;
+use Cwd;
+
+my (%opts, $error, $ok);
+my ($dir, $id, $infile);
+my (@errors, @progress, $msg);
+
+my $imageHeaderComment = "This image may have been resized to correct the aspect/ratio.";
+my $me = 'img_comment';
+my $startDir = cwd();
+my $group = 'dlpswg';
+my $mailFrom = 'jlk4p';
+my $mailTo = 'ul-dlpsscripts';
+
+my $usage = <<EOD;
+
+$me - will change the comment of each image. The image files are modified 
+in place. If the original images need to be saved, make a copy of them before 
+running this script.
+
+Usage: $me [-v] directories
+  -v (verbose) Show status messages
+
+In:  Names of directories containing TIFF files to process
+Out: The script performs the following actions for each input directory:
+       - Updates each non-cover page image to contain a comment in the TIF
+         header regarding the possibility that the image was resized.
+ 
+EOD
+
+getopts('v', \%opts) || die $usage;
+die $usage unless (@ARGV);
+
+$msg = "Started at "  . (scalar localtime) . "\n\n";
+push(@progress, $msg);
+
+#======================================================================
+# main logic
+#======================================================================
+
+foreach $dir (sort(@ARGV)) {
+    $error = 0;
+    $ok = 1;
+
+    $dir =~ s:/$::;  # remove final slash, if present
+    $id = $dir;
+    $id =~ s:^.*/::;  # remove leading path, if any
+
+    $msg = "$me: Processing directory '$dir' (ID $id)...\r\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+
+    if (-d $dir) {
+	unless ( -r $dir ) {
+	    $msg = "$me: ERROR: Need read permission for directory '$dir'\r\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+	unless ( -w $dir ) {
+	    $msg = "$me: ERROR: Need write permission for directory '$dir'\r\n";
+	    warn $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+    } else {
+	$msg = "$me: ERROR: '$dir' is not a directory\r\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+    # change to input directory
+    if ( not chdir($dir) ) {
+	$msg = "$me: ERROR: Cannot change to directory '$dir': $!\r\n";
+	warn $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+
+    #------------------------------------------------------------------
+    # update image comment using imagemagick
+    #------------------------------------------------------------------
+    $msg = "    Adding comment to TIFF files...\r\n";
+    print $msg if ($opts{'v'});
+    push(@progress, $msg);
+	my @images = ();
+    if ( opendir(DIR, '.') ) {
+		while ( defined($infile = readdir(DIR)) ) {
+			if ( $infile =~ /^\./) {
+				next;	# ignore file as it starts with .
+			} elsif ($infile =~ /\.tif$/) {
+				# process tif file
+			} elsif ($infile =~ /\.TIF$/) {
+				# process TIF file
+			} else {
+				next;	# ignore non-TIFF files
+			}
+		    push(@images,$infile);
+		}
+		closedir DIR;
+    } else {
+		$msg = "$me: ERROR: Cannot read directory '$dir': $!\r\n";
+		warn $msg;
+		push(@errors, $msg);
+		$ok = 0; next;
+    }
+
+    if ( not scalar(@images) ) {
+		$msg = "$me: WARNING: No .tif files found in directory '$dir'\r\n";
+		print $msg;
+		push(@progress, $msg);
+		next;
+    }
+
+	my ($exception1,$exception2);
+    foreach $infile (@images) {
+		my @fileName = split(/\./,$infile);
+		# Ignore cover and spine page images.
+		if ($fileName[0] =~ /[0-9]$/) {
+			# Read the image into memory.
+			my $image = Image::Magick->new;
+			$exception1 = $image->Read("$infile");
+			if (($exception1 eq "") or 
+				(($exception1 =~ m/^Exception 350/) and 
+				 ((($exception1 =~ m/unknown field with tag/) and 
+				 (($exception1 =~ m/ignored/) or ($exception1 =~ m/encountered/))) or 
+				 (($exception1 =~ m/incorrect count for field/) and ($exception1 =~ m/tag ignored/))) )) {
+				$image->Comment($imageHeaderComment);
+				$exception2 = $image->Write("$infile");
+				if ($exception2 ne "") {
+					$msg = "$me: ERROR: Writing file $infile FAILED!\r\n";
+					warn $msg;
+					push(@errors, $msg);
+					push(@errors, $exception2 . "\r\n");
+				    $ok = 0; next;
+				}
+			} else {
+				$msg = "$me: ERROR: Reading file $infile FAILED!\r\n";
+				warn $msg;
+				push(@errors, $msg);
+				push(@errors, $exception1 . "\r\n");
+			    $ok = 0; next;
+			}
+		}
+    }
+
+    if (not $ok) {
+	next;
+    }
+
+}
+continue {
+    if ($ok) {
+	$msg = "    Directory '$dir' was processed successfully.\r\n\r\n";
+	print $msg if ($opts{'v'});
+	push(@progress, $msg);
+    } else {
+	$msg = "$me: ERROR: Processing of directory '$dir' FAILED!\r\n\r\n";
+	warn $msg;
+	push(@errors, $msg);
+    }
+
+    # change to starting directory
+    if ( cwd() ne $startDir ) {
+		if ( not chdir($startDir) ) {
+		    $msg = "$me: FATAL ERROR: Cannot change to starting directory '$startDir': $!\r\n";
+		    push(@errors, $msg);
+		    Send_Mail();
+		    die $msg;
+		}
+    }
+}
+
+$msg = "\nFinished at "  . (scalar localtime) . "\n";
+push(@progress, $msg);
+
+Send_Mail();
+
+#======================================================================
+# subroutines
+#======================================================================
+
+sub Send_Mail {
+
+    my @time = localtime(time);
+    my $today = $time[3];
+    my $month = (1,2,3,4,5,6,7,8,9,10,11,12)[(localtime)[4]];
+    my $year = $time[5];
+    $year = $year - 100;
+
+    $year = sprintf("%02d",$year);
+    $month = sprintf("%02d",$month);
+    $today = sprintf("%02d",$today);
+
+    my($date)="$month/$today/$year";
+    my($messageto) = $mailTo . "\@virginia.edu";
+
+    open(MAIL,"| /usr/lib/sendmail -i -t");
+    print MAIL "To: $messageto\n"; 
+    print MAIL "From: $mailFrom\@virginia.edu\n";
+    if (@errors) {
+	print MAIL "Subject: Error processing EAF images to add header comment\n\n";
+	print MAIL "There was an error from the $me script on $date:\n\n";
+    }
+    else {
+	print MAIL "Subject: Report on processing EAF images to add header comment\n\n";
+	print MAIL "$me script completed with no errors on $date.\n\n";
+    }
+    foreach my $err (@errors) {
+	print MAIL "$err";
+    }
+    foreach my $noerr (@progress) {
+	print MAIL "$noerr" ;
+    }
+    print MAIL "-" x 75 . "\n\n";
+    close(MAIL);
+}

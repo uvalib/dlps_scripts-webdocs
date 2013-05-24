@@ -1,0 +1,433 @@
+#!/usr/bin/perl -w
+
+# eaf_proofreader - takes EAF (Early American Fiction) color TIFF page images and
+#   makes GIF derivatives for use in Proofreader (the DLPS web-based image viewer)
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2005-10-10
+# Last modified: 2006-07-10
+
+# See usage summary below for a list of steps this script performs.
+
+# Note: The reason for using the 'tiffcp' command to copy the TIFFs
+# prior to making GIFs with the ImageMagick 'mogrify' command is that
+# IM cannot process some TIFF images (namely EAF page images) if their
+# internal TIFF structure contains unexpected oddities; tiffcp
+# corrects weirdness in the TIFF structure of the files, allowing IM
+# to process the files.
+
+
+# 2006-04-26: gpm2a: Added logging.
+#
+# 2006-05-11: gpm2a: Removed logic for running 'tiffcp' command. (This
+# is now handled by a separate script.) Also added logic to remove
+# certain files created automatically when files are accessed on a
+# Mac.
+#
+# 2006-07-10: gpm2a: Changed to update DLPS tracking system -->
+# Migration Workflow --> Make web images
+
+
+#======================================================================
+# setup
+#======================================================================
+
+use strict;
+use Getopt::Std;
+use Cwd;
+use File::Copy;
+use lib '/shares/admin/bin/text';
+use DlpsText;
+use TrackSys;
+
+my (%opts, $error, $ok, @outfiles, %infiles, @gifs, %gifs);
+my ($dir, $id, $infile, $outfile, $command, $gif, $gifOut, $tifOut);
+my (@errors, @progress, $msg);
+my ($sql, $affected);
+
+my $LOG_DIR = '/shares/admin/bin/text/logs/eaf_proofreader/';
+my $MOGRIFY = 'mogrify';  # path to ImageMagick binaries has been added to system-wide profile
+
+my $me = 'eaf_proofreader';
+my $finalDir = '/shares/image1/01bookscanning/52_CCITTCOMPRESS_OUT';
+my $startDir = cwd();
+my $group = 'dlpswg';
+my $mailFrom = 'gpm2a';
+
+my $gifDir = '/www/doc/dlps/uva-only/proofreader/images';
+if (not -d $gifDir) {
+    $msg = "$me: FATAL ERROR: Proofreader directory '$gifDir' does not exist\n";
+    push(@errors, $msg);
+    Send_Mail();
+    die $msg;
+}
+
+my $usage = <<EOD;
+
+$me - takes EAF (Early American Fiction) color TIFF page images and
+  makes GIF derivatives for use in Proofreader (the DLPS web-based image viewer)
+
+Usage: $me [-v] directories
+  -v (verbose) Show status messages
+
+In:  Names of directories containing TIFF files (named with .tif) to
+     process
+Out: The script performs the following actions for each input directory:
+       - Deletes files created automatically when files are accessed on a Mac
+       - Deletes existing GIFs in Proofreader directory, if necessary
+       - Creates a GIF for each TIFF
+       - Moves GIFs to Proofreader directory $gifDir
+       - Moves TIFFs to final TIFF directory $finalDir
+       - Update DLPS Tracking System --> Migration Workflow --> Make web images
+       - Logs all actions to a logfile in $LOG_DIR
+
+EOD
+
+getopts('v', \%opts) || die $usage;
+die $usage unless (@ARGV);
+
+my $LD = 'LD_LIBRARY_PATH';
+if ( defined $ENV{$LD} ) {
+    $ENV{$LD} = '/usr/local/lib/:' . "$ENV{$LD}";
+} else {
+    $ENV{$LD} = '/usr/local/lib/';
+}
+
+# create log file and make sure you can write to it
+my $log = $LOG_DIR . DlpsText::getLogFileName($me . '_');
+open(LOG, ">$log") || die "Cannot create log file '$log': $!\n";
+print LOG '';
+close LOG;
+# set permissions, including group write
+chmod 0664, $log;
+
+
+#======================================================================
+# main logic
+#======================================================================
+
+# connect to DLPS tracking system
+TrackSys::connect();
+
+# open log file
+open(LOG, ">$log") || die "Cannot write to log file '$log': $!\n";
+
+foreach $dir (sort(@ARGV)) {
+    $error = 0;
+    $ok = 1;
+    @outfiles = ();
+    %infiles = ();
+    %gifs = ();
+
+    $dir =~ s:/$::;  # remove final slash, if present
+    $id = $dir;
+    $id =~ s:^.*/::;  # remove leading path, if any
+
+    $msg = "\n$me: Processing directory '$dir' (ID $id)...\n";
+    print $msg if ($opts{'v'});
+    print LOG $msg;
+    push(@progress, $msg);
+
+    if (-d $dir) {
+	unless ( -r $dir ) {
+	    $msg = "$me: ERROR: Need read permission for directory '$dir'\n";
+	    warn $msg;
+	    print LOG $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+	unless ( -w $dir ) {
+	    $msg = "$me: ERROR: Need write permission for directory '$dir'\n";
+	    warn $msg;
+	    print LOG $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+    } else {
+	$msg = "$me: ERROR: '$dir' is not a directory\n";
+	warn $msg;
+	print LOG $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+    # change to input directory
+    if ( not chdir($dir) ) {
+	$msg = "$me: ERROR: Cannot change to directory '$dir': $!\n";
+	warn $msg;
+	print LOG $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+
+    #------------------------------------------------------------------
+    # count input files and remove files created automatically when
+    # files are accessed on a Mac
+    #------------------------------------------------------------------
+
+    # read input directory; count input files and remove Mac-generated files
+    if ( opendir(DIR, '.') ) {
+	while ( defined($infile = readdir(DIR)) ) {
+	    if ( $infile =~ /^\.DS_Store/ || $infile =~ /^\._eaf/ || $infile =~ /\.ivc_\d$/ ) {
+		if ( unlink "./$infile" ) {
+		    $msg = "$me: Deleted file '$infile'\n";
+		    print $msg;
+		    print LOG $msg;
+		}
+	    }
+
+	    if ( $infile =~ /^\./ or not $infile =~ /\.tif$/ ) {
+		# filename starts with . or does not end with .tif; skip
+		next;
+	    }
+	    $infiles{$infile} = $infile;
+	}
+	closedir DIR;
+    } else {
+	$msg = "$me: ERROR: Cannot read directory '$dir': $!\n";
+	warn $msg;
+	print LOG $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+    if ( not scalar(keys(%infiles)) ) {
+	$msg = "$me: WARNING: No .tif files found in directory '$dir'\n";
+	print $msg;
+	print LOG $msg;
+	push(@progress, $msg);
+	next;
+    }
+
+
+    #------------------------------------------------------------------
+    # mogrify
+    #------------------------------------------------------------------
+
+    # delete existing GIF files in Proofreader directory, if any
+    $gifOut = "$gifDir/$id";
+    if (-d $gifOut) {
+	@gifs = glob("$gifOut/*.gif");
+	foreach $gif (sort(@gifs)) {
+	    if ( not unlink($gif) ) {
+		$msg = "$me: ERROR: Cannot delete existing GIF file '$gif'\n";
+		warn $msg;
+		print LOG $msg;
+		push(@errors, $msg);
+		$ok = 0; last;
+	    }
+	}
+	if (not $ok) {
+	    next;
+	}
+    }
+
+    # make GIF output directory
+    if (not -d $gifOut) {
+	if (mkdir($gifOut)) {
+	    # set group and permissions for output directory
+	    chmod 0775, $gifOut;
+	    system("chgrp $group $gifOut");
+	} else {
+	    $msg = "$me: ERROR: Cannot create GIF output directory '$gifOut': $!\n";
+	    warn $msg;
+	    print LOG $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+    }
+
+    # run mogrify on TIFF files to produce GIF derivatives
+    $msg = "    Creating GIF files...\n";
+    print $msg if ($opts{'v'});
+    print LOG $msg;
+    push(@progress, $msg);
+
+    $error = system("$MOGRIFY -format gif -scale 480x1000 *.tif");
+    if ($error != 0) {
+	$msg = "$me: ERROR: Error creating GIF files for directory '$dir'\n";
+	warn $msg;
+	print LOG $msg;
+	push(@errors, $msg);
+        $ok = 0; next;
+    }
+
+    @gifs = glob('*.gif');
+    if ( scalar(keys(%infiles)) != scalar(@gifs) ) {
+	$msg = "$me: ERROR: The number of GIF output files (" . scalar(@gifs)
+	    . ") does not equal the number of TIFF input files (" . scalar(keys(%infiles)) . ")\n";
+	warn $msg;
+	print LOG $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+    # move GIF files to output directory
+    $msg = "    Moving GIF files to Proofreader directory...\n";
+    print $msg if ($opts{'v'});
+    print LOG $msg;
+    push(@progress, $msg);
+
+    foreach $gif (sort(@gifs)) {
+	$outfile = "$gifOut/$gif";
+	if ( move($gif, $outfile) ) {
+	    $gifs{$gif} = $id;
+	    # set group and permissions for GIF file
+	    chmod 0664, $outfile;
+	    system("chgrp $group $outfile");
+	} else {
+	    $msg = "$me: ERROR: Cannot move GIF file '$gif' to Proofreader directory: $!\n";
+	    warn $msg;
+	    print LOG $msg;
+	    push(@errors, $msg);
+	    $ok = 0; last;
+	}
+    }
+
+    if ( scalar(keys(%infiles)) != scalar(keys(%gifs)) ) {
+	$msg = "$me: ERROR: The number of GIF output files (" . scalar(keys(%gifs))
+	    . ") does not equal the number of TIFF input files (" . scalar(keys(%infiles)) . ")\n";
+	warn $msg;
+	print LOG $msg;
+	push(@errors, $msg);
+	$ok = 0; next;
+    }
+
+
+    #------------------------------------------------------------------
+    # move TIFFs to final directory
+    #------------------------------------------------------------------
+
+    # make final TIFF directory
+    $tifOut = "$finalDir/$id";
+    if (not -d $tifOut) {
+	if (mkdir($tifOut)) {
+	    # set group and permissions for output directory
+	    chmod 0775, $tifOut;
+	    system("chgrp $group $tifOut");
+	} else {
+	    $msg = "$me: ERROR: Cannot create final TIFF directory '$tifOut': $!\n";
+	    warn $msg;
+	    print LOG $msg;
+	    push(@errors, $msg);
+	    $ok = 0; next;
+	}
+    }
+
+    # move TIFF files to final TIFF directory
+    $msg = "    Moving TIFF files to final TIFF directory...\n";
+    print $msg if ($opts{'v'});
+    print LOG $msg;
+    push(@progress, $msg);
+
+    foreach $infile (sort(keys(%infiles))) {
+	$outfile = "$tifOut/$infile";
+	if ( move($infile, $outfile) ) {
+	    # set group and permissions for GIF file
+	    chmod 0664, $outfile;
+	    system("chgrp $group $outfile");
+	} else {
+	    $msg = "$me: ERROR: Cannot move TIFF file '$infile' to final TIFF directory '$tifOut': $!\n";
+	    warn $msg;
+	    print LOG $msg;
+	    push(@errors, $msg);
+	    $ok = 0; last;
+	}
+    }
+}
+continue {
+    if ($ok) {
+	$msg = "    Directory '$dir' was processed successfully.\n\n";
+	print $msg if ($opts{'v'});
+	print LOG $msg;
+	push(@progress, $msg);
+
+	# update DLPS tracking system
+	$msg = "    Updating DLPS tracking system...\n";
+	print $msg if ($opts{'v'});
+	print LOG $msg;
+	push(@progress, $msg);
+	$affected = 0;
+	$sql = "UPDATE bookScanning SET makeWebImages = 1 WHERE dlpsId = '$id' LIMIT 1";
+	$affected = TrackSys::query($sql);
+	if ($affected != 1) {
+	    $msg = "$me: WARNING: Cannot update DLPS tracking system for record '$id'. Update manually.\n\n";
+	    warn $msg;
+	    print LOG $msg;
+	    push(@errors, $msg);
+	}
+    } else {
+	$msg = "$me: ERROR: Processing of directory '$dir' FAILED!\n\n";
+	warn $msg;
+	print LOG $msg;
+	push(@errors, $msg);
+    }
+
+    # change to starting directory
+    if ( cwd() ne $startDir ) {
+	if ( not chdir($startDir) ) {
+	    $msg = "$me: FATAL ERROR: Cannot change to starting directory '$startDir': $!\n";
+	    print LOG $msg;
+	    push(@errors, $msg);
+	    Send_Mail();
+	    die $msg;
+	}
+    }
+
+    # remove original TIFF directory (if empty)
+    if ($ok) {
+	if ( not rmdir($dir) ) {
+	    $msg = "$me: WARNING: Cannot remove original TIFF directory '$dir': $!\n";
+	    print $msg;
+	    print LOG $msg;
+	    push(@progress, $msg);
+	}
+    }
+}
+
+close LOG;
+TrackSys::disconnect();
+Send_Mail();
+
+
+
+#======================================================================
+# subroutines
+#======================================================================
+
+sub Send_Mail {
+
+    my @time = localtime(time);
+    my $today = $time[3];
+    my $month = (1,2,3,4,5,6,7,8,9,10,11,12)[(localtime)[4]];
+    my $year = $time[5];
+    $year = $year - 100;
+
+    $year = sprintf("%02d",$year);
+    $month = sprintf("%02d",$month);
+    $today = sprintf("%02d",$today);
+
+    my($date)="$month/$today/$year";
+    my($messageto) = "ul-dlpsscripts\@virginia.edu";
+
+    open(MAIL,"| /usr/lib/sendmail -i -t");
+    print MAIL "To: $messageto\n"; 
+    print MAIL "From: $mailFrom\@virginia.edu\n";
+    if (@errors) {
+	print MAIL "Subject: Error processing EAF images after QA\n\n";
+	print MAIL "There was an error from the eaf_proofreader script on $date:\n\n";
+    }
+    else {
+	print MAIL "Subject: Report on processing EAF images after QA\n\n";
+	print MAIL "eaf_proofreader script completed with no errors on $date.\n\n";
+    }
+    foreach my $err (@errors) {
+	print MAIL "$err\n";
+    }
+    foreach my $noerr (@progress) {
+	print MAIL "$noerr" ;
+    }
+    print MAIL "-" x 75 . "\n\n";
+    close(MAIL);
+}

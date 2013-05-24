@@ -1,0 +1,505 @@
+#!/usr/bin/perl -w -I /shares/admin/bin/text
+
+# proofprep - creates GIF derivatives of page images and makes them
+# available to the DLPS Proofreader web-based image viewer
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2002-07-15
+# Last modified: 2008-09-16
+
+# 2003-07-07: gpm2a: Complete overhaul of the script, including:
+#   - Changed from using the File::Copy module to using system calls
+#     to move files.
+#   - Added option for NOT moving GIFs into place (i.e. only creating
+#     them).
+#   - Simplified format of config file. Added defaults for all config
+#     settings so that only IDs are strictly required in config file.
+#   - Removed code relating to copying the XML file into place (our
+#     workflow has changed such that it is preferable to run this
+#     script while the text is at the keyboarding vendor, so there's
+#     no XML file to copy).
+#   - Removed code relating to generating enlargements (we've never
+#     made use of this option).
+#
+# 2004-08-05: gpm2a: Changed default source and destination
+# directories.
+#
+# 2006-02-09: gpm2a: Updated for use on pogo.lib
+#
+# 2008-09-16: gpm2a: Changed to allow IDs other than traditional DLPS
+# [bz]\d{9} format
+
+# Usage: ModEndproofprep config-file [dir1 dir2 ... dirN]
+
+# In: Requires a configuration file.
+
+# Out: The script makes GIF images and, optionally, puts them where
+# Proofreader can use them. Messages are printed to standard output.
+
+# Format of config file:
+
+# source=/shares/image1/01bookscanning/52_CCITTCOMPRESS_OUT
+# destination=/www/doc/dlps/uva-only/proofreader/images
+# size=480x1000
+# move=yes
+# verbose=yes
+# b001234567
+# b007654321
+
+# Lines starting with # are ignored.
+
+# 'source' indicates main directory, containing subdirectory for each
+#     ID, for source (TIFF) images
+# 'destination' indicates main directory, containing subdirectory for
+#     each ID, for output (GIF) images (Proofreader directory)
+# 'size' is the value to be used by the mogrify -scale option; format
+#     is <width>x<height>, where <width> and <height> are integers
+#     indicating maximum possible pixels
+# 'move' is a yes/no value indicating whether or not to move the
+#     images to the destination directory after they're created in the
+#     source directory
+# 'verbose' is a yes/no value indicating whether or not to display
+#     info messages (as well as warning and error messages, which are
+#     always displayed)
+# IDs to be processed must be specified one per line
+
+# With the exception of the IDs to process, the settings are all
+# optional, since they all have defaults; the default values are
+# indicated in the example config format above.
+
+# ms3uf: changed this to allow command line args as directories; config file req'd
+
+#===========
+# main logic
+#===========
+
+use strict;
+use DlpsText;
+
+my ($me, $usage, $msg);
+my ($config_file, $source_path, $dest_path, $size, $move, $verbose, @ids, $id);
+my ($move_display, $verbose_display, $in);
+my ($tif_count, $gif_source_count, $gif_dest_count);
+my ($source_dir, $dest_dir, $source_file, $dest_file, $file);
+
+
+#----------------
+# set 'constants'
+#----------------
+
+my $config_file_default = '/shares/admin/bin/text/proofprep.config';
+my $source_path_default = '/shares/image1/01bookscanning/52_CCITTCOMPRESS_OUT/';
+my $dest_path_default = '/www/doc/dlps/uva-only/proofreader/images/';
+my $size_default = '480x1000';
+my $MOGRIFY = 'mogrify';  # path to ImageMagick binaries has been added to system-wide profile
+
+# ----------------------------------------------------------
+# now that config file is disabled: add config settings here
+# ----------------------------------------------------------
+
+$source_path=$source_path_default;
+$dest_path=$dest_path_default;
+$size=$size_default;
+$move="yes";
+$verbose="yes";
+
+#----------------------------
+# test command-line arguments
+#----------------------------
+
+$me = $0;
+$usage = <<EOD;
+
+$me - creates GIF derivatives of page images and makes them
+  available to the DLPS Proofreader web-based image viewer
+Usage: ModEndproofprep config-file [dir1 dir2 ... dirN]
+  config-file: the configuration file, which specifies directory
+    locations and which IDs to process. Defaults to
+    $config_file_default
+
+EOD
+
+foreach (@ARGV) {
+    die $usage if /^-[h\?]/;   # this is just for testing
+}
+#die $usage if (@ARGV > 1); # no more than one argument
+
+
+#$config_file = shift;
+#if (not $config_file) { $config_file = $config_file_default; }
+#if (not -e $config_file) { die "$me: ERROR: Configuration file '$config_file' does not exist.\n"; }
+
+
+
+#-----------------
+# read config file
+#-----------------
+
+#open(CONFIG, $config_file) || die "$me: ERROR: Cannot read '$config_file': $!\n";
+#while (<CONFIG>) {
+#    next if ( /^#/ );
+#    next if ( /^\s*$/ );
+#
+#    if ( /^source=(.*)/ ) {
+#	$source_path = $1;
+#    } elsif ( /^destination=(.*)/ ) {
+#	$dest_path = $1;
+#    } elsif ( /^size=(.*)/ ) {
+#	$size = $1;
+#    } elsif ( /^move=(.*)/ ) {
+#	$move = $1;
+#    } elsif ( /^verbose=(.*)/ ) {
+#	$verbose = $1;
+#    } elsif ( /^(\w+)\s*$/ ) {
+#	push @ids, $1;
+#    }
+#}
+#close CONFIG;
+
+# read and test dirs passed on command line
+
+my @dirs = undef;
+@dirs = @ARGV; # the remaining args will expand to fill @ARGV if they contain wildcards
+if (not @dirs) { @dirs = "."; }
+for (my $d=0; $d <= $#dirs; $d++) {
+	unless ( -d "$source_path".'/'."$dirs[$d]" ) { 
+		my $removed = splice(@dirs, $d, 1); $d--;
+		print "$removed is not a directory.  Removing it from list.\n";
+	} else {
+		print "target dir: $dirs[$d]\n";
+	}
+}
+
+#-------------------------
+# validate config settings
+#-------------------------
+
+# source path
+if ($source_path) {
+    $source_path = DlpsText::normalize_path($source_path);
+} else {
+    $source_path = $source_path_default;
+}
+if (not -d $source_path) {
+    die "$me: ERROR: Config setting 'source': '$source_path' is not a valid directory path.\n"; }
+if (not -r $source_path) {
+    die "$me: ERROR: Config setting 'source': Need read permissions on directory '$source_path'.\n";}
+if (not -w $source_path) {
+    die "$me: ERROR: Config setting 'source': Need write permissions on directory '$source_path'.\n"; }
+
+# destination path
+if ($dest_path) {
+    $dest_path = DlpsText::normalize_path($dest_path);
+} else {
+    $dest_path = $dest_path_default;
+}
+if ($move) {
+    if (not -d $dest_path) {
+	die "$me: ERROR: Config setting 'destination': '$dest_path' is not a valid directory path.\n"; }
+    if (not -r $dest_path) {
+	die "$me: ERROR: Config setting 'destination': Need read permissions on directory '$dest_path'.\n"; }
+    if (not -w $dest_path) {
+	die "$me: ERROR: Config setting 'destination': Need write permissions on directory '$dest_path'.\n"; }
+}
+
+# size of output images
+if ($size) {
+    if (not $size =~ /\d+x\d+/) {
+	die "$me: ERROR: Config setting 'size': '$size' is not valid. Must be <width>x<height>,"
+	    . " where <width> is an integer for maximum allowable width"
+	    . " and <height> is an integer for maximum allowable height.\n";
+    }
+} else {
+    $size = $size_default;
+}
+
+if ($move) {
+    if ( $move =~ /^(no|false)\s*$/i ) {
+	$move = 0;
+    } elsif ($move =~ /^(yes|true)\s*$/i ) {
+	$move = 1;
+    } else {
+	die "$me: ERROR: Config setting 'move': '$move' is not valid."
+	    . " Must be one of 'yes', 'no', 'true', or 'false'.\n";
+    }
+} else {
+    $move = 1;
+}
+
+if ($verbose) {
+    if ( $verbose =~ /^(no|false)\s*$/i ) {
+	$verbose = 0;
+    } elsif ($verbose =~ /^(yes|true)\s*$/i ) {
+	$move = 1;
+    } else {
+	die "$me: ERROR: Config setting 'verbose': '$verbose' is not valid."
+	    . " Must be one of 'yes', 'no', 'true', or 'false'.\n";
+    }
+} else {
+    $verbose = 1;
+}
+
+# ---------------------------------------------------
+# append command line directories to config file dirs
+# ---------------------------------------------------
+
+unless ( $#dirs == -1 ) {
+	push(@ids, @dirs);
+}
+
+if (not @ids) { die "$me: ERROR: No IDs specified.\n"; }
+
+
+#-------------------------------------------------
+# display config settings to user for confirmation
+#-------------------------------------------------
+
+if ($move) { $move_display = 'Yes'; } else { $move_display = 'No'; }
+if ($verbose) { $verbose_display = 'Yes'; } else { $verbose_display = 'No'; }
+
+print <<EOD;
+
+Source directory:           $source_path
+Destination directory:      $dest_path
+Size of output images:      $size
+Move images after creating? $move_display
+Show status messages?       $verbose_display
+IDs to process:
+EOD
+
+foreach $id (@ids) {
+    print "    $id\n";
+}
+
+print "Run proofprep using these configuration settings? (y/n) ";
+$in = <STDIN>;
+chomp $in;
+if ( $in =~ /(y|yes)/i ) {
+    # proceed
+} else {
+    exit;
+}
+
+
+#----------------
+# process each id
+#----------------
+
+foreach $id (@ids) {
+    $tif_count = 0;
+    $gif_source_count = 0;
+    $gif_dest_count = 0;
+
+    $msg = "Processing ID '$id' at " . DlpsText::getDateTime() . "...";
+    print "\n$me: $id: $msg\n";
+
+    #----------------------
+    # test source directory
+    #----------------------
+
+    $source_dir = $source_path . $id . "/";
+
+    if (not -d $source_dir) {
+	$msg = "\tWARNING: Source directory: '$source_dir' is not a directory."
+	    . " ID '$id' could NOT be processed.\n";
+	warn $msg;
+	next;
+    }
+
+    if (not -r $source_dir) {
+	$msg = "\tWARNING: Source directory: Need read permissions on directory '$source_dir'."
+	    . " ID '$id' could NOT be processed.\n";
+	warn $msg;
+	next;
+    }
+
+    if (not -w $source_dir) {
+	$msg = "\tWARNING: Source directory: Need write permissions on directory '$source_dir'."
+	    . " ID '$id' could NOT be processed.\n";
+	warn $msg;
+	next;
+    }
+
+
+    #--------------------------------
+    # establish destination directory
+    #--------------------------------
+
+    if ($move) {
+	$dest_dir = $dest_path . $id . "/";
+	if (-d $dest_dir) {
+	    # destination directory exists; test permissions
+	    if (not -r $dest_dir) {
+		$msg = "\tWARNING: Destination directory: Need read permissions on directory '$dest_dir'."
+		    . " ID '$id' could NOT be processed.\n";
+		warn $msg;
+		next;
+	    }
+	    if (not -w $dest_dir) {
+		$msg = "\tWARNING: Destination directory: Need write permissions on directory '$dest_dir'."
+		    . " ID '$id' could NOT be processed.\n";
+		warn $msg;
+		next;
+	    }
+
+	    # remove all GIF files
+	    if ($verbose) {
+		$msg = "\tDestination directory '$dest_dir' already exists. Removing existing GIF images...\n";
+		print $msg;
+	    }
+	    chdir $dest_dir;
+	    unlink_all('.gif');
+	} else {
+	    # destination directory does not exist; create directory
+	    if ( mkdir($dest_dir) ) {
+		if ($verbose) {
+		    $msg = "\tCreated destination directory '$dest_dir'.\n";
+		    print $msg;
+		}
+
+		# set permissions, including group write, on newly created destination directory
+		if ( not chmod(0775, $dest_dir) ) {
+		    $msg = "\tWARNING: Unable to set group write"
+			. " permissions on destination directory '$dest_dir': $!\n";
+		    warn $msg;
+		}
+	    } else {
+		$msg = "\tWARNING: Cannot create destination directory '$dest_dir': $!\n"
+		    . " ID '$id' could NOT be processed.\n";
+		warn $msg;
+		next;
+	    }
+	}
+    }
+
+
+    #-----------------------
+    # make derivative images
+    #-----------------------
+
+    if ($verbose) {
+	$msg = "\tMaking derivative GIF images in source directory '$source_dir'...\n";
+	print $msg;
+    }
+
+    system("$MOGRIFY -format gif -scale $size ${source_dir}*.tif");
+
+    # test number of derivative GIFs created vs. number of original TIFFs
+    if ( opendir(SOURCE, $source_dir) ) {
+	foreach $file ( readdir(SOURCE) ) {
+	    if ($file =~ /\.gif$/) {
+		$gif_source_count++;
+	    } elsif ($file =~ /\.tif$/) {
+		$tif_count++;
+	    }
+	}
+	closedir SOURCE;
+
+	if ($gif_source_count == $tif_count) {
+	    if ($verbose) {
+		$msg = "\tCreated $gif_source_count derivative GIFs from $tif_count original TIFFs.\n";
+		print $msg;
+	    }
+	} else {
+	    $msg = "\tWARNING: Number of derivative GIFs created ($gif_source_count)"
+		. " is NOT EQUAL to number of original TIFFs ($tif_count).\n";
+	    warn $msg;
+	}
+    } else {
+	$msg = "\tWARNING: Cannot read source directory '$source_dir': $! "
+	    . "Cannot verify number of GIFs created.\n";
+	warn $msg;
+    }
+
+
+    #-------------------------------------
+    # move images to destination directory
+    #-------------------------------------
+
+    if ($move) {
+	if ( opendir(SOURCE, $source_dir) ) {
+	    if ($verbose) {
+		$msg = "\tMoving images to destination directory '$dest_dir'...\n";
+		print $msg;
+	    }
+
+	    foreach $file ( readdir(SOURCE) ) {
+		if ($file =~ /\.gif$/) {
+		    $source_file = $source_dir . $file;
+		    $dest_file = $dest_dir . $file;
+
+		    # move this GIF image to destination directory
+		    system("mv -f $source_file $dest_file");
+		}
+	    }
+	    closedir SOURCE;
+
+	    if ( opendir(DEST, $dest_dir) ) {
+		# count number of GIFs in destination directory and set group write permissions on them
+		foreach $file ( readdir(DEST) ) {
+		    if ($file =~ /\.gif$/) {
+			$gif_dest_count++;
+			$dest_file = $dest_dir . $file;
+
+			# set permissions, including group write, for this GIF
+			chmod 0664, $dest_file;
+		    }
+		}
+		close DEST;
+
+		# test number of derivative GIFs vs. number of original TIFFs
+		if ($gif_dest_count == $tif_count) {
+		    if ($verbose) {
+			$msg = "\tMoved $gif_dest_count GIFs to destination directory. All GIFs accounted for.\n";
+			print $msg;
+		    }
+		} else {
+		    $msg = "\tWARNING: Number of derivative GIFs in destination directory ($gif_dest_count)"
+			. " is NOT EQUAL to number of original TIFFs in source directory ($tif_count).\n";
+		    warn $msg;
+		}
+	    } else {
+		$msg = "\tWARNING: Cannot read destination directory '$dest_dir': $! "
+		    . "Cannot verify number of GIFs in destination directory.\n";
+		warn $msg;
+	    }
+	} else {
+	    $msg = "\tWARNING: Cannot read source directory '$source_dir': $! "
+		. "Cannot move images to destination directory.\n";
+	    warn $msg;
+	}
+    }
+
+    $msg = "\tFinished processing ID '$id' at " . DlpsText::getDateTime() .  ".\n";
+    print $msg;
+}
+
+
+
+#============
+# subroutines
+#============
+
+sub unlink_all {
+    # unlinks all files with specified filename extension
+    # expects one argument: a string indicating file extension, e.g. '.xml' or '.gif'
+
+    my $ext = shift;
+    my $unlink_count = 0;
+    my $temp = 0;
+    my $file = "";
+
+    foreach $file (<*$ext>) {
+	$temp = unlink($file);
+	if ($temp) {
+	    $unlink_count += $temp;
+	} else {
+	    $msg = "\tWARNING: Cannot remove file '$file': $!\n";
+	    warn $msg;
+	}
+    }
+    if ($unlink_count and $verbose) {
+	$msg = "\tRemoved $unlink_count '$ext' files.\n";
+	print $msg;
+    }
+}

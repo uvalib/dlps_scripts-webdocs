@@ -1,0 +1,142 @@
+#!/usr/bin/perl -w
+
+# count_unclears - counts number of <unclear> and <gap/> tags in the
+# file and issues warnings if an excessive number of unclears or gaps
+# appear on a single page (suggesting a bad page image)
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2004-01-26
+
+use Getopt::Std;
+use strict;
+
+my ($me, $usage, %opts, $q, $n, $infile, @infile);
+my (%langs, $unclears, $gaps, $unclears_page, $gaps_page);
+my ($pagenumber, $pageimage);
+my ($i, $el, $el_c, $page_c, $test, $buffer, $match);
+
+$me = 'count_unclears';
+$usage = <<EOD;
+
+$me - counts number of <unclear> and <gap/> tags in the
+  file and issues warnings if an excessive number of unclears or gaps
+  appear on a single page (suggesting a bad page image)
+
+Usage: $me [-n number] [-q] filenames
+  -n (number) Number of unclears/gaps on a single page to consider excessive. Defaults to 10.
+  -q (quiet)  Suppress warning messages about too many unclears/gaps on a single page.
+
+In: TEI XML file(s)
+Out: Prints messages to standard output. No changes to input file.
+
+EOD
+
+getopts('n:q', \%opts) || die $usage;
+$n = $opts{'n'} || '10';
+$q = $opts{'q'};
+
+if (not $n =~ /^\d+$/) { die "Value of -n option must be an integer\n$usage"; }
+$n = $n + 0;
+if ($n < 1) { die "Value of -n option must be 1 or higher\n$usage"; }
+
+die $usage if (! @ARGV);
+
+foreach $infile (@ARGV) {
+    $unclears = 0; $gaps = 0;
+    $unclears_page = 0; $gaps_page = 0;
+
+    # read input file into an array
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # get language IDs; these are used to exclude gaps for non-Western
+    # characters, e.g. to skip <gap desc="chi" reason="editorial"/>
+    foreach (@infile) {
+	if ( /<language [^>]*id=("|')([^\1]+?)\1/ ) {
+	    $langs{$2} = '';
+	}
+	last if ( /<\/teiHeader>/ );
+    }
+    # add language-related desc values you know you always want to exclude
+    $langs{'chi'} = '';
+    $langs{'Chinese characters'} = '';
+
+    foreach (@infile) {
+	if ( /<pb(\s|\/?>)/ ) {
+            if (not $q) {
+	        if ($unclears_page >= $n) {
+		    warn "$me: $infile: Warning: Page $pagenumber (image $pageimage) " .
+                        "has $unclears_page <unclear> tags.\n";
+	        }
+	        if ($gaps_page > $n) {
+		    warn "$me: $infile: Warning: Page $pagenumber (image $pageimage) " .
+                        "has $gaps_page <gap> tags.\n";
+	        }
+            }
+
+	    $unclears_page = 0; $gaps_page = 0;
+
+	    if (/<pb.+n=["'](\w+)["'].*>/i) {
+		$pagenumber = $1;
+	    } else {
+		$pagenumber = '[unnumbered]';
+	    }
+
+	    if (/<pb.+entity=["'](\w+)["'].*>/i) {
+		$pageimage = $1;
+	    } else {
+		$pageimage = '';
+	    }
+	}
+
+	if ( /<unclear/ or /<gap/ ) {
+	    # check this line twice: once for unclears, once for gaps
+	    for ($i = 1; $i <= 2; $i++) {
+		if ($i == 1) {
+		    $el = 'unclear';
+		    $el_c = $unclears;
+		    $page_c = $unclears_page;
+		} else {
+		    $el = 'gap';
+		    $el_c = $gaps;
+		    $page_c = $gaps_page;
+		}
+
+		# find all occurrences on this line
+		if ( /<$el/ ) {
+		    $test = $_;
+		    $buffer = '';
+		    while ( $test =~ m:(<$el[^/>]*?/>|<$el[^/>]*?>.*?</$el>): ) {
+			$match = $&;
+			$buffer .= $`;
+			$test = $';
+
+			$el_c++;
+			$page_c++;
+
+			# test for language-related gap (where desc is a language ID); if so, skip
+			if ($el eq 'gap') {
+			    if ( $match =~ /<$el[^>]*desc=("|')([^\1]+?)\1/ ) {
+				if ( exists($langs{$2}) ) {
+				    $el_c--; $page_c--; next;
+				}
+			    }
+			}
+		    } # end while
+		    $buffer .= $test;
+		    $_ = $buffer;
+		    if ($el eq 'unclear') {
+			$unclears = $el_c;
+			$unclears_page = $page_c;
+		    } else { 
+			$gaps = $el_c;
+			$gaps_page = $page_c;
+		    }
+		}
+	    }
+	}
+    }
+
+    print "$me: $infile: $unclears <unclear> tags, $gaps <gap> tags (" . ($unclears + $gaps) . " total)\n";
+}

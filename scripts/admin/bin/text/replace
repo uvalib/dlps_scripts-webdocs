@@ -1,0 +1,12 @@
+#!/usr/bin/perl -w
+
+# Usage: replace perlexpr [filenames]
+
+($op = shift) || die "Usage: replace perlexpr [filenames]\n";
+if (!@ARGV) {
+    @ARGV = <STDIN>;
+    chop(@ARGV);
+}
+for (@ARGV) {
+    system "/usr/bin/perl -pi.bak -e '$op' $_";
+}

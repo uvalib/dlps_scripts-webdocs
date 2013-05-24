@@ -1,0 +1,166 @@
+#!/usr/bin/perl -w
+
+# qa_pids - checks TEI XML document(s) for presence of properly
+# declared 'pid' (persistent ID) attribute values
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2005-04-05
+# Last modified: 2008-07-29
+
+# 2005-05-11: gpm2a: Fixed bug whereby empty SYSTEM values and/or
+# empty 'pid' attribute values were not raising errors.
+#
+# 2005-06-13: gpm2a: Changed script to require 'pid' attribute only if
+# 'entity' attribute is present. Without 'entity' attribute, 'pid'
+# attribute is not applicable and cannot be verified. For texts with
+# no figure images, 'pid' attribute is not required.
+#
+# 2005-08-01: gpm2a: Use standard output for QA error/warning/info
+# messages (since these are normal script output). Only use standard
+# error for fatal script errors.
+#
+# 2006-03-17: gpm2a: Fixed bug that manifested itself only when there
+# was a very large number of errors to report.
+#
+# 2008-07-29: gpm2a: Fixed bug occurring when <!ENTITY declaration is
+# preceded by leading whitespace.
+
+
+#***********
+# main logic
+#***********
+
+use Getopt::Std;
+use strict;
+
+my ($me, $usage, %opts, $e, $infile, @infile);
+my ($c, @hits, $lc, $problem);
+my ($entword, $entname, $sysword, $pid, $ndataword, $contentmodel, %pids);
+my ($match, $test, $tag, $entity);
+my ($el, $id, $line, $col, $type, $msg);
+
+
+$me = 'qa_pids';
+$usage = <<EOD;
+
+$me - checks TEI XML document(s) for presence of properly declared 'pid' (persistent ID) attribute values
+Usage: $me [-e number] [-E] filenames
+    -e  Maximum number of error/warning messages to display (defaults to 10)
+    -E  Only display error messages (suppress warnings)
+In: XML file(s)
+Out: Prints messages to standard output
+
+EOD
+
+getopts('e:E', \%opts) || die $usage;
+$e = $opts{'e'} || '10';
+die "-e must be a number.$usage" if (not $e =~ /\d+/);
+$e += 0;
+die $usage if (! @ARGV);
+
+INFILE: foreach $infile (@ARGV) {
+    @hits = ();
+    %pids = ();
+    $c = 0;
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # build hash of pids, by entity name
+    foreach (@infile) {
+	if ( /<!ENTITY.*(uvaBitonal|uvaHighRes|uvaLowRes)>/ ) {
+	    ($entword, $entname, $sysword, $pid, $ndataword, $contentmodel) = split(/\s+/, $&);
+	    $pid =~ s/"//g;
+	    if ($pid) {
+		if ($entname) {
+		    $pids{$entname} = $pid;
+		} else {
+		    print "$me: $infile: WARNING: No entity name in ENTITY declaration\n";
+		}
+	    } else {
+		print "$me: $infile: WARNING: No PID value found in declaration of entity '$entname'\n";
+	    }
+	} elsif ( /<TEI.2/) {
+	    last;
+	}
+    }
+
+
+    #==========
+    # run tests
+    #==========
+
+    $lc = 0;
+    foreach (@infile) {
+	$lc++;
+
+	$test = $_;
+	while ( $test =~ /<(pb|figure)\s+[^>]*?>/ ) {
+	    $match = $&;
+	    $test = $';
+	    $tag = $1;
+	    $col = length($`) + 1;
+	    $problem = $match . $test; chomp $problem;
+
+	    # first, test for presence of 'entity' attribute (if no 'entity' then 'pid' is not applicable)
+	    if ( $match =~ /\sentity=("|')([^\1]+?)\1/ ) {
+		$entity = $2;
+
+		# test for presence of 'pid' attribute
+		if ( $match =~ /\spid=("|')([^\1]+?)\1/ ) {
+		    $pid = $2;
+
+		    # test that the 'pid' value was declared with the corresponding 'entity' attribute value
+		    if ( $pid ne $pids{$entity} ) {
+			hit($lc, $col, 'E', "'pid' attribute value '$pid' was not declared.");
+		    }
+		} else {
+		    hit($lc, $col, 'E', "Required 'pid' attribute is missing.");
+		}
+	    }
+	}
+    }
+
+
+    #===============
+    # print messages
+    #===============
+
+    # print messages, sorted by line number and column number
+    $c = 0;
+    foreach $el ( sort({$a cmp $b} @hits) ) {
+	$c++;
+	($id, $line, $col, $type, $msg) = split(/~/, $el);
+
+	if    ($type eq 'E')    { $type = 'ERROR'; }
+	elsif ($type eq 'W')    { $type = 'WARNING'; }
+	elsif ($type eq 'INFO') { $type = 'Info'; }
+
+	if ($line) { $line = "$line: "; } else { $line = ''; }
+	if ($col)  { $col = "$col: ";   } else { $col = ''; }
+	print "$infile: $line$type: $msg\n";  # no need to print column number; it is more distracting than helpful
+
+	if ($c >= $e) {
+	    print "$infile: Info: Maximum number of errors ($e) reached; change with -e option\n\n";
+	    next INFILE;
+	}
+    }
+}
+
+
+#************
+# subroutines
+#************
+
+sub hit {
+    my $line = shift;
+    my $col = shift;
+    my $type = shift;
+    my $msg = shift;
+
+    my $id = sprintf("%05d", $line) . '.' . sprintf("%04d", $col);
+    $hits[$c] = "$id~$line~$col~$type~$msg\n\tProblem: $problem\n";
+    $c++;
+}

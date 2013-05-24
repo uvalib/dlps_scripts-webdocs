@@ -1,0 +1,91 @@
+#!/usr/bin/perl -w
+
+# multiline_tags - any SGML/XML start-tags broken across multiple lines are brought onto one line
+
+# Greg Murray <gpm2a@virginia.edu>
+# Written: 2002-05-20
+# Last modified: 2003-03-25
+
+
+use strict;
+##use lib '/shares/admin/bin/text';
+##use DlpsText;
+
+my ($me, $usage);
+my ($infile, @infile);
+my ($changed, $buffer, $found, $out, $msg);
+
+$me = 'multiline_tags';
+$usage = <<EOD;
+
+$me - any SGML/XML start-tags broken across multiple lines are brought onto one line
+Usage: $me filenames
+In: SGML/HTML/XML file(s)
+Out: Copies each input file to [filename].bak, then overwrites original input file
+
+EOD
+
+die $usage if (! @ARGV);
+foreach (@ARGV) {
+    die $usage if /^-/;   # this script has no switches
+}
+
+foreach $infile (@ARGV) {
+    $out = '';
+
+    # read input file
+    open(IN, $infile) || die "$me: ERROR: Cannot read '$infile': $!\n";
+    @infile = <IN>;
+    close IN;
+
+    # look for any start-tags split across lines; if none, no need to process file
+    $changed = 0;
+    foreach (@infile) {
+	if ($found) {
+	    # broken tag was found on previous line
+	    $buffer .= $_;                   # add current line to buffer
+	    $buffer =~ s/(<[^>]*?)\n/$1 /;   # replace newline with a space
+	    $changed = 1;                    # flag that a change has been made; input file will need to be replaced
+	    if ($buffer =~ /<([^>]*)$/) {
+		# buffer also ends with a broken tag; do not add buffer to output yet
+	    } else {
+		$out .= $buffer;      # add buffer to output
+		$buffer = "";
+		$found = 0;
+	    }
+	} elsif (/(<[^>]*)$/) {
+	    # broken tag found on current line
+	    if (/!DOCTYPE.*\[/) {
+		# DOCTYPE declarations with internal subsets are the exception; do not try to collapse onto one line
+		$out .= $_;
+	    } else {
+		# broken tag (not a DOCTYPE declaration) found on current line
+		$buffer .= $_;
+		$found = 1;
+	    }
+	} else {
+	    # line ok; add line to output and move one
+	    $out .= $_;
+	}
+    }
+
+    if ($changed) {
+	# make backup
+	open(BAK, ">${infile}.bak") || die "$me: ERROR: Cannot write '${infile}.bak': $!\n";
+	foreach (@infile) {
+	    print BAK;
+	}
+	close BAK;
+
+	# overwrite input file
+	open(OUT, ">$infile") || die "$me: ERROR: Cannot write '$infile': $!\n";
+	print OUT $out;
+	close OUT;
+
+	$msg = 'Collapsed multi-line start-tags';
+    } else {
+	$msg = 'No changes made';
+    }
+
+    ##DlpsText::log($me, $infile, $msg);
+}
