@@ -1,0 +1,338 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0051 SYSTEM "000000766_0051" NDATA jpg>
+<!ENTITY DSSR_000000766_0052 SYSTEM "000000766_0052" NDATA jpg>
+<!ENTITY DSSR_000000766_0053 SYSTEM "000000766_0053" NDATA jpg>
+<!ENTITY DSSR_000000766_0054 SYSTEM "000000766_0054" NDATA jpg>
+
+<!--<!ENTITY NA62b02a SYSTEM "NA62b02a.jpg" NDATA jpg>
+<!ENTITY NA62b02b SYSTEM "NA62b02b.jpg" NDATA jpg>
+<!ENTITY NA62b02c SYSTEM "NA62b02c.jpg" NDATA jpg>
+<!ENTITY NA62b02d SYSTEM "NA62b02d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NA62b02">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-02-02">1862 February 2</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Diana Williams, Joyner Library, East Carolina University</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Diana Williams, Joyner Library, East Carolina University</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">17</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62b02</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, 1862 February 2</title>
+
+
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p>Corinne Carr Nettleton Civil War Collection </p>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p>There is a postscript up-side-down on the top of the first page of
+                                this letter.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-02-02">1862-02-02</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Women Writers/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2001-05">May 2001</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Carolyn Fay, Electronic Text Center</name>
+                </respStmt>
+                <item>Updated TEI header and tags. </item>
+            </change>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-03">November 3rd, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">September 30, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1862-02-02">1862-02-02</date>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+
+                <p>Addie tells Charlie that she is a free spirit. She encourages Charlie to
+                    accompany her brother on a home visit. She tells how she maneuvers in her
+                    hometown to conceal her affection for Charlie. In her youth, she explains, she
+                    felt she should not be loved, and she tells Charlie what she thinks is her true
+                    nature. </p>
+            </div1>
+
+        </front>
+
+        <body id="d4">
+
+
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-02-02"
+                        >1862 February 2</date></head>
+                <pb n="1" entity="DSSR_000000766_0051"/>
+
+                <opener>
+                    <dateline><name type="place">Mecca</name> February 2<hi rend="super">nd</hi> '62</dateline>
+                    <lb/>
+                    <salute>Darling <name type="recipient">Charlie</name></salute>
+                    <lb/>
+                </opener>
+                <p> Did you ever behold<lb/> such a beautiful sabbath day as this one?<lb/> I feel
+                    more like working out of doors<lb/> and shouting for joy, than sitting in
+                    silent<lb/> admiration, as civilized people are pleased to<lb/> call it. But I
+                    don't believe they enjoy<lb/> the beauty one half as much as they would<lb/> if
+                    they were as free as birds. Oh, anything<lb/> for me but sitting in the house
+                    so<lb/> prim and formal saying just such<lb/> words, as if they had
+                    memorized<lb/> them, and if you chance to say anything<lb/>
+                    <pb n="2" entity="DSSR_000000766_0052"/> else, blush as if you<lb/> had been
+                    caught in the act of stealing<lb/> Why, <name type="recipient">Charlie</name> my
+                    darling I believe<lb/> human beings wander as far from<lb/> nature as from God.
+                    But you, will<lb/> say is this from <name type="sender">Addie</name>, such a <orig
+                        reg="commencement">commence-<lb/> ment</orig> for a letter from <name
+                        type="sender">Addie</name>? I presume<lb/> that is the fact, does it not
+                    agree<lb/> with your sentiments? <name type="recipient">Charlie</name>, <hi
+                        rend="underline">You</hi> do<lb/> not know the disappointment I shall<lb/>
+                    experience if you do not come home when<lb/> Hallie<corr sic="comes."
+                        resp="unknown">comes</corr>I had stored away <hi rend="underline"
+                    >so</hi><lb/> much pleasure for your return, thus it is<lb/> with life. How
+                    suddenly and cruelly can<lb/> our brightest hopes be dashed. But I<lb/> truly
+                    hope thus that hope will rise soon.<lb/> I saw <name type="person">Mrs.
+                    Benton</name> at a donations<lb/> party last tuesday evening, and judge of<lb/>
+                    my surprise when she told me that, her<lb/> husband <orig reg="received"
+                    >recieved</orig> a letter from <name type="recipient">Charlie<lb/> Tenney</name>.
+                    She told me that she heard<lb/> from Hal, I asked her, how she heard<lb/>
+                </p>
+
+                <p>
+                    <pb n="3" entity="DSSR_000000766_0053"/> She replied that they <orig
+                        reg="received">recieved</orig> a letter from<lb/> you the day before. I
+                    presume I looked the surprise<lb/> which I felt. Ah, indeed, I exclaimed,
+                    &ldquo;Yes, do<lb/> you know him?"&rdquo; she asked perceieving my
+                    astonishment<lb/> &ldquo;slightly&rdquo; I replied &ldquo;When you
+                    write send my kind<lb/> regards&rdquo; Such was the short conversation
+                    between<lb/> us But oh, how I longed to clasp that letter<lb/> to my heart and
+                    read its contents, but <hi rend="underline">pride</hi><lb/> came to my relief,
+                    and I was fearful of<lb/> betraying my interest in you, dear <name
+                        type="recipient">Charlie</name><lb/>
+                </p>
+                <p> Can not you read my character in that short<lb/> conversation my darling? <orig
+                        reg="And">and</orig> do you dare to love<lb/> the woman, who for fear of a
+                    few trifling<lb/> remarks would put away such a pleasure?<lb/>
+                </p>
+                <p> Such you <hi rend="underline">may</hi> always find me to be,<lb/> even if <name
+                        type="person">Hallie</name> wished me to throw away the nearest<lb/> friend
+                    I possessed. I have no<del hand="h1">[unclear]</del> doubt but<lb/> that I
+                    should do it, Dear <name type="recipient">Charlie</name>, it is no<lb/> vain talk
+                    when I say I would die for <name type="person">Hal</name><lb/> for if I had a
+                    thousand lives I would willingly<lb/> give them all for him. I have been
+                    writing<lb/> to him today in preference to you, he will<lb/> doubtless tell you
+                    what I wrote<lb/>
+                </p>
+                <p> I wish you to know me before you <hi rend="underline">love</hi><lb/> me for you
+                    know not what a girl I am<lb/> My nearest friends call me
+                    &ldquo;strange&rdquo; &ldquo;unfathomable&rdquo;<lb/> Those who
+                    have always had the care of me seem<lb/> to know as much of me as stangers, I think<lb/>
+                    <name type="person">Hallie</name> knows me better than any living<lb/> creature,
+                    for to him I can open my heart<lb/> freely and fully. When I first began<lb/> to
+                    notice what an interest you took in the<lb/> wayward girl, your correspondent, I
+                    thought<lb/> it wrong and would exclaim, <hi rend="underline">he must not love</hi><lb/>
+                     <hi rend="underline">me</hi>. I had been so used to the<lb/> appellations of
+                    &ldquo;a queer girl&rdquo; &rdquo;strange child&rdquo; so<lb/>
+                    that I had imagined it wicked for any<lb/> one to love me. Even when a little
+                    child I<lb/> remember of being called a &ldquo;cold and heart-<lb/> less
+                    child&rdquo; when I so much craved genial<lb/> love and sympathy Dear <name
+                        type="recipient">Charlie</name>, those I do<lb/> love, I almost idolize. But
+                    perhaps you will<lb/> call me a perfect egotist. Perhaps I am<lb/>
+                    <pb n="4" entity="DSSR_000000766_0054"/> but I write just as I feel. I should
+                    not<lb/> write thus but you ask me to &ldquo;allow you<lb/> to love
+                    me&rdquo; and I wished to inform you<lb/> of just the woman you wish to
+                    love, If<lb/> you <hi rend="underline">can</hi> love this &ldquo;strange
+                    girl&rdquo; as I presume<lb/>
+                    <add place="inline" hand="h1">even</add> you no doubt will call me after reading
+                    this<lb/> you are at perfect liberty so to do. And remember<lb/> if Addie does
+                    not love you <hi rend="underline">quite</hi> as well as<lb/> she does <name
+                        type="person">Hallie</name>, yet next to him you are the<lb/> dearest friend
+                    she can boast of and that<lb/> you <hi rend="underline">always</hi> will share
+                    her heart felt sympathy<lb/>
+                </p>
+                <p> Dear <name type="recipient">Charlie</name>: You wrote me assuring me<lb/> that
+                    your was &ldquo;free from dishonor&rdquo; I thank<lb/> God for it
+                    darling, yet do not think for<lb/> a moment that I thought you were not,<lb/>
+                    for I would as soon think the sun would<lb/> refuse to occupy the positions
+                    which God has<lb/> destined it, as to think that a <orig reg="dishonorable"
+                        >dishon<lb/> -orable</orig> act rested upon <add hand="h1"
+                        place="supralinear">the name of</add> my <orig reg="brother's"
+                    >brothers</orig> friend<lb/> and my own darling friend still I thank you<lb/>
+                    for writing as you did. You may wonder why<lb/> I send my letter to you in <name
+                        type="person">Hallie</name>'s<lb/> But &ldquo;<name type="place"
+                    >Mecca</name> folks&rdquo; are very anxious to know<lb/> who my
+                    correspondent is and I<lb/> am just as anxious to keep them in<lb/> ignornace. </p>
+
+                <closer>But I must reluctantly close<lb/> as it is getting too dark to write
+                    more<lb/> I must however, again request you to<lb/> come with <name type="person"
+                        >Hallie</name>, if it is a possible<lb/> thing with out infringing upon
+                    your<lb/> duties Would that I could be near you<lb/> and protect you from
+                    danger, darling<lb/> But God will and I must bid<lb/> you good night. I shall
+                    offer no excuse<lb/> for this silly composed letter for it is<lb/> from the one
+                    you love<lb/>
+                    <signed>
+                        <name type="sender">Addie C. Case</name>
+                    </signed><lb/>
+                    <seg type="postscript">My kind regards to Sergeant Moore and Will<lb/>
+                        <unclear>Breden</unclear>. Your Addie</seg><lb/>
+                    <seg type="postscript">Sister<ref target="n1" n="1">[1]</ref> sends love and
+                        Auntie<lb/> says, I would really love to see your wonderful<lb/>
+                        correspondent<lb/> Addie</seg><lb/>
+                </closer>
+            </div1>
+        </body>
+
+        <back id="d6">
+            <div1 type="notes" n="1" id="d7">
+                <head>Notes</head>
+
+                <note id="n1" place="end" n="1">
+                    <seg type="note-symbol">[1]</seg>
+                    <p> This second postscript is actually written up-side down on the top of page
+                        one of the letter, rather than at the bottom of the fourth page of the
+                        letter.</p>
+                </note>
+
+            </div1>
+        </back>
+
+    </text>
+</TEI.2>

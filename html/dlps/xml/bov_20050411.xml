@@ -1,0 +1,1542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+<!ENTITY % xref 'INCLUDE'>
+<!ATTLIST xref url CDATA #IMPLIED>
+]>
+
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with
+                        local customizations)</resp>
+                    <name>University of Virginia Library</name>
+                </respStmt>
+                <biblScope type="date">
+                    <date value="2005-04-11">April 11, 2005</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">70</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2009">2009</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the
+                        University of Virginia</p>
+                    <p n="access">Publicly accessible</p>
+                </availability>
+                <idno type="DLPS ID">bov_20050411</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors
+                            minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of
+                            Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors
+                            meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2005-04-11">April 11, 2005</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information. Access to
+                                minutes containing salary information will be granted only under the
+                                procedures of the Virginia Freedom of Information Act (Code of
+                                Virginia-2.1-340 ff.) or if permission is granted by the Secretary
+                                of the Board. Researchers interested in obtaining access to these
+                                records should direct a request in writing to the Office of the
+                                Legal Adviser, Madison Hall, University of Virginia. These public
+                                minutes have had salary information deleted and bear no
+                                restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special
+                                Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body
+                                which is the legal owner and operator of the institution. Recorded
+                                in the minutes are appointments and other personnel decisions
+                                concerning faculty, decisions about construction of facilities,
+                                gifts to the university, and all other board actions, decisions and
+                                resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction;
+                &editorial_normalization; &editorial_hyphenation; &editorial_quotation;
+                &editorial_stdVals; </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language id="eng" n="008" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+    <revisionDesc>
+<change>
+<date value="2011-06-07">June 7, 2011</date>
+<respStmt>
+<name id="lsc6v">Lorrie Chisholm, University of Virginia Library</name>
+<resp>corrector</resp>
+</respStmt>
+<item>Minor corrections to student markup.</item>
+</change>
+</revisionDesc>
+</teiHeader>
+
+    <text id="d1">
+        <body id="d2">
+            <div1 id="d3" type="contents">
+                <head type="main">RESOLUTIONS ADOPTED BY THE BOARD OF VISITORS<lb/>
+                    <date value="2005-04-11">APRIL 11, 2005</date></head>
+
+                <p>
+                    <table cols="2" rows="5">
+                        <row>
+                            <cell/>
+                            <cell>PAGE</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of 2005-2006 Tuition, Required Fees,<lb/> and Other
+                                Charges for the Academic Division </cell>
+                            <cell>6891</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of Allocation of Required Fees for<lb/> 2005-2006 Regular
+                                Session of the Academic<lb/> Division </cell>
+                            <cell>6891</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of Allocation of Required Fees for<lb/> the 2005-2006
+                                Special Sessions of the Academic<lb/> Division </cell>
+                            <cell>6891</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of Increase in Tuition, Required Fees<lb/> and Other
+                                Charges for The University of<lb/> Virginia’s College at Wise </cell>
+                            <cell>6891</cell>
+                        </row>
+                    </table>
+                </p>
+               
+            </div1>
+            <div1 id="d4" type="statement">
+                <pb  n="6891"/>
+                <head type="main">TENTATIVE MINUTES<lb/> SUBJECT TO THE<lb/> APPROVAL OF THE<lb/>
+                    BOARD OF VISITORS<lb/><lb/>
+                    <date value="2005-04-11">April 11, 2005</date></head>
+
+
+               <p>The Board of Visitors of the University of Virginia met by
+                    telephone, in Open Session and in accord with the exemptions permitted by law,
+                    at 4:00 p.m., on Monday, <date value="2005-04-11">April 11, 2005</date>;
+                        <name>Gordon F. Rainey, Jr.</name>, Rector, presided. <name>Thomas F.
+                        Farrell, II, A. Macdonald Caputo, G. Slaughter Fitz-Hugh, Jr., W. Heywood
+                        Fralin, Mark J. Kington, Vincent J. Mastracco, Jr., Lewis F. Payne, Don R.
+                        Pippin, Warren M. Thompson, Ms. Georgia M. Willis, and Ms. Catherine
+                    Neale</name> participated.</p>
+
+               <p>Also participating were <name>Leonard W. Sandridge, Alexander G.
+                        Gilliam, Jr., Alton A. Martin, Ms. Colette Sheehy, Ms. Melody Bianchetto,
+                        Ms. Nancy Rivers, and Ms. Jeanne Flippo Bailes</name>.</p>
+
+               <p>Members of the press were present in the President’s Conference
+                    Room at Madison Hall, along with <name>Mr. Sandridge</name>, the Secretary, and
+                    the other members of the University Administration listed above.</p>
+
+               <p>The Rector opened the meeting by directing the Secretary to call
+                    the roll, after which <name>Mr. Sandridge</name> gave a brief summary of the
+                    proposed tuition and required fees for the 2005-2006 Academic Session at the
+                    University and at The University of Virginia’s College at Wise, and for the 2006
+                    Summer Session. He reminded Members that discussions of these had taken place at
+                    both the February and April meetings of the Board.</p>
+
+               <p>In setting forth the proposed tuition and fees, <name>Mr.
+                    Sandridge</name> emphasized that there will be a concomitant increase in student
+                    financial aid – in fact a 17% increase.</p>
+
+               <p><name>Mr. Thompson</name> said it is important that publicity be
+                    given to the increase in financial aid.</p>
+
+                <pb n="6892"/>
+               <p>On motion, resolutions approving the tuition and fees were adopted
+                    by the Board – these resolutions are attached to the Minutes.</p>
+                <ornament type="characters">- - - - - - - - - - - - - -</ornament>
+               <p>On further motion, the meeting was adjourned at 4:12 p.m.</p>
+                <signed>Respectfully submitted, <lb/>
+                    <name>Alexander G. Gilliam, Jr.</name>
+                    <lb/> Secretary </signed>
+                <trailer> AGG:jb<lb/> These minutes have been posted to the University of Virginia’s
+                    Board of Visitors website. <xref
+                        url="http://www.virginia.edu/bov/publicminutes.html"
+                        >http://www.virginia.edu/bov/publicminutes.html</xref>
+                </trailer>
+
+            </div1>
+            <div1 id="d5" type="section">
+                 <pb/>
+                <head type="main">ATTACHMENT</head>
+                <p/>
+            </div1>
+            <div1 id="d6" type="statement">
+                <pb n="1"/>
+                <head type="main">APPROVAL OF 2005-2006 TUITION, REQUIRED FEES, AND OTHER CHARGES
+                    FOR THE ACADEMIC<lb/>DIVISION</head>
+
+               <p>RESOLVED that the tuition and required fees and other charges
+                    applicable to the Academic Division are approved as shown below, effective <date
+                        value="2005-07-01">July 1, 2005</date>:</p>
+
+                <table cols="9" rows="23">
+                    <row>
+                        <cell/>
+                        <cell cols="4" role="label">Virginian</cell>
+                        <cell cols="4" role="label">Non-Virginian</cell>
+                    </row>
+                    <row>
+                        <cell/>
+                        <cell role="label">2004-05<lb/> Approved</cell>
+                        <cell role="label">Amount<lb/> of<lb/> Increase</cell>
+                        <cell role="label">Percent<lb/> of<lb/> Increase</cell>
+                        <cell role="label">2005-06<lb/>Proposed</cell>
+                        <cell role="label">2004-05<lb/> Approved</cell>
+                        <cell role="label">Amount<lb/> of<lb/> Increase</cell>
+                        <cell role="label">Percent<lb/> of<lb/> Increase</cell>
+                        <cell role="label">2005-06<lb/>Proposed</cell>
+                    </row>
+                    <row>
+                        <cell cols="9" rend="left" role="label">REGULAR SESSION:</cell>
+                    </row>
+
+                    <row>
+                        <cell cols="9"> Undergraduate School - Tuition and All Required Fees,
+                            including University Activity Fee and excluding School Activity Fee
+                            which varies by school: </cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">All Full-time Students</cell>
+                        <cell>$ 6,600</cell>
+                        <cell>$ 580</cell>
+                        <cell>8.8%</cell>
+                        <cell>$ 7,180</cell>
+                        <cell>$ 22,700</cell>
+                        <cell>$ 1,400</cell>
+                        <cell>6.2%</cell>
+                        <cell>$ 24,100</cell>
+                    </row>
+                    <row>
+                        <cell cols="9"/>
+                    </row>
+                    <row>
+                        <cell cols="9"> Graduate School - Tuition and All Required Fees, including
+                            University Activity Fee and excluding School Activity Fee which varies
+                            by school:</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">All Full-time Students</cell>
+                        <cell>$ 9,200</cell>
+                        <cell>$ 600</cell>
+                        <cell>6.5%</cell>
+                        <cell>$ 9,800</cell>
+                        <cell>$ 20,200</cell>
+                        <cell>$ 200</cell>
+                        <cell>1.0%</cell>
+                        <cell>$ 20,400</cell>
+                    </row>
+                    <row>
+                        <cell cols="9"/>
+                    </row>
+                    <row>
+                        <cell cols="9"> School of Commerce - Grad Accounting - Tuition and All
+                            Required Fees, including University Activity Fee and excluding School
+                            Activity Fee which varies by school: </cell>
+                    </row>
+
+                    <row>
+                        <cell rend="left" role="label">All Full-time Students</cell>
+                        <cell>$ 22,511</cell>
+                        <cell>$ 189</cell>
+                        <cell>0.8%</cell>
+                        <cell>$ 22,700</cell>
+                        <cell>$ 27,511</cell>
+                        <cell>$ 189</cell>
+                        <cell>0.7%</cell>
+                        <cell>$ 27,700</cell>
+                    </row>
+                    <row>
+                        <cell cols="9"/>
+                    </row>
+                    <row>
+                        <cell cols="9"> School of Medicine - Tuition and All Required Fees,
+                            including University and School Activity Fees: </cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Full-time Students Entering Fall 2005</cell>
+                        <cell>n/a</cell>
+                        <cell>n/a</cell>
+                        <cell>n/a</cell>
+                        <cell>$ 28,700</cell>
+                        <cell>n/a</cell>
+                        <cell>n/a</cell>
+                        <cell>n/a</cell>
+                        <cell>$ 38,700</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Full-time Students Entering Fall 2004</cell>
+                        <cell>$ 26,074</cell>
+                        <cell>$ 2,126</cell>
+                        <cell>8.2%</cell>
+                        <cell>$ 28,200</cell>
+                        <cell>$ 36,633</cell>
+                        <cell>$ 2,067</cell>
+                        <cell>5.6%</cell>
+                        <cell>$ 38,700</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Full-time Students Entering Fall 2003</cell>
+                        <cell>$ 24,174</cell>
+                        <cell>$ 2,026</cell>
+                        <cell>8.4%</cell>
+                        <cell>$ 26,200</cell>
+                        <cell>$ 36,633</cell>
+                        <cell>$ 2,067</cell>
+                        <cell>5.6%</cell>
+                        <cell>$ 38,700</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Full-time Students Entering Fall 2002</cell>
+                        <cell>$ 22,174</cell>
+                        <cell>$ 1,826</cell>
+                        <cell>8.2%</cell>
+                        <cell>$ 24,000</cell>
+                        <cell>$ 36,633</cell>
+                        <cell>$ 2,067</cell>
+                        <cell>5.6%</cell>
+                        <cell>$ 38,700</cell>
+                    </row>
+                    <row>
+                        <cell cols="9"/>
+                    </row>
+                    <row>
+                        <cell cols="9"> Colgate Darden Graduate School of Business Administration -
+                            Tuition and All Required Fees, including University and School Activity
+                            Fees: </cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Regular Session Full-time Students</cell>
+                        <cell>$ 30,200</cell>
+                        <cell>$ 2,100</cell>
+                        <cell>7.0%</cell>
+                        <cell>$ 32,300</cell>
+                        <cell>$ 35,200</cell>
+                        <cell>$ 2,100</cell>
+                        <cell>6.0%</cell>
+                        <cell>$ 37,300</cell>
+                    </row>
+                    <row>
+                        <cell cols="9"/>
+                    </row>
+                    <row>
+                        <cell cols="9"> School of Law - Tuition and All Required Fees, including
+                            University and School Activity Fees: </cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">All Full-time Students</cell>
+                        <cell>$ 26,100</cell>
+                        <cell>$ 2,200</cell>
+                        <cell>8.4%</cell>
+                        <cell>$ 28,300</cell>
+                        <cell>$ 31,100</cell>
+                        <cell>$ 2,200</cell>
+                        <cell>7.1%</cell>
+                        <cell>$ 33,300</cell>
+                    </row>
+                </table>
+                <pb n="2"/>
+                <table cols="9" rows="30">
+                    <row>
+                        <cell cols="9" rend="left" role="label">SPECIAL SESSION:</cell>
+                    </row>
+
+                    <row>
+                        <cell cols="9" rend="left" role="label">School of Continuing and
+                            Professional Studies Tuition Rates:</cell>
+                    </row>
+
+                    <row>
+                        <cell rend="left" role="label">Bachelor of Interdisciplinary Studies (per
+                            sem.)</cell>
+                        <cell>$ 2,653</cell>
+                        <cell>$ 75</cell>
+                        <cell>2.8%</cell>
+                        <cell>$ 2,728</cell>
+                        <cell>$ 9,834</cell>
+                        <cell>$ 75</cell>
+                        <cell>0.8%</cell>
+                        <cell>$ 9,909</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Undergraduate Per Hour</cell>
+                        <cell>$ 185</cell>
+                        <cell>$ 5</cell>
+                        <cell>2.7%</cell>
+                        <cell>$ 190</cell>
+                        <cell>$ 325</cell>
+                        <cell>$ 9</cell>
+                        <cell>2.8%</cell>
+                        <cell>$ 334</cell>
+                    </row>
+
+                    <row>
+                        <cell rend="left" role="label">Graduate Per Hour</cell>
+                        <cell>$ 225</cell>
+                        <cell>$ 10</cell>
+                        <cell>4.4%</cell>
+                        <cell>$ 235</cell>
+                        <cell>$ 360</cell>
+                        <cell>$ 10</cell>
+                        <cell>2.8%</cell>
+                        <cell>$ 370</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">K-12 Educators Per Hour</cell>
+                        <cell>$ 200</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 200</cell>
+                        <cell>$ 300</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 300</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Undergraduate Distance Learning Per Hour</cell>
+                        <cell>$ 225</cell>
+                        <cell>$ 6</cell>
+                        <cell>2.7%</cell>
+                        <cell>$ 231</cell>
+                        <cell>$ 300</cell>
+                        <cell>$ 8</cell>
+                        <cell>2.7%</cell>
+                        <cell>$ 308</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Graduate Distance Learning Per Hour</cell>
+                        <cell>$ 250</cell>
+                        <cell>$ 7</cell>
+                        <cell>2.8%</cell>
+                        <cell>$ 257</cell>
+                        <cell>$ 300</cell>
+                        <cell>$ 8</cell>
+                        <cell>2.7%</cell>
+                        <cell>$ 308</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Graduate Televised Engineering Per Hour</cell>
+                        <cell>$ 341</cell>
+                        <cell>$ 10</cell>
+                        <cell>2.9%</cell>
+                        <cell>$ 351</cell>
+                        <cell>$ 600</cell>
+                        <cell>$ 17</cell>
+                        <cell>2.8%</cell>
+                        <cell>$ 617</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Special SCPS Students Per Hour</cell>
+                        <cell>$ 235</cell>
+                        <cell>$ 7</cell>
+                        <cell>3.0%</cell>
+                        <cell>$ 242</cell>
+                        <cell>$ 991</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 991</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Special SCPS Students Per Hour - High School
+                            Students</cell>
+                        <cell>$ 185</cell>
+                        <cell>$ 5</cell>
+                        <cell>2.7%</cell>
+                        <cell>$ 190</cell>
+                        <cell>$ 325</cell>
+                        <cell>$ 9</cell>
+                        <cell>2.8%</cell>
+                        <cell>$ 334</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Study Abroad (per semester) 3-7 hours</cell>
+                        <cell>$ 2,000</cell>
+                        <cell>$ 200</cell>
+                        <cell>10.0%</cell>
+                        <cell>$ 2,200</cell>
+                        <cell>$ 2,000</cell>
+                        <cell>$ 350</cell>
+                        <cell>17.5%</cell>
+                        <cell>$ 2,350</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Study Abroad (per semester) 8-15 hours</cell>
+                        <cell>$ 3,500</cell>
+                        <cell>$ 350</cell>
+                        <cell>10.0%</cell>
+                        <cell>$ 3,850</cell>
+                        <cell>$ 3,500</cell>
+                        <cell>$ 500</cell>
+                        <cell>14.3%</cell>
+                        <cell>$ 4,000</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Music Lessons (13 1-hr lessons/semester)</cell>
+                        <cell>$ 654</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 654</cell>
+                        <cell>$ 654</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 654</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Northern Virginia Facilities Fee Per Hour</cell>
+                        <cell>$ 17</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 17</cell>
+                        <cell>$ 17</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 17</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Technology Fee (per hour)</cell>
+                        <cell>$ 4</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 4</cell>
+                        <cell>$ 4</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 4</cell>
+                    </row>
+                    <row>
+                        <cell cols="9"/>
+                    </row>
+                    <row>
+                        <cell cols="9" rend="left" role="label">2006 Summer Session, 2006 January
+                            Term and Mt. Lake Biological Station:</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Undergraduate Per Semester Hour</cell>
+                        <cell>$ 170</cell>
+                        <cell>$ 16</cell>
+                        <cell>9.6%</cell>
+                        <cell>$ 186</cell>
+                        <cell>$ 740</cell>
+                        <cell>$ 41</cell>
+                        <cell>5.5%</cell>
+                        <cell>$ 781</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Graduate Per Semester Hour</cell>
+                        <cell>$ 215</cell>
+                        <cell>$ 14</cell>
+                        <cell>6.4%</cell>
+                        <cell>$ 229</cell>
+                        <cell>$ 660</cell>
+                        <cell>$ (1)</cell>
+                        <cell>-0.1%</cell>
+                        <cell>$ 659</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Thesis/Dissertation Research</cell>
+                        <cell>$ 850</cell>
+                        <cell>$ (1)</cell>
+                        <cell>-0.1%</cell>
+                        <cell>$ 849</cell>
+                        <cell>$ 850</cell>
+                        <cell>$ (1)</cell>
+                        <cell>-0.1%</cell>
+                        <cell>$ 849</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Appellate Judges Program</cell>
+                        <cell>$ 1,400</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 1,400</cell>
+                        <cell>$ 1,450</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 1,450</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Non-Resident Fee</cell>
+                        <cell>$ 115</cell>
+                        <cell>$ -</cell>
+                        <cell>-0.1%</cell>
+                        <cell>$ 115</cell>
+                        <cell>$ 115</cell>
+                        <cell>-</cell>
+                        <cell>-0.1%</cell>
+                        <cell>$ 115</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Summer Foreign Language Institute Fee</cell>
+                        <cell>$ 40</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 40</cell>
+                        <cell>$ 40</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 40</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Mt. Lake Laboratory Use Fee</cell>
+                        <cell>$ 88</cell>
+                        <cell>$ 2</cell>
+                        <cell>2.3%</cell>
+                        <cell>$ 90</cell>
+                        <cell>$ 88</cell>
+                        <cell>$ 2</cell>
+                        <cell>2.3%</cell>
+                        <cell>$ 90</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Mt. Lake Non-UVa Researcher - Senior
+                            Investigators</cell>
+                        <cell>$ 255</cell>
+                        <cell>$ 7</cell>
+                        <cell>2.7%</cell>
+                        <cell>$ 262</cell>
+                        <cell>$ 255</cell>
+                        <cell>$ 7</cell>
+                        <cell>2.7%</cell>
+                        <cell>$ 262</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Mt. Lake Non-UVa Researcher -
+                            Co-Investigators/Students</cell>
+                        <cell>$ 67</cell>
+                        <cell>$ 2</cell>
+                        <cell>3.0%</cell>
+                        <cell>$ 69</cell>
+                        <cell>$ 67</cell>
+                        <cell>$ 2</cell>
+                        <cell>3.0%</cell>
+                        <cell>$ 69</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">2006 New Student Orientation Fee</cell>
+                        <cell>$ 190</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 190</cell>
+                        <cell>$ 190</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 190</cell>
+                    </row>
+
+                    <row>
+                        <cell cols="9"> (The Orientation Fee will be rolled into the total tuition
+                            and fee bill for first year and transfer students in the first year of
+                            enrollment.)</cell>
+                    </row>
+                    <row>
+                        <cell cols="9"> OTHER: Other contracted course and cooperative program
+                            tuition and required fee rates, including tuition for specialized
+                            graduate and professional credit courses, approved on a basis consistent
+                            with University contracting policies and procedures by the Executive
+                            Vice President and Chief Operating Officer. </cell>
+                    </row>
+                </table>
+                <pb n="3"/>
+
+                <table cols="5" rows="34">
+                    <row>
+                        <cell/>
+                        <cell cols="4" rend="center"> All Students </cell>
+                    </row>
+                    <row>
+                        <cell/>
+                        <cell rend="center" role="label">2004-05<lb/> Approved</cell>
+                        <cell rend="center" role="label">Amount<lb/> of<lb/> Increase</cell>
+                        <cell rend="center" role="label">Percent<lb/> of<lb/> Increase</cell>
+                        <cell rend="center" role="label">2005-06<lb/>Proposed</cell>
+                    </row>
+                    <row>
+                        <cell cols="5" rend="left" role="label"> Other Charges: </cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Application Fee - Undergraduate</cell>
+                        <cell>$ 40</cell>
+                        <cell>$ 20</cell>
+                        <cell>50.0%</cell>
+                        <cell>$ 60</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Application Fee - Graduate</cell>
+                        <cell>$ 40</cell>
+                        <cell>$ 20</cell>
+                        <cell>50.0%</cell>
+                        <cell>$ 60</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Application Fee - Law</cell>
+                        <cell>$ 65</cell>
+                        <cell>$ 5</cell>
+                        <cell>7.7%</cell>
+                        <cell>$ 70</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Application Fee - Darden</cell>
+                        <cell>$ 140</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 140</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Application Fee - Darden Executive MBA</cell>
+                        <cell>n/a</cell>
+                        <cell>n/a</cell>
+                        <cell>n/a</cell>
+                        <cell>$ 200</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Application Fee - Medicine</cell>
+                        <cell>$ 75</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 75</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Application Fee - SCPS</cell>
+                        <cell>$ 25</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 25</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Application Fee - SCPS BIS</cell>
+                        <cell>$ 40</cell>
+                        <cell>$ 20</cell>
+                        <cell>50.0%</cell>
+                        <cell>$ 60</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Application Fee - Commerce</cell>
+                        <cell>$ 40</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 40</cell>
+                    </row>
+                    <row>
+                        <cell cols="5"/>
+                    </row>
+
+
+                    <row>
+                        <cell rend="left" role="label">Activity Fee - All Full-time Students</cell>
+                        <cell>$ 47</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 47</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Activity Fee - All Part-time Students</cell>
+                        <cell>$ 17</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 17</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Activity Fee - Arts &amp; Sciences</cell>
+                        <cell>$ 4</cell>
+                        <cell>$ 2</cell>
+                        <cell>50.0%</cell>
+                        <cell>$ 6</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Activity Fee - Architecture</cell>
+                        <cell>$ 46</cell>
+                        <cell>$ 7</cell>
+                        <cell>15.2%</cell>
+                        <cell>$ 53</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Activity Fee - Commerce</cell>
+                        <cell>$ 45</cell>
+                        <cell>$ 10</cell>
+                        <cell>22.2%</cell>
+                        <cell>$ 55</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Activity Fee - Darden</cell>
+                        <cell>$ 55</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 55</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Activity Fee - Education</cell>
+                        <cell>$ 10</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 10</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Activity Fee - Engineering</cell>
+                        <cell>$ 10</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 10</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Activity Fee - Grad. Arts &amp; Sciences</cell>
+                        <cell>$ 10</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 10</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Activity Fee - Law School</cell>
+                        <cell>$ 40</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 40</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Activity Fee - Medicine</cell>
+                        <cell>$ 125</cell>
+                        <cell>$ (76)</cell>
+                        <cell>(60.8%)</cell>
+                        <cell>$ 49</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Activity Fee - Nursing</cell>
+                        <cell>$ 55</cell>
+                        <cell>$ (40)</cell>
+                        <cell>(72.7%)</cell>
+                        <cell>$ 15</cell>
+                    </row>
+
+                    <row>
+                        <cell cols="5"/>
+                    </row>
+
+
+                    <row>
+                        <cell rend="left" role="label">Residential College Fee - Hereford</cell>
+                        <cell>$ 120</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 120</cell>
+                    </row>
+
+                    <row>
+                        <cell rend="left" role="label">Residential College Fee - Brown</cell>
+                        <cell>$ 120</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 120</cell>
+                    </row>
+
+                    <row>
+                        <cell rend="left" role="label">Residential College Fee - International</cell>
+                        <cell>$ 220</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 220</cell>
+                    </row>
+
+                    <row>
+                        <cell rend="left" role="label">Residential College Fee - Mosaic</cell>
+                        <cell>$ 220</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 220</cell>
+                    </row>
+
+                    <row>
+                        <cell rend="left" role="label">Residential College Fee - French</cell>
+                        <cell>$ 100</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 100</cell>
+                    </row>
+
+                    <row>
+                        <cell rend="left" role="label">Residential College Fee - Spanish</cell>
+                        <cell>$ 100</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 100</cell>
+                    </row>
+
+                    <row>
+                        <cell rend="left" role="label">Residential College Fee - Monroe Lane</cell>
+                        <cell>$ 100</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 100</cell>
+                    </row>
+
+                    <row>
+                        <cell rend="left" role="label">International Student Fee</cell>
+                        <cell>$ 100</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 100</cell>
+                    </row>
+
+                </table>
+            </div1>
+            <div1 id="d7" type="statement">
+                <pb n="4"/>
+                <head type="main">APPROVAL OF ALLOCATION OF REQUIRED FEES FOR 2005-06 REGULAR
+                    SESSION OF THE ACADEMIC<lb/>DIVISION</head>
+                
+                   
+                        <p> RESOLVED that the annual required fees for students enrolled in more
+                            than 3 credit hours per semester is established, effective <date
+                                value="2005-07-01">July 1, 2005</date>, in the amount of $1,531 for
+                            in-state students and $1,707 for out-of-state students; and </p>
+                        
+                        <p> RESOLVED FURTHER that the full-time mandatory regular session fee is
+                            allocated for 2005-06 as follows: </p>
+                     
+                    
+                
+
+
+                <table cols="9" rows="19">
+                    <row>
+                        <cell/>
+                        <cell cols="4" role="label">Virginian</cell>
+                        <cell cols="4" role="label">Non-Virginian</cell>
+                    </row>
+                    <row>
+                        <cell/>
+                        <cell rend="center" role="label">2004-05<lb/>Approved</cell>
+                        <cell rend="center" role="label">Amount<lb/>of<lb/>Increase</cell>
+                        <cell rend="center" role="label">Percent<lb/>of<lb/>Increase</cell>
+                        <cell rend="center" role="label">2005-06<lb/>Proposed</cell>
+                        <cell rend="center" role="label">2004-05<lb/>Approved</cell>
+                        <cell rend="center" role="label">Amount<lb/>of<lb/>Increase</cell>
+                        <cell rend="center" role="label">Percent<lb/>of<lb/>Increase</cell>
+                        <cell rend="center" role="label">2005-06<lb/>Proposed</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">University Transit</cell>
+                        <cell>$ 111</cell>
+                        <cell>$ 5</cell>
+                        <cell>4.5%</cell>
+                        <cell>$ 116</cell>
+                        <cell>$ 111</cell>
+                        <cell>$ 5</cell>
+                        <cell>4.5%</cell>
+                        <cell>$ 116</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Escort Services</cell>
+                        <cell>$ 5</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 5</cell>
+                        <cell>$ 5</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 5</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Recreational Facilities</cell>
+                        <cell>$ 206</cell>
+                        <cell>$ 9</cell>
+                        <cell>4.4%</cell>
+                        <cell>$ 215</cell>
+                        <cell>$ 206</cell>
+                        <cell>$ 9</cell>
+                        <cell>4.4%</cell>
+                        <cell>$ 215</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Auxiliary Debt Service</cell>
+                        <cell>$ 89</cell>
+                        <cell>$ (6)</cell>
+                        <cell>-6.7%</cell>
+                        <cell>$ 83</cell>
+                        <cell>$ 89</cell>
+                        <cell>$ (6)</cell>
+                        <cell>-6.7%</cell>
+                        <cell>$ 83</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Athletics</cell>
+                        <cell>$ 450</cell>
+                        <cell>$ 62</cell>
+                        <cell>13.8%</cell>
+                        <cell>$ 512</cell>
+                        <cell>$ 450</cell>
+                        <cell>$ 62</cell>
+                        <cell>13.8%</cell>
+                        <cell>$ 512</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Student Health</cell>
+                        <cell>$ 305</cell>
+                        <cell>$ 30</cell>
+                        <cell>9.8%</cell>
+                        <cell>$ 335</cell>
+                        <cell>$ 305</cell>
+                        <cell>$ 30</cell>
+                        <cell>9.8%</cell>
+                        <cell>$ 335</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Newcomb Hall Operating</cell>
+                        <cell>$ 112</cell>
+                        <cell>$ 9</cell>
+                        <cell>8.0%</cell>
+                        <cell>$ 121</cell>
+                        <cell>$ 112</cell>
+                        <cell>$ 9</cell>
+                        <cell>8.0%</cell>
+                        <cell>$ 121</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Student Programming</cell>
+                        <cell>$ 26</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 26</cell>
+                        <cell>$ 26</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 26</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">WTJU</cell>
+                        <cell>$ 6</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 6</cell>
+                        <cell>$ 6</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 6</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">OOS Debt Service - Capital Outlay</cell>
+                        <cell>$ -</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ -</cell>
+                        <cell>$ 59</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 59</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">OOS Debt Service -ETF</cell>
+                        <cell>$ -</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ -</cell>
+                        <cell>$ -</cell>
+                        <cell>$ 117</cell>
+                        <cell>n/a</cell>
+                        <cell>$ 117</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Capital Renewal Fee</cell>
+                        <cell>$ 24</cell>
+                        <cell>-</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 24</cell>
+                        <cell>$ 24</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 24</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Arts Fee</cell>
+                        <cell>$ 12</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 12</cell>
+                        <cell>$ 12</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 12</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Technology Fee</cell>
+                        <cell>$ 45</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 45</cell>
+                        <cell>$ 45</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 45</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">E&amp;G Facilities Debt Service</cell>
+                        <cell>$ 31</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 31</cell>
+                        <cell>$ 31</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 31</cell>
+                    </row>
+                    <row>
+                        <cell cols="9"/>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">TOTAL FOR ALL STUDENTS</cell>
+                        <cell>$ 1,422</cell>
+                        <cell>$ 109</cell>
+                        <cell>7.7%</cell>
+                        <cell>$ 1,531</cell>
+                        <cell>$ 1,481</cell>
+                        <cell>$ 226</cell>
+                        <cell>15.3%</cell>
+                        <cell>$ 1,707</cell>
+                    </row>
+                </table>
+
+            </div1>
+
+
+            <div1 id="d8" type="statement">
+                <pb n="5"/>
+                <head type="main">APPROVAL OF ALLOCATION OF REQUIRED FEES FOR THE 2005-06 SPECIAL
+                    SESSIONS OF THE ACADEMIC DIVISION</head>
+            
+                        <p>RESOLVED that the special session fees for the Academic Division is
+                            established, effective with the Fall 2005 session, in the amount of $97
+                            for in-state students and $104 for out-of-state students; and</p>
+                      
+
+                        <p>RESOLVED that the students enrolled in the summer session will be also
+                            assessed a fee for services provided by Student Health, effective Summer
+                            2006, in the amount of $111; and</p>
+                       
+
+                        <p>RESOLVED FURTHER that the mandatory special session fee is allocated
+                            for 2005-06 as follows:</p>
+                    
+                <table cols="9" rows="18">
+                    <row>
+                        <cell/>
+                        <cell rend="center" role="label">2004-05<lb/>Approved</cell>
+                        <cell rend="center" role="label">Amount<lb/>of<lb/>Increase</cell>
+                        <cell rend="center" role="label">Percent<lb/>of<lb/>Increase</cell>
+                        <cell rend="center" role="label">2005-06<lb/>Proposed</cell>
+                        <cell rend="center" role="label">2004-05<lb/>Approved</cell>
+                        <cell rend="center" role="label">Amount<lb/>of<lb/>Increase</cell>
+                        <cell rend="center" role="label">Percent<lb/>of<lb/>Increase</cell>
+                        <cell rend="center" role="label">2005-06<lb/>Proposed</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">University Transit</cell>
+                        <cell>$ 25</cell>
+                        <cell>$ 2</cell>
+                        <cell>8.0%</cell>
+                        <cell>$ 27</cell>
+                        <cell>$ 25</cell>
+                        <cell>$ 2</cell>
+                        <cell>8.0%</cell>
+                        <cell>$ 27</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Escort Services</cell>
+                        <cell>$ 2</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 2</cell>
+                        <cell>$ 2</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 2</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Recreational Facilities</cell>
+                        <cell>$ 22</cell>
+                        <cell>$ 1</cell>
+                        <cell>4.5%</cell>
+                        <cell>$ 23</cell>
+                        <cell>$ 22</cell>
+                        <cell>$ 1</cell>
+                        <cell>4.5%</cell>
+                        <cell>$ 23</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Newcomb Hall Operating</cell>
+                        <cell>$ 22</cell>
+                        <cell>$ 2</cell>
+                        <cell>9.1%</cell>
+                        <cell>$ 24</cell>
+                        <cell>$ 22</cell>
+                        <cell>$ 2</cell>
+                        <cell>9.1%</cell>
+                        <cell>$ 24</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">WTJU</cell>
+                        <cell>$ 1</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 1</cell>
+                        <cell>$ 1</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 1</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">OOS Debt Service - Capital Outlay</cell>
+                        <cell>$ -</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ -</cell>
+                        <cell>$ 5</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 5</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">OOS Debt Service - ETF</cell>
+                        <cell>$ -</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ -</cell>
+                        <cell>$ -</cell>
+                        <cell>$ 2</cell>
+                        <cell>n/a</cell>
+                        <cell>$ 2</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Classroom Renewal Fee</cell>
+                        <cell>$ 6</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 6</cell>
+                        <cell>$ 6</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 6</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Technology Fee</cell>
+                        <cell>$ 5</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 5</cell>
+                        <cell>$ 5</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 5</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Arts Fee</cell>
+                        <cell>$ 6</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 6</cell>
+                        <cell>$ 6</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 6</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">E&amp;G Facilities Debt Service</cell>
+                        <cell>$ 3</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 3</cell>
+                        <cell>$ 3</cell>
+                        <cell>$ -</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 3</cell>
+                    </row>
+                    <row>
+                        <cell cols="9"/>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">SPECIAL SESSION TOTAL - Other than Summer
+                            Session</cell>
+                        <cell>$ 92</cell>
+                        <cell>$ 5</cell>
+                        <cell>5.4%</cell>
+                        <cell>$ 97</cell>
+                        <cell>$ 97</cell>
+                        <cell>$ 7</cell>
+                        <cell>7.2%</cell>
+                        <cell>$ 104</cell>
+                    </row>
+                    <row>
+                        <cell cols="9"/>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Student Health</cell>
+                        <cell>$ 102</cell>
+                        <cell>$ 9</cell>
+                        <cell>8.8%</cell>
+                        <cell>$ 111</cell>
+                        <cell>$ 102</cell>
+                        <cell>$ 9</cell>
+                        <cell>8.8%</cell>
+                        <cell>$ 111</cell>
+                    </row>
+                    <row>
+                        <cell cols="9"/>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">SPECIAL SESSION TOTAL - Summer Session</cell>
+                        <cell>$ 194</cell>
+                        <cell>$ 14</cell>
+                        <cell>7.2%</cell>
+                        <cell>$ 208</cell>
+                        <cell>$ 199</cell>
+                        <cell>$ 16</cell>
+                        <cell>8.0%</cell>
+                        <cell>$ 215</cell>
+                    </row>
+                </table>
+            </div1>
+
+
+
+
+
+            <div1 id="d9" type="statement">
+                <pb n="6"/>
+                <head type="main">APPROVAL OF INCREASE IN TUITION, REQUIRED FEES AND OTHER CHARGES
+                    FOR THE<lb/> UNIVERSITY OF VIRGINIA'S COLLEGE AT WISE</head>
+               
+                    <p> RESOLVED that the tuition and required fees and other charges applicable
+                        to The University of Virginia's College at Wise is approved as shown below,
+                        effective <date value="2005-07-01">July 1, 2005</date>: </p>
+                
+                <table cols="9" rows="14">
+                    <row>
+                        <cell/>
+                        <cell cols="4" role="label">Virginian</cell>
+                        <cell cols="4" role="label">Non-Virginian</cell>
+                    </row>
+                    <row>
+                        <cell/>
+                        <cell rend="center" role="label">2004-05<lb/> Approved</cell>
+                        <cell rend="center" role="label">Amount<lb/> of<lb/> Increase</cell>
+                        <cell rend="center" role="label">Percent<lb/> of<lb/> Increase</cell>
+                        <cell rend="center" role="label">2005-06<lb/>Proposed</cell>
+                        <cell rend="center" role="label">2004-05<lb/> Approved</cell>
+                        <cell rend="center" role="label">Amount<lb/> of<lb/> Increase</cell>
+                        <cell rend="center" role="label">Percent<lb/> of<lb/> Increase</cell>
+                        <cell rend="center" role="label">2005-06<lb/>Proposed</cell>
+                    </row>
+                    <row>
+                        <cell cols="9" rend="left" role="label">Full-time Students (12 hrs or more
+                            per semester)</cell>
+                    </row>
+
+                    <row>
+                        <cell rend="left" role="label">Tuition and Required E&amp;G Fees</cell>
+                        <cell>$ 2,840</cell>
+                        <cell>$ 201</cell>
+                        <cell>7.1%</cell>
+                        <cell>$ 3,041</cell>
+                        <cell>$ 12,310</cell>
+                        <cell>$ 809</cell>
+                        <cell>6.6%</cell>
+                        <cell>$ 13,119</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Auxiliary Fees</cell>
+                        <cell>$ 1,942</cell>
+                        <cell>$ 98</cell>
+                        <cell>5.0%</cell>
+                        <cell>$ 2,040</cell>
+                        <cell>$ 1,942</cell>
+                        <cell>$ 98</cell>
+                        <cell>5.0%</cell>
+                        <cell>$ 2,040</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Total Tuition and Required Fees</cell>
+                        <cell>$ 4,782</cell>
+                        <cell>$ 299</cell>
+                        <cell>6.3%</cell>
+                        <cell>$ 5,081</cell>
+                        <cell>$ 14,252</cell>
+                        <cell>$ 907</cell>
+                        <cell>6.4%</cell>
+                        <cell>$ 15,159</cell>
+                    </row>
+                    <row>
+                        <cell cols="9" rend="left">Students taking more than 18 credithours per
+                            semester must pay for the additional hours at the tuition rates listed
+                            below:</cell>
+                    </row>
+                    <row>
+                        <cell cols="9"/>
+                    </row>
+                    <row>
+                        <cell cols="9" rend="left" role="label">Other Charges</cell>
+                    </row>
+
+                    <row>
+                        <cell rend="left" role="label">Part-time Students (less than 12 hours per
+                            semester)</cell>
+                        <cell>$ 115</cell>
+                        <cell>$ 8</cell>
+                        <cell>7.0%</cell>
+                        <cell>$ 123</cell>
+                        <cell>$ 504</cell>
+                        <cell>$ 36</cell>
+                        <cell>7.1%</cell>
+                        <cell>$ 540</cell>
+                    </row>
+
+
+                    <row>
+                        <cell rend="left" role="label">Off-Campus Instruction per hour</cell>
+                        <cell>$ 115</cell>
+                        <cell>$ 8</cell>
+                        <cell>7.0%</cell>
+                        <cell>$ 123</cell>
+                        <cell>$ 353</cell>
+                        <cell>$ 25</cell>
+                        <cell>7.1%</cell>
+                        <cell>$ 378</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Non-Credit Courses per unit</cell>
+                        <cell>$ 50</cell>
+                        <cell>$ 0</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 50</cell>
+                        <cell>$ 153</cell>
+                        <cell>$ 11</cell>
+                        <cell>7.2%</cell>
+                        <cell>$ 164</cell>
+                    </row>
+                    <row>
+                        <cell rend="left" role="label">Application Fee</cell>
+                        <cell>$ 25</cell>
+                        <cell>$ 0</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 25</cell>
+                        <cell>$ 25</cell>
+                        <cell>$ 0</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 25</cell>
+                    </row>
+
+
+                    <row>
+                        <cell rend="left" role="label">Graduation Fee</cell>
+                        <cell>$ 50</cell>
+                        <cell>$ 0</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 50</cell>
+                        <cell>$ 50</cell>
+                        <cell>$ 0</cell>
+                        <cell>0.0%</cell>
+                        <cell>$ 50</cell>
+                    </row>
+                    <row>
+                        <cell cols="9" rend="left">Registration Fee for part-time students will be
+                            $5 per semester hour.</cell>
+                    </row>
+                </table>
+           
+                    <p> RESOLVED FURTHER that the Executive Vice President and Chief Operating
+                        Officer is authorized to approve reduced tuition rates for residents of
+                        Kentucky and Tennessee who live in counties that are within a 50-mile radius
+                        of The University of Virginia's College at Wise and who are enrolled at the
+                        College in accordance with Section 23-7.4:2.F. of the Code of Virginia.
+                    </p>
+                
+
+            </div1>
+        </body>
+    </text>
+</TEI.2>

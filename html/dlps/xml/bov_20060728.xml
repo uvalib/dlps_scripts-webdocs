@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+
+<!ENTITY % xref 'INCLUDE'>
+<!ATTLIST xref url CDATA #IMPLIED>
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with
+                        local customizations)</resp>
+                    <name>University of Virginia Library</name>
+                </respStmt>
+                <biblScope type="date">
+                    <date value="2006-07-28">July 28, 2006</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">43</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2009">2009</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the
+                        University of Virginia</p>
+                    <p n="access">Publicly accessible</p>
+                </availability>
+                <idno type="DLPS ID">bov_20060728</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors
+                            minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of
+                            Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors
+                            meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2006-07-28">July 28, 2006</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information. Access to
+                                minutes containing salary information will be granted only under the
+                                procedures of the Virginia Freedom of Information Act (Code of
+                                Virginia-2.1-340 ff.) or if permission is granted by the Secretary
+                                of the Board. Researchers interested in obtaining access to these
+                                records should direct a request in writing to the Office of the
+                                Legal Adviser, Madison Hall, University of Virginia. These public
+                                minutes have had salary information deleted and bear no
+                                restrictions. </p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special
+                                Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body
+                                which is the legal owner and operator of the institution. Recorded
+                                in the minutes are appointments and other personnel decisions
+                                concerning faculty, decisions about construction of facilities,
+                                gifts to the university, and all other board actions, decisions and
+                                resolutions. </p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction;
+                &editorial_normalization; &editorial_hyphenation; &editorial_quotation;
+                &editorial_stdVals; </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language id="eng" n="008" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+    </teiHeader>
+
+
+    <text id="d1">
+        <body id="d2">
+            <div1 type="contents" id="d3">
+                <pb/>
+                <head type="main"> RESOLUTIONS ADOPTED BY THE BOARD OF VISITORS <lb/>
+                    <dateRange from="2006-07-28" to="2006-07-29">JULY 28-29, 2006</dateRange>
+                </head>
+                <p>
+                    <table cols="2" rows="7">
+                        <row>
+                            <cell/>
+                            <cell role="label">PAGE</cell>
+                        </row>
+                        <row>
+                            <cell> Approval of the Thomas Jefferson Foundation<lb/> Medal in Civic
+                                Leadership </cell>
+                            <cell>7150</cell>
+                        </row>
+                        <row>
+                            <cell> Approval of Legislative Proposal – Duties and<lb/> Powers of the
+                                Auditor of Public Accounts </cell>
+                            <cell>7152</cell>
+                        </row>
+                        <row>
+                            <cell> Approval of Legislative Proposal – Investment of<lb/> Public
+                                Funds </cell>
+                            <cell>7155</cell>
+                        </row>
+                        <row>
+                            <cell> Health Care Practitioner Workforce Shortage </cell>
+                            <cell>7157</cell>
+                        </row>
+                        <row>
+                            <cell> Transfer of Endowment Funds from the University to<lb/> the
+                                College Foundation of the University of Virginia </cell>
+                            <cell>7158</cell>
+                        </row>
+                        <row>
+                            <cell> Amendment to the Resolution Establishing the Shure<lb/>
+                                Professorship in Pediatric Neurology </cell>
+                            <cell>7158</cell>
+                        </row>
+                    </table>
+                </p>
+            </div1>
+            <div1 type="roll-call" id="d4">
+                <pb n="7148"/>
+                <head type="main">
+                    <dateRange from="2006-07-28" to="2006-07-29">July 28-29, 2006</dateRange>
+                </head>
+               <p> The Board of Visitors of the University of Virginia convened, in
+                    Open Session, in Retreat at 10:00 a.m., Friday, <date value="2006-07-28">July
+                        28, 2006</date>, at the Williamsburg Inn; <name>Thomas F. Farrell,
+                    II</name>, Rector, presided. All Members of the Board - <name>W. Heywood Fralin,
+                        Daniel R. Abramson, A. Macdonald Caputo, The Honorable Alan A. Diamonstein,
+                        Ms. Susan Y. Dorsey, Ms. Georgia Willis Fauber, G. Slaughter Fitz-Hugh, Jr.,
+                        Ms. Glynn D. Key, Vincent J. Mastracco, Jr., The Honorable Lewis F. Payne,
+                        Don R. Pippin, Gordon F. Rainey, Jr., Warren M. Thompson, E. Darracott
+                        Vaughan, Jr., M.D., John O. Wynne, and Ms. Anne Elizabeth Mullen</name> -
+                    were present. </p>
+               <p> Present as well were <name>John T. Casteen, III, Leonard W.
+                        Sandridge, Alexander G. Gilliam, Jr., Paul J. Forch, Ms. Nancy N. Rivers,
+                        and Ms. Jeanne Flippo Bailes</name>. </p>
+                <p> Present at the first session on July 28<hi rend="super">th</hi>, were <name>Gene D.
+                        Block, Ms. Colette Sheehy, J. Milton Adams, George A. Stovall, Ms. Carolyn
+                        S. Wood, and Ms. A. Megan Lowe. Robert D. Sweeney</name> was present during
+                    the afternoon of July 28th. </p>
+               <p> The first portion of the Retreat was devoted to the work of the
+                    Special Committee on Planning and consisted both of a report on work
+                    accomplished and work yet to be done, as well as a general discussion by the
+                    Board of some the issues raised by the Committee. </p>
+               <p> The Rector opened the meeting with a summary of his charge to the
+                    Committee and the work done by the Committee to date. <name>Mr. Wynne</name>,
+                    the Chair of the Committee, spoke on the background of the charge and the
+                    Committee's deliberations. Basically, the Committee is trying to devise a ten
+                    year plan for the University, but like any good ten year plan, it is not
+                    complete and probably never will be. The Committee has not yet decided on
+                    priorities, and he observed that if priorities are based entirely on <pb
+                        n="7149"/> dollars the plan won't work, because every other institution is
+                    trying to raise the dollars necessary for the fulfillment of their plans. </p>
+               <p> At the Chair's request, <name>Ms. Sheehy</name> led a discussion
+                    on performance measures and distributed a manual on performance measurement. The
+                    Chair and the Rector observed that the manual should be a guide and that the
+                    Board should not attempt to micromanage this. The Chair noted that <hi rend="italic">U.S. News
+                        &amp; World Report</hi>, in its annual ranking of colleges and universities, does
+                    not measure efficiency of operation, only dollars spent per student - which
+                    works to the detriment of the University, an efficiently run organization. </p>
+               <p> After a short recess, <name>Mr. Rainey</name>, who had to leave
+                    because of another obligation, thanked Board Members for their commitments to
+                    the Campaign. </p>
+               <p> The meeting resumed with the following motions to go into
+                    Executive Session: </p>
+               <p> That the Board of Visitors into Closed Session to discuss and
+                    review fund-raising and gift development strategy, donor prospects and related
+                    performance goals of identifiable personnel of the University in connection with
+                    the University's Capital Campaign; and also to discuss and seek further legal
+                    guidance of General Counsel as may be needed with respect to gifts, gift
+                    development and coordination of University-related foundations, for the purpose
+                    of guiding and coordinating the future private financing and support of the
+                    University and sustaining its continued excellence for the long-term, as
+                    permitted by Section 2.2-3711 (A) (1), (6), (7) and (8) of the <hi rend="underline">Code of Virginia</hi>. </p>
+               <p> That the Board of Visitors into Closed Session to evaluate and
+                    discuss the performance and the performance goals and objectives of the
+                    University's President and the Executive Vice President and Chief Operating
+                    Officer, as provided for in Section 2.2-3711 (A) (1) of the <hi rend="underline">Code of Virginia</hi>. </p>
+               <p> The Board went into Executive Session. </p>
+                <pb n="7150"/>
+               <p> After a recess for dinner, the Board resumed its deliberations, in
+                    Executive Session, until 10:15 p.m., when it recessed for the evening. </p>
+                <p> The Board resumed at 8:30 a.m., Saturday, July 29<hi rend="super">th</hi>, once more in
+                    Executive Session. </p>
+               <p> After adopting the following resolution certifying that its
+                    deliberations in Executive Session had been conducted in accord with the
+                    exemptions permitted by the Virginia Freedom of Information Act, the Board went
+                    into Open Session at 10:00 a.m.: </p>
+               <p> That we vote on and record our certification that, to the best of
+                    each Board member's knowledge, only public business matters lawfully exempted
+                    from open meeting requirements and which were identified in the motion(s)
+                    authorizing the closed session, were heard, discussed or considered in closed
+                    session. </p>
+               <p> The meeting continued with reports by the several Committee Chairs
+                    on the attainment of their Committee goals - established at the Board Retreat in
+                    July, 2005 - over the past year, as well as the goals they have set for the
+                    forthcoming year. (These reports will be issued as a Supplement to these
+                    Minutes.) </p>
+               <p> The President presented a proposal to establish a third Thomas
+                    Jefferson Foundation Medal, an award to be presented jointly by the Thomas
+                    Jefferson Foundation and the University. The new medal, to be called the Thomas
+                    Jefferson Foundation Medal in Civic Leadership, would follow the Thomas
+                    Jefferson Foundation Medal in Architecture, established in 1966, and the Thomas
+                    Jefferson Foundation Medal in Law, established in 1977, both of which are
+                    awarded each year at Founder's Day. The Medal in Civic Leadership would be
+                    established for three years, after which there will be a review of its success. </p>
+               <p> On motion, the Board adopted the following resolution approving
+                    the establishment of the Medal: </p>
+            </div1>
+            <div1 type="resolution" id="d5">
+                <head type="main"> APPROVAL OF THE THOMAS JEFFERSON FOUNDATION MEDAL<lb/> IN CIVIC
+                    LEADERSHIP </head>
+               
+                        <p> WHEREAS, the Thomas Jefferson Foundation and the
+                            University of Virginia, with generous gifts from the 
+                  
+                    <pb n="7151"/>
+                            
+                            Foundation, established the Thomas Jefferson Foundation Medal in Architecture in
+                            1966 and the Thomas Jefferson Foundation Medal in Law in 1977; and
+                        </p>
+                   
+                        <p> WHEREAS, the two Medals commemorate two of Thomas
+                            Jefferson's passions, architecture and the law, by recognizing each year
+                            at Founder's Day distinguished practitioners in both professions; and </p>
+                     
+                        <p> WHEREAS, <name>Mr. Jeffrey Walker</name>, an alumnus of
+                            the University, with the concurrence of the Thomas Jefferson Foundation,
+                            has proposed a third award, the Thomas Jefferson Foundation Medal in
+                            Civic Leadership, to recognize extraordinary leadership by a private
+                            citizen in any field of endeavor, consistent with the interests of
+                            Thomas Jefferson; and </p>
+                     
+                        <p> WHEREAS, the medalist would be chosen by a committee of
+                            five members appointed by the Rector of the University and consisting of
+                            the President of the University, or his or her representative, who will
+                            serve as chair; the President of the Thomas Jefferson Foundation, or his
+                            or her representative, who will serve as secretary; two members of the
+                            faculty of the University; and one person chosen by the other four
+                            members of the selection committee; and </p>
+                       
+                        <p> WHEREAS, the conditions and funding of the Thomas
+                            Jefferson Foundation Medal in Civic Leadership are to be enumerated in a
+                            policy statement prepared by the President; </p>
+                       
+                        <p> RESOLVED, the Board of Visitors approves the
+                            establishment of the Thomas Jefferson Foundation Medal in Civic
+                            Leadership and thanks <name>Mr. Walker</name> and the Foundation for
+                            this latest instance of their generosity and their furtherance of the
+                            mutual goals of the University and the Foundation. The Board establishes
+                            three years as the interval before the first sunset review, this review
+                            to be conducted by the President consistent with the Board's directions
+                            at the time. Further, the Board requests the President to conduct
+                            similar reviews of all three medals, one each year. </p>
+          
+                <pb n="7152"/>
+               <p> The Board went on to consider several other business matters, the
+                    first two of which were legislative proposals explained by <name>Mr.
+                    Sandridge</name>: legislation proposed by the University must be sent to the
+                    Governor's Office for approval, and this must be done before the next regularly
+                    scheduled meeting of the full Board. The first of these has to do with a
+                    proposal to amend provisions of the <hi rend="italic">Code of Virginia</hi> relating to the duties and
+                    powers of the Auditor of Public Accounts of the Commonwealth and the second with
+                    the investment of public funds. </p>
+               <p> On motion, the Board approved the two proposals. </p>
+            </div1>
+            <div1 type="resolution" id="d6">
+                <head type="main"> APPROVAL OF LEGISLATIVE PROPOSAL - DUTIES AND<lb/> POWERS OF THE
+                    AUDITOR OF PUBLIC ACCOUNTS </head>
+               
+                        <p> RESOLVED, the Board of Visitors of the University of
+                            Virginia approves and endorses the proposed legislation to clarify that
+                            private gifts are excluded from the transaction data to be reported to
+                            the Auditor of Public Accounts of the Commonwealth for inclusion in a
+                            statewide database. </p>
+               <p> The proposed legislation, which follows, would amend § 30-133,
+                    subsection H: </p>
+                <p> H. 1. The Auditor of Public Accounts shall compile and maintain on its Internet
+                    website a searchable database providing certain state expenditure, revenue, and
+                    demographic information as described in this subsection. In maintaining the
+                    database, the Auditor of Public Accounts shall work with and coordinate his
+                    efforts with the Joint Legislative Audit and Review Commission in obtaining,
+                    summarizing, and compiling the information to avoid duplication of efforts. The
+                    database shall be updated each year by October 15, to provide the information
+                    required in this subsection for the 10 most recently ended fiscal years of the
+                    Commonwealth. </p>
+               <p> The online database shall be made available to citizens of the
+                    Commonwealth to allow public access to historical revenue collections and
+                    appropriations with related demographic information, to the extent that the
+                    information is available and provided to the Auditor of <pb n="7153"/> Public
+                    Accounts. All state departments, courts officers, boards, commissions,
+                    institutions, or other agencies of the Commonwealth shall furnish all
+                    information requested by the Auditor of Public Accounts and shall cooperate with
+                    him to the fullest extent. </p>
+               <p>
+                    <hi rend="underline"> For purposes of reporting pursuant to this subsection and
+                        implementing the above database, the Auditor of Public Accounts shall
+                        include all appropriated funds and other sources under the control of
+                        state-supported institutions of higher education, except for the activity of
+                        private gifts, including endowment funds and unrestricted gifts referenced
+                        in §23-9.2 of the Code of Virginia notwithstanding anything as may be to the
+                        contrary herein. The exclusion of this activity does not affect the public
+                        access to these records unless otherwise specifically exempted by law. </hi>
+                </p>
+                <p> 2. The database shall contain the following for each of the 10 most recently
+                    ended fiscal years of the Commonwealth: </p>
+                    <list>
+                        <item> a. Major categories of spending by each secretariat and for major
+                            agencies; </item>
+                        <lb/>
+                        <item> b. The number of full-time state employees; </item>
+                        <lb/>
+                        <item> c. Total fiscal year revenues from state taxes, fees, and other
+                            charges, and total fiscal year revenues from state taxes, fees, and
+                            other charges computed on a per capita basis and as a percentage of
+                            personal income in the Commonwealth; </item>
+                        <lb/>
+                        <item> d. With regard to state taxes, fees, and other charges computed on a
+                            per capita basis and as a percentage of personal income, a comparison of
+                            such statistics for Virginia with the same statistics for other states; </item>
+                        <lb/>
+                        <item> e. Total fiscal year revenues from federal sources, including the
+                            major categories of spending for such revenues; </item>
+                        <lb/>
+                        <item> f. Total population and total population by various age groups
+                            including, but not limited to, school-age population and the population
+                            of persons 65 years of age and older; </item>
+                   
+                    <pb n="7154"/>
+                  
+                        <item> g. Student enrollment in grades K through 12; </item>
+                        <lb/>
+                        <item> h. Enrollment in public institutions of higher education of the
+                            Commonwealth; </item>
+                        <lb/>
+                        <item> i. Enrollment in private institutions of higher education in the
+                            Commonwealth; </item>
+                        <lb/>
+                        <item> j. The annual prison population; </item>
+                        <lb/>
+                        <item> k. Virginia adjusted gross income and Virginia taxable income by
+                            various age groups; </item>
+                        <lb/>
+                        <item> l. The number of citizens in the Commonwealth receiving food stamps; </item>
+                        <lb/>
+                        <item> m. The number of driver's licenses issued; </item>
+                        <lb/>
+                        <item> n. The number of registered motor vehicles; </item>
+                        <lb/>
+                        <item> o. The number of full-time private sector employees; </item>
+                        <lb/>
+                        <item> p. The number of households; </item>
+                        <lb/>
+                        <item> q. The number of prepaid tuition contracts outstanding pursuant to
+                            Chapter 4.9 (§23-38.75 et seq.) of Title 23 and the estimated total
+                            liability under such contracts; and </item>
+                        <lb/>
+                        <item> r. Other data as the Auditor deems appropriate relating to the
+                            Commonwealth of Virginia. </item>
+                    </list>
+          
+                <p> 3. By October 15th of each year, the Auditor shall also produce a paper copy or
+                    a computer file containing the information described in this subsection and
+                    shall distribute the copy or file to newspapers of general circulation in the
+                    Commonwealth. The distribution shall include the address of the Internet website
+                    for the searchable database. </p>
+            </div1>
+            <div1 type="resolution" id="d7">
+                <pb n="7155"/>
+                <head type="main"> APPROVAL OF LEGISLATIVE PROPOSAL - INVESTMENT OF<lb/> PUBLIC
+                    FUNDS </head>
+                
+                        <p> RESOLVED, the Board of Visitors of the University of
+                            Virginia approves and endorses the proposed legislation to add other
+                            University funds to those funds that may be invested by the Board of
+                            Visitors in financial securities other than fixed-income securities.
+                        </p>
+                <p> The proposed legislation, which follows, would make exempt from §2.2-4500 -
+                    2.2-4517 the following: </p>
+                <p> §<xref url="http://leg1.state.va.us/cgi-bin/legp504.exe?000+cod+23-76.1"
+                    >23-76.1</xref>. Investment of endowment funds, endowment income, and gifts;
+                    standard of care; liability; exemption from the Virginia Public Procurement Act. </p>
+                <p> A. The board of visitors shall invest and manage the endowment funds, endowment
+                    income, gifts, <hi rend="italic">all non-general fund reserves held by the University, all local
+                    funds, tuition, education and general fees, or research and sponsored program
+                    funds</hi> of the University in accordance with this section and the provisions of
+                    the Uniform Management of Institutional Funds Act (§<xref
+                        url="http://leg1.state.va.us/cgi-bin/legp504.exe?000+cod+55-268.1"
+                    >55-268.1</xref> et seq.). </p>
+                <p> B. No member of the board of visitors shall be personally liable for losses
+                    suffered by an endowment funds, endowment income, gifts, <hi rend="italic">all non-general fund
+                    reserves held by the University, all local funds, tuition, education and general
+                    fees, or research and sponsored program funds</hi> arising from investments made
+                    pursuant to the provisions of subsection A. </p>
+                <p> C. The investment and management of endowment funds, endowment income, gifts,
+                    all non-general fund reserves held by the University, <hi rend="italic">all local funds, tuition,
+                    education and general fees, or research and sponsored program funds</hi> of the
+                    University shall not be subject to the provisions of the Virginia Public
+                    Procurement Act (§<xref
+                        url="http://leg1.state.va.us/cgi-bin/legp504.exe?000+cod+2.2-4300"
+                    >2.2-4300</xref> et seq.). </p>
+                <pb n="7156"/>
+                <p> D. In addition to the investment practices authorized by the Uniform Management
+                    of Institutional Funds Act (§<xref
+                        url="http://leg1.state.va.us/cgi-bin/legp504.exe?000+cod+55-268.1">55-
+                    268.1</xref> et seq.), the board of visitors may also invest or reinvest the
+                    endowment funds, endowment income, gifts, <hi rend="italic">all non-general fund reserves held by
+                    the University, all local funds, tuition, education and general fees, or
+                    research and sponsored program funds</hi> in derivatives, options, and financial
+                    securities. </p>
+                <p> 1. In this section, "derivative" means a contract or financial instrument or a
+                    combination of contracts and financial instruments, including, without
+                    limitation, any contract commonly known as a "swap," which gives the University
+                    the right or obligation to deliver or receive delivery of, or make or receive
+                    payments based on, changes in the price, value, yield or other characteristic of
+                    a tangible or intangible asset or group of assets, or changes in a rate, an
+                    index of prices or rates, or other market indicator for an asset or a group of
+                    assets. </p>
+                <p> 2. In this section, an "option" means an agreement or contract whereby the
+                    University may grant or receive the right to purchase or sell, or pay or receive
+                    the value of, any personal property asset including, without limitation, any
+                    agreement or contract which relates to any security, contract or agreement. </p>
+                <p> 3. In this section, "financial security" means any note, stock, treasury stock,
+                    bond, debenture, evidence of indebtedness, certificate of interest,
+                    collateral-trust certificate, pre-organization certificate or subscription,
+                    transferable share, investment contract, voting-trust certificate, certificate
+                    of deposit for a security, fractional undivided interest in oil, gas, or other
+                    mineral rights, any put, call, straddle, option, or privilege on any security,
+                    certificate of deposit, or group or index of securities (including any interest
+                    therein or based on the value thereof), or any put, call, straddle, option, or
+                    privilege entered into on a national securities exchange relating to foreign
+                    currency, or, in general, any interest or instrument commonly known as a
+                    "security," or any certificate of interest or participation in, temporary or
+                    interim certificate for, receipt for, guarantee of, or warrant or right to
+                    subscribe to or purchase, any of the foregoing. </p>
+                <pb n="7157"/>
+               <p> The third proposal was a resolution, to be sent to Richmond,
+                    supporting a legislative study of the serious shortage of health care
+                    practitioners. </p>
+               <p> The Board, on motion, approved the following resolution: </p>
+            </div1>
+            <div1 type="resolution" id="d8">
+                <head type="main">HEALTH CARE PRACTITIONER WORKFORCE SHORTAGE</head>
+               
+                        <p> WHEREAS, the demand for health care in the Commonwealth
+                            continues to grow, and is anticipated to increase exponentially in the
+                            next few years; and </p>
+                       
+                        <p> WHEREAS, one of the major causes of the demand is that
+                            the "baby boomer" population is reaching age 65. Those between the ages
+                            of 65 and 80 need three or more times the rate of health care as younger
+                            people; and </p>
+                       
+                        <p> WHEREAS, although the 60-80 year old population is
+                            anticipated to quadruple by 2030, the number of doctors, nurses and
+                            other health care practitioners is not increasing at the rate of the
+                            aging population, which will cause a workforce shortage; and </p>
+                       
+                        <p> WHEREAS, the impact of a health care workforce shortage
+                            will likely result in limitations to health care for citizens of the
+                            Commonwealth; </p>
+                       
+                        <p> RESOLVED, the Board of Visitors recognizes a growing
+                            workforce shortage of health care practitioners and supports a study, by
+                            the General Assembly and academic health centers, of methods to ensure
+                            an adequate supply of health care practitioners to serve the
+                            Commonwealth's population into the future. </p>
+                <ornament type="characters">- - - - - - - -</ornament>
+               <p>
+                    <name>Mr. Sandridge</name> then proposed a resolution to transfer certain
+                    endowment funds from the University to the College Foundation of the University
+                    of Virginia. </p>
+               <p> On motion, the Board approved the following resolution: </p>
+            </div1>
+            <div1 type="resolution" id="d9">
+                <pb n="7158"/>
+                <head type="main"> TRANSFER OF ENDOWMENT FUNDS FROM THE UNIVERSITY TO<lb/> THE
+                    COLLEGE FOUNDATION OF THE UNIVERSITY OF<lb/> VIRGINIA </head>
+              
+                        <p> WHEREAS, the Hamrick family contributed funds, using a
+                            gift annuity, to the University to benefit the History Department in the
+                            College Arts and Sciences; and </p>
+                       
+                        <p> WHEREAS, the Hamrick family later established an
+                            endowed fellowship fund with the College Foundation of the University of
+                            Virginia that provides for a graduate fellowship in the Corcoran
+                            Department of History in the Graduate School of Arts and Sciences; and </p>
+                     
+                        <p> WHEREAS, the Hamrick family has requested that the
+                            funds held by the University be transferred to the College Foundation of
+                            the University of Virginia so that they may be added to the Hamrick
+                            Graduate Fellowship Fund; </p>
+                     
+                        <p> RESOLVED, the Board of Visitors authorizes transfer of
+                            the <name>George L. Hamrick</name> Gift Annuity funds, currently held by
+                            the University, to the College Foundation of the University of Virginia,
+                            to be added to the Hamrick Graduate Fellowship Fund. </p>
+                <ornament type="characters">- - - - - - - - -</ornament>
+               <p> Finally, the Secretary proposed a resolution correcting the
+                    designation of a professorship, established by the Board by resolution on June
+                    9th, of this year. </p>
+               <p> On motion, the Board approved the following resolution: </p>
+            </div1>
+                <div1 type="resolution" id="d10">
+                <head type="main"> AMENDMENT TO THE RESOLUTION ESTABLISHING THE<lb/> SHURE
+                    PROFESSORSHIP IN PEDIATRIC NEUROLOGY </head>
+              
+                        <p> RESOLVED, that the resolution establishing the Shure
+                            Professorship in Pediatric Neurology, adopted by the Board of Visitors
+                            on <date value="2006-06-09">June 9, 2006</date>, be amended to read that
+                            the Professorship is to be held in the Department of Neurology in the
+                            School of Medicine. </p>
+                <ornament type="characters">- - - - - - - - - - - - -</ornament>
+                <pb n="7159"/>
+               <p> The Rector asked <name>Ms. Mullen</name>, the Student Member, if
+                    she had any general comments to make on the matters considered by the Board at
+                    the Retreat. <name>Ms. Mullen</name> replied that from the point of view of the
+                    students at the University, it is very important to try to reduce the size of
+                    undergraduate classes. </p>
+                <ornament type="characters">- - - - - - - - -</ornament>
+               <p>On motion, the Retreat was adjourned at 10:54 a.m.</p>
+                <signed>Respectfully submitted, <lb/>
+                    <name>Alexander G. Gilliam, Jr.</name><lb/>Secretary </signed>
+                <trailer> AGG:jb<lb/> These minutes have been posted to the University of Virginia’s
+                    Board of Visitors website. <xref
+                        url="http://www.virginia.edu/bov/publicminutes.html"
+                        >http://www.virginia.edu/bov/publicminutes.html</xref>
+                </trailer>
+            </div1>
+                <div1 type="addenda" id="d11">
+                <pb n="7160"/>
+                <head type="main"> ADDENDUM TO THE OFFICIAL MINUTES OF THE MEETING OF THE BOARD OF
+                    VISITORS OF THE UNIVERSITY OF VIRGINIA <lb/> Meeting Date: <dateRange
+                        from="2006-07-28" to="2006-07-29">July 28-29, 2006</dateRange>
+                </head>
+                <lb/>
+                <head type="sub">CERTIFICATION OF EXECUTIVE MEETING</head>
+                <p> The Board of Visitors, sitting in Open Session, unanimously adopted a resolution
+                    certifying that while meeting in Executive Session - as permitted by the
+                    relevant provisions of the <hi rend="underline">Code of Virginia</hi> - only public business authorized by
+                    its motion and lawfully exempted from consideration in closed session. </p>
+                <signed>Respectfully submitted, <lb/>
+                    <name>Alexander G. Gilliam, Jr.</name><lb/>Secretary </signed>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

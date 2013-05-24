@@ -1,0 +1,363 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0625 SYSTEM "000000766_0625" NDATA jpg>
+<!ENTITY DSSR_000000766_0626 SYSTEM "000000766_0626" NDATA jpg>
+<!ENTITY DSSR_000000766_0627 SYSTEM "000000766_0627" NDATA jpg>
+<!ENTITY DSSR_000000766_0628 SYSTEM "000000766_0628" NDATA jpg>
+<!ENTITY DSSR_000000766_0629 SYSTEM "000000766_0629" NDATA jpg>
+<!ENTITY DSSR_000000766_0630 SYSTEM "000000766_0630" NDATA jpg>
+<!ENTITY DSSR_000000766_0631 SYSTEM "000000766_0631" NDATA jpg>
+<!ENTITY DSSR_000000766_0632 SYSTEM "000000766_0632" NDATA jpg>
+
+<!--<!ENTITY NC62i21a SYSTEM "NC62i21a.jpg" NDATA jpg>
+<!ENTITY NC62i21b SYSTEM "NC62i21b.jpg" NDATA jpg>
+<!ENTITY NC62i21c SYSTEM "NC62i21c.jpg" NDATA jpg>
+<!ENTITY NC62i21d SYSTEM "NC62i21d.jpg" NDATA jpg>
+<!ENTITY NC62i21e SYSTEM "NC62i21e.jpg" NDATA jpg>
+<!ENTITY NC62i21f SYSTEM "NC62i21f.jpg" NDATA jpg>
+<!ENTITY NC62i21g SYSTEM "NC62i21g.jpg" NDATA jpg>
+<!ENTITY NC62i21h SYSTEM "NC62i21h.jpg" NDATA jpg>-->
+ ]>
+
+<TEI.2 id="NC62i21">
+
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-09-21"
+      >September 21<hi rend="super">st</hi>, 1862</date></title>
+
+    <author>Tenney, Charles N.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Christopher A. Schnell and Daniel W. Stowell, Lincoln Legal Papers</name>
+     <resp>Creation of digital images:</resp>
+     <name>University of Virginia Library Electronic Text Center</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>Christopher A. Schnell and Daniel W. Stowell, Lincoln Legal Papers</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">17</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NC62i21</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Page images have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Charles N. Tenney to Adelaide E. Case, September 21st, 1862</title>
+
+
+      <author>Charles N. Tenney</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>8 pp.</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p>Tenney used commas and end of sentence periods interchangably.</p>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p>All unambiguous end-of-line hyphens have been retained.</p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings.</p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-09-21">1862-09-21</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>masculine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-16">November 16th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">October 14th, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>8 pp.</extent>
+      <date value="1862-09-21">September 21st, 1862</date>
+
+      <title>Letter from Charles N. Tenney to Adelaide E. Case</title>
+     </bibl>
+    </head>
+    <p>Charlie describes his regiment's participation in the Battle of Antietam on September 17,
+     1862, and reports that Maryland is free from Confederate control. He closes by asking about
+     Addie's school.</p>
+   </div1>
+
+  </front>
+
+  <body id="d4">
+
+
+   <div1 type="letter" n="1" id="d5">
+
+    <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-09-21">September
+       21<hi rend="super">st</hi>, 1862</date></head>
+    <pb n="1" entity="DSSR_000000766_0625"/>
+    <opener>
+     <dateline>
+      <name type="place">Near Harper's Ferry, <abbr expan="Maryland">Md.</abbr></name>
+      <date value="1862-09-21">Sept. 21<hi rend="super">
+        <hi rend="underline">st</hi>
+       </hi> 1862</date>
+     </dateline>
+     <salute> My darling <name type="recipient">Addie</name>; </salute>
+    </opener>
+    <p> Ere this reaches you, the telegraph will<lb/> have informed you of the great battle of the
+      17<hi rend="super">
+      <hi rend="underline">th</hi>
+     </hi>, at <name type="place">Sharpsburg</name><lb/> and you will be painfully anxious to learn
+     the fate of<lb/> your Charlie. Through the mercy of the<q>"God of battles,"</q><lb/> as
+     heretofore, I came through perfectly safe. To your<lb/> prayers, precious one, I owe my safety.
+     Day before<lb/> yesterday, I recieved two letters from you, dated Aug 31<hi rend="super">
+      <hi rend="underline">st</hi>
+     </hi> &amp;<lb/> Sept. 8<hi rend="super">
+      <hi rend="underline">th</hi>
+     </hi> and Sept. 10<hi rend="super">
+      <hi rend="underline">th</hi>
+     </hi>, one enclosing a note from Dora, and<lb/> I need not tell you that they were recieved
+     with pleasure,<lb/> for you already know how I prize your letters. But I<lb/> owe you an
+     explanation for not writing oftener than I have<lb/> for the past month, and will give it now.
+     If you have<lb/> recieved the letters I wrote from near Georgetown and near<lb/> Rockville, you
+     will have seen why I did not write while<lb/> on the <name type="river">Rappahannock</name>. The
+     day I wrote you last. we marched<lb/> some eight miles, and with the exception of two days
+     when<lb/> it rained. (and we had no shelter.) have been marching or doing<lb/> some duty
+     equally laborious, thus putting it completely beyond<lb/> any power to write&mdash; part of
+     the time, even in my diary.<lb/>
+    </p>
+
+    <pb n="2" entity="DSSR_000000766_0626"/>
+
+    <p> So you see that the campaign in Maryland is in fact<lb/> an arduous one. But I now have the
+     pleasure of writing<lb/> that Maryland is free from Secesh. After the battle of South<lb/>
+     Mountain, a week ago today, the Rebels precipitately fled to<lb/> the vicinity of <name
+      type="place">Sharpsburg</name>, and posted <orig reg="themselves">them selves</orig> on<lb/>
+     the hills surrounding the village. They were closely pressed<lb/> and our men kept them
+     constantly under fire. Tuesday<lb/> was occupied in feeling their position and a heavy
+     artillery<lb/> skirmish took place, with some loss on both sides.<lb/> Our division was formed
+     in column of companies, to be held<lb/> as a reserve corps. and at night we lay down&mdash;
+     as I supposed<lb/> &mdash;for the night. Tattoo sounded and a hush, solemn in its<lb/>
+     stillness, settled over camp. I had just sank into an<lb/> easy slumber when the clear notes of
+     a bugle sang out on the<lb/> breeze, and the bivouac was broken. Hurrying into line,<lb/> we
+     were marched from the left of the field around some<lb/> 4&frac12; miles to the right,
+     again going into bivouac about<lb/> half past one A.M. At daylight we were aroused<lb/> by a
+     volley of musketry but a short distance from us.<lb/> The <abbr expan="Pennsylvania"
+     >Penna.</abbr> Reserves were engaged, in less than an hour<lb/> the engagement became pretty
+     warm, the artillery having<lb/> joined in the fray. We were called into line, and<lb/> marched
+     toward the scene of conflict at once meeting<lb/>
+     <pb n="3" entity="DSSR_000000766_0627"/> the wounded coming in, nearly every rod. We
+     halted<lb/> a short distance from the field, and twenty five minutes<lb/> allowed us to make
+     coffee. At the expiration of that time<lb/> we fell in and marched directly in the face of the
+     enemy<lb/> who held as usual, a hill surmounted with a belt of<lb/> woods, where they held at
+     bay some four or five of the<lb/>
+     <abbr expan="Pennsylvania">Pa.</abbr> reserve regiments. As we advanced steadily across<lb/>
+     the open field, we <orig reg="deployed in column">ployed column</orig> and advanced in<lb/> two
+     columns, directly into the woods, delivering our fire as<lb/> we came up. Our <abbr
+      expan="regiment">regt.</abbr> was upon the right of the 2d column<lb/> and where we were the
+     woods were not very dense, and<lb/> we soon dislodged the enemy, they then taking cover<lb/>
+     behind a fence, in a cornfield. As we came upon<lb/> the brow of the hill, we halted, and
+     poured an incessant<lb/> fire into their ranks for about 20 minutes, when they<lb/> began to
+     show signs of unsteadiness.<q>"<hi rend="underline">Charge</hi>, <hi rend="underline"
+      >bayonets</hi>,"</q><lb/> exclaimed <abbr expan="Colonel">Col.</abbr> Tyndale (<abbr
+      expan="commanding">comdg.</abbr> the brigade) and away<lb/> we went shouting like madmen.
+     Charging over the<lb/> fence into the ranks of the Secesh, they broke like sheep.<lb/> leaving
+     the dead and wounded at our mercy&mdash; and<lb/> their name was legion. Away they went, at
+     full speed<lb/> closely followed by our brave boys, and we chased<lb/> them into another piece
+     of woods. In this charge, we<lb/>
+     <pb n="4" entity="DSSR_000000766_0628"/> drove them nearly half a mile, and our brigade
+     captured<lb/> a twelve pounder rifled cannon, and two stands of<lb/> colors, while the ground
+     was thickly strewn with<lb/> small arms, and the dead lay in heaps of tens,<lb/> twenties,
+     fifties, and even <hi rend="underline">hundreds</hi>! As we neared<lb/> this 2<hi rend="super">
+      <hi rend="underline">d</hi>
+     </hi> piece of woods, it was discoved that it was<lb/> under cover of a battery of heavy guns.
+     A battery<lb/> of Howitzers was immediately ordered up, and they<lb/> stood an unequal fire
+     until their amunition was<lb/> completely exhaused, when they were relieved by<lb/> the 8<hi
+      rend="super">
+      <hi rend="underline">th</hi>
+     </hi> <abbr expan="Rhode Island">R. I.</abbr> battery of Parrott guns. Soon it was
+     announced<lb/> that the enemy was advancing upon the Battery, from<lb/> the right. We made a
+     half wheel to the right, and<lb/> lay down behind a ridge of land, just enough to<lb/> conceal
+     us. Here, recourse was had to strategy.<lb/> A small force, with the colors, advanced and
+     delivered<lb/> a weak fire, as though they were the only support to<lb/> the battery. The bait
+     took. With a yell, they dashed<lb/> out of the woods hoping to make our guns an easy<lb/> prey,
+     but at the word<q>"<hi rend="underline">Up boys and at them</hi>,"</q><lb/> with a cheer which
+     rent the air, we rose and<lb/> poured a deadly volley into the advancing <orig reg="column"
+      >col-<lb/> umn</orig>. They halted, reeled a moment, and would<lb/>
+     <pb n="5" entity="DSSR_000000766_0629"/> have broken, had it not been for the firmness of<lb/>
+     their officers. They rallied, but did not advance.<lb/> We continued to rain bullets into their
+     midst;<lb/> till they finally gave way before the impetuosity<lb/> of our men. Again <abbr
+      expan="Colonel">Col.</abbr> Tyndale ordered us forward<lb/> and we held the second hill. Our
+     company was<lb/> immediately thrown out into the woods as skirmishers<lb/> and for about an
+      hour <hi rend="underline">we held our position against</hi><lb/>
+     <hi rend="underline">Gen. A.P. Hill's entire division</hi>! About 12 oclock, the<lb/> 13<hi
+      rend="super">
+      <hi rend="underline">th</hi>
+     </hi> New Jersey <abbr expan="regiment">regt.</abbr> came up to relieve us, and our<lb/>
+     regiment fell back being completely out of ammunition<lb/> About half past one P.M., a panic
+     was seen to spread<lb/> in the ranks of the 13<hi rend="super">
+      <hi rend="underline">th</hi>
+     </hi> (just named), and they soon<lb/> broke and ingloriously fled the field. The panic<lb/>
+     spread even to our own brigade and regardless of<lb/> the commands and entreaties of the
+     officers, they left<lb/> the field. Seeing them thus giving way, Major Crane<lb/> immediately
+     formed the remnant of our brave Seventh,<lb/> upon our colors, and vainly endeavored to stay
+     the<lb/> retreating column&mdash;but it seemed as though the<lb/> New Jersey <abbr
+      expan="regiment">regt.</abbr> was bound to be defeated. <pb n="6" entity="DSSR_000000766_0630"
+     /> The rebels advanced, but their triumph was short<lb/> lived, for they advanced directly
+     between our<lb/> right and left wings and they closed upon them<lb/> driving them back in
+     precipitancy losing some 600<lb/> prisoners, and very many killed and wounded.<lb/> Thus
+      the <del hand="h1">day</del> field was saved. Gen. Green withdrew<lb/> our division from the
+     field but the fight continued<lb/> uninterruptedly until after dark. Our victory<lb/> is
+     complete and decisive, and our brigade has<lb/> covered itself with new glory, and the
+     Seventh<lb/> is proud of its laurels. The <abbr expan="regiment">regt.</abbr> lost 5 killed,
+     and<lb/> 33 wounded. <abbr expan="Company">Co.</abbr> H. lost one killed&mdash;Henry
+     Bacon<lb/> and one wounded&mdash;H. J. Bell. I was under<lb/> fire the entire day, not
+     leaving the company,<lb/> and how I escaped is truly wonderful to me.<lb/>
+    </p>
+    <p> I went over the field day before yesterday, and<lb/> I wish never to see the like again. The
+     ground<lb/> for as far as the eye can reach, was literally<lb/> covered with dead bodies, still
+     unburied. I can-<lb/> not here describe the scenes of that field so I<lb/> will dismiss the
+     subject, with<q>"Three cheers<lb/> for Gen. M<hi rend="super">c</hi>Clellan,"</q> who
+      says<q>"the Ohio boys<lb/> cant be beaten."</q> <abbr expan="Colonel">Col.</abbr> Tyndale was
+     killed just before the brigade fell back. </p>
+
+    <pb n="7" entity="DSSR_000000766_0631"/>
+
+    <p> After a tedious march to Maryland Heights,<lb/> we found yesterday that Jackson had
+     crossed<lb/> the <name type="river">Potomac</name>, and left <name type="place">Maryland</name>. </p>
+    <p> If I had time, I would like to tell you all<lb/> about this country but, the mail closes in
+     15<lb/> minutes. We hope to soon have 24 hours<lb/> rest when I will write, until I
+     can&mdash;well<lb/> I will write you a very long letter&mdash;answer Dora's<lb/> write
+     to Laura, &amp; your Papa.&mdash;give Hal. a scolding<lb/> for not writing to me,
+     &amp;c. &amp;c. Dont consider<lb/> this as an answer to your charming letters, for
+     I<lb/> shall do that in a little better style; but I write<lb/> now on a stone, sitting upon
+     the ground, and<lb/> the sun shining very hotly. </p>
+    <p> I suppose your school has closed, did you<lb/> have a good time, at the close? But my time
+     is<lb/> nearly up and we move soon. </p>
+    <p> Remember me to Dora, and the rest<lb/> and tell Laurie I will write as soon as possible. </p>
+    <p> Be happy, my darling, and dont forget to<lb/> pray for, and write to, </p>
+    <closer>
+     <salute>Your devoted</salute>
+     <signed><name type="sender">Charlie</name>.</signed>
+     <pb n="8" entity="DSSR_000000766_0632"/>
+
+     <address><addrLine>Direct <abbr expan="Company">Co.</abbr> H. 7<hi rend="super"><hi rend="underline">th</hi></hi> Ohio <abbr expan="Regiment">Regt.</abbr></addrLine>
+<addrLine>1<hi rend="super"><hi rend="underline">st</hi></hi> Brigade, 2<hi rend="super"><hi rend="underline">d</hi></hi> Division.</addrLine>
+<addrLine>Bank's' Army Corps.</addrLine>
+<addrLine>Washington D.C.</addrLine></address>
+
+    </closer>
+
+   </div1>
+  </body>
+
+ </text>
+</TEI.2>

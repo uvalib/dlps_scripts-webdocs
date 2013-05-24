@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % ISOtech SYSTEM "http://text.lib.virginia.edu/charent/iso-tech.ent"> %ISOtech;
+<!ENTITY DSSR_000004398_0007 SYSTEM "000004398_0007" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0008 SYSTEM "000004398_0008" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0009 SYSTEM "000004398_0009" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0010 SYSTEM "000004398_0010" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0011 SYSTEM "000004398_0011" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0012 SYSTEM "000004398_0012" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0013 SYSTEM "000004398_0013" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0014 SYSTEM "000004398_0014" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0015 SYSTEM "000004398_0015" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0016 SYSTEM "000004398_0016" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0017 SYSTEM "000004398_0017" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0018 SYSTEM "000004398_0018" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0019 SYSTEM "000004398_0019" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0020 SYSTEM "000004398_0020" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0021 SYSTEM "000004398_0021" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0022 SYSTEM "000004398_0022" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0023 SYSTEM "000004398_0023" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0024 SYSTEM "000004398_0024" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0025 SYSTEM "000004398_0025" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0026 SYSTEM "000004398_0026" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0027 SYSTEM "000004398_0027" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0028 SYSTEM "000004398_0028" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0029 SYSTEM "000004398_0029" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0030 SYSTEM "000004398_0030" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0031 SYSTEM "000004398_0031" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0032 SYSTEM "000004398_0032" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0033 SYSTEM "000004398_0033" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0034 SYSTEM "000004398_0034" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0035 SYSTEM "000004398_0035" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0036 SYSTEM "000004398_0036" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0037 SYSTEM "000004398_0037" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0038 SYSTEM "000004398_0038" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0039 SYSTEM "000004398_0039" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0040 SYSTEM "000004398_0040" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0041 SYSTEM "000004398_0041" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0042 SYSTEM "000004398_0042" NDATA uvaHighRes>
+<!ENTITY DSSR_000004398_0043 SYSTEM "000004398_0043" NDATA uvaHighRes>
+
+]>
+
+<TEI.2 id="D13048">
+    <teiHeader type="AACR2">
+
+        <fileDesc>
+            <titleStmt>
+
+                <title type="main">Diary of Asa F. Paige</title>
+
+                <author>Paige, Asa F.</author>
+                <respStmt>
+                    <resp>Creation of machine-readable version: </resp>
+                    <name>Digital Curation Services , University of Virginia Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Digital Curation Services</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Creation of digital images:</resp>
+                    <!-- Need to check with source to determine pagination -->
+                    <name>Digitization Services, University of Virginia Library</name>
+                </respStmt>
+
+            </titleStmt>
+
+            <extent>ca. <num type="kilobytes">51</num> kilobytes</extent>
+
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia </pubPlace>
+                <idno type="DCS">D13048</idno>
+                <date value="2009">2009</date>
+            </publicationStmt>
+            
+            <seriesStmt>                
+                <title>University of Virginia Library, Text collection</title>                
+                <idno type="uva-set">UVA-LIB-Text</idno>                
+                <idno type="uva-set">UVA-LIB-CivilWar</idno>                
+            </seriesStmt>
+
+            <sourceDesc>
+
+                <biblFull>
+                    <titleStmt>
+                        <title type="main">Diary of Asa F. Paige [manuscript], 1864 April to 1865
+                            June.</title>
+                        <title type="sort">diary of asa f. page 1864 april to 1865 june.</title>
+                        <author>Paige, Asa F., fl. 1864-1865.</author>
+                    </titleStmt>
+                    <extent>1 vol.</extent>
+                    <publicationStmt>
+                        <idno type="callNo">mss 13048</idno>
+                        <idno type="Virgo ID">X004937851</idno>
+                        <idno type="title control number">a4298684</idno>
+                        <availability>
+                            <p> Albert &amp; Shirley Small Special Collections, University of
+                                Virginia Library, Charlottesville, Virginia, USA</p>
+                        </availability>
+                    </publicationStmt>
+                </biblFull>
+
+            </sourceDesc>
+
+
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <!-- Per Matt we need to work on this statement-->
+                <p> Prepared for the University of Virginia Library by Digital Curation Services
+                    staff and volunteer Mary Roy Dawson Edwards, Transcriber. February 2007.</p>
+            </projectDesc>
+        </encodingDesc>
+
+        <profileDesc>
+            <langUsage>
+                <language id="eng" usage="main">English</language>
+            </langUsage>
+            <handList>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+        </profileDesc>
+
+    </teiHeader>
+    <text id="d1">
+        <body id="d2">
+            <div1 id="d3" type="part">
+                <head>Diary of Asa F. Paige</head>
+                <!--  [See transcription notes at the end.]-->
+                <p>Asa F. Paige<lb/> Co. D.<lb/> N. H. Vols.</p>
+                <div2 id="d4" type="section">
+                    <head>1864</head>
+                    <div3 id="d5" type="entry">
+                        <pb entity="DSSR_000004398_0007" n="np"/>
+                        <head><date value="1864-04-07">April 7<hi rend="super">th</hi> 1864</date>.</head>
+                        <p>Our regt reported at Concord today having been on furlough 30 days.</p>
+                    </div3>
+
+                    <div3 id="d6" type="entry">
+                        <head><date value="1864-04-14">14<hi rend="super">th</hi></date>.</head>
+                        <p>Left Concord today for Washington D. C.</p>
+                    </div3>
+                    <div3 id="d7" type="entry">
+                        <head><date value="1864-04-15">15<hi rend="super">th</hi></date>.</head>
+                        <p>We arrived at New York at daylight this morning left town at 3 Oclock
+                            A.M. for Phill, arrived at Phill at 9 Oclock this P.M.</p>
+                    </div3>
+                    <div3 id="d8" type="entry">
+                        <head>
+                            <date value="1864-04-16">16</date>
+                            <hi rend="super">th</hi>
+                        </head>
+                        <p>arrived in Washington <pb entity="DSSR_000004398_0008" n="np"/> at &frac12; 9
+                            went up to the Soldier's rest.</p>
+                    </div3>
+                    <div3 id="d9" type="entry">
+                        <head><date value="1864-04-18">18</date><hi rend="super">th</hi>.</head>
+                        <p>Marched over long bridge this morning to Arlington Hights and went into
+                            Camp.</p>
+                    </div3>
+
+                    <div3 id="d10" type="entry">
+                        <head><date value="1864-04-21">21</date><hi rend="super">st</hi>.</head>
+                        <p><del hand="author">
+                                <unclear>
+                                    <hi rend="line-through">[Word lined out.]</hi>
+                                </unclear>
+                            </del> Reviewed today by Genl. Casey.</p>
+                    </div3>
+
+                    <div3 id="d11" type="entry">
+                        <head><date value="1864-04-25">25</date><hi rend="super">th</hi>.</head>
+                        <p>Struck Camp today and marched to Alexandria and went on board a
+                        Steamer.</p>
+                    </div3>
+
+                    <div3 id="d12" type="entry">
+                        <pb entity="DSSR_000004398_0009" n="np"/>
+                        <head><date value="1864-04-26">26</date><hi rend="super">th</hi>.</head>
+                        <p>Weighed anchor this morning and run down the Potomac to Fortress
+                        Monroe.</p>
+                    </div3>
+
+                    <div3 id="d13" type="entry">
+                        <head><date value="1864-04-27">27</date><hi rend="super">th</hi>.</head>
+                        <p>Landed on Glousester point Va. today went into Camp.</p>
+                    </div3>
+
+                    <div3 id="d14" type="entry">
+                        <head><date value="1864-04-30">30</date><hi rend="super">th</hi>.</head>
+                        <p>Reviewed today by Maj. Genl Butler.</p>
+                    </div3>
+
+                    <div3 id="d15" type="entry">
+                        <head><date value="1864-05-01">May <del hand="author">
+                                    <hi rend="line-through">1<hi rend="super">st.</hi></hi>
+                                </del></date>
+                            <date value="1864-05-04">4</date><hi rend="super">th</hi>.</head>
+                        <p>Embarked on board steamer <unclear>Galvor</unclear> and run to Fortress
+                            Monroe.</p>
+                    </div3>
+
+                    <div3 id="d16" type="entry">
+                        <pb entity="DSSR_000004398_0010" n="np"/>
+                        <head><date value="1864-05-05">5</date><hi rend="super">th</hi>.</head>
+                        <p>Run up the James river and landed at Bermuda landing.</p>
+                    </div3>
+
+                    <div3 id="d17" type="entry">
+                        <head>
+                            <date value="1864-05-06">6</date>
+                            <hi rend="super">th.</hi>
+                        </head>
+                        <p>Took up the lines of march this morning towards Petersburg, threw up
+                            rifle pits at Foster's plantation</p>
+                    </div3>
+                    <div3 id="d18" type="entry">
+                        <head><date value="1864-05-09">9</date><hi rend="super">th</hi>.</head>
+                        <p>Had a fight to day in front of Petersburg. tore up 2 miles of the track
+                            on the P. and R. - R.R.<ref n="1" target="n1">{1}</ref>
+                        </p>
+                    </div3>
+
+                    <div3 id="d19" type="entry">
+                        <pb entity="DSSR_000004398_0011" n="np"/>
+                        <head><date value="1864-05-13">13</date><hi rend="super">th</hi>.</head>
+                        <p>We Charged and took a rebel fort today.</p>
+                    </div3>
+
+                    <div3 id="d20" type="entry">
+                        <head><date value="1864-05-15">15</date><hi rend="super">th</hi>.</head>
+                        <p>We came up with the rebels again at Druries Bluff.</p>
+                    </div3>
+
+                    <div3 id="d21" type="entry">
+                        <head><date value="1864-05-16">16</date><hi rend="super">th</hi>.</head>
+                        <p>We had a fight today and had to fall back.</p>
+                    </div3>
+
+                    <div3 id="d22" type="entry">
+                        <head><date value="1864-05-18">18</date><hi rend="super">th</hi>.</head>
+                        <p>The rebeles have drove our pickets in and we are fighting now the fight
+                            has stoped for the night.</p>
+                    </div3>
+
+                    <div3 id="d23" type="entry">
+                        <pb entity="DSSR_000004398_0012" n="np"/>
+                        <head><date value="1864-05-21">21</date><hi rend="super">st</hi>.</head>
+                        <p>We had a fight today with the rebs.</p>
+                    </div3>
+
+                    <div3 id="d24" type="entry">
+                        <head><date value="1864-05-28">28</date><hi rend="super">th</hi>.</head>
+                        <p>Went aboard the Steamer Escort and run to Fortress Monroe.</p>
+                    </div3>
+
+                    <div3 id="d25" type="entry">
+                        <head><date value="1864-05-29">29</date><hi rend="super">th</hi>.</head>
+                        <p>Ran to West point today</p>
+                    </div3>
+
+                    <div3 id="d26" type="entry">
+                        <head><date value="1864-05-30">30</date><hi rend="super">th</hi>.</head>
+                        <p>Weighed anchor and run up the Permonky. river and landed at White
+                        house.</p>
+                    </div3>
+
+                    <div3 id="d27" type="entry">
+                        <pb entity="DSSR_000004398_0013" n="np"/>
+                        <head><date value="1864-06-04">June 4</date><hi rend="super">th</hi>.</head>
+                        <p>Marched from White house this morning to the front, and entrenched
+                            ourselves.</p>
+                    </div3>
+
+                    <div3 id="d28" type="entry">
+                        <head><date value="1864-06-05">5</date><hi rend="super">th</hi>.</head>
+                        <p>the rebs Charged our lines to night and were repulsed.</p>
+                    </div3>
+
+                    <div3 id="d29" type="entry">
+                        <head><date value="1864-06-12">12</date><hi rend="super">th</hi>.</head>
+                        <p>We marched to White house landing today.</p>
+                    </div3>
+
+                    <div3 id="d30" type="entry">
+                        <head><date value="1864-06-13">13</date><hi rend="super">th</hi>.</head>
+                        <p>embarked on board Steamer - and run to Fort Monroe.</p>
+                    </div3>
+
+                    <div3 id="d31" type="entry">
+                        <pb entity="DSSR_000004398_0014" n="np"/>
+                        <head><date value="1864-06-14">14</date><hi rend="super">th</hi>.</head>
+                        <p>We ran up the James river and landed at Bermuda hundred.</p>
+                    </div3>
+
+                    <div3 id="d32" type="entry">
+                        <head><date value="1864-06-15">15</date><hi rend="super">th</hi>.</head>
+                        <p>crossed the Appamacox on the pontoon bridge and drove the rebels from
+                            there first line in front of Petersburg it was a pretty hard fight.</p>
+                    </div3>
+
+                    <div3 id="d33" type="entry">
+                        <head>
+                            <date value="1864-06-16">16</date>
+                            <hi rend="super">th</hi>
+                        </head>
+                        <p>The 18<hi rend="super">th</hi> Corps was reinforced to stay by the 2<hi
+                                rend="super">nd</hi> Corps, {the 2<hi rend="super">nd</hi>. div.
+                                10<hi rend="super">th</hi> a.c. is transferred to the 18<hi
+                                rend="super">th</hi> for the present time.</p>
+                    </div3>
+
+                    <div3 id="d34" type="entry">
+                        <pb entity="DSSR_000004398_0015" n="np"/>
+                        <head><date value="1864-06-17">17</date><hi rend="super">th</hi>.</head>
+                        <p>The 6<hi rend="super">th</hi> Corps came up to day.</p>
+                    </div3>
+
+                    <div3 id="d35" type="entry">
+                        <head><date value="1864-06-19">19</date><hi rend="super">th</hi>.</head>
+                        <p>Marched to Bermuda hundred and went into Camp.</p>
+                    </div3>
+
+                    <div3 id="d36" type="entry">
+                        <head><date value="1864-06-20">20</date><hi rend="super">th</hi>.</head>
+                        <p>Went into the trenches at the front to day.</p>
+                    </div3>
+
+                    <div3 id="d37" type="entry">
+                        <head><date value="1864-06-21">21</date><hi rend="super">st</hi>.</head>
+                        <p>Marched back acrost the Appamacox to the trenches in front of
+                                Petersburg.<ref n="2" target="n2">{2}</ref></p>
+                    </div3>
+
+                    <div3 id="d38" type="entry">
+                        <pb entity="DSSR_000004398_0016" n="np"/>
+                        <head><date value="1864-06-29">29</date><hi rend="super">th</hi>.</head>
+                        <p>We were releaved from the front line to night and went into the
+                        seconds</p>
+                    </div3>
+
+                    <div3 id="d39" type="entry">
+                        <head><date value="1864-06-30">30</date><hi rend="super">th</hi>.</head>
+                        <p>We were musturd today for two months pay.</p>
+                    </div3>
+
+                    <div3 id="d40" type="entry">
+                        <head><date value="1864-07-01">July 1</date><hi rend="super">st</hi>.</head>
+                        <p>Our Brigade had a fight to day in our front, it was about til far
+                        lat.</p>
+                    </div3>
+
+                    <div3 id="d41" type="entry">
+                        <head><date value="1864-07-03">3</date><hi rend="super">rd</hi>.</head>
+                        <p>Went into the front trenches and releaved the 91<ref n="3" target="n3"
+                            >{3}</ref>. Penn Vols.</p>
+                    </div3>
+
+                    <div3 id="d42" type="entry">
+                        <pb entity="DSSR_000004398_0017" n="np"/>
+                        <head><date value="1864-07-29">29</date><hi rend="super">th</hi>.</head>
+                        <p>Marched to the front of the 9<hi rend="super">th</hi> Corps tonight.</p>
+                    </div3>
+
+                    <div3 id="d43" type="entry">
+                        <head><date value="1864-07-30">30</date><hi rend="super">th</hi><ref n="4"
+                                target="n4">{4}</ref>.</head>
+                        <p>Rebel fort blown up at &frac12; 4 O'clock this morning it shook us up pretty
+                            good. We had to Charge on the left of the fort<ref n="5" target="n5"
+                            >{5}</ref>. </p>
+                    </div3>
+
+                    <div3 id="d44" type="entry">
+                        <head><date value="1864-07-31">31</date><hi rend="super">st</hi>.</head>
+                        <p>Marched to Bermuda H. and went into camp tonight.</p>
+                    </div3>
+
+                    <div3 id="d45" type="entry">
+                        <head><date value="1864-08-01">Aug 1</date><hi rend="super">st</hi>.</head>
+                        <p>Today is the first day we have been from under fires for 36 days.</p>
+                    </div3>
+
+                    <div3 id="d46" type="entry">
+                        <pb entity="DSSR_000004398_0018" n="np"/>
+                        <head><date value="1864-07-12">12</date><hi rend="super">th</hi>.</head>
+                        <p>Struck camp at 11 O clock to night and marched to
+                            <unclear>Joneses</unclear> landing.</p>
+                    </div3>
+
+                    <div3 id="d47" type="entry">
+                        <head><date value="1864-07-13">13</date><hi rend="super">th</hi>.</head>
+                        <p>Crossed the James on the upper pontoon at daylight this morning.</p>
+                    </div3>
+
+                    <div3 id="d48" type="entry">
+                        <head><date value="1864-07-19">19<!--Should be 14--></date><hi rend="super"
+                                >th</hi>.</head>
+                        <p>We moved round to deep bottom last night and moved to the front
+                        today.</p>
+                    </div3>
+
+                    <div3 id="d49" type="entry">
+                        <head><date value="1864-07-15">15</date><hi rend="super">th</hi>.</head>
+                        <p>The 2<hi rend="super">nd</hi> and 10<hi rend="super">th</hi> Corps had a
+                            hard battle today.</p>
+                    </div3>
+
+                    <div3 id="d50" type="entry">
+                        <pb entity="DSSR_000004398_0019" n="np"/>
+                        <head><date value="1864-07-21">21</date><hi rend="super">st</hi>.</head>
+                        <p>The 2<hi rend="super">nd</hi> and 10<hi rend="super">th</hi> Corps
+                            recrossed the James last night on the midle and lower pontoons our regt.
+                            helped cover the retreat. We are back in our old camp <del hand="author">
+                                <hi rend="line-through">at</hi>
+                            </del> near Fosters plantation, it is three years today since I
+                            enlisted.. The No. of battles up to to day that we have been in is
+                            twelve the number of men killed wounded and missing is {365.} the number
+                            of miles <pb entity="DSSR_000004398_0020" n="np"/>we have marched is
+                            (250. (miles.)</p>
+                    </div3>
+
+                    <div3 id="d51" type="entry">
+
+                        <head><date value="1864-07-25">25</date><hi rend="super">th</hi>.</head>
+                        <p>The rebs Charged our lines this morn<add hand="author" place="top"
+                            >ing</add> but we were repulsed</p>
+                    </div3>
+
+                    <div3 id="d52" type="entry">
+                        <head><date value="1864-07-28">28</date><hi rend="super">th</hi>.</head>
+                        <p>We marched to the trenches in front of Petersburg got there at &frac12; 9 Oclock
+                            to night.</p>
+                    </div3>
+
+                    <div3 id="d53" type="entry">
+                        <head><date value="1864-07-31">31</date><hi rend="super">st</hi>.</head>
+                        <p>We were musterd for pay today.</p>
+                    </div3>
+
+                    <div3 id="d54" type="entry">
+                        <head><date value="1864-09-01">Sept 1</date><hi rend="super">st</hi>.</head>
+                        <p>went into the trenches <pb entity="DSSR_000004398_0021" n="np"/> to
+                            night.</p>
+                    </div3>
+
+                    <div3 id="d55" type="entry">
+                        <head><date value="1864-09-04">Sept. 4</date><hi rend="super">th</hi>.</head>
+                        <p>We got releaved to night.</p>
+                    </div3>
+
+                    <div3 id="d56" type="entry">
+                        <head><date value="1864-09-06">Sept 6</date><hi rend="super">tth</hi>.</head>
+                        <p>We went into the trenches tonight.</p>
+                    </div3>
+
+                    <div3 id="d57" type="entry">
+                        <head><date value="1864-09-09">Sept 9</date><hi rend="super">th</hi>.</head>
+                        <p>We got releaved from the trenches, to night.</p>
+                    </div3>
+                    <div3 id="d58" type="entry">
+                        <head><date value="1864-09-13">Sept. 13</date><hi rend="super">th</hi>.</head>
+                        <p>We went into the trenches to night.</p>
+                    </div3>
+
+                    <div3 id="d59" type="entry">
+                        <pb entity="DSSR_000004398_0022" n="np"/>
+                        <head><date value="1864-09-16">Sept 16</date><hi rend="super">th</hi>.</head>
+                        <p>We got releaved tonight.</p>
+                    </div3>
+
+                    <div3 id="d60" type="entry">
+                        <head><date value="1864-09-19">Sept 19</date><hi rend="super">th</hi>.</head>
+                        <p>We went into the trenches to night.</p>
+                    </div3>
+
+                    <div3 id="d61" type="entry">
+                        <head><date value="1864-09-22">Sept 22</date><hi rend="super">nd</hi>.</head>
+                        <p>We got releaved from the trenches to night.</p>
+                    </div3>
+
+                    <div3 id="d62" type="entry">
+                        <head><date value="1864-09-25">Sept 25</date><hi rend="super">th</hi>.</head>
+                        <p>We were releaved to night by the 2nd. Corp and went back
+                            <unclear>[-]</unclear> miles and went into Camp.</p>
+                    </div3>
+
+                    <div3 id="d63" type="entry">
+                        <head><date value="1864-09-25">Sept. 25</date><hi rend="super">th</hi>.</head>
+                        <p>We struck Camp at 9 Oclock this P.M crossed the Appomat <pb
+                                entity="DSSR_000004398_0023" n="np"/>at 11 Oclock at night crossed
+                            the James at &frac12; past 2. and halted for one hour.</p>
+                    </div3>
+
+                    <div3 id="d64" type="entry">
+                        <head><date value="1864-09-29">Sept. 29</date><hi rend="super">th</hi>.</head>
+                        <p>we started at 4 Oclock this morning and drove the rebs 5 miles on the New
+                            Market road charged and drove the rebs, and charged again at 9 Oclock
+                            this P.M. but were repulsed, my regt. lost 21 out of 40 men</p>
+                    </div3>
+
+                    <div3 id="d65" type="entry">
+                        <pb entity="DSSR_000004398_0024" n="np"/>
+                        <head>
+                            <date value="1864-09-30">Sept 30</date>
+                            <hi rend="super">th</hi>
+                        </head>
+                        <p>We took up our position on the old McLell<add hand="author" place="top"
+                                >an</add> line 8 miles from Richmond.</p>
+                    </div3>
+
+                    <div3 id="d66" type="entry">
+                        <head><date value="1864-12-07">Dec 7</date><hi rend="super">th</hi>.</head>
+                        <p>We struck camp at 4 Oclock and marched to Bermuda H. front.</p>
+                    </div3>
+
+                    <div3 id="d67" type="entry">
+                        <head><date value="1864-12-08">Dec 8</date><hi rend="super">th</hi>.</head>
+                        <p>started at day break and marched to B - landing embarked on board Steamer
+                                <unclear>Haye</unclear></p>
+                    </div3>
+
+                    <div3 id="d68" type="entry">
+                        <head>
+                            <date value="1864-12-09">Dec 9</date>
+                            <hi rend="super">th</hi>
+                        </head>
+                        <p>we arived at F. Monroe <pb entity="DSSR_000004398_0025" n="np"/> at 2
+                            Oclock this morning</p>
+                    </div3>
+
+                    <div3 id="d69" type="entry">
+                        <head>
+                            <date value="1864-12-12">Dec 12</date>
+                            <hi rend="super">th</hi>
+                        </head>
+                        <p>weighed anchor and sailed up the Chesapeake to point Lookout Md. started
+                            at 5 Oclock this afternoon for Cape Henry</p>
+                    </div3>
+
+                    <div3 id="d70" type="entry">
+                        <head>
+                            <date value="1864-12-14">Dec 14</date>
+                            <hi rend="super">th</hi>
+                        </head>
+                        <p>we put to sea at 5 Oclock this P.M.</p>
+                    </div3>
+
+                    <div3 id="d71" type="entry">
+                        <head>X<date value="1864-12-07">Dec 15</date><hi rend="super">th</hi></head>
+                        <p>we passed Cape Haterass at day light this morning.</p>
+                    </div3>
+
+                    <div3 id="d72" type="entry">
+                        <pb entity="DSSR_000004398_0026" n="np"/>
+                        <head><date value="1864-12-19">Dec 19</date><hi rend="super">th</hi>.</head>
+                        <p>We run into Beaufort N.C. to <del hand="author">
+                                <unclear>
+                                    <hi rend="line-through">[word lined out]</hi>
+                                </unclear>
+                            </del> caulap</p>
+                    </div3>
+
+                    <div3 id="d73" type="entry">
+                        <head><date value="1864-12-20">Dec 20</date><hi rend="super">th</hi>.</head>
+                        <p>went to sea to day and joined the fleet of Wilmington.</p>
+                    </div3>
+                    <div3 id="d74" type="entry">
+                        <head><date value="1864-12-21">Dec 21</date><hi rend="super">st</hi>.</head>
+                        <p>at sea and a very heavy storm.</p>
+                    </div3>
+
+                    <div3 id="d75" type="entry">
+                        <head><date value="1864-12-23">Dec 23</date><hi rend="super">rd</hi>.</head>
+                        <p>We ran into Beaufort again to <del hand="author">
+                                <hi rend="line-through">day</hi>
+                            </del> day</p>
+                    </div3>
+
+                    <div3 id="d76" type="entry">
+                        <head><date value="1864-12-24">Dec 24</date><hi rend="super">th</hi>.</head>
+                        <p>We rut down and again joined the <pb entity="DSSR_000004398_0027" n="np"
+                            /> fleet <del hand="author">
+                                <hi rend="line-through">fr</hi>
+                            </del> opp W -</p>
+                    </div3>
+
+                    <div3 id="d77" type="entry">
+                        <head><date value="1864-12-25">Dec 25</date><hi rend="super">th</hi>.</head>
+                        <p>We landed under cover of the Gun boats 2 &frac12; miles above Fort Fisher<ref
+                                n="6" target="n6">{6}</ref>, and reembarked after dark.</p>
+                    </div3>
+
+                    <div3 id="d78" type="entry">
+                        <head>
+                            <date value="1864-12-27">Dec 27</date>
+                            <hi rend="super">th</hi>
+                        </head>
+                        <p>We left the fleet this morning for F. Monroe.</p>
+                    </div3>
+
+                    <div3 id="d79" type="entry">
+                        <head>
+                            <date value="1864-12-28">Dec 28</date>
+                            <hi rend="super">th</hi>
+                        </head>
+                        <p>We arived at F. Monroe to night.</p>
+                    </div3>
+
+                    <div3 id="d80" type="entry">
+                        <head><date value="1864-12-29">Dec 29</date><hi rend="super">th</hi>.</head>
+                        <p>We left F Monroe <pb entity="DSSR_000004398_0028" n="np"/> at noon for B.
+                            Hundred</p>
+                    </div3>
+
+                    <div3 id="d81" type="entry">
+                        <head><date value="1864-12-30">Dec 30</date><hi rend="super">th</hi>.</head>
+                        <p>We landed at Jones landing at 3 Oclock arived at our Camp <del
+                                hand="author">
+                                <hi rend="line-through">at dark.</hi>
+                            </del> on the New Market road at dark.</p>
+                    </div3>
+                </div2>
+
+                <div2 id="d82" type="section">
+                    <head>1865</head>
+                    <div3 id="d83" type="entry">
+                        <head><date value="1865-01-03">Jan 3<hi rend="super">rd</hi>. 1865</date>.</head>
+                        <p>We struck camp at noon and marched within one mile of Bermuda landing and
+                            lay in the woods all night it snowed all night.</p>
+                    </div3>
+
+                    <div3 id="d84" type="entry">
+                        <pb entity="DSSR_000004398_0029" n="np"/>
+                        <head><date value="1865-01-04">Jan 4</date><hi rend="super">th</hi>.</head>
+                        <p>We embarked at dark to night.</p>
+                    </div3>
+
+                    <div3 id="d85" type="entry">
+                        <head><date value="1865-01-05">Jan 5</date><hi rend="super">th</hi>.</head>
+                        <p>We left Bermuda at day light this morning arived at F. Monroe at 2 Oclock
+                            this P.M.</p>
+                    </div3>
+
+                    <div3 id="d86" type="entry">
+                        <head><date value="1865-01-06">Jan 6</date><hi rend="super">th</hi>.</head>
+                        <p>We left F. Monroe at day light this morning.</p>
+                    </div3>
+
+                    <div3 id="d87" type="entry">
+                        <head><date value="1865-01-07">Jan 7</date><hi rend="super">th</hi>.</head>
+                        <p>We passed Cape Hatrass this afternoon </p>
+                    </div3>
+
+                    <div3 id="d88" type="entry">
+                        <pb entity="DSSR_000004398_0030" n="np"/>
+                        <head><date value="1865-01-08">Jan 8</date><hi rend="super">th</hi>.</head>
+                        <p>We arived off Beaufort N.C. this morning.</p>
+                    </div3>
+
+                    <div3 id="d89" type="entry">
+                        <head><date value="1865-01-12">Jan. 12</date><hi rend="super">th</hi>.</head>
+                        <p>We left Beaufort for Wilmington Bar</p>
+                    </div3>
+
+                    <div3 id="d90" type="entry">
+                        <head><date value="1865-01-13">Jan 13</date><hi rend="super">th</hi>.</head>
+                        <p>We arrived off Fort Fisher last night and landed at 9 Oclock this morning
+                            on the beach 3 miles from the fort</p>
+                    </div3>
+
+                    <div3 id="d91" type="entry">
+                        <head><date value="1865-01-15">Jan 15</date><hi rend="super">th</hi>.</head>
+                        <p>We made an attack on the fort <pb entity="DSSR_000004398_0031" n="np"/>
+                            today fought 5 hours inside the fort the rebs surrendered at 10 Oclock
+                                tonight.<ref n="7" target="n7">{7}</ref>
+                        </p>
+                    </div3>
+
+                    <div3 id="d92" type="entry">
+                        <head><date value="1865-01-16">Jan 16</date><hi rend="super">th</hi>.</head>
+                        <p>The main magazine of the fort blew up this morning.</p>
+                    </div3>
+
+                    <div3 id="d93" type="entry">
+                        <head><date value="1865-01-19">Jan. 19</date><hi rend="super">th</hi>.</head>
+                        <p>our regt moved to the point to garrison Battery Beauchanan</p>
+                    </div3>
+
+                    <div3 id="d94" type="entry">
+                        <head><date value="1865-02-11">Feb 11</date><hi rend="super">th</hi>.</head>
+                        <p>We <del hand="author">
+                                <hi rend="line-through">break</hi>
+                            </del> struck camp at 6 Oclock this morning and <pb
+                                entity="DSSR_000004398_0032" n="np"/> and marched to the point.</p>
+                    </div3>
+
+                    <div3 id="d95" type="entry">
+                        <head><date value="1865-02-17">
+                                <del hand="author">
+                                    <hi rend="line-through">Feb. 17<hi rend="super">th</hi></hi>
+                                </del>
+                            </date>. 18<hi rend="super">th</hi>.</head>
+                        <p>We marched back and crossed the river at Federal point this <del
+                                hand="author">
+                                <hi rend="line-through">to night</hi>
+                            </del>
+                            <add hand="author" place="top">morning</add> and marched to the front on
+                            the south side of the river.</p>
+                    </div3>
+
+                    <div3 id="d96" type="entry">
+                        <head><date value="1865-02-19">Feb. 19</date><hi rend="super">th</hi>.</head>
+                        <p>We crossed the river to night within eight miles of the City in small
+                            boats. <del hand="author">
+                                <unclear>
+                                    <hi rend="line-through">[a word lined out]</hi>
+                                </unclear>
+                            </del></p>
+                    </div3>
+
+                    <div3 id="d97" type="entry">
+                        <pb entity="DSSR_000004398_0033" n="np"/>
+                        <head><ref n="8" target="n8">{8}</ref><date value="1865-02-22">Feb
+                                22</date><hi rend="super">nd</hi>.</head>
+                        <p>We took persession of the City of Wilmington to day and drove the rebs 12
+                            miles beyond the City.</p>
+                    </div3>
+
+                    <div3 id="d98" type="entry">
+                        <head><date value="1865-03-02">March 2</date><hi rend="super">nd</hi>.</head>
+                        <p>We marched back within one mile of the town today.</p>
+                    </div3>
+
+                    <div3 id="d99" type="entry">
+                        <head><date value="1865-03-15">March 15</date><hi rend="super">th</hi>.</head>
+                        <p>struck camp at noon and marched to the front 10 miles from the city.</p>
+                    </div3>
+
+                    <div3 id="d100" type="entry">
+                        <pb entity="DSSR_000004398_0034" n="np"/>
+                        <head><date value="1865-03-16">March 16</date> -</head>
+                        <p>struck camp at !/2 6 this morning and marched towards Goldsboro</p>
+                    </div3>
+
+                    <div3 id="d101" type="entry">
+                        <head><date value="1865-03-17">March 17</date> -</head>
+                        <p>struck camp at 7 Oclock this morning and marched until 6 P.M.</p>
+                    </div3>
+
+                    <div3 id="d102" type="entry">
+                        <head><date value="1865-03-18">March 18</date> -</head>
+                        <p> struck camp at 1 P.M. and marched until 7 to night.</p>
+                    </div3>
+
+                    <div3 id="d103" type="entry">
+                        <pb entity="DSSR_000004398_0035" n="np"/>
+                        <head><ref n="9" target="n9">{9}</ref><date value="1865-03-19">March 19</date>
+                            -</head>
+                        <p>marched at 6 this morning marched until &frac12; 5 to night.</p>
+                    </div3>
+
+                    <div3 id="d104" type="entry">
+                        <head><date value="1865-03-20">March 20</date> -</head>
+                        <p>marched at 7 this morning went into camp at dark</p>
+                    </div3>
+
+                    <div3 id="d105" type="entry">
+                        <head>
+                            <date value="1865-03-21">March<del hand="author">
+                                    <hi rend="line-through">ed</hi>
+                                </del> 21</date>
+                        </head>
+                        <p>marched at <del hand="author">
+                                <hi rend="line-through">1</hi>
+                            </del> 7 this morning and went into camp at 9 P.M.</p>
+                    </div3>
+
+                    <div3 id="d106" type="entry">
+                        <head>
+                            <date value="1865-03-25">March 25</date>
+                        </head>
+                        <p> marched all day</p>
+                    </div3>
+
+                    <div3 id="d107" type="entry">
+                        <pb entity="DSSR_000004398_0036" n="np"/>
+                        <head><date value="1865-03-30">March 30</date> -</head>
+                        <p> struck camp at 4 this afternoon and went aboard the cars and run to
+                            south Washington 29 miles from Wilmington</p>
+                    </div3>
+                    <div3 id="d108" type="entry">
+                        <head><date value="1865-04-05">April 5</date> -</head>
+                        <p>struck camp <del hand="author">
+                                <hi rend="line-through">at</hi>
+                            </del> this morning and marched to Bergan distance 6 miles</p>
+                    </div3>
+
+                    <div3 id="d109" type="entry">
+                        <head><date value="1865-04-06">April 6</date> -</head>
+                        <p>marched back to south washing to <del hand="author">
+                                <hi rend="line-through">day de</hi>
+                            </del> day</p>
+                    </div3>
+
+                    <div3 id="d110" type="entry">
+                        <pb entity="DSSR_000004398_0037" n="np"/>
+                        <head><date value="1865-04-08">April 8</date> -</head>
+                        <p>struck camp this morning and marched to Magnolia 20 miles from S. W -</p>
+                    </div3>
+
+                    <div3 id="d111" type="entry">
+                        <head><date value="1865-04-09">April 9</date> -</head>
+                        <p>marched. to faisons station to day distance 23 miles.</p>
+                    </div3>
+
+                    <div3 id="d112" type="entry">
+                        <head>
+                            <date value="1865-04-11">April 11</date>
+                        </head>
+                        <p>struck camp at 9 to night and marched until &frac12; 3.</p>
+                    </div3>
+
+                    <div3 id="d113" type="entry">
+                        <head><date value="1865-04-12">April 12</date> -</head>
+                        <p>struck camp at 6 this morning and marched <pb
+                                entity="DSSR_000004398_0038" n="np"/> until 8 to night</p>
+                    </div3>
+
+                    <div3 id="d114" type="entry">
+                        <head><date value="1865-04-13">April 13</date> -</head>
+                        <p>marched at 6 this morning</p>
+                    </div3>
+
+                    <div3 id="d115" type="entry">
+                        <head><date value="1865-04-14">April 14</date> -</head>
+                        <p>marched at &frac12; 6 arived at Raleigh 8 to night.<ref n="10" target="n10"
+                            >{10}</ref></p>
+                    </div3>
+                    <div3 id="d116" type="entry">
+                        <pb entity="DSSR_000004398_0040" n="np"/>
+                        <head>
+                            <date value="1865-06-27"><ref n="11" target="n11">{11}</ref>
+                                <ref n="12" target="n12">{12}</ref>June 27<hi rend="super">th</hi>
+                                1864</date>
+                        </head>
+                        <p>Left Raleigh at 10 Oclock A.M. Reached Morehead at half past six P.M.
+                            embarked on the Steamer Starlight for Fortress monroe.</p>
+                    </div3>
+
+                    <div3 id="d117" type="entry">
+                        <head>
+                            <date value="1865-06-28">28</date>
+                            <hi rend="super">th</hi>
+                        </head>
+                        <p>A.M. 5 Oclock steamed out for home - 5 P.M. passed Cape Hatterass, sea
+                            smooth.</p>
+                    </div3>
+
+                    <div3 id="d118" type="entry">
+                        <pb entity="DSSR_000004398_0042" n="np"/>
+                        <head>
+                            <date value="1865-06-29">29</date>
+                            <hi rend="super">th</hi>
+                        </head>
+                        <p>A.M. 11 Oclock Came to anchor in Hampton roads. 3. Oclock. I went ashore
+                            got transportation for the squad to Baltimore at five. P.M. steamed down
+                            Hampton roads for Baltimore arrived in Baltimore the morning of the
+                                30<hi rend="super">th</hi> at seven Oclock. <pb
+                                entity="DSSR_000004398_0043" n="np"/> took the train at noon Oclock
+                            for Philadelphia arrived in New York at six P.M. Stayed all night at the
+                            New England rooms.</p>
+                    </div3>
+
+                    <div3 id="d119" type="entry">
+                        <head><date value="1865-06-31">31</date><hi rend="super">st</hi>.</head>
+                        <p>Embarked on the City of Boston steamer down long Island Sound took the
+                            cars to New London [New Hampshire] for <unclear>Wirlister</unclear></p>
+                    </div3>
+                </div2>
+            </div1>
+            
+                <!-- - Mary Roy Dawson Edwards, Feb. 2007]
+                    13048
+                    Page 1-->
+            <div1 id="d120" type="notes">
+                <head>Notes</head>
+                <p>[Transcription Notes:
+                    
+                    Mary Jo Kline's transcription style as suggested in her A Guide To 
+                    Documentary Editing, Baltimore: The Johns Hopkins Press, 1987, has 
+                    been followed for Asa Paige's diary.
+                    The diary measures 3" X 4 &frac12; ".  The front cover is black leather.  The 
+                    back cover is missing.  The paper is lined and somewhat soiled.
+                    Every attempt has been made to transcribe this document literally.  
+                    Spelling and punctuation are reproduced as found.  When punctuation 
+                    and or capitalization have not been used by the author, three spaces are 
+                    inserted to denote the end of one thought and the beginning of another
+                    When words are inserted above the line by the author, the symbol "^" 
+                    is used with the inserted words bracketed.  See page 8 for McLell^'an'.
+                    Insertions by the transcriber are placed within square brackets.     
+                    To denote a missing word, [-] is used.  If a word or proper name is 
+                    unclear, a question mark is inserted, such as Wirlister [?].]</p>
+                
+                <note id="n1" n="1" place="end">
+                    <seg type="note-symbol">{1}</seg>
+                    <p>[Richmond and Petersburg Railroad]</p>
+                </note>
+
+                <note id="n2" n="2" place="end">
+                    <seg type="note-symbol">{2}</seg>
+                    <p>[[The date skips to the 29<hi rend="super">th</hi>. Perhaps a page is missing
+                        from this diary.]</p>
+                </note>
+
+                <note id="n3" n="3" place="end">
+                    <seg type="note-symbol">{3}</seg>
+                    <p>[or 97]</p>
+                </note>
+
+                <note id="n4" n="4" place="end">
+                    <seg type="note-symbol">{4}</seg>
+                    <p>[1864]</p>
+                </note>
+
+                <note id="n5" n="5" place="end">
+                    <seg type="note-symbol">{5}</seg>
+                    <p>[Petersburg mine explosion and assault - Battle of the Crater.]</p>
+                </note>
+
+                <note id="n6" n="6" place="end">
+                    <seg type="note-symbol">{6}</seg>
+                    <p>["Nearly sixty warships continued the Federal bombardment of Fort Fisher,
+                        easily hitting the parapets and traverses of the sand-built fort. Meanwhile,
+                        the Federal troops landed two miles north, captured a battery, and pushed
+                        close to the fort itself. However, as darkness came on, Confederate troops
+                        closed in from the north. Furthermore, assault was deemed too expensive in
+                        lives, so the troops were taken off (the last on Dec. 27) and the whole
+                        fleet returned to Hampton Roads, devoid of success but with light
+                        casualties. Fort Fisher still stood active at the entrance to the Cape Fear
+                        River." - Long, E.B. Civil War Day by Day: An Almanac 1861-1865, p.
+                    615.]</p>
+                </note>
+
+                <note id="n7" n="7" place="end">
+                    <seg type="note-symbol">{7}</seg>
+                    <p>["The result ....was significant; Wilmington was cut off as a blockade- running
+                        port and it has been the last major access point for the South." Long, E.
+                        B., Civil War Day by Day, p. 625.] </p>
+                </note>
+
+                <note id="n8" n="8" place="end">
+                    <seg type="note-symbol">{8}</seg>
+                    <p>Here, a page is cut out of this diary.</p>
+                </note>
+
+                <note id="n9" n="9" place="end">
+                    <seg type="note-symbol">{9}</seg>
+                    <p>Here an entire page is cut out.</p>
+                </note>
+
+                <note id="n10" n="10" place="end">
+                    <seg type="note-symbol">{10}</seg>
+                    <p>An indecipherable word appears in pencil on this line.</p>
+                </note>
+
+                <note id="n11" n="11" place="end">
+                    <seg type="note-symbol">{11}</seg>
+                    <p>Here three pages are cut from this diary.</p>
+                </note>
+
+                <note id="n12" n="12" place="end">
+                    <seg type="note-symbol">{12}</seg>
+                    <p>The following three pages are written in pencil.</p>
+                </note>
+            </div1>
+
+
+        </body>
+    </text>
+</TEI.2>
+

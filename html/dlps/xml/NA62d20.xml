@@ -1,0 +1,316 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0119 SYSTEM "000000766_0119" NDATA jpg>
+<!ENTITY DSSR_000000766_0120 SYSTEM "000000766_0120" NDATA jpg>
+<!ENTITY DSSR_000000766_0121 SYSTEM "000000766_0121" NDATA jpg>
+<!ENTITY DSSR_000000766_0122 SYSTEM "000000766_0122" NDATA jpg>
+
+<!--<!ENTITY NA62d20a SYSTEM "NA62d20a.jpg" NDATA jpg>
+<!ENTITY NA62d20b SYSTEM "NA62d20b.jpg" NDATA jpg>
+<!ENTITY NA62d20c SYSTEM "NA62d20c.jpg" NDATA jpg>
+<!ENTITY NA62d20d SYSTEM "NA62d20d.jpg" NDATA jpg>-->
+]>
+<TEI.2 id="NA62d20">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-04-20">April 20th, 1862</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>William E. Sleeman, Thurgood Marshall Law Library, University of Maryland
+                        School of Law</name>
+                    <resp>Creation of digital images:</resp>
+                    <name>University of Virginia Library Electronic Text Center</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>William E. Sleeman, Thurgood Marshall Law Library, University of Maryland
+                        School of Law</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">15</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62d20</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2001">2001</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, April 20th, 1862</title>
+
+
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">UVA Special Collections</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-04-20">1862-04-20</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Women Writers/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-06">November 6th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">September 30, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1862-04-20">April 20th, 1862</date>
+
+                        <title>Letter from Adelaide to Charles</title>
+                    </bibl>
+                </head>
+
+                <p>Addie discusses the use of pet names in the letters. She explains her decision to
+                    begin teaching in East Claridon, Ohio. She thanks Charles for his recent gifts
+                    to her and urges him to continue to write to Laura after Addie leaves for East
+                    Claridon. Finally, Addie mentions the visit of Laura and the receipt of a letter
+                    from John Chaffee.</p>
+
+            </div1>
+
+        </front>
+
+
+        <body id="d4">
+
+
+
+            <div1 type="letter" n="1" id="d5">
+
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-04-20"
+                        >April 20th, 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0119"/>
+                <opener>
+                    <dateline> Maple Grove.<date value="1862-04-20"> April 20. 1862</date>
+                    </dateline>
+
+                    <salute>My "precious" Charlie.</salute>
+
+                </opener>
+
+                <p> Do not think dear one<lb/> that I address you thus merely as a salutation for I
+                    feel<lb/> that you <hi rend="underline">are precious</hi> to me. The reason<lb/>
+                    that I write the word <q>"precious"</q> as I do,, your<lb/> apologies for
+                        addressing <hi rend="underline">me</hi> by endearing <add place="inline"
+                        hand="h1">names</add><lb/> shall I say troubled me<unclear>[;]</unclear> I
+                    was surprised<lb/> darling. almost pained when I read your letter<lb/> I had not
+                    thought of confining myself to<lb/> the rules of etiquette when writing to you.
+                    nor<lb/> do I think I ought: I always speak as I feel<lb/> and generally obey
+                    the dictations of my heart;<lb/> Have I not done right? those that I loved <pb
+                        n="2" entity="DSSR_000000766_0120"/> I always have my own form of addressing
+                    them<lb/> by irrespective of etiquette. I love to be called<lb/> by pet names,,
+                    shall I tell you what Hal and<lb/> papa used to call me: Hal's pet name<lb/> for
+                    me was<q>"Birdie"</q> and father's (dont laugh<lb/> now)
+                    was<q>"Whip-stalk,,"</q> When a child I was<lb/> very slender and quite tall,
+                    hence papa called<lb/> me by that<q>"tender"</q> expression. I just asked<lb/>
+                    father (he is here at aunties) if he remembers<lb/> what he used to call me. He
+                    replied that he<lb/> did,, but does not think I am much of a<lb/> whip stalk
+                    now. that I am now more of a chub. Ha ha<lb/> you say that not more than a week
+                    passes<lb/> without writing to me. How strange! Last week I<lb/> received two
+                    letters from you the first time I<lb/> have received one from you oftener
+                    than<lb/> in ten days and sometimes much longer<lb/> for two months I
+                    guess.<lb/> Charlie dear, would you <add place="inline" hand="h1">have</add>
+                    thought me doing<lb/> right if I had engaged a school and<lb/> gone on -
+                    commenced teaching &amp;c, without<lb/> speaking to you in regard to any
+                    future<lb/> occupations? Truly you would not have <pb n="3"
+                        entity="DSSR_000000766_0121"/> wished me to. You say "you found the
+                    bitter<lb/> with <add place="inline" hand="h1">the</add> sweet" while teaching. I
+                    have considered all<lb/> this but is it not always so in life; and should<lb/> I
+                    not teach because I will find perhaps a few<lb/> unpleasant days? I think I
+                    shall love teaching.</p>
+            </div1>
+
+            <div1 type="letter" n="2" id="d6">
+                <head>Monday Morning, April 21st</head>
+
+                <opener>
+                    <dateline>Monday morning.</dateline>
+                </opener>
+
+                <p>Going to church prevented me from finishing<lb/> this last evening.
+                        therefore<q>"monday morning"</q> has<lb/> to<q>"suffer"</q> Not a very
+                    lovely morning either. for<lb/>
+                    <q>"heaven is weeping"</q> and I tend to think quite sad.<lb/> Great drops
+                    trickled down on the window panes, and<lb/> this<q>"romantic little stream"</q>
+                    is rising swelling as<lb/> if anxious to escape from the bed which was made<lb/>
+                    for it. The thought<q>"I pity the brave soldiers<lb/> to day"</q> was the first
+                    that entered my mind<lb/> after awakening from a sweet and gentle sleep
+                    this<lb/> morning. Bless God for sleep. Last night I was very<lb/> tired and
+                    felt more than<q>"half sick"</q> but I feel<lb/> as well as ever this morning. I
+                    scarcely know<lb/> which had the greatest effect in restoring me<lb/> my sleep
+                    or my <hi rend="underline">dreams</hi>. Both took an active part<lb/>
+                    <q>"I reckon"</q> Oh how sweet are dreams, but at<lb/> times they are horrific,
+                    not often though <pb n="4" entity="DSSR_000000766_0122"/> Dearest. I am again
+                    called to thank you for<lb/> your splendid gift the Cross Lanes battle.<ref
+                        target="n1" n="1">1</ref>
+                    <orig reg="beautiful">How beaut</orig>-<lb/> iful! and how
+                    kind<unclear>[in]</unclear> you to send it. Thanks seem<lb/> almost as insults
+                    now. you have presented me with<lb/> so many gifts but may God spare you my
+                    own<lb/> and I will strive to reward you. I love gifts!<lb/> Now do not think
+                    dearest that I love you<lb/> for your gifts far from it dear. I love you
+                    for<lb/> yourself alone. for your true and noble heart.<lb/> Oh Charlie when I
+                    listen to Hallie's remarks of you<lb/> and hear him mention some of your noble
+                    acts how<lb/> my heart warms with love and - may Heaven<lb/> forgive me - pride.
+                    It is then I feel how unworthy<lb/> I am of you and then I wonder if it is
+                    right<lb/> for me to love you as I do love. Darling<lb/> strange thoughts enter
+                    my mind at times. Emblematic of<lb/> the<q>"strange girl"</q>of whom I have
+                    heretofore written.<lb/> Do you not think so. But I will tire you if I<lb/>
+                    write thus. Laura is here in front of me and<lb/> on the floor with her back
+                    supported by the wall.<lb/> Sober little Deacon! Charlie I wish you were
+                    here<lb/> to "shore her up" My fear is getting to rundown<lb/> to affect her and
+                    I do not like to see her so<lb/> sad. When I go to Claridon you must write
+                    her<lb/> great long letters and cheerful ones too. She loves<lb/> your letters
+                    very much. Who would not.<lb/> Auntie wishes me to ask you if have had your
+                    revenge<lb/> for the Cross Lanes defeat. John Chafee<ref target="n2" n="2"
+                    >2</ref> wrote home<lb/> that he had. But time forbids that I should<lb/> write
+                    longer. Regards to the boys, &amp;c Write real<lb/> often. I think I told
+                    you<lb/> to write to East Claridon did I not? </p>
+
+                <closer>
+                    <salute>Heaven guard and bless thee dearest.</salute>
+
+                    <signed>Yours: &amp;c Addie</signed>
+                </closer>
+            </div1>
+        </body>
+
+        <back id="d7">
+
+            <div1 type="notes" id="d8">
+
+                <head>Notes</head>
+
+                <note id="n1" n="1" place="end"><seg type="note-symbol">1</seg>
+                    <p>Battle of Cross Lanes, Aug. 26, 1861. While there was a battle by this name
+                        the reference to it in this section of the letter is unclear.</p>
+                </note>
+
+                <note id="n2" n="2" place="end"><seg type="note-symbol">2</seg>
+                    <p>This may be John A. Chaffee, Sargent of Company H, of the Seventh Ohio
+                        Infantry. See the regiment roster located at:
+                        http://members.tripod.com/Larry_Hardman</p>
+                </note>
+            </div1>
+        </back>
+    </text>
+</TEI.2>

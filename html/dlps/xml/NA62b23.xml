@@ -1,0 +1,351 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0087 SYSTEM "000000766_0087" NDATA jpg>
+<!ENTITY DSSR_000000766_0088 SYSTEM "000000766_0088" NDATA jpg>
+<!ENTITY DSSR_000000766_0089 SYSTEM "000000766_0089" NDATA jpg>
+<!ENTITY DSSR_000000766_0090 SYSTEM "000000766_0090" NDATA jpg>
+
+<!--<!ENTITY NA62b23a SYSTEM "NA62b23a.jpg" NDATA jpg>
+<!ENTITY NA62b23b SYSTEM "NA62b23b.jpg" NDATA jpg>
+<!ENTITY NA62b23c SYSTEM "NA62b23c.jpg" NDATA jpg>
+<!ENTITY NA62b23d SYSTEM "NA62b23d.jpg" NDATA jpg>-->
+]>
+
+<TEI.2 id="NA62b23">
+
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-02-23">February 23rd, 1862</date></title>
+                <title n="240"/>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Sara B. Weber, University of Notre Dame/RBS 23-27 2001</name>
+                    <resp>Creation of digital images:</resp>
+                    <name>University of Virginia Library Electronic Text Center.</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Sara B. Weber, University of Notre Dame/RBS 23-27 2001</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">18</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62b23</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2001">2001</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, February 23rd,
+                            1862</title>
+
+
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-02-23">1862-02-23</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Women Writers/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-06">November 6th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">September 30, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1862-02-23">February 23<hi rend="super">rd</hi>, 1862</date>
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+                <p> Addie first describes her worry when there is no letter from Charlie, and her
+                    joy when one arrives. She then explains that the George family of singers is
+                    visiting Mecca, and the two daughters, Jesse and Mollie, are staying with
+                    Addie's family. She names two song sung by the girls, "The Sword of Bunker Hill"
+                    and "Union for ever for me!", and describes the effect of the performaces on
+                    herself. Addie then responds to Charlie's tale of his personal history in his
+                    most recent letter to her, and describes the changes in her own emotions towards
+                    him, from sisterly love to true love for a "noble pure and high minded man." The
+                    letter indicates that her brother Hal is home on furlough, for he teases her
+                    about a possible visit from Charlie. </p>
+            </div1>
+        </front>
+
+        <body id="d4">
+
+
+
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-02-23"
+                        >February 23rd, 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0087"/>
+                <opener>
+                    <dateline>
+                        <name type="place">Mecca</name>
+                        <date value="1862-02-23">Feb. 23<hi rend="super">rd</hi>/'62</date>
+                    </dateline>
+
+                </opener>
+                <p> A welcome letter was <unclear>there</unclear><lb/> dearest brought by fridays's
+                    mail<lb/> It had been long and earnestly<lb/> looked for by anxious and,
+                    sometime<lb/> tearful eyes, I could not refrain<lb/> from thinking,
+                        pretty <unclear>loud</unclear>, Heart!<lb/> welcome messenger of love,
+                    when<lb/> it was handed, <add hand="h1" place="inline">me</add> I must
+                    tell<lb/> you how or rather what a joyful<lb/> disappointment,
+                        it <unclear>produced</unclear><lb/>
+                </p>
+
+                <p> The donation. that I spoke of in<lb/>
+                    <pb n="2" entity="DSSR_000000766_0088"/> my last "came
+                    off". <unclear>Laurie</unclear><lb/> went over in the afternoon<lb/> and I waited
+                    till evening.<lb/> The first place that I went<lb/> was to the office, which
+                    is<lb/> under the Hall. where the<lb/> donation was held. I inquired<lb/> if
+                    there was any mail for<lb/> me. <hi rend="underline">None, replied the
+                    postmaster</hi><lb/> I presume I looked -- guess how<lb/> "Oh: you must not put
+                    on such<lb/> a 'solemncholy' face, replied he<lb/> Well dear Charlie, I had
+                    to<lb/> put forth all the resolutions which<lb/> I was capable of, to keep
+                    back<lb/> the tears, presently Laurie came<lb/> down stairs with our stretched
+                    hand<lb/> and <unclear>guess</unclear> I <unclear>presumed</unclear>, dont
+                    you<lb/>
+                </p>
+                <p> Dearest, I am stealing these few<lb/> moments, but I <unclear>could</unclear> not
+                    help<lb/> it we have company here<lb/>
+                    <pb n="3" entity="DSSR_000000766_0089"/> passing the sabbath. The<lb/> "George
+                    family" consisting of<lb/> Mr. George and wife, and two<lb/> daughters have been
+                    giving some<lb/> grand vocal concerts here in<lb/> Mecca, and the young
+                    ladies<lb/> are staying with us. They are<lb/> sweet little<del hand="h1"
+                    >s</del> girls. Misses <unclear>Jess</unclear>. <add place="inline" hand="h1"
+                            >or <unclear>Jessey</unclear></add> and<lb/> Mollie. Jesse is a petite
+                    little<lb/> thing, about four feet high and<lb/> very near my. Mollie is<lb/>
+                    younger, Oh Charlie, if you could<lb/> but hear them sing, It raises<lb/> me up.
+                    away off. I dont know<lb/> where Jesse sang, 'The Union<lb/> Forever, for
+                        me"<ref target="n1" n="1">1</ref> last night. The<lb/> folds of their
+                    magnificent flag<lb/> fell as graceful over her little<lb/> form. as you could
+                    wish. They sang<lb/> 'The Sword of Bunker Hill"<ref target="n2" n="2">2</ref>
+                    also,<lb/> I had heard<del hand="h1">of</del> it sung before<lb/>
+                    <pb n="4" entity="DSSR_000000766_0090"/> but never with such thrilling<lb/>
+                    sweetness Hal says I am a perfect<lb/>
+                    <unclear>enthusiast</unclear> when I hear music<ref target="n3" n="3">3</ref>.
+                    but who<lb/> could help having this enthusiasm<lb/> rise, while listening to
+                    sweet music<lb/>
+                </p>
+                <p>But I must not let the "George<lb/> family" fill up my letter. Dearest what<lb/>
+                    a history you gave of yourself in your<lb/> last. It was <add place="inline"
+                        hand="h1">as</add> unexpected as it was strange<lb/> and sorrowfull. I know
+                    that I never<lb/> have spoken to you about it and what<lb/> is more <hi
+                        rend="underline">I</hi> <hi rend="underline">never</hi> would unless you<lb/>
+                    introduced the subject I felt no<lb/> anxiety what ever in regard to your
+                    past<lb/> life. I had given you my confidence<lb/> first as a friend. I next <hi
+                        rend="underline">tried</hi> to give<lb/> it as a sister, but luckily or
+                    unluckily<lb/> or not. the future will tell, - failed.<lb/> and now I give it to
+                    you as a true<lb/> pure hearted and youthful maiden<lb/> would give to a noble
+                    pure and<lb/> high minded man, I give it you now<lb/> as a sacred gift not
+                    scrupulously. but<lb/> freely <add place="inline" hand="h1"> &amp;</add>
+                    with out a doubt. I surely can<lb/> not rejoice in your sorrow dearest and<lb/>
+                    yet I sometimes am glad that you<lb/> tasted its bitterness It seems<lb/> as if
+                    one could sympathis in an others<lb/> sorrows more earnestly when they
+                    themselves<lb/> have drunk the <unclear>draughts</unclear>. but how selfish<lb/>
+                    I am. Forgive me darling for such thoughts<lb/>
+                </p>
+                <p>I am sorry that Col. Tyler is so much disliked<lb/> in his Regt. It must be very
+                    unpleasant<lb/> for him to remain when he has not the<lb/> confidence of his men
+                    I am so sorry<lb/> that that ugly little quarrel arose between<lb/>
+                </p>
+                <p>the Col, and Hallie but I can not help it. If I had been with you when you<lb/>
+                    wrote of your becoming a commissioned officer I presume I should have
+                    responded<lb/> ha, ha, ha!<lb/> Thanks you<lb/> dear one<lb/> for your<lb/>
+                    "sketchey'<lb/> gift I<lb/> can best<lb/> thank you<lb/>
+                    <unclear>?</unclear> but<lb/> hope to<lb/> see the time<lb/> when I can<lb/>
+                    show my<lb/> gratitude<lb/> in a more<lb/> beneficial<lb/> way, Hallie<lb/> was
+                    looking<lb/> at your<lb/> portrait a<lb/> little while<lb/> ago and<lb/> wishing
+                    you<lb/> were here.<lb/> He said<lb/> you would<lb/> be a very welcome<lb/>
+                    visitor &amp; he<lb/> would feel as if you<del hand="h1">came</del><lb/>
+                </p>
+
+                <p>
+                    <ref target="n4" n="4">4</ref>came<lb/> expressly to see him that is if some
+                    one<lb/> else were not here giving a sly look at one<lb/>
+                </p>
+                <p> The girls laughed (for I am right in the room<lb/> with them Jess would not let
+                    me go out)<lb/> and they<lb/> looked at<lb/> me too<lb/> Presume<lb/> I
+                    blushed<lb/> for Hal. said "Dont you wish Charlie was<lb/> here to see the
+                    roses" naughty boy is<lb/> he not? that is some times. How ambitious<lb/> you
+                    are dear Charlie, I fear I would<lb/> rather remain dormant than trust to<lb/>
+                    chances in a battle but our<lb/> natures are different in that respect<lb/>
+                </p>
+
+                <closer> But I can write but little more<lb/> as Mollie says she will be
+                    compelled<lb/> to go to sleep if I do not stop writing<lb/> Wonder if it <hi
+                        rend="underline">is</hi> so dull with out<lb/> me. " <hi rend="underline"
+                        >Dont I feel flattered</hi>" Write often<lb/> very often dearest to cheer your<lb/>
+                    <signed>Addie</signed><lb/>
+                    <seg type="postscript">Please excuse this writing and<lb/> composition</seg> For
+                    Charlie </closer>
+            </div1>
+        </body>
+
+        <back id="d6">
+
+            <div1 type="notes" n="1" id="d7">
+                <head>Notes</head>
+
+                <note id="n1" place="end" n="1"><seg type="note-symbol">1</seg>
+                    <p>"Union for ever for me!" is a 1861 song, written and composed for Miss Ada
+                        Webb by William Shakespeare Hays (1837-1907). See the lyrics online atthe
+                        Public Domain Music website or atthe Library of Congress's "America Singing:
+                        Nineteenth-Century Song Sheets" website - this song is the second to last
+                        link on the Library of Congress page. The Public Domain Music website also
+                        has a MIDI of this song.</p>
+                </note>
+
+                <note id="n2" place="end" n="2"><seg type="note-symbol">2</seg>
+                    <p>"The Sword of Bunker Hill" is a 1855 song, written by William Ross Wallace
+                        with music by Bernard Covert. The song tells of a veteran of the American
+                        Revolutionary War on his deathbed giving his son the sword he took from a
+                        British captain. See the lyrics online atthe Public Domain Music Web site or
+                        at the Library of Congress's Web site - this song is the third link from the
+                        top on the Library of Congress page. The Public Domain Music website also
+                        has a MIDI of this song.</p>
+                </note>
+
+                <note id="n3" place="end" n="3"><seg type="note-symbol">3</seg>
+                    <p> In researching the above two songs, it was discovered that the letterhead
+                        illustration used on some of the other letters appears to have been copied
+                        fromother sheet music of the period.</p>
+                </note>
+                <note id="n4" place="end" n="4"><seg type="note-symbol">4</seg>
+                    <p>The following is written perpendicularly across page 1</p>
+                </note>
+
+            </div1>
+        </back>
+
+    </text>
+
+</TEI.2>

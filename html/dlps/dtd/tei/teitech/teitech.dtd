@@ -1,0 +1,199 @@
+<!-- ******************************************************************************************
+
+     teitech.dtd
+     Version 1.5
+     2006-06-07
+
+     One of two extension files (see also teitech.ent) constituting a customization of TEI P4,
+     following the method described in the TEI Guidelines, chapter 29, "Modifying and Customizing
+     the TEI DTD".
+
+       http://www.tei-c.org/P4X/MD.html
+
+     This DTD, teitech, is a simple DTD for marking up technical documentation in TEI.
+
+     Greg Murray <gpm2a@virginia.edu>
+     Digital Library Production Services, University of Virginia Library
+
+     ****************************************************************************************** -->
+
+
+
+<!-- ******************************************************************************************
+     Revision History
+     ******************************************************************************************
+
+     See teitech.ent for revision history.
+-->
+
+
+
+<!-- ******************************************************************************************
+     1. New elements
+     ****************************************************************************************** -->
+
+<!-- New element:    admon
+     Element type:   Element for technical documentation
+     Content model:  Component sequence
+     Attribute list: a.global plus 'type' and 'applies'
+     Occurs:         Block-level element; included in x.chunk to extend m.chunk, so admon occurs
+                     where elements like ab, l, lg, p, and sp are allowed.
+     Comments:       Used for admonitions set off from the main text, comparable to <note>, <tip>,
+                     <important>, etc. in DocBook. Value "special" for attribute 'type' is for
+                     indicating special instructions. Attribute 'applies' is for indicating which
+                     project the special instructions apply to.
+-->
+<!ELEMENT admon (%component.seq;) >
+<!ATTLIST admon
+      %a.global;
+      type (caution | fyi | important | note | special | tip | warning) #REQUIRED 
+      applies (BOV | EAF | text-only) #IMPLIED>
+
+<!-- ========================================================================================== -->
+
+<!-- New element:    att, code, command, eg, gi, ident, kw, path, tag, val
+     Element type:   Elements for use in technical documentation
+     Content model:  PCDATA; some of these also allow <replace> and <xref>
+     Occurs:         Phrase-level elements; can occur wherever m.data class is used
+     -->
+<!ELEMENT att (#PCDATA)>
+<!ATTLIST att
+      %a.global;
+      tei (yes|no) #IMPLIED
+      TEIform CDATA 'att'>
+
+<!ELEMENT code (#PCDATA)>
+<!ATTLIST code
+      %a.global;
+      TEIform CDATA 'code'>
+
+<!ELEMENT command (#PCDATA | replace | xref)*>
+<!ATTLIST command
+      %a.global;>
+
+<!ELEMENT eg (#PCDATA | replace | xref)*>
+<!ATTLIST eg
+      %a.global;
+      TEIform CDATA 'eg'>
+
+<!ELEMENT gi (#PCDATA)>
+<!ATTLIST gi
+      %a.global;
+      tei (yes|no) #IMPLIED
+      TEIform CDATA 'gi'>
+
+<!ELEMENT ident (#PCDATA)>
+<!ATTLIST ident
+      %a.global;
+      TEIform CDATA 'ident'>
+
+<!ELEMENT kw (#PCDATA)>
+<!ATTLIST kw
+      %a.global;
+      TEIFORM CDATA 'ident'>
+
+<!ELEMENT path (#PCDATA | replace)*>
+<!ATTLIST path
+      %a.global;>
+
+<!ELEMENT tag (#PCDATA)>
+<!ATTLIST tag
+      %a.global;
+      TEI ( yes | no ) #IMPLIED
+      TEIform CDATA 'tag'>
+
+<!ELEMENT val (#PCDATA)>
+<!ATTLIST val
+      %a.global;
+      TEIform CDATA 'val'>
+
+<!-- ========================================================================================== -->
+
+<!-- New element:    gizmo
+     Element type:   Element for technical documentation
+     Content model:  Character data and <replace>
+     Attribute list: a.global plus 'type'
+     Occurs:         Phrase-leve (m.data class)
+     Comments:       Equivalent to <guibutton>, <guiicon>, etc. in DocBook. Identifies any element
+                     of a graphical user interface. Use 'type' attribute to specify type (button,
+                     icon, label, menu item, etc.).
+-->
+<!ELEMENT gizmo (#PCDATA | replace)* >
+<!ATTLIST gizmo
+      %a.global;
+      type CDATA #IMPLIED >
+
+<!-- ========================================================================================== -->
+
+<!-- New element:    replace
+     Element type:   Element for technical documentation
+     Content model:  Character data
+     Attribute list: a.global
+     Occurs:         Phrase-leve (m.data class)
+     Comments:       Borrowed from <replaceable> in DocBook: "used to mark text that describes what
+                     a user is supposed to enter, but not the actual text that they are supposed to
+                     enter" - for example, <replace>filename</replace>
+-->
+<!ELEMENT replace (#PCDATA) >
+<!ATTLIST replace
+      %a.global; >
+
+
+
+<!-- ******************************************************************************************
+     2. Modified elements
+     ****************************************************************************************** -->
+
+<!-- AttList:   date (teicore2.dtd)
+     Extend:    Add 'type' attribute and enumerate vocabulary
+     Constrain: None
+     -->
+<!ATTLIST %n.date;
+      type (last-modified) #IMPLIED >
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   fileDesc (teihdr2.dtd)
+     Change:    Make sourceDesc optional (change + to *)
+     Comments:  Technical documents are usually born digital and so won't have a print source.
+     -->
+<!ELEMENT %n.fileDesc; %om.RR;  ((%n.titleStmt;), (%n.editionStmt;)?, (%n.extent;)?,
+           (%n.publicationStmt;), (%n.seriesStmt;)?, (%n.notesStmt;)?,
+           (%n.sourceDesc;)* ) >
+<!ATTLIST %n.fileDesc;
+      %a.global;
+      TEIform CDATA 'fileDesc'  >
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   hi (teicore2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT %n.hi; %om.RR; %paraContent;>
+
+<!-- AttList:   hi
+     Extend:    Add 'other' attribute (used when rend="other")
+     Constrain: Require 'rend' attribute; enumerate vocabulary
+     Comments:  If no value from the enumerated list applies, use
+                <hi rend='other' other='...'> -->
+<!ATTLIST %n.hi;
+      %a.global.no_rend;
+      %a.rend.hi;
+      TEIform CDATA 'hi'>
+
+<!-- ========================================================================================== -->
+
+<!-- AttList:   xref (teilink2.dtd)
+     Extend:    Add 'url' attribute
+     Constrain: None
+     Comments:  Analogous to the 'href' attribute on <a> in HTML. See TEI Guidelines, section
+                14.2.4 Representation of HTML links in TEI.
+     -->
+<!ATTLIST %n.xref;
+      url CDATA #IMPLIED>
+
+
+<!-- ========================================================================================== -->
+
+<!-- END OF teitech.dtd -->

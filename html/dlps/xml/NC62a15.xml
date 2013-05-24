@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0487 SYSTEM "000000766_0487" NDATA jpg>
+<!ENTITY DSSR_000000766_0488 SYSTEM "000000766_0488" NDATA jpg>
+<!ENTITY DSSR_000000766_0489 SYSTEM "000000766_0489" NDATA jpg>
+<!ENTITY DSSR_000000766_0490 SYSTEM "000000766_0490" NDATA jpg>
+
+<!--<!ENTITY NC62a15a SYSTEM "NC62a15a.jpg" NDATA jpg>
+<!ENTITY NC62a15b SYSTEM "NC62a15b.jpg" NDATA jpg>
+<!ENTITY NC62a15c SYSTEM "NC62a15c.jpg" NDATA jpg>
+<!ENTITY NC62a15d SYSTEM "NC62a15d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NC62a15">
+
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+                        value="1862-01-15">1862 Jan 15</date></title>
+
+                <author>Tenney, Charles N.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name/>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name/>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">12</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NC62a15</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2001">2001</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title/>
+
+
+                        <author>Charles N. Tenney</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p>The Corinne Carr Nettleton Civil War Collection</p>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-01-23">1862-01-23</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>masculine</term>
+                    <term>American Civil War/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2001-06"> June 2001</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name> Carolyn Fay, Electronic Text Center</name>
+                </respStmt>
+                <item> Updated TEI header and tags. </item>
+            </change>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-11">November 11th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 14th, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <body id="d2">
+
+            <div1 type="letter" n="1" id="d3">
+                <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-01-15"
+                        >1862 Jan 15</date></head>
+                <pb n="1" entity="DSSR_000000766_0487"/>
+                <opener>
+                    <salute>My darling <hi rend="underline">Sister</hi>: </salute>
+                </opener>
+
+                <p> The "furlough boys"<lb/> have just returned <sic corr="tonight"
+                    >to-night</sic><lb/> and none were more welcome<lb/> than John Chaffee, who met
+                    me<lb/> with outstretched hand - but<lb/> what did it contain but a<lb/> letter
+                    in the wellknown writing<lb/> of my sister " <abbr expan="Misses">Miss.</abbr>
+                        Case, <abbr expan="Esquire">Esq.</abbr>"<lb/>
+                </p>
+
+                <p> Now have I not reason to<!-- smudge --><lb/> thank John? Well, I <hi
+                        rend="underline">did</hi> thank<lb/> him, and - fell to devouring<lb/>
+                    eagerly the contents! You ask<lb/> if Hallie is well yet, He is
+                    very<!-- mark after very --><lb/> nearly well, so much so that<lb/> he is now in
+                    command of the<lb/>
+                    <pb n="2" entity="DSSR_000000766_0488"/> company, <abbr expan="Captain"
+                    >Capt</abbr> Asper obtained<lb/> leave of absence for a day or two<lb/> and
+                    today he applied for an <orig reg="extention">
+                        <sic corr="extension">ex=<lb/>
+                            tention<!-- author correction on second "t"--></sic>
+                    </orig> on ground of sickness, and<lb/> it was granted. He is at Cumberland<lb/>
+                    threatened with a fever. So long as<lb/> he is unwell, Hallie cannot come<lb/>
+                    home. (,) I would like to see you<lb/> very much before you go
+                    to <unclear>O-u</unclear><!-- mark after O-u -->.<lb/> but fate seems to have
+                    decreed that<lb/> I shall have the <hi rend="underline">extreme</hi>
+                    pleasure<lb/> of remaining in my tented home<lb/>
+                </p>
+
+                <p> It is now, that romance fails<lb/> to make camp life pleasant. You<lb/> have no
+                    conception of the dreariness<lb/> I should feel if it were not that<lb/> I know
+                    there is one who <del hand="h1">anxious</del><lb/> anxiously prays for the safety
+                    of two<lb/> whose lives are in the hands of Him<lb/> who rules the
+                    universe.<lb/>
+                </p>
+
+                <p> But with Hallie I pass a very<lb/> pleasant,<!-- mark looks like period --> time
+                    but, I hate to go<lb/> to his tent, lest the boys would<lb/>
+                    <!-- indent -->think me a favorite.<lb/>
+                </p>
+
+                <pb n="3" entity="DSSR_000000766_0489"/>
+                <p>I was sorry to learn your friend,<lb/>
+                    <abbr expan="Misses">Miss.</abbr> <unclear>Herslop</unclear> was ill. I hope
+                    however,<lb/> to soon learn of her recovery.<lb/>
+                </p>
+
+                <p> How would you like to have<lb/> a description of the members of<lb/> our mess? I
+                    will send you one, if<lb/> you would like it. I had three<lb/> or four sketches
+                    of scenes around<lb/>
+                    <unclear>Reomney</unclear>, nearly finished, when they<lb/> were abstracted from
+                    my portfolio.<lb/>
+                </p>
+
+                <p> The weather has been so severe<lb/> that I have I have<add place="inline"
+                        hand="h1">not</add> been able to make<lb/> a sketch since I came here.<lb/>
+                </p>
+
+                <p> This position, as <abbr expan="General">Gen.</abbr> Lander<lb/> says, is a strong
+                    one in a <orig reg="military">mil<lb/> itary</orig> point of view, and the<lb/>
+                    Rebels, should they come this<lb/> way, will find a hand boy<lb/> to handle in
+                    Lander.<lb/>
+                </p>
+
+                <p> I will make a diagram of<lb/> this position, and enclose it in my next.<lb/>
+                </p>
+                <p>My mind is so scattered<lb/>
+                    <pb n="4" entity="DSSR_000000766_0490"/> I can not conscentrate my thoughts<lb/>
+                    upon any one subject.<lb/>
+                </p>
+
+                <p> The one absorbing thought of<lb/> my mind is "Addie." and I doubt<lb/> not but
+                    it is well to have such an<lb/> abject on which to dwell.<lb/>
+                </p>
+
+                <p> Pardon me for this<lb/> poorly written, illy composed.<lb/> letter, and my nest
+                    I will try<lb/> to make more interesting.<lb/>
+                </p>
+
+                <closer>
+                    <salute><!-- indent --> Meanwhile believe me, <!-- indent --> I remain Yours
+                        &amp; yours only</salute>
+                    <signed><!-- indent --> Charlie N. Tenney</signed>
+
+                    <name type="place"> Patterson</name>
+                    <unclear><!-- unknown -->O.R.R.</unclear>
+                    <date value="1862-01-15">
+                        <!-- indent --> Jan 15th 1852</date>
+                </closer>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

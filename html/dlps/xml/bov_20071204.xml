@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?dlps id="bov_20071204"?>
+<?dlps page-images="none" figure-images="no"?>
+<?dlps transcription="none"?>
+
+
+
+
+
+
+
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+<!ENTITY % xref 'INCLUDE'>
+<!ATTLIST xref url CDATA #IMPLIED>
+<!ENTITY % MANUSCRIPT "INCLUDE">
+]>
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of
+                    Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors
+                    meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with
+                        local customizations)</resp>
+                    <name>University of Virginia Library</name>
+                </respStmt>
+                <biblScope type="date">
+                    <date value="2007-12-04">December 4, 2007</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">11</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2010">2010</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2010 by the Rector and Visitors of the
+                        University of Virginia</p>
+                    <p n="access">Publicly accessible</p>
+                </availability>
+                <idno type="DLPS ID">bov_20071204</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors
+                            minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of
+                            Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors
+                            meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2007-12-04">December 4, 2007</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">2 pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information. Access to
+                                minutes containing salary information will be granted only under the
+                                procedures of the Virginia Freedom of Information Act (Code of
+                                Virginia-2.1-340 ff.) or if permission is granted by the Secretary
+                                of the Board. Researchers interested in obtaining access to these
+                                records should direct a request in writing to the Office of the
+                                Legal Adviser, Madison Hall, University of Virginia. These public
+                                minutes have had salary information deleted and bear no
+                                restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special
+                                Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body
+                                which is the legal owner and operator of the institution. Recorded
+                                in the minutes are appointments and other personnel decisions
+                                concerning faculty, decisions about construction of facilities,
+                                gifts to the university, and all other board actions, decisions and
+                                resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction;
+                &editorial_normalization; &editorial_hyphenation; &editorial_quotation;
+                &editorial_stdVals; </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language n="008" id="eng" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <list>
+                        <item>University of Virginia::Board of Visitors</item>
+                    </list>
+                </keywords>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2011-04-12">April 12, 2011</date>
+                <respStmt>
+                    <name id="lsc6v">Lorrie Chisholm, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to student markup.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text id="d1">
+        <body id="d2">
+            <div1 type="memorandum" id="d3">
+                <pb n="7497"/>
+
+                <head type="main"><date value="2007-12-04">December 4, 2007</date>
+                    <lb/> MEMORANDUM </head>
+                <table cols="2" rows="13">
+                    <row>
+                        <cell cols="2">TO: The Board of Visitors:</cell>
+                    </row>
+                    <row>
+                        <cell cols="2"/>
+                    </row>
+                    <row>
+                        <cell cols="2"><name>W. Heywood Fralin</name>, Rector</cell>
+                    </row>
+                    <row>
+                        <cell><name>John O. Wynne</name>, Vice Rector</cell>
+                        <cell><name>Austin Ligon</name>
+                        </cell>
+                    </row>
+                    <row>
+                        <cell><name>Daniel R. Abramson</name></cell>
+                        <cell><name>Vincent J. Mastracco, Jr.</name></cell>
+                    </row>
+                    <row>
+                        <cell><name>A. Macdonald Caputo</name></cell>
+                        <cell><name>The Hon. Lewis F. Payne</name>
+                        </cell>
+                    </row>
+                    <row>
+                        <cell cols="2"/>
+                    </row>
+                    <row>
+                        <cell><name>The Hon. Alan A. Diamonstein </name></cell>
+                        <cell><name>Don R. Pippin </name></cell>
+                    </row>
+                    <row>
+                        <cell><name>Susan Y. Dorsey</name></cell>
+                        <cell><name>Gordon F. Rainey, Jr.</name>
+                        </cell>
+                    </row>
+                    <row>
+                        <cell><name>Thomas F. Farrell, II</name></cell>
+                        <cell><name>Warren M. Thompson</name>
+                        </cell>
+                    </row>
+                    <row>
+                        <cell><name>G. Slaughter Fitz-Hugh, Jr.</name>
+                        </cell>
+                        <cell><name>E. Darracott Vaughan, Jr., M.D.</name></cell>
+                    </row>
+                    <row>
+                        <cell><name>Glynn D. Key</name></cell>
+                        <cell><name>Carey J. Mignerey</name>
+                        </cell>
+                    </row>
+                    <row>
+                        <cell cols="2"/>
+                    </row>
+                    <row>
+
+                        <cell cols="2">
+                            <name>FROM: Alexander G. Gilliam, Jr.</name>
+                        </cell>
+                    </row>
+                    <row>
+                        <cell cols="2">SUBJECT:  Minutes of the Telephonic Poll of the Board on <date
+                                value="2007-12-04">December 4, 2007</date>
+                        </cell>
+                    </row>
+                </table>
+                <p rend="indent"> The Board of Visitors of the University of Virginia was polled by
+                    telephone on <date value="2007-12-04">December 4, 2007</date>, on the naming of
+                    the new building that has been erected as the annex to Rouss Hall &mdash; the
+                    two buildings will serve as the home of the McIntire School of Commerce
+                    beginning in the second semester of this academic year.</p>
+                <p rend="indent"> The building was given by <name>John A. Griffin</name>, who took
+                    his degree from the McIntire School in <date value="1985">1985</date>. At the
+                    time of his gift, <name>Mr. Griffin</name> specified that he wanted to delay the
+                    naming until around <date value="-12-01">December 1</date><hi rend="super"
+                        >st</hi> of this year. Subsequently, he asked that the building be named in
+                    honor of his mentor, the New York financier <name>Julian H. Robertson,
+                        Jr.</name>, and his wife, <name>Josie</name>.</p>
+                <p rend="indent"> The President and the University Names Committee approved the
+                    naming. </p>
+                <p rend="indent"> All voting Members of the Board approved the following resolution: </p>
+                <pb n="7498"/>
+                <p rend="indent"> RESOLVED, that the annex to Rouss Hall be named Robertson Hall,
+                    the two buildings to be opened in <date value="2008">2008</date> as the new
+                    quarters of the McIntire School of Commerce. The naming honors <name>Julian H.
+                        Robertson, Jr.</name> and his wife, <name>Josie</name>;</p>
+                <p rend="indent"> RESOLVED FURTHER, the Board expresses its great gratitude to
+                        <name>John A. Griffin</name>, an alumnus of the McIntire School, not only
+                    for his continuing support and interest, but for his magnificent gift which has
+                    made possible the construction of Robertson Hall.</p>
+                <trailer> AGG:lah <lb/> These minutes have been posted to the University of
+                    Virginia's <lb/> Board of Visitors website. <lb/>
+                    <xref>http://www.virginia.edu/bov/publicminutes.html</xref>
+                </trailer>
+
+            </div1>
+        </body>
+    </text>
+</TEI.2>

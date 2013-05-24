@@ -1,0 +1,2724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+
+<!ENTITY % xref 'INCLUDE'>
+<!ATTLIST xref url CDATA #IMPLIED>
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with
+                        local customizations)</resp>
+                    <name>University of Virginia Library</name>
+                </respStmt>
+                <biblScope type="date">
+                    <date value="2005-04-01">April 1, 2005</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">167</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2009">2009</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the
+                        University of Virginia</p>
+                    <p n="access">Publicly accessible</p>
+                </availability>
+                <idno type="DLPS ID">bov_20050401</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors
+                            minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of
+                            Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors
+                            meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2005-04-01">April 1, 2005</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information. Access to
+                                minutes containing salary information will be granted only under the
+                                procedures of the Virginia Freedom of Information Act (Code of
+                                Virginia-2.1-340 ff.) or if permission is granted by the Secretary
+                                of the Board. Researchers interested in obtaining access to these
+                                records should direct a request in writing to the Office of the
+                                Legal Adviser, Madison Hall, University of Virginia. These public
+                                minutes have had salary information deleted and bear no
+                                restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special
+                                Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body
+                                which is the legal owner and operator of the institution. Recorded
+                                in the minutes are appointments and other personnel decisions
+                                concerning faculty, decisions about construction of facilities,
+                                gifts to the university, and all other board actions, decisions and
+                                resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction;
+                &editorial_normalization; &editorial_hyphenation; &editorial_quotation;
+                &editorial_stdVals; </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language id="eng" n="008" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2009-05-18">May 18, 2009</date>
+                <respStmt>
+                    <name id="aet7f">Andrew Tarne, University of Virginia Library, Scholarly
+                        Resources</name>
+                    <resp>XML Mark Up</resp>
+                </respStmt>
+                <item>Marked up the raw text</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+        <body id="d2">
+            <div1 id="d3" type="contents">
+                <pb n="1"/>
+                <head type="main">RESOLUTIONS ADOPTED BY THE BOARD OF VISITORS<lb/>
+                    <dateRange from="2005-04-01" to="2005-04-02">APRIL 1-2, 2005</dateRange></head>
+                <p>
+                    <table cols="2" rows="15">
+                        <row>
+                            <cell/>
+                            <cell role="label">PAGE</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of the Minutes of the February 4th Board<lb/> Meeting </cell>
+                            <cell>6858</cell>
+                        </row>
+                        <row>
+                            <cell>Resolution for Addition to the Agenda</cell>
+                            <cell>6858</cell>
+                        </row>
+                        <row>
+                            <cell>Setting of Meeting Dates for 2006 </cell>
+                            <cell>6859 </cell>
+                        </row>
+                        <row>
+                            <cell>Resolution on Gifts and Grants</cell>
+                            <cell>6862</cell>
+                        </row>
+                        <row>
+                            <cell>Naming of the Barry Parkhill Practice Court</cell>
+                            <cell>6864</cell>
+                        </row>
+                        <row>
+                            <cell>Naming of the Byrd Seminar Room</cell>
+                            <cell>6864</cell>
+                        </row>
+                        <row>
+                            <cell>Road Namings</cell>
+                            <cell>6864</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of a Permanent Access Easement at the Fan<lb/> Mountain
+                                Observatory </cell>
+                            <cell>6869</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of a Permanent Easement to Virginia Electric<lb/> and
+                                Power Company for a Power Line on University<lb/> Property Adjacent
+                                to the North Grounds Connector</cell>
+                            <cell>6869</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of a Permanent Easement to the City of<lb/>
+                                Charlottesville for a Natural Gas Line on Stillfried<lb/> Lane
+                                Located at the Kluge Children’s Rehabilitation Center</cell>
+                            <cell>6870</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of a Permanent Easement to the Albemarle<lb/> County
+                                Service Authority for Water and Sewer Lines<lb/> On Stillfried Lane
+                                Located at the Kluge Children’s<lb/> Rehabilitation Center</cell>
+                            <cell>6870</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of Increase in Faculty and Staff Housing Rates<lb/> for
+                                2005-2006</cell>
+                            <cell>6871</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of Contract Rates for Dining Services for<lb/> 2005-2006
+                                for the Academic Division and The University<lb/> of Virginia’s
+                                College at Wise</cell>
+                            <cell>6873</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of Six-Year Capital Outlay Plan</cell>
+                            <cell>6874</cell>
+                        </row>
+                    </table>
+                    <pb n="2"/>
+                    <table cols="2" rows="26">
+                        <row>
+                            <cell/>
+                            <cell role="label">PAGE</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of Revised Enrollment Projections</cell>
+                            <cell>6874</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of Endowment Spending Policy</cell>
+                            <cell>6875</cell>
+                        </row>
+                        <row>
+                            <cell>Reaffirmation of Housing Requirements for All<lb/> First-Year
+                                Students and Planning for the Replacement<lb/> of Alderman Road
+                                Residences</cell>
+                            <cell>6875</cell>
+                        </row>
+                        <row>
+                            <cell>Memorial Resolution on <name>Dr. J. Thomas Hulvey</name></cell>
+                            <cell>6876</cell>
+                        </row>
+                        <row>
+                            <cell>Faculty Personnel Actions</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell>Elections</cell>
+                            <cell>6877</cell>
+                        </row>
+                        <row>
+                            <cell>Actions Relating to Chairholders</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell rend="indent">Election of Chairholders</cell>
+                            <cell>6879</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Special Salary Action of Chairholders</cell>
+                            <cell>6880</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Retirement of Chairholders</cell>
+                            <cell>6880</cell>
+                        </row>
+                        <row>
+                            <cell>Special Salary Actions</cell>
+                            <cell>6881</cell>
+                        </row>
+                        <row>
+                            <cell>Correction to the Salary Action for <name>Dr. Erol Baskurt</name></cell>
+                            <cell>6883</cell>
+                        </row>
+                        <row>
+                            <cell>Resignations</cell>
+                            <cell>6883</cell>
+                        </row>
+                        <row>
+                            <cell>Retirements</cell>
+                            <cell>6884</cell>
+                        </row>
+                        <row>
+                            <cell>Correction to the Retirement of <name>Ms. Natalie O.
+                                Kononenko</name></cell>
+                            <cell>6885</cell>
+                        </row>
+                        <row>
+                            <cell>Appointments</cell>
+                            <cell>6885</cell>
+                        </row>
+                        <row>
+                            <cell>Re-Appointments</cell>
+                            <cell>6885</cell>
+                        </row>
+                        <row>
+                            <cell>Election of Professors Emeriti</cell>
+                            <cell>6886</cell>
+                        </row>
+                        <row>
+                            <cell>Correction to the Emeritus Action for <name>Ms. Natalie O.<lb/>
+                                    Kononenko</name></cell>
+                            <cell>6887</cell>
+                        </row>
+                        <row>
+                            <cell>Election of Associate Professors Emeriti</cell>
+                            <cell>6887</cell>
+                        </row>
+                        <row>
+                            <cell>Deaths</cell>
+                            <cell>6887</cell>
+                        </row>
+                        <row>
+                            <cell>The University of Virginia’s College at Wise<lb/> Re-Appointment</cell>
+                            <cell>6887</cell>
+                        </row>
+                        <row>
+                            <cell>Resolution Commending James Watson Head</cell>
+                            <cell>6888</cell>
+                        </row>
+                        <row>
+                            <cell>Resolutions Adopted by the Buildings and Grounds<lb/>
+                                Committee:<lb/> Approval of Schematic Design for the College at
+                                Wise<lb/> Drama Building Addition and Renovation </cell>
+                            <cell>6888</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of Architect Selection for the School of<lb/> Nursing
+                                Building</cell>
+                            <cell>6889</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of Concept, Site, and Design Guidelines for<lb/> the New
+                                Education School Building </cell>
+                            <cell>6889</cell>
+                        </row>
+                    </table>
+                </p>
+            </div1>
+
+            <div1 id="d4" type="roll-call">
+                <pb n="6857"/>
+                <head type="main"> TENTATIVE MINUTES<lb/> SUBJECT TO THE<lb/> APPROVAL OF THE<lb/>
+                    BOARD OF VISITORS<lb/><lb/>
+                    <dateRange from="2005-04-01" to="2005-04-02">April 1-2, 2005</dateRange>
+                </head>
+
+                <p> The Board of Visitors of the University of Virginia met, in Open
+                    Session, at 9:55 a.m., Friday, <date value="2005-04-01">April 1, 2005</date>, in
+                    the East Oval Room of the Rotunda; <name>Gordon F. Rainey, Jr., Rector</name>,
+                    presided. <name>Thomas F. Farrell, II, A. Macdonald Caputo, Alan A. Diamonstein,
+                        Ms. Susan Y. Dorsey, G. Slaughter Fitz-Hugh, Jr., W. Heywood Fralin, Ms.
+                        Glynn D. Key, Mark J. Kington, Vincent J. Mastracco, Jr. Lewis F. Payne, Don
+                        R. Pippin, Warren M. Thompson, E. Darracott Vaughan, Jr., M.D., Ms. Georgia
+                        M. Willis, John O. Wynne, and James W. Head</name> were present. </p>
+                <p>
+                    <name>Ms. Catherine S. Neale</name>, the Student Member-elect, was present as
+                    well. </p>
+                <p> Also present were <name>John T. Casteen, III, Leonard W.
+                        Sandridge, Alexander G. Gilliam, Jr., Paul J. Forch, Gene D. Block, Arthur
+                        Garson, Jr., M.D., R. Edward Howell, Ms. Patricia M. Lampkin, Robert E.
+                        Reynolds, M.D., Ms. Yoke San L. Reynolds, Ms. Colette Sheehy, Robert D.
+                        Sweeney, Ernest H. Ern, and Ms. Jeanne Flippo Bailes</name>. </p>
+                <p> The Rector opened the meeting and asked Ms. Key to lead the Pledge
+                    of Allegiance. </p>
+            </div1>
+            <div1 id="d5" type="statement">
+                <head type="main">INTRODUCTION OF NEW MEMBERS</head>
+                <p>The Rector introduced the new Members of the Board, <name>A.
+                        Macdonald Caputo</name> of Greenwich, Connecticut, <name>Alan A.
+                    Diamonstein</name> of Newport News, and <name>Vincent J. Mastracco, Jr.</name>,
+                    of Norfolk. He also introduced <name>Ms. Catherine S. Neale</name> of Richmond,
+                    the Student Member-elect. </p>
+            </div1>
+            <div1 id="d6" type="resolution">
+                <pb n="6858"/>
+                <head type="main">APPROVAL OF THE MINUTES OF THE FEBRUARY 4TH BOARD<lb/> MEETING</head>
+                <p>The Rector called for a motion to approve the Minutes of the last
+                    meeting of the full Board, the meeting of February 4. </p>
+                <p>On motion, the Board passed a resolution approving the Minutes.
+                </p>
+            </div1>
+            <div1 id="d7" type="statement">
+                <head type="main">ELECTION OF THE EXECUTIVE COMMITTEE AND APPOINTMENTS TO<lb/> THE
+                    STANDING COMMITTEES</head>
+                <p>The Rector announced that he would delay proposing nominees to the
+                    Executive Committee, as well as making appointments to the standing Committees,
+                    until several weeks after the meeting. He explained that he wanted the new
+                    Members to have a better sense of the operations of the Board before making
+                    appointments. As there are vacancies in the Chairmanships of two Committees –
+                    Finance and the Committee on The University of Virginia’s College at Wise – he
+                    asked <name>Mr. Farrell</name> to serve as the Temporary Chair of Finance and
+                        <name>Mr. Pippin</name> to serve as the Temporary Chair of the Wise
+                    Committee. </p>
+            </div1>
+            <div1 id="d8" type="resolution">
+                <head type="main">RESOLUTION FOR ADDITION TO THE AGENDA</head>
+                <p>
+                   Pursuant to the conditions set forth in the Board
+                            Manual, the Rector asked for a resolution permitting the consideration
+                            of addenda to the published Agenda. </p>
+                       
+                        <p>On motion, the following resolution was adopted: </p>
+                       
+                        <p>RESOLVED that the Board of Visitors approves the
+                            addition of addenda to the Agenda and their consideration by the Board.
+                        </p>
+                   
+            </div1>
+            <div1 id="d9" type="statement">
+                <head type="main">THE BOARD RETREAT</head>
+                <p>The Rector announced that the Board Retreat, set for July 29 and
+                    30, will be held at Wintergreen in Nelson County. </p>
+            </div1>
+            <div1 id="d10" type="resolution">
+                <pb n="6859"/>
+                <head type="main">SETTING OF MEETING DATES FOR 2006</head>
+                <p>
+                   The Rector called for a resolution setting the Board
+                            meeting dates for 2006; the following resolution was adopted: </p>
+                        
+                        <p>RESOLVED, that the dates for meetings of the Board of
+                        Visitors in 2006 are approved as follows: </p>
+                
+                            <table cols="2" rows="5">
+                                <row>
+                                    <cell>Thursday, Friday, Saturday<lb/> February 2, 3, and 4</cell>
+                                    <cell>at Charlottesville</cell>
+                                </row>
+                                <row>
+                                    <cell>Thursday, Friday, Saturday<lb/> April 6, 7, and 8</cell>
+                                    <cell>at Charlottesville</cell>
+                                </row>
+                                <row>
+                                    <cell>Thursday, Friday, Saturday<lb/> June 8, 9, and 10</cell>
+                                    <cell>at Charlottesville</cell>
+                                </row>
+                                <row>
+                                    <cell>RETREAT<lb/> Friday and Saturday<lb/> July 28 and 29</cell>
+                                    <cell>to be determined</cell>
+                                </row>
+                                <row>
+                                    <cell>Thursday, Friday, Saturday<lb/> October 5, 6, and 7</cell>
+                                    <cell>at Charlottesville</cell>
+                                </row>
+                            </table>
+   
+                        <p>The Rector also asked the Board Office to poll Members
+                            about possible meeting dates for 2007 and said that the 2007 schedule
+                            would be proposed at the June Board meeting. </p>
+   
+            </div1>
+            <div1 id="d11" type="statement">
+                <head type="main">DEATH OF <name>DR. J. THOMAS HULVEY</name></head>
+                <p>The Rector announced the death of <name>Dr. J. Thomas Hulvey</name>
+                    of Abingdon, Member of the Board of Visitors from 1990 to 1994, on March 7<hi rend="super">th</hi>. He
+                    noted that the Board would be asked to consider a memorial resolution at the
+                    final session of the Board meeting on <date value="04-02">April 2<hi rend="super">nd</hi></date>
+                </p>
+                <p>The Rector then asked the President to give his customary report.
+                </p>
+            </div1>
+            <div1 id="d12" type="report">
+                <pb n="6860"/>
+                <head type="main">PRESIDENT’S REPORT</head>
+                <p>The President welcomed the three new Members and said that a few
+                    weeks before, he had the pleasure of telephoning <name>Catherine Neale</name>
+                    with the good news of her selection as a Truman Scholar. He described the
+                    criteria for the Truman and said he understood that <name>Ms. Neale</name> plans
+                    a career in public higher education, both as a law school instructor and as a
+                    college administrator and eventually hopes to become a university president. </p>
+                <div2 id="d13" type="section">
+                    <head type="main">RESTRUCTURING</head>
+                    <p>He then reviewed the legislation on restructuring, noting that
+                        the Governor has submitted a substitute bill which will be considered by the
+                        General Assembly on April 6. The President outlined the Governor’s
+                        modifications and said his “clarifications provide a sound framework.” Work
+                        on this legislation throughout the General Assembly Session has been
+                        bipartisan, and the support of the Governor and the Legislature for higher
+                        education has been very gratifying and is important to the economic future
+                        of Virginia. </p>
+                </div2>
+                <div2 id="d14" type="section">
+                    <head type="main">GRADUATE SCHOOL RANKINGS</head>
+                    <p>The President reported on the latest <hi rend="italic">U.S. News &amp; World
+                        Report</hi> graduate school rankings, released today. The Law School ranks 8<hi rend="italic">th</hi>,
+                        tied with the University of Michigan but up from 9<hi rend="super">th</hi> last year. In the
+                        School of Medicine, the research ranking is 26<hi rend="super">th</hi>, down one from last year;
+                        Medicine’s goal is to be ranked 20<hi rend="super">th</hi> in the country. Darden is judged 14<hi rend="super">th</hi>
+                        best, down from 12<hi rend="super">th</hi> last year. The Curry School ranks 22<hi rend="super">nd</hi> – tied with the
+                        University of Maryland – down from 20<hi rend="super">th</hi> last year. The School of Engineering
+                        is 34<hi rend="super">th</hi>, tied with North Carolina State University, the Renssalaer
+                        Polytechnic Institute and Washington University in St. Louis; this is an
+                        improvement over last year’s ranking as 42<hi rend="super">nd</hi>. </p>
+                    <pb n="6861"/>
+                    <p>The English Department has an overall ranking of 12<hi rend="super">th</hi>, in a
+                        tie with Duke University and the University of Michigan; English departments
+                        were not ranked last year. The Department’s programs in African-American
+                        literature, American literature after 1865, American literature before 1865,
+                        and 18th through 20<hi rend="super">th</hi> century British literature, were rated as being among
+                        the ten best in the country. The History Department ranks 19<hi rend="super">th</hi>, in a tie
+                        with Indiana University and the University of Texas; History departments
+                        were not ranked last year. </p>
+                </div2>
+                <div2 id="d15" type="section">
+                    <head type="main">THE VIRGINIA QUARTERLY REVIEW</head>
+                    <p>The <hi rend="italic">Virginia Quarterly Review</hi> has been nominated in two
+                        categories of the American Society of Magazine Editors’ Annual National
+                        Magazine Awards – in fiction and in general excellence for publications with
+                        circulations of under 100,000. To be nominated in fiction is particularly
+                        impressive – the other finalists this year in this category are The <hi rend="italic">Atlantic
+                            Monthly, Harper’s, The New Yorker</hi>, and <hi rend="italic">The Paris Review</hi>. </p>
+                </div2>
+                <div2 id="d16" type="section">
+                    <head type="main">UPDATE ON SEARCHES</head>
+                    <p>The President gave a brief update on current searches: Chief
+                        Officer for Diversity and Equity, Dean of the Darden School, Dean of the
+                        School of Engineering, Chancellor at Wise, and the Equal Opportunity
+                        Director. </p>
+                </div2>
+                <div2 id="d17" type="section">
+                    <head type="main">GIFTS AND GRANTS REPORT</head>
+                    <p>The President gave his customary report on Gifts and Grants.</p>
+                    <p>Private giving to the University and its related foundations in
+                        the current fiscal year, through February 28<hi rend="super">th</hi>, is $130.2million, an
+                        increase of $17.2million or 15% over the same period last year. </p>
+                    <p>Among the significant gifts received since the February meeting
+                        of the Board are a $1.2million increase in a grant to the Law School by the
+                            <name>John D. and Catherine T. MacArthur</name> Foundation, a $915,000
+                        pledge payment from <name>Mrs. Ann Lee Saunders Brown</name>, and a $700,000
+                        pledge payment from the <name>Peter B. &amp; Adeline W. Ruffin</name>
+                        Foundation. Two significant new pledges are an anonymous $3.6million pledge
+                        for the unrestricted use of the Athletic Department, and $1million from
+                            <name>Mr. Mansoor Ijaz</name> to the College Foundation for an endowed
+                        graduate fellowship. </p>
+                    <pb n="6862"/>
+                    <p>The Rector asked for a resolution accepting the President’s
+                        Gifts and Grants Report, and the following resolution was adopted: </p>
+                </div2>
+            </div1>
+            <div1 id="d18" type="resolution">
+                <head type="main">RESOLUTION ON GIFTS AND GRANTS</head>
+                <p>
+                   
+                       RESOLVED, the Gifts and Grants Report for the period
+                                <dateRange from="2004-12-01" to="2005-02-28">December 1, 2004 to
+                                February 28, 2005</dateRange>, is accepted. 
+                 </p>
+            </div1>
+            <div1 id="d19" type="statement">
+                <head type="main">COMPLIANCE BRIEFING</head>
+                <p>After a short recess, the Board was briefed by <name>James W.
+                    Booz</name>, Associate Athletics Director for Compliance, on the restrictions on
+                    involvement by Board Members in athletics. </p>
+            </div1>
+            <div1 id="d20" type="report">
+                <head type="main">REPORTS</head>
+                <p>The Board heard brief reports from each of the Committee Chairs on
+                    the work of their respective Committees. </p>
+                <ornament type="characters">- - - - - - - - -</ornament>
+                <p>The Board recessed at 11:30 a.m. for lunch.</p>
+                <ornament type="characters">- - - - - - - - -</ornament>
+            </div1>
+            <div1 id="d21" type="statement">
+                <head type="main">EXECUTIVE SESSION</head>
+                <p>The Board reconvened after lunch and, after adopting the following
+                    motions, went into Executive Session at 1:20 p.m. </p>
+                <p>All Members present at the morning session were in attendance. </p>
+                <pb n="6863"/>
+                <p>That the Board of Visitors of the University of Virginia convene in
+                    Executive Session for the purpose of discussing and/or approving personnel
+                    actions involving the appointment, reappointment, nomination, evaluation,
+                    compensation, and resignation of University officers and employees as provided
+                    for in Section 2.2-3711 (A) (1) of the <hi rend="underline">Code of Virginia</hi>. </p>
+                <p>That the Board of Visitors convene in Executive Session to consult
+                    with General Counsel regarding his privileged legal report to the Board on
+                    pending and anticipated litigation affecting the University; and such other
+                    matters as may arise with respect to University operations requiring the
+                    provision of legal advice and counsel, as provided for in Section 2.2- 3711
+                    (A)(7) of the <hi rend="underline">Code of Virginia</hi>. </p>
+                <p>That the Board of Visitors convene in Executive Session to consult
+                    with legal counsel on the applicable law and review of the performance of
+                    University personnel responsible for diversity procurement, as provided for in
+                    Section 2.2-3711 (A) (1),(7), and (8) of the <hi rend="underline">Code of Virginia</hi>. </p>
+                <ornament type="characters">- - - - - - - - - - - - -</ornament>
+                <p>The Board recessed at 3:30 p.m., after adopting a resolution
+                    certifying that its discussions in Executive Session had been conducted in
+                    accord with the exemptions granted by the Virginia Freedom of Information Act,
+                    and moved to the Dome Room of the Rotunda. </p>
+                <p>That we vote on and record our certification that, to the best of
+                    each Board member’s knowledge, only public business matters lawfully exempted
+                    from open meeting requirements and which were identified in the motion(s)
+                    authorizing the closed session, were heard, discussed or considered in closed
+                    session. </p>
+            </div1>
+            <div1 id="d22" type="statement">
+                <pb n="6864"/>
+                <head type="main">NAMINGS:</head>
+                <p>The Board resumed its meeting in the Dome Room at 3:45 and heard
+                    reports on the naming of the <name>Barry Parkhill</name> Practice Court and the
+                    Byrd Seminar Room, as well as an ex-post facto report on the naming of a number
+                    of streets and roadways on the Grounds of the University. </p>
+                <div2 id="d23" type="section">
+                    <head type="main">THE <name>BARRY PARKHILL</name> PRACTICE COURT</head>
+                    <p>The <name>Barry Parkhill</name> Practice Court is the men’s
+                        practice court in the new <name>John Paul Jones</name> Arena, on the lower
+                        level and at the east end. It is named for <name>Barry L. Parkhill</name>
+                        (B.S.’73), one of the greatest basketball players in the history of the
+                        University. </p>
+                </div2>
+                <div2 id="d24" type="section">
+                    <head type="main">BYRD SEMINAR ROOM</head>
+                    <p>The Byrd Seminar Room is on the top floor of the <name>Mary and
+                            David Harrison</name> Institute for American History, Literature, and
+                        Culture and the <name>Albert and Shirley Small</name> Collections Library.
+                        The name honors the Byrd family of Winchester. <name>Harry F. Byrd,
+                        Jr.</name>, United States Senator from Virginia, 1965-1983, has been a
+                        generous benefactor of the Library, both in monetary gifts and from the
+                        point of view of the immensely valuable collections of his own political
+                        papers and those of his father, the late <name>Senator Harry F. Byrd,
+                        Sr.</name>, which he has presented to the Library. </p>
+                </div2>
+                <div2 id="d25" type="section">
+                    <head type="main">ROAD NAMINGS</head>
+                    <p>
+                         There follows a listing of roads and streets on the
+                                Grounds of the University, named, mostly, in 1994 and not previously
+                                reported to the Board: </p>
+                        <list>
+                            <item> <hi rend="underline">Hereford Drive</hi> – Named for <name>Frank L. Hereford, Jr.</name>,
+                                fifth President of the University. It serves Hereford College from
+                                the end of Stadium Road. </item>
+                            <lb/>
+                            <item> <hi rend="underline">Floyd Drive</hi> – Named for <name>Edwin Floyd</name>, Professor of
+                                Mathematics, Dean of the Faculty of Arts and Sciences and Provost of
+                                the University. It serves the Gooch/Dillard dormitory complex and is
+                                a loop road, with one end in Alderman Road and the other in Stadium
+                                Road. </item>
+                            <lb/>
+                            <item> <hi rend="underline">University Gardens Drive</hi> – Named for University Gardens, the
+                                married student apartment complex on Emmet Street, opposite the John
+                                Paul Jones Arena. It is the road into the complex. </item>
+                            <lb/>
+                            <item> <hi rend="underline">Buckler Drive</hi> – Named for the late <name>Leslie Hepburn
+                                Buckler</name>, who was a Professor of Law. It is in the Copeley II
+                                area, which is 
+                      
+                        <pb n="6865"/>
+                        
+                             to say the law student dormitories across the road from the Law
+                                School, and Buckler Drive enters the precinct from Arlington
+                                Boulevard. </item>
+                            <lb/>
+                            <item> <hi rend="underline">Golf Course Drive</hi> – Golf Course Drive connects the Birdwood Golf
+                                Course Clubhouse with the Ivy Road (US250 West). </item>
+                            <lb/>
+                            <item> <hi rend="underline">Birdwood Drive</hi> – Birdwood Drive is the old driveway from the Ivy
+                                Road to the main house at Birdwood. </item>
+                            <lb/>
+                            <item> <hi rend="underline">Chemistry Drive</hi> – Chemistry Drive runs between the Chemistry and
+                                Mechanical Engineering Buildings, between Whitehead Road and
+                                McCormick Road. </item>
+                            <lb/>
+                            <item> <hi rend="underline">Faulkner Drive</hi> – Faulkner Drive runs from the Miller Center (the
+                                main building of the Miller Center is Faulkner House) to the
+                                adjacent Faulkner dormitory complex. Faulkner House, and thus
+                                Faulkner Drive, was named for the novelist <name>William
+                                Faulkner</name>, several times Writer-in-Residence at the
+                                University. Faulkner House is an historic building, much modified
+                                since the original portion was built before the Civil War, and has
+                                no connection with <name>William Faulkner</name> other than the
+                                name. </item>
+                            <lb/>
+                            <item> <hi rend="underline">Dawson’s Row</hi> – Dawson’s Row is the modern name for a walkway in
+                                the area behind the McIntire Amphitheater once occupied by Dawson’s
+                                Row, a mid-19th century row of dormitories, remnants of which
+                                survived to the middle of the 20th century. The original Dawson’s
+                                Row was named for <name>Martin Dawson</name> of Albemarle County, an
+                                early benefactor of the University. </item>
+                            <lb/>
+                            <item> <hi rend="underline">Lambeth Commons</hi> – Lambeth Commons is the central walk in the
+                                Lambeth Field dormitory complex; the dormitories are built on the
+                                site of the outfield of Lambeth Field, which was once the
+                                University’s football stadium, baseball park, track, and soccer and
+                                lacrosse fields, all in one. Lambeth Field was named for <name>Dr.
+                                    William Lambeth</name> (M.D. 1892, Ph.D. 1901) who was Professor
+                                of Medicine, Chairman of the Department of Physical Education, and
+                                Superintendent of Buildings and Grounds. </item>
+                            <lb/>
+                            <item> <hi rend="underline">Engineer’s Way</hi> – This is the walkway between Thornton Hall – the
+                                main building of the School of Engineering – and the Materials
+                                Engineering Building. </item>
+                            <lb/>
+                            <item> <hi rend="underline">Amphitheater Way</hi> – Amphitheater Way is the walkway around the rim
+                                of the McIntire Amphitheater, in front of Minor, Maury, and Halsey
+                                Halls. </item>
+                     
+                        <pb n="6866"/>
+                        
+                            <item> <hi rend="underline">Leake Drive</hi> – Leake Drive is named for <name>Herbert Leake</name>
+                                and other members of the Leake family who were members of the
+                                Buildings and Ground – now Facilities Management – staff for many
+                                years. It is a service road, adjacent to Facilities Management and
+                                the Astronomy Building at the corner of Alderman and McCormick
+                                Roads. </item>
+                            <lb/>
+                            <item> <hi rend="underline">Pratt Drive</hi> – Pratt Drive, also in the Facilities Management
+                                area, honors <name>William A. Pratt</name>, an early Superintendent
+                                of Buildings and Grounds. </item>
+                            <lb/>
+                            <item> <hi rend="underline">Bayly Drive</hi> – Bayly Drive is the service road behind the old
+                                Bayly Museum – now the University of Virginia Art Museum, on Rugby
+                                Road. The Bayly Museum, built in the mid-1930s, was named after
+                                    <name>Thomas H. Bayly</name> at the request of the principal
+                                donor, <name>Mrs. Evelyn May Bayly Tiffany</name>. </item>
+                            <lb/>
+                            <item> <hi rend="underline">Gilmer Drive</hi> – This service road is behind Gilmer Hall, which
+                                houses the Biology and Psychology Departments and is located on
+                                McCormick Road, although Gilmer Drive runs off of Alderman Road just
+                                west of its intersection with McCormick Road. The building – the
+                                road takes its name from the building - was named for <name>Francis
+                                    Walker Gilmer</name> of Albemarle County, who was sent to Europe
+                                by Jefferson to recruit the first faculty of the University. </item>
+                            <lb/>
+                            <item> <hi rend="underline">Geldard Drive</hi> – This is a service Road adjacent to Gilmer Hall
+                                and the Chemistry Building and running off Whitehead Road on the
+                                east side of Scott Stadium. It honors <name>Frank A. Geldard</name>,
+                                who was a Chairman of the Psychology Department and, from 1960 to
+                                1962, Dean of the Graduate School of Arts and Sciences. </item>
+                            <lb/>
+                            <item><hi rend="underline"> Tree House Drive</hi> – Another service road, Tree House Drive serves
+                                the Tree House, a snack bar adjacent to the Observatory Hill Dining
+                                Hall and the Alderman Road dormitory complex. </item>
+                            <lb/>
+                            <item><hi rend="underline"> O-Hill Drive</hi> – O-Hill is an abbreviation, commonly in use at the
+                                University, for the Observatory Hill Dining Hall, at the
+                                intersection of McCormick and Alderman Roads. O-Hill Drive is a
+                                service road in the area. </item>
+                        
+                        <pb n="6867"/>
+                        
+                            <item><hi rend="underline"> Bice Drive</hi> – Bice Drive honors <name>Raymond C. Bice, Jr.</name>,
+                                Professor of Psychology and Secretary to the Board of Visitors,
+                                1969-1990. It is the service road behind Balz House in the Alderman
+                                Road dormitory complex. </item>
+                            <lb/>
+                            <item><hi rend="underline"> Vaughan Drive</hi> – Vaughan Drive is adjacent to Vaughan House in
+                                Hereford College. Vaughan House – and thus Vaughan Drive – is named
+                                for the late <name>Joseph L. Vaughan</name>, Professor of English in
+                                the School of Engineering and the first Provost of the University. </item>
+                            <lb/>
+                            <item><hi rend="underline"> South Newcomb Road</hi> – As its name would indicate, South Newcomb
+                                Road is the southern half of Newcomb Road, the service road behind
+                                Newcomb Hall. Newcomb Hall was named for John Lloyd Newcomb, second
+                                President of the University. </item>
+                            <lb/>
+                            <item><hi rend="underline"> Lannigan Drive</hi> – <name>Henry H. Lannigan</name>, known as “Pop,”
+                                was a trainer and track and basketball coach for many years in the
+                                first third of the 20th century – he is credited, in fact, with
+                                having introduced basketball to the University. Lannigan Drive runs
+                                behind Lannigan Track and Davenport Field, the baseball park. </item>
+                            <lb/>
+                            <item><hi rend="underline"> Nash Drive</hi> – Nash Drive, which is adjacent to the Law School, is
+                                named for the late <name>Charles P. Nash</name>, legendary Marine
+                                hero in World War I and beloved member of the Law School faculty for
+                                many years after. He was known to several generations of students as
+                                “Gummy” Nash. </item>
+                            <lb/>
+                            <item><hi rend="underline">West Lee Street</hi> – West Lee Street, the continuation of a city
+                                street, is a service road in the Medical Center complex. </item>
+                            <lb/>
+                            <item><hi rend="underline"> McKim Drive</hi> – This is a service road behind McKim Hall, built in
+                                1930-31 as the nurses’ dormitory and named for <name>Dr. Randolph
+                                    McKim</name>, the donor. McKim Hall is now an administrative and
+                                classroom building for the School of Medicine. </item>
+                            <lb/>
+                            <item> <hi rend="underline">Reed Lane</hi> – Reed Lane, named for <name>Dr. Walter Reed</name>, a
+                                member of the Medical Class of 1869 and the conqueror of yellow
+                                fever, is the entrance road (from US250 West, the Ivy Road) to the
+                                Kluge Children’s Rehabilitation Center. </item>
+                            <lb/>
+                            <item><hi rend="underline"> Research Way and Incinerator Road</hi> are both in the Medical Center
+                                complex, and both are known as “support facility” roads. </item>
+                        
+                        <pb n="6868"/>
+                        
+                            <item><hi rend="underline"> Lane Road</hi> - Lane Road’s original name, “Perimeter Road,” describes
+                                its function: it runs around two sides of the Medical Center
+                                complex, from Jefferson Park Avenue to Lee Street. The name appears
+                                to have come from that of an existing city street, of which the
+                                University’s Lane Road is an extension. </item>
+                           </list>
+                            <p> The following roads are in the old Blue Ridge
+                                Hospital complex below Monticello; in 1994, elements of the Medical
+                                Center and the Medical School were located there: </p>
+                            <list>
+                                <item> <hi rend="underline">Hart Road</hi> – Hart Road was the main entrance road to Blue Ridge. </item>
+                            <lb/>
+                                <item><hi rend="underline"> Lyman Mansion Road</hi> – Lyman Mansion Road was the loop around Lyman
+                                Mansion, a building in the Blue Ridge complex. </item>
+                            <lb/>
+                                <item> <hi rend="underline">Heating Plant Road</hi> – As its name would indicate, the road served
+                                the Blue Ridge Heating Plant. </item>
+                            <lb/>
+                                <item> <hi rend="underline">Dairy Barn Road</hi> – Dairy Barn Road served the Dairy Barn at Blue
+                                Ridge. </item>
+                            <lb/>
+                                <item><hi rend="underline">
+                                Ray C. Hunt Drive</hi> – <name>Ray C. Hunt</name> Drive is
+                                the main road into the Fontaine Research Park from Fontaine Avenue.
+                                It is named for <name>Ray C. Hunt</name>, Professor of Commerce and
+                                Chief Financial Officer; at various times, <name>Mr. Hunt</name>
+                                also held the titles of Executive Vice President and Senior Vice
+                                President. </item>
+                          </list>
+                            <p> On motion, the Board adjourned at 4:00 p.m., until
+                                the following morning. </p>
+                 </div2>
+            </div1>
+            <div1 id="d26" type="statement">
+                <head type="main">POLICY DISCUSSION</head>
+                <p>The Board reconvened, as the full Board, in Open Session at 9:30
+                    a.m., on Saturday, <date value="2005-04-02">April 2, 2005</date>, in the East
+                    Oval Room of the Rotunda with the Rector presiding. All Members in attendance
+                    the previous day were there, save <name>Mr. Fitz-Hugh</name>. </p>
+                <p><name>Mr. Sweeney</name>, Senior Vice President for Development and
+                    Public Affairs, presented the topic, a discussion on an “institutional brand”
+                    for the University for use in the Capital Campaign. He then introduced <name>Ms.
+                        Gretchen Gehrett</name> of the firm G2 Marketing; <name>Ms. Gehrett</name>
+                    introduced some concepts and led a very lively discussion. No “brand” was agreed
+                    upon, but a number of suggestions were made to <name>Ms. Gehrett and Mr.
+                    Sweeney</name>. </p>
+                <p>The discussion ended at 10:45.</p>
+            </div1>
+            <div1 id="d27" type="statement">
+                <pb n="6869"/>
+                <head type="main">FINAL SESSION</head>
+                <p>The Board continued into the final session of the meeting and
+                    adopted the following resolutions: </p>
+            </div1>
+            <div1 id="d28" type="resolution">
+                <head type="main">APPROVAL OF A PERMANENT ACCESS EASEMENT AT THE<lb/> FAN MOUNTAIN
+                    OBSERVATORY</head>
+                           
+                           <p> RESOLVED that the granting of a permanent easement, to
+                            an adjacent property owner for access to Fan Mountain Road on property
+                            owned by The Rector and Visitors of the University of Virginia, is
+                            approved; and </p>
+                       
+                        <p> RESOLVED FURTHER that appropriate officers of the
+                            University are authorized to execute said easement. </p>
+            </div1>
+            
+            <div1 id="d29" type="resolution">
+                <head type="main">APPROVAL OF A PERMANENT EASEMENT TO VIRGINIA ELECTRIC<lb/> AND
+                    POWER COMPANY FOR A POWER LINE ON UNIVERSITY<lb/> PROPERTY ADJACENT TO THE NORTH
+                    GROUNDS CONNECTOR</head>
+  
+                        <p> RESOLVED that the granting of a permanent easement to
+                            Virginia Electric and Power Company for a power line adjacent to the
+                            North Grounds Connector on property owned by The Rector and Visitors of
+                            the University of Virginia, is approved; and </p>
+                        
+                        <p> RESOLVED FURTHER that appropriate officers of the
+                            University are authorized to execute said easement and to vacate the
+                            easement for the existing power line route. </p>
+            </div1>
+            <div1 id="d30" type="resolution">
+                <pb n="6870"/>
+                <head type="main">APPROVAL OF A PERMANENT EASEMENT TO THE CITY OF<lb/>
+                    CHARLOTTESVILLE FOR A NATURAL GAS LINE ON STILLFRIED<lb/> LANE LOCATED AT THE
+                    KLUGE CHILDREN’S REHABILITATION<lb/> CENTER</head>
+      
+                        <p> RESOLVED that the granting of a permanent easement, to
+                            the City of Charlottesville for a natural gas line on Stillfried Lane
+                            located at the Kluge Children’s Rehabilitation Center in Albemarle
+                            County on property owned by The Rector and Visitors of the University of
+                            Virginia, is approved; and </p>
+                        
+                        <p> RESOLVED FURTHER that appropriate officers of the
+                            University are authorized to execute said easement. </p>
+            </div1>
+            <div1 id="d31" type="resolution">
+                <head type="main">APPROVAL OF A PERMANENT EASEMENT TO THE ALBEMARLE<lb/> COUNTY
+                    SERVICE AUTHORITY FOR WATER AND SEWER LINES ON<lb/> STILLFRIED LANE LOCATED AT
+                    THE KLUGE CHILDREN’S<lb/> REHABILITATION CENTER</head>
+                
+                        <p> RESOLVED that the granting of a permanent easement, to
+                            the Albemarle County Service Authority for water and sewer lines on
+                            Stillfried Lane located at the Kluge Children’s Rehabilitation Center in
+                            Albemarle County on property owned by The Rector and Visitors of the
+                            University of Virginia, is approved; and </p>
+                       
+                        <p> RESOLVED FURTHER that appropriate officers of the
+                            University are authorized to execute said easement. </p>
+            </div1>
+            <div1 id="d32" type="resolution">
+                <pb n="6871"/>
+                <head type="main">APPROVAL OF INCREASE IN FACULTY AND STAFF HOUSING<lb/> RATES FOR
+                    2005-2006</head>
+ 
+                        <p> RESOLVED that the faculty and staff housing rates be
+                            approved as indicated, effective <date value="2005-07-01">July 1,
+                            2005</date>. The Executive Vice President and Chief Operating Officer is
+                            authorized to increase the rates to market level when a property is
+                            vacated. </p>
+               
+                    <table cols="7" rows="24">
+                        <head>ACADEMIC DIVISION</head>
+                        <row>
+                            <cell role="label">Properties</cell>
+                            <cell role="label">Utilities<lb/>Furnished</cell>
+                            <cell role="label">Rents<lb/>2004-05<lb/>Per Month</cell>
+                            <cell role="label">Amount<lb/>of Increase</cell>
+                            <cell role="label">Percent of<lb/>Increase</cell>
+                            <cell role="label">Prop. Rents<lb/>2005-06<lb/>Per Month</cell>
+                            <cell role="label">Utilities<lb/>Paid by<lb/>Occupant</cell>
+                        </row>
+                        <row>
+                            <cell cols="7" rend="left" role="label">Piedmont Estates</cell>
+                        </row>
+                        <row>
+                            <cell>1 Bedroom Apt. (7)(F)</cell>
+                            <cell>WS,E,G,C,T</cell>
+                            <cell>$593</cell>
+                            <cell>$36</cell>
+                            <cell>6.07%</cell>
+                            <cell>$629</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell>2 Bedroom Apt. (16)(UF)</cell>
+                            <cell>WS,E,G,C,T</cell>
+                            <cell>$718</cell>
+                            <cell>$43</cell>
+                            <cell>5.99%</cell>
+                            <cell>$761</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell>Houses (3BR) (16)(1E) (UF)</cell>
+                            <cell>WS,C,T</cell>
+                            <cell>$1,030</cell>
+                            <cell>$70</cell>
+                            <cell>6.80%</cell>
+                            <cell>$1,100</cell>
+                            <cell>E, G</cell>
+                        </row>
+                        <row>
+                            <cell>Townhouses (3BR)(5)(UF)</cell>
+                            <cell>WS,C,T</cell>
+                            <cell>$1,030</cell>
+                            <cell>$70</cell>
+                            <cell>6.80%</cell>
+                            <cell>$1,100</cell>
+                            <cell>E, G</cell>
+                        </row>
+                        <row>
+                            <cell>Farmhouse Apt. 1 (1BR)(F)</cell>
+                            <cell>WS,E,G,C,T,AC</cell>
+                            <cell>$651</cell>
+                            <cell>$49</cell>
+                            <cell>7.53%</cell>
+                            <cell>$700</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell>Farmhouse Apt. 2 (3 BR)(UF)</cell>
+                            <cell>WS,E,G,C,T</cell>
+                            <cell>$672</cell>
+                            <cell>$40</cell>
+                            <cell>5.95%</cell>
+                            <cell>$712</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell>Farmhouse Apt. 3 (1 BR)(F)*</cell>
+                            <cell>WS,E,G,C,T,AC</cell>
+                            <cell>$560</cell>
+                            <cell>$140</cell>
+                            <cell>25.00%</cell>
+                            <cell>$700</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell>Farmhouse Apt. 4 (2 BR)(F)</cell>
+                            <cell>WS,E,G,C,T,AC</cell>
+                            <cell>$736</cell>
+                            <cell>$44</cell>
+                            <cell>5.98%</cell>
+                            <cell>$780</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell cols="7">*Furnished for 2005-06</cell>
+                        </row>
+                        <row>
+                            <cell cols="7"/>
+                        </row>
+                        <row>
+                            <cell cols="7" rend="left" role="label">Sundry</cell>
+                        </row>
+                        <row>
+                            <cell>Vyssotsky Cottage (3BR)(UF)</cell>
+                            <cell>WS,T, AC</cell>
+                            <cell>$825</cell>
+                            <cell>$57</cell>
+                            <cell>6.91%</cell>
+                            <cell>$882</cell>
+                            <cell>E,G</cell>
+                        </row>
+                        <row>
+                            <cell>McGuffey Cottage (Eff)(UF)</cell>
+                            <cell>WS,E,V,T,AC</cell>
+                            <cell>$507</cell>
+                            <cell>$32</cell>
+                            <cell>6.31%</cell>
+                            <cell>$539</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell>Upper Mews (1BR)(F)</cell>
+                            <cell>WS,E,HP,C,T,AC</cell>
+                            <cell>$708</cell>
+                            <cell>$22</cell>
+                            <cell>3.11%</cell>
+                            <cell>$730</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell>Lower Mews (1BR)(F)</cell>
+                            <cell>WS,E,HP,C,T,AC</cell>
+                            <cell>$600</cell>
+                            <cell>$36</cell>
+                            <cell>6.00%</cell>
+                            <cell>$636</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell>Monroe Hill Range (1BR)(UF)</cell>
+                            <cell>WS,E,HVAC,T,V</cell>
+                            <cell>$760</cell>
+                            <cell>$51</cell>
+                            <cell>6.71%</cell>
+                            <cell>$811</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell>Brown College Apts. (2)(UF)</cell>
+                            <cell>WS,E,HVAC,T,V</cell>
+                            <cell>$669</cell>
+                            <cell>$46</cell>
+                            <cell>6.88%</cell>
+                            <cell>$715</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell>Hereford Coll. Apts. (2)(UF)</cell>
+                            <cell>WS,E,HVAC,T,V</cell>
+                            <cell>$780</cell>
+                            <cell>$48</cell>
+                            <cell>6.15%</cell>
+                            <cell>$828</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell>Hereford Coll.Princ.Res. (3BR)(UF)</cell>
+                            <cell>WS,E,HVAC,T,V</cell>
+                            <cell>$972</cell>
+                            <cell>$58</cell>
+                            <cell>5.97%</cell>
+                            <cell>$1,030</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell>102 Cresap Fac. Apt. (1BR)(F)</cell>
+                            <cell>WS,E,G,T,HVAC,V</cell>
+                            <cell>$725</cell>
+                            <cell>$44</cell>
+                            <cell>6.07%</cell>
+                            <cell>$769</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell>Hedge House (2BR)(F)</cell>
+                            <cell>WS,C,T,AC</cell>
+                            <cell>$773</cell>
+                            <cell>$46</cell>
+                            <cell>5.95%</cell>
+                            <cell>$819</cell>
+                            <cell>E,G</cell>
+                        </row>
+                        <row>
+                            <cell>Orchard House (5RMS)(F)</cell>
+                            <cell>WS,E,G,C,T,AC</cell>
+                            <cell>$372</cell>
+                            <cell>$26</cell>
+                            <cell>6.99%</cell>
+                            <cell>$398</cell>
+                            <cell/>
+                        </row>
+                    </table>
+                    <pb n="6872"/>
+                    <table cols="7" rows="36">
+                        <row>
+                            <cell/>
+                            <cell role="label">Utilities<lb/>Furnished</cell>
+                            <cell role="label">Rents<lb/>2004-05<lb/>Per Month</cell>
+                            <cell role="label">Amount<lb/>of Increase</cell>
+                            <cell role="label">Percent<lb/>of Increase</cell>
+                            <cell role="label">Prop. Rents<lb/>2005-06<lb/>Per Month</cell>
+                            <cell role="label">Utilities<lb/>Paid by<lb/>Occupant</cell>
+                        </row>
+                        <row>
+                            <cell>118 Oakhurst, Upper (2BR)(UF)</cell>
+                            <cell>WS,G,C</cell>
+                            <cell>$680</cell>
+                            <cell>$43</cell>
+                            <cell>6.32%</cell>
+                            <cell>$723</cell>
+                            <cell>E,T</cell>
+                        </row>
+                        <row>
+                            <cell>118 Oakhurst, Lower (2BR)(UF)</cell>
+                            <cell>WS,G,C,AC</cell>
+                            <cell>$680</cell>
+                            <cell>$43</cell>
+                            <cell>6.32%</cell>
+                            <cell>$723</cell>
+                            <cell>E,T</cell>
+                        </row>
+                        <row>
+                            <cell>409 Valley Road, (2BR)(F)</cell>
+                            <cell>WS,E,G,C,AC</cell>
+                            <cell>$960</cell>
+                            <cell>$58</cell>
+                            <cell>6.04%</cell>
+                            <cell>$1,018</cell>
+                            <cell>T</cell>
+                        </row>
+                        <row>
+                            <cell>411 Valley Road, (2BR)(F)</cell>
+                            <cell>WS,E,G,C,AC</cell>
+                            <cell>$960</cell>
+                            <cell>$58</cell>
+                            <cell>6.04%</cell>
+                            <cell>$1,018</cell>
+                            <cell>T</cell>
+                        </row>
+                        <row>
+                            <cell>503 Valley Road, (1BR)(UF)</cell>
+                            <cell>C</cell>
+                            <cell>$544</cell>
+                            <cell>$39</cell>
+                            <cell>7.17%</cell>
+                            <cell>$583</cell>
+                            <cell>WS,E,G,T</cell>
+                        </row>
+                        <row>
+                            <cell>424 MLLH, (1BR)(UF)</cell>
+                            <cell>WS,E,G,C,HVAC,V</cell>
+                            <cell>$693</cell>
+                            <cell>$49</cell>
+                            <cell>7.07%</cell>
+                            <cell>$742</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell>423 MLLH, (2BR)(UF)</cell>
+                            <cell>WS,E,G,C,HVAC,V</cell>
+                            <cell>$809</cell>
+                            <cell>$49</cell>
+                            <cell>6.06%</cell>
+                            <cell>$858</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell cols="7"/>
+                        </row>
+                        <row>
+                            <cell cols="7" rend="left" role="label">Birdwood Properties</cell>
+                        </row>
+                        <row>
+                            <cell>Cottage (1BR)(UF)</cell>
+                            <cell>WS,C,T</cell>
+                            <cell>$554</cell>
+                            <cell>$34</cell>
+                            <cell>6.14%</cell>
+                            <cell>$588</cell>
+                            <cell>E</cell>
+                        </row>
+                        <row>
+                            <cell>Garage Apt.(2BR)(UF)</cell>
+                            <cell>WS,C,T</cell>
+                            <cell>$792</cell>
+                            <cell>$54</cell>
+                            <cell>6.82%</cell>
+                            <cell>$846</cell>
+                            <cell>E,G</cell>
+                        </row>
+                        <row>
+                            <cell>Cash House (3BR)(UF)</cell>
+                            <cell>WS,C,T,AC</cell>
+                            <cell>$1,013</cell>
+                            <cell>$68</cell>
+                            <cell>6.71%</cell>
+                            <cell>$1,081</cell>
+                            <cell>E,G</cell>
+                        </row>
+                        <row>
+                            <cell>Middleton House (4BR)(UF)</cell>
+                            <cell>WS,C,T,AC</cell>
+                            <cell>$1,190</cell>
+                            <cell>$71</cell>
+                            <cell>5.97%</cell>
+                            <cell>$1,261</cell>
+                            <cell>E,G</cell>
+                        </row>
+                        <row>
+                            <cell cols="7"/>
+                        </row>
+                        <row>
+                            <cell cols="7" rend="left" role="label">E &amp; G Properties</cell>
+                        </row>
+                        <row>
+                            <cell>Montebello (3BR/Garage)</cell>
+                            <cell>WS,E,G,AC</cell>
+                            <cell>$745</cell>
+                            <cell>$39</cell>
+                            <cell>5.23%</cell>
+                            <cell>$784</cell>
+                            <cell>C,T</cell>
+                        </row>
+                        <row>
+                            <cell>Big Morea (4BR)</cell>
+                            <cell>WS,E,G,AC,T</cell>
+                            <cell>$1,042</cell>
+                            <cell>$48</cell>
+                            <cell>4.61%</cell>
+                            <cell>$1,090</cell>
+                            <cell>C</cell>
+                        </row>
+                        <row>
+                            <cell>Little Morea (2BR)</cell>
+                            <cell>WS,E,G,AC,T</cell>
+                            <cell>$800</cell>
+                            <cell>$34</cell>
+                            <cell>4.25%</cell>
+                            <cell>$834</cell>
+                            <cell>C</cell>
+                        </row>
+                        <row>
+                            <cell>Sunnyside (4BR)</cell>
+                            <cell>WS,E,O,AC</cell>
+                            <cell>$1,633</cell>
+                            <cell>$66</cell>
+                            <cell>4.04%</cell>
+                            <cell>$1,699</cell>
+                            <cell>C</cell>
+                        </row>
+                        <row>
+                            <cell>Monroe Hill House (4BR)</cell>
+                            <cell>WS,E,HVAC,T,V</cell>
+                            <cell>$964</cell>
+                            <cell>$45</cell>
+                            <cell>4.67%</cell>
+                            <cell>$1,009</cell>
+                            <cell>C</cell>
+                        </row>
+                        <row>
+                            <cell>Buckingham Palace (Eff)</cell>
+                            <cell>WS,E,HP,AC,T</cell>
+                            <cell>$357</cell>
+                            <cell>$21</cell>
+                            <cell>5.88%</cell>
+                            <cell>$378</cell>
+                            <cell>C</cell>
+                        </row>
+                        <row>
+                            <cell>Pavilion I (5BR)</cell>
+                            <cell>WS,E,HVAC,T,V</cell>
+                            <cell>$878</cell>
+                            <cell>$43</cell>
+                            <cell>4.90%</cell>
+                            <cell>$921</cell>
+                            <cell>C</cell>
+                        </row>
+                        <row>
+                            <cell>Pavilion II (5BR)</cell>
+                            <cell>WS,E,HP,T,V</cell>
+                            <cell>$650</cell>
+                            <cell>$36</cell>
+                            <cell>5.54%</cell>
+                            <cell>$686</cell>
+                            <cell>C</cell>
+                        </row>
+                        <row>
+                            <cell>Pavilion III (5BR)</cell>
+                            <cell>WS,E,HVAC,T,V</cell>
+                            <cell>$878</cell>
+                            <cell>$43</cell>
+                            <cell>4.90%</cell>
+                            <cell>$921</cell>
+                            <cell>C</cell>
+                        </row>
+                        <row>
+                            <cell>Pavilion IV (5BR)</cell>
+                            <cell>WS,E,HP,T,V</cell>
+                            <cell>$650</cell>
+                            <cell>$36</cell>
+                            <cell>5.54%</cell>
+                            <cell>$686</cell>
+                            <cell>C</cell>
+                        </row>
+                        <row>
+                            <cell>Pavilion V (5BR)</cell>
+                            <cell>WS,E,HVAC,T,V</cell>
+                            <cell>$878</cell>
+                            <cell>$43</cell>
+                            <cell>4.90%</cell>
+                            <cell>$921</cell>
+                            <cell>C</cell>
+                        </row>
+                        <row>
+                            <cell>Pavilion VI (5BR)</cell>
+                            <cell>WS,E,HVAC,T,V</cell>
+                            <cell>$878</cell>
+                            <cell>$43</cell>
+                            <cell>4.90%</cell>
+                            <cell>$921</cell>
+                            <cell>C</cell>
+                        </row>
+                        <row>
+                            <cell>Pavilion VIII Upper (3BR)</cell>
+                            <cell>WS,E,HVAC,T,V</cell>
+                            <cell>$566</cell>
+                            <cell>$34</cell>
+                            <cell>6.01%</cell>
+                            <cell>$600</cell>
+                            <cell>C</cell>
+                        </row>
+                        <row>
+                            <cell>Pavilion VIII Lower (1BR)</cell>
+                            <cell>WS,E,HVAC,T,V</cell>
+                            <cell>$298</cell>
+                            <cell>$15</cell>
+                            <cell>5.03%</cell>
+                            <cell>$313</cell>
+                            <cell>C</cell>
+                        </row>
+                        <row>
+                            <cell>Pavilion IX (5BR)</cell>
+                            <cell>WS,E,HVAC,T,V</cell>
+                            <cell>$878</cell>
+                            <cell>$43</cell>
+                            <cell>4.90%</cell>
+                            <cell>$921</cell>
+                            <cell>C</cell>
+                        </row>
+                        <row>
+                            <cell>Pavilion X (5BR)</cell>
+                            <cell>WS,E,HP,T,V</cell>
+                            <cell>$650</cell>
+                            <cell>$36</cell>
+                            <cell>5.54%</cell>
+                            <cell>$686</cell>
+                            <cell>C</cell>
+                        </row>
+                        <row>
+                            <cell cols="7"/>
+                        </row>
+                        <row>
+                            <cell cols="7" rend="left" role="label">Blandy Farm</cell>
+                        </row>
+                        <row>
+                            <cell>Curator's House</cell>
+                            <cell>WS</cell>
+                            <cell>$0</cell>
+                            <cell>$0</cell>
+                            <cell>0.00%</cell>
+                            <cell>$0</cell>
+                            <cell>E,O</cell>
+                        </row>
+                        <row>
+                            <cell>Green Farm House</cell>
+                            <cell>WS</cell>
+                            <cell>$65</cell>
+                            <cell>$0</cell>
+                            <cell>0.00%</cell>
+                            <cell>$65</cell>
+                            <cell>E,O</cell>
+                        </row>
+                    </table>
+                
+                <p> Notes: <list>
+                        <item>In total sixteen properties (Piedmont Houses) were brought to market
+                            this budget year. </item>
+                        <item>The (E) designates properties that have been enhanced. </item>
+                        <item>The (F) designates properties that are furnished. The (UF) designates
+                            properties that are unfurnished. </item>
+                        <item>Utility abbreviations are as follows: WS (water, sewer), E (electric),
+                            G (gas), O (oil), HP (heating plant), HVAC (heating, ventilating, and
+                            air conditioning), AC (window air conditioning), C (cable TV), V
+                            (voice), and T (trash). </item>
+                    </list>
+                </p>
+            </div1>
+            <div1 id="d33" type="resolution">
+                <pb n="6873"/>
+                <head type="main">APPROVAL OF CONTRACT RATES FOR DINING SERVICES FOR<lb/> 2005-2006
+                    FOR THE ACADEMIC DIVISION AND THE UNIVERSITY<lb/> OF VIRGINIA’S COLLEGE AT WISE</head>
+              
+                        <p> RESOLVED that the student contract rates for dining
+                            services be approved as shown below, effective beginning with the
+                            2005-2006 session: </p>
+              
+                    <table cols="5" rows="36">
+                        <head>ACADEMIC DIVISION</head>
+                        <row>
+                            <cell/>
+                            <cell>Actual<lb/>2004-2005</cell>
+                            <cell>Amount of<lb/>Increase</cell>
+                            <cell>Percent<lb/>Increase</cell>
+                            <cell>Proposed<lb/>2005-2006</cell>
+                        </row>
+                        <row>
+                            <cell cols="5" rend="left" role="label">Regular Meal Plans (1,2)</cell>
+                        </row>
+                        <row>
+                            <cell>Unlimited Entry w/ $150 Plus Dollars</cell>
+                            <cell>$2,990</cell>
+                            <cell>$110</cell>
+                            <cell>3.7%</cell>
+                            <cell>$3,100</cell>
+                        </row>
+                        <row>
+                            <cell>15 Meals per week w/ $400 Plus Dollars</cell>
+                            <cell>2,990</cell>
+                            <cell>110</cell>
+                            <cell>3.7%</cell>
+                            <cell>3,100</cell>
+                        </row>
+                        <row>
+                            <cell>13 Meals per week w/ $500 Plus Dollars</cell>
+                            <cell>2,990</cell>
+                            <cell>110</cell>
+                            <cell>3.7%</cell>
+                            <cell>3,100</cell>
+                        </row>
+                        <row>
+                            <cell>10 Meals per week (first year) w/ $790 Plus Dollars</cell>
+                            <cell>2,990</cell>
+                            <cell>110</cell>
+                            <cell>3.7%</cell>
+                            <cell>3,100</cell>
+                        </row>
+                        <row>
+                            <cell>10 Meals per week (upperclass) w/ $350 Plus Dollars</cell>
+                            <cell>2,550</cell>
+                            <cell>90</cell>
+                            <cell>3.5%</cell>
+                            <cell>2,640</cell>
+                        </row>
+                        <row>
+                            <cell>100 Meals per semester w/ $350 Plus Dollars</cell>
+                            <cell>1,690</cell>
+                            <cell>80</cell>
+                            <cell>4.7%</cell>
+                            <cell>1,770</cell>
+                        </row>
+                        <row>
+                            <cell>80 Meals per semester w/ $350 Plus Dollars</cell>
+                            <cell>1,470</cell>
+                            <cell>70</cell>
+                            <cell>4.8%</cell>
+                            <cell>1,540</cell>
+                        </row>
+                        <row>
+                            <cell>50 Meals per semester w/ $390 Plus Dollars</cell>
+                            <cell>1,110</cell>
+                            <cell>60</cell>
+                            <cell>5.4%</cell>
+                            <cell>1,170</cell>
+                        </row>
+                        <row>
+                            <cell cols="7"/>
+                        </row>
+                        <row>
+                            <cell cols="7" rend="left" role="label">Residential College/Language
+                                House Meal Plans (1,2,3)</cell>
+                        </row>
+                        <row>
+                            <cell>Unlimited Entry w/ $150 Plus Dollars</cell>
+                            <cell>$3,100</cell>
+                            <cell>$110</cell>
+                            <cell>3.5%</cell>
+                            <cell>$3,210</cell>
+                        </row>
+                        <row>
+                            <cell>15 Meals per week w/ $400 Plus Dollars</cell>
+                            <cell>3,100</cell>
+                            <cell>110</cell>
+                            <cell>3.5%</cell>
+                            <cell>3,210</cell>
+                        </row>
+                        <row>
+                            <cell>13 Meals per week w/ $500 Plus Dollars</cell>
+                            <cell>3,100</cell>
+                            <cell>110</cell>
+                            <cell>3.5%</cell>
+                            <cell>3,210</cell>
+                        </row>
+                        <row>
+                            <cell>10 Meals per week (first year) w/ $790 Plus Dollars</cell>
+                            <cell>3,100</cell>
+                            <cell>110</cell>
+                            <cell>3.5%</cell>
+                            <cell>3,210</cell>
+                        </row>
+                        <row>
+                            <cell>10 Meals per week (upperclass) w/ $350 Plus Dollars</cell>
+                            <cell>2,660</cell>
+                            <cell>100</cell>
+                            <cell>3.8%</cell>
+                            <cell>2,760</cell>
+                        </row>
+                        <row>
+                            <cell>100 Meals per semester w/ $350 Plus Dollars</cell>
+                            <cell>1,800</cell>
+                            <cell>80</cell>
+                            <cell>4.4%</cell>
+                            <cell>1,880</cell>
+                        </row>
+                        <row>
+                            <cell>80 Meals per semester w/ $350 Plus Dollars</cell>
+                            <cell>1,580</cell>
+                            <cell>70</cell>
+                            <cell>4.4%</cell>
+                            <cell>1,650</cell>
+                        </row>
+                        <row>
+                            <cell>50 Meals per semester w/ $390 Plus Dollars</cell>
+                            <cell>1,220</cell>
+                            <cell>60</cell>
+                            <cell>4.9%</cell>
+                            <cell>1,280</cell>
+                        </row>
+                        <row>
+                            <cell cols="7"/>
+                        </row>
+                        <row>
+                            <cell cols="7" rend="left" role="label">Athletic Meal Plans</cell>
+                        </row>
+                        <row>
+                            <cell>Unlimited Entry w/ $150 Plus Dollars</cell>
+                            <cell>$3,100</cell>
+                            <cell>$110</cell>
+                            <cell>3.5%</cell>
+                            <cell>$3,210</cell>
+                        </row>
+                        <row>
+                            <cell>15 Meals per week w/ $400 Plus Dollars</cell>
+                            <cell>3,100</cell>
+                            <cell>110</cell>
+                            <cell>3.5%</cell>
+                            <cell>3,210</cell>
+                        </row>
+                        <row>
+                            <cell>13 Meals per week w/ $500 Plus Dollars</cell>
+                            <cell>3,100</cell>
+                            <cell>110</cell>
+                            <cell>3.5%</cell>
+                            <cell>3,210</cell>
+                        </row>
+                        <row>
+                            <cell>10 Meals per week (first year) w/ $790 Plus Dollars</cell>
+                            <cell>3,100</cell>
+                            <cell>110</cell>
+                            <cell>3.5%</cell>
+                            <cell>3,210</cell>
+                        </row>
+                        <row>
+                            <cell>10 Meals per week (upperclass) w/ $350 Plus Dollars</cell>
+                            <cell>2,660</cell>
+                            <cell>100</cell>
+                            <cell>3.8%</cell>
+                            <cell>2,760</cell>
+                        </row>
+                        <row>
+                            <cell>100 Meals per semester w/ $350 Plus Dollars</cell>
+                            <cell>1,800</cell>
+                            <cell>80</cell>
+                            <cell>4.4%</cell>
+                            <cell>1,880</cell>
+                        </row>
+                        <row>
+                            <cell>80 Meals per semester w/ $350 Plus Dollars</cell>
+                            <cell>1,580</cell>
+                            <cell>70</cell>
+                            <cell>4.4%</cell>
+                            <cell>1,650</cell>
+                        </row>
+                        <row>
+                            <cell cols="7"/>
+                        </row>
+                        <row>
+                            <cell cols="7" rend="left" role="label">Other</cell>
+                        </row>
+                        <row>
+                            <cell>Law School Dining Spending Account (4)</cell>
+                            <cell>$400</cell>
+                            <cell>($200)</cell>
+                            <cell>-50.0%</cell>
+                            <cell>$200</cell>
+                        </row>
+                        <row>
+                            <cell cols="7"/>
+                        </row>
+                        <row>
+                            <cell cols="7" rend="left" role="label">THE UNIVERSITY OF VIRGINIA’S
+                                COLLEGE AT WISE</cell>
+                        </row>
+                        <row>
+                            <cell>19 Meal Plan</cell>
+                            <cell>$2,582</cell>
+                            <cell>$130</cell>
+                            <cell>5.0%</cell>
+                            <cell>$2,712</cell>
+                        </row>
+                        <row>
+                            <cell>12 Meal Plan</cell>
+                            <cell>2,322</cell>
+                            <cell>$116</cell>
+                            <cell>5.0%</cell>
+                            <cell>$2,438</cell>
+                        </row>
+                    </table>
+                
+                <pb n="6874"/>
+                <p>
+                    <list>
+                        <item> (1) Plus Dollars are credited to a student's identification card and
+                            may be used in the same manner as cash at any board dining hall and/or
+                            retail operation. </item>
+                        <item> (2) First-year students are required to purchase a 13-, 15-, or
+                            unlimited-meal plan during their first semester. During their second
+                            semester, they may switch to a 10-meal plan with $790 Plus Dollars. </item>
+                        <item> (3) Some residential colleges and language houses have a dining
+                            requirement as part of their program. </item>
+                        <item> (4) Law School students are allowed to deposit a minimum $200 per
+                            academic year into a dining spending account. </item>
+                    </list>
+                </p>
+            </div1>
+            <div1 id="d34" type="resolution">
+                <head type="main">APPROVAL OF SIX-YEAR CAPITAL OUTLAY PLAN</head>
+        
+                        <p>RESOLVED that the Six-Year Capital Outlay Plan for the
+                            Academic Division, the Medical Center, and The University of Virginia’s
+                            College at Wise for the 2006-2012 period is approved; and </p>
+                        
+                        <p>RESOLVED FURTHER that appropriate officers of the
+                            University are authorized to make necessary revisions to the Plan prior
+                            to its submission to the state, provided the revisions do not alter in
+                            any substantive way the overall capital program as approved. </p>
+            </div1>
+            <div1 id="d35" type="resolution">
+                <head type="main">APPROVAL OF REVISED ENROLLMENT PROJECTIONS</head>
+    
+                        <p> WHEREAS, the University’s existing enrollment plan,
+                            approved by the Board of Visitors in April 2003, must be revised to
+                            reflect projected increases in the undergraduate and graduate enrollment
+                            levels; and </p>
+                       
+                        <p> WHEREAS, the Board previously discussed the
+                            University’s action plan relative to enrollment growth – to grow by
+                            1,100 undergraduate students and 400 graduate students over the next
+                            decade; and </p>
+                      
+                        <p> WHEREAS, the University is committed to serving the
+                            higher education needs of the Commonwealth of Virginia and the nation;
+                            and </p>
+                     
+                        <p> WHEREAS, the revised enrollment projections for
+                            2005-2006 through 2009-2010 were submitted to the State Council of
+                            Higher Education in Virginia on <date value="2005-03-17">March 17,
+                            2005</date>; </p>
+                        
+                        <p> RESOLVED that the Executive Vice President and Chief
+                            Operating Officer is authorized to develop plans with the State Council
+                            of Higher Education in Virginia which will put the University on track
+                            to increase total enrollment by 1,500 students over the next decade; and </p>
+                        
+                        <p> RESOLVED FURTHER that all undergraduate growth maintain
+                            the current mix of in-state and out-of-state students. </p>
+            </div1>
+            <div1 id="d36" type="resolution">
+                <pb n="6875"/>
+                <head type="main">APPROVAL OF ENDOWMENT SPENDING POLICY</head>
+              
+                        <p> WHEREAS, the University’s existing endowment spending
+                            policy, approved by the Board of Visitors in April 2001, must be revised
+                            to align with reduced investment return expectations and to allow the
+                            University an opportunity to make strategic adjustments from time to
+                            time; </p>
+                        
+                        <p> RESOLVED that the endowment spending policy, effective
+                                <date value="2005-07-01">July 1, 2005</date>, shall be as follows:</p>
+                            
+                        
+                                <p> The spending policy calls for a percentage
+                                    increase in the annual distribution from the endowment, unless
+                                    such increase causes the distribution to fall outside a range
+                                    defined as 3.5 percent on the low end and 5.5 percent on the
+                                    high end of the market value of the Pooled Endowment Fund. If
+                                    the distribution falls outside of this range, the Finance
+                                    Committee may recommend either raising or lowering the rate of
+                                    increase. The first distribution under the new policy would be
+                                    made in January 2006. </p>
+                                
+                                <p> For Class A shares, the annual increase is
+                                    pegged to inflation, where “inflation” is defined as the Higher
+                                    Education Price Index or its equivalent. It is set initially at
+                                    3.6 percent and will be reviewed in five years. </p>
+                                
+                                <p> For Class B shares, the annual payout is set at
+                                    the level of the June 2005 distribution, until such time that
+                                    the payment has been reduced to a unit distribution identical to
+                                    that of the Class A shares, from which point the annual
+                                    distribution will remain the same for Class A and Class B
+                                    shares. </p>
+                            
+            </div1>
+            <div1 id="d37" type="resolution">
+                <head type="main"> REAFFIRMATION OF HOUSING REQUIREMENTS FOR ALL FIRST-YEAR<lb/>
+                    STUDENTS AND PLANNING FOR THE REPLACEMENT OF<lb/> ALDERMAN ROAD RESIDENCES </head>
+               
+                        <p> WHEREAS, the University of Virginia’s educational
+                            mission extends to the University residences where undergraduate
+                            students live and the related residential programming in which they
+                            engage; and </p>
+                       
+                        <p> WHEREAS, an undergraduate student’s first year is a
+                            critical time for assimilation into the University community; and </p>
+                       
+                        <p> WHEREAS, having all first-year students live together
+                            is central to this process; and </p>
+                    
+                    <pb n="6876"/>
+                    
+                        <p> WHEREAS, the Architect of the University has endorsed
+                            the continued use of the Alderman Road area as the principal location
+                            for first-year student housing and its expansion; and </p>
+                       
+                        <p> WHEREAS, most of the residence halls on Alderman Road
+                            must be replaced; </p>
+                        
+                        <p> RESOLVED the Board of Visitors endorses and reaffirms
+                            the requirement that all first-year students live together in University
+                            housing for the purpose of creating community and a comprehensive
+                            first-year experience; and </p>
+                        
+                        <p> RESOLVED FURTHER the Board of Visitors endorses and
+                            supports planning to proceed with the replacement of the Alderman Road
+                            residences as housing for first-year students. </p>
+                    
+
+            </div1>
+            <div1 id="d38" type="resolution">
+                <head type="main">MEMORIAL RESOLUTION ON <name>DR. J. THOMAS HULVEY</name></head>
+        
+                        <p> WHEREAS, <name>J. Thomas Hulvey</name>, a native of
+                            Staunton, took the M.D. from the University of Virginia in 1962; and </p>
+                       
+                        <p> WHEREAS, <name>Dr. Hulvey</name>, after military
+                            service and a residency in orthopaedic surgery at the University, began
+                            the practice of orthopaedic surgery in Abingdon in 1969; and </p>
+                        
+                        <p> WHEREAS, <name>Dr. Hulvey</name> attained great
+                            distinction in his profession and held teaching appointments in several
+                            institutions, including the University; and </p>
+                       
+                        <p> WHEREAS, <name>Dr. Hulvey</name>’s excellence in his
+                            profession was recognized by his colleagues who elected him to numerous
+                            professional boards and committees, including the Presidency of the
+                            Medical Society of Virginia; and </p>
+                       
+                        <p> WHEREAS, <name>Dr. Hulvey</name> served his state and
+                            community in many other ways, ranging from the Washington County School
+                            Board to the Barter Foundation Board of Trustees, and from being team
+                            physician to Abingdon High School to serving as Chairman of the Advisory
+                            Committee of the University of Virginia Medical Alumni Association; and </p>
+                        
+                        <p> WHEREAS, <name>Dr. Hulvey</name> served on the Board of
+                            Visitors from 1990 to 1994; and </p>
+                        
+                        <p> WHEREAS, <name>Dr. Hulvey</name> died in Abingdon on
+                                <date value="2005-03-07">March 7, 2005</date>; </p>
+                    
+                    <pb n="6877"/>
+                  
+                        <p> RESOLVED, the Board of Visitors notes with profound
+                            regret the passing of <name>J. Thomas Hulvey</name>, remembers his
+                            selfless service and devotion to the University of Virginia, and
+                            expresses its deepest sympathy to <name>Mrs. Hulvey</name> and to their
+                            children, Elizabeth, Margaret, and John. </p>
+            </div1>
+            <div1 id="d39" type="resolution">
+                <head type="main">FACULTY PERSONNEL ACTIONS</head>
+                <div2 id="d40" type="section">
+                    <head type="main">ELECTIONS</head>
+ 
+                      
+                            <p> RESOLVED that the following persons are elected to
+                                the faculty: </p>
+                    <list>
+                            <item rend="indent"><name>Mr. Mark T. Aronson</name> as Associate
+                                Professor of Chemical Engineering, General Faculty, for the period
+                                    <dateRange from="2005-01-03" to="2005-12-24">January 3, 2005,
+                                    through December 24, 2005</dateRange>, at an academic year
+                                salary of $70,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Mr. Bradford C. Bennett</name> as Assistant
+                                Professor of Research in Orthopaedic Surgery, for one year,
+                                effective <date value="2004-12-25">December 25, 2004</date>, at an
+                                annual salary of $55,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Mr. Edward J. Berger</name> as Associate
+                                Professor of Civil Engineering, effective <date value="2004-12-25"
+                                    >December 25, 2004</date>, at an academic year salary of
+                                $82,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Dr. William Hal Cragun</name> as Associate
+                                Professor of Clinical Internal Medicine, Roanoke Program, for one
+                                year, effective <date value="2004-12-01">December 1, 2004</date>, at
+                                an annual salary of $89,200. </item>
+                            <lb/>
+                            <item rend="indent"><name>Dr. Michael D. Dake</name> as Professor of
+                                Radiology, effective <date value="2005-01-01">January 1,
+                                2005</date>, at an annual salary of $100,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Mr. Lance A. Davidson</name> as Research
+                                Assistant Professor of Biology, for the period <date
+                                    value="2005-01-01">January 1, 2005</date>, through May 24, 2005,
+                                at an academic year salary of $45,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Dr. Susan M. Ditter</name> as Assistant
+                                Professor of Clinical Psychiatric Medicine, for one year, effective
+                                    <date value="2005-01-01">January 1, 2005</date>, at an annual
+                                salary of $100,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Dr. Elizabeth A. Erwin</name> as Assistant
+                                Professor of Internal Medicine, for three years, effective <date
+                                    value="2004-12-01">December 1, 2004</date>, at an annual salary
+                                of $110,000. </item>
+                        
+                        <pb n="6878"/>
+                       
+                            <item rend="indent"><name>Dr. Avery J. Evans</name> as Professor of
+                                Clinical Radiology, for three years, effective <date
+                                    value="2004-12-01">December 1, 2004</date>, at an annual salary
+                                of $100,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Ms. Patricia A. Ganea</name> as Research
+                                Assistant Professor of Psychology, for one year, effective <date
+                                    value="2004-12-15">December 15, 2004</date>, at an annual salary
+                                of $42,900. </item>
+                            <lb/>
+                            <item rend="indent"><name>Mr. David L. Green</name> as Assistant
+                                Professor of Chemical Engineering, for the period <dateRange
+                                    from="2005-02-03" to="2008-05-24">January 3, 2005, through May
+                                    24, 2008</dateRange>, at an annual salary of $102,700. </item>
+                            <lb/>
+                            <item rend="indent"><name>Dr. Peter S. Ham</name> as Assistant Professor
+                                of Family Medicine, for three years, effective <date
+                                    value="2005-02-01">February 1, 2005</date>, at an annual salary
+                                of $116,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Dr. Sheryl L. Johnson</name> as Assistant
+                                Professor of Psychiatric Medicine, for three years, effective <date
+                                    value="2004-12-01">December 1, 2004</date>, at an annual salary
+                                of $100,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Ms. Francisca Kemper</name> as Assistant
+                                Professor of Astronomy, for four years, effective <date
+                                    value="2005-01-10">January 10, 2005</date>, at an academic year
+                                salary of $60,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Dr. Shiv R. Khandelwal</name> as Assistant
+                                Professor of Clinical Radiation Oncology, for three years, effective
+                                    <date value="2005-02-15">February 15, 2005</date>, at an annual
+                                salary of $100,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Mr. Seung-Hun Lee</name> as Associate
+                                Professor of Physics, for the period <dateRange from="2005-01-10"
+                                    to="2009-05-24">January 10, 2005, through May 24,
+                                2009</dateRange>, at an academic year salary of $70,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Mr. Marc L. Lipson</name> as Associate
+                                Professor of Business Administration, effective <date
+                                    value="2005-09-25">August 25, 2005</date>, at an academic year
+                                salary of $174,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Mr. Jason A. Papin</name> as Assistant
+                                Professor of Biomedical Engineering, for three years, effective
+                                    <date value="2005-01-10">January 10, 2005</date>, at an annual
+                                salary of $99,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Mr. Robert E. Patterson</name> as Assistant
+                                Professor, General Faculty, for one year, effective <date
+                                    value="2005-01-25">January 25, 2005</date>, at an annual salary
+                                of $55,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Dr. K. Robert Shen</name> as Assistant
+                                Professor of Surgery, for three years, effective <date
+                                    value="2005-02-01">February 1, 2005</date>, at an annual salary
+                                of $100,000. </item>
+                       
+                        <pb n="6879"/>
+                       
+                            <item rend="indent"><name>Mr. Mir Said Siadaty</name> as Assistant
+                                Professor of Research in Health Evaluation Sciences, for the period
+                                    <dateRange from="2004-09-30" to="2006-07-31">September 30, 2004,
+                                    through July 31, 2006</dateRange>, at an annual salary of
+                                $64,800. </item>
+                            <lb/>
+                            <item rend="indent"><name>Dr. Nassima Ait-Daoud Tiouririne</name> as
+                                Assistant Professor of Research in Psychiatric Medicine, for the
+                                period <dateRange from="2005-01-01" to="2007-10-31">January 1, 2005,
+                                    through October 31, 2007</dateRange>, at an annual salary of
+                                $130,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Dr. Mohamed Tiouririne</name> as Assistant
+                                Professor of Anesthesiology, for three years, effective <date
+                                    value="2005-02-01">February 1, 2005</date>, at an annual salary
+                                of $100,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Mr. Ray G. Van Ausdal</name> as Associate
+                                Professor of Clinical Radiation Oncology, for one year, effective
+                                    <date value="2004-12-13">December 13, 2004</date>, at an annual
+                                salary of $140,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Dr. Ajeet G. Vinayak</name> as Assistant
+                                Professor of Clinical Internal Medicine, for three years, effective
+                                    <date value="2005-02-01">February 1, 2005</date>, at an annual
+                                salary of $100,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Dr. Lynda T. Wells</name> as Associate
+                                Professor of Anesthesiology, effective <date value="2005-01-25"
+                                    >January 25, 2005</date>, at an annual salary of $100,000. </item>
+                            <lb/>
+                            <item rend="indent"><name>Mr. Herman Wijnen</name> as Assistant
+                                Professor of Biology, for the period <dateRange from="2004-12-25"
+                                    to="2008-05-24">December 25, 2004, through May 24,
+                                2008</dateRange>, at an academic year salary of $60,000. </item>
+                        </list>
+                    
+                </div2>
+                
+                <div2 id="d41" type="section">
+                    <head type="main">ACTIONS RELATING TO CHAIRHOLDERS</head>
+                          
+                            <p>RESOLVED that the actions relating to the
+                                chairholders are approved as shown below: </p>
+                      
+                    <div3 id="d42" type="subsection">
+                        <head type="sub">(a) Election of Chairholders</head>
+    
+                            <list>
+                                <item rend="indent"><name>Mr. Donald E. Brown</name> as
+                                        <name>William Stansfield Calcott</name> Professor of
+                                    Engineering and Applied Science, effective <date
+                                        value="2005-05-25">May 25, 2005</date>. <name>Mr.
+                                    Brown</name> will continue as Professor of Systems Engineering,
+                                    without term. </item>
+                                <lb/>
+                                <item rend="indent"><name>Mr. James L. Ferris</name> as
+                                        <name>Brenton S. Halsey</name> Distinguished Visiting
+                                    Professor of Chemical Engineering and Applied Science, for one
+                                    semester, effective <date value="2005-01-10">January 10,
+                                    2005</date>, at a salary of $30,000. </item>
+                                <lb/>
+                                <item rend="indent"><name>Mr. Jose E. Fuentes</name> as Cavaliers'
+                                    Distinguished Teaching Associate Professor, for two years,
+                                    effective <date value="2005-06-25">June 25, 2005</date>.
+                                        <name>Mr. Fuentes</name> will continue as Associate
+                                    Professor of Environmental Sciences, without term. </item>
+                            
+                            <pb n="6880"/>
+                         
+                                <item rend="indent"><name>Mr. Richard P. Gangloff</name> as
+                                        <name>Ferman W. Perry</name> Professor in the School of
+                                    Engineering and Applied Science, effective <date
+                                        value="2005-05-25">May 25, 2005</date>. <name>Mr.
+                                    Gangloff</name> will continue as Professor of Materials Science
+                                    and Engineering, without term. </item>
+                                <lb/>
+                                <item rend="indent"><name>Mr. Nicholas J. Garber</name> as
+                                        <name>Henry L. Kinnier</name> Professor of Civil
+                                    Engineering, effective <date value="2005-05-25">May 25,
+                                    2005</date>. <name>Mr. Garber</name> will continue as Professor
+                                    of Civil Engineering, without term. </item>
+                                <lb/>
+                                <item rend="indent"><name>Dr. Bankole A. Johnson</name> as Alumni
+                                    Professor of Psychiatric Medicine, effective <date
+                                        value="2005-02-25">February 25, 2005</date>. <name>Dr.
+                                        Johnson</name> will continue as Professor of Psychiatric
+                                    Medicine and Professor of Neuroscience, without term. </item>
+                                <lb/>
+                                <item rend="indent"><name>Mr. Matthew Neurock</name> as <name>Alice
+                                        M. and Guy A. Wilson</name> Professor of Chemical
+                                    Engineering, effective <date value="2005-05-25">May 25,
+                                    2005</date>. <name>Mr. Neurock</name> will continue as Professor
+                                    of Chemical Engineering, without term. </item>
+                                <lb/>
+                                <item rend="indent"><name>Dr. Mark D. Okusa</name> as <name>John C.
+                                        Buchanan</name> Distinguished Professor of Internal
+                                    Medicine, effective <date value="2005-02-25">February 25,
+                                    2005</date>. <name>Dr. Okusa</name> will continue as Professor
+                                    of Internal Medicine, without term. </item>
+                                <lb/>
+                                <item rend="indent"><name>Mr. Luis Pereiro</name> as <name>Eleanor
+                                        F. and Philip G. Rust</name> Professor of Business
+                                    Administration, for the period <dateRange from="2004-12-25"
+                                        to="2005-06-24">December 25, 2004, through June 24,
+                                    2005</dateRange>, at a salary of $49,500. </item>
+       </list>
+                    </div3>
+                    <div3 id="d43" type="subsection">
+                        <head type="sub">(b) Special Salary Action of Chairholders</head>
+  
+                            <list>
+                                <item rend="indent">
+                                    <name>Mr. Gary Balian</name>, <name>Mary Muilenburg Stamp</name>
+                                    Professor of Orthopaedic Research, effective <date
+                                        value="2004-11-25">November 25, 2004</date>, at an annual
+                                    salary of $103,000. </item>
+                                <lb/>
+                                <item rend="indent">
+                                    <name>Ms. Felicia Gaskin</name>, <name>J. Pretlow Darden</name>
+                                    Professor in the School of Medicine, effective <date
+                                        value="2005-01-25">January 25, 2005</date>, at an annual
+                                    salary of $108,600. </item>
+                            </list>
+                        
+                    </div3>
+                    <div3 id="d44" type="subsection">
+                        <head type="sub">(c) Retirement of Chairholders</head>
+      
+                            <list>
+                                <item rend="indent">
+                                    <name>Mr. Warren T. Byrd, Jr.</name>, <name>Merrill D.
+                                    Peterson</name> Professor in the School of Architecture,
+                                    effective <date value="2005-05-24">May 24, 2005</date>.
+                                        <name>Mr. Byrd</name> has been a member of the faculty since
+                                        <date value="1979-09-01">September 1, 1979</date>. </item>
+                          
+                            <pb n="6881"/>
+                        
+                                <item rend="indent">
+                                    <name>Mr. Theodore Caplow</name>, Commonwealth Professor of
+                                    Sociology, effective <date value="2005-05-24">May 24,
+                                    2005</date>. <name>Mr. Caplow</name> has been a member of the
+                                    faculty since <date value="1970-09-01">September 1, 1970</date>. </item>
+                                <lb/>
+                                <item rend="indent">
+                                    <name>Mr. Ralph Cohen</name>, <name>William R. Kenan,
+                                    Jr.</name>, Professor of English, effective <date
+                                        value="2005-05-24">May 24, 2005</date>. <name>Mr.
+                                    Cohen</name> has been a member of the faculty since <date
+                                        value="1967-09-01">September 1, 1967</date>. </item>
+                                <lb/>
+                                <item rend="indent">
+                                    <name>Mr. Richard C. Collins</name>, <name>Lawrence Lewis,
+                                    Jr.</name>, Professor of Architecture, effective <date
+                                        value="2005-05-24">May 24, 2005</date>. <name>Mr.
+                                    Collins</name> has been a member of the faculty since <date
+                                        value="1974-09-01">September 1, 1974</date>. </item>
+                                <lb/>
+                                <item rend="indent">
+                                    <name>Mr. Thomas E. Hutchinson</name>, <name>William Stansfield
+                                        Calcott</name> Professor of Systems Engineering, effective
+                                        <date value="2005-05-24">May 24, 2005</date>. <name>Mr.
+                                        Hutchinson</name> has been a member of the faculty since
+                                        <date value="1982-10-01">October 1, 1982</date>. </item>
+                                <lb/>
+                                <item rend="indent">
+                                    <name>Ms. Doris Kuhlmann-Wilsdorf</name>, University Professor
+                                    of Applied Science, effective <date value="2005-05-24">May 24,
+                                        2005</date>. <name>Ms. Kuhlmann-Wilsdorf</name> has been a
+                                    member of the faculty since <date value="1963-09-01">September
+                                        1, 1963</date>. </item>
+                                <lb/>
+                                <item rend="indent">
+                                    <name>Ms. Patricia M. Spacks</name>, <name>Edgar F. Shannon,
+                                    Jr.</name>, Professor of English, effective <date
+                                        value="2005-05-24">May 24, 2005</date>. <name>Ms.
+                                    Spacks</name> has been a member of the faculty since <date
+                                        value="1989-07-01">July 1, 1989</date>. </item>
+                            </list>
+                    </div3>
+                </div2>
+                <div2 id="d45" type="section">
+                    <head type="main">SPECIAL SALARY ACTIONS</head>
+                
+                       
+                            <p> RESOLVED that the following persons shall receive
+                                the salary indicated: </p>
+                    <list>
+                            <item rend="indent">
+                                <name>Mr. Paul A. H. Babitts</name>, Lecturer, General Faculty,
+                                effective <date value="2005-01-01">January 1, 2005</date>, at an
+                                annual salary of $47,000. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Ms. Andrea Bauchowitz</name>, Assistant Professor of Clinical
+                                Psychiatric Medicine, effective <date value="2005-01-25">January 25,
+                                    2005</date>, at an annual salary of $48,900. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Dr. Kenneth J. Cherry</name>, Professor of Surgery, effective
+                                    <date value="2005-01-01">January 1, 2005</date>, at an annual
+                                salary of $200,000. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Ms. Dawna M. Clarke</name>, Lecturer, General Faculty,
+                                effective <date value="2005-02-25">February 25, 2005</date>, at an
+                                annual salary of $104,600. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Ms. Melissa F. Clarke</name>, Lecturer, General Faculty,
+                                effective <date value="2005-02-01">February 1, 2005</date>, at an
+                                annual salary of $80,000. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Ms. Sarah L. Collie</name>, Lecturer, General Faculty,
+                                effective <date value="2005-01-25">January 25, 2005</date>, at an
+                                annual salary of $70,000. </item>
+                        
+                        <pb n="6882"/>
+                      
+                            <item rend="indent">
+                                <name>Mr. Alon Confino</name>, Associate Professor of History,
+                                effective <date value="2005-02-25">February 25, 2005</date>, at an
+                                academic year salary of $80,000. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Daniel J. Cox</name>, Professor of Psychiatric Medicine,
+                                effective <date value="2004-12-25">December 25, 2004</date>, at an
+                                annual salary of $145,300. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Frederic J. Drake</name>, Lecturer, General Faculty,
+                                effective <date value="2005-02-25">February 25, 2005</date>, at an
+                                annual salary of $62,000. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Robert W. Freer</name>, Lecturer, General Faculty,
+                                effective <date value="2005-01-01">January 1, 2005</date>, at an
+                                annual salary of $188,000. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Ms. Leah J. Goswell</name>, Lecturer in Medical Education,
+                                effective <date value="2005-01-25">January 25, 2005</date>, at an
+                                annual salary of $80,000. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Ms. Nicole F. Hurd</name>, Lecturer, General Faculty,
+                                effective <date value="2004-12-25">December 25, 2004</date>, at an
+                                annual salary of $72,000. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Kurt R. Illig</name>, Research Assistant Professor of
+                                Psychology, effective <date value="2005-01-10">January 10,
+                                2005</date>, at an annual salary of $52,700. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Ms. Susan E. Kennel</name>, Assistant Professor of Nursing,
+                                General Nursing Faculty, effective <date value="2004-12-25">December
+                                    25, 2004</date>, at an academic year salary of $58,400. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Evan S. Marcus</name>, Instructor, General Faculty,
+                                effective <date value="2005-01-16">January 16, 2005</date>, at an
+                                annual salary of $115,000. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Ms. Shannon K. Mathie</name>, Lecturer, General Faculty,
+                                effective <date value="2005-02-25">February 25, 2005</date>, at an
+                                annual salary of $62,000. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Ms. Suzanne M. Moenter</name>, Associate Professor of Internal
+                                Medicine and Associate Professor of Cell Biology, effective <date
+                                    value="2005-01-25">January 25, 2005</date>, at an annual salary
+                                of $97,300. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Walter A. Moore, Jr.</name>, Lecturer, General Faculty,
+                                effective <date value="2004-12-25">December 25, 2004</date>, at an
+                                annual salary of $53,000. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Ms. Maurine B. Neiman</name>, Lecturer in Biology, effective
+                                    <date value="2005-01-10">January 10, 2005</date>, at an annual
+                                salary of $39,400. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Roy C. Ogle</name>, Professor of Neurosurgery and
+                                Professor of Cell Biology, effective <date value="2005-01-25"
+                                    >January 25, 2005</date>, at an annual salary of $116,500.
+                            </item>
+                       
+                        <pb n="6883"/>
+                       
+                            <item rend="indent">
+                                <name>Ms. Sandra M. Pai</name>, Lecturer, General Faculty, effective
+                                    <date value="2005-01-25">January 25, 2005</date>, at an annual
+                                salary of $62,400. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Dr. Nancy J. Payne</name>, Assistant Professor of Clinical
+                                Pediatrics, effective <date value="2004-07-25">July 25, 2004</date>,
+                                at an annual salary of $86,000. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Ms. Ellen C. Ramsey</name>, Lecturer, General Faculty, Claude
+                                Moore Health Sciences Library, effective <date value="2005-02-25"
+                                    >February 25, 2005</date>, at an annual salary of $50,000. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Bradly W. Reed</name>, Associate Professor of History,
+                                effective <date value="2005-01-25">January 25, 2005</date>, at an
+                                academic year salary of $66,400. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. David R. Singleton</name>, Instructor of Research in
+                                Pathology, effective <date value="2005-01-25">January 25,
+                                2005</date>, at an annual salary of $50,000. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Ms. Elizabeth M. Snyder</name>, Lecturer, General Faculty,
+                                effective <date value="2005-01-01">January 1, 2005</date>, at an
+                                annual salary of $144,000. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Ms. Anita A. Thompson-Heisterm</name>, Instructor, General
+                                Nursing Faculty, effective <date value="2004-12-25">December 25,
+                                    2004</date>, at an academic year salary of $49,400. </item>
+                        </list>
+                    
+                </div2>
+                <div2 id="d46" type="section">
+                    <head type="main">CORRECTION TO THE SALARY ACTION FOR <name>DR. EROL
+                        BASKURT</name></head>
+       
+                      
+                            <p> RESOLVED that the special salary action for
+                                    <name>Dr. Erol Baskurt</name>, Clinical Instructor in Radiology,
+                                effective <date value="2004-09-25">September 25, 2004</date>, at an
+                                annual salary of $150,000, as shown in the Minutes of the meeting of
+                                the Board of Visitors dated <date value="2005-02-04">February 4,
+                                    2005</date>, be corrected to read as follows: </p>
+                    <list>
+                            <item rend="indent"><name>Dr. Erol Baskurt</name>, Clinical Instructor
+                                in Radiology, effective <date value="2004-09-25">September 25,
+                                2004</date>, at an annual salary of $100,000. </item>
+                        </list>
+                    
+                </div2>
+                <div2 id="d47" type="section">
+                    <head type="main">RESIGNATIONS</head>
+     
+                      
+                            <p> The following resignations were announced: </p>
+                    <list>
+                            <item rend="indent"><name>Mr. Robert S. Coyne</name>, Assistant
+                                Professor of Research in Biochemistry and Molecular Genetics,
+                                effective <date value="2004-11-01">November 4, 2004</date>, to
+                                accept another position. </item>
+                            <lb/>
+                            <item rend="indent"><name>Mr. Quansheng Du</name>, Assistant Professor
+                                of Research in Microbiology, effective <date value="2005-03-04"
+                                    >March 4, 2005</date>, to accept another position. </item>
+                        
+                        <pb n="6884"/>
+                      
+                            <item rend="indent">
+                                <name>Mr. John A. Hunter, Jr.</name>, Research Associate Professor
+                                of Psychology, effective <date value="2005-01-03">January 3,
+                                2005</date>, to accept another position. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Shyamal Das Peddada</name>, Professor of Statistics,
+                                effective <date value="2004-10-07">October 7, 2004</date>, to accept
+                                another position. </item>
+                        </list>
+                    
+                </div2>
+                <div2 id="d48" type="section">
+                    <head type="main">RETIREMENTS</head>
+
+                            <p>The following retirements were announced:</p>
+                    <list>
+                            <item rend="indent">
+                                <name>Mr. Charles F. Dunkl</name>, Professor of Mathematics,
+                                effective <date value="2005-05-24">May 24, 2005</date>. <name>Mr.
+                                    Dunkl</name> has been a member of the faculty since <date
+                                    value="1967-09-01">September 1, 1967</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Ronald D. Flack, Jr.</name>, Professor of Mechanical and
+                                Aerospace Engineering, effective <date value="2005-08-24">August 24,
+                                    2005</date>. <name>Mr. Flack</name> has been a member of the
+                                faculty since <date value="1976-01-16">January 16, 1976</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. John L. Gainer</name>, Professor of Chemical Engineering,
+                                effective <date value="2005-05-24">May 24, 2005</date>. <name>Mr.
+                                    Gainer</name> has been a member of the faculty since <date
+                                    value="1966-02-01">February 1, 1966</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Theo C. Giras</name>, Research Professor of Electrical and
+                                Computer Engineering, effective <date value="2005-01-03">January 3,
+                                    2005</date>. <name>Mr. Giras</name> has been a member of the
+                                faculty since <date value="2000-06-25">June 25, 2000</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Paul Jeffrey Hopkins</name>, Professor of Religious
+                                Studies, effective <date value="2005-05-24">May 24, 2005</date>.
+                                    <name>Mr. Hopkins</name> has been a member of the faculty since
+                                    <date value="1973-09-01">September 1, 1973</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. William E. Jackson</name>, Associate Professor of German,
+                                effective <date value="2005-05-24">May 24, 2005</date>. <name>Mr.
+                                    Jackson</name> has been a member of the faculty since <date
+                                    value="1981-07-01">July 1, 1981</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Ms. Chung-ming Lung</name>, Assistant Professor, General
+                                Faculty, Alderman Library, effective <date value="2005-05-31">May
+                                    31, 2005</date>. <name>Ms. Lung</name> has been a member of the
+                                faculty since <date value="1982-02-15">February 15, 1982</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. James L. Rovnyak</name>, Professor of Mathematics,
+                                effective <date value="2005-05-24">May 24, 2005</date>. <name>Mr.
+                                    Rovnyak</name> has been a member of the faculty since <date
+                                    value="1967-09-01">September 1, 1967</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. John Ruvalds</name>, Professor of Physics, effective <date
+                                    value="2005-05-24">May 24, 2005</date>. <name>Mr. Ruvalds</name>
+                                has been a member of the faculty since <date value="1969-07-01">July
+                                    1, 1969</date>. </item>
+                       
+                        <pb n="6885"/>
+                        
+                            <item rend="indent">
+                                <name>Dr. Hubert A. Shaffer, Jr.</name>, Professor of Clinical
+                                Radiology, effective <date value="2005-06-30">June 30, 2005</date>.
+                                    <name>Dr. Shaffer</name> has been a member of the faculty since
+                                    <date value="1972-08-16">August 16, 1972</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Theo van Groll</name>, Associate Professor of
+                                Architecture, effective <date value="2005-05-24">May 24,
+                                2005</date>. <name>Mr. van Groll</name> has been a member of the
+                                faculty since <date value="1972-09-01">September 1, 1972</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Jennings L. Wagoner, Jr.</name>, Professor of Education,
+                                effective <date value="2005-05-24">May 24, 2005</date>. <name>Mr.
+                                    Wagoner</name> has been a member of the faculty since <date
+                                    value="1968-09-01">September 1, 1968</date>. </item>
+                        </list>
+                    
+                </div2>
+                <div2 id="d49" type="section">
+                    <head type="main">CORRECTION TO THE RETIREMENT OF <name>MS. NATALIE O.
+                        KONONENKO</name></head>
+                   
+                       
+                            <p>The President announced that the retirement of
+                                    <name>Ms. Natalie W. Kononenko</name>, Professor of Slavic
+                                Languages and Literatures, effective <date value="2004-06-24">June
+                                    24, 2004</date>, as shown in the Minutes of the meeting of the
+                                Board of Visitors dated <dateRange from="2004-06-10" to="2004-06-12"
+                                    >June 10-12, 2004</dateRange>, be corrected to read as follows: </p>
+                    <list>
+                            <item rend="indent"><name>Ms. Natalie O. Kononenko</name>, Professor of
+                                Slavic Languages and Literatures, effective <date value="2004-06-24"
+                                    >June 24, 2004</date>. <name>Ms. Kononenko</name> has been a
+                                member of the faculty since <date value="1974-09-01">September 1,
+                                    1974</date>. </item>
+                        </list>
+                    
+                </div2>
+                <div2 id="d50" type="section">
+                    <head type="main">APPOINTMENTS</head>
+
+                            <p> The following appointments were announced: </p>
+                    <list>
+                            <item rend="indent"><name>Mr. Brian C. Bell</name> as Director,
+                                Leadership Development Center, for three years, effective <date
+                                    value="2005-04-01">April 1, 2005</date>. </item>
+                            <lb/>
+                            <item rend="indent"><name>Ms. Kathryn L. Jarvis</name> as Special
+                                Assistant to the Senior Vice President for Development and Public
+                                Affairs, for one year, effective <date value="2005-02-01">February
+                                    1, 2005</date>. </item>
+                        </list>
+                    
+                </div2>
+                <div2 id="d51" type="section">
+                    <head type="main">RE-APPOINTMENTS</head>
+                                     
+                            <p> The following re-appointments were announced: </p>
+                            <list>
+                            <item rend="indent">
+                                <name>Mr. James H. Aylor</name> as Interim Dean, School of
+                                Engineering and Applied Science, through <date value="2005-08-24"
+                                    >August 24, 2005</date>, or until a dean is hired, effective
+                                    <date value="2005-01-10">January 10, 2005</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Jeffrey D. Blank</name> as Assistant to the Vice President
+                                for Research and Graduate Studies, for three years, effective <date
+                                    value="2004-07-25">July 25, 2004</date>. </item>
+                    
+                        <pb n="6886"/>
+                        
+                            <item rend="indent">
+                                <name>Mr. Andrew P. Selfridge</name> as Director of Regional and
+                                Reunion Development, for three years, effective <date
+                                    value="2005-04-01">April 1, 2005</date>. </item>
+                        </list>
+                    
+                </div2>
+                <div2 id="d52" type="section">
+                    <head type="main">ELECTION OF PROFESSORS EMERITI</head>
+ 
+                     
+                            <p>RESOLVED that the following persons are elected
+                                Professor Emeritus: </p>
+                    <list>
+                            <item rend="indent">
+                                <name>Mr. Warren T. Byrd, Jr., Merrill D. Peterson</name> Professor
+                                in the School of Architecture, effective <date value="2005-05-24"
+                                    >May 24, 2005</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Theodore Caplow</name>, Commonwealth Professor of
+                                Sociology, effective <date value="2005-05-24">May 24, 2005</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Ralph Cohen, William R. Kenan, Jr.</name>, Professor of
+                                English, effective <date value="2005-05-24">May 24, 2005</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Richard C. Collins, Lawrence Lewis, Jr.</name>, Professor
+                                of Architecture, effective <date value="2005-05-24">May 24,
+                                2005</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Charles F. Dunkl</name>, Professor of Mathematics,
+                                effective <date value="2005-05-24">May 24, 2005</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Ronald D. Flack, Jr.</name>, Professor of Mechanical and
+                                Aerospace Engineering, effective <date value="2005-08-24">August 24,
+                                    2005</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. John L. Gainer</name>, Professor of Chemical Engineering,
+                                effective <date value="2005-05-24">May 24, 2005</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Paul Jeffrey Hopkins</name>, Professor of Religious
+                                Studies, effective <date value="2005-05-24">May 24, 2005</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Thomas E. Hutchinson, William Stansfield Calcott</name>
+                                Professor of Systems Engineering, effective <date value="2005-05-24"
+                                    >May 24, 2005</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Ms. Doris Kuhlmann-Wilsdorf</name>, University Professor of
+                                Applied Science, effective <date value="2005-05-24">May 24,
+                                2005</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. James L. Rovnyak</name>, Professor of Mathematics,
+                                effective <date value="2005-05-24">May 24, 2005</date>
+                            </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. John Ruvalds</name>, Professor of Physics, effective <date
+                                    value="2005-05-24">May 24, 2005</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Dr. Hubert A. Shaffer, Jr.</name>, Professor of Clinical
+                                Radiology, effective <date value="2005-06-30">June 30, 2005</date>.
+                            </item>
+                      
+                        <pb n="6887"/>
+                        
+                            <item rend="indent">
+                                <name>Ms. Patricia M. Spacks, Edgar F. Shannon, Jr.</name>,
+                                Professor of English, effective <date value="2005-05-24">May 24,
+                                    2005</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Jennings L. Wagoner, Jr.</name>, Professor of Education,
+                                effective <date value="2005-05-24">May 24, 2005</date>. </item>
+                        </list>
+                    
+                </div2>
+                <div2 id="d53" type="section">
+                    <head type="main">CORRECTION TO THE EMERITUS ACTION FOR <name>MS. NATALIE O.
+                            KONONENKO</name></head>
+      
+                  
+                            <p> RESOLVED that the Emeritus action for <name>Ms.
+                                    Natalie W. Kononenko</name>, Professor of Slavic Languages and
+                                Literatures, effective <date value="2004-06-24">June 24,
+                                2004</date>, as shown in the Minutes of the meeting of the Board of
+                                Visitors dated <dateRange from="2004-06-10" to="2004-06-12">June
+                                    10-12, 2004</dateRange>, be corrected to read as follows: </p>
+                    <list>
+                            <item rend="indent">
+                                <name>Ms. Natalie O. Kononenko</name>, Professor of Slavic Languages
+                                and Literatures, effective <date value="2004-06-24">June 24,
+                                2004</date>. </item>
+                        </list>
+                    
+                </div2>
+                <div2 id="d54" type="section">
+                    <head type="main">ELECTION OF ASSOCIATE PROFESSORS EMERITI</head>
+        
+ 
+                            <p>RESOLVED that the following persons are elected
+                                Associate Professor Emeritus:</p>
+                    <list>
+                            <item rend="indent">
+                                <name>Mr. William E. Jackson</name>, Associate Professor of German,
+                                effective <date value="2005-05-24">May 24, 2005</date>. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Mr. Theo van Groll</name>, Associate Professor of
+                                Architecture, effective <date value="2005-05-24">May 24,
+                                2005</date>. </item>
+                        </list>
+                    
+                </div2>
+                <div2 id="d55" type="section">
+                    <head type="main">DEATHS</head>
+   
+                       
+                            <p> The following deaths were announced: </p>
+                    <list>
+                            <item rend="indent">
+                                <name>Mr. Piet C. Gugelot</name>, Professor Emeritus of Physics,
+                                died <date value="2005-02-02">February 2, 2005</date>. <name>Mr.
+                                    Gugelot</name> was a member of the faculty from 1967 until his
+                                retirement in 1989. </item>
+                            <lb/>
+                            <item rend="indent">
+                                <name>Ms. Ellen M. Whitener</name>, Professor of Commerce, died
+                                    <date value="2005-03-22">March 22, 2005</date>. <name>Ms.
+                                    Whitener</name> had been a member of the faculty since <date
+                                    value="1988-09-01">September 1, 1988</date>. </item>
+                        </list>
+                </div2>
+            </div1>
+            <div1 id="d56" type="announcement">
+                <head type="main">THE UNIVERSITY OF VIRGINIA'S COLLEGE AT WISE</head>
+                <div2 id="d57" type="section">
+                    <head type="main">RE-APPOINTMENT</head>
+
+                    <p>The following re-appointment was announced: </p>
+                    <list>
+                            <item rend="indent">
+                                <name>Mr. J. A. (Jim) Knight</name> as Vice Chancellor for
+                                Development and College Relations, The University of Virginia’s
+                                College at 
+                       
+                        <pb n="6888"/>
+                      Wise, for five years, effective May 25, 2004.
+                            </item>
+                        </list>
+                </div2>
+            </div1>
+ 
+            <div1 id="d58" type="resolution">
+                <head type="main">RESOLUTION COMMENDING JAMES WATSON HEAD</head>
+ 
+                        <p> WHEREAS, <name>James Watson Head</name>, raised in
+                            Northern Virginia and in Washington, but of distinguished Alabama
+                            heritage, took a B.A. with High Distinction from the College in 2003;
+                            and </p>
+                     
+                        <p> WHEREAS, <name>Mr. Head</name> had the good fortune to
+                            marry Cristin a week later; and </p>
+                       
+                        <p> WHEREAS, <name>Mr. and Mrs. Head</name> matriculated in
+                            the School of Law in August, 2003; and </p>
+                       
+                        <p> WHEREAS, <name>Mr. Head</name> was appointed the
+                            Student Member of the Board of Visitors in February, 2004; and </p>
+                      
+                        <p> WHEREAS, <name>Mr. Head</name> has brought to the Board
+                            valuable insights gained through his wide circle of friends and
+                            acquaintances throughout the student body, and through the breadth of
+                            his involvement in student activities which extend from the Raven
+                            Society to the IMP Society, and from Phi Beta Kappa to the Honor
+                            Committee, to say nothing of the esteem in which he is held by his
+                            peers; and </p>
+                    
+                        <p> WHEREAS, <name>Mr. Head</name>’s term on the Board of
+                            Visitors expires at the end of the Board meeting on April 2nd; </p>
+                       
+                        <p> RESOLVED, the Board thanks <name>Jamie Head</name>, its
+                            friend and colleague, for his exemplary service and devotion to the
+                            University, and wishes him and Kristi every good fortune as they
+                            continue their legal studies. </p>
+                <ornament type="characters">- - - - - - - - - - -</ornament>
+            </div1>
+            <div1 id="d59" type="resolution">
+                <p>The following resolutions were adopted by the Buildings and Grounds
+                    Committee on <date value="2005-03-31">March 31, 2005</date>; they required
+                    action only by the Committee and not by the full Board, and are listed here as a
+                    matter of record: </p>
+                <div2 id="d60" type="section">
+                    <head type="main">APPROVAL OF ARCHITECT SELECTION FOR THE SCHOOL OF<lb/> NURSING
+                        BUILDING</head>
+   
+                            <p> RESOLVED that <name>Bowie Gridley</name>
+                                Architects, of Washington, D.C., is approved for the performance of
+                                architectural and engineering services for the School of Nursing
+                                Building. </p>
+ 
+                </div2>
+               
+                <div2 id="d61" type="section">
+                    <pb n="6889"/>
+                    <head type="main">APPROVAL OF SCHEMATIC DESIGN FOR THE COLLEGE AT WISE<lb/>
+                        DRAMA BUILDING ADDITION AND RENOVATION</head>
+  
+                            <p> RESOLVED that the schematic design, dated <date
+                                    value="2005-03-31">March 31, 2005</date>, and prepared by the
+                                    <name>Bushman Dreyfus</name> Architects of Charlottesville, for
+                                the College at Wise Drama Building Addition and Renovation is
+                                approved for further development and construction. </p>
+                  
+                </div2>
+                <div2 id="d62" type="section">
+                    <head type="main">APPROVAL OF CONCEPT, SITE, AND DESIGN GUIDELINES FOR<lb/> THE
+                        NEW EDUCATION SCHOOL BUILDING</head>
+   
+                            <p> RESOLVED that the concept, site, and design
+                                guidelines, dated <date value="2005-03-31">March 31, 2005</date>,
+                                and prepared by the Architect for the University, for the New
+                                Education School Building are approved; and </p>
+                           
+                            <p> RESOLVED FURTHER that the project will be presented
+                                for further review at the schematic design level of development.
+                            </p>
+ 
+                <ornament type="characters">- - - - - - - - - -</ornament>
+                <p>On motion, the meeting was adjourned at 10:55 a.m.</p>
+                <signed>Respectfully submitted, <lb/>
+                    <name>Alexander G. Gilliam, Jr.</name>
+                    <lb/> Secretary </signed>
+                <trailer> AGG:jb<lb/> These minutes have been posted to the University of Virginia’s
+                    Board of Visitors website. <xref
+                        url="http://www.virginia.edu/bov/publicminutes.html"
+                        >http://www.virginia.edu/bov/publicminutes.html</xref>
+                </trailer>
+                    </div2>
+            </div1>
+            <div1 id="d63" type="addenda">
+                <pb n="6890"/>
+                <head type="sub">ADDENDUM TO THE OFFICIAL MINUTES OF THE MEETING OF<lb/> THE BOARD
+                    OF VISITORS OF THE UNIVERSITY OF VIRGINIA</head>
+                <p>Meeting Date: <dateRange from="2005-04-01" to="2005-04-02">April
+                        1-2, 2005</dateRange></p>
+                <div2 id="d65" type="statement">
+                    <head type="sub"> CERTIFICATION OF EXECUTIVE MEETING </head>
+                    <p>The Board of Visitors, sitting in Open Session, unanimously
+                        adopted a resolution certifying that while meeting in Executive Session – as
+                        permitted by the relevant provisions of the <hi rend="underline">Code of Virginia</hi> – only public
+                        business authorized by its motion and lawfully exempted from consideration
+                        in closed session. </p>
+                    <signed>Respectfully submitted, <lb/>
+                        <name>Alexander G. Gilliam, Jr.</name>
+                        <lb/> Secretary </signed>
+                </div2>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

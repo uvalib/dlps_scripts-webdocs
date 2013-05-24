@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Setup for TEI Header Workflow - DLPS</title>
+<link rel="stylesheet" type="text/css" href="/dlps/css/dlpsdoc.css">
+</head>
+<body>
+<h1>Setup for TEI Header Workflow</h1>
+<p><b>Digital Library Production Services, University of Virginia Library</b></p>
+
+<!-- UPDATE DATE MANUALLY WHEN MODIFYING THIS FILE ************************ -->
+<p><b>Last modified:</b> December 28, 2005</p>
+
+<p><b>Overview:</b> The DLPS workflow for creating full TEI headers
+requires certain software to be present on the user's local PC. This
+document details the requirements.</p>
+
+<hr>
+
+<ul>
+
+<li><b>Perl</b> &mdash; Have your LSP install Perl. The standard port
+of Perl for Windows is called ActivePerl and is available as a free
+download from
+
+<blockquote><a href="http://www.activestate.com/Products/ActivePerl/">http://www.activestate.com/Products/ActivePerl/</a></blockquote>
+
+To test the installation, open a command window (Start &rarr; Programs
+&rarr; Accessories &rarr; Command Prompt) and enter: <tt>perl
+-v</tt></li>
+
+
+<li><b>Java</b> &mdash; Have your LSP install the Java Runtime
+Environment, available as a free download from
+
+<blockquote><a href="http://java.com/">http://java.com/</a></blockquote>
+
+(Just click the <b>Get It Now</b> button.) To test the installation,
+open a command window (Start &rarr; Programs &rarr; Accessories &rarr;
+Command Prompt) and enter: <tt>java -version</tt><br><br></li>
+
+
+<li><b>NoteTab</b> &mdash; Normally the free text editor NoteTab Light
+will already be installed on your PC, but if you have a version older
+than 4.8, have your LSP upgrade to the current version. NoteTab Light
+is available either from ITC's Software Central or from the NoteTab
+web site:
+
+<blockquote><a href="http://www.itc.virginia.edu/desktop/central/">http://www.itc.virginia.edu/desktop/central/</a> <br>
+<a href="http://www.notetab.com/">http://www.notetab.com/</a></blockquote></li>
+
+<li><b>NoteTab setup</b>
+
+  <ul>
+
+  <li>If you don't already have a folder named <tt>C:\temp</tt> on
+  your computer, create it. (This folder is needed for temporary files
+  and error logs.)</li>
+
+  <li>Make sure you have write permission on folder <tt>C:\temp</tt>
+  and on whatever folder you use for the output file.</li>
+
+  <li>Download the file <a href="DLPS.clb">DLPS.clb</a> (right-click
+  and choose <b>Save Target As...</b>, then for file type, select "All
+  files") and save it to <tt>C:\Program Files\NoteTab Light\Libraries</tt></li>
+
+  <li>Close NoteTab if it's open. Open NoteTab, open the Clipbook
+  (Tools &rarr; Clipbook &rarr; Open Clipbook), and choose <b>DLPS</b>
+  from the pull-down menu in the Clipbook.</li>
+
+  <li>Double-click <b>About these commands...</b> to view a dialog box
+  with a description of each command in the <b>DLPS</b> clip library.</li>
+
+  <li>Map the DLPS workspace <tt>\\pogo.lib.virginia.edu\text</tt> as
+  a network drive, using any available drive letter.</li>
+
+  <li>Double-click <b>Indicate drive letter for DLPS workspace...</b>
+  in the Clipbook. In the dialog box that appears, enter the drive
+  letter used to map the DLPS workspace as a network drive.</li>
+
+  </ul>
+
+</li>
+
+</ul>
+
+</body>
+</html>

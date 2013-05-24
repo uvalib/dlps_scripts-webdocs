@@ -1,0 +1,331 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0175 SYSTEM "000000766_0175" NDATA jpg>
+<!ENTITY DSSR_000000766_0176 SYSTEM "000000766_0176" NDATA jpg>
+<!ENTITY DSSR_000000766_0177 SYSTEM "000000766_0177" NDATA jpg>
+<!ENTITY DSSR_000000766_0178 SYSTEM "000000766_0178" NDATA jpg>
+
+<!--<!ENTITY NA62g31a SYSTEM "NA62g31a.jpg" NDATA jpg>
+<!ENTITY NA62g31b SYSTEM "NA62g31b.jpg" NDATA jpg>
+<!ENTITY NA62g31c SYSTEM "NA62g31c.jpg" NDATA jpg>
+<!ENTITY NA62g31d SYSTEM "NA62g31d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NA62g31">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-07-31">1862 July 31</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Evelyn Frangakis, National Agricultural Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Evelyn Frangakis, National Agricultural Library</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">16</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62g31</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, <date
+                                value="1862-07-31">1862 July 31</date></title>
+
+
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p>The Corinne Carr Nettleton Civil War Collection</p>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-07-31">1862-07-31</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Women Writers/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2001-06">June 2001</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Carolyn Fay, Electronic Text Center</name>
+                </respStmt>
+                <item>Updated TEI header and tags. </item>
+            </change>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-09">November 9th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                    </bibl>
+                </head>
+
+                <p>Addie, writing to Charlie from East Claridon, expresses concerns over military
+                    activities in Richmond as well as possible interference from England. Addie
+                    updates him on her current activities and articulates her longing to be with
+                    him.</p>
+
+            </div1>
+
+        </front>
+
+        <body id="d4">
+
+
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-07-31"
+                        >1862 July 31</date></head>
+                <pb n="1" entity="DSSR_000000766_0175"/>
+                <opener> HOLYOKE CO.<ref target="n1" n="1">1</ref>
+                    <dateline>
+                        <name type="place">East Claridon</name>. <date value="1862-07-31">July <hi
+                                rend="underline">31</hi><hi rend="super">st</hi> A.D. 1862</date></dateline><lb/>
+                    <salute>My darling Charlie</salute><lb/>
+                </opener>
+
+                <p> As I have allowed so long a<lb/> time to pass without writing to you I thought
+                    it<lb/> would be very appropriate to write on the last day<lb/> of the month.
+                    Shall I beg pardon dearest, or not?<lb/> My only excuse for not writing sooner
+                    is that I<lb/> have had no<del hand="h1">t</del> time.<lb/>
+                </p>
+
+                <p> How has the <del hand="h1">[unclear]</del> month of July been spent<lb/> by
+                        you <orig reg="dear? More">dear. More</orig> useful than by me I <orig
+                        reg="trust. Just">trust, Just</orig><lb/> one continual round of visiting,
+                    accompanied my<lb/> vacation, but I could not feel contented. I longed so<lb/>
+                    much for the time to come when I could again call<lb/> my little "flock" around
+                    me and, in my feeble way<lb/>
+                    <pb n="2" entity="DSSR_000000766_0176"/> impart useful knowledge to their young
+                    hearts,<lb/> I feel much happiness when I know that I am<lb/> useful, than
+                        while <orig reg="away. Certainly">away. certainly</orig> I spent many<lb/>
+                    pleasant hours "amongst friends at home," but not such<lb/> pleasant ones as in
+                    my school room. I commence my<lb/> school again Monday<lb/>
+                </p>
+
+                <p> I attended the "Aid Society" at <name type="place">E. Claridon</name> yesterday
+                    for the first<lb/> time. How happy the ladies seem while engaged in<lb/> their
+                    noble cause, and well they may be happy. Busy<lb/> fingers were flying, until
+                    five o'clock when - the Pres'<hi rend="super">t</hi><lb/> being absent - the
+                    Secretary. (M<hi rend="underline">rs</hi> Ailsworth) called<q>"the
+                    house"</q><lb/> to order. The <abbr expan="Secretary">Sec't</abbr> and Treasurer
+                    gave their reports, we<lb/> then listened to two letters from a member of the forty-<lb/>
+                    <orig reg="second, and">second. and</orig> closed after a prayer by Mrs Ames,
+                    had<lb/> ascended to that Higher Throne in behalf of those<lb/> brave and true
+                    ones who had gone to defend our loved<lb/> land. I enjoyed myself these if any
+                        one <orig reg="did.">did,</orig><lb/>
+                </p>
+
+                <p> Dear <name type="recipient">Charlie</name> what do you think of the
+                    movements<lb/> at <orig reg="Richmond? Are"> <name type="place">Richmond</name>.
+                        Are</orig> you not fearful that we<del hand="h1">'l</del> <del hand="h1"
+                        >will</del> <add place="inline" hand="h1">shall</add> be<lb/>
+                    <orig reg="defeated? I">defeated. I</orig> know not why it is but I have more
+                    con-<lb/> fidence in Pope's ability to conquer <name type="place">Richmond</name>
+                    with his<lb/> handful of men than in McClellan, with his<lb/> vast army.
+                    McClellan is fast losing the confidence<lb/>
+                    <pb n="3" entity="DSSR_000000766_0177"/> of the citizens of <name type="place"
+                        >Ohio</name>. They seem to be watching<lb/> Pope with an eager anxious eye,
+                    as much as to say<lb/> "there lies our hope." Are you not fearful that<lb/>
+                    <name type="place">England</name> will interfere? Many are the hearts that<lb/>
+                    are breathing waiting for the result at <name type="place">Richmond</name><lb/>
+                    fearing that if our troops are defeated there <name type="place"
+                    >England</name><lb/> with all her hosts will be upon us. <name type="recipient"
+                        >Charlie</name><lb/> if <name type="place">England</name> does interfere, she
+                    will find many<lb/> of the patriotic ladies of <name type="place">America</name>
+                    willing and ready<lb/> to "shoulder arms." I could never stay at home<lb/> while
+                    our friends and brothers were falling by the hand<lb/> of a foreign foe <orig
+                        reg="never. Wonder">never, Wonder</orig> if I could not be<lb/> as brave as
+                    Joan of Arc.<lb/>
+                </p>
+
+                <p> I received your gift by the kindness of <abbr expan="Captain">Capt,</abbr><lb/>
+                    Wood. I was very thankful for it, you must hurry<lb/> and come home (guess you
+                        will <hi rend="underline">hurry</hi>) and tell me<lb/> how
+                        you <unclear>captured</unclear> it as you promised me.<lb/>
+                </p>
+
+                <p> Dear <name type="recipient">Charlie</name> why do you not write to <orig
+                        reg="Laurie? She">Laurie. She</orig><lb/> has not <abbr expan="received"
+                        >rec'd</abbr> a letter from you for a long long<lb/> time or at least had
+                    not when I left <name type="place">Mecca</name>, I<lb/> do not doubt but that
+                    your time for writing is<lb/> very limited or you would write oftener to me<lb/>
+                    over two weeks has elapsed since I heard from<lb/>
+                    <pb n="4" entity="DSSR_000000766_0178"/> you. But I promised not to <hi
+                        rend="underline">scold</hi> <orig reg="you, did">you. did</orig> I<lb/> not
+                    dear? But I should love "ever so much" to<lb/> receive letters as often as I did
+                    last winter and<lb/> spring. Your photograph is here darling, also your<lb/>
+                    ambrotype. I love to look at the latter dearest, because<lb/> it reminds me so
+                    much of the pleasant and happy<lb/> hours I spent in your society. It also
+                    reminds me of<lb/>
+                    <name type="recipient">Charlie</name> as he was when I first gave him my young
+                    love<lb/> and at the former I gaze fondly fervently comparing<lb/> it with
+                        the <name type="recipient">Charlie</name>, the darling noble minded hero
+                    of<lb/> my <orig reg="dreams. Shall">dreams Shall</orig> aught ever dispel those
+                    happy dreams<lb/> dearest? No, they are not dreams darling they are
+                    realities.<lb/>
+                </p>
+
+                <p> Would that I could be with you dear and be a<lb/> sharer of the sufferings you
+                    endure, but I have wished<lb/> that often enough to realize that it is
+                    useless.<lb/>
+                </p>
+
+                <p> I have not heard from Hallie for some time, the<lb/> last he wrote, he was very
+                    anxious to take the <orig reg="field">filed</orig><lb/> and wished to go to <name
+                        type="place">Richmond</name>. He is still<lb/> acting as provost marshall
+                        over <name type="place">Cumberland</name>.<lb/>
+                </p>
+
+                <p> I trust he will not be required to go there.<lb/> Perhaps I do wrong in wishing
+                    him not to go<lb/> but when I consult my own feelings I can not<lb/> help it.
+                    Dora is waiting for me to go down<lb/> with her and I must close write very often<lb/>
+                    <orig reg="darling. And">darling. and</orig> may Angels guard thee for<lb/>
+                    <name type="sender">Addie</name><lb/>
+                </p>
+
+                <closer> Remember me to <abbr expan="Sergeant">Sergt.</abbr> Moore,
+                        Will <unclear>Breden</unclear><lb/> Charlie Brooks, and "all the rest"<lb/>
+                    <signed>Addie</signed><lb/>
+                    <seg type="postscript">Dora sends love</seg><lb/>
+                </closer>
+
+            </div1>
+        </body>
+
+
+        <back id="d6">
+            <div1 type="notes" n="1" id="d7">
+                <head>Notes</head>
+                <lb/>
+
+                <note id="n1" place="end" n="1"><seg type="note-symbol">1</seg>
+                    <p>The paper is embossed in the upper left hand corner with an oval image
+                        containing the words "HOLYOKE CO."</p>
+                </note>
+                <lb/>
+
+            </div1>
+        </back>
+    </text>
+
+</TEI.2>

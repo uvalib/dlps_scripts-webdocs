@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000002759_0021 SYSTEM "000002759_0021" NDATA uvaHighRes>
+<!ENTITY DSSR_000002759_0022 SYSTEM "000002759_0022" NDATA uvaHighRes>
+]>
+
+<TEI.2 id="WEKewin18620405">
+    <teiHeader type="AACR2">
+        
+        <fileDesc>
+            <titleStmt>
+                
+                <title>William E. Kewin to Mr. Garretsee <date value="1862-04-05">April 5th 1862</date>
+                </title>
+                <author>Kewin, William E.</author> <!-- Author entry not from authoritz file. -->
+                <respStmt>
+                    <resp>Creation of machine-readable version: </resp>
+                    <name>Digital Curation Services , University of Virginia Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Digital Curation Services</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Creation of digital images:</resp>
+                    <name>Digitization Services, University of Virginia Library</name>
+                </respStmt>
+                
+            </titleStmt>
+            
+            <extent>ca. <num type="kilobytes">6</num> kilobytes</extent>
+            
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia </pubPlace>
+                <idno type="DCS">WEKewin18620405</idno>
+                <date value="2010">2010</date>
+            </publicationStmt>
+            
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-VACivilWar-letters</idno>
+            </seriesStmt>
+            
+            <sourceDesc>
+                
+                <biblFull>
+                    <titleStmt>
+                        <title>Letters from Federal soldiers stationed in Virginia, to friends at home [manuscript], 1861-1864.</title>
+                        <author></author>
+                    </titleStmt>
+                    <extent>1 page</extent>
+                    <publicationStmt>
+                        
+                        <idno type="Accession No.">MSS 828</idno>
+                        <idno type="Virgo ID">3929607-1001</idno>
+                        <idno type="title control number">a3929607 </idno>
+                        
+                        <availability>
+                            <p> Albert &amp; Shirley Small Special Collections, University of
+                                Virginia Library, Charlottesville, Virginia, USA</p>
+                        </availability>
+                    </publicationStmt>
+                </biblFull>
+                
+            </sourceDesc>
+            
+            
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <!-- Per Matt we need to work on this statement-->
+                <p> Prepared for the University of Virginia Library by Digital Curation Services staff
+                    and volunteer Mary Roy Dawson Edwards, Transcriber. 2005.</p>
+            </projectDesc>
+        </encodingDesc>
+        
+        <profileDesc>
+            <handList>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+        </profileDesc>
+        
+    </teiHeader>
+    
+    <text id="d1">
+        <body id="d2">
+            <!-- [The following two letters are by the same soldier, William E. Kewin.  
+            They are both written on stationery with an American flag and an eagle.] -->
+        	
+        	<!-- Comment from DCS staff: May not actually be two letters. Second part of letter possibly a postscript. -->
+            
+            <div1 type="letter" id="d3">
+            	<pb entity="DSSR_000002759_0021"/>
+            	<head>William E. Kewin to Mr. Garretsee <date value="1862-04-05">April 5<hi rend="super">th</hi> 1862</date></head>
+            	
+            	<opener>
+            		<dateline>
+            <name type="place">Camron Station Va.</name><lb/>
+            <date value="1862-04-05">Apr. 5<hi rend="super">th</hi> 1862</date><lb/>
+            		</dateline>
+            		<salute>
+            Mr. Garretsee<lb/>
+            Dear Sir.
+            		</salute>
+            	</opener>
+            	
+            <p>	
+            Twenty five Dollars, Enclosed<lb/>
+            you will fine &#x0024;25.00<lb/>
+            Which I send you through<lb/>
+            Adams Express, the package is<lb/>
+            directed to Mr. G. Hamilton.<lb/>
+            When you receive it please sends<lb/>
+            me a Receipt of the same.<lb/>
+            </p>
+            	
+            	<closer>
+            <signed>William E. Kewin.</signed>
+            	</closer>
+            </div1>
+        	<div1 type="letter" id="d4">
+            <head>n.d.</head>
+           <p> <del hand="author" rend="line-through">When</del> I received your letter of<lb/>
+            the twenty fifth on the first of<lb/>
+            this Month.  I had just written<lb/>
+            to you the day before I was glad<lb/>
+            to know that you were all well<lb/>
+            and hope you will continue to<lb/>
+            do so I have not received<lb/>
+            Mrs. Garretsee's letter as yet and<lb/>
+            but one from you since the 22<hi rend="super">nd</hi> of <add place="top" hand="author">february</add>
+           </p>
+        		
+        		<pb entity="DSSR_000002759_0022"/>
+            	
+            	</div1>
+        </body>
+        </text>
+</TEI.2>

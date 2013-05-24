@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0469 SYSTEM "000000766_0469" NDATA jpg>
+<!ENTITY DSSR_000000766_0470 SYSTEM "000000766_0470" NDATA jpg>
+<!ENTITY DSSR_000000766_0471 SYSTEM "000000766_0471" NDATA jpg>
+<!ENTITY DSSR_000000766_0472 SYSTEM "000000766_0472" NDATA jpg>
+<!ENTITY DSSR_000000766_0473 SYSTEM "000000766_0473" NDATA jpg>
+<!ENTITY DSSR_000000766_0474 SYSTEM "000000766_0474" NDATA jpg>
+<!ENTITY DSSR_000000766_0475 SYSTEM "000000766_0475" NDATA jpg>
+<!ENTITY DSSR_000000766_0476 SYSTEM "000000766_0476" NDATA jpg>
+
+<!--<!ENTITY NC62a01a SYSTEM "NC62a01a.jpg" NDATA jpg>
+<!ENTITY NC62a01b SYSTEM "NC62a01b.jpg" NDATA jpg>
+<!ENTITY NC62a01c SYSTEM "NC62a01c.jpg" NDATA jpg>
+<!ENTITY NC62a01d SYSTEM "NC62a01d.jpg" NDATA jpg>
+<!ENTITY NC62a01e SYSTEM "NC62a01e.jpg" NDATA jpg>
+<!ENTITY NC62a01f SYSTEM "NC62a01f.jpg" NDATA jpg>
+<!ENTITY NC62a01g SYSTEM "NC62a01g.jpg" NDATA jpg>
+<!ENTITY NC62a01h SYSTEM "NC62a01h.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NC62a01">
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-01-01"
+      >1862 January 01</date></title>
+
+    <author>Tenney, Charles N</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Crabbe, Stuart John</name>
+     <resp>Creation of digital images:</resp>
+     <name>University of Virginia Library Electronic Text Center.</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>Crabbe, Stuart John</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">16</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NC62a01</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Charles N. Tenney to Adelaide E. Case, 1862 January 01</title>
+
+
+      <author>Charles N. Tenney</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>8 pp.</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p>All unambiguous end-of-line hyphens have been retained.</p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings.</p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-01-01">1862-01-01</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>masculine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-11">November 11th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">October 14th, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+ <text id="d1">
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>8 pp.</extent>
+      <date value="1862-01-01"> January 01, 1862</date>
+
+      <title>Letter from Charles N. Tenney to Adelaide E. Case</title>
+     </bibl>
+    </head>
+    <p> The first day of a New Year and Charles bids Adelaide a Happy New Year. Charles asks for two
+     wishes for the New Year, a letter form Adelaide and Hal's recovery from his illness and laments
+     the lack of letters from Adelaide. He then describes a night on picket and closes by wishing
+     all a good New Year. A second letter on the same day sees Charles in higher spirits, his two
+     wishes for the day being fulfilled, a letter from Adelaide and Hal's recovery. Charles is moved
+     to describe that he has given up the domestic evils of drink, tobacco and cards and thanks
+     Adelaide for her kindness in writing to him. </p>
+   </div1>
+
+  </front>
+  <body id="d4">
+
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-01-01">1862 January
+      01</date></head>
+    <pb entity="DSSR_000000766_0469"/>
+
+
+    <opener>
+     <dateline>
+      <name type="place">Romney Va.</name>
+      <date value="1862-01-01">Jany 1<hi rend="super">st</hi> 1862</date>
+     </dateline>
+
+     <salute>A happy New year to you, dear<lb/>
+      <name type="recipient">Addie</name>, and my kindest wishes in<lb/> your interest.</salute>
+    </opener>
+
+    <p> How do you do, this<lb/> beautiful day? Did you ever see such<lb/> a beautiful new years day
+     in your life?<lb/> The day here is as pleasant as the most<lb/> delightful day I ever saw in
+     May.<lb/> The main things <add place="inline" hand="h1">wanted</add> thought, to make me<lb/>
+     perfectly happy to-day, are, first a letter<lb/> from my <name type="recipient">Addie</name>.
+      second <name type="person">Hal's</name> recovery<lb/> from his present indisposition. He
+     has<lb/> not been well for the past few days<lb/> and last night he was some worse,<lb/> but
+     is, I trust, better this morning<lb/> I hope he will soon be able to resume<lb/> his duties. He
+     is not so bad however, as<lb/> to call in the Doctor yet, and I hope will not.<lb/></p>
+
+    <pb n="2" entity="DSSR_000000766_0470"/>
+
+    <p>I have <del hand="h1">not</del> recieved but one letter since<lb/> we left <name type="place"
+      >Charleston</name>, and that one was sent<lb/> to <name type="place">Charleston</name> first.
+     In it you spoke of not<lb/> recieving a letter from me since Capt Asper<lb/> returned. Have you
+     not recieved any of<lb/> the letters I have written? I sent one from<lb/>
+     <name type="place">Charleston</name>, one from <name type="place">Parkersburg</name>, one from<lb/>
+     <name type="place">Green Spring Run</name>, and two from <name type="place">Romney</name><lb/>
+     together with a picture of "your's truly"<lb/> I have been waiting for <name type="person"
+     >Wood</name> to return<lb/> hoping he would bring me some tidings<lb/> from you, but he does
+     not come, and<lb/> as I went in and saw <name type="person">Hal</name>, he asked<lb/> me to
+     write home and let you know<lb/> he was unwell, so I add one more to<lb/> the list of
+     unanswered letters.<lb/></p>
+    <p> I was on picket the other day and had<lb/> a first rate time. I send you a hasty sketch<lb/>
+     of the headquarter of the outpost where I<lb/> was stationed. The smaller part of<lb/>
+     <pb n="3" entity="DSSR_000000766_0471"/> the house took fire, in the night, and great<lb/>
+     excitement ensued in consequence. Many who<lb/> were asleep supposed the rebels had
+     attacked<lb/> us, and were very much alarmed.<lb/> There is a peculiar sort of excitement<lb/>
+     in standing on picket guard that I love<lb/> One takes his post in the evening, banishes<lb/>
+     all though of comfort <unclear/> rest, and gives<lb/> way to his own thoughts, all the time
+     on<lb/> the <unclear>
+      <q>"qui vive"</q>
+     </unclear>, expecting to hear the click<lb/> of a gun lock, the step of an enemy, or,<lb/>
+     perchance, the discharge of a gun itself,<lb/> summoning him to another world. The<lb/>
+     rustling of the breeze through the dry leaves,<lb/> (for there is no snow) or the cry of some
+     night<lb/> bird calling for its mate makes him<lb/> involuntarily get his gun in readiness<lb/>
+     to meet the expected foe. Some times<lb/> it happens that inefficient men are placed<lb/> on a
+     dangerous post, as on the last night<lb/>
+     <pb n="4" entity="DSSR_000000766_0472"/> I stood. A man was placed on a post<lb/> near mine,
+     and towards daylight he fancied<lb/> he saw a man, preparing to make a<lb/> hostile movement:
+     frightened nearly to death<lb/> he drew up his musket and fired. An<lb/> alarm was thus raised
+     needlessly. In<lb/> the morning, we visited the spot where<lb/> the supposed <unclear/> had
+     stood, when lo, a bush<lb/> appeared, having seen it move he shot it.<lb/></p>
+    <p> I made a sketch of some points of<lb/> interest, intending to send them to you<lb/> but
+     while on picket the other day, they<lb/> were stolen. <name type="person">Mr. Davis</name>
+     arrived safe did<lb/> he not? Did you get the picture?<lb/></p>
+    <p> But I must bring this uninteresting<lb/> letter to a <q>"finis"</q>. Do write soon dear<lb/>
+     <name type="recipient">Addie</name>, for I am so lonesome<lb/> Give my kind wishes to all,
+      bid <name type="person">Laurie</name><lb/> and <name type="person">Dora</name> (when you see
+     her) a happy new year for me,<lb/> and please accept my love yourself<lb/></p>
+
+    <closer> Yours as ever<signed>Charlie</signed>
+     <seg type="postscript">I am perfectly well. &amp; trust you are too. Excuse poor writing.
+      for I have a poor pen </seg>
+    </closer>
+   </div1>
+
+   <div1 type="letter" n="2" id="d6">
+
+    <pb n="5" entity="DSSR_000000766_0473"/>
+    <head>Letter from Charles N. Tenney to Adelaide E. Case, 1862 January 01</head>
+
+    <opener>
+     <name type="place">Romney Va</name>.; Happy New years.,<lb/>
+     <salute>My dear friend;-</salute>
+    </opener>
+
+    <p> Although I have once<lb/> written to day, duty and <hi rend="underline">my own</hi><lb/>
+     inclination lead me to pen a<lb/> few more scattered thoughts to<lb/> my dearest, kindest,
+      friend <name type="recipient">Addie</name><lb/> Now, to speak truly, I feel<lb/> more like
+     myself to-night than<lb/> this morning, for two reasons,<lb/> which reasons, are the
+     fulfillment<lb/> of my two wishes expressed in<lb/> my note of this
+     morning <unclear>orig</unclear>.--<lb/> the reception of a letter from you<lb/> and about <name
+      type="person">Hal's</name> getting better.<lb/> He is some better tonight, though<lb/> not
+     well. The wind has been<lb/> blowing very hard,all day,<lb/>
+     <pb n="6" entity="DSSR_000000766_0475"/> Page 2.<lb/> and the tent kept flapping
+     a <unclear/><lb/> making a very disagreable <orig reg="noise">noi</orig><lb/> to <name
+      type="person">Hal</name>, consequently, a severe <orig reg="head">hea</orig><lb/> ache ensued,
+     but the gale has<lb/> in a measure subsided, and I<lb/> trust a good night's rest will<lb/>
+     restore him to his wanted good<lb/> health. But to turn to <orig reg="other">oth</orig><lb/>
+     subjects. Have you passed a<lb/> happy new-year's day? and did<lb/> you thoughts revert
+      once <del hand="h1">of</del> to<lb/>
+     <q>"Soldier boy"</q> <name type="sender">Charlie</name>? and wonder<lb/> if he was engaged in
+     some<lb/> Bechanalian excesses? Thanks,<lb/>
+     <name type="recipient">Addie</name>, for the question which sis-<lb/> ter <name type="person"
+      >Laurie</name> prompted you to ask<lb/> me. You may inform her that<lb/>
+     <name type="sender">Charlie</name> never was intoxicated in<lb/> his life, and furthermore,
+     while<lb/> at <name type="place">Summersville</name>, I<lb/> pledged myself to <q>"touch not</q>,<lb/>
+     <pb n="7" entity="DSSR_000000766_0474"/> 3<hi rend="super">rd</hi> Page <q>taste not, handle
+      not the wine,"</q> or,<lb/> in other words became a teetotaller.<lb/> In making these
+     assertions, I think<lb/> I can be borne out in them by Co. H.<lb/> and its officers. While on
+     the subject[s]<lb/> of domestic evils, let me remark that<lb/> over two months ago, I eschewed
+     the<lb/> use of tobacco in any form, and while<lb/> at <name type="place">Green Spring
+     Run</name>, I forswore the<lb/> practice of playing cards. This I did<lb/> for my own benefit
+     and character<lb/> hereafter. Is <name type="recipient">Addie</name> satisfied with this<lb/>
+     statement? It is I believe the truth.<lb/> Oh! the temptations of a soldier's life!<lb/> How
+     great the want of some restraining<lb/> influence at home! <q>"Home,"</q> Tears invol=<lb/>
+     untarily spring to my eyes as I utter<lb/> that endearing word, and think.<q>" <hi
+       rend="underline">I<lb/> have no home</hi>."</q> But fate has decreed<lb/> that <hi
+      rend="underline">one</hi> remains, not too proud to<lb/> own an <hi rend="underline">outcast
+      soldier</hi> as a <hi rend="underline">brother</hi><lb/>
+     <pb n="8" entity="DSSR_000000766_0476"/> That you should find anything<lb/> worthy a sister's
+     love in my poor<lb/> self, is a matter of wonder to me.<lb/> How can I ever repay you for
+     your<lb/> kindness in noticing one so far<lb/> below your happy position?<lb/> But, do I wound
+     you? Forgive me<lb/>
+     <hi rend="underline">dear, kind</hi> sister, and I will endeav <unclear/><lb/> or to dispel the
+     unpleasant state<lb/> of mind, which has come over me<lb/> in a few moments of <hi
+      rend="underline">bitter</hi> thought<lb/> Would you know how the day<lb/> has been passed by
+     me? Well<lb/> in the morning, after performing<lb/> the usual routine, I called on <name
+      type="person">Hal</name><lb/> and was pained to learn that he<lb/> had passed an ill night,
+     after<lb/> fulfilling his request to write home,<lb/> I read <q>"Guy Mannering"</q> until<lb/>
+     Battalion drill, after which I returned<lb/> to attend to the wants of my<lb/> brother <name
+      type="person">Hall</name> where I now am and will remain<lb/> tonight <name type="person"><abbr
+       expan="George">Geo.</abbr> Moore</name> is with me and requests<lb/> me to give his respects
+      to <q>"the family,"</q> I suppose he<lb/>
+     <sic corr="has">has</sic> some one <orig reg="in p">articular</orig>. By the bye <name
+      type="person">George</name> is a<lb/> good boy and is a true man.</p>
+
+   </div1>
+
+  </body>
+
+ </text>
+</TEI.2>

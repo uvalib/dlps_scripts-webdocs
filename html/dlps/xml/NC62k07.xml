@@ -1,0 +1,356 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0655 SYSTEM "000000766_0655" NDATA jpg>
+<!ENTITY DSSR_000000766_0656 SYSTEM "000000766_0656" NDATA jpg>
+<!ENTITY DSSR_000000766_0657 SYSTEM "000000766_0657" NDATA jpg>
+<!ENTITY DSSR_000000766_0658 SYSTEM "000000766_0658" NDATA jpg>
+
+<!--<!ENTITY NC62k07a SYSTEM "NC62k07a.jpg" NDATA jpg>
+<!ENTITY NC62k07b SYSTEM "NC62k07b.jpg" NDATA jpg>
+<!ENTITY NC62k07c SYSTEM "NC62k07c.jpg" NDATA jpg>
+<!ENTITY NC62k07d SYSTEM "NC62k07d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NC62k07">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+                        value="1862-11-07">November 7, 1862</date></title>
+
+                <author>Tenney, Charles N.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Eileen C. Mathias</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Eileen C. Mathias</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">18</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NC62k07</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case, November 7, 1862</title>
+
+
+                        <author>Charles N. Tenney</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p> </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-11-07">1862-11-07</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>masculine</term>
+                    <term>American Civil War / Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-16">November 16th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 21st, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+        <front id="d2">
+            <div1 type="summary" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1862-11-07">November 7, 1862</date>
+
+                        <title>Charles N. Tenney, Harper's Ferry, Virginia, to Adelaide E.
+                        Case</title>
+                    </bibl>
+                </head>
+
+                <p> Charley describes the Brigade's march to Harper's Ferry, and says he may well be
+                    there for the winter in the enviable position of Clerk to the Provost Marshal.
+                    He hopes to take a furlough during the winter to visit Addie, but realizes it
+                    may be impossible. He responds to Addie's letter in which she describes an
+                    affair between her sister, Laura, and Mr. Grant. Charley is astounded at Mr.
+                    Grant's "low" and "vile" behavior, and believes God will "mete out justice to
+                    such men". Charley wishes happiness to Laura in her new "estate" as Mrs.
+                    Thompson. Charley also expresses regret that Hal was not successful in "filling
+                    up the 84th" but imagines that Addie will be pleased because this means Hal will
+                    not return to the field. </p>
+            </div1>
+        </front>
+
+
+        <body id="d4">
+            <div1 type="letter" id="d5">
+                <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-11-07"
+                        >November 7, 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0655"/>
+                <opener>
+                    <dateline>Provost Marshals Office<lb/>
+                        <name type="place">Harper's Ferry</name><date value="1862-11-07">
+                            <abbr expan="November">Nov.</abbr>
+                            <abbr expan="seventh" type="superscription">7th</abbr>, 1862</date><lb/>
+                    </dateline>
+
+                    <salute> My darling Addie; </salute>
+                </opener>
+
+                <p> Quite a long time has elapsed since<lb/> I last wrote you, and I fear you will
+                    think I am<lb/>
+                    <orig reg="tresspassing">trespa&longs;sing</orig> too far on your <orig
+                        reg="goodness">goodne&longs;s</orig> and forbearance. But<lb/> when I
+                    explain this unwanted silence, I think you will<lb/> forgive me &mdash; at
+                    least in part. Two precious letters<lb/> have been recieved from you, each of
+                    which deserves an<lb/> "answer" complete in itself, b<del hand="h1">y</del><add
+                        place="inline" hand="h1">ut</add> at this time it is <orig reg="impossible"
+                        >im-<lb/> po&longs;sible</orig> for one to write a very long or
+                    interesting letter.<lb/>
+                </p>
+
+                <p> You percieve by the "heading" that I am in the<lb/> Provost Marshal's office at
+                    this place, where I have been<lb/> since Sunday, &mdash; in the pleasant
+                    situation of<abbr expan="Provost"> Pro.</abbr> <abbr expan="Marshal">Mar.</abbr>
+                    Clerk.<lb/>
+                </p>
+
+                <p> The <abbr expan="Regiment">Regt</abbr> &mdash; in fact the Brigade was
+                    aroused<lb/> from our pleasant camp in <name type="place">Loudon Valley</name> on
+                    Thursday<lb/> morning to "move with Camp and Garrison equipage, at<lb/> 6 A.M."
+                    and at that time we were in line and even<lb/> marching toward <name type="place"
+                        >Harper's Ferry</name>, through which we <orig reg="passed"
+                    >pa&longs;sed</orig><lb/> to <name type="place">Bolivar Heights</name>, where
+                    we halted for further orders.<lb/>
+                </p>
+
+                <p> The result was &mdash; we had to go out on Picket duty<lb/> leaving a few
+                    men to pitch our camp at <name type="place">Bolivar Heights</name>.<lb/>
+                    <pb n="2" entity="DSSR_000000766_0656"/> We were not <orig reg="relieved"
+                    >relived</orig> until late Friday night and then<lb/> was obliged to walk
+                    4&frac12; miles to attain a point only &frac34; mile<lb/> away. This was
+                    to gratify a "stylish Colonel." Saturday and<lb/> Sunday I was quite unwell, but
+                    Sunday P.M. I was detailed<lb/> for this duty, and in view of the coming cold
+                    weather and<lb/>
+                    <orig reg="cheerless">cheerle&longs;s</orig> camps, I thought I would come.
+                    The work &mdash; though<lb/> steady &mdash; is not very heavy and with
+                    our present Provost Marshal<lb/> &mdash; <name type="person"><abbr
+                            expan="Captain">Capt.</abbr> Church Howe</name>, of <name type="person"
+                            ><abbr expan="General">Gen</abbr> Sedgwick</name>'s Staff &mdash; I
+                    could wish<lb/> for nothing save a good long Leave of Absence to visit my<lb/>
+                    own &mdash; <hi rend="underline">my darling <name type="person"
+                            reg="Adelaide E. Case">Addie</name></hi>.<lb/>
+                </p>
+
+                <p> But it is <orig reg="useless">usele&longs;s</orig> for one to wish for <hi
+                        rend="underline">that</hi> even,<lb/> for "Furloughs" are a fruit not
+                    growing very plentifully in these<lb/> parts, and most difficult to obtain,
+                    still, if the thing is <orig reg="possible">po&longs;sible</orig>,<lb/> I
+                    shall come home this Winter. By the way, old Boreas has<lb/> made his appearance
+                    with us, and left &mdash; no, not left, for he hasn't<lb/> gone &mdash;
+                    but is making his footsteps plainly visible. It has snowed<lb/> continually all
+                    day, and the surrounding hills are quite<lb/> enshrouded in a snowy mantle
+                    &mdash; (There &mdash; think of being<lb/>
+                    <hi rend="underline">enshrouded in a mantle</hi>; <hi rend="underline">ain't</hi>
+                    I poetic?)<lb/>
+                </p>
+
+                <p> Of course, you have heard of the "Advance", and<lb/> of course are anxious to
+                    learn if the Seventh is "with the<lb/> army". For a wonder, we &mdash; <hi
+                        rend="underline">our entire Corps</hi> &mdash; are in the<lb/> rear,
+                    actually remaining to garrison this famous "City of Burnt<lb/> Shops", and the
+                    surrounding Heights!!! </p>
+
+                <pb n="3" entity="DSSR_000000766_0657"/>
+
+                <p> From all I can learn, we will <orig reg="doubtlessly"
+                    >doubtle&longs;sly</orig> remain here this<lb/> coming Winter, and nothing
+                    could be more acceptable to us<lb/> as a regiment. </p>
+
+                <p> Now I will briefly reply to a<lb/> portion of your letters &mdash; but do
+                    not think, my darling <name type="person" reg="Adelaide E. Case">Addie</name>
+                    that<lb/> I wish to neglect them, nothing is farther from my thoughts
+                    &mdash; I will<lb/> write a good long letter soon, and devote "lots" of time
+                    and care to it<lb/> The office is crowded now, and it is quite late in the
+                    evening.<lb/>
+                </p>
+
+                <p> Your letter of the <abbr expan="twenty-fourth" type="superscription"
+                        >24th</abbr> <abbr expan="October">Oct</abbr>, surprised me not a little. It
+                    was<lb/> in relation to Laura and her late painful and unfortunate<lb/> affair
+                        with <name type="person"><unclear>Hi.</unclear> Grant</name>. I had
+                        known <name type="person">Grant</name> previously to my<lb/> enlistment,<add
+                        hand="h1" place="supralinear">while in <name type="place">Mecca</name></add>
+                    and had never dreamed that he could be guilty of<lb/> such deep=dyed villainy as
+                    striving to win the affection of a pure, noble=<lb/> minded lady, while engaged
+                    to another. He is not worth the name<lb/> of "<hi rend="underline">Man</hi>"
+                        &mdash; <hi rend="underline">does not deserve the friendship even of a
+                        dog</hi>. It is<lb/> difficult to imagine a person so low, so vile, as to
+                    trifle with the<lb/> holiest thoughts and passions, and so <orig
+                        reg="heartlessly">heartle&longs;sly</orig> destroy the highborn<lb/>
+                    impulses of the soul &mdash; aye break the heart itself. God will<lb/> mete
+                    out justice to such men, &mdash; He has written " <hi rend="underline"
+                        >vengeance is mine <gap desc="part of the letter e"
+                            extent="1 alphabet letter and possible puncuation" reason="damage"/>
+                        <lb/> I will repay</hi>." To <name type="person">Laurie</name> in her new
+                    estate &mdash; as <name type="person">Mrs.<lb/> Thompson</name> &mdash;
+                    I wish pure and unbroken <orig reg="happiness">happine&longs;s</orig>
+                    &mdash; a future un=<lb/> dimmed by clouds of adversity, and a long and
+                    happy life<lb/>
+                </p>
+
+                <p> Could I wish more? May the good giver of all good <orig reg="preserve">pre-<lb/>
+                        serve</orig> her and thee &mdash; <hi rend="underline">my own loved
+                             <name type="person" reg="Adelaide E. Case">Adelaide</name>
+                    </hi>. <lb/>
+                </p>
+
+                <pb n="4" entity="DSSR_000000766_0658"/>
+                <p>I am almost sorry that <name type="person">Hal</name> did not succeed in
+                    filling<lb/> up the <abbr expan="Eigthy-fourth">84th</abbr> to the required
+                    standard, but perhaps it is all for<lb/> the best &mdash; I know <hi
+                        rend="underline">you</hi> will say so, as it precludes his return to<lb/>
+                    the field. Had he been successful, I should have endeavered<lb/> to be
+                    transferred into his <abbr expan="Regiment">Regt,</abbr> as it is, I will,
+                    quietly of course,<lb/> remain in the "Bloody Seventh."<lb/>
+                </p>
+
+                <closer> But I must close this very uninteresting letter, as<lb/>
+                    <name type="person"><abbr expan="Lieutenant">Lieut</abbr> Howe</name> has come
+                    in, and I must report the "prisoners" <lb/>
+                    <lb/> Remember me to all &mdash; particularly to <name type="person">Papa.
+                        Hallie</name> and<lb/>
+                    <name type="person">Laurie</name> but <hi rend="underline">most</hi> particularly
+                    remember me to your own darling<lb/> self and write as soon as convenient. <lb/>
+                    <salute> From Your own devoted and true </salute>
+                    <signed> Charley Tenney. </signed>
+                    <address>
+<addrLine>Address&mdash; Chas. N. Tenney</addrLine>
+<addrLine>Care of <abbr expan="Captain">Capt</abbr> Howe &mdash; <abbr expan="Provost">Prov.</abbr>
+Marshal</addrLine>
+<addrLine><name type="place">Harper's Ferry</name></addrLine>
+<addrLine><name type="place"><abbr expan="Virginia">Va.</abbr></name></addrLine>
+
+<addrLine>Omit the <abbr expan="Company">Co.</abbr> &amp; <abbr expan="Regiment">Regt.</abbr></addrLine>
+
+</address>
+                </closer>
+            </div1>
+
+        </body>
+
+    </text>
+</TEI.2>

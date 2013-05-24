@@ -1,0 +1,2056 @@
+/* fedora variable-width page CSS */
+
+h1 {
+	color: #444491;
+	clear: left;
+}
+
+h2 {
+	color: #960;
+	padding-left: 1.3em;
+	clear: left;
+	margin: 1.75em 0 0 0;
+}
+
+h3 {
+	color: #444491;
+	padding-left: 1.6em;
+	clear: left;
+	margin: 1.5em 0 0 0;
+}
+
+h4 {
+	color: #960;
+	padding-left: 2em;
+	margin: 1.25em 0 0 0;
+}
+
+p {
+position: relative;
+	padding-left: 2em;
+	clear: left;
+}
+
+p img {
+	margin: 0 0.5em 0.5em 0;
+	position: relative;
+	clear: left;
+}
+
+a img {
+	border: 0;
+}
+
+
+/* PAGE-AREA is the wrapper -- NOTE: THERE IS CUSTOM CSS FOR PAGE IMAGE DISPLAYS: see div#page-area-pgimg: NO MARGINS and A GREY CONTENT BKG */
+
+div#page-area {
+	position: relative;
+	top: 0px;
+	min-width: 780px;
+	margin-top: 0px;
+	margin-right: 2%;
+	margin-left: 2%;
+	padding: 0;
+	text-align: left;
+	background-color: #FFF;
+}
+
+div#banner {
+	position: relative;
+	left: 0px;
+	margin: 0px;
+	padding: 0px;
+	border-bottom: 1px solid #000;
+	width: 100%;
+	height: 44px;
+	background-image: url(/digital/collections/images/banner_left.gif);
+	background-position: left;
+	background-repeat: no-repeat;
+}
+
+h1#textbanner {
+	margin: 0;
+	padding-top: 44px;
+	width: 100%;
+	background-image: url(/digital/collections/images/banner_right.gif);
+	background-position: top right;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	height: 44px;
+	voice-family: "\"}\""; 
+	voice-family:inherit;
+	height: 0;
+}
+
+/* DROP MENUS */
+
+div#nav {
+	position: absolute;
+	top: 45px;
+	z-index: 10;
+	margin: 0;
+	padding: 0;
+}
+
+ul#navmenu {
+	height: 1.4em; 
+	position: relative;
+	padding: 0;
+	margin: 0px;
+	font-size: 11px;
+	list-style: none;
+	white-space: nowrap;
+}
+
+ul#navmenu  li {
+	float: left;
+	position: relative;
+	width: 6em;
+	height: 1.4em;
+	background-color: #FAF6CC;
+	padding: 0px 12px 0px 4px;
+	margin: 0;
+	border-top: 0;
+	border-right: 1px solid #336;
+	border-bottom: 1px solid #336;
+	border-left: 0;
+	text-align: left;
+}
+
+/* ie 5 mac & win hacks \*/
+ul#navmenu li {
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width: auto;
+}
+
+html>body ul#navmenu li {
+	width: auto;
+}
+/* end hacks */
+
+ul#navmenu li:hover, ul#navmenu li ul li:hover {
+	background-color: #FFFFEA;
+}
+
+ul#navmenu a { 
+	font-weight: bold;
+	color: #036;
+	text-decoration: none;
+	margin: 0;
+	padding: 0px 8px 2px 4px;
+}
+
+ul#navmenu li a:hover {
+	text-decoration: underline;
+}
+
+ul#navmenu li#first {
+	border-left: 0;
+}
+
+ul#navmenu li#last {
+	border-right: 1px solid #333;
+}
+
+ul#navmenu li ul {
+	display: none;
+	position: absolute;
+	top: 105%; /* value for ie5 */
+	left: -1.5em; /* value for ie5 */
+	margin: 0;
+	font-weight: normal;
+	list-style: none;
+}
+
+/* hack to hide from IE 5 \*/
+ul#navmenu li ul {
+	voice-family: "\"}\""; /* ie5 stops reading here */
+	voice-family: inherit;
+	top: 115%;
+	left: -0.1em; /* ie6 reads this */
+}
+
+/* but only good browsers read this - hidden from ie5-6win */
+html>body ul#navmenu li ul {
+	top: 107%;
+	left: -3.72em;
+}
+/*end hacks */
+
+ul#navmenu li ul li {
+	display: block;
+	float: none;
+	margin: 0; /*values for IE5win ??? */
+	padding: 2px 4px 2px 4px;
+	background-color: #FAF6CC;
+	border-top: 0;
+	border-right: 1px solid #333;
+	border-left: 1px solid #333;
+	border-bottom: 1px solid #333;
+	white-space: normal;
+	height: auto;
+	width: 17em;
+}
+
+ul#navmenu li ul li a {
+	display: block;
+	color: #036;
+	text-decoration: none;
+	height: 12px;
+	margin: 0;
+	padding: 0;
+}
+
+ul#navmenu li ul li a:hover {
+	text-decoration: underline;
+}
+
+#navmenu li:hover ul, #navmenu li.over ul {
+	display: block;
+	margin: 0;
+}
+
+
+/*
+div#rotunda {
+	z-index: 20;
+	width: 42;
+	height: 44;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+div#virgo_box {
+	background-color: #CCF;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #000000;
+	vertical-align: top;
+	width: 132px;
+	height: 52px;
+	padding: 4px;
+}
+
+form#virgo_search {
+	margin-top: 1px; 
+	margin-bottom: 2px;
+	font-size: 10px;
+	}
+*/
+
+/* MAIN CONTENT -- NOTE: THERE ARE DIFFERENT CONTENT CSS FOR DIFFERENT DOCUMENT TYPES; PAGE IMAGE DISPLAYS NEED A GREY BKG */
+
+div#content {
+	position: relative;
+	padding: 1em 2em 3em 2em;
+	margin: 0;
+	background-color: #FFF;
+}
+
+/*because IE doesn't support child selectors, and renders lists differently
+div#content ul, div#content ol, div#content blockquote {
+	padding-left: 1em;
+	clear: left;
+}*/
+
+div#content ul li ul, div#content ol li ul, div#content ol li ol {
+	padding-left: 0;
+}
+
+ /*for good browsers*/
+div#content>ul, div#content>ol, div#content>blockquote {
+	padding-left: 4em;
+	clear: left;
+}
+
+div#content>ul li>ul, div#content>ol li>ul, div#content>ol li>ol {
+	padding-left: 2em;
+} 
+
+div#content>ul {
+	list-style: square;
+}
+
+div#content>ul li {
+	margin-bottom: 0.5em;
+}
+
+/* TOP-LEVEL PAGES */
+
+#blurb {
+	padding: 0px 0px 0px 12px;
+	text-indent: -12px;
+	font-size: 90%;
+	width: 64%; /* ie5win fudge begins */
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	width: 44%;
+}
+
+html>body #blurb {
+	width: 44%; /* ie5win fudge ends */ 
+
+}
+
+.leader {
+	font-size: 160%;
+	color: #960;
+	font-weight: bold;
+	margin: 0px;
+}
+
+p.listheader {
+	margin-bottom: 0;
+}
+
+p.listheader + ul {
+	margin-top: 0;
+}
+
+#menu-callout {
+	position: relative;
+	float: right;
+	width: 200px;
+	margin: 36px 36px 0 0;
+}
+
+#menu-callout h3, #searchbox h4 {
+	position: relative;
+	z-index: 2;
+	top: 0.3em;
+	padding-left: 0;
+	margin: 0;
+	white-space: nowrap;
+}
+
+ #menu-callout ul {
+	position: relative;
+	padding-left: 0;
+	margin: 0;
+} 
+
+#menu-callout li {
+	list-style-type: none;
+	background-color: #444491;
+	border: 1px solid #FFF;
+	border-left: 6px solid #960;
+	padding: 4px;
+	margin: 0 1px 1px 0;
+}
+
+/* hide from ie \*/
+#menu-callout li {
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	margin: 0px 1px 1px 0;
+}
+/*end hack */
+
+#searchbox {
+	position: relative;
+	width: 220px;
+	height: auto;
+	float: right;
+	margin: 1em 0 2em 3em;
+}
+
+#searchbox-advanced {
+	position: relative;
+	width: 260px;
+	height: auto;
+	float: left;
+	margin: 1em 1em 2em 0;
+	padding: 1px;
+	width: 30%;
+}
+
+#searchbox-advanced h2 {
+	position: relative;
+	z-index: 2;
+	top: 0.1em;
+	padding-left: 0;
+	margin: 0;
+	white-space: nowrap;
+}
+
+#searchbox form, #searchbox-advanced form {
+	font-size: 14px;
+	background-color: #F6F6FC;
+	border: 1px solid #336;
+	margin: 0;
+	padding: 1em;
+	line-height: 1.5em;
+}
+
+
+div.column1 {
+	position: relative;
+	width: 60%;
+}
+
+div.column2 {
+	position: relative;
+	float: left;
+	width: 50%; /* ie hacks begin */
+	voice-family: "\"}\""; /* ie5win stops reading here */
+	voice-family: inherit;
+	width: 65%; /* ie6 reads this */
+}
+
+/* only good browsers read this - hidden from ie5-6win */
+html>body div.column2 {
+	width: 65%; /* ie hacks end */ 
+}
+
+div.column2 li {
+	margin-left: 2em;
+	padding-bottom: 1em;
+}
+
+
+html > body #menu-callout li {
+	margin: 0px 1px 1px 0;
+}
+
+
+#menu-callout li.first {
+	border-top: 1px solid #960;
+}
+
+#menu-callout li:hover {
+	background-color: #606CBA;
+	border-left-color: #D9A70F;
+}
+
+#menu-callout a {
+	font-size: 90%;
+	font-weight: bold;
+	color: #FFFFEA;
+	text-decoration: none;
+}
+
+#menu-callout a:hover {
+	color: #FFF;
+	text-decoration: underline;
+}
+
+/*.item {
+position: relative;
+width: 705px;
+} */
+
+.item {
+	margin: 0px 3em 2em 0;
+	clear: both;
+}
+
+
+.item h2, .item h3, .item h4 {
+	margin: 2em 0 -0.3em 0.2em;
+	position: relative;
+	z-index: 10;
+	background-color: transparent;
+	left: -0.1em; 
+}
+
+.item p, .item form, .item ul {
+	padding: 1.5em;
+	margin: 0 0 0 2em;
+	border: 1px solid #333;
+	background-color: #FFFFEA;
+/*	line-height: 140%;
+	font-size: 90%; */
+}
+
+
+.item ul li {
+	list-style-type: square;
+	list-style-position: outside;
+	margin-left: 0;
+	padding: 0 0 0.5em 0;
+}
+
+
+.item-float {
+	position: relative;
+	float: left;
+	margin: 0 5% 5% 0px;
+	width: 34%; /* ie5win fudge begins */
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	width: 45%;
+}
+
+
+.item-float p {
+	position: relative;
+	padding: 8px;
+	border: 1px solid #000;
+	margin-top: 0px;
+	background-color: #FFFFEA;
+}
+
+.item-float h2 {
+	padding-left: 0;
+	font-size: 16px;
+	margin: 36px 0px -5px 0px;
+	position: relative;
+	z-index: 2;
+}
+
+div.item-float p img {
+	position: relative; 
+	background-color: transparent;
+	margin: 0 10px 6px 0px;
+}
+
+div.featured-collection {
+	position: relative;
+	margin: 1em 5% 2em 5%;
+	padding-bottom: 1em;
+/*	border-bottom: 1px solid #666;*/
+}
+
+div.featured-collection h4, div.featured-collection p {
+	position: relative;
+	margin: 0 0 0 85px;
+}
+
+div.featured-collection img {
+	position: absolute;
+	left: -2em;
+}
+
+div.home-image-group {
+	position: relative;
+	padding-left: 0;
+	margin-bottom: 3em;
+	width: 200px;
+	float: left;
+}
+
+div.image-group img, div.home-image-group img, div.image-group-rv img {
+	margin: 3px;
+}
+
+.image-group-rv {
+	padding: 0.5em;
+	margin: 0 1em 1em 1em;
+	width: auto;
+	height: auto;
+	text-align: center;
+	float: right;
+}
+
+ul#collection-links {
+	margin: 0;
+	padding: 0;
+	position: absolute; 
+	left: 215px;
+	top: 80px;
+	width: 200px;
+	font-size: 80%;
+	list-style: square;
+}
+
+.callout {
+	padding: 0.2em;
+	margin: 2em;
+	width: 240px;
+	height: auto;
+	float: right;
+	border: 1px dotted #999;
+	background-color: #FFFFEA;
+	font-size: 90%; 
+}
+
+div.callout-wide {
+	margin-top: 2em;
+}
+
+div.callout-wide ul, p.callout-wide  {
+	position: relative;
+	width: 55%;
+	padding: 0.5em;
+	margin: 0 0 1em 1em;
+	border: 1px dotted #999;
+	background-color: #FFFFEA;
+	font-size: 90%; 
+}
+
+.callout-wide ul li {
+	list-style-type: square;
+	margin-left: 1em;
+}
+
+.callout-wide h2, .callout-wide h3, .callout-wide h4  {
+	margin: 0 0 -0.2em 0;
+	position: relative;
+	z-index: 10;
+	background-color: transparent;
+	left: -0.75em; 
+}
+
+
+/* SEARCH RESULTS HEADER */
+
+
+div#header {
+	position: relative;
+	top: 0;
+	margin: 0;
+	background-color: #E7E7F7;
+	border-bottom: 1px solid #336;
+	padding: 1.2em 0 0 1em; /* ie hacks begin */
+	voice-family: "\"}\""; /* ie5win stops reading here */
+	voice-family:inherit;
+	padding-bottom: 0; /* ie6 reads this */
+}  
+
+/* only good browsers read this - hidden from ie5-6win */
+html>body div#header {
+	padding-bottom: 1em; /* ie hacks end */ 
+}
+
+#header h1 {
+	margin: 0.2em 0 0 0;
+	width: 75%;
+}
+
+#header h2, #header h3, #header h4 {
+	margin: 0;
+	padding: 0;
+}
+
+div#search-tips {
+	position: absolute;
+	top: 3em;
+	right: 5%; 
+	font-size: 75%;
+}
+
+div#search-tips a, p.button a {
+	display: block;
+	float: left;
+	padding: 0 3px 0 3px;
+	margin: 0 3px;
+	color: #FFF;
+	font-weight: bold;
+	background-color: #669;
+	border: 1px solid #000;
+}
+
+div#search-tips a:hover, p.button a:hover {
+	color: #333;
+	background-color: #CCC;
+	border: 1px solid #666;
+}
+
+
+/* TABS*/
+
+#results-tabs {
+	position: relative;
+	float: none;
+	margin: 0;
+	top: 1px;
+	width: 100%;
+	line-height:normal; 
+}
+
+#results-tabs ul {
+	margin: 0;
+	padding: 0.8em 0.8em 0.75em 0.8em;
+	list-style: none;
+	font-size: 0.8em;
+}
+
+#results-tabs li {
+	float: left;
+	background: url("/digital/collections/images/tab-left.gif") no-repeat left top;
+	margin: 0;
+	padding: 0 0 0 9px;
+}
+
+#results-tabs a {
+	float:left;
+	display:block;
+	background:url("/digital/collections/images/tab-right.gif") no-repeat right top;
+	padding: 5px 15px 4px 6px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/* Commented Backslash Hack
+   hides rule from IE5-Mac \*/
+#results-tabs a {
+	float: none;}
+/* End IE5-Mac hack */
+
+
+#results-tabs li.current {
+	background-image: url("/digital/collections/images/tab-left-on.gif");
+}
+
+#results-tabs li.current a {
+	background-image: url("/digital/collections/images/tab-right-on.gif");
+	padding-bottom: 5px;
+}
+
+#results-tabs a img {
+	vertical-align: middle;
+}
+
+
+/* SIDEBAR */
+
+div#sidebar, div#resultsidebar {
+	position: relative;
+	float: right;
+	right: -2em;
+	width: 180px;
+	padding: 8px;
+	background-color: #FFFFEA;
+	border-left: 1px solid #000;
+	border-bottom: 1px solid #000;
+	margin: -1em 0 40px 2em; 
+}
+
+/* only good browsers read this - hidden from ie5-6win */
+html>body div#sidebar, div#resultsidebar {
+	margin-right: 0; /* ie hacks end */ 
+}
+
+div#sidebar p, div#sidebar ul, div#resultsidebar p, div#resultsidebar ul {
+	padding: 0;
+	margin: 0;
+	font-size: 90%;
+	font-weight: bold;
+}
+
+div#page-area-pgimg #sidebar, div#page-area-pgimg #resultsidebar {
+	margin-right: 0;
+}
+
+
+/* SIDEBAR SEARCH REPORT  */
+
+span.criteria {
+	color: #900;
+	font-weight: bold;
+}
+
+span.field {
+	font-weight: normal;
+	font-style: italic;
+}
+
+
+#search-report ul, #search-report li {
+	margin: 0;
+	padding-left: 0;
+	list-style-position: inside;
+	font-weight: normal;
+}
+
+span#sorted-by {
+	font-weight: bold;
+}
+
+#sidebar #searchbox, #resultsidebar #searchbox {
+	position: relative;
+	float: none;
+	width: 166px;
+	height: auto;
+	margin: 2em 0 0 0;
+}
+
+#sidebar #searchbox h4, #resultsidebar #searchbox h4 {
+	position: relative;
+	z-index: 2;
+	margin: 0;
+	padding: 0;
+	top: 0.3em;
+}
+
+#sidebar #searchbox form, #resultsidebar #searchbox form {
+	width: 150px;
+}
+
+#sidebar span.author, #resultsidebar span.author {
+	font-weight: bold;
+}
+
+#sidebar span.title, #resultsidebar span.title {
+	font-style: italic;
+}
+
+#sidebar img#titlepage-tn, #resultsidebar img#titlepage-tn {
+	padding-bottom: 100%;
+}
+
+/* MAIN SEARCH RESULTS DISPLAY */
+
+div#results, div#imgobj-results{
+	position: relative;
+	top: 0;
+	margin: 0 15% 0 0;
+	padding: 0;
+	height: 1%;
+}
+
+/* only good browsers read this - hidden from ie5-6win */
+html>body div#results, html>body div#imgobj-results {
+	height: auto;/* ie hacks end */ 
+}
+
+p#results-location {
+	position: relative;
+	width: 60%;
+	padding-left: 0;
+	font-size: 90%;
+	font-weight: bold;
+}
+
+p.results-nav {
+	position: relative;
+	width: 60%;
+	padding: 0;
+	text-align: center;
+	font-size: 90%;
+}
+
+p.results-nav a {
+	padding: 0 0.2em 0 0.2em;
+}
+
+p.results-nav span#current {
+	color: #900;
+	font-weight: bold;
+}
+
+p.results-nav a#next {
+	font-weight: bold;
+	padding-right: 10px;
+	background: transparent url(/digital/collections/images/arrow-r.gif) right no-repeat;
+}
+
+p.results-nav a#previous {
+	font-weight: bold;
+	padding-left: 10px;
+	background: transparent url(/digital/collections/images/arrow-l.gif) left no-repeat;
+}
+
+div#results ul#titles, div#results ul#image-titles {
+	width: 90%;
+	margin: 0;
+	padding-left: 0;
+	border: 1px solid #336;
+	border-bottom: 0;
+}
+
+div#results ul#titles li, div#results ul#image-titles li {
+	margin: 0;
+	border-bottom: 1px solid #336;
+	padding: 0.2em 1em 0.2em 0.5em;
+	list-style-position: none;
+	font-size: 90%;
+	font-weight: bold;
+}
+
+div#results ul#titles li.text {
+	list-style-image: url(/digital/collections/images/icon-text.gif);
+}
+
+
+div#results ul#titles li.page-image {
+	list-style-image: url(/digital/collections/images/icon-pageimage.gif);
+}
+
+
+div#results ul#titles li.image {
+	list-style-image: url(/digital/collections/images/icon-image.gif);
+}
+
+div#results ul#titles li.ead {
+	list-style-image: url(/digital/collections/images/icon-findingaid.gif);
+}
+
+div#results ul li span.matchnum,  div#results ul#titles span.matchnum, div#results ul#image-titles li span.matchnum {
+	position: relative;
+	display: block;
+	text-align: right;
+	font-weight: normal;
+	font-style: italic;
+}
+
+
+div#results ul#img-title-hdr {
+	position: relative;
+	width: 88%;
+	border: 1px solid #336;
+	list-style: none;
+	margin: 0;
+	padding: 0.5em;
+	background-color: #F6F6FC;
+	font-size: 100%;
+	font-weight: bold;
+}
+
+
+div#results ul#img-title-hdr span.matchnum {
+	position: relative;
+	display: block;
+	right: 0;
+	top: -1em;
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+	font-style: italic;
+}
+
+.searchword {
+        font-weight: bold;
+        font-size:110%
+}
+
+div.label {
+	margin: 0;
+	padding: 0.2em 0.5em;
+	background-color: #ffffea;
+	border: 1px solid #960;
+	width: 500px;
+}
+
+div#results ul.author-titles {
+	list-style: none;
+	margin: 0.5em 0 2em 1em;
+	font-size: 90%;
+	font-weight: bold;
+	line-height: 1.8em;
+}
+
+div#results ul.author-titles li span.matchnum {
+	font-weight: normal;
+	font-style: italic;
+	display: inline;
+	text-align: left;
+	padding-left: 20px;
+
+}
+
+div.label h1, div.label h2, div.label h3, div.label h4 {
+	margin: 0;
+	padding: 0;
+}
+
+ul.matchlist {
+	list-style-type: square;
+	line-height: 2em;
+}
+
+ol.matchlist {
+	list-style-type: decimal;
+	line-height: 2em;
+}
+
+.matchlist a, #toc li a {
+	text-decoration: none;
+}
+
+.matchlist a:hover,  #toc li a:hover {
+	text-decoration: underline;
+}
+
+/* TEXT DOCUMENT TOC */
+
+ul#toc {
+	list-style-type: square;
+	line-height: 1.3;
+	margin-right: 265px;
+}
+
+ul#toc li {
+	padding-bottom: 1.5em;
+}
+
+ul#toc span.chapter {
+	font-weight: bold;
+}
+
+
+/* TEXT DOC NAV */
+
+div#docnav {
+	position: relative;
+	display: block;
+	height: 1.4em;
+	width: 100%;
+	margin: 1em 0 1em 0;
+	white-space: nowrap;
+	font-size: 11px;
+	z-index: 10;
+}
+
+div#docnav ul, div#setnav ul {
+	position: relative;
+	display: inline;
+	height: 1.4em;
+	padding: 0;
+	font-size: 11px;
+	list-style: none;
+	white-space: nowrap;
+}
+
+div#docnav ul  li, div#setnav ul li {
+	float: left;
+	position: relative;
+	width: 120px;
+	height: 1.4em;
+	background-color: #669;
+	padding: 0 3px 0 3px;
+	margin: 0;
+	border: 1px solid #333;
+	border-right: 1px solid #606060;
+	text-align: left;
+}
+
+/* ie 5 mac & win hacks \*/
+div#docnav ul li, div#setnav ul li {
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width: auto;
+}
+
+html>body div#docnav ul li, body div#setnav ul li {
+	width: auto;
+}
+/* end hacks */
+
+div#docnav ul li:hover, div#docnav ul li ul li:hover, div#setnav ul li:hover {
+	background-color: #77a;
+}
+
+div#docnav ul li a, div#setnav ul li a {
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+	margin: 0;
+	padding: 0px 4px 2px 4px;
+}
+
+div#docnav ul li a:hover, div#setnav ul li a:hover {
+	text-decoration: underline;
+}
+
+
+div#docnav ul li ul {
+	display: none;
+	position: absolute;
+	left: -1px;
+	top: 105%; /* value for ie5 */
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	list-style: none;
+	border-bottom: 1px solid #333;
+}
+
+/* hack to hide from IE 5 \*/
+div#docnav ul li ul {
+	voice-family: "\"}\""; /* ie5 stops reading here */
+	voice-family: inherit;
+	top: 1.2em;
+}
+
+/* but only good browsers read this - hidden from ie5-6win */
+html>body div#docnav ul li ul {
+	top: 105%;
+}
+/*end hacks */
+
+div#docnav ul li ul li {
+	display: block;
+	position: relative;
+	float: none;
+	margin: 0;
+	padding: 2px 4px;
+	background-color: #669;
+	border-top: 0;
+	border-right: 1px solid #333;
+	border-left: 1px solid #333;;
+	border-bottom: 1px solid #333;
+	white-space: normal; 
+	height: auto;
+	min-width: 124px;
+	width: 240px;
+}
+
+div#docnav ul li ul li a {
+	color: #fff;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+}
+
+div#docnav ul li ul li a:hover {
+	text-decoration: underline;
+}
+
+#docnav li:hover ul, #docnav li.over ul, #setnav li:hover ul, #setnav li.over ul {
+	display: block;
+}
+
+
+#docnav ul li a#previous, #setnav ul li a#previous {
+	padding-left: 10px;
+	background-image: url("/digital/collections/images/arrow-l-w.gif");
+	background-position: left;
+	background-repeat: no-repeat;
+}
+
+#docnav ul li a#next, #setnav ul li a#next {
+	background-image:  url("/digital/collections/images/arrow-r-w.gif");
+	background-position: right;
+	background-repeat: no-repeat;
+	padding-right: 10px;
+}
+
+#docnav ul li a#first-page, #setnav ul li a#first-page {
+	padding-left: 15px;
+	background-image: url("/digital/collections/images/arrow-l-w-dbl.gif");
+	background-position: left;
+	background-repeat: no-repeat;
+}
+
+#docnav ul li a#last-page, #setnav ul li a#last-page {
+	background-image: url("/digital/collections/images/arrow-r-w-dbl.gif");
+	background-position: right;
+	background-repeat: no-repeat;
+	padding-right: 14px;
+}
+
+#docnav ul a#pgimg-next, #setnav ul a#pgimg-next {
+	background-image:  url("/digital/collections/images/arrow-r-w.gif");
+	background-position: 2.6em -0.5;
+	background-repeat: no-repeat;
+}
+
+#docnav ul li a#pgimg-last-page, #setnav ul li a#pgimg-last-page {
+	background-image: url("/digital/collections/images/arrow-r-w-dbl.gif");
+	background-position: right;
+	background-repeat: no-repeat;
+}
+
+
+#header  {
+	z-index: 2;
+}
+
+
+div#content {
+	z-index: 1;
+}
+
+div#docnav form#jump-to {
+	width: auto;
+	height: auto;
+	float: right;
+	margin-right: 3%;
+	padding: 0 4px 0 4px;
+	font-weight: bold;
+	border: 1px solid #000;
+	color: #FFF;
+	background-color: #669;
+}
+
+div#docnav form#jump-to input#num {
+	height: 10px;
+	font-size: 10px;
+	vertical-align: top;
+	margin: 0 2px 0 0;
+}
+
+div#docnav form input#go {
+	vertical-align: bottom;
+}
+
+
+#content div#docnav ul {
+	margin-bottom: 1.5em;
+}
+
+
+/* TEXT DOCUMENT CONTENT */
+div#text-object {
+	font-size: 90%;
+	padding-bottom: 360px;   /* for hanging page-img tn's */
+} 
+
+
+div#text-object p {
+	padding-left: 0;
+/*	white-space: nowrap; */ /* some dlps texts have no linebreaks */ 
+}
+
+div#text-object table {
+	margin-top: 1em;
+	border: 1px solid #DDD;
+}
+
+div#text-object td {
+	border: 1px solid #DDD;
+	padding: 5px;
+}
+
+div#text-object caption {
+	font-size: 110%;
+	font-weight: bold;
+	margin-top: 1em;
+}
+
+td.label {
+	font-weight: bold;
+}
+
+div.head-main, div.head-sub, div.head-divisional, div.head {
+	position: relative;
+	left: 0;
+	width: 420px;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	text-align: center;
+	font-weight: bold;
+}
+
+div.head-main {
+	font-size: 160%;
+}
+
+div.head-sub {
+	font-size: 110%;
+}
+
+div.head-divisional {
+	font-size: 135%;
+}
+/*
+div.docAuthor, div.docEdition, div.docTitle {
+	width: 420px;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	text-align: center;
+}
+*/
+
+div.argument, div.epigraph {
+	font-size: 80%;
+	margin-bottom: 1em;
+	margin-left: 3em;
+}
+
+div.call-out {
+	margin: 1em;
+}
+
+div.div1, div.div2, div.div3, div.div4, div.div5, div.div6, div.div7 {
+	margin-bottom: 1em;
+}
+
+div.figure {
+	position: relative;
+	width: 420px; /* in keeping with div.head above */
+	text-align: center;
+}
+span.figure {
+	position: relative;
+}
+
+div.lg {
+	margin-top: 1em;
+}
+
+div.q {
+	font-size: 80%;
+	margin: 1em;
+}
+
+div.sp {
+	margin-top: 1em;
+}
+
+div.speaker {
+	font-weight: bold;
+	width: 420px; /* in keeping with div.head above */
+	text-align: center;
+}
+
+div.trailer {
+	margin-top: 1em;
+	width: 420px; /* in keeping with div.head above */
+	text-align: center;
+}
+
+span.note-symbol {
+	vertical-align: super;
+}
+
+span.ref, span.ptr {
+	font-size: 75%;
+	vertical-align: super;
+}
+
+div#text-object ul li span.label {
+	font-weight: bold;
+}
+
+
+div.pbfirst {
+	position: relative;
+	width: 100%;
+	height: 300px;
+	overflow: visible;
+	top: -1.2em; 
+	margin-top: 0;
+	margin-bottom: -280px;
+	border-top: 0;
+}
+
+
+div.pb {
+	position: relative;
+	width: 100%;
+	height: 300px; 
+	overflow: visible;
+	margin-top: 220px;
+	margin-bottom: -280px;
+	border-top: 2px solid #333;
+}
+
+
+div.pb-display  {
+	position: relative;
+	float: right;
+	right: 0;
+	width: 200px;
+	border: 1px solid #000;
+	border-top: 0;
+	background-color: #FFFFEA;
+	font-size: 90%;
+	font-weight: bold;
+	font-style: italic;
+	color: #333;
+	margin-left: 1em;
+	margin-bottom: 1em;
+}
+
+div#results div#text-object div.pbfirst div.pb-display {
+	border-top: 1px solid #000;
+	top: 3em;
+}
+
+.pb span.page-number, .pbfirst span.page-number {
+	position: relative;
+	display: block;
+	text-align: right;
+	margin: 0.5em 0.5em -0.5em 0;
+	right: 0px;
+}
+
+.pb span.view-pgimg, .pbfirst span.view-pgimg {
+	position: relative;
+	display: block;
+	margin: 0.5em 0.5em 0 0;
+	text-align: right;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.pb div.tn, .pbfirst div.tn {
+	position: relative;
+	padding: 0 10px 1em 10px;
+}
+
+
+
+.pb a, .pbfirst a {
+	text-decoration: none;
+}
+
+.pb a:hover, .pbfirst a:hover {
+	text-decoration: underline;
+}
+
+div#sidebar span.page-number {
+	font-size: 90%;
+	font-weight: bold;
+	font-style: italic;
+	color: #333;
+	position: relative;
+	display: block;
+	margin: 0 0.5em -0.5em 0;
+	right: 0px;
+}
+
+div#sidebar span.view-pgimg, div#sidebar span.view-fulltxt {
+	position: relative;
+	display: block;
+	margin: 0;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+div#sidebar img.tn {
+	position: relative;
+	margin: 0 auto 1em auto;
+}
+
+/* PAGE IMAGE CONTENT */
+
+div#page-area-pgimg {
+	position: relative;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+div#page-area-pgimg div#content {
+	position: relative;
+	width: 100%;
+	background-color: #C0C0C0;
+	padding: 0.5em 0 0 0;
+	margin: 0;
+}
+
+div#page-area-pgimg div#content p {
+	margin: 0;
+}
+
+div#page-area-pgimg div#content p img {
+	margin: 0;
+	padding: 0;
+}
+
+
+div#content div#pgimg-report {
+	position: relative;
+	float: right;
+	right: 1em;
+	margin-bottom: 1em;
+	padding: 0.25em;
+	border: 1px solid #000;
+	background-color: #FFF;
+	text-align: right;
+	font-size: 11px;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+div#pgimg-report a {
+	white-space: nowrap;
+	text-decoration: none;
+}
+
+div#pgimg-report a:hover {
+	text-decoration: underline;
+}
+
+/* PAGE IMAGE THUMBNAILS */
+
+div.img-tn {
+	width: 150px;
+	height: 160px;
+	margin: 18px 6px 18px 0px;
+	padding: 6px 6px 2px 6px;
+	background-color: #C0C0C0;
+	border: 1px solid black;
+	float: left;
+}
+
+div.pageimg-tn, div.img-tn-titles {
+	position: relative;
+	width: 150px;
+	margin: 18px 6px;
+	padding: 6px 6px 2px 6px;
+	background-color: #C0C0C0;
+	border: 1px solid black;
+	float: left;
+}
+
+div.img-tn-titles {
+	height: 210px;
+}
+
+div.pageimg-tn {
+	height: 260px;
+}
+
+div#content div.img-tn-caption {
+	font-size: 12px;
+	font-weight: normal;
+	margin: 3px 0 3px 0;
+	height: 30px;
+	overflow: hidden;
+}
+
+
+ul.img-tools {
+	position: relative;
+	list-style: none;
+	margin: 2px 0 0 0;
+	padding: 0;
+}
+
+ul.img-tools li a {
+	display: block;
+	height: 20px;
+	left: 0;
+	background: transparent url(/digital/collections/images/menu-button-2.gif) no-repeat;
+	text-decoration: none;
+}
+
+
+ul.img-tools li ul {
+	display: none;
+	position: absolute;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 11px;
+	font-weight: normal;
+	line-height: 13px;
+	list-style: none;
+}
+
+ul.img-tools li ul li {
+	display: block;
+	position: relative;
+	float: none;
+	margin: 0 0 0 18px; 
+	padding: 3px 4px;
+	background: #DDD;
+	border-top: 0;
+	border-right: 1px solid #333;
+	border-left: 1px solid #333;
+	border-bottom: 1px solid #333;
+	white-space: nowrap;
+	height: 12px;
+	width: 11em;
+}
+
+ul.img-tools li ul li.first {
+	border-top: 1px solid #333;
+	border-left: 0;
+	margin-left: 19px;
+}
+
+ul.img-tools li ul li a {
+	display: block;
+	color: #036;
+	text-decoration: none;
+	background-image: none;
+	height: 11px;
+	margin: 0;
+	padding: 0;
+}
+
+ul.img-tools li ul li a:hover {
+	text-decoration: underline;
+}
+
+ul.img-tools li:hover ul, ul.img-tools li.over ul {
+	display: block;
+	margin: 0;
+}
+
+ul.img-tools li ul li:hover {
+	background-color: #E7E7F7;
+}
+
+/* IMAGE OBJECTS */
+
+#imgobj-results div.label h4 {
+	text-align: right;
+}
+
+/*
+ul.imgobj-desc {
+	position: relative;
+	list-style: none;
+	margin: 1em 0 5em 250px;
+	border-bottom: 1px dashed #ccc;
+	padding-left: 0;
+}
+
+ul.imgobj-desc li {
+	margin-bottom: 1em;
+	border-top: 1px dashed #ccc;
+}
+
+ul.imgobj-desc span.label {
+	position: absolute;
+	font-weight: bold;
+	text-align: right;
+	border-top: 1px dashed #ccc;
+	width: 220px;
+	left: -230px;
+}
+*/
+
+table.imgobj-desc {
+	border-bottom: 1px dashed #ccc;
+	margin: 1em 0 5em 1em;
+}
+
+table.imgobj-desc tr {
+	margin-bottom: 1em;
+}
+
+table.imgobj-desc td.label {
+	border-top: 1px dashed #ccc;
+	font-weight: bold;
+	text-align: right;
+	vertical-align: top;
+	width: 220px;
+}
+
+table.imgobj-desc td.value {
+	border-top: 1px dashed #ccc;
+	vertical-align: bottom;
+}
+
+/* FOOTER */
+
+div#footer, div#footer-object {
+	position: relative;
+	margin: 0;
+	clear: both;
+	width: 100%;
+	background-color: #E7E9F5;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000;
+	padding: 0.25em 0 0.25em 0;
+	height: 5em;
+}
+
+div#footer-object {
+	margin-top: 360px;
+}
+
+#address {
+	position: relative;
+	float: left;
+	top: 0px;
+	left: 0px;
+	padding: 0px 1% 0px 1%;
+	margin: 0px;
+	width: 45%;
+}
+
+#urls {
+	position: relative;
+	float: right;
+	top: 0px;
+	right: 0px;
+	padding: 0px 1% 0px 1%;
+	text-align: right;
+	margin: 0px;
+	width: 45%;
+}
+
+
+/* TEI stuff */
+
+/* Note: The following 'rend' attribute values from uva-dl-tei are not
+   currently handled in this CSS stylesheet:
+     - for indentation: hang, no-indent
+     - for typographic changes: open, overline, script, slash-through
+*/
+
+/* classes for basic type of display */
+
+.block {
+	display: block;
+}
+
+.inline {
+	display: inline;
+}
+
+.none {
+	display: none;
+}
+
+/* classes for indentation */
+
+.indent {
+	margin-left: 20px;
+}
+.indent2 {
+	margin-left: 40px;
+}
+.indent3 {
+	margin-left: 60px;
+}
+.indent4 {
+	margin-left: 80px;
+}
+.indent5 {
+	margin-left: 100px;
+}
+
+/* classes for alignment; apply center and right alignment only to table cells */
+
+td.center {
+	text-align: center;
+}
+
+.left {
+	text-align: left;
+}
+
+td.right {
+	text-align: right;
+}
+
+/* classes for typographic changes */
+
+.bold {
+	font-weight: bold;
+}
+
+/* There is no CSS font-variant or font-style for gothic type. Using
+   bold + italic instead. */
+.gothic {
+	font-weight: bold;
+	font-style: italic;
+}
+
+.italic {
+	font-style: italic;
+}	
+
+.line-through {
+	text-decoration: line-through;
+}
+
+.overline {
+	text-decoration: overline;
+}
+
+.red-letter {
+	color: #C00;
+}
+
+.roman {
+	font-style: normal;
+}
+
+.small {
+	font-size: 80%;
+}
+
+.small-caps {
+	font-variant: small-caps;
+}
+
+.sub {
+	vertical-align: sub;
+}
+
+.super {
+	vertical-align: super;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+
+span.line-number {
+	color: #999;
+	/*float: left;*/
+	margin-right: 1em;
+	text-align: right;
+	width: 2em;
+}
+
+p#button a {
+	width: 120px;
+	height: 20px;
+	text-align: center;
+	padding: 2px;
+	margin: 0px 2px;
+	background-color: #505050;
+	text-decoration: none;
+	border: 1px solid #000;
+	font-size: 85%;
+	color: #FFF;
+	}
+	
+p#button a:hover, a.button:hover {
+	background-color: #666;
+	border: 1px solid #333;
+	text-decoration: underline;
+	}
+	
+div#content ul#pagenav {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+ul#pagenav li {
+	position: relative;
+	left: 0;
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+ul#pagenav li a {
+	margin: 0 0.3em 0 0.3em;
+	padding: 0.2em;
+	border: 1px dotted #960;
+	background-color: #E7E9F5;
+	font-size: 75%;
+	text-decoration: none;
+}
+
+ul#pagenav li a:hover {
+	background-color: #F2F4FA;
+	border: 1px solid #C90;
+	text-decoration: underline;
+	color: #00C;
+}
+
+div#content ul#mbox {
+	position: relative;
+	padding: 0;
+	margin: 0 0 1.5em 0;
+/*	background-color: #FFFFEE; 
+	border: 1px dotted #960;
+	border-right: none;*/
+	list-style: none;
+	height: 200px;
+	width: 436px;
+ }
+ 
+ul#mbox li {
+	padding: 0 10px 10px 10px;
+	margin: 0;
+	display: block;
+	float: left;
+	border-left: 1px solid #960;
+	width: 124px;
+	height: 180px;
+	font-size: 80%;
+}
+
+ul#mbox li a.label {
+	display: block;
+	font-weight: bold;
+	text-decoration: none;
+	padding-bottom: 4px;
+	font-size: 120%;
+}
+
+ul#mbox a {
+	text-decoration: none;
+}
+
+ul#mbox a:hover {
+	text-decoration: underline;
+}
+
+
+ul#mbox li img {
+	position: relative;
+	display: block;
+	clear: right;
+	left: -6px;
+	top: 0;
+ }
+
+a.button {
+	position: relative;
+	display: inline;
+	clear: right;
+	padding: 2px;
+	margin-bottom: 4px;
+	background-color: #666;
+	text-decoration: none;
+	border: 1px solid #000;
+	font-size: 75%;
+	color: #FFF;
+}
+
+ul#mbox li.first {
+	border-left: 0;
+}
+
+.no-padding {
+	padding-left: 0;
+}
+
+/* EAD CSS  */
+
+div.titleproper { 
+	font-size: 165%; 
+	font-weight: bold; 
+	color: #444491; 
+	margin: 1em 0 0.1em 0;
+}
+
+h2#doctitle, div.subtitlenum, div.subtitle {
+	font-size: 140%; 
+	font-weight: bold; 
+	color: #960;
+	padding: 0.5em 0 0.1em 1em;
+	clear: left;
+	margin: 0; 
+}
+
+h3#collection-number {
+	font-size: 115%; 
+	font-weight: bold; 
+	color: #444491;
+	padding-left: 1.5em;
+	clear: left;
+	margin: 0;
+}
+
+#collection-number {
+	text-align: right;
+	padding-right: 1.5em;
+}
+
+p#uva-sc img {
+	position: absolute;
+	left: 60%;
+	top: 100px;
+}
+
+/*  these conflict with earlier uses 
+ul#toc {
+	margin: 1em 0 0 0;
+	padding: 0;
+}
+
+ul#toc li {
+	list-style-type: none;
+	padding: 0 0 0.5em 0;
+}
+ */
+
+ul.simplelist {
+	margin: 0;
+	padding: 0;
+	line-height: normal;
+}
+
+div#content ul.simplelist li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0 0 0 2em;
+}
+
+dl.deflist {
+	margin: 1em 0 0 0;
+	padding: 0 0 0 3em;
+	line-height: normal;
+}
+
+dl.deflist dt {
+	font-weight: bold;
+}
+
+dl.deflist dd {
+	margin-left: 1em;
+}
+
+div.pubdate {
+	margin: 2em;
+	font-size: 90%;
+}
+
+
+div.archdesc>div.head, div.titlepage>div.head, div.descgrp>div.head, div.did>div.head, div.scopecontent>div.head, div.bioghist>div.head, div.arrangement>div.head {
+	font-size: 115%; 
+	font-weight: bold; 
+	color: #444491;
+	padding: 1.5em 0 0 1.5em;
+	margin: 0;
+}
+
+.accessrestrict>div.head, .userestrict>div.head, .prefercite>div.head, .acqinfo>div.head, .processinfo>div.head {
+	color: #960;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 2em;
+}
+
+.head + p {
+	margin-top: 0;
+}
+
+.label {
+	font-weight: bold;
+}
+
+div.scopecontent p, div.arrangement p, div.archdesc p {
+	padding-bottom: 0.5em;
+	margin-left: 1em;
+}
+
+
+div.archdesc ul, div.arrangement ul {
+	margin-left: 4em;
+	padding-left: 0;
+}
+
+
+div.archdesc ul ul, div.arrangement ul ul {
+	margin-left: 2em;
+	padding-left: 0;
+}
+
+div.archdesc ul li p, div.arrangement ul li p, div.archdesc ul ul li p, div.arrangement ul ul li p {
+	padding-left: 0;
+	margin-left: 0;
+}
+
+div.note {
+	/* Turn off these styles, to avoid having a note inherit the style of the
+     phrase in which it happens to occur. */
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	text-decoration: none;
+
+	font-size: 75%;
+	margin: 1em;
+}
+
+.alert, .alert-small {
+	color: #f00;
+	font-weight: bold;
+}
+
+alert-small {
+	font-size: 12px;
+}
+
+

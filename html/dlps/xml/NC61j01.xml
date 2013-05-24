@@ -1,0 +1,285 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0393 SYSTEM "000000766_0393" NDATA jpg>
+<!ENTITY DSSR_000000766_0394 SYSTEM "000000766_0394" NDATA jpg>
+<!ENTITY DSSR_000000766_0395 SYSTEM "000000766_0395" NDATA jpg>
+<!ENTITY DSSR_000000766_0396 SYSTEM "000000766_0396" NDATA jpg>
+
+<!--<!ENTITY NC61j01a SYSTEM "NC61j01a.jpg" NDATA jpg>
+<!ENTITY NC61j01b SYSTEM "NC61j01b.jpg" NDATA jpg>
+<!ENTITY NC61j01c SYSTEM "NC61j01c.jpg" NDATA jpg>
+<!ENTITY NC61j01d SYSTEM "NC61j01d.jpg" NDATA jpg>
+<!ENTITY filename SYSTEM "filename.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NC61j01">
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date value="1861-10-01"
+      >1861 October 1</date></title>
+
+    <author>Tenney, Charles N.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Bret Payne, Oak Spring Garden Library</name>
+     <resp>Creation of digital images:</resp>
+     <name>University of Virginia Library Electronic Text Center</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>Bret Payne</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">12</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NC61j01</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Charles N. Tenney to Adelaide E. Case, 1861 October 1</title>
+
+
+      <author>Charles N. Tenney</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 pp.</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p>All unambiguous end-of-line hyphens have been retained.</p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings.</p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1861-10-01">1861-10-01</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>fiction</term>
+     <term>prose</term>
+     <term>masculine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-11">November 11th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">October 7th, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>8 pp.</extent>
+      <date value="1861-10-01">October 1, 1861</date>
+
+      <title>Letter from Charles N. Tenney to Adelaide E. Case</title>
+     </bibl>
+    </head>
+    <p> </p>
+   </div1>
+  </front>
+  <body id="d4">
+
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1861-10-01">1861 October
+     1</date></head>
+    <pb n="1" entity="DSSR_000000766_0393"/>
+
+    <opener>
+     <dateline>
+      <name type="place">Charleston Va.</name>
+      <date value="1861-10-01">Oct 1<hi rend="underline">st</hi> |61<lb/></date>
+     </dateline>
+
+     <salute>My dear Addie:</salute>
+    </opener>
+
+    <p> You will doubtless<lb/> think I mean you shall<lb/> have enough of my non<del hand="h1"
+     >s</del><lb/> sense but perhaps it will be as<lb/> heretofore, you may not get this.<lb/>
+     However, I will address you once<lb/> more. "I am well as usual, and hope these<lb/> few lines
+     will find you the same," and having<lb/> a few moments liesure I improve<lb/> the same in
+     writing to you.-There,-<lb/> cant I tell a thing two or three times<lb/> if any one can? It
+     would be a<lb/> pleasure to me to be in Mecca,<lb/> to-day. I could enjoy my self, "right<lb/>
+     smart, I reckon" and the Virginians<lb/> say. Mecca, I suppose is not so<lb/> lively now, as
+     last year at this<lb/> time. of course the War produces its<lb/>
+     <pb n="2" entity="DSSR_000000766_0394"/> awful effects even in Oildom, does it<lb/> not? I, you
+     percieve, am off the<lb/> boat now, the Valley has become so<lb/> quiet as not to need a guard,
+     so<lb/> we came off last Saturday<lb/>
+    </p>
+    <p> Charleston has been the scene of<lb/> great excitement, during the past<lb/> few days. Last
+     Thursday, it commen-ced<lb/> raining, and it rained heavily, too.<lb/> till Friday night. Then
+     the River<lb/> commencing to swell, it continued <add place="inline" hand="h1">rising</add>
+     until<lb/> Monday morning. and the whole town<lb/> was submerged, whole houses were<lb/>
+     carried away and every person in town<lb/> suffered more or less. It is painful<lb/> to go
+     through town and see the<lb/> devastation every where visible. The place<lb/> was a second
+     Venice, the people went<lb/> about not in gondoliers, but canoes<lb/> skiffs, and on floats. I
+     went<lb/> yesterday.- the waters have nearly<lb/>
+     <pb n="3" entity="DSSR_000000766_0395"/> subsided now--to one of the houses<lb/> to assist a
+     "secesh" lady to remove<lb/> her goods, and we found the furniture<lb/> nearly ruined. A
+     splendid new piano<lb/> stood in the Parlor, and it is almost<lb/> spoiled, I would not now
+     give one<lb/> sixth of the original cost for it. Splendid<lb/> paintings were entirely ruined.
+     Oh!<lb/> it is too bad but it cannot be helped<lb/> The more superstitious say it is on<lb/>
+     account of the war in which we are<lb/> engaged the it was sent as a judgment<lb/> upon them,
+     and I have no doubt<lb/> of it. At the house where I<lb/> went, there was a very pretty
+     young<lb/> lady, (not as much so as Addie though)<lb/> by name of Helen Caldwell, on see-<lb/>
+     ing the ruined state of her piano<lb/> and music burst into tears and exclaimed<lb/> "I did not
+     care so much for my ward-<lb/> robe, but my poor piano", It <hi rend="underline">was poor"</hi><lb/>
+     <pb n="4" entity="DSSR_000000766_0396"/> It is feared much harm will<lb/> be done down on the
+     Ohio at the<lb/> different towns but I hope not.</p>
+
+    <p> I do not know when we shall<lb/> leave here. I hope before long. for it<lb/> is getting
+     rather unhealthy here.<lb/> and in fact it would be much<lb/> better if we should move.<lb/>
+     Hal's health is good &amp; he is now<lb/> acting Adjutant here, as Adj. DeForest<lb/> is at
+     Ganley Bridge. Capt Asper<lb/> is now on a furlough home and<lb/> consequently Lieut Wood is
+     commandant<lb/> of the Company. Some thrity of our<lb/> men are now at Camp Ganley<lb/> under
+     command of Lieut Robinson of<lb/> Co. G. I do not know why they went<lb/> or what they have to
+     do. Co's B &amp; D<lb/> went down to Pt. Pleasant to lay<lb/> a telegraph. to day. But you
+     will<lb/> consider this more as a newsletter<lb/> than a letter of friendship or regular
+     correspondence.<lb/> I am very glad you promised to correspond with me, for it is a source<lb/>
+     of much pleasure to me I cannot forget the many kindnesses you showed<lb/> me while at your
+     home (I almost feel as if it were <hi rend="underline">my</hi> home)<lb/> I often wish my sister
+     would evince as much feeling and interest in my<lb/> welfare as <hi rend="underline">you</hi>
+     have already shown, but though I have written two or<lb/> three times to her and the rest of
+     the family<lb/> I can get no reply whatever. The last<lb/> time I wrote I told them "I could
+     write<lb/> no more unless they thought enough of<lb/> me to answer my letters." Now Addie<lb/>
+     what do you think and what would you do?<lb/><lb/> Hal<ref target="n1" n="1">1</ref> is a
+     brother to me and has been ever since I became acquainted<lb/> with him. He is so kind and
+     good. I don't wonder you love him.</p>
+
+    <p>I hope for his promotion soon. and I think he <add place="inline" hand="h1">soon</add> will<lb/>
+     <del hand="h1">be</del> <add place="inline" hand="h1">will recieve one</add> too, surely, no
+     one<lb/> deserves it more. than he does. He is already the pride of the Seventh Regt<lb/> Do
+     you know James <unclear>Beebe</unclear>? he joined this<lb/> company under the three month[s?]
+     enlistment<lb/> What is he doing now? Is he at Mecca now?<lb/> The company did not like him
+     very well for some<lb/> cause </p>
+    <lb/>
+
+    <p>And<ref target="n2" n="2">2</ref> Stephen Bishop too. You know his folks. do you not? How are
+     they now? Some how<lb/> to me it seems as if he does not care for them <add place="inline"
+      hand="h1">as he ought</add> and indeed I have heard vague<lb/> rumors that he did not take
+     proper care of his family. Is this true?<lb/>
+    </p>
+
+    <closer> But I must close. Give my respects to Laura and<lb/> all other inquiring friends. and
+     Dear Addie<lb/> write soon to yours ever and truely<lb/>
+     <signed>Charley Tenney.</signed><lb/> To <name type="recipient">Addie</name>
+    </closer>
+   </div1>
+   <div1 type="notes" n="1" id="d6">
+    <head>Notes</head>
+
+    <note id="n1" place="end" n="1"><seg type="note-symbol">1</seg>
+     <p>The following text is written in the margins of page 3.</p>
+    </note>
+    <note id="n2" place="end" n="2"><seg type="note-symbol">2</seg>
+     <p>The following text is written in the margins of page 2.</p>
+    </note>
+   </div1>
+  </body>
+ </text>
+</TEI.2>

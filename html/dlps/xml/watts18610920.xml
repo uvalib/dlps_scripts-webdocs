@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000002755_0013 SYSTEM "000002755_0013" NDATA uvaHighRes>
+<!ENTITY DSSR_000002755_0014 SYSTEM "000002755_0014" NDATA uvaHighRes>
+]>
+
+
+
+<TEI.2 id="watts18610920">
+    <teiHeader type="AACR2">
+        
+        <fileDesc>
+            <titleStmt>
+                
+                <title>Watts  to Bettie  <date value="1861-09-20">Sept 20th, 1861</date>
+                </title>
+                <author>Watts, Robert William, Rev., 1825-1910</author>
+                <respStmt>
+                    <resp>Creation of machine-readable version: </resp>
+                    <name>Digital Curation Services , University of Virginia Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Digital Curation Services</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Creation of digital images:</resp>
+                    <name>Digitization Services, University of Virginia Library</name>
+                </respStmt>
+                
+            </titleStmt>
+            
+            <extent>ca. <num type="kilobytes">9</num> kilobytes</extent>
+            
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia </pubPlace>
+                <idno type="DCS">watts18610920</idno>
+                <date value="2010">2010</date>
+            </publicationStmt>
+            
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Watts-letters</idno>
+            </seriesStmt>
+            
+            <sourceDesc>
+                
+                <biblFull>
+                    <titleStmt>
+                        <title>Letters from Robert William Watts to members of his family in Albemarle County, Va</title>
+                        <author>Watts, Robert William, Rev., 1825-1910</author>
+                    </titleStmt>
+                    <extent>2 page</extent>
+                    <publicationStmt>
+                        
+                        <idno type="Accession No.">MSS 809</idno>
+                        <idno type="Virgo ID">3928516-1001</idno>
+                        <idno type="title control number">a3928516 </idno>
+                       
+                        <availability>
+                            <p> Albert &amp; Shirley Small Special Collections, University of
+                                Virginia Library, Charlottesville, Virginia, USA</p>
+                        </availability>
+                    </publicationStmt>
+                </biblFull>
+                
+            </sourceDesc>
+            
+            
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <!-- Per Matt we need to work on this statement-->
+                <p> Prepared for the University of Virginia Library by Digital Curation Services staff
+                    and volunteer Mary Roy Dawson Edwards, Transcriber. 2005.</p>
+            </projectDesc>
+        </encodingDesc>
+        
+        <profileDesc>
+            <handList>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+        </profileDesc>
+        
+    </teiHeader>
+    
+    <text id="d1">
+        <body id="d2">
+            <div1 type="letter" id="d3">
+                <head>Watts  to Bettie  <date value="1861-09-20">Sept 20<hi rend="super">th</hi>, 1861</date></head>
+                <pb entity="DSSR_000002755_0013"/>
+                <opener>
+                    <dateline><name type="place">Helmswood</name>, 
+                        <date value="1861-09-20">Sept 20<hi rend="super">th</hi> 1861.</date></dateline>
+                    <salute>My dear Bettie,</salute>
+                </opener>
+                <p rend="indent5">      I have been expecting<lb/>
+                    to find a letter from you &amp;Olga since my arrival here,<lb/>
+                    in answer to mine sent from Upperville, but thus far<lb/>
+                    have been disappointed &mdash; Hope it may come <reg orig="to-|morrow!">tomorrow!</reg><lb/>
+                    I know of nothing particularly interesting to write,<lb/>
+                    yet must do so in order that paternal restraints &amp;<lb/>
+                    love may not be forgotten.  I read a letter from y'r<lb/>
+                  G. Father <add place="top" hand="author">J.D.</add>
+                  Watts <reg orig="to-|day">today</reg> in which he informs me<lb/>
+                    of the death of young S. Turner, and the continued<lb/>
+                    illness of Charlie.  Oh! It is sad to see &amp; hear of so<lb/>
+                    much sickness among the soldiers!  They are scattered<lb/>
+                    all thr'o this neighborhood among the private houses<lb/>
+                    Here at Helmswood there are four Mississippians, one<lb/>
+                    of whom has been very low with Typhoid fever: the<lb/>
+                    others are convalescent &mdash; Lees burg is <unclear>[-]</unclear> with them<lb/>
+                    and there are deaths almost every day &mdash; But it is not<lb/>
+                    as bad now as it has been with them, for the No.<lb/>
+                    of sick is decreasing.  There seems to be no movements<lb/>
+                    among our armies at present, and all is expectation<lb/>
+                    of a grand move in all parts soon, tho' every thing<lb/>
+                    is in the dark to us.  I think Loudoun is pretty<lb/>
+                    well defended now as we have a Brigade of soldiers<lb/>
+                    among us, sufficient to hold the enemy in check<lb/>
+                    About a month &amp; a half from this time, I expect<lb/>
+                  
+                    <pb entity="DSSR_000002755_0014" n="[page 2]"/>
+                  to leave Loudoun for Amherst, and shall be<lb/>
+                    most glad to see you all and find you both<lb/>
+                    much improved.  I have many warm friends here<lb/>
+                    whom I dislike very much to leave, but thus it<lb/>
+                    must be, and I must seek new ones in a new field<lb/>
+                    I hope you are both striving to make good use of<lb/>
+                    y'r time knowing that it is very precious, and ought<lb/>
+                    to be treasured &amp; improved more than money.  I expect<lb/>
+                    much of you both, knowing that you have good minds<lb/>
+                    and advantages, which if rightly used, must make<lb/>
+                    you useful women.  How are you feeling Bettie<lb/>
+                    in y'r religious experience?  I want you to tell me<lb/>
+                    of that &mdash; What are y'r greatest besetments &amp; <reg orig="tempta-|tions">temptations</reg>;<lb/>
+                    for I know you have them as they are common<lb/>
+                    to every body.  Struggle to be a good Christian, <reg orig="perform-|ing">performing</reg><lb/>
+                    all your duties; and trust in God for help.  Be kind<lb/>
+                    and affectionate to Olga, and don't allow y'rself to be<lb/>
+                    fretted.  Be kind to all around you and respectful to<lb/>
+                    all persons older than yrself.  I want both of you<lb/>
+                    to mind Cousins Lizzie &amp; Mollie in every thing.  Be<lb/>
+                    particular in keeping yr'selves neat &amp; clean, washing<lb/>
+                    y'r teeth &amp; feet and combing y'r hair.  Don't be rude<lb/>
+                    with boys, &amp; when y'r spirits get too high, stop and<lb/>
+                    think a little.  Olga, my child, you must not contend<lb/>
+                    with y'r sister, nor with any of the girls.  When you<lb/>
+                    rise from y'r bed, don't be the first to rush at the <lb/>
+                    water but wait for others, and learn to be gentle &amp; polite<lb/>
+                    Give my love to both families.</p>
+                <closer>
+                  <salute>Yr affectionate father</salute>
+                    <signed><name>RWW</name></signed>
+                </closer>
+            </div1>
+          </body>
+    </text>
+</TEI.2>
+

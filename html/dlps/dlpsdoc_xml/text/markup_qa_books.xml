@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+
+<!-- =============================================================== -->
+<!-- NOTE: Update last modified date manually when editing this file -->
+<!-- =============================================================== -->
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % TEI.extensions.ent SYSTEM "http://pogo.lib.virginia.edu/dlps/dtd/tei/teitech/teitech.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://pogo.lib.virginia.edu/dlps/dtd/tei/teitech/teitech.dtd">
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % markup_qa_entities SYSTEM 'markup_qa.ent'> %markup_qa_entities;
+<!ENTITY % common_entities SYSTEM 'common.ent'> %common_entities;
+]>
+<TEI.2>
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Markup QA Workflow for Books</title>
+<author>Greg Murray (gpm2a@virginia.edu), Digital Library Production Services</author>
+</titleStmt>
+<publicationStmt>
+<publisher>Digital Library Production Services, University of Virginia Library</publisher>
+</publicationStmt>
+</fileDesc>
+</teiHeader>
+
+<text id="d1">
+<body id="d2">
+<argument>
+<p>This document describes the workflow for in-house markup QA and
+correction of electronic texts digitized from printed books by
+keyboarding vendors for Digital Library Production Services (DLPS),
+University of Virginia Library. It is intended for use by internal
+DLPS staff.</p>
+
+<!-- =============================================================== -->
+<!-- NOTE: Update last modified date manually when editing this file -->
+<!-- =============================================================== -->
+
+<p><hi rend="bold">Last modified:</hi> <date type="last-modified" value="2007-01-29">1/29/2007</date></p>
+</argument>
+
+<div1 id="d3">
+<head>Preliminaries</head>
+<div2 id="d4">
+&initial_steps;
+
+<admon type="special" applies="EAF"><p>When working with EAF files,
+check the EAF readme file in
+<path>04postkb/10received/eaf1_public</path> (or other subdirectory,
+as appropriate) and follow the instructions given there.</p></admon>
+</div2>
+
+<div2 id="d7">
+<head>Additions to TEI header</head>
+
+<admon type="special" applies="EAF"><p>When working with EAF XML
+files, skip this section. Proceed to "Unclosed end-of-line unclears"
+below.</p></admon>
+
+<list>
+&teiHeader_revisionDesc;
+
+<!-- This section on declaring languages is unnecessary. For languages
+referenced using the 'lang' attribute, the DTD ensures that they're at
+least declared somewhere, since 'lang' is type IDREF. For non-Western
+languages marked with <gap/>, the assumption that the 'desc' attribute
+will hold a language code such as "chi" for Chinese seems wrong, since
+we don't require the vendor to use language codes for 'desc' in such
+cases. If we wanted to do that, we should use the 'lang' attribute,
+not 'desc'.
+
+<label>Languages</label>
+<item>Check for the use of foreign languages, which need to be
+declared in the TEI header:
+  <list>
+  <label>Check for foreign phrases</label>
+  <item>Search for <val>lang=</val> (check "Find in tags", and click the "Find all"
+  button). Any languages found need to be declared in the TEI header.</item>
+  <label>Check for non-Western languages</label>
+  <item>Search for gap tags: use <val>&lt;gap</val> as the
+  search phrase, check "Find in tags", and click the "Find all"
+  button. If any search results show <att>desc</att> attributes where
+  the value is a three-character language abbreviation (for example,
+  <tag>gap desc="chi"</tag> for Chinese), then that language needs to be
+  declared in the TEI header.</item>
+
+  <label>Insert language declarations</label>
+  <item>For each language, insert a <gi>language</gi> element
+  following the declaration for
+  English. For example:
+
+<eg><![CDATA[
+<langUsage>
+<language id="eng">English</language>
+<language id="chi">Chinese</language>
+</langUsage>
+]]></eg>
+
+<p>Some common language abbreviations include:<lb/><lb/>
+
+<table>
+<row>
+<cell>chi</cell><cell>Chinese</cell>
+</row><row>
+<cell>fre</cell><cell>French</cell>
+</row><row>
+<cell>ger</cell><cell>German</cell>
+</row><row>
+<cell>grc</cell><cell>Greek, ancient (to 1453)</cell>
+</row><row>
+<cell>gre</cell><cell>Greek, modern (1453- )</cell>
+</row><row>
+<cell>heb</cell><cell>Hebrew</cell>
+</row><row>
+<cell>ita</cell><cell>Italian</cell>
+</row><row>
+<cell>lat</cell><cell>Latin</cell>
+</row><row>
+<cell>rus</cell><cell>Russian</cell>
+</row><row>
+<cell>spa</cell><cell>Spanish</cell>
+</row>
+</table>
+</p>
+
+<p>For a complete list of language codes, see
+<xref type="external" url="http://www.loc.gov/standards/iso639-2/langcodes.html">the Library
+of Congress ISO 639.2 page</xref>. Use the 3-character codes. If more
+than one 3-character code is provided, use the first (bibliographic)
+code.</p>
+
+  </item>
+  </list>
+</item>
+-->
+
+</list>
+</div2>
+
+<div2>
+<head>Unclosed end-of-line unclears</head>
+<list>
+<item>To find unclosed <gi>unclear</gi> tags occurring at the end of a
+line (which the <gizmo>Unclears</gizmo> report from the
+post-keyboarding workflow does not include), run this command from the
+Unix command line:
+
+<eg><xref type="scripts">find_unclosed_unclears</xref> <replace>filename</replace></eg>
+
+For each occurrence, this command displays the filename, the line
+number, and the actual line from the text.</item>
+
+<item>Locate the line, compare the page image, and correct the
+<gi>unclear</gi> markup as needed.</item>
+</list>
+</div2>
+
+<div2 id="d5">
+&unknown_chars;
+</div2>
+</div1>
+
+<div1 id="d8">
+<head>Div structure</head>
+<list>
+&divs_structure;
+&divs_types;
+
+<label>Front matter</label><item>Check front matter fairly carefully;
+correct markup as needed (since front matter tends to be much more
+miscellaneous than body; div problems are likely)</item>
+
+<label>Book-plate</label>
+<item>Check for presence of a book-plate (usually the first page
+image), which the vendor will omit from the electronic text. (The page
+with the book-plate will be represented in the XML as a blank page
+&mdash; a <gi>pb</gi> tag with nothing after it.) If present, add the
+book-plate as the first <gi>div1</gi> within <gi>front</gi>. For
+example:
+
+<eg><![CDATA[
+<front>
+<div1 type="book-plate">
+<pb entity="b123456789_0001"/>
+<p rend="center">LIBRARY OF THE <lb/>
+UNIVERSITY OF VIRGINIA <lb/>
+<figure entity="b123456789_0001" rend="block"/>
+DONATION OF <lb/>
+. . .</p>
+<pb entity="b123456789_0002"/>
+</div1>
+]]></eg>
+
+
+If the book-plate has a blank page after it, be sure to put the page
+break for the blank page as the last <gi>pb</gi> within the <tag>div1
+type="book-plate"</tag>, as in the example above.</item>
+
+&divs_view_changes;
+&divs_update_tracksys;
+</list>
+</div1>
+
+<div1 id="d11">
+<head>Notes</head>
+
+<p>To determine whether the document contains any footnotes, endnotes,
+or marginal notes, search for <code>&lt;note</code> with "Find in
+tags" checked. If there are any notes:</p>
+
+<admon type="special" applies="EAF"><p>When working on EAF 1 Private
+files, verify (using the &proofreader_xref; to view the page images)
+that the type of notes used in the book are footnotes. If not, change
+the <att>place</att> attribute value as appropriate. (This step is
+necessary because <att>place="foot"</att> has been added to all
+<gi>note</gi> tags in these files programmatically.)</p></admon>
+
+<list>
+
+<label>Supply sequential numbers for notes</label>
+
+<item>Run this command-line script to supply sequential note numbers
+within each <gi>div1</gi> element:
+<eg><xref type="scripts">notes_n</xref> -d div1 &files;</eg>
+</item>
+
+<!--
+<item>Choose from <emph>one</emph> of the following scenarios:
+  <list>
+  <item>If note numbers/symbols in print source start over on each page or are
+otherwise not numbered sequentially within each chapter or
+other high-level div, then number the notes sequentially
+using the -d option, specifying the div level at which
+numbering should start over. For example, use:
+<eg>notes_n -d div1 <replace>filename</replace></eg>
+to number the notes sequentially within each <gi>div1</gi>.
+  </item>
+
+  <item>If notes in print source are already numbered sequentially
+within divs (or within entire work), then preserve the print source's
+numbering using the -p option:
+<eg>notes_n -p <replace>filename</replace></eg>
+<admon type="note"><p>Although it may seem that options -d and -p are
+equivalent in cases where the print source already numbers notes
+sequentially, it is best to use -p to preserve the original numbers
+whenever possible; there may be subtleties to the note numbering (such
+as notes within notes) that are not evident without carefully and
+thoroughly inspecting the notes.</p></admon>
+  </item>
+
+  <item>If the treatment of notes differs from one part of the text to
+another (for example, in <gi>front</gi> you want numbering to restart
+at each <gi>div1</gi>, but in <gi>body</gi> you want numbering to
+restart at each <gi>div2</gi>), then use the -s option to limit the
+scope of the numbering to a particular structural division
+(<gi>front</gi>, <gi>body</gi>, <gi>back</gi>, or div). For example:
+<eg><![CDATA[
+notes_n -d div1 -s d2 [filename]
+notes_n -d div2 -s d14 [filename]
+]]></eg>
+  where you have <tag>front id="d2"</tag> and <tag>body id="d14"</tag>.
+  </item>
+  </list>
+</item>
+-->
+
+&notes_update_tracksys;
+
+</list>
+</div1>
+
+<div1 id="d12">
+<head>QA Programs</head>
+<list>
+&qa_programs_commandline;
+&qa_programs_web;
+&final_steps;
+</list>
+
+&copy_to_69processed;
+</div1>
+</body>
+</text>
+</TEI.2>

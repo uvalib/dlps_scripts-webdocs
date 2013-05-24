@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0525 SYSTEM "000000766_0525" NDATA jpg>
+<!ENTITY DSSR_000000766_0526 SYSTEM "000000766_0526" NDATA jpg>
+<!ENTITY DSSR_000000766_0527 SYSTEM "000000766_0527" NDATA jpg>
+<!ENTITY DSSR_000000766_0528 SYSTEM "000000766_0528" NDATA jpg>
+
+<!ENTITY longs "s"><!-- as typically used in 18th c -->
+]>
+
+<!--<!DOCTYPE TEI.2 SYSTEM 'teixlite.dtd'[
+
+	<!NOTATION jpg SYSTEM "JPEG">   
+	 
+  <!ENTITY NC62c23a SYSTEM "NC62c23a.jpg" NDATA jpg> 
+  <!ENTITY NC62c23b SYSTEM "NC62c23b.jpg" NDATA jpg> 
+  <!ENTITY NC62c23c SYSTEM "NC62c23c.jpg" NDATA jpg>
+  <!ENTITY NC62c23d SYSTEM "NC62c23d.jpg" NDATA jpg>
+
+<!ENTITY longs "s" >long s as typically found in 18th cent 
+
+	<!ENTITY % ISOlat1 SYSTEM "ISOlat1.pen"> %ISOlat1;  
+	<!ENTITY % ISOlat2 SYSTEM "ISOlat2.pen"> %ISOlat2;  
+	<!ENTITY % ISOnum SYSTEM "ISOnum.pen"> %ISOnum;  
+	<!ENTITY % ISOpub SYSTEM "ISOpub.pen"> %ISOpub;  
+	<!ENTITY % ISOtech SYSTEM "ISOtech.pen"> %ISOtech; ]>-->
+
+<TEI.2 id="NC62c23a">
+
+
+  <teiHeader type="migrated">
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+            value="1862-03-21">21 March 1862</date> &amp; <date value="1862-03-28">28 March
+          1862</date></title>
+        <author>Tenney, Charles, fl. 1861-1863</author>
+
+        <respStmt>
+          <resp>Transcription and TEIXLITE encoding.</resp>
+          <name>Mark McKone. Wake Forest University School of Medicine. Coy C. Carpenter Library.
+            Rare Book School 2005.</name>
+        </respStmt>
+
+      </titleStmt>
+
+
+
+      <publicationStmt>
+        <publisher>Albert H. Small Special Collections Library, University of Virginia</publisher>
+        <pubPlace>Charlottesville, Va.</pubPlace>
+        <idno type="etext">NC62c23a.xml</idno>
+        <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+        <date value="2001">2001</date>
+      </publicationStmt>
+      <seriesStmt>
+        <title>The Corinne Carr Nettleton Civil War Collection</title>
+        <idno type="uva-set">UVA-LIB-Text</idno>
+        <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+      </seriesStmt>
+
+      <sourceDesc>
+        <biblFull>
+          <titleStmt>
+            <title>Letter from Charles N. Tenney to Adelaide E. Case, 21, 28 March 1862</title>
+            <author>Tenney, Charles, fl. 1861-1863</author>
+          </titleStmt>
+          <publicationStmt>
+            <publisher/>
+            <pubPlace/>
+            <date value="1862-03-21">1862-03-21</date>
+            <date value="1862-03-28">1862-03-28</date>
+          </publicationStmt>
+        </biblFull>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <creation>
+        <date value="1862-02-28">1862-02-28</date>
+      </creation>
+      <langUsage>
+        <language id="eng">English</language>
+      </langUsage>
+      <handList>
+        <hand id="h1"/>
+        <hand id="author"/>
+        <hand id="unknown"/>
+        <hand id="cataloger"/>
+      </handList>
+    </profileDesc>
+    <revisionDesc>
+      <change>
+        <date value="2009-11-12">November 12th, 2009</date>
+        <respStmt>
+          <resp>corrector</resp>
+          <name>Digital Curation Services Staff</name>
+        </respStmt>
+        <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+          (uva-dl-tei).</item>
+      </change>
+      <change>
+        <date value="2010-09-30">October 14th, 2010</date>
+        <respStmt>
+          <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+          <resp>corrector</resp>
+        </respStmt>
+        <item>Minor corrections to spacing.</item>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+
+  <text id="d1">
+
+    <front id="d2">
+      <div1 type="summary" n="1" id="d3">
+
+        <head>
+          <bibl>
+            <abbr>ALS</abbr>
+            <extent>4 pp.</extent>
+            <date value="1862-03-21">March 21, 1862</date>
+            <date value="1862-03-28">March 28, 1862</date>
+            <!--<idno rend="suppress">NC62c23</idno>-->
+            <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, March 21 and 28,
+              1862</title>
+          </bibl>
+        </head>
+
+        <p> Tenney briefly notes skirmishes at Cedar Creek and vividly describes in detail what it
+          is like to participate in a bombardment at Strasburg. </p>
+      </div1>
+    </front>
+
+    <body id="d4">
+
+
+
+      <div1 type="letter" n="1" id="d5">
+        <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-03-21">21 March
+            1862</date>
+        </head>
+        <pb n="1" entity="DSSR_000000766_0525"/>
+        <opener>
+
+          <!--<seg>
+            <figure rend="page" entity="NC62c23a">
+              <figDesc/>
+            </figure>
+          </seg>-->
+
+          <dateline>
+            <name type="place">Camp Shields Va.</name>
+            <date value="1862-03-21">March 21st 62</date>
+            <lb/>
+          </dateline>
+
+          <salute>My darling;<lb/></salute>
+
+        </opener>
+        <p> Imagine, if you can my joyful<lb/> surprise, on arriving in from Strasburg, Pa-<lb/> was
+          the fact of my having four letters. "In luck",<lb/> said I upon opening them I found three
+          good long<lb/> letters from Addie two notes from Laurie and one<lb/> good letter from
+          Gail. "It never rains, but pours"<lb/> is an old adage, and if true, I may expect some
+          other<lb/> good fortune soon, I am at a <orig reg="loss">lo&longs;s</orig> to know how
+          to answer<lb/> your triple favor, and my perplexity increases when I <lb/> note the
+          multitudinous(horrors! what a long word!)subjects<lb/> to write about. I <orig reg="guess"
+            >gue&longs;s</orig> I will confine myself to writing<lb/> that which contains no <hi
+            rend="underline">public</hi> interest reserving<lb/> that for the "Chron". Firstly the
+          "grand move" is much<lb/> followed up, and is nearly at a "level", and
+          notwithstanding<lb/> the 7th was included, we <hi rend="underline">are all safe</hi>. My
+          health is <orig reg="excellent">excel<lb/> lent</orig> and trust it will continue so. Gen.
+          Shields<lb/> with his entire command moved on the 18th toward<lb/> Strasburg. Ha ha! Aint
+          I fortunate? Moore<lb/> just came in with the mail, and two more<lb/> letters came for
+            "<abbr expan="Charles">Chas</abbr> N. Tenney."/ from <unclear/> the other<lb/> from N.
+          J. Braden of Gustavus<lb/>
+        </p>
+
+        <pb n="2" entity="DSSR_000000766_0526"/>
+
+        <!--<p>
+          <figure rend="page" entity="NC62c23b">
+            <figDesc/>
+          </figure>
+        </p>-->
+
+        <p> But to resume&ndash; arriving at Cedar Creek. 1 1/4 miles<lb/> beyond Middletown, a
+          slight skirmish took place<lb/> and the enemy retreated, burning the bridge. In<lb/> the
+          morning, we formed a floating bridge, (this artillery<lb/> and cavalry finding) and
+          advanced to Strasburg<lb/> 3 miles distant. Our <abbr expan="Regiment">Reg</abbr> with the
+          Cavalry were <lb/> sent out to skirmish.&ndash; We had the exquisite<lb/> pleasure of
+          listening to the rebel <abbr expan="artillery">arty</abbr> and <orig reg="witnessing"
+            >witne&longs;sing</orig><lb/> the shells burst. (I will tell all in Chron) There is
+            <orig reg="something">some<lb/> thing</orig> exciting in <orig reg="witnessing"
+            >witne&longs;sing</orig> a bombardment. particularly<lb/>
+          <hi rend="underline">when you are among those being shelled</hi>. You look<lb/> anxiously
+          at the concealed battery, and lo! A puff of<lb/> white smoke&mdash; you listen
+          breathlessly&mdash;a stunning<lb/> report, and the shell comes fiercely shrieking
+          through<lb/> the air&mdash;you cannnot see it, but you follow by the sound<lb/> it is
+          directly over you&mdash;whizzing&mdash;a puff of dense smoke<lb/> an explosion and
+          the fragments come screaming<lb/> in every direction on their message of
+          death.&mdash;a few<lb/> seconds and all is over.&mdash;you are waiting the<lb/>
+          next discharge. I was surprised on seeing such<lb/>
+          <orig reg="coolness">coolne&longs;s</orig> evinced by our men, while those of the
+          5th.<lb/> near us, dodged at every discharge. It furnished<lb/> much amusement for our
+          boys. they have often<lb/> boasted of their bravery and <orig reg="coolness"
+            >coolne&longs;s</orig>.<lb/>
+        </p>
+
+        <pb n="3" entity="DSSR_000000766_0527"/>
+
+        <!--<p>
+          <figure rend="page" entity="NC62c23c">
+            <figDesc/>
+          </figure>
+        </p>-->
+
+        <p> We remained at Strasburg over night having<lb/> chased the enemy some five miles beyond.
+          The next<lb/> day we returned to camp.<lb/>
+        </p>
+      </div1>
+
+      <div1 type="letter" n="2" id="d6">
+        <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-03-28">28 March
+            1862</date></head>
+
+        <opener>
+          <dateline>
+            <date value="1862-03-28">March 28th 1862</date>
+          </dateline>
+          <lb/>
+        </opener>
+
+        <p> Quite a long period has elapsedd since I commenced<lb/> this during which I have
+          dispatched you a <sic corr="hearty">harty</sic><lb/> note apprising you of my <sic
+            corr="safety">saftey</sic> and I resume<lb/> the task of answering your <hi
+            rend="underline">four</hi> letters (for I received one<lb/> since the 21st&mdash;the
+          24th <unclear/>) Did I say <hi rend="underline">task</hi>? I am<lb/> wrong, for it is <hi
+            rend="underline">no</hi> task to write to <hi rend="underline">her</hi> I love <hi
+            rend="underline">better</hi> than<lb/> myself, and I wrong my self when I write it.<lb/>
+        </p>
+        <p> Let me see, when shall I commence?<lb/> Do the best I can, I must speak of your last
+          letter<lb/> How charming, and so refreshing&mdash;coming from<lb/> "Maple Grove". two
+          full sheets full of confidence, love, and<lb/> sense. Not but all of your letters are so,
+          but after such<lb/> horrible battle scenes as I <orig reg="witnessed"
+          >witne&longs;sed</orig>, your sweet words<lb/> were so soothing. How much I prize your
+          letters!<lb/> Then&mdash;the good news that your Papa bid you be<lb/> happy in my
+          love! Addie, have I not much to<lb/> make me happy? God being my helper, <hi
+            rend="underline">I will</hi><lb/>
+          <hi rend="underline">never give you cause to regret having loved</hi> the<lb/> humble
+          Charlie Tenney. May God help you dearest<lb/>
+        </p>
+
+        <pb n="4" entity="DSSR_000000766_0528"/>
+
+        <!--<p>
+          <figure rend="page" entity="NC62c23d">
+            <figDesc/>
+          </figure>
+        </p>-->
+
+        <p> Do not allow my protracted absence to mar your <orig reg="happiness"
+          >happine&longs;s</orig><lb/> Addie, for you know I was not to come until July and
+          then<lb/> if it is <orig reg="possible">po&longs;sible</orig>, you may be sure. I will
+          hold Lieut. Brisbine to<lb/> his promise. And you must not pay too much attention<lb/> to
+          Telegraph reports, for you know they are seldom correct, then<lb/> you know when it is
+          possible, I shall write very often, and keep<lb/> you "posted." I have not yet received
+          another letter from Mrs.<lb/> Holcumb and I am not anxious to receive one
+          either&mdash;only I<lb/> would like to have her know that my intentions were
+          honorable. If<lb/> you do not wish me to, I will not send you any more of her<lb/> letters
+          but I will send them to Neal&mdash;and if you wish you can read<lb/> them. <hi
+            rend="underline">Of course</hi> I have no objection to your writing <hi rend="underline"
+            >any one</hi> you<lb/> wish. nor do I wish to see you their letters. so remember<lb/> I
+          love Addie&ndash; not to find fault, for I can <hi rend="underline">trust</hi> the one
+          I love.<lb/> I am glad you remember me often. not an hour passes but I<lb/> invoke the
+          blessings of Heaven upon you.<lb/>
+        </p>
+        <p> You request me to wait on your consent to become mine<lb/> however repugnant it is for
+          me <hi rend="underline">to wait</hi>. I will do so&ndash;only you<lb/> will not allow
+            <hi rend="underline">too</hi> long a time to elapse before you speak of it again
+          will<lb/> you.<lb/>
+        </p>
+        <p> You mention my sister, and request to know more<lb/> of her. I will only say she does
+          not <hi rend="underline">very</hi> much resemble me&ndash; in<lb/> looks as well as
+          disposition.&mdash;She is beautiful&mdash;very beautiful, and<lb/> proud. I will
+          tell you all about her when I come home<lb/> You must have an exalted idea of my
+          abilities, indeed ha! ha!<lb/> But you must not feel that I wish to exercise any power
+          over you<lb/> I only wish you to return my love, as I love.<lb/>
+        </p>
+        <p> Have you seen the order relating to soldiers sending<lb/> letters from the
+            <unclear>Peterman</unclear>? This will explain why my letters have not<lb/> been
+          received. but I will write often, and perhaps one may "run<lb/> the blockade" and get to
+          you.<lb/>
+        </p>
+        <p> I cannot write any thing of the late battle, save<lb/> a few incidents. Gen. Moore after
+          Capt. Asper was wounded<lb/> had command of the company and distinguished himself. I
+          think<lb/> he will be promoted. I think Capt. Asper will be, too.<lb/>
+        </p>
+        <p> I regretted that I could not accompany the boys<lb/> on the pursuit but my arm was so
+          <unclear/> that I could not.<lb/> it is nearly well now. I forgot to say that we were at
+          Strasburg.<lb/> My portfolio with my papers got separated from me so I could<lb/> not
+          finish this before.<lb/>
+        </p>
+        <p> You must write to me very often and I will<lb/> write very often too. Can you send me a
+          copy of Laurie's<lb/> poem "the Vision"? I learned of it from Charlie Brooks. He<lb/>
+          arrived here yesterday. I would very much like to see it and<lb/> also your "Fifty years
+          ahead." But if it will be any trouble you need<lb/> not mind it.<lb/>
+        </p>
+        <closer> I must close now as it is past tattoo. I may write<lb/> more tomorrow so Good Night
+          my own.<lb/>
+          <salute>Finis</salute>
+          <signed>Charlie.</signed><lb/>
+        </closer>
+
+      </div1>
+
+    </body>
+  </text>
+
+
+</TEI.2>

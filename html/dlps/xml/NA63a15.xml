@@ -1,0 +1,274 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0259 SYSTEM "000000766_0259" NDATA jpg>
+<!ENTITY DSSR_000000766_0260 SYSTEM "000000766_0260" NDATA jpg>
+<!ENTITY DSSR_000000766_0261 SYSTEM "000000766_0261" NDATA jpg>
+<!ENTITY DSSR_000000766_0262 SYSTEM "000000766_0262" NDATA jpg>
+
+<!--<!ENTITY NA63a15a SYSTEM "NA63a15a.jpg" NDATA jpg>
+<!ENTITY NA63a15b SYSTEM "NA63a15b.jpg" NDATA jpg>
+<!ENTITY NA63a15c SYSTEM "NA63a15c.jpg" NDATA jpg>
+<!ENTITY NA63a15d SYSTEM "NA63a15d.jpg" NDATA jpg>
+<!ENTITY NA63a15e SYSTEM "NA63a15e.jpg" NDATA jpg>
+<!ENTITY NA63a15f SYSTEM "NA63a15f.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NA63a15">
+    <teiHeader type="migrated">
+        <!-- todo -->
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1863-01-15">15 January 1863</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>David Seaman</name>
+                    <resp>Creation of digital images:</resp>
+                    <name>University of Virginia Library Electronic Text Center</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>ETC</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">13</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA63a15</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton</p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2001">2001</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Illustrations have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, 15 January 1863</title>
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>6 pages</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p> </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1863-01-15">1863-01-15</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-19">November 10th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+        <front id="d2">
+
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>6 pp.</extent>
+                        <date value="1863-01-15">15 January 1863</date>
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+                <p/>
+            </div1>
+        </front>
+        <body id="d4">
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1863-01-15">15
+                        January 1863</date></head>
+                <pb n="1" entity="DSSR_000000766_0259"/>
+                <opener>
+                    <dateline>
+                        <name type="place">Farmington </name>
+                        <date value="1863-01-15">15, Jan. 1863.</date>
+                    </dateline>
+                    <salute>My own precious darling,</salute>
+                </opener>
+
+                <p> I have just returned from "Ball Call" and seated myself in the comfortable room
+                    with pen in hand to pour out on paper thoughts for your eyes alone, which shall
+                    again remind you of my strong devotion for <hi rend="underline"> my own loved
+                        one.</hi>
+                </p>
+                <p> I recieved the <unclear/> letter from <unclear>Welfare Goon</unclear> and
+                    Barnum, last evening. Nothing could have give one greater pain that to know that
+                    you dearest; had suffered a relapse. Your last letter was so hopeful and
+                    charming that I was much encouraged, but as you my dearest; "There is many a
+                        <unclear>livest?</unclear> the <unclear/> and the life." May God in his
+                    great mercy give you strength so that you may not again be brought to your bed.
+                    I think there was nothing which kept me from utter dispair, except the knowledge
+                        <pb n="2" entity="DSSR_000000766_0260"/> that you had recieved a furlough
+                    and that God <unclear/> illing, you will soon be home. But love, will not the
+                    exertion be too great? Will not the journey be too long for you to undertake in
+                    your <unclear/> weak state? </p>
+                <p> Oh Charlie, <hi rend="underline">darling</hi> one I tremble. Would that you were
+                    but here, But I will be hopeful and trust in God's goodness. </p>
+                <p> Seth informed me that the arrival of any letters gave you great pleasure, I was
+                    gratified to know it; I feared they were written with so much <unclear/> that
+                    they would but thend to make you worse, But darling, do not read my sad
+                    thoughts, read only the happy ones, or at-least do not dwell upon the sad ones.
+                    I will try and write cheerful loving letters, just such as you <hi
+                        rend="underline"> dear <unclear/>
+                    </hi> Charlie needs. </p>
+                <p> How happy I should be love, could I but watch over you as you return to health,
+                    I do not believe any one can do <unclear/> as well I as I should. How devoted I
+                    should be. When the pain tortured you, I would try <del hand="h1">and so</del>
+                    drive it away and soothe you with <pb n="3" entity="DSSR_000000766_0261"/>
+                    gentle words, such as none but <hi rend="underline"> your Addie</hi> has a right
+                    to utter. Then when you were able and could endure it, I would read some
+                    splendid work, from which we could obtain instruction, and for one <unclear/> .
+                    Would be not be happy dearest? In my dreams I was with you last night. I went to
+                    sleep wishing that I could fly to you. I had no sooner fallen into a gentle
+                    slumber than I was lifted from my bed and <unclear/> far far away, over
+                    mountains, hills, rivers, citites and towns, on on till at last I found myself
+                    in a dark comfortable foom surrounded by <unclear/> . Some were lying on rough
+                    beds, others walking around as if tired of life and wished to walk into
+                    eternity, <unclear/> I was told that I was in a hospital and that those
+                    frightful objects were dear brave soldiers. </p>
+                <p> Mentally, I asked if Charlie was there and began searching. Earnestly I gazed in
+                    each face hoping to see one familiar glance one <hi rend="underline"> loving
+                    </hi> one, I looked in one corner and noticed a rude couch of straw <pb n="4"
+                        entity="DSSR_000000766_0262"/> accompanied by <hi rend="underline"> my
+                        Charlie </hi>/ I needed no second glance to convince me, besides over it
+                    <unclear/> born, his face animated and his blue-eyes humming with joy as he
+                    asked, "How you <unclear/> ." I flew to thee darling and awaken <unclear/>
+                    Carrie. But darling <unclear/> Carrie wishes to <unclear/> a word of
+                    enocouragement; and this with hers will be all that you must read at one time. I
+                    will write a line to <unclear/> who so <unclear/> to me for you, and if you are
+                    proper please give it them. Darling even to have you with me I remain as ever
+                    thine own true, </p>
+
+                <closer>
+                    <signed>Addie</signed>
+                </closer>
+            </div1>
+            <div1 type="addenda" id="d6">
+                <head>Addendum to the Letter from Adelaide E. Case to Charles N. Tenney of <date
+                        value="1863-01-15">15 January 1863</date>, written by
+                        <unclear>unclear</unclear><ref target="n1" n="1">1</ref></head>
+                <opener>
+                    <salute>Mr, Tenney---</salute>
+                </opener>
+                <lb/>
+                <p>May I beg the priviledge of <unclear/> ? Although you are a strange to me
+                    <unclear/> I have heard you so frequently <unclear/> almost feel we are friends.
+                    <lb/> Is <unclear/> been with feelings of regreat the we have learned of you
+                    illness- <unclear/> be assured you </p>
+            </div1>
+            <div1 type="notes" n="1" id="d7">
+                <head>Notes</head>
+
+                <note id="n1" place="end" n="1">
+                    <seg type="note-symbol">1</seg>
+                    <p> This message is written perpendicularly to the text of page 4.</p>
+                </note>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

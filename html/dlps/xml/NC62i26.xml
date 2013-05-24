@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0639 SYSTEM "000000766_0639" NDATA jpg>
+<!ENTITY DSSR_000000766_0640 SYSTEM "000000766_0640" NDATA jpg>
+<!ENTITY DSSR_000000766_0641 SYSTEM "000000766_0641" NDATA jpg>
+<!ENTITY DSSR_000000766_0642 SYSTEM "000000766_0642" NDATA jpg>
+
+<!--<!ENTITY NC62i26a SYSTEM "NC62i26a.jpg" NDATA jpg>
+<!ENTITY NC62i26b SYSTEM "NC62i26b.jpg" NDATA jpg>
+<!ENTITY NC62i26c SYSTEM "NC62i26c.jpg" NDATA jpg>
+<!ENTITY NC62i26d SYSTEM "NC62i26d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NC62i26">
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-09-26"
+      >26 September 1862</date></title>
+
+    <author>Tenney, Charles N.</author>
+    <editor/>
+   </titleStmt>
+
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NC62i26</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title/>
+      <author/>
+     </titleStmt>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+     </publicationStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-09-26">1862-09-26</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-16">November 16th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <body id="d2">
+   <div1 type="letter" n="1" id="d3">
+    <pb n="1" entity="DSSR_000000766_0639"/>
+    <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-09-26">26 September
+      1862</date></head>
+
+    <opener>
+     <dateline>Loudon Heights, near Harper's Ferry, Va., <date value="1862-09-26">Sept. 26th
+      1862</date>
+     </dateline>
+     <salute>My dear sister <name type="recipient">Minnie</name>: </salute>
+    </opener>
+
+    <p> Very many days have elapsed since<lb/> I last indited a letter to you, but you have been by
+     no means <lb/> forgotten, but while we have been tramping over the<lb/> hills and vales of
+     "sacred <name type="place">Virginia</name>," and "Maryland, my <lb/> Maryland," my mind has
+     often wandered away up<lb/> "where the water tastes like <hi rend="underline">ile</hi>," and
+     delighted itself in <lb/> calling up hours never to be forgotten. But this is not <lb/> telling
+     you why I have not sooner written. Since we evacuated <name type="place">Cullpepper</name> on
+     the <date value="1862-08-19">19<hi rend="super">th</hi> of August</date>, until we <lb/> came
+     to this point, (the 23<hi rend="super">d</hi> inst.) we have been constantly <lb/> engaged in
+     all the duties and troubles of an arduous <orig reg="campaign">cam-<lb/> paign</orig>. When the
+     rebels performed that astounding feat<lb/> of outflanking the seat of war itself, we lay in a
+     state of<lb/> fancied security on the Rappahannock, never dreaming<lb/> that two weeks later we
+     would be fighting in <name type="place">Maryland</name>, <lb/> yet the deed was accomplished,
+     and even Fredericktown<lb/> a union city was invested and in<hi rend="underline">feste</hi>d by
+     a subtle and <lb/> cunning foe. Of course, <name type="place">Maryland</name> must be
+     liberated, <lb/>
+     <pb n="2" entity="DSSR_000000766_0640"/> and who should do it, but the "Splendid Army of
+     Va."<lb/> Thus by a series of "forced marches," adroit escapes from<lb/> a surrounding enemy,
+     and "brilliant reconnoissances," we<lb/> were transferred over into MD. hitherto to be known
+     as<lb/> "Capital defense army," and we have accomplished the <lb/> task. &mdash; Maryland
+     is free from rebel tread, though <orig reg="polluted">pol-<lb/> luted</orig> by rebel dead. We
+     have fought the battles of<lb/> South Mountain and Sharpsburg, and the rebel army <lb/> went
+     out of Maryland 40,000 weaker than it entered. We<lb/> &mdash; our <hi rend="underline"
+      >Corps d'arm</hi>ee - occupy Loudon Heights below the far<lb/> famed town of Harper's Ferry,
+     and from the elevated position<lb/> we occupy. we naturally feel <hi rend="underline">above</hi>
+     <hi rend="underline">common</hi> people.<lb/>
+    </p>
+    <p> Now my sister, condsidering the fact that we have been<lb/> employed in such a manner as to
+     make it impofsible to<lb/> write, and that I have successfully "come out" of the
+     "Waterloo"<lb/> of America, am I not entitled to your pardon for my un-<lb/> willing silence?
+     Why I have scarcely written more than<lb/> a line (until yesterday.) to Addie, and not a line
+     to any<lb/> one else. I trust there will be no more such painful<lb/> pauses in our
+     correspondence: surely there will ^ not be if I<lb/> can have my will. Raking it for granted
+     that you<lb/> have kindly forgiven me, I will devote the remnant of<lb/> my time and paper to
+     some other subject. <lb/> *How ludicrous! I was carelefs, pardon the mistake.<lb/>
+     <pb n="3" entity="DSSR_000000766_0641"/> I gave a description of the late battle of Antietam or
+     Sharps-<lb/> burg, to Addie; also a description of Loudon Heights, <lb/> and as her school is
+     closed ere this, you will have seen<lb/> the letters. I recieved a letter from you--dated <lb/>
+     "Farmington, June 20th"--on the 9th of this month, and<lb/> dont you think the news was fresh?
+     Well it was,<lb/> for I had not recieved a letter for a long time before, and<lb/> coming from
+     one whom I esteem so highly as your-<lb/> self, it was doubly welcome. You spoke of <lb/> the
+     Battle of Port Republic. I was not in that en-<lb/> gagement, as I felt it my duty to remain at
+     Suray<lb/> "cos vy," I was decidedly unwell. Since then it has<lb/> been my fortune to not only
+     witne&longs;s but to take part<lb/> in two of the most sanguinary struggles of the
+     war,<lb/> viz. Cedar Mountain and Sharpsburg, and through<lb/> the infinite mercy of God, I
+     pafsed through both with-<lb/> out recieving a scratch. I often wonder, in my hours<lb/> of
+     meditation, if it is not the purpose of God<lb/> in this war, to spare my life for some unknown
+     purpose, to<lb/> do his work. He truly deserves all--and more than <lb/> I can render in his
+     cause. </p>
+    <p> I was very much interested in that part of your<lb/> letter, relating to Addie and her
+     school. You, as a<lb/>
+     <pb n="4" entity="DSSR_000000766_0642"/> teacher, not to say as a sister, ought to be able to
+     judge<lb/> if any one, and I am very willing to believe you when<lb/> you say she is a "good
+     teacher." Indeed, I predicted in<lb/> the Spring, when she first informed me of her
+     intention<lb/> to take a school, that she would prove a capital Tutor.<lb/> I am not
+     particularly biassed in her favor, because I love her,<lb/> but the above would have been my
+     verdict in her case, had I<lb/> been an entire stranger. I wish I could have been<lb/> able to
+     reply to your inquiries about our mutual friend Will<lb/> sooner, but circumstances were
+     unfavorable. I did see<lb/> the letter you wrote him, and can say without any reser-<lb/>
+     vation, that he was highly delighted with it. It was not<lb/> too free, if I could judge from
+     his actions, as well as words.<lb/>
+    </p>
+    <p> What he said, would not become me to disclose, but<lb/> let if suffice me to say, he prizes
+     you as one of his best<lb/> and--gue&longs;s the other word--friends. His greatest trouble
+     was<lb/> fear lest he had overstepped the bounds of propriety in wri-<lb/> ting to you as he
+     did, and he was too much pleased at learn<lb/> ing that you were not offended, to judge
+     rashly--as he must, had<lb/> he been offended at your letter. Will is a noble man I am<lb/>
+     proud of him as a friend and will be more so as a --brother.<lb/> He is at present, I learn, at
+     Fort Ellsworth, in command of 150<lb/> recruits for the 7th, but he has not fully recovered
+     from his wound.<lb/> Charley Brooks is with him, 2nd in command. We have just had an
+     installment of 40<lb/> recruits, of whom 16 were afsigned to<lb/> Co. H. I think it is most too
+     bad to recruit up this Regt.<lb/> and keep it in the field, since it has been reduced to 85
+     men,<lb/> for duty, while other rgts, as the Ohio 4th, have been allowed 3<lb/> months to go
+     home and recruit. However, we have had<lb/> the honor of participating in five engagements
+     while the 4th<lb/> has none to boast of. Will, if our Country needs the immolation of all the
+     7th to<lb/> preserve its Nationality, it has only to make the<lb/> demand: the 85 left are as
+     true patriots as ever cro&longs;sed steel.<lb/>
+    </p>
+    <p> Sister mine, how shall I prove the gratitude I owe and feel<lb/> for the generous interest
+     you evince in my welfare. God will<lb/> reward you. I little dreamed when I introduced myself
+     to<lb/> you, that I should in a year address you as a sister. But how<lb/> little we know the
+     heart. You will accept a brother's love will<lb/> you not,--for I hope at no very distant day
+     to --well, I --I wont tell<lb/>
+    </p>
+    <p> But I am way down to the place where we see "finis," so I will close this<lb/> uninteresting
+     letter by promising to write again at an early<lb/> day. Please give my love to your Papa and
+     all the rest and<lb/> (Addie will give you my addre&longs;s) </p>
+    <closer>
+     <salute>write soon to Your Brother</salute>
+     <signed>Charlie</signed>
+     <lb/>
+     <seg type="postscript"> Please tell Mi&longs;s <unclear>Debbie</unclear> that the <lb/>
+      interest she feels in soldiers is fully <lb/> reciprocated by them, as I can well <lb/>
+      testify, for I am "one of them."<lb/> I am gratefull for her well<lb/> wishes. Please return
+      my compli<lb/> ments, with best wishes for her <lb/> welfare. Yours Etc. Charley </seg>
+    </closer>
+   </div1>
+  </body>
+ </text>
+
+</TEI.2>

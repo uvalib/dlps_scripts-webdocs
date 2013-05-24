@@ -1,0 +1,1161 @@
+<?xml version="1.0"?>
+
+<?dlps figure-images="yes"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY DSSR_000005823_0001 SYSTEM "000005823_0001.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0002 SYSTEM "000005823_0002.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0003 SYSTEM "000005823_0003.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0004 SYSTEM "000005823_0004.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0005 SYSTEM "000005823_0005.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0006 SYSTEM "000005823_0006.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0007 SYSTEM "000005823_0007.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0008 SYSTEM "000005823_0008.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0009 SYSTEM "000005823_0009.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0010 SYSTEM "000005823_0010.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0011 SYSTEM "000005823_0011.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0012 SYSTEM "000005823_0012.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0013 SYSTEM "000005823_0013.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0014 SYSTEM "000005823_0014.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0015 SYSTEM "000005823_0015.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0016 SYSTEM "000005823_0016.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0017 SYSTEM "000005823_0017.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0018 SYSTEM "000005823_0018.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0019 SYSTEM "000005823_0019.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0020 SYSTEM "000005823_0020.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0021 SYSTEM "000005823_0021.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0022 SYSTEM "000005823_0022.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0023 SYSTEM "000005823_0023.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0024 SYSTEM "000005823_0024.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0025 SYSTEM "000005823_0025.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0026 SYSTEM "000005823_0026.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0027 SYSTEM "000005823_0027.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0028 SYSTEM "000005823_0028.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0029 SYSTEM "000005823_0029.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0030 SYSTEM "000005823_0030.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0031 SYSTEM "000005823_0031.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0032 SYSTEM "000005823_0032.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0033 SYSTEM "000005823_0033.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0034 SYSTEM "000005823_0034.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0035 SYSTEM "000005823_0035.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0036 SYSTEM "000005823_0036.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0037 SYSTEM "000005823_0037.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0038 SYSTEM "000005823_0038.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0039 SYSTEM "000005823_0039.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0040 SYSTEM "000005823_0040.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0041 SYSTEM "000005823_0041.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0042 SYSTEM "000005823_0042.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0043 SYSTEM "000005823_0043.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0044 SYSTEM "000005823_0044.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0045 SYSTEM "000005823_0045.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0046 SYSTEM "000005823_0046.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0047 SYSTEM "000005823_0047.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0048 SYSTEM "000005823_0048.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0049 SYSTEM "000005823_0049.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0050 SYSTEM "000005823_0050.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0051 SYSTEM "000005823_0051.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0052 SYSTEM "000005823_0052.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0053 SYSTEM "000005823_0053.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0054 SYSTEM "000005823_0054.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0055 SYSTEM "000005823_0055.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0056 SYSTEM "000005823_0056.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0057 SYSTEM "000005823_0057.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0058 SYSTEM "000005823_0058.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0059 SYSTEM "000005823_0059.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0060 SYSTEM "000005823_0060.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0061 SYSTEM "000005823_0061.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0062 SYSTEM "000005823_0062.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0063 SYSTEM "000005823_0063.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0064 SYSTEM "000005823_0064.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0065 SYSTEM "000005823_0065.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0066 SYSTEM "000005823_0066.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0067 SYSTEM "000005823_0067.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0068 SYSTEM "000005823_0068.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0069 SYSTEM "000005823_0069.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0070 SYSTEM "000005823_0070.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0071 SYSTEM "000005823_0071.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0072 SYSTEM "000005823_0072.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0073 SYSTEM "000005823_0073.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0074 SYSTEM "000005823_0074.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0075 SYSTEM "000005823_0075.jpg" NDATA jpg>
+<!ENTITY DSSR_000005823_0076 SYSTEM "000005823_0076.jpg" NDATA jpg>
+]> 
+<TEI.2 id="clehom">
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">The Home Library of the Garnetts of "Elmwood"</title>
+    <title type="sort">the home library of the garnetts of elmwood</title>
+    <author>Clemons, Harry, 1879-1968.</author>
+    <respStmt>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Unknown</name>
+     <resp></resp>
+     <name></name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">54</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="ETC">clehom</idno>
+    <date value="2010">2010</date>
+    <availability status="public">
+     <p n="copyright">Copyright &copy; 2010 by the Rector and Visitors of the University of
+      Virginia</p>
+     <p n="access">Publicly accessible</p>
+    </availability>
+    <idno type="uva-pid"/>
+   </publicationStmt>
+<seriesStmt>
+<title>University of Virginia Library, Text collection</title>
+<idno type="uva-set">UVA-LIB-Text</idno>
+<idno type="uva-set">UVA-LIB-home_library</idno>
+</seriesStmt>
+   <notesStmt>
+    <note>
+     <p/>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title type="main">The Home Library of the Garnetts of "Elmwood"</title>
+      <title type="sort">the home library of the garnetts of elmwood</title>
+      <author>Clemons, Harry, 1879-1968.</author>
+     </titleStmt>
+     <publicationStmt>
+      <p/>
+     </publicationStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p></p>
+   </projectDesc>
+   <editorialDecl>
+    <p></p>
+    <p id="ETC"></p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="2010">2010</date>
+   </creation>
+   <langUsage>
+    <language id="eng" usage="main">English</language>
+   </langUsage>
+   <textClass>
+    <keywords>
+     <term/>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2010-01">January 2010</date>
+    <respStmt>
+     <resp>Migration</resp>
+     <name>Andrew Tarne, Digital Collection Services</name>
+    </respStmt>
+    <item>Converted markup (originally html) to comply with the UVA Library
+     DTD (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-03">March 2010</date>
+    <respStmt>
+     <resp>Adding page images</resp>
+     <name>Andrew Tarne, Digital Collection Services</name>
+    </respStmt>
+    <item>Added scanned page images from source: Z733.V72C55 1957 Copy 5, Ivy Stacks</item>
+   </change>
+  </revisionDesc>
+  
+ </teiHeader>
+ <text id="d1">
+  <front id="d2">
+   
+   <pb entity="DSSR_000005823_0001" n="Spine"/>
+   <pb entity="DSSR_000005823_0002" n="Cover"/>
+   <pb entity="DSSR_000005823_0003" n="Back"/>
+   <pb entity="DSSR_000005823_0004" n="Head"/>
+   <pb entity="DSSR_000005823_0005" n="Tail"/>
+   <pb entity="DSSR_000005823_0006" n="Foredge"/>
+   
+   <pb entity="DSSR_000005823_0007"/>
+   <pb entity="DSSR_000005823_0008"/>
+   <pb entity="DSSR_000005823_0009"/>
+    <div1 type="half-title" id="d3">
+     <pb entity="DSSR_000005823_0010"/>
+     <head type="main">
+      The Home Library of<lb/>
+      the Garnetts of Elmwood
+     </head>
+     <ab type="empty" rend="none"/>
+     <pb entity="DSSR_000005823_0011"/>
+    </div1>
+   <titlePage id="d4">
+    <pb entity="DSSR_000005823_0012"/>
+    <docTitle>
+     <titlePart type="main">
+      The Home Library<lb/>
+      of the<lb/>
+      Garnetts of Elmwood
+     </titlePart>
+    </docTitle>
+
+    <byline>
+     BY<lb/>
+     <docAuthor>
+      <hi rend="small-caps">Harry Clemons,<lb/> 
+      university of virginia librarian</hi><lb/> 
+      1927-1950
+     </docAuthor>
+    </byline>
+
+
+    <docImprint>
+     <pubPlace><hi rend="small-caps">Charlottesville</hi></pubPlace><lb/>
+     <publisher><hi rend="small-caps">University of Virginia Press</hi><lb/> 
+      <date value="1957">1957</date>
+     </publisher>
+     <pb entity="DSSR_000005823_0013"/>
+     
+     
+     Copyright 1957<lb/>
+     by the University of Virginia<lb/>
+     Library of Congress Card<lb/>
+     Number 57-6691<lb/>
+     <lb/>
+     <lb/>
+     <lb/>
+     <lb/>
+     <lb/>
+     Printed in the United States of America<lb/>
+     by the University of Virginia Press
+    </docImprint>
+   </titlePage>
+   <div1 type="contents" id="d5">
+    <pb entity="DSSR_000005823_0014"/>
+     <p>
+      <table rows="11" cols="2">
+       <head><hi rend="italic">Contents</hi></head>
+       <row>
+        <cell/>
+        <cell>
+         <hi rend="small-caps">page</hi>
+        </cell>
+       </row>
+       <row>
+        <cell>
+         I Epitome
+        </cell>
+        <cell>
+         9
+        </cell>
+       </row>
+       <row>
+        <cell>
+         II "Elmwood"
+        </cell>
+        <cell>
+         9
+        </cell>
+       </row>
+       <row>
+        <cell>
+         III The Garnetts
+        </cell>
+        <cell>
+         12
+        </cell>
+       </row>
+       <row>
+        <cell>
+         IV James Mercer Garnett: The<lb/>
+         Grandfather
+        </cell>
+        <cell>
+         13
+        </cell>
+       </row>
+       <row>
+        <cell>
+         V Robert Mercer Taliaferro<lb/>
+         Hunter: The Uncle
+        </cell>
+        <cell>
+         20
+        </cell>
+       </row>
+       <row>
+        <cell>
+         VI Muscoe Russell Hunter Garnett:<lb/>
+         The Owner in 1864
+        </cell>
+        <cell>
+         24
+        </cell>
+       </row>
+       <row>
+        <cell>
+         VII Mary Picton Stevens Garnett:<lb/>
+         The Wife
+        </cell>
+        <cell>
+         34
+        </cell>
+       </row>
+       <row>
+        <cell>
+         VIII "Elmwood" After 1864
+        </cell>
+        <cell>
+         40
+        </cell>
+       </row>
+       <row>
+        <cell>
+         IX The Transfer of the Collection
+        </cell>
+        <cell>
+         43
+        </cell>
+       </row>
+       <row>
+        <cell>
+         X The Collection Itself
+        </cell>
+        <cell>
+         47
+        </cell>
+       </row>
+      </table>
+     </p>
+    <pb entity="DSSR_000005823_0015"/>
+    <pb entity="DSSR_000005823_0016"/>
+     <p>
+      <table rows="8" cols="2">
+       <head><hi rend="italic">Illustrations</hi></head>
+       <row>
+        <cell/>
+        <cell>
+         <hi rend="small-caps">page</hi>
+        </cell>
+       </row>
+       <row>
+        <cell>
+         "Elmwood"
+        </cell>
+        <cell>
+         11
+        </cell>
+       </row>
+       <row>
+        <cell>
+         James Mercer Garnett: The Grand-<lb/>
+         father
+        </cell>
+        <cell>
+         15
+        </cell>
+       </row>
+       <row>
+        <cell>
+         Robert Mercer Taliaferro Hunter:<lb/>
+         The Uncle
+        </cell>
+        <cell>
+         21
+        </cell>
+       </row>
+       <row>
+        <cell>
+         Muscoe Russell Hunter Garnett:<lb/>
+         The Owner in 1864
+        </cell>
+        <cell>
+         25
+        </cell>
+       </row>
+       <row>
+        <cell>
+         Mary Picton Stevens Garnett: The<lb/>
+         Wife
+        </cell>
+        <cell>
+        35
+        </cell>
+       </row>
+       <row>
+        <cell>
+         Mrs. James Clayton Mitchell: The<lb/>
+         Donor
+        </cell>
+        <cell>
+         45
+        </cell>
+       </row>
+       <row>
+        <cell>
+         Garnett Room, University of Virginia<lb/>
+         Library
+        </cell>
+        <cell>
+         55
+        </cell>
+       </row>
+      </table>
+     </p>
+   </div1>
+   <div1 type="fly-title" id="d6">
+    <pb entity="DSSR_000005823_0017"/>
+    
+    <pb entity="DSSR_000005823_0018"/>
+     <head type="main">
+      THE HOME LIBRARY OF<lb/>
+      THE GARNETTS OF "ELMWOOD"
+     </head>
+    
+    <pb entity="DSSR_000005823_0019"/>
+    
+    <ab type="empty" rend="none"/>
+   </div1>
+  </front>
+  <body id="d7">
+   <div1 type="book" id="d8">
+    <pb n="9" entity="DSSR_000005823_0020"/>
+    <div2 type="chapter" id="d9">
+     <head>I Epitome</head>
+     <p>The Garnett collection is the home library of an eminent Virginia family, a home library
+      that has been preserved, intact to a remarkable degree, since the closing months of the War of
+      1861-1865. Until its removal to the University of Virginia Library in 1938, it was located at
+      "Elmwood," the impressive mansion on the Garnett estate in Essex County, Virginia. The
+      collection represents the reading interests of a family notable for cultural attainment and
+      public service; and its owner in 1864, Muscoe Russell Hunter Garnett, was a distinguished
+      alumnus of the University of Virginia.</p>
+    </div2>
+    <div2 type="chapter" n="2" id="d10">
+     <head>II "Elmwood"</head>
+     <p>The "Elmwood" of 1864 was&mdash;as indeed the building still is&mdash;a solid
+      example of a Virginia plantation house dating from colonial times. It stood on rising ground
+      somewhat less than a mile south of the highway (now Route 17) running roughly
+      <pb n="10" entity="DSSR_000005823_0021"/>
+      parallel with and to the right of the Rappahannock River as one proceeded downstream from
+      Fredericksburg to Tappahannock. The building was a massive brick structure of two storeys
+      above a windowed basement, its stern lines broken by an unsightly stair tower near one end.
+      The location gave an effect of severe aloofness: <lb/><lb/> and to one approaching "Elmwood"
+      from the highway, the first impression was of the grimness of a barracks. But as one passed
+      through the outer portal, the effect was at once of spaciousness and of ornate decoration. The
+      interior was rich in its furnishings, its marble mantels were colorful, and the extent of its
+      hand-tooled woodwork was extraordinary. The generous proportions of its halls and reception
+      rooms and chambers offered promise of unstinted hospitality; and its library room, paneled
+      with curly maple and equipped with built-in bookcases of maple and mahogany, was an invitation
+      to scholarly and cultural pursuits. Extending back of the mansion was a formal garden, and
+      beyond that was the family burial plot, the whole bordered
+      
+      <pb n="11"/>
+      <figure entity="DSSR_000005823_0022" rend="page">
+       <head><hi rend="italic">An early picture of "Elmwood"</hi></head>
+      </figure>
+      
+      <pb n="12" entity="DSSR_000005823_0023"/> with cedar and holly
+      and with crape myrtle of unusual size. Together with the outlying house for the overseer and
+      with the tenant cottages and farm buildings, this was the center of an estate of broad
+      acreage.</p>
+    </div2>
+    <div2 type="chapter" n="3" id="d11">
+     <head>III The Garnetts</head>
+     <p>The three given names of the 1864 owner&mdash;Muscoe, Russell, Hunter&mdash;along
+      with the surname Garnett point to prominent Virginia families stemming from colonial settlers.
+      Also linked by marriage with the Garnetts were Fentons, Mercers, and Taliaferros. In England
+      there had been Garnetts extending back to NormanFrench origins in the eleventh century. The
+      Virginia Garnetts apparently came from a Lancashire branch. In scholarly attainments
+      transmitted through successive generations they resembled the Ottley in Yorkshire branch of
+      the English Garnetts, among whose members have been Jeremiah Garnett (1793- 1870), founder and
+      editor of the <hi rend="italic">Manchester Guardian</hi>; his elder 
+      <pb n="13" entity="DSSR_000005823_0024"/> 
+      brother, Richard Garnett
+      (1789-1850), philologist and Assistant Keeper of Printed Books at the British Museum; whose
+      son, Richard Garnett (1835-1906), was Keeper of Printed Books at the British Museum and joint
+      author of the Garnett and Gosse <hi rend="italic">Illustrated History of English Literature</hi>; and his son and
+      grandson, Edward Garnett (1868- 1937) and David Garnett (born 1892), have been authors and
+      critics of note.</p>
+    </div2>
+    <div2 type="chapter" n="4" id="d12">
+     <head>IV James Mercer Garnett: The Grandfather</head>
+     <p>"Elmwood" was built shortly before the Revolutionary War by an earlier Muscoe Garnett
+      (1736-1803), who married Grace Fenton Mercer; and it was presented as a wedding gift to their
+      son, James Mercer Garnett (1770-1843). This son was the grandfather of the 1864 owner of the
+      estate; and it was he who began the collection of the home library. He gained distinction in
+      four fields: politics, agriculture, religion, and education. His name 
+      <pb n="14" entity="DSSR_000005823_0025"/>  
+      thereafter
+      became a favorite one for Garnett progeny. One descendant, of the second generation, w as the
+      James Mercer Garnett who from 1882 to 1896 was Professor of` English Language and Literature
+      at the University of Virginia.</p>
+     <p>The original James Mercer Garnett was a member of the Virginia Legislature in 1799-1800 and
+      again in 1824-1825; he held an honored place in that Convention of distinguished men which
+      framed the Virginia Constitution of 1829-1830; he was in 1809 one of the grand jury which
+      indicted Aaron Burr for treason; and he represented Virginia in the United States Congress for
+      two terms, 1805-1809. On his resignation at the close of his second term, his friend John
+      Randolph of Roanoke testified of him that "he never said an unwise thing or gave a bad vote."
+      Records of that friendship, which reveal a softer aspect of the bitter and ofttimes
+      tempestuous Randolph, are preserved at the University of Virginia Library in a manuscript
+      collection of more than three hundred letters covering the years 1806 to 1832.</p>
+     <pb n="15"/>
+     <figure entity="DSSR_000005823_0026" rend="page">
+       <head><hi rend="italic">James Mercer Garnett: The Grandfather</hi></head>
+     </figure>
+     
+     <pb n="16" entity="DSSR_000005823_0027"/>
+     <p>One of the reasons for James Mercer Garnett's retirement from Congress was his desire to
+      concentrate his efforts on the improvement of agricultural conditions in Virginia. He was a
+      member of the Fredericksburg Agricultural Society, and its President for twenty years; he was
+      one of the founders of the Virginia State Agricultural Society; and he was the first President
+      of the National Society of Agriculture. He wrote a number of pamphlets and newspaper and
+      periodical articles on agriculture, and, as a by-product of the farmer's point of view, he was
+      an energetic advocate of free trade.</p>
+     <p>Like his father and his grandfather, James Mercer Garnett was a Vestryman of the nearby
+      Vawter's Church. He was at various times a delegate both to the Diocesan Conventions and to
+      the General Conventions of the Episcopal Church. On his own property he erected a log house
+      for use as a Sunday School, of which he was for many years the teacher.</p>
+     <p>His own education had been obtained at home. When in the 1820's the wealth he 
+      <pb n="17" entity="DSSR_000005823_0028"/>
+      had inherited began to dwindle, partly because of his profuse hospitality and his personal
+      benevolence, he and his talented wife (he had married a first cousin, Mary Eleanor Dick
+      Mercer) opened at "Elmwood" a school for girls. This had several years of prosperity, students
+      coming from a number of States besides Virginia. A series of formal lectures which he
+      delivered before the young ladies was in 1824 published by T. W. White of Richmond, and in
+      that year and the next it ran into four editions, the last two bearing the title <hi rend="italic">Lectures on
+      Female Education</hi>. About 1830 the school was closed because of the ill health of Mrs. Garnett.
+      But not long after, a small school for boys was opened at "Elmwood," the main purpose in this
+      case being to insure companionship for his grandson, our Muscoe Russell Hunter Garnett. That
+      attempt, however, was not long continued. An indication of James Mercer Garnett's reputation
+      as an educator was his election, in 1824, as a member of the Board of Visitors of the College
+      of William and Mary.</p>
+     <pb n="18" entity="DSSR_000005823_0029"/>
+     <p>The comments of two visitors may serve to picture the "Elmwood" and the Garnett family of
+      those days.</p>
+     <p>Benjamin Johnson Barbour, later a Congressman from Virginia and Rector of the Board of
+      Visitors of the University of Virginia during the critical years following the War of
+      1861-1865, was a pupil at the boys' school at "Elmwood." In some reminiscences dated 1885 he
+      wrote: <lb/><lb/>I shall not attempt any description of "Elmwood." I will only say that it has
+      suggested some of the fine old English homes to me, and for years after I lived there, when I
+      would be reading an English novel, "Elmwood" with its fine hall, its library and parlor, its
+      corridors and general spaciousness, would rise up before me.</p>
+     <p>John Henry Hobart, who was to become Bishop of New York, was a visitor at "Elmwood" during
+      one of his vacations from college life at Princeton; and in a letter he then wrote to his
+      mother was this tribute:<lb/><lb/> The family in which I have been form a scene of domestic
+      happiness that my imagination 
+      <pb n="19" entity="DSSR_000005823_0030"/> 
+      has often painted but such as I have never before
+      found realized. Every want and every wish supplied by an ample sufficiency, their manners
+      unfettered by all artificial forms of politeness, and yet entirely removed from rustic
+      plainness, mark the artless expression of informal goodness wishing to dispense happiness to
+      all around.</p>
+     <p>James Mercer Garnett had four sons and four daughters. His wife died in 1837, but he himself
+      lived on until 1843. His eldest son, James Mercer Garnett, Jr., was, however, short-lived.
+      Born at "Elmwood" in 1794, he died there in 1824&mdash;a young man already widely read and
+      of much promise. He had been a student at Princeton, but left before obtaining a degree. He
+      had then privately studied law and had begun practice at Loretto, a small settlement which
+      served as post office for "Elmwood." Like his father, he married a first cousin, Maria Hunter.
+      Their only child, Muscoe Russell Hunter Garnett, was born in 1821, and was thus only three
+      years of age at the time of his father's death. It was 
+      <pb n="20" entity="DSSR_000005823_0031"/> 
+      a natural consequence that
+      the ties of affection between grandfather and grandson became especially close.</p>
+    </div2>
+    <div2 type="chapter" n="5" id="d13">
+     <head>V Robert Mercer Taliaferro Hunter: The Uncle</head>
+     <p>Intimate also was the relationship between the growing boy and his mother's younger brother.
+      Her home had been in the neighboring estate (on the Tappahannock side) of "Fonthill." There
+      lived her brother and her two maiden sisters. The brother was Robert Mercer Taliaferro Hunter
+      (1809-1887). He was already entered upon a career that was to come within sight of the highest
+      political distinction.</p>
+     <p>He had been a student at the University of Virginia from 1826 to 1829. It has been recorded
+      that along with Edgar A1lan Poe he was in the group of students present at the funeral of
+      Thomas Jefferson. He had read law under Judge Henry St. George Tucker in Winchester, Virginia,
+      and for a short time thereafter had practiced his profession in Essex County.</p>
+     <pb n="21"/>
+     <figure entity="DSSR_000005823_0032" rend="page">
+       <head><hi rend="italic">Robert Mercer Taliaferro Hunter:<lb/> The Uncle</hi></head>
+     </figure>
+     
+     
+     <pb n="22" entity="DSSR_000005823_0033"/>
+     <p>But soon came the entrance upon a long course of office holding. In succession he was a
+      member of the Virginia General Assembly, a member of the United States Congress, the Speaker
+      of that body, and for fourteen years (1847-1861) a Senator in Washington. During most of his
+      period in the Senate he was Chairman of its powerful Finance Committee. Both President Pierce
+      and President Buchanan are said to have offered him the post of Secretary of State in their
+      Cabinets, but their offers were declined. During the conventions preliminary to the national
+      election of 1860 Hunter was prominently considered among the possible candidates for
+      President. Later he was among those mentioned for the presidency of the Confederate States. He
+      was Secretary of State under President Davis for a period during the years 1861 and 1862, but
+      resigned and became Senator&mdash; and in the Confederate Senate he was again foremost in
+      financial councils. Toward the close of the war he was one of the Southern Commissioners who
+      met with 
+      <pb n="23" entity="DSSR_000005823_0034"/> 
+      President Lincoln and Secretary Seward in a futile effort to negotiate
+      peace. After the surrender at Appomattox he was taken prisoner and was for several months
+      confined at Fort Pulaski. When freed, he returned to a "Fonthill" that had in 1863 suffered
+      severely from a raid instigated by General Benjamin F. Butler. Nevertheless Hunter continued
+      to be a leader in the efforts toward Southern rehabilitation that followed. From 1874 to 1880
+      he was Treasurer of Virginia; and shortly before his death, which came in 1887, President
+      Cleveland appointed him Collector of the Port of Tappahannock thus completing what might be
+      termed a full gamut of public service.</p>
+     <p>What this resume does not reveal is that throughout his long career Robert Mercer Taliaferro
+      Hunter proved himself to be a man of broad culture&mdash;and that his public addresses (a
+      plump volume of them could be compiled) demonstrate a foundation of literary as well as of
+      political knowledge. Certainly in this uncle of his, as well as in his grandfather, young
+      Muscoe 
+      <pb n="24" entity="DSSR_000005823_0035"/> 
+      Garnett had intimate and inspiring examples of noble character, scholarly
+      attainment, serious purpose, and widely recognized distinction.</p>
+    </div2>
+    <div2 type="chapter" n="6" id="d14">
+     <head>VI Muscoe Russell Hunter Garnett: The Owner in 1864</head>
+     <p>It was in this ''Elmwood'' and with this family environment that Muscoe Russell Hunter
+      Garnett was born in 1821; and home and family were dominant influences in his life. He was a
+      sensitive, retiring, precocious youth. His education up to his college days at the University
+      of Virginia was received at home, and it was directed mainly by his mother and his two maiden
+      aunts from "Fonthill." Fearing the effects of this only son's isolation from playmates of his
+      own age, his family did undertake for a time the boys' school at "Elmwood" with teachers
+      brought from outside. But in a revealing sketch of his boyhood, written by one of his aunts,
+      Martha Fenton Hunter (author of several books, the best known being <hi rend="italic">The Clifford</hi> 
+     <pb n="25"/>
+     <figure entity="DSSR_000005823_0036" rend="page">
+       <head><hi rend="italic">Muscoe Russell Hunter Garnett:<lb/> The Owner in 1864</hi></head>
+     </figure>
+      
+      <pb n="26" entity="DSSR_000005823_0037"/>
+      <hi rend="italic">Family</hi>), it is noted that at recess periods Muscoe was quite likely to slip away from his
+      youthful comrades to read some favorite book, such as Rollin's <hi rend="italic">Roman History</hi>. Charles Rollin's
+      map-studded volumes did have popular appeal. Even so, this preference offers sufficient
+      evidence that Muscoe was an exceptional child.</p>
+     <p>This home training continued until, in his seventeenth year, he was admitted as a college
+      student at the University of Virginia. He enrolled in the Schools of Ancient Languages (Greek
+      and Latin), of French Language, of German Language, and of Pure Mathematics. In that period.
+      for satisfactory completion of the requirements of a School there was awarded a Certificate of
+      Proficiency. There were no bachelor's degrees conferred for college work, but a student could
+      continue his studies towards a master's degree. At the close of a single session (1838-1839),
+      Muscoe Garnett received the desired certificates, the "tickets," in all of his Schools.</p>
+     <p>At this point this young man of eighteen years made a characteristic decision. 
+      <pb n="27" entity="DSSR_000005823_0038"/>
+      Instead of further study at Charlottesville leading to a master's degree, he resolved to
+      return to "Elmwood" for an organized course of reading in the home library there before he
+      went on to the study of Law&mdash;his father's and his uncle's profession. The letter
+      written home from the University, the letter in which he announced this decision, would seem
+      to be a pertinent document in the story of the Garnett collection, and from it an extract is
+      here quoted.</p>
+     <p>I shall continue my general studies without reference to any particular profession for at
+      least twelve months and probably longer. Of course, then, my three branches of study will be
+      History, Metaphysics, and Belles Lettres. I shall frame an extensive course of study in each,
+      and the books may be in any of the five languages I am acquainted with. So by reading authors
+      in the original, my knowledge of the language will be kept up and improved. History I will
+      study not as a mere amusement, but philosophically. I will study it in connection with
+      Political Economy and the general doctrines of Government, and as an illustration of the
+      science of the mind, in 
+      <pb n="28" entity="DSSR_000005823_0039"/> 
+      short, as "Philosophy teaching by example." By
+      Metaphysics I mean the whole philosophy of the mind, whether considered individually or in
+      masses, in its most extensive sense. In Belles Lettres I will study the great poets and
+      critics, and view their masterpieces not only as sources of enjoyment, but as works of art,
+      and examine the principles which direct their composition. In a word, I mean to study in these
+      Belles Lettres what the Germans call Aesthetics. And furthermore, I shall accustom myself to
+      express my reflections on what I read in writing. This will force me to reflect, fix what I
+      read in my memory, and assist me to form a style in writing.</p>
+     <p>Now look at the advantages of this plan. I am anxious to become well acquainted with the
+      languages, and this plan will certainly make me so. For, if I read Shakespeare, so will I
+      Homer and Goethe. If I read Clarendon, so will I Sismondi and Tacitus, and if I study Bacon,
+      so will I Plato. This plan too embraces everything but Mathematics in its connection with the
+      Natural Sciences, and the Sciences themselves. But these can easily be put in. It may be
+      objected that it is so extensive that it would require a long time to do it any justice. I
+      reply that I can stop whenever I find it necessary, and that, as to requiring so much time and
+      labor, a thorough 
+      <pb n="29" entity="DSSR_000005823_0040"/> 
+      education is not attained without these. I think, in making out
+      a course of reading, the best plan is to put down the very best books we know, without
+      considering whether we have them or not, and also to make the course very thorough without
+      noticing how long it would require to go through it. Then we can afterwards modify it to suit
+      our case.</p>
+     <p>That is a remarkable conception for a youth of eighteen, whether the date be 1839 or 1957.
+      Equally remarkable is the resolution with which that 1839 eighteen year-old put the plan into
+      operation. To it he devoted not one but two years; and the field of operation was the home
+      library at ''Elmwood.'' Once or twice he did go to Washington, where he could consult
+      additional volumes at the Library of Congress and where he could find interest and stimulus in
+      visits to the halls of Congress, his uncle then being Speaker of the House.</p>
+     <p>By 1841 Muscae deemed that the time was ripe for specialization in law studies. He returned
+      to the University of Virginia, and it was his good fortune that Judge Henry St. George Tucker
+      was that session 
+      <pb n="30" entity="DSSR_000005823_0041"/> 
+      beginning his four years tenure of the law
+      professorship&mdash;a brief tenure, but one of lasting significance for the University
+      since Professor Tucker was the prime mover in the establishment of the Honor System. Robert M.
+      T. Hunter had read law under Judge Tucker in Winchester; and his home-loving nephew was for
+      that session of 1841-1842 made a member of the Tucker household. It was for that session only,
+      for the revealing reason that young Muscae, who had needed only one year for his college
+      "tickets," now completed in one year the requirements for a law degree.</p>
+     <p>He began practice, as his father had done, at Loretta. There was not a great deal of law
+      business in that rural area (this is no adverse criticism of Essex County), and he was able to
+      resume his reading programme at "Elmwood." He now proceeded to the stage of forming a "style
+      in writing." The experiments included several book reviews which were contributed to the
+      Southern Magazine and the <hi rend="italic">Southern Literary Messenger</hi>.</p>
+     <p>The financial difficulties which had 
+      <pb n="31" entity="DSSR_000005823_0042"/> 
+      beset the estate worsened toward the close
+      of the grandfather's life, and for an interval "Elmwood" passed out of the possession of the
+      immediate family. Fortunately a brother-in-law of James Mercer Garnet, Robert Payne Warring,
+      was able so to take over the property that it later reverted to the direct line. But an
+      immediate result was that after the grandfather's death in 1843, Muscae and his mother for
+      several years transferred their residence to the Hunter home at "Fonthill." On their return to
+      "Elmwood" in the more prosperous period of the 1850's, Muscae concerned himself in making
+      additions to the book collection, in developing the flower garden, and in sundry renovations
+      of the residence itself.</p>
+     <p>During those years there was a shift in the young lawyer's concentration of interest that
+      offers a mild parallel to Woodrow Wilson's legal experience at Atlanta. From the somewhat
+      trivial cases which Essex County offered, Muscae moved to the contemplation of government and
+      its underlying principles. The year 1850 sharply 
+      <pb n="32" entity="DSSR_000005823_0043"/> 
+      indicated the change. The
+      publication of a pamphlet, <hi rend="italic">The Union, Past and Future: How It Works and How to Save It</hi>, a
+      philosophical exposition of the relationship of slavery to national government, elicited wide
+      attention and comment. Muscae was selected as a delegate to the Virginia Constitutional
+      Convention of that year; and, following that, he was elected a member of the Virginia House of
+      Delegates, a post which he held until 1855. In 1856 came his election as Representative from
+      the First Virginia District to the United States Congress. From then until the outbreak of the
+      war, Essex County and the Garnet-Hunter family had the distinction of being
+      represented&mdash;and ably represented&mdash;in Washington by Muscae R. H. Garnet as
+      Congressman and by Robert M. T. Hunter as Senator.</p>
+     <p>It is pleasant to inject into this record the assurance that the Garnet-Hunter prestige was
+      recognized at the University of Virginia. Both uncle and nephew were chosen as alumni
+      association orators at Finals, Hunter in 1839 and Garnet in 
+      <pb n="33" entity="DSSR_000005823_0044"/> 
+      1850 (that year of
+      significance in his career); and both served as members of the University's Board of Visitors,
+      Hunter during the period 1845 to 1852 and Garnet from 1855 to 1859. During his occupancy of
+      that office, Muscae Garnet was quite fittingly named Chairman of the Library Committee of the
+      Board of Visitors &mdash;and it is to be noted that never previously had the Visitors'
+      Library Committee so effectively concerned itself with such matters as the professional
+      equipment of the Librarian and the "modern" cataloguing of` the library collection.</p>
+     <p>Muscae Garnet continued in Washington until the secession of Virginia in April 1861. He then
+      became a member of the Virginia State Convention; and in November of that year he was elected
+      to represent the First Virginia District in the Confederate House of Representatives. He
+      served in that legislative body through its months of increasing difficulty and discouragement
+      until, early in 1864, there was for him an abrupt termination. He contracted typhoid fever,
+      was granted 
+      <pb n="34" entity="DSSR_000005823_0045"/> 
+      leave to return to "Elmwood," and died in his loved home on February
+      fourteenth. He had not yet reached his forty-third birthday; and the expressions of profound
+      regret at this sudden ending of a career of unusual promise gave evidence of the widespread
+      respect felt by his contemporaries for the pre-eminent abilities of this
+     scholar-statesman.</p>
+    </div2>
+    <div2 type="chapter" n="7" id="d15">
+     <head>VII Mary Picton Stevens Garnett: The Wife</head>
+     <p>Intermarriage within related families had been a characteristic of the Garnetts. Both
+      Muscae's father and his grandfather had wedded first cousins. But Muscae himself had stepped
+      out. On 26 July 1860 he had married a northerner, Mary Picton Stevens of "Castle Point,"
+      Hoboken, New Jersey. She also had come from a family of distinction. In that case, however,
+      the distinction was in the field of engineering, specifically in pioneer developments in the
+      use of steam locomotion both for ships and for railways. Mrs. Garnet's father, Edwin 
+     <pb n="35"/>
+     <figure entity="DSSR_000005823_0046" rend="page">
+       <head><hi rend="italic">Mary Picton Stevens Garnett: The Wife<lb/> (Taken about 1860)</hi></head>
+     </figure> 
+      
+      <pb n="36" entity="DSSR_000005823_0047"/> 
+      Augustus Stevens (1795- 1868), his two elder brothers, John Cox Stevens (1785-1857)
+      and Robert Livingston Stevens (1787-1856), and their father, John Stevens (1749-1838), all had
+      notable careers as inventors; and Mrs. Garnet's father was the founder of the Stevens
+      Institute of Technology in Hoboken. Ability in business management had secured for the family
+      moderate financial resources. There was also lively inclination toward love of sports. For
+      example, John Cox Stevens was a founder of the New York Yacht Club, and he had been
+      instrumental in the building of the "America" which in 1851 won the first international yacht
+      race, off Cowes, England. There was a family tradition that Mrs. Garnet's father had been a
+      volunteer member of the crew in that famous victory. </p>
+     <p>That was the paternal line. Mrs. Garnet's mother, Mary Barton Picton of West Point, was
+      Edwin Augustus Stevens' first wife. His second wife was Martha Bayard Dod, daughter of Albert
+      Baldwin Dod, who had ably pursued&mdash;and pursued simultaneously&mdash; 
+      <pb n="37" entity="DSSR_000005823_0048"/>
+      careers as a clergyman and as a professor of mathematics at Princeton University. Through her
+      stepmother, Mrs. Garnet had come into friendly relations with the Princeton Dods. </p>
+     <p>The married life of Mary Picton Stevens and Muscae Garnet was all too brief. Its duration
+      was somewhat less than four years&mdash;spent at first in Washington and later at
+      "Elmwood." The young bride met with an affectionate reception at "Elmwood" and she soon came
+      to love her new Virginia home. She settled wholeheartedly into its life and there is good
+      evidence that she took her part in the addition of books to the home library.</p>
+     <p>After her husband's untimely death, it was her desire to remain at "Elmwood." But Essex
+      County, while still nominally held by the Confederate forces, was liable to be overrun by
+      scouting and raiding parties of both the blue and the gray. Moreover there were two very young
+      children: James Mercer Garnet, of two years and seven months (born 7 July 1861), and Mary
+      Barton Picton Garnet, of eight 
+      <pb n="38" entity="DSSR_000005823_0049"/> 
+      months (born 28 May 1863). Consequently the
+      anxious Stevens family at "Castle Point" exerted at Washington its not inconsiderable
+      influence to have the widow and her children moved through the lines and brought north to New
+      Jersey. </p>
+     <p>The measures taken by the Washington administration were notably appropriate. Earlier in the
+      war, Mrs. Garnet's father had presented to the northern government a small vessel propelled by
+      a steam engine of Stevens design; and this had been converted into a gunboat. Moreover Mrs.
+      Garnet's stepmother had a younger brother, Captain Albert Dod, who had gained recognition in
+      the northern army both on the battle front and in staff work. So what the Washington
+      authorities did was to order the Stevens gunboat to proceed down the Potomac and up the
+      Rappahannock to a point opposite "Elmwood;" and to detach Captain Dod and a squad of soldiers
+      to make the trip with a pass for Mrs. Garnet, two children, and a nurse.</p>
+     <p>It was evening when Captain Dod and 
+      <pb n="39" entity="DSSR_000005823_0050"/> 
+      his file of soldiers arrived at "Elmwood."
+      Though fearing that this was some raiding party, the young widow bravely faced
+      them&mdash;to be greeted by a familiar voice: <lb/><lb/> "Mary, I have come for you."
+      <lb/><lb/> "Oh, it's you, Albert. But&mdash;I don't want to leave." </p>
+     <p>A long discussion ensued. But the realization of her family's acute anxiety and the sight of
+      the pass from President Lincoln finally persuaded Mrs. Garnet. She did, however, succeed in
+      having the departure postponed until morning. There followed a night busy with preparations
+      for a journey with young children, with the concealment of some of the more movable
+      possessions, and with arrangements for a caretaker to remain in charge at "Elmwood."</p>
+     <p>At break of dawn the house was securely closed, and the little party quietly stole down
+      across the main road to the landing stage, and was taken aboard. The children and the nurse
+      were hurried below. But as the gunboat got under way, this adopted daughter of the Confederacy
+      insisted on 
+      <pb n="40" entity="DSSR_000005823_0051"/> 
+      remaining on deck for a final look across her familiar fields toward
+      the distant mass that was "Elmwood." Captain Dod and the gunboat's commanding officer urged
+      her to retire for greater safety. <lb/><lb/> "No," she flashed back at them. "You two men go
+      below. Southern soldiers will not shoot at a lady." <lb/><lb/> They laughed, and one said:
+      "All right. Let her stay. Anyway those Johnny Rebs can't hit a barn door." <lb/><lb/> It is
+      true that there was some desultory shooting as the boat dropped down the Rappahannock. But the
+      trip was made safely. </p>
+     <p>And on that eventful night the Garnet home library had been sealed into its permanent form
+      as a collection.</p>
+    </div2>
+    <div2 type="chapter" n="8" id="d16">
+     <head>VIII "Elmwood " After 1864</head>
+     <p>As soon after the fighting war as circumstances would permit, Mrs. Garnet returned to
+      ''Elmwood'' and was joyfully received. But the difficult years of the reconstruction period
+      prevented her from 
+      <pb n="41" entity="DSSR_000005823_0052"/> 
+      maintaining a residence there; and health conditions in her
+      family at "Castle Point" seemed to make necessary her protracted withdrawal. Later efforts to
+      reopen "Elmwood" were blocked by the expense of renovating the building and running the
+      estate. Nevertheless the services of a resident overseer were continued, and the contents of
+      the mansion, including its library, were carefully protected. </p>
+     <p>Naturally there were temptations to pillage any isolated property during those years of
+      widespread penury. But the vigilant care of the faithful servitors was aided by a curious
+      rumor that became current in that sparsely settled district. It was the rumor of the ghostly
+      activities of the "Doctor. "</p>
+     <p>In the days of the family's openhanded hospitality, the "Doctor" had come as a week-end
+      guest&mdash;and had remained forty years, had died at "Elmwood," and had been interred in
+      the family burial plot. The story bruited about through the countryside was that nightly the
+      "Doctor" was wont to emerge from his grave and visit 
+      <pb n="42" entity="DSSR_000005823_0053"/> 
+      his familiar chamber and the
+      library, putting to rights the furniture and dusting the books. Thus did the gentle guest
+      perform grateful returns for the gracious hospitality of his whilom host with the indirect but
+      potent result that prowling bands of superstitious vagabonds were strongly inclined to resist
+      any inclination to maraud. </p>
+     <p>The wife died in 1903, and her son, who was still another James Mercer Garnet, in 1915. The
+      ownership both of "Elmwood" and of "Fonthill" then passed to that little daughter of eight
+      months in 1864. She had grown up, had in New Jersey married a clergyman, James Clayton
+      Mitchell, and upon his death was residing in North Wales (near Philadelphia) in Pennsylvania.
+      It was her custom to make occasional trips to Virginia, staying at the smaller house
+      "Fonthill" and continuing the necessary measures for the protection of both properties.</p>
+     <p>Not long before her death, 9 November 1949, Mrs. J. Clayton Mitchell transferred the
+      ownership of "Elmwood" to 
+      <pb n="43" entity="DSSR_000005823_0054"/> 
+      her nephew, Muscae Russell Hunter Garnet II of New York
+      City, and the ownership of "Fonthill" to a niece, Mrs. Thomas Blackburn Payne of
+      Fredericksburg. Both houses are now being attractively used as summer homes. The grandson who
+      proudly bears the name of the owner in 1864 has devotedly accomplished much for the
+      restoration of "Elmwood" to its former distinction &mdash; and hospitality. In 1953 the
+      mansion and its formal garden were opened for inspection during "Historic Garden
+      Week"&mdash;that annual Mecca for flower lovers so effectively planned and managed by The
+      Garden Club of Virginia. </p>
+
+    </div2>
+    <div2 type="chapter" n="9" id="d17">
+     <head>IX The Transfer of the Collection</head>
+     <p>Information concerning an undisturbed collection of books dating from the years before the
+      War of 1861 - 1865 had reached certain interested circles, but its existence was not generally
+      known. The possibility of an inspection of that collection came to the University of Virginia
+      Library in 1930 through Dr. Carroll Mason 
+      <pb n="44" entity="DSSR_000005823_0055"/> 
+      Sparrow, Professor of Physics and
+      member of the Faculty Library Committee, Mrs. Sparrow having relatives living in Tappahannock.
+      One of those relatives, Mr. James Meriwether Lewis, a graduate of the University of Virginia,
+      was Commonwealth Attorney for Essex County. He arranged with Mrs. J. Clayton Mitchell for a
+      small group from the University to visit "Elmwood" on October first of that year. </p>
+     <p>As that little group stepped into the spacious reception hall, the effect was that of a
+      plunge into the past as if three score and ten years had in a breath been unlived. Nowhere was
+      the past more real than in the library room, with its rows of shelved books, its padded easy
+      chair where Muscae Garnet had been wont to sit, its orderly piles of the <hi rend="italic">Revue des Deux
+      Moncles</hi> on the window ledge beside the chair, the subscription ending a month or two after
+      that February of 1864. The impression was so vivid that at the close of that enchanted day, as
+      one, breathing the crisp October air, walked down the well-nigh
+     <pb n="45"/>
+     <figure entity="DSSR_000005823_0056" rend="page">
+       <head><hi rend="italic">Mrs. J. Clayton Mitchell: The Donor<lb/> (Taken about 1915)</hi></head>
+     </figure>  
+      
+      <pb n="46" entity="DSSR_000005823_0057"/> 
+      overgrown road to
+      the main highway, there was no surprise at seeing a cluster of horsemen led by a red-coated
+      rider who flourished a bugle and was preceded by a pack of hounds. But a raucous honk by an
+      impatient motorist was so incongruous as instinctively to provoke a flash of anger. </p>
+     <p>On that day was conceived the plan for the permanent preservation of that home library in a
+      future library building at Muscae Garnet's University. The proposition was suggested in a
+      letter to Mrs. Mitchell. There was at that time no response. But eight years later, when that
+      new building was nearing completion and word had been transmitted to Mrs. Mitchell that there
+      was therein an appropriate special room, she gave her hearty approval, and a date was set for
+      the transfer. Included with the gift was a mahogany secretary, a most suitable accompaniment
+      to the books. Mrs. Mitchell came from Pennsylvania for the occasion; and she entertained the
+      party from the University of Virginia at a luncheon in the dining hall at "Elmwood," the
+      viands being sent from 
+      <pb n="47" entity="DSSR_000005823_0058"/> 
+      the Riverside Hotel at Tappahannock. Thus was the old time
+      hospitality once more in evidence, with the sprightly Garnet owner graciously presiding. The
+      transfer was made with care; and at the dedication of the Alderman Library building at the
+      Final Exercises in June of that year, 1938, the collection was in place in its new home. </p>
+    </div2>
+    <div2 type="chapter" n="10" id="d18">
+     <head>X The Collection Itself</head>
+     <p>As for the collection that has thus been preserved, it is comparatively a small one, of only
+      about twelve hundred volumes. It is, however, in no sense a collection casually assembled. The
+      books were selected with painstaking care. The range of subjects is wide. The largest section
+      is that of Literature, including several European languages in addition to English. In English
+      the compass is notable, extending from Beowulf to Edgar Allan Poe. Other general subjects, in
+      order of emphasis, are History and Geography, Religion and Philosophy, Law, and Agriculture,
+      including 
+      <pb n="48" entity="DSSR_000005823_0059"/> 
+      Botany. In Science and Technology and Domestic Science the books are
+      few but are representative. </p>
+     <p>In the collectors' minds there was obviously no intention of making this a rare book
+      collection. The books were acquired for serious reading. In some cases time has now added
+      rarity. The purchases were made through booksellers in Fredericksburg and Washington, or
+      directly from publishers in Baltimore, Philadelphia, and New York. No indication has been
+      observed that the Garnetts imported books from abroad. This tended to limit them to reliance
+      on American publications and reprints. In view of Muscae Garnet's familiarity with Greek,
+      Latin, German, French, Italian, and one or two other European tongues (shortly before his
+      death he began a study of Sanskrit), it is altogether probable that had there been greater
+      access to original publications in those languages, the collection would in those materials
+      have had greater depth. Tabs attached to some of the book covers indicate that Muscae Garnet
+      made use of a binder in Fredericksburg, 
+      <pb n="49" entity="DSSR_000005823_0060"/> 
+      and on some of the volumes his name, M.
+      R. H. Garnet, is printed at the base of the spine. There are only a few fine
+      bindings&mdash;and in the majority of these, the name Mary Picton Stevens is written on
+      the flyleaf. </p>
+     <p>This Garnet collection is an excellent library example of an exception proving the rule. The
+      rule in this case is that for the convenience of readers, especially when the readers are
+      research scholars using the stacks, all books on the same subject should be shelved
+      together&mdash;and that there should therefore be as few separately located collections as
+      possible. But should these Garnet books be scattered by subject through the main stack
+      collection, its value for research would be drastically reduced. Considered by individual
+      volumes this is not an especially valuable collection; considered as a unit it decidedly is,
+      and it offers valid topics for investigation in a number of directions.</p>
+     <p>It will be readily apparent what some of the possible subjects for investigation are.
+      Obviously one is the collection's revelation 
+      <pb n="50" entity="DSSR_000005823_0061"/> 
+      of the salient characteristics of
+      this leading Virginia family of a century ago&mdash; more especially the characteristics
+      of Muscae Russell Hunter Garnet himself. For example, consider Muscae Garnet as a traveler. </p>
+     <p>Reference has previously been made to the sketch of the youthful Muscae written by an
+      admiring aunt. In it she records that from his earliest years he delighted in maps; that he
+      spent many happy hours lying on the floor with a map spread out before him, while, supported
+      on his elbows, he traced out sea coasts and cities, rivers and mountains. That zest for travel
+      continued unabated throughout his life, and it was illustrated in his conversation and in his
+      writings.</p>
+     <p>During the year he was studying Law at the University of Virginia, that is, during the
+      session of 1841-1842, he was an editor of a student publication called <hi rend="italic">The Collegian</hi>; and in
+      the issue for November 841 a fellow editor, John R. Thompson (who later cut for himself an
+      enduring niche among the Virginia poets), wrote a 
+      <pb n="51" entity="DSSR_000005823_0062"/> 
+      description of Muscae Garnet,
+      giving him the sobriquet of "our indefatigable Emerald." From that contemporary appraisal this
+      bit may be quoted: <lb/><lb/> "His conversation is instructive and diversified. At one time he
+      discourses on the beauties of the dreamy writers of Germany, at another he enters into an
+      eloquent and thrilling disquisition of the "Sovereignty of the People." But his favorite theme
+      is Italy. He is familiar with every "ruined arch and ivied wall" from Rome and Caracalla's
+      Baths to Tivoli's romantic steep. Her dark-eyed v daughters and her sunny skies are associated
+      with his fondest dreams of the Poet Land." </p>
+     <p>Again, about five years later, while Muscae Garnet was leisurely practicing law in Essex
+      County, he experimented with the serious avocation of writing reviews. One of those,
+      contributed to the <hi rend="italic">Southern Literary Messenger</hi>, was a review of John Paget's two volume work
+      on <hi rend="italic">Hungary and Transylvania</hi>. What a review! It filled seventeen pages of double column small
+      print&mdash;so long and so thorough it was that the Editors divided it for publication,
+      <pb n="52" entity="DSSR_000005823_0063"/> 
+      as leading articles, in two issues, those for January and February 1846. </p>
+     <p>Now what was the physical reality of his travels? In actual fact, his journeyings from
+      "Elmwood" extended westward as far as Charlottesville (for his college and law courses),
+      northward to Washington (as Congressman), southward to Richmond (as Congressman in the
+      Confederacy), and his farthest venture was to New Jersey where he married his wife, whom he
+      had met in Washington. He was indeed an extensive traveler, but his traveling was in his mind,
+      and his mind found its incentive in the books in this home library. Therein were the open
+      roads to the countries and the peoples of Europe, Africa, Asia, and North America. It was
+      while seated in the comfortably padded chair in the library at "Elmwood" that he unlatched the</p>
+      <lg type="stanza">
+       <l>Charmed magic casements, opening on the foam</l> 
+       <l>Of perilous seas, in Faery lands forlorn.</l>
+      </lg>
+     <p>In addition to this collection's revelations 
+      <pb n="53" entity="DSSR_000005823_0064"/> 
+      of Garnet character and interests
+      and to the more general topics of investigation which this early nineteenth-century home
+      library affords, there is one value which did not occur to the then University Librarian until
+      in 1940 it w as brought to his attention by Count Carlo Sforza, the renowned Italian
+      statesman. </p>
+     <p>Count Sforza, outspoken opponent of Mussolini and Fascism, was then living in exile in New
+      York City. During the early months of that year, 1940, he came to the University of Virginia
+      once a week to lecture on the Italian people and government. He was a frequent and warmly
+      welcomed user of the Alderman Library. One day he was shown the Garnet collection, and
+      something of its background was explained to him. He listened with avid interest, and he
+      seemed loath to leave the Garnet Room.</p>
+     <p>The following week Count Sforza appeared in the Librarian's office accompanied by an
+      upstanding youth, whose resemblance to the tall and distinguished Count was unmistakable. 
+      <pb n="54" entity="DSSR_000005823_0065"/> 
+      "This time I have brought with me my son, who is in school in New York. I have
+      brought him because I wished to have him see that home library which you showed to me last
+      week. May we have permission to inspect it?" </p>
+     <p>The permission was promptly, indeed eagerly, granted. On entering the Garnet Room, the Count
+      made the further request that he be allowed to tell the story of the collection. With his
+      characteristic and gracious courtesy he injected into the long narrative in Italian occasional
+      English words, obviously as clues to aid the Librarian in following the exposition; and
+      specific books were pointed out to the son, especially the little group on Italian life and
+      letters.</p>
+     <p>At the end the Count turned to the Librarian with this explanatory comment:<lb/><lb/> "This
+      past week I have been often thinking of this collection. It has been to me a source of great
+      encouragement. That is why I have brought my son from New York, especially to see these books.
+      It has been a source of encouragement because 
+     <pb n="55"/>
+     <figure entity="DSSR_000005823_0066" rend="page">
+       <head><hi rend="italic">The Garnett Room in the University of Virginia Library</hi></head>
+     </figure>   
+      
+      <pb n="56" entity="DSSR_000005823_0067"/> 
+      it has suggested to me that in many
+      liberty loving countries there may be home collections like this one, of books freely bought
+      and freely read. I think this practice and these collections form a true and a vital bond
+      among free peoples. <lb/><lb/> "In our home in Italy we had a library so very similar to this
+      one. The books had been gathered without fear, and without fear we read and discussed them.
+      Our library room was a cherished center of our family life. Then that Mussolini"&mdash;the
+      descriptive words he used were vitriolic&mdash; "confiscated our home, our books, and our
+      estate, and we have to live in exile. But I want you to know"&mdash;his words came more
+      slowly, and he removed his glasses with their film of moisture&mdash;"I want you to
+      know&mdash;that never since I was thrust out&mdash; from my loved Italy&mdash;have
+      I felt so much at home&mdash;as I do here&mdash;in this room&mdash;and among these
+      books." </p>
+     
+    </div2>
+    <div2 type="bibliography" n="11" id="d19">
+     <pb n="57" entity="DSSR_000005823_0068"/>
+     <head>SOME SOURCES</head>
+     <p>Delightful sources of information have been the letters from and the remembered
+      conversations with Mrs. J. Clayton Mitchell, the daughter of eight months when Muscoe Russell
+      Hunter Garllett died in 1864 and the donor of this collection. The present owner of "Elmwood,"
+      Muscoe Russell Huntcr Garnett 1I, has read this text and he and Mrs. Thomas B. Payne, the
+      present owner of ''Fonthill,'' have aided with the illustrations. Among the printed materials
+      consulted have been the following: <list>
+       <item>Bartlett, David Vandewater Golden. Presidential Candidates: Containing Sketches Bio
+        graphical, Personal, and Political of Prominellt Candidates for the Presidency in 1860. New
+        York, Burdick, 1859. (R. M. T. Hunter, pp. 244-250)</item>
+       <lb/>
+       <item>Biographical Directory of the American Congress. Washington, Government Printing
+        Office, 1950. (Articles on James Mercer Garnett, 1770-1843, Muscoe Russell Hunter Garnett,
+        Robert Mercer Taliaferro Hunter)</item>
+       <lb/>
+       <item>Chisolm, William Garnett. Elmwood, Essex County, Virginia. Privately printed in 1953
+        for Muscoe Russell Hunter Garnett II.</item>
+       <lb/>
+       <item>Chisolm, William Garnett. The Garnetts of Essex County and Their Homes. In Virginia
+        Magazine of History and Biography, vol. 42, no. 1, January 1934, pp. 72-83; no. 2, April ,
+        pp. 166-180; no. 3, July 1934, pp. 256- 
+        <pb n="58" entity="DSSR_000005823_0069"/> 
+        268; no. 4, October 1934, pp. 358-366;
+        vol. 43, no. 1, January 1935, pp. 69-71.</item>
+       <lb/>
+       <item>Dictionary of American Biography. New York, Scribner, 1928-1937. Twenty volumes.
+        Articles on <list>
+         <lb/>
+         <item>Garnett, James Mercer, 1770-1843, by Avery 0. Craven.</item>
+         <lb/>
+         <item>Garnett, Muscoe Russell Hunter, by Armistead C. Gordon, Jr.</item>
+         <lb/>
+         <item>Hunter, Robert Mercer Taliaferro, by Charles H. Ambler.</item>
+         <lb/>
+         <item>Stevens, Edwin Augustus, by Carl W. Mitman.</item>
+         <lb/>
+         <item>Stevens, John, by Carl W. Mitman.</item>
+         <lb/>
+         <item>Stevens, Robert Livingston, by Carl W. Mitman.</item>
+         <lb/>
+        </list>
+       </item>
+       <lb/>
+       <item>Garnett, James Mercer, 1840- 1916. Biographical Sketch of Hon. Muscoe Russell Hunter
+        Garnett, of Essex County, Virginia. In William and Mary College Quarterly, vol. 18, no. 1,
+        July lgog, pp. 17-37; no. 2, October 1909, pp. 71-80. Reprinted as pamphlet of seventy-six
+        pages, including Appendix of extracts from the writings of Muscoe Russell Hunter Garnett.</item>
+       <lb/>
+       <item>Garnett, James Mercer, 1840- 1916. Genealogy of the Hunter-Garnett Family of Essex Coun
+        ty, Virginia. Richmond, Whittet &amp; Shepperson, Cl910.</item>
+       <lb/>
+       <item>Hunter. Martha T. A Memoir of Robert M. T.</item>
+       <lb/>
+       <pb n="59" entity="DSSR_000005823_0070"/>
+       <item>Hunter. Washington, Neale Publishing Company, 1903.</item>
+       <lb/>
+       <item>Lewis, Nell Battle. Feature story, illustrated, in Sunday issue of Norfolk
+        Virginian-Pilot, 14 September 1941, part 4, page 5.</item>
+       <lb/>
+       <item>Rothery, Agnes. Houses Virginians Have Loved. New York, Rinehart &amp; Company,
+        C1954. (Elmwood, pp. 207-214) .</item>
+       <lb/>
+       <item>Sale, Edith Tunis. Interiors of Virginia Houses of Colonial Times. Richmond, WilliaIll
+        Byrd Press, 1927. (Elmwood, pp. 229-245)</item>
+       <lb/>
+       <item>Senator Hunter of Virginia. In Harper's Weekly, vol. 4, no. 167, lo March 1860, pp.
+        145, 146.</item>
+       <lb/>
+       <item>Simms, Henry Harrison. Life of Robert M. T. Hunter: A Study in Sectionalism and
+        Secession. Richmond, William Byrd Press, C 1935.</item>
+       <lb/>
+       <item>University of Virginia: Its History, lllilllellce, Equipment, and Characteristics, with
+        Biographical Sketches and Portraits of Founders, Benefactors, Officcrs, and Alumni. Edited
+        by Paul Brandon Barringer, James Mercer Garnett, Rosewall Page. New York, Lewis Publishing
+        Company, 1904. Two volumes. (Articles in volume one on Robert M. T. Hunter, pp. 331-332, and
+        on Muscoe R. H. Gaenett, p.375)</item>
+       <lb/>
+       <item>Waterman, Thomas Tileston. The Mansions of Virginia 1706-1776. Chapel Hill, University
+        of North Carolina Press, C1945. Pp. 246-248, 298no8, 415.</item>
+      </list>
+     </p>
+     <pb entity="DSSR_000005823_0071"/>
+    </div2>
+    <div2 type="colophon" n="12" id="d20">
+     <pb entity="DSSR_000005823_0072"/>
+     <head>COLOPHON</head>
+     <p>One thousand copies produced by the University of Virginia Press, Charlottesville. Composed
+      in Linotype Baskerville, 12 point on 13. Printed on a No. 4 Miehle press, on 80 pound Warren's
+      Cumberland Dull enamel paper. Engravings by Allied Arts of Charlottesville. Cloth binding by
+      the Albrecht Company of Baltimore.</p>
+    </div2>
+    <pb entity="DSSR_000005823_0073"/>
+    <pb entity="DSSR_000005823_0074"/>
+    <pb entity="DSSR_000005823_0075"/>
+    <pb entity="DSSR_000005823_0076"/>
+   </div1>
+  </body>
+ </text>
+</TEI.2>

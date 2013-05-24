@@ -1,0 +1,3469 @@
+<?xml version="1.0"?>
+<!DOCTYPE practices SYSTEM "practices.dtd" [
+
+<!ENTITY dlps-bin "/dlps_work/bin/">
+<!ENTITY qa-path "/cenrepo/bin/cgi-dl/dlps/xsl/">
+<!ENTITY qa-url "http://text.lib.virginia.edu/bin/cgi-dl/dlps/markupQA/">
+
+<!ENTITY reason_date '
+<reason category="delivery"><p>Provides a consistent, machine-readable way of
+accessing date values. Facilitates delivery, especially as regards the ability
+to perform full-text searches for specific dates or date ranges.</p></reason>
+'>
+
+<!ENTITY note_id_remarks '
+<p>When creating IDs for notes, use a simple, compact,
+human-readable scheme. For notes that are already numbered in the
+print source, include the number in the ID. Base the ID scheme on the
+referencing scheme used in the print source:</p>
+<list>
+<label>numbered sequentially throughout</label>
+<item>If the notes are numbered sequentially throughout the entire
+work, use the printed note number, prefixed with <char name="ldquo"/>n<char name="rdquo"/> (short for
+<char name="ldquo"/>note<char name="rdquo"/>). For example, <val>n1</val>, <val>n2</val>, <val>n3</val>,
+etc.</item>
+<label>numbered within each chapter</label>
+<item>If the note numbering starts over at 1 in each chapter, create a
+unique ID by including the chapter number as well as the note
+number. For example, the note IDs for the third chapter would be
+<val>n3.1</val>, <val>n3.2</val>, <val>n3.3</val>, etc.</item>
+<label>identified on each page</label>
+<item>If the note numbers or symbols start over on each page, create a
+unique ID by numbering the notes sequentially within each chapter. For
+example, if the 35th footnote in chapter VI is indicated by an
+asterisk (*), the <att>id</att> would be <val>n6.35</val> and the note
+body would be marked: 
+<usage applies="VENDOR">&lt;note id="n6.35" place="foot"&gt;&lt;ns&gt;*&lt;/ns&gt;...&lt;/note&gt;</usage>
+<usage applies="POSTKB">&lt;note id="n6.35" place="foot"&gt;&lt;seg type="note-symbol"&gt;*&lt;/seg&gt;...&lt;/note&gt;</usage>
+</item>
+</list>
+'>
+
+<!ENTITY note_place_remarks '
+<p>The possible values for <att>place</att> are:</p>
+<list>
+<label><val>end</val></label>
+<item>note appears in a separate division containing all the notes for
+a given section (endnotes)</item>
+<label><val>foot</val></label>
+<item>note appears in bottom margin (footnotes)</item>
+<label><val>left</val></label>
+<item>note appears in left margin (marginal notes)</item>
+<label><val>right</val></label>
+<item>note appears in right margin (marginal notes)</item>
+<label><val>head</val></label>
+<item>note appears in top margin; rarely used</item>
+<label><val>inline</val></label>
+<item>note appears within the main body of the text</item>
+<label><val>above</val></label>
+<item>note appears between the lines of the main text, above the line
+to which it refers; rarely used</item>
+<label><val>below</val></label>
+<item>note appears between the lines of the main text, below the line
+to which it refers; rarely used</item>
+</list>
+'>
+
+]>
+<practices>
+<practicesHeader>
+<docDesc>
+<title type="main">TEI Markup Practices</title>
+<title type="sub">Digital Library Production Services (DLPS), University of Virginia Library</title>
+<respStmt>
+<resp>Maintained by</resp>
+<name>Greg Murray (gpm2a <hi rend="italic">at</hi> virginia <hi rend="italic">dot</hi> edu), DLPS</name>
+</respStmt>
+<summary>
+<p>The XML source for this documentation describes the local markup
+practices for TEI-encoded electronic texts followed by Digital Library
+Production Services (DLPS), University of Virginia Library. It
+contains three types of markup practices:</p>
+<list>
+<item>those applicable only to keyboarding/encoding vendors
+(<char name="ldquo"/>vendor<char name="rdquo"/> practices)</item>
+<item>those applicable only after a text has been received from a
+vendor (<char name="ldquo"/>postkb<char name="rdquo"/> practices)</item>
+<item>those applicable to both (<char name="ldquo"/>global<char name="rdquo"/>
+practices)</item>
+</list>
+<p>The documentation is intended to be helpful in three main ways:</p>
+<list>
+<item>as a set of encoding guidelines for keyboarding/encoding vendors
+who produce TEI texts for DLPS</item>
+<item>as a reference for DLPS staff when working on QA/correction,
+markup enhancement, migration, etc. of TEI texts</item>
+<item>as a reference for authors of delivery systems for the digital
+library, when creating delivery mechanisms for TEI texts produced by
+DLPS</item>
+</list>
+</summary>
+<revisionDesc>
+<change>
+<date value="2005-08">August 2005</date>
+<respStmt>
+<resp>author</resp>
+<name>Greg Murray, DLPS</name>
+</respStmt>
+<changeEntry><p>Produced first published version. Documented about 100 markup
+practices in 8 main categories and about 30 subcategories.</p></changeEntry>
+</change>
+<change>
+<date value="2006-02-24">February 24, 2006</date>
+<respStmt>
+<resp>corrector</resp>
+<name>Greg Murray, DLPS</name>
+</respStmt>
+<changeEntry><p>Minor corrections and enhancements to existing practices.</p></changeEntry>
+</change>
+<change>
+<date value="2008-07-01">July 1, 2008</date>
+<respStmt>
+<resp>corrector</resp>
+<name>Greg Murray</name>
+</respStmt>
+<changeEntry><p>Minor changes and additions.</p></changeEntry>
+</change>
+</revisionDesc>
+</docDesc>
+<enforcementDesc>
+<dtd>
+<name>The DLPS DTD (uva-dl-tei)</name>
+<dtdFiles>
+<dtdFile diskPath="/cenrepo/dtd/tei/tei-p4/tei2.dtd" url="http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd">
+	<filename>tei2.dtd</filename>
+	<description>TEI P4 main (driver) file; all other files in the TEI DTD distribution are also required</description>
+</dtdFile>
+<dtdFile diskPath="/cenrepo/dtd/tei/uva-dl-tei/uva-dl-tei.ent" url="http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+	<filename>uva-dl-tei.ent</filename>
+	<description>DLPS TEI modification file #1 of 2: entity declarations</description>
+</dtdFile>
+<dtdFile diskPath="/cenrepo/dtd/tei/uva-dl-tei/uva-dl-tei.dtd" url="http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+	<filename>uva-dl-tei.dtd</filename>
+	<description>DLPS TEI modification file #2 of 2: element declarations</description>
+</dtdFile>
+</dtdFiles>
+</dtd>
+<programs>
+<program id="char2ent" language="Perl" type="processing" diskPath="&dlps-bin;char2ent">
+	<filename>char2ent</filename>
+	<description>Converts super-ASCII characters to standard mnemonic character entities, when available</description>
+</program>
+<program id="notes_n" language="Perl" type="processing" diskPath="&dlps-bin;notes_n">
+	<filename>notes_n</filename>
+	<description>Adds or updates the <att>n</att> attribute on <gi>note</gi>, <gi>ref</gi>, and <gi>ptr/</gi> elements.</description>
+</program>
+<program id="replace_xml_decl" language="Perl" type="processing" diskPath="&dlps-bin;replace_xml_decl">
+	<filename>replace_xml_decl</filename>
+	<description>Replaces XML declaration</description>
+</program>
+<program id="qa_dates" language="Perl" type="QA" diskPath="&dlps-bin;qa_dates">
+	<filename>qa_dates</filename>
+	<description>QA program for standardized date values</description>
+</program>
+<program id="qa_figures" language="Perl" type="QA" diskPath="&dlps-bin;qa_figures">
+	<filename>qa_figures</filename>
+	<description>QA program for <gi>figure</gi> elements</description>
+</program>
+<program id="qa_lib_corr" language="XSLT" type="QA" diskPath="&qa-path;qa_lib_corr.xsl" url="&qa-url;">
+	<filename>qa_lib_corr.xsl</filename>
+	<description>QA program for corrections, additions, and deletions</description>
+</program>
+<program id="qa_lib_foreign" language="XSLT" type="QA" diskPath="&qa-path;qa_lib_foreign.xsl" url="&qa-url;">
+	<filename>qa_lib_foreign.xsl</filename>
+	<description>QA program for foreign phrases and the global <att>lang</att> attribute</description>
+</program>
+<program id="qa_lib_misc" language="XSLT" type="QA" diskPath="&qa-path;qa_lib_misc.xsl" url="&qa-url;">
+	<filename>qa_lib_misc.xsl</filename>
+	<description>QA program for miscellaneous requirements not handled by the other qa_lib_* stylesheets</description>
+</program>
+<program id="qa_lib_notes" language="XSLT" type="QA" diskPath="&qa-path;qa_lib_notes.xsl" url="&qa-url;">
+	<filename>qa_lib_notes.xsl</filename>
+	<description>QA program for TEI notes and note references</description>
+</program>
+<program id="qa_lib_structure" language="XSLT" type="QA" diskPath="&qa-path;qa_lib_structure.xsl" url="&qa-url;">
+	<filename>qa_lib_structure.xsl</filename>
+	<description>QA program for TEI document structure</description>
+</program>
+<program id="qa_xml" language="Perl" type="QA" diskPath="&dlps-bin;qa_xml">
+	<filename>qa_xml</filename>
+	<description>QA program for XML features</description>
+</program>
+</programs>
+</enforcementDesc>
+</practicesHeader>
+<practicesDoc>
+<argument applies="VENDOR">
+<p>This document describes the text encoding practices for initial
+document production (keyboarding) followed by Digital Library
+Production Services (DLPS), University of Virginia Library. It is
+intended for use by keyboarding vendors when encoding electronic texts
+for DLPS.</p>
+<admon type="note">
+<p>When referring to elements <gi>div1</gi> through
+<gi>div7</gi> as a group, the pseudo-tag <gi tei="no">divN</gi> is used <char name="mdash"/>
+for example, <char name="ldquo"/>The <att>type</att> attribute is required on <gi tei="no">divN</gi>
+elements.<char name="rdquo"/></p>
+<!--<p>Sections added or revised since the last major version of this
+document are <hi rend="revised">highlighted with a light yellow
+background</hi>.</p>-->
+</admon>
+</argument>
+<argument applies="POSTKB">
+<p>This document describes the local markup practices for TEI-encoded electronic texts
+followed by Digital Library Production Services (DLPS), University of Virginia
+Library. It is intended to be helpful in two main ways:</p>
+<list>
+<item>as a reference for DLPS staff when working on QA/correction, markup
+enhancement, migration, etc. of TEI texts</item>
+<item>as a reference for authors of delivery systems for the digital library,
+when creating delivery mechanisms for TEI texts produced by DLPS</item>
+</list>
+<admon type="note">
+<p>When referring to elements <gi>div1</gi> through
+<gi>div7</gi> as a group, the pseudo-tag <gi tei="no">divN</gi> is used <char name="mdash"/>
+for example, <char name="ldquo"/>The <att>type</att> attribute is required on <gi tei="no">divN</gi>
+elements.<char name="rdquo"/></p>
+<!--<p>Sections added or revised since the last major version of this
+document are <hi rend="revised">highlighted with a light yellow
+background</hi>.</p>-->
+</admon>
+</argument>
+
+
+<!-- ====================================================================== -->
+<!-- GENERAL REQUIREMENTS                                                   -->
+<!-- ====================================================================== -->
+
+<practiceGroup id="general">
+<head>General Requirements</head>
+
+<practice id="general_xml" applies="VENDOR">
+<head>XML form of TEI</head>
+<desc>All TEI documents produced for DLPS must be encoded in the XML
+expression of TEI (not SGML).</desc>
+<enforcement method="dtd"/>
+</practice>
+
+<practice id="general_transcription" applies="VENDOR">
+<head>The transcription</head>
+<desc>The electronic text should contain an exact
+character-for-character transcription of the text of the print
+source.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="general_allContent">
+<head>Including all content</head>
+<desc>With very few exceptions, all printed content from the print
+source must be included in the electronic text. All textual data must
+be included in the transcription, and all non-textual (graphical) data must be
+included in the markup as <gi key="figure">figure</gi> elements.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+<exceptions>
+<p>The only exceptions to this rule are:</p>
+<list>
+<label>Running page headers</label>
+<item><p>Exclude the running headers that often appear at the top of each
+page in a printed book. (These headers are typically very repetitive
+and only contain content already available elsewhere in the electronic
+transcription, such as the title of the book or the title of the
+current chapter.)</p>
+<admon type="note"><p>In rare cases, running page headers will contain
+unique content (such as a summary of the content of the current
+page). In such cases DLPS will require that the running headers be
+included in the electronic text. See <ptr target="pb_headers"/>.</p></admon>
+</item>
+<label>Handwriting</label>
+<item>When transcribing <emph>printed</emph> materials, handwriting
+(such as readers<char name="rsquo"/> notes or markings) should be excluded from the
+transcription.</item>
+<label>Gaps</label>
+<item>Gaps in the transcription are necessary in some cases, typically
+either because a passage is missing from the print source (due to a
+missing or torn page, for example), or because the print source
+contains non-Western characters. Any and all omissions in the
+electronic transcription must be indicated by the <gi key="gap">gap/</gi> element. See
+<ptr target="gaps_gap"/>.</item>
+</list>
+</exceptions>
+</practice>
+
+<practice id="general_xmlDecl" applies="POSTKB">
+<head>XML declaration</head>
+<desc>All XML documents produced for DLPS should begin with an XML
+declaration, which should include <att>version</att> with value
+<val>1.0</val>. The <att>encoding</att> declaration should either be omitted or set to
+<val>UTF-8</val>.</desc>
+<remarks><p>Omitting the <att>encoding</att> declaration is equivalent to
+specifying <val>UTF-8</val>, because UTF-8 is the assumed/default encoding for
+all XML documents.</p></remarks>
+<exemplum><eg><![CDATA[
+<?xml version="1.0"?>
+]]></eg></exemplum>
+<enforcement method="program" method-name="qa_xml" message-type="error">
+<remarks><p>Compliance with this practice is automated: The processing script
+<ref target="replace_xml_decl">replace_xml_decl</ref> programmatically replaces
+the vendor<char name="rsquo"/>s XML declaration with our own.</p></remarks>
+</enforcement>
+<reason><p>While not strictly required by XML, including the XML declaration is
+good practice.</p></reason>
+</practice>
+
+<practice id="general_ascii">
+<head>ASCII encoding</head>
+<desc>The entire XML file (transcription and markup) must not contain
+any illegal control characters nor any super-ASCII characters. That
+is, all characters in the file must have ASCII/Unicode code points of
+9 (tab), 10 (newline/linefeed), 13 (carriage return), or 32-126 (space
+- tilde).</desc>
+<remarks><p>All super-ASCII characters must be represented as
+character entities.</p></remarks>
+<enforcement method="program" method-name="qa_xml" message-type="error">
+<remarks><p>Compliance with this practice is automated: The processing script
+<ref target="char2ent">char2ent</ref> programmatically replaces super-ASCII
+characters with character entities (named/mnemonic entities when available, hex
+numeric entities otherwise).</p></remarks>
+</enforcement>
+<reason><p>Portability</p></reason>
+<seeAlso><ptr target="charent"/></seeAlso>
+</practice>
+
+<practice id="general_lineEndings" applies="VENDOR">
+<head>Line endings</head>
+<desc>If the XML files contain PC, two-byte line endings (carriage
+return + linefeed), convert them to Unix, one-byte line endings
+(linefeed character) before calculating character output and
+delivering the finished files to DLPS.</desc>
+<enforcement machine-enforceable="yes" enforced="no"/>
+</practice>
+
+<practice id="general_filenaming" applies="VENDOR">
+<head>Filenaming convention</head>
+<desc>Each XML file produced for DLPS should be named with its DLPS
+ID, which is a lower-case <char name="ldquo"/>b<char name="rdquo"/> or <char name="ldquo"/>z<char name="rdquo"/> followed by 9 digits, and with
+the extension <char name="ldquo"/>.xml<char name="rdquo"/>. The DLPS ID is in the <gi key="teiHeader">teiHeader</gi>
+supplied to the vendor by DLPS (see <tag key='idno type="DLPS ID"'>idno type="DLPS ID"</tag>).</desc>
+<exemplum><eg><![CDATA[
+b000090177.xml
+z000000032.xml
+]]></eg></exemplum>
+<enforcement machine-enforceable="yes" enforced="no"/>
+</practice>
+
+<practice id="general_readme" applies="VENDOR">
+<head>External notes document</head>
+<desc>For each file prepared for DLPS, include a separate <char name="ldquo"/>notes<char name="rdquo"/>
+document, external to the TEI XML file and in plain-text form. This
+notes document should include information on any unusual circumstances
+encountered in the transcription or encoding process, such as oddities
+or errors in the print source, or how ambiguous or problematic parts
+of the text have been handled. The notes file
+should be named with the DLPS ID followed by <char name="ldquo"/>_notes.txt<char name="rdquo"/>.</desc>
+<exemplum><eg><![CDATA[
+b000090177_notes.txt
+z000000032_notes.txt
+]]></eg></exemplum>
+<enforcement machine-enforceable="yes" enforced="no"/>
+</practice>
+</practiceGroup>
+
+
+<!-- ====================================================================== -->
+<!-- MAJOR STRUCTURE                                                        -->
+<!-- ====================================================================== -->
+
+<practiceGroup id="structure">
+<head>Major Structure</head>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- ESSENTIAL STRUCTURE             -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="essential">
+<head>Essential Structure</head>
+
+<practice id="essential_essential" applies="VENDOR">
+<head>Basic document structure</head>
+<desc>Follow the essential structural markup common to most TEI texts:
+<gi key="TEI.2">TEI.2</gi> contains <gi key="teiHeader">teiHeader</gi> and <gi key="text">text</gi>; the
+<gi>text</gi> element contains <gi key="front">front</gi>, <gi key="body">body</gi>, and
+<gi key="back">back</gi>. (The <gi>back</gi> element is optional; technically,
+<gi>front</gi> is also optional, though it is extremely rare to have a
+text with no front matter whatsoever.)</desc>
+<exemplum><eg><![CDATA[
+<TEI.2>
+    <teiHeader>
+        . . . [supplied by DLPS to the keyboarding vendor]
+    </teiHeader>
+    <text>
+        <front>
+            . . . [front matter: title page, table of contents, preface, etc.]
+        </front>
+        <body>
+            . . . [main body of text]
+        </body>
+        <back>
+            . . . [back matter: endnotes, index, appendices, etc.]
+        </back>
+    </text>
+</TEI.2>
+]]></eg></exemplum>
+<enforcement machine-enforceable="no" enforced="no">
+<remarks><p>Of course, the DTD cannot
+ensure appropriate use of <gi>front</gi>, <gi>body</gi>, and
+<gi>back</gi>.</p></remarks>
+</enforcement>
+</practice>
+
+<practice id="essential_teiHeader" applies="VENDOR">
+<head>TEI header</head>
+<desc>The <gi key="teiHeader">teiHeader</gi> element will be supplied by DLPS to the
+vendor.</desc>
+<enforcement method="dtd"/>
+</practice>
+
+<practice id="essential_composite">
+<head>Composite texts</head>
+<desc>In rare cases, DLPS will request that a particular text be
+marked as a composite text, in which the usual <gi key="body">body</gi> element
+is replaced with the <gi key="group">group</gi> element, which then contains
+multiple <gi key="text">text</gi> elements, each with its own <gi key="front">front</gi>,
+<gi>body</gi>, and <gi key="back">back</gi>.</desc>
+<remarks><p>DLPS will only request a composite text in the case of
+anthologies or collected works, where each work has its own front
+and/or back matter.</p></remarks>
+<exemplum><eg><![CDATA[
+<TEI.2>
+    <teiHeader>
+        . . . [metadata section supplied by DLPS to the keyboarding vendor]
+    </teiHeader>
+    <text>
+        <front> . . . [front matter for the collection] </front>
+        <group>
+            <text>
+                <front> . . . [front matter of first text] </front>
+                <body> . . . [main body of first text] </body>
+                <back> . . . [back matter of first text] </back>
+            </text>
+            <text>
+                <front> . . . [front matter of second text] </front>
+                <body> . . . [main body of second text] </body>
+                <back> . . . [back matter of second text] </back>
+            </text>
+        </group>
+        <back> . . . [back matter for the collection] </back>
+    </text>
+</TEI.2>
+]]></eg></exemplum>
+<enforcement machine-enforceable="semi" method="program" method-name="qa_lib_structure" message-type="warning">
+<remarks><p><ref target="qa_lib_structure">qa_lib_structure</ref> issues a
+warning if the <gi>group</gi> element is used, so that the QA tech can check
+the markup manually. No DTD or program can ensure proper use of <gi>group</gi>.</p></remarks>
+</enforcement>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- STRUCTURAL DIVISIONS            -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="divs">
+<head>Structural Divisions</head>
+
+<practice id="divs_div1">
+<head>Top-level divisions</head>
+<desc>Top-level structural divisions are always <gi key="div1">div1</gi>;
+<gi>div</gi> and <gi>div0</gi> are not used.</desc>
+<enforcement method="dtd"/>
+</practice>
+
+<practice id="divs_allContent">
+<head>All content within a div</head>
+<desc>The <gi key="front">front</gi>, <gi key="body">body</gi>, and <gi key="back">back</gi> elements
+must contain only <gi key="div1">div1</gi> elements. No content is allowed
+directly within <gi>front</gi>, <gi>body</gi>, or
+<gi>back</gi>.</desc>
+<enforcement method="dtd"/>
+</practice>
+
+<!--
+<practice id="divs_toc" applies="VENDOR">
+<head>Determining division boundaries</head>
+<desc>When determining the start- and end-points of divisions and the
+nesting of lower-level divisions, refer to the printed table of
+contents for the work. Typically the table of contents is an accurate
+guide to the hierarchical structure of the work.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+-->
+
+<practice id="divs_type">
+<head>Typed divs</head>
+<desc>The <att key="type" element="divN">type</att> attribute is required on <gi tei="no" key="div1 - div7">divN</gi>
+elements, and it has an enumerated vocabulary of
+allowed values. If a division has no obvious type, the generic value
+<val>section</val> may be used; if <val>section</val> has already been
+used for a higher-level division, use <val>subsection</val>.</desc>
+
+<remarks>
+<p>Most of the available <att>type</att> values are self-explanatory,
+and no definition is provided for them here. Those that are not
+necessarily self-explanatory are:</p>
+<list>
+<label><val>bio</val></label>
+<item>for brief biographic sketches of authors or other
+contributors</item>
+<label><val>castlist</val></label>
+<item>for a list of characters preceding a dramatic work</item>
+<label><val>chronology</val></label>
+<item>for biographical or historical timelines</item>
+<label><val>colophon</val></label>
+<item>a section at or near the end of a book, containing printing
+information such as name of printer (as distinct from publisher),
+typefaces used, etc.</item>
+<label><val>contents</val></label>
+<item>for tables of contents <emph>and</emph> for lists of
+illustrations, etc.</item>
+<label><val>editorial</val></label>
+<item>for opinion pieces in newspapers</item>
+<label><val>entry</val></label>
+<item>for journal entries or encyclopedia/dictionary entries</item>
+<label><val>errata</val></label>
+<item>for lists of printing errors; also called corrigenda</item>
+<label><val>fly-title</val></label>
+<item>like a half-title page, but occurs between the front matter and
+the body; treat as last page of front matter (not first page of
+body); see <ptr target="divs_half"/></item>
+<label><val>frontispiece</val></label>
+<item>technically, an illustration facing the title page; may also be
+used for any full-page illustration in the front matter, or for an
+illustration facing the first page of a major division within the
+body</item>
+<label><val>half-title</val></label>
+<item>a page preceding the title page bearing the title of the work,
+perhaps with a series title or volume number; see <ptr target="divs_half"/></item>
+<label><val>masthead</val></label>
+<item>a block of matter in a newspaper or other periodical indicating
+title of publication, address, list of editors or other contributors,
+etc.</item>
+<label><val>plates</val></label>
+<item>one or more full-page illustrations, often unnumbered or
+numbered independently of main pagination</item>
+<label><val>speech</val></label>
+<item>for a transcript of an oration, not for a piece of dialog in a
+dramatic work (for which use <gi key="sp">sp</gi>)</item>
+</list>
+</remarks>
+<enforcement machine-enforceable="semi" enforced="yes" method="dtd">
+<remarks><p>Although the DTD requires <att>type</att> on
+divs and enumerates the allowable values, obviously the DTD cannot
+enforce appropriate use of the available <att>type</att>
+values.</p></remarks>
+</enforcement>
+</practice>
+
+<practice id="divs_n">
+<head>n on divs</head>
+<desc>If a division is numbered or otherwise labeled in the print
+source (this should be obvious from the division<char name="rsquo"/>s heading), record the
+number or label in the <att key="n" element="divN">n</att> attribute (in addition to
+transcribing it as part of the <gi key="head">head</gi>). If the division does
+not have a number or other label associated with it, do not include
+the <att>n</att> attribute.</desc>
+<remarks><p>The value of <att>n</att> does not have to be strictly
+numeric; often it will be a roman numeral or letter.</p></remarks>
+
+<exemplum>
+<p><xref url="examples/divn.html">page image</xref></p>
+
+<eg applies="VENDOR"><![CDATA[
+<div1 type="introduction">
+<pb/>
+<head>INTRODUCTION</head>
+<div2 type="chapter" ]]><hi rend="attn">n="I"</hi><![CDATA[>
+<head>]]><hi rend="attn">I</hi><![CDATA[</head>
+<div3 type="section" ]]><hi rend="attn">n="1"</hi><![CDATA[>
+<head>]]><hi rend="attn">1</hi><![CDATA[&mdash;IMPORTANCE OF THE PO HU T'UNG.</head>
+<p>The <i>Po hu t'ung</i> pretends to be the official report of the discussions |
+on the Classics which were held under Imperial auspices in 79 A.D., |
+<!-- continues -->
+]]></eg>
+
+<eg applies="POSTKB"><![CDATA[
+<div1 type="introduction">
+<pb/>
+<head>INTRODUCTION</head>
+<div2 type="chapter" ]]><hi rend="attn">n="I"</hi><![CDATA[>
+<head>]]><hi rend="attn">I</hi><![CDATA[</head>
+<div3 type="section" ]]><hi rend="attn">n="1"</hi><![CDATA[>
+<head>]]><hi rend="attn">1</hi><![CDATA[&mdash;IMPORTANCE OF THE PO HU T'UNG.</head>
+<p>The <hi rend="italic">Po hu t'ung</hi> pretends to be the official report of the discussions <lb/>
+on the Classics which were held under Imperial auspices in 79 A.D., <lb/>
+<!-- continues -->
+]]></eg>
+
+</exemplum>
+
+<enforcement machine-enforceable="no" enforced="no"/>
+<reason category="delivery"><p>Could be useful for delivery. As is our usual
+practice, <att>n</att> is simply a label
+for display; <att>n</att> is not being used as a transcriptional space
+here, since the number/label of the div is transcribed in the
+division<char name="rsquo"/>s <gi key="head">head</gi>.</p></reason>
+</practice>
+
+<practice id="divs_half">
+<head>Half-titles, fly-titles, and divisional titles</head>
+<desc>Encode half-titles as <tag key='div1 type="half-title"'>div1 type="half-title"</tag> within
+<gi key="front">front</gi>. Encode fly-titles as <tag key='div1 type="fly-title"'>div1 type="fly-title"</tag>
+within <gi>front</gi>. Encode divisional titles as <tag key='head type="divisional"'>head type="divisional"</tag>
+within the <gi tei="no" key="div1 - div7">divN</gi> that it precedes.</desc>
+<remarks>
+<p>A common feature in many books is a heading (on a separate page, or at the
+top of the first page of the first chapter) containing the
+title of the work (or the title of a section of the work). There are
+three main types of such features:</p>
+<list>
+<item>A page preceding the title page and bearing the title of the
+work, perhaps with a series title or volume number, is a <term key="half-title">half-title page</term>
+and should be marked as <tag>div1 type="half-title"</tag> within
+<gi>front</gi>.</item>
+<item>A page similar to a half-title page but occurring between the
+front matter and the body is a <term key="fly-title">fly-title</term> and should be marked as
+<tag>div1 type="fly-title"</tag> as the last division within
+<gi>front</gi> (not as the first division of the <gi key="body">body</gi>).</item>
+<item>A page, or just an initial heading preceding other headings,
+similar to a half-title but occurring <emph>within the body</emph> of
+the work, to announce the beginning of a major section, is a
+<term key="divisional title">divisional title</term>. In contrast to half-title and fly-title pages
+within the front matter, a divisional title should <emph>not</emph> be
+marked with its own <gi tei="no">divN</gi>. Instead, the divisional
+title should be incorporated <emph>into</emph> the <gi
+tei="no">divN</gi> that it precedes, as a <gi key="head">head</gi>
+element.</item>
+</list>
+</remarks>
+
+<exemplum>
+<p><xref url="examples/divs_half.html">page images</xref></p>
+
+<eg applies="VENDOR"><![CDATA[
+<front>
+<!-- ... -->
+]]><hi rend="attn"><![CDATA[<div1 type="fly-title">]]></hi>
+<![CDATA[<pb/>
+<head type="main">The Original Journals of Captains Meriwether |
+Lewis and William Clark</head>
+<ornament type="line"/>
+<head type="sub"><i>THE JOURNALS PROPER</i></head>
+<ab type="empty" rend="none"/>
+<pb/>
+</div1>
+</front>
+<body>
+<div1 type="chapter" n="I">
+<pb n="3"/>]]>
+<hi rend="attn"><![CDATA[<head type="divisional">]]></hi><![CDATA[<i>The</i> ORIGINAL JOURNALS OF |
+LEWIS AND CLARK</head>
+<head type="main"><smcap>Chapter</smcap> I</head>
+<ornament type="line"/>
+<head type="sub"><i>FROM RIVER DUBOIS TO THE PLATTE</i></head>
+<head type="desc">Clark's Journal and Orders, January 30&ndash;July 22, 1804 |
+Entries and Orders by Lewis, February 20, March 3, May 15, 20, 26, and July 8, 12</head>
+<ornament type="line"/>
+<div2 type="section">
+<head>[PRELIMINARY MEMORANDA]</head>
+<div3 type="subsection">
+<head rend="left">[Clark]</head>
+<p>CAPT<sup>S</sup>. LEWIS &amp; CLARK wintered at the enterance |
+of a Small river opposit the Mouth of Missouri |
+<!-- page continues -->
+]]></eg>
+
+<eg applies="POSTKB"><![CDATA[
+<front>
+<!-- ... -->
+]]><hi rend="attn"><![CDATA[<div1 type="fly-title">]]></hi>
+<![CDATA[<pb/>
+<head type="main">The Original Journals of Captains Meriwether <lb/>
+Lewis and William Clark</head>
+<ornament type="line"/>
+<head type="sub"><hi rend="italic">THE JOURNALS PROPER</hi></head>
+<ab type="empty" rend="none"/>
+<pb/>
+</div1>
+</front>
+<body>
+<div1 type="chapter" n="I">
+<pb n="3"/>]]>
+<hi rend="attn"><![CDATA[<head type="divisional">]]></hi><![CDATA[<hi rend="italic">The</hi> ORIGINAL JOURNALS OF <lb/>
+LEWIS AND CLARK</head>
+<head type="main"><hi rend="small-caps">Chapter</hi> I</head>
+<ornament type="line"/>
+<head type="sub"><hi rend="italic">FROM RIVER DUBOIS TO THE PLATTE</hi></head>
+<head type="desc">Clark's Journal and Orders, January 30&ndash;July 22, 1804 <lb/>
+Entries and Orders by Lewis, February 20, March 3, May 15, 20, 26, and July 8, 12</head>
+<ornament type="line"/>
+<div2 type="section">
+<head>[PRELIMINARY MEMORANDA]</head>
+<div3 type="subsection">
+<head rend="left">[Clark]</head>
+<p>CAPT<hi rend="super">S</hi>. LEWIS &amp; CLARK wintered at the enterance <lb/>
+of a Small river opposit the Mouth of Missouri <lb/>
+<!-- page continues -->
+]]></eg>
+
+</exemplum>
+
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="divs_informal">
+<head>Informal divisions</head>
+<desc>It is fairly common (especially in poems, but also in prose
+works) to see informal divisions, indicated by a string of asterisks
+or periods, or by a horizontal line. Normally, such informal dividers
+do <emph>not</emph> indicate the beginning of a new <gi
+tei="no" key="div1 - div7">divN</gi>. Instead, they should be marked as
+<gi tei="no" key="ornament">ornament</gi> elements.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+<seeAlso><ptr target="ornaments_lines"/></seeAlso>
+</practice>
+
+<practice id="divs_quotes">
+<head>Quoted material</head>
+<desc>In cases where a brief section of verse, a letter, or other
+material is quoted within surrounding prose text, the material should
+be marked as a block quotation using <gi key="q">q</gi>, <emph>not</emph>
+as a distinct <gi tei="no" key="div1 - div7">divN</gi>.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+<seeAlso applies="VENDOR">
+<ptr target="quotations_main"/>
+<ptr target="quotations_openClose_vendor"/>
+</seeAlso>
+<seeAlso applies="POSTKB">
+<ptr target="quotations_main"/>
+<ptr target="quotations_openClose_postkb"/>
+</seeAlso>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- DIVISION HEADINGS               -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="headings">
+<head>Division Headings</head>
+
+<practice id="headings_multiple">
+<head>Multiple headings</head>
+<desc>If a division (or other feature) has more than one heading, use
+multiple <gi key="head">head</gi> elements (rather than a single <gi>head</gi>
+with line breaks), and include the <att key="type" element="head">type</att> attribute with one
+of these values: <val>main</val>, <val>sub</val>, <val>desc</val>
+(descriptive), <val>alt</val> (alternative), or <val>divisional</val>
+(for divisional titles; see <ptr target="divs_half"/>).</desc>
+<exemplum>
+<p><xref url="examples/headings_multiple.html">page image</xref></p>
+<p>In this example, the main heading identifies the division as a
+chapter and gives its number, the sub-heading indicates the content of
+the chapter, and the descriptive heading indicates the manuscript
+materials represented in the chapter.</p>
+
+<eg applies="VENDOR"><![CDATA[
+<div1 type="chapter" n="I">
+<pb n="3"/>]]>
+<hi rend="attn"><![CDATA[<head type="divisional">]]></hi><![CDATA[<i>The</i> ORIGINAL JOURNALS OF |
+LEWIS AND CLARK]]><hi rend="attn"><![CDATA[</head>
+<head type="main">]]></hi><![CDATA[<smcap>Chapter</smcap> I]]><hi rend="attn"><![CDATA[</head>]]></hi><![CDATA[
+<ornament type="line"/>
+]]><hi rend="attn"><![CDATA[<head type="sub">]]></hi><![CDATA[<i>FROM RIVER DUBOIS TO THE PLATTE</i>]]><hi rend="attn"><![CDATA[</head>
+<head type="desc">]]></hi><![CDATA[Clark's Journal and Orders, January 30&ndash;July 22, 1804 |
+Entries and Orders by Lewis, February 20, March 3, May 15, 20, 26, and July 8, 12]]><hi rend="attn"><![CDATA[</head>]]></hi><![CDATA[
+<ornament type="line"/>
+<div2 type="section">
+<head>[PRELIMINARY MEMORANDA]</head>
+<div3 type="subsection">
+<head rend="left">[Clark]</head>
+<p>CAPT<sup>S</sup>. LEWIS &amp; CLARK wintered at the enterance |
+of a Small river opposit the Mouth of Missouri |
+<!-- page continues -->
+]]></eg>
+
+<eg applies="POSTKB"><![CDATA[
+<div1 type="chapter" n="I">
+<pb n="3"/>]]>
+<hi rend="attn"><![CDATA[<head type="divisional">]]></hi><![CDATA[<hi rend="italic">The</hi> ORIGINAL JOURNALS OF <lb/>
+LEWIS AND CLARK]]><hi rend="attn"><![CDATA[</head>
+<head type="main">]]></hi><![CDATA[<hi rend="small-caps">Chapter</hi> I]]><hi rend="attn"><![CDATA[</head>]]></hi><![CDATA[
+<ornament type="line"/>
+]]><hi rend="attn"><![CDATA[<head type="sub">]]></hi><![CDATA[<hi rend="italic">FROM RIVER DUBOIS TO THE PLATTE</hi>]]><hi rend="attn"><![CDATA[</head>
+<head type="desc">]]></hi><![CDATA[Clark's Journal and Orders, January 30&ndash;July 22, 1804 <lb/>
+Entries and Orders by Lewis, February 20, March 3, May 15, 20, 26, and July 8, 12]]><hi rend="attn"><![CDATA[</head>]]></hi><![CDATA[
+<ornament type="line"/>
+<div2 type="section">
+<head>[PRELIMINARY MEMORANDA]</head>
+<div3 type="subsection">
+<head rend="left">[Clark]</head>
+<p>CAPT<hi rend="super">S</hi>. LEWIS &amp; CLARK wintered at the enterance <lb/>
+of a Small river opposit the Mouth of Missouri <lb/>
+<!-- page continues -->
+]]></eg>
+
+</exemplum>
+<enforcement machine-enforceable="semi" method="program" method-name="qa_lib_structure" message-type="error">
+<remarks><p>The DTD
+enumerates the possible values for <att>type</att> on <gi>head</gi>,
+but it doesn<char name="rsquo"/>t require <att>type</att> because it<char name="rsquo"/>s unnecessary if
+there<char name="rsquo"/>s only one <gi>head</gi>. The QA program can only verify that,
+if multiple heads are present, they each have the <att>type</att>
+attribute. It cannot determine that multiple heads should have been
+used (rather than a single <gi>head</gi> with line breaks, since line
+breaks are often needed/legitimate within a heading), or that the appropriate <att>type</att>
+values have been used.</p></remarks>
+</enforcement>
+<seeAlso><ptr target="divs_half"/></seeAlso>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- TITLE PAGES                     -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="titlePage">
+<head>Title Pages</head>
+
+<practice id="titlePage_one" applies="POSTKB">
+<head>Exactly one <gi key="titlePage">titlePage</gi></head>
+<desc>Normally a text should have exactly one <gi>titlePage</gi>
+element.</desc>
+<remarks><p>Although a text with more or less than one
+<gi>titlePage</gi> is theoretically possible and technically allowed
+by the DTD, such an occurrence is extremely rare and should be
+regarded as an encoding error unless proven otherwise.</p></remarks>
+<enforcement method="program" method-name="qa_lib_structure" message-type="warning"/>
+</practice>
+
+<practice id="titlePage_type">
+<head>Title types</head>
+<desc>When using <gi key="titlePart">titlePart</gi> to mark the parts of the title,
+include the <att key="type" element="titlePart">type</att> attribute, assigning one of these values:
+<val>main</val>, <val>sub</val>, <val>desc</val> (descriptive),
+<val>alt</val> (alternative), or <val>volume</val> (for volume
+information).</desc>
+<enforcement method="dtd"/>
+</practice>
+
+<practice id="titlePage_volume">
+<head>Volume information on title page</head>
+<desc>Volume information on the title page should be encoded as
+<tag key='titlePart type="volume"'>titlePart type="volume"</tag>.</desc>
+<remarks><p>This rule holds true even if the volume information is
+separated from the title by the byline or other elements
+(<gi key="titlePart">titlePart</gi> is allowed outside <gi key="docTitle">docTitle</gi>).</p>
+<eg><![CDATA[
+. . . </docTitle>
+<byline>By <docAuthor>BOOKER T. WASHINGTON</docAuthor></byline>
+<titlePart type="volume">VOLUME I</titlePart>
+]]></eg>
+</remarks>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="titlePage_verso">
+<head>Verso of title page</head>
+<desc>The content on the verso (reverse side) of the title page should
+be included within the <gi key="titlePage">titlePage</gi> element, typically inside
+<gi key="docImprint">docImprint</gi>.</desc>
+<exemplum>
+<p><xref url="examples/titlePage_verso.html">page images</xref></p>
+
+<eg applies="VENDOR"><![CDATA[
+<titlePage>
+<pb/>
+<docTitle>
+<titlePart type="main">THE |
+UNDERGROUND RAILROAD |
+FROM |
+SLAVERY TO FREEDOM</titlePart>
+</docTitle>
+<byline>BY |
+<docAuthor>WILBUR H. SIEBERT</docAuthor>
+ASSOCIATE PROFESSOR OF EUROPEAN HISTORY |
+IN OHIO STATE UNIVERSITY</byline>
+<titlePart type="desc"><i>WITH AN INTRODUCTION</i>
+BY |
+ALBERT BUSHNELL HART
+PROFESSOR OF HISTORY IN HARVARD UNIVERSITY</titlePart>
+]]><hi rend="attn"><![CDATA[<docImprint>]]></hi><![CDATA[
+<pubPlace><hi rend="gothic">New York</hi></pubPlace>
+<publisher>THE MACMILLAN COMPANY |
+LONDON: MACMILLAN &amp; CO., <smcap>Ltd.</smcap></publisher>
+<docDate>1899</docDate>
+<i>All rights reserved</i>
+]]><hi rend="attn"><![CDATA[<pb/>
+<smcap>Copyright</smcap>, 1898, |
+<smcap>By THE MACMILLAN COMPANY</smcap>. |
+<ornament type="line"/>
+Set up and electrotyped December, 1898. &emsp; Reprinted September, |
+1899. |
+|
+|
+|
+<hi rend="gothic">Norwood Press</hi> |
+J. S. Cushing &amp; Co. &mdash; Berwick &amp; Smith |
+Norwood Mass. U.S.A.
+</docImprint>]]></hi><![CDATA[
+</titlePage>
+]]></eg>
+
+<eg applies="POSTKB"><![CDATA[
+<titlePage>
+<pb/>
+<docTitle>
+<titlePart type="main">THE <lb/>
+UNDERGROUND RAILROAD <lb/>
+FROM <lb/>
+SLAVERY TO FREEDOM</titlePart>
+</docTitle>
+<byline>BY <lb/>
+<docAuthor>WILBUR H. SIEBERT</docAuthor>
+ASSOCIATE PROFESSOR OF EUROPEAN HISTORY <lb/>
+IN OHIO STATE UNIVERSITY</byline>
+<titlePart type="desc"><hi rend="italic">WITH AN INTRODUCTION</hi>
+BY <lb/>
+ALBERT BUSHNELL HART
+PROFESSOR OF HISTORY IN HARVARD UNIVERSITY</titlePart>
+]]><hi rend="attn"><![CDATA[<docImprint>]]></hi><![CDATA[
+<pubPlace><hi rend="gothic">New York</hi></pubPlace>
+<publisher>THE MACMILLAN COMPANY <lb/>
+LONDON: MACMILLAN &amp; CO., <hi rend="small-caps">Ltd.</hi></publisher>
+<docDate>1899</docDate>
+<hi rend="italic">All rights reserved</hi>
+]]><hi rend="attn"><![CDATA[<pb/>
+<hi rend="small-caps">Copyright</hi>, 1898, <lb/>
+<hi rend="small-caps">By THE MACMILLAN COMPANY</hi>. <lb/>
+<ornament type="line"/>
+Set up and electrotyped December, 1898. &emsp; Reprinted September, <lb/>
+1899. <lb/>
+<lb/>
+<lb/>
+<lb/>
+<hi rend="gothic">Norwood Press</hi> <lb/>
+J. S. Cushing &amp; Co. &mdash; Berwick &amp; Smith <lb/>
+Norwood Mass. U.S.A.
+</docImprint>]]></hi><![CDATA[
+</titlePage>
+]]></eg>
+
+</exemplum>
+<enforcement method="program" method-name="qa_lib_structure" message-type="warning">
+<remarks><p>This practice is machine-enforceable in the sense that the QA program checks for
+exactly two <gi>pb</gi> elements within <gi>titlePage</gi>.</p></remarks>
+</enforcement>
+</practice>
+</practiceGroup>
+</practiceGroup>
+
+
+<!-- ====================================================================== -->
+<!-- GENRES                                                                 -->
+<!-- ====================================================================== -->
+
+<practiceGroup id="genres">
+<head>Genres</head>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- LETTERS                         -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="letters">
+<head>Letters</head>
+
+<practice id="letters_openClose">
+<head>Openers and closers</head>
+<desc>When encoding letters, prefaces, and other such personal
+writings, use <gi key="opener">opener</gi> and/or <gi key="closer">closer</gi> as needed to
+encode the opening and closing sections of the division.</desc>
+<remarks>
+<p><gi>opener</gi> and <gi>closer</gi> typically contain one or more of these
+elements:</p>
+<list>
+<label><gi key="dateline">dateline</gi></label>
+<item>groups together the place, date, etc., the letter was written;
+normally contains at least <tag key='name type="place"'>name type="place"</tag>
+and <tag>date value="..."</tag></item>
+<label><gi key="date">date</gi></label>
+<item>contains a date in any format; use the <att key="value" element="date">value</att>
+attribute to provide the date in standardized format; see
+<ptr target="dates_format"/></item>
+<label><gi key="name">name</gi></label>
+<item>contains a proper name; use <att key="type" element="name">type</att> to indicate
+<val>person</val> or <val>place</val>.</item>
+<label><gi key="salute">salute</gi></label>
+<item>salutation at the beginning (e.g. <char name="ldquo"/>Dear Sir<char name="rdquo"/>) or end
+(e.g. <char name="ldquo"/>Yours sincerely<char name="rdquo"/>) of a letter</item>
+<label><gi key="signed">signed</gi></label>
+<item>signature at the end of a letter, preface, etc.</item>
+</list>
+</remarks>
+
+<exemplum>
+<p><xref url="examples/letters_openClose.html">page images</xref></p>
+<eg applies="VENDOR"><![CDATA[
+<div2 type="letter">
+<head>TO MRS. H. LINCOLN.<ref target="n1"><sup>1</sup></ref>
+<!-- <note id="n1" place="foot"> here -->
+</head>
+]]><hi rend="attn"><![CDATA[<opener>
+<dateline>
+<name type="place">Weymouth</name>, <date value="1761-10-05">5 October, 1761.</date>
+</dateline>
+<salute>MY DEAR FRIEND,</salute>
+</opener>]]></hi><![CDATA[
+<p><smcap>Does</smcap> not my friend think me a stupid girl, when |
+she has kindly offered to correspond with me, that |
+I should be so senseless as not to accept the offer? |
+
+<!-- continues -->
+
+<p>I can say, in the length of this epistle, I've made |
+the golden rule mine. Pray, my friend, do not let it |
+be long before you write to your ever affectionate</p>
+]]><hi rend="attn"><![CDATA[<closer>
+<signed>A. S.</signed>
+<ps>P.S. My regards to your good man. I've no |
+acquaintance with him, but if you love him, I do, |
+and should be glad to see him.</ps>
+</closer>]]></hi><![CDATA[
+</div2>
+]]></eg>
+
+<eg applies="POSTKB"><![CDATA[
+<div2 type="letter">
+<head>TO MRS. H. LINCOLN.<ref target="n1"><hi rend="super">1</hi></ref>
+<!-- <note id="n1" place="foot"> here -->
+</head>
+]]><hi rend="attn"><![CDATA[<opener>
+<dateline>
+<name type="place">Weymouth</name>, <date value="1761-10-05">5 October, 1761.</date>
+</dateline>
+<salute>MY DEAR FRIEND,</salute>
+</opener>]]></hi><![CDATA[
+<p><hi rend="small-caps">Does</hi> not my friend think me a stupid girl, when <lb/>
+she has kindly offered to correspond with me, that <lb/>
+I should be so senseless as not to accept the offer? <lb/>
+
+<!-- continues -->
+
+<p>I can say, in the length of this epistle, I've made <lb/>
+the golden rule mine. Pray, my friend, do not let it <lb/>
+be long before you write to your ever affectionate</p>
+]]><hi rend="attn"><![CDATA[<closer>
+<signed>A. S.</signed>
+<seg type="postscript" rend="block">P.S. My regards to your good man. I've no <lb/>
+acquaintance with him, but if you love him, I do, <lb/>
+and should be glad to see him.</seg>
+</closer>]]></hi><![CDATA[
+</div2>
+]]></eg>
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+<seeAlso>
+<ptr target="quotations_openClose_postkb"/>
+<ptr target="alignIndent_defaults"/>
+</seeAlso>
+</practice>
+
+<practice id="letters_ps_vendor" applies="VENDOR">
+<head>Postscripts</head>
+<desc>Postscripts in letters should be encoded using <gi tei="no" key="ps">ps</gi>
+within <gi key="closer">closer</gi>.</desc>
+<exemplum><ref target="letters_openClose">See preceding example</ref></exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="letters_ps_postkb" applies="POSTKB">
+<head>Postscripts</head>
+<desc>Postscripts in letters should be encoded using <tag key='seg type="postscript"'>seg
+type="postscript" rend="block"</tag> within <gi key="closer">closer</gi>.</desc>
+<exemplum><ref target="letters_openClose">See preceding example</ref></exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- VERSE                           -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="verse">
+<head>Verse</head>
+
+<practice id="verse_indent">
+<head>Indented lines</head>
+<desc>If a line of verse is indented more than the surrounding lines,
+use <tag key='l rend="indent"'>l rend="indent"</tag>. In cases of multiple levels of
+indentation, use <val>indent</val> for the first level,
+<val>indent2</val> for the second level, etc. potentially through
+<val>indent5</val>.</desc>
+
+<!-- TODO: an example with multiple levels of indentation, and/or <l
+rend="indent"> combined with <hi rend="hang">, from the question
+raised by Apex -->
+
+<enforcement machine-enforceable="no" enforced="no"/>
+<seeAlso><ptr target="alignIndent_main"/></seeAlso>
+</practice>
+
+<practice id="verse_lb_vendor" applies="VENDOR">
+<head>Line breaks in verse</head>
+<desc>When encoding verse it is important to distinguish between
+logical lines of verse and the physical presentation of those lines on
+the printed page. In cases where a line of verse is too long to fit on
+the printed page, and for that reason is continued on a second line,
+use <gi key="l">l</gi> to mark the logical line of verse and | (vertical bar
+character) to mark the physical line break.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+<seeAlso><ptr target="lb_main_vendor"/></seeAlso>
+</practice>
+
+<practice id="verse_lb_postkb" applies="POSTKB">
+<head>Line breaks in verse</head>
+<desc>When encoding verse it is important to distinguish between
+logical lines of verse and the physical presentation of those lines on
+the printed page. In cases where a line of verse is too long to fit on
+the printed page, and for that reason is continued on a second line,
+use <gi key="l">l</gi> to mark the logical line of verse and <gi key="lb">lb/</gi> to
+mark the physical line break.</desc>
+
+<!-- TODO: a better example -->
+
+<enforcement machine-enforceable="no" enforced="no"/>
+<seeAlso><ptr target="lb_main_postkb"/></seeAlso>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- DRAMA                           -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="drama">
+<head>Drama</head>
+
+<practice id="drama_tei">
+<head>Encoding dramatic works</head>
+<desc>Use the standard TEI elements for encoding plays and other dramatic
+texts.</desc>
+<remarks>
+<list>
+<item>act and scene divisions should be marked as <gi tei="no" key="div1 - div7">divN</gi> elements</item>
+<item>speeches should be marked as <gi key="sp">sp</gi>, with speakers marked as <gi key="speaker">speaker</gi></item>
+<item>stage directions should be marked as <gi key="stage">stage</gi></item>
+<item>castlists should be marked as <tag key='div1 type="castlist"'>div1 type="castlist"</tag> within <gi key="front">front</gi></item>
+</list>
+</remarks>
+<!-- TODO: example from O'Neill plays -->
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- NEWSPAPERS                      -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="newspapers">
+<head>Newspapers</head>
+
+<practice id="newspapers_layout">
+<head>Layout</head>
+<desc>Although the layout of a newspaper page is more complex than a
+book page, the usual elements are used: <gi key="pb">pb</gi> for page breaks,
+<gi key="cb">cb/</gi> for column breaks, and <gi tei="no" key="cols">cols/</gi> for changes in
+columnar layout.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+<seeAlso>
+<ptr target="pb"/>
+<ptr target="cb"/>
+</seeAlso>
+</practice>
+
+<practice id="newspapers_splits">
+<head>Associating related sections</head>
+<desc>Because newspaper articles are often broken up and printed
+in two (or more) non-contiguous sections, it is necessary to link the
+first section of the article with the subsequent section(s). Use the
+<att key="id" element="divN">id</att>, <att key="next" element="divN">next</att>
+and <att key="prev" element="divN">prev</att> attributes on
+<gi tei="no" key="div1 - div7">divN</gi> elements to achieve this.</desc>
+<exemplum><eg><![CDATA[
+<div1 type="article" id="a1.3" next="a14.2">
+<!-- first part of newspaper article -->
+</div1>
+
+<!-- multiple pages of content here -->
+
+<div1 type="article" id="a14.2" prev="a1.3">
+<!-- continuation of article -->
+</div1>
+]]></eg></exemplum>
+<enforcement machine-enforceable="no" enforced="no">
+<remarks><p>Because the datatype of
+<att>next</att> and <att>prev</att> is <datatype>IDREF</datatype>, the
+DTD enforces that these attributes point to an ID somewhere in the XML
+document. To verify that the ID is on a certain kind of div, or to
+verify that <att>next</att> points to an element whose <att>prev</att>
+attribute points back to it, a QA program would be
+necessary.</p></remarks>
+</enforcement>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- ENCYCLOPEDIAS                   -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="encyc">
+<head>Encyclopedias</head>
+
+<practice id="encyc_tei">
+<head>Encyclopedia entries</head>
+<desc>Encyclopedia entries typically consist mainly of prose
+paragraphs and do not normally pose any special markup issues. Each
+encyclopedia entry is a <gi tei="no" key="div1 - div7">divN</gi> element containing one
+or more headings followed by paragraphs.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- DICTIONARIES                    -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="dict">
+<head>Dictionaries</head>
+
+<practice id="dict_simple">
+<head>Simple entries</head>
+<desc>In the simplest case, a dictionary entry has minimal grammatical
+information and only one definition.</desc>
+<exemplum>
+<p><hi rend="bold">After-night,</hi> <hi rend="italic">n.</hi> The time after it becomes night.</p>
+
+<eg applies="VENDOR"><![CDATA[
+<entry>
+<form><orth><b>After-night,</b></orth></form>
+<gramGrp><pos><i>n.</i></pos></gramGrp>
+<def>The time after it becomes night.</def>
+</entry>
+]]></eg>
+<eg applies="POSTKB"><![CDATA[
+<entry>
+<form><orth><hi rend="bold">After-night,</hi></orth></form>
+<gramGrp><pos><hi rend="italic">n.</hi></pos></gramGrp>
+<def>The time after it becomes night.</def>
+</entry>
+]]></eg>
+
+<p><xref url="examples/dict_simple.html">page image</xref></p>
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="dict_alt">
+<head>Alternate spellings and usage examples</head>
+<desc>Alternate spellings should be marked with
+<tag key='orth type="alt"'>orth type="alt"</tag>. Usage examples should be marked with
+<gi key="eg">eg</gi>.</desc>
+<remarks>
+<p>The <gi>eg</gi> element does not allow character data; instead,
+<gi>eg</gi> must contain <gi key="q">q</gi> (for examples with no attributed
+source) or <gi key="cit">cit</gi> (for examples that include an attribution of
+the author or source text).</p>
+<admon type="note"><p>Because DLPS normally uses <gi>q</gi> for block
+quotations, when using <gi>q</gi> in a dictionary entry please
+indicate <tag key='q rend="inline"'>q rend="inline"</tag>, as shown in the following
+example.</p></admon>
+</remarks>
+<exemplum>
+<p><hi rend="bold">Again,</hi> <hi rend="italic">conj. Agen; agin:</hi>
+By the time that, untill: <char name="ldquo"/>I<char name="rsquo"/>ll have <lb/>
+<char name="nbsp"/><char name="nbsp"/><char name="nbsp"/><char name="nbsp"/><char name="nbsp"/>it ready <hi rend="italic">agin</hi>
+you come.<char name="rdquo"/></p>
+
+<eg applies="VENDOR"><![CDATA[
+<entry rend="hang">
+<form><orth><b>Again,</b></orth></form>
+<gramGrp><pos><i>conj.</i></pos></gramGrp>
+<form>]]><hi rend="attn"><![CDATA[<orth type="alt"><i>Agen; agin:</i></orth>]]></hi><![CDATA[</form>
+<def>By the time that, untill:</def>
+]]><hi rend="attn"><![CDATA[<eg><q rend="inline">"I'll have |
+it ready <i>agin</i> you come."</q></eg>]]></hi><![CDATA[
+</entry>
+]]></eg>
+
+<eg applies="POSTKB"><![CDATA[
+<entry rend="hang">
+<form><orth><hi rend="bold">Again,</hi></orth></form>
+<gramGrp><pos><hi rend="italic">conj.</hi></pos></gramGrp>
+<form>]]><hi rend="attn"><![CDATA[<orth type="alt"><hi rend="italic">Agen; agin:</hi></orth>]]></hi><![CDATA[</form>
+<def>By the time that, untill:</def>
+]]><hi rend="attn"><![CDATA[<eg><q rend="inline">"I'll have <lb/>
+it ready <hi rend="italic">agin</hi> you come."</q></eg>]]></hi><![CDATA[
+</entry>
+]]></eg>
+
+<p><xref url="examples/dict_simple.html">page image</xref></p>
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="dict_multiple">
+<head>Multiple homographs and multiple meanings</head>
+<desc>More complex dictionary entries may include more than one form
+of the same word <char name="mdash"/> that is, multiple homographs (words identical
+in spelling but different in meaning or pronunciation), each marked
+with <gi key="hom">hom</gi>. Entries may also include more than one meaning for
+the same word, in which case the information (definitions, examples,
+etc.)  for each meaning should be grouped as a <gi key="sense">sense</gi>. If the
+senses are labeled with numbers or letters in the print source,
+include the label in the <att key="n" element="sense">n</att> attribute.</desc>
+<exemplum>
+<p><hi rend="bold">Against,</hi> <hi rend="italic">prep.</hi> In resistance to; or defense from <char name="ldquo"/>They <lb/>
+<char name="nbsp"/><char name="nbsp"/><char name="nbsp"/><char name="nbsp"/><char name="nbsp"/> marched <hi rend="italic">against</hi> the Spaniards.<char name="rdquo"/> (2.) Opposite. <char name="ldquo"/>Over <lb/>
+<char name="nbsp"/><char name="nbsp"/><char name="nbsp"/><char name="nbsp"/><char name="nbsp"/> <hi rend="italic">against</hi> a point called 
+Sandy Point.<char name="rdquo"/> Against, <hi rend="italic">conj.</hi> <char name="ldquo"/>Keep <lb/>
+<char name="nbsp"/><char name="nbsp"/><char name="nbsp"/><char name="nbsp"/><char name="nbsp"/> <char name="rsquo"/>em <hi rend="italic">against</hi> I come.<char name="rdquo"/></p>
+
+<eg applies="VENDOR"><![CDATA[
+<entry rend="hang">
+]]><hi rend="attn"><![CDATA[<hom>]]></hi><![CDATA[
+<form><orth><b>Against,</b></orth></form>
+<gramGrp><pos><i>prep.</i></pos></gramGrp>
+]]><hi rend="attn"><![CDATA[<sense>]]></hi><![CDATA[
+<def>In resistance to; or defense from</def>
+<eg><q rend="inline">"They |
+marched <i>against</i> the Spaniards."</q></eg>
+]]><hi rend="attn"><![CDATA[</sense>
+<sense n="2">]]></hi><![CDATA[
+(2.) <def>Opposite.</def>
+<eg><q rend="inline">"Over |
+<i>against</i> a point called Sandy Point."</q></eg>
+]]><hi rend="attn"><![CDATA[</sense>
+</hom>
+<hom>]]></hi><![CDATA[
+<form><orth>Against,</orth></form>
+<gramGrp><pos><i>conj.</i></pos></gramGrp>
+<eg><q rend="inline">"Keep |
+'em <i>against</i> I come."</q></eg>
+]]><hi rend="attn"><![CDATA[</hom>]]></hi><![CDATA[
+</entry>
+]]></eg>
+
+<eg applies="POSTKB"><![CDATA[
+<entry rend="hang">
+]]><hi rend="attn"><![CDATA[<hom>]]></hi><![CDATA[
+<form><orth><hi rend="bold">Against,</hi></orth></form>
+<gramGrp><pos><hi rend="italic">prep.</hi></pos></gramGrp>
+]]><hi rend="attn"><![CDATA[<sense>]]></hi><![CDATA[
+<def>In resistance to; or defense from</def>
+<eg><q rend="inline">"They <lb/>
+marched <hi rend="italic">against</hii> the Spaniards."</q></eg>
+]]><hi rend="attn"><![CDATA[</sense>
+<sense n="2">]]></hi><![CDATA[
+(2.) <def>Opposite.</def>
+<eg><q rend="inline">"Over <lb/>
+<hi rend="italic">against</hi> a point called Sandy Point."</q></eg>
+]]><hi rend="attn"><![CDATA[</sense>
+</hom>
+<hom>]]></hi><![CDATA[
+<form><orth>Against,</orth></form>
+<gramGrp><pos><hi rend="italic">conj.</hi></pos></gramGrp>
+<eg><q rend="inline">"Keep <lb/>
+'em <hi rend="italic">against</hi> I come."</q></eg>
+]]><hi rend="attn"><![CDATA[</hom>]]></hi><![CDATA[
+</entry>
+]]></eg>
+
+<p><xref url="examples/dict_simple.html">page image</xref></p>
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="dict_super">
+<head>Super entries</head>
+<desc>In cases where words with identical spellings (homographs)
+receive separate entries in the dictionary (rather than being included
+within a single entry), each entry should be marked as an
+<gi key="entry">entry</gi> as usual, but then the group of entries should be
+wrapped in a <gi key="superEntry">superEntry</gi> element.</desc>
+<exemplum>
+<p><xref url="examples/dict_super.html">page image</xref></p>
+
+<eg applies="VENDOR"><hi rend="attn"><![CDATA[
+<superEntry>
+<entry rend="hang">]]></hi><![CDATA[
+<form><orth><b>Pitch,</b></orth></form>
+<gramGrp><pos><i>n.</i></pos></gramGrp>
+<def>The height of anything.</def>
+<eg><q rend="inline">"The roof was ten feet |
+<i>pitch</i>."</q></eg>
+<eg><q rend="inline">"Tester bedstead 7&half; feet <i>pitch</i>."</q></eg>
+]]><hi rend="attn"><![CDATA[</entry>
+<entry rend="hang">]]></hi><![CDATA[
+<form><orth><b>Pitch,</b></orth></form>
+<gramGrp><pos><i>v.</i></pos></gramGrp>
+<sense>
+<def>To pitch in, to begin; set to work with promptness |
+or energy.</def>
+</sense>
+<sense n="2">
+(2.) <def><i>To pitch into</i>, to attack; assault.</def>
+</sense>
+]]><hi rend="attn"><![CDATA[</entry>
+<entry rend="hang">]]></hi><![CDATA[
+<form><orth><b>Pitch,</b></orth></form>
+<gramGrp><pos><i>v.</i></pos></gramGrp>
+<def>To sit down; to light.</def>
+<eg><q rend="inline">"I saw wild geese <i>pitch</i> |
+in the wheatfields."</q></eg>
+]]><hi rend="attn"><![CDATA[</entry>
+<entry rend="hang">]]></hi><![CDATA[
+<form><orth><b>Pitch,</b></orth></form>
+<gramGrp><pos><i>v.</i></pos></gramGrp>
+<def>To plant.</def>
+<eg><q rend="inline">"I have already <i>pitched</i> my crop."</q></eg>
+]]><hi rend="attn"><![CDATA[</entry>
+</superEntry>
+<superEntry>
+<entry rend="hang">]]></hi><![CDATA[
+<form><orth><b>Pitcher,</b></orth></form>
+<gramGrp><pos><i>n.</i></pos></gramGrp>
+<def>A vessel of various sizes with one handle and a |
+lip-spout for holding water or other liquids. A basin and |
+<i>pitcher</i>. Never called <i>jug</i>.</def>
+]]><hi rend="attn"><![CDATA[</entry>
+<entry rend="hang">]]></hi><![CDATA[
+<form><orth><b>Pitcher,</b></orth></form>
+<gramGrp><pos><i>n.</i></pos></gramGrp>
+<def>The man who pitches the sheaves of wheat up on |
+the cart or stack, by means of a pitch-fork.</def>
+]]><hi rend="attn"><![CDATA[</entry>
+</superEntry>]]></hi></eg>
+
+<eg applies="POSTKB"><hi rend="attn"><![CDATA[
+<superEntry>
+<entry rend="hang">]]></hi><![CDATA[
+<form><orth><hi rend="bold">Pitch,</hi></orth></form>
+<gramGrp><pos><hi rend="italic">n.</hi></pos></gramGrp>
+<def>The height of anything.</def>
+<eg><q rend="inline">"The roof was ten feet <lb/>
+<hi rend="italic">pitch</hi>."</q></eg>
+<eg><q rend="inline">"Tester bedstead 7&half; feet <hi rend="italic">pitch</hi>."</q></eg>
+]]><hi rend="attn"><![CDATA[</entry>
+<entry rend="hang">]]></hi><![CDATA[
+<form><orth><hi rend="bold">Pitch,</hi></orth></form>
+<gramGrp><pos><hi rend="italic">v.</hi></pos></gramGrp>
+<sense>
+<def>To pitch in, to begin; set to work with promptness <lb/>
+or energy.</def>
+</sense>
+<sense n="2">
+(2.) <def><hi rend="italic">To pitch into</hi>, to attack; assault.</def>
+</sense>
+]]><hi rend="attn"><![CDATA[</entry>
+<entry rend="hang">]]></hi><![CDATA[
+<form><orth><hi rend="bold">Pitch,</hi></orth></form>
+<gramGrp><pos><hi rend="italic">v.</hi></pos></gramGrp>
+<def>To sit down; to light.</def>
+<eg><q rend="inline">"I saw wild geese <hi rend="italic">pitch</hi> <lb/>
+in the wheatfields."</q></eg>
+]]><hi rend="attn"><![CDATA[</entry>
+<entry rend="hang">]]></hi><![CDATA[
+<form><orth><hi rend="bold">Pitch,</hi></orth></form>
+<gramGrp><pos><hi rend="italic">v.</hi></pos></gramGrp>
+<def>To plant.</def>
+<eg><q rend="inline">"I have already <hi rend="italic">pitched</hi> my crop."</q></eg>
+]]><hi rend="attn"><![CDATA[</entry>
+</superEntry>
+<superEntry>
+<entry rend="hang">]]></hi><![CDATA[
+<form><orth><hi rend="bold">Pitcher,</hi></orth></form>
+<gramGrp><pos><hi rend="italic">n.</hi></pos></gramGrp>
+<def>A vessel of various sizes with one handle and a <lb/>
+lip-spout for holding water or other liquids. A basin and <lb/>
+<hi rend="italic">pitcher</hi>. Never called <hi rend="italic">jug</hi>.</def>
+]]><hi rend="attn"><![CDATA[</entry>
+<entry rend="hang">]]></hi><![CDATA[
+<form><orth><hi rend="bold">Pitcher,</hi></orth></form>
+<gramGrp><pos><hi rend="italic">n.</hi></pos></gramGrp>
+<def>The man who pitches the sheaves of wheat up on <lb/>
+the cart or stack, by means of a pitch-fork.</def>
+]]><hi rend="attn"><![CDATA[</entry>
+</superEntry>]]></hi></eg>
+
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+</practiceGroup>
+</practiceGroup>
+
+
+<!-- ====================================================================== -->
+<!-- BLOCK-LEVEL FEATURES                                                   -->
+<!-- ====================================================================== -->
+
+<practiceGroup id="block">
+<head>Block-level Features</head>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- BLOCK QUOTATIONS                -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="quotations">
+<head>Block Quotations</head>
+
+<practice id="quotations_main">
+<head>Block quotations</head>
+<desc>Block quotations should be encoded using the <gi key="q">q</gi>
+element.</desc>
+<remarks>
+<p>By <term key="block quotation">block quotation</term> we simply mean a quotation set off
+from the surrounding text by one or more of these typographic
+changes:</p>
+<list>
+<item>set off by line breaks</item>
+<item>indented</item>
+<item>in a smaller typeface</item>
+</list>
+<p><gi>q</gi> is always used for block quotations, irrespective of
+whether or not the narrator/author attributes the quotation to an
+external source; that is, the <gi key="quote">quote</gi> element should never be
+used.</p>
+</remarks>
+<enforcement machine-enforceable="no" enforced="no"/>
+<seeAlso><ptr target="divs_quotes"/></seeAlso>
+</practice>
+
+<practice id="quotations_marks">
+<head><gi key="q">q</gi> and quotation marks</head>
+<desc><gi>q</gi> should never be used to replace quotation marks. If
+the quotation is both set off typographically from the surrounding
+text and enclosed in quotation marks, use the <gi>q</gi> element and
+also include the quotation marks.</desc>
+
+<exemplum>
+<p><xref url="examples/quotations_marks.html">page image</xref></p>
+
+<eg applies="VENDOR"><![CDATA[
+forward into "the pen." The phrase forcibly |
+recalled Milton's lines&mdash; |
+]]><hi rend="attn"><![CDATA[<q>]]></hi><![CDATA[<lg>
+<l>]]><hi rend="attn">"</hi><![CDATA[Blind mouths! that scarce themselves know how to hold</l>
+<l>A sheep-hook, or have learned aught else, the least</l>
+<l>That to the faithful herdsman's art belongs!</l>
+<l>&mdash;But when they list their lean and flashy songs,</l>
+<l>Grate on their scrannel pipes of wretched straw;&mdash;</l>
+<l rend="indent">The hungry sheep look up, and are not fed!</l>
+<l>But swoln with wind, and the rank mist they draw,</l>
+<l rend="indent">Rot inwardly&mdash;and foul contagion spread.]]><hi rend="attn">"</hi><![CDATA[</l>
+</lg>]]><hi rend="attn"><![CDATA[</q>]]></hi><![CDATA[
+"The pen" was the space immediately below |
+the preachers' stand; we were therefore placed |
+]]></eg>
+
+<eg applies="POSTKB"><![CDATA[
+forward into "the pen." The phrase forcibly <lb/>
+recalled Milton's lines&mdash; <lb/>
+]]><hi rend="attn"><![CDATA[<q>]]></hi><![CDATA[<lg>
+<l>]]><hi rend="attn">"</hi><![CDATA[Blind mouths! that scarce themselves know how to hold</l>
+<l>A sheep-hook, or have learned aught else, the least</l>
+<l>That to the faithful herdsman's art belongs!</l>
+<l>&mdash;But when they list their lean and flashy songs,</l>
+<l>Grate on their scrannel pipes of wretched straw;&mdash;</l>
+<l rend="indent">The hungry sheep look up, and are not fed!</l>
+<l>But swoln with wind, and the rank mist they draw,</l>
+<l rend="indent">Rot inwardly&mdash;and foul contagion spread.]]><hi rend="attn">"</hi><![CDATA[</l>
+</lg>]]><hi rend="attn"><![CDATA[</q>]]></hi><![CDATA[
+"The pen" was the space immediately below <lb/>
+the preachers' stand; we were therefore placed <lb/>
+]]></eg>
+
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="quotations_openClose_vendor" applies="VENDOR">
+<head>Block quotations with opener/closer</head>
+<desc>For block quotations requiring <gi key="opener">opener</gi>
+and/or <gi key="closer">closer</gi>, use <gi tei="no" key="quotedLetter">quotedLetter</gi>.</desc>
+<exemplum>
+<p><xref url="examples/quotations_openClose.html">page image</xref></p>
+<eg><![CDATA[
+passage of the Kansas-Nebraska act. The results secured by |
+the two circulars will be seen in the following letter from |
+Francis Jackson, of Boston, to his fellow-townsmen and co- |
+worker, the Rev. Theodore Parker.</p>
+]]><hi rend="attn"><![CDATA[<quotedLetter>
+<opener>]]></hi><![CDATA[
+<dateline>
+<name type="place"><smcap>Boston</smcap></name>, <date value="1854-08-27">Aug. 27,1854</date>.
+</dateline>
+<salute><smcap>Theodore Parker</smcap>:</salute>
+]]><hi rend="attn"><![CDATA[</opener>]]></hi><![CDATA[
+<p><i>Dear Friend</i>,&mdash; The contributions of the churches in behalf of |
+the fugitive slaves I think have about all come in. I herewith |
+<!-- letter continues -->
+have been. Those societies who have contributed, I judge were |
+least able to do so.</p>
+]]><hi rend="attn"><![CDATA[<closer>]]></hi><![CDATA[
+<signed><smcap>Francis Jackson</smcap>.<ref target="n4.1"><sup>1</sup></ref>
+<note id="n4.1" place="foot"><ns><sup>1</sup></ns><p>Theodore Parker's 
+<i>Scrap-book</i>, Boston Public Library.</p></note>
+</signed>
+]]><hi rend="attn"><![CDATA[</closer>
+</quotedLetter>]]></hi><![CDATA[
+<p>The political affiliations of underground helpers before |
+1840 were, necessarily, with one or the other of the old |
+]]></eg>
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+<seeAlso><ptr target="letters_openClose"/></seeAlso>
+</practice>
+
+<practice id="quotations_openClose_postkb" applies="POSTKB">
+<head>Block quotations with opener/closer</head>
+<desc>For block quotations requiring <gi key="opener">opener</gi>
+and/or <gi key="closer">closer</gi>, use
+<gi key="q">q</gi><gi key="text">text</gi><gi key="body">body</gi><gi key='div1'>div1</gi>.
+If the quoted text is a letter (the most common case), use
+<gi>q</gi><gi>text</gi><gi>body</gi><tag key='div1 type="letter"'>div1 type="letter"</tag>.
+If the quoted text is not a letter or other type for which an appropriate
+<att key="type">type</att> value exists, use
+<gi>q</gi><gi>text</gi><gi>body</gi><tag key='div1 type="quotation"'>div1 type="quotation"</tag>.</desc>
+<exemplum>
+<p><xref url="examples/quotations_openClose.html">page image</xref></p>
+<eg><![CDATA[
+passage of the Kansas-Nebraska act. The results secured by <lb/>
+the two circulars will be seen in the following letter from <lb/>
+Francis Jackson, of Boston, to his fellow-townsmen and co- <lb/>
+worker, the Rev. Theodore Parker.</p>
+]]><hi rend="attn"><![CDATA[<q><text><body><div1 type="letter">
+<opener>]]></hi><![CDATA[
+<dateline>
+<name type="place"><hi rend="small-caps">Boston</hi></name>,
+<date value="1854-08-27">Aug. 27,1854</date>.
+</dateline>
+<salute><hi rend="small-caps">Theodore Parker</hi>:</salute>
+]]><hi rend="attn"><![CDATA[</opener>]]></hi><![CDATA[
+<p><hi rend="italic">Dear Friend</hi>,&mdash; The contributions of the churches in behalf of <lb/>
+the fugitive slaves I think have about all come in. I herewith <lb/>
+<!-- letter continues -->
+have been. Those societies who have contributed, I judge were <lb/>
+least able to do so.</p>
+]]><hi rend="attn"><![CDATA[<closer>]]></hi><![CDATA[
+<signed><hi rend="small-caps">Francis Jackson</hi>.<ref target="n4.1"><hi rend="super">1</hi></ref>
+<note id="n4.1" place="foot"><seg type="note-symbol"><hi rend="super">1</hi></seg><p>Theodore Parker's 
+<hi rend="italic">Scrap-book</hi>, Boston Public Library.</p></note>
+</signed>
+]]><hi rend="attn"><![CDATA[</closer>
+</div1></body></text></q>]]></hi><![CDATA[
+<p>The political affiliations of underground helpers before <lb/>
+1840 were, necessarily, with one or the other of the old <lb/>
+]]></eg>
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+<seeAlso><ptr target="letters_openClose"/></seeAlso>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- FIGURES AND ORNAMENTS           -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="figures">
+<head>Figures and Ornaments</head>
+
+<practice id="figures_captions">
+<head>Captions and associated text</head>
+<desc>When using the <gi key="figure">figure</gi> element to indicate
+graphical content (illustrations, photographs, maps, etc.), use the
+<gi key="head">head</gi> element to record the caption of the figure (if
+any). Use the <gi key="p">p</gi> element to record text (if any) that is
+associated with the figure but is not part of the caption.</desc>
+<remarks><p>If the graphic has a credit or byline, use the
+<gi key="byline">byline</gi> element within <gi>figure</gi>.</p></remarks>
+<exemplum>
+<p><xref url="examples/figures_captions.html">page image</xref></p>
+
+<eg applies="VENDOR"><![CDATA[
+<pb/>
+<figure>
+<head>ONE OF THE PIONEERS IN THE UNDERGROUND MOVEMENT IN | 
+PHILADELPHIA AND NEW YORK.</head>
+<p>Mr. Hopper is supposed to have resorted to underground methods as early as 1787.</p>
+</figure>
+]]></eg>
+
+<eg applies="POSTKB"><![CDATA[
+<pb/>
+<figure>
+<head>ONE OF THE PIONEERS IN THE UNDERGROUND MOVEMENT IN <lb/> 
+PHILADELPHIA AND NEW YORK.</head>
+<p>Mr. Hopper is supposed to have resorted to underground methods as early as 1787.</p>
+</figure>
+]]></eg>
+
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="figures_rend" applies="POSTKB">
+	<head><att key="rend" element="figure">rend</att> attribute on <gi key="figure">figure</gi></head>
+	<desc>The <att>rend</att> attribute is required on <gi>figure</gi>.</desc>
+	<remarks>
+		<p><att>rend</att> indicates how the figure appears on the page in the physical source (not how it is intended to appear on screen in an electronic display).</p>
+		<p>The allowed values are:</p>
+		<list>
+			<label><val>inline</val></label><item>figure occurs on same line as surrounding text content</item>
+			<label><val>block</val></label><item>figure is set off by line breaks, with no text to the left or right of the figure</item>
+			<label><val>page</val></label><item>figure occupies the entire page</item>
+		</list>
+	</remarks>
+	<enforcement enforced="yes" machine-enforceable="yes" method="program" method-name="qa_figures" message-type="error"/>
+	<reason>
+		<p>It seems good practice inherently to record relation of figure to text. Facilitates delivery.</p>
+	</reason>
+</practice>
+
+<practice id="frontispiece">
+<head>A figure at the start of a division: <gi key="frontispiece">frontispiece</gi></head>
+<desc>A <gi>frontispiece</gi> is a figure that occurs at or near the
+beginning of a structural division.</desc>
+<remarks><p>The <gi>frontispiece</gi> element is identical to the <gi>figure</gi>
+element except that, unlike a <gi>figure</gi>, a <gi>frontispiece</gi> can
+occur at the top of a <gi tei="no">divN</gi> element.</p>
+<p>There are cases where an illustration is the first component in a chapter
+or other structural division. This occurs most often when the figure is a
+full-page illustration on the page immediately preceding the first page of
+content for that division, and the illustration is clearly related to the
+content that follows it, not the content that precedes it. In such cases, the
+illustration should be marked as a <gi>frontispiece</gi> at the beginning
+of the new <gi tei="no">divN</gi>, <emph>not</emph> as a <gi>figure</gi>
+at the end of the preceding <gi tei="no">divN</gi>.</p></remarks>
+<exemplum>
+<p><xref url="examples/frontispiece.html">page images</xref></p>
+
+<eg applies="VENDOR"><![CDATA[
+<div1 type="section">
+<pb/>
+]]><hi rend="attn"><![CDATA[<frontispiece>
+<head><smcap>Patrick Henry.</smcap></head>
+</frontispiece>]]></hi><![CDATA[
+<pb><fw type="sig" place="bottom-left">8</fw></pb>
+<head type="main">THE FAMOUS <lb/>
+Revolution Speech of Patrick Henry,</head>
+<head type="sub">DELIVERED BEFORE THE VIRGINIA CONVENTION IN ST. JOHN'S |
+CHURCH, 1775.</head>
+<ornament type="line"/>
+<p>"Mr. President," said he, "it is natural to man to indulge |
+in the illusions of hope. We are apt to shut our eyes against |
+a painful truth and listen to the song of that siren, till she |
+]]></eg>
+
+<eg applies="POSTKB"><![CDATA[
+<div1 type="section">
+<pb entity="b000234935_0130"/>
+]]><hi rend="attn"><![CDATA[<frontispiece entity="b000234935_0130_0" rend="page">
+<head><hi rend="small-caps">Patrick Henry.</hi></head>
+</frontispiece>]]></hi><![CDATA[
+<pb entity="b000234935_0131"><fw type="sig" place="bottom-left">8</fw></pb>
+<head type="main">THE FAMOUS <lb/>
+Revolution Speech of Patrick Henry,</head>
+<head type="sub">DELIVERED BEFORE THE VIRGINIA CONVENTION IN ST. JOHN'S <lb/>
+CHURCH, 1775.</head>
+<ornament type="line"/>
+<p>"Mr. President," said he, "it is natural to man to indulge <lb/>
+in the illusions of hope. We are apt to shut our eyes against <lb/>
+a painful truth and listen to the song of that siren, till she <lb/>
+]]></eg>
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="figures_ornaments">
+<head>Printer<char name="rsquo"/>s ornaments</head>
+<desc>Printer<char name="rsquo"/>s ornaments do not qualify as figures. Instead,
+printer<char name="rsquo"/>s ornaments should be encoded with
+<tag key='ornament type="ornament"'>ornament type="ornament"/</tag></desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="ornaments_lines">
+<head>Horizontal lines</head>
+<desc>Horizontal lines should be encoded using the <gi tei="no" key="ornament">ornament</gi>
+element. For true horizontal lines, set <att key="type" element="ornament">type</att> to
+<val>line</val>. For a string of asterisks, periods, etc. that functions
+as a horizontal line, set <att>type</att> to <val>characters</val> and
+include the characters as the content of the <gi>ornament</gi>
+element.</desc>
+<exemplum>
+<eg><![CDATA[
+<ornament type="line"/>
+
+<ornament type="characters">*&emsp;*&emsp;*&emsp;*&emsp;*&emsp;*&emsp;*&emsp;*</ornament>
+]]></eg>
+</exemplum>
+<enforcement machine-enforceable="semi" method="program" method-name="qa_lib_misc" message-type="error">
+<remarks><p>The <ref target="qa_lib_misc">qa_lib_misc</ref> QA program verifies that if <att>type</att>=<val>characters</val>,
+the <gi>ornament</gi> element must contain text (must not be empty), and that if
+<att>type</att>=<val>line</val> (or <att>type</att>=<val>ornament</val>), the <gi>ornament</gi>
+element must be empty. But there is no machine-enforceable way to ensure that horizontal lines
+are marked properly, or marked at all.</p></remarks>
+</enforcement>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- TABLES                          -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="tables">
+<head>Tables</head>
+
+<practice id="tables_labelCells">
+<head>Label cells</head>
+<desc>For cells that contain a label or heading, rather than data, use
+<tag key='cell role="label"'>cell role="label"</tag>.</desc>
+<remarks>
+<p>For cells containing data, there is no need to include the
+<att key="role" element="cell">role</att> attribute; <val>data</val>
+is the default value.</p>
+</remarks>
+<exemplum>
+<p><xref url="examples/tables_labelCells.html">page image</xref></p>
+<eg applies="VENDOR"><![CDATA[
+<div1 type="contents">
+<pb/>
+<head>CONTENTS |
+<smcap>of</smcap> |
+VOLUME I.</head>
+<table>
+<row>
+<cell ]]><hi rend="attn">role="label"</hi><![CDATA[ cols="2" rend="center">CHAPTER I.</cell>
+</row>
+<row>
+<cell ]]><hi rend="attn">role="label"</hi><![CDATA[ cols="2" rend="right"><smcap>page</smcap></cell>
+</row>
+<row>
+<cell>Entrance of the Mississippi&mdash;Balize</cell>
+<cell rend="right">1</cell>
+</row>
+<row>
+<cell ]]><hi rend="attn">role="label"</hi><![CDATA[ cols="2" rend="center">CHAPTER II.</cell>
+</row>
+<row>
+<cell rend="hang">New Orleans&mdash;Society&mdash;Creoles and Quadroons&mdash;Voy- |
+age up the Mississippi</cell>
+<cell rend="right">7</cell>
+</row>
+<!-- continues -->
+]]></eg>
+
+<eg applies="POSTKB"><![CDATA[
+<div1 type="contents">
+<pb/>
+<head>CONTENTS <lb/>
+<hi rend="small-caps">of</hi> <lb/>
+VOLUME I.</head>
+<table>
+<row>
+<cell ]]><hi rend="attn">role="label"</hi><![CDATA[ cols="2" rend="center">CHAPTER I.</cell>
+</row>
+<row>
+<cell ]]><hi rend="attn">role="label"</hi><![CDATA[ cols="2" rend="right"><hi rend="small-caps">page</hi></cell>
+</row>
+<row>
+<cell>Entrance of the Mississippi&mdash;Balize</cell>
+<cell rend="right">1</cell>
+</row>
+<row>
+<cell ]]><hi rend="attn">role="label"</hi><![CDATA[ cols="2" rend="center">CHAPTER II.</cell>
+</row>
+<row>
+<cell rend="hang">New Orleans&mdash;Society&mdash;Creoles and Quadroons&mdash;Voy- <lb/>
+age up the Mississippi</cell>
+<cell rend="right">7</cell>
+</row>
+<!-- continues -->
+]]></eg>
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+<reason category="delivery"><p>Facilitates delivery: equates to <gi tei="no">th</gi> in HTML.</p></reason>
+</practice>
+
+<practice id="tables_spanning">
+<head>Spanning rows or columns</head>
+<desc>If a cell occupies more than one row or column, use the
+<att key="rows" element="cell">rows</att> or <att key="cols" element="cell">cols</att> attribute, respectively, on the
+<gi key="cell">cell</gi> start-tag.</desc>
+<remarks>
+<p>This usage is equivalent to the use of the <att tei="no">rowspan</att>
+and <att tei="no">colspan</att> attributes on <gi tei="no">td</gi> and
+<gi tei="no">th</gi> in HTML.</p>
+</remarks>
+<exemplum><ref target="tables_labelCells">See preceding example</ref></exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+<reason category="delivery"><p>Facilitates delivery: equates to <att tei="no">rowspan</att> and 
+<att tei="no">colspan</att> in HTML.</p></reason>
+</practice>
+
+<practice id="tables_vsLists">
+<head>Tables vs. lists</head>
+<desc>In some cases, the choice between <gi key="table">table</gi> and
+<gi key="list">list</gi> may not be obvious, but typically any items of text that
+are intended to line up vertically should be encoded as a
+<gi>table</gi>. A table of contents, list of illustrations,
+etc. should almost always be marked up as a table.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- LISTS                           -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="lists">
+<head>Lists</head>
+
+<practice id="lists_nested">
+<head>Nested lists</head>
+<desc>Lists can be nested (a list <gi key="item">item</gi> can contain a
+<gi key="list">list</gi>). A common use of nested lists is for indexes where each
+entry contains indented sub-entries.</desc>
+<exemplum>
+<xref url="examples/lists_nested.html">page image and example markup</xref>
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- NOTES                           -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="notes">
+<head>Notes</head>
+
+<practice id="notes_ref">
+<head>Anchored note references: <gi key="ref">ref</gi></head>
+<desc>In cases where the note reference is indicated by a number or
+symbol, as is almost always true of footnotes and endnotes, use
+<gi>ref</gi> to encode the note reference.</desc>
+<remarks><p>By <term key="note reference">note reference</term> we mean the anchor point
+for the annotation within the flow of the main text, typically
+indicated with a superscript number or symbol. By <term key="note body">note
+body</term> we mean the content of the annotation.</p>
+</remarks>
+<exemplum applies="VENDOR">
+<xref url="examples/notes_ref_vendor.html">page image and example markup</xref>
+</exemplum>
+<exemplum applies="POSTKB">
+<xref url="examples/notes_ref_postkb.html">page image and example markup</xref>
+</exemplum>
+<enforcement machine-enforceable="semi" enforced="yes" method="dtd">
+<remarks><p>Enforced by the DTD insofar as the DTD
+disallows the use of <att>target</att> on <gi>note</gi> (VENDOR mode
+only), thereby disallowing the use of <tag>note target="..."</tag> to
+encode the note reference (at the point of initial/vendor encoding).</p></remarks>
+</enforcement>
+</practice>
+
+<practice id="notes_ptr">
+<head>Unanchored note references: <gi key="ptr">ptr/</gi></head>
+<desc>In cases where no number or other referencing symbol is present,
+as is common for marginal notes, use <gi>ptr/</gi> to supply an anchor
+point for the annotation.</desc>
+<exemplum applies="VENDOR">
+<xref url="examples/notes_ptr_vendor.html">page image and example markup</xref>
+</exemplum>
+<exemplum applies="POSTKB">
+<xref url="examples/notes_ptr_postkb.html">page image and example markup</xref>
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+<seeAlso><ptr target="notes_unanchored"/></seeAlso>
+</practice>
+
+<practice id="notes_target">
+<head><att key="target">target</att> attribute required for note reference</head>
+<desc>Whether using <gi key="ref">ref</gi> or <gi key="ptr">ptr/</gi> to encode the note
+reference, the <att>target</att> attribute is required, and its value
+must match the value of the <att key="id" element="note">id</att> attribute of the
+corresponding <gi key="note">note</gi>.</desc>
+<enforcement machine-enforceable="semi" enforced="yes" method="program" method-name="qa_lib_notes" message-type="error">
+<remarks><p>This rule is machine-enforceable insofar as the DTD requires <att>target</att>
+on <gi>ref</gi> and <gi>ptr/</gi>, where <att>target</att> (datatype
+<datatype>IDREFS</datatype>) must refer to an <datatype>ID</datatype> within
+the XML document. The QA program further
+requires (unless <att>place</att>=<val>inline</val>) that each <gi>note</gi>
+must be pointed to by a <gi>ref</gi> or <gi>ptr/</gi> element (not by any
+element). But no DTD or QA program can ensure that a <gi>ref</gi> or <gi>ptr/</gi> points to
+<emph>the correct corresponding <gi>note</gi></emph>, and in this
+regard this rule is unenforceable (except by painstaking human effort).</p></remarks>
+</enforcement>
+</practice>
+
+<practice id="notes_placement">
+<head>Placement of <gi key="note">note</gi> elements within the XML document</head>
+<desc>With the exception of endnotes, which are already located in a
+separate section in the print source and should not be moved, the <gi>note</gi> element
+should be placed at the point of the note<char name="rsquo"/>s attachment in the main
+text <char name="mdash"/> that is, immediately after the corresponding <gi key="ref">ref</gi>
+or <gi key="ptr">ptr/</gi> element.</desc>
+<exemplum applies="VENDOR">
+<xref url="examples/notes_ref_vendor.html">page image and example markup</xref>
+</exemplum>
+<exemplum applies="POSTKB">
+<xref url="examples/notes_ref_postkb.html">page image and example markup</xref>
+</exemplum>
+<enforcement method="program" method-name="qa_lib_notes" message-type="warning"/>
+</practice>
+
+<practice id="notes_symbols_vendor" applies="VENDOR">
+<head>Note symbols</head>
+<desc>When the note body includes the referencing symbol
+(a number, *, <char name="dagger"/>, etc.), record this symbol using the
+<gi tei="no" key="ns">ns</gi> (note symbol) element as the first element within
+<gi key="note">note</gi>.</desc>
+<exemplum>
+<xref url="examples/notes_ref_vendor.html">page image and example markup</xref>
+</exemplum>
+<enforcement method="program" method-name="qa_lib_notes" message-type="warning"/>
+<seeAlso><ptr target="notes_unanchored"/></seeAlso>
+</practice>
+
+<practice id="notes_symbols_postkb" applies="POSTKB">
+<head>Note symbols</head>
+<desc>When the note body includes the referencing symbol
+(a number, *, <char name="dagger"/>, etc.), record this symbol using 
+<tag key='seg type="note-symbol"'>seg type="note-symbol"</tag> as the first element within
+<gi key="note">note</gi>.</desc>
+<exemplum>
+<xref url="examples/notes_ref_postkb.html">page image and example markup</xref>
+</exemplum>
+<enforcement method="program" method-name="qa_lib_notes" message-type="warning">
+<remarks><p>Because a note symbol is almost always printed for anchored notes
+(footnotes and endnotes), the QA program issues a warning if the first child
+element of <gi>note</gi> is not <tag>seg type="note-symbol"</tag>, unless
+<att>anchored</att>=<val>no</val>.</p></remarks>
+</enforcement>
+<reason category="delivery"><p>Isolation of the note symbol is expected to
+facilitate delivery, especially if the delivery system chooses to suppress the
+printed note symbol and instead use the <att>n</att> value for display.</p></reason>
+<seeAlso><ptr target="notes_unanchored"/></seeAlso>
+</practice>
+
+<practice id="notes_symbolsMatch" applies="POSTKB">
+<head>Note symbol on <gi key="note">note</gi> vs. note symbol on <gi key="ref">ref</gi></head>
+<desc>The content of <gi>note</gi><tag key='seg type="note-symbol"'>seg type="note-symbol"</tag>
+should match the content of that note<char name="rsquo"/>s corresponding <gi>ref</gi>.</desc>
+<enforcement method="program" method-name="qa_lib_notes" message-type="warning">
+<remarks><p>The reason this rule applies to <char name="ldquo"/>POSTKB<char name="rdquo"/> only is that the vendor is
+not authorized to make corrections. If the note symbols on <gi>ref</gi> and
+<gi>note</gi> do not match due to a printing error, DLPS can correct it using
+<gi>corr</gi>; the vendor cannot.</p></remarks>
+</enforcement>
+</practice>
+
+<practice id="notes_nAtt" applies="POSTKB">
+<head><att key="n">n</att> attribute for notes</head>
+<desc>The <att>n</att> attribute is required on both the note
+reference (<gi key="ref">ref</gi> or <gi key="ptr">ptr/</gi>) and the note body
+(<gi key="note">note</gi>). Its value should be a label for display, which may or
+may not be equivalent to the note symbol transcribed from the print
+source (for note reference, content of <gi>ref</gi>; for note body,
+content of <gi>note</gi><tag>seg type="note-symbol"</tag>).</desc>
+<enforcement method="program" method-name="qa_lib_notes" message-type="error">
+<remarks><p>The QA program requires <att>n</att> on <gi>note</gi> (except in
+<gi>teiHeader</gi>), and also on <gi>ref</gi> and <gi>ptr/</gi>.</p>
+<p>Compliance with this practice is automated: The processing script
+<ref target="notes_n">notes_n</ref> programmatically adds the <att>n</att>
+attribute on <gi>note</gi>, <gi>ref</gi>, and <gi>ptr/</gi> elements.</p>
+</remarks>
+</enforcement>
+<reason category="delivery"><p>Facilitates delivery. If <att>n</att> is always present and
+always carries a label for display, delivery of notes is greatly
+facilitated, without interfering at all with the transcriptional
+content.</p></reason>
+</practice>
+
+<practice id="notes_nMatch" applies="POSTKB">
+<head><att key="n">n</att> on note reference vs. <att>n</att> on note body</head>
+<desc>The value of <att>n</att> on <gi key="note">note</gi> must match the
+value of <att>n</att> on that note<char name="rsquo"/>s corresponding <gi key="ref">ref</gi> or <gi key="ptr">ptr/</gi>.</desc>
+<enforcement method="program" method-name="qa_lib_notes" message-type="error"/>
+</practice>
+
+<practice id="notes_id" applies="VENDOR">
+<head><att key="id" element="note">id</att> required on <gi key="note">note</gi></head>
+<desc>The <att>id</att> attribute is required on <gi>note</gi>.</desc>
+<remarks>
+&note_id_remarks;
+</remarks>
+<enforcement method="dtd"/>
+</practice>
+
+<practice id="notes_place" applies="VENDOR">
+<head><att key="place" element="note">place</att> required on <gi key="note">note</gi></head>
+<desc>The <att>place</att> attribute is required on <gi>note</gi>.</desc>
+<remarks>
+&note_place_remarks;
+</remarks>
+<enforcement method="dtd">
+<remarks><p>The DTD requires <att>place</att> and enumerates the allowed values,
+but of course no DTD can ensure appropriate use of the allowed values.</p></remarks>
+</enforcement>
+</practice>
+
+<practice id="notes_teiHeader" applies="POSTKB">
+<head><att key="id" element="note">id</att> and <att key="place" element="note">place</att> on <gi key="note">note</gi></head>
+<desc>The <att>id</att> and <att>place</att> attributes are required
+on <gi>note</gi>, except in <gi key="teiHeader">teiHeader</gi>.</desc>
+<remarks>
+&note_id_remarks;
+&note_place_remarks;
+</remarks>
+<enforcement method="program" method-name="qa_lib_notes" message-type="error">
+<remarks><p>Because <gi>note</gi> is needed in <gi>teiHeader</gi>, the requirement of
+<att>id</att> and <att>place</att> cannot be DTD-enforced at the
+post-keyboarding stage (as it is for vendor markup). In the context of
+<gi>teiHeader</gi>, <att>id</att> is not necessary (no <gi>ref</gi>
+refers to the <gi>note</gi>) and <att>place</att> is not applicable
+(there is no physical placement, no print source for the note).</p></remarks>
+</enforcement>
+</practice>
+
+<practice id="notes_unanchored">
+<head>Unanchored notes</head>
+<desc>If a <gi key="note">note</gi> is unanchored (has no corresponding note
+reference <char name="mdash"/> that is, is pointed to by <gi key="ptr">ptr/</gi> rather than
+<gi key="ref">ref</gi>; typically marginal notes), include the
+<att key="anchored" element="note">anchored</att> attribute with value <val>no</val>.</desc>
+<exemplum applies="VENDOR">
+<xref url="examples/notes_ptr_vendor.html">page image and example markup</xref>
+</exemplum>
+<exemplum applies="POSTKB">
+<xref url="examples/notes_ptr_postkb.html">page image and example markup</xref>
+</exemplum>
+<enforcement method="program" method-name="qa_lib_notes" message-type="error"/>
+<reason><p>Explicitness; could facilitate delivery</p></reason>
+<seeAlso><ptr target="notes_ptr"/></seeAlso>
+</practice>
+
+<practice id="notes_multiple">
+<head>Multiple references to a single note</head>
+<desc>It is possible for multiple <gi key="ref">ref</gi> or
+<gi key="ptr">ptr/</gi> elements to point to a single
+<gi key="note">note</gi> element. In such cases, the <gi>note</gi>
+element should <emph>not</emph> be repeated. Instead, the
+<gi>note</gi> should be transcribed once and placed after the first
+<gi>ref</gi> or <gi>ptr/</gi> that points to that note.</desc>
+<exemplum applies="VENDOR">
+<xref url="examples/notes_ptr_vendor.html">page image and example markup</xref>
+</exemplum>
+<exemplum applies="POSTKB">
+<xref url="examples/notes_ptr_postkb.html">page image and example markup</xref>
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- OTHER BLOCK-LEVEL FEATURES      -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="blockMisc">
+<head>Other Block-level Features</head>
+
+<practice id="blockMisc_main">
+<head>Other features</head>
+<desc>Arguments, bibliographic citations, epigraphs, and trailers
+should be marked using the appropriate TEI elements.</desc>
+<exemplum>
+<p>An epigraph containing a quotation, along with attribution of its source:</p>
+
+<eg applies="VENDOR"><![CDATA[
+<epigraph>
+<cit>
+<q>"I have sworn upon the altar of God |
+eternal hostility against every form of tyranny |
+over the mind of man."</q>
+<bibl><author> &mdash; <i>Thomas Jefferson.</i></author></bibl>
+</cit>
+</epigraph>
+]]></eg>
+
+<eg applies="POSTKB"><![CDATA[
+<epigraph>
+<cit>
+<q>"I have sworn upon the altar of God <lb/>
+eternal hostility against every form of tyranny <lb/>
+over the mind of man."</q>
+<bibl><author> &mdash; <hi rend="italic">Thomas Jefferson.</hi></author></bibl>
+</cit>
+</epigraph>
+]]></eg>
+
+<p>A trailer:</p>
+<eg><![CDATA[
+<trailer>FINIS.</trailer>
+]]></eg>
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="blockMisc_argument">
+<head>Arguments</head>
+<desc>An <term key="argument">argument</term> is a block of content near the beginning of a
+<gi tei="no" key="div1 - div7">divN</gi> containing a summary or overview of that section. It is
+often (though certainly not always) presented as a series of topics separated
+by long dashes. An argument should be marked as an <gi key="argument">argument</gi>, not as a
+second <gi key="head">head</gi> or as the first <gi key="p">p</gi>.</desc>
+<exemplum>
+<p><xref url="examples/blockMisc_argument.html">page image</xref></p>
+<eg applies="VENDOR"><![CDATA[
+<div1 type="chapter" n="VIII">
+<pb n="101"/>
+<head>CHAPTER VIII.</head>
+]]><hi rend="attn"><![CDATA[<argument>]]></hi><![CDATA[
+<p><i>Absence of public and private Amusement&mdash;Churches |
+and Chapels&mdash;Influence of the Clergy&mdash;A Revival.</i></p>
+]]><hi rend="attn"><![CDATA[</argument>]]></hi><![CDATA[
+<p><smcap>I never</smcap> saw any people who appeared to live so |
+much without amusement as the Cincinnatians. |
+]]></eg>
+
+<eg applies="POSTKB"><![CDATA[
+<div1 type="chapter" n="VIII">
+<pb n="101"/>
+<head>CHAPTER VIII.</head>
+]]><hi rend="attn"><![CDATA[<argument>]]></hi><![CDATA[
+<p><hi rend="italic">Absence of public and private Amusement&mdash;Churches <lb/>
+and Chapels&mdash;Influence of the Clergy&mdash;A Revival.</hi></p>
+]]><hi rend="attn"><![CDATA[</argument>]]></hi><![CDATA[
+<p><hi rend="small-caps">I never</hi> saw any people who appeared to live so <lb/>
+much without amusement as the Cincinnatians. <lb/>
+]]></eg>
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+</practiceGroup>
+</practiceGroup>
+
+<!-- ====================================================================== -->
+<!-- PHRASE-LEVEL FEATURES                                                  -->
+<!-- ====================================================================== -->
+
+<practiceGroup id="phrase">
+<head>Phrase-level Features</head>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- TYPEFACE                        -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="typeface">
+<head>Changes in Typeface</head>
+
+<practice id="typeface_changes_vendor" applies="VENDOR">
+<head>Changes in typeface</head>
+<desc>With the exception of <ref target="foreign">foreign
+phrases</ref>, changes in typeface should be marked with the
+appropriate <emph>physical</emph> element, not with a
+<emph>logical</emph> element such as <gi key="emph">emph</gi>, <gi key="title">title</gi>,
+<gi key="term">term</gi>, <gi key="mentioned">mentioned</gi>, etc.</desc>
+<remarks>
+<p>When marking changes in typeface, the following elements
+should be used whenever applicable:</p>
+<list>
+<label>italics</label><item><gi tei="no" key="i">i</gi></item>
+<label>bold</label><item><gi tei="no" key="b">b</gi></item>
+<label>underline</label><item><gi tei="no" key="u">u</gi></item>
+<label>superscript</label><item><gi tei="no" key="sup">sup</gi></item>
+<label>subscript</label><item><gi tei="no" key="sub">sub</gi></item>
+<label>small capitals</label><item><gi tei="no" key="smcap">smcap</gi></item>
+</list>
+<p>For all other typographic changes, use <tag>hi rend="..."</tag>,
+using one of the following available values for the <att key="rend" element="hi">rend</att> attribute:</p>
+<list>
+<label><val>gothic</val></label><item></item>
+<label><val>line-through</val></label><item></item>
+<label><val>open</val></label><item></item>
+<label><val>overline</val></label><item></item>
+<label><val>red-letter</val></label><item></item>
+<label><val>roman</val></label><item>assumed and not normally necessary</item>
+<label><val>script</val></label><item></item>
+<label><val>slash-through</val></label><item></item>
+<label><val>other</val></label>
+<item>indicate rendering using the <att key="other" element="hi">other</att> attribute, as in:
+<tag key='hi rend="other"'>hi rend="other" other="..."</tag> (Of course, <gi key="hi">hi</gi> should
+be used in this way only as a last resort.)</item>
+</list>
+<p>The most common of these values is <val>gothic</val>, which should be used
+for the gothic or black-letter style of typeface. In modern printed books,
+gothic type is typically used to highlight a name or brief passage.</p>
+<p><xref url="examples/typeface_changes.html">page image</xref></p>
+<eg><![CDATA[
+<docImprint>
+<pubPlace>]]><hi rend="attn"><![CDATA[<hi rend="gothic">New York</hi>]]></hi><![CDATA[</pubPlace>
+<publisher>THE MACMILLAN COMPANY |
+LONDON: MACMILLAN &amp; CO., <smcap>Ltd.</smcap></publisher>
+<docDate>1899</docDate>
+<i>All rights reserved</i>
+]]></eg>
+</remarks>
+<enforcement method="dtd">
+<remarks><p>As a whole this practice is enforced, or at
+least greatly encouraged, by the DTD by way of (a) availability of
+convenience elements <gi>i</gi>, <gi>b</gi>, etc.; (b) controlled
+vocabulary on <att>rend</att>, which disallows values like <char name="ldquo"/>italic<char name="rdquo"/>
+<char name="ldquo"/>italics<char name="rdquo"/> <char name="ldquo"/>ital<char name="rdquo"/> etc.; (c) <att>rend</att> is required on
+<gi>hi</gi></p></remarks>
+</enforcement>
+</practice>
+
+<practice id="typeface_changes_postkb" applies="POSTKB">
+<head>Changes in typeface</head>
+<desc>With the exception of <ref target="foreign">foreign
+phrases</ref>, the vendor has been instructed to mark changes in
+typeface as <emph>physical</emph> changes, not with a
+<emph>logical</emph> element such as <gi key="emph">emph</gi>, <gi key="title">title</gi>,
+<gi key="term">term</gi>, <gi key="mentioned">mentioned</gi>, etc. At the post-keyboarding stage,
+this practice continues. For the sake of consistency, and as a matter
+of practical necessity, DLPS does not normally undertake the enhanced,
+logical markup of changes in typeface.</desc>
+<remarks>
+<p>The most common values for the <att key="rend" element="hi">rend</att> attribute on
+<gi key="hi">hi</gi> are:</p>
+<list>
+<item><val quoted="no">italic</val></item>
+<item><val quoted="no">bold</val></item>
+<item><val quoted="no">underline</val></item>
+<item><val quoted="no">super</val> <char name="mdash"/> superscript</item>
+<item><val quoted="no">sub</val> <char name="mdash"/> subscript</item>
+<item><val quoted="no">small-caps</val></item>
+<item><val quoted="no">gothic</val></item>
+</list>
+<p>Less common but valid values are:</p>
+<list>
+<item><val quoted="no">line-through</val></item>
+<item><val quoted="no">open</val></item>
+<item><val quoted="no">overline</val></item>
+<item><val quoted="no">red-letter</val></item>
+<item><val quoted="no">roman</val> <char name="mdash"/> assumed and not normally necessary</item>
+<item><val quoted="no">script</val></item>
+<item><val quoted="no">slash-through</val></item>
+<item><val quoted="no">other</val> <char name="mdash"/> indicate rendering using the
+<att key="other" element="hi">other</att> attribute, as in: <tag key='hi rend="other"'>hi rend="other"
+other="..."</tag> (Of course, <gi>hi</gi> should be used in this way
+only as a last resort.)</item>
+</list>
+<p>The value <val>gothic</val> should be used for the gothic or
+black-letter style of typeface. In modern printed books, gothic type
+is typically used to highlight a name or brief passage.</p>
+<p><xref url="examples/typeface_changes.html">page image</xref></p>
+<eg><![CDATA[
+<docImprint>
+<pubPlace>]]><hi rend="attn"><![CDATA[<hi rend="gothic">New York</hi>]]></hi><![CDATA[</pubPlace>
+<publisher>THE MACMILLAN COMPANY <lb/>
+LONDON: MACMILLAN &amp; CO., <hi rend="small-caps">Ltd.</hi></publisher>
+<docDate>1899</docDate>
+<hi rend="italic">All rights reserved</hi>
+]]></eg>
+</remarks>
+<enforcement machine-enforceable="no" enforced="no">
+<remarks><p>Enforced by the DTD in that
+<att>rend</att> is required on <gi>hi</gi>, and <att>rend</att> has an
+enumerated vocabulary. But as always, the appropriate use of
+<gi>hi</gi> and its available <att>rend</att> values is not
+machine-enforceable.</p></remarks>
+</enforcement>
+<reason><p>While ideally changes in typeface would always be encoded
+with the appropriate logical element, in practice this is not feasible
+for vendor-produced markup. The encoders may not be native speakers of
+English and should not be expected to make the appropriate semantic
+distinctions or determine the author<char name="rsquo"/>s rhetorical intention. Instead,
+such distinctions should be reserved for second-pass markup by a
+native speaker of English, perhaps even a subject-matter specialist.
+Note, however, that such second-pass markup is not a part of the DLPS
+workflow. Normally a text will receive such enhanced, logical markup
+only if someone outside DLPS (faculty member, Info Comm, Etext Center,
+etc.) happens to take an interest in the text and brings the resources
+(funding, staff, etc.) to undertake the additional markup.</p></reason>
+</practice>
+
+<practice id="typeface_smallCaps">
+<head>Small caps</head>
+<desc>Text that is printed in small caps should be transcribed using
+both upper-case and lower-case letters, <emph>not</emph> all
+upper-case letters.</desc>
+<exemplum>
+<p><xref url="examples/typeface_smallCaps.html">page image</xref></p>
+
+<eg applies="VENDOR"><![CDATA[
+<div2 type="chapter">
+<pb n="184"/>
+<head>CONNECTICUT.</head>
+<p>There was no press in this colony until 1709; and, I |
+believe, not more than four printing houses in it before |
+1775.</p>
+<div3 type="section">
+<head>]]><hi rend="attn"><![CDATA[<smcap>New London</smcap>]]></hi><![CDATA[.</head>
+<p>The first printing done in Connecticut was in that town; |
+<!-- continues -->
+]]></eg>
+
+<eg applies="POSTKB"><![CDATA[
+<div2 type="chapter">
+<pb n="184"/>
+<head>CONNECTICUT.</head>
+<p>There was no press in this colony until 1709; and, I <lb/>
+believe, not more than four printing houses in it before <lb/>
+1775.</p>
+<div3 type="section">
+<head>]]><hi rend="attn"><![CDATA[<hi rend="small-caps">New London</hi>]]></hi><![CDATA[.</head>
+<p>The first printing done in Connecticut was in that town; <lb/>
+<!-- continues -->
+]]></eg>
+
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+<!-- TODO: It would be possible for a program to check for all caps
+within <hi rend="small-caps">, but this is not a priority. -->
+<reason><p>This is the simplest way to distinguish the fully capitalized
+letters from the small-caps letters. The alternative method of marking
+small caps would be to mark only the small-caps letters, leaving the
+fully capitalized letters unmarked, for example:</p>
+<eg><![CDATA[H<hi rend="small-caps">ERE</hi>, A<hi rend="small-caps">BANDON</hi>
+A<hi rend="small-caps">LL</hi> H<hi rend="small-caps">OPE</hi>]]></eg>
+<p>rather than simply</p>
+<eg><![CDATA[<hi rend="small-caps">Here, Abandon All Hope</hi>]]></eg>
+<p>The former is ugly, tag-heavy, and unnecessary.</p></reason>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- ALIGNMENT AND INDENTATION       -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="alignIndent">
+<head>Alignment and Indentation</head>
+
+<practice id="alignIndent_main">
+<head>Representing alignment and indentation</head>
+<desc>When indicating alignment or indentation, use the <att key="rend">rend</att>
+attribute, either on structural elements
+(<gi key="p">p</gi>, <gi key="l">l</gi>, <gi key="cell">cell</gi>, <gi key="item">item</gi>, etc.) or on
+<gi key="hi">hi</gi>, as appropriate to the situation.</desc>
+
+<remarks>
+<p>For indicating alignment, the available <att>rend</att> values are:</p>
+<list>
+<label><val>center</val></label><item></item>
+<label><val>left</val></label><item>assumed and not normally necessary</item>
+<label><val>right</val></label><item></item>
+</list>
+<p>For indicating indentation, the available <att>rend</att> values are:</p>
+<list>
+<label><val>indent</val></label><item></item>
+<label><val>indent2</val>, <val>indent3</val>, <val>indent4</val>,
+<val>indent5</val></label>
+<item>for cases where more than one level of indentation needs to be
+recorded (Use these values sparingly, and only when <val>indent</val>
+has already been used. Normally these values are only needed when
+encoding lines of verse.)</item>
+<label><val>hang</val></label><item>for hanging indentation <char name="mdash"/>
+that is, when the first line of content is further <emph>left</emph>
+than subsequent lines; common in lists, such as indexes</item>
+</list>
+</remarks>
+
+<enforcement machine-enforceable="no" enforced="no">
+<remarks><p>Enforced by the DTD in the sense that <att>rend</att> has an
+enumerated vocabulary, but as always, the appropriate use of the available
+<att>rend</att> values is not machine-enforceable.
+<!-- I suppose a QA program could issue a warning if indent2 - indent5 is used
+without a preceding "indent" value, but that hardly seems a priority. -->
+</p></remarks>
+</enforcement>
+
+<reason><p>Originally the DTD Practices Group recommendations limited
+global <att>rend</att> to <val>block</val>, <val>inline</val>, or
+<val>none</val>, with the intention of encouraging the nesting of
+typographic markup within structural markup (for example,
+<usage><![CDATA[<p><hi rend="bold">...</hi></p>]]></usage> rather than
+<usage><![CDATA[<p rend="bold">...</p>]]></usage>), partly for inherent
+logical/semantic reasons and partly to facilitate writing stylesheets for
+delivery. In practice this came to seem counterintuitive for marking alignment and
+indentation, especially for marking lines of verse, where indentation
+markup is common. We decided to consider alignment and indentation as
+properties of the elements themselves, not as a form of highlighting
+(for example, <usage><![CDATA[<l rend="indent">...</l>]]></usage> is preferable
+to <usage><![CDATA[<l><hi rend="indent">...</hi></l>]]></usage>, since the line
+itself is indented; the text within the line is not being highlighted). That
+is, we decided to distinguish between display (<val>block</val>,
+<val>inline</val>, or <val>none</val>), alignment (<val>center</val>,
+<val>left</val>, or <val>right</val>), and indentation
+(<val>indent</val>, <val>indent2</val> etc., or <val>hang</val>) on
+the one hand, and typographic changes on the other.</p></reason>
+</practice>
+
+<practice id="alignIndent_defaults">
+<head>Default alignment</head>
+<desc>Some elements have a presumed or default alignment and do not
+normally require explicit alignment markup.</desc>
+<remarks>
+<list>
+<label><gi key="head">head</gi></label><item>center</item>
+<label><gi key="table">table</gi></label><item>center</item>
+<label><gi key="figure">figure</gi></label><item>center</item>
+<label>elements within <gi key="titlePage">titlePage</gi></label><item>center</item>
+<label><gi key="trailer">trailer</gi></label><item>center</item>
+<label><gi tei="no" key="ornament">ornament</gi></label><item>center</item>
+<label><gi key="dateline">dateline</gi></label><item>right</item>
+<label><gi key="salute">salute</gi> within <gi key="opener">opener</gi></label><item>left</item>
+<label><gi>salute</gi> within <gi key="closer">closer</gi></label><item>right, with some indentation toward the left</item>
+<label><gi key="signed">signed</gi></label><item>right</item>
+<label>all other elements</label><item>left</item>
+</list>
+<p>These elements should contain alignment markup <emph>only</emph>
+when the layout of the element on the printed page differs from the
+defaults listed above.</p>
+</remarks>
+<enforcement machine-enforceable="no" enforced="no">
+<remarks><p>This practice is unenforceable. Its usefulness (apart from saving
+keystrokes) depends entirely on the delivery system being aware of these default
+alignments.</p></remarks>
+</enforcement>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- FOREIGN PHRASES                 -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="foreign">
+<head>Foreign Phrases</head>
+
+<practice id="foreign_main">
+<head>Use of <gi key="foreign">foreign</gi></head>
+<desc>Words or phrases that are both (a) typographically distinct
+(usually in italics), and (b) not in the main language of the text,
+should be marked with the <gi>foreign</gi> element.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+<reason><p>The reasons for requiring that foreign phrases must be
+typographically distinct to warrant <gi>foreign</gi> are that (a) the
+keyboarding vendor can know unambiguously when to use
+<gi>foreign</gi>, and (b) if the phrase is not italicized or otherwise
+distinct, it is presumably so common as to have lost its foreign-ness,
+at least in the author<char name="rsquo"/>s (or copy editor<char name="rsquo"/>s, or typesetter<char name="rsquo"/>s)
+estimation.</p></reason>
+</practice>
+
+<practice id="foreign_lang">
+<head><att key="lang" element="foreign">lang</att> attribute on <gi key="foreign">foreign</gi></head>
+<desc>Whenever possible, include the <att>lang</att> attribute on
+<gi>foreign</gi>, using one of the standard
+<xref type="external" url="http://www.loc.gov/standards/iso639-2/langcodes.html">ISO 639-2
+three-character language codes</xref>. In cases where the language is not
+obvious, mark the phrase with <gi>foreign</gi> but omit <att>lang</att>.</desc>
+
+<remarks><p>Commonly used ISO 639-2 codes include:</p>
+<list>
+<label><val>fre</val></label><item>French</item>
+<label><val>ger</val></label><item>German</item>
+<label><val>grc</val></label><item>Greek, ancient (to 1453)</item>
+<label><val>gre</val></label><item>Greek, modern (1453- )</item>
+<label><val>heb</val></label><item>Hebrew</item>
+<label><val>ita</val></label><item>Italian</item>
+<label><val>lat</val></label><item>Latin</item>
+<label><val>rus</val></label><item>Russian</item>
+<label><val>spa</val></label><item>Spanish</item>
+</list>
+</remarks>
+<enforcement machine-enforceable="no" enforced="no">
+<remarks><p>While a QA program could issue a warning if a <gi>foreign</gi>
+element has no <att>lang</att> attribute, we have not deemed it a good use of
+the QA tech<char name="rsquo"/>s time to manually double-check/second-guess the vendor<char name="rsquo"/>s omission
+of the <att>lang</att> attribute.</p></remarks>
+</enforcement>
+</practice>
+
+<practice id="foreign_decl">
+<head>Declaring languages</head>
+<desc>Each language identified by a <att key="lang">lang</att> attribute (on <gi key="foreign">foreign</gi>, or
+on any other element) must be declared in a <gi key="language">language</gi> element within
+the <gi key="teiHeader">teiHeader</gi>.</desc>
+<exemplum>
+<p>In the <gi>teiHeader</gi>:</p>
+<eg><![CDATA[
+<profileDesc>
+<langUsage>
+<language id="eng" usage="main">English</language>
+]]><hi rend="attn"><![CDATA[<language id="fre">French</language>]]></hi><![CDATA[
+</langUsage>
+</profileDesc>
+]]></eg>
+<p>In the body of the text:</p>
+<eg applies="VENDOR"><![CDATA[
+This the reader is willing to |
+accept as a possible occurrence; but when she |
+goes on to say that having completed his dem- |
+onstration, this person triumphantly replaced |
+his pencil-case, and with his feet upon the chimney- |
+piece whistled Yankee Doodle, ]]><hi rend="attn"><![CDATA[<foreign lang="fre"><i>c'est un peu |
+trop fort</i></foreign>]]></hi><![CDATA[, and we are probably justified in set- |
+ting it down as a bit of literary colour.</p>
+]]></eg>
+
+<eg applies="POSTKB"><![CDATA[
+This the reader is willing to <lb/>
+accept as a possible occurrence; but when she <lb/>
+goes on to say that having completed his dem- <lb/>
+onstration, this person triumphantly replaced <lb/>
+his pencil-case, and with his feet upon the chimney- <lb/>
+piece whistled Yankee Doodle, ]]><hi rend="attn"><![CDATA[<foreign lang="fre"><hi rend="italic">c'est un peu <lb/>
+trop fort</hi></foreign>]]></hi><![CDATA[, and we are probably justified in set- <lb/>
+ting it down as a bit of literary colour.</p>
+]]></eg>
+</exemplum>
+<enforcement method="program" method-name="qa_lib_foreign" message-type="error">
+<remarks><p>Although the <att>lang</att> attribute is declared as type
+<datatype>IDREF</datatype>, a validating parser can only verify that
+the value of <att>lang</att> corresponds to an <datatype>ID</datatype>
+somewhere in the XML document. The QA program checks whether
+<att>lang</att> actually corresponds to a <tag key='language id="..."'>language id="..."</tag>
+within <xpath>teiHeader/profileDesc/langUsage</xpath>.</p></remarks>
+</enforcement>
+</practice>
+
+<practice id="foreign_hi_vendor" applies="VENDOR">
+<head>Retaining typographic distinction</head>
+<desc>Using the <gi key="foreign">foreign</gi> element does not
+eliminate the need to encode the change in typeface using
+<gi key="i">i</gi>, <gi>b</gi>, etc.</desc>
+<remarks><p>Since foreign phrases are usually italicized, typical
+markup for a foreign phrase will be:
+<usage><![CDATA[<foreign lang="..."><i>...</i></foreign>]]></usage></p></remarks>
+<enforcement method="program" method-name="qa_lib_foreign" message-type="warning"/>
+</practice>
+
+<practice id="foreign_hi_postkb" applies="POSTKB">
+<head>Retaining typographic distinction</head>
+<desc>Using the <gi key="foreign">foreign</gi> element does not eliminate
+the need to encode the change in typeface using <gi key="hi">hi</gi>.</desc>
+<remarks><p>Since foreign phrases are usually italicized, typical
+markup for a foreign phrase will be:
+<usage><![CDATA[<foreign lang="..."><hi rend="italic">...</hi></foreign>]]></usage></p></remarks>
+<enforcement method="program" method-name="qa_lib_foreign" message-type="warning"/>
+<reason><p>Explicitness. This approach is preferable to assuming that
+foreign content is italicized, on the same principle as avoiding the use of default values
+for attributes: if there<char name="rsquo"/>s a default value, encoders tend to ignore
+the attribute altogether and thus forget to use it when it<char name="rsquo"/>s actually
+applicable, resulting in erroneous (or missing) markup.</p></reason>
+</practice>
+
+<practice id="foreign_nonRoman">
+<head>Not roman but not Asian</head>
+<desc>Languages such as Greek, Hebrew, and Russian fall into a special
+category. They require non-roman characters, but they are alphabetic,
+not ideographic. If the language is within the vendor<char name="rsquo"/>s capabilities,
+the foreign content should be included in the electronic
+transcription. If the language is not within the vendor<char name="rsquo"/>s
+capabilities, omit the characters from the transcription and use the
+<gi key="gap">gap/</gi> element to mark the location of the omitted
+characters.</desc>
+<remarks><p>When transcribing these kinds of languages, use the
+appropriate character entities, when available (namely Greek), or XML
+character references with Unicode hexadecimal values:</p>
+<list>
+<label>Greek</label>
+<item>Use the iso-grk1.ent character entities, supplemented as needed
+by the accented characters in iso-grk2.ent</item>
+<label>Hebrew</label>
+<item>Use the Hebrew block of Unicode (0590 - 05FF)</item>
+<label>Russian</label>
+<item>Use the Cyrillic block of Unicode (0400 - 04FF)</item>
+</list>
+</remarks>
+<enforcement machine-enforceable="no" enforced="no"/>
+<seeAlso>
+<ptr target="gaps_gap"/>
+<ptr target="charent"/>
+</seeAlso>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- PUNCTUATION                     -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="punctuation">
+<head>Punctuation</head>
+
+<practice id="punctuation_standard">
+<head>Standard keyboard punctuation</head>
+<desc>Most common punctuation characters can and should be represented
+using their normal keyboard characters.</desc>
+<remarks>
+<list>
+<label>exclamation point</label><item> !</item>
+<label>dollar sign</label><item> $</item>
+<label>percent sign</label><item> %</item>
+<label>asterisk</label><item> *</item>
+<label>opening and closing parentheses</label><item> ( )</item>
+<label>hyphen</label><item> -</item>
+<label>opening and closing square brackets</label><item> [ ]</item>
+<label>opening and closing braces</label><item> { }</item>
+<label>colon</label><item> :</item>
+<label>semicolon</label><item> ;</item>
+<label>double quotation mark</label><item> "</item>
+<label>single quotation mark and apostrophe</label><item> '</item>
+<label>comma</label><item> ,</item>
+<label>period</label><item> .</item>
+<label>solidus (forward slash)</label><item> /</item>
+<label>question mark</label><item> ?</item>
+</list>
+</remarks>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="punctuation_charent">
+<head>Use of character entities</head>
+<desc>Marks of punctuation other than those listed above must be
+represented using their standard character entities.</desc>
+<remarks>
+<list>
+<label>ampersand</label>
+<item> <![CDATA[&amp;]]> (as required by XML)</item>
+<label>vertical bar</label>
+<item> <![CDATA[&verbar;]]> (since the vendor is required to use the vertical
+bar character ( | ) to represent line breaks; see <ptr target="lb"/>)</item>
+<label>em dash</label>
+<item> <![CDATA[&mdash;]]> (long dash)</item>
+<label>en dash</label>
+<item> <![CDATA[&ndash;]]> (medium-length dash, often used to indicate
+a range, for example: <usage><![CDATA[1783&ndash;1804]]></usage>)</item>
+</list>
+<p>Other marks of punctuation are available in the <filename>iso-num.ent</filename>,
+<filename>iso-pub.ent</filename>, and <filename>iso-tech.ent</filename> character
+entity sets. See <ptr target="charent"/>.</p>
+</remarks>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="punctuation_ellipses">
+<head>Ellipses</head>
+<desc>An ellipse <char name="mdash"/> a series of dots or asterisks indicating
+deliberately omitted text <char name="mdash"/> should be indicated by a series of
+keyboard-character periods or asterisks. Simply use the same number of
+periods or asterisks used in the print source.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="punctuation_longSpaces">
+<head>Long spaces</head>
+<desc>If the print source contains an exceptionally long space that
+needs to be preserved (for example, to indicate a word deliberately
+omitted by the author), use a series of <![CDATA[&emsp;]]> (em space)
+entities.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="punctuation_sentenceSpacing">
+<head>Spacing between sentences</head>
+<desc>Use one space character between sentences, not two, regardless
+of the apparent spacing in the print source.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+<reason><p>Saves keystrokes. Multiple spaces will be collapsed to a
+single space by web browsers at the point of delivery anyway.</p></reason>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- DATES                           -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="dates">
+<head>Dates</head>
+
+<practice id="dates_value">
+<head>Date values</head>
+<desc>On <gi key="date">date</gi>, the <att key="value" element="date">value</att> attribute is required. On
+<gi key="dateRange">dateRange</gi>, the <att key="to" element="dateRange">to</att> and <att key="from" element="dateRange">from</att> attributes
+are required.</desc>
+<enforcement method="dtd"/>
+&reason_date;
+</practice>
+
+<practice id="dates_format">
+<head>Standardized date formats</head>
+<desc>The values of attributes where the datatype is <datatype>%ISO-date;</datatype> <char name="mdash"/>
+namely <att key="value" element="date">value</att> on <gi key="date">date</gi>, and <att key="to" element="dateRange">to</att> and
+<att key="from" element="dateRange">from</att> on <gi key="dateRange">dateRange</gi> <char name="mdash"/> must be in one of the
+machine-readable formats listed below.</desc>
+<remarks>
+	<p>Formats:</p>
+	<list>
+		<item>YYYY-MM-DD</item>
+		<item>YYYY-MM</item>
+		<item>YYYY</item>
+		<item>-MM-DD</item>
+		<item>--DD</item>
+	</list>
+	<p>BC/BCE dates are represented in the same way, but prefixed with a "B".</p>
+	<eg>&lt;date value="B233" type="death">d. 233 B.C.&lt;/date></eg>
+</remarks>
+<exemplum>
+<eg>&lt;date value="1901-08-04">4 Aug., 1901&lt;/date></eg>
+<eg>&lt;date value="1870-03">March 1870&lt;/date></eg>
+<eg>&lt;date value="2003">2003&lt;/date></eg>
+<eg>&lt;date value="-01-20">Jan. 20th&lt;/date></eg>
+</exemplum>
+<enforcement method="program" method-name="qa_dates" message-type="error"/>
+&reason_date;
+</practice>
+</practiceGroup>
+
+<practiceGroup id="phraseMisc">
+<head>Other Phrase-level Features</head>
+
+<practice id="phraseMisc_formulas">
+<head>Mathematical formulas</head>
+<desc>Short mathematical or scientific formulas should be represented
+textually using the <gi key="formula">formula</gi> element. For long
+or complex formulas, omit the textual representation and instead
+represent the formula as a graphic using the <gi key="figure">figure</gi>
+element.</desc>
+<remarks>
+<p>Within <gi>formula</gi>, mark superscript or subscript text in the
+usual way. Include the required <att key="notation" element="formula">notation</att>
+attribute with the value <val>informal</val>.</p>
+<p>When using <gi>figure</gi> to represent a long formula, if the
+formula is printed within the flow of the surrounding text, use
+<att key="rend" element="figure">rend</att>=<val>inline</val>. If the
+formula is set off by line breaks, use <att>rend</att>=<val>block</val>.</p>
+</remarks>
+<exemplum>
+<p><xref url="examples/phraseMisc_formulas.html">page image</xref></p>
+<eg applies="VENDOR"><![CDATA[
+knew not enough mathematics even to figure a formula beyond |
+the schoolboy ]]><hi rend="attn"><![CDATA[<formula notation="informal">s=gt<sup>2</sup> / 2</formula>]]></hi><![CDATA[. If 
+Kepler and Newton could take liberties |
+with the sun and moon, an obscure person in a remote wilderness |
+like La Fayette Square could take liberties with Congress, and |
+venture to multiply half its attraction into the square of its time. |
+]]></eg>
+<eg applies="POSTKB"><![CDATA[
+knew not enough mathematics even to figure a formula beyond <lb/>
+the schoolboy ]]><hi rend="attn"><![CDATA[<formula notation="informal">s=gt<hi rend="super">2</hi> / 2</formula>]]></hi><![CDATA[. If
+Kepler and Newton could take liberties <lb/>
+with the sun and moon, an obscure person in a remote wilderness <lb/>
+like La Fayette Square could take liberties with Congress, and <lb/>
+venture to multiply half its attraction into the square of its time. <lb/>
+]]></eg>
+<p>Although the formula shown here is short and simple enough to be represented
+using <gi>formula</gi>, if it were a long or complex formula requiring
+<gi>figure</gi>, the markup would be as follows:</p>
+<eg applies="VENDOR"><![CDATA[
+knew not enough mathematics even to figure a formula beyond |
+the schoolboy ]]><hi rend="attn"><![CDATA[<figure rend="inline"/>]]></hi><![CDATA[. If Kepler and Newton could take liberties |
+with the sun and moon, an obscure person in a remote wilderness |
+like La Fayette Square could take liberties with Congress, and |
+venture to multiply half its attraction into the square of its time. |
+]]></eg>
+<eg applies="POSTKB"><![CDATA[
+knew not enough mathematics even to figure a formula beyond <lb/>
+the schoolboy ]]><hi rend="attn"><![CDATA[<figure rend="inline"/>]]></hi><![CDATA[. If Kepler and Newton could take liberties <lb/>
+with the sun and moon, an obscure person in a remote wilderness <lb/>
+like La Fayette Square could take liberties with Congress, and <lb/>
+venture to multiply half its attraction into the square of its time. <lb/>
+]]></eg>
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+<reason><p>The goal here is simply to provide a mechanism for
+<emph>informal</emph> textual representation of the occasional
+mathematical formula in prose humanities texts. The textual
+representation is human-readable, the flow of the narrative is not
+interrupted, and there is no need to refer the reader to the page
+image (which would otherwise be necessary, because DLPS does not
+provide cropped, bitonal figure images for inline display).</p></reason>
+</practice>
+</practiceGroup>
+</practiceGroup>
+
+
+<!-- ====================================================================== -->
+<!-- REFERENCE SYSTEMS                                                      -->
+<!-- ====================================================================== -->
+
+<practiceGroup id="refSys">
+<head>Reference Systems</head>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- PAGE BREAKS                     -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="pb">
+<head>Page Breaks</head>
+
+<practice id="pb_top">
+<head>Marks beginning of page</head>
+<desc>The <gi key="pb">pb/</gi> element marks the point at which a page begins,
+and so the <gi>pb/</gi> element should always be placed at the top or
+beginning of the markup for that page, regardless of the position of
+the printed page number in the print source.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="pb_n">
+<head>Page numbers</head>
+<desc>If the page contains a printed page number, record it in the <att key="n" element="pb">n</att>
+attribute; if not, do not include the <att>n</att> attribute.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="pb_corr" applies="POSTKB">
+<head>Page number corrections</head>
+<desc>In cases where it is necessary to correct a page number (or add
+any other markup to a page number), insert an <gi key="fw">fw</gi> (form work)
+element within the <gi key="pb">pb</gi> element, and use <gi key="corr">corr</gi> as
+usual to make the correction. Put the correct number in the <att key="n" element="pb">n</att>
+attribute.</desc>
+<exemplum><eg><![CDATA[
+<pb n="242"/>
+<!-- ... -->
+<pb n="243"><fw type="pageno"><corr resp="gpm2a" sic="242">243</corr></fw></pb>
+<!-- ... -->
+<pb n="244"/>
+]]></eg></exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+<reason><p>We do not consider the <att>n</att> attribute on
+<gi>pb</gi> to be a transcriptional space; <att>n</att> is actually
+just a label for display. The <att>n</att> attribute is the most
+convenient and traditional place to record the page number, but in
+cases where tagging is needed around a page number, it is not possible
+in XML to add that tagging within an attribute value. For these reasons,
+we have opted to allow <gi>fw</gi> within <gi>pb</gi>. This approach
+is comparable to the distinction between printed note reference symbols
+and the <att>n</att> attribute on <gi>note</gi>. See
+<ptr target="notes_symbols_postkb"/>.</p></reason>
+<seeAlso>
+<ptr target="corr"/>
+<ptr target="pb_headers"/>
+</seeAlso>
+</practice>
+
+<practice id="pb_inDiv">
+<head>Always within a div</head>
+<desc>Page breaks must be placed within a <gi tei="no" key="div1 - div7">divN</gi>
+element, never between divisions. Therefore, when a division starts on
+a new page, the <gi key="pb">pb</gi> is the first element in the division,
+immediately following the opening <gi tei="no">divN</gi> tag
+(preceding even the division <gi key="head">head</gi>, if there is one).</desc>
+<exemplum><eg><![CDATA[
+</div2>
+<div2 type="chapter" n="II">
+]]><hi rend="attn"><![CDATA[<pb/>]]></hi><![CDATA[
+<head>II&mdash;APPELLATIONS.</head>
+]]></eg></exemplum>
+<enforcement machine-enforceable="no" enforced="no">
+<remarks><p>The DTD disallows <gi>pb</gi>
+outside a div, but there is no way for the DTD to control exact
+placement of those <gi>pb</gi> elements within the div.</p></remarks>
+</enforcement>
+<exceptions type="newspapers">
+<p>The exception to this rule is newspapers, where the use of
+<gi>pb/</gi> is reversed: <gi>pb/</gi> is required to occur
+<emph>outside</emph> of any <gi tei="no">divN</gi> (<gi>pb/</gi>
+is allowed only within <gi>body</gi>). This practice simply
+fits better with the nature of printed newspapers, where each page
+contains large amounts of text divided into numerous different divs,
+and where a div almost never continues to the next page uninterrupted.</p>
+</exceptions>
+</practice>
+
+<practice id="pb_blank">
+<head>Blank pages</head>
+<desc>There must be one <gi key="pb">pb</gi> element for every page in the set
+of page images for the work. This is true even for pages that have no
+textual or graphical content on them. If a blank page occurs between
+divs, place the blank page<char name="rsquo"/>s <gi>pb</gi> element as the last page of
+the preceding div, not as the first page of the new div.</desc>
+<exemplum><eg><![CDATA[
+<!-- end of last chapter --></p>
+]]><hi rend="attn"><![CDATA[<pb/>]]></hi><![CDATA[ <!-- blank page between last chapter and bibliography -->
+</div1>
+</body>
+<back>
+<div1 type="bibliography">
+<pb/>
+<head>BIBLIOGRAPHY</head>
+]]></eg></exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="pb_headers">
+<head>Running page headers</head>
+<desc>Normally running page headers should be excluded from the
+electronic text, but in some cases (namely, when the running headers
+contain unique content not already available elsewhere in the
+transcription, such as a summary of that page<char name="rsquo"/>s content) DLPS will
+specifically require that the running headers be preserved. To encode
+the running headers, use <tag key='fw type="header"'>fw type="header"</tag> within
+<gi key="pb">pb</gi>.</desc>
+<exemplum>
+<eg><![CDATA[
+<pb n="99"><fw type="header">APPEAL TO CHURCHES OF MASSACHUSETTS</fw></pb>
+]]></eg>
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- COLUMN BREAKS                   -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="cb">
+<head>Column Breaks</head>
+
+<practice id="cb_main">
+<head>Use of <gi key="cb">cb/</gi></head>
+<desc>If the print source has a single-column layout, it is not
+necessary to mark the column at all. For materials with multiple
+columns, use <gi>cb/</gi> to mark the beginning of each
+column on each page.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="cb_top">
+<head>Marks beginning of column</head>
+<desc>Like <gi>pb/</gi> (page break), which always marks the beginning
+of the page, <gi key="cb">cb/</gi> should always mark the top or beginning of
+the column of text.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+<seeAlso><ptr target="pb_top"/></seeAlso>
+</practice>
+
+<practice id="cb_n">
+<head><att key="n" element="cb">n</att> attribute</head>
+<desc>Use the <att>n</att> attribute on <gi key="cb">cb/</gi>to record the
+number of the column on the page. For example, if each page contains two columns,
+the first (left) column on each page is <usage><![CDATA[<cb n="1"/>]]></usage>, and
+the second (right) column is <usage><![CDATA[<cb n="2"/>]]></usage>.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="cb_mixed">
+<head>Mixed column layouts</head>
+<desc>In cases where the number of columns changes mid-page, use the
+<gi tei="no" key="cols">cols/</gi> element to indicate the point at which the number of
+columns changes. Use the <att key="n" element="cols">n</att> attribute to indicate the number
+of columns in the section that follows the <gi>cols/</gi> tag.</desc>
+<remarks><p>For example, if the page layout shifts from single-column
+to double-column in the midst of the page, use <usage><![CDATA[<cols n="2"/>]]></usage>
+to indicate the point at which double-column layout begins (and then
+use <usage><![CDATA[<cb n="1"/>]]></usage> and <usage><![CDATA[<cb n="2"/>]]></usage> to mark the columns,
+as usual). At the point where the layout shifts back to single-column
+text, use <usage><![CDATA[<cols n="1"/>]]></usage> (after which no <gi key="cb">cb/</gi> elements
+are necessary, since the layout is single-column).</p>
+<admon type="note">
+<p>A division <gi key="head">head</gi> followed by a multi-column layout does not
+indicate a mixed-column layout and does not require <tag>cols
+n="..."/</tag>.</p>
+<p>
+<xref applies="VENDOR" url="examples/cb_mixedNot_vendor.html">page image and example markup</xref>
+<xref applies="POSTKB" url="examples/cb_mixedNot_postkb.html">page image and example markup</xref>
+</p>
+</admon>
+</remarks>
+<exemplum applies="VENDOR">
+<xref url="examples/cb_mixed_vendor.html">page image and example markup</xref>
+</exemplum>
+<exemplum applies="POSTKB">
+<xref url="examples/cb_mixed_postkb.html">page image and example markup</xref>
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- LINE BREAKS                     -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="lb">
+<head>Line Breaks</head>
+
+<practice id="lb_main_vendor" applies="VENDOR">
+<head>Line breaks</head>
+<desc>Line breaks in running prose should be preserved in the
+electronic transcription by marking the end of each printed line with
+the | (vertical bar) character (standing in for the <gi key="lb">lb/</gi>
+element).</desc>
+<remarks>
+<admon type="note"><p>If the vertical bar character appears in the
+content of the text itself, use the <usage><![CDATA[&verbar;]]></usage> character
+entity to represent it.</p></admon>
+</remarks>
+<exemplum>
+<xref url="examples/lb_main_vendor.html">page image and example markup</xref>
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+<seeAlso><ptr target="verse_lb_vendor"/></seeAlso>
+</practice>
+
+<practice id="lb_main_postkb" applies="POSTKB">
+<head>Line breaks</head>
+<desc>Line breaks in running prose should be preserved in the
+electronic transcription by marking the end of each printed line with
+<gi key="lb">lb/</gi>.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+<seeAlso><ptr target="verse_lb_postkb"/></seeAlso>
+</practice>
+</practiceGroup>
+</practiceGroup>
+
+<!-- ====================================================================== -->
+<!-- SPECIAL CONSIDERATIONS                                                 -->
+<!-- ====================================================================== -->
+
+<practiceGroup id="special">
+<head>Special Considerations</head>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- GAPS AND UNCLEARS               -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="gaps">
+<head>Gaps and Uncertainties</head>
+
+<practice id="gaps_gap">
+<head>Use of <gi key="gap">gap/</gi></head>
+<desc>Use <gi>gap/</gi> to mark any section (character, word, passage,
+page, etc.) that is being omitted from the transcription.</desc>
+<remarks>
+<p>There are two reasons for such omissions: the section is missing
+(as happens with torn or missing pages), or it has been excluded
+deliberately for editorial reasons. In particular, a block of
+non-Western characters in a language outside the vendor<char name="rsquo"/>s capabilities
+should be marked as a <gi>gap/</gi>. Use one <gi>gap/</gi> element for
+each unbroken section of content that is being excluded from the
+electronic transcription.</p>
+</remarks>
+<exemplum applies="VENDOR">
+<xref url="examples/gaps_gap_vendor.html">Example of use of <gi>gap/</gi> for non-Western characters</xref>
+</exemplum>
+<exemplum applies="POSTKB">
+<xref url="examples/gaps_gap_postkb.html">Example of use of <gi>gap/</gi> for non-Western characters</xref>
+</exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+<seeAlso><ptr target="general_allContent"/><!--<ptr target="foreign_nonRoman"/>--></seeAlso>
+</practice>
+
+<practice id="gaps_desc">
+<head><att key="desc" element="gap">desc</att> and <att key="reason" element="gap">reason</att> attributes on <gi key="gap">gap/</gi></head>
+<desc>The <att>desc</att> (description) and <att>reason</att>
+attributes are required on <gi>gap/</gi>.</desc>
+<remarks><p>The value of <att>desc</att> should be a brief description
+of the content being omitted from the transcription. The
+<att>reason</att> attribute accepts these values:</p>
+<list>
+<label><val>editorial</val></label>
+<item>the section is omitted deliberately for editorial reasons (for
+example, non-Western characters)</item>
+<label><val>damage</val></label>
+<item>the section is omitted because of damage to the physical page
+(for example, a torn page)</item>
+<label><val>missing</val></label>
+<item>the section is missing entirely (for example, a missing
+page)</item>
+<label><val>other</val></label>
+<item>indicate the reason in the <char name="ldquo"/>other<char name="rdquo"/> attribute, as in:
+<usage><![CDATA[<gap desc="..." reason="other" other="..."/>]]></usage></item>
+</list>
+</remarks>
+<exemplum>
+<eg><![CDATA[<gap desc="Chinese characters" reason="editorial"/>]]></eg>
+<eg><![CDATA[<gap desc="page 43, line 17 to end of page" reason="damage"/>]]></eg>
+</exemplum>
+<enforcement method="dtd"/>
+<reason><p>Explicitness</p></reason>
+</practice>
+
+<practice id="gaps_unclear_vendor" applies="VENDOR">
+<head>Use of <gi key="unclear">unclear</gi></head>
+<desc>Use <gi>unclear</gi> to mark passages that cannot be transcribed
+with certainty, as happens when a letter/word/phrase is physically
+present on the page but is <emph>unreadable</emph> (due to a printing
+error, physical damage to the page such as readers<char name="rsquo"/> marks, or a bad
+scan).</desc>
+
+<remarks>
+<p>When marking an illegible letter/word/phrase as unclear, transcribe
+the readable characters, omit the unreadable characters, and mark the
+entire word or phrase with <usage><![CDATA[<unclear>...</unclear>]]></usage>.</p>
+<eg><![CDATA[
+lost, wounded or captured in a fruitless and |
+<unclear>opeless</unclear> assault. |           <-- ok
+
+lost, wounded or captured in a fruitless and |
+<unclear/>opeless assault. |                    <-- wrong
+]]></eg>
+<p>If a word or phrase is so illegible that none of its characters can
+be read with certainty, use an empty <gi>unclear/</gi> element to mark the
+point at which the word or phrase occurs.</p>
+<eg><![CDATA[
+instead of his sargeant; and therefore no regiment |
+<unclear/> to be seen in which there are not soldiers in |
+]]></eg>
+</remarks>
+<enforcement machine-enforceable="no" enforced="no"/>
+<reason><p>Although ultimately we do not want partial words in the
+transcription, experience has shown that it is preferable for the
+vendor to do the best it can (transcribe all legible characters) and
+let us handle the unclears on our end as part of post-keyboarding
+processing.</p></reason>
+</practice>
+
+<practice id="gaps_unclear_postkb" applies="POSTKB">
+<head>Use of <gi key="unclear">unclear</gi></head>
+<desc>Use <gi>unclear</gi> to mark passages that cannot be transcribed
+with certainty, as happens when a letter/word/phrase is physically
+present on the page but is <emph>unreadable</emph> (due to a printing
+error, physical damage to the page such as readers<char name="rsquo"/> marks, or a bad
+scan).</desc>
+<remarks>
+<p>When working with words or phrases marked by the vendor as
+<gi>unclear</gi>, follow these guidelines:</p>
+<list>
+<item>If a word marked as <gi>unclear</gi> by the vendor is actually
+legible (as can happen when a bad page image is rescanned and replaced
+only after the page images have shipped to the vendor), simply supply
+the characters necessary to complete the word and remove the
+<tag>unclear</tag> start-tag and <tag>/unclear</tag> end-tag.</item>
+<item>If the word is unclear but a reasonable supposition can be made
+as to the intended word, supply the characters necessary to complete
+the word, but leave the <tag>unclear</tag> and <tag>/unclear</tag>
+markup in place.</item>
+<item>If the word is so illegible that no reasonable supposition can
+be made, remove the entire illegible word/phrase and replace it with
+an empty <tag>unclear/</tag> element.</item>
+</list>
+</remarks>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- ARBITRARY SECTIONS              -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="arbitrary">
+<head>Arbitrary Sections</head>
+
+<practice id="arbitrary_main">
+<head>Arbitrary sections</head>
+<desc>When none of the standard TEI elements is appropriate for a
+particular textual feature, use <gi key="ab">ab</gi> if the feature is a block
+element or <gi key="seg">seg</gi> if the feature is within a containing block
+element.</desc>
+<remarks>
+<p>In texts with complex structure or layout, the encoder is likely to
+encounter block-level sections or phrase-level passages that are
+difficult to fit into any of the standard TEI elements. In such cases,
+it may be best to take advantage of TEI<char name="rsquo"/>s elements for arbitrary
+sections:</p>
+<list>
+<label><gi>ab</gi></label>
+<item>(anonymous block) occurs at the block level (at same level as
+<gi>p</gi>, <gi>table</gi>, <gi>list</gi>, etc.)</item>
+<label><gi>seg</gi></label>
+<item>(segment) occurs at the phrase level (within <gi>p</gi>,
+<gi>cell</gi>, <gi>item</gi>, etc.)</item>
+</list>
+<p>Both of these elements accept the <att key="type">type</att> attribute with
+any value (no predefined vocabulary).</p>
+<p>Although these elements should be used sparingly, they are very
+useful when genuinely needed.</p>
+<admon type="important"><p>It is better to use <gi>ab</gi> or
+<gi>seg</gi>, when appropriate, than to inject inappropriate markup
+<char name="mdash"/> such as <gi tei="no" key="div1 - div7">divN</gi> elements that do not truly
+reflect the major structural divisions of the work, or <gi key="p">p</gi>
+elements that are not really paragraphs <char name="mdash"/> for the sake of
+<char name="ldquo"/>making it parse.<char name="rdquo"/></p></admon>
+<p>If a work contains a particularly problematic feature for which the
+preferred encoding is not clear, ask DLPS for further guidance.</p>
+</remarks>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+</practiceGroup>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- SPECIAL CHARACTERS              -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<practiceGroup id="charent">
+<head>Special Characters</head>
+
+<practice id="charent_sets">
+<head>Character-entity sets</head>
+<desc>Character-entity sets are not declared in the external
+DTD. Instead, you will need to declare and invoke any entity sets
+required by a given document in the document<char name="rsquo"/>s internal subset.</desc>
+<remarks>
+<p>Although the character-entity files can be invoked using disk paths,
+we prefer the use of URLs, so that the document points to the
+latest version of the DTD and character-entity files.</p>
+<eg><![CDATA[
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % ISOtech SYSTEM "http://text.lib.virginia.edu/charent/iso-tech.ent"> %ISOtech;
+]>
+]]></eg>
+<p>The usual ISO 8879 (SGML) entity sets are included with the
+DLPS DTD files. Please do not
+use your own local versions of the ISO 8879 entity sets, as our
+versions include corrections, as well as a supplementary set
+containing characters not available in the standard sets
+(<filename>uva-supp.ent</filename>).</p>
+</remarks>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="charent_nonStandard">
+<head>Characters not in a standard entity set</head>
+<desc>Use the named (mnemonic) entities from the DLPS-supplied entity
+sets whenever possible, but if a particular character is not in one of
+the DLPS-supplied entity sets, declare a new character entity that
+resolves either to the appropriate Unicode character, or to a
+combination of a standard character and a Unicode combining
+diacritic.</desc>
+<remarks>
+<p>If a character is not available in any of the DLPS-supplied entity
+sets (don<char name="rsquo"/>t forget to check
+<filename>uva-supp.ent</filename> as well as the ISO 8879 sets), it
+may nevertheless be available as a
+<xref type="external" url="http://www.unicode.org/charts/">Unicode</xref>
+character. In such cases, identify the correct Unicode character and
+declare it as an entity with an appropriate human-readable name.</p>
+<p>In some cases, a particular character is not available in
+Unicode. It is usually possible, however, to create the needed
+character by combining a standard character with one of the
+<xref type="external" url="http://www.unicode.org/charts/PDF/U0300.pdf">Unicode
+combining diacritics</xref> (block 0300<char name="ndash"/>036F of Unicode).</p>
+<p>
+<xref applies="VENDOR" url="examples/charent_nonStandard_vendor.html">page image and example markup</xref>
+<xref applies="POSTKB" url="examples/charent_nonStandard_postkb.html">page image and example markup</xref>
+</p>
+</remarks>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+</practiceGroup>
+</practiceGroup>
+
+
+<!-- ====================================================================== -->
+<!-- CORRECTIONS                                                            -->
+<!-- ====================================================================== -->
+
+<practiceGroup id="corr" applies="POSTKB">
+<head>Corrections</head>
+
+<practice id="corr_revisionDesc">
+<head>Adding to the file<char name="rsquo"/>s revision history</head>
+<desc>Before undertaking any significant markup correction or enhancement, add a
+<gi key="change">change</gi> entry to the file<char name="rsquo"/>s <gi key="revisionDesc">revisionDesc</gi> (the last
+major element within <gi key="teiHeader">teiHeader</gi>).</desc>
+<remarks>
+<p>In the <gi key="name">name</gi> element, include your first and last name (not
+just initials). Include the <att key="id" element="name">id</att> attribute, using your UVa
+computing ID (which can then be used for the <att key="resp" element="corr">resp</att> attribute
+on <gi key="corr">corr</gi> when making corrections; see <ptr target="corr_resp"/>).</p>
+</remarks>
+<exemplum><eg><![CDATA[
+</profileDesc>
+<revisionDesc>
+<change>
+<date value="2005-03-08">March 8, 2005</date>
+<respStmt>
+<name id="gpm2a">Greg Murray (Digital Library Production Services,
+University of Virginia Library)</name>
+<resp>corrector</resp>
+</respStmt>
+<item><p>Converted markup to validate against the DLPS DTD (uva-dl-tei)
+in its post-keyboarding mode. Overhauled div structures. Corrected
+note-related problems when encountered. Corrected minor printing
+errors.</p></item>
+</change>
+</revisionDesc>
+</teiHeader>
+]]></eg></exemplum>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="corr_main">
+<head>Use of <gi key="corr">corr</gi></head>
+<desc>If the print source contains a blatant error, the error can and
+should be corrected in the electronic text. When making corrections,
+always use the <gi>corr</gi> element to mark the content that has been
+changed.</desc>
+<enforcement machine-enforceable="no" enforced="no"/>
+</practice>
+
+<practice id="corr_sic">
+<head><att key="sic" element="corr">sic</att> attribute on <gi key="corr">corr</gi></head>
+<desc>Whenever possible, include the <att>sic</att> attribute on
+<gi>corr</gi>; its value should be the original, uncorrected
+word/phrase from the print source.</desc>
+<remarks><p> Normally the only time <att>sic</att> should be missing
+is when correcting an error of omission, in which case there is
+nothing to record in the <att>sic</att> attribute.</p></remarks>
+<enforcement method="program" method-name="qa_lib_corr" message-type="warning"/>
+</practice>
+
+<practice id="corr_resp">
+<head><att key="resp" element="corr">resp</att> attribute on <gi key="corr">corr</gi></head>
+<desc>When making corrections, include the <att>resp</att> (responsibility)
+attribute on <gi>corr</gi>. Its value should correspond to the
+<att key="id" element="name">id</att> attribute of a
+<gi key="name">name</gi> element within a <gi key="respStmt">respStmt</gi>
+in the <gi key="teiHeader">teiHeader</gi>.</desc>
+<remarks>
+<p>The typical scenario is to add an entry to the revision history for
+the file in <xpath>teiHeader/revisionDesc</xpath> (see <ptr target="corr_revisionDesc"/>),
+then use <att>resp</att> to record responsibility for corrections.</p>
+<eg><![CDATA[
+We have no <corr sic="trustworty" resp="gpm2a">trustworthy</corr> statistics <lb/>
+]]></eg>
+</remarks>
+<enforcement method="program" method-name="qa_lib_corr" message-type="warning">
+<remarks><p>The DTD does not require <att>resp</att> on <gi>corr</gi>, because in cases
+of conversion/migration of existing markup where the corrector is unknown, it is not always possible
+to supply a useful value for <att>resp</att>. Instead, the QA program issues a warning
+if <att>resp</att> is missing. The program also verifies that the <att>resp</att> value
+corresponds to the <att>id</att> attribute of an element within <gi>teiHeader</gi>. (This
+test goes beyond the DTD, which specifies that <att>resp</att> is an <datatype>IDREF</datatype>
+and so must point to an <datatype>ID</datatype> somewhere within the XML document. Actually,
+this test is performed for any and all elements that have a <att>resp</att> attribute, not
+just <gi>corr</gi>.)</p></remarks>
+</enforcement>
+</practice>
+</practiceGroup>
+</practicesDoc>
+</practices>

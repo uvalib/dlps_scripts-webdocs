@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0211 SYSTEM "000000766_0211" NDATA jpg>
+<!ENTITY DSSR_000000766_0212 SYSTEM "000000766_0212" NDATA jpg>
+<!ENTITY DSSR_000000766_0213 SYSTEM "000000766_0213" NDATA jpg>
+<!ENTITY DSSR_000000766_0214 SYSTEM "000000766_0214" NDATA jpg>
+
+<!--<!ENTITY NA62j04a SYSTEM "NA62j04a.jpg" NDATA jpg>
+<!ENTITY NA62j04b SYSTEM "NA62j04b.jpg" NDATA jpg>
+<!ENTITY NA62j04c SYSTEM "NA62j04c.jpg" NDATA jpg>
+<!ENTITY NA62j04d SYSTEM "NA62j04d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NA62j04">
+ <teiHeader type="migrated">
+  <!-- todo -->
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-10-04">4
+      October 1862</date></title>
+
+    <author>Case, Adelaide E.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>David Seaman</name>
+     <resp>Creation of digital images:</resp>
+     <name>University of Virginia Library Electronic Text Center</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>ETC</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">11</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NA62j04</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Adelaide E. Case to Charles N. Tenney, 4 October 1862</title>
+      <author>Adelaide E. Case</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 pages</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p> </p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings. </p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-10-04">1862-10-04</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>feminine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-10">November 10th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-10-04">4 October 1862</date>
+
+      <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+     </bibl>
+    </head>
+    <p/>
+   </div1>
+  </front>
+  <body id="d4">
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-10-04">4 October
+     1862</date></head>
+    <pb n="1" entity="DSSR_000000766_0211"/>
+    <opener>
+     <dateline>
+      <name type="place">Mecca. </name>
+      <date value="1862-10-04">October 4<hi rend="super">th</hi> 1862</date>
+     </dateline>
+     <salute>My darling Charley</salute>
+    </opener>
+
+    <p>Where do you guess I am <lb/> to day. Do you remember of Hal. taking your <lb/> glass--when
+     you was home, over a year ago, looking <lb/> down south. and trying to "shake hands with Uncle"
+     <lb/> as you then said? I am at said uncle's house.. <lb/> Why. do you ask? I will tell you.
+     Aunt Sarah <lb/> is in Oberlin. spending a few weeks, and cousin <lb/> Mary. or Mamie. as we
+     call her was left to "keep <lb/> house" Mamie's health not being very good and <lb/> she not
+     knowing very well how to discharge the <lb/> duties incumbent upon her.--as she is not <lb/>
+     thirteen years of age yet--Uncle wished me to come <lb/> and "kinder of oversee her in baking
+     bread takin' <lb/> care of the pickles &amp;c." So you see instead of a <lb/>
+     <pb n="2" entity="DSSR_000000766_0212"/> "school-ma'am," I am now. "maid of all work. <lb/>
+     Are'nt you sorry that you are not of the opinion <lb/> of Homer Powers? But of course you do
+     not know <lb/> him. so I must enligten you. When I tell you that <lb/> I once heard him say
+     that he could not <unclear>ever</unclear>
+     <lb/> respect a woman. who could act in the capacity <lb/> of both housekeeper and lady. you
+     will have learned <lb/> [rest of scan damaged] <lb/>
+     <pb n="3" entity="DSSR_000000766_0213"/> could I say. Were I to speak the truth--as of <lb/>
+     course I must-- I should tell you that if <lb/> you <del hand="h1">are</del> are not so large a
+     [piece or price]. as Uncle Sam <lb/> appears to be, yet the love that belongs to you is <lb/>
+     far stronger than all that Uncle Sam has, <lb/> But you are a privileged character darling so
+     <lb/> you will not <hi rend="underline">scold</hi> me for not loving my country <lb/> enough
+     will you? Remember that love for my <lb/> country is paramount to every thing but <hi
+      rend="underline">God and <lb/> you</hi> dearest. But do not think darling that because <lb/> I
+     love you so dearly I would have you shirk <lb/> from <hi rend="underline">your duty</hi>. No.
+     no. love. Although danger may <lb/> surround you uet if God wills it my love and prayers <lb/>
+     shall be an armor to guard you through this strug= <lb/> =gle in safety. May God bless you
+     dearest and give <lb/> you strength to discharge your duty as faithfully <lb/> as you have
+     heretofore. I am not the only one <lb/> one who gazes with such proud rapture upon that <lb/>
+     little band--<hi rend="underline">the noble seventh</hi>. Knowing as we do <lb/> how true they
+     have always been in every engage= <lb/> =ment it is no wonder that we look forward <lb/> with
+     so much confidence when we know that our <lb/> noble seventh is to participate. and of what
+     proud <lb/>
+     <pb n="4" entity="DSSR_000000766_0214"/> emotions swell our hearts when we read <lb/> "Another
+     glorious virtory" "The gallant Seventh Ohio <lb/> again distinguished iteslf" Pen can not
+     describe the <lb/> feelings of my heart when I read such sentences <lb/> for I know <hi
+      rend="underline">one</hi> at least <del hand="h1">in</del> of that little band <lb/> who would
+     never <hi rend="underline">never</hi> falter. Is it any wonder <lb/> Charlie that I love you so
+     proudly? Uncle is now <lb/> reading <add place="inline" hand="h1">aloud</add> the details of
+     the battle of Sharpsburg <lb/> Often he is obliged to cease reading and wipe away the <lb/>
+     great tear-drops that will flow in sympathy for <lb/> the faithful fallen, WHat a man is Gen.
+     Hooker. how <lb/> indispendable were his services on the dreadful field <lb/> And yet he was
+     wounded. You ask if the obscurity has <lb/> been removed at all within the past 10 days. Much,
+     <lb/> very much. McClellans victories have changed the <lb/> aspect of things entirely. As you
+     phrophesied, people <lb/> are even more enthusiastic over McClellan and wildly <lb/> shouting
+      "<hi rend="underline">He is the man for the times</hi>" <lb/> By the tone of our letters I see
+     that John Pope is no <lb/> favorite of yours. also McDowell. I do not like McDowell <lb/> but I
+     believe Pope did the best he could under the circum <lb/> stances. <unclear>[T]</unclear>o what
+     was his defeat attributed There seems <lb/> to have been some misunderstanding or else
+     treachery. <lb/> Can you give me any light upon the subject for it is <lb/> to me the most
+     unconvincible mess I ever heard of <lb/> before. I should judge that your culinary department
+     <lb/> were not very extensive. Only three pints of water for <lb/> two! I believe I shoud enter
+     a protest against such <lb/> scarcity. Who is your "partner" Would'nt I laugh <lb/> to see you
+     cooking your breakfast or "preparing <unclear/>
+     <lb/> Say Charlie, who takes the head of the table where <lb/> you live, Which do you wait upon
+     first ladies or <lb/> gentlemen But </p>
+    <p> "Brave boys are they <lb/> Gone at their countries call &amp;c." </p>
+    <p> so I must not laugh <lb/> at you, By the way dearest did you ever hear the <lb/> song "Brave
+     boys are they? If so do you not think <lb/> it splendid? The first time I heard <del hand="h1"
+      >of</del> it I could <lb/> not listen to all the song it came so near home <lb/> Miss Carrie
+      <unclear>Hib[l?]bee</unclear> played and sang it for me and <lb/> I had to request her to
+     cease playing. I was <lb/> [end of page 4: rest of letter missing] <lb/>
+    </p>
+
+   </div1>
+  </body>
+ </text>
+</TEI.2>

@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0521 SYSTEM "000000766_0521" NDATA jpg>
+<!ENTITY DSSR_000000766_0522 SYSTEM "000000766_0522" NDATA jpg>
+<!ENTITY DSSR_000000766_0523 SYSTEM "000000766_0523" NDATA jpg>
+<!ENTITY DSSR_000000766_0524 SYSTEM "000000766_0524" NDATA jpg>
+
+<!ENTITY longs "s"><!-- as typically used in 18th c -->
+]>
+
+<!--<!DOCTYPE TEI.2 SYSTEM 'teixlite.dtd'[
+
+  <!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY NC62c03a SYSTEM "NC62c03a.jpg" NDATA jpg>
+<!ENTITY NC62c03b SYSTEM "NC62c03b.jpg" NDATA jpg>
+<!ENTITY NC62c03c SYSTEM "NC62c03c.jpg" NDATA jpg>
+<!ENTITY NC62c03d SYSTEM "NC62c03d.jpg" NDATA jpg>
+
+	<!ENTITY % ISOlat1 SYSTEM "ISOlat1.pen"> %ISOlat1;  
+	<!ENTITY % ISOlat2 SYSTEM "ISOlat2.pen"> %ISOlat2;  
+	<!ENTITY % ISOnum SYSTEM "ISOnum.pen"> %ISOnum;  
+	<!ENTITY % ISOpub SYSTEM "ISOpub.pen"> %ISOpub;  
+	<!ENTITY % ISOtech SYSTEM "ISOtech.pen"> %ISOtech; ]>-->
+
+
+<TEI.2 id="NC62c03">
+
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-03-03">3
+      March 1862</date></title>
+    <author>Tenney, Charles, fl. 1861-1863</author>
+    <respStmt>
+     <resp>Transcription and TEI encoding.</resp>
+     <name>Maura Marx. Boston Public Library. Rare Book School 2005.</name>
+    </respStmt>
+   </titleStmt>
+
+   <publicationStmt>
+    <publisher>Albert H. Small Special Collections Library, University of Virginia</publisher>
+    <pubPlace>Charlottesville, Va.</pubPlace>
+    <idno type="etext">NC62c03</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Charles N. Tenney to Adelaide E. Case, 3 March 1862</title>
+      <author>Tenney, Charles, fl. 1861-1863</author>
+     </titleStmt>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <date value="1862-03-03">1862-03-03</date>
+     </publicationStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-02-28">1862-02-28</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2009-11-12">November 12th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-03-03">March 3, 1862</date>
+      <!--<idno rend="suppress">NC62c03</idno>-->
+      <title>Letter from Charles N. Tenney to Adelaide E. Case</title>
+     </bibl>
+    </head>
+    <p>Tenney describes the ceremony surrounding the funeral of Gen. Lander and the "Noble 7th's"
+     part in it. He expresses his loyalty to Hal and asks Addie to marry him. </p>
+   </div1>
+  </front>
+
+  <body id="d4">
+
+
+
+   <div1 type="letter" n="1" id="d5">
+
+    <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-03-03">3 March
+     1862</date></head>
+    <pb n="1" entity="DSSR_000000766_0521"/>
+    <opener>
+
+     <!--     <seg>
+      <figure rend="page" entity="NC62c03a">
+       <figDesc/>
+      </figure>
+     </seg>-->
+
+     <dateline>
+      <name type="place">Camp Tyler <abbr expan="Virginia">Va.</abbr></name>
+      <date value="1862-03-03">March 3<hi rend="super">d </hi>1862</date>
+     </dateline>
+     <lb/>
+     <salute>My dearest Addie:-</salute>
+     <lb/>
+    </opener>
+
+    <p> Imagine my happy surprise<lb/> this evening on receiving another delightful<lb/> missive
+     from your own heart -- in fact another<lb/> "Angel's visit." Indeed, your letters <hi
+      rend="underline">are</hi> happily<lb/> received, and nothing could give me more<lb/> pleasure
+     -- <hi rend="underline">except -- <orig reg="a visit">avisit</orig> to the dear little
+     author</hi><lb/>
+    </p>
+
+    <p> I just went to the P.O. Box, &amp; took therefrom<lb/> a letter I wrote last evening,
+     which I enclose with<lb/> this, thinking I might as well send two in one<lb/> My health is
+     excellent, <name type="person"><abbr expan="Captain">Capt</abbr> Asper</name> yesterday<lb/>
+     asked me, "Charley, why is it you are always looking<lb/> so goodnatured?" I replied "I do not
+     know, only<lb/> it is because I feel well. I consider myself as<lb/> healthy man as you have."
+     "I guess you are," said he,<lb/> "for I never know you <add place="supralinear" hand="h1"
+     >to</add> be sick." You are<lb/> not quite correct in regard to our having bad<lb/> air to
+     breathe, none can have purer, for there is<lb/> nearly always a current of air <orig
+      reg="passing">pa&longs;sing</orig> through<lb/> camp. It is quite different from a city, I
+     assure<lb/> you.<lb/>
+     <pb n="2" entity="DSSR_000000766_0522"/>
+     <!--    <figure rend="page" entity="NC62c03b">
+      <figDesc/>
+     </figure>--></p>
+
+    <p> But I must give you an account of todays<lb/> proceedings. At 10 am, our brigade was<lb/>
+     marched to the late General's<ref target="n1" n="1">1</ref> headquarters, and<lb/> the 7<hi
+      rend="super">th</hi> was the Regt. honored by being the escort<lb/> of the body to the R.R.
+     "marching in columns of<lb/> platoons, with reversed arms, and at common<lb/> time," If you
+      <orig reg="don't">dont</orig> know the meaning of that,<lb/> (but I presume you <hi
+      rend="underline">do</hi>) Hallie will tell you.<lb/>
+    </p>
+    <p> Fourteen <abbr expan="Regiments">Regts</abbr> of Infantry 2000 Cavalry and<lb/> several
+     batteries of Artillery, were drawn up in line<lb/> and all honors due to the deceased <abbr
+      expan="General">Gen.</abbr> were paid<lb/> with proper solemnity &amp; form. but we can
+     safely say,<lb/> without self-praise that the 7<hi rend="super">th</hi> under noble Will
+     Creighton<lb/> was the observed of all observers. <hi rend="underline">and we were not <lb/>
+      vain of the distinction</hi>, either.<lb/>
+    </p>
+    <p> No indeed! I <hi rend="underline">did not</hi> intend to do you any<lb/> injustice, nor did
+     I imagine you <hi rend="underline">were</hi> jealous. for<lb/> I well knew there was no cause
+     whatever; I wrote<lb/> what I did, merely as a pleasantry, not because I really<lb/> thought
+     so, Oh: yes. Addie, I will <orig reg="suppress">suppre&longs;s</orig> any<lb/> ill-will,
+      <hi rend="underline">with a vengeance</hi>, I think there can be no<lb/> danger whatever, When
+     any one insults Hal, the<lb/> insult reaches me. &amp; I will resent this one, no,<lb/> the many,<lb/>
+     <pb n="3" entity="DSSR_000000766_0523"/>
+     <!--     <figure rend="page" entity="NC62c03c">
+      <figDesc/>
+     </figure>-->
+    </p>
+
+    <p> It is not right; nor just for him to tyrannize<lb/> over any of his officers, and when he
+     does, he<lb/> injures the regiment. If some one who had<lb/> the authority, would investigate
+     the matter, and<lb/> "give the devil his due," I would be in a manner<lb/> silent; but as the
+     officers are seemingly afraid to<lb/> a&longs;sert their <hi rend="underline">own
+      independence</hi>, I consider it my<lb/> duty to myself, and to Hallie, <hi rend="underline"
+      >for the services he has <lb/> done me</hi>, as far as lies in my power, to write the<lb/>
+     truth, the whole truth, and nothing <hi rend="underline">but</hi> the truth, even<lb/> though
+     it does come close, I may be wrong,<lb/> but if I fail to see it so, When a man has done<lb/>
+     as much for his company. as Hal has for this. a man<lb/> is a coward, and not worthy the name
+     of friend<lb/> or brother, if he will refuse to take his part though<lb/> it does place him in
+     a dangerous place. But I fear<lb/> nothing. Am I not in the right? Ask Hal if I am not<lb/>
+    </p>
+    <p> But I am getting too indignant.<lb/>
+    </p>
+    <p> Darling Addie, I love you dearer than ever,<lb/> I could not be perfectly happy, until I
+     knew you could<lb/> love me as I am. I will strive to make you happy<lb/> Another abrupt
+     question, dearest Addie, - How would<lb/> you like to change your name, to the one <hi
+      rend="underline">I</hi> have? And,<lb/>
+     <pb n="4" entity="DSSR_000000766_0524"/>
+     <!--     <figure rend="page" entity="NC62c03d">
+      <figDesc/>
+     </figure>--> if you
+     would, when <add hand="h1" place="supralinear">shall</add> the ceremony take place?<lb/>
+    </p>
+    <p> Dear Addie. does your papa know of our<lb/> "<hi rend="underline">carrying on</hi>?" and is
+     he willing?<lb/>
+    </p>
+    <closer>But I must close for it is late and<lb/> past tattoo. Give my love to all and write
+     very<lb/> often. <salute>My heartfelt thanks for your kind letters<lb/> and my love to
+      yours,<lb/></salute>
+     <signed>Charlie.</signed>
+    </closer>
+   </div1>
+  </body>
+
+  <back id="d6">
+   <div1 type="notes" n="1" id="d7">
+    <head>Notes</head>
+    <note id="n1" place="end" n="1">
+     <seg type="note-symbol">1</seg>
+     <p>General Frederick W. Lander (1821 - 1862)</p>
+    </note>
+   </div1>
+  </back>
+ </text>
+</TEI.2>

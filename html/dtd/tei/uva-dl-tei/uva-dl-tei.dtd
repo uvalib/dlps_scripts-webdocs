@@ -1,0 +1,1859 @@
+<!-- ******************************************************************************************
+
+     uva-dl-tei.dtd
+     Version 1.58
+     2008-11-03
+
+     One of two extension files (see also uva-dl-tei.ent) constituting a customization of TEI P4,
+     following the method described in the TEI Guidelines, chapter 29, "Modifying and Customizing
+     the TEI DTD".
+
+       http://www.tei-c.org/P4X/MD.html
+
+     This DTD is used for initial document production (keyboarding vendor encoding and subsequent
+     in-house post-keyboarding processing) by Digital Library Production Services (DLPS),
+     University of Virginia Library.
+
+     Greg Murray <gpm2a@virginia.edu>, DLPS
+
+     ****************************************************************************************** -->
+
+
+
+<!-- ******************************************************************************************
+     Contents
+     ******************************************************************************************
+
+     1. New elements
+     2. Modified elements
+-->
+
+
+
+<!-- ******************************************************************************************
+     Revision History
+     ******************************************************************************************
+
+     See uva-dl-tei.ent for revision history.
+-->
+
+
+
+<!-- ******************************************************************************************
+     1. New elements
+     ****************************************************************************************** -->
+
+<![%STANDALONE_HEADER;[
+
+<!-- New element:    standaloneHeader
+     Element type:   Top-level element, used instead of <TEI.2>, for documents containing a
+                     <teiHeader> but no <text>.
+     TEI equivalent: <ihs> from teishd2.dtd, the TEI auxiliary DTD for Independent Headers
+     Content model:  One <teiHeader> element
+     Attribute list: Identical to <ihs> (a.global plus TEIform)
+     Occurs:         Top-level
+     Comments:       <standaloneHeader> documents are used in the Digital Library to represent the
+                     "parent" object for a serial, newspaper, monographic set, etc. (while <TEI.2>
+                     documents are the "child" objects representing the issues of a newspaper,
+                     volumes of a monographic set, etc.). See also revision history entry for
+                     version 1.12, 2004-04-23.
+-->
+
+<!ELEMENT standaloneHeader (teiHeader)>
+<!ATTLIST standaloneHeader
+      %a.global;
+      TEIform CDATA 'ihs'>
+
+]]>
+
+<!-- ========================================================================================== -->
+
+<![%VENDOR;[
+
+<!-- New element:    b, i, smcap, sub, sup, u (VENDOR only)
+     Element type:   Convenience elements
+     TEI equivalent: <hi rend="...">
+     Content model:  Identical to <hi>
+     Attribute list: Identical to <hi> (a.global plus TEIform), except that 'rend' is excluded
+     Occurs:         By extending m.hqphrase using x.hqphrase, these elements are allowed wherever
+                     <hi> is allowed.
+-->
+<!ELEMENT b %paraContent;>
+<!ATTLIST b
+      %a.global.no_rend;
+      TEIform CDATA 'hi'>
+
+<!ELEMENT i %paraContent;>
+<!ATTLIST i
+      %a.global.no_rend;
+      TEIform CDATA 'hi'>
+
+<!ELEMENT smcap %paraContent;>
+<!ATTLIST smcap
+      %a.global.no_rend;
+      TEIform CDATA 'hi'>
+
+<!ELEMENT sub %paraContent;>
+<!ATTLIST sub
+      %a.global.no_rend;
+      TEIform CDATA 'hi'>
+
+<!ELEMENT sup %paraContent;>
+<!ATTLIST sup
+      %a.global.no_rend;
+      TEIform CDATA 'hi'>
+
+<!ELEMENT u %paraContent;>
+<!ATTLIST u
+      %a.global.no_rend;
+      TEIform CDATA 'hi'>
+]]>
+
+<!-- ========================================================================================== -->
+
+<![%VENDOR;[
+<![%NEWSPAPER;[
+
+<!-- New element:    ad, cartoon, comicStrip, puzzle, wireArticle, wirePhoto (VENDOR only)
+     Element type:   Convenience elements for vendor markup of newspapers
+     TEI equivalent: <gap desc="..." reason="editorial"/>
+     Content model:  Identical to <gap/>, namely EMPTY
+     Attribute list: Limited to a.global plus extent and TEIform (removed desc, reason, resp, hand,
+                     and agent because not needed for vendor use)
+     Occurs:         By extending m.editIncl using x.editIncl, these elements are allowed wherever
+                     <gap/> is allowed.
+-->
+<!ELEMENT ad EMPTY>
+<!ATTLIST ad
+      %a.global;
+      extent CDATA #IMPLIED
+      TEIform CDATA 'gap'>
+
+<!ELEMENT cartoon EMPTY>
+<!ATTLIST cartoon
+      %a.global;
+      extent CDATA #IMPLIED
+      TEIform CDATA 'gap'>
+
+<!ELEMENT comicStrip EMPTY>
+<!ATTLIST comicStrip
+      %a.global;
+      extent CDATA #IMPLIED
+      TEIform CDATA 'gap'>
+
+<!ELEMENT puzzle EMPTY>
+<!ATTLIST puzzle
+      %a.global;
+      extent CDATA #IMPLIED
+      TEIform CDATA 'gap'>
+
+<!ELEMENT wireArticle EMPTY>
+<!ATTLIST wireArticle
+      %a.global;
+      extent CDATA #IMPLIED
+      TEIform CDATA 'gap'>
+
+<!ELEMENT wirePhoto EMPTY>
+<!ATTLIST wirePhoto
+      %a.global;
+      extent CDATA #IMPLIED
+      TEIform CDATA 'gap'>
+]]>
+]]>
+
+<!-- ========================================================================================== -->
+
+<![%VENDOR;[
+
+<!-- New element:    quotedLetter (VENDOR only)
+     Element type:   Convenience element
+     TEI equivalent: <q><text><body><div1>
+     Content model:  Identical to div7
+     Attribute list: Identical to q
+     Occurs:         By adding quotedLetter to x.inter, x.hqinter, and cit, quotedLetter can occur
+                     wherever q can occur.
+     Comments:       quotedLetter allows for quotations containing opener and/or closer.
+-->
+<!ELEMENT quotedLetter (
+      (%m.divtop; | %m.Incl;)*,
+      (%component;, (%m.Incl;)*)+,
+      ((%m.divbot;), (%m.Incl;)*)*
+      )>
+<!ATTLIST quotedLetter
+      %a.global;
+      type CDATA #IMPLIED
+      direct (y | n | unspecified) "unspecified"
+      who CDATA #IMPLIED
+      TEIform CDATA 'q'>
+]]>
+
+<!-- ========================================================================================== -->
+
+<![%VENDOR;[
+
+<!-- New element:    ps (for postscript) (VENDOR only)
+     Element type:   Convenience element
+     TEI equivalent: <seg type="postscript" rend="block">
+     Content model:  Identical to seg
+     Attribute list: Identical to seg
+     Occurs:         
+     Comments:       -->
+<!ELEMENT ps  %paraContent;>
+<!ATTLIST ps
+      %a.global;
+      %a.seg;
+      subtype CDATA #IMPLIED
+      TEIform CDATA 'seg'>
+]]>
+
+<!-- ========================================================================================== -->
+
+<![%VENDOR;[
+
+<!-- New element:    ns (for note symbol) (VENDOR only)
+     Element type:   Convenience element
+     TEI equivalent: <seg type="note-symbol">
+     Content model:  Identical to seg
+     Attribute list: Identical to seg
+     Occurs:         
+     Comments:       -->
+<!ELEMENT ns  %paraContent;>
+<!ATTLIST ns
+      %a.global;
+      %a.seg;
+      subtype CDATA #IMPLIED
+      TEIform CDATA 'seg'>
+
+]]>
+
+<!-- ========================================================================================== -->
+
+<!-- New element:    cols
+     Content model:  Empty, like all milestone elements
+     Attribute list: Identical to pb, lb, and cb (a.global plus 'ed'), except that 'n' is required
+     Occurs:         By extending m.refsys using x.refsys, cols can occur anywhere milestone
+                     elements can occur.
+     Comments:       cols marks beginning of a columnar layout, typically beginning of a
+                     multi-column layout or a return to single-column layout; used in conjunction
+                     with (does not replace) <cb/>. Number of columns in the columnar layout should
+                     be recorded in 'n' attribute.
+-->
+<!ELEMENT cols EMPTY>
+<!ATTLIST cols
+      %a.global.n_required;
+      ed CDATA #IMPLIED
+      TEIform CDATA 'milestone'>
+
+<!-- ========================================================================================== -->
+
+<!-- New element:    ornament
+     Content model:  PCDATA
+     Attribute list: Similar to <figure>, plus required 'type' with enumerated vocabulary
+     Occurs:         By extending m.refsys using x.refsys, ornament can occur anywhere milestone
+                     elements can occur.
+     Comments:       <ornament> is a specialized kind of figure, without bearing the importance of a
+                     figure and without necessarily implying an accompanying image file; used for
+                     strings of asterisks or other characters, horizontal lines, and true printer's
+                     ornaments.
+-->
+<!ELEMENT ornament (#PCDATA)>
+<!ATTLIST ornament
+      %a.global;
+      type (characters | line | ornament) #REQUIRED
+      %a.entity;
+      TEIform CDATA 'figure'>
+
+<!-- ========================================================================================== -->
+
+<!-- New element:    frontispiece
+     Content model:  Same as for <figure>
+     Attribute list: Same as for <figure>
+     Occurs:         By extending m.divtop using x.divtop, <frontispiece> occurs at the start of a
+                     div, like <head>, <epigraph>, <opener>, etc.
+     Comments:       <frontispiece> is a <figure> that is allowed at the start of a div. <figure>
+                     itself cannot be added to m.divtop because doing so creates an ambiguous
+                     content model (since <figure> is also allowed later in the div).
+-->
+<!ELEMENT frontispiece (
+    (%m.Incl;)*,
+    ( head, (%m.Incl;)* )?,
+    ( (%m.chunk; | byline), (%m.Incl;)* )*,
+    ( figDesc, (%m.Incl;)* )?
+)>
+<!ATTLIST frontispiece
+      %a.global.no_rend;
+      rend (page | block | inline) #IMPLIED
+      %a.entity;
+      TEIform CDATA 'figure'>
+
+<!-- ========================================================================================== -->
+
+<![%MANUSCRIPT;[
+
+<!-- New element:    postmark (MANUSCRIPT only)
+     Content model:  name or date
+     Attribute list: Global only
+     Occurs:         In <opener>
+     Comments:       Needed for identifying a postmark on an envelope accompanying a manuscript
+                     letter.
+-->
+<!ELEMENT postmark ( (name | date)+ )>
+<!ATTLIST postmark
+      %a.global;
+      TEIform CDATA 'seg'>
+
+<!-- New element:    to (MANUSCRIPT only)
+     Content model:  name or address
+     Attribute list: Global only
+     Occurs:         In <opener>
+     Comments:       Needed for identifying the recipient address on an envelope accompanying a
+                     manuscript letter.
+-->
+<!ELEMENT to ( (name | address)+ )>
+<!ATTLIST to
+      %a.global;
+      TEIform CDATA 'seg'>
+
+<!-- New element:    from (MANUSCRIPT only)
+     Content model:  name or address
+     Attribute list: Global only
+     Occurs:         In <opener>
+     Comments:       Needed for identifying the return/sender address on an envelope accompanying a
+                     manuscript letter.
+-->
+<!ELEMENT from ( (name | address)+ )>
+<!ATTLIST from
+      %a.global;
+      TEIform CDATA 'seg'>
+
+<!-- New element:    stamp (MANUSCRIPT only)
+     Content model:  PCDATA or <damage>
+     Attribute list: Global only
+     Occurs:         In <opener>
+     Comments:       Needed for identifying the location of a stamp on an envelope accompanying a
+                     manuscript letter, or more precisely, for marking an indicator such as
+                     "[Stamp]" when working from a typed transcription of a manuscript letter.
+-->
+<!ELEMENT stamp (#PCDATA | damage)*>
+<!ATTLIST stamp
+      %a.global;
+      TEIform CDATA 'seg'>
+
+]]>
+
+<!-- ========================================================================================== -->
+
+<![%OCR;[
+
+<!-- New element:    page (OCR only)
+     Content model:  A single <ab> element only
+     Attribute list: Similar to <pb>
+     Occurs:         In <div1>
+     Comments:       The <page> element contains a single <ab> containing one page of OCR-created
+                     text. -->
+<!ELEMENT page (ab)>
+<!ATTLIST page
+      %a.global.no_rend;
+      %a.entity;
+      TEIform CDATA 'pb'>
+
+]]>
+
+<!-- ========================================================================================== -->
+
+<![%RUBY;[
+
+<![%RUBY_COMPLEX;[
+<!ENTITY % ruby.complex.content '| (rbc, rtc, rtc?)'>
+]]>
+<!ENTITY % ruby.complex.content ''>
+
+<!-- New element:    ruby (RUBY only)
+     Content model:  Ruby-specific elements only
+     Attribute list: Global only
+     Occurs:         By extending m.phrase using x.phrase, <ruby> occurs at the phrase level
+     Comments:       The <ruby> element is a container for other ruby-specific markup. -->
+
+<!ELEMENT ruby ( (rb, (rt | (rp, rt, rp))) %ruby.complex.content; )>
+
+<!ATTLIST ruby
+      %a.global;
+      TEIform CDATA 'seg'>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+<![%RUBY_COMPLEX;[
+
+<!-- New element:    rbc (RUBY only)
+     Content model:  One or more <rb> elements
+     Attribute list: Global only
+     Occurs:         In <ruby>
+     Comments:       The <rbc> (ruby base container) element serves as the container for <rb> (ruby
+                     base) elements in complex ruby markup. -->
+
+<!ELEMENT rbc (rb+)>
+
+<!ATTLIST rbc
+      %a.global;
+      TEIform CDATA 'seg'>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+<!-- New element:    rtc (RUBY only)
+     Content model:  One or more <rt> elements
+     Attribute list: Global only
+     Occurs:         In <ruby>
+     Comments:       The <rtc> (ruby text container) element serves as the container for <rt> (ruby
+                     text) elements in complex ruby markup. -->
+
+<!ELEMENT rtc (rt+)>
+
+<!ATTLIST rtc
+      %a.global;
+      TEIform CDATA 'seg'>
+
+]]><!-- end of RUBY_COMPLEX subsection -->
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+<!-- New element:    rb (RUBY only)
+     Content model:  Character data
+     Attribute list: Global only
+     Occurs:         In <ruby> (simple ruby markup) or in <rbc> (complex ruby markup)
+     Comments:       The <rb> (ruby base) element contains the base text, which is the span of text
+                     being annotated. -->
+
+<!ELEMENT rb (#PCDATA)>
+
+<!ATTLIST rb
+      %a.global;
+      TEIform CDATA 'seg'>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+<!-- New element:    rt (RUBY only)
+     Content model:  Character data
+     Attribute list: Global plus 'rbspan'
+     Occurs:         In <ruby> (simple ruby markup) or in <rtc> (complex ruby markup)
+     Comments:       The <rt> (ruby text) element contains the ruby text, which is the annotation.
+                     In complex ruby markup, the rbspan attribute allows an <rt> element to span
+                     multiple <rb> elements. -->
+
+<!ELEMENT rt (#PCDATA)>
+
+<!ATTLIST rt
+      %a.global;
+      TEIform CDATA 'seg'>
+
+<![%RUBY_COMPLEX;[
+<!ATTLIST rt
+      rbspan CDATA '1'>
+]]>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+<!-- New element:    rp (RUBY only)
+     Content model:  Character data
+     Attribute list: Global only
+     Occurs:         In <ruby> (simple ruby markup only)
+     Comments:       The <rp> (ruby parenthesis) element can be used in simple ruby markup to
+                     specify characters that can denote the beginning and end of ruby text when
+                     user agents do not have other ways to present ruby text distinctively from
+                     the base text. -->
+
+<!ELEMENT rp (#PCDATA)>
+
+<!ATTLIST rp
+      %a.global;
+      TEIform CDATA 'seg'>
+
+]]> <!-- End of RUBY conditional exclusion -->
+
+<!-- ========================================================================================== -->
+
+
+
+<!-- ******************************************************************************************
+     2. Modified elements
+     ****************************************************************************************** -->
+
+<![%MANUSCRIPT;[
+
+<!-- Element:   add (teicore2.dtd) (MANUSCRIPT only)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT add %specialPara;>
+
+<!-- AttList:   add
+     Extend:    None
+     Constrain: Change 'hand' from %INHERITED; to REQUIRED. Change 'place' from CDATA to enumerated
+                vocabulary and from IMPLIED to REQUIRED.
+     -->
+<!ATTLIST add
+      %a.global.no_rend;
+      rend (%a.rend.display; | %a.rend.align; | %a.rend.indent; | %a.rend.typo; %a.rend.extended;) #IMPLIED
+      place (inline|supralinear|infralinear|left|right|top|bottom|opposite|verso|mixed) #REQUIRED
+      resp IDREF %INHERITED;
+      cert CDATA #IMPLIED
+      hand IDREF #REQUIRED
+      TEIform CDATA 'add'>
+]]>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   availability (teihdr2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT availability ((p)+)>
+
+<!-- AttList:   availability
+     Extend:    None
+     Constrain: Change controlled vocabulary for 'status' from (free | unknown | restricted) to
+                UVa-specific terms, and change from default value "unknown" to "public".
+     -->
+<!ATTLIST availability
+      %a.global;
+      status (public | uva | viva | restricted) "public"
+      TEIform CDATA 'availability'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   back (teiback2.dtd)
+     Extend:    None
+     Constrain: Restrict content model to allow only top-level divisions and gaps.
+     -->
+<!ELEMENT back ( (div1 | %m.editIncl;)+ )>
+
+<!-- AttList:   back
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST back
+      %a.global;
+      %a.declaring;
+      TEIform CDATA 'back'>
+
+<!-- ========================================================================================== -->
+
+<![%POSTKB;[
+<!-- Element:   biblFull (teicore2.dtd)
+     Extend:    Allow more than one <extent> element (change from ? to *).
+     Constrain: None
+     -->
+<!ELEMENT biblFull ((%m.Incl;)*, (titleStmt, (%m.Incl;)*),
+               (editionStmt, (%m.Incl;)*)?, (extent, (%m.Incl;)*)*,
+               (publicationStmt, (%m.Incl;)*), (seriesStmt, (%m.Incl;)*)?,
+               (notesStmt, (%m.Incl;)*)?, (sourceDesc, (%m.Incl;)*)*)>
+
+<!-- AttList:   biblFull
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST biblFull
+      %a.global;
+      %a.declarable;
+      TEIform CDATA 'biblFull'>
+]]>
+
+<!-- ========================================================================================== -->
+
+<![%OCR;[
+
+<!-- Element:   body (teistr2.dtd)
+     Extend:    None
+     Constrain: Restrict content model to allow only a single top-level division.
+     -->
+<!ELEMENT body ( div1 )>
+
+<!-- AttList:   body
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST body
+      %a.global;
+      %a.declaring;
+      TEIform CDATA 'body'>
+
+]]>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+<![%TRANS;[
+
+<!-- Element:   body (teistr2.dtd)
+     Extend:    None
+     Constrain: Restrict content model to allow only top-level divisions and gaps (and, for
+                NEWSPAPER only, pb).
+     Comments:  For newspapers, pb is sometimes needed within body, in cases where a page break
+                occurs in midst of a series of gaps (ads, comic strips, etc.) such that there is no
+                div to contain the pb.
+     -->
+<!ELEMENT body ( (%m.pb; div1 | %m.editIncl;)+ )>
+
+<!-- AttList:   body
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST body
+      %a.global;
+      %a.declaring;
+      TEIform CDATA 'body'>
+
+]]>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+<![%NONTRANS;[
+
+<!-- Element:   body (teistr2.dtd)
+     Extend:    None
+     Constrain: Restrict content model to allow only a single top-level division.
+     -->
+<!ELEMENT body ( div1 )>
+
+<!-- AttList:   body
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST body
+      %a.global;
+      %a.declaring;
+      TEIform CDATA 'body'>
+
+]]>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   byline (teistr2.dtd)
+     Extend:    Allow <note>
+     Constrain: None
+     Comments:  See comment for <signed> below.
+     -->
+<!ELEMENT byline (#PCDATA | %m.phrase; | docAuthor | %m.Incl; | note)*>
+
+<!-- AttList:   byline
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST byline
+      %a.global;
+      TEIform CDATA 'byline'>
+
+<!-- ========================================================================================== -->
+
+<![%VERSE;[
+
+<!-- Element:   caesura (teivers2.dtd)
+     Extend:    None
+     Constrain: None
+     Comments:  See revision history for 1.48, 2006-09-27.
+     -->
+<!ELEMENT caesura EMPTY>
+
+<!-- AttList:   caesura
+     Extend:    None
+     Constrain: Only allow 'id'
+     -->
+<!ATTLIST caesura
+      id ID #IMPLIED
+      TEIform CDATA 'caesura'>
+
+]]>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   cb (teicore2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT cb EMPTY>
+
+<!-- AttList:   cb
+     Extend:    None
+     Constrain: Require 'n'.
+     -->
+<!ATTLIST cb
+      %a.global.n_required;
+      ed CDATA #IMPLIED
+      TEIform CDATA 'cb'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   cell (teifig2.dtd)
+     Extend:    None
+     Constrain: Remove <cb/> and <pb/> from content model.
+     -->
+<!ELEMENT cell (#PCDATA | %m.phrase; | %m.inter; |
+                %x.Incl; %n.anchor; | %m.editIncl; | %m.metadata; | %x.refsys; %n.lb; | %n.milestone;)*>
+
+<!-- AttList:   cell
+     Extend:    None
+     Constrain: Enumerate vocabulary for 'role'.
+     -->
+<!ATTLIST cell
+      %a.global;
+      role (data | label) "data"
+      rows CDATA "1"
+      cols CDATA "1"
+      TEIform CDATA 'cell'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   cit (teicore2.dtd)
+     Extend:    None
+     Constrain: Restrict content model to enforce intended TEI meaning of cit as a container for a
+                single quotation and a single bibliographic reference, in either order.
+     -->
+<!ELEMENT cit (
+    ( (q | quote), (%m.Incl;)*, (%m.bibl; | %m.loc;), (%m.Incl;)* ) |
+    ( (%m.bibl; | %m.loc;), (%m.Incl;)*, (q | quote), (%m.Incl;)* )
+)>
+
+<!-- AttList:   cit
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST cit
+      %a.global;
+      TEIform CDATA 'cit'>
+
+<!-- ========================================================================================== -->
+
+<![%VENDOR;[
+<!ENTITY % closer.ps 'ps |'>
+]]>
+
+<!ENTITY % closer.ps ''>
+
+<!-- Element:   closer (teistr2.dtd)
+     Extend:    Allow <figure> and <note>. Allow ps (VENDOR only).
+     Constrain: None
+     Comments:  We have excluded <figure> from m.Incl, but in the case of <closer> there is a
+                genuine need for <figure>, so we add it back here.
+                Re. adding <note>: See comment for <signed> below.
+                <ps> is a convenience element for postscripts within letters (VENDOR only).
+     -->
+<!ELEMENT closer (#PCDATA | signed | dateline | salute | %m.phrase; | %m.Incl;
+      | %closer.ps; figure | note)*>
+
+<!-- AttList:   closer
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST closer
+      %a.global;
+      TEIform CDATA 'closer'>
+
+<!-- ========================================================================================== -->
+
+<![%POSTKB;[
+
+<!-- Element:   corr (teicore2.dtd) (POSTKB only)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT corr %specialPara;>
+
+<!-- AttList:   corr
+     Extend:    None
+     Constrain: Change 'resp' datatype from CDATA to IDREF.
+     -->
+<!ATTLIST corr
+      %a.global;
+      sic CDATA #IMPLIED
+      resp IDREF %INHERITED;
+      cert CDATA #IMPLIED
+      TEIform CDATA 'corr'>
+]]>
+
+<!-- ========================================================================================== -->
+
+<![%MANUSCRIPT;[
+
+<!-- Element:   damage (teitran2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT damage %paraContent;>
+
+<!-- AttList:   damage
+     Extend:    None
+     Constrain: Require 'agent' and 'extent' attributes.
+     -->
+<!ATTLIST damage
+      %a.global;
+      type CDATA #IMPLIED
+      extent CDATA #REQUIRED
+      resp IDREF %INHERITED;
+      hand IDREF %INHERITED;
+      agent CDATA #REQUIRED
+      degree CDATA #IMPLIED
+      TEIform CDATA 'damage'>
+]]>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   date (teicore2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT date %phrase.seq;>
+
+<!-- AttList:   date
+     Extend:    Add 'type' attribute with enumerated vocabulary.
+     Constrain: Require 'value' attribute; use %ISO-date; as datatype. Change datatype of
+                'certainty' from CDATA to enumerated vocabulary.
+     Comments:  In values for 'certainty', "ca" stands for Latin circa (around). In values for
+                'type', "fl" stands for flourished (or Latin floruit).
+     -->
+<!ATTLIST date
+      %a.global;
+      calendar CDATA #IMPLIED
+      value %ISO-date; #REQUIRED
+      certainty (after | before | ca | exact | uncertain) #IMPLIED
+      type (birth | death | fl) #IMPLIED
+      TEIform CDATA 'date'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   dateline (teistr2.dtd)
+     Extend:    Allow hi. Also allow note references (<ref>, <ptr/>, etc.) and notes (<note>).
+     Constrain: None
+     Comments:  <dateline> is an unusual element in that it allows PCDATA but not hi or other
+                phrase-level elements. In this DTD, hi is needed on dateline to allow inclusion of
+                rendering information, since we restrict the vocabulary for the global 'rend'
+                attribute.
+     -->
+<!ELEMENT dateline ( #PCDATA | date | time |
+      name | address | hi | %m.loc; | %m.notes; | %m.Incl; )*>
+
+<!-- AttList:   dateline
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST dateline
+      %a.global;
+      TEIform CDATA 'dateline'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   dateRange (teicore2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT dateRange %phrase.seq;>
+
+<!-- AttList:   dateRange
+     Extend:    Add 'type' attribute with enumerated vocabulary.
+     Constrain: Require 'from' and 'to'. Use %ISO-date; as datatype.
+     Comments:  See comments for 'date' above.
+     -->
+<!ATTLIST dateRange
+      %a.global;
+      calendar CDATA #IMPLIED
+      from %ISO-date; #REQUIRED
+      to %ISO-date; #REQUIRED
+      exact (to|from|both|none) #IMPLIED
+      type (fl) #IMPLIED
+      TEIform CDATA 'dateRange'>
+
+<!-- ========================================================================================== -->
+
+<![%MANUSCRIPT;[
+
+<!-- Element:   del (teicore2.dtd) (MANUSCRIPT only)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT del %phrase.seq;>
+
+<!-- AttList:   del
+     Extend:    None
+     Constrain: Change 'hand' from %INHERITED; to REQUIRED.
+                Change 'status' from default value "unremarkable" to IMPLIED.
+     -->
+<!ATTLIST del
+      %a.global.no_rend;
+      rend (%a.rend.display; | %a.rend.align; | %a.rend.indent; | %a.rend.typo; %a.rend.extended;) #IMPLIED
+      type CDATA #IMPLIED
+      status CDATA #IMPLIED
+      resp IDREF %INHERITED;
+      cert CDATA #IMPLIED
+      hand IDREF #REQUIRED
+      TEIform CDATA 'del'  >
+]]>
+
+<!-- ========================================================================================== -->
+
+<![%OCR;[
+
+<!-- Element:   div1 (teistr2.dtd)
+     Extend:    None
+     Constrain: Restrict content model to allow only <page> elements.
+     -->
+<!ELEMENT div1 ( (page)+ )>
+
+<!-- AttList:   div1
+     Extend:    None
+     Constrain: Exclude 'type', 'org', 'sample', and 'part' attributes (by removing a.divn).
+     -->
+<!ATTLIST div1
+      %a.global;
+      %a.declaring;
+      TEIform CDATA 'div1'>
+
+]]>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+<![%TRANS;[
+
+<!-- Element:   div1 - div7 (teistr2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+
+<!-- AttList:   div1 - div7
+     Extend:    None
+     Constrain: Enumerate vocabulary for 'type' attribute, and require it; exclude 'org', 'sample',
+                and 'part' attributes
+     Comments:  Here a.divtype, which contains 'type', replaces a.divn, which contains 'type',
+                'org', 'sample', and 'part' (and a.metrical, which resolves to an empty string).
+     -->
+
+<!ELEMENT div1
+ ( (%m.divtop; | %m.Incl;)*, ( (((div2) | divGen), (%m.Incl;)*)+
+              | ( (%component;, (%m.Incl;)*)+,
+                   (((div2) | divGen), (%m.Incl;)*)*)),
+              ((%m.divbot;), (%m.Incl;)*)*)>
+<!ATTLIST div1
+      %a.global;
+      %a.divtype;
+      %a.declaring;
+      TEIform CDATA 'div1'>
+
+<!ELEMENT div2
+ ( (%m.divtop; | %m.Incl;)*, ( (((div3) | divGen), (%m.Incl;)*)+
+              | ( (%component;, (%m.Incl;)*)+,
+                   (((div3) | divGen), (%m.Incl;)*)*)),
+              ((%m.divbot;), (%m.Incl;)*)*)>
+<!ATTLIST div2
+      %a.global;
+      %a.divtype;
+      %a.declaring;
+      TEIform CDATA 'div2'>
+
+<!ELEMENT div3
+ ( (%m.divtop; | %m.Incl;)*, ( (((div4) | divGen), (%m.Incl;)*)+
+              | ( (%component;, (%m.Incl;)*)+,
+                   (((div4) | divGen), (%m.Incl;)*)*)),
+              ((%m.divbot;), (%m.Incl;)*)*)>
+<!ATTLIST div3
+      %a.global;
+      %a.divtype;
+      %a.declaring;
+      TEIform CDATA 'div3'>
+
+<!ELEMENT div4
+ ( (%m.divtop; | %m.Incl;)*, ( (((div5) | divGen), (%m.Incl;)*)+
+              | ( (%component;, (%m.Incl;)*)+,
+                   (((div5) | divGen), (%m.Incl;)*)*)),
+              ((%m.divbot;), (%m.Incl;)*)*)>
+<!ATTLIST div4
+      %a.global;
+      %a.divtype;
+      %a.declaring;
+      TEIform CDATA 'div4'>
+
+<!ELEMENT div5  ( (%m.divtop; | %m.Incl;)*, ( (((div6) | divGen), (%m.Incl;)*)+
+              | ( (%component;, (%m.Incl;)*)+,
+                   (((div6) | divGen), (%m.Incl;)*)*)),
+              ((%m.divbot;), (%m.Incl;)*)*)>
+<!ATTLIST div5
+      %a.global;
+      %a.divtype;
+      %a.declaring;
+      TEIform CDATA 'div5'>
+
+<!ELEMENT div6
+ ( (%m.divtop; | %m.Incl;)*, ( (((div7) | divGen), (%m.Incl;)*)+
+              | ( (%component;, (%m.Incl;)*)+,
+                   (((div7) | divGen), (%m.Incl;)*)*)),
+              ((%m.divbot;), (%m.Incl;)*)*)>
+<!ATTLIST div6
+      %a.global;
+      %a.divtype;
+      %a.declaring;
+      TEIform CDATA 'div6'>
+
+<!ELEMENT div7
+ ((%m.divtop; | %m.Incl;)*,
+         (%component;, (%m.Incl;)*)+, ((%m.divbot;),
+         (%m.Incl;)*)*)>
+<!ATTLIST div7
+      %a.global;
+      %a.divtype;
+      %a.declaring;
+      TEIform CDATA 'div7'>
+
+]]>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+<![%NONTRANS;[
+
+<!-- Element:   div1 (teistr2.dtd)
+     Extend:    None
+     Constrain: Restrict content model to allow only page breaks and figures.
+     Comments:  The reason for allowing <figure> (in addition to <pb>) is that <figure> is needed
+                in cases where the page images are bitonal, but the bitonal image cannot adequately
+                represent an illustration, photo, or other graphic.
+     -->
+<!ELEMENT div1 ( (pb|figure)+ )>
+
+<!-- AttList:   div1
+     Extend:    None
+     Constrain: Exclude 'type', 'org', 'sample', and 'part' attributes (by removing a.divn).
+     -->
+<!ATTLIST div1
+      %a.global;
+      %a.declaring;
+      TEIform CDATA 'div1'>
+
+]]>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   docImprint (teifron2.dtd)
+     Extend:    Allow <figure>
+     Constrain: None
+     Comments:  We have excluded <figure> from m.Incl, but in the case of <docImprint> there is a
+                genuine need for <figure>, so we add it back here.
+     -->
+<!ELEMENT docImprint (#PCDATA | %m.phrase; | pubPlace | docDate | publisher | %m.Incl; | figure)* >
+
+<!-- AttList:   docImprint
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST docImprint
+      %a.global;
+      TEIform CDATA 'docImprint'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   extent (teihdr2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT extent %phrase.seq;>
+
+<!-- AttList:   extent
+     Extend:    Add 'type' attribute
+     Constrain: None
+     Comments:  See revision history for version 1.51, 2007-01-16.
+     -->
+<!ATTLIST extent
+      %a.global;
+      type (duration) #IMPLIED
+      TEIform CDATA 'extent'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   figure (teifig2.dtd)
+     Extend:    Allow all m.chunk elements, not just <p>. Allow <byline>.
+     Constrain: Restrict content model to disallow <text> element.
+     Comments:  There are times when elements from class m.chunk, such as <ab> or <lg>, are needed
+                within <figure>. It seems odd that TEI would allow <p> here but not other m.chunk
+                elements. Adding <byline> allows marking credits for illustrations, photos, etc.
+                (without resorting to <p>). Following the example of div1 - div7 (m.divtop class),
+                <byline> is allowed at the top of the figure, like a head, before <p> or other
+                m.chunk elements.
+     -->
+<!ELEMENT figure (
+    ( (head | byline | %m.Incl;)* )?,
+    ( (%m.chunk;), (%m.Incl;)* )*,
+    ( figDesc, (%m.Incl;)* )?
+)>
+
+<!-- AttList:   figure
+     Extend:    Add 'pid' attribute (POSTKB only; see declaration of a.entity class)
+     Constrain: Enumerate vocabulary for 'rend'.
+     Comments:  'pid' attribute facilitates delivery by making the UVa Library PID (persistent
+                identifier) directly available to delivery stylesheets/programs.
+     -->
+<!ATTLIST figure
+      %a.global.no_rend;
+      rend (page | block | inline) #IMPLIED
+      %a.entity;
+      TEIform CDATA 'figure'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   fileDesc (teihdr2.dtd)
+     Extend:    Allow more than one <publicationStmt> (changed from one to +). Allow more than one
+                <seriesStmt> (changed from ? to *).
+     Constrain: None
+     Comments:  It is possible to have more than one publisher (260a is repeatable in MARC); better
+                to have more than one publicationStmt than to put both publishers in one
+                publicationStmt and rely on element order to indicate which pubPlace corresponds
+                with which <publisher>. It is also possible for an item to participate in more than
+                one series.
+     -->
+<!ELEMENT fileDesc (titleStmt, editionStmt?, extent?,
+           publicationStmt+, seriesStmt*, notesStmt?,
+           sourceDesc+ )>
+
+<!-- AttList:   fileDesc
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST %n.fileDesc;
+      %a.global;
+      TEIform CDATA 'fileDesc'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   front (teifron2.dtd)
+     Extend:    None
+     Constrain: Restrict content model to allow only <titlePage>, top-level divisions, and gaps.
+                For POSTKB only, also allow page breaks. The purpose of this is to allow page breaks
+                at the beginning of <front> for covers/edges/spine. Achieving exactly what we want
+                (pb|gap followed by titlePage|div1|gap) is impossible without creating an ambiguous
+                content model, so we allow pb anywhere and supplement with an XSLT check. See
+                revision history entries for versions 1.22, 1.23 and 1.41.
+     -->
+<![%VENDOR;[
+<!ELEMENT front ( (titlePage | div1 | %m.editIncl;)+ )>
+]]>
+
+<![%POSTKB;[
+<!ELEMENT front ( (titlePage | div1 | %m.editIncl; | pb)+ )>
+]]>
+
+<!-- AttList:   front
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST front
+      %a.global;
+      %a.declaring;
+      TEIform CDATA 'front'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   fw (teitran2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT fw %phrase.seq;>
+
+<!-- AttList:   fw
+     Extend:    None
+     Constrain: Require 'type'; enumerate vocabulary for 'type' and 'place'.
+     -->
+<!ATTLIST fw
+      %a.global;
+      type (catch | footer | header | pageno | sig) #REQUIRED
+      place (bottom-center | bottom-left | bottom-right | left | right | top-center | top-left |
+             top-right) #IMPLIED
+      TEIform CDATA 'fw'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   gap (teicore2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT gap EMPTY>
+
+<!-- AttList:   gap
+     Extend:    Add 'other' attribute (used when reason="other"). Add altRend attribute (used when
+                reason="editorial" and print source has a specific manner of rendering editorial
+                omissions, such as multiple asterisks, multiple em dashes, etc.).
+     Constrain: Require 'desc' and 'reason' attributes; enumerate vocabulary for 'reason'.
+     -->
+<!ATTLIST gap
+      %a.global;
+      altRend CDATA #IMPLIED
+      desc CDATA #REQUIRED
+      other CDATA #IMPLIED
+      resp IDREF %INHERITED;
+      hand IDREF %INHERITED;
+      agent CDATA #IMPLIED
+      extent CDATA #IMPLIED
+      TEIform CDATA 'gap'>
+
+<![%VENDOR;[
+<!ATTLIST gap reason (damage | editorial | missing | obscured | other) #REQUIRED>
+]]>
+<![%POSTKB;[
+<!ATTLIST gap reason (damage | editorial | missing | obscured | other | unknown) #REQUIRED>
+]]>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   group (teistr2.dtd)
+     Extend:    None
+     Constrain: Restrict content model to allow only <text> and <group> elements.
+     Comments:  Content model requires two or more elements because it makes no sense to have a
+                group of one.
+     -->
+<!ELEMENT group ( (text | group), (text | group)+ )>
+
+<!-- AttList:   group
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST group
+      %a.global;
+      %a.declaring;
+      TEIform CDATA 'group'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   head (teicore2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT head %paraContent;>
+
+<!-- AttList:   head
+     Extend:    None
+     Constrain: Enumerate vocabulary for 'type' attribute
+     Comments:  We consider 'type' required on <head> when there is more than one <head>, but not
+                when just one; so 'type' is not REQUIRED.
+     -->
+<!ATTLIST head
+      %a.global;
+      type (alt | desc | divisional | edition | main | resp | series | sub |
+            volume) #IMPLIED
+      TEIform CDATA 'head'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   hi (teicore2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT hi %paraContent;> 
+
+<!-- AttList:   hi
+     Extend:    Add 'other' attribute (used when rend="other")
+     Constrain: Require 'rend' attribute; enumerate vocabulary
+     Comments:  If no value from the enumerated list applies, use <hi rend='other' other='...'>.
+-->
+<!ATTLIST hi
+      %a.global.no_rend;
+      rend (%a.rend.display; | %a.rend.align; | %a.rend.indent; | %a.rend.typo; %a.rend.extended; | other) #REQUIRED
+      other CDATA #IMPLIED
+      TEIform CDATA 'hi'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   idno (teihdr2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT idno (#PCDATA)>
+
+<!-- AttList:   idno
+     Extend:    None
+     Constrain: Require 'type' attribute
+     -->
+<!ATTLIST idno
+      %a.global;
+      type CDATA #REQUIRED
+      TEIform CDATA 'idno'>
+
+<!-- TODO: Add level attribute with en. vocabulary
+      level (monograph | serial) "monograph"
+-->
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   language (teihdr2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT language %phrase.seq;>
+
+<!-- AttList:   language
+     Extend:    Change 'usage' attribute type from NMTOKEN to CDATA. (NMTOKEN is too restrictive for
+                our purposes. I would use an enumerated vocabulary, but we want to use spaces and
+                punctuation marks not allowed in the vocab list; vocab can be controlled by an XSLT
+                QA stylesheet.)
+     Constrain: 
+     -->
+<!ATTLIST language
+      %a.global;
+      wsd ENTITY #IMPLIED
+      usage CDATA #IMPLIED
+      TEIform CDATA 'language'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   lg (teicore2.dtd)
+     Extend:    Allow <stage>.
+     Constrain: None
+     Comments:  Needed for verse drama. See revision history entry for 1.52, 2007-04-18.
+     -->
+<!ELEMENT lg ((%m.divtop; | %m.Incl;)*,
+                    (l | lg | stage), (l | lg | stage | %m.Incl;)*,
+                    ((%m.divbot;), (%m.Incl;)*)*)>
+
+<!-- AttList:   lg
+     Extend:    None
+     Constrain: Exclude 'org', 'sample', and 'part' attributes.
+     Comments:  Here the 'type' attribute replaces a.divn, which contains 'type', 'org', 'sample',
+                and 'part' (and a.metrical, which resolves to an empty string).
+     -->
+
+<!ATTLIST lg
+      %a.global;
+      type CDATA #IMPLIED
+      TEIform CDATA 'lg'>
+
+<!-- ========================================================================================== -->
+
+<![%VENDOR;[
+<!-- Element:   note (teicore2.dtd)
+     Extend:    None
+     Constrain: Eliminate mixed content model by disallowing PCDATA and m.phrase, except for
+                allowing <ns> (VENDOR) or <seg> (POSTKB) as first element (for recording the note
+                symbol).
+     -->
+<!ELEMENT note ((ns)?, (%m.inter; | %m.chunk; | %m.Incl;)*)>
+
+<!-- AttList:   note
+     Extend:    None
+     Constrain: Require 'id' and 'place'. Enumerate vocabulary for 'place'.
+                Remove 'target' and 'targetEnd' attributes.
+                No default value for 'anchored' (change default from "yes" to "IMPLIED").
+                Change datatype of 'resp' from CDATA to IDREF.
+     Comments:  Removing 'target' and 'targetEnd'
+                encourages use of note for body of note, not for
+                referencing symbol (for which use <ref> or <ptr/>
+                instead). -->
+<!ATTLIST note
+      %a.global.id_required;
+      type CDATA #IMPLIED
+      resp IDREF #IMPLIED
+      place (above | below | end | foot | head | inline | left | right) #REQUIRED
+      anchored (yes | no) #IMPLIED
+      TEIform CDATA 'note'>
+]]>
+
+<![%POSTKB;[
+<!-- Element:   note (teicore2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT note %specialPara;>
+
+<!-- AttList:   note
+     Extend:    None
+     Constrain: Enumerate vocabulary for 'place'.
+                No default value for 'anchored' (change default from "yes" to IMPLIED).
+                Change datatype of 'resp' from CDATA to IDREF.
+     Comments:  For post-keyboarding DTD, 'target' and 'targetEnd' are available, to allow linking
+                from note to point of attachment; 'id' and 'place' attributes are not required,
+                because <note> is used in <teiHeader> where 'id' is not necessary (no ref refers to
+                the note) and 'place' is not applicable (there is no placement, no print source for
+                the note).
+     -->
+<!ATTLIST note
+      %a.global;
+      type CDATA #IMPLIED
+      resp IDREF #IMPLIED
+      place (above | below | end | foot | head | inline | left | right) #IMPLIED
+      anchored (yes | no) #IMPLIED
+      target IDREFS #IMPLIED
+      targetEnd IDREFS #IMPLIED
+      TEIform CDATA 'note'>
+]]>
+
+<!-- ========================================================================================== -->
+
+<![%MANUSCRIPT;[
+
+<!-- Element:   opener (teicore2.dtd)
+     Extend:    Allow new elements <postmark>, <to>, <from>, and <stamp> (MANUSCRIPT only)
+     Constrain: None
+     Comments:  These elements are needed for identifying the addressing information found on the
+                envelope accompanying a manuscript letter.
+     -->
+<!ELEMENT opener (#PCDATA | %m.phrase; | argument | byline | dateline | epigraph | salute | signed
+     | postmark | to | from | stamp | %m.Incl;)* >
+
+<!-- AttList:   opener
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST opener
+      %a.global;
+      TEIform CDATA 'opener'>
+
+]]>
+
+<!-- ========================================================================================== -->
+
+<![%POSTKB;[
+
+<!-- Element:   orig (teicore2.dtd) (POSTKB only)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT orig %phrase.seq;>
+
+<!-- AttList:   orig
+     Extend:    None
+     Constrain: Change 'resp' datatype from CDATA to IDREF.
+     -->
+<!ATTLIST orig
+      %a.global;
+      reg CDATA #IMPLIED
+      resp IDREF #IMPLIED
+      TEIform CDATA 'orig'>
+]]>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   pb (teicore2.dtd)
+     Extend:    Allow <fw>.
+     Constrain: None
+     Comments:  <pb> is the logical place to record page-related content for which <fw> is used:
+                running headers, printing signatures, and page numbers. Using <fw> for page numbers
+                in addition to the 'n' attribute follows our practice of not using attributes as
+                transcriptional spaces (thus n becomes only a label for display).
+     -->
+<!ELEMENT pb ((fw)*)>
+
+<!-- AttList:   pb
+     Extend:    Add 'entity', 'altEntity', and 'pid' attributes (POSTKB only).
+     Constrain: Remove 'rend' attribute.
+     Comments:  - 'entity' attribute: added to allow associating page images with the text.
+                - 'altEntity' attribute: to be used in cases where page images are bitonal and a
+                  grayscale or color figure image exists for a full-page figure. In such a case,
+                  the bitonal page image's base filename is the value of the 'entity' attribute;
+                  the color/grayscale figure image's base filename is the value of the 'altEntity'
+                  attribute. This allows a delivery system to choose between 'entity' for speed or
+                  'altEntity' for appearance, as appropriate to the delivery context.
+                - 'pid' attribute: facilitates delivery by making the UVa Library PID (persistent
+                  identifier) directly available to delivery stylesheets/programs.
+                - 'rend' attribute: has no meaning for milestone elements like pb.
+     -->
+<![%VENDOR;[
+<!ATTLIST pb
+      %a.global.no_rend;
+      ed CDATA #IMPLIED
+      TEIform CDATA 'pb'>
+]]>
+
+<![%POSTKB;[
+<!ATTLIST pb
+      %a.global.no_rend;
+      ed CDATA #IMPLIED
+      %a.entity;
+      altEntity ENTITY #IMPLIED
+      TEIform CDATA 'pb'>
+]]>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   q (teicore2.dtd)
+     Extend:    None: Restore <text> element to content model.
+     Constrain: None
+     Comments:  <q> is the one element in this DTD (other than TEI.2 and group) where it is
+                reasonable to allow <text>. Because <text> has been excluded from m.inter, it must
+                be explicitly restored here.
+     -->
+<!ELEMENT q (#PCDATA | %m.phrase; | %m.inter; | text | %m.chunk; | %m.Incl;)*>
+
+<!-- AttList:   q
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST q
+      %a.global;
+      type CDATA #IMPLIED
+      direct (y | n | unspecified) "unspecified"
+      who CDATA #IMPLIED
+      TEIform CDATA 'q'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   ref (teicore2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT ref %paraContent;>
+
+<!-- AttList:   ref
+     Extend:    None
+     Constrain: Change 'target' from IMPLIED to REQUIRED.
+     Comments:  Requiring a reference to refer to something (requiring 'target') is just common
+                sense and follows the example of <ptr/>, where 'target' is already required in TEI.
+     -->
+<!ATTLIST ref
+      %a.global;
+      %a.pointer;
+      target IDREFS #REQUIRED
+      TEIform CDATA 'ref'>
+
+<!-- ========================================================================================== -->
+
+<![%POSTKB;[
+
+<!-- Element:   reg (teicore2.dtd) (POSTKB only)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT reg %phrase.seq;>
+
+<!-- AttList:   reg
+     Extend:    None
+     Constrain: Change 'resp' datatype from CDATA to IDREF.
+     -->
+<!ATTLIST reg
+      %a.global;
+      orig CDATA #IMPLIED
+      resp IDREF #IMPLIED
+      TEIform CDATA 'reg'>
+]]>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   row (teifig2.dtd)
+     Extend:    None
+     Constrain: Remove <table> from content model. (Nested tables are still allowed within <cell>.)
+                Also remove <cb/> and <pb/> from content model.
+     -->
+<!ELEMENT row (cell, (%x.Incl; %n.anchor; | %m.editIncl; | %m.metadata; | %x.refsys; %n.lb; | %n.milestone;)*)+>
+
+<!-- AttList:   row
+     Extend:    None
+     Constrain: Remove 'role' attribute.
+     Comments:  Use 'role' on cell element instead (e.g. <cell role="label"> is equivalent to <th>
+                in XHTML).
+     -->
+<!ATTLIST row
+      %a.global;
+      TEIform CDATA 'row'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   salute (teistr2.dtd)
+     Extend:    Allow <note>
+     Constrain: None
+     Comments:  See comment for <signed> below.
+     -->
+<!ELEMENT salute (%phrase; | note)*>
+
+<!-- AttList:   salute
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST salute
+      %a.global;
+      TEIform CDATA 'salute'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   seg (teilink2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT seg %paraContent;>
+
+<!-- AttList:   seg
+     Extend:    None
+     Constrain: Require 'type' attribute and provide enumerated vocabulary. Remove attributes
+                'subtype', 'function', and 'part'.
+     Comments:  These contraints are accomplished by removing %a.seg; and then defining 'type'.
+     -->
+<!ATTLIST seg
+      %a.global;
+      type (anon | call-out | note-symbol | postscript ) #REQUIRED
+      TEIform CDATA 'seg'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   seriesStmt (teihdr2.dtd)
+     Extend:    Allow <biblScope>.
+     Constrain: None
+     -->
+<!ELEMENT seriesStmt ( (title+, (idno | respStmt)*, biblScope*) | p+ )>
+
+<!-- AttList:   seriesStmt
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST seriesStmt
+      %a.global;
+      TEIform CDATA 'seriesStmt'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   sic (teicore2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT sic %specialPara;>
+
+<!-- AttList:   sic
+     Extend:    None
+     Constrain: Change 'resp' datatype from CDATA to IDREF.
+     -->
+<!ATTLIST sic
+      %a.global;
+      corr CDATA #IMPLIED
+      resp IDREF %INHERITED;
+      cert CDATA #IMPLIED
+      TEIform CDATA 'sic'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   signed (teistr2.dtd)
+     Extend:    Allow <note>
+     Constrain: None
+     Comments:  Notes should be allowed wherever note references (ref or ptr) are allowed. But
+                adding <note> to m.loc (which is part of m.phrase) is not possible because doing so
+                creates an ambiguous content model (conflicts with <note> in m.inter, I suspect),
+                so we have no choice but to add <note> directly to the content models of those
+                elements that need it.
+     -->
+<!ELEMENT signed  (%phrase; | note)*>
+
+<!-- AttList:   signed
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST signed
+      %a.global;
+      TEIform CDATA 'signed'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   stage (teicore2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT stage %specialPara;>
+
+<!-- AttList:   stage
+     Extend:    None
+     Constrain: Enumerate vocabulary for 'type' attribute.
+     -->
+<!ATTLIST stage
+      %a.global;
+      type (business | delivery | entrance | exit | location |
+            modifier | mixed | novelistic | setting) #IMPLIED
+      TEIform CDATA 'stage'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   teiHeader (teihdr2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT teiHeader ((fileDesc), (encodingDesc)*, (profileDesc)*, (revisionDesc)?)>
+
+<!-- AttList:   teiHeader
+     Extend:    None
+     Constrain: 1. Enumerate vocabulary for 'type' attribute and require it.
+                2. Enumerate vocabulary for 'creator' attribute.
+                3. Change 'status' attribue from default value "new" to IMPLIED.
+     Comments:  1. For 'type' attribute, allowed values are "AACR2" indicating a header derived
+                   from a MARC record, and "migrated" indicating a header originally created by
+                   some other means (and subsequently updated to conform to this DTD). Although the
+                   markup in a "migrated" header must conform to this DTD (assuming the TEI document
+                   is valid XML), some header data/content might be contained in different fields,
+                   expressed more frequently as prose within <p>, less complete, less mutually
+                   consistent with other TEI headers, etc., as compared to a header derived from a
+                   MARC record.
+                2. When header 'type' is "migrated", 'creator' attribute should identify the
+                   creator of the original header.
+                3. It seems unwise to assume that all headers not explicitly marked otherwise are
+                   necessarily new; they might have been updated by some means at some time.
+     -->
+<!ATTLIST %n.teiHeader;
+      %a.global;
+      type (AACR2 | migrated) #REQUIRED
+      creator (Etext) #IMPLIED
+      status (new | update) #IMPLIED
+      date.created %ISO-date; #IMPLIED
+      date.updated %ISO-date; #IMPLIED
+      TEIform CDATA 'teiHeader'>
+
+<!-- ========================================================================================== -->
+
+<![%OCR;[
+
+<!-- Element:   text (teistr2.dtd)
+     Extend:    None
+     Constrain: Restrict content model to allow only <body>.
+     -->
+<!ELEMENT text ( body )>
+
+<!-- AttList:   text
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST text
+      %a.global;
+      %a.declaring;
+      TEIform CDATA 'text'>
+
+]]>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+<![%TRANS;[
+
+<!-- Element:   text (teistr2.dtd)
+     Extend:    None
+     Constrain: Restrict content model to allow only top-level structures.
+     -->
+<!ELEMENT text ( (front)?, (body | group), (back)? )>
+
+<!-- AttList:   text
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST text
+      %a.global;
+      %a.declaring;
+      TEIform CDATA 'text'>
+
+]]>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+<![%NONTRANS;[
+
+<!-- Element:   text (teistr2.dtd)
+     Extend:    None
+     Constrain: Restrict content model to allow only <body>.
+     -->
+<!ELEMENT text ( body )>
+
+<!-- AttList:   text
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST text
+      %a.global;
+      %a.declaring;
+      TEIform CDATA 'text'>
+
+]]>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   title (teicore2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT title %paraContent;>
+
+<!-- AttList:   title
+     Extend:    None
+     Constrain: Enumerate vocabulary for 'type' attribute.
+                Remove 'level' attribute (VENDOR only).
+     Comments:  Use of 'level' should be reserved for later (if ever) analytic markup enhancement.
+                Values "portion", "parallel", "distinctive", "cover", "added-title-page", "caption",
+                "running", and "spine" are used in the teiHeader and correspond to MARC 246 (varying
+                form of title) 2nd indicator values, except that a 246 2nd indicator of 4 for "Other
+                title" should be represented in TEI as simply type="alternate".
+     -->
+<!ATTLIST title
+      %a.global;
+      type (abbreviated | alternate | desc | former | main | number | parent | part | related |
+            resp | sort | sub | uniform | volume |
+            portion | parallel | distinctive | cover | added-title-page | caption | running | spine
+           ) #IMPLIED
+      TEIform CDATA 'title'>
+
+<![%POSTKB;[
+<!ATTLIST title level (a | m | j | s | u) #IMPLIED>
+]]>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   titlePage (teifron2.dtd)
+     Extend:    None
+     Constrain: Require pb as first child of titlePage
+     -->
+<!ELEMENT titlePage (pb, (%m.Incl;)*, (%m.tpParts;),
+         (%m.tpParts; | %m.Incl;)*)>
+
+<!-- AttList:   titlePage
+     Extend:    None
+     Constrain: Change 'type' from CDATA to enumerated vocabulary.
+     -->
+<!ATTLIST titlePage
+      %a.global;
+      type (main | series) #IMPLIED
+      TEIform CDATA 'titlePage'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   titlePart (teifron2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT titlePart %paraContent;>
+
+<!-- AttList:   titlePart
+     Extend:    None
+     Constrain: Enumerate vocabulary for 'type' attribute.
+     -->
+<!ATTLIST titlePart
+      %a.global;
+      type (alt | desc | main | resp | series | sub | volume) #IMPLIED
+      TEIform CDATA 'titlePart'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   titleStmt (teihdr2.dtd)
+     Extend:    Allow <biblScope>.
+     Constrain: None
+     -->
+<!ELEMENT titleStmt (title+, (author | editor | sponsor | funder | principal | respStmt)*, biblScope*)>
+
+<!-- AttList:   titleStmt
+     Extend:    None
+     Constrain: None
+     -->
+<!ATTLIST titleStmt
+      %a.global;
+      TEIform CDATA 'titleStmt'>
+
+<!-- ========================================================================================== -->
+
+<!-- Element:   unclear (teicore2.dtd)
+     Extend:    None
+     Constrain: None
+     -->
+<!ELEMENT unclear %paraContent;>
+
+<!-- AttList:   unclear
+     Extend:    None
+     Constrain: Supply 'illegible' as default for 'reason' attribute;
+                change 'resp' datatype from CDATA to IDREF
+     -->
+<!ATTLIST unclear
+      %a.global;
+      reason CDATA 'illegible'
+      resp IDREF %INHERITED;
+      cert CDATA #IMPLIED
+      hand IDREF %INHERITED;
+      agent CDATA #IMPLIED
+      TEIform CDATA 'unclear'>
+
+<!-- ========================================================================================== -->
+
+<!-- END OF uva-dl-tei.dtd -->

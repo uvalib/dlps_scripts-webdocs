@@ -1,0 +1,393 @@
+<?xml version="1.0"?>
+
+<?dlps id="bov_20000714"?>
+<?dlps page-images="none" figure-images="no"?>
+<?dlps transcription="other"?>
+
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of
+                    Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors
+                    meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with
+                        local customizations)</resp>
+                    <name>University of Virginia Library</name>
+                </respStmt>
+                <biblScope type="date">
+                    <date value="2000-07-14">July 14, 2000</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">17</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2011">2011</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2011 by the Rector and Visitors of the
+                        University of Virginia</p>
+                    <p n="access">Publicly accessible</p>
+                </availability>
+                <idno type="DLPS ID">bov_20000714</idno>
+                <idno type="uva-pid">uva-lib:498157</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors
+                            minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of
+                            Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors
+                            meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2000-07-14">July 14, 2000</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information. Access to
+                                minutes containing salary information will be granted only under the
+                                procedures of the Virginia Freedom of Information Act (Code of
+                                Virginia-2.1-340 ff.) or if permission is granted by the Secretary
+                                of the Board. Researchers interested in obtaining access to these
+                                records should direct a request in writing to the Office of the
+                                Legal Adviser, Madison Hall, University of Virginia. These public
+                                minutes have had salary information deleted and bear no
+                                restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special
+                                Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body
+                                which is the legal owner and operator of the institution. Recorded
+                                in the minutes are appointments and other personnel decisions
+                                concerning faculty, decisions about construction of facilities,
+                                gifts to the university, and all other board actions, decisions and
+                                resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction;
+                &editorial_normalization; &editorial_hyphenation; &editorial_quotation;
+                &editorial_stdVals; </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language n="008" id="eng" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+
+                <date value="2011-06-30">June 30, 2011</date>
+                <respStmt>
+                    <name id="lsc6v">Lorrie Chisholm, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to student markup.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text id="d1">
+        <body id="d2">
+            <div1 type="statement" id="d3">
+                <pb n="5871"/>
+                <head type="main">TENTATIVE MINUTES SUBJECT TO THE APPROVAL OF THE BOARD OF
+                    VISITORS<lb/> July 14-15, 2000</head>
+
+                <p>The Board of Visitors met in Retreat at Upper Brandon in Prince George County on
+                    July 14 and 15, 2000. <name type="present">John P. Ackerly, III, Rector, Thomas J. Bliley, Jr.,
+                    Charles M. Caravati, Jr., M.D., William G. Crutchfield, Jr., Charles L. Glazer,
+                    William H. Goodwin, Jr., T. Keister Greer, Mrs. Elsie Goodwyn Holland, Gordon F.
+                    Rainey, Jr., Ms. Elizabeth A. Twohy, Walter F. Walker, Benjamin P.A. Warthen,
+                    James C. Wheat, III, Joseph E. Wolfe, and Stephen S. Phelan, Jr. </name>were
+                    present.</p>
+
+                <p>Also present were <name type="present">John T. Casteen, III, Leonard W. Sandridge, Alexander G.
+                    Gilliam, Jr., Paul J. Forch, Ms. Penny Rue</name> (on July 14<hi rend="super">th</hi>
+                    only) and <name type="present">Ms. Jeanne Flippo Bailes</name>.</p>
+
+                <p>The Retreat began in Open Session at 8:30 p.m. on the 14th. The following
+                    motions, permitting the Board to meet in Open Session according to the
+                    appropriate provisions of the <hi rend="underline">Code of Virginia</hi>, were
+                    proposed and, on motion, adopted by the Board:</p>
+
+                <p>That the Board of Visitors of the University of Virginia go into Executive
+                    Session to discuss the acquisition of real property located in the City of
+                    Charlottesville and the County of Albemarle, where such discussion would
+                    adversely affect our negotiations, strategy and financial interest as permitted
+                    in Section 2.1-344 (A) (3) and (6) of the <hi rend="underline">Code of Virginia</hi>. </p>
+                <p>That the Board of Visitors of the University of Virgini go into Executive Session
+                    to review the performance and present and future assignments of senior
+                    University administrators, as provided for in Section 2.1-344 (A)(1) of the <hi rend="underline">Code
+                    of Virginia</hi>. </p>
+                <pb n="5872"/>
+
+                <p>That the Board of Visitors of the University of Virginia go into Executive
+                    Session to discuss the acquisition of real property located in the City of
+                    Charlottesville and the County of Albemarle, where such discussion would
+                    adversely affect our negotiation strategy and financial interest, as provided
+                    for in Section 2.1-344 (A)(3) and (6) of the <hi rend="underline">Code of Virginia</hi>. </p>
+                <p>The Board went into Executive Session at 8:35 p.m., and recessed at 10:45 p.m.,
+                    for the evening.</p>
+
+                <p>The Board resumed its meeting, in Retreat, at 8:40 a.m., on the 15<hi rend="super">th</hi>, adjourned
+                    for lunch, and went into Open Session at 1:00 p.m.</p>
+
+                <p>The morning session having ended ahead of schedule, the Rector proposed short
+                    discussions of a miscellany of topics, which he introduced. No formal actions
+                    were taken as a result of the discussions. </p>
+                <p>On motion, the meeting was adjourned at 2:30 p.m.</p>
+
+                <trailer>Respectfully submitted,<lb/>
+                    <name>Alexander G. Gilliam, Jr.</name></trailer>
+
+                <epigraph>
+                    <p>AGG:jb</p>
+                </epigraph>
+            </div1>
+            <div1 type="section" id="d4">
+
+                <pb/>
+
+                <p>At a meeting of the Board of Visitors of the University of Virginia held on July
+                    14 and 15, 2000, a roll call vote was taken immediately following an executive
+                    session. Members voting "yes" certify that to the best of the Member's knowledge
+                    (1) only public business matters lawfully exempted were discussed in closed
+                    session; and (2) only public business matters identified in the public motion by
+                    which the executive or closed meeting were discussed. In accordance with the
+                    law, any member of the public body who believes that there was a departure from
+                    the foregoing shall so state prior to the vote indicating "the substance of the
+                    departure". Any such statements are recorded below under "comments". </p>
+                <table rows="17" cols="3">
+                    <row>
+                        <cell role="label">NAME</cell>
+                        <cell role="label"> VOTE</cell>
+                        <cell role="label"> COMMENTS</cell>
+                    </row>
+                    <row>
+                        <cell/>
+                        <cell> yes or no</cell>
+                        <cell/>
+                    </row>
+
+                    <row>
+                        <cell>John P. Ackerly, II</cell>
+                        <cell>yes</cell>
+                        <cell/>
+                    </row>
+
+                    <row>
+
+                        <cell>Thomas J. Bliley, Jr.</cell>
+                        <cell>yes</cell>
+                        <cell/>
+                    </row>
+                    <row>
+                        <cell>Charles M. Caravati, Jr.</cell>
+                        <cell>yes</cell>
+                        <cell/>
+                    </row>
+                    <row>
+                        <cell>William G. Crutchfield, Jr.</cell>
+                        <cell>yes</cell>
+                        <cell/>
+                    </row>
+                    <row>
+                        <cell>Charles L. Glazer</cell>
+                        <cell>yes</cell>
+                        <cell/>
+                    </row>
+                    <row>
+                        <cell>William H. Goodwin, Jr.</cell>
+                        <cell>yes</cell>
+                        <cell/>
+                    </row>
+                    <row>
+                        <cell>T. Keister Greer</cell>
+                        <cell>yes</cell>
+                        <cell/>
+                    </row>
+                    <row>
+                        <cell>Elsie Goodwyn Holland</cell>
+                        <cell>yes</cell>
+                        <cell/>
+                    </row>
+                    <row>
+                        <cell>Gordon F. Rainey, Jr.</cell>
+                        <cell>yes</cell>
+                        <cell/>
+                    </row>
+                    <row>
+                        <cell>Timothy B. Robertson</cell>
+                        <cell/>
+                        <cell>absent</cell>
+                    </row>
+                    <row>
+                        <cell>Terence P. Ross</cell>
+                        <cell/>
+                        <cell>absent</cell>
+                    </row>
+                    <row>
+                        <cell>Elizabeth A. Twohy</cell>
+                        <cell>yes</cell>
+                        <cell/>
+                    </row>
+                    <row>
+                        <cell> Walter F. Walker</cell>
+                        <cell>yes</cell>
+                        <cell/>
+                    </row>
+                    <row>
+                        <cell>Benjamin P.A. Warthen</cell>
+                        <cell>yes</cell>
+                        <cell/>
+                    </row>
+                    <row>
+                        <cell>James C. Wheat, III</cell>
+                        <cell>yes</cell>
+                        <cell/>
+                    </row>
+                    <row>
+                        <cell>Joseph E. Wolfe</cell>
+                        <cell>yes</cell>
+                        <cell/>
+                    </row>
+                    <row>
+                        <cell>Stephen S. Phelan, Jr.</cell>
+                        <cell>yes</cell>
+                        <cell/>
+                    </row>
+                </table>
+            </div1>
+            <div1 type="addenda" id="d5">
+                <pb/>
+                <head type="main">ADDENDUM TO THE OFFICIAL MINUTES OF THE MEETING OF THE BOARD OF
+                    VISITORS OF THE UNIVERSITY OF VIRGINIA<lb/>Meeting Date: July 14-15, 2000</head>
+                <div2 type="section" id="d6">
+
+                    <head type="sub">CERTIFICATION OF EXECUTIVE MEETING</head>
+
+                    <p>WHEREAS the Board of Visitors has convened an executive meeting on this date
+                        pursuant to an affirmative recorded vote and in accordance with the
+                        provisions of the Virginia Freedom of Information Act; and </p>
+                    <p>WHEREAS Section 2.1-344.1 of the <hi rend="underline">Code of Virginia</hi>
+                        requires a certification by this Board of Visitors that such executive
+                        meeting was conducted in conformity with Virginia law; </p>
+                    <p>NOW THEREFORE BE IT RESOLVED that the Board of Visitors hereby certifies
+                        that, to the best of each member's knowledge, (i) only public business
+                        matters lawfully exempted from open meeting requirements by Virginia law
+                        were discussed in the executive meeting to which this certification
+                        resolution applies, and (ii) only such public business matters as were
+                        identified in the motion convening the executive meeting were heard,
+                        discussed or considered by the Board of Visitors. </p>
+                    <table rows="3" cols="2">
+                        <row>
+                            <cell cols="2"> VOTE</cell>
+                        </row>
+                        <row>
+                            <cell>AYES:</cell>
+                            <cell>15</cell>
+                        </row>
+                        <row>
+                            <cell>NAYS:</cell>
+                            <cell> 0</cell>
+                        </row>
+                    </table>
+
+
+
+
+                    <p>[For each nay vote, the substance of the departure from the requirements of
+                        the Act should be described].</p>
+
+                    <table rows="2" cols="2">
+                        <row>
+                            <cell>ABSENT DURING VOTE:</cell>
+                            <cell>2 </cell>
+                        </row>
+                        <row>
+                            <cell>ABSENT DURING MEETING:</cell>
+                            <cell>2</cell>
+                        </row>
+
+                    </table>
+                </div2>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

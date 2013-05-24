@@ -1,0 +1,304 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0043 SYSTEM "000000766_0043" NDATA jpg>
+<!ENTITY DSSR_000000766_0044 SYSTEM "000000766_0044" NDATA jpg>
+<!ENTITY DSSR_000000766_0045 SYSTEM "000000766_0045" NDATA jpg>
+<!ENTITY DSSR_000000766_0046 SYSTEM "000000766_0046" NDATA jpg>
+
+<!--<!ENTITY N620909a SYSTEM "620909a.jpg" NDATA jpg>
+<!ENTITY N620909b SYSTEM "620909b.jpg" NDATA jpg>
+<!ENTITY N620909c SYSTEM "620909c.jpg" NDATA jpg>
+<!ENTITY N620909d SYSTEM "620909d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NA62a26">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-01-26">26 January 1862</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Heather L. Horechny</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Heather L. Horechny, University of Virginia Library Electronic Text
+                        Center.</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">16</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62a26</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, 26 January 1862</title>
+
+
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 p.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-01-26">1862-01-26</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War; Women Writers; Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-03">November 3rd, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">September 30, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <body id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1862-01-26"/>
+
+                        <title>Letter from Adelaide E. Case to Charles Tenney</title>
+                    </bibl>
+                </head>
+
+                <p>Addie apologizes for not responding sooner to Charlie's previous two letters. She
+                    has read in the newspaper that Gen. McClellan is not granting furloughs and
+                    Addie is disappointed in not being able to see him. Charlie had sent her poetry,
+                    presumatively love poetry. Addie writes that she always wishes that she could be
+                    a poetess and that she sees poetry everwhere in life and nature. Finally, Addie
+                    comes to the main point of her letter. She claims that she sees Charlie only as
+                    a brother, not a lover. She is conflicted over her feelings, hurting Charlie,
+                    and the impact on family and friends. Laurie (Addie's brother) has been playing
+                    a song, "Heart be still" in the background, and it has Addie's emotions riled
+                    up. Addie hopes that Charlie does not take her letter badly for she does not
+                    wish to hurt him. She points out that loving him as a brother places him in the
+                    highest esteem, and that it is not an empty and cold declaration. Laurie
+                    finishes his music and wishes Addie to go with him to a prayer meeting, so Addie
+                    closes the letter praying that a guardian angel watch over Charlie.</p>
+            </div1>
+            <div1 type="letter" n="1" id="d4">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-01-26">26
+                        January 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0043"/>
+                <opener>
+                    <dateline>
+                        <name type="place">Mecca</name>
+                        <date value="1862-01-26">January 26<hi rend="underline">
+                                <hi rend="super">th</hi>
+                            </hi> 1862</date>
+                        <lb/>
+                    </dateline>
+                    <salute>My Dear<corr sic="Brother," resp="unknown">Brother</corr><lb/>
+                    </salute>
+                </opener>
+                <p>Laurie is writing to Hal<lb/> and wishes to know if I will send a<lb/> line to
+                    &ldquo;my brother&rdquo; I, of course, <hi rend="underline"
+                    >gladly</hi><lb/> accept the offer. I received two dear letters<lb/> from you
+                    last week and neglected to answer<lb/> both till now, and consequently shall
+                    answer<lb/> both in this <orig reg="one.">one,</orig> First I must tell you<lb/>
+                    of what I read in the paper, which<lb/> caused unforbidden tears to flow; I<lb/>
+                    read that <name type="person">Gen. McClellan</name> had forbidden<lb/> any more
+                    furloughs being granted.<lb/>
+                </p>
+                <p>Now, dear Charles, do <hi rend="underline">you</hi> blaim me for<lb/> weeping at
+                    that; when my anticipations<lb/>
+                    <pb n="2" entity="DSSR_000000766_0044"/> had been so hightened? I certainly<lb/>
+                    could not help it although father told<lb/> me that I was &ldquo;such a
+                    foolish little girl&rdquo;<lb/> But this is not answering Charlie's welcome<lb/>
+                    <orig reg="letter.">letter,</orig> Indeed dear brother I felt somewhat<lb/>
+                    flattered on the reciept of your poetry; How<lb/> often I have wished that I was
+                        a <orig reg="poetes&longs;">poetes&longs;,</orig><lb/> It is one of
+                    the wildest dreams that I ever<lb/> experienced the thought of being a <orig
+                        reg="poetes&longs;">poetes&longs;,</orig><lb/> But as Laurie would
+                    say, &ldquo;cut it short&rdquo; and<lb/> tell the truth &ldquo;you
+                    don't know <orig reg="enough.">enough,</orig>&rdquo;<lb/> Well, dear brother,
+                        even <hi rend="underline">I</hi> have begun to<lb/> believe it Poetry is--I
+                    am tempted<lb/> to say--my life. I can imagine poetry<lb/> in every breeze of
+                    wind that fans my<lb/> cheek, in every ripple of the merry<lb/> brook, in every
+                    melodious song of the<lb/> pretty warbler, and most of all and<lb/> sweeter, yes
+                    far sweeter than all these, is<lb/> poetry in the accent of love and friend<lb/>
+                    <corr sic="ship;" resp="unknown">ship.</corr> but when I strive to place it
+                    in<lb/> rhyme, my imagination seems to<corr sic="fly." resp="unknown"
+                    >fly</corr><lb/>
+                </p>
+
+                <pb n="3" entity="DSSR_000000766_0045"/>
+                <p>But now comes this, &ldquo;Read this<lb/> last, please&rdquo; <hi
+                        rend="underline">My</hi> <hi rend="underline">brother</hi>. how many,
+                    many<lb/> happy thoughts have clustered round that<lb/> substitute for Charlie,
+                    you dear Charlie would<lb/> wish to dispel those thoughts- would you?</p>
+                <p>You may say I may hold in in a happier<lb/> nearer and dearer relation. <orig
+                        reg="But">but</orig> my friend<lb/> the translation from a brother to a
+                    love<lb/> is no common affair. I have taught my<lb/> heart to love you only as a
+                    sister and have<lb/> tried to have my love returned only as a<lb/> brother.
+                    Charlie, I will confes&longs; that I could<lb/> love you with the true and
+                    fervent passion<lb/> of which my heart is capable, but Charlie<lb/> the dark and
+                    dreadful disgrace resting<lb/> upon our family! I am sensible to the fact<lb/>
+                    that there should be no blame attached<lb/> to me. But darling brother <hi
+                        rend="underline">you</hi> are to pure<lb/> to unite yourself with one whom
+                    the world<lb/> looks upon in such a light, or rather<lb/>
+                        darknes&longs;<orig reg=", I">. I</orig> may be too sensitive. I
+                    some<lb/> times feel that I am, but my darling Charlie<lb/> had I known of the
+                    facts I now do, I could <pb n="4" entity="DSSR_000000766_0046"/>
+                    <hi rend="underline">never</hi><hi rend="underline"> never </hi> consented to
+                    corresponded with<lb/> you. I am thankful very thankful<del hand="h1">
+                        <hi rend="line-through">for</hi>
+                    </del> to<lb/> Hallie for telling you. My heart and<lb/> conscience often
+                    reproved me for not telling<lb/> you myself, but I could not. My God! I
+                    would<lb/> exclaim. I could not tell <hi rend="underline">him</hi> if it even
+                    to<lb/> save this nation! Was that a strong expres&longs;ion, my<lb/>
+                    brother! My brother, what feelings arise upon the writing<lb/> of that word when
+                    I know it is not sin. My darling<lb/> I will not call you by
+                    that <unclear>ould</unclear> I may<lb/> by name, but as my own heart says. My own<lb/>
+                    <unclear>s</unclear>darling Charlie which I feel to be <unclear>true</unclear>.</p>
+                <p>What am I writing, dear Charlie. Will you blush<lb/> for Addie when you read
+                    these the sentiment of my<lb/> heart. I fear you will, but Laurie was playing
+                    and<lb/> singing one of my favorite pieces entitled &ldquo;Heart be
+                    still&rdquo;<lb/> and it called out all the deeper feelings of my<lb/>
+                    <hi rend="underline">rebellious</hi> heart and seemed to work opposite from<lb/>
+                    its usual course for <hi rend="underline">my</hi> heart <hi rend="underline"
+                        >would</hi> <hi rend="underline">not</hi> &ldquo;<hi rend="underline"
+                        >be</hi> <hi rend="underline">still</hi>&rdquo;<lb/> dear Charlie will
+                    you throw this from you in anger<lb/> and say &ldquo;she is nothing but a
+                    silly romantic school<lb/> girl&rdquo; Will you dear Charlie; If I knew you
+                    would<lb/> I would not send it, but my darling, it is an<lb/> ill tale but my
+                    hand has moved over if never<lb/> before in unison with my heart and
+                    feelings<lb/>
+                </p>
+                <p>Darling Charlie do you not think there is poetry on<lb/> this page? I know there
+                    is in my heart<lb/> But fie! what an expres&longs;ion I have written near
+                    the<lb/> top of this page drawing the inference that the<lb/> name of brother is
+                    cold. Bles&longs; me! did I forget my<lb/> own darling brother <orig
+                        reg="Hallie?">Hallie</orig> No a brother's name<lb/> is not cold but a
+                    tumult of a different nature<lb/> swept over me at that moment. Than
+                    fortune<lb/> Laurie has stopped playing or I should again go off into<lb/> one
+                    of my wild dreams that is my nature when<lb/> I hear music, I either sit spell
+                    bound or else the<lb/> inmost depth of my soul are awakened, but<lb/>
+                </p>
+                <closer>I must close this as Laurie wishing one to go to<lb/> prayer meeting tonight
+                        with <orig reg="him.">him</orig><salute>May a guardian<lb/> angel from Heaven
+                        hover round thee, forever<lb/> as the earnest prayer of your<lb/>
+                    </salute><signed>Addie</signed></closer>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

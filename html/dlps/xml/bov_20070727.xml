@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?dlps id="bov_20070727"?>
+<?dlps page-images="none" figure-images="no"?>
+<?dlps transcription="ocr"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+<!ENTITY % xref 'INCLUDE'>
+<!ATTLIST xref url CDATA #IMPLIED>
+<!ENTITY % MANUSCRIPT "INCLUDE">
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of
+                    Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors
+                    meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with
+                        local customizations)</resp>
+                    <name>Digital Curation Services, University of Virginia Library, Charlottesville
+                        Virginia</name>
+                </respStmt>
+                <biblScope type="date">
+                    <date value="2007-07-27">July 27, 2007</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">33</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2010">2010</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the
+                        University of Virginia</p>
+                    <p n="access">Publicly accessible</p>
+                </availability>
+                <idno type="DLPS ID">bov_20070727</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors
+                            minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of
+                            Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors
+                            meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2007-07-27">July 27, 2007</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information. Access to
+                                minutes containing salary information will be granted only under the
+                                procedures of the Virginia Freedom of Information Act (Code of
+                                Virginia-2.1-340 ff.) or if permission is granted by the Secretary
+                                of the Board. Researchers interested in obtaining access to these
+                                records should direct a request in writing to the Office of the
+                                Legal Adviser, Madison Hall, University of Virginia. These public
+                                minutes have had salary information deleted and bear no
+                                restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special
+                                Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body
+                                which is the legal owner and operator of the institution. Recorded
+                                in the minutes are appointments and other personnel decisions
+                                concerning faculty, decisions about construction of facilities,
+                                gifts to the university, and all other board actions, decisions and
+                                resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction;
+                &editorial_normalization; &editorial_hyphenation; &editorial_quotation;
+                &editorial_stdVals; </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language n="008" id="eng" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <list>
+                        <item>University of Virginia::Board of Visitors</item>
+                    </list>
+                </keywords>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2010-06-29">June 29, 2010</date>
+                <respStmt>
+                    <name id="lsc6v">Lorrie Chisholm, (Digital Curation Services, University of
+                        Virginia Library)</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>The physical page 7398 contains an error in the enrollment goals. Corrected
+                    the error in the electronic text.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+        <body id="d2">
+            <div1 id="d3" type="statement">
+                <pb n="7392"/>
+                <head>SUBJECT TO THE APPROVAL OF THE BOARD OF VISITORS <lb/>
+                    <dateRange from="2007-07-27" to="2007-07-28">July 27-28, 2007
+                    </dateRange></head>
+                <p>The Board of Visitors of the University of Virginia met, in retreat, on Friday
+                    and Saturday, <dateRange from="2007-07-27" to="2007-07-28">July 27, and 28,
+                        2007</dateRange>, at The Hotel Roanoke in Roanoke. <name>W. Heywood
+                        Fralin</name>, Rector, presided over all sessions. </p>
+                <p><name type="present">John O. Wynne, Daniel R. Abramson, A. Macdonald Caputo, the
+                        Honorable Alan A. Diamonstein, Ms. Susan Y. Dorsey, Thomas F. Farrell, II,
+                        G. Slaughter Fitz-Hugh, Jr., Ms. Glynn D. Key, Austin Ligon, Vincent J.
+                        Mastracco, Jr., the Honorable Lewis F. Payne, Warren M. Thompson, E.
+                        Darracott Vaughan, Jr., M.D., and Carey J. Mignerey </name> were present. </p>
+                <p><name>Gordon F. Rainey, Jr.</name>, participated by telephone. </p>
+                <p>Present as well were <name type="present">John T. Casteen, III, Leonard W.
+                        Sandridge, Alexander G. Gilliam, Jr., Paul J. Forch, Arthur Garson, Jr.,
+                        M.D., Ms. Carol Wood, and Ms. Jeanne Flippo Bailes</name>. </p>
+                <p><name type="present">Ms. Patricia M. Lampkin, Ms. Colette Sheehy, Robert D.
+                        Sweeney, Craig K. Littlepage, Milton Adams, George Stovall, Benjamin Y.
+                        Cooper, IV, Ms. Julie Caruccio, Justin Watkins, and Keith D. Vanderbeek,
+                        were present for portions of the Retreat</name>. </p>
+                <p><name>Charles W. Steger</name>, the President of Virginia Tech, was present
+                    briefly on the morning of July 28<hi rend="super">th</hi>, as a special guest. </p>
+                <p>The Retreat began at 12:10 p.m., on <date value="2007-07-27">Thursday, July 27<hi
+                    rend="super">th</hi></date>. </p>
+                <p>The Rector opened the first session with general remarks on what he sees as the
+                    Board goals over the next two years, goals that will be his during his term as
+                    Rector. Implementation of the plans to be proposed by <name>Messrs. Wynne</name>
+                    and <name>Caputo</name> special committees will be important, and there will be
+                    a continuing emphasis on diversity. The Board must continue to focus on the
+                    Capital Campaign and make sure that it will exceed expectations, with the
+                    opportunity to raise perhaps &#x0024;4billion, &#x0024;1billion over the present
+                    Campaign goal. </p>
+
+                <pb n="7393"/>
+
+                <p>Particular emphasis, he said, must be placed on the College, the "backbone of
+                    this University and we must focus on providing the necessary resources for it to
+                    be the best it can be, preparing our students for a global economy."</p>
+                <p>He went on to say that as specified in the University's long range plan, there
+                    must be a strengthening of the focus on research, a focus which includes support
+                    for graduate students, faculty, and the need for new facilities. </p>
+                <p>The University must expand on its successes at The University of Virginia at Wise
+                    to provide educational opportunities for more students; these efforts are vital
+                    to the economic well being and development of Southwest Virginia. </p>
+                <p>The Rector said that support for the principles of diversity, and improvement of
+                    diversity at the University, "must be at the top of our list of goals." He noted
+                    that the long range plan for the University, soon to be finished, must be
+                    implemented and not allowed to languish. </p>
+                <p>Work must be done, too, on identifying a successor to <name>Mr. Sandridge</name>. </p>
+                <p>Finally, the Rector emphasized the proper role of the Board: the President and
+                        <name>Mr. Sandridge</name> are charged with running the University on a day
+                    to day basis, with the Board providing advice and oversight. </p>
+                <p><name>Mr. Diamonstein</name> remarked, however, that the Board should not be a
+                    "rubberstamping" body. The Rector agreed, but said there should be a balance
+                    between the role of the Board on one hand and that of the administration on the
+                    other. </p>
+                <p><name>Mr. Wynne</name> stressed the importance of developing, soon, criteria for
+                    priorities. </p>
+                <p>The Board then heard a presentation on planning, as is being developed by the
+                    Special Committee on Planning. <name>Ms. Sheehy</name>, <name>Messrs. Adams and
+                        Stovall</name>, <name>Dr. Garson</name>, and <name>Mr. Wynne</name>, the
+                    Committee Chair, all participated. </p>
+                <p>Following this portion of the Retreat, the President and <name>Mr.
+                        Sandridge</name>, the Chief Operating Officer, commented briefly on their
+                    annual reports. </p>
+                <pb n="7394"/>
+                <p>Among other topics, the President noted his concerns about the low rate of
+                    participation in mathematics courses by incoming students. He pointed out the
+                    correlation between this and low enrollments in science courses. </p>
+                <p><name>Mr. Rainey</name>, National Chair of the Capital Campaign, and <name>Mr.
+                        Sweeney </name> discussed the possibility of raising the Campaign goal, as
+                    suggested in the Rector's opening remarks. The Rector proposed that the Campaign
+                    Executive Committee consider the matter and make a recommendation to the Board. </p>
+                <p>On motion, the Board went into Executive Session at 2:30 p.m.</p>
+                <p>That in connection with the University Capital Campaign and beyond, the Special
+                    Committee on Foundations go into Closed Session to discuss and to further
+                    consult with the General Counsel, seeking his continued legal advice and
+                    guidance in the matters of gift development and coordination of fund-raising
+                    activity, costs and expenditures with University-Related Foundations, as
+                    provided for in Section 2.2-3711 &lpar;A&rpar; &lpar; 4&rpar;, &lpar;6&rpar;,
+                    &lpar;7&rpar; and &lpar;8&rpar; of the <hi rend="underline">Code of
+                        Virginia.</hi>
+                </p>
+                <ornament type="characters">- - - - - - - - - - - - - </ornament>
+                <p>The Board resumed in Open Session at 3:40 p.m., and adopted the following
+                    resolution certifying that its discussions in Executive Session had been
+                    conducted in accordance with the exemptions permitted by the Virginia Freedom of
+                    Information Act: </p>
+                <p>That we vote on and record our certification that, to the best of each Board
+                    member's knowledge, only public business matters lawfully exempted from open
+                    meeting requirements and which were identified in the motion&lpar;s&rpar;
+                    authorizing the closed session, were heard, discussed or considered in closed
+                    session. </p>
+                <p>The Board then held a short business session, during which the following
+                    resolutions were adopted: </p>
+            </div1>
+            <div1 type="resolution" id="d4">
+                <head>APPROVAL OF LEGISLATIVE PROPOSAL </head>
+                <p>RESOLVED, the Board of Visitors approves and endorses the proposed legislation to
+                    exempt sensitive donor information from public disclosure pursuant to the
+                    provisions of the Virginia Freedom of Information Act. </p>
+                <pb n="7395"/>
+                <p>The proposed legislation, which follows, would amend &#x00A7; 2.2-3705.4 of the
+                        <hi rend="italic">Code of Virginia</hi>: </p>
+                <p>&#x00A7;2.2-3705.4. Exclusions to application of chapter; educational records and
+                    certain records of educational institutions. </p>
+                <p>The following records are excluded from the provisions of this chapter but may be
+                    disclosed by the custodian in his discretion, except where such disclosure is
+                    prohibited by law: </p>
+                <list>
+                    <item n="1">
+                        <p>1. Scholastic records containing information concerning identifiable
+                            individuals, except that such access shall not be denied to the person
+                            who is the subject thereof, or the parent or legal guardian of the
+                            student. However, no student shall have access to &lpar;i&rpar;
+                            financial records of a parent or guardian or &lpar;ii&rpar; records of
+                            instructional, supervisory, and administrative personnel and educational
+                            personnel ancillary thereto, that are in the sole possession of the
+                            maker thereof and that are not accessible or revealed to any other
+                            person except a substitute. </p>
+                        <p>The parent or legal guardian of a student may prohibit, by written
+                            request, the release of any individual information regarding that
+                            student until the student reaches the age of 18 years. For scholastic
+                            records of students under the age of 18 years, the right of access may
+                            be asserted only by his legal guardian or parent, including a
+                            noncustodial parent, unless such parent's parental rights have been
+                            terminated or a court of competent jurisdiction has restricted or denied
+                            such access. For scholastic records of students who are emancipated or
+                            attending a state-supported institution of higher education, the right
+                            of access may be asserted by the student. </p>
+                        <p>Any person who is the subject of any scholastic record and who is 18
+                            years of age or older may waive, in writing, the protections afforded by
+                            this subdivision. If the protections are so waived, the public body
+                            shall open such records for inspection and copying. </p>
+                    </item>
+                    <item rend="indent2" n="2"> 2. Confidential letters and statements of
+                        recommendation placed in the records of educational agencies or institutions
+                        respecting &lpar;i&rpar; admission to any educational agency or institution,
+                        &lpar;ii&rpar; an application for employment, or &lpar;iii&rpar; receipt of
+                        an honor or honorary recognition. </item>
+                    <pb n="7396"/>
+                    <item rend="indent2" n="3"> 3. Records of the Brown v. Board of Education
+                        Scholarship Awards Committee relating to personally identifiable
+                        information, including scholarship applications, personal financial
+                        information, and confidential correspondence and letters of recommendation. </item>
+                    <lb/>
+                    <item rend="indent2" n="4"> 4. Data, records or information of a proprietary
+                        nature produced or collected by or for faculty or staff of public
+                        institutions of higher education, other than the institutions' financial or
+                        administrative records, in the conduct of or as a result of study or
+                        research on medical, scientific, technical or scholarly issues, whether
+                        sponsored by the institution alone or in conjunction with a governmental
+                        body or a private concern, where such data, records or information has not
+                        been publicly released, published, copyrighted or patented. </item>
+                    <lb/>
+                    <item rend="indent2" n="5"> 5. All records of the University of Virginia or the
+                        University of Virginia Medical Center or Eastern Virginia Medical School, as
+                        the case may be, that contain proprietary, business-related information
+                        pertaining to the operations of the University of Virginia Medical Center or
+                        Eastern Virginia Medical School, as the case may be, including business
+                        development or marketing strategies and activities with existing or future
+                        joint venturers, partners, or other parties with whom the University of
+                        Virginia Medical Center or Eastern Virginia Medical School, as the case may
+                        be, has formed, or forms, any arrangement for the delivery of health care,
+                        if disclosure of such information would be harmful to the competitive
+                        position of the Medical Center or Eastern Virginia Medical School, as the
+                        case may be. </item>
+                    <lb/>
+                    <item rend="indent2" n="6"> 6. Personal information, as defined in &#x00A7;
+                        2.2-3801, provided to the Board of the Virginia College Savings Plan or its
+                        employees by or on behalf of individuals who have requested information
+                        about, applied for, or entered into prepaid tuition contracts or savings
+                        trust account agreements pursuant to Chapter 4.9 &lpar;&#x00A7; 23-38.75 et
+                        seq.&rpar; of Title 23. Nothing in this subdivision shall be construed to
+                        prohibit disclosure or publication of information in a statistical or other
+                        form that does not identify individuals or provide personal information.
+                        Individuals shall be provided access to their own personal information. </item>
+                    <lb/>
+                    <item rend="indent2" n="7">
+                        <hi rend="italic">7. Records that contain personal information concerning
+                            donors and prospective donors in connection with fundraising by or for a
+                            public institution of higher education; except that the amount, date and
+                            purpose of any pledge or donation, and the identity of the donor, unless
+                            the donor has requested anonymity in connection with or as a condition
+                            of making the pledge or donation shall be released. </hi>
+                    </item>
+                </list>
+            </div1>
+            <div1 type="resolution" id="d5">
+                <pb n="7397"/>
+                <head>APPOINTMENT OF BOARD OF VISITORS REPRESENTATIVE TO THE INSTITUTE FOR SHIPBOARD
+                    EDUCATION BOARD OF DIRECTORS </head>
+                    <p>WHEREAS, the University of Virginia became the academic
+                        sponsor of the Institute for Shipboard's Education Semester at Sea program
+                        by agreement dated <date value="2005-12-12">December 12, 2005</date>; and </p>
+                    <p>WHEREAS, this agreement states that the Institute for
+                        Shipboard Education will add two voting members to its Board of Directors,
+                        one appointed by and representing the Board of Visitors, the other a member
+                        of the senior administration of the University of Virginia appointed by and
+                        representing the President; and </p>
+                    <p>WHEREAS, <name>Gene D. Block</name> resigned his appointment
+                        as the Board of Visitors appointee effective <date value="2007-06-30">June
+                            30, 2007</date>; and </p>
+                    <p>WHEREAS, the Executive Vice President and Provost of the
+                        University plays an important role in the relationship with the Institute
+                        for Shipboard Education because of the academic sponsorship. </p>
+                    <p>RESOLVED, the Board appoints <name>Arthur Garson, Jr.,
+                            M.D.</name>, to serve as the Board of Visitors representative to the
+                        Board of Directors of the Institute for Shipboard Education for a term of
+                        three years. </p>
+            </div1>
+            <div1 type="resolution" id="d6">
+                <head>APPROVAL OF APPOINTMENT TO THE BOARD OF THE UNIVERSITY OF VIRGINIA COLLEGE AT
+                    WISE </head>
+                    <p>RESOLVED that <name>Mr. Roger C. Viers</name> be appointed
+                        to The University of Virginia's College at Wise Board for a four-year term
+                        ending <date value="2011-06-30">June 30, 2011</date> in accordance with the
+                        terms of the Board bylaws. </p>
+            </div1>
+            <div1 type="resolution" id="d7">
+                <pb n="7398"/>
+                <head>APPROVAL OF SCHEV ENROLLMENT PROJECTIONS </head>
+                <p>RESOLVED, the Board of Visitors approves the enrollment
+                    projections for The University of Virginia College at Wise for the fall of 2007
+                    through the fall of 2013, as recommended by The University of Virginia's College
+                    at Wise Board. </p>
+                <table>
+                    <row>
+                        <cell role="label" cols="7"><hi rend="center">ENROLLMENT GOALS</hi></cell>
+                    </row>
+                    <row>
+                        <cell> Fall<lb/>2007</cell>
+                        <cell> Fall<lb/>2008</cell>
+                        <cell> Fall<lb/>2009</cell>
+                        <cell> Fall<lb/>2010</cell>
+                        <cell> Fall<lb/>2011</cell>
+                        <cell> Fall<lb/>2012</cell>
+                        <cell> Fall<lb/><corr resp="lsc6v" sic="2113">2013</corr></cell>
+                    </row>
+                    <row>
+                        <cell>1936</cell>
+                        <cell>1957</cell>
+                        <cell>1983</cell>
+                        <cell>2003</cell>
+                        <cell>2030</cell>
+                        <cell>2052</cell>
+                        <cell>2077</cell>
+                    </row>
+                </table>
+                <p>Enrollment Data provided by the Office of Admissions, Registrar
+                    Office, and the Institutional Research Office. <lb/> &#x002A;FTF means full-time
+                    freshmen.</p>
+                <ornament type="characters">- - - - - - - - - </ornament>
+                <p><name>Ms. Key</name>, as Chair of the Educational Policy
+                    Committee, gave a presentation on technology transfer, focusing on the marketing
+                    of technology developed at the University. At the end of her presentation, it
+                    was agreed that she, the Provost, the Vice President for Research, and <name>Mr.
+                        Sandridge</name> would study the problems in this regard and report back to
+                    the Board. </p>
+                <p>The Board recessed at 4:35 p.m.</p>
+                <p>The Board resumed its Retreat, in Open Session, at 8:15 a.m., on
+                        <date value="2007-07-28">Saturday, July 28<hi rend="super">th</hi>,</date> and met with <name>Mr.
+                        Charles Steger</name>, the President of Virginia Tech. <name>Mr.
+                        Steger</name> thanked the Board for the University's support in the
+                    aftermath of the tragic events at Blacksburg in April, talked a bit about
+                    Virginia Tech's role in the state, and mentioned his school's many joint
+                    ventures and other cooperative efforts with the University. </p>
+                <p>At the conclusion of his remarks, at 8:40 a.m., the Board went
+                    into Executive Session after adopting the following motion: </p>
+                <p>That the Board of Visitors go into Closed Session to review with
+                    the Chair of the Honor Committee the Committee's procedures and specific student
+                    cases and to discuss same with the General Counsel, seeking his legal advice and
+                    guidance in connection therewith, as provided for in Section 2.2-3711
+                    &lpar;A&rpar; &lpar;2&rpar; and &lpar;7&rpar; of the <hi rend="underline">Code
+                        of Virginia</hi>. </p>
+                <pb n="7399"/>
+                <p>The Board resumed its meeting in Open Session at 10:40 a.m., and
+                    adopted the following resolution certifying that its meeting in Executive
+                    Session had been held in accordance with the provisions of the Virginia Freedom
+                    of Information Act: </p>
+                <p>That we vote on and record our certification that, to the best of
+                    each Board member knowledge, only public business matters lawfully exempted from
+                    open meeting requirements and which were identified in the motion&lpar;s&rpar;
+                    authorizing the closed session, were heard, discussed or considered in closed
+                    session. </p>
+                <p>The Board then heard a presentation by <name>Mr.
+                    Littlepage</name>, Director of Athletics, and <name>Mr. Vanderbeek</name>,
+                    Associate Athletic Director for Business Operations, on Athletics financing and
+                    operations. They went into some detail on revenues and expenses, both at present
+                    and projected, and on the finances of the John Paul Jones Arena. <name>Mr.
+                        Littlepage</name> talked, too, of other concerns: facility needs &mdash;
+                    both new capital projects and renovations and maintenance, the recruiting and
+                    retention of coaches and staff, and so on. </p>
+                <ornament type="characters">- - - - - - - - - - - - </ornament>
+            </div1>
+            <div1 type="statement" id="d8">
+                <p>On motion, the meeting was adjourned at 12:15 p.m.</p>
+                <signed>Respectfully submitted, <lb/>
+                    <name>Alexander G. Gilliam, Jr.</name><lb/> Secretary</signed>
+
+                <trailer>AGG:jb <lb/> These minutes have been posted to the University of Virginia
+                    Board of Visitors website. <lb/>
+                    <xref url="http://www.virginia.edu/bov/publicminutes.html"
+                        >http://www.virginia.edu/bov/publicminutes.html </xref></trailer>
+            </div1>
+            <div1 type="addenda" id="d9">
+                <pb n="7400"/>
+                <head>ADDENDUM TO THE OFFICIAL MINUTES OF THE MEETING OF THE BOARD OF VISITORS OF
+                    THE UNIVERSITY OF VIRGINIA </head>
+                <p>Meeting Date: <dateRange from="2007-07-27" to="2007-07-28">July
+                        27-28, 2007</dateRange>
+                </p>
+                <div2 type="resolution" id="d10">
+                    <head>CERTIFICATION OF EXECUTIVE MEETING </head>
+                    <p>The Board of Visitors, sitting in Open Session, unanimously
+                        adopted a resolution certifying that while meeting in Executive Session
+                        &mdash; as permitted by the relevant provisions of the <hi rend="underline"
+                            >Code of Virginia</hi> &mdash; only public business authorized by its
+                        motion and lawfully exempted from consideration were discussed in closed
+                        session. </p>
+                    <signed> Respectfully submitted, <lb/>
+                        <name>Alexander G. Gilliam, Jr.</name><lb/> Secretary</signed>
+                    <trailer>AGG:jb </trailer>
+                </div2>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

@@ -1,0 +1,297 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0305 SYSTEM "000000766_0305" NDATA jpg>
+<!ENTITY DSSR_000000766_0306 SYSTEM "000000766_0306" NDATA jpg>
+<!ENTITY DSSR_000000766_0307 SYSTEM "000000766_0307" NDATA jpg>
+<!ENTITY DSSR_000000766_0308 SYSTEM "000000766_0308" NDATA jpg>
+
+
+<!--<!ENTITY NA61j27a SYSTEM "NA61j27a.jpg" NDATA jpg>
+<!ENTITY NA61j27b SYSTEM "NA61j27b.jpg" NDATA jpg>
+<!ENTITY NA61j27c SYSTEM "NA61j27c.jpg" NDATA jpg>
+<!ENTITY NA61j27d SYSTEM "NA61j27d.jpg" NDATA jpg>
+<!ENTITY N611027a SYSTEM "611027a.jpg" NDATA jpg>
+<!ENTITY N611027b SYSTEM "611027b.jpg" NDATA jpg>
+<!ENTITY N611027c SYSTEM "611027c.jpg" NDATA jpg>
+<!ENTITY N611027d SYSTEM "611027d.jpg" NDATA jpg>
+<!ENTITY N611027aa SYSTEM "611027aa.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NA61j27">
+
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1861-10-27">October 27 1861</date></title>
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Kenneth C. Thompson</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Kenneth C. Thompson</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">14</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA61j27</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, October 27 1861</title>
+
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p> </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1861-10-27">1861-10-27</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-02">November 2nd, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">September 30, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1861-10-27">October 27, 1861</date>
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+
+                <p>Adelaide E. Case (Addie) writes to Charles N. Tenney (Charlie), of Company H, of
+                    the 7th Regiment, Ohio Volunteer Infantry. Tenney entered the service on April
+                    25th, 1861, for 3 months. He then mustered out and reenlisted on June 20th,
+                    1861, for 3 years. He was wounded in the Battle of Kernstown, Virginia (March
+                    23rd, 1862). He returned to duty and died of dysentry at Harper's Ferry,
+                    Virginia on June 14th, 1863. In Addie's letter of October 27th, 1861, she writes
+                    about a recent death in her home town of Mecca, Ohio and reflects on the
+                    uncertainty of life. Her letter is flirtatious and playful. She talks, for
+                    example, about another man's interest in her--a member of Tenny's regiment--and
+                    says that she would rather be courted by Charlie. She also reflects on whether
+                    women prefer flattery to other forms of attention. And she tells him about going
+                    to a Ball for the 6th Ohio Cavalry, which she enjoyed, and asks him to guess who
+                    she would rather have been with.</p>
+
+            </div1>
+        </front>
+
+
+        <body id="d4">
+
+
+
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1861-10-27"
+                        >October 27 1861</date></head>
+                <pb n="1" entity="DSSR_000000766_0305"/>
+                <opener>
+                    <dateline>
+                        <name type="place">Mecca</name>
+                        <date value="1861-10-27">October 27<hi rend="super">th</hi> 1861</date>
+                    </dateline>
+                    <lb/>
+                    <salute>Dear Friend Charlie<lb/>
+                    </salute>
+
+                </opener>
+
+                <p> I again had<lb/> the pleasure of perusing one of your kind<lb/> and interesting
+                    letters last saturday<lb/> and I can assure you that it afforded<lb/> much
+                    pleasure. Charlie if you could <unclear>witness</unclear><lb/> the eagerness with
+                    which I grasp your<lb/> letters you would not hesitate to<lb/> leave your work
+                    to write to me. But<lb/> of course I would not ask you to<lb/> if you could not
+                    do so with <unclear>convenience</unclear>.<lb/> I think you must have
+                    received<lb/> another letter from me since you wrote<lb/>
+                    <unclear/> about the 12th of this month.<lb/> This is a beautiful day rather
+                    cool<lb/> but not more so than we should expect<lb/> for the season. Mr.
+                        James <unclear>Beebe</unclear> of <pb n="2" entity="DSSR_000000766_0306"/>
+                    Ohio Seventh is here. I do not feel so<lb/> much like entertaining him as I do<lb/>
+                    <unclear/> Tenney of said <abbr expan="Regiment">Regt</abbr> and<lb/> therefore
+                    act accordingly. He is trying<lb/> to guess who I am writing to<lb/></p>
+
+                <p>There has been quite a<unclear>bereavment</unclear><lb/> in one of the families
+                    of Mecca lately<lb/>
+                    <unclear>Perry Barton</unclear> of whom
+                        I <unclear>mean</unclear> was <unclear>married</unclear><lb/> or, rather,
+                    entered <unclear/> into the<lb/> blissful state of matrimony<lb/> about four
+                    weeks ago and Saturday<lb/> morning he was found dead in his<lb/> bed. He died
+                    in a fit of <unclear>apolexy</unclear><lb/> His brother died about three years
+                    ago<lb/> and now as he <unclear>had</unclear> arrived at the<lb/> same age that
+                    his brother was, he too is<lb/> cut down. How strange is life and how<lb/>
+                    uncertain.</p>
+
+                <p>So you imagined that I would think<lb/> you was writing <unclear/>, did you.<lb/>
+                    Well Charlie I know just how much<lb/> flattery and sentimentality to
+                    believe<lb/> It is an old saying<del hand="h1">that</del>and <unclear/>
+                    <pb n="3" entity="DSSR_000000766_0307"/> too true that it is natural<lb/> for
+                    women to desire<del hand="h1">be</del> some<lb/> flattery. But in many
+                    instances<lb/> it fails to prove its self at least<lb/> it does with me for "I
+                    had rather<lb/>
+                    <unclear>kissed</unclear> than flattered &amp; as the "old<lb/> maids, say.
+                    Do not <unclear>turn</unclear> and say "I <unclear>dont</unclear><lb/> doubt that"
+                    will you Charlie I feel as<lb/> if you, or I mean, I would enjoy singing<lb/> a
+                    little while would you come and assist<lb/> me. Got a cold, did you say? Oh well
+                    then<lb/> I will excuse you I attended a<lb/> Union ball last
+                        Friday <unclear>evening</unclear><lb/> given in honor of the Sixth Ohio
+                    Cavalry<lb/> which will soon go to Warren I enjoyed<lb/> myself very well but
+                    should have been<lb/> better pleased if some of my absent<lb/> friends had been
+                    present I will<lb/> allow you to guess who I mean</p>
+
+                <p> Oh Charlie I have a compliment<lb/> for you from your Captain. He<lb/> said that
+                    Charlie Tenney (do you know<lb/> the gentleman) was the (now prepare for <pb
+                        n="4" entity="DSSR_000000766_0308"/> the worst) best boy--I mean one of<lb/>
+                    the best boys in the Regiment </p>
+
+                <p>There I would that I could be there<lb/> and see you turn pale with
+                        surprise <unclear>(ahem</unclear> But Dear Charlie I guess you will say<lb/>
+                    that I am writing the nonsense<lb/> and you the sense <unclear>wont
+                    you?</unclear>
+                </p>
+
+                <p> But I will be obliged to close<lb/> for tea is ready will you walk out<lb/> and
+                    sup with us? I wish you could.<lb/>
+                </p>
+
+                <closer> Take good care of your health And may<lb/> may heaven spread her
+                        protection <unclear>over</unclear><lb/>
+                    <unclear>thee</unclear>, Dear Charlie, Is the heartfelt<lb/> prayer of your friend<lb/>
+                    <signed>Addie</signed>
+                </closer>
+
+
+            </div1>
+        </body>
+
+
+    </text>
+
+</TEI.2>

@@ -1,0 +1,312 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0381 SYSTEM "000000766_0381" NDATA jpg>
+<!ENTITY DSSR_000000766_0382 SYSTEM "000000766_0382" NDATA jpg>
+<!ENTITY DSSR_000000766_0383 SYSTEM "000000766_0383" NDATA jpg>
+<!ENTITY DSSR_000000766_0384 SYSTEM "000000766_0384" NDATA jpg>
+
+<!--<!ENTITY NC61i16a SYSTEM "NC61i16a.jpg" NDATA jpg>
+<!ENTITY NC61i16b SYSTEM "NC61i16b.jpg" NDATA jpg>
+<!ENTITY NC61i16c SYSTEM "NC61i16c.jpg" NDATA jpg>
+<!ENTITY NC61i16d SYSTEM "NC61i16d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NC61i16">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+                        value="1861-09-16">September 16, 1861</date></title>
+
+                <author>Tenney, Charles N.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Mott Linn, Clark University</name>
+                    <resp>Creation of digital images:</resp>
+                    <name>University of Virginia Library Electronic Text Center</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Mott Linn, Clark University</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">15</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NC61i16</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2001">2001</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case, September 16, 1861</title>
+
+
+                        <author>Charles N. Tenney</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+      
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1861-09-16">1861-09-16</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>masculine</term>
+                    <term>American Civil War/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-11">November 11th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 7th, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1861-09-16">September 16, 1861</date>
+
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case</title>
+                    </bibl>
+                </head>
+                <p>Charlie writes about life in the army while mentioning towns that the boat he is
+                    writing on goes down the Ohio River. He talks about first seeing action at Cross
+                    Lanes and about other Ohio regiments fighting at Carnix's Ford (presumably
+                    Carnifex (or Carnifix) Ferry).</p>
+            </div1>
+        </front>
+
+        <body id="d4">
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1861-09-16"
+                        >September 16, 1861</date></head>
+                <pb n="1" entity="DSSR_000000766_0381"/>
+
+                <opener>
+                    <dateline>On board the U.S. Steamer,<lb/> Silver Lake, Ohio R., Sept 16th<lb/>
+                        1861</dateline>
+                    <lb/>
+                    <salute>Dear Friend Addie;</salute>
+                </opener>
+                <lb/>
+                <p> War has its visissitudes as<lb/> well as the other phases of life and they<lb/>
+                    are not a few I'll assure you. For the past<lb/> few weeks things have been
+                    constantly<lb/> changing; one day we would be reposing<lb/> in perceived
+                    security and perhaps the<lb/> next morning be awakened and moved<lb/> to haste
+                    to prepare to meet the meet the enemy<lb/> who were momentarily expected to
+                    come<lb/> upon us, still except in the instance of<lb/> Cross Lanes they have
+                    not made an<lb/> open attack upon us. The <unclear>?</unclear><lb/>
+                    <pb n="2" entity="DSSR_000000766_0382"/> But you will think this is a
+                    strange<lb/> opening for a letter but today it is my<lb/>
+                    <q>"style"</q> Among other changes, ten, includ<lb/> ing
+                    Will <unclear>B</unclear> and my self, from<lb/> Co. H. have been detailed as
+                    guards on<lb/> the Steamer Silver Lake under command<lb/> of Lieut Wood. (I wish
+                    very much that<lb/> Hal was in his place) We have made<lb/> these trips from
+                        Camp <unclear>E</unclear>, 12 miles<lb/> above Charleston Va. to Gallipolis
+                    Ohio<lb/> and we are now<lb/> We have on board several of the wounded<lb/> from
+                    the battle ofCarnix's Ford<ref target="n1" n="1">1</ref> fought<lb/> last
+                    Tuesday, and the remains of Col.<lb/> Lowe of the 12th O. Regt. who fell at
+                    the<lb/> same battle fighting bravely. Among the<lb/> wounded are Col. Lytle of
+                    the 10th Regt<lb/> Lieut. Col. <unclear>Mason</unclear> of the 13th and Capt<lb/>
+                    <unclear>McGoverty</unclear> of the 13th. It is perhaps necessary<lb/> for me to
+                    state that the day was won<lb/> by our gallent Ohio boys. as you ere<lb/> this
+                        must<add place="inline" hand="h1">have</add> received the particulars<lb/>
+                    <pb n="3" entity="DSSR_000000766_0383"/> I had no idea of the feelings
+                    produced<lb/> by being engaged in a battle until the<lb/> fight at Cross
+                        Lanes<ref target="n2" n="2">2</ref>. These feelings were<lb/> indescribable.
+                    I had no thoughts of dodging<lb/> the balls nor did I think of getting
+                    killed<lb/> All I did was to take one thought of friends<lb/> (including you, my
+                    dear Addie) then watch for<lb/> an opportunity to send some <unclear>
+                        <q>"Secesh"</q>
+                    </unclear> to<lb/>
+                    <q>"Kingdom Come"</q> but although we saw them<lb/> on our front, right, and
+                    left, I thought I<lb/> would reserve my fire till I was sure of<lb/> my man, or
+                    at least till the order was given<lb/> to fire so lost a chance to discharge my
+                    piece </p>
+
+                <p>I cannot speak too highly of Hal. he<lb/> acted so cooly and bravely; not an
+                    action<lb/> did he commit to lessen the respect and<lb/> admiration he commands
+                    in the entire<lb/> regiment I would that I could send<lb/> you his portrait as
+                    he stood while we<lb/> were waiting the approach of the enemy<lb/> his sword was
+                    drawn and his revolver<lb/> in his left hand ready to face the<lb/>
+                    <pb n="4" entity="DSSR_000000766_0384"/> coming foe. Every oder was given
+                    in<lb/> a manner that showed he meant to<lb/> be obayed. Suffice it to say that
+                    we did merit<lb/> the apporbrium bestowed upon us by the Cin-<lb/>
+                        cinnati<q>"Gazette"</q> in that they pronounced<lb/> the affair<q>"Tyler's
+                        disgraceful defeat and <unclear>run</unclear>"</q><lb/>
+                </p>
+
+                <p> We are passing through a most beautiful<lb/> section of the country. we have now
+                    passed<lb/> Rome, Hanging Rock, Portsmouth, Aberdeen<lb/> and Higginsport, Ohio
+                    and Ashland,<lb/> Maysville, Rome, Augusta Ky.<lb/> On the Ohio side the
+                    hillsides are covered with<lb/> vineyards that are now purple with grapes<lb/>
+                    while the Kentucky hills are covered with<lb/> fields of Corn and Tobacco. We
+                    have just<lb/> met three steamers loaded with a <unclear>part</unclear><lb/>
+                            of<q>" <unclear>Piatt's</unclear> Zouave Brigade."</q> We are now
+                    just<lb/> between Foster's Landing Ky. and Nevillsville Ohio.<lb/> Moscow is in
+                    sight. If the Kanawha Valley was<lb/> more thickly inhabited it would be almost
+                    as<lb/> beautiful as the Ohio and it soon will be <unclear>for</unclear><lb/> the
+                    formation of the State of Kanakha makes it<lb/> the most important of any
+                    section of the state<lb/> But I must bring this <unclear>uninteresting</unclear>
+                    letter to a<lb/> close. Since I received your last letter which<lb/> I did not
+                    get until we arrived at Charleston<lb/> I have written you a letter covering two
+                    and a half<lb/> sheets did you get it? I have been waiting impatiently<lb/> for
+                    an answer ever since but can get none. I can scarcely<lb/> get time to write we
+                    have so much to do. Standing guard<lb/>
+                    <unclear>?</unclear>. The boat trembles so that I doubt if you can<lb/> read
+                    this rough thing. can you? We just passed<lb/> Point Pleasant Ohio and New
+                    Richmond is in sight<lb/> we are now twenty miles from Cincinnati. we are<lb/>
+                    running fast and the scenery is splended. Now opposite<lb/> California Ky. Hall
+                    is well or was two or three days<lb/> ago. I wish he was on here. he would enjoy
+                    it so much<lb/>
+                </p>
+
+                <p> With this I send you a rough pencil sketch of<lb/> Weston, where Col Tyler took
+                    for the government $37000. The<lb/> view is taken from a hill overlooking the
+                    camp. The stream<lb/> between Camp and town is the West fork of the
+                    Monongahela<lb/>
+                </p>
+
+                <closer> But I must now stop for it is almost time for me to<lb/> go on guard. Write
+                    soon Addie and a good long letter<lb/> your letters are so good and
+                    entertaining. I love them.<lb/> Give my respects to Laurie and all to whom you
+                    see fit and believe<lb/> me I remain <salute>Sincerely and ever yours</salute><lb/>
+                    <signed>Charlie</signed><lb/> Direct to Charleston Kanawha Co. Va.<lb/>
+                    <seg type="postscript">There is New Richmond<lb/> a beautiful town I wish<lb/>
+                        the boat would stop I<lb/> would sketch it<lb/>
+                    </seg></closer>
+            </div1>
+        </body>
+
+        <back id="d6">
+            <div1 type="notes" n="1" id="d7">
+                <head>Notes</head>
+                <note id="n1" place="end" n="1">
+                    <seg type="note-symbol">1</seg>
+                    <p>Carnifex (or Carnifix) Ferry was fought on Tuesday, Sept. 10, six days before
+                        he wrote the letter. The 10th, 12th, and 13th Ohio Regiments all fought in
+                        this battle.</p>
+                </note>
+                <note id="n2" place="end" n="2">
+                    <seg type="note-symbol">2</seg>
+                    <p>According to "Battles and Leaders of the Civil War", Tyler's 7th Ohio was
+                        routed on August 26th at Cross Lanes.</p>
+                </note>
+            </div1>
+        </back>
+
+    </text>
+</TEI.2>

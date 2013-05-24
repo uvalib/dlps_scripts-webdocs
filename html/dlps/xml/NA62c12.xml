@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0095 SYSTEM "000000766_0095" NDATA jpg>
+<!ENTITY DSSR_000000766_0096 SYSTEM "000000766_0096" NDATA jpg>
+<!ENTITY DSSR_000000766_0097 SYSTEM "000000766_0097" NDATA jpg>
+<!ENTITY DSSR_000000766_0098 SYSTEM "000000766_0098" NDATA jpg>
+
+<!--<!ENTITY NA62c12a SYSTEM "NA62c12a.jpg" NDATA jpg>
+<!ENTITY NA62c12b SYSTEM "NA62c12b.jpg" NDATA jpg>
+<!ENTITY NA62c12c SYSTEM "NA62c12c.jpg" NDATA jpg>
+<!ENTITY NA62c12d SYSTEM "NA62c12d.jpg" NDATA jpg>-->
+]>
+
+<TEI.2 id="NA62c12">
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-03-12"
+      >12 March 1862</date></title>
+
+    <author>Case, Adelaide E.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>David Seaman</name>
+     <resp>Creation of digital images:</resp>
+     <name>University of Virginia Library Electronic Text Center</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>ETC</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">9</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NA62c12</idno>
+    <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Adelaide E. Case to Charles N. Tenney, 12 March 1862</title>
+      <author>Adelaide E. Case</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 pages</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p> </p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings. </p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-03-12">1862-03-12</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>feminine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-06">November 6th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">September 30, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-03-12">March 12, 1862</date>
+
+      <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+     </bibl>
+    </head>
+    <p/>
+   </div1>
+  </front>
+  <body id="d4">
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-03-12">12 March
+     1862</date></head>
+    <pb n="1" entity="DSSR_000000766_0095"/>
+    <opener>
+     <dateline>
+      <name type="place">
+       <unclear>Oildom</unclear>
+      </name>
+      <date value="1862-03-12">March 12<hi rend="super">th</hi> '62</date>
+     </dateline>
+     <lb/>
+     <salute>My Darling</salute>
+    </opener>
+
+    <p>I can wait no longer <lb/> for a letter from you<unclear>.</unclear> but must <lb/> continue
+     to keep you my debter<unclear>..</unclear>
+     <lb/> I must ask you dear one the <lb/> same question which you asked me <lb/> in the winter
+     Have I offended <lb/> you the reason that you do not <lb/> write? Almost two weeks have fled
+     <lb/> since I <sic>recieved</sic> your last "angel visit<unclear>..</unclear>" <lb/> Do you
+     know how sad and lonely I <lb/> feel when such a long time passes with <lb/> out hearing from
+     you? Darling, <hi rend="underline">please</hi> write <lb/> often<unclear>..</unclear> I should
+     love to <sic>recieve</sic> letters <lb/>
+     <pb n="2" entity="DSSR_000000766_0096"/> from you daily<unclear>..</unclear></p>
+    <p>How muddy the roads are here now<unclear>.</unclear>
+     <lb/> the frost is all out of the ground<unclear>.</unclear> but <lb/> the roads have not as
+     yet got settled <lb/> You was here last spring when the roads <lb/> broke
+     up<unclear>.</unclear> think of the roads then and <lb/> now<unclear>.</unclear> but they are
+     not quite so bad <lb/> now as they were then<unclear>..</unclear> I am with <lb/> Dora today
+     and have been since day <lb/> before yesterday<unclear>..</unclear> I intended going home <lb/>
+     yesterday, but it was so bad going <lb/> that I did not go. Dora says I shall <lb/> not go till
+     sunday. How odd she <lb/> does look, here, attending to her <lb/> domestic duties. Wish you
+     could see <lb/> her you would laugh<unclear>..</unclear> I did not <lb/> think last
+      fall<unclear>.</unclear> that she could <lb/> ever become contented and sober <lb/> enough to
+     "keep house" but I <lb/> was mistaken. If you could <lb/> see her commanding her Regt. <lb/> of
+     pots and kettles<unclear>.</unclear> you would <lb/>
+     <pb n="3" entity="DSSR_000000766_0097"/> be almost tempted to ask her <lb/> to show you her
+     diploma.</p>
+
+    <p>I am going home again to <unclear>live.</unclear>
+     <lb/> our school closed two weeks ago to- <lb/> morrow. Hallie has not been home <lb/> for a
+     good while I wish very much <lb/> to see him<unclear>.</unclear> but do not expect to at <lb/>
+     present. Hal. intended renting a <lb/> house in Warren and having Laura <lb/> and I live with
+      him<unclear>.</unclear> and I was <lb/> going to school<unclear>.</unclear> but he could <lb/>
+     get no house hence we were dis- <lb/> appointed. Laurie and I would <lb/> have gone to
+      <unclear>Oberlin</unclear> if we had <lb/> not expected to go<del hand="h1"><unclear>[unclear]</unclear></del> to
+     Warren. <lb/> Oh<unclear>.</unclear> well<unclear>.</unclear> it only served to <lb/> show us
+     that we were doomed <lb/> to disappointment in this life<unclear>..</unclear>
+     <lb/> I do not feel very well this <lb/> week. I have a severe cold and <lb/> my throat
+     troubles me some in <lb/> consequence<unclear>.</unclear> but shall be<del hand="h1"
+     ><unclear>[unclear]</unclear></del> better <pb n="4" entity="DSSR_000000766_0098"/> in a few
+     days<unclear>.</unclear> I trust<unclear>.</unclear> It is nothing serious<unclear>.</unclear>
+     so do not be <lb/> alarmed dearest. How is your health <lb/> dear one. It has been so long
+     since <lb/> I have heard from you that I <lb/> fear you are ill<unclear>..</unclear> You would
+     certainly <lb/> inform me if you was not well<unclear>.</unclear> would <lb/> you not Charlie.</p>
+
+    <p>Oh I attended a school exhibition <lb/> tuesday afternoon here at the corners <lb/> They has
+     as good a paper as I ever <lb/> heard read. <unclear/> Sarah <unclear>Logan</unclear> was <lb/>
+     editress. One piece entitled "fifty- <lb/> years ahead." was excellent<unclear>..</unclear> I
+     guess <lb/> old Mecca can boast of at least <lb/> one genius<unclear>..</unclear></p>
+    <p>Dearest Charlie I must beg of you <lb/> to excuse this poor apology for a <lb/> letter for I
+     have a violent head <lb/> ache. I should not have written <lb/> to day but duty commanded me
+     <lb/> to. Please write immediately my darling <lb/> and <sic>recieve</sic> the blessing of your</p>
+    <closer>
+     <signed>Addie</signed>
+    </closer>
+   </div1>
+  </body>
+ </text>
+</TEI.2>

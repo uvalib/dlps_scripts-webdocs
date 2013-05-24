@@ -1,0 +1,360 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0651 SYSTEM "000000766_0651" NDATA jpg>
+<!ENTITY DSSR_000000766_0652 SYSTEM "000000766_0652" NDATA jpg>
+<!ENTITY DSSR_000000766_0653 SYSTEM "000000766_0653" NDATA jpg>
+<!ENTITY DSSR_000000766_0654 SYSTEM "000000766_0654" NDATA jpg>
+
+<!--<!ENTITY NC62j21a SYSTEM "NC62j21a.jpg" NDATA jpg>
+<!ENTITY NC62j21b SYSTEM "NC62j21b.jpg" NDATA jpg>
+<!ENTITY NC62j21c SYSTEM "NC62j21c.jpg" NDATA jpg>
+<!ENTITY NC62j21d SYSTEM "NC62j21d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NC62j21">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+                        value="1862-10-21">21 October 1862</date></title>
+
+                <author>Charles Tenney</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Charles F. Bearden, Fondren Library, Rice University</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Charles F. Bearden, University of Virginia Library Electronic Text
+                    Center.</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">20</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NC62j21</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case, 21 October 1862</title>
+
+
+                        <author>Charles Tenney</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 p.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-10-21">1862-10-21</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>masculine</term>
+                    <term>American Civil War ; Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-16">November 16th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 21st, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1862-10-21">October 21, 1862</date>
+
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case</title>
+                    </bibl>
+                </head>
+
+                <p>Charles has been feeling down but expresses a resolve to cheer up with the help
+                    of "an hours conversation with my treasure", taking Addie's portrait as
+                    surrogate interlocutor. One great source of sadness is Charles's family's,
+                    especially his father's, apparent indifference to Charles's military service:
+                    "no wishes for my success--no hopes for my return, but a cold shoulder, a cool
+                    'no difference.'" Charles has been left behind as his regiment decamped--he is
+                    under physician's orders to rest in order to overcome an unspecified ailment.
+                    The regiment has moved to Hillsborough, and Charles suspects that McClellan
+                    intends to hinder the enemy's movements in that area. After remembering a love
+                    of Byron's poetry that he shares with Adelaide, he shifts his thoughts to
+                    politics, rejoicing that "Vallandigheim" lost the recent election and regretting
+                    the political maneuverings at the War Department that have hindered the Union's
+                    war efforts. He then invites Adelaide to a word-tour of two hospitals where his
+                    injured comrades receive treatment. Charles concludes by asking Adelaide to
+                    dream of him, and to write often.</p>
+            </div1>
+        </front>
+
+        <body id="d4">
+            <div1 type="letter" n="1862-10-21" id="d5">
+                <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-10-21">21
+                        October 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0651"/>
+                <opener>
+                    <dateline><name type="place">Harper's Ferry, <abbr expan="Virginia">Va.</abbr></name><lb/>
+                        <date value="1862-10-21"><abbr expan="October">Oct.</abbr> 21<hi
+                                rend="super">st</hi>, 1862</date>.<lb/>
+                    </dateline>
+                    <salute>My dearest <name type="person">Addie</name>,</salute>
+                    <lb/>
+                </opener>
+                <p>I have had that most horrible of all<lb/> diseases
+                    &ldquo;Hypochondria,&rdquo; and still feel a little
+                    &ldquo;blue&rdquo;,-- but I<lb/> have no busine&longs;s to either.
+                    Why? Because I have just<lb/> recieved your darling letter of the 12<hi
+                        rend="underline">th</hi>. Now I am going by<lb/> force of will, and an <orig
+                        reg="hour's">hours</orig> conversation with my treasure, <hi rend="underline"
+                        >to<lb/> dispel</hi> all traces of this horrible feeling. I <hi
+                        rend="underline">can</hi> do it, <hi rend="underline">
+                        <orig reg="and I will">andIwill</orig>
+                    </hi>.<lb/>
+                </p>
+                <p>First, let me place your portrait--that radiant <hi rend="underline"
+                    >lovely</hi><lb/> countenance, before me, and allow me to gaze for a moment<lb/>
+                    into those loving eyes. There it is--lying upon my Bible, which<lb/> which is
+                    yet open at the 42<hi rend="super">nd</hi> &amp; <orig reg="43">3</orig><hi
+                        rend="super">d</hi> Psalms, (I have been reading.)<lb/>
+                </p>
+                <p>Are you well, my love? No answer,--yet that same<lb/> quiet smiles bids me good
+                    cheer. "Why art thou cast down<lb/> O my soul? Why art thou disquieted within
+                    me?" " <hi rend="underline">Hope thou<lb/> in God</hi>." Yes, I will hope in God,
+                    and He shall preserve<lb/>
+                    <hi rend="underline">thee</hi> and me. Pardon me, <name type="person"
+                    >Addie</name> mine, I have been<lb/> thinking of that home, which is <hi
+                        rend="underline">no_home</hi> to me, and like<lb/>
+                    <pb n="2" entity="DSSR_000000766_0652"/> a child, have allowed myself to indulge
+                    in memories of<lb/> younger days when I would look forward into that misty<lb/>
+                    <orig reg="future">Future</orig> and picture to myself
+                    happine&longs;s--myself beloved by<lb/> brothers, sisters, <hi
+                        rend="underline">Father</hi> and <hi rend="underline">Mother</hi>, then I
+                    pa&longs;sed to the day<lb/> when I <hi rend="underline">should</hi> have
+                    had, at least the sympathies of a Father<lb/> when I sprang in my love of
+                    justice and liberty, to the defence<lb/> of <hi rend="underline">my</hi>-- <hi
+                        rend="underline">our</hi> flag, but no wishes for my succe&longs;s--no
+                    hopes for my<lb/> return, but a cold shoulder, a cool &ldquo;no
+                    difference.&rdquo;<lb/>
+                </p>
+                <p>"I am become a <hi rend="underline">stranger</hi> unto my brethren, and an <hi
+                        rend="underline">alien</hi><lb/> unto my mother's children." But I am more
+                    calm<lb/> now. I am loved, <hi rend="underline">Thou</hi> art my betrothed--<name
+                        type="person">Laurie</name> is my<lb/> sister-- <name type="person"
+                    >Hallie</name> is my brother-- and I am happy. Yes, <hi rend="underline"
+                    >indeed</hi> am<lb/> I, my heart is lighter by far. But I fear I have
+                    written<lb/> much that is uninteresting, if not painful to you: if so,
+                    forgive<lb/> me, for my heart was full. Now that baleful
+                    &ldquo;Hypo&rdquo; is<lb/> gone, I can write with greater ease. How I
+                        should <hi rend="underline">love</hi> to<lb/> see you and chat with you
+                    and--yes, fold your precious self to<lb/> my heart, but mine is the fortune of a
+                    soldier, and I will<lb/>
+                    <hi rend="underline">be</hi> a soldier, a stern unflinching one too, save to my
+                    dear friends.<lb/>
+                </p>
+                <p>I will tell you how I came to wander back in<lb/> my reverie. The camp is almost
+                    deserted today. Last<lb/> evening, or night rather, for it was midnight, the
+                    Adjutant<lb/> came around, and gave the order to<q type="speech">get ready to
+                        march with<lb/> two days rations</q>. Well, I did not go, for I have been
+                    ailing<lb/> for the past 3 or 4 days and the Surgeon ordered me to keep<lb/>
+                    quiet. The regiment started about <orig reg="12:30,">12.30</orig>
+                    cro&longs;sed the <orig reg="Blue Ridge,">
+                        <name type="place">Blue<lb/> Ridge</name>
+                    </orig> and proceeded toward <name type="place">Hillsborough</name>, where they
+                    now are.<lb/> The object probably is to prevent the enemy from leaving the<lb/>
+                    <pb n="3" entity="DSSR_000000766_0653"/><name type="place">Valley</name>. I
+                    judge from the activity prevailing in camp that<lb/> our &ldquo; <name
+                        type="person">Little Mac</name>&rdquo; intends to make a forward move
+                    soon, but<lb/> new orders must be issued or we shall remain at <name type="place"
+                        >Harper's<lb/> Ferry</name>. for a general order was issued to the effect
+                    that the<lb/> 2<hi rend="super">d</hi> and 12<hi rend="super">th</hi> Army <orig
+                        reg="Corps">corps</orig> are to remain at this place as a<lb/> Winter
+                    garrison. Ours, you know, is the 12<hi rend="super">th</hi>, and of course
+                    the<lb/> order relates to us. Still, I do not place too much<lb/> confidence in
+                    it, for it is not the good luck of the <name type="corporate"
+                    >Seventh</name>.<lb/> But it is growing dark and I will wait until the candle
+                    is<lb/> lighted when I will converse again with you.<lb/>
+                </p>
+                <p>Good evening, <name type="person">Addie</name> mine. Will you sit<lb/> upon my
+                    lowly couch while we have a little chat? No, well<lb/> sit where you like, your
+                        spirit <hi rend="super">must</hi> be with me this,<lb/> the evening of the
+                        21<hi rend="super">st</hi> of October. <name type="person"
+                        >Byron</name>--you <hi rend="underline">love</hi><lb/>
+                    <name type="person">Byron</name>? So do I. Well do I remember how I used to love
+                    "the<lb/> Corsair." But about as touching as any lines he wrote, at least<lb/>
+                    to me, are those commencing&ldquo;Maid of Athens, ere we part,<lb/> Give, O
+                    give me back my <orig reg="heart&rdquo;">heart</orig>.<lb/> But I am not in a
+                    poetical mood this evening, so pardon<lb/> me if I introduce politics. The
+                    election is over and thank<lb/> Heaven <name type="person">Vallandigheim</name>
+                    is defeated. Will the dog dare again to<lb/> appear before honest loyal men? If
+                    he were to enter our<lb/> camp, I greatly fear he would not leave it alive, so
+                    intense<lb/> is the hatred existing toward him here. I trust now that<lb/> the
+                        &ldquo;2<hi rend="super">d</hi> Tuesday in <abbr expan="October">
+                    Oct.</abbr> &rdquo; is past, that the subject of &ldquo;political<lb/>
+                    generals&rdquo; will be consigned to oblivion. I am a&longs;sured in
+                    my<lb/> mind that this miserable bickering about politics, mixing<lb/> poison
+                    with the questions of the greatest importance, has<lb/>
+                    <pb n="4" entity="DSSR_000000766_0654"/> delayed the war eight months. Political
+                    influence at the <name type="corporate">War<lb/>
+                        <orig reg="Department">department</orig></name> prevented <name type="person"
+                            >M<hi rend="super">c</hi> Clellan</name> from having the cooperation
+                    of<lb/> M<hi rend="super">c</hi> Dowell's corps, after the <name type="battle"
+                        >Battle of and advance from <name type="place">
+                            <orig reg="Williamsburg">Williams<lb/> burg</orig>
+                        </name></name>. It prevented him from receiving reinforcements (to<lb/>
+                        any <add hand="h1" place="supralinear">great</add> extent) until after
+                        the <name type="battle">
+                        <orig reg="Six Days' Battles">six days battles</orig>
+                    </name>. It deposed<abbr expan="Generals"> Gen's.</abbr><lb/>
+                    <name type="person">Fremont</name> and <name type="person">Hunter</name>. It has
+                        kept <name type="person"> <abbr expan="General">Gen.</abbr> Banks</name> from
+                    a fit<lb/> position, and in command of one of the smallest corps in the
+                    army.<lb/> It whipped us at <name type="battle">
+                        <name type="place">Bull Run</name>
+                    </name>, for by political influence the traitor<lb/> M<hi rend="super"
+                    >c</hi> Dowell was kept in command. Heaven pardon me if<lb/> I am wrong, but I am
+                    tired of politics and policitical influences.<lb/>
+                    <hi rend="underline">It has almost ruined our noble Republic!</hi> Away with it,
+                    for<lb/> tonight at least.<lb/>
+                </p>
+                <p>Shall we visit the Hospital? Here we are, in the village<lb/> of <name
+                        type="place">Harper's Ferry</name>, and in the <name type="place"
+                    >Hospital</name>. That laughing <orig reg="chunk">chink</orig> of a boy is<lb/>
+                    Billy Bennett of our <unclear>Me&longs;s.</unclear> (No. 3.) he is caring
+                        for <name type="person">Ambrose Trimmer</name>. <orig reg="He">he</orig><lb/>
+                    has the fever. <name type="person">
+                         <abbr expan="Frederick">Fred.</abbr>
+                    </name> Roberts is here too, not very sick, <hi rend="underline">but not
+                        doing<lb/> duty</hi>. Let us go to <name type="place">St. Pauls Church
+                        Hosp.</name> <name type="place">Alexandria</name>. Ah!<lb/>
+                    <name type="person">Bob. Murray</name> is hopping around on crutches, but will
+                    never be fit<lb/> for duty again. <name type="person"> <abbr expan="George"
+                        >Geo.</abbr> Moore</name> is here, not very well. He <orig reg="can't"
+                    >cant</orig> keep<lb/> quiet long enough to get well. He sends love--brotherly
+                    love<lb/> he says, for he is my brother. You do not know the rest, so<lb/> we
+                    will just see that they are doing well, and will walk home.<lb/> Here we are
+                    just at the door, now a parting loving ki&longs;s, and<lb/>
+                    &ldquo;farewell for the present&rdquo;. Give my love to all, and dream
+                    of<lb/> me tonight.<lb/>
+                </p>
+                <closer>Write <orig reg="often!">often</orig><lb/>
+                    <salute>I am ever <hi rend="underline">thine own</hi>, now cheerful.</salute><lb/>
+                    <signed>
+                        <name type="person">Charley.</name>
+                    </signed><lb/>
+                </closer>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

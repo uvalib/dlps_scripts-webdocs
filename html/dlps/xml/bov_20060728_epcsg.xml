@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> 
+%dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> 
+%UVAsupp;
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of 
+Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors 
+meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with local 
+customizations)</resp> 
+                    <name>University of Virginia Library</name> </respStmt>
+                <biblScope type="date">
+                    <date value="2006-07-28">July 28, 2006</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">10</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2009">2009</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the  
+University of Virginia</p>
+                    <p n="access">Publicly accessible</p>                   
+                </availability>
+                <idno type="DLPS ID">bov_20060728_epcsg</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+            
+            
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors 
+minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of 
+Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors 
+meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2006-07-28">July 28, 2006</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>  
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information.  Access to 
+minutes containing salary information will be granted only under the procedures of the Virginia 
+Freedom of  Information Act (Code of Virginia-2.1-340 ff.) or if permission is granted by the 
+Secretary of the Board.  Researchers interested in obtaining access to these records should direct 
+a request in writing to the Office of the Legal Adviser, Madison Hall, University of Virginia.  
+These public minutes have had salary information deleted and bear no restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special 
+Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body which is 
+the legal owner and operator of the institution.  Recorded in the minutes are appointments and 
+other personnel decisions concerning faculty, decisions about construction of facilities, gifts to 
+the university, and all other board actions, decisions and resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        
+        <encodingDesc>
+            &projectDesc;
+            <editorialDecl>
+                &editorial_correction;
+                &editorial_normalization;
+                &editorial_hyphenation;
+                &editorial_quotation;
+                &editorial_stdVals;
+            </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language n="008" id="eng" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body id="d1">
+            <div1 type="report" id="d2">
+                <head>EDUCATIONAL POLICY COMMITTEE <lb/>
+                STRATEGIC GOALS 2006-2007</head>
+              
+                    <p>
+                        1. Develop a Strategic Plan to Enhance Graduate Education: Graduate 
+                        education is a critical factor in the health and standing of the 
+                        University. Graduate students play an important role as faculty and 
+                        mentors to undergraduates. Moreover, the caliber and areas of study 
+                        of graduate students can determine the current and future academic 
+                        quality and reputation of the University. The Committee will 
+                        develop a strategic plan to enhance graduate education through 
+                        financial investment, strategic focus on critical academic areas, 
+                        and improving University policies and programs. </p>
+                    <p>
+                        2. Update and Enhance the Technology Transfer Program: The 
+                        Universitys technology transfer program is a small operation that 
+                        is conducted through the Patent Foundation and Spinner 
+                        Technologies. The basic framework for the program is a 1977 
+                        agreement between the University and the Patent Foundation. The 
+                        University needs a robust technology transfer program in order to 
+                        (i) realize its research ambitions, (ii) leverage its expertise in 
+                        areas such as the life sciences, and (iii) generate unrestricted 
+                        revenue. The Committee will develop a strategic plan that will be 
+                        based upon (i) a review of best practices of successful technology 
+                        transfer programs, (ii) priorities aligned with or synergistic with 
+                        the Universitys research expertise and strengths, and (iii) an 
+                        appropriate business model. </p>
+                    <p>
+                        3. Educational Policy Committee Operating Charter: The Educational 
+                        Policy Committee currently operates in an ad hoc fashion with 
+                        recurring administrative responsibilities such as approving new 
+                        degree programs and faculty salaries. There is a need to establish 
+                        an operating charter for the Committee to ensure that the 
+                        Committees operations maintain substantive continuity and are 
+                        functionally aligned with setting academic policy as the University 
+                        enters a period of growth and a highly competitive environment in 
+                        higher education. The Committee will look at the best practices of 
+                        peer and model institutions as well as industry experts and 
+                        accreditation requirements.</p>
+                
+            </div1>
+        </body>
+    </text>
+</TEI.2>
+

@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0421 SYSTEM "000000766_0421" NDATA jpg>
+<!ENTITY DSSR_000000766_0422 SYSTEM "000000766_0422" NDATA jpg>
+<!ENTITY DSSR_000000766_0423 SYSTEM "000000766_0423" NDATA jpg>
+<!ENTITY DSSR_000000766_0424 SYSTEM "000000766_0424" NDATA jpg>
+
+<!--<!ENTITY NC61m18a SYSTEM "NC61m18a.jpg" NDATA jpg>
+<!ENTITY NC61m18b SYSTEM "NC61m18b.jpg" NDATA jpg>
+<!ENTITY NC61m18c SYSTEM "NC61m18c.jpg" NDATA jpg>
+<!ENTITY NC61m18d SYSTEM "NC61m18d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NC61m18">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+                        value="1861-12-18">December 18, 1861</date></title>
+
+                <author>Tenney, Charles</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Nancy Heywood</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Nancy Heywood</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">12</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NC61m18</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case, December 18, 1861</title>
+
+
+                        <author>Charles Tenney</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p> </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1861-12-18">1861-12-18</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>masculine</term>
+                    <term>American Civil War / Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-11">November 11th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 14th, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1861-12-18">December 18, 1861</date>
+                    </bibl>
+                </head>
+
+                <p> Charlie Tenney, writing from Romney, Virginia, informs Addie that he believes
+                    his regiment will fight in a battle in near future and lists the other Union
+                    regiments stationed in the area. He also refers to the importance of their
+                    correspondence by mentioning the frequency of the letters he is exchanging with
+                    Addie. </p>
+
+            </div1>
+        </front>
+
+
+
+
+        <body id="d4">
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1861-12-18"
+                        >December 18, 1861</date></head>
+                <pb n="1" entity="DSSR_000000766_0421"/>
+
+
+                <opener>
+                    <dateline>
+                        <name type="place">Romney, Hampshire Co. Va</name>
+                        <lb/>
+                        <date value="1861-12-18">Dec. 18<hi rend="super">th</hi> 1861</date>
+                        <lb/>
+                    </dateline>
+
+                    <salute>My dearest Addie:-</salute>
+                    <lb/>
+
+                </opener>
+                <p> It has been a long<lb/> time since I received a letter<lb/> from you, so long
+                    that I can<lb/> not wait till I receive one<lb/>
+                    <del hand="h1">from</del> before I write again. I am<lb/> quite lonely today, so
+                    you will<lb/> pardon me for thus again <orig reg="intruding">itruding</orig><lb/>
+                    myself upon your notice.<lb/>
+                </p>
+
+                <p> Here we are in a veritable<lb/>
+                    <unclear>Secesh</unclear> town in which before<lb/> our brave boys came here, there<lb/>
+                    <pb n="2" entity="DSSR_000000766_0422"/> was not a union man.<lb/> There has
+                    been two battles here in<lb/> which the Federal troops were<lb/> victorious. We
+                        left <name type="place">Green Spring<lb/> Run</name> yesterday at 11.30, and
+                    arrived<lb/> here last evening at 6.30. a distance<lb/> of 16 1/2 miles.<lb/>
+                </p>
+
+                <p> There is some prospect of a<lb/> fight here in a few days, and it is<lb/>
+                    reported that there are 20.000 Rebels<lb/> some 17 miles from here. and <orig
+                        reg="advancing">advan-<lb/> cing</orig> toward us. They will <orig
+                        reg="undoubtedly">undoubt<lb/> edly</orig> find us ready to give them a<lb/>
+                    warm reception.<lb/>
+                </p>
+
+                <p>
+                    <name type="place">Romney</name> is quite a town, it<lb/> contained probably one
+                    thousand<lb/> inhabitants, the greater portion of<lb/> them fled on the capture
+                    of the<lb/> town. There are now the 4<hi rend="super">th</hi> 5<hi rend="super"
+                        >th</hi><lb/> 7<hi rend="super">th</hi> &amp; 8<hi rend="super">th</hi>
+                    Ohio Regts. the 1<hi rend="super">st</hi> 2<hi rend="super">nd</hi><lb/> and
+                        7<hi rend="super">th</hi> Virginia. The Kelley Lancers<lb/> one company each
+                    of the Ringgold<lb/>
+                    <pb n="3" entity="DSSR_000000766_0423"/> and Washington (Pa.) Calvary.<lb/> and
+                    three batteries of Rifled <orig reg="ordnance.">ord-<lb/> nance.</orig>
+                        Gen. <unclear>Rosecrans</unclear> is expected<lb/> here every day to take
+                    command<lb/> in place of Gen. <name type="person">Kelley</name>. sick.<lb/>
+                </p>
+
+
+                <p> I send you with this a couple<lb/> of Harper's Weekly, and a rough<lb/> pencil
+                    sketch of the Bluffs opposite<lb/>
+                     <name type="place">Green Spring</name>. I will send you<lb/> a sketch or two
+                        illustrating <name type="place">Romney</name><lb/> in a few days.<lb/>
+                </p>
+
+
+                <p> Hal kindly let me<lb/> read a letter from you, in which<lb/> you said you said
+                    you had not<lb/> received a letter from me for some<lb/> time. well I guess you
+                    wrote that<lb/> before we left <name type="place">Charleston</name> <del hand="h1"
+                        >Va</del> For<lb/> this makes four times that I have<lb/> written. So you
+                    are not going<lb/> to Oberlin this fall or rather winter,<lb/> Well, perhaps Hal
+                    &amp; I can get a<lb/> Furlough before you go. and come<lb/> and visit
+                    you<lb/>
+                </p>
+
+                <pb n="4" entity="DSSR_000000766_0424"/>
+                <p> Is your lodge of Good <unclear>Templan</unclear><lb/> still in existence?
+                    &amp; do you have<lb/> as fine times as you used to?<lb/> If I ever can, you
+                    may rest assured<lb/> I shall join them. then perhaps<lb/> we shall be brother
+                    &amp; sister in the<lb/> same lodge. </p>
+
+
+                <closer> But I must close now &amp; try<lb/> and get a little sleep as I
+                    slept<lb/> none last night.<lb/> Give my respects to all.<lb/> and believe me I remain<lb/>
+                    <salute>Your true friend and<lb/> Brother</salute><signed>
+                        <name type="person">Charlie</name>
+                    </signed><lb/>
+                    <address>
+<addrLine>To my own dear</addrLine>
+<addrLine>Addie L. C.</addrLine>
+<addrLine>Mecca. O.</addrLine>
+</address>
+                </closer>
+
+
+            </div1>
+        </body>
+
+    </text>
+</TEI.2>

@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+
+<?dlps id="bov_20021003"?>
+<?dlps page-images="none" figure-images="no"?>
+<?dlps transcription="other"?>
+
+
+
+
+
+
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of
+                    Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors
+                    meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with
+                        local customizations)</resp>
+                    <name>University of Virginia Library</name>
+                </respStmt>
+                <biblScope type="date">
+                    <date value="2002-10-03">October 13, 2002</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">10</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2008">2008</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the
+                        University of Virginia</p>
+                    <p n="access">Publicly accessible</p>
+                </availability>
+                <idno type="DLPS ID">bov_20021003</idno>
+                <idno type="uva-pid">uva-lib:498317</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors
+                            minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of
+                            Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors
+                            meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2002-10-03">October 03, 2002</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information. Access to
+                                minutes containing salary information will be granted only under the
+                                procedures of the Virginia Freedom of Information Act (Code of
+                                Virginia-2.1-340 ff.) or if permission is granted by the Secretary
+                                of the Board. Researchers interested in obtaining access to these
+                                records should direct a request in writing to the Office of the
+                                Legal Adviser, Madison Hall, University of Virginia. These public
+                                minutes have had salary information deleted and bear no
+                                restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special
+                                Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body
+                                which is the legal owner and operator of the institution. Recorded
+                                in the minutes are appointments and other personnel decisions
+                                concerning faculty, decisions about construction of facilities,
+                                gifts to the university, and all other board actions, decisions and
+                                resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction;
+                &editorial_normalization; &editorial_hyphenation; &editorial_quotation;
+                &editorial_stdVals; </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language n="008" id="eng" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2008-07-17">July 17, 2008</date>
+                <respStmt>
+                    <name id="ewg4x">Ethan Gruber, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to vendor markup.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text id="d1">
+        <body id="body1">
+            <div1 id="d2" type="roll-call">
+                <pb n="6256"/>
+                <head type="main">TENTATIVE MINUTES<lb/> SUBJECT TO THE<lb/> APPROVAL OF THE<lb/>
+                    BOARD OF VISITORS<lb/>
+                    <date value="2002-10-03">October 3, 2002</date></head>
+                <p>The Board of Visitors of the University of Virginia met, in Open Session, at 4:45
+                    p.m., Thursday, <date value="2002-10-03">October 3, 2002</date>, in the Chapel
+                    of All Faiths at The University of Virginia's College at Wise; <name
+                        type="present">John P. Ackerly, III</name>, Rector, presided. <name
+                        type="present">Thomas J. Bliley, Jr., William G. Crutchfield, Jr., Thomas F.
+                        Farrell, II, Charles L. Glazer, William H. Goodwin, Jr., Mark J. Kington,
+                        Don R. Pippin, Gordon F. Rainey, Jr., Terence P. Ross, Thomas A. Saunders,
+                        III, Ms. Elizabeth A. Twohy, E. Darracott Vaughan, Jr., M.D., and H. Timothy
+                        Lovelace, Jr.</name>, were present.</p>
+                <p>Also present were <name type="present">John T. Casteen, III, Steven H. Kaplan,
+                        Leonard W. Sandridge, and Alexander G. Gilliam, Jr.</name>, as well as
+                    members of The University of Virginia's College at Wise Board and senior
+                    administrators of the College.</p>
+                <p>Special guests included <name type="present">Mr. and Mrs. Kenneth P.
+                        Asbury</name> and members of their family.</p>
+                <p>The President proposed the establishment of a chair at the College in honor of
+                        <name>Mr. Kenneth P. Asbury</name>, one of the "three Wise men' who
+                    convinced <name>President Darden</name> in 1954 of the need to establish a
+                    public college in Southwest Virginia. The college was founded as Clinch Valley
+                    College, at first a two-year institution under the aegis of the University, then
+                    a four year baccalaureate institution and more recently The University of
+                    Virginia's College at Wise.</p>
+                <p>The chair, to be known as the Kenneth Asbury Professorship in History, is being
+                    established by the Kenneth Asbury Professorship in History Fund, which was
+                    created with a lead gift from the late <name>Mrs. Lelia Maude Richmond</name>
+                    and other donors.</p>
+                <p>On motion, the following resolution was adopted:</p>
+            </div1>
+            <div1 id="d3" type="resolution">
+                <head type="main">APPROVAL OF THE KENNETH ASBURY PROFESSORSHIP</head>
+
+                <p>WHEREAS, <name>Kenneth Asbury</name> was instrumental in the founding, in 1954, of The
+                    University of Virginia's College at Wise, then known as Clinch Valley College;
+                    and</p>
+                <pb n="6257"/>
+                <p>WHEREAS, <name>Mr. Asbury's</name> unwavering and extraordinary commitment to the College, his
+                    work on the Advisory Board, and the subsequent College Board, has been
+                    instrumental in the College's continuing growth and achievements; and</p>
+                <p>WHEREAS, through generous gifts from <name>Lelia Maude Richmond</name> and others, funds were
+                    garnered to honor Mr. Asbury with a permanent endowed professorship; and</p>
+                <p>WHEREAS, the establishment of this endowed professorship will bring academic
+                    excellence to the College community;</p>
+                <p>RESOLVED that the Board of Visitors approves the establishment of the Kenneth
+                    Asbury Professorship in History and thanks <name>Mr. Asbury</name> for his commitment and
+                    many years of generous service to The University of Virginia's College at
+                    Wise.</p>
+                <ornament type="characters">---------------</ornament>
+                <p>On further motion, the meeting was adjourned at 4:55 p.m.</p>
+                <signed>Respectfully submitted,<lb/> Alexander G. Gilliam, Jr.<lb/>
+                    Secretary</signed>
+                <epigraph>
+                    <p>AGG:lah</p>
+                </epigraph>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

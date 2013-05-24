@@ -1,0 +1,304 @@
+<!--
+
+  scripts.dtd - a simple DTD for documentation of locally written/maintained
+    software programs
+
+  Greg Murray <gpm2a@virginia.edu>
+  Written: 2005-12-06
+  Last modified: 2006-08-30
+
+-->
+
+<!-- ============================== -->
+<!-- PARAMETER ENTITIES             -->
+<!-- ============================== -->
+
+<!ENTITY % a.id "id ID #REQUIRED">
+
+<!-- The 'tei' attribute indicates whether an element or attribute is
+defined in TEI or not -->
+<!ENTITY % a.tei "tei (yes | no) 'yes'">
+
+<!-- The 'key' attribute can be used for generating indexes of script
+names, technical terms, etc. -->
+<!ENTITY % a.key "key CDATA #IMPLIED">
+
+<!ENTITY % m.block "admon | p | list">
+
+<!ENTITY % block "(%m.block; | eg)+">
+
+<!ENTITY % m.phrase "att| code | command | datatype | emph | filename | gi | kw | lb | optionMention | path | ptr | ref | replace | tag | term | usage | val | xref">
+
+<!ENTITY % phrase "(#PCDATA | %m.phrase;)*">
+<!ENTITY % phraseBasic "(#PCDATA | hi | lb)*">
+
+<!ENTITY % inter "(#PCDATA | %m.phrase; | %m.block; | eg)*">
+
+
+<!-- ============================== -->
+<!-- TOP-LEVEL ELEMENT              -->
+<!-- ============================== -->
+
+<!-- The top-level element; contains a header and a body -->
+<!ELEMENT scripts (scriptsHeader, scriptsDoc)>
+
+
+<!-- ============================== -->
+<!-- HEADER ELEMENTS                -->
+<!-- ============================== -->
+
+<!-- Main metadata element; declares the title, author, etc. of the
+  documentation -->
+<!ELEMENT scriptsHeader (title, title?, respStmt+, summary?, revisionDesc?)>
+
+<!-- The title of the documentation -->
+<!ELEMENT title (#PCDATA)>
+<!ATTLIST title type (main | sub) #REQUIRED>
+
+<!-- Responsibility statement; declares the creators, maintainers, etc. of the documentation -->
+<!ELEMENT respStmt ( (resp, name)+ )>
+
+<!-- Declares the role or task for which this person is responsible -->
+<!ELEMENT resp (#PCDATA)>
+
+<!-- Summary or overview of the document -->
+<!ELEMENT summary %block;>
+
+<!-- Declares the changes made to the documentation over time -->
+<!ELEMENT revisionDesc (change+)>
+
+<!-- Declares the changes made for a particular version of the documentation -->
+<!ELEMENT change (date, respStmt+, changeEntry)>
+
+<!-- The date of this version of the documentation -->
+<!ELEMENT date (#PCDATA)>
+<!ATTLIST date value CDATA #REQUIRED>
+
+<!-- A description of the changes made in this revision of the documentation -->
+<!ELEMENT changeEntry %block;>
+
+
+<!-- ============================== -->
+<!-- BODY ELEMENTS                  -->
+<!-- ============================== -->
+
+<!-- The body of the document -->
+<!ELEMENT scriptsDoc (argument?, scriptsGroup+)>
+
+<!-- A group of related script descriptions -->
+<!ELEMENT scriptsGroup (head, argument?, (scriptsGroup+ | script+))>
+<!ATTLIST scriptsGroup %a.id;>
+
+<!-- An individual script description; this is the central element of any <scripts> document -->
+<!ELEMENT script (head, desc, (usage, options?, args?)?, output, remarks?, examples?, beforeAfter?, interaction?, tracksys?, context?, seeAlso?)>
+<!ATTLIST script
+	%a.id;
+	language (Perl | PerlWin32 | shell | XSLT) #REQUIRED
+	type (admin | processing | QA) #REQUIRED
+	interface (command-line | web) #REQUIRED
+	diskPath CDATA #REQUIRED
+	url CDATA #IMPLIED>
+
+<!-- The after part of a <beforeAfter> example -->
+<!ELEMENT after (desc?, eg)>
+
+<!-- A list of script arguments -->
+<!ELEMENT args (arg+)>
+
+<!-- A script argument -->
+<!ELEMENT arg (argName, desc)>
+<!ATTLIST arg required (yes|no) #REQUIRED>
+
+<!-- The name of a script argument -->
+<!ELEMENT argName %phrase;>
+
+<!-- Summary or overview of the document or a subsection of it -->
+<!ELEMENT argument %block;>
+
+<!-- The before part of a <beforeAfter> example -->
+<!ELEMENT before (desc?, eg)>
+
+<!-- A real-world example showing the XML source before and after
+being processed by the script -->
+<!ELEMENT beforeAfter ( (before, after)+ )>
+
+<!-- The context in which the script is used -->
+<!ELEMENT context %phrase;>
+
+<!-- Indicates the default value for a script option -->
+<!ELEMENT default %phrase;>
+
+<!-- A brief description -->
+<!ELEMENT desc %inter;>
+
+<!-- One or more usage examples, each with optional description -->
+<!ELEMENT examples (example+)>
+
+<!-- A usage example, optionally including a description -->
+<!ELEMENT example (eg, desc?)>
+
+<!-- A heading for a script, group of scripts, etc. -->
+<!ELEMENT head %phrase;>
+
+<!-- Whether/how the script interacts with the user -->
+<!ELEMENT interaction %phrase;>
+
+<!-- A list of script options -->
+<!ELEMENT options ((optionGroup+|option+), remarks?)>
+
+<!-- A group of related script options -->
+<!ELEMENT optionGroup (head, option+)>
+
+<!-- A script option -->
+<!ELEMENT option (optionName, usage, desc, default?)>
+
+<!-- The name (usually a single letter) of a script option -->
+<!ELEMENT optionName (#PCDATA)>
+<!ATTLIST optionName expan CDATA #IMPLIED>
+
+<!-- Describes the output for the script -->
+<!ELEMENT output %inter;>
+
+<!-- Additional remarks that supplement the brief description -->
+<!ELEMENT remarks %block;>
+
+<!-- Pointers to related scripts -->
+<!ELEMENT seeAlso (ptr | xref)+>
+
+<!-- Whether/how the script updates the DLPS tracking system -->
+<!ELEMENT tracksys %phrase;>
+
+<!-- Usage summary for the script -->
+<!ELEMENT usage %phrase;>
+
+
+<!-- ============================== -->
+<!-- BLOCK-LEVEL ELEMENTS           -->
+<!-- ============================== -->
+
+<!-- An admonition set off from the main text; comparable to <note>,
+<tip>, <important>, etc. in DocBook -->
+<!ELEMENT admon (p | list | eg)+>
+<!ATTLIST admon type (important | note | tip) #REQUIRED>
+
+<!-- A usage example -->
+<!ELEMENT eg %phraseBasic;>
+
+<!-- A list item -->
+<!ELEMENT item %inter;>
+
+<!-- The label for a list item -->
+<!ELEMENT label %phrase;>
+
+<!-- A list, which can contain either label/item pairs, or just items -->
+<!ELEMENT list (head?, ( (label,item)+ | (item+) ) )>
+
+<!-- A paragraph -->
+<!ELEMENT p %phrase;>
+
+
+<!-- ============================== -->
+<!-- PHRASE-LEVEL ELEMENTS          -->
+<!-- ============================== -->
+
+<!-- Contains the name of an attribute for an XML element -->
+<!ELEMENT att (#PCDATA)>
+<!ATTLIST att
+	%a.tei;
+	%a.key;
+	element CDATA #IMPLIED>
+
+<!-- Identifies/inserts a symbol or other special character -->
+<!--
+<!ELEMENT char EMPTY >
+<!ATTLIST char name (dagger | ldquo | mdash | nbsp | ndash | rdquo | rsquo) #REQUIRED>
+-->
+
+<!-- Contains a short fragment of code in some formal language -->
+<!ELEMENT code (#PCDATA)>
+
+<!-- Indicates a command to be entered by the user at the command line -->
+<!ELEMENT command %phrase;>
+
+<!-- Contains the name of a datatype of some kind -->
+<!ELEMENT datatype (#PCDATA)>
+
+<!-- Marks a word or phrase for rhetorical emphasis -->
+<!ELEMENT emph %phrase;>
+
+<!-- Contains a filename -->
+<!ELEMENT filename %phrase;>
+
+<!-- Contains the name (generic identifier) of an XML element -->
+<!ELEMENT gi (#PCDATA)>
+<!ATTLIST gi
+	%a.tei;
+	%a.key;
+	rend (empty) #IMPLIED>
+
+<!-- Marks a word or phrase as distinct in some way, specified by the required
+'rend' attribute; here, the options are to mark a phrase as requiring attention,
+as bolded, as italicized, or as revised (new or updated since the last version
+of the documentation) -->
+<!ELEMENT hi %phrase;>
+<!ATTLIST hi rend (attn | bold | italic | revised) #REQUIRED>
+
+<!-- Contains a keyword in some formal language -->
+<!ELEMENT kw (#PCDATA)>
+
+<!-- A line break -->
+<!ELEMENT lb EMPTY>
+
+<!-- A name in any form -->
+<!ELEMENT name %phraseBasic;>
+
+<!-- The meaning of a script option. For example, an option <name> of
+"v" might have a <meaning> of "verbose". -->
+<!ELEMENT meaning (#PCDATA)>
+
+<!-- Contains a script option used in a prose context (not as part of an
+<option> element). For example: "Use <optionMention>-O</optionMention> option
+to override default output behavior." -->
+<!ELEMENT optionMention (#PCDATA)>
+
+<!-- Contains a disk path -->
+<!ELEMENT path (#PCDATA)>
+
+<!-- A pointer/cross-reference to another section within the document;
+does not specify the text for the link (on the assumption that the processor
+(XSLT stylesheet) will supply the heading for the section being pointed to) -->
+<!ELEMENT ptr EMPTY>
+<!ATTLIST ptr target IDREF #REQUIRED>
+
+<!-- A pointer/cross-reference to another section within the document;
+specifies the text for the link -->
+<!ELEMENT ref %phrase;>
+<!ATTLIST ref target IDREF #REQUIRED>
+
+<!-- Indicates text to be replaced by the user -->
+<!ELEMENT replace (#PCDATA)>
+
+<!-- Contains a complete start-tag (or, less often, end-tag), possibly including
+attribute specifications, but excluding the opening and closing markup delimiter
+characters -->
+<!ELEMENT tag (#PCDATA)>
+<!ATTLIST tag
+	%a.tei;
+	%a.key;
+	rend (empty) #IMPLIED>
+
+<!-- Contains a word or short phrase considered a technical term; typically used
+when a technical term is introduced or defined -->
+<!ELEMENT term (#PCDATA)>
+<!ATTLIST term %a.key;>
+
+<!-- Contains a value of some kind, typically an attribute value -->
+<!ELEMENT val (#PCDATA)>
+<!ATTLIST val quoted (yes | no) 'yes'>
+
+<!-- A pointer/cross-reference to an external document or subsection of an
+external document -->
+<!ELEMENT xref %phrase;>
+<!ATTLIST xref
+	url CDATA #REQUIRED
+	type (external) #IMPLIED>

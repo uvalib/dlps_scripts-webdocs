@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0187 SYSTEM "000000766_0187" NDATA jpg>
+<!ENTITY DSSR_000000766_0188 SYSTEM "000000766_0188" NDATA jpg>
+<!ENTITY DSSR_000000766_0189 SYSTEM "000000766_0189" NDATA jpg>
+<!ENTITY DSSR_000000766_0190 SYSTEM "000000766_0190" NDATA jpg>
+
+<!--<!ENTITY NA62h31a SYSTEM "NA62h31a.jpg" NDATA jpg>
+<!ENTITY NA62h31b SYSTEM "NA62h31b.jpg" NDATA jpg>
+<!ENTITY NA62h31c SYSTEM "NA62h31c.jpg" NDATA jpg>
+<!ENTITY NA62h31d SYSTEM "NA62h31d.jpg" NDATA jpg>
+<!ENTITY NA62h31e SYSTEM "NA62h31e.jpg" NDATA jpg>
+<!ENTITY NA62h31f SYSTEM "NA62h31f.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NA62h31">
+ <teiHeader type="migrated">
+  <!-- todo -->
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-08-31"
+      >31 August 1862</date></title>
+
+    <author>Case, Adelaide E.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>David Seaman</name>
+     <resp>Creation of digital images:</resp>
+     <name>University of Virginia Library Electronic Text Center</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>ETC</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">13</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NA62h31</idno>
+    <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+                    <p n="copyright"/>
+                </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Adelaide E. Case to Charles N. Tenney, 31 August 1862</title>
+      <author>Adelaide E. Case</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>6 pages</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p> </p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings. </p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-08-31">1862-08-31</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>feminine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-10">November 10th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>6 pp.</extent>
+      <date value="1862-08-31">31 August 1862</date>
+
+      <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+     </bibl>
+    </head>
+    <p/>
+   </div1>
+  </front>
+  <body id="d4">
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-08-31">31 August
+     1862</date></head>
+    <pb n="1" entity="DSSR_000000766_0187"/>
+    <opener>
+     <dateline>
+      <name type="place">East Clarindon </name>
+      <date value="1862-08-31">August 31<hi rend="super">st</hi> 1862</date>
+     </dateline>
+     <salute>My own loved Charlie</salute>
+    </opener>
+
+
+
+    <p>Although <unclear>two weeks</unclear>
+     <lb/> was spent in anxiety yet the blessed <unclear/>
+     <lb/> last arrived. that "Charlie--<hi rend="underline">my darling</hi>
+     <unclear>friend[?]</unclear> is <lb/> safe. You will wonder perhaps when I tell you <lb/> that
+     I had not entertained such <unclear/> ing fears <lb/> in regard to your safety as formerly
+     specially about <lb/> the line of the battles of <unclear>. </unclear> I pray- <lb/> ed just as
+     <unclear/> for the <unclear/> of my <lb/>
+     <hi rend="underline">loved</hi> one. but something seemed <unclear/> to <lb/> me so
+      confidently<del hand="h1">ly</del> Your Charlie is safe" that <lb/> I would not doubt. Indeed
+     dearest Charlie I felt <lb/> more gl <unclear/> today than I have <unclear/> since <lb/>
+     <unclear/> darling that you are perfectly safe and <lb/>
+     <pb n="2" entity="DSSR_000000766_0188"/> that these strange emotions are not caused by <lb/>
+     the possibility of your being in danger. How strange <lb/> it is that we are not <add
+      place="inline" hand="h1">so</add> willing to listen to the <lb/> voice of fear as we are to
+     that of safety. I have been <lb/> trying all day to <unclear>dispute[?]</unclear> these dismal
+     thoughts but <lb/> have not succeeded and have concluded to sit down <lb/> and give you a good
+     long "talking to" but I con- <lb/> fess I do not know what to talk to you about. <lb/> I can
+     forgive you darling for not telling me the <lb/> exact position you were to occupy should an
+     engage- <lb/> ment occur. but you must not repeat it. please do <lb/> not love I prefer knowing
+     your exact position as far <unclear>a[s?]</unclear>
+     <lb/> you can acquaint me of it. Had you fallen dearest. <lb/> and in time I had learned that
+     you had--forgive me <lb/> darling for the the thought--decieved me I know not what <lb/> my
+     feelings would have been, but--I can imagine. <lb/> I was sorry to learn of the misfortune of
+     your friend <lb/> Geo. Moore <unclear>[(]is he my friend too[?)]</unclear> trust he has
+     recovered <lb/> ere this, Was John Chaffee in the engagement? How <lb/> does he prosper. and
+     how does Steven Bishop prosper <lb/> Although I never was very much <unclear/> in <lb/> his
+      <add place="inline" hand="h1">Mr Bishops</add> favor yet as he is a soldier I feel the same
+     <lb/> interest in his welfare that I do in others who <lb/>
+     <pb n="3" entity="DSSR_000000766_0189"/> are so bravely defending the "Stars and Stripes" </p>
+    <p> We are constantly hearing rumers of <unclear/> and <lb/> defeats on the Rappahannock which
+     causes the most <lb/> intense excitement and speculation among those I call <lb/>
+     <hi rend="underline">cowards</hi>,, They are the more deserving of the name <lb/> because they
+     will quietly sit and listen while they <lb/> are being called thus. I believe some people
+     regard <lb/> "cowrd" as a kind of pet name at least they <lb/> are willing to bear it and I
+     must say it becomes <lb/> them most admirally.. Dear Charlie I attended <lb/> a wedding last
+     tuesday. Mr. Henry Hathaway. <lb/> and Miss Laura Carver. They were married at <lb/> Little
+     Mountain out near Painesville. A splendid <lb/> place. How do you think I felt when I looked
+     <lb/> upon that happy pair she standing beside the chosen <lb/> one ready to utter that solemn
+     promise, while my <lb/> thoughts were way off with my chosen one, laboring so <lb/> hard and
+     enduring so much for what? His <lb/> country. Ah. my soldier boy Charlie is far worthier <lb/>
+     of the love the <unclear>[pure?]</unclear> undying love of <unclear>[a? unc]</unclear> true and
+     <lb/> noble woman. than the Mr Hathaway. who refused about <lb/> ten months ago to "go to war"
+     when his betrothed told <lb/> him if he felt it to be his duty to go to fight <lb/>
+     <pb n="4" entity="DSSR_000000766_0190"/> to go, and leave her. she could wait till his <lb/>
+     return or she could first marry him and he could then <lb/> go. But poor fellow he finally
+     concluded he would <lb/> stay and court the favor of his "lady love" than <lb/> of the secesh
+     bullets, How patriotic truly! Charlie <lb/> do you think I would promise to love honor and <hi
+      rend="underline">obey</hi>
+     <lb/> such a man, Why as for the first. I couldnt. for the <lb/> second. I would'nt and as for
+     the last I need'nt <lb/> for if I should <unclear/> a little piece of <unclear/>
+     <lb/> he would be frightened to death. But what am I <unclear>tracing[?]</unclear>
+     <lb/> You will say "A strange girl. go to his wedding and <lb/>
+     <unclear>[write?]</unclear> this about him" If he should ask me my opin <lb/> =ion of him I
+     should tell him just so.. But "what can't <lb/> be cured must be endured," you know. </p>
+    <p> I recieved a letter from Hallie a few days ago <lb/> he expects to be mustered out of
+     service in a few <lb/> days and come home. I wish Charlie would accom- <lb/> pany him but I
+     dont see but that you are <unclear/> to <lb/> remain in "Old Virginny" as long as the war
+     lasts. <lb/> Y <unclear/> Dora had answered your letter <lb/> yet. She has not. I handed her a
+     letter addressed <lb/> to you and asked her to answer yours. <unclear/>
+     <unclear>the[?]</unclear>
+     <lb/> answer in mine and put it in the office. She <lb/> said she would but last night she told
+     me that <lb/> she did not have time to answer it She will <lb/> soon. perhaps will send with
+     this. </p>
+
+    <p>Sep<add place="inline" hand="h1">t</add>ember 8<hi rend="super">th</hi></p>
+    <p> My darling. Several days have passed since <lb/> I commenced this. but circumstances
+     prevented <lb/> me from finishing it.. You have been neglected <lb/> darling most cruelly..
+     .but I will write often <lb/> enough now to make up past deficiencies, <lb/> I am laboring
+     under a great deal of fear and <lb/> anxiety on your account loved one knowing as <lb/> I do of
+     the serious trouble in <lb/>
+     <lb/>
+     <unclear>[unclear]</unclear> Virginia, but I will try to believe that you will be spared. I
+     have not <lb/> heard from you in a long time. or at least it appears to be a long time. but I
+     am <lb/> [across the top] <lb/> always ready to assign some excuse for you and <lb/> now I
+     think that the reason why you do not <lb/> write is because you are so constantly harassed
+     <lb/><lb/> the<ref target="n1" n="1">1</ref> enemy. I never saw such and excitement as has been
+     for the past week. <lb/> The fact that the rebels are so near Cincinnati. has aroused northern
+     Ohio to the <lb/> certainty. that some thing must be done, and that quickly.. Men are ready to
+     protect <lb/> their own state and will do it. Thursday <lb/> evening, twenty from this town
+     volunteered <lb/> to go to Cincinnati, but all were not <lb/> acceptedt. When will this cruel
+     war <lb/> end. many hearts are becoming <lb/> faint and discouraged. but I live <lb/> on
+     trusting and hopeful. Hallie will <lb/> be homein a few days. and then we <lb/> shall have a
+     reason of rejoicing. but Charlie <lb/> absence will be none the less deeply <lb/> regretted.
+     <unclear/> I not be happy if <lb/> Charlie could come? but itis nearly <lb/> school time and I
+     must close <lb/> Please write soon and direct to <lb/> Mecca as I shall be there before <lb/>
+     your <add place="inline" hand="h1">answer</add> will reach me. May <lb/> heaven guard thee ever
+     dearest <lb/> and protect thee for your </p>
+    <closer> Addie </closer>
+   </div1>
+   <div1 type="notes" n="1" id="d6">
+    <head>Notes</head>
+
+    <note id="n1" place="end" n="1">
+     <seg type="note-symbol">1</seg>
+     <p>The following continues on top of page 1.</p>
+    </note>
+   </div1>
+  </body>
+ </text>
+
+</TEI.2>

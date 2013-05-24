@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0377 SYSTEM "000000766_0377" NDATA jpg>
+<!ENTITY DSSR_000000766_0378 SYSTEM "000000766_0378" NDATA jpg>
+<!ENTITY DSSR_000000766_0379 SYSTEM "000000766_0379" NDATA jpg>
+<!ENTITY DSSR_000000766_0380 SYSTEM "000000766_0380" NDATA jpg>
+
+<!--<!ENTITY NC61f16a SYSTEM "NC61f16a.jpg" NDATA jpg>
+<!ENTITY NC61f16b SYSTEM "NC61f16b.jpg" NDATA jpg>
+<!ENTITY NC61f16c SYSTEM "NC61f16c.jpg" NDATA jpg>
+<!ENTITY NC61f16d SYSTEM "NC61f16d.jpg" NDATA jpg>
+<!ENTITY filename SYSTEM "filename.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NC61f16">
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date value="1861-06-16"
+      >1861 June 16</date></title>
+
+    <author>Tenney, Charles N.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Bret Payne, Oak Spring Garden Library</name>
+     <resp>Creation of digital images:</resp>
+     <name>University of Virginia Library Electronic Text Center</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>Bret Payne</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">10</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NC61f16</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Charles N. Tenney to Adelaide E. Case, 1861 June 16</title>
+
+
+      <author>Charles N. Tenney</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 pp.</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p>Part of page 1 and 2 missing (cut out of image). The scan available online has cropped out
+        part of the original image as well.</p>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p>All unambiguous end-of-line hyphens have been retained.</p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings.</p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1861-06-16">1861-06-16</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>fiction</term>
+     <term>prose</term>
+     <term>masculine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-10">November 10th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">October 7th, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+
+  <front id="d2">
+
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1861-06-01"> June 16, 1861</date>
+
+      <title>Letter from Charles N. Tenney to Adelaide E. Case</title>
+     </bibl>
+    </head>
+    <p> Camp Dennison, Ohio. Charlie alludes to Addie's brother, Hallie's recent promotion to
+     lieutenant status and expresses his own "secret" desire to achieve higher status as well. The
+     Ninth and the artillery division have shipped off to Virginia, and he expects his division
+     (7th) will follow in the next week or two. He would like Addie to come and visit his camp with
+     the "ladies of Warren" via train before they change location. He asks Addie if they can
+     exchange ambrotypes (photographs). </p>
+   </div1>
+
+  </front>
+
+  <body id="d4">
+
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1861-06-16">1861 June
+     16</date></head>
+    <pb n="1" entity="DSSR_000000766_0377"/>
+
+
+    <opener>
+     <salute>My dear friend,</salute>
+     <lb/>
+    </opener>
+
+    <p> Would you be offended<lb/> if I were to say my dear<lb/> Addie? for I'm sure I<lb/> would
+     much rather call<lb/> you by the name my<lb/> heart prompts me to. I am very well<lb/> quite
+     so. and trust you are. Brig--or<lb/> rather Lieut. Case is also quite well.<lb/> He has improve
+     a great deal since<lb/> he left home. and you may rest<lb/> assured that he will be well
+     cared<lb/> for, for we all love him very much<lb/> I know there is no man to whom<lb/> I am as
+     much attached as to your<lb/> brother, you may well be proud<lb/> of <hi rend="underline"
+     >such</hi> a brother. I prophecy that<lb/> no man will sooner reach a place<lb/> in the hearts
+     of the people equal<lb/> to Col. Ellsworth or even Stephen A.<lb/>
+     <pb n="2" entity="DSSR_000000766_0378"/> Douglas or Lincoln, <unclear>[part of page missing]</unclear><lb/> than
+     your brother,<sic corr="[Halbert]">H</sic><unclear>[part of page missing]</unclear><lb/> B. Case.<lb/>
+    </p>
+    <p> We arrived here last <unclear>[missing]</unclear><lb/> night about four oc[lock] <unclear>[missing]</unclear><lb/> the boys all
+     well. <unclear>[missing]</unclear><lb/> month men, we <unclear>[missing]</unclear><lb/> Friday night. They were dismissed<lb/> and on
+     their way home. I think<lb/> they <add place="top" hand="author">ought</add> to have seen service before going<lb/> home; however
+     I don't care now<lb/> for perhaps I may have a chance<lb/> (although a small one) to get in
+     some<lb/> more genial position for I must<lb/> confess that I have a secret desire to<lb/>
+     <hi rend="underline">merit</hi> a promotion.<lb/>
+    </p>
+    <p> Two Regiments, the 9<hi rend="super">th</hi> &amp; the<lb/> Artillery left here this
+     morning for Virginia, and a rumor is<lb/> current, but you know how to believe<lb/> them, to
+     the effect that the<lb/>
+     <pb n="3" entity="DSSR_000000766_0379"/> Seventh Reg't. is to go in a week<lb/> or two. I wish
+     it may be so, but<lb/> I would like very much to see<lb/> Addie once more, still I do not<lb/>
+     expect to, unless you come down<lb/> this week with the ladies of Warren<lb/> Mrs. Stull
+     informed me that<lb/> they were coming down this<lb/> week or next, now you might<lb/> just as
+     well come down as not<lb/> coming down here is, I know, no<lb/> small affair, but I
+     understand<lb/> the railroad presidents will allo[w]<lb/> them, (from Warren) to pass free<lb/>
+     This is a beautiful day here, a<lb/> cool breeze is rustling through the<lb/> leaves (for you
+     must know that while<lb/> we were home the boys made a<lb/> sort of bower over the alley<lb/>
+     between the buildings) and the<lb/> sky is slightly overcast with clouds<lb/>
+     <pb n="4" entity="DSSR_000000766_0380"/> Altogether this is pleasant. There is<lb/> something
+     fascinating in it to me<lb/> I am healthier, stronger and can do<lb/> more here than in any
+     other business<lb/> But there is some thing <hi rend="underline">more</hi> fascinating<lb/> and
+     that is Addie Case. But I dare<lb/> not hope that you think more of me<lb/> than a common
+     friend. If I could only<lb/> know that you do, how happy I would<lb/> be-- but pshaw, I am
+     writing nonsense<lb/> pray forgive me for I cannot help it.<lb/> Are you well now? and do you
+     have<lb/> pleasant times, now the soldiers are gone?<lb/>
+    </p>
+    <p> Does Laura know that I am going<lb/> to correspond with you? If she does, give<lb/> my kind
+     regards to her.But I have wearied you patience<lb/> too much already so I will not write<lb/>
+     any more. If you are not displeased with<lb/> this <hi rend="underline">please</hi> write very
+     soon.<lb/>
+    </p>
+    <closer> Meanwhile rest assured<lb/> I remain Yours truly &amp; affectional[ity]<lb/>
+     <signed>Charlie Tenney</signed><lb/>
+     <seg type="postscript">P.S. Would you have<lb/> any objection to our<lb/> changing
+      ambrotypes!<lb/> if not I will send<lb/> mine next time I<lb/> write.</seg>
+     <dateline><name type="sender">Address<lb/> Cha[ ]. N. Tenney<lb/> Care of Capt Asper<lb/> Co.
+       H. 7<hi rend="super">th</hi>
+       Regt<unclear>[?]</unclear>.<unclear>[?]</unclear>.M.<lb/></name><name type="place">Camp
+       Dennison<lb/> Ohio<lb/></name> Camp.<date value="1861-06-16">June 16<hi rend="super">th</hi>
+       1861.<lb/></date></dateline>
+    </closer>
+
+   </div1>
+  </body>
+
+ </text>
+</TEI.2>

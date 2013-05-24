@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % MANUSCRIPT "INCLUDE"> 
+<!ENTITY DSSR_000000962_0458 SYSTEM "000000962_0458.jpg" NDATA jpg>     
+<!ENTITY DSSR_000000962_0459 SYSTEM "000000962_0459.jpg" NDATA jpg> 
+
+<!--
+<!ENTITY filename SYSTEM "filename.jpg" NDATA jpg> 
+<!ENTITY longs "&#x017F;">
+<!ENTITY B640603a SYSTEM "640603a.jpg" NDATA jpg> 
+<!ENTITY B640603b SYSTEM "640603b.jpg" NDATA jpg> -->
+]> 
+<TEI.2 id="B640603">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Brand Civil War Collection: Letter from William Francis Brand to
+                    Amanda Catherine Armentrout, <date value="1864-06-03">1864 June 3</date></title>
+                <author>Brand Civil War Collection: Brand, William Francis </author>
+                <editor> </editor>
+                <respStmt>
+                    <resp> </resp>
+                    <name> </name>
+                    <resp>Creation of machine-readable version: </resp>
+                    <name>Mary Elizabeth McCaskill </name>
+                    <resp>Creation of digital images: </resp>
+                    <name>Mary Elizabeth McCaskill </name>
+                    <resp>Conversion to TEI.2-conformant markup: </resp>
+                    <name>University of Virginia Library Electronic Text Center. </name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. 10 kilobytes </extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library </publisher>
+                <pubPlace>Charlottesville, Virginia </pubPlace>
+                <idno type="etext">B640603</idno>
+                <availability status="public">
+                    <p n="access">Publicly accessible</p>
+                    <p n="copyright">copyright 2000, by the Rector and Visitors of the University of
+                        Virginia </p>
+                </availability>
+                <date value="2000">2000 </date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-BrandLetterscivilwar</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Images of the manuscript have been included from the original source. </p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title type="main">Brand Civil War Collection: Fragment of letter from
+                            William Francis Brand to Amanda Catherine Armentrout, <date
+                                value="1864-06-03">1864 June 3</date></title>
+                        <title type="parallel"> </title>
+                        <title level="u"> </title>
+                        <author>Brand Civil War Collection: William Francis Brand </author>
+                        <editor> </editor>
+                        <respStmt>
+                            <resp> </resp>
+                            <name> </name>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p> </p>
+                    </editionStmt>
+                    <extent>2 p. </extent>
+                    <publicationStmt>
+                        <publisher> </publisher>
+                        <pubPlace> </pubPlace>
+                        <date value="1864-06-03">1864-06-03 </date>
+                        <idno type="callNo">Source copy consulted: MSS 11332, Special Collections,
+                            Alderman Library, University of Virginia </idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p> </p>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p> </p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center. </p>
+            </projectDesc>
+            <editorialDecl>
+                <p>Original lineation has been maintained. </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+                <p>Autograph letter signed Willie</p>
+            </editorialDecl>
+            <refsDecl>
+                <p> </p>
+            </refsDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>
+                        <title>Library of Congress Subject Headings </title>
+                    </bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1864-06-03">1864-06-03</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English </language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction </term>
+                    <term>prose </term>
+                    <term>masculine </term>
+                    <term>American Civil War/Special Collections </term>
+                </keywords>
+                <!--<keywords scheme="LCSH">
+                    <term type="Field650">LCSH </term>
+                </keywords>-->
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2000-09">September 2000 </date>
+                <respStmt>
+                    <resp>corrector </resp>
+                    <name>Mary Elizabeth McCaskill and Carolyn Fay, Electronic Text Center </name>
+                </respStmt>
+                <item>Added TEI header and tags. </item>
+            </change>
+            <change>
+                <date value="2009-11">November 2009 </date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+            <div1 id="d3" type="summary">
+                <head>Summary <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>2 pp.</extent>
+                        <date value="1864-06-03">June 3, 1864</date>
+
+                        <title>Letter from William Francis Brand to Amanda Catherine Armentrout,
+                            June 3, 1864</title>
+                    </bibl>
+                </head>
+
+                <p>WFB, &ldquo;At Home,&rdquo; to &ldquo;My dear K.&rdquo;: asks
+                    forgiveness for not visiting her; promises to visit ad stay with her at least
+                    two days, wishes it could be longer &ldquo;but it might not look
+                    well&rdquo;; his shoulder wound has nearly healed </p>
+            </div1>
+        </front>
+        <body id="d4">
+
+
+            <div1 id="d5" n="1864-06-03" type="letter">
+                <pb entity="DSSR_000000962_0458" n="1"/>
+                <head>Letter from William Francis Brand to Amanda Catherine Armentrout, June 3, 1864</head>
+
+                <opener>
+                    <dateline>
+                        <name type="place">At Home</name>
+                        <lb/>
+                        <date value="1864-06-03">June 3rd, /64</date>
+                    </dateline>
+                    <salute>My dear K.</salute>
+                </opener>
+                <p> I <orig reg="received">recieved</orig> your letter<lb/> the <orig reg="first."
+                        >first,</orig> Truly was <unclear/> glad to hear<lb/> from <orig
+                        reg="you, but">you. But</orig> it did not my<lb/>
+                    <orig reg="conscience">consience</orig> reprove me for<orig reg="neglect-"
+                        >neglec</orig><lb/>
+                    <orig reg="ing">ting</orig> the <orig reg="idol">idle</orig> of my heart.
+                        <unclear>My</unclear><lb/> dear Kate forgive me for I shall<lb/> never
+                    forget thee or ever <orig reg="cease">seace</orig> to<lb/> love <orig
+                        reg="thee.">thee,</orig> It has been my constan<hi rend="super">t</hi><lb/>
+                    wish to be with thee for the last<lb/> two <orig reg="weeks.">weeks</orig> I
+                    hardly know what has<lb/> kept me from thy side so <orig reg="long,">long.</orig>
+                    <orig reg="unless">with</orig><lb/>
+                    <orig reg="it"> out it</orig> is that you are at <orig reg="an unknown">a stran</orig><lb/>
+                    <orig reg="place">ge plase</orig> to me &amp; your sister <orig reg="is"
+                        >being</orig><lb/>
+                    <orig reg="unwell.">unwell</orig> Dear <orig reg="Kate,">Kate</orig> I know thy
+                        <orig reg="generous">gen</orig><lb/>
+                    <orig reg="heart">erous</orig> heart has been <orig reg="severely"
+                    >severly</orig> tried<lb/> of late &amp; if I am <orig reg="spared"
+                    >spaired</orig> I will<lb/> soon be by thy side to make thee<lb/> happy<orig
+                        reg="&mdash;if I can be cheerful, be happy."> if I can,; be cheerfull be
+                        happy</orig>
+                    <pb entity="DSSR_000000962_0459" n="2"/> If I am spared you shall never<lb/>
+                    lack a friend or <orig reg="lover.">lover</orig> I will come<lb/> up to see you
+                    next Monday if you<lb/> think it advisable for me to come<lb/> up
+                        <unclear>&nbsp;&nbsp;</unclear> you have no lady<lb/> friend on the
+                        <orig reg="place. Your Brother-">plase &amp; your Brothe</orig><lb/>
+                    <orig reg="in-law">in law</orig> is no doubt very busy<lb/> this time of the
+                        <orig reg="year.">year</orig> I will<lb/> come up Monday &amp; if you
+                    think it <orig reg="advisable.">advisable</orig><lb/> I will stay a day<lb/> or
+                        <orig reg="two.">two,</orig> God <orig reg="knows">nows</orig> I would
+                    like<lb/> to stay longer but it might<lb/> not look <orig reg="good."
+                    >well.</orig> I would write more<lb/> but I have a chance to send this<lb/> to
+                    the office so it may reach you<lb/> tomorrow. Your Brother was well the
+                    last<lb/> time I <orig reg="heard">hurd</orig> from <orig reg="him;"
+                        >him.</orig><orig reg="Bro.">Bro,</orig> J is still<lb/>
+                    <orig reg="safe.">safe</orig> My health is very <orig reg="good.">good</orig> My
+                    wound is nearly well. <orig reg="All">all</orig> that makes me<lb/> sad is to
+                    think my darling Kate is<lb/> so <orig reg="dispondent. Fear not.">dispondent
+                        fear not</orig> God knows<lb/> I love thee &amp; I hope to be <orig
+                        reg="blessed">blest</orig> with <orig reg="thee.">thee</orig>
+                </p>
+                <closer>
+                    <salute>Your tried <orig reg="lover,">lover</orig></salute>
+
+                    <signed>Willie</signed>
+                    <seg type="postscript">Good bye &amp; a ki&longs;s <orig reg="until"
+                            >untill</orig> I meet <orig reg="thee">the</orig>
+                        <unclear>have</unclear> as many as you<lb/>
+                        <orig reg="please.">please</orig></seg>
+                </closer>
+            </div1>
+        </body>
+
+    </text>
+</TEI.2>

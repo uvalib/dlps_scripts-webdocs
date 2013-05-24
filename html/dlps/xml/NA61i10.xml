@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0279 SYSTEM "000000766_0279" NDATA jpg>
+<!ENTITY DSSR_000000766_0280 SYSTEM "000000766_0280" NDATA jpg>
+<!ENTITY DSSR_000000766_0281 SYSTEM "000000766_0281" NDATA jpg>
+<!ENTITY DSSR_000000766_0282 SYSTEM "000000766_0282" NDATA jpg>
+
+<!--<!ENTITY NA61i10a SYSTEM "NA61i10a.jpg" NDATA jpg>
+<!ENTITY NA61i10b SYSTEM "NA61i10b.jpg" NDATA jpg>
+<!ENTITY NA61i10c SYSTEM "NA61i10c.jpg" NDATA jpg>
+<!ENTITY NA61i10d SYSTEM "NA61i10d.jpg" NDATA jpg>-->
+]>
+
+<TEI.2 id="NA61i10">
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date value="1861-09-10"
+      >10 September 1861</date></title>
+    <author>Case, Adelaide E.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>David Seaman</name>
+     <resp>Creation of digital images:</resp>
+     <name>University of Virginia Library Electronic Text Center</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>David Seaman</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">7</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NA61i10</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Adelaide E. Case to Charles N. Tenney, 10 September 1861</title>
+
+      <author>Adelaide E. Case</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 pages</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p> </p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings. </p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1861-09-10">1861-09-10</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>feminine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-02">November 2nd, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1861-09-10">10 September 1861</date>
+
+      <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+     </bibl>
+    </head>
+    <p/>
+   </div1>
+  </front>
+  <body id="d4">
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1861-09-10">10 September
+      1861</date></head>
+    <pb n="1" entity="DSSR_000000766_0279"/>
+    <opener>
+     <dateline>
+      <date value="1861-09-10">September 10<hi rend="super">th</hi> 1861</date>
+     </dateline>
+     <salute>Friend Charley</salute>
+    </opener>
+
+
+
+    <p>Shall I offer an apology <lb/> for writing <unclear/>
+     <lb/> none <unclear/> that I am at school <unclear/>
+     <lb/> no pen or ink and being <unclear/>
+     <lb/> likewise I should have written before <lb/> and oftener, but that I <unclear/> to <unclear/>
+     <lb/> advice of my brother before corresponding <lb/> regularly with you. You may thing me
+     foolish <lb/> in relying upon the advice of Hallie but <lb/> I feel safe in <unclear/> for I
+     <unclear/> that I <lb/> am govorned by the <hi rend="underline">noblest</hi> and <hi
+      rend="underline">bravest</hi> brother <lb/> that a sister ever <hi rend="underline">dare</hi>
+     <unclear/> of </p>
+    <p>How did you enjoy the fight you must have <lb/> felt somewhat proud in <unclear/> to <pb
+      n="2" entity="DSSR_000000766_0280"/> quell so superior a force I presume if I had <lb/> been
+     there my heart would have trembled <lb/> for your safety. I was almost surprised <lb/> not to
+     have recieved a letter from you <lb/> immediately after the fight. I felt very <lb/> an[x]ious
+     to hear and we did not recieve <lb/> a letter from Hal. until yesterday. In fact <lb/> his
+     death came in the papers. It was <lb/> soon contradicted but suspense is almost <lb/> as bad as
+     reality Charley if you have written <lb/> to me lately I have not recieved your letter <lb/> I
+     recieved an engraving of Camp Dennison <lb/> which I prize very much and also <unclear/>
+     <lb/> which I supposed came from you. I have not <lb/> written <add hand="h1" place="inline"
+      >you</add> but one letter since you lef[t] <unclear/> for <lb/> the reason that I have given
+     above. My <lb/> thoughts are scattered far and wide today so <lb/> if my letter is rather
+     abrupt you will excuse <lb/> it I will send this in a letter to Hallie <lb/>
+     <pb n="3" entity="DSSR_000000766_0281"/> as I anticipate <unclear/> it will go more <unclear/>
+     <lb/> if you can write immediately after recieving <lb/> this please do so <lb/>
+    </p>
+
+    <closer> Yours in friendship <lb/> Addie <unclear/> Case <pb n="4" entity="DSSR_000000766_0282"
+     /> [blank]</closer>
+   </div1>
+  </body>
+ </text>
+</TEI.2>

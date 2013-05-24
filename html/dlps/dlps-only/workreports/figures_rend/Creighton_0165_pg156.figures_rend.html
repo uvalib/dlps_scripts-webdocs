@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Figures: Rendering Report: Creighton_0165_pg156.xml</title>
+<link rel="stylesheet" type="text/css" href="/dlps/css/workreports.css">
+</head>
+<body onLoad="document.frm.operator.focus();">
+<h3>Figures: Rendering Report: Creighton_0165_pg156.xml</h3>
+<p><b>Summary:</b> 2 items</p>
+<h4>Instructions</h4>
+<ol>
+<li>Enter your name.</li>
+<li>For each item, indicate how the figure is rendered <i>on the printed page</i>:
+
+<ul>
+<li>"Full-page" means that only one or more figure(s) (perhaps with
+captions) appears on the page; no text from the body of the work
+appears on the page.</li>
+<li>"Block" means that the figure is set off from the surrounding text
+by line breaks.</li>
+<li>"Inline" means that the figure is set within the flow of the
+surrounding text; the text flows around the figure on at least one
+side.</li>
+</ul>
+</li>
+
+<li>If the figure appears problematic in some way, mark it for further
+review by entering a brief note of explanation in the "Note"
+textbox.</li>
+<li>When finished with all items, click the "Save Data" button.</li>
+</ol>
+
+<form name="frm" method="post" action="/cgi-dlps/dlps-only/workreports/save.pl">
+
+<table border="0" cellpadding="5">
+<tr>
+<td>Name <i>(required)</i>: <input type="text" class="text" name="operator"></td>
+</tr>
+</table>
+
+<table border="1" cellpadding="5">
+<tr><th>Item</th><th>Rendering</th><th>Review</th><th>Page number/image</th></tr>
+<tr>
+<td>1<input type="hidden" name="id_1" value="f1"></td>
+<td nowrap class="nowrap"><input type="radio" name="rend_1" value="page">Full-page<br>
+<input type="radio" name="rend_1" value="block">Block<br>
+<input type="radio" name="rend_1" value="inline">Inline</td>
+<td>Mark this item for further review:<br>
+Note:&nbsp;<input type="text" class="text" name="note_1"></td>
+<td>157<input type="hidden" name="pagenumber_1" value="157"><br>
+<input type="hidden" name="pageimage_1" value=""></td>
+</tr>
+<tr>
+<td>2<input type="hidden" name="id_2" value="f2"></td>
+<td nowrap class="nowrap"><input type="radio" name="rend_2" value="page">Full-page<br>
+<input type="radio" name="rend_2" value="block">Block<br>
+<input type="radio" name="rend_2" value="inline">Inline</td>
+<td>Mark this item for further review:<br>
+Note:&nbsp;<input type="text" class="text" name="note_2"></td>
+<td>169<input type="hidden" name="pagenumber_2" value="169"><br>
+<input type="hidden" name="pageimage_2" value=""></td>
+</tr>
+</table>
+
+<input type="hidden" name="form_id" value="Creighton_0165_pg156.figures_rend">
+<input type="hidden" name="item_count" value="2">
+
+<br><br>
+<table>
+<tr><td><input type="button" class="button_default" value="Save Data" onClick="document.frm.submit();"></td></tr>
+</table>
+
+</form>
+</body>
+</html>

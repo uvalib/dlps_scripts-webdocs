@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY longs "s" >
+
+<!ENTITY DSSR_000000766_0059 SYSTEM "000000766_0059" NDATA jpg>
+<!ENTITY DSSR_000000766_0060 SYSTEM "000000766_0060" NDATA jpg>
+<!ENTITY DSSR_000000766_0061 SYSTEM "000000766_0061" NDATA jpg>
+<!ENTITY DSSR_000000766_0062 SYSTEM "000000766_0062" NDATA jpg>
+
+<!--<!ENTITY Na62b09a SYSTEM "Na62b09a.jpg" NDATA jpg>
+<!ENTITY Na62b09b SYSTEM "Na62b09b.jpg" NDATA jpg>
+<!ENTITY Na62b09c SYSTEM "Na62b09c.jpg" NDATA jpg>
+<!ENTITY Na62b09d SYSTEM "Na62b09d.jpg" NDATA jpg>-->
+]>
+
+<TEI.2 id="NA62b092">
+
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-02-09">February 9, 1862</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Debbie Bright, Arthur J. Morris Law Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Debbie Bright Arthur J. Morris Law Library</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">12</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62b092</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2004">2004</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Illustrations have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney,</title>
+                        <author>Adelaide E. Case</author>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>44 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-03-03">1862-03-03</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Women Writers/Special Collections</term>
+                </keywords>
+
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+
+        </profileDesc>
+
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-03">November 3rd, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">September 30, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1862-02-09">February 9, 1862</date>
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+
+                <p> Addie is very happy that Charlie has written her that he loves her. She writes
+                    back about her love for him. Her brother, Hal, is home on leave and wishes that
+                    he could have come home at the same time. </p>
+            </div1>
+
+        </front>
+
+        <body id="d4">
+
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-02-09"
+                        >February 9, 1862</date></head>
+
+                <pb n="1" entity="DSSR_000000766_0059"/>
+
+                <opener>
+                    <dateline>
+                        <name type="place">Mecca</name>
+                        <date value="1862-02-09">Feb. 9th "62</date>
+                        <lb/>
+                    </dateline>
+
+                    <salute>Dear Charlie,</salute>
+
+                </opener>
+
+                <p> How the mind will<lb/> wander, when alone, and what is<lb/> more natural, than
+                    that it<lb/> should stray &ldquo;way off&rdquo; to dear, absent<lb/>
+                    friends. But I am quite confident<lb/> that it is not Natural as it used<lb/> to
+                    be but, one loved friend, <orig reg="engrosses">engro&longs;ses</orig><lb/>
+                    the wandering thoughts of Addie. </p>
+
+                <p> My darling Hal has at last<lb/> returned to his &ldquo;home and
+                    friends&rdquo; </p>
+
+                <p> Oh! dear Charlie, you <hi rend="underline">certainly</hi> can<lb/> not know our
+                    joy at his return<lb/> but I fear you feel his absence <pb n="2"
+                        entity="DSSR_000000766_0060"/> full as much as we do his presence.<lb/> I
+                    know you <orig reg="miss">mi&longs;s</orig> him, and I<lb/>
+                    <hi rend="underline">almost</hi> could wish him with you<lb/> for your sake </p>
+
+                <p> I received your <hi rend="underline">dear</hi> letter, friday<lb/> I know not why
+                    it was that I<lb/> wept while reading it. Laurie brought<lb/> it from the
+                        office, <add place="inline" hand="h1">and</add> immediately I<lb/> hurried
+                    to my room to read it.<lb/> Something, seemed to tell me that<lb/> my thoughts
+                    would be to sacred while<lb/> reading it to be <orig reg="witnessed"
+                        >witne&longs;sed</orig>, even<lb/> by my <hi rend="underline"
+                    >sister</hi>. Darling, did you ever<lb/> weep tears of joy? I know <hi
+                        rend="underline">I</hi> did while<lb/> reading your darling letter. Noble
+                    youth!<lb/> How I thanked God, that there was<lb/> one, not ashamed to own me as
+                    a friend </p>
+
+                <p> Can you be happy in Addie's love?<lb/> Then my own darling, be happy.<lb/> For
+                        I <orig reg="confess">confe&longs;s</orig>, dear Charles, what, to
+                    man,<lb/> I never before <orig reg="confessed">confe&longs;sed</orig>,
+                    &mdash; my love<lb/> A pure and fervent love it is incessant<lb/> as time
+                    itself. How long I have felt <pb n="3" entity="DSSR_000000766_0061"/> and known
+                    it I dare not own. For a<lb/> time, I strove to clothe it in the<lb/>
+                    appellation's of &ldquo;sister's regard&rdquo; for you.<lb/> A
+                    &ldquo;sisterly interest&rdquo; in your welfare. </p>
+
+                <p> But Charlie, I found that I <hi rend="underline">do</hi><lb/> not do so. It was
+                    too sacrilegious.<lb/> But I must not dwell on this subject<lb/> Dear Charlie,
+                    cruelly as Col. Tyler in-<lb/>
+                    <unclear/> That you, for my sake, darling do<lb/> nothing rash. you will not
+                    will you?<lb/> You will not be offended will you?<lb/> I should so dread to have
+                    you get into<lb/> a quarrel with him. </p>
+
+                <p>I am glad that you are going to<lb/> write for the &ldquo;Democrat&rdquo;
+                    Bye the by<lb/> the &ldquo;Democrat&rdquo; and
+                    &ldquo;Chronicle&rdquo; are<lb/> all one now called by the name of<lb/>
+                    the latter. I was very much disappoin<lb/> ted at your not coming home with<lb/>
+                    Hal still I think your chances<lb/> are good. I <orig reg="guess"
+                    >gue&longs;s</orig> you have been as<lb/> faithful to your post as any of
+                    the<lb/> company. Laurie says she will<lb/>
+                    <pb n="4" entity="DSSR_000000766_0062"/> answer your &ldquo;short
+                    note&rdquo; and send in this </p>
+
+                <p> I presume it will be<del hand="h1">sol</del><lb/> so long that I will<lb/> be
+                    obliged to pay double<lb/> postage. Darling Charlie<lb/> you will excuse
+                    this<lb/> short letter as Hallie<lb/> is going away to night<lb/> and he wishes
+                    me to stop writing<lb/> and sing with him. I will write<lb/> again in a few days </p>
+
+                <p> Remember me to the boys,<lb/> meanwhile accept the love and <orig reg="blessing"
+                        >ble&longs;sing</orig>blessing<lb/> of your's forever </p>
+
+                <closer>
+                    <signed>Addie</signed>
+
+                </closer>
+
+            </div1>
+
+        </body>
+
+
+    </text>
+
+</TEI.2>

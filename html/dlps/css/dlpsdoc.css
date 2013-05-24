@@ -1,0 +1,61 @@
+/* dlpsdoc.css - styles for internal DLPS documentation */
+
+/*------------*/
+/* TAG STYLES */
+/*------------*/
+
+body, p, td, th {
+  background-color: white;
+  color: black;
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+}
+
+em {
+  font-style: normal;
+  font-weight: bold;
+}
+
+input, select {
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+}
+
+li {
+  margin: 5px;
+}
+
+tt {
+  color: #000099;
+  font-weight: bold;
+}
+
+a:link {
+  color: blue;
+}
+
+a:visited {
+  color: gray;
+}
+
+/*---------*/
+/* CLASSES */
+/*---------*/
+
+.attn {
+  color: #CC0000;
+  font-weight: bold;
+}
+
+.hi {
+  color: #CC0000;
+}
+
+.mono {
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.revised {
+  color: #0000CC;
+}

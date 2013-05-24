@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>About TEI Preview</title>
+<link rel="stylesheet" type="text/css" href="/dlps/css/markupQA.css">
+</head>
+<body>
+<h1>About TEI Preview</h1>
+
+<p>TEI Preview provides a no-frills HTML view of an underlying
+TEI XML document. Page images display in a separate window, as do
+notes.</p>
+
+<h2>Known issues</h2>
+
+<h3>Columns</h3>
+
+<p><b>Issue:</b> The stylesheet currently does not support
+representation of columns.<br>
+
+<b>Work-around:</b> None; text is always displayed in a single
+column.</p>
+
+
+<h3>Small capitals</h3>
+
+<p><b>Issue:</b> The rendering of small capitals (<tt>&lt;hi
+rend="small-caps"&gt;</tt>) relies on CSS (<code>font-variant:
+small-caps</code>). Browsers don't always render this style correctly,
+especially at smaller font sizes.<br>
+
+<b>Work-around:</b> Representation of small-caps is supplemented by
+<u>underlining</u>.</p>
+
+
+<h3>Gothic typeface</h3>
+
+<p><b>Issue:</b> Rendering a gothic typeface (<tt>&lt;hi
+rend="gothic"&gt;</tt>) would require a gothic-style font widely
+available across browsers and platforms, and there is no such
+font.<br>
+
+<b>Work-around:</b> Gothic type is represented in <b><i>bold
+italic</i></b>.</p>
+
+
+<h3>Em spaces</h3>
+
+<p><b>Issue:</b> The em space (<tt>&amp;emsp;</tt>) is typically not
+available in web browsers and will appear like this: &#8195; Other
+character entities not common in HTML may present the same
+problem.<br>
+
+<b>Work-around:</b> None.</p>
+
+</body>
+</html>

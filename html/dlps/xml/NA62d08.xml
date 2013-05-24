@@ -1,0 +1,274 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0107 SYSTEM "000000766_0107" NDATA jpg>
+<!ENTITY DSSR_000000766_0108 SYSTEM "000000766_0108" NDATA jpg>
+<!ENTITY DSSR_000000766_0109 SYSTEM "000000766_0109" NDATA jpg>
+<!ENTITY DSSR_000000766_0110 SYSTEM "000000766_0110" NDATA jpg>
+<!ENTITY longs "s" >
+
+<!--<!ENTITY NA62d08a SYSTEM "NA62d08a.jpg" NDATA jpg>
+<!ENTITY NA62d08b SYSTEM "NA62d08b.jpg" NDATA jpg>
+<!ENTITY NA62d08c SYSTEM "NA62d08c.jpg" NDATA jpg>
+<!ENTITY NA62d08d SYSTEM "NA62d08d.jpg" NDATA jpg>-->
+]>
+<TEI.2 id="NA62d08">
+
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-04-08"
+      >April 8, 1862</date></title>
+
+    <author>Case, Adelaide E.</author>
+    <editor>primary editor first [last name, first name] ; maximum of three </editor>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Creed, Mary</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>Creed, Mary</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">10</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NA62d08</idno>
+    <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+    <date value="2004">2004</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Adelaide E. Case to Charles N. Tenney,</title>
+
+      <author>Adelaide E. Case</author>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 pp.</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p>All unambiguous end-of-line hyphens have been retained.</p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings.</p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-04-08">1862-04-08</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>feminine</term>
+     <term>American Civil War/Women Writers/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-06">November 6th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">September 30, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+
+  <front id="d2">
+
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-04-08">April 8, 1862</date>
+
+      <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+     </bibl>
+    </head>
+    <p> Addie has received another letter from Charlie, where he has discussed a move, and expresses
+     that all are safe. She discusses several poems and their authoresses. She expresses her worry
+     after hearing of the battle at Winchester. She tells him of several lady friends she will
+     introduce him to when he visits next. She wants to know his opinion about her becoming a summer
+     school teacher. </p>
+   </div1>
+  </front>
+
+  <body id="d4">
+
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-04-08">>April 8,
+     1862</date></head>
+    <pb n="1" entity="DSSR_000000766_0107"/>
+    <opener>
+     <dateline>
+      <name type="place">Mecca.</name>
+      <date value="1862-04-08">April 8th '62</date>
+      <lb/>
+     </dateline>
+     <salute>My darling</salute>
+     <lb/>
+    </opener>
+
+    <p>Happy very happy was I<lb/> last night when father handed me your<lb/> letter of - well <hi
+      rend="underline">I</hi> do not know when it<lb/> was written. for it was dated so many
+     times<lb/> I think it not necessary for me to fill<lb/> this sheet with expressions of joy and
+     pleasure.<lb/> because I was so fortunate as to recieve another<lb/> of your darling missives.
+     so I will allow you<lb/> for this time to imagine it.</p>
+    <p> Dearest. you say - in speaking of the &ldquo;grand move&rdquo;<lb/> &ldquo;not
+     withstanding the &ldquo; Seventh&rdquo; was included we are<lb/> all safe..&rdquo;
+     Did you really mean it? was not our<lb/>
+     <orig reg="loss">lo&longs;s</orig> at Winchester fearful? Perhaps I did not<lb/> understand
+     you.. I too was pleased when you<lb/> wrote me of your <orig reg="success"
+     >succe&longs;s</orig> in the &ldquo;letter line&rdquo;<lb/> I love letters it is so
+     cheering when far<lb/>
+     <pb n="2" entity="DSSR_000000766_0108"/> from friends to recieve good letters. as you<lb/>
+     certainly do <hi rend="underline">if you get mine</hi> (ahem)<lb/> It has been more than one
+     week since I<lb/> last wrote you. but I have been from home most<lb/> of the time since then..
+     Friday I went to<lb/> Claridon with Dora, and stayed until yesterday<lb/> I am excusable am I
+     not dear?</p>
+
+    <p>Charlie. you requested me to send you Laurie's<lb/> poem. &ldquo;A Vision&rdquo;
+     Although that was composed<lb/> by Laura <unclear>M.</unclear> Case. still I do not think
+     my<lb/> sister. Laura M. Case was the <orig reg="authoress">authore&longs;s</orig>. if
+     she<lb/> is she does not tell me so. It is a beautiful<lb/> piece. I will send it to you. I
+     intended<lb/> sending the paper but it was destroyed throug<lb/>
+     <orig reg="carelessness">carele&longs;sne&longs;s</orig>. but I saved the poem.</p>
+
+    <p>Did you infer dearest from what I wrote of<lb/> &ldquo;Fifty years ahead&rdquo; that
+     I was the authoress of<lb/> it? I was not nor do I know who was. but<lb/> I think it was Miss
+     Lucy Logan.</p>
+
+    <p>When I see Lucy. I will ask here for a copy of it<lb/> for you. You say you wish me to return
+     your love<lb/>
+     <pb n="3" entity="DSSR_000000766_0109"/> as you love. Oh. my darling would that you<lb/> knew
+     with what dpeth and tenderness your<lb/> love is reciprocated. yes. <hi rend="underline">would
+      that you knew.</hi><lb/>
+     <hi rend="underline">I</hi> would not have thought. one year ago that<lb/> any mortal. could
+     ever be so dear to me as is<lb/> my idol. my treasure. Can it be that you are<lb/> mortal? I
+     feel that your love is not. When I<lb/> think of that wretched week which I passed<lb/> through
+     after hearing of the Winchester fight<lb/> I shudder. and wonder how I lived.. Do<lb/> you
+     wonder that in the dead of night<lb/> when all was still that tears. which seemed<lb/> to sweep
+     away my very heart . would flow.<lb/> and <unclear>murmurs</unclear> such as &ldquo;Charlie
+     my darling<lb/> my all why am I not with thee&rdquo; would escape.<lb/> But am I becoming
+     tedious? Perhaps I am<lb/> Oh! yes dearest. I will try and enlarge your<lb/> list of lady
+     friends. when you come home, which<lb/> I trust will be soon. I have many lady friends<lb/>
+      in <unclear>Brumhill</unclear> Co. of whom I never spoke to<lb/> you. There are the <orig
+      reg="Misses">Mi&longs;ses</orig> <unclear>Gilbersons</unclear> (please<lb/>
+     <pb n="4" entity="DSSR_000000766_0110"/> ask Will. Braden if he remembers them<lb/> They speak
+     of him quite often) also <unclear>
+      <orig reg="Miss">Mi&longs;s</orig>
+     </unclear><lb/> Belle. Duncan. Lucia Leeland. Libbie Smith.<lb/> Grace Smith. and many others.</p>
+
+    <p>Darling. I wrote to you in <del hand="h1">regard</del> (I meant<lb/> that for regard) to my
+     teaching this summer<lb/> Did you recieve the letter: Please write to<lb/> me and let me know
+     if you wish me to<lb/> become. &ldquo;school marm&rdquo;</p>
+
+    <p>I have no time to write more now<lb/> dearest for I must send this to the office<lb/> by
+     Uncle __ Pa's brother. I have not sent<lb/> your letter to sister over yet therefore she
+     probably<lb/> will not write in this. Please write <hi rend="underline">very</hi><lb/> often to
+     your own</p>
+
+    <closer>
+     <signed>Addie</signed>
+    </closer>
+
+   </div1>
+  </body>
+
+
+ </text>
+
+</TEI.2>

@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!NOTATION jpg SYSTEM "JPEG">
+
+<!ENTITY DSSR_000000766_0265 SYSTEM "000000766_0265" NDATA jpg>
+<!ENTITY DSSR_000000766_0266 SYSTEM "000000766_0266" NDATA jpg>
+<!ENTITY DSSR_000000766_0267 SYSTEM "000000766_0267" NDATA jpg>
+<!ENTITY DSSR_000000766_0268 SYSTEM "000000766_0268" NDATA jpg>
+
+
+<!--<!ENTITY NA61a19a SYSTEM "NA61a19a.jpg" NDATA jpg>
+<!ENTITY NA61a19b SYSTEM "NA61a19b.jpg" NDATA jpg>
+<!ENTITY NA61a19c SYSTEM "NA61a19c.jpg" NDATA jpg>
+<!ENTITY NA61a19d SYSTEM "NA61a19d.jpg" NDATA jpg>-->
+]>
+<TEI.2 id="NA61a19">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1861-01-19">1861, January 19</date></title>
+                <author>Case, Adelaide E.</author>
+                <editor> </editor>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Carolyn Fay, Electronic Text Center</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>University of Virginia Library Electronic Text Center.</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">12</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA61a19</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+
+                    <p n="copyright"/>
+                </availability>
+                <date value="1999">1999</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Images of the manuscript pages have been included.</p>
+                </note>
+                <note>
+                    <p>Original punctuation in the letter has been maintained. Note that periods are
+                        often used in place of commas.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Nettleton Civil War Collection: Letter from Adelaide E. Case to
+                            Charles N. Tenney, 1861, January 19</title>
+
+
+                        <author>Adelaide E. Case</author>
+                        <editor> </editor>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p> </p>
+                    </editionStmt>
+                    <extent>4 p. </extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p> </p>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center. </p>
+            </projectDesc>
+            <editorialDecl>
+                <p>Original lineation has been maintained. </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p> </p>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1861-01-19">1861-01-19</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English </language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="1999-11">November, 1999</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Carolyn Fay, Electronic Text Center</name>
+                </respStmt>
+                <item>Added TEI header and tags.</item>
+            </change>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-10-30">October 30th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+        <change>
+<date value="2010-09-30">September 30, 2010</date>
+<respStmt>
+<name id="jkl8b">Julie Lim, University of Virginia Library</name>
+<resp>corrector</resp>
+</respStmt>
+<item>Minor corrections to spacing.</item>
+</change>
+</revisionDesc>
+    </teiHeader>
+    <text id="d1">
+        <body id="d2">
+            <div1 type="letter" n="1861-01-19" id="d3">
+                <head>Letter, January 19, 1861, from Adelaide E. Case to Charles Tenney</head>
+
+                <pb n="1" entity="DSSR_000000766_0265"/>
+
+                <opener>
+                    <dateline>
+                        <name type="place">Mecca</name>
+                        <date value="1861-01-19">January 19<hi rend="super">th</hi>/61</date>
+                    </dateline>
+
+                    <salute>
+                        <name type="person">
+                            <hi rend="underline">Charlie</hi></name>,
+                         My <hi rend="underline">Dear Brother</hi>- </salute>
+                </opener>
+
+                <p> Here comes another<lb/> of my sunday letters will it be <add hand="h1"
+                        place="supralinear">a</add> welcome <del hand="h1" rend="line-through">d</del><lb/>
+                    <orig reg="guest">guist</orig>. <hi rend="underline">Maybe</hi> that you imagine
+                    I think the<lb/> better the day the better the deed.<lb/> I read your <hi
+                        rend="underline">very very</hi> <unclear/> letter<lb/> dear Charlie and was
+                    grieved by the<lb/> feelings which were espressed in it.<lb/>
+                </p>
+                <p> Will you think me presumptious. dear<lb/> brother<del hand="h1"
+                        rend="line-through">If</del> if I ask you <hi rend="underline">why</hi> your
+                    sister<lb/> does not correspond with you? You must<lb/> not answer me unless you
+                    deem it<lb/> prudent so to do. but I should so<lb/></p>
+
+
+                <pb n="2" entity="DSSR_000000766_0266"/>
+                <p>love to win your confidence as a <hi rend="underline">sister</hi><lb/> should
+                        or <hi rend="underline">brothers</hi> confidence. </p>
+                <p> I have wondered <hi rend="underline">often</hi> wondered why<lb/> your sister did
+                    not write to you. It must<lb/> indeed be a lonely life<add hand="h1"
+                        place="supralinear">for a brother</add> to have a<lb/> sister that could not
+                    write to him<lb/> Although I now sympathize with you.<lb/> yet I can not offer
+                    my sympathy in the<lb/> same form that I could if I knew the<lb/> direct cause
+                    of your grief. Perhaps you<lb/> will think me selfish in asking. it<lb/> is not
+                    at all to be wondered at if<lb/> I am, for I will own that I have<lb/> a selfish
+                    disposition. I am not so blind<lb/> to my faults but that I can see my<lb/>
+                    selfishness. </p>
+                <p> You still seem to have an idea<lb/> that we have sleighing. why dear
+                    Charlie<lb/> we do not. I guess sleighing either<lb/> has gone to war or else
+                    gone where<lb/> Mecca Oil has. Oh! such a winter<lb/> as this is. One day very
+                    cold<lb/> and the next warm. Yesterday<lb/>
+                    <pb n="3" entity="DSSR_000000766_0267"/>
+                </p>
+
+                <p> morning there fell about three inches<lb/> of snow and now there is not
+                    enough<lb/> to snow-ball with while the streams<lb/> look like (small) rivers. I
+                    wrote you<lb/> of the illness of<name type="name">Sadie Hezlep</name>. She<lb/>
+                    is better. <name type="person">
+                        <hi rend="underline">Dora</hi>
+                    </name> came down to see me the<lb/> afternoon of the day of which I wrote
+                    you<lb/> last. She is <hi rend="underline">such</hi> a good little girl. </p>
+                <p> Dear Charlie. how willingly would I<lb/> take your position in this war if I
+                    could<lb/> do so. how thankful I ought to be<lb/> for having brothers and
+                    friends to go<lb/> and protect our homes as I have<lb/> but when I think of what
+                    may come<lb/> it causes a trembling fear to take<lb/> possession of my frame and
+                    I<lb/> sometimes wish that my friends could<lb/> stay with me. There is
+                    another<lb/> instance of my selfishness. but<lb/> some way it seems as if
+                    my<lb/> friends were a great deal nearer<lb/> and dearer to me then other<lb/>
+                    people's friends were to them.<lb/>
+                    <pb n="4" entity="DSSR_000000766_0268"/>
+                </p>
+                <p> But I must<lb/> close or the dark<lb/> will catch my words<lb/> and carry them
+                    to<lb/> you sooner than the<lb/> mail. I am well<lb/> with the exception of<lb/>
+                    a slight cold, which I think<lb/> is contagious this winter.<lb/>
+                </p>
+                <p> How is your health dear brother.<lb/> Please write soon. </p>
+                <closer>
+                    <salute> Affectionately your sister ever,<lb/>
+                    </salute>
+                    <signed>Addie</signed>
+                    <seg type="postscript">Please excuse all mistakes &amp;c</seg>
+                </closer>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0031 SYSTEM "000000766_0031" NDATA jpg>
+<!ENTITY DSSR_000000766_0032 SYSTEM "000000766_0032" NDATA jpg>
+<!ENTITY DSSR_000000766_0033 SYSTEM "000000766_0033" NDATA jpg>
+<!ENTITY DSSR_000000766_0034 SYSTEM "000000766_0034" NDATA jpg>
+
+<!--<!ENTITY NA62a01a SYSTEM "NA62a01a.jpg" NDATA jpg>
+<!ENTITY NA62a01b SYSTEM "NA62a01b.jpg" NDATA jpg>
+<!ENTITY NA62a01c SYSTEM "NA62a01c.jpg" NDATA jpg>
+<!ENTITY NA62a01d SYSTEM "NA62a01d.jpg" NDATA jpg>-->
+]>
+
+<TEI.2 id="NA62a01">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-01-01">January 1st 1862</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Eliza Marie Gilligan</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Eliza Marie Gilligan, University of Virginia Library Electronic Text
+                        Center.</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">11</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62a01</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, January 1st, 1862</title>
+
+
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>3 pages</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p>[Notes about the original source]</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-01-01">1862-01-01</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War;Women Writers;Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-03">November 3rd, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text id="d1">
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent> 4 pp.</extent>
+                        <date value="1862-01-01"> January 1st, 1862</date>
+
+                        <title> Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+                <p>Addie writes to Charles, thanking him for his "very acceptable" Christmas
+                    present. She also shares her thoughts on the ringing in of the new year. She is
+                    upset to think that the war will continue and she fears for Charles' safety. In
+                    response to a previous letter from Charles she says that she has been writing
+                    him every week.</p>
+            </div1>
+        </front>
+        <body id="d4">
+
+
+            <div1 type="letter" n="1" id="d5">
+                <pb n="1" entity="DSSR_000000766_0031"/>
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-01-01"
+                        >January 1st 1862</date></head>
+                <opener>
+                    <dateline>Mecaa January 1st 1862</dateline>
+                    <salute>Dear brother Charlie</salute>
+                </opener>
+                <p>Here you sit right<lb/> before me and now for a good long<lb/> conversation. I
+                    recieved your welcome<lb/> gift yesterday, I can assure you<lb/> that it was a
+                    very acceptable Christmas<lb/> gift. I can thank you much better<lb/> when I see
+                    you than now.<lb/>
+                </p>
+                <p>I was awakened last night at<lb/> twelve o'clock by the church bell<lb/> giving
+                    notice that the &ldquo;Old years&rdquo;<lb/> last moments had passed
+                    and<lb/> the New year had stepped into<lb/> existence. Dear Charlie, you can<lb/>
+                    <pb n="2" entity="DSSR_000000766_0032"/> can not conceive my thoughts as<lb/> I
+                    listened to the sound of that<lb/> old church bell reverberating in<lb/> the
+                    stillness of the night<lb/> I thought can it be that this<lb/> loved country <hi
+                        rend="underline">our own country</hi> must<lb/> commence another year with
+                    the clash<lb/> of arms and the cries and groans<lb/> of the downtrodden
+                    resounding<lb/> through the land? I would that<lb/> this land could have
+                    commenced<lb/> the year of 1862 in peace and<lb/> true Liberty but it was
+                    otherwise<lb/> willed</p>
+                <p>Dear <hi rend="underline">brother</hi> I sometimes tremble<lb/> and entertain
+                    vague prortentions<lb/> for your safty. But a feeble effort<lb/> so made to
+                    commend you to<lb/> Him who alone can rescue<lb/> Life under the most auspi<lb/>
+                    <pb n="3" entity="DSSR_000000766_0033"/> cious circumstances is uncertain<lb/>
+                    but how fearfully uncertain it<lb/> must be when all the destruct<lb/> ive
+                    powers of warfare are brought<lb/> against it. but I <hi rend="underline"
+                    >trust</hi> that<lb/> you will live to return to your<lb/> friends.<lb/>
+                </p>
+                <p>I heard a report yesterday that<lb/> Hallie had been taken from his<lb/> office
+                    and placed in the ranks<lb/> by Colonel <unclear/> for writing a letter<lb/> in
+                    the &ldquo;Democrat#&rdquo; not approving the<lb/> move from
+                    Charleston<lb/>
+                </p>
+                <p>Dear Charlie your portrait looks<lb/> some? different from your discriptions<lb/>
+                    of the<q>little dirty ragged <unclear>il dogge</unclear></q><lb/> Is there as
+                    great a difference in<lb/> your feelings? I shewed it to<lb/> Auntie. She said-
+                    well I<lb/> wont say what she said. It<lb/>
+                    <pb n="4" entity="DSSR_000000766_0034"/> would make you vain to hear it<lb/> I
+                    wish you knew my aunt. She is<lb/> one of the dearest aunties that I<lb/> or
+                    anyone else can boast of. Did you<lb/> ever hear Hallie speak of her? I
+                    almost<lb/> know you have. What a windy<lb/> day this is. I[t] seems that the
+                    elements<lb/> as well as our nation were in a<lb/> fierce combat with each
+                    other.<lb/> But I have not time to write much<lb/> more to day. You write that
+                    you receive<lb/> no letters from me. I think it<lb/> very strange for I may
+                    safely say that<lb/> I have written weekly.<lb/>
+                </p>
+                <closer>Please write soon and often<lb/> As ever your <hi rend="underline">sister</hi><lb/>
+                    <signed>Addie</signed></closer>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

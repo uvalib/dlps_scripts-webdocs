@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+]>
+
+<TEI.2 id="McC19170328">
+    <teiHeader type="AACR2">
+        
+        <fileDesc>
+            <titleStmt>
+                
+                <title> Edwin A. Alderman to Mrs. Sarah R. McConnell <date value="1917-03-28">March 28, 1917.</date>
+                </title>
+                <author>Alderman, Edwin A., 1861-1931</author>
+                <respStmt>
+                    <resp>Creation of machine-readable version: </resp>
+                    <name>Digital Curation Services , University of Virginia Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Digital Curation Services</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Creation of digital images:</resp>
+                    <name>Digitization Services, University of Virginia Library</name>
+                </respStmt>
+                
+            </titleStmt>
+            
+            <extent>ca. <num type="kilobytes">6</num> kilobytes</extent>
+            
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia </pubPlace>
+                <idno type="DCS">McC19170328</idno>
+                <date value="2010">2010</date>
+            </publicationStmt>
+            
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-McConnell-papers</idno>
+            </seriesStmt>
+            
+            <sourceDesc>
+                
+                <biblFull>
+                    <titleStmt>
+                        <title>Papers of James Rogers McConnell [manuscript], 1915-1977 (bulk 1915-1917)</title>
+                        <author>McConnell, James R. (James Rogers), 1887-1917.</author>
+                    </titleStmt>
+                    <extent>1 page</extent>
+                    <publicationStmt>
+                        
+                        <idno type="Accession No.">MSS 2104</idno>
+                        <idno type="Virgo ID">2798594-1001</idno>
+                        <idno type="title control number">a2798594</idno>
+                        
+                        <availability>
+                            <p> Albert &amp; Shirley Small Special Collections, University of
+                                Virginia Library, Charlottesville, Virginia, USA</p>
+                        </availability>
+                    </publicationStmt>
+                </biblFull>
+                
+            </sourceDesc>
+            
+            
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <!-- Per Matt we need to work on this statement-->
+                <p> Prepared for the University of Virginia Library by Digital Curation Services staff
+                    and volunteer Mary Roy Dawson Edwards, Transcriber. 2005.</p>
+            </projectDesc>
+        </encodingDesc>
+        
+        <profileDesc>
+            <handList>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+        </profileDesc>
+        
+    </teiHeader>
+    
+    <text>
+        <body>
+        	<div1 type="letter">
+        		<head>Edwin A. Alderman to Mrs. Sarah R. McConnell <date value="1917-03-28">March 28, 1917.</date></head>
+           
+            <opener>
+            <dateline>
+            <name type="place">University of Virginia<lb/>
+            Charlottesville<lb/>
+            Office of the President.</name><lb/>
+            <date value="1917-03-28">March 28, 1917.</date><lb/>
+            <lb/>
+            Mrs. Sarah R. McConnell,<lb/>
+            Seabreeze, Fla.<lb/>
+            </dateline><lb/>
+            
+            <salute>My dear Mrs. McConnell:</salute>
+            </opener>
+        		
+            <p>
+            The faculty and students of the University of
+            Virginia share with you your great sorrow in the loss of your son
+            and what must be your noble pride in his splendid valor and heroic
+            death.  At a meeting of our faculty last night, I told the story of
+            his life to them.  It is the desire of the faculty, students, and
+            friends of James McConnell to place a memorial here to him, which
+            shall, in enduring forms of beauty, express to future generations
+            the meaning of idealism, valor, and devotion to freedom and right.
+            This University has lived one hundred years.  Its sons have borne
+            a big part in every great national crisis.  No single one of them
+            has met death with more courage and nobler self-sacrifice than
+            your son, and you have a right, therefore, to taste the sweetness
+            of the noblest pride in his achievement while struggling with the
+            grief that a mother must have for the loss of her son.  This <reg orig="Univer-|sity">University</reg>
+            shares that pride and that grief in fullest measure.
+            </p>
+        		
+        		<closer>
+            <salute>Faithfully yours,</salute>
+            
+            <signed>Edwin A. Alderman,</signed>
+            
+            President.
+            </closer>
+            
+            <!-- File: McConnell/ Alderman -->
+            
+            </div1>
+        </body>
+    </text>
+	</TEI.2>

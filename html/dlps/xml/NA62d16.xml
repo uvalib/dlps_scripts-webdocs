@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0115 SYSTEM "000000766_0115" NDATA jpg>
+<!ENTITY DSSR_000000766_0116 SYSTEM "000000766_0116" NDATA jpg>
+<!ENTITY DSSR_000000766_0117 SYSTEM "000000766_0117" NDATA jpg>
+<!ENTITY DSSR_000000766_0118 SYSTEM "000000766_0118" NDATA jpg>
+
+<!--<!ENTITY NA62d16a SYSTEM "NA62d16a.jpg" NDATA jpg>
+<!ENTITY NA62d16b SYSTEM "NA62d16b.jpg" NDATA jpg>
+<!ENTITY NA62d16c SYSTEM "NA62d16c.jpg" NDATA jpg>
+<!ENTITY NA62d16d SYSTEM "NA62d16d.jpg" NDATA jpg>-->
+]>
+
+<TEI.2 id="NA62d16">
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-04-16"
+      >1862 April 16</date></title>
+
+    <author>Case, Adelaide E.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Heather Marchessault, for the Electronic Text Center, University of Virginia</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>David Seaman and Carolyn Fay, University of Virginia Library Electronic Text
+     Center.</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">11</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NA62d16</idno>
+    <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+                    <p n="copyright"/>
+                </availability>
+    <date value="1999">1999</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Images of the manuscript pages have been included.</p>
+    </note>
+    <note>
+     <p>Original punctuation in the letter has been maintained. Note that periods are often used in
+      place of commas.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title> Nettleton Civil War Collection: Letter from Adelaide E. Case to Charles, 1862 April 16</title>
+
+
+      <author>Adelaide E. Case</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 p.</extent>
+     <publicationStmt>
+      <publisher>Unpublished manuscript in private hands.</publisher>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p>Original lineation has been maintained.</p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings.</p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-04-16">1862-04-16</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>feminine</term>
+     <term>American Civil War / Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="1999-10">October 1999</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Carolyn Fay, Electronic Text Center</name>
+    </respStmt>
+    <item>Added TEI header and completed tagging. Updated transcription.</item>
+   </change>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-06">November 6th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">September 30, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+ <text id="d1">
+  <body id="d2">
+   <div1 type="letter" n="1862-04-16" id="d3">
+
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-04-16">1862 April
+     16</date></head>
+    <pb n="1" entity="DSSR_000000766_0115"/>
+
+    <opener>
+     <dateline>
+      <name type="place">Mecca,</name>
+      <date value="1862-04-16">April. 16<hi rend="super">th</hi> 1862</date>
+     </dateline>
+     <salute><name type="person">Charley</name>, my darling.</salute>
+    </opener>
+    <p>This day is too pleasant to<lb/> have work associated with it. Therefore I devote<lb/> myself
+     to something more congenial, which <hi rend="underline"> some-<lb/> thing</hi>, always is a
+     pleasant pastime. </p>
+    <p>I have just returned from Uncle's, while<lb/> coming home. I gathered these little flowers.
+     Spring<lb/> lovely ornaments. They are the first I have seen,<lb/> and <hi rend="underline"
+      >Charlie</hi> must have them. <orig reg="Remember">Remem<lb/> ber,</orig> they are <name
+      type="place">Mecca</name> flowers. Undoubtedly they<lb/> will have faded, <orig reg="before"
+      >ere</orig> you <orig reg="receive">recieve</orig> them. but<lb/> think that while they lie
+     before me now, they<lb/> are beautiful. A small token, perhaps you<lb/> will think, many do.
+     But to me they are worth<lb/> more than jewels.<lb/>
+    </p>
+    <p>My "dark eyed sister" was at home a<lb/>
+     <hi rend="underline">few minutes</hi> this morning. She says I<lb/> am to <orig reg="receive"
+      >recieve</orig> a letter from you<lb/>
+     <orig reg="today">to day</orig>.<lb/>
+     <pb n="2" entity="DSSR_000000766_0116"/> I trust that I shall, for more than<lb/> a week has
+     passed since hearing from you.<lb/>
+    </p>
+    <p>Darling, why do you not "go into raptures"<lb/> over the beauty of such a day as this. As
+     I<lb/> sit here before the open window, listening to<lb/> the little warblers and occasionally
+     glancing<lb/> at the budding trees, I can not help <orig reg="exclaiming">exclaim<lb/>
+     ing</orig> wonderful! beautiful! Although I <add hand="h1" place="supralinear">have</add>
+     heard<lb/> birds sing just as sweet and have seen the budding<lb/> of trees, many many times
+     before, yet <orig reg="today">to day</orig><lb/> there seems to be something more than
+     sweetness<lb/> mingled with their songs. They seem to tell<lb/> me what a blessed thing is life
+     and what<lb/> a noble thing it is <hi rend="underline">to live</hi>. How different<lb/> are my
+      thoughts <orig reg="today">to day</orig> from what they are<lb/> sometimes. At times I feel
+     some as " <orig reg="Hamlet">Ham-<lb/> let</orig>" did while meditating after seeing his<lb/>
+     father's ghost. <orig reg="That">that</orig> for "that dread of <orig reg="something">some-<lb/>
+      thing</orig> after Death," I too would not wish<lb/> to live. but <orig reg="today">to
+     day</orig>. how different. now I<lb/> would cling to life firmly. Life seems grand<lb/>
+     <pb n="3" entity="DSSR_000000766_0117"/>
+     <orig reg="today">to day</orig>, and blessed. Indeed I think I am<lb/> blessed. Yes, dearest
+     blessed with your love.<lb/> and what more <hi rend="underline">could</hi> I ask.<lb/>
+    </p>
+    <p><name type="person">
+      <unclear>Hallie</unclear>
+     </name> came home Monday. I had a<lb/> pleasant but short visit with him, darling boy!<lb/> He
+     says Charlie is one of the <hi rend="underline">best</hi> boys that<lb/> ever drew breath. Such
+     a remark from <name type="person">Hal</name><lb/> made <hi rend="underline">me</hi> feel proud.
+     do not allow it such<lb/> liberties with yourself.<lb/>
+    </p>
+    <p> Did I write you of <name type="person">Mr. Beaman</name>'s death?<lb/> He died of
+     consumption. was buried last<lb/> Saturday. He was an uncle of <name type="person">Mrs.<lb/>
+       Newton <unclear>Shaw</unclear></name>. Dear Charlie if you do not<lb/> come home soon. I fear
+     you will not have<lb/> a chance to become acquainted with<lb/>
+     <name type="person">Miss Sadie <unclear>Heylep</unclear></name> for <unclear>"Junior"</unclear>
+     says she<lb/> is soon to be married to Mr. Church<lb/> By the way <name type="person"
+     >Sadie</name> used to admire <name type="person">Hal</name><lb/> "pretty much." She invited him
+     to see her<lb/> last Saturday. he told her that her<lb/> "meeting house" was in the way.<lb/>
+    </p>
+
+    <pb n="4" entity="DSSR_000000766_0118"/>
+    <p> I have <orig reg="received">recieved</orig> no answer from you<lb/> yet in reference to my
+     teaching. They<lb/> wished to know if I would take the school<lb/> and I did. I shall commence
+     one week<lb/> from next monday I think. How I<lb/> should enjoy a visit from you before
+     then<lb/> darling. but I expect that happiness is denied<lb/> me. When you write to me
+      after <orig reg="receiving">recieving</orig><lb/> this please direct <name type="place">East
+      Claridon Geauga Co.<lb/> Ohio.</name> <orig reg="Don't">Dont</orig> you think <hi
+      rend="underline">I will make a good<lb/> school. teacher</hi>? Guess I will. I should be
+     pleased<lb/> to have Mr. Penny for one of my scholars.<lb/>
+    </p>
+    <p> How I wish the "blockade" was not quite so<lb/> effectual. I miss your your dear letters --
+     pardon<lb/> me I meant -- "Angel visits" Oh hush! did you<lb/> say. well. remember me to the
+     "boys" especially<lb/> to <name type="person">Mr. Penny</name>. and write as often as you
+     can<lb/> please </p>
+    <closer>
+     <salute>Yours &amp;c.</salute>
+     <signed>Addie</signed>
+     <seg type="postscript"> Beautiful is not this. </seg>
+    </closer>
+   </div1>
+  </body>
+ </text>
+</TEI.2>

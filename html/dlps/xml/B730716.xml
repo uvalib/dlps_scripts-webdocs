@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!ENTITY DSSR_000000962_0606 SYSTEM "000000962_0606.jpg" NDATA jpg>     
+<!ENTITY DSSR_000000962_0607 SYSTEM "000000962_0607.jpg" NDATA jpg> 
+<!ENTITY DSSR_000000962_0608 SYSTEM "000000962_0608.jpg" NDATA jpg>     
+<!ENTITY DSSR_000000962_0609 SYSTEM "000000962_0609.jpg" NDATA jpg> 
+
+<!--<!ENTITY filename SYSTEM "filename.jpg" NDATA jpg>
+<!ENTITY longs "&#x017F;">
+<!ENTITY B730716a SYSTEM "730716a.jpg" NDATA jpg>
+<!ENTITY B730716b SYSTEM "730716b.jpg" NDATA jpg>
+<!ENTITY B730716c SYSTEM "730716c.jpg" NDATA jpg>
+<!ENTITY B730716d SYSTEM "730716d.jpg" NDATA jpg>-->
+]>
+<TEI.2 id="B730716">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Brand Civil War Collection: Letter to William Francis Brand from
+                    Alice M, <date value="1873-07-16">1873 July 16</date></title>
+                <author>Brand Civil War Collection: Alice M.</author>
+                <editor> </editor>
+                <respStmt>
+                    <resp> </resp>
+                    <name> </name>
+                    <resp>Creation of machine-readable version: </resp>
+                    <name>Mary Elizabeth McCaskill </name>
+                    <resp>Creation of digital images: </resp>
+                    <name>Mary Elizabeth McCaskill </name>
+                    <resp>Conversion to TEI.2-conformant markup: </resp>
+                    <name>University of Virginia Library Electronic Text Center. </name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. xxx kilobytes </extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library </publisher>
+                <pubPlace>Charlottesville, Virginia </pubPlace>
+                <!--<idno type="ETC">Modern English, B730716</idno>-->
+                <idno type="etext">B730716</idno>
+                <availability status="public">
+                    <p n="access">Publicly accessible</p>
+
+                    <p n="copyright">copyright 2000, by the Rector and Visitors of the University of
+                        Virginia </p>
+                </availability>
+                <date value="2002-05">May 2002 </date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-BrandLetterscivilwar</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Images of the manuscript have been included from the original source. </p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title type="main">Brand Civil War Collection: Brand Civil War Collection:
+                            Letter to William Francis Brand from Alice M, <date value="1873-07-16"
+                                >1873 July 16</date></title>
+                        <title type="parallel"> </title>
+                        <title level="u"> </title>
+                        <author>Brand Civil War Collection: Alice M. </author>
+                        <editor> </editor>
+                        <respStmt>
+                            <resp> </resp>
+                            <name> </name>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p> </p>
+                    </editionStmt>
+                    <extent>4 p. </extent>
+                    <publicationStmt>
+                        <publisher> </publisher>
+                        <pubPlace> </pubPlace>
+                        <date value="1873-07-16">1873-07-16 </date>
+                        <idno type="callNo">Source copy consulted: MSS 11332, Special Collections,
+                            Alderman Library, University of Virginia </idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p> </p>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p> </p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center. </p>
+            </projectDesc>
+            <editorialDecl>
+                <p>Original lineation has been maintained. </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+                <p>Autograph letter signed Alice M.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p> </p>
+            </refsDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>
+                        <title>Library of Congress Subject Headings </title>
+                    </bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1873-07-16">1873-07-16</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English </language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction </term>
+                    <term>prose </term>
+                    <term>masculine </term>
+                    <term>American Civil War/Special Collections </term>
+                </keywords>
+                <!-- <keywords scheme="LCSH">
+                    <term type="Field650">LCSH </term>
+                </keywords>-->
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2002-05">May 2002</date>
+                <respStmt>
+                    <resp>corrector </resp>
+                    <name>Mary Elizabeth McCaskill, Electronic Text Center </name>
+                </respStmt>
+                <item>Added TEI header and tags. </item>
+            </change>
+            <change>
+                <date value="2005-06">June 2005</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted sgml to xml.</item>
+            </change>
+            <change>
+                <date value="2009-11">November 2009 </date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+
+            <div1 id="d3" type="summary">
+                <head>Summary <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1873-07-16">July 16, 1873</date>
+                        <title>Letter to William Francis Brand from Alice M., dated 1873 July
+                        16</title>
+                    </bibl>
+                </head>
+                <p> Alice M? [Alice M. Walker-cousin?], Marshall Place, to &ldquo;Dear Cousin
+                    William&rdquo; [WFB]": death of her grandmother last month and description
+                    of he<pb/>r final days; family news, crops are good, especially tobacco </p>
+                <pb/>
+            </div1>
+
+        </front>
+
+        <body id="d4">
+            <div1 id="d5" n="1873-07-16" type="letter">
+                <pb entity="DSSR_000000962_0606" n="1"/>
+                <head>Letter to William Francis Brand from Alice M., dated 1873 July 16</head>
+
+                <opener>
+                    <address><addrLine>Marshall Place</addrLine></address>
+                    <date value="1873-07-16">July 16<hi rend="super">th</hi>, 1873.</date>
+                    <salute>Dear cousin William.</salute>
+                </opener>
+                <p> Some time<lb/> has passed since the reception of <lb/> your kind letter, and yet
+                    it has<lb/> not been answered. I hope you<lb/> will forgive me for being so
+                    slow<lb/> this time, as I promise to do better<lb/> in future.<lb/></p>
+                <p>I am sorry to inform you of<lb/> the death of our dear old Grand<lb/> -mother.
+                    She died the 16<hi rend="super">th</hi> June<lb/> exactly one month ago
+                    today).<lb/> We mi&longs;s her a great deal, but she <orig reg="suffered">
+                        suf</orig><lb/> -fered so much while here, that we<lb/> looked on her death
+                    as being a<lb/> relief. There was not a day during<lb/> her last
+                    sickne&longs;s that she was'nt suffering<lb/>
+                    <pb entity="DSSR_000000962_0607" n="2"/> all the time unle&longs;s she was
+                    under<lb/> the influence of Morphine.<lb/> She always spoke of death with<lb/>
+                    calmne&longs;s. Said she was willing<lb/> to go at any time, but seemed
+                    to<lb/> fear the sting of death. I believe she<lb/> looked upon it as being
+                    something<lb/> awful, but when it came she<lb/> met it with perfect
+                    calmne&longs;s and<lb/> gently fell asleep. The day before<lb/> she died,
+                    she said, &ldquo; The Saviour has<lb/> been a support to me in many<lb/>
+                    trials, and he is now my staff.#&rdquo; <lb/> She gave every evidence of
+                    being<lb/> a truly pious <orig reg="Christian,">christian,</orig> and<lb/>
+                    remained faithful to the end.<lb/> God grant that all of us may live<lb/> to be
+                    as useful and good as she was.<lb/> She had a remarkable mind<lb/> and remained
+                    sensible to the<lb/> last. We buried her at her old home<lb/> in the upper end
+                    of the county.<lb/>
+                    <pb entity="DSSR_000000962_0608" n="3"/> I wish you and cousin Jane could<lb/>
+                    have seen her before she <add hand="h1" place="supralinear">died</add> but
+                    I<lb/> know you couldn't come so<lb/> far. Wish cousin Jane had come<lb/> last
+                    winter. Where is she now?<lb/> Cousin Josie Walker has been<lb/> staying with us
+                    this summer.<lb/> We are planning to take a trip<lb/> to the Valley this summer.
+                    Think<lb/> we will certainly go this time.<lb/> If not it will be a great <orig
+                        reg="disappointment">disappoint</orig><lb/> to us both. If cousin John
+                    comes<lb/> over in time to make arrange-<lb/> ments to go with us back we
+                    will<lb/> go about the middle of August<lb/> or the first of September.<lb/> I
+                    anticipate great pleasure in <lb/> seeing the Valley and hope my<lb/> wishes
+                    will be realized before<lb/> long. We are <orig reg="beginning">beggining</orig>
+                    to have<lb/> vegetables and fruit in abundance.<lb/> Have had a few peaches, but they<lb/>
+                    <pb entity="DSSR_000000962_0609" n="4"/> were not entirely ripe. We have<lb/> a
+                    good prospect for fruit.<lb/> The crops are very good. Pa has<lb/> a large crop
+                    of tobacco this year.<lb/> The rains have been very frequent<lb/> and very
+                    gentle this year, so<lb/> I hope the droughts have come<lb/> to an end at
+                    last.<lb/> Tell cousin Kate cousin Joe will<lb/> write to her very soon.<lb/></p>
+                <p> Much <del hand="h1" rend="line-through">f</del><add hand="h1" place="inline"
+                    >l</add>ove from us all to her<lb/> and the children. Tell cousin<lb/> John of
+                    our intentions and send<hi rend="super">him</hi><lb/> our
+                        <unclear>love</unclear><hi rend="underline">make<orig reg="arrangments."
+                            >arrangements</orig></hi><lb/> Write soon <unclear>love</unclear><lb/></p>
+                <closer>
+                    <salute>Your true cousin</salute>
+                    <lb/>
+                    <signed>
+                        <name type="person">Alice M-</name>
+                    </signed>
+                    <lb/>
+                    <seg type="postscript"> I hope you will excuse this<lb/> miserable scrawl. My
+                        pen is not a<lb/> good one.<lb/></seg>
+                </closer>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

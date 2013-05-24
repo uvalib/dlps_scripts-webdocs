@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0283 SYSTEM "000000766_0283" NDATA jpg>
+<!ENTITY DSSR_000000766_0284 SYSTEM "000000766_0284" NDATA jpg>
+<!ENTITY DSSR_000000766_0285 SYSTEM "000000766_0285" NDATA jpg>
+<!ENTITY DSSR_000000766_0286 SYSTEM "000000766_0286" NDATA jpg>
+<!ENTITY DSSR_000000766_0287 SYSTEM "000000766_0287" NDATA jpg>
+<!ENTITY DSSR_000000766_0288 SYSTEM "000000766_0288" NDATA jpg>
+
+<!--<!ENTITY NA61i26a SYSTEM "NA61i26a.jpg" NDATA jpg>
+<!ENTITY NA61i26b SYSTEM "NA61i26b.jpg" NDATA jpg>
+<!ENTITY NA61i26c SYSTEM "NA61i26c.jpg" NDATA jpg>
+<!ENTITY NA61i26d SYSTEM "NA61i26d.jpg" NDATA jpg>
+<!ENTITY NA61i26e SYSTEM "NA61i26e.jpg" NDATA jpg>
+<!ENTITY NA61i26f SYSTEM "NA61i26f.jpg" NDATA jpg>-->
+]>
+
+<TEI.2 id="NA61i26">
+ <teiHeader type="migrated">
+  <!-- todo -->
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date value="1861-09-26"
+      >26 September 1861</date>
+    </title>
+    <author>Case, Adelaide E.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>David Seaman</name>
+     <resp>Creation of digital images:</resp>
+     <name>University of Virginia Library Electronic Text Center</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>ETC</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">11</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NA61i26</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Adelaide E. Case to Charles N. Tenney, 26 September 1861</title>
+      <author>Adelaide E. Case</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>6 pages</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p> </p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings. </p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1861-09-26">1861-09-26</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>feminine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-02">November 2nd, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>6 pp.</extent>
+      <date value="1861-09-26">26 September 1861</date>
+
+      <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+     </bibl>
+    </head>
+    <p/>
+   </div1>
+  </front>
+  <body id="d4">
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1861-09-26">26 September
+      1861</date></head>
+    <pb n="1" entity="DSSR_000000766_0283"/>
+    <opener>
+     <dateline>
+      <name type="place">Oil Spring Seminary, </name>
+      <date value="1861-09-26">Sept 26, /61</date>
+     </dateline>
+     <salute>Dear Friend</salute>
+    </opener>
+
+    <p>After waiting long and <lb/>
+     <unclear>anxiously</unclear> I at last recieved your kind <lb/> letter dated Sept. 16 Indeed I
+     was <unclear/>
+     <lb/> surprised when I recieved it for I had <lb/> almost <unclear>dispaired</unclear> the hope
+     of hearing from <lb/> you again. and having heard since you left <lb/> Camp Dennison I thing
+     that you must have <lb/> felt somewhat relieved when you found <lb/> yourself <unclear> down
+      the </unclear>. You must <lb/> have felt freed <unclear>to some</unclear> extent. I think that <lb/>
+     <hi rend="underline">I</hi> should enjoy a ride on that <unclear/> , with it <lb/> guarded by
+     some of the gallant seventh. You spoke <lb/> of your feelings during the fight of <unclear/>
+     <lb/> as being indescribable Perhaps they were similar <lb/> to mine when I first heard of the
+     fight <lb/> Not knowing who were safe and who were not <lb/>
+     <pb n="2" entity="DSSR_000000766_0284"/> and also hearing that that idolized brother <lb/> had
+     passed into the cold hands of death <lb/> you will not wonder that my feelings were <lb/> sad
+     and voluntarily turned to Charlie <lb/> wondering if he too had entered that <lb/> narrow void.
+     It was then <hi rend="underline">I again</hi> felt <lb/> that strange sensation mingled with
+     <lb/> pity that I wrote you of when I first became <lb/> acquainted with you I was then <hi
+      rend="underline">I really longed</hi>
+     <lb/> to hear from you but did not have the pleasure <lb/> till last eve You wrote of sending a
+     letter <lb/> after recieving mine which I did not recieve <lb/> Perhaps I will yet but do not
+     think so <lb/> Charlie I wish I could collect my scattered <lb/> thoughts enough to write
+     something worthy <lb/> your perusal. but that seems impossible <lb/> I wrote a letter to Hallie
+     a few days <lb/> ago including a few lines to you do you <lb/> know whether he recieved it or
+     not <lb/>
+     <pb n="3" entity="DSSR_000000766_0285"/> I sincerely hope you did. I read of the <lb/> fight in
+     which Col. Lowe fell. Noble man <lb/> he died a cruel yet noble death It seems, when <lb/> I
+     realize the privations of. war, cruel for our <lb/> (for our) brave youths to fall on the
+     battle <lb/> field with no kind friend to sooth and <lb/> comfort them. But I would not sadden
+     your <lb/> thoughts. If you were here would we not have <lb/> a nice <unclear/> ring? We miss
+     Hal very much <lb/> when we <unclear/> round the old <unclear/>
+     <lb/> while away the hours in music. He would <lb/> never give us any peace till <add
+      place="inline" hand="h1">we</add> would play <lb/> and sing with him. Charlie I have a <lb/>
+     sweet little friend here in Mecca <lb/> If it were not for her I would be very <lb/> lonesome
+     indeed. We are <add hand="h1" place="inline">almost</add> constantly together <lb/> her name is
+     Dora Leslie I wish you were <lb/> acquainted with her. She is gentle and <lb/> kind and still
+     she is as perfect a piece <lb/>
+     <pb n="4" entity="DSSR_000000766_0286"/> of female vanity as I ever became <lb/> acquainted
+     with. [W or Sh]e attends the same <lb/> school <unclear/> the same lesson and <lb/> occupy the
+     same seat. In fact some <lb/> have intimated that our friendship <lb/> was more for the sake of
+     her brother <lb/> and Hal than for each other <sic>(Ridicalous)</sic>
+     <lb/> If Hal knew who told me so he would <lb/> laugh some. I saw Edwin Williams about <lb/>
+     two weeks ago. he said when I wrote <lb/> to Hal to send word to Will. Braden <lb/> that he was
+     well and would like to <lb/> see him. He wish <unclear/> very much to <lb/> go to war again but
+     does not <unclear/>
+     <lb/> health will permit him to do <lb/> so. Charlie what a <unclear>quiet</unclear> day this
+     is <lb/> This morning it was <unclear/> warm and the <lb/> sun was shining so beautifully
+      <unclear>but</unclear>
+     <lb/> now <unclear> hardly </unclear>
+     <lb/>
+     <pb n="5" entity="DSSR_000000766_0287"/> clouds have gathered together and <lb/> completely
+     obscured the sun. <unclear/> a slow <lb/> drizzling rain is falling as if nature <lb/> was
+     shedding a few silent tears that <lb/> the summer is ended and the cold winter <lb/> is fast
+     approaching. When the rain is <lb/> falling in torrents I always turn my <lb/> thoughts to the
+     soldiers wondering when <lb/> and how they are I do <unclear/> you if you will <lb/> be obliged
+     to camp out this winter <lb/> Charlie you know not how many silent <lb/> petitions have been
+     sent to that high <lb/> throne for your safety and darling Hallie's <lb/> I sometimes wonder
+     why life is so strange <lb/> and why I am <unclear> to </unclear> this <lb/> dull routine of
+     life You may think that I <lb/> have strange feelings indeed I have at <lb/> times I know not
+     for what I live. Do <lb/> I do any good in the world? I fear <lb/>
+     <pb n="6" entity="DSSR_000000766_0288"/> not But what am I writing My thoughts <lb/> have been
+     way down south in Ole Virginny <lb/> with Hal to day more than usual, <lb/> and I scarcely know
+     what I write <lb/> Charlie are you <unclear>fasting</unclear> to day Dora <unclear/>
+     <lb/> to ask you she says tell him Addie and <lb/> I are <unclear/> on green apples But I <lb/>
+     guess you will be tired when you have <lb/> finished this nonsense give my love <lb/> to Hallie
+     and Please write soon <lb/> and oblige me <lb/>
+    </p>
+
+    <p>Affectionately, Addie <unclear> Case <lb/> I am again </unclear> to tender my thanks <lb/>
+     for the sketch of <unclear/> you <lb/> sent me. I prize it very highly </p>
+    <closer> Addie </closer>
+   </div1>
+  </body>
+ </text>
+</TEI.2>

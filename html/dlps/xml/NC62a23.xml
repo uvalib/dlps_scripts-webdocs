@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0495 SYSTEM "000000766_0495" NDATA jpg>
+<!ENTITY DSSR_000000766_0496 SYSTEM "000000766_0496" NDATA jpg>
+<!ENTITY DSSR_000000766_0497 SYSTEM "000000766_0497" NDATA jpg>
+<!ENTITY DSSR_000000766_0498 SYSTEM "000000766_0498" NDATA jpg>
+
+<!--<!ENTITY NC62a23a SYSTEM "NC62a23a.jpg" NDATA jpg>
+<!ENTITY NC62a23b SYSTEM "NC62a23b.jpg" NDATA jpg>
+<!ENTITY NC62a23c SYSTEM "NC62a23c.jpg" NDATA jpg>
+<!ENTITY NC62a23d SYSTEM "NC62a23d.jpg" NDATA jpg>-->
+]>
+<TEI.2 id="NC62a23">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+                        value="1862-01-23">1862 January 23</date></title>
+
+                <author>Tenney, Charles E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Graham Jefcoate, British Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Graham Jefcoate, British Library</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">13</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NC62a23</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case, 1862 January 23</title>
+
+
+                        <author>Charles N. Tenney</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p>The Corinne Carr Nettleton Civil War Collection</p>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-01-23">1862-01-23</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>masculine</term>
+                    <term>American Civil War/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2001-06"> June 2001</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name> Carolyn Fay, Electronic Text Center</name>
+                </respStmt>
+                <item> Updated TEI header and tags. </item>
+            </change>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-11">November 11th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 14th, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1862-01-23">1862-01-23</date>
+
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case</title>
+                    </bibl>
+                </head>
+                <p>Charlie writes to Addie about his pleasure in receiving her letter and asks
+                    permission to love her. He mentions stormy weather and wintry conditions in camp
+                    and anticipates an imminent advance to the Potomac, preventing him from applying
+                    for a furlough to return home. He describes his estrangement from his family but
+                    assures her he "detests cowardice" and is "without dishonour". </p>
+            </div1>
+        </front>
+
+        <body id="d4">
+
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-01-23"
+                        >1862 January 23</date></head>
+                <pb n="1" entity="DSSR_000000766_0495"/>
+                <opener>
+                    <dateline>Camp Kelley,<lb/>
+                        <date value="1862-01-23">Jan<sic corr="23rd">23th</sic>1862</date>
+                    </dateline>
+                    <lb/>
+                    <salute>My dear Addie, -</salute>
+                    <lb/>
+                </opener>
+
+                <p>After patiently waiting<lb/> for several days, I have been rewarded<lb/> by the
+                    reception of a kind letter<lb/> from my only correspondent, and as<lb/> a matter
+                    of pleasure, rather than duty,<lb/> I devote this stormy evening to answer
+                    it<lb/> Capt. Wood came back yesterday, and<lb/> the letter you sent by him,
+                    Hallie<lb/> gave me to-day. Have I not sufficiently<lb/> answered it? <hi
+                        rend="underline">Dear</hi> Addie, may I not<lb/> consider part thereof as
+                    though it never<lb/> had been written? Now as Hallie has<lb/> told me all, <hi
+                        rend="underline">do not</hi> for a moment<lb/> think that any <hi
+                        rend="underline">such</hi> thing could<lb/> make me "curse" you, or even
+                    make<lb/> me think otherwise of <hi rend="underline">you</hi>, dear Addie,<lb/>
+                    <add place="inline" hand="h1">than I always have.</add><lb/> Only allow<add
+                        place="inline" hand="h1">me</add>to love you, dearest. Will you not?<lb/>
+                    <pb n="2" entity="DSSR_000000766_0496"/> You have doubtless <sic corr="received"
+                        >recieved</sic> one or<lb/> two letters since you wrote the letter<lb/> now
+                    before me. I shall have little rest<lb/> until I <sic corr="receive"
+                    >recieve</sic> a reply.<lb/></p>
+
+                <p>You need have no compunctions<lb/> as to my<del hand="h1">compunction</del>
+                    condemning a<lb/> letter written on Sunday for it is an<lb/> old proverb and
+                    with more truth<lb/> than poetry, that "there are no sundays<lb/> in war." and I
+                        fear <hi rend="underline">I</hi> pay too little<lb/> attention to such
+                    matters.<lb/></p>
+
+                <p>You ask as to the reason my<lb/> sister does not write to me. If I <hi
+                        rend="underline">knew</hi><lb/> the reason, I would have no objection<lb/>
+                    to telling you. I know of no reason<lb/> unless she partakes of the prejudices
+                    which<lb/> the entire family seem to hold against<lb/> me. She is <hi
+                        rend="underline">very</hi> proud, and doubtless<lb/>
+                    <hi rend="underline">LOVES ME</hi>. I cannot write of these things,<lb/> you can
+                    imagine my feelings, but I will assure you that I am <hi rend="underline"
+                    >FREE</hi> FROM DISHONOUR.</p>
+
+                <p>
+                    <pb n="3" entity="DSSR_000000766_0497"/> Sunday morning, -<lb/> I could not
+                    write any more<lb/> last evening, so will finish this morning.<lb/> Hal is
+                    coming home soon,<lb/> but I suppose he has acquainted you<lb/> with the
+                    circumstances. I would give<lb/> a great deal to accompany him, but<lb/> I
+                    suppose there will be soon a <hi rend="underline">"Forward</hi><lb/> move on
+                        the <hi rend="underline">Potomac</hi>," and it will<lb/> require every man
+                    who is able, to "go<lb/> along." You know if in the face of a<lb/> contemplated
+                    attack, I were to apply<lb/> for a furlough, it would sound like<lb/> cowardice,
+                    and of all things I detest<lb/> a coward. However much I would<lb/> like to come
+                    home, it must be deferred<lb/> Hallie will tell you all about me when he comes.
+                        perhaps <hi rend="underline">I</hi> can come<lb/> at the <hi rend="underline"
+                        >close of the war.</hi> meanwhile<lb/> my home must be<lb/>
+                </p>
+
+                <lg type="verse">
+                    <l>"In the snowy tent a warrior loves"</l>
+                </lg>
+
+                <p>
+                    <pb n="4" entity="DSSR_000000766_0498"/> Last night it was stormy, today<lb/> it
+                    is clear and cold The mud is<lb/> frozen, and it is so very hard walking.<lb/>
+                </p>
+
+                <p>My dear Addie, you must excuse me<lb/> for not writing a longer letter, for
+                    my<lb/> head aches, and my brain is in a perfect<lb/> whirl of excitement. But
+                        I <hi rend="underline">must</hi> ask<lb/> you again to recall those words in
+                    the<lb/> letter Wood brought, and allow<lb/> me to <hi rend="underline">love
+                        you</hi>. <hi rend="underline">Will</hi> you not, <hi rend="underline"
+                    >dearest</hi> Addie?<lb/> I <hi rend="underline">cannot</hi> help writing thus,
+                    forgive me if<lb/> I do wrong.<lb/></p>
+
+                <closer> Dear Addie, write soon and often<lb/> to your true and faithful
+                    Charlie.<lb/> God will help you from evil, darling,<lb/> and will give you <hi
+                        rend="underline">all</hi>.<lb/>
+                    <signed><hi rend="underline">Your</hi> Charlie.</signed><lb/>
+                </closer>
+            </div1>
+        </body>
+
+    </text>
+</TEI.2>

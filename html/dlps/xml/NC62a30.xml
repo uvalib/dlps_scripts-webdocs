@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0499 SYSTEM "000000766_0499" NDATA jpg>
+<!ENTITY DSSR_000000766_0500 SYSTEM "000000766_0500" NDATA jpg>
+<!ENTITY DSSR_000000766_0501 SYSTEM "000000766_0501" NDATA jpg>
+<!ENTITY DSSR_000000766_0502 SYSTEM "000000766_0502" NDATA jpg>
+]>
+<TEI.2 id="NC62a30">
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-01-30"
+      >1862 Jan 30</date></title>
+
+    <author>Tenney, Charles N.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Natalie A. Cleaver</name>
+     <resp>Creation of digital images:</resp>
+     <name>University of Virginia Library Electronic Text Center</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>Natalie A. Cleaver</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">11</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NC62a30</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Charles N. Tenney to Adelaide E. Case, 1862 Jan 30</title>
+
+
+      <author>Charles N. Tenney</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>2 pages</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p> </p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings. </p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-01-13">1862-01-13</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>masculine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-11">November 11th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">October 14th, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-01-13">January 30, 1862</date>
+
+      <title>Letter from Charles Tenney to Adelaide Case</title>
+     </bibl>
+    </head>
+    <p> </p>
+   </div1>
+
+  </front>
+
+  <body id="d4">
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-01-30">1862 Jan
+     30</date></head>
+    <pb n="1" entity="DSSR_000000766_0499"/>
+    <opener>
+     <name type="Camp Kelley Virginia">Camp Kelley Va.</name> <date value="1862-01-30">Jany 30<hi
+       rend="super">th</hi> 1862</date><lb/>
+     <salute>Darling <name key="Adelaide E. Case">Addie</name></salute>:--<lb/>
+    </opener>
+    <p>Conflicting emotions have<lb/> tossed me about, all unmindful of my poor<lb/> heart, fairly
+     disturbing my rest at night,<lb/> until to day. To add to my trials, my<lb/>
+     <hi rend="underline">best</hi> friend, and brother, <name key="Hal">Hal</name>. yesterday<lb/>
+     started for home. How sad I felt! But I<lb/> could not bear to pain his noble heart, so<lb/> I
+     strove to appear cheerful. I did not send<lb/> even a line to you, by him , <hi rend="underline"
+      >something</hi><lb/> restrained me--told me I should <add place="inline" hand="h1">soon</add>
+     recieve a<lb/> letter from you--. and I could not-- <hi rend="underline">dare</hi> not<lb/>
+     write in my. (then) unhappy state of mind.<lb/> True enough, when the mail arrived this<lb/>
+     morning, a letter came for <name key="Hal">Hal</name>. My heart<lb/> told me, that in that
+     envelope was a letter<lb/> for me. <name key="Lieutenant Boisbine"
+      >Lieut. <unclear>Boisbine</unclear></name>, for me, opened it<lb/> and my heart was gladdened.<lb/>
+     <pb n="2" entity="DSSR_000000766_0500"/> Your letter found me well, and made me<lb/> happy. I
+     say "happy." Hope was infused into my<lb/> heart, and with Hope comes Happiness.</p>
+    <lb/>
+    <p> Dearest <name key="Adelaide E. Case">Addie</name>, I know how the world<lb/> views such
+     things as the only objection you offer<lb/> but I am not of the opinion of the world, nor<lb/>
+     do I allow myself to be governed in my actions<lb/> or judgment <hi rend="underline">by</hi> the
+     world. You "confide". /<lb/> thank you kindly for it / if it were not for that <hi
+      rend="underline">one<lb/> thing</hi>. you could love me, and say I am too<lb/> good to <add
+      place="inline" hand="h1">be</add> united to you. Oh! dearest. do not think<lb/> so for a
+     moment. I love you. fondly. truely.<lb/> God knows my heart. that I could not. <hi
+      rend="underline">would</hi><lb/> not conquer my love for you for what <hi rend="underline"
+      >others</hi> may<lb/> do, or have done. God says every one must be ans<lb/> werable for
+      their <hi rend="underline">own</hi> deeds. The world judges wrongly<lb/> in attaching blame to
+     one person for what another<lb/> has done. <hi rend="underline">I</hi> consider
+     that <unclear>i</unclear> person is not worthy<lb/> the name of "man" if he will close a
+     correspondence,<lb/> or even change his feelings, for any <hi rend="underline">such</hi>
+     cause,<lb/> I <hi rend="underline">could</hi> not I am too independent of the world<lb/>
+    </p>
+
+    <pb n="3" entity="DSSR_000000766_0501"/>
+
+    <p>Now. <name key="Adelaide E. Case">Addie</name>, darling, you will not cast<lb/> me off. and
+     say "I cannot love" will you?</p>
+    <lb/>
+    <p>If your heart says you can love me,<lb/> is it wrong? <hi rend="underline">My</hi> heart tells
+     me that<lb/> I do not love in vain. How happy I am<lb/> in the sunshine of your love. What
+     fascinated<lb/> me while at your house? <unclear>Dost</unclear> know, Addie<lb/> dear? Twas <hi
+      rend="underline">you</hi>. That feeling of admiration<lb/> has ripened into <hi
+      rend="underline">deep unchanging</hi> love. I do<lb/> not write ignorantly. I have carefully
+     analyzed<lb/> my feelings, and <hi rend="underline">know</hi> what I write.</p>
+    <lb/>
+    <p>Happy in hope,, I await for--your consent<lb/> for me to love you, as <hi rend="underline"
+      >mine</hi>. <hi rend="underline">Mine</hi>!<lb/> Mine to love to cherish! I know the poetry of
+     your soul<lb/> have felt its power. Iam--when alone--a poet.<lb/> Not a Rhymer. but a love of
+     the poetry of Nature</p>
+    <lb/>
+    <p>But I must turn to other things.<lb/> You should see us now. Far and wide, all<lb/> is mud. a
+     perfect sea of mud. I was up to<lb/> the camp of the 29<hi rend="super">th</hi> yesterday. to
+     see a friend<lb/> of mine-- <name key="Sidney Crosby">Sidney Crosby</name>--it was the same mud</p>
+    <lb/>
+
+    <pb n="4" entity="DSSR_000000766_0502"/>
+
+    <p>How sorry am I that <name key="Hal">Hallie</name> has gone<lb/> We shall not be able to find a
+     man to fill<lb/> his place. Not a man has done so much for<lb/> his company as <name key="Hal"
+      >Hal</name> has for this. But I cannot<lb/> blame him I would do the very same if I were
+     in<lb/> his position. <name key="Adelaide E. Case">Addie</name>. <hi rend="underline">Tyler</hi>
+     shall yet feel my power<lb/>
+     <name key="Hal">Hal</name>&apos;s insult is too grievous to pass by lightly. I shall<lb/>
+     remember him.</p>
+    <lb/>
+    <p>I am going to correspond for the Democrat<lb/> But <name key="Hal">Hallie</name> will tell you
+     all.</p>
+    <lb/>
+
+    <p><name key="General George McClellan">McClellan</name> <hi rend="underline">has</hi> dampened
+     my hopes<lb/> in regard to my coming home on furlough<lb/> but I must not complain, for he is my<lb/>
+     <hi rend="underline">commander</hi> you know. But Brisbine<lb/> says I may come
+     next July, <hi rend="underline">provided</hi><lb/> we <hi rend="underline">take Winchester</hi>
+     previous to that time.<lb/> My chances are <hi rend="underline">good</hi> are they not?</p>
+    <lb/>
+    <p>Well, I must bide my time and believe<lb/> Addie loves me.</p>
+    <lb/>
+    <closer> But I must close.<lb/> One word more.<lb/> Addie, <hi rend="underline">love
+     me</hi>.<lb/> From <hi rend="underline">your own</hi> devoted<lb/>
+     <signed>Charlie</signed><lb/> To my <name type="recipient">Addie</name>.<lb/>
+     <seg type="postscript"><name key="George Moore">Geo. Moore</name>. <name key="Seth Coon"
+      >Seth</name> &amp; all <add place="inline" hand="h1">your friends</add> send their respects<lb/>
+      <hi rend="underline">supposing</hi> I am writing to you.<lb/> I have sent your letter on <unclear>
+       <name key="Laurie">Laurie</name>
+      </unclear><lb/> I do not know which to Hea[l].</seg></closer>
+   </div1>
+  </body>
+
+ </text>
+</TEI.2>

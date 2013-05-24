@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0099 SYSTEM "000000766_0099" NDATA jpg>
+<!ENTITY DSSR_000000766_0100 SYSTEM "000000766_0100" NDATA jpg>
+<!ENTITY DSSR_000000766_0101 SYSTEM "000000766_0101" NDATA jpg>
+<!ENTITY DSSR_000000766_0102 SYSTEM "000000766_0102" NDATA jpg>
+
+<!--<!ENTITY NA62c14a SYSTEM "NA62c14a.jpg" NDATA jpg>
+<!ENTITY NA62c14b SYSTEM "NA62c14b.jpg" NDATA jpg>
+<!ENTITY NA62c14c SYSTEM "NA62c14c.jpg" NDATA jpg>
+<!ENTITY NA62c14d SYSTEM "NA62c14d.jpg" NDATA jpg>-->
+]>
+
+<TEI.2 id="NA62c14">
+
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-03-14">March 14, 1862</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Archie K. Loss</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Archie K. Loss</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">13</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62c14</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2004">2004</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Illustrations have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney,</title>
+                        <author>Adelaide E. Case</author>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-03-03">1862-03-03</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/WomenWriters/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-06">November 6th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">September 30, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>AL</abbr>
+                        <extent>4 pp.</extent>
+
+                        <date value="1862-03-14">March 14,1862</date>
+                        <date value="1862-03-16">March 16, 1862</date>
+
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+                <p>Addie sits outside in the unseasonably warm March weather, fetches her writing
+                    desk from her aunt's house, and describes the scene for her Charlie. She wonders
+                    what can possibly keep him longer in the army now that (she thinks) certain
+                    victories have been won by the Union forces. This leads her to reflect on how
+                    painful it is for people at home, worrying over the soldiers at the front, but
+                    how glorious it is for those who die in battle. She is interrupted by her aunt's
+                    call to dinner. Addie continues her letter two days later, telling Charlie how
+                    sad she feels much of the time, with dark thoughts of all the war casualties.
+                    She ends abruptly with mention of meeting a mutual friend, also named Charlie,
+                    soon to go back to the front.</p>
+
+            </div1>
+
+        </front>
+
+
+        <body id="d4">
+
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-03-14"
+                        >March 14, 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0099"/>
+                <opener>
+                    <dateline>
+                        <name type="place">Maple Grove</name>
+                        <date value="1862-03-14">March 14<hi rend="super">th</hi>'62</date>
+                    </dateline>
+                    <lb/>
+                    <salute> My Darling Charlie..</salute>
+                    <lb/>
+                </opener>
+
+                <p>What can <hi rend="underline">be</hi> more lovely<lb/> than this day. warm as the
+                    summer<lb/> days generally are and the more beautiful<lb/> because it is March..
+                    Can you see me. Charlie<lb/> sitting here on the root of a maple tree<lb/> about
+                    two feet above the little brook that<lb/> is south of Auntie's house? Here I
+                    have<lb/> been sitting dreaming and listening to<lb/> the babbling of the little
+                    stream till it<lb/> sounded like sweet music. and then<lb/> commenced talking to
+                    me of absent loved<lb/> ones. occasionally looking at the sun that<lb/> is
+                    peeping through the soft haze which<lb/> envelopes it. until--well something
+                    struck<lb/> me. the thought that I would go to <sic corr="the">the</sic><lb/>
+                    house and get my writing desk. When<lb/>
+                    <pb n="2" entity="DSSR_000000766_0100"/> I started back.. I caught up
+                    Titcombs<lb/> "Lessons in Life," and here it lies on the<lb/> mossy bank by my
+                    side. Oh! who is not<lb/> a lover of Nature.. the true mother of<lb/> all
+                    beauty.. Here I can sit and dream for<lb/> hours. with no companion but the
+                    little birds<lb/> that are even now singing among the not<lb/> leafy but
+                    leafless boughs above my head.<lb/> And of what am I dreaming. do you ask?<lb/>
+                    Of what <hi rend="underline">could</hi> I be dreaming save my<lb/> Charlie.. It
+                    does seem like "fairy land" wonder<lb/> if I could not see their footprints
+                    up<lb/> on the hill. How I wish I was an artist<lb/> would not I draw some grand
+                    sketches..<lb/> Or if you were. but here. I presume I would<lb/> have you
+                    installed immediately.. Oh. Charlie.<lb/> what is there now to hinder you from
+                    coming<lb/> home. Manassas. Winchester.and all of the<lb/> prominent places <sic
+                        corr="that">that</sic> are in the possession of<lb/> our troops. I can see
+                    no objections why<lb/> you can not come I do wish to see<lb/>
+                    <pb n="3" entity="DSSR_000000766_0101"/>
+                    <!--Page three is not transcribed-->
+                    <pb n="4" entity="DSSR_000000766_0102"/> this must be to those whose
+                    friends<lb/> have gone. What can ever give them<lb/> strength to bear the great
+                    grief but<lb/> the hope of meeting them in death..</p>
+
+                <closer>
+                    <salute>But auntie calls me to dinner, and I<lb/> must go</salute>
+                </closer>
+            </div1>
+
+            <div1 type="letter" n="1" id="d6">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-03-16"
+                        >March 16, 1862</date></head>
+
+                <opener>
+                    <dateline>
+                        <date value="1862-03-16">March 16<hi rend="super">th</hi></date>
+                    </dateline>
+                    <salute>Dear Charlie,</salute>
+                </opener>
+
+                <p>When I commenced this<lb/> I intended to send it by the evening<lb/> mail.. but
+                    we had company in the<lb/> afternoon.. and I found no time..<lb/> I attended a
+                    party that evening<lb/> in Bristol. I did not enjoy myself<lb/> very well. I
+                    know not why.. but I<lb/> felt lonesome. Amid all the laughter<lb/> music and
+                    dancing. feelings of love<lb/>
+                    <unclear>_______</unclear> would steal over me. Charlie<lb/> I am not enjoy<sic
+                        corr="ing">ing</sic> my self. at parties<lb/> as I used to. every peal of
+                    laughter<lb/> that escapes from me seems more like<lb/> a death knell. while our
+                    country is<lb/> in such peril.. and hundreds of its<lb/> protectors are bleeding
+                    and dying, how can<lb/> I enjoy such frivolities.. I cannot enter<lb/> them with
+                    any heart and where I have no<lb/> heart for any thing I can not enjoy it.
+                    I<lb/> had the pleasure of seeing Charlie Brooks while<lb/> there. He returns to
+                    the army one week from<lb/> to morrow, so he said. He seemed quite anxious<lb/>
+                    to go. I can not blame him either.<lb/>
+                </p>
+            </div1>
+
+        </body>
+
+    </text>
+
+</TEI.2>

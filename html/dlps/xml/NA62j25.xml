@@ -1,0 +1,304 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0219 SYSTEM "000000766_0219" NDATA jpg>
+<!ENTITY DSSR_000000766_0220 SYSTEM "000000766_0220" NDATA jpg>
+<!ENTITY DSSR_000000766_0221 SYSTEM "000000766_0221" NDATA jpg>
+<!ENTITY DSSR_000000766_0222 SYSTEM "000000766_0222" NDATA jpg>
+
+<!--<!ENTITY NA62j25a SYSTEM "NA62j25a.jpg" NDATA jpg>
+<!ENTITY NA62j25b SYSTEM "NA62j25b.jpg" NDATA jpg>
+<!ENTITY NA62j25c SYSTEM "NA62j25c.jpg" NDATA jpg>
+<!ENTITY NA62j25d SYSTEM "NA62j25d.jpg" NDATA jpg>
+<!ENTITY N621025aa SYSTEM "621025aa.jpg" NDATA jpg>
+<!ENTITY N621025ca SYSTEM "621025ca.jpg" NDATA jpg>
+<!ENTITY N621025a SYSTEM "621025a.jpg" NDATA jpg>
+<!ENTITY N621025b SYSTEM "621025b.jpg" NDATA jpg>
+<!ENTITY N621025c SYSTEM "621025c.jpg" NDATA jpg>
+<!ENTITY N621025d SYSTEM "621025d.jpg" NDATA jpg>
+<!ENTITY N621025b SYSTEM "621025b.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NA62j25">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-10-25">25 October 1862</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Adriaan van der Weel</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Adriaan van der Weel</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">15</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62j25</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, 25 October 1862</title>
+
+
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p> </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-10-25">1862-10-25</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War / Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-10">November 10th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 7th, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1862-10-25">1862 October 25</date>
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+                <p> Addie experiences conflicting emotions about the role Charlie and the other men
+                    in her life should play: is their place at home or in the army? She gently
+                    scolds Charlie for not writing more often, but tries hard to take an interest in
+                    the vicissitudes of his life as a soldier and the technicalities of the
+                    campaign. She asks him to come home on furlough, and excuses herself for not
+                    writing at length, as her mother has not yet fully recovered from her illness.
+                </p>
+            </div1>
+        </front>
+
+        <body id="d4">
+
+
+            <div1 type="letter" n="1" id="d5">
+
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-10-25">25
+                        October 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0219"/>
+                <opener>
+                    <dateline>
+                        <name type="place">Mecca.</name>
+                        <date value="1862-10-25">Oct,, 25<hi rend="super">th</hi> 1862..</date>
+                    </dateline>
+                    <lb/>
+                    <salute>My darling <name type="person">Charlie</name></salute>
+                </opener>
+                <p> Shall I try and<lb/> interest you for a few moments. this rainy<lb/> evening?
+                    But I shall not commence my<lb/> letter quite so &ldquo;stylish&rdquo;
+                    as was <hi rend="underline">my darling's</hi><lb/> last. even if I am a <hi
+                        rend="underline">Colonel's</hi> sister.<lb/> I shall not give myself that
+                    little, until<lb/> I know whether I have a right to it or<lb/> not.. for <name
+                        type="person">Hal</name>. is rather dubious about his<lb/> being able to get
+                    men enough for his<lb/> regiment. So many have been drafted, and<lb/>
+                        although <name type="person">Gov.. Tod.</name> has given drafted men<lb/>
+                    permission to enlist for three years, yet the<lb/> most of them think nine
+                    months is not<lb/> so long a period as three years..<lb/>
+                    <pb n="2" entity="DSSR_000000766_0220"/> For my part. I am not very particular
+                    about<lb/> his going into the service again. for we all<lb/> want him at home.
+                    True. I know that our<lb/> old Uncle Sam wants just such men as my<lb/> brother
+                        &mdash; <name type="person">Hal. B.. Case</name> but <name type="person"
+                        >Addie</name> &amp; <name type="person">Laura</name> want<lb/> him too..
+                    We want <name type="person">Charlie</name> also <hi rend="underline">very</hi>
+                    much. but<lb/> darling, can we have him for a little while this<lb/> coming
+                    winter? I fear the answer will be this<lb/> &ldquo;No <name type="person"
+                        >Addie</name> <hi rend="underline">you must wait patiently still a<lb/>
+                        little longer,</hi> thy <name type="person">Charlie</name> is too useful to
+                    be<lb/> spared yet&rdquo; Have I not waited very patiently<lb/> and oh. <hi
+                        rend="underline">how long</hi> for thy return my darling?<lb/> So <hi
+                        rend="underline">you</hi> was rejoiced, and congratulate. <name type="person"
+                        >Hal</name> on<lb/> his &ldquo;good fortune&rdquo; do you dear? Well
+                    as your<lb/> congratulations came through my letter. I<lb/> suppose it becomes
+                    me to thank you, which I<lb/> heartily do.. I could inform <name type="person"
+                        >Lt. Col. Asper</name><lb/> that the military committee did not have<lb/>
+                    very much to do about selecting <hi rend="underline">
+                        <name type="person">Case</name>
+                    </hi> &ldquo;after<lb/> he had that rupture with <name type="person"
+                        >Tyler</name>.&rdquo; <hi rend="underline">It was <name type="person"
+                            >Gov..<lb/> Tods</name> own offer..</hi> <name type="person">Hal.</name>
+                    at first declined and<lb/> even now says he is willing but not anxious to<lb/></p>
+                <pb n="3" entity="DSSR_000000766_0221"/>
+
+                <p>I fear dearest that your &ldquo;mansion&rdquo; which<lb/> you erected was
+                    not very beneficial, for<lb/> you wrote me that you had moved your<lb/> camp.
+                    You could not move that also could<lb/> you? Altogether I am sorry for those
+                    &ldquo;three<lb/> U.S. privates&rdquo; who labored so hard, and one<lb/>
+                    who was too busy to write to <hi rend="underline">his <name type="person"
+                        >Addie</name></hi> &mdash;<lb/> but <name type="person"
+                        >Adelaide</name>, <hi rend="underline">hush!</hi> you promised not to<lb/>
+                    scold him even if he does not write so often &mdash;<lb/> Darling. that is
+                    the way any little prompter<lb/> &mdash; conscience I gue&longs;s
+                    &mdash; talks to me when ever I<lb/> begin to write any thing naughty.<lb/>
+                    <orig reg="Aren't">Are'nt</orig> you glad of it? I am for there<lb/> is not a
+                    person in this world I would<lb/> mind half <del hand="h1">as</del> <add
+                        place="inline" hand="h1">so</add> soon as I would Conscience. </p>
+                <p> Thank you very much dearest for your<lb/> liberal statement of <name
+                        type="person">Gen. Pope</name>. I can now<lb/> comprehend how he was so
+                    easily outflanked<lb/>
+                </p>
+                <p> How can anyone help condemning him<lb/> for neglecting to <add hand="h1"
+                        place="supralinear">post</add> his pickets every where<lb/> where there was
+                    an opportunity for the rebels<lb/> to outflank him. I could not yet<lb/> the
+                    correct statement before though I had <pb n="4" entity="DSSR_000000766_0222"/>
+                    earnestly tried, and I concluded to write<lb/> to some one who knew,, Hence my
+                    inqui-<lb/> ring of you..</p>
+                <p rend="inline"> You wrote that it was<lb/> said you remained there this winter. No
+                    certain-<lb/> ty about it is there? (Do you know what<lb/> is coming?) If you
+                    remain there will you not<lb/> try to obtain a furlough and come to <name
+                        type="person">Addie</name>?<lb/> I should be so <hi rend="underline"
+                    >very</hi> happy. There was a letter<lb/> in our last <title>Chronicle</title>
+                    from (my) <add hand="h1" place="supralinear">(is it?)</add> <name type="person">
+                        <unclear>Julius</unclear>
+                    </name> which<lb/> is highly interesting. &amp; at least to one. </p>
+                <p> But darling you will excuse me from writing<lb/> very long to night. will you
+                    not? I am quite<lb/> tired. Mother has not entirely recovered from<lb/> her late
+                    illne&longs;s, and &ldquo;discharging duties&rdquo;<lb/> gives me
+                    &ldquo;tired&rdquo; for a companion,, <name type="person">Hal</name>.
+                    came<lb/> home Thursday night but went to <name type="place"
+                    >Barmington</name><lb/> this afternoon to spend <orig reg="the">thes</orig>
+                    sabbath<lb/> I will close now and play. &ldquo; <hi rend="underline">Brave
+                        boys are</hi><lb/> they for you and bid you good night.<lb/>
+                </p>
+                <p> Please write <hi rend="underline">very</hi> soon and often to<lb/>
+                </p>
+                <closer>
+                    <salute>Your affectionate</salute>
+                    <signed>Addie</signed>
+                    <seg type="postscript">Love to all etc,,</seg>
+                </closer>
+
+            </div1>
+        </body>
+
+
+
+    </text>
+</TEI.2>

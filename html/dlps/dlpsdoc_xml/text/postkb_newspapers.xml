@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+
+<!-- =============================================================== -->
+<!-- NOTE: Update last modified date manually when editing this file -->
+<!-- =============================================================== -->
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % TEI.extensions.ent SYSTEM "http://pogo.lib.virginia.edu/dlps/dtd/tei/teitech/teitech.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://pogo.lib.virginia.edu/dlps/dtd/tei/teitech/teitech.dtd">
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+
+<!ENTITY files '<replace>cavdaily_*.xml</replace>'>
+<!ENTITY qa_commandline_script '<xref type="scripts">qa_newspapers</xref>'>
+<!ENTITY qa_super '<xref type="scripts">qa_super</xref> -N'>
+
+<!ENTITY additional_scripts '<item>Adjust page breaks for newspaper markup: <command><xref type="scripts">pb_outside_divs</xref> &files;</command></item>'>
+
+<!ENTITY % postkb_entities SYSTEM 'postkb.ent'> %postkb_entities;
+<!ENTITY % common_entities SYSTEM 'common.ent'> %common_entities;
+]>
+<TEI.2>
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Post-keyboarding Workflow for Newspapers</title>
+<author>Greg Murray (gpm2a@virginia.edu), Digital Library Production Services</author>
+</titleStmt>
+<publicationStmt>
+<publisher>Digital Library Production Services, University of Virginia Library</publisher>
+</publicationStmt>
+</fileDesc>
+</teiHeader>
+
+<text id="d1">
+<body id="d2">
+<argument>
+
+<p>This document describes the workflow for in-house processing of
+electronic texts digitized from printed newspapers by keyboarding
+vendors for Digital Library Production Services (DLPS), University of
+Virginia Library. It is intended for use by internal DLPS staff.</p>
+
+<!-- =============================================================== -->
+<!-- NOTE: Update last modified date manually when editing this file -->
+<!-- =============================================================== -->
+
+<p><hi rend="bold">Last modified:</hi> <date type="last-modified" value="2006-09-26">9/26/2006</date></p>
+</argument>
+
+<div1 id="d3">
+<head>TEI Headers</head>
+<div2 id="d4">
+<head>Minimal TEI header</head>
+<p>There is no need to prepare a minimal TEI header for each newspaper
+issue. Instead, the vendor is instructed to use the same header
+template for all issues in the newspaper project.</p>
+
+<p>For the Cavalier Daily project, the template looks like this:
+<eg><![CDATA[
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>The Cavalier Daily</title>
+</titleStmt>
+<publicationStmt>
+<publisher>University of Virginia Library</publisher>
+</publicationStmt>
+<sourceDesc><bibl/></sourceDesc>
+</fileDesc>
+<profileDesc>
+<langUsage>
+<language id="eng">English</language>
+</langUsage>
+</profileDesc>
+</teiHeader>
+]]></eg>
+</p>
+</div2>
+
+<div2 id="d5">
+<head>Full TEI header</head>
+&full_teiHeader_ref;
+</div2>
+</div1>
+
+<div1 id="d6">
+&retrieval1;
+<div2>
+<head>Rename</head>
+<list>
+<item>Rename all files (XML files and TIFF files, if included) from
+"CavDaily..." to "cavdaily..." (all lower case). Use your
+batch-renaming tool of choice, or use the following command from the
+Unix command line: <command>rename 's/CavDaily/cavdaily/' CavDaily*</command></item>
+</list>
+</div2>
+
+<div2>
+<head>Move image files</head>
+<p>If the .zip file from the vendor included page images, those images
+need to be moved to the appropriate image directory.</p>
+<list>
+<item>From the Unix command line, navigate to the directory where the
+image files were unzipped and renamed, normally
+<path>&text_dir;/04postkb/10being_received</path></item>
+
+<item>To move the images into
+<path>01bookscanning/52_CCITTCOMPRESS_OUT</path> grouped into
+subdirectories by ID, run this command:
+
+<eg><xref type="scripts">make_filesets</xref> cavdaily*.tif</eg></item>
+
+</list>
+</div2>
+&retrieval2;
+</div1>
+
+<div1 id="d7">
+&scripts;
+</div1>
+
+<div1 id="d8">
+<head>Associating Page Breaks and Page Images</head>
+<list>
+<item><emph>Copy</emph> files to <path>30being_pbsynced</path></item>
+
+<item>To associate a page image with each page break, add
+<att>entity</att> attributes to <gi>pb</gi> tags:
+
+<eg><xref type="scripts">pb_entities</xref> -n &files;</eg>
+
+(-n is for "newspapers"; the -n switch uses defaults appropriate to the cavdaily files)
+</item>
+
+&pb_entities_messages;
+
+<item>When no warning messages appear, run these commands:
+
+<eg><xref type="scripts">declare_entities</xref> &files;
+<xref type="scripts">qa_entities</xref> &files;</eg>
+</item>
+
+&parse;
+
+<item>Update the &tracksys_xref;: <command><xref type="scripts">update_tracksys</xref> &files;</command></item>
+
+<item><emph>Move</emph> files to <path>30pbsynced</path></item>
+</list>
+</div1>
+
+<div1 id="d10">
+<head>Web Reports</head>
+<list>
+<item><emph>Copy</emph> files to <path>51being_rehyphenated</path></item>
+
+<item>Run the re-hyphenate report (shows words for which the
+end-of-line hyphen, programmatically collapsed previously by the
+<command>postkb</command> script, may need to be restored)
+
+<eg><xref type="scripts">report_rehyphenate</xref> &files;</eg>
+</item>
+
+<item>For each XML file, view the report online: &workreports_xref;
+<lb/>
+Follow the instructions at the top of the report, fill out the report,
+and save the data when finished</item>
+
+<item>Update the XML files: <command><xref type="scripts">commit_rehyphenate</xref> &files;</command></item>
+&parse;
+<item><emph>Move</emph> files to <path>51rehyphenated</path></item>
+</list>
+
+&copy_to_59processed;
+</div1>
+
+<div1 id="d11">
+<head>Markup QA and Correction</head>
+<p>The markup QA/correction workflow is documented separately. See
+<xref url="http://pogo.lib.virginia.edu/cgi-dlps/saxon/SaxonCGI.pl?source=http://pogo.lib.virginia.edu/dlps/dlpsdoc_xml/text/markup_qa_newspapers.xml&amp;style=http://pogo.lib.virginia.edu/dlps/xsl/teitech.xsl&amp;docid=markup_qa_newspapers">Markup
+QA and Correction for Newspapers</xref>.</p>
+</div1>
+
+<div1 id="d12">
+<head>Insert Full TEI Headers</head>
+<list>
+<item><emph>Move</emph> files from <path>69processed</path> to <path>70being_fullheaders_added</path></item>
+
+<item>Replace the minimal TEI header already in the XML file with the
+full TEI header contained in the appropriate template header file. For
+the Cav Daily project, the command is:
+<eg><xref type="scripts">replace_teiHeader_cavdaily</xref> &files;</eg></item>
+
+<item>Update the TEI header to include the volume number, issue
+number, date, etc. for that particular newspaper issue. For the Cav
+Daily project, the command is:
+<eg><xref type="scripts">update_teiHeader_cavdaily</xref> &files;</eg></item>
+
+&parse;
+<item>Run this command to normalize line endings: <command>dos2unix &files;</command></item>
+<item>Update the access status (public, UVA only, etc.) recorded in
+the TEI header: <command><xref type="scripts">update_teiHeader_access</xref> &files;</command></item>
+<item>Update the file size recorded in the TEI header: <command><xref type="scripts">refresh_filesize</xref> &files;</command></item>
+<item>Correct common problems with date values (carried over from the MARC record used to create the TEI header): <command><xref type="scripts">header_date_values</xref> &files;</command></item>
+&parse;
+<item>Run QA checks on the TEI header: <command><xref type="scripts">qa_super</xref> -h &files;</command></item>
+<item>Fix problems, if any; this may require working with Cataloging to assess/fix the problems</item>
+
+<!-- As of 9/26/2006, Erin says the following is no longer necessary:
+
+<item>Run this command to generate a report showing the
+volume/issue/date data that was inserted by the
+<command>update_teiHeader_cavdaily</command> script:
+<eg><xref type="scripts">report_teiHeader_cavdaily</xref> &files; > cavdaily_report.txt</eg></item>
+
+<item>Email the report to Erin in Cataloging for review. (If
+cataloging finds any problems, they will notify us, and we will take
+action at that point.)</item>
+-->
+
+<item><emph>Move</emph> files to <path>70fullheaders_added</path></item>
+&update_tracksys_item;
+</list>
+
+<admon type="fyi">
+<p>For each file processed successfully, the &tracksys_xref; gets
+updated automatically as follows:</p>
+<table>
+<row>
+<cell><command>replace_teiHeader</command></cell>
+<cell>Finalization Workflow &rarr; Replace TEI header</cell>
+</row>
+<row>
+<cell><command>update_teiHeader_cavdaily</command></cell>
+<cell>Finalization Workflow &rarr; Update issue data</cell>
+</row>
+<row>
+<cell><command>update_teiHeader_access</command></cell>
+<cell>Finalization Workflow &rarr; Update access level</cell>
+</row>
+<row>
+<cell><command>qa_super -h</command></cell>
+<cell>Finalization Workflow &rarr; QA TEI header</cell>
+</row>
+<row>
+<cell><command>report_teiHeader_cavdaily</command></cell>
+<cell>Finalization Workflow &rarr; Run &amp; send TEI header report</cell>
+</row>
+</table>
+</admon>
+</div1>
+
+<div1 id="d13">
+&finalize;
+</div1>
+
+<div1 id="d14">
+<head>[Don't] Copy to ReadyRepo</head>
+
+<p>At this time, issues of <title>The Cavalier Daily</title> are not
+being delivered via the central repository, so we do not copy finished
+<code>cavdaily</code> files to ReadyRepo as we would for digitized
+books.</p>
+
+<list>
+
+<item><hi rend="bold">Hand off:</hi> Notify Melinda, Kristy, and Greg
+as to which <code>cavdaily</code> items have been copied to
+<path>80final</path>. (Normally Greg contacts Chris R. to coordinate
+where to copy the files for hand-off to the indexing and delivery
+process.)</item>
+
+<item><hi rend="bold">Archive:</hi> After the files have been copied
+to the hand-off point, the files should be archived as appropriate.</item>
+
+&cleanup_script;
+
+</list>
+</div1>
+</body>
+</text>
+</TEI.2>

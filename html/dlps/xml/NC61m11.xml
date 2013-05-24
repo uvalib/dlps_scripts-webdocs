@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0413 SYSTEM "000000766_0413" NDATA jpg>
+<!ENTITY DSSR_000000766_0414 SYSTEM "000000766_0414" NDATA jpg>
+<!ENTITY DSSR_000000766_0415 SYSTEM "000000766_0415" NDATA jpg>
+<!ENTITY DSSR_000000766_0416 SYSTEM "000000766_0416" NDATA jpg>
+
+<!--<!ENTITY NC61m11a SYSTEM "NC61m11a.jpg" NDATA jpg>
+<!ENTITY NC61m11b SYSTEM "NC61m11b.jpg" NDATA jpg>
+<!ENTITY NC61m11c SYSTEM "NC61m11c.jpg" NDATA jpg>
+<!ENTITY NC61m11d SYSTEM "NC61m11d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NC61m11">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+                        value="1861-12-11">December 11, 1861</date></title>
+
+                <author>Tenney, Charles</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Kinsella, Thomas E.</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Kinsella, Thomas E.</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">14</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NC61m11</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case, December 11, 1861</title>
+
+
+                        <author>Charles Tenney</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p> </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+         
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1861-12-11">1861-12-11</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>masculine</term>
+                    <term>American Civil War / Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-11">November 11th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 7th, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+
+
+    <text id="d1">
+
+        <front id="d2">
+
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 p.</extent>
+                        <date value="1861-12-11">December 11th, 1861</date>
+
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case</title>
+                    </bibl>
+                </head>
+
+                <p> Charles Tenney writes Adelaide E. Case from Parkersburg, Va., describing his
+                    arrival on the steamer Decatur and his imminent departure by railroad to
+                    Grafton, Va. He suggests the happiness he derives from his correspondence with
+                    Addie.</p>
+            </div1>
+
+        </front>
+
+
+        <body id="d4">
+
+
+
+
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1861-12-11"
+                        >December 11, 1861</date></head>
+                <pb n="1" entity="DSSR_000000766_0413"/>
+
+
+                <opener>
+                    <dateline><name type="place">Parkersburg <abbr expan="Virginia">Va</abbr></name><lb/>
+                        <date value="1862-12-11">Dec 11<hi rend="super">th</hi> 1861</date>. </dateline>
+                    <lb/>
+
+                    <salute>My dear Addie:</salute>
+                </opener>
+
+
+                <p>Here we are, right<lb/> in sight of loyal<name type="place">Ohio</name> but<lb/>
+                        refus<del hand="h1">ing</del><add place="inline" hand="h1">ed</add> the
+                        privil<del hand="h1">i</del><add place="inline" hand="h1">e</add>ge of
+                    entering<lb/> within its borders, the authorities<lb/> preferring that we should
+                    remain<lb/> on the &ldquo;sacred soil of <name type="place"
+                    >Virginia</name>.&rdquo;<lb/> But we are not long to have<lb/> the privilege
+                    even of looking at<lb/> the <name type="place">Ohio</name> Shore, for at four
+                    P.M.<lb/> we take the R. R. for <name type="place">Grafton</name>.<lb/> From
+                    thence I suppose we go to<lb/> the end of the world,&mdash; <name
+                        type="place">Romney</name>.<lb/> Well, as I am denied the happine&longs;s<lb/>
+                    <pb n="2" entity="DSSR_000000766_0414"/> of seeing my <name type="person"
+                    >Addie</name>. I will resort<lb/> to the only feasible expedient, that of<lb/>
+                    conversation on paper.</p>
+
+                <p> My health is good, how is yours<lb/>
+                     <name type="person">Addie</name>, dear? How glad I am that<lb/> writing was
+                    invented long ago, and<lb/> that I have a good memory, for<lb/> I seem to
+                        see <orig reg="you,">you.</orig> sitting by your<lb/> sweet toned
+                        melodeon<ref target="n1" n="1">1</ref>, your soul<lb/> giving utterance to
+                    its goodne&longs;s<lb/> in happy song, the music of which<lb/> seems to
+                    reach me, and enliven<lb/> my inmost spirit. How glad am<lb/> I, <del hand="h1"
+                        rend="slash-through">that</del> to know and feel that you<lb/> are at this
+                    moment holding me in<lb/> kind remembrance. Happine&longs;s, is a<lb/> boon
+                    many strive to reach, but few,<lb/> comparatively, attain, but if
+                    happine&longs;s<lb/> exists among soldiers, it is him, who<lb/> knows that
+                    there is a heart which<lb/> beats in unison with his own, and<lb/> feels that <hi
+                        rend="underline">her</hi> spirit is watching over<lb/> him, that is the
+                    fortunate possessor.<lb/>
+                    <pb n="3" entity="DSSR_000000766_0415"/> Am I mistaken in believing that<lb/>
+                    there is one who thus remembers<lb/> me, and that one, <name type="person"
+                    >Addie</name>? Forgive<lb/> me <orig reg="if I do">if do</orig> wrong in thus
+                        plainly <orig reg="expressing">expre&longs;s-<lb/> ing</orig> myself, for
+                    it is the promptings of my<lb/> heart, and my conscience reproves me often<lb/>
+                    for not doing as I ought. I speak thus<lb/> to hush its reproving voice. But,
+                    although<lb/> our acquaintance has been short, has it<lb/> been productive of
+                    ill? has your heart not<lb/> been moved in unison with mine? but I'll<lb/> bide
+                    my time, perhaps I may meet<lb/> you again. Forgive me if I have done wrong. </p>
+
+                <p>In a few short hours, we leave<lb/> the pleasant view of <name type="place"
+                    >Ohio</name>, and retreat<lb/> to the wilds of <name type="place"
+                    >Virginia</name>, perhaps never<lb/> to return, for I learn by the way that<lb/>
+                    we are to enter the field again. If I fall<lb/> I fall in the defense of my once
+                    happy<lb/> country. I shall die, "unwept, unhonored,<lb/> and unknown;" but of
+                    this, in the main,<lb/> I care not, all I wish to know is<lb/> that if I fall I
+                    shall be regretted by <hi rend="underline">one</hi>.<lb/>
+                    <pb n="4" entity="DSSR_000000766_0416"/> Assured that such is the <orig
+                        reg="case, I">case. I</orig> die <orig reg="happy.">happy</orig><lb/> But <del
+                        hand="h1" rend="line-through">le&longs;s</del> lest I weary you I will
+                    change<lb/> the subject. We left <name type="place">Charleston</name>
+                    yesterday<lb/> at 2 P.M. on the steamer &ldquo; <name type="ship"
+                    >Decatur</name>&rdquo;<lb/> and arrived at <name type="place">Pt.
+                    Pleasant</name> at 7.40<lb/> we rode all night, most of the time<lb/> racing
+                    with the <name type="ship"> <orig reg="Fort">Fort.</orig> Wayne</name> on<lb/>
+                    which was part of the <abbr expan="regiment">Regt</abbr>. At<lb/> about 11.30
+                    A.M. to day we arrived<lb/> here. I suppose as the <name type="regiment"
+                    >Seventh</name> is<lb/> accredited as a good <abbr expan="regiment">Regt.</abbr>
+                    we must<lb/> keep our name by <hi rend="underline">deserving</hi> <orig reg="it."
+                        >it</orig></p>
+
+                <closer>
+                    <salute> But I must close. Forgive all<lb/> errors and <orig reg="mistakes, as"
+                            >mistakes. as</orig> I am writing<lb/> in the cabin of the <name
+                            type="ship">Decatur</name>, and all<lb/> is <orig reg="confusion, and"
+                            >confusion. and</orig> write soon to Your true</salute>
+                    <signed>
+                         <name type="person">Charlie</name>
+                    </signed>,<lb/> I will send you our addre&longs;s as soon<lb/> as I learn
+                    where it is. <name type="person">Hal</name> urges your and <orig reg="Laurie's"
+                        >Lauries</orig> going<lb/> to <name type="place">Oberlin</name>, and sends a
+                        note. <orig reg="My">my</orig> respects<lb/> to all and love to <name
+                        type="person">Addie</name>. </closer>
+
+
+            </div1>
+        </body>
+
+
+        <back id="d6">
+
+            <div1 type="notes" n="1" id="d7">
+                <head>Notes</head>
+                <p>
+                    <note id="n1" place="end" n="1">
+                        <seg type="note-symbol">1</seg>
+                        <p> <hi rend="italic">The Oxford English Dictionary</hi> describes a melodeon
+                            as "a wind instrument, furnished with a keyboard, the bellows being
+                            moved by means of pedals worked by the feet of the performer; an earlier
+                            form of the 'American organ'."</p>
+                    </note>
+                </p>
+            </div1>
+        </back>
+
+    </text>
+</TEI.2>

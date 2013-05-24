@@ -1,0 +1,1379 @@
+<?xml version="1.0"?>
+
+<?dlps id="oplkeno"?>
+<?dlps page-images="color" figure-images="no"?>
+<?dlps transcription="other"?>
+
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY oplkeno_back SYSTEM "uva-lib:504329" NDATA uvaHighRes>
+<!ENTITY oplkeno_contents SYSTEM "uva-lib:504330" NDATA uvaHighRes>
+<!ENTITY oplkeno_cover SYSTEM "uva-lib:504331" NDATA uvaHighRes>
+<!ENTITY oplkeno_foredge SYSTEM "uva-lib:504332" NDATA uvaHighRes>
+<!ENTITY oplkeno_head SYSTEM "uva-lib:504333" NDATA uvaHighRes>
+<!ENTITY oplkeno_spine SYSTEM "uva-lib:504334" NDATA uvaHighRes>
+<!ENTITY oplkeno_tail SYSTEM "uva-lib:504335" NDATA uvaHighRes>
+<!ENTITY oplkeno_title SYSTEM "uva-lib:504336" NDATA uvaHighRes>
+]>
+<TEI.2 id="oplkeno">
+<teiHeader type="migrated" creator="Etext">
+<fileDesc>
+<titleStmt>
+<title type="main">A Chiricahua Apache`s Account of the Geronimo Campaign of 1886</title>
+<title type="sort">chiricahua apache s account of the geronimo campaign of 1886</title>
+<author>Opler, Morris; Kenoi, Sam</author>
+<respStmt>
+<resp>Creation of machine-readable version:</resp>
+<name>M. Eleanor Culley</name>
+<resp>Conversion to TEI.2-conformant markup:</resp>
+<name>University of Virginia Library Electronic Text Center.</name>
+</respStmt>
+</titleStmt>
+<extent>ca. <num type="kilobytes">65</num> kilobytes</extent>
+<publicationStmt>
+<publisher>University of Virginia Library</publisher>
+<pubPlace>Charlottesville, Virginia</pubPlace>
+<idno type="ETC">OplKeno</idno>
+<date value="2001">2001</date>
+<availability status="public">
+<p n="copyright">Copyright &copy; 2001 by the Rector and Visitors of the University of Virginia</p>
+<p n="access">Publicly accessible</p>
+</availability>
+<idno type="uva-pid">uva-lib:477230</idno>
+</publicationStmt>
+<seriesStmt>
+<title>University of Virginia Library, Text collection</title>
+<idno type="uva-set">UVA-LIB-Text</idno>
+</seriesStmt>
+<notesStmt>
+<note>
+<p>Illustrations have been included from the original source.</p>
+</note>
+<note>
+<p>Republished with permission of New Mexico Historical Review, &copy;1938, all rights reserved. This text may be used and shared in
+accordance with the fair use provisions of US and international copyright law and agreement, provided that it is accompanied by full
+citation:   "A Chiricahua Apache`s Account fo the Geronimo Campaign of 1886", by Morris E. Opler, Vol. 13:4 (October 1938), 360-386.</p>
+</note>
+</notesStmt>
+<sourceDesc>
+<biblFull>
+<titleStmt>
+<title type="main">A Chiricahua Apache`s Account of the Geronimo Campaign of 1886</title>
+<title level="j">New Mexico Historical Review, Vol XIII, No. 4, October, 1938.</title>
+<title type="sort">chiricahua apache s account of the geronimo campaign of 1886</title>
+<author>Morris Opler,&nbsp;&nbsp; Sam Kenoi</author>
+<editor>Lansing B. Bloom</editor>
+</titleStmt>
+<extent>pp. 360-86; or 26 pages</extent>
+<publicationStmt>
+<publisher>Historical Society of New Mexico and University of New Mexico</publisher>
+<pubPlace>University of New Mexico, Albuquerque</pubPlace>
+<date value="1938">1938</date>
+<idno type="callNo">Source copy consulted:    Alderman Library, University of Virginia, F 791.N76 Vol 13-14, 1938-9.</idno>
+</publicationStmt>
+</biblFull>
+</sourceDesc>
+</fileDesc>
+<encodingDesc>
+<projectDesc>
+<p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+</projectDesc>
+<editorialDecl>
+<p>All unambiguous end-of-line hyphens have been removed, and the  trailing part of a word has been joined to the preceding line.</p>
+<p id="ETC">Some keywords in the header are a local Electronic Text Center scheme  to aid in establishing analytical groupings.</p>
+</editorialDecl>
+</encodingDesc>
+<profileDesc>
+<creation>
+<date value="1938">1938</date>
+</creation>
+<langUsage>
+<language id="eng" usage="main">English</language>
+<language id="apa">Apache</language>
+<language id="spa">Spanish</language>
+</langUsage>
+<textClass>
+<keywords>
+<term>nonfiction</term>
+<term>prose</term>
+<term>masculine</term>
+<term>Native American</term>
+</keywords>
+</textClass>
+</profileDesc>
+<revisionDesc>
+<change>
+<date value="2001-08">August 2001</date>
+<respStmt>
+<resp>corrector</resp>
+<name>M. Eleanor Culley, Electronic Text Center</name>
+</respStmt>
+<item>added TEI header and tags, added Sam Kenoi as a co-author</item>
+</change>
+<change>
+<date value="2005-07">July 2005</date>
+<respStmt>
+<resp>Corrector</resp>
+<name>John Ivor Carlson</name>
+</respStmt>
+<item>Converted to XML and/or checked tags.</item>
+</change>
+<change>
+<date value="2007-09">September 2007</date>
+<respStmt>
+<resp>Migration</resp>
+<name>Ethan Gruber, University of Virginia Library</name>
+</respStmt>
+<item>Converted XML markup from TEI Lite to uva-dl-tei (TEI P4 with local customizations).</item>
+</change>
+<change>
+<date value="2008-01">January 2008</date>
+<respStmt>
+<resp>Migration</resp>
+<name>Greg Murray, University of Virginia Library</name>
+</respStmt>
+<item>Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</item>
+</change>
+    
+    <change>
+        <date value="2008-09">September 2008</date>
+        <respStmt>
+            <resp>Migration</resp>
+            <name>Scholarly Resources, University of Virginia Library</name>
+        </respStmt>
+        <item>Added and/or replaced the digital images accompanying the electronic text.
+            To achieve consistency between text and images, all images were digitized from
+            the source copy from which the text was originally digitized (Call Number: F791 .N76).</item>
+    </change>
+    
+</revisionDesc>
+</teiHeader>
+
+<text id="d1">
+<front id="d2">
+    <pb entity="oplkeno_spine" pid="uva-lib:504334" n="Spine"/>
+    <pb entity="oplkeno_cover" pid="uva-lib:504331" n="Cover"/>
+    <pb entity="oplkeno_back" pid="uva-lib:504329" n="Back"/>
+    <pb entity="oplkeno_head" pid="uva-lib:504333" n="Head"/>
+    <pb entity="oplkeno_tail" pid="uva-lib:504335" n="Tail"/>
+    <pb entity="oplkeno_foredge" pid="uva-lib:504332" n="Foredge"/>
+    <pb entity="oplkeno_title" pid="uva-lib:504336" n="Title"/>
+    <pb entity="oplkeno_contents" pid="uva-lib:504330" n="Contents"/>
+</front>
+
+<body id="d3">
+<div1 type="article" id="d4">
+<head><bibl><title>A CHIRICAHUA APACHE'S ACCOUNT OF THE GERONIMO CAMPAIGN OF
+1886</title><author>MORRIS OPLER</author><author>SAMUEL E.
+KENOI</author></bibl></head>
+
+
+<div2 type="introduction" id="d5">
+<head><bibl><title>INTRODUCTION</title><author>MORRIS OPLER</author></bibl></head>
+<p>
+During the years 1931-33, while I was engaged in ethnological research among the
+Chiricahua Apache Indians now living on the Mescalero Indian Reservation of New
+Mexico,<ref target="a1" n="1">l</ref> one of my most helpful informants was a fifty-seven or fifty-eight-year-old man, Samuel E. Kenoi. In 1932 a long
+autobiographical account was recorded from Mr. Kenoi. The pages that follow
+comprise the section of that life story which has to do with the 1885-86
+campaign against the Chiricahua leader, Geronimo. Many of the American military
+leaders who participated in that campaign have offered, in reports, articles,
+and books, their versions of the event. It is certainly in order that the less
+articulate Chiricahua be consulted before we may say that all relevant
+historical material concerning the episode is before us.
+</p>
+<p>
+The Chiricahua Apache tribe may be divided into three bands, the Eastern,
+Central, and Southern Chiricahua. Before the reservation period, the Eastern
+band, better known as the Warm Springs Apache, ranged mostly in southwestern New
+Mexico.<ref target="a2" n="2">2</ref> Mangus Colorado, Victorio, Nana, and Loco are
+come of the better known leaders of this band. The Central Chiricahua, led at
+various times by Cochise, Chihuahua, and Naiche, controlled the southeastern
+part of Arizona.<ref target="a3" n="3">3</ref> The Southern Chiricahua, with whom
+the names Geronimo, Bonito, and Juh (Who, Whoa, or Ho) are to be identified,
+lived primarily in the state of Chihuahua, Mexico, but frequently entered
+southern Arizona as well.<ref target="a4" n="4">4</ref>
+</p>
+
+<note place="foot" id="a1" n="1"><seg type="note-symbol">1.</seg><p> This research was made possible by the Laboratory of
+Anthropology of Santa F&eacute;, the Southwest Society, the University of
+Chicago, the Social Science Research Council, the National Research Council, and
+Columbia University.
+</p></note>
+<note place="foot" id="a2" n="2"><seg type="note-symbol">2.</seg><p> The Chiricahua name for the Eastern Chiricahua is <foreign
+lang="apa">Tcihende</foreign>, "Red Paint People."
+</p></note>
+<note place="foot" id="a3" n="3"><seg type="note-symbol">3.</seg><p> In their own language the Central Chiricahua are known as
+Tcokanene. The word does not yield to linguistic analysis.
+</p></note>
+<note place="foot" id="a4" n="4"><seg type="note-symbol">4.</seg><p> The native name for the Southern Chiricahua is Ne'na'i, "Enemy
+People."
+</p></note>
+
+<pb n="361"/>
+
+<p>
+In order to settle and pacify the two bands living wholly within the boundaries
+of the United States, reservations were established. In 1872 a reservation was
+set aside in the Dragoon Mountains of Arizona for the Central Chiricahua under
+Cochise. Previously the Ojo Caliente Reserve in western New Mexico had been
+established for the Eastern Chiricahua or Warm Springs Apache. Under this
+policy, which allowed the bands to remain by themselves within their former
+territories, conditions improved markedly. Serious trouble broke out when these
+reservations were abolished after 1875 and an attempt was made to concentrate
+all Chiricahua on the White Mountain Reservation (now the San Carlos and White
+Mountain reservations) of the Western Apache. The Chiricahua bitterly resisted
+removal and failed to make a satisfactory adjustment to the Western Apache, from
+whom they considered themselves separated by a sharp difference in dialect and
+customs. At the time of the removal of the Chiricahua to the Western Apache
+Reservation, as many Southern Chiricahua as could be found were taken, too, but
+quite as many were not apprehended. As the following narrative attests, the
+distrust of the Western Apache, the nostalgia for their former homes, and the
+resistance against the close supervision of the white military, led to frequent
+escapes of small Chiricahua parties and marauding expeditions. Many of these
+raiding parties became involved with the unsubdued So&uacute;thern Chiricahua in
+depredations or fled to Southern Chiricahua territory for refuge, and it was not
+long before the Southern Chiricahua who were still at large were the target of
+the military and an attempt was made to place them at San Carlos as well. Since
+the Southern Chiricahua operated on both sides of the border, it was necessary
+for General Crook, in his campaign of 1883, to cross over into Mexico to conquer
+these Apache and to bring a large number of them to San Carlos.
+</p>
+
+<pb n="362"/>
+
+<p>
+The increasing number of outsiders was hardly welcomed by the Western Apache.
+Suspicion and unrest continued, friction increased, a conflict over authority
+between civil and military officers added to the uncertainty and confusion, and
+in 1885 Geronimo, Chihuahua, Mangus, and Naiche had again left the reservation
+with their followers and resumed raids throughout New Mexico and Arizona.
+General Crook followed and carried on the war until he was relieved of command
+in favor of General Nelson A. Miles. The surrender of Geronimo, September 5,
+1886, ended the contest.
+</p>
+<p>
+The father of the narrator was a Southern Chiricahua, but he was in no way
+involved in the Geronimo outbreak. Many other Chiricahua not only refused to
+heed the advice of the headstrong leaders, but rendered signal service to the
+United States troops throughout the expedition. Mr. Kenoi gives special credit
+to two Chiricahua, Charles Martine and Kaitah, for locating the hiding place of
+Geronimo in the Sierra Madre and for inducing him to surrender. That estimate of
+the contributions of these two men to the final victory has been concurred in by
+Captain John G. Bourke (<hi rend="italic">0n the Border With Crook</hi>) and
+Britton Davis (<hi rend="italic">The Truth About Geronimo</hi>). The subsequent
+imprisonment and removal from the west of the entire tribe, including the
+peaceful and co&ouml;perative elements, is still a source of bitterness and
+reproach, as Mr. Kenoi's account indicates.
+</p>
+
+</div2>
+
+
+<div2 type="section" id="d6">
+<head><bibl><title>
+A CHIRICAHUA APACHE'S ACCOUNT OF THE GERONIMO CAMPAIGN OF 1886</title>
+<author>Samuel E. Kenoi</author>
+<editor>Morris Opler</editor></bibl></head>
+
+<p>
+I was born in 1875. I remember the last time Geronimo went on the war-path. That
+was in 1885, but I had heard about his taking the war-path before this.
+</p>
+<p>
+My father was a Southern Chiricahua. He ran all over the country, here, there,
+and everywhere. Ho<ref target="b1" n="5">1</ref> was the leader of my father's
+group, which was a small group. But my father did not stay with them very long.
+He went to San Carlos, to Fort Apache, to Mescalero. My father was never with
+Geronimo on the war-path.
+</p>
+
+<note place="foot" id="b1" n="5"><seg type="note-symbol">1.</seg><p> Ho, also written Juh, Who, and Whoa in reports and historical
+accounts, was a Southern Chiricahua leader. His son, Asa Datlogi, is still
+living at Mescalero.
+</p></note>
+
+<pb n="363"/>
+
+<p>
+But one time my father and another man by the name of Adis, Tom Duffy's father,
+were chosen as scouts at Fort Apache. This was before Geronimo escaped for the
+last time. There was a big hostile band out before Geronimo went. Ho was chief
+of that band. It was a Southern Chiricahua group. The United States Army
+officers selected my father and Adis to go out after them. Small round tickets
+with numbers were issued to my father and Adis by the army officer. Only the
+oldest scouts were issued tickets in th&iacute;s way. You had to be a scout in order to
+get one, and you had to be recognized in Washington too. These tickets were
+issued to the Indians by the officers just the same as they were issued to their
+own white scouts. After these two men were selected, they were issued an army
+rifle, Springfield 45-70, with belt and cartridges and plenty of ammunition. The
+two men were told to go and get Ho's band, make peace with them, and bring them
+in. This happened about 1873.<ref target="b2" n="6">2</ref> Because my father and
+this other man were Southern Chiricahua and Ho's band was Southern Chiricahua,
+they were told to go and get them. My father and Adis went out, because my
+father had many relatives by marriage in Ho's band.<ref target="b3" n="7">3</ref>
+They went over and got those Indians and brought them back to Fort Apache.
+</p>
+<p>
+From the way they talked in the old days, it seems that the Indians didn't say
+much about the white people except what good they were doing, giving them plenty
+of blankets and rations. They seemed to be on good terms with them in those
+days. Even during the wars the peaceable Indians at the agency talked like that.
+They said the white man came from across the ocean.
+</p>
+
+<note place="foot" id="b2" n="6"><seg type="note-symbol">2.</seg><p> This date is probably set too early, since few Chiricahua were
+settled in Western Apache country prior to 1876.</p></note>
+
+<note place="foot" id="b3" n="7"><seg type="note-symbol">3.</seg><p> In their own languge the Central Chiricahua are known as <foreign lang="apa">Tcokanene</foreign></p></note>
+
+<pb n="364"/>
+
+<p>
+What they didn't like was so much ruling; that's what they didn't like. They
+didn't have all the Indians at the agency in those days. It was the people who
+lived around the agency, who saw white people all the time, who were controlled.
+The people out away from the agency were wild. That's why some thought the white
+men had queer ways and hated them. After they got to know the white man's way,
+they liked it. The white men gave them new things, new food, for instance. But
+it was the new-comers like Ho and Geronimo who didn't like the white man. If
+there was any ruling to do, they wanted to do it.
+</p>
+
+<p>
+The Indians and the Mexicans were enemies. The Indians thought the Mexicans were
+no good. It seems that even the different Apache groups, like the Southern
+Chiricahua and the Central Chiricahua, were not so close. It was the country.
+They loved the country, the place where their parents were born. They claimed
+that country.
+</p>
+
+<p>
+Looking back over the way those Indians lived, it seems to me that the
+Department of the Interior or the War Department was just trying to outlaw the
+Indians, just to have something to do. They put the Indians on a reservation,
+trying to civilize them; and in place of civilizing them, they herded them in on
+that reservation, naked, starving, sad, too far from any white people. The
+nearest school the government had in those days was in Carlisle, Pennsylvania.
+There was no Indian school in Fort Apache or anywhere near in those days. The
+only white men they sent out were some very rough army officers, as rough as
+they could find in the United States Army, to put in charge of these poor
+ignorant Indians.
+</p>
+
+<p>
+I remember seeing General Crook directing the Western Division of the United
+States Army. He had been to this reservation. It is very cold in Fort Apache in
+winter. Still they were living in brush huts with whatever they could get hold
+of, a piece of cowhide or sheep hide, to prevent the water from going through
+their huts.
+</p>
+
+<pb n="365"/>
+
+<p>
+General Nelson A. Miles was second in charge of these Indians. He relieved
+General Crook. He also saw the conditions. Instead of making conditions a little
+better, his soldiers were always scaring small groups here and there. Then these
+frightened Indians would go on the war-path.
+</p>
+
+<p>
+This is the way it would happen. Suppose Ho was on the war-path, and suppose
+Naiche<ref target="b4" n="8">4</ref> was on the war-path, and suppose Geronimo was
+on the war-path. Well, they might send two Apache to Ho to get him to come back
+to the reservation in a peaceable way. The government might send two men after
+Naiche. The government might send two men after Geronimo. They might all come
+back at the same time to the agency. When they got back on the reservation,
+these three groups would be full of fear. They might think they were going to be
+hung or have their heads cut off. So they were sure to listen and try to find
+out what was said about them. They would go around to this camp and the next
+camp to learn. They were full of fear.
+</p>
+<p>
+The soldiers would point to them, asking, "Which is Naiche? Which one is Ho?
+Which is Geronimo?"
+</p>
+
+<p>
+In order to get some fun out of them, a soldier might run his hand along his
+throat as if to slit it, when the officer wasn't looking.<ref target="b5" n="9">5</ref>  
+    Then the Indians would be more afraid than ever; something
+would be done about it. Those three, Ho, Geronimo, and Naiche, would hold a
+secret council when everybody was asleep that night. They would say to each
+other, "That white soldier met us and made a motion as if he were cutting his
+throat. It's bound to mean something. He might be a good man trying to let us
+know just what they are going to do to us.."
+</p>
+
+<p>
+They wo&uacute;ld take it that way. They would think that white soldier was a kind
+fellow, that he was telling them that they were going to have their heads cut
+off. That soldier did it for fun and never knew why those Indians left the
+reservation again. But those Indians were wild. They didn't know any better.
+</p>
+
+<note place="foot" id="b4" n="8"><seg type="note-symbol">4.</seg><p> Naiche was the son of Cochise, the great chief of the Central
+Chiricahua. Naiche's sons, Christian Naiche and Barnabas Naiche, are now living
+at Mescalero.</p></note>
+
+<note place="foot" id="b5" n="9"><seg type="note-symbol">5.</seg><p> All old Chiricahua agree concerning what they now recognize as
+obvious attempts of the white soldiers to terrorize them.</p></note>
+
+<pb n="366"/>
+
+<p>
+The Indians who had been on the war-path would listen to find out anything that
+was said about them. A soldier, a private, might say, "Those Indians ought to go
+to jail," or, "Those Indians ought to be killed for that." Maybe some uneducated
+Indian who knew just a little English would hear this. He would spread the news
+that the Indians were going to jail or were going to be killed. And off they
+would go again.
+</p>
+<p>
+The Indians on the reservation stayed around the agency buildings when the
+bandits were out, because the bandits would capture anyone who could carry a gun
+and make him go with them. And they took women too. If you wanted a horse from
+pasture, you would have to send a little boy for it to be safe.
+</p>
+<p>
+Rock piles and mountains bounded the reservation. I was a little fellow. I
+didn't know the boundaries. But my father and mother knew them, and all the
+older people knew. My father was already on the reservation when I was born. My
+father was first brought to the agency by General George Crook. It was before my
+time. They told him, "Here is your agency, Fort Apache. You can go from here to
+San Carlos. You can camp anywhere between."
+</p>
+<p>
+I think it was in 1871 that many groups of Indians were put on that reservation.
+They had to comply with the regulations and orders. Anyone violating the laws
+against killing and stealing was punished. Most of the Indians complied with the
+regulations. Just a few didn't.
+</p>
+<pb n="367"/>
+
+<p>
+There was Geronimo, for instance. He was called a human tiger.<ref target="b6" n="10">6</ref> 
+    He would rather be on the war-path than anything else. He
+would advise his parents' group, and his wife's relatives, and any other
+relatives, to leave and he would take them out with him.<ref target="b7" n="11">7</ref> 
+    And since I have thought about Geronimo I feel this way: He
+was always suspicious of living on the reservation as other Indians did. He was
+always afraid. Then there was his foolish ceremony.<ref target="b8" n="12">8</ref> He
+thought the white people were going to kill him or send him to jail somewhere.
+Then he would hold his ceremony and see some vision and it would say, "Go out on
+the war-path."
+</p>
+<p>
+Ho was Asa's<ref target="b9" n="13">9</ref> father. The name doesn't mean anything.
+He was called that because he stuttered. He was a war shaman, and during the
+trouble with the white men he had a great deal of influence. He always managed
+to keep a few men stirred up and out raiding and fighting. Then the whole tribe
+would be blamed for it, and it was because of men like him that we were held
+prisoners of war and were treated as we were.
+</p>
+<p>
+Geronimo was nothing but the same kind of man, an old trouble maker. He was a
+shaman. He was as cowardly as a coyote. You can ask men like Perico what he was
+like.<ref target="b10" n="14">10</ref> Perico is a brave man and was one of the best
+Apache fighters. He is well known for this, as was his brother, Eyelash, who was
+also called Fun. Fun was a great fighter. He killed himself in Alabama.<ref target="b11" n="15">11</ref> Perico will tell you how he and others did all the
+fighting while Geronimo stayed behind like a woman.
+</p>
+
+
+<note place="foot" id="b6" n="10"><seg type="note-symbol">6.</seg><p> The informant has leen a very popular commercial picture of
+Geronimo with this phraee on it and has picked it up.</p></note>
+
+<note place="foot" id="b7" n="11"><seg type="note-symbol">7.</seg><p> Geronimo was not a chief in the accepted Chiricahua sense of
+the term. As this passase indicates, his influence was exerted primarily on
+relatives and close friends. This is one reason why those over whom he had no
+control resent the fact that the government exacted the penalty from them as
+well.</p></note>
+
+<note place="foot" id="b8" n="12"><seg type="note-symbol">8.</seg><p> Among his own people Geronimo's chief claim to prominence prior
+to his defiance of the white forces, was his ceremonial power. One of his
+ceremonies was designed to determine the whereabouts and intentions of the
+enemy. During the period under discussion he used this to predict the actions of
+the white man. Since he had definite fears in respect to this subject and since
+his ceremony was the servant of his fears, the directions of his "power" were
+likely to involve him in flight and further difficulties.</p></note>
+
+<note place="foot" id="b9" n="13"><seg type="note-symbol">9.</seg><p> Between Ho's son, Asa, and the narrator, there exists sharp
+political rivalry and some personal animosity. Ho has been consistently
+described as aggressive and cruel, however.</p></note>
+
+<note place="foot" id="b10" n="14"><seg type="note-symbol">10.</seg><p> Perico has died since this story was recorded.
+</p></note>
+
+<note place="foot" id="b11" n="15"><seg type="note-symbol">11.</seg><p> Fun is said to have injured his wife in a fit of jealousy.
+Thinking he had killed the woman (she later recovered) he took his own life.
+</p></note>
+
+
+<pb n="368"/>
+
+
+<p>
+Once Geronimo's men were caught in a cave by the Mexican soldiers in Old Mexico.
+The women and children of the party were in there too. The Mexicans set fire to
+the grass all around and tried to smoke and burn them out, and they kept up a
+steady fire into the entrance of that cave. The Apache were falling right and
+left. Instead of standing up and fighting, Geronimo got behind the women and
+children. Women and children were dying right on top of him, with their blood
+running down over him, and he was under them, burrowing in the sand. One of his
+soldiers caught him by the feet and pulled him up and said to him, "Where are
+you going? You were man enough at the start. Why don't you stand up now and
+fight like a man?"<ref target="b12" n="16">12</ref>
+</p>
+
+<p>
+I know plenty of stories like this about Geronimo. Now some of the young people
+try to make him out a hero. They say he was a fine man and stood up and fought
+for his country, and things like that.
+</p>
+
+<p>
+I was talking about him once at Fort Sill,<ref target="b13" n="17">13</ref> and one
+Indian said to me, "What do you know about Geronimo?"
+</p>
+
+<p>
+I said to him, "I know plenty about him. I know that he and a few others like
+him were the cause of the death of my mother and many of my relatives who have
+been pushed around the country as prisoners of war. I know we would not be in
+our present trouble if it was not for men like him, and you honor him for that!"
+</p>
+<p>
+I remember how it was at Fort Apache. Most of the Indians were peaceful. They
+were attending to business. They were raising crops. They had their sheep and
+cattle and were getting along very well. Then somebody would say, "Geronimo is
+out again," and there he would be with a small band of about forty men up in the
+mountains. Pretty soon he would raid a settlement here, or kill a person, and
+the whole tribe would be blamed for it. Instead of coming and getting his
+rations and settling down and trying to be civilized, he would be out there like
+a wild animal, killing and raiding. Then they would organize the Chiricahua
+scouts and send them out after Geronimo's men. In this way he caused Apache to
+fight Apache and all sorts of trouble to break out among our people.
+</p>
+
+<note place="foot" id="b12" n="16"><seg type="note-symbol">12.</seg><p> I happened upon this story a number of times during my
+stay.</p></note>
+
+<note place="foot" id="b13" n="17"><seg type="note-symbol">13.</seg><p> Fort Sill, Oklahoma, where the Chiricahua were quartered as
+prisoners of war from 1894 to 1913.</p></note>
+
+<pb n="369"/>
+
+<p>
+Naiche was one of the sub-chiefs under Geronimo. Naiche was a good man in some
+ways, but you couldn't civilize him. He liked his Indian dancing, and he liked
+his fighting, and he liked his drinking. You could make a good soldier out of
+him, and that was all. He was always influenced by Geronimo. Mangus was another
+trouble maker. He always had three or four men on the war-path, and the whole
+tribe would be blamed. His daughter is still living here. She is George
+Martine's wife. This is not Mangus Colorado, but another Mangus. Mangus Colorado
+lived before this and was a good man. Roger Tulane is his grandson.
+</p>
+
+<p>
+I asked Perico who were the best chiefs he knew. He said Mangus Colorado was by
+far the best of them. Perico is an old man, even older than Chatto. He says that
+when he was a boy he saw Mangus Colorado sign a peace treaty for the Indians.
+This treaty was signed July 1, 1852, according to a government paper that I
+have. Perico says that he was twelve or fourteen years old then. He says that
+Tcic was second best.<ref target="b14" n="18">14</ref> Tcic was Christian Naiche's
+father's father. He says that Bonito, a Southern Chiricahua, was the next best
+man. Loco, Johnny Loco's father, was afraid, he said, and just hung around Warm
+Springs.<ref target="b15" n="19">15</ref> Victorio was another trouble maker.
+</p>
+
+
+<note place="foot" id="b14" n="18"><seg type="note-symbol">14.</seg><p> Tcic, "Nose," known to the whites as Cochise.</p></note>
+<note place="foot" id="b15" n="19"><seg type="note-symbol">15.</seg><p> Johnny Loco is still living near Apache, Oklahoma. In 1913
+when the Chiricahua were freed from military supervision, some chose to remain
+in Oklahoma and receive allotments; most decided to take up residence at
+Mescalero, New Mexico. Johnny Loco accepted allotment in Oklahoma.
+</p></note>
+<pb n="370"/>
+
+<p>
+At Fort Apache they said Geronimo was always suspicious. There were two women
+and three men who were secret service agents for Lieutenant Davis. They were
+Western Apache. These are a different tribe. That is what caused many of the
+stories that were going around. The two women who were secret service agents
+would go after midnight to these army official and tell them what had been said,
+what the Indians intended to do. Most of the trouble came through the Western
+Apache. They told stories, mostly false. We don't know who the secret service
+people were. But I don't think the government offlcials can deny that they had
+secret agents, men and women.
+</p>
+
+<p>
+Really the reservation belonged to the Western Apache. It was their land just as
+other places belonged to other groups. There were the Warm Springs Apache. There
+were the Central Chiricahua; they had a little strip of country away from the
+reservation. The Southern Chiricahua had another little place of their own. And
+there were the people of Mount Mora and Baronko. There were small groups here
+and there, relatives and people related by marriage, people who knew each other,
+scattered out in different country. The Mohave Apache<ref target="b16" n="20">l6</ref> had their own country, and they were brought there too.
+In about 1871 the United States Government started to herd the Indians on the
+reservation. It reached the Warm Springs Indians and those other groups. They
+spoke the same language. These groups were put on these two reservations, San
+Carlos and Fort Apache.<ref target="b17" n="21">17</ref>
+</p>
+
+<p>
+The Chiricahua got along all right with the Western Apache at first. Then the
+Western Apache in about a year began to be uneasy, began to be jealous of the
+other tribes on their reservation, though these Chiricahua were put there and
+compelled to live there. When these Western Apache, who had owned that
+reservation before we were put there, began to have a jealous feeling against
+the other tribes, they told the agent and other army ofilcials some false
+stories so they might get something to do from the government if the Chiricahua
+went on the war-path.
+</p>
+
+<note place="foot" id="b16" n="20"><seg type="note-symbol">16.</seg><p> The Yavapai, who are often mistakenly called Mohave Apache,
+are meant. They are in no way Apache and speak a language of an entirely
+different linguistic stock. Some of them are still living on the San Carlos
+Indian Reservation.</p></note>
+
+<note place="foot" id="b17" n="21"><seg type="note-symbol">17.</seg><p> Fort Apache was the agency center for the White Mountain
+Reservation.</p></note>
+
+
+<pb n="371"/>
+
+<p>
+The name we called the Western Apache Indians, <foreign
+lang="apa">Biniedine</foreign><ref target="b18" n="22">18</ref>, was made long before
+my father or his father. It meant, according to the old people, that they were
+foolish, didn't have much sense. There are a good many stories that show how
+well this name fitted them. There were not many marriages between the Western
+Apache and the Chiricahua, not as many as between the Mescalero and Chiricahua
+here.
+</p>
+<p>
+The Navaho acted as scouts against the Chiricahua on the war-path, and so did a
+few Pueblo Indians and some of the "People without Moccasins." These are a
+people in Arizona, around Tucson somewhere. I think they are the Pima. They were
+barefooted. If they got stickers in their feet they just rubbed them off on the
+ground.
+</p>
+
+<p>
+In 1885 Geronimo went on the war-path again. Some of those who stayed on the
+reservation were sympathetic toward Geronimo because they didn't know any
+better. General Nelson A. Miles, General Lawton (Captain Lawton at that time),
+Captain Crawford, 1st Lieutenant Gatewood, 2nd Lieutenant Britton Davis, were
+all at Fort Apache.
+</p>
+<p>
+Uncus'<ref target="b19" n="23">19</ref> father, George Noche, was called by General
+Miles one night. General Miles said, "I want you to organize the Chiricahua
+Apache Scouts to run down the renegades."
+</p>
+
+<p>
+And I feel that General Miles did the right thing to organize Apache scouts who
+knew the country in Arizona, New Mexico, and Old Mexico. These Indian scouts
+were familiar with all the water holes, with all the rough country, and all the
+trails in that region. George Noche was highly respected by General Miles.
+Whenever General Miles wished to do anything about the bandits, he asked George
+Noche.
+</p>
+
+<note place="foot" id="b18" n="22"><seg type="note-symbol">18.</seg><p> Literally "People with no Sense." All Western Apache sroupa
+are called this by the Chiricahua.</p></note>
+<note place="foot" id="b19" n="23"><seg type="note-symbol">19.</seg><p> Uncus, a blind Chiricahua now past middle age, was alive and
+was employed as agency interpreter at Mescalero when this story was being
+recorded.
+</p></note>
+
+<pb n="372"/>
+
+<p>
+After the troop was organized, they gave them two rounds of ammunition and
+issued them Springfield U. S. Army rifles. The only thing they issued them in
+the way of clothing was a coat, a black uniform coat. To show who was a non-commissioned man and who was not, they wore their coats. Those non-commissioned
+wore their stripes according to what they were. And they made George Noche
+sergeant-major. They claim George Noche knew all the country. He was not a
+leading man among the Indians, however.
+</p>
+
+<p>
+Another night George Noche was called again. That night General Miles told
+Noche, 'I'm going to give you two days and two nights. I leave it to you to
+decide which is the best way to get Geronimo and his band. I have sat here day
+and night and I have tried my best with white troops to catch Geronimo, but all
+my attempts seem to have failed. Now I give you two days and two nights to think
+about it, and on the morning of the second day you come back and let me know.
+That's why I called you over here." That's what General Miles told George Noche.
+</p>
+
+<p>
+So George Noche told General Miles, "There is no need for you to give me two
+days and nights to think it over. It seems to me right now I know how to get
+that man. I appreciate and thank you for the high respect you show to me to do
+this important work. Now I want to tell my plan to get that man. If it doesn't
+work you can get someone else. It's the best I can do. If you agree to it we can
+set out tomorrow.
+</p>
+
+<p>
+"Here's my plan. I have two men here for you, Kaitah and Martine. I will have a
+talk with them in the morning and bring them over to you. I will tell you the
+reason I have chosen these men. Martine has many close relatives in that band
+and so has Kaitah. Also Geronimo is Kaitah's relative-in-law. So it would be
+almost impossible for those bandits to kill these men. It is impossible to send
+any other men, for they will not come back alive."
+</p>
+
+<p>
+General Miles was well pleased with Noche's idea. He said, "We must do that."
+</p>
+
+<p>
+George Noche saw Martine and Kaitah. In the morning they went to General Miles
+with George Noche. They agreed to it. He enlisted them as scouts, issued them
+guns and gave
+<pb n="373"/>
+them each a mule. So they went out the following day, starting for Mexico. They
+told General Miles that when they got Geronimo they would bring him to Fort
+Bowie, Arizona.
+</p>
+
+<p>
+Those men went by themselves with Lieutenant Gatewood of the 6th Cavalry. In a
+day or so the 3rd Cavalry with a hundred Indian scouts set out for Mexico too,
+to look for him. And in the meantime Mexican soldiers ran Geronimo into Arizona;
+then these soldiers chased him into Mexico again. They were hot on his trail.
+</p>
+
+<p>
+Crawford had his troops and Indian scouts close to the Mexican border. For some
+reason Crawford's troops were several miles behind, but Crawford was with the
+Indian scouts ahead. This was in Old Mexico. It was on a mountain. Then they met
+a Mexican troop of about five hundred or more soldiers. They were after Geronimo
+too. The Mexican troop was here on a flat, coming up to them. The Mexican troop
+stopped, and the Indians were on a ridge over there with Captain Crawford. There
+were about five hundred Mexican soldiers lined up, and Crawford only had about a
+hundred Indian scouts. The commanders of these Mexican troops got together in
+front. They started to march over there. And then all at once as these officers
+were going along, one of these men began to shoot.
+</p>
+
+<p>
+Crawford got up. He took his handkerchief out and waved it. He said, "We're
+United States troops. We're friends."
+</p>
+
+<p>
+But those Mexican officers didn't pay attention to Crawford. One of them shot
+him. He fell down to the rocks below. The Indians had told him not to get on
+that rock, but he did not think the Mexicans would shoot. He had another army
+officer with him, 2nd Lieutenant Maus.
+</p>
+
+<p>
+The Indians loved Captain Crawford. After they saw him knocked off that big rock
+one Apache who could speak Mexican said to the Mexicans, "Don't run if you are
+men. You're going to meet up with men today."
+</p>
+
+<pb n="374"/>
+
+<p>
+The Mexican officers cursed them right back. They said, "We are the troops that
+cleaned out Victorio's bunch."<ref target="b20" n="24">20</ref>
+</p>
+
+<p>
+The Indians told them, "Right from where you are now, you are not going to make
+tracks for another place."
+</p>
+
+<p>
+And they were standing behind trees, two or three of them behind every tree, and
+they said, "We are the ones that killed Victorio, and we can kill every one of
+you today."
+</p>
+
+<p>
+Then the scouts got a couple of pack mules with ammunition. Maus didn't want
+them to fight. But they said, "They killed our commander, now let's go over this
+Lieutenant's head and kill them. Half go one way and half stay here along the
+ridge."
+</p>
+
+<p>
+And they threw the ammunition down and filled their belts and pockets. One half
+said to the other, "We're going to cut loose on them from the side."
+</p>
+<p>
+The Mexican officers felt that they had more men, so they were eager to fight.
+They kept saying, "Why don't you shoot? You just sit up there and talk. You're
+no women !" That's what they said.
+</p>
+
+<p>
+So this Indian said, "All right, get ready. We're going to fire on you right
+now."
+</p>
+
+<p>
+The Indians were all strung around on the ridge. They fired on the Mexicans. The
+way the old men tell it, and they laugh about it, is that the officers were
+falling over each other behind those trees trying to get out of the way. The
+trees were just riddled. Every one of these officers was killed. And the other
+half began shooting on the soldiers. They killed about a hundred and chased
+them.
+</p>
+
+<p>
+I heard the story then and I still hear it told. Sundayman, Benjamin, Paul,
+Cooney, Arnold, and lots of others were there. Perico was on the war-path with
+Geronimo. Stephen and Evan Zozoni were there.<ref target="b21" n="25">21</ref> Some
+of the scouts were out with other troops. There were many bands looking for
+Geronimo.
+</p>
+
+<note place="foot" id="b20" n="24"><seg type="note-symbol">20.</seg><p> Victorio was killed and his command almost annihilated in
+1880 when he met a superior force of Mexican soldiers in Mexico.</p></note>
+
+<note place="foot" id="b21" n="25"><seg type="note-symbol">21.</seg><p> Of all the men mentioned here, only two, Arnold Kinjoni and
+Stephen Gaji, are still alive.</p></note>
+
+<pb n="375"/>
+
+<p>
+The Indian scouts gathered together again after the Mexicans put up their white
+flag. They were gathering up their dead. They carried Crawford. He was still
+alive but he couldn't talk. They didn't have any doctor with them. So they took
+him in a sort of crate made from long poles which a mule dragged. The Indian
+scouts did the best they could, but he died before they got to Fort Bowie.
+</p>
+
+<p>
+Meanwhile Kaitah, Martine, George Wratten, and Gatewood were out. All the troops
+and Indian scouts were looking in different parts of the country for Geronimo.
+And Kaitah and his bunch were trailing them too. A body of troops was following
+Kaitah and the others, many miles behind.
+</p>
+
+<p>
+They came to a mountain called Sierra Madre. They were down at the foot of the
+mountain, and they saw those men at the top of the mountain. While they were
+down on the flat, Kaitah hoisted up a white flag to them. Kaitah says Martine
+was afraid to go up. Martine must have been behind him, always tying his
+shoestring or something. Kaitah told the two white men to stay down, and he
+started up with the white flag. When Kaitah got about half way up he looked
+back. Martine wasn't anywhere in sight.<ref target="b22" n="26">22</ref>
+</p>
+
+<p>
+Geronimo's men were pretty well armed and ready. Before Geronimo knew it was
+Kaitah he ordered his men not to let any man get up to that place or down alive.
+</p>
+
+<p>
+Kaitah kept on going up till he got in sight, and they knew it was Kaitah. He
+stopped once in a while, for he thought they were going to shoot at him.
+</p>
+
+<p>
+After they were sure it was Kaitah, his relatives said, "Come on up. No one is
+going to hurt you."
+</p>
+
+<p>
+Then he went up there. He sat up there and talked with all those men. Still
+Martine hadn't come in sight.
+</p>
+
+
+<note place="foot" id="b22" n="26"><seg type="note-symbol">22.</seg><p> There has been some dispute between the Martine and Kaitah
+factions concerning the bravery of Martine on this occasion. Certain it is that
+Kaitah was more closely related to members of Geronimo's band and therefore
+stood in least danger. Both Kaitah and Martine acted as informants for me during
+my ethnological field-work. Kaitah has since died, but Martine was alive in 1935
+and may still be living.</p></note>
+
+<pb n="376"/>
+
+<p>
+Kaitah told these men, "All of you are my friends, and some of you are my
+brothers-in-law. I think a lot of you Indians, and I don't want you to get
+killed. The troops are coming after you from all directions, from all over the
+United States. You people have no chance whatever. The War Department's aim is
+to kill every one of you if it takes fifty years to hunt you down. But if you
+people come as the government wants you to do, they will not harm you at all.
+Everything is against you. Even pieces of stick will hurt you. At night you do
+not rest as you should. If you are awake at night and a rock rolls down the
+mountain or a stick breaks, you will be running. The high cliff even is your
+enemy. At night you go around, and you might fall off the cliff. You have the
+wild animals for your enemies. You even eat your meals running. You have no
+friends whatever in the world.</p>
+
+<p>
+"So I beg you, my friends, do what the government wants you to do. That's what
+I'm up here for. I have followed you people around for several months. It's not
+a very pleasant life. So agree with me. I live at the agency. I live peaceably.
+Nobody bothers me. I sleep well; I get plenty to eat. I go wherever I want, talk
+to good people. I go to bed whenever I want and get all my sleep. I have nobody
+to fear. I have my little patch of corn. I'm trying to do what the white people
+want me to do. And there's no reason why you people shouldn't do it. I'm doing
+it. I know you people could do it. You all agree with me and behave yourself and
+go back to the reservation with me. We'll live longer, more happily, and rest
+better. So I want you to go down with me when the troops come, and they want you
+to come down on the flats and have a council with them."
+</p>
+
+<p>
+Then all these men said, "All right, we'll do what you say, and we'll come
+down."
+</p>
+
+<p>
+Kaitah had kept watching for Martine. Martine hadn't come up yet all through the
+conversation. And Kaitah wondered what was wrong, and he went down a little way.
+There was Martine coming, listening for gun-fire too, I guess. And when Kaitah
+came to Martine he ordered him to go down and tell Wratten to run his horse back
+and get those troops on the flat as fast as possible. So Martine went.
+</p>
+
+<pb n="377"/>
+<p>
+When he came back Kaitah was eating and joking with the men. Then the troops
+came. They came where Lieutenant Gatewood was. So at that time they sent a
+despatch to Fort Bowie that they had Geronimo and that General Miles should meet
+them half way. Then they brought all those families down.
+</p>
+
+<p>
+They had a little talk. They came to an agreement to take them to Fort Bowie.
+Right here one army officer told them that General Miles would meet them on the
+way to Fort Bowie. They hadn't disarmed them yet. That day they took them and
+went with them all day till dark. They weren't guarded. Some of those men were
+running on the side, hunting as they went along. Next day General Miles met
+them. He came in a government stage coach. They met again the next day.
+</p>
+
+<p>
+General Miles, when he met them, asked Geronimo to hold a conference with him.
+General Miles, the way Kaitah tells this story, said, "The people of these three
+states, the State of Arizona, the State of New Mexico,<ref target="b23" n="27">23</ref> and the State of Mexico, are enforcing laws to capture
+you or bring you back dead. We were forced to look for you. When we are forced
+to look for you, we must carry out our orders. We are like slaves. We have to do
+according to what the people of the United States say. In these two states, New
+Mexico and Arizona, the governments and the people do not like the way you have
+been treating them, killing them, taking their stock and destroying the homes of
+the settlers. They made a law to force the War Department either to kill you or
+bring you back alive. If you fight, we will kill you. If you surrender, we will
+bring you back alive. You have killed many settlers, killed many soldiers, and
+taken their horses and mules and other equipment. The people do not like it. You
+see those mountains over there. If you do not agree with me that what I am
+telling you is the best thing you could do, I give you the privilege to go to
+your mountains. I'll give you a whole night and a day before I follow your gang.
+Then I shall kill every last one of you, even your children. But if you want to
+go back with me to Fort Bowie and be peaceful and faithful like other Apaches
+who are at Fort Bowie and San Carlos, all right. Take your choice.
+</p>
+
+<note place="foot" id="b23" n="27"><seg type="note-symbol">23.</seg><p> Both Arizona and New Mexico were still territories at this
+time, of course.
+</p></note>
+
+<pb n="378"/>
+<p>
+"The government has spent several million dollars in order to catch you. You
+have taken many lives. You have destroyed many homes. Those people you have
+destroyed are human just like you. They wanted to live. Why should you do that?
+And there's Kaedine.<ref target="b24" n="28">24</ref> He was one of the dangerous
+young war chieftains. He's right here in the midst of us now. He has rendered me
+a great service. A two year sentence in a California Federal prison has done him
+good. Since he got back he admits that he used to do wrong. I have high respect
+for him, for turning into as good a man as he is since he got back.
+</p>
+
+<p>
+"Now, Geronimo, Naiche, all you men, members of this band, you could do as well
+as this Kaedine did, maybe better. Instead of that you have everything on earth
+against you, and you live, dodging people, like a coyote, ambushing innocent
+people. I'm here under authority to take you to Fort Bowie. There I will put you
+in prison until further orders from Washington. Now I'd like to hear from you,"
+he told Geronimo.
+</p>
+<p>
+Now Geronimo talked. He didn't say very much. What little he said covered a lot
+though.
+</p>
+
+<p>
+"I agree with you about taking us back. You said just the right thing when you
+told me that everything is my enemy. It's just the way of you white people. You
+always have a ground of your own to make your statement as though it was the
+only true statement. But there is still something that causes you to criticize
+us in that manner. The earth is listening to us. The winds listen to us. The sun
+sees us and hears everything we say, all these things.
+</p>
+
+
+<note place="foot" id="b24" n="28"><seg type="note-symbol">24.</seg><p> The name means "No Arrows" and implies that the individual is
+so brave he has shot them all. Kaedine was one of the leading spirits of the
+Chiricahua raids of the early '80's. After his surrender to General Crook in
+1883 the prison sentence to which reference ia made was imposed. After his
+return he assisted the government in pacifying the rest of his tribesmen.
+</p></note>
+
+<pb n="379"/>
+
+<p>
+"The second time I went on the war-path it was because of your having so many
+Indian secret service men telling you some false story about me. 'Geronimo is
+going to do this,' 'Geronimo says this,' `You ought to have Geronimo in some
+jail,' and so on. Some of your own white soldiers, when they saw me and some of
+my men, would motion as though they were going to cut our throats.
+</p>
+
+<p>
+"When I was on the reservation before, you people taught me nothing. You did not
+come to my home or teach
+me how other people live. You are here right in the midst of these soldiers.
+Where have you ever tried to he1p me? Then.you criticize me for killing white
+people here. I did kill many Mexicans, but I have never killed as many white
+people as you say I have. I know some of your big generals. You become generals
+just because you are good liars. Why I tell you that you are a liar right in the
+midst of your troops
+is that you never have caught me shooting. And now, General Miles, I have come
+with my men to you with good will, but I know just what you are going to do. You
+will say this, I know: 'I have caught Geronimo while he was shooting and made
+him surrender to me.'" That's what he told General
+Miles.
+</p>
+
+<p>
+"I'm here. The earth, the sun, and the winds all listen to me. <foreign lang="apa">Yusn</foreign><ref target="b25" n="29">25</ref> listens to me. I do not
+lie to you. I lay my arms down. I will not ask for mercy. If you wish, line us
+up and shoot us today or tomorrow. I won't care. I'll take my medicine like a
+man. So here's my gun." And he and his men laid their guns down.
+</p>
+
+<note place="foot" id="b25" n="29"><seg type="note-symbol">25.</seg><p> <foreign lang="apa">Yusn</foreign> is an Apache loan word
+from the Spanish <foreign lang="spa">D&iacute;os</foreign>. The final <hi
+rend="italic">n</hi> is a relative, having the force of "he who is."
+</p></note>
+
+<pb n="380"/>
+
+<p>
+Then General Miles talked again. He shook hands with Geronimo. "No, don't have
+that idea, Geronimo. We do not kill people who don't offer any fight. What I
+said a while ago to you, I repeat. I will take you back to Fort Bowie, have you
+under guard as prisoner until further orders from Washington. As I said a moment
+ago, I have to carry out my orders from the War Department." And General Miles
+said, "I myself do not like the idea, but I'm a soldier of the United States,
+and I get my orders. If I don't obey them, they have me under guard just as I'm
+going to have you under guard. Don't worry about what they may do to you, for
+you are causing all this trouble; you brought it on yourself."
+</p>
+
+<p>
+So they took all their arms. Then they decided to go. They took Geronimo in that
+coach, and Naiche and Perico and the principal men rode with Miles. The men,
+women, and children were followed by Indian scouts and several troops of
+cavalry. In a day or so they were in Fort Bowie. They had Geronimo already under
+guard in prison when the rest got there. They had that small band in prison,
+women, children, and all. They had those men and women under armed guard, had
+them working with picks and shovels making ditches around the post. They had
+Chihuahua's little band, just a few men, already in prison when Geronimo
+arrived. They were working too, under armed guard.
+</p>
+
+<p>
+And Mangus was still out with a very small group, three or four men. General
+Miles had spoken at the council with Geronimo about this and told Geronimo, "It
+is not necessary to run down Mangus, because it will mean just so much more
+expense, more hardships for the soldiers. He can keep going if he wants to, but
+he will not get anywhere; for I know, Geronimo, when he hears that you and
+Chihuahua have made peace with the government, he will not be out there by
+himself any longer. I know he will come into one of these reservations, San
+Carlos or Fort Apache."
+</p>
+
+<p>
+That first band captured in the fall of 1886, Chihuahua's little band, they took
+to Fort Marion, St. Augustine, Florida, and put them in prison.<ref target="b26" n="30">26</ref> It's one of the oldest posts in the United States, right
+on the edge of the ocean, where, when the heavy tide comes in, it flaps against
+the building. It is an old Spanish fort made of stone and cement.
+</p>
+
+<note place="foot" id="b26" n="30"><seg type="note-symbol">26.</seg><p> Chihuahua has a son, Eugene Chihuahua, and a daughter still
+living at Mescalero.</p></note>
+
+<pb n="381"/>
+
+<p>
+Geronimo's band, the second group captured, was taken to San Antonio, Texas.
+They had them in prison there for several months.
+</p>
+
+<p>
+The third group taken was composed of the faithful Indians who lived at Fort
+Apache. After all the Indian scouts came home from the expedition, when they
+thought they were all at home at Fort Apache, they called all the Indian scouts
+together and lined them up.<ref target="b27" n="31">27</ref> Then the commander
+ordered his troops to take their belts and ammunition and their guns away from
+them. By order of the commander to his soldiers, they herded the scouts in the
+horse barn and guarded them day and night. They threw them horse blankets to li
+on. Soldiers guarded them, the very men they had gone out with before. If they
+wanted to urinate the soldiers went with them.
+</p>
+<p>
+After these Indians had gone through all these hardships for the good of the
+people of these two states, they did this to them. Many of these scouts and most
+of the other Indians were farming all this time at the agency. Some of them had
+sheep, some had goats, some had mule teams, wagons, harnesses; some of them had
+horses and fine saddles.
+</p>
+
+<p>
+The Chiricahua scouts did not know what was happening. That night the Western
+Apache gave a big social dance, and the women were in there dancing. No one was
+worried. Suddenly the escort wagons were there. They herded the children, the
+women, and the old men at the camps down to the agency. They loaded them on
+escort wagons. They wouldn't allow any of them to carry any kind of weapon. They
+just let them take what they had on, a shawl, a blanket. All the crops were
+ready to be gathered. I was about ten or eleven years old then, and I was one of
+them.
+</p>
+
+<p>
+The nearest railroad station was at Holbrook, Arizona. It is about a hundred
+miles away, maybe a little more, I don't know. That's where they were taking us,
+to load us on a train for Fort Marion, St. Augustine, Florida, the same place
+where Chihuahua was. They took us from Fort Apache to Holbrook in escort wagons,
+a two or three days' trip in escort wagons, strung out, a long way.
+</p>
+
+<note place="foot" id="b27" n="31"><seg type="note-symbol">27.</seg><p> The Indian scouts referred to are the Chiricahua who had been
+serving the government in the Geronimo campaign.
+</p></note>
+
+<pb n="382"/>
+
+<p>
+I was with my father in an escort wagon. My mother was with some other people. I
+didn't know where she was until we got off at Holbrook. Then I found her. At
+Holbrook the Indians had a big dance that night with the Western Apache scouts,
+negroes, and white people all present.
+</p>
+
+<p>
+We didn't know where we were to be taken from Holbrook. Some thought we were
+going to be taken to the ocean and thrown in. Some thought we were going to be
+killed in some other way.
+</p>
+
+<p>
+These people, these Chiricahua Apache, who lived at Fort Apache peacefully, and
+the scouts who had helped the army run down Geronimo's band, were taken to
+prison for what Geronimo had done.
+</p>
+
+<p>
+And I say this much about it. The white man plants corn. But he puts two kernels
+in the ground. One good kernel will yield, but one rotten kernel will kill the
+good one if you put them together. So, as smart as the white people pretend to
+be, there's one time they planted a good kernel with a rotten one. The shadow of
+the shameful way they treated these faithful Indians and United States Scouts
+still lies over us.
+</p>
+
+<p>
+At Holbrook, Arizona, they loaded us on a train, and they took us to Fort
+Marion, St. Augustine, Florida.
+</p>
+
+<p>
+It was the first time most of us had seen a train. When that train was coming
+along the river and it whistled, many said it was run by lightning, and they
+began to pray to the train. I saw many old men and women do&iacute;ng this. They said,
+"Bless us, that we may be blessed wherever we go."
+</p>
+
+<p>
+Lots of the children were running out in the brush. They were afraid of the
+train. The soldiers had to chase them and get them in. I ran away from them;
+they had to catch me. I was afraid. I was thinking that they were taking me
+somewhere to kill me. I was so afraid. I had so much serious fear in me, that I
+don't know how I felt.
+</p>
+
+<pb n="383"/>
+
+<p>
+It took us about a week to get to St. Augustine. There were two soldiers at each
+door. The train stopped somewhere around Albuquerque, New Mexico, in the plains,
+and we were told to get off. The Chiricahua all thought it was their last day.
+The soldiers came with hardtack barrels and fed us. The rest of the time we ate
+on the train. They drove us back in there and we went on. It was the only time
+we got off. The soldiers kept making motions as if they were going to cut our
+throats every time they went through the train to give coffee. The Indians, poor
+and ignorant, took it that they were going to have their throats cut.
+</p>
+<p>
+There was one scout, Massi, who jumped off the train.<ref target="b28" n="32">28</ref> He jumped in sandy place somewhere in Colorado. He got
+away. He was one of the scouts who had been in that battle where Crawford had
+been killed. He's a relative of Stephen, Duncan, and Benjamin.<ref target="b29" n="33">29</ref> He was related to Duncan's father. He got back here and
+was wild for a long time. He never came to town. Once he ran away with a woman
+who was gathering pi&ntilde;on nuts at Rinconada. He forced her to go. He just
+threw her on his back and went off to the San Andreas Mountains. They chased him
+but couldn't catch him.
+</p>
+
+<p>
+This woman is still living and is the wife of a Spanish American.<ref target="b30" n="34">30</ref> She told the story once that he sent her home with all
+the children. She came back with a lot of children. All died except one, who is
+living now. She's married to a Mescalero. Those children were born in the wilds.
+This woman was a Mescalero. She's a relative of Marion Simms,<ref target="b31" n="35">31</ref> calls him cousin.
+</p>
+<note place="foot" id="b28" n="32"><seg type="note-symbol">28.</seg><p> This individual has been confused with Apache kid and ia
+often spoken of as the Apache Kid by white men who live in the vicinity of the
+Mescalero Indian Reaervation.</p></note>
+
+<note place="foot" id="b29" n="33"><seg type="note-symbol">29.</seg><p> Stephen Gaji, Duncan Balachu, and Benjamin Astoyah are the
+persons meant. So far as I know, the first two are still alive at Mescalero. The
+last named has died recently.</p></note>
+
+<note place="foot" id="b30" n="34"><seg type="note-symbol">30.</seg><p> This woman has since died.</p></note>
+
+<note place="foot" id="b31" n="35"><seg type="note-symbol">31.</seg><p> Marion Simms, a prominent Mescalero Apache, has died since
+this account was taken.</p></note>
+
+<pb n="384"/>
+
+<p>
+On that train we slept the best we could sitting up. Little children were put in
+that rack where you put packages.
+</p>
+
+<p>
+We arrived, the last party, in that place at night, moonlight, about ten or
+eleven o'clock. It's a big place made out of cement and stones. It has a great
+dungeon under it. It's dark; even in daytime you have to carry a lantern. Those
+dungeons are filled with nothing but cannon balls and ammunition. There is a big
+place about fifteen yards wide all around on top, with a cement wall about four
+feet high so you couldn't fall over. On each corner of that wall is a square, a
+little tower made out of stone and concrete with windows on each side. It was a
+lookout tower, I believe. On that run-around they had been setting up army tents
+thick. We were up there on a cement floor, and we had no privilege to move our
+tents. We had to stay right there.
+</p>
+
+<p>
+And they had a big gate down there where they brought us in, and it was guarded
+by soldiers. The Indians were not allowed to leave that gate without permission.
+Just certain people were allowed to get out.
+</p>
+
+<p>
+They began to send the children to schools, the ones about fourteen or fifteen
+years old who were able to go. In the morning they strung out those poor
+children, and without trying to dress them up like their own class of people,
+they sent them to school. Wearing moccasins, some of them, some of them going
+barefooted, they were compelled to go to the Catholic school in the city. They
+wore their loin cloths, wore rags around their heads, and were bare-legged. And
+they sent them into that city to the Catholic school every day until the
+Catholic school was burned down one night. These Chiricahua children were turned
+in as prisoners every evening. They were watched as well as the older people.
+</p>
+
+<p>
+Later General R. H. Pratt (Captain Pratt then) was selected as Superintendent of
+Carlisle Indian School in Pennsylvania. He came to Fort Marion, took all the
+children under the authority of the Department, put them on board ship to New
+York somewhere. From there they took
+
+<pb n="385"/>
+
+a train to Carlisle Indian School. Some of those children who were taken from
+there are still living today&mdash;Duncan Balachu, Arnold Kinzuni, Charlie Isti, Dora
+Isti, Hugh Chee, Asa Dat-ogi, David Kaja, and others. There were over a hundred
+children taken. The ones that went to Carlisle were only at St. Augustine one
+month.
+</p>
+
+<p>
+I have told you that Chihuahua was the first, and the biggest bunch, the
+faithful tribe, came next. I don't know how many months we were there when
+Geronimo and his band came. They shipped him right to an island, to Pensacola,
+Fort Pickens. We could see the island from Fort Marion.
+</p>
+
+<p>
+We were at Fort Marion for about six months. At Fort Marion my mother, my
+sister, and I lived in one of those tents. They issued out bread and meat each
+day. We did our own cooking. There was no wood there. Wood was given, a little,
+and a place to cook was provided in one of the dungeons below. We had to sleep
+on the hard cement floor. It was warm there in Florida. Bananas grow there.
+</p>
+
+<p>
+It was a tough life. I was a little fellow, and I never stole anything, never,
+did harm to anyone. They kept me a prisoner for twenty-seven years. It's the
+same with Blind Tom.<ref target="b32" n="36">32</ref> He was blind; he wasn't harming
+anyone, but he was taken prisoner too. He had to be led around. If I were
+offered a hundred more years of life like that, I would say "No." Many died at
+St. Augustine. We were not used to the climate.
+</p>
+
+<p>
+As I told you, the worst bandits, Geronimo and his people, they put on the
+island over there, Pensacola. Geronimo, Naiche, Perico, Jasper Kanseah,<ref target="b33" n="37">33</ref> Jewett Tisnoltos, and Asa were there. Chihuahua was not
+there then. He had been out with Geronimo on the war-path from the beginning,
+but when things got too hot, they separated from Geronimo's band and got chased
+to Fort Bowie, Arizona. This was in 1886. They were the first ones to be sent
+away. They were sent to Florida&mdash;Chihuahua, Ozoni, his brother, Eugene, Ramona,
+Hosea Second, and others. They were all relatives it seems. The women were sent
+too, whole families. This was about a month before Geronimo was captured.
+</p>
+
+<note place="foot" id="b32" n="36"><seg type="note-symbol">32.</seg><p> Blind Tom Lasinasti was still living at Mescalero
+recently.</p></note>
+<note place="foot" id="b33" n="37"><seg type="note-symbol">33.</seg><p> Jasper Kanseah was chief of police at Mescalero when this
+account was being recorded.</p></note>
+
+<pb n="386"/>
+
+
+<p>
+Kaitah and Martine were taken with Geronimo's people. They had gone up to the
+Sierra Madre to get Geronimo to surrender. They had done a valuable service to
+the government. Still they were taken prisoner. They took them to San Antonio,
+Texas. They had them in prison there for about a month or so. And all those
+scouts who had been after Geronimo were straying back to F&oacute;rt Apache. Some got
+in in a week; some took longer. They came in on foot, with sore feet, and some
+nearly starved. Then they were made prisoners.
+</p>
+
+<p>
+Geronimo's band was taken to Fort Pickens, Pensacola, an island near the shore
+where we were. We knew they were there because when the army ship went from the
+shore to the island some men went along and saw them. But they didn't come over
+and visit us. They were not allowed to leave. The women of that band were there
+too, whole families were there.<lb/><lb/>
+Reed College, Portland, Oregon.
+</p>
+</div2>
+</div1>
+</body>
+</text>
+</TEI.2>

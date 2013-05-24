@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0537 SYSTEM "000000766_0537" NDATA jpg>
+<!ENTITY DSSR_000000766_0538 SYSTEM "000000766_0538" NDATA jpg>
+<!ENTITY DSSR_000000766_0539 SYSTEM "000000766_0539" NDATA jpg>
+<!ENTITY DSSR_000000766_0540 SYSTEM "000000766_0540" NDATA jpg>
+
+<!ENTITY longs "s"><!-- as typically used in 18th c -->
+]>
+
+<!--<!DOCTYPE TEI.2 SYSTEM 'teixlite.dtd'[
+	
+<!NOTATION jpg SYSTEM "JPEG">   
+	<!ENTITY NC62d09a SYSTEM "NC62d09a.jpg" NDATA jpg>  
+	<!ENTITY NC62d09b SYSTEM "NC62d09b.jpg" NDATA jpg>
+	<!ENTITY NC62d09c SYSTEM "NC62d09c.jpg" NDATA jpg>
+	<!ENTITY NC62d09d SYSTEM "NC62d09d.jpg" NDATA jpg>
+	
+<!ENTITY longs "s"> long s as typically found in 18th c 
+
+<!ENTITY % ISOlat1 SYSTEM "ISOlat1.pen"> %ISOlat1;  
+	<!ENTITY % ISOlat2 SYSTEM "ISOlat2.pen"> %ISOlat2;  
+	<!ENTITY % ISOnum SYSTEM "ISOnum.pen"> %ISOnum;  
+	<!ENTITY % ISOpub SYSTEM "ISOpub.pen"> %ISOpub;  
+	<!ENTITY % ISOtech SYSTEM "ISOtech.pen"> %ISOtech; ]>-->
+
+<TEI.2 id="NC62d09">
+
+
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+                        value="1862-04-09">9 April 1862</date></title>
+                <author>Tenney, Charles, fl. 1861-1863</author>
+
+                <respStmt>
+                    <resp>Transcription and TEIXLITE encoding</resp>
+                    <name>Christiane E. Hartmann. Digital Library Federation. Rare Book School
+                    2005.</name>
+                </respStmt>
+
+            </titleStmt>
+
+            <publicationStmt>
+                <publisher>Albert H. Small Special Collections Library, University of Virginia,</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NC62d09</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2001">2001</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case, 9 April 1862</title>
+                        <author>Tenney, Charles, fl. 1861-1863</author>
+                    </titleStmt>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <date value="1862-04-09">1862-04-09</date>
+                    </publicationStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2009-11-12">November 12th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 14th, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+
+
+    <text id="d1">
+
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+
+                <head>
+                    <bibl>
+                        <abbr>AL</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1862-04-09">April 9, 1862</date>
+                        <!--<idno rend="suppress">NC62d09</idno>-->
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case</title>
+                    </bibl>
+                </head>
+
+                <p> Camp Tyler, April 9, 1862 Charlie gives intensifying protestations of love to
+                    Addie and says there has been snow and hail the last three days. He expresses
+                    his feelings regarding Addie's upcomming teaching position as well as an arm
+                    injury he aquired which Addie had inquired about in a prior letter. </p>
+            </div1>
+        </front>
+
+
+
+        <body id="d4">
+
+
+
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-04-09">9
+                        April 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0537"/>
+                <opener>
+
+                    <!--<seg>
+                        <figure rend="page" entity="NC62d09a">
+                            <figDesc/>
+                        </figure>
+                    </seg>-->
+
+                    <name type="place">Camp Tyler, Va. </name>
+                    <date value="1862-04-09">April 9th 1862</date>
+                    <lb/>
+
+                    <salute>My Precious Addie,<lb/></salute>
+                </opener>
+
+                <p> Perhaps I am placing myself <lb/> in a position liable to censure, in <orig
+                        reg="applying">apply-<lb/> ing</orig> endearing terms to you - but when I
+                    <lb/> say "My <hi rend="underline">precious</hi> Addie," I feel it from the
+                    <lb/> depth of my heart. Used as I have always <lb/> been, to being repelled and
+                        <hi rend="underline">scorned</hi> by those <lb/> who should have <hi
+                        rend="underline">loved</hi>, to have the <lb/> assurance that there <hi
+                        rend="underline">is</hi> one who <hi rend="underline">loves</hi> me, it
+                    <lb/> is not at all strange that I should be <orig reg="somewhat">some-<lb/>
+                        what</orig> <hi rend="underline">"outr&eacute;"</hi> in my
+                    "addre&longs;ses". Had it been<lb/> otherwise with me, I might perhaps be a
+                    little <lb/> more reserved in my expre&longs;sions, but I feel that<lb/>
+                    <hi rend="underline">my</hi> Addie will pardon this seeming break of <lb/>
+                    etiquette.<lb/>
+                </p>
+
+                <pb n="2" entity="DSSR_000000766_0538"/>
+                <!--  <p>
+                    <figure rend="page" entity="NC62d09b">
+                        <figDesc/>
+                    </figure>
+                </p>-->
+
+                <p> Now, after that long apology, you will expect <lb/> something <hi
+                        rend="underline">comme il faut</hi>, as the French say. Whether<lb/> all I
+                    write is as it should be, or not remains to be<lb/> seen. I am very sorry you
+                    suffer so much <lb/> on my account. You are correct in supposing that<lb/> I
+                    should not withhold any thing from you, nor <lb/> have I. Had I been seriously
+                    injured, I <lb/> should have informed you. My arm was not <lb/> fractured, at
+                    least <hi rend="underline">I</hi> do not think it was, and <lb/> it is very
+                    nearly well as ever. It was caused<lb/> by a spent ball or a fragment of a shell
+                    striking <lb/> my arm just above the elbow, and for the time<lb/> depriving me
+                    of the use of it. <hi rend="underline">It might have<lb/> been worse</hi>. Do
+                    not think that I would <lb/> conceal anything from you, my own, I am <lb/> not
+                    schooled in the art of <hi rend="underline">deception</hi>. <lb/>
+                </p>
+
+                <p> Another thing which gives me great uneasine&longs;s<lb/> is, that you do not
+                    receive all of my letters. I have <lb/> not allowed <hi rend="underline"
+                    >more</hi> than a week to pass without <lb/> writing to you, and yet you did not
+                    receive any <lb/> for <hi rend="underline">nearly three weeks</hi>! I know you
+                    must <orig reg="anxiously">anx- <lb/>iously</orig> watch the mail. -Laura tells
+                    me so- <lb/> It is really too bad.<lb/>
+                </p>
+
+                <pb n="3" entity="DSSR_000000766_0539"/>
+                <!--    <p>
+                    <figure rend="page" entity="NC62d09c">
+                        <figDesc/>
+                    </figure>
+                </p>-->
+
+                <p> The weather is horrid - still <hi rend="underline">God </hi>sends it and <lb/>
+                    "He doeth all things well." For the past two or three<lb/> days, it has snowed
+                    and hailed ince&longs;santly. <lb/> But weather beaten as we are, we do not
+                    mind <lb/> it. To be sure, we feel some <hi rend="underline">ennui</hi>, but if
+                    we have<lb/> papers - which by the bye are rather scarce - we manage <lb/> to
+                    while away the time. Do you see that great drop <lb/> of water there? How
+                    provoking that it should come <lb/> right down upon my paper! I tried to prevent
+                    it, but <lb/> could not. Excuse it, will you not my love? <lb/>
+                </p>
+
+                <p> You ask my advice about your teaching <lb/> school this coming summer, Why
+                    Addie? I could<lb/> not have been more surprised, had you asked me <lb/> if you
+                    could not eat your breakfast. Do you imagine<lb/> that I wish to control your
+                    actions? I do not <hi rend="underline">love </hi><lb/> to <hi rend="underline"
+                        >control</hi>. Far from it, dearest. You must do just as <lb/> you see fit,
+                    just as though I had never seen you. <lb/> Teaching is a pleasant employment,
+                    but it has its <lb/> pains, also; I taught three terms, and if my <orig
+                        reg="experience">expe-<lb/> rience</orig> is like everyone's, or rather if
+                    they are all like mine, <lb/> they found the bitter with the sweet.<lb/>
+                </p>
+
+
+                <p> Do not think that I wish to dissuade you from it.<lb/> Have you asked Hal's
+                    advice, and your papa's? <lb/>
+                    <pb n="4" entity="DSSR_000000766_0540"/>
+                    <!--<figure rend="page" entity="NC62d09d">
+                        <figDesc/>
+                    </figure>-->
+                    Trust their advice sooner than me, for you know <lb/> they are older and more
+                    experienced. <lb/>
+                </p>
+
+
+                <p> You must not allow your faith in the <lb/> great and good God to waver for a
+                    moment, for you <lb/> know, "whom He loveth He <sic corr="chasteneth"
+                    >chastenith</sic>." "He is ever <lb/> faithful, ever sure," if it is his will
+                    that I should come home <lb/> soon, won't we be happy?<lb/>
+                </p>
+
+                <p> I believe Ed. Williams<ref target="n1" n="1">1</ref> was uninjured in the <lb/>
+                    late battle. I am not personally acquainted with<lb/> him, but often hear Will
+                    speak of him.<lb/>
+                </p>
+
+                <closer> But I must close as it is nearly night. <lb/> Tell your papa that he has my
+                    kind regards, and <lb/> give my respects to all.<lb/><lb/> You and Laurie must
+                    write often <lb/> and rest assured that I will write as often as possible.
+                    <lb/><lb/> Did I mention in mine of the 6th that <lb/> I sent a picture of crop
+                    lanes?<lb/><lb/> May Heavens ble&longs;sings be thine, dear Addie, <lb/> is
+                    the prayer of your Charlie.<lb/>
+                    <lb/>
+                    <seg type="postscript">P.S. I received a letter from Hallie yesterday<lb/> and
+                        will answer it this evening.<lb/></seg>
+                </closer>
+            </div1>
+        </body>
+
+        <back id="d6">
+            <div1 type="notes" n="1" id="d7">
+                <head>Notes</head>
+
+                <note id="n1" place="end" n="1">
+                    <seg type="note-symbol">1</seg>
+                    <p>Edward Williams - who was he?</p>
+                </note>
+
+            </div1>
+        </back>
+
+    </text>
+</TEI.2>

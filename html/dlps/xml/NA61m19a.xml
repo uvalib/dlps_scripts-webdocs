@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!--<!DOCTYPE TEI.2 SYSTEM 'teixlite.dtd'[
+	<!NOTATION jpg SYSTEM "JPEG">  
+	<!ENTITY NA62m19a SYSTEM "NA62m19a.jpg" NDATA jpg>  
+	<!ENTITY NA62m19b SYSTEM "NA62m19b.jpg" NDATA jpg>
+	<!ENTITY NA62m19c SYSTEM "NA62m19c.jpg" NDATA jpg>
+	<!ENTITY NA62m19d SYSTEM "NA62m19d.jpg" NDATA jpg>
+	
+	<!ENTITY % ISOlat1 SYSTEM "ISOlat1.pen"> %ISOlat1;  
+	<!ENTITY % ISOlat2 SYSTEM "ISOlat2.pen"> %ISOlat2;  
+	<!ENTITY % ISOnum SYSTEM "ISOnum.pen"> %ISOnum;  
+	<!ENTITY % ISOpub SYSTEM "ISOpub.pen"> %ISOpub;  
+	<!ENTITY % ISOtech SYSTEM "ISOtech.pen"> %ISOtech;-->
+	
+	
+<!ENTITY DSSR_000000766_0317 SYSTEM "000000766_0317" NDATA jpg>
+<!ENTITY DSSR_000000766_0318 SYSTEM "000000766_0318" NDATA jpg>
+<!ENTITY DSSR_000000766_0319 SYSTEM "000000766_0319" NDATA jpg>
+<!ENTITY DSSR_000000766_0320 SYSTEM "000000766_0320" NDATA jpg>
+
+<!ENTITY longs "s" ><!-- long s as typically found in the 18th c -->
+
+]>
+
+<TEI.2 id="NA61m19a">
+
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1861-12-19">19 December 1861</date></title>
+                <author>Case, Adelaide E., fl. 1861-1863</author>
+                <respStmt>
+                    <resp>Transcription and TEIXLITE encoding.</resp>
+                    <name>Anna M. Lankford. NASA Headquarters Office of the General Counsel. Rare
+                        Book School 2005.</name>
+                </respStmt>
+            </titleStmt>
+
+            <publicationStmt>
+                <publisher>Albert H. Small Special Collections Library, University of Virginia.</publisher>
+                <pubPlace>Charlottesville, Va.</pubPlace>
+                <idno type="etext">NA61m19a</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2005">2005</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide Case to Charles Tenney, 19 December 1861</title>
+                        <author>Case, Adelaide E., fl. 1861-1863</author>
+                    </titleStmt>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <date value="1861-12-19">1861-12-19</date>
+                    </publicationStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2009-11-03">November 3rd, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1861-12-19">December 19, 1861</date>
+                        <!--<idno rend="suppress">NA61m19a</idno>-->
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+
+                <p> Adelaide has received two letters from Charles and answers the first. She
+                    chastises him for praising her, saying she is not sweet and has a rebellious and
+                    wicked heart. She writes about the unusually warm weather in December, while
+                    staying with Aunt Sperry, and that she will go back to school in February. She
+                    comments on Charles' health and closes with a postscript thanking him for the
+                    'the house "Uncle Sam" built'.</p>
+
+            </div1>
+        </front>
+
+        <body id="d4">
+
+
+
+            <div1 type="letter" n="1" id="d5">
+                <pb n="1" entity="DSSR_000000766_0317"/>
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1861-12-19">19
+                        December 1861</date></head>
+
+                <opener>
+                    <!--<seg>
+                        <figure rend="page" entity="NA62m19a">
+                            <figDesc/>
+                        </figure>
+                    </seg>-->
+                    <dateline>
+                        <name type="place">East Mecca At Aunt Sperry's.</name>
+                        <date value="1861-12-19">Dec. 19<hi rend="super">th</hi> 1861</date>
+                        <lb/>
+                    </dateline>
+
+                    <salute>Dear Charlie</salute>
+                    <lb/>
+
+                </opener>
+
+                <p> Not knowing your addre&longs;s<lb/> I consequently have two letters
+                    from<lb/> my noble friend in the service of his<lb/> once happy country to
+                    answer. Therefore<lb/> I will begin with the first. I <sic corr="received"
+                        >recieved</sic><lb/> it same as I would <sic corr="receive">recieve</sic> a
+                    strangers.<lb/> Not that I wished it as a strangers<lb/> but it had been so long
+                    since I<lb/> had been the happy recipient of a letter<lb/> from my friend that I
+                    scarcely knew<lb/> how to <sic corr="receive">recieve</sic> it&mdash;
+                    unle&longs;s with joy.<lb/> I almost thought that I had been<lb/> wafted far
+                    down Lethe's stream<ref target="n1" n="1">1</ref><lb/> but happily found myself
+                    mistaken.<lb/>
+                </p>
+
+                <pb n="2" entity="DSSR_000000766_0318"/>
+
+                <!--<p>
+                    <figure rend="page" entity="NA62m19b">
+                        <figDesc/>
+                    </figure>
+                </p>-->
+
+
+                <p> Dear <name type="person">Charlie </name>
+                    <hi rend="underline">please</hi> do not pa&longs;s<lb/> such <sic
+                        corr="inconveniences">enconviences</sic> on your unworthy<lb/> correspondent
+                    as <q>The sweetest beings God<lb/> ever made</q> for it is not correct. If<lb/>
+                    you knew what a wicked and rebellious<lb/> heart <name type="person"
+                    >Addie</name> po&longs;se&longs;sed you would not think<lb/> her quite
+                    the <hi rend="underline">sweetest</hi> being. You <orig reg="requested"
+                        >reques-<lb/> ted</orig> me to write you if you wrote<lb/> anything contrary
+                    to my wishes, and<lb/> I have done so.<lb/>
+                </p>
+
+                <p> I sincerely hope you have not so severe<lb/> weather as you had when you wrote
+                    me.<lb/> I told auntie <add hand="h1" place="supralinear">this morn</add> that I
+                    would the soldier<lb/> had as warm a room as I had to<lb/> sleep in this winter.
+                    What very pleasant<lb/> weather we have had for the past week<lb/> there has
+                    scarcely been a cloud to obscure<lb/> the beautiful sun and the roads<lb/> are
+                    quite dry and good. December is<lb/> surely as pleasant as May.<lb/>
+                </p>
+
+                <p> You wished to know when I intended<lb/> going to <name type="place"
+                    >Oberlin</name>. I think I shall go<lb/> at the commencement of the spring term<lb/>
+                    <pb n="3" entity="DSSR_000000766_0319"/>
+                    <!--<figure rend="page" entity="NA62m19c">
+                        <figDesc/>
+                    </figure>-->
+                    which commences in February.<lb/> I think I shall enjoy it very much<lb/> as I
+                    always do when I attend school.<lb/> I intend to remain with auntie<lb/> till
+                    then and attend school here at<lb/> the corners which I have commenced<lb/> to
+                    do.<lb/>
+                </p>
+
+                <p> Dear friend and <hi rend="underline">brother</hi> I am very<lb/> thankful that
+                    you regard your health<lb/> as you do. Few know the enjoyment<lb/> of <hi
+                        rend="underline">good</hi> health I wish you to regard<lb/>
+                    <unclear/> your health above all other things.<lb/>
+                </p>
+
+                <p>
+                    <name type="person">Laurie</name> lives here so you see we are<lb/> together
+                    besides we have our melodeon<ref target="n2" n="2">2</ref><lb/> here which is a
+                        <hi rend="underline">great deal</hi> of company<lb/> for us. But it is time
+                    fore me to<lb/> go to afternoon school till then<lb/> goodbye when I will answer
+                    you<lb/> last letter<lb/>
+                </p>
+
+                <closer>
+                    <salute>Yours etc,</salute>
+                    <signed>Addie</signed>
+                    <lb/>
+                    <seg type="postscript"> Dear Charlie. forgive my negligence<lb/> in almost
+                        forgetting to thank you<lb/> for the house that <q>Uncle Sam</q> built.<lb/>
+                        <!--<figure rend="page" entity="NA62m19d">
+                            <figDesc>blank page</figDesc>
+                        </figure>-->
+                    </seg>
+                </closer>
+                <pb n="4" entity="DSSR_000000766_0320"/>
+            </div1>
+        </body>
+
+        <back id="d6">
+
+
+            <div1 type="notes" n="1" id="d7">
+                <head>Notes</head>
+
+                <note id="n1" place="end" n="1">
+                    <seg type="note-symbol">1</seg>
+                    <p>Lethe's stream. From Greek mythology, the souls who are destined for
+                        reincarnation drink from Lethe's stream (Oblivion) and quench their troubles
+                        in forgetfulness so that they may return to corporeal existence on earth.
+                    </p>
+                </note>
+
+                <note id="n2" place="end" n="2">
+                    <seg type="note-symbol">2</seg>
+                    <p>melodeon. A melodeon is a folk instrument similar to an accordion or
+                        concertina; ten button, single row box and operated by bellows movement.
+                    </p>
+                </note>
+            </div1>
+
+        </back>
+
+    </text>
+</TEI.2>

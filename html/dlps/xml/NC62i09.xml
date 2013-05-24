@@ -1,0 +1,367 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0621 SYSTEM "000000766_0621" NDATA jpg>
+<!ENTITY DSSR_000000766_0622 SYSTEM "000000766_0622" NDATA jpg>
+<!ENTITY DSSR_000000766_0623 SYSTEM "000000766_0623" NDATA jpg>
+<!ENTITY DSSR_000000766_0624 SYSTEM "000000766_0624" NDATA jpg>
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NC62i09">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+                        value="1862-09-09">September 9, 1862</date></title>
+
+                <author>Tenney, Charles</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Greenebaum, David C.</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Greenebaum, David C.</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">21</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NC62i09</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case, September 9, 1862</title>
+
+
+                        <author>Charles Tenney</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>3 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p> </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-09-09">1862-09-09</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+                <language id="lat">Latin </language>
+                <language id="fre">French </language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>masculine</term>
+                    <term>American Civil War / Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-16">November 16th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 14th, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+
+    <text id="d1">
+
+        <front id="d2">
+
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr expan="Autograph Letter Signed">ALS</abbr>
+                        <extent>3 pp.</extent>
+                        <date value="1862-09-09">September 9, 1862</date>
+
+                        <title>Charles Tenney, near Rockville, Maryland, Letter to Adelaide E.
+                        Case</title>
+                    </bibl>
+                </head>
+                <p> Charles provides Adelaide with a brief overview of his daily routine and of the
+                    enlisted men's opinions of their commanders, including a few barbed comments
+                    about his own division commander, General Green. After relating some current
+                    rumors about enemy activity in the region, he dismisses them with the assurance
+                    that he never pays attention to such gossip. He defends General Geary against
+                    recent charges of destruction and cowardice, made against him in the Cleveland
+                    Leader, and maintains that no better Brigadier General exists, than John. W.
+                    Geary. He closes with an appeal for a longer letter. </p>
+            </div1>
+
+        </front>
+
+        <body id="d4">
+
+
+
+            <div1 type="letter" n="1" id="d5">
+
+                <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-09-09"
+                        >September 9, 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0621"/>
+                <opener>
+                    <dateline>In line of battle, 2 miles above <name type="place">Rockville,<abbr
+                                expan="Maryland">Md.</abbr></name><lb/>
+                        <date value="1862-09-09"><abbr expan="September">Sept.</abbr> 9<hi
+                                rend="super">th</hi>, 1862</date></dateline>
+                    <salute>My darling <name type="person">Addie</name>:</salute>
+                </opener>
+
+                <p> Your very short, but withal kind letter of<lb/> Aug. 18<hi rend="super">th</hi>,
+                        I <orig reg="received">recieved</orig> yesterday, and although there is no
+                    certainty<lb/> of a chance to send it, I will reply to it today. You will
+                    forgive<lb/> me for writing on so poor quality of paper, when I tell you that
+                    mine<lb/> is all with the company wagon, and this sheet is all I could
+                    obtain<lb/> out here in the woods. You will wonder why I do not oftener<add
+                        hand="h1" place="supralinear">write</add> to you<lb/> and what can induce me
+                    to remain silent for so long a time, I wrote<lb/> you a letter a few days since,
+                    but could not send it until a day before <orig reg="yesterday.">yes=<lb/>
+                    terday.</orig> &mdash;In it, I gave you a very hasty sketch of what we had
+                    been doing for<lb/> the two or three weeks previous, and said "when we could
+                    remain 24<lb/> hours in a place, I had much to write you. Although we have
+                    remained<lb/> in our present position for nearly forty eight hours, we know not
+                    how<lb/> soon we may move three, ten or twenty miles, but I will do all I can
+                    in<lb/> the interim. My health (notwithstanding the constant exposure)<lb/>
+                    remains in excellent condition, which I consider somewhat remarkable, as<lb/>
+                    the officers who are much better cared for than the men, and very many<lb/> of
+                    the men are suffering from Colds. summer complaints, <orig reg="etc."
+                    >&amp;c.</orig> Perhaps<lb/> it is owing to your prayers, and your wish for
+                    me to care for my health.<lb/>
+                </p>
+                <p> I think I will give you a <foreign lang="fre">
+                        <hi rend="underline">resume</hi>
+                    </foreign> of my daily routine. My first<lb/> work after roll-call, is to
+                    prepare my breakfast, consisting of a cup of coffee&mdash;<lb/> some fried
+                    meat and crackers &mdash; and a dish of stewed apples or peaches. (both<lb/>
+                    are very plenty here.) After B. until noon, I read papers etc. then comes<lb/>
+                    dinner of Coffee &amp; crackers.&mdash;then reading, and making
+                        entries <sic corr="in">im</sic> my journal<lb/> until night, then prepare
+                    supper. [<foreign lang="lat">vide</foreign> Breakfast.] Thus you will<lb/> see
+                    that time must <orig reg="necessarily">nece&longs;sarily</orig> lag, and <orig
+                        reg="pass">pa&longs;s</orig> wearily by. Occasionally, we can<lb/> get
+                    up a spirited and lively "confab" relating to the topics of the day, in
+                    which<lb/> Generals have to <orig reg="pass">pa&longs;s</orig> a rigid
+                    criticism, not always favorable; but then, our<lb/> opinions do not make any
+                    visible alteration in the conduct of the war.<lb/>
+                </p>
+                <p> Just now, <name type="person">Pope</name> and <name type="person">McDowell</name>
+                    are receiving a generous share of anathemas<lb/> and invectives, while <name
+                        type="person">
+                        <orig reg="McClellan">McClillan</orig>
+                    </name> is idolized. Speaking of generals, I<lb/> am tempted to treat you to a
+                    little scandal about our division general&mdash;<lb/>
+                    <name type="person">Green</name>. When <abbr expan="Generals">Gens.</abbr> <name
+                        type="person">Augur</name> &amp; <name type="person">Geary</name> were
+                    wounded at <name type="place">Cedar Mountain</name>,<lb/>
+                    <abbr expan="Brigadier General">Brig. Gen.</abbr> <name type="person"
+                    >Green</name> was next in rank, so assumed command of the division<lb/> Since
+                    which, by his too familiar manners, and the supercilious way<lb/> he treats
+                    officers in the Ohio regiments, he has rendered himself completely<lb/>
+                    <pb n="2" entity="DSSR_000000766_0622"/> obnoxious, and whenever he makes his
+                    appearance, he is met with<lb/> "Here comes Greeney!" "Hurrah for our green
+                    general!" &mdash;and the like.<lb/> A couple of conundrums are going the
+                    rounds.&mdash; "Why is the 2<hi rend="super">d</hi> division<lb/> the<hi
+                        rend="underline">bore</hi> of the army?" "Because it is <name type="person">
+                        <hi rend="underline">Augur</hi>
+                    </name>'s." "Why is it now very<lb/> unpopular?" "Because it has a<hi
+                        rend="underline">green</hi> commander." <name type="person">Green</name> has
+                    a son<lb/> who is one of his <orig reg="aides-de-camp">aidecamps</orig>, He is a
+                    very verdant looking fellow, and he<lb/> evidently adores his mustache which is
+                    scarcely perceptible, but<lb/> he is more popular than his father.
+                        Latterly, <name type="person">Green</name> has acquired the<lb/> cognomen of
+                    "Night hawk," pecause he moves us so much after night,<lb/>
+                </p>
+                <p> Very likely, your curiosity is aroused to know why we are in line of<lb/> battle
+                    here so long, instead of being in camp. <orig reg="Rumor">Rumer</orig> has it
+                    that<lb/> the rebels are in force in front of us, but we form the center line -
+                        or <del hand="h1" rend="line-through">reser</del> <add hand="h1"
+                        place="supralinear">reserve,</add><lb/> and we wait a demonstration upon our
+                    front. I hardly think they<lb/> will make a push this way, though I learn they
+                    have taken <name type="place">Frederick</name><lb/> I have heard also that the
+                    rebels have made a <orig reg="crossing">cro&longs;sing</orig> into <name
+                        type="place">Ohio</name>, and committed several daring depredations. But
+                    then, it is but <orig reg="rumor">rumer</orig><lb/> and lacks confirmation. I
+                    wish you could hear the rumors of the army<lb/> for one day. you would say it
+                    was the most incongruous map of <orig reg="information">infor=<lb/> mation</orig>
+                    you ever heard in your life. I pay no attention to the body of<lb/> them, as it
+                    would cause me too much <orig reg="uneasiness">uneasine&longs;s</orig>, and I
+                    do not like<lb/> to be disturbed with fears of the "near approach of the enemy,"
+                    and such<lb/> like apprehensions. for it is inconvenient enough to endure
+                    trouble when it does come, without borrowing any <orig reg="unnecessary"
+                        >unece&longs;sary</orig> trouble.<lb/>
+                </p>
+                <p> I saw an article in a late <name type="newspaper">Cleveland Leader</name>,
+                        from <name type="person">W.W.H. McCardy</name><lb/> in which he condemns the
+                    removal of <abbr expan="General">Gen.</abbr> <name type="person">Tyler</name> from
+                    the command of<lb/> the 3<hi rend="super">d</hi> Brigade, and the <orig
+                        reg="assignment">a&longs;signment</orig> of <abbr expan="General"
+                        >Gen.</abbr> <name type="person">Geary</name> to the same, with the<lb/>
+                    addition of the 28<hi rend="super">th</hi> <name type="place">
+                        <abbr expan="Pennsylvania">Pa.</abbr>
+                    </name> <abbr expan="Regiment">Regt.</abbr>, thus forming the 1<hi rend="super"
+                        >st</hi> Brigade of the 2<hi rend="super">d</hi> division.<lb/> He also
+                        charges <name type="person">Geary</name> with destroying <sic corr="property"
+                        >pooperty</sic>, and incontinently flying<lb/> when there was no enemy
+                    within 20 miles. This is false. He did not<lb/> authorize the destruction of the
+                    property, nor was it done with his knowledge,<lb/> neither did he retreat in
+                    disorder, He simply obeyed the order from<lb/>
+                    <name type="place">Washington</name> to fall back to <name type="place">
+                        <orig reg="Manassas">Mana&longs;sas</orig>
+                    </name>, &amp; he did it <hi rend="underline">with his command</hi><lb/> in
+                    excellent order. It was the 104<hi rend="super">th</hi> <name type="place">
+                        <abbr expan="New York">N.Y.</abbr>
+                    </name> who burned the guns<lb/> tents <orig reg="etc">&amp;c</orig> then
+                    retreated in confusion, and they belonged to <name type="person"
+                    >Duryea</name>'s<lb/> brigade. <hi rend="underline">I</hi> say, (and it will be
+                    borne out by the testimony of the<lb/> leading generals &mdash; <name
+                        type="person">Banks</name>, <name type="person">Augur</name> <name
+                        type="person">Pope</name> <orig reg="etc.">&amp;c.</orig> <orig reg="etc."
+                        >&amp;c.</orig>&mdash;) that no better <abbr
+                        expan="Brigadier General">Brig. Gen.</abbr><lb/> exists, than <name
+                        type="person">John. W. Geary</name>. </p>
+                <p> I have been pained to notice the proceedings in the West, and<lb/> think much
+                    more might have been done by <abbr expan="Generals">Gens.</abbr> <name
+                        type="person">Grant</name>. &amp;<lb/>
+                    <name type="person">Buell</name>, but it is not for me to censure. Are you not
+                    fearful<lb/> that some daring rebel will make a raid up into good old<lb/>
+                    <name type="place">Trumbull <abbr expan="County">Co.</abbr></name>? But I <orig
+                        reg="guess">gue&longs;s</orig> the "struggles of the dying confederacy,
+                    in<lb/> its last throes," will hardly reach so far, even though <name
+                        type="place">Maryland</name> does<lb/> suffer, as evidently she must. </p>
+
+                <pb n="3" entity="DSSR_000000766_0623"/>
+                <p> But I have learned that mail closes at 10.30, and that<lb/> we move at 11. so I
+                    must write fast, as it is now 10.<lb/>
+                    <abbr expan="Colonel">Col.</abbr> <name type="person">Asper</name>, and <abbr
+                        expan="Major">Maj.</abbr> <name type="person">
+                        <unclear>Carne</unclear>
+                    </name> are both sick and <abbr expan="Adjutant">Adjt</abbr> <name type="person"
+                        >Molyneaux</name><lb/> commands the <abbr expan="Regiment">Regt</abbr>. He is
+                    a very agreeable man, and of late,<lb/> (Singularly enough?) has evinced
+                    considerable interest in me<lb/> To what circumstance of luck. I am indebted for
+                    the above, I<lb/> know not. </p>
+                <p> How does your school prosper? Near its close, are you<lb/> not? And how and
+                        where <hi rend="underline">is</hi> <name type="person">Dora</name>? You have
+                    not quarrelled<lb/> with her, have you? </p>
+                <p> You must write me a good long letter next<lb/> time, will you not, love? If
+                        you <hi rend="underline">do</hi> not, I <hi rend="underline">may</hi> be
+                    tempted to<lb/> administer a <hi rend="underline">light</hi> rebuke. Your
+                    prayers, my love, are<lb/> potent, and God is good. Put your trust in him,
+                    and<lb/> he will bring us all in <hi rend="underline">his</hi> time. </p>
+                <closer> I must close now.<salute>Believe me, I remain.<lb/> Your own true and
+                        faithful.</salute><signed> <name type="person">Charlie</name>.</signed><lb/>
+                    <address>
+<addrLine><abbr expan="Company">Co.</abbr> H. 7<hi rend="super">th</hi><abbr expan="Regiment, Ohio Volunteer Infantry">R.O.V.I.</abbr>
+</addrLine>
+<addrLine>1<hi rend="super">st</hi> Brigade 2<hi rend="super">d</hi> Division,</addrLine>
+<addrLine><name type="person">Banks</name>' Corps.</addrLine>
+<addrLine><name type="place">Washington<abbr expan="District of Columbia">D.C.</abbr></name></addrLine>
+</address>
+                    <pb n="4" entity="DSSR_000000766_0624"/>
+                </closer>
+            </div1>
+        </body>
+    </text>
+
+</TEI.2>

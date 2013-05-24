@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0613 SYSTEM "000000766_0613" NDATA jpg>
+<!ENTITY DSSR_000000766_0614 SYSTEM "000000766_0614" NDATA jpg>
+<!ENTITY DSSR_000000766_0615 SYSTEM "000000766_0615" NDATA jpg>
+<!ENTITY DSSR_000000766_0616 SYSTEM "000000766_0616" NDATA jpg>
+<!ENTITY DSSR_000000766_0617 SYSTEM "000000766_0617" NDATA jpg>
+<!ENTITY DSSR_000000766_0618 SYSTEM "000000766_0618" NDATA jpg>
+<!ENTITY DSSR_000000766_0619 SYSTEM "000000766_0619" NDATA jpg>
+<!ENTITY DSSR_000000766_0620 SYSTEM "000000766_0620" NDATA jpg>
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NC62i05">
+ <teiHeader type="migrated">
+  <!-- todo -->
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-09-05">5
+      Spetember 1862</date></title>
+
+    <author>Tenney, Charles N.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>David Seaman</name>
+     <resp>Creation of digital images:</resp>
+     <name>University of Virginia Library Electronic Text Center</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>ETC</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">12</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NC62i05</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2005">2005</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Charles N. Tenney to Adelaide E. Case</title>
+
+
+      <author>Charles N. Tenney</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>8 pages</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p> </p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings. </p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-09-05">1862-09-05</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>masculine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-16">November 16th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>8 pp.</extent>
+      <date value="1862-09-05">1862-09-05</date>
+
+      <title>Letter from Charles Tenney to Adelaide Case</title>
+     </bibl>
+    </head>
+    <p/>
+   </div1>
+  </front>
+  <body id="d4">
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-09-05">5 Spetember
+      1862</date></head>
+    <pb n="1" entity="DSSR_000000766_0613"/>
+    <opener>
+     <dateline>
+      <name type="place">Camp in Maryland, 3 miles above Georgetown, </name>
+      <date value="1862-09-05">Sept. 5th, 1862</date>
+     </dateline>
+     <salute>My own darling Addie;</salute>
+    </opener>
+
+    <p> At last, I have a chance to write a few lines,with a hope that it will soon reach you. I
+     wrote you a good long letter from Culpepper <unclear/> on the 18th of August, but as we left
+     there that day, I supposed it has never been sent. On the 20th, an order was recieved from Gen.
+     Halleck forbidding the further transmission of mails, and until now I have had no opportunity
+     to send a line to apprise you of my safety. I know how you must suffer, and how thoughless you
+     must think me, but all I can plead is the inexorable character of military orders. I have much
+     to write you as soon as we can remain 24 hours in a place. Since the 18th, we have been
+     constantly under arms and for more than 3/4 of the time under fire from the enemy, but we have
+     not lost a man. I have kept a full journal of all our proceedings, which I shall send to the
+     Chronicle for publication, as soon as I can. </p>
+    <pb n="2" entity="DSSR_000000766_0614"/>
+
+    <p>Out of 18 days, we have march 11, and but two nights have we slept under a blanket, and those
+     the last two nights. But scarce is a murmer of dissatisfaction have I heard, except at the
+     almost <unclear/> manner in which we have been deprived of news from home. But is not the
+     record of the last three weeks a dark one? While on the 11th of Aug. we had a Point-d'apprei on
+     the Rapidan river, we have the Potomac for a base of operations- not to say <hi
+      rend="underline"> of defense</hi>. </p>
+    <p>We have lost in killed, surrounded, and prisoners not less than twenty thousand men.
+     <unclear/> poorly has John Pope met the expectations of the nation. (No event has caused such
+     general and genuine rejoicing in the army, as has the <unclear/> of Gen. McClellan to the
+     command of the entire army of Virginia, I confess that my confidence in him is <unclear/> and
+     <unclear/> and I believe all feel the same. Gen. Pope was too strong in written pronuniciamento
+     (whew what a long word!) upon the start to hold out good in action. While he condcuted a small
+     army in the west most admirably, against really inferior generals, he has <pb n="3"
+      entity="DSSR_000000766_0615"/> proven himself incompetent to handle a large force, against a
+     wily and subtle Jackson or an accomplished Lee. </p>
+    <p>But I guess this will not be very interesting to you, so I will change the subject. (while we
+     have been performing arduous marches and course temmarches, through rain, mud, sunshine and
+     dust. <del hand="h1"> "I have" </del> and with less that 1/3 rations of Bread and coffee, I
+     have not forgotten that it was for my country and thee for whom I was fighting, and though we
+     passed unscathed through the sotrm of balls and skulls, I have remembered that it was in answer
+     to your prayers that the bullets <unclear/> past me harmlessly, and the horrid shell burst in
+     rain. I have enjoyed perfect health during the entire time, not even contracting a cold, not
+     withstanding the exposure we have endured. Had I been allowed to write to you, and to recieve
+     letters from you. I should have been happy, but instead my mind has been filled with vague
+     fears for your health and happiness, and I am as anxious as ever. God grant my fears may be
+     unfounded. </p>
+    <p>As if to add to my anxiety, I have not heard <pb n="4" entity="DSSR_000000766_0616"/> one
+     word from Hal since we left Alexandria. <unclear/> he and what is he doing? <unclear/> Corps)
+     <unclear/> nearly surrrounded at the Bristoe Station <unclear/> since, by a large rebel force,
+     but they <unclear/> "cute" enough for and loved general for <unclear/> down the Brentsville
+     road, as though <unclear/> going down to Fredericksburg, then turned <unclear/> the flank of
+     the enemy just above <unclear/> Junction, croped Bull Run, and seemed <unclear/> near
+     Centreville. This was on Sunday <unclear/> marched eleven miles making but <unclear/> a few
+     minutes each. When we <unclear/> about a mile from Bull Run, we saw <unclear/> fifteen rebel
+     cavalry.--these were the videttes <unclear>, so you see how narrowly we escaped. <unclear/>
+      long soon we to remain secure at Cent-</unclear> for the very next day, they made a deour to
+     <unclear/> to Fairfax, VA, thus placing us again in <unclear/> Accordingly we evacuated C.
+     Banks' <unclear/> taking the direct road to Alexandria, while <unclear/> to Alexandira, while
+     <unclear/> mess went toward Fairfax. Already <unclear/> storm arose shortly after we started.
+     <unclear/> attacked Stevens' and Kearney's divisions. </p>
+
+    <pb n="5" entity="DSSR_000000766_0617"/>
+
+    <p>on the Fairfax road, but even repulsed with a heavy <unclear/> . Gens. Stevens and Kearney
+     were both killed. We could hear the fighting but could render no assistance. That night we lay
+     in the rain and mud without fire or ven a blanket. The next day we were delayed by the heavy
+     trains and did not reach our camp- 4 miles from Alexa.- until nearly two oclock at night. The
+     next P.M. we moved next to Arlington Heights,- to the rear of Fort Albany, and as we supposed
+     to go into camp for a few days. But about mid-night orders came to get ready to start for
+     Ports-ville Md. with 2 days rations, at 8 1/2 A.M. We started about noon yesterday, crossed the
+     river at Georgetown, and halted here. Col. Asper joined us, and took command at the
+     Rappahannock, on the 23rd. and is with us at present. He gives very good satisfaction. </p>
+    <p>Gen Moore is still at Alexandria in the Hospital, and so is my friend Bob Murray (Will Boaden
+     is in Washington. He is recovering slowly. <pb n="6" entity="DSSR_000000766_0618"/> I trust
+     soon to record the victorious achievements of Little Mac. and to hear of the utter defeat or
+     capture of Lee and Jackson. </p>
+    <p>I have not recieved a letter from you since we left Culpepper. How soon may I expect one? How
+     lonsome I have been, and am now! Yes, I feel that "alls for the best," I wish I had mor time to
+     write. I would write you 3 or 4 sheets jull, but the mail closes in just 5 minutes so I must
+     close. </p>
+    <p>Don't fail to write soon-- Give my love to <hi rend="underline"> Addie mine, </hi> and
+     remember me to Dora. </p>
+    <p>Best assured that although we cannot converse as frequently as we could wish, yet- my heart
+     is with thee forever, and you are continually in my thoughts. </p>
+    <closer> Please write very often to your own Affelction and loving Charley. <lb/> C.H. 7th.
+     R.O.V.I.<lb/> 1st Brigade, 2nd Div. Banks Corps.<lb/> Via Washington, D.C.<lb/> (Care of
+     Capt.-McClellan)<lb/>
+    </closer>
+
+    <pb entity="DSSR_000000766_0619"/>
+    <pb entity="DSSR_000000766_0620"/>
+   </div1>
+  </body>
+ </text>
+</TEI.2>

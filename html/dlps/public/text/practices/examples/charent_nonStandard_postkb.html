@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Example: Characters not in a standard entity set</title>
+<link rel="stylesheet" type="text/css" href="../practices.css">
+</head>
+<body onload="window.focus();">
+
+<img src="b000545739_028.gif" border="2">
+<br>
+
+<p>The lower-case e with tilde is not declared in any of the ISO 8879 (SGML)
+entity sets, but it is available as a Unicode character. Therefore, it
+has been declared in the file uva-supp.ent as follows:</p>
+
+<blockquote><pre>
+&lt;!ENTITY etilde "&amp;#x1EBD;"> &lt;!-- LATIN SMALL LETTER E WITH TILDE -->
+</pre></blockquote>
+
+<p>The lower-case m with tilde is not declared in any of the standard
+entity sets, and it is not available in Unicode. Therefore, it is
+necessary to create this character using the tilde from the Unicode
+combining diacritics, which is Unicode code point 303. This entity can
+be declared in the document's internal subset as follows:</p>
+
+<blockquote><pre>
+&lt;!ENTITY mtilde "m&amp;#x0303;"> &lt;!-- No Unicode equivalent. Using "m" with combining tilde. -->
+</pre></blockquote>
+
+<p>In the markup, these entities can then be used like so:</p>
+
+<blockquote><pre>
+&lt;p>Cong&lt;hi rend="super">s&lt;/hi> have letters from Mr. Laurens of the 17th &lt;lb/&gt;
+June but they decide nothing as to the definitive &lt;lb/&gt;
+Treaty. We have no reason, how<span class="hi">&amp;etilde;</span>r, to impute the &lt;lb/&gt;
+delay to any cause which renders the event suspicious. &lt;lb/&gt;
+It is said that the British Councils grow more &amp;amp; more &lt;lb/&gt;
+wary on the subject of a Co<span class="hi">&amp;mtilde;</span>er&lt;hi rend="super">l&lt;/hi> Treaty with the U. &lt;lb/&gt;
+S. and that the spirit of the Navigation act is likely &lt;lb/&gt;
+to prevail over a more liberal system.&lt;/p>
+</pre></blockquote>
+
+</body>
+</html>

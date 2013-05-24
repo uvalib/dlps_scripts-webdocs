@@ -1,0 +1,2210 @@
+<?xml version="1.0"?>
+
+<?dlps id="bov_20000616"?>
+<?dlps page-images="none" figure-images="no"?>
+<?dlps transcription="other"?>
+
+
+
+
+
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of
+                    Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors
+                    meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with
+                        local customizations)</resp>
+                    <name>University of Virginia Library</name>
+                </respStmt>
+                <biblScope type="date">
+                    <date value="2000-06-16">June 16, 2000</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">104</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2008">2008</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the
+                        University of Virginia</p>
+                    <p n="access">Publicly accessible</p>
+                </availability>
+                <idno type="DLPS ID">bov_20000616</idno>
+                <idno type="uva-pid">uva-lib:498157</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors
+                            minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of
+                            Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors
+                            meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2000-06-16">June 16, 2000</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information. Access to
+                                minutes containing salary information will be granted only under the
+                                procedures of the Virginia Freedom of Information Act (Code of
+                                Virginia-2.1-340 ff.) or if permission is granted by the Secretary
+                                of the Board. Researchers interested in obtaining access to these
+                                records should direct a request in writing to the Office of the
+                                Legal Adviser, Madison Hall, University of Virginia. These public
+                                minutes have had salary information deleted and bear no
+                                restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special
+                                Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body
+                                which is the legal owner and operator of the institution. Recorded
+                                in the minutes are appointments and other personnel decisions
+                                concerning faculty, decisions about construction of facilities,
+                                gifts to the university, and all other board actions, decisions and
+                                resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction;
+                &editorial_normalization; &editorial_hyphenation; &editorial_quotation;
+                &editorial_stdVals; </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language n="008" id="eng" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2008-06-10">June 10, 2008</date>
+                <respStmt>
+                    <name id="ewg4x">Ethan Gruber, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to vendor markup.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text id="d1">
+        <body id="d2">
+            <div1 type="memorandum" id="d3">
+
+                <opener><dateline><date value="2000-07-05">July 5, 2000</date></dateline></opener>
+                <head type="main">MEMORANDUM</head>
+                <p>
+                    <table rows="15" cols="3">
+                        <row>
+                            <cell role="label">TO:</cell>
+                            <cell role="label">The Board of Visitors:</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell><name>John P. Ackerly, III, Rector</name></cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell><name>Thomas J. Bliley, Jr.</name></cell>
+                            <cell><name>Gordon F. Rainey, Jr.</name></cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell><name>Charles M. Caravati, Jr.</name></cell>
+                            <cell><name>Timothy B. Robertson</name></cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell><name>William G. Crutchfield, Jr.</name></cell>
+                            <cell><name>Terence P. Ross</name></cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell><name>Charles L. Glazer</name></cell>
+                            <cell><name>Elizabeth A. Twohy</name></cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell><name>William H. Goodwin, Jr.</name></cell>
+                            <cell><name>Walter F. Walker</name></cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell><name>T. Keister Greer</name></cell>
+                            <cell><name>Benjamin P.A. Warthen</name></cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell><name>Elsie Goodwyn Holland</name></cell>
+                            <cell><name>James C. Wheat, III</name></cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell><name>Stephen S. Phelan, Jr.</name></cell>
+                            <cell><name>Joseph E. Wolfe</name></cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell role="label">FROM:</cell>
+                            <cell><name>Alexander G. Gilliam, Jr.</name></cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell role="label">SUBJECT:</cell>
+                            <cell cols="2">Correction to the Minutes of the meeting of <dateRange
+                                    from="2000-06-16" to="2000-06-17">June 16-17,
+                                2000</dateRange></cell>
+                        </row>
+                    </table></p>
+                <p>The Minutes of the Board of Visitors meeting of <dateRange from="2000-06-16"
+                        to="2000-06-17">June 16-17, 2000</dateRange>, should be corrected as
+                    follows:</p>
+                <p>On the first page (page 6068 of the Annotated Minutes and page 5828 of the Public
+                    Minutes), the last paragraph before the Resolution should be changed to read as
+                    follows:</p>
+                <p>"As is customary at the Annual Meeting, the Rector confirmed appointments of
+                    Members to committees, the appointments having been made at the April meeting.
+                    As is also customary at the Annual Meeting, it was moved that the Executive
+                    Committee be re-elected, with <name>Ms. Twohy</name> nominated vice <name>Mr.
+                        Clark</name>, who was not reappointed to the Board by the Governor. The
+                    Board approved the nomination of <name>Ms. Twohy</name> and the re-election of
+                    the Committee."</p>
+                <pb n="2"/>
+                <p>The Resolution should be changed to read:</p>
+
+                <p>"RESOLVED that the Executive Committee is re-elected with <name>Ms. Elizabeth A.
+                        Twohy</name> to take the place of <name>Mr. Champ Clark</name>."</p>
+
+                <p>On the last page of the Minutes, just above the notice of adjournment (page 6112
+                    of the Annotated Minutes and page 5870 of the Public Minutes), the following
+                    should be added:</p>
+
+                <p>The following resolutions were adopted by the Board of the University of Virginia
+                    Investment Management Company (UVIMCO) on <date value="2000-05-31">May 31,
+                        2000</date>. They do not require action by the full Board of Visitors, and
+                    are included here as a matter of record:</p>
+                <p>RESOLVED by the Board of the University of Virginia's Investment Management
+                    Company that the investment of 25 million Euro with BC Partners, LP, is
+                    approved.</p>
+                <p>RESOLVED by the Board of the University of Virginia's Investment Management
+                    Company that the investment of &dollar;5.65 million with Crosspoint LS 2000 is
+                    approved.</p>
+                <p>RESOLVED by the Board of the University of Virginia's Investment Management
+                    Company that the investment of &dollar;5 million with Constitution Research
+                    &amp; Management is approved.</p>
+                <p>RESOLVED by the Board of the University of Virginia's Investment Management
+                    Company that the investment of &dollar;10 million with BPI International is
+                    approved.</p>
+                <p>RESOLVED by the Board of the University of Virginia's Investment Management
+                    Company that on any position over &dollar;5 million, UVIMCO staff should talk to
+                    the UVIMCO Board about hedging.</p>
+
+                <epigraph>
+                    <p>AGG:jb<lb/> Copies to: <name>President John T. Casteen, III</name><lb/> Vice
+                        President <name>Leonard W. Sandridge</name></p>
+                </epigraph>
+            </div1>
+            <div1 type="contents" id="d4">
+                <pb/>
+                <head type="main">RESOLUTIONS ADOPTED BY THE BOARD OF VISITORS<lb/>
+                    <dateRange from="2000-06-16" to="2000-06-17">June 16-17, 2000</dateRange></head>
+
+                <table rows="16" cols="2">
+                    <row>
+                        <cell/>
+                        <cell role="label">PAGE</cell>
+                    </row>
+                    <row>
+                        <cell>Election of the Executive Committee</cell>
+                        <cell>5828</cell>
+                    </row>
+                    <row>
+                        <cell>Establishment of the Centennial Distinguished Professorship in
+                            Nursing</cell>
+                        <cell>5831</cell>
+                    </row>
+                    <row>
+                        <cell>Establishment of the Robert J. Roberts Professorship in
+                            Pediatrics</cell>
+                        <cell>5831</cell>
+                    </row>
+                    <row>
+                        <cell>Naming of the New Residence Hall on Alderman Road in Honor of
+                                <name>Mr. T. Braxton Woody</name></cell>
+                        <cell>5832</cell>
+                    </row>
+                    <row>
+                        <cell>Resolution Congratulating <name>Joseph E. Wolfe</name></cell>
+                        <cell>5833</cell>
+                    </row>
+                    <row>
+                        <cell>Blue Ribbon Commission Resolution</cell>
+                        <cell>5833</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of Pratt Fund Distribution for 2000-2001</cell>
+                        <cell>5834</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of the Appointment of a Public Member to the Board of the
+                            University of Virginia Investment Management Company</cell>
+                        <cell>5835</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of the Blue Ridge Hospital Property Transfer</cell>
+                        <cell>5835</cell>
+                    </row>
+                    <row>
+                        <cell>Adoption of the Return of Title IV Funds Schedule and Revision of the
+                            Policy on Refund of Tuition, Fees and Room and Board Charges</cell>
+                        <cell>5836</cell>
+                    </row>
+                    <row>
+                        <cell>Conflict of Interest Exemption</cell>
+                        <cell>5837</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of Architect Selection for the Campbell Hall Addition
+                            Project</cell>
+                        <cell>5838</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of Architect Selection for the Hospital Expansion
+                            Project</cell>
+                        <cell>5838</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of Architect Selection for the Medical Research Building
+                            &num;6 Project</cell>
+                        <cell>5839</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of Architectural Design Guidelines for the Campbell Hall
+                            Addition Project</cell>
+                        <cell>5839</cell>
+                    </row>
+                </table>
+                <pb n="2"/>
+                <table rows="17" cols="2">
+
+                    <row>
+                        <cell/>
+                        <cell role="label">PAGE</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of Architectural Design Guidelines for the Medical Research
+                            Building &num;6 Project</cell>
+                        <cell>5839</cell>
+                    </row>
+                    <row>
+                        <cell>Approval to Remove Vyssotsky Cottage Garage</cell>
+                        <cell>5840</cell>
+                    </row>
+                    <row>
+                        <cell>Approval to Remove the Faulkner Carriage House Garage</cell>
+                        <cell>5840</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of the 2000-2001 Operating Budget for the Academic
+                            Division</cell>
+                        <cell>5841</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of the 2000-2001 Operating Budget for The University of
+                            Virginia's College at Wise</cell>
+                        <cell>5842</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of the 2000-2001 Operating and Capital Budget for the
+                            University of Virginia Medical Center</cell>
+                        <cell>5842</cell>
+                    </row>
+                    <row>
+                        <cell>Authorization to Increase the Fiscal Year 1999-2000 Endowment Income
+                            Distribution</cell>
+                        <cell>5842</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of Bond Issuance</cell>
+                        <cell>5843</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of the Creation of a College Foundation</cell>
+                        <cell>5848</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of the Audit Schedule</cell>
+                        <cell>5849</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of Preliminary Design for the Monroe Lane Student Residence
+                            Project</cell>
+                        <cell>5849</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of VDOT Agreement, Emmet Street Bridge</cell>
+                        <cell>5849</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of Allocation from the Fiscal Year 2000 Operating Margin of
+                            the Medical Center</cell>
+                        <cell>5850</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of Revisions to the Board's Bylaws</cell>
+                        <cell>5850</cell>
+                    </row>
+                    <row>
+                        <cell>Appointments to the University of Virginia's College at Wise
+                            Board</cell>
+                        <cell>5851</cell>
+                    </row>
+                    <row>
+                        <cell>Memorial Resolution for Belva T. Dunn Jones</cell>
+                        <cell>5851</cell>
+                    </row>
+                </table>
+                <pb n="3"/>
+                <table rows="18" cols="2">
+
+                    <row>
+                        <cell/>
+                        <cell role="label">PAGE</cell>
+                    </row>
+                    <row>
+                        <cell>Elections and Re-elections to the Miller Center Governing
+                            Council</cell>
+                        <cell>5852</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of Property Purchase</cell>
+                        <cell>5852</cell>
+                    </row>
+                    <row>
+                        <cell>Approval of Summary of Audit Findings</cell>
+                        <cell>5852</cell>
+                    </row>
+                    <row>
+                        <cell cols="2">Faculty Personnel Actions</cell>
+                    </row>
+                    <row>
+                        <cell rend="indent">Elections</cell>
+                        <cell>5853</cell>
+                    </row>
+                    <row>
+                        <cell rend="indent">Actions Relating to Chairholders</cell>
+                        <cell>5854</cell>
+                    </row>
+                    <row>
+                        <cell rend="indent">Promotions</cell>
+                        <cell>5855</cell>
+                    </row>
+                    <row>
+                        <cell rend="indent">Resignations</cell>
+                        <cell>5865</cell>
+                    </row>
+                    <row>
+                        <cell rend="indent">Re-appointments</cell>
+                        <cell>5866</cell>
+                    </row>
+                    <row>
+                        <cell rend="indent">Deaths</cell>
+                        <cell>5867</cell>
+                    </row>
+                    <row>
+                        <cell rend="indent">Change in the Appointment of <name>Ms. Sally N.
+                                Barber</name></cell>
+                        <cell>5867</cell>
+                    </row>
+                    <row>
+                        <cell rend="indent">Change in the Election of Associate Professor Emeritus
+                            of <name>Mr. J. David Deck</name></cell>
+                        <cell>5867</cell>
+                    </row>
+                    <row>
+                        <cell rend="indent">Change in the Election of <name>Mr. Charles R.
+                                Marsh</name></cell>
+                        <cell>5868</cell>
+                    </row>
+                    <row>
+                        <cell rend="indent">Approval of Reporting Relationships and Supervisory
+                            Structure for Dual Employment Situation</cell>
+                        <cell>5868</cell>
+                    </row>
+                    <row>
+                        <cell cols="2">The University of Virginia's College at Wise</cell>
+                    </row>
+                    <row>
+                        <cell rend="indent">Resignation</cell>
+                        <cell>5869</cell>
+                    </row>
+                    <row>
+                        <cell rend="indent">Appointment</cell>
+                        <cell>5869</cell>
+                    </row>
+                </table>
+            </div1>
+            <div1 type="roll-call" id="d5">
+                <pb n="5828"/>
+                <head type="main">TENTATIVE MINUTES<lb/> SUBJECT TO THE APPROVAL<lb/> OF THE BOARD
+                    OF VISITORS<lb/>
+                    <dateRange from="2000-06-16" to="2000-06-17">June 16-17, 2000</dateRange></head>
+
+                <p>The Board of Visitors of the University of Virginia met, in Open Session, at 8:30
+                    a.m., Friday, <date value="2000-06-16">June 16, 2000</date>, in the East Oval
+                    Room of the Rotunda; <name>John P. Ackerly, III</name>, Rector, presided. <name
+                        type="present">Thomas J. Bliley, Jr., Charles M. Caravati, Jr., M.D.,
+                        William G. Crutchfield, Jr., Charles L. Glazer, William H. Goodwin, Jr., T.
+                        Keister Greer, Gordon F. Rainey, Jr., Timothy B. Robertson, Terence P. Ross,
+                        Ms. Elizabeth A. Twohy, Walter F. Walker, Benjamin P.A. Warthen, James C.
+                        Wheat, III, Joseph E. Wolfe, and Stephen S. Phelan, Jr.</name>, were
+                    present.</p>
+                <p>Also present were <name type="present">John T. Casteen, III, Leonard W.
+                        Sandridge, Alexander G. Gilliam, Jr., Paul J. Forch, Robert W. Cantrell,
+                        M.D., Peter W. Low, Robert D. Sweeney, William W. Harmon, Ms. Colette
+                        Sheehy, Robert E. Reynolds, M.D., Gene D. Block, Terry Holland, L. Jay
+                        Lemons, and Ms. Jeanne Flippo Bailes</name>.</p>
+                <p>The Minutes of the Board meeting of April 14-15, previously distributed, were
+                    approved.</p>
+                <p>As is customary at the Annual Meeting, the Rector confirmed appointments of
+                    Members to committees, the appointments having been made at the April meeting.
+                    The Rector also nominated <name>Ms. Twohy</name> to the Executive Committee,
+                    vice <name>Mr. Clark</name> who was not reappointed to the Board by the
+                    Governor. The Board approved the nomination.</p>
+                <p>RESOLVED that Ms. Elizabeth A. Twohy is elected to the Executive Committee of the
+                    Board of Visitors.</p>
+                <pb n="5829"/>
+                <p> The Rector reminded Members of the Board Retreat, which is scheduled for July 14
+                    and 15, at Upper Brandon in Prince George County, and the meeting of the Health
+                    Affairs Committee to take place in his offices in Richmond on July 14<hi
+                        rend="super">th</hi> before the Retreat. He also reminded Members of the
+                    President's Retreat, to be held in Charlottesville on November 17<hi
+                        rend="super">th</hi>.</p>
+            </div1>
+            <div1 type="report" id="d6">
+                <p>The President gave his customary report:</p>
+                <p>The first two winners of the University Seminars Sabbatical Fellowships have been
+                    named &mdash; <name>Farzaneh Milani</name>, Associate Professor of Asian and
+                    Middle Eastern Languages and Cultures and of Women's Studies, has won the Thomas
+                    I. Storrs Fellowship, and <name>Sarah Farrell</name>, Assistant Professor of
+                    Nursing, has won the Dennis J. Shaughnessy Fellowship. <name>Professors Anita
+                        Jones and Michael Thorner</name> have been elected to the American Academy
+                    of Arts &amp; Sciences, which brings to 26 the total of faculty fellows in the
+                    Academy from the University.</p>
+                <p><name>Lori Graham</name>, Assistant Professor of Civil Engineering, has been
+                    given a Presidential Early Career Award, which is the highest honor for young
+                    scientists and engineers in the country.</p>
+                <p>Gifts to the University since <date value="1999-07-01">July 1, 1999</date>, and
+                    through April 30<hi rend="super">th</hi> of this year come to &dollar;171
+                    million, an increase of 59.2&percnt; over the previous year. The Campaign total
+                    on April 30th was &dollar;1.131 billion. Since April 30, several significant
+                    gifts have been received: <name>U. Bertram Ellis, Jr.</name> and his wife,
+                        <name>Deborah Hicks Ellis</name>, have pledged &dollar;5 million to the
+                    Darden Foundation and &dollar;5 million to the College of Arts and Sciences. The
+                    Olsson Memorial Foundation has pledged &dollar;1 million to the Engineering
+                    School, the Pew Charitable Trust &dollar;530,000 to the Law School Foundation,
+                    and the Trust of Roy R. Charles &dollar;500,000 to the School of Nursing.
+                        <name>Mr. James W. Todd</name> has pledged &dollar;500,000 to the Athletics
+                    Department and an anonymous donor has given &dollar;2 million to the College of
+                    Arts and Sciences. The Report was accepted by the Board.</p>
+                <p>On motion, the meeting was adjourned at 8:45 a.m.</p>
+
+            </div1>
+            <div1 type="resolution" id="d7">
+                <pb n="5830"/>
+                <p>The Board of Visitors resumed its meeting as a full Board, in Open Session, at
+                    2:08 p.m. All Members were present save <name>Mrs. Holland and Mr.
+                        Robertson</name>.</p>
+                <p>The Board adopted the following motions to enable it to meet in Executive
+                    Session:</p>
+                <p>That the Board of Visitors of the University of Virginia go into Executive
+                    Session to consult with General Counsel on the present disposition of pending
+                    litigation and further litigation strategy, and to discuss with Counsel a
+                    copyright matter, as provided for in Section 2.1-344 (A) (7) of the <hi
+                        rend="underline">Code of Virginia</hi>.</p>
+                <p>That the Board of Visitors of the University of Virginia go into Executive
+                    Session to review the performance and present and future assignments of senior
+                    University administrators, as provided for in Section 2.1-344 (A)(1) of the <hi
+                        rend="underline">Code of Virginia</hi>.</p>
+                <p>That the Board of Visitors of the University of Virginia go into Executive
+                    Session to discuss with Counsel and consider the status and terms of a proposed
+                    gift of property to the University, as provided for in Section 2.1-344 (A) (7)
+                    and (8) of the <hi rend="underline">Code of Virginia</hi>.</p>
+                <p>That the Educational Policy Committee of the Board of Visitors go into Executive
+                    Session for the purpose of discussing personnel matters pertaining to the
+                    appointment, assignment, reappointment, promotion, performance, compensation,
+                    discipline, separation and resignation of specific faculty members of the
+                    University of Virginia, as provided for in Section 2.1-344 (A) (1) of the <hi
+                        rend="underline">Code of Virginia</hi>.</p>
+                <p>The Board went into Executive Session at 2:10 p.m., resumed in Open Session at
+                    4:00 p.m., and recessed to continue its meeting in the Dome Room of the
+                    Rotunda.</p>
+
+            </div1>
+            <div1 type="roll-call" id="d8">
+                <pb n="5831"/>
+                <p>The Board resumed its meeting at 4:10 p.m.; all Members were present save <name
+                        type="absent">Mrs. Holland and Messrs. Goodwin, Robertson, Ross and
+                        Walker</name>. After adopting resolutions to create two professorships and
+                    name a dormitory, and to hear a report from the President on the naming of the
+                    Neuroradiology Suites in memory of <name>Dr. Wayne S. Cail</name>, the Board, on
+                    motion, adjourned at 4:30 p.m.</p>
+            </div1>
+            <div1 type="resolution" id="d9">
+                <head type="main">ESTABLISHMENT OF THE CENTENNIAL DISTINGUISHED PROFESSORSHIP IN
+                    NURSING</head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, an anonymous donor has made a very generous gift to establish a
+                    professorship in the School of Nursing, the largest individual donation made to
+                    the School; and</p>
+                <p>WHEREAS, the School of Nursing will celebrate the centennial of its founding in
+                    2001;</p>
+                <p>RESOLVED that the Board of Visitors expresses its gratitude for the generosity of
+                    the donor and establishes The Centennial Distinguished Professorship in Nursing,
+                    to be held in the School of Nursing.</p>
+            </div1>
+            <div1 type="resolution" id="d10">
+                <head type="main">ESTABLISHMENT OF THE ROBERT J. ROBERTS PROFESSORSHIP IN
+                    PEDIATRICS</head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, <name>Dr. Robert J. Roberts</name> was Chair of the Department of
+                    Pediatrics and Director of the Children's Medical Center from 1987 until his
+                    death in 1997; and WHEREAS, <name>Dr. Roberts</name> was a superb physician,
+                    teacher and researcher; and</p>
+                <p>WHEREAS, <name>Dr. Roberts</name> worked to extend and improve patient care
+                    programs for children in Virginia and expanded the services of the Children's
+                    Medical Center and the Department of Pediatrics;</p>
+                <pb n="5832"/>
+                <p>RESOLVED that the Board of Visitors establishes the Robert J. Roberts
+                    Professorship in Pediatrics, to be held in the Department of Pediatrics of the
+                    School of Medicine, and in so doing pays tribute to the contributions and
+                    devoted service of <name>Dr. Roberts</name> to his patients, his students and
+                    the University of Virginia.</p>
+            </div1>
+            <div1 type="resolution" id="d11">
+                <head type="main">NAMING OF THE NEW RESIDENCE HALL ON ALDERMAN ROAD IN HONOR OF
+                        <name>MR. T. BRAXTON WOODY</name></head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, <name>Thaddeus Braxton Woody</name>, a native of Petersburg and an
+                    alumnus of the University of Virginia, joined the faculty in 1928 as Assistant
+                    Professor of Romance Languages; and</p>
+                <p>WHEREAS, <name>Mr. Woody</name> was recognized in numerous ways both for his
+                    superb teaching and for his support of the Jeffersonian precepts of close
+                    relations between faculty and students, as exemplified in the concept of the
+                    "academical village;" and</p>
+                <p>WHEREAS, <name>Mr. Woody</name> was an Assistant Dean of the College of Arts
+                    &amp; Sciences and the Chair of the faculty committee which in 1968 recommended
+                    unrestricted undergraduate coeducation; and</p>
+                <p>WHEREAS, <name>Mr. Woody</name> died on <date value="2000-01-09">January 9,
+                        2000</date>;</p>
+                <p>RESOLVED that the new first year dormitory under construction behind the Alderman
+                    Road dormitories be named Woody House in honor of <name>Thaddeus Braxton
+                        Woody</name>.</p>
+            </div1>
+            <div1 type="roll-call" id="d12">
+                <p>The Board met, in Open Session, as the full Board at 8:50 a.m., Saturday, <date
+                        value="2000-06-17">June 17, 2000</date>; all Members were present save <name
+                        type="absent">Mrs. Holland and Messrs. Robertson and Ross</name>.</p>
+                <pb n="5833"/>
+            </div1>
+            <div1 type="resolution" id="d13">
+                <p>On motion, the Board approved the following Resolution, offered by <name>Mr.
+                        Glazer</name>:</p>
+                <p>RESOLVED the Board of Visitors recognizes one of its Members, Joseph Wolfe, and
+                    congratulates him and the Appalachian School of Law on the graduation of its
+                    inaugural class.</p>
+            </div1>
+            <div1 type="roll-call" id="d14">
+                <p>The Board adjourned at 8:55 a.m. and resumed at 9:50 a.m. to hear the report of
+                    the Ad Hoc Subcommittee appointed by the Rector to study the recommendations of
+                    the Governor's Blue Ribbon Commission on Higher Education. All Members of the
+                    Board were present save <name type="absent">Mrs. Holland and Messrs. Robertson
+                        and Ross</name>.</p>
+                <p><name>Mr. Greer</name>, the Chair of the Subcommittee, and <name>Mr.
+                        Rainey</name>, a member of the Subcommittee and of the Blue Ribbon
+                    Commission, reported on the deliberations of the Subcommittee, using as the
+                    basis of their report the study undertaken by <name>Ms. Kelsh</name> of the
+                    President's staff .</p>
+            </div1>
+            <div1 type="resolution" id="d15">
+                <p>On motion, the Board approved the recommendations of the Ad Hoc Subcommittee by
+                    the following resolution:</p>
+                <p>WHEREAS, the Governor's Blue Ribbon Commission on Higher Education has made
+                    recommendations relating to the public responsibilities of boards of visitors
+                    each of which is endorsed and supported by the Board of Visitors of the
+                    University;</p>
+                <p>WHEREAS, the Rector of the University appointed an ad hoc subcommittee of the
+                    Board of Visitors to study the recommendations applicable to boards of visitors
+                    and to recommend action required to assure that the Board of Visitors of the
+                    University is discharging its fiduciary responsibilities in accordance with the
+                    Commission's recommendations;</p>
+                <p>WHEREAS, the ad hoc subcommittee has prepared the report (see Attachment A)
+                    indicating with respect to each recommendation applicable to boards of visitors
+                    whether the policies and procedures followed by the University's Board <pb
+                        n="5834"/> of Visitors are in compliance with the Commission's
+                    recommendations and, in the few instances where that is not presently the case,
+                    the action required to bring the Board's policies and procedures into full
+                    compliance;</p>
+                <p>RESOLVED that the attached report of the ad hoc subcommittee is accepted and
+                    approved by the Board of Visitors;</p>
+                <p>RESOLVED FURTHER that in those few instances where current board policies and
+                    procedures are not in full compliance with the recommendations of the Blue
+                    Ribbon Commission the implementation plans set forth in the attached report be
+                    undertaken promptly to assure full compliance with the Blue Ribbon Commission's
+                    recommendations relating to boards of visitors.</p>
+            </div1>
+            <div1 type="roll-call" id="d16">
+                <p>The Board adjourned at 10:35 a.m. and resumed at 11:15 a.m., once more in Open
+                    Session. All Members were present save <name type="absent">Mrs. Holland and
+                        Messrs. Robertson and Ross</name>.</p>
+            </div1>
+            <div1 type="resolution" id="d17">
+                <head type="main">APPROVAL OF PRATT FUND DISTRIBUTION FOR 2000-2001</head>
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that the budget for the expenditure of funds from the Estate of
+                        <name>John Lee Pratt</name> be approved to supplement appropriations made by
+                    the Commonwealth of Virginia for the School of Medicine and Departments of
+                    Biology, Chemistry, Mathematics and Physics in the College of Arts and Sciences.
+                    The normal allocations, which are not to exceed &dollar;2.6 million for 2000-01,
+                    are suggested by the department chairs and recommended by the dean of each
+                    school. The special distributions are not to exceed &dollar;3.5 million for
+                    2000-01. To the extent the annual income from the endowment is not adequate to
+                    meet the recommended distribution, the principal of the endowment will be
+                    disinvested to provide funds for the approved budgets.</p>
+            </div1>
+            <div1 type="resolution" id="d18">
+                <pb n="5835"/>
+                <head type="main">APPROVAL OF THE APPOINTMENT OF A PUBLIC MEMBER TO THE BOARD OF THE
+                    UNIVERSITY OF VIRGINIA INVESTMENT MANAGEMENT COMPANY</head>
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that <name>Christine P. Gustafson</name> is hereby appointed to serve as
+                    a public member of the Board of the University of Virginia Investment Management
+                    Company, for a term of four years, beginning <date value="2000-07-01">July 1,
+                        2000</date>.</p>
+            </div1>
+            <div1 type="resolution" id="d19">
+                <head type="main">APPROVAL OF THE BLUE RIDGE HOSPITAL PROPERTY TRANSFER</head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, the Governor of Virginia has the authority to allow the University to
+                    convey the property held by the Rector and Visitors of the University of
+                    Virginia known as Blue Ridge Hospital (the Property) on such terms and
+                    conditions approved by the Governor and in a manner that respects the historical
+                    and environmental significance of Monticello Mountain; and</p>
+                <p>WHEREAS, the Governor has agreed to a conveyance of the Property to the
+                    University of Virginia Real Estate Foundation for development that furthers the
+                    educational and research missions of the University of Virginia, and to allow
+                    the Thomas Jefferson Memorial Foundation to lease a portion of the Property to
+                    build a visitors center.</p>
+                <p>RESOLVED that the Board of Visitors delegates authority to the Executive Vice
+                    President and Chief Operating Officer to execute any documents and enter into
+                    agreements necessary to effect a transfer of the Blue Ridge Hospital property to
+                    the University of Virginia Real Estate Foundation.</p>
+            </div1>
+            <div1 type="resolution" id="d20">
+                <pb n="5836"/>
+                <head type="main">ADOPTION OF THE RETURN OF TITLE IV FUNDS SCHEDULE AND REVISION OF
+                    THE POLICY ON REFUND OF TUITION, FEES AND ROOM AND BOARD CHARGES</head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, the Higher Education Amendments of 1998, which substantially revised
+                    Section 484B of the Federal Higher Education Act of 1965, require adoption of
+                    the Return of Title IV Funds Schedule; and</p>
+                <p>WHEREAS, the Higher Education Amendments of 1998 eliminate the Pro Rata Refund
+                    Schedule; and</p>
+                <p>WHEREAS, the federal government has mandated compliance with the Higher Education
+                    Amendments of October 1998;</p>
+                <p>RESOLVED that the University adopts the Return of Title IV Funds Schedule as it
+                    appears below, effective the first day of the Fall 2000 semester; and</p>
+                <p>RESOLVED FURTHER that the University modifies the language of the Policy on
+                    Refund of Tuition, Fees and Room and Board Charges to eliminate the Pro Rata
+                    Refund Schedule.</p>
+
+                <div2 type="statement" id="d21">
+                    <head type="sub">POLICY ON REFUND TUITION, FEES, ROOM AND BOARD CHARGES</head>
+                    <p>In the event a student withdraws from the University and that individual has
+                        not received Title IV Aid, the Institutional Refund Schedule will apply.</p>
+
+                    <p><hi rend="underline">Institutional Refund Schedule</hi>: Tuition and fees
+                        will be charged on a percentage basis, based on the school week during which
+                        the student withdraws. A school week is defined as the period beginning on
+                        Monday and ending on the succeeding Sunday. The first school week of a
+                        semester (term) is defined as the week during which the general University
+                        Final Registration ends. Application of the Institutional Refund Schedule
+                        pertains only to tuition and fees. Room and board refunds are calculated
+                        separately, since the student signs a detailed contract for each.</p>
+
+                    <pb n="5837"/>
+
+                    <table rows="8" cols="3">
+                        <row>
+                            <cell role="label" rend="center">School Week</cell>
+                            <cell role="label" rend="center">Percentage Retained</cell>
+                            <cell role="label" rend="center">Percentage<lb/>Refunded</cell>
+                        </row>
+                        <row>
+                            <cell rend="center">1</cell>
+                            <cell rend="center">20</cell>
+                            <cell rend="center">80</cell>
+                        </row>
+                        <row>
+                            <cell rend="center">2</cell>
+                            <cell rend="center">20</cell>
+                            <cell rend="center">80</cell>
+                        </row>
+                        <row>
+                            <cell rend="center">3</cell>
+                            <cell rend="center">30</cell>
+                            <cell rend="center">70</cell>
+                        </row>
+                        <row>
+                            <cell rend="center">4</cell>
+                            <cell rend="center">40</cell>
+                            <cell rend="center">60</cell>
+                        </row>
+                        <row>
+                            <cell rend="center">5</cell>
+                            <cell rend="center">50</cell>
+                            <cell rend="center">50</cell>
+                        </row>
+                        <row>
+                            <cell rend="center">6</cell>
+                            <cell rend="center">60</cell>
+                            <cell rend="center">40</cell>
+                        </row>
+                        <row>
+                            <cell> After 6</cell>
+                            <cell rend="center">100</cell>
+                            <cell rend="center">0</cell>
+                        </row>
+                    </table>
+                    <p>In the event a student withdraws from the University and the student has
+                        received Title IV Aid, the Return of Title IV Funds Schedule will apply.</p>
+                    <p><hi rend="underline">Return of Title IV Funds Schedule</hi>: Under this
+                        schedule, room and board are considered institutional charges and will be
+                        refunded in the same manner as Tuition and Fees, i.e., based on the number
+                        of days of attendance. Details of this calculation are complex and are
+                        available in either the Bursar's Office or the Office of Financial Aid to
+                        Students.</p>
+                </div2>
+            </div1>
+            <div1 type="resolution" id="d22">
+                <head type="main">CONFLICT OF INTEREST EXEMPTION</head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, the Curry School of Education wishes to pursue basic research in the
+                    uses of technology for the education of students with disabilities; and</p>
+                <p>WHEREAS, a portion of this research may be done in collaboration with ERICA Inc.,
+                    a small business which has developed unique software and hardware applications
+                    which will greatly facilitate this research; and</p>
+                <p>WHEREAS, University faculty members or employees, <name>Thomas Hutchinson, Peter
+                        Beling, George Overstreet, Chris Lankford, and K. Preston White, Jr.</name>
+                    have ownership interests in ERICA Inc.; and</p>
+                <pb n="5838"/>
+                <p>WHEREAS, an agreement with ERICA may be entered into by the University under the
+                    exemption to the Virginia Conflict of Interests Act as provided in Section <reg
+                        orig="2.1-|639.6(C)(7)">2.1639.6(C)(7)</reg> of the <hi rend="italic">Code
+                        of Virginia</hi>, with approval by the Board of Visitors.</p>
+                <p>RESOLVED that the exemption under Section <reg orig="2.1-|639.6(C)(7)"
+                        >2.1639.6(C)(7)</reg> of the <hi rend="italic">Code of Virginia</hi> for the
+                    proposed agreement between the University and ERICA is approved, provided the
+                    annual disclosure statement of economic interests is filed by <name>Thomas
+                        Hutchinson, Peter Beling, George Overstreet, Chris Lankford, and K. Preston
+                        White, Jr.</name> as required by law, provided the University files its
+                    required annual report with the Secretary of the Commonwealth disclosing the
+                    contract and responsible managers overseeing its administration, and provided
+                    the Deans of the School of Engineering and Applied Science, the McIntire School
+                    of Commerce, and the Curry School of Education vigilantly oversee and monitor
+                    the utilization of University resources in implementation of any contract with
+                    ERICA.</p>
+            </div1>
+            <div1 type="resolution" id="d23">
+                <head type="main">APPROVAL OF ARCHITECT SELECTION FOR THE CAMPBELL HALL ADDITION
+                    PROJECT</head>
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that Allied Works Architecture, Inc., of Portland, Oregon is approved
+                    for the performance of architectural and engineering services for the Campbell
+                    Hall Addition project.</p>
+            </div1>
+            <div1 type="resolution" id="d24">
+                <head type="main">APPROVAL OF ARCHITECT SELECTION FOR THE HOSPITAL EXPANSION
+                    PROJECT</head>
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that RTKL Associates, Inc. of Baltimore, Maryland is approved for the
+                    performance of architectural and engineering services for the Hospital Expansion
+                    project.</p>
+            </div1>
+            <div1 type="resolution" id="d25">
+                <pb n="5839"/>
+                <head type="main">APPROVAL OF ARCHITECT SELECTION FOR THE MEDICAL RESEARCH BUILDING
+                    &num;6 PROJECT</head>
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that Henningson, Durham, and Richardson of Alexandria, Virginia is
+                    approved for the performance of architectural and engineering services for the
+                    Medical Research Building &num;6 project.</p>
+            </div1>
+            <div1 type="resolution" id="d26">
+                <head type="main">APPROVAL OF ARCHITECTURAL DESIGN GUIDELINES FOR THE CAMPBELL HALL
+                    ADDITION PROJECT</head>
+                <p>The following resolution was adopted: <list>
+                        <item>RESOLVED that the architectural design guidelines, dated <date
+                                value="2000-07-01">July 1, 2000</date>, prepared by the Architect
+                            for the University, for the Campbell Hall Addition project, are
+                            approved; and</item>
+                        <item>RESOLVED FURTHER that the project will be presented for further review
+                            at the schematic design level of development.</item>
+                    </list></p>
+            </div1>
+            <div1 type="resolution" id="d27">
+                <head type="main">APPROVAL OF ARCHITECTURAL DESIGN GUIDELINES FOR THE MEDICAL
+                    RESEARCH BUILDING &num;6 PROJECT</head>
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that the architectural design guidelines, dated <date value="2000-07-01"
+                        >July 1, 2000</date>, prepared by the Architect for the University, for the
+                    Medical Research Building &num;6 project are approved; and</p>
+                <p>RESOLVED FURTHER that the project will be presented for further review at the
+                    schematic design level of development.</p>
+            </div1>
+            <div1 type="resolution" id="d28">
+                <pb n="5840"/>
+                <head type="main">APPROVAL TO REMOVE VYSSOTSKY COTTAGE GARAGE</head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, the University owns a small garage (FAACS Building Number: 207-2355) at
+                    the McCormick Astronomical Observatory on the University of Virginia's
+                    Observatory Hill (Mount Jefferson) in Albemarle County; and</p>
+                <p>WHEREAS, this structure has not been used for several years; and</p>
+                <p>WHEREAS, the Governor of Virginia delegated to the Board of Visitors, pursuant to
+                    Executive Order Number Thirty-Four (98), dated <date value="1998-11-10">November
+                        10, 1998</date>, the authority of the Governor to approve the removal of
+                    buildings on state property, with the advice and counsel of the Art and
+                    Architectural Review Board, and the review of the Department of Historic
+                    Resources; and</p>
+                <p>WHEREAS, the Art and Architectural Review Board and the Department of Historic
+                    Resources have approved the removal of this structure;</p>
+                <p>RESOLVED that the removal of the Vyssotsky Cottage Garage, 207-2355, is approved
+                    by the Board of Visitors; and</p>
+                <p>RESOLVED FURTHER that the Executive Vice President and Chief Operating Officer is
+                    authorized to execute any and all documents pertaining to the removal of the
+                    aforementioned building, and that the said officer ensure that the required
+                    report regarding the building removal is sent to the Department of General
+                    Services.</p>
+            </div1>
+            <div1 type="resolution" id="d29">
+                <head type="main">APPROVAL TO REMOVE THE FAULKNER CARRIAGE HOUSE GARAGE</head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, the University owns a small garage (FAACS Building Number: 207-2611)
+                    behind Faulkner House on Old Ivy Road in Albemarle County; and</p>
+                <pb n="5841"/>
+
+                <p>WHEREAS, this structure must be demolished to allow for development associated
+                    with the addition to the White Burkett Miller Center for Public Affairs; and</p>
+                <p>WHEREAS, the Governor of Virginia delegated to the Board of Visitors, pursuant to
+                    Executive Order Number Thirty-Four (98), dated <date value="1998-11-10">November
+                        10, 1998</date>, the authority of the Governor to approve the removal of
+                    buildings on state property, with the advice and counsel of the Art and
+                    Architectural Review Board, and the review of the Department of Historic
+                    Resources; and</p>
+                <p>WHEREAS, the Art and Architectural Review Board and the Department of Historic
+                    Resources have approved the removal of this structure;</p>
+                <p>RESOLVED that the removal of the Faulkner Carriage House Garage, 207-2611, is
+                    approved by the Board of Visitors; and</p>
+                <p>RESOLVED FURTHER that the Executive Vice President and Chief Operating Officer is
+                    authorized to execute any and all documents pertaining to the removal of the
+                    aforementioned building, and that the said officer ensure that the required
+                    report regarding the building removal is sent to the Department of General
+                    Services.</p>
+            </div1>
+            <div1 type="resolution" id="d30">
+                <head>APPROVAL OF THE 2000-2001 OPERATING BUDGET FOR THE ACADEMIC DIVISION</head>
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that the 2000-2001 Operating Budget for the Academic Division be
+                    approved, as recommended by the President and the Chief Financial Officer.</p>
+            </div1>
+            <div1 type="resolution" id="d31">
+                <pb n="5842"/>
+                <head>APPROVAL OF THE 2000-2001 OPERATING BUDGET FOR THE UNIVERSITY OF VIRGINIA'S
+                    COLLEGE AT WISE</head>
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that the 2000-2001 Operating Budget for the College at Wise be approved,
+                    as recommended by the President and the Chief Financial Officer.</p>
+            </div1>
+            <div1 type="resolution" id="d32">
+                <head type="main">APPROVAL OF THE 2000-2001 OPERATING AND CAPITAL BUDGET FOR THE
+                    UNIVERSITY OF VIRGINIA MEDICAL CENTER</head>
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that the 2000-2001 Operating and Capital Budget for the University of
+                    Virginia Medical Center, which includes a hospital room and ancillary service
+                    rate increase of 6.0 percent, be approved, as recommended by the President and
+                    the Chief Financial Officer, and as approved by the Finance Committee.</p>
+            </div1>
+            <div1 type="resolution" id="d33">
+                <head type="main">AUTHORIZATION TO INCREASE THE FISCAL YEAR 1999-2000 ENDOWMENT
+                    INCOME DISTRIBUTION</head>
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that the Executive Vice President and Chief Operating Officer be
+                    authorized to increase the Fiscal Year 2000-2001 income distribution of Class A
+                    shares thirty percent from &dollar;68.76 per share to &dollar;89.39 per share,
+                    which equals 3.70 percent of the <date value="2000-03-31">March 31, 2000</date>,
+                    market value of the Pooled Endowment Fund;</p>
+                <p>RESOLVED FURTHER that the Executive Vice President and Chief Operating Officer be
+                    authorized to increase the Fiscal Year 2000-2001 income distribution of Class B
+                    shares thirty percent from &dollar;94.43 per share to &dollar;122.76 per share,
+                    which equals 5.07 percent of the <date value="2000-03-31">March 31, 2000</date>,
+                    market value of the Pooled Endowment Fund;</p>
+                <pb n="5843"/>
+                <p>RESOLVED FURTHER that the Executive Vice President and Chief Operating Officer be
+                    authorized to increase the Fiscal Year 2000-2001 income distribution to the Sun
+                    Trust portion of the Miller Center endowment by four percent from
+                    &dollar;1,008,000 to &dollar;1,048,320, which equals 5.15 percent of the <date
+                        value="2000-03-31">March 31, 2000</date>, market value of that fund.</p>
+            </div1>
+            <div1 type="resolution" id="d34">
+                <head type="main">APPROVAL OF BOND ISSUANCE</head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, pursuant to Chapter 3.2, Title 23 of the <hi rend="underline">Code of
+                        Virginia of 1950</hi>, as amended (the "Act"), the General Assembly of
+                    Virginia has authorized the Virginia College Building Authority (the
+                    "Authority") to develop a pooled bond program (the "Program") to purchase bonds
+                    and other debt instruments issued by public institutions of higher education in
+                    the Commonwealth of Virginia (the "Institutions") to finance or refinance the
+                    construction of projects of capital improvement specifically included in a bill
+                    passed by a majority of those elected to each house of the General Assembly of
+                    Virginia (the "Projects"); and</p>
+                <p>WHEREAS, the Authority intends to issue from time to time under the Program its
+                    Educational Facilities Revenue Bonds (Public Higher Education Financing Program)
+                    (the "Bonds") to finance the purchase of bonds and other debt instruments issued
+                    by the Institutions to finance or refinance the Projects, all in the furtherance
+                    of the purposes of the Act and the Program; and</p>
+                <p>WHEREAS, the Board of Visitors of The Rector and Visitors of the University of
+                    Virginia (the "Board") may from time to time wish to finance or refinance
+                    Projects of The Rector and Visitors of the University of Virginia (the
+                    "Institution") through the Program; and</p>
+                <p>WHEREAS, if the Institution wishes to finance or refinance a Project through the
+                    Program, it will be necessary for the Institution to enter into a Loan Agreement
+                    (a "Loan Agreement") between the Authority and the Institution and to evidence
+                    the loan to be made by the Authority to the Institution pursuant to the Loan
+                    Agreement <pb n="5844"/> by issuing the Institution's promissory note (the
+                    "Note") pursuant to Section 23-19 of the <hi rend="underline">Code of Virginia
+                        of 1950</hi>, as amended. Pursuant to the Loan Agreement, the Authority will
+                    agree to issue its Bonds and to use certain proceeds of the Bonds to purchase
+                    the Note issued by the Institution and the Institution will agree to use the
+                    proceeds received from the Authority to finance or refinance the construction of
+                    the Project and to make payments under the Loan Agreement and the Note in sums
+                    sufficient to pay, together with certain administrative and arbitrage rebate
+                    payments, the principal of, premium, if any, and interest due on that portion of
+                    the Bonds issued to purchase the Note; and</p>
+                <p>WHEREAS, the Institution now proposes to sell to the Authority its Note (the
+                    "2000A Note") to be issued under a Loan Agreement (the "2000A Loan Agreement")
+                    to finance or refinance all or a portion of the costs of the Darden School
+                    Expansion project, the National Radio Astronomy Observatory Addition project and
+                    the Student Center for the University of Virginia's College at Wise project
+                    (together, the "2000A Project"); and</p>
+                <p>WHEREAS, there has been made available to the Board in the office of the
+                    Institution's Executive Vice President and Chief Operating Officer the proposed
+                    forms of the 2000A Note and the 2000A Loan Agreement; and</p>
+                <p>WHEREAS, it is the desire of the Board to authorize the execution and delivery of
+                    the 2000A Loan Agreement and the execution and issuance of the 2000A Note to
+                    authorize officers of the Institution to execute, deliver and issue in the name
+                    of and on behalf of the Institution, the 2000A Loan Agreement, the 2000A Note
+                    and any and all documents necessary to effectuate the financing or refinancing
+                    of all or a portion of the costs of the 2000A Project through the Program with
+                    the Authority and to facilitate the purchase of the 2000A Note by the Authority;
+                    and</p>
+                <p>WHEREAS, it is the desire of the Board to approve the further participation by
+                    the Institution in the Program and to authorize the execution, delivery and
+                    issuance of such other Loan Agreements and Notes on terms and conditions
+                    substantially similar to the 2000A Loan Agreement and 2000A <pb n="5845"/> Note
+                    and to similarly authorize certain officers of the Institution to execute,
+                    deliver and issue in the name of and on behalf of the Institution, all Loan
+                    Agreements, all Notes and any and all future documents necessary to effectuate
+                    the Program with the Authority and to facilitate the purchase of the Notes by
+                    the Authority.</p>
+                <p>RESOLVED:</p>
+                <p>Section 1. The Board authorizes hereby the participation of the Institution in
+                    the Program and the execution of the loan agreements and other documents,
+                    including any note, as may be authorized by its authorized officers.</p>
+                <p>Section 2. The President of the Institution and the Executive Vice President and
+                    Chief Operating Officer of the Institution (the "Authorized Officers"), or
+                    either of them, are each hereby delegated and invested with full power and
+                    authority to execute, deliver and issue, on behalf of the Board, (a) the 2000A
+                    Loan Agreement with such changes, insertions or omissions as may be approved by
+                    the Authorized Officers, whose approval shall be evidenced conclusively by the
+                    execution and delivery of the 2000A Loan Agreement, (b) the 2000A Note with such
+                    changes, insertions or omissions as may be approved by any Authorized Officer,
+                    whose approval shall be evidenced conclusively by the execution and issuance of
+                    the 2000A Note, and (c) any and all other documents, instruments or certificates
+                    as may be deemed necessary to consummate the financing or refinancing of all or
+                    a portion of the costs of the 2000A Project through the Program, the
+                    construction of the 2000A Project and the Institution's participation in the
+                    Program, and to further carry out the purposes and intent of this Resolution.
+                    The Authorized Officers are directed to take such steps and deliver such
+                    certificates prior to the delivery of the 2000A Note as may be required under
+                    existing obligations of the Institution.</p>
+                <p>Section 3. The Authorized Officers, or either of them, are each hereby delegated
+                    and invested with full power and authority to execute and deliver, on behalf of
+                    the Board, (a) such future Loan Agreements in substantially <pb n="5846"/> the
+                    form of the 2000A Loan Agreement with such changes, insertions or omissions as
+                    may be approved by any Authorized Officer, whose approval shall be evidenced
+                    exclusively by the execution and delivery of the future Loan Agreement, (b) such
+                    future Notes in substantially the form of the 2000A Note with such changes,
+                    insertions or omissions as may be approved by the Authorized Officers, whose
+                    approval shall be evidenced exclusively by the execution and delivery of the
+                    future Note, and (c) any and all other documents, instruments or certificates as
+                    may be deemed necessary in the future to consummate the Program, the
+                    construction of the Projects and the Institution's participation in the Program,
+                    and to further carry out the purposes and intent of this Resolution in the
+                    future, it being the intent of the Board that no further action on behalf of the
+                    Board shall be necessary to empower the Authorized Officers, or either of them,
+                    to execute, deliver and issue such future Loan Agreements, future Notes and
+                    other documents as may be deemed necessary in order for the Institution to
+                    participate in the Program in the future.</p>
+                <p>Section 4. The authorizations given above as to the execution, delivery and
+                    issuance of the 2000A Loan Agreement and the 2000A Note are subject to the
+                    following parameters: (a) that the principal amount to be paid under the 2000A
+                    Note shall not be greater than the aggregate amount authorized for the
+                    components of the 2000A Project by the General Assembly of Virginia, including
+                    any adjustments required or permitted by law, (b) that the interest rate payable
+                    under the 2000A Note shall not exceed a "true" or "Canadian" interest cost more
+                    than fifty basis points higher than the interest rate for "AA" rated securities
+                    with comparable maturities, as reported by Delphis-Hanover, or another
+                    comparable service or index on the date that the interest rates on the 2000A
+                    Note are determined, taking into account original issue discount or premium, if
+                    any, (c) that the weighted average maturity of the principal payments due under
+                    the 2000A Note shall not be in excess of twenty (20) years, (d) that the last
+                    principal payment date under the 2000A Note with respect to each of the
+                    components of the 2000A Project shall not extend beyond the period of the
+                    reasonably expected economic life of each such component of the 2000A Project,
+                    (e) that the financing of the 2000A Project and the terms <pb n="5847"/> and
+                    provisions of the 2000A Loan Agreement and the 2000A Note will comply with the
+                    Alternative Construction and Financing Guidelines issued by the Commonwealth's
+                    Secretary of Finance, and (f) that the actual interest rates, maturities, and
+                    date of the 2000A Note shall be approved by an Authorized Officer, which
+                    approval will be evidenced by the execution of the 2000A Note.</p>
+                <p>Section 5. The authorizations given above as to the execution, delivery and
+                    issuance of any future Loan Agreements and future Notes are subject to the
+                    following parameters: (a) that the principal amount to be paid under such Notes
+                    shall not be greater than the amount authorized for the Projects by the General
+                    Assembly of Virginia, including any adjustments required or permitted by law,
+                    (b) that the interest rate payable under such Notes shall not exceed a "true" or
+                    "Canadian" interest cost more than fifty basis points higher than the interest
+                    rate for "AA" rated securities with comparable maturities, as reported by
+                    Delphis-Hanover, or another comparable service or index on the dates that the
+                    interest rates on such Notes are determined, taking into account original issue
+                    discount or premium, if any, (c) that the weighted average maturity of the
+                    principal payments due under such Notes shall not be in excess of twenty (20)
+                    years, (d) that the last principal payment date under such Notes with respect to
+                    each of the components of the Projects shall not extend beyond the period of the
+                    reasonably expected economic life of each such component of the Projects being
+                    financed, and (e) that the financing of the Projects and the terms and
+                    provisions of such Loan Agreements and Notes will comply with the Alternative
+                    Construction and Financing Guidelines issued by the Commonwealth's Secretary of
+                    Finance.</p>
+                <p>Section 6. The Board acknowledges, on behalf of the Institution, that if the
+                    Institution fails to make any payments of debt service due under any Loan
+                    Agreement or Note, including the 2000A Loan Agreement and the 2000A Note, the
+                    Program authorizes the State Comptroller to charge against the appropriations
+                    available to the Institution all future payments of debt service on that Loan
+                    Agreement and Note when due and payable and to make <pb n="5848"/> such payments
+                    to the Authority or its designee, so as to ensure that no future default will
+                    occur on such Loan Agreement or Note.</p>
+                <p>Section 7. The Board agrees that if the Authority determines that the Institution
+                    is an "obligated person" with respect to which a disclosure obligation arises
+                    under Rule 15c2-12 of the Securities and Exchange Commission with respect to any
+                    issue of Bonds, the Institution will enter into a continuing disclosure
+                    undertaking in form and substance satisfactory to the Authority and the
+                    Institution and will comply with the provisions and disclosure obligations
+                    contained therein.</p>
+                <p>Section 8. This resolution shall take effect immediately upon its adoption.</p>
+            </div1>
+            <div1 type="resolution" id="d35">
+                <head type="main">APPROVAL OF THE CREATION OF A COLLEGE FOUNDATION</head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, the University Policy on University-Related Foundations requires that
+                    all new University-Related Foundations receive approval of the Board of
+                    Visitors; and</p>
+                <p>WHEREAS, the Vice President for Development recommends that the Board of Visitors
+                    approve the creation of a University-Related Foundation for the College and
+                    Graduate School of Arts and Sciences; and</p>
+                <p>WHEREAS, this new foundation will adhere to the University's Policy on
+                    University-Related Foundations;</p>
+                <p>RESOLVED that the Board of Visitors approves the creation of a University-Related
+                    Foundation for the College and Graduate School of Arts and Sciences.</p>
+            </div1>
+            <div1 type="resolution" id="d36">
+                <pb n="5849"/>
+                <head type="main">APPROVAL OF THE AUDIT SCHEDULE</head>
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that the Audit Schedule for Fiscal Year <reg orig="2000-|2001"
+                        >20002001</reg>, is approved as recommended by the Audit Committee.</p>
+            </div1>
+            <div1 type="resolution" id="d37">
+                <head>APPROVAL OF PRELIMINARY DESIGN FOR THE MONROE LANE STUDENT RESIDENCE
+                    PROJECT</head>
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that the preliminary design, dated June <date value="2000-06-17">17,
+                        2000</date>, and prepared by Mitchell/Matthews Architects of
+                    Charlottesville, for the Monroe Lane Student Residence project, is approved for
+                    further development and construction.</p>
+            </div1>
+            <div1 type="resolution" id="d38">
+                <head type="main">APPROVAL OF VDOT AGREEMENT, EMMET STREET BRIDGE</head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, in accordance with Virginia Department of Transportation construction
+                    allocation procedures, it is necessary that a request by resolution be made in
+                    order that the Department program an urban highway project at the University of
+                    Virginia in the City of Charlottesville.</p>
+                <p>RESOLVED that the University of Virginia requests the Virginia Department of
+                    Transportation to establish an urban system highway project to provide a
+                    pedestrian and bicycle bridge over Emmet Street (near Massie Road) and
+                    associated roadway improvements, a distance of approximately 2400 feet; and</p>
+                <p>RESOLVED FURTHER that the University of Virginia agrees to pay its share of the
+                    total cost for preliminary engineering and construction of this project in
+                    accordance with Section 33.1-44 of the <hi rend="underline">Code of
+                        Virginia</hi>, and that, if the University subsequently elects to cancel
+                    this project, the University agrees to reimburse the Virginia Department of
+                    Transportation for the total amount of the cancellation.</p>
+            </div1>
+            <div1 type="resolution" id="d39">
+                <pb n="5850"/>
+                <head type="main">APPROVAL OF ALLOCATIONS FROM THE FISCAL YEAR 2000 OPERATING MARGIN
+                    OF THE MEDICAL CENTER</head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, the Medical Center will exceed its projected four percent operating
+                    margin in Fiscal Year 2000; and</p>
+                <p>WHEREAS, the Medical Center's operating margin in Fiscal Year 2000 was positively
+                    impacted by both one-time revenue enhancements related to payments for services
+                    provided in prior periods and reduced operating costs relative to the volume of
+                    activity; and</p>
+                <p>WHEREAS, the Medical Center staff has contributed significantly to the high
+                    quality care of patients under extremely demanding conditions; and</p>
+                <p>WHEREAS, the Board recognizes the contributions of the staff to the success of
+                    the Medical Center in delivering high quality and efficient health care to its
+                    patients, and wishes to express its gratitude;</p>
+                <p>RESOLVED that the Executive Vice President and Chief Operating Officer is
+                    authorized to apply up to &dollar;1 million of the Fiscal Year 2000 operating
+                    margin of the Medical Center to support the professional development and
+                    training of persons who deliver health care, and up to &dollar;2 million from
+                    the same source to augment the authorization made by the Board in April 2000 to
+                    adjust the salaries of critical personnel to market rates with the express
+                    purpose of improving retention of the Medical Center's health care staff.</p>
+            </div1>
+            <div1 type="resolution" id="d40">
+                <head type="main">APPROVAL OF REVISIONS TO THE BOARD'S BYLAWS</head>
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that the bylaws of The University of Virginia's College at Wise Board be
+                    approved as amended (see Attachment B).</p>
+            </div1>
+            <div1 type="resolution" id="d41">
+                <pb n="5851"/>
+                <head type="main">APPOINTMENTS TO THE UNIVERSITY OF VIRGINIA'S COLLEGE AT WISE
+                    BOARD</head>
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that <name>Ms. Marcia Adams-Gilliam, Mr. Don Green, Mr. Ronnie
+                        Montgomery, Mr. Ford C. Quillen, and Mr. Henry R. Winkler</name> be
+                    appointed to The University of Virginia's College at Wise Board, for a term
+                    ending <date value="2004-06-30">June 30, 2004</date>, in accordance with the
+                    terms of its bylaws.</p>
+            </div1>
+            <div1 type="resolution" id="d42">
+                <head>MEMORIAL RESOLUTION FOR <name>BELVA T. DUNN JONES</name></head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, <name>Belva Tune Dunn Jones</name>, an alumna of Mary Washington
+                    College, was appointed to the Board of Visitors by Governor Stanley in 1954;
+                    and</p>
+                <p>WHEREAS, <name>Mrs. Jones</name> was 31 at the time of her appointment, the
+                    youngest woman to be named to a board of visitors in the United States; and</p>
+                <p>WHEREAS, <name>Mrs. Jones</name> was reappointed to the Board of Visitors by
+                    Governor Almond for a second term in 1958; and</p>
+                <p>WHEREAS, <name>Mrs. Jones</name> was a valued member of the Board with a
+                    particular interest in Mary Washington College, at that time a part of the
+                    University of Virginia; and</p>
+                <p>WHEREAS, <name>Mrs. Jones</name> died in Northampton County on <date
+                        value="2000-05-31">May 31, 2000</date>;</p>
+                <p>RESOLVED that the Board of Visitors expresses its deepest sympathy to the family
+                    of <name>Belva Tune Dunn Jones</name>, as well as its appreciation for her years
+                    of devoted service to the Board and to the University of Virginia.</p>
+            </div1>
+            <div1 type="resolution" id="d43">
+                <pb n="5852"/>
+                <head type="main">ELECTIONS AND RE-ELECTIONS TO THE MILLER CENTER GOVERNING
+                    COUNCIL</head>
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that <name>Ms. Sylvia B. Mathews and Mr. Leigh B. Middleditch,
+                        Jr.</name>, be elected to the Miller Center Governing Council, for three
+                    years, effective <date value="2000-06-17">June 17, 2000</date>;</p>
+                <p>RESOLVED FURTHER that <name>Ms. Bette B. Anderson and Mr. Daniel K.
+                        Frierson</name> be re-elected to the Miller Center Governing Council, for
+                    three years, effective <date value="2000-06-17">June 17, 2000</date>.</p>
+            </div1>
+            <div1 type="resolution" id="d44">
+                <head type="main">APPROVAL OF PROPERTY PURCHASE</head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, the University has identified strategically valuable property adjacent
+                    to current Health System facilities that may be available for purchase; and</p>
+                <p>WHEREAS, the acquisition of adjacent property will assist in addressing the
+                    current and future needs for additional space for Medical Center and Medical
+                    School programs;</p>
+                <p>RESOLVED that the Executive Vice President and Chief Operating Officer is
+                    authorized to: 1) negotiate appropriate purchase prices for property adjacent to
+                    current Health System facilities that are of strategic importance for the
+                    current and future space needs of the Medical Center and the Medical School,
+                    subject to the approval of the Chair of the Finance Committee; and 2) execute
+                    any and all contracts and other documents pertaining to the acquisition of
+                    adjacent property.</p>
+            </div1>
+            <div1 type="resolution" id="d45">
+                <head type="main">APPROVAL OF SUMMARY OF AUDIT FINDINGS</head>
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that the Summary of Audit Findings for the period <dateRange
+                        from="2000-03-01" to="2000-04-30">March 1, 2000 through April 30,
+                        2000</dateRange> as presented by the Director of Audits, is approved as
+                    recommended by the Audit Committee.</p>
+            </div1>
+            <div1 type="section" id="d46">
+                <pb n="5853"/>
+                <head type="main">FACULTY PERSONNEL ACTIONS</head>
+                <div2 type="resolution" id="d47">
+                    <head type="sub">ELECTIONS</head>
+                    <p>The following resolution was adopted:</p>
+                    <p>RESOLVED that the following persons are elected to the faculty:</p>
+                    <list>
+                        <item><name>Dr. Matthew J. Bassignani</name> as Assistant Professor of
+                            Radiology, for three years, effective <date value="2000-04-25">April 25,
+                                2000</date>.</item>
+                        <item><name>Dr. Ivan K. Crosby</name> as Professor of Clinical Surgery, for
+                            two years, effective <date value="2000-02-21">February 21, 2000</date>. </item>
+                        <item><name>Mr. Jagadananda Ghosh</name> as Assistant Professor of Research
+                            in Internal Medicine, from<dateRange from="2000-03-31" to="2001-03-02"
+                                >March 31, 2000 to March 2, 2001</dateRange>. </item>
+                        <item><name>Mr. Kevin T. Hogan</name> as Associate Professor of Research in
+                            Surgery, for one year, effective <date value="2000-04-01">April 1,
+                                2000</date>. </item>
+                        <item><name>Ms. Sandra D. Iliescu</name> as Assistant Professor of
+                            Architecture, for three academic years, effective <date
+                                value="2000-08-25">August 25, 2000</date>. </item>
+                        <item><name>Ms. Mary J. Kelley</name> as Assistant Professor of Medical
+                            Education in Internal Medicine, for three years, effective <date
+                                value="2000-04-17">April 17, 2000</date>. </item>
+                        <item><name>Dr. William F. Marx</name> as Assistant Professor of Radiology,
+                            for one year, effective <date value="2000-04-01">April 1, 2000</date>. </item>
+                        <item><name>Ms. Ellen S. Pentz</name> as Assistant Professor of Research in
+                            Pediatrics, for one year, effective <date value="2000-03-01">March 1,
+                                2000</date>. </item>
+                        <item><name>Ms. Anna M. Pomes</name> as Assistant Professor of Research in
+                            Internal Medicine, for two years, effective <date value="2000-03-01"
+                                >March 1, 2000</date>. </item>
+                        <item><name>Dr. Paul W. Read</name> as Assistant Professor of Radiation
+                            Oncology, for one year, effective<date value="2000-03-01">March 1,
+                                2000</date>.</item>
+
+                        <pb n="5854"/>
+
+                        <item><name>Mr. John W. Steinke</name> as Assistant Professor of Research in
+                            Internal Medicine, for two years, effective <date value="2000-02-03"
+                                >February 3, 2000</date>.</item>
+                    </list>
+                </div2>
+                <div2 type="resolution" id="d48">
+                    <head type="sub">ACTIONS RELATING TO CHAIRHOLDERS</head>
+                    <p>The following resolution was adopted:</p>
+                    <p>RESOLVED that the actions relating to the chairholders are approved as shown
+                        below:</p>
+                    <div3 type="section" id="d49">
+                        <head type="desc">(a) Election of Chairholders</head>
+                        <list>
+                            <item><name>Dr. Sim S. Galazka</name> as Walter M. Seward Professor of
+                                Family Medicine, effective <date value="2000-02-01">February 1,
+                                    2000</date>. <name>Dr. Galazka</name>will continue as Professor
+                                of Family Medicine, without term.</item>
+                            <item><name>Dr. David C. Slawson</name> as B. Lewis Barnett, Jr.,
+                                Professor of Family Medicine, effective <date value="2000-03-25"
+                                    >March 25, 2000</date>. <name>Dr. Slawson</name> will continue
+                                as Associate Professor of Clinical Family Medicine, with
+                                term.</item>
+                            <item><name>Mr. James A. Smith</name> as Cavaliers' Distinguished
+                                Teaching Professor, for two years, effective <date
+                                    value="2000-06-25">June 25, 2000</date>. <name>Mr. Smith</name>
+                                will continue as Associate Professor of Civil Engineering, without
+                                term.</item>
+                        </list>
+                    </div3>
+                    <div3 type="section" id="d50">
+                        <head type="desc">(b) Promotions of Chairholders</head>
+                        <list>
+                            <item><name>Dr. Margaret E. Mohrmann</name> from Associate Professor of
+                                Pediatrics, with term, to Associate Professor of Pediatrics, without
+                                term, effective <date value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Dr. David C. Slawson</name> from Associate Professor of
+                                Clinical Family Medicine and Associate Professor of Clinical Health
+                                Evaluation Sciences to Professor of Clinical Family Medicine and
+                                Professor of Clinical Health Evaluation Sciences, for three years,
+                                effective <date value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Dr. Craig L. Slingluff, Jr.</name> from Associate Professor
+                                of Surgery to Professor of Surgery, effective <date
+                                    value="2000-07-01">July 1, 2000</date>.</item>
+                        </list>
+                    </div3>
+                    <div3 type="section" id="d51">
+                        <pb n="5855"/>
+                        <head type="desc">Special Salary Action of Chairholders &mdash; Deleted</head><ab/>
+                    </div3>
+                    <div3 type="section" id="d52">
+                        <head type="desc">(d) Resignations of Chairholders</head>
+                        <p>The following resignations were announced:</p>
+                        <list>
+                            <item><name>Mr. Robert G. King</name> as Carter Glass Professor of
+                                Economics and Robert P. Black Research Professor of Economics,
+                                effective <date value="2000-05-24">May 24, 2000</date>, to accept
+                                another position.</item>
+                            <item><name>Ms. Julie C. Novak</name> as Theresa A. Thomas Professor in
+                                Primary Care Nursing, effective <date value="2000-06-30">June 30,
+                                    2000</date>, to accept another position.</item>
+                        </list>
+                    </div3>
+                </div2>
+                <div2 type="resolution" id="d53">
+                    <head>PROMOTIONS</head>
+                    <p>The following resolution was adopted:</p> 
+                            <p>RESOLVED that the following persons are promoted:</p>
+                    <list>
+                            <item><name>Mr. Gib Akin</name> from Associate Professor of Commerce to
+                                Professor of Commerce, effective <date value="2000-08-25">August 25,
+                                    2000</date>.</item>
+                            <item><name>Ms. Millicent S. Aron</name> from Associate Professor of
+                                History to Professor of History, effective <date value="2000-08-25"
+                                    >August 25, 2000</date>.</item>
+                            <item><name>Mr. Craig E. Barton</name> from Assistant Professor of
+                                Architecture to Associate Professor of Architecture, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Dr. Victor C. Baum</name> from Associate Professor of
+                                Anesthesiology, without term, and Associate Professor of Pediatrics,
+                                with term, to Professor of Anesthesiology, without term, and
+                                Professor of Pediatrics, for three years, effective <date
+                                    value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Mr. Douglas A. Bayliss</name> from Assistant Professor of
+                                Pharmacology to Associate Professor of Pharmacology, effective <date
+                                    value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Mr. James M. Beach</name> from Assistant Professor of
+                                Research in Ophthalmology to Associate Professor of Research in
+                                Ophthalmology, for one year, effective <date value="2000-07-01">July
+                                    1, 2000</date>.</item>
+                            <pb n="5856"/>
+                            <item><name>Mr. Peter A. Beling</name> from Assistant Professor of
+                                Systems Engineering to Associate Professor of Systems Engineering,
+                                effective <date value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Dr. Stephen J. Bickston</name> from Assistant Professor of
+                                Clinical Internal Medicine to Associate Professor of Clinical
+                                Internal Medicine, for three years, effective <date
+                                    value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Ms. Amy H. Bouton</name> from Assistant Professor of
+                                Microbiology to Associate Professor of Microbiology, for two years,
+                                effective <date value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Dr. Robert J. Boyle</name> from Associate Professor of
+                                Pediatrics to Professor of Pediatrics, effective <date
+                                    value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Dr. William J. Brady</name> from Assistant Professor of
+                                Emergency Medicine and Assistant Professor of Clinical Internal
+                                Medicine to Associate Professor of Emergency Medicine, without term,
+                                and Associate Professor of Clinical Internal Medicine, for three
+                                years, effective <date value="2000-07-01">July 1,
+                                2000</date>.</item>
+                            <item><name>Ms. Maite Brandt-Pearce</name> from Assistant Professor of
+                                Electrical Engineering to Associate Professor of Electrical
+                                Engineering, effective <date value="2000-08-25">August 25,
+                                    2000</date>.</item>
+                            <item><name>Mr. Frederick J. Brigham</name> from Assistant Professor of
+                                Education to Associate Professor of Education, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Mr. John K. Brown</name> from Assistant Professor of
+                                Technology, Culture and Communication to Associate Professor of
+                                Technology, Culture and Communication, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Ms. Beth P. Camden</name> from Assistant Librarian, General
+                                Faculty, Alderman Library, to Associate Librarian, General Faculty,
+                                Alderman Library, effective <date value="2000-08-25">August 25,
+                                    2000</date>.</item>
+                            <item><name>Mr. James G. Clawson</name> from Associate Professor of
+                                Business Administration to Professor of Business Administration,
+                                effective <date value="2000-08-25">August 25, 2000</date>.</item>
+                            <pb n="5857"/>
+                            <item><name>Dr. Bruce J. Cohen</name> from Assistant Professor of
+                                Psychiatric Medicine and Assistant Professor of Clinical Physical
+                                Medicine and Rehabilitation to Associate Professor of Psychiatric
+                                Medicine and Associate Professor of Clinical Physical Medicine and
+                                Rehabilitation, for three years, effective <date value="2000-07-01"
+                                    >July 1, 2000</date>.</item>
+                            <item><name>Mr. Dale C. Copeland</name> from Assistant Professor of
+                                Government and Foreign Affairs to Associate Professor of Government
+                                and Foreign Affairs, effective <date value="2000-08-25">August 25,
+                                    2000</date>.</item>
+                            <item><name>Ms. Teresa B. Culver</name> from Assistant Professor of
+                                Civil Engineering to Associate Professor of Civil Engineering,
+                                effective <date value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Dr. Alan C. Dalkin</name> from Associate Professor of
+                                Internal Medicine, with term, to Associate Professor of Internal
+                                Medicine, without term, effective <date value="2000-07-01">July 1,
+                                    2000</date>.</item>
+                            <item><name>Ms. Diane L. Damiano</name> from Assistant Professor of
+                                Orthopaedic Surgery to Associate Professor of Orthopaedic Surgery,
+                                for three years, effective <date value="2000-07-01">July 1,
+                                    2000</date>.</item>
+                            <item><name>Mr. Richard N. Day</name> from Associate Professor of
+                                Internal Medicine, with term, and Associate Professor of Cell
+                                Biology, with term, to Associate Professor of Internal Medicine,
+                                without term, and Associate Professor of Cell Biology, for three
+                                years, effective <date value="2000-07-01">July 1,
+                                2000</date>.</item>
+                            <item><name>Mr. John D. Dillery</name> from Assistant Professor of
+                                Classics to Associate Professor of Classics, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Dr. David B. Drake</name> from Assistant Professor of
+                                Plastic Surgery and Assistant Professor of Clinical Otolaryngology
+                                &mdash; Head and Neck Surgery to Associate Professor of Plastic
+                                Surgery, for four years, and Associate Professor of Clinical
+                                Otolaryngology &mdash; Head and Neck Surgery, for three years,
+                                effective <date value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Dr. Kimberly P. Dunsmore</name> from Assistant Professor of
+                                Pediatrics to Associate Professor of Clinical Pediatrics, for three
+                                years, effective <date value="2000-07-01">July 1,
+                                2000</date>.</item>
+                            <pb n="5858"/>
+                            <item><name>Mr. Kenneth M. Eades</name> from Associate Professor of
+                                Business Administration to Professor of Business Administration,
+                                effective <date value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Ms. Deborah Eisenberg</name> from Professor, General
+                                Faculty, to Professor of English, effective <date value="2000-08-25"
+                                    >August 25, 2000</date>.</item>
+                            <item><name>Mr. Anthony Frankfurter</name> from Associate Research
+                                Professor, General Faculty, to Research Professor, General Faculty,
+                                effective <date value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Dr. John P. Franko</name> from Assistant Professor of
+                                Clinical Family Medicine to Associate Professor of Clinical Family
+                                Medicine, for three years, effective <date value="2000-07-01">July
+                                    1, 2000</date>.</item>
+                            <item><name>Dr. Thomas J. Gampper</name> from Assistant Professor of
+                                Plastic Surgery and Assistant Professor of Clinical Neurosurgery to
+                                Associate Professor of Plastic Surgery and Associate Professor of
+                                Clinical Neurosurgery, for three years, effective <date
+                                    value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Dr. Spencer B. Gay</name> from Associate Professor of
+                                Radiology to Professor of Radiology, effective <date
+                                    value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Dr. Lawrence W. Gimple</name> from Associate Professor of
+                                Internal Medicine to Professor of Internal Medicine, effective <date
+                                    value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Mr. Jacob Goeree</name> from Assistant Professor of
+                                Economics to Associate Professor of Economics, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Mr. Andrew Grimshaw</name> from Associate Professor of
+                                Computer Science to Professor of Computer Science, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Ms. Margaret M. Grogan</name> from Assistant Professor of
+                                Education to Associate Professor of Education, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <pb n="5859"/>
+                            <item><name>Mr. Daniel J. Haisenleder</name> from Assistant Professor of
+                                Research in Internal Medicine to Associate Professor of Research in
+                                Internal Medicine, for three years, effective <date
+                                    value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Mr. Hossein Haj-Hariri</name> from Associate Professor of
+                                Mechanical and Aerospace Engineering to Professor of Mechanical and
+                                Aerospace Engineering, effective <date value="2000-08-25">August 25,
+                                    2000</date>.</item>
+                            <item><name>Ms. Diane M. Hoffman</name> from Assistant Professor of
+                                Education to Associate Professor of Education, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Dr. Shepard R. Hurwitz</name> from Associate Professor of
+                                Orthopaedic Surgery to Professor of Orthopaedic Surgery, effective
+                                    <date value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Dr. Nabil F. Jarmukli</name> from Assistant Professor of
+                                Internal Medicine to Associate Professor of Internal Medicine, for
+                                three years, effective <date value="2000-07-01">July 1,
+                                2000</date>.</item>
+                            <item><name>Dr. Mary E. Jensen</name> from Associate Professor of
+                                Radiology, with term, and Assistant Professor of Clinical
+                                Neurosurgery to Associate Professor of Radiology, without term, and
+                                Associate Professor of Clinical Neurosurgery, for three years,
+                                effective <date value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Dr. Vern C. Juel</name> from Assistant Professor of
+                                Neurology to Associate Professor of Neurology, for three years,
+                                effective <date value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Dr. David M. Kahler</name> from Associate Professor of
+                                Orthopaedic Surgery, with term, to Associate Professor of
+                                Orthopaedic Surgery, without term, effective <date
+                                    value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Mr. William C. Keene</name> from Research Associate
+                                Professor, General Faculty, to Research Professor, General Faculty,
+                                effective <date value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Mr. Richard Lee Kennedy</name> from Assistant Professor of
+                                Drama to Associate Professor of Drama, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <pb n="5860"/>
+                            <item><name>Mr. Mark T. Kopeny</name> from Assistant Professor, General
+                                Faculty to Associate Professor, General Faculty, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Ms. Andrea L. Larson</name> from Assistant Professor,
+                                General Faculty, to Associate Professor, General Faculty, effective
+                                    <date value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Mr. Michael B. Lawrence</name> from Assistant Professor of
+                                Biomedical Engineering to Associate Professor of Biomedical
+                                Engineering, effective <date value="2000-08-25">August 25,
+                                    2000</date>.</item>
+                            <item><name>Ms. Angeline S. Lillard</name> from Assistant Professor of
+                                Psychology to Associate Professor of Psychology, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Mr. Steven R. Majewski</name> from Assistant Professor of
+                                Astronomy to Associate Professor of Astronomy, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Ms. Barbara J. Mann</name> from Assistant Professor of
+                                Internal Medicine and Assistant Professor of Research in
+                                Microbiology to Associate Professor of Internal Medicine, without
+                                term, and Associate Professor of Research in Microbiology, for three
+                                years, effective <date value="2000-07-01">July 1,
+                                2000</date>.</item>
+                            <item><name>Ms. Christina M. Mastrangelo</name> from Assistant Professor
+                                of Systems Engineering to Associate Professor of Systems
+                                Engineering, effective <date value="2000-08-25">August 25,
+                                    2000</date>.</item>
+                            <item><name>Mr. Charles W. McCurdy</name> from Associate Professor of
+                                History to Professor of History, effective <date value="2000-08-25"
+                                    >August 25, 2000</date>.</item>
+                            <item><name>Dr. Coleen A. McNamara</name> from Assistant Professor of
+                                Internal Medicine and Assistant Professor of Molecular Physiology
+                                and Biological Physics to Associate Professor of Internal Medicine
+                                and Assistant Professor of Molecular Physiology and Biological
+                                Physics, for three years, effective <date value="2000-07-01">July 1,
+                                    2000</date>.</item>
+                            <item><name>Mr. Charles Menefee, III</name>, from Associate Professor of
+                                Architecture, with term, to Associate Professor of Architecture,
+                                without term, effective <date value="2000-08-25">August 25,
+                                    2000</date>.</item>
+                            <pb n="5861"/>
+                            <item><name>Ms. Suzanne M. Moenter</name> from Assistant Professor of
+                                Internal Medicine and Assistant Professor of Cell Biology to
+                                Associate Professor of Internal Medicine and Associate Professor of
+                                Cell Biology, for three years, effective <date value="2000-07-01"
+                                    >July 1, 2000</date>.</item>
+                            <item><name>Ms. Janelle A. Molloy</name> from Assistant Professor of
+                                Clinical Radiation Oncology to Associate Professor of Clinical
+                                Radiation Oncology, for one year, effective <date value="2000-07-01"
+                                    >July 1, 2000</date>.</item>
+                            <item><name>Dr. Ruth E. Moran</name> from Assistant Professor of
+                                Clinical Radiology to Associate Professor of Clinical Radiology, for
+                                three years, effective <date value="2000-07-01">July 1,
+                                2000</date>.</item>
+                            <item><name>Dr. Victoria F. Norwood</name> from Assistant Professor of
+                                Pediatrics to Associate Professor of Pediatrics, for three years,
+                                effective <date value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Mr. Brian P. Owensby</name> from Assistant Professor of
+                                History to Associate Professor of History, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Ms. Deborah W. Parker</name> from Associate Professor of
+                                Spanish, Italian and Portuguese to Professor of Spanish, Italian and
+                                Portuguese, effective <date value="2000-08-25">August 25,
+                                    2000</date>.</item>
+                            <item><name>Mr. Eduardo A. Perozo</name> from Assistant Professor of
+                                Molecular Physiology and Biological Physics to Associate Professor
+                                of Molecular Physiology and Biological Physics, effective <date
+                                    value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Ms. Gina R. Petroni</name> from Assistant Professor of
+                                Research in Health Evaluation Sciences to Associate Professor of
+                                Research in Health Evaluation Sciences, for three years, effective
+                                    <date value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Mr. Andrei S. Rapinchuk</name> from Associate Professor of
+                                Mathematics to Professor of Mathematics, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Mr. Kodimangalam S. Ravichandran</name> from Assistant
+                                Professor of Microbiology to Associate Professor of Microbiology,
+                                effective <date value="2000-07-01">July 1, 2000</date>.</item>
+                            <pb n="5862"/>
+                            <item><name>Mr. Bradly W. Reed</name> from Assistant Professor of
+                                History to Associate Professor of History, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Dr. James F. Reibel</name> from Assistant Professor of
+                                Clinical Otolaryngology - Head and Neck Surgery to Associate
+                                Professor of Clinical Otolaryngology - Head and Neck Surgery, for
+                                three years, effective <date value="2000-07-01">July 1,
+                                2000</date>.</item>
+                            <item><name>Dr. George F. Rich</name> from Associate Professor of
+                                Anesthesiology and Associate Professor of Biomedical Engineering,
+                                with term, to Professor of Anesthesiology and Professor of
+                                Biomedical Engineering, for two years, effective <date
+                                    value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Mr. Joel Rini</name> from Associate Professor of Spanish,
+                                Italian and Portuguese to Professor of Spanish, Italian and
+                                Portuguese, effective <date value="2000-08-25">August 25,
+                                    2000</date>.</item>
+                            <item><name>Ms. Emilie F. Rissman</name> from Associate Professor of
+                                Biology to Professor of Biology, effective <date value="2000-08-25"
+                                    >August 25, 2000</date>.</item>
+                            <item><name>Dr. Mark K. Robbins</name> from Assistant Professor of
+                                Clinical Internal Medicine to Associate Professor of Clinical
+                                Internal Medicine, for three years, effective July 1, 2000.</item>
+                            <item><name>Ms. Joan D. Ruelle</name> from Affiliate Librarian, General
+                                Faculty, Alderman Library, to Assistant Librarian, General Faculty,
+                                Alderman Library, effective <date value="2000-08-25">August 25,
+                                    2000</date>.</item>
+                            <item><name>Mr. Edmund P. Russell, III</name>, from Assistant Professor
+                                of Technology, Culture and Communication to Associate Professor of
+                                Technology, Culture and Communication, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Mr. James D. Savage</name> from Associate Professor of
+                                Government and Foreign Affairs to Professor of Government and
+                                Foreign Affairs, effective <date value="2000-08-25">August 25,
+                                    2000</date>.</item>
+                            <item><name>Mr. John R. Scully</name> from Associate Professor of
+                                Materials Science and Engineering to Professor of Materials Science
+                                and Engineering, effective <date value="2000-08-25">August 25,
+                                    2000</date>.</item>
+                            <pb n="5863"/>
+                            <item><name>Mr. H. L. Seneviratne</name> from Associate Professor of
+                                Anthropology to Professor of Anthropology, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Mr. Peter L. Sheras</name> from Associate Professor of
+                                Education to Professor of Education, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Mr. Kevin J. Sullivan</name>from Assistant Professor of
+                                Computer Science to Associate Professor of Computer Science,
+                                effective <date value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Mr. Lukas K. Tamm</name> from Associate Professor of
+                                Molecular Physiology and Biological Physics to Professor of
+                                Molecular Physiology and Biological Physics, effective <date
+                                    value="2000-07-01">July 1, 2000</date>.</item>
+                            <item>[t]&emsp;<name>Mr. Elias D. Towe</name> from Associate Professor
+                                of Electrical Engineering to Professor of Electrical Engineering,
+                                effective <date value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Ms. Patricia A. Trimmer</name> from Assistant Professor of
+                                Research in Neurology and Assistant Professor of Research in
+                                Neuroscience to Associate Professor of Research in Neurology and
+                                Associate Professor of Research in Neuroscience, for three years,
+                                effective <date value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Dr. Bhairvi K. Trivedi</name> from Assistant Professor of
+                                Clinical Internal Medicine to Associate Professor of Clinical
+                                Internal Medicine, for three years, effective <date
+                                    value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Dr. Alda Tufro-McReddie</name> from Assistant Professor of
+                                Pediatrics to Associate Professor of Pediatrics, for three years,
+                                effective <date value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Mr. Jeremy B. Tuttle</name> from Associate Professor of
+                                Neuroscience and Associate Professor of Research in Urology, with
+                                term, to Professor of Neuroscience and Professor of Research in
+                                Urology, for three years, effective <date value="2000-07-01">July 1,
+                                    2000</date>.</item>
+                            <pb n="5864"/>
+                            <item><name>Mr. Milton Vickerman</name> from Assistant Professor of
+                                Sociology to Associate Professor of Sociology, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Mr. David A. Waldner</name> from Assistant Professor of
+                                Government and Foreign Affairs to Associate Professor of Government
+                                and Foreign Affairs, effective <date value="2000-08-25">August 25,
+                                    2000</date>.</item>
+                            <item><name>Ms. Diane P. Walker</name> from Associate Librarian, General
+                                Faculty, Alderman Library, to Librarian, General Faculty, Alderman
+                                Library, effective <date value="2000-08-25">August 25,
+                                2000</date>.</item>
+                            <item><name>Mr. Paul L. Walker</name> from Assistant Professor of
+                                Commerce to Associate Professor of Commerce, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Mr. Russell J. Weber</name> from Associate Professor of
+                                Business Administration to Professor of Business Administration,
+                                effective <date value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Ms. Toni G. Wegner</name> from Associate Professor, General
+                                Faculty, to Professor, General Faculty, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Mr. K. Preston White</name> from Associate Professor of
+                                Systems Engineering to Professor of Systems Engineering, effective
+                                    <date value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Ms. Ellen M. Whitener</name> from Associate Professor of
+                                Commerce to Professor of Commerce, effective <date
+                                    value="2000-08-25">August 25, 2000</date>.</item>
+                            <item><name>Mr. Mark B. Williams</name> from Assistant Professor of
+                                Radiology to Associate Professor of Radiology, for one year,
+                                effective <date value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Dr. Brian Wispelwey</name> from Associate Professor of
+                                Internal Medicine to Professor of Internal Medicine, effective <date
+                                    value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Mr. John J. Yiannias</name> from Associate Professor of Art
+                                to Professor of Art, effective <date value="2000-02-25">February 25,
+                                    2000</date>.</item>
+                        </list>
+                </div2>
+            
+                <div2 type="resolution" id="d54">
+                    <pb n="5865"/>
+                    <head type="sub">SPECIAL SALARY ACTIONS DELETED</head>
+                    <ab type="empty" rend="none"/>
+                </div2>
+                <div2 type="resolution" id="d55">
+                    <head type="sub">RESIGNATIONS</head>
+                    <p>The following resignations were announced:</p>
+                    <list>
+                            <item><name>Ms. Marianne Baxter</name>, Professor of Economics,
+                                effective <date value="2000-05-24">May 24, 2000</date>, to accept
+                                another position.</item>
+                            <item><name>Ms. Lori L. Graham</name>, Assistant Professor of Civil
+                                Engineering, effective <date value="2000-05-24">May 24, 2000</date>,
+                                to accept another position.</item>
+                            <item><name>Ms. Ana Maria Herrera</name>, Assistant Professor of
+                                Economics, effective <date value="2000-05-24">May 24, 2000</date>,
+                                to accept another position.</item>
+                            <item><name>Ms. Meei-Huey Jeng</name>, Assistant Professor of Internal
+                                Medicine, effective <date value="2000-05-31">May 31, 2000</date>, to
+                                accept another position.</item>
+                            <item><name>Mr. Chinghai Kao</name>, Assistant Professor of Urology,
+                                effective <date value="2000-05-31">May 31, 2000</date>, to accept
+                                another position.</item>
+                            <item><name>Dr. Neil P. Lewis</name>, Assistant Professor of Internal
+                                Medicine, effective <date value="2000-06-30">June 30, 2000</date>,
+                                to accept another position.</item>
+                            <item><name>Mr. Gregg E. Newschwander</name>, Assistant Professor of
+                                Nursing, General Nursing Faculty, effective <date value="2000-05-24"
+                                    >May 24, 2000</date>, to accept another position.</item>
+                            <item><name>Ms. Ayse Pamuk</name>, Assistant Professor of Urban and
+                                Environmental Planning, effective <date value="2000-05-24">May 24,
+                                    2000</date>, to accept another position.</item>
+                            <item><name>Ms. Kathleen Ryall</name>, Assistant Professor of Computer
+                                Science, effective <date value="2000-05-24">May 24, 2000</date>, to
+                                accept another position.</item>
+                        </list>
+                </div2>
+                <div2 type="announcement" id="d56">
+                    <pb n="5866"/>
+                    <head type="sub">RE-APPOINTMENTS</head>
+                    <p>The following re-appointments were announced:</p>
+                    <list>
+                            <item><name>Mr. Samuel A. Anderson, III</name>, as Architect for the
+                                University, for three years, effective <date value="2000-06-01">June
+                                    1, 2000</date>.</item>
+                            <item><name>Mr. John A. Blackburn</name> as Dean of Admission, for five
+                                years, effective <date value="2000-06-25">June 25,
+                                2000</date>.</item>
+                            <item><name>Ms. Amy D. Cronin</name> as Special Assistant to the
+                                President and Chief of Staff, for five years, effective <date
+                                    value="2000-07-31">July 31, 2000</date>.</item>
+                            <item><name>Ms. Yvonne B. Hubbard</name> as Director of Financial Aid,
+                                for five years, effective <date value="2000-02-29">February 29,
+                                    2000</date>.</item>
+                            <item><name>Mr. James S. Kennan</name> as Associate Vice President for
+                                the Health System and Special Assistant to the Vice President and
+                                Provost for the Health System, for three years, effective <date
+                                    value="2000-01-01">January 1, 2000</date>.</item>
+                            <item><name>Ms. B. Jeanette Lancaster</name> as Dean, School of Nursing,
+                                for five years, effective <date value="2000-01-01">January 1,
+                                    2000</date>.</item>
+                            <item><name>Ms. Shirley L. Menaker</name> as Associate Provost for
+                                Academic Support and Classroom Management, for five years, effective
+                                    <date value="2000-07-01">July 1, 2000</date>.</item>
+                            <item><name>Mr. Jeffrey Plank</name> as Assistant Vice President for
+                                Research, for three years, effective <date value="2000-01-01"
+                                    >January 1, 2000</date>.</item>
+                            <item><name>Mr. Robert C. Vaughan</name> as Director, Virginia
+                                Foundation for the Humanities, for one year, effective <date
+                                    value="1999-06-25">June 25, 1999</date>.</item>
+                            <item><name>Mr. Robert C. Vaughan</name> as Director, Virginia
+                                Foundation for the Humanities, for three years, effective <date
+                                    value="2000-06-25">June 25, 2000</date>.</item>
+                            <item><name>Ms. Linda A. Watson</name> as Director of The Claude Moore
+                                Health Sciences Library, for five years, effective <date
+                                    value="2000-04-01">April 1, 2000</date>.</item>
+                        </list>
+                </div2>
+                <pb n="5867"/>
+                <div2 type="announcement" id="d57">
+                    <head type="sub">DEATHS</head>
+                 
+                        <list>
+                            <item><name>Dr. Wayne Cail</name>, Professor of Radiology, died <date
+                                    value="2000-02-06">February 6, 2000</date>. <name>Dr.
+                                    Cail</name> had been a member of the faculty since <date
+                                    value="1979-07-01">July 1, 1979</date>.</item>
+                            <item><name>Mr. Heinz G. F. Wilsdorf</name>, William G. Reynolds
+                                Professor Emeritus of Materials Science, died <date
+                                    value="2000-04-17">April 17, 2000</date>. <name>Mr.
+                                    Wilsdorf</name> was a member of the faculty from September, 1963
+                                until his retirement, effective <date value="1991-01-16">January 16,
+                                    1991</date>.</item>
+                        </list>
+                </div2>
+                <div2 type="announcement" id="d58">
+                    <head type="sub">CHANGE IN THE APPOINTMENT OF MS. SALLY N. BARBER</head>
+                    <p>The President announced the appointment change:</p> 
+                            <p>That the appointment of <name>Ms. Sally N. Barber</name> as Senior
+                                Assistant to the Vice President and Provost for the Health System,
+                                for two years, effective <date value="2000-01-01">January 1,
+                                    2000</date>, as shown in the Minutes of the meeting of <date
+                                    value="2000-04-15">April 15, 2000</date>, be changed to read as
+                                    follows:</p>
+                    <list>
+                            <item><name>Ms. Sally N. Barber</name> as Senior Assistant to the Vice
+                                President and Provost for the Health System, for three years,
+                                effective <date value="2000-01-01">January 1, 2000</date>.</item>
+                        </list>
+                </div2>
+                <div2 type="resolution" id="d59">
+                    <head type="sub">CHANGE IN THE ELECTION OF ASSOCIATE PROFESSOR EMERITUS OF MR.
+                        J. DAVID DECK</head>
+                    <p>The following resolution was adopted:</p> 
+                            <p>RESOLVED that the election of <name>Mr. J. David Deck</name>,
+                                Associate Professor of Cell Biology, effective <date
+                                    value="1999-06-30">June 30, 1999</date>, as shown in the Minutes
+                                of the meeting of <date value="1999-10-16">October 16, 1999</date>,
+                                be changed to read as follows:</p>
+                    <list>
+                            <item><name>Mr. J. David Deck</name>, Professor Emeritus of Cell
+                                Biology, effective <date value="1999-06-30">June 30,
+                                1999</date>.</item>
+                        </list>
+                </div2>
+  
+                <div2 type="resolution" id="d60">
+                    <pb n="5868"/>
+                    <head type="sub">CHANGE IN THE ELECTION OF MR. CHARLES R. MARSH</head>
+                    <p>The following resolution was adopted:</p> 
+                            <p>RESOLVED that the election of <name>Mr. Charles R. Marsh</name>,
+                                Associate Professor of Religious Studies, effective <date
+                                    value="2000-01-10">January 10, 2000</date>, as shown in the
+                                Minutes of the meeting of <date value="2000-04-15">April 15,
+                                2000</date>, be changed to read as follows:</p>
+                    <list>
+                            <item><name>Mr. Charles R. Marsh</name>, as Associate Professor of
+                                Religious Studies, effective <date value="2000-01-10">January 10,
+                                    2000</date>.</item>
+                        </list>
+                </div2>
+                <div2 type="resolution" id="d61">
+                    <head type="sub">APPROVAL OF REPORTING RELATIONSHIPS AND SUPERVISORY STRUCTURE
+                        FOR DUAL EMPLOYMENT SITUATION</head>
+                    <p>The following resolution was adopted:</p> 
+                            <p>WHEREAS, the Virginia Conflict of Interest Act permits the dual
+                                employment of immediate family members by public institutions of
+                                higher education that would otherwise be prohibited by the Act,
+                                subject to the following conditions:</p>
+                    <list>
+                                    <item>(i) the officer or employee and the immediate family
+                                        member are engaged in teaching, research, or administrative
+                                        support positions at the educational institution, (ii) the
+                                        governing board of the educational institution finds that it
+                                        is in the best interest of the institution and the
+                                        Commonwealth for such dual employment to exist, and (iii)
+                                        after such finding, the board establishes and oversees the
+                                        implementation of reporting relationships and a supervisory
+                                        structure to ensure that the officer or employee, or the
+                                        immediate family member, does not supervise, evaluate or
+                                        otherwise participate in personnel decisions regarding the
+                                        other; and</item>
+                                </list>
+                            <p>WHEREAS, <name>Mary Jo Herriman</name> and <name>John C.
+                                    Herr</name>, who are married to each other, are both employed in
+                                the Department of Cell Biology in the School of Medicine; and</p>
+                            <pb n="5869"/>
+                            <p>WHEREAS, <name>Mary Jo Herriman</name> is a Research Assistant in
+                                the Department of Cell Biology, School of Medicine, of which
+                                    <name>John C. Herr</name> is Professor of Cell Biology.</p>
+                            <p>RESOLVED that the Board of Visitors finds it in the best interest
+                                of the University of Virginia and the Commonwealth to employ
+                                    <name>Mary Jo Herriman</name> and <name>John C. Herr</name> in
+                                their positions in the Department of Cell Biology, as Research
+                                Assistant and Professor with tenure, respectively;</p>
+                            <p>RESOLVED FURTHER that the reporting relationship and supervisory
+                                structure shall be as follows: (a) in <name>Mary Jo
+                                    Herriman's</name> capacity as a member of the Department of Cell
+                                Biology, she reports directly to and is supervised by the Chair of
+                                the Department of Cell Biology, <name>Dr. Charles J.
+                                    Flickinger</name>; and (b) regarding <name>John C. Herr's</name>
+                                position as Professor of Cell Biology, there is no reporting or
+                                supervisory relationship between <name>Mary Jo Herriman</name> and
+                                    <name>John C. Herr</name>.</p>
+                </div2>
+            </div1>
+            <div1 type="section" id="d62">
+                <head type="main">THE UNIVERSITY OF VIRGINIA'S COLLEGE AT WISE</head>
+                <div2 type="resolution" id="d63">
+                    <head type="sub">SPECIAL SALARY ACTIONS DELETED</head>
+                    <ab type="empty" rend="none"/>
+                 </div2>
+                <div2 type="announcement" id="d64">
+                    <head type="sub">RESIGNATION</head>
+                    <p>The following resignation was announced:</p> 
+                    <list>
+                            <item><name>Mr. Christopher M. Oldenburg</name>, Assistant Professor of
+                                Psychology, The University of Virginia's College at Wise, effective
+                                    <date value="2000-05-24">May 24, 2000</date>, to accept another
+                                position.</item>
+                        </list>
+                </div2>
+                <div2 type="announcement" id="d65">
+                    <head type="sub">APPOINTMENT</head>
+                    <p>The following appointment was announced:</p>
+                    <list>
+                            <item><name>Mr. Russell D. Necessary</name> as Director of Admissions
+                                and Financial Aid, The University of Virginia's College at Wise, for
+                                the period <date value="2000-04-01">April 1, 2000</date> through
+                                    <date value="2000-06-24">June 24, 2002</date></item>
+                        </list>
+                </div2>
+    
+            </div1>
+            <div1 type="section" id="d66">
+                <pb n="5870"/>
+                <p>On motion, the meeting was adjourned at 11:30 a.m.</p>
+                <signed>Respectfully submitted,<lb/>
+                    <name>Alexander G. Gilliam, Jr.</name><lb/> Secretary</signed>
+                <epigraph>
+                    <p>AGG:jb</p>
+                </epigraph>
+                <pb n="5871"/>
+            </div1>
+            <div1 type="roll-call" id="d67">
+                <p>At a meeting of the Board of Visitors of the University of Virginia held on
+                    Friday, <date value="2000-06-16">June 16, 2000</date>, a roll call vote was
+                    taken immediately following an executive session. Members voting "yes" certify
+                    that to the best of the Member's knowledge (1) only public business matters
+                    lawfully exempted were discussed in closed session; and (2) only public business
+                    matters identified in the public motion by which the executive or closed meeting
+                    were discussed. In accordance with the law, any member of the public body who
+                    believes that there was a departure from the foregoing shall so state prior to
+                    the vote indicating "the substance of the departure". Any such statements are
+                    recorded below under "comments".</p>
+              
+                    <table cols="3" rows="19">
+                        <row>
+                            <cell role="label">NAME</cell>
+                            <cell role="label">VOTE <lb/>yes or no</cell>
+                            <cell role="label">COMMENTS</cell>
+                        </row>
+                        <row>
+                            <cell><name>John P. Ackerly, II</name></cell>
+                            <cell> yes</cell>
+                            <cell>-</cell>
+                        </row>
+                        <row>
+                            <cell><name>Thomas J. Bliley, Jr.</name></cell>
+                            <cell>yes</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell><name>Charles M. Caravati, Jr.</name></cell>
+                            <cell>yes</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell><name>William G. Crutchfield, Jr.</name></cell>
+                            <cell> yes</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell><name/>Charles L. Glazer</cell>
+                            <cell>yes</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell><name>William H. Goodwin, Jr.</name></cell>
+                            <cell>yes</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell><name>T. Keister Greer</name></cell>
+                            <cell> yes</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell><name>Elsie Goodwyn Holland</name></cell>
+                            <cell/>
+                            <cell>absent</cell>
+                        </row>
+                        <row>
+                            <cell><name>Gordon F. Rainey, Jr.</name></cell>
+                            <cell>yes</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell><name>Timothy B. Robertson</name></cell>
+                            <cell/>
+                            <cell>absent</cell>
+                        </row>
+                        <row>
+                            <cell><name>Terence P. Ross</name></cell>
+                            <cell>yes</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell><name>Elizabeth A. Twohy</name></cell>
+                            <cell>yes</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell><name>Walter F. Walker</name></cell>
+                            <cell>yes</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell><name>Benjamin P.A. Warthen</name></cell>
+                            <cell>yes</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell><name>James C. Wheat, III</name></cell>
+                            <cell>yes</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell><name>Joseph E. Wolfe</name></cell>
+                            <cell>yes</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell><name>Stephen S. Phelan, Jr.</name></cell>
+                            <cell>yes</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell><name/></cell>
+                            <cell/>
+                            <cell/>
+                        </row>
+                    </table>
+            </div1>
+            <div1 type="addenda" id="d68">
+                <head type="main">ADDENDUM TO THE OFFICIAL MINUTES OF THE MEETING<lb/> OF THE BOARD
+                    OF VISITORS OF THE UNIVERSITY OF<lb/> VIRGINIA<lb/> Meeting Date: <date
+                        value="2000-06-16">June 16, 2000</date></head>
+                <head type="sub">CERTIFICATION OF EXECUTIVE MEETING</head>
+                <p>WHEREAS the Board of Visitors has convened an executive meeting on this date
+                    pursuant to an affirmative recorded vote and in accordance with the provisions
+                    of the Virginia Freedom of Information Act; and</p> 
+                        <p>WHEREAS Section 2.1-344.1 of the <hi rend="underline">Code of Virginia</hi> requires a
+                            certification by this Board of Visitors that such executive meeting was
+                            conducted in conformity with Virginia law;</p>
+                        <p>NOW THEREFORE BE IT RESOLVED that the Board of Visitors hereby
+                            certifies that, to the best of each member's knowledge, (i) only public
+                            business matters lawfully exempted from open meeting requirements by
+                            Virginia law were discussed in the executive meeting to which this
+                            certification resolution applies, and (ii) only such public business
+                            matters as were identified in the motion convening the executive meeting
+                            were heard, discussed or considered by the Board of Visitors.</p>
+                    
+                    <table>
+                        <row>
+                          <cell role="label">VOTE</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell>AYES:</cell>
+                            <cell>15</cell>
+                        </row>
+                        <row>
+                            <cell>NAYS:</cell>
+                            <cell>0</cell>
+                        </row>
+                    </table>
+                    <list>
+                        <item>[For each nay vote, the substance of the departure from the
+                            requirements of the Act should be described].</item>
+                    </list>
+                    <table>
+                        <row>
+                            <cell>ABSENT DURING VOTE:</cell>
+                            <cell>2</cell>
+                        </row>
+                        <row>
+                            <cell>ABSENT DURING MEETING:</cell>
+                            <cell>2</cell>
+                        </row>
+                    </table>
+                <signed><name>Alexander G. Gilliam, Jr.</name><lb/> Secretary, Board of
+                    Visitors,<lb/> University of Virginia<lb/></signed>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

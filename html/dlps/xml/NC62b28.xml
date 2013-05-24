@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0517 SYSTEM "000000766_0517" NDATA jpg>
+<!ENTITY DSSR_000000766_0518 SYSTEM "000000766_0518" NDATA jpg>
+<!ENTITY DSSR_000000766_0519 SYSTEM "000000766_0519" NDATA jpg>
+<!ENTITY DSSR_000000766_0520 SYSTEM "000000766_0520" NDATA jpg>
+
+<!--<!ENTITY NC62b28a SYSTEM "NC62b28a.jpg" NDATA jpg>
+<!ENTITY NC62b28b SYSTEM "NC62b28b.jpg" NDATA jpg>
+<!ENTITY NC62b28c SYSTEM "NC62b28c.jpg" NDATA jpg>
+<!ENTITY NC62b28d SYSTEM "NC62b28d.jpg" NDATA jpg>-->
+]>
+<TEI.2 id="NC62b28">
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-02-28"
+      >1862 February 28</date></title>
+
+    <author>Tenney, Charles N</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Crabbe, Stuart John</name>
+     <resp>Creation of digital images:</resp>
+     <name>University of Virginia Library Electronic Text Center.</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>Crabbe, Stuart John</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">10</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NC62b28</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Charles N. Tenney to Adelaide E. Case, 1862 February 28</title>
+
+
+      <author>Charles N. Tenney</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 pp.</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p>All unambiguous end-of-line hyphens have been retained.</p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings.</p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-02-28">1862-02-28</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>masculine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-12">November 12th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">October 14th, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-02-28"> February 28, 1862</date>
+
+      <title>Letter from Charles N. Tenney to Adelaide E. Case</title>
+     </bibl>
+    </head>
+    <p> Charles receives a longed for letter from Adelaide and thanks her for it. He discusses how
+     as a single man it is difficult to find people to vouch for his character, especially as he is
+     in not on amiable terms with his father's family. He chastises Mollie for disapproving of
+     Adelaide taking time to write, and then describes his religious sentiments professing his faith
+     is not as it should be, but that the Bible is his most precious book. </p>
+   </div1>
+  </front>
+  <body id="d4">
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-02-28">1862 February
+      28</date></head>
+    <pb n="1" entity="DSSR_000000766_0517"/>
+
+
+    <opener>
+     <name type="place">Camp Tyler, Va.</name>
+     <lb/>
+     <dateline>Feby 28th 1862</dateline>
+     <lb/>
+     <salute>My own loved<name type="recipient">Addie</name>;</salute>
+    </opener>
+
+    <p> Your longed for letter came to<lb/> hand tonight, and now I can resort to my<lb/>
+      favorite <orig reg="past time">pasttime</orig> - There! <orig reg="Don't">Dont</orig> that look
+     fine with 2 ts?<lb/> this evening, that of writing, also my <hi rend="underline">duty</hi>
+     in<lb/> answering your kind letter. Perhaps you<lb/> would like to know what part of your<lb/>
+     letter interested me most. I will tell you.<lb/> I was gratified to know that my rehearsal<lb/>
+     of my past life, strengthened you confidence in<lb/> me, which I <hi rend="underline"
+      >never</hi> <hi rend="underline">doubted</hi>. <del hand="h1">before.</del><lb/></p>
+    <p> I had feared that it might pain you<lb/> and situated as I am, not on <orig reg="amiable"
+      >amieable</orig> terms<lb/> with my father's family, I could not refer you<lb/> to them to
+     establish my character. I have always<lb/> tried to maintain <hi rend="underline">strict
+      integrity</hi>, all my life,<lb/> yet being alone, it is natural for people to distrust<lb/>
+     one, on that account. This company, I think<lb/> to <orig reg="a man">a/man</orig>, will testify
+     to my good behaviour,<lb/> since I have been in the service.<lb/></p>
+
+    <pb n="2" entity="DSSR_000000766_0518"/>
+
+    <p> But I will change the subject.<lb/> I was delighted with the description you gave<lb/> me of
+      the<q>"Large Family."</q> but I am sure I could<lb/> not like<q>
+      <name>"Mollie."</name>
+     </q> She must be of a selfish nature<lb/> if she could not give you an hour or two to
+     write<lb/> to those who are fighting in her behalf,<lb/> to secure the <orig reg="privileges"
+      >priveleges</orig> she even <hi rend="underline">now</hi> enjoys<lb/> Not that <hi
+      rend="underline">I</hi> am selfish, but I am one of six hun=<lb/> dred thousand, I have no
+     doubt but she was<lb/> charmed with your society, for who would not be?<lb/> but passing the
+     day with you, and having some<lb/> slight knowledge <del hand="h1">of</del> as to whom you were
+     writing to.<lb/> she must be selfish indeed if she could not suffer<lb/> you to do even <hi
+      rend="underline">that</hi>.<lb/></p>
+    <p> You must admire my letters very much<lb/> to <orig reg="receive">recieve</orig> them with
+     such demonstrations of lively<lb/> pleasure, now suppose you recieved such interesting<lb/> and
+     charming letters as a certain correspondent<lb/> of mine-- <name type="recipient">Miss A.L.
+     Case</name> - writes, how would you<lb/> deport yourself when they arrived? I love your<lb/>
+     letters, for they tell me I am loved, <hi rend="underline">I love you</hi>, for<lb/> it is
+     right, and - <hi rend="underline">you</hi> love <hi rend="underline">me</hi>.<lb/> <hi
+      rend="underline">God bless you</hi>, and<lb/> preserve you my hearts idol, <hi rend="underline"
+      >my Love!</hi><lb/></p>
+
+    <pb n="3" entity="DSSR_000000766_0519"/>
+
+    <p> Did I ever tell you my religious sentiments?<lb/> I think not? That there is a good God,
+     none can<lb/> deny. That some, yes <hi rend="underline">many</hi> of those who<lb/> profess to
+     have a<q>"saving knowledge of Christ<lb/> Jesus"</q> are misguided, is a matter of as little doubt.<lb/>
+     <q>"The Bible is true."</q> is one of my<q>"articles of faith."</q><lb/>
+     <q>"Christ died for all,"</q> is another,<q>"God is just,"</q> is a third.<lb/> From these,
+      you <orig reg="percieve">percieve</orig> I believe that the way<lb/> is open for all <hi
+      rend="underline">who will</hi>, to enter Heaven.</p>
+    <p> I do not profess to Love the Saviour, as I ought,<lb/> but <hi rend="underline">I might</hi>.
+     I have my Bible, and I consider<lb/> it the most precious of all books. <name type="recipient"
+      >Addie</name>, there<lb/> is not a ch<add place="inline" hand="h1">r</add>istian in this
+     company! Are you<lb/> astonished? <hi rend="underline">Tis true</hi>. I shudder to think of<lb/>
+     the end, yet <hi rend="underline">I</hi> am <hi rend="underline">one</hi> of them.<lb/></p>
+    <p><name type="recipient">Addie</name> dearest, I would give much if I<lb/> could come and see
+     you, but I cannot, yet<lb/> I know that is one who remembers me, and<lb/> I am happy. But I
+     must bring this to a<lb/> close, Think of me often, and remember that<lb/> I am with you
+     constantly in spirit, give my love<lb/> to <name type="person">Bro. Hallie</name>, <name
+      type="person">Sister Laurie</name>, Auntie, and all, and write very<lb/> often to Your <name
+      type="sender">Charlie</name>.<seg type="postscript">P.S. Do you ever sing.<q>"Dixie"</q><lb/>
+      My favorite is<q>"Ever of thee"</q>. Our band plays it beautifully.<lb/></seg></p>
+
+    <pb n="4" entity="DSSR_000000766_0520"/>
+
+   </div1>
+  </body>
+
+ </text>
+
+</TEI.2>

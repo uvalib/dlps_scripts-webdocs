@@ -1,0 +1,57 @@
+<!--
+
+  uva-tei-spoken.ent
+
+  One of two extension files (see also uva-tei-spoken.dtd) constituting a
+  customization of TEI P4, following the method described in the TEI
+  Guidelines, chapter 29, "Modifying and Customizing the TEI DTD".
+
+    http://www.tei-c.org/P4X/MD.html
+
+  This DTD is intended for use with documents containing transcriptions of
+  speech, such as a transcript of an audio recording. It was created for use by
+  the University of Virginia Library in connection with faculty digitization
+  projects.
+
+  Greg Murray <gpm2a@virginia.edu>, University of Virginia Library
+  2009-04-01
+
+
+  2009-08-05: gpm2a: Changed the definition of a.divn to include a.timed
+  attributes. This allows <div#> elements to carry @start and @end attributes,
+  which allows structural/semantic divisions (groups of utterances) within a
+  transcription of speech to be temporally situated just like utterances.
+
+-->
+
+<!-- Enable XML (rather than SGML) -->
+<!ENTITY % TEI.XML 'INCLUDE'>
+
+<!-- Enable base tagset for transcriptions of speech -->
+<!ENTITY % TEI.spoken 'INCLUDE'>
+
+<!-- Enable additional tagsets -->
+<!ENTITY % TEI.linking 'INCLUDE'>
+<!ENTITY % TEI.corpus 'INCLUDE'><!-- Needed for <settingDesc> and <particDesc> in TEI header -->
+<!ENTITY % TEI.names.dates 'INCLUDE'><!-- Needed for <persName>, used in <particDesc> in TEI header -->
+
+<!-- Disable a few unused elements -->
+<!ENTITY % div "IGNORE">
+<!ENTITY % div0 "IGNORE">
+<!ENTITY % divGen "IGNORE">
+<!ENTITY % teiCorpus.2 "IGNORE">
+
+<!-- Change the definition of a.divn to include a.timed attributes.
+This requires declaring a.metrical and a.timed prior to use. -->
+<!ENTITY % a.metrical ''>
+<!ENTITY % a.timed '
+      start IDREF #IMPLIED
+      end IDREF #IMPLIED
+      dur CDATA #IMPLIED'>
+<!ENTITY % a.divn '
+      %a.metrical;
+      %a.timed;
+      type CDATA #IMPLIED
+      org (composite | uniform) "uniform"
+      sample (initial | medial | final | unknown | complete) "complete"
+      part (Y | N | I | M | F) "N"'>

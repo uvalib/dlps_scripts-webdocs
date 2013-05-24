@@ -1,0 +1,658 @@
+<?xml version="1.0"?>
+
+<!-- =============================================================== -->
+<!-- NOTE: Update last modified date manually when editing this file -->
+<!-- =============================================================== -->
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % TEI.extensions.ent SYSTEM "http://pogo.lib.virginia.edu/dlps/dtd/tei/teitech/teitech.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://pogo.lib.virginia.edu/dlps/dtd/tei/teitech/teitech.dtd">
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % postkb_entities SYSTEM 'postkb.ent'> %postkb_entities;
+<!ENTITY % common_entities SYSTEM 'common.ent'> %common_entities;
+<!ENTITY eaf_files '<replace>eaf*.xml</replace>'>
+]>
+<TEI.2>
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Post-keyboarding Workflow for Books</title>
+<author>Greg Murray (gpm2a@virginia.edu), Digital Library Production Services</author>
+</titleStmt>
+<publicationStmt>
+<publisher>Digital Library Production Services, University of Virginia Library</publisher>
+</publicationStmt>
+</fileDesc>
+</teiHeader>
+
+<text id="d1">
+<body id="d2">
+<argument>
+
+<p>This document describes the workflow for in-house processing of
+electronic texts digitized from printed books by keyboarding vendors
+for Digital Library Production Services (DLPS), University of Virginia
+Library. It is intended for use by internal DLPS staff.</p>
+
+<admon type="special" applies="EAF"><p>When processing EAF (Early
+American Fiction) XML files, begin with the <ptr target="scripts"/>
+section.</p></admon>
+
+<!-- =============================================================== -->
+<!-- NOTE: Update last modified date manually when editing this file -->
+<!-- =============================================================== -->
+
+<p><hi rend="bold">Last modified:</hi> <date type="last-modified" value="2010-05-25">5/25/2010</date></p>
+</argument>
+
+<div1 id="d3">
+<head>Prepare Files for Vendor</head>
+
+<!--
+<div2 id="d4">
+<head>Make minimal TEI header</head>
+<list>
+<item>Log into the &tracksys_xref; and search for the item(s) for
+which you need to create a minimal header.</item>
+
+<item>Click the hyperlinked DLPS ID to view the "Edit Item for Text
+Workflow" page.</item>
+
+<item>Click the "View minimal TEI header" hyperlink.</item>
+
+<item>Copy the contents of the minimal header and paste them into a
+plain text file using any text editor.</item>
+
+<item>Save the text file:
+
+  <list>
+  <label>Filename</label>
+  <item>Name the file with the DLPS ID plus with the extension
+  ".header" (for example, b001234567.header)</item>
+
+  <label>Location</label>
+  <item>Save the file in the directory of images to be sent to the
+  vendor</item>
+  </list>
+</item>
+</list>
+</div2>
+-->
+
+<div2 id="d5">
+<head>Prepare image files to be sent to vendor</head>
+<list>
+<item>Copy each folder of image files from <path>50QAed_IN</path> to
+<path>50QAed_OUT</path></item>
+
+<item>Set the group to 'dlpswg' and grant group write permissions on
+all folders and files: <command><xref type="scripts">change_group</xref> -g dlpswg -p *</command></item>
+
+<item>Create minimal TEI headers:
+<command><xref type="scripts">make_minheaders</xref> -v</command> <lb/>
+
+This script looks in <path>50QAed_OUT</path>, and for each
+subdirectory found there, it creates a .header file in that
+subdirectory. (It also copies the .doc file for that DLPS ID to the
+same subdirectory.)</item>
+
+</list>
+
+<p>An automated script (cron job) will run overnight to zip the files
+for uploading to the vendor. After you receive email notification that
+the script has run successfully:</p>
+
+<list>
+<item>Inspect the .zip file to verify that all files are present and
+accounted for</item>
+
+<item>If the .zip file is ok, delete the corresponding folder from
+<path>50QAed_IN</path></item>
+</list>
+</div2>
+
+<div2 id="d6">
+<head>Upload</head>
+<list>
+<item>Open an FTP program
+(if you're on a Windows workstation,
+<xref url="http://www.itc.virginia.edu/desktop/securefx/securefx.html" type="external">SecureFX</xref>
+is recommended)</item>
+<item>Connect to the keyboarding vendor's FTP server</item>
+<item>Connect to the DLPS server</item>
+<item>Transfer the .zip files from the DLPS server to vendor's FTP server</item>
+<item>Close connections and exit the FTP program</item>
+</list>
+</div2>
+
+<div2 id="d7">
+<head>Notify vendor</head>
+<list>
+<item>E-mail the vendor to notify them that the files have been uploaded.</item>
+</list>
+</div2>
+</div1>
+
+<div1 id="d8">
+<head>Prepare Full TEI Header</head>
+&full_teiHeader_ref;
+</div1>
+
+<div1 id="d9">
+&retrieval1;
+&retrieval2;
+</div1>
+
+<div1 id="scripts">
+&scripts;
+</div1>
+
+<div1 id="d11">
+<head>Synchronizing Page Breaks and Page Images</head>
+
+<admon type="special" applies="text-only"><p>When processing text-only
+texts, skip this section entirely and proceed to
+<ptr target="web_reports"/> below.</p></admon>
+
+<list>
+<item><emph>Copy</emph> files to <path>30being_pbsynced</path></item>
+
+<item>Make the XML files available to the Proofreader web application:
+<command><xref type="scripts">refresh_proofreader</xref> &files;</command>
+
+<admon type="special" applies="EAF">
+<p>When processing EAF XML files, also run the following additional
+scripts:</p>
+<list>
+<item><command><xref type="scripts">eaf_fixes</xref> &eaf_files;</command></item>
+<item><command><xref type="scripts">refresh_proofreader</xref> &eaf_files;</command> (to copy the corrected files to Proofreader)</item>
+</list>
+<p>(It is preferable to run these two additional scripts at this
+point, even if <command>refresh_proofreader</command> generated
+warning messages.)</p>
+</admon>
+
+</item>
+
+&pb_entities_messages;
+
+<item>If warning messages occur, follow this procedure:
+  <list>
+  <item>Use &proofreader_xref; to verify the problem.</item>
+
+  <item>If the discrepancy is due to missing or extra <gi>pb</gi> tags in the XML file:
+    <list>
+    <item>Open the XML file for editing</item>
+    <item>Insert <tag>pb n="..."/</tag> (where ... is the printed page
+number), or remove unwanted <gi>pb</gi> tags as needed</item>
+    <item>Re-copy the XML file to Proofreader: <command>refresh_proofreader <replace>filename.xml</replace></command></item>
+    </list>
+  </item>
+
+  <item>If the discrepancy is due to an image problem (missing image or duplicate image):
+    <list>
+    <item>Correct the problem in the original TIFF images</item>
+    <item>Re-derive the GIF images for Proofreader</item>
+    </list>
+  </item>
+
+  <item>Repeat until all pages are in sync when viewed in Proofreader</item>
+  </list>
+</item>
+
+&parse;
+
+<item>Update the &tracksys_xref;: <command><xref type="scripts">update_tracksys</xref> &files;</command></item>
+
+<item><emph>Move</emph> files to <path>30pbsynced</path></item>
+</list>
+</div1>
+
+<div1 id="web_reports">
+<head>Web Reports</head>
+<div2 id="d14">
+<head>Generate the web reports</head>
+<list>
+<item><emph>Copy</emph> files to <path>40being_reports_run</path></item>
+
+<item>Run the reports that can be generated at this point:
+
+  <list>
+  <item>If the texts are mainly in English: <command><xref type="scripts">run_reports</xref> &files;</command></item>
+  <item>If the texts are mainly in a foreign language: <command>run_reports -f &files;</command> (where -f indicates foreign-language input files; the Rehyphenate report is not generated)</item>
+  </list>
+
+  <admon type="tip"><p>If you prefer to see a status message
+indicating each report being generated for each input file, use the -v
+(verbose) option: <command>run_reports -v &files;</command></p></admon>
+
+  <admon type="note"><p>The web-based (HTML) reports generated by default are:
+  <list>
+  <label>Rehyphenate</label>
+  <item>shows words for which the end-of-line hyphen,
+    programmatically collapsed previously by the <command><xref type="scripts">postkb</xref></command>
+    script, may need to be restored</item>
+  <label>Figures: Rendering</label>
+  <item>allows indicating whether illustrations are rendered on the
+    printed page as full-page, block, or inline</item>
+  </list>
+  </p></admon>
+</item>
+
+<item>To determine whether the <gizmo>Unclears</gizmo> report should
+be generated for one or more texts:
+
+<eg><xref type="scripts">count_unclears</xref> &files;</eg>
+
+If the script reports <emph>25 or more</emph> <gi>unclear</gi> tags
+for one or more files, generate the unclears report for those files
+only:
+
+<eg><xref type="scripts">report_unclears</xref> <replace>filenames</replace></eg>
+</item>
+
+<item><emph>Move</emph> files to <path>40reports_run</path></item>
+</list>
+</div2>
+
+<div2 id="d15">
+<head>Fill out and submit the web reports</head>
+<list>
+<item>For each file, go to <lb/><lb/>
+&workreports_xref; <lb/><lb/>
+and view the <gizmo>Rehyphenate</gizmo> and <gizmo>Figures:
+Rendering</gizmo> reports</item>
+
+<item>For each report, follow the instructions at the top of the
+report. Fill out the report, and save the data when finished.</item>
+
+<item>Also fill out the <gizmo>Unclears</gizmo> report, if it exists</item>
+</list>
+</div2>
+
+<div2 id="d16">
+<head>Commit the changes</head>
+<div3 id="d17">
+<head>Rehyphenate</head>
+<list>
+<item><emph>Copy</emph> files to <path>51being_rehyphenated</path></item>
+<item>Update the XML files: <command><xref type="scripts">commit_rehyphenate</xref> &files;</command></item>
+&parse;
+<item><emph>Move</emph> files to <path>51rehyphenated</path></item>
+</list>
+</div3>
+
+<div3 id="d18">
+<head>Unclears (if applicable)</head>
+<list>
+<item><emph>Copy</emph> files to <path>52being_unclears_fixed</path></item>
+<item>Update the XML files: <command><xref type="scripts">commit_unclears</xref> &files;</command></item>
+&parse;
+<item><emph>Move</emph> files to 52unclears_fixed</item>
+</list>
+</div3>
+
+<div3 id="d19">
+<head>Figures: Rendering</head>
+<list>
+<item><emph>Copy</emph> files to <path>53being_figures_rend</path></item>
+
+<item>Update the XML files: <command><xref type="scripts">commit_figures_rend</xref> &files;</command>
+
+<admon type="special" applies="text-only"><p>When processing text-only
+texts, skip the <command>figure_entities</command> and
+<command>declare_entities</command> scripts below.</p></admon>
+
+</item>
+
+<item>Add entity attribute on figure tags: <command><xref type="scripts">figure_entities</xref> &files;</command></item>
+<item>Refresh references to image files: <command><xref type="scripts">declare_entities</xref> &files;</command></item>
+&parse;
+<item><emph>Move</emph> files to <path>53figures_rend</path></item>
+</list>
+</div3>
+</div2>
+
+<div2 id="d20">
+<head>Generate the Figures: Filenames report</head>
+
+<admon type="special" applies="EAF"><p>When processing EAF files, skip
+the "Figures: Filenames" steps. Proceed to
+<ptr target="copy59processed"/> below.</p></admon>
+
+<admon type="special" applies="text-only"><p>When processing text-only
+files, skip the "Figures: Filenames" steps. Proceed to
+<ptr target="copy59processed"/> below.</p></admon>
+
+<p>Having updated the XML file with figure-rendering information, it
+is now possible to generate the second figure-related report, which
+pertains to the filenames of the figure-image files.</p>
+<list>
+<item><emph>Copy</emph> files to <path>54being_figures_filenames</path></item>
+<item>Generate the report: <command><xref type="scripts">report_figures_filenames</xref> &files;</command></item>
+</list>
+</div2>
+
+<div2 id="d21">
+<head>Fill out and submit the Figures: Filenames report</head>
+<list>
+<item>For each file, go to <lb/><lb/>
+&workreports_xref; <lb/><lb/>
+and view the <gizmo>Figures: Filenames</gizmo> report</item>
+
+<item>Follow the instructions at the top of the report. Fill out the
+report, and save the data when finished.</item>
+</list>
+</div2>
+
+<div2 id="d22">
+<head>Commit the changes from the Figures: Filenames report</head>
+<list>
+<item>Update the XML files: <command><xref type="scripts">commit_figures_filenames</xref> &files;</command></item>
+<item>Refresh references to image files: <command><xref type="scripts">declare_entities</xref> &files;</command></item>
+&parse;
+<item><emph>Move</emph> files to <path>54figures_filenames</path></item>
+</list>
+</div2>
+
+&copy_to_59processed;
+
+<div2>
+<admon type="fyi">
+<p>For each file processed successfully, the &tracksys_xref; gets
+updated automatically as follows:</p>
+
+<table>
+<row>
+<cell><command>run_reports</command></cell>
+<cell>Post-keyboarding Workflow &rarr; Generate reports</cell>
+</row>
+<row>
+<cell><command>report_figures_filenames</command></cell>
+<cell>Post-keyboarding Workflow &rarr; Generate figures-filenames report</cell>
+</row>
+<row>
+<cell>Save a web report</cell>
+<cell>Post-keyboarding Workflow &rarr; Submit <replace>[report-type]</replace> report</cell>
+</row>
+<row>
+<cell><command>commit_<replace>[report-type]</replace></command></cell>
+<cell>Post-keyboarding Workflow &rarr; Commit <replace>[report-type]</replace> changes</cell>
+</row>
+</table>
+</admon>
+</div2>
+</div1>
+
+<div1 id="d23">
+<head>Markup QA and Correction</head>
+<p>The markup QA/correction workflow is documented separately. See
+<xref url="/cgi-dlps/saxon/SaxonCGI.pl?source=http://pogo.lib.virginia.edu/dlps/dlpsdoc_xml/text/markup_qa_books.xml&amp;style=http://pogo.lib.virginia.edu/dlps/xsl/teitech.xsl&amp;filename=markup_qa_books.xml">Markup
+QA and Correction for Books</xref>.</p>
+</div1>
+
+<div1 id="d24">
+<head>Insert Full TEI Headers</head>
+<list>
+
+<item><emph>Move</emph> files from <path>69processed</path> to
+<path>70being_fullheaders_added</path></item>
+
+<item>Replace the minimal TEI header already in the XML file with the
+full TEI header: <eg><xref type="scripts">replace_teiHeader</xref> &files;</eg>
+
+If no full TEI header file exists for a particular ID,
+<command>replace_teiHeader</command> will display a warning.
+
+<admon type="note"><p>This assumes that the full TEI header files are
+located in <path>&text_dir;/05teiHeader/80final</path>. If not,
+specify the directory with the -d option, for example:
+<eg>replace_teiHeader -d &apos;&text_dir;/04postkb/<replace>whatever</replace>&apos; &files;</eg></p>
+</admon>
+
+<admon type="special" applies="EAF"><p>When processing EAF XML files,
+you <emph>must</emph> use the -E option, for example:
+<eg>replace_teiHeader -E -d &apos;&text_dir;/05teiHeader/80final/EAF/EAF1Public/individualHeaders&apos; &eaf_files;</eg></p></admon>
+
+<admon type="special" applies="BOV"><p>When processing BOV (Board of
+Visitors) XML files, use the -t (template) option and specify the
+appropriate template file, as follows:</p>
+
+<table>
+<row>
+<cell>Filenames indicate dates from 1817 &ndash; April 28, 1928 <lb/>
+OR from October 8, 1965 &ndash; present</cell>
+<cell>Use "public" template: <path>bov_header_public.xml</path></cell>
+</row>
+<row>
+<cell>Filenames indicate dates from June 1928 &ndash; June 1965</cell>
+<cell>Use "official" template: <path>bov_header_official.xml</path></cell>
+</row>
+</table>
+
+<eg>replace_teiHeader -t '/shares/text/05teiHeader/BOV/production/bov_header_public.xml' <replace>bov_*.xml</replace></eg>
+
+<p>Then update the TEI header with data (date, page count, etc.)
+specific to each particular file:
+<eg><xref type="scripts">update_teiHeader_bov</xref> <replace>bov_*.xml</replace></eg></p>
+
+</admon>
+
+</item>
+
+&parse;
+<item>Run this command to normalize line endings: <command>dos2unix &files;</command></item>
+
+<item>Update the access status (public, UVA only, etc.) recorded in
+the TEI header: <command><xref type="scripts">update_teiHeader_access</xref> &files;</command>
+
+<admon type="tip">
+<p>If the XML files don't have corresponding records in the DLPS
+Tracking System, use the <code>-F</code> option &mdash; for example:
+
+<eg><xref type="scripts">update_teiHeader_access</xref> -F public <replace>*.xml</replace></eg>
+
+</p>
+</admon>
+</item>
+
+<item>Update the file size recorded in the TEI header: <command><xref type="scripts">refresh_filesize</xref> &files;</command></item>
+<item>Correct common problems with date values (carried over from the MARC record used to create the TEI header): <command><xref type="scripts">header_date_values</xref> &files;</command></item>
+&parse;
+<item>Run QA checks on the TEI header: <command><xref type="scripts">qa_super</xref> -h &files;</command></item>
+<item>Fix problems, if any; this may require working with Cataloging to assess/fix the problems</item>
+<item><emph>Move</emph> files to <path>70fullheaders_added</path></item>
+<item>Update the &tracksys_xref;: Navigate to <path>70fullheaders_added</path>
+and run this command: <command><xref type="scripts">update_tracksys</xref> &files;</command></item>
+</list>
+
+<admon type="fyi">
+<p>For each file processed successfully, the &tracksys_xref; gets
+updated automatically as follows:</p>
+<table>
+<row>
+<cell><command>replace_teiHeader</command></cell>
+<cell>Finalization Workflow &rarr; Replace TEI header</cell>
+</row>
+<row>
+<cell><command>update_teiHeader_access</command></cell>
+<cell>Finalization Workflow &rarr; Update access level</cell>
+</row>
+<row>
+<cell><command>qa_super -h</command></cell>
+<cell>Finalization Workflow &rarr; QA TEI header</cell>
+</row>
+</table>
+</admon>
+</div1>
+
+<div1 id="d25">
+&finalize;
+</div1>
+
+<div1 id="d26">
+<head>Copy to ReadyRepo</head>
+<list>
+
+<item><command>cd</command> into
+<path>80final/<replace>subdirectory</replace></path>, substituting the
+appropriate subdirectory</item>
+
+<item>
+
+<p>To copy the finalized items to ReadyRepo (the hand-off point
+between DLPS and the central repository), run this command:
+
+<eg><xref type="scripts">dlps2ReadyRepo</xref> -p <replace>project-name</replace> &files;</eg>
+
+where <replace>project-name</replace> is the name of the "project"
+directory (either new or existing) to which the items should be copied
+within ReadyRepo. Normally, this should be a "monthly" directory,
+named with the 4-digit year, then an underscore, then a 2-digit number
+for the current month.</p>
+
+<p>For example, for May 2006, you would use <command>-p 2006_05</command>:
+
+<eg>dlps2ReadyRepo -p 2006_05 &files;</eg>
+</p>
+
+<p><command>dlps2ReadyRepo</command> is a large and complex script
+that performs several important tasks:
+  <list>
+    <item>Copies XML file to <path>ReadyRepo</path></item>
+
+    <item>Creates web-deliverable derivatives of page-image TIFFs and
+      figure-image TIFFs (GIFs for bitonal TIFFs, JPEGs for
+      color/grayscale TIFFs), and puts them in place in the
+      <path>ReadyRepo</path> directory structure</item>
+
+    <item>Archives XML file to
+      <path>&text_dir;/04xmlArchive/10final/</path> and archives TIFF
+      files to <path>&image_dir;/09archive/</path></item>
+
+    <item>If entire process succeeds, deletes page images, figure
+      images, and XML file from their original locations</item>
+  </list>
+</p>
+
+<p>For further information, see the online scripts documentation for
+<xref type="scripts">dlps2ReadyRepo</xref>.</p>
+
+<admon type="note"><p>The creation of web-deliverable derivatives
+takes a <emph>long</emph> time. You should expect that
+<command>dlps2ReadyRepo</command> will run for several hours, and that
+it will likely need to run overnight.</p></admon>
+
+<admon type="tip">
+<p>If you experience script timeouts while running
+<command>dlps2ReadyRepo</command>, try running the process in the
+background:
+
+<eg>nohup dlps2ReadyRepo -p <replace>project-name</replace> &files; &amp;</eg>
+
+The <command>nohup</command> (no hangup) command allows you to log out
+of the terminal without interrupting the script, while the
+<command>&amp;</command> at the end tells the Unix shell to run the
+process in the background.</p>
+
+<p>When running <command>dlps2ReadyRepo</command> in this way, status
+messages will not appear on screen. To check the status of the
+process, use the <command>ps</command> command to see which processes
+are running under your user ID:
+
+<eg>ps -ef | grep <replace>user-id</replace></eg>
+
+Alternatively, you can look in an output directory such as:
+
+<eg>/cenrepo/ReadyRepo/image/<replace>project-name/dlps-id</replace>/uvaHighRes/max</eg>
+
+for example:
+
+<eg>/cenrepo/ReadyRepo/image/2006_05/b000123456/uvaHighRes/max</eg>
+
+to see how many derivative images have been created so far for that
+ID.</p>
+</admon>
+
+<admon type="tip">
+
+<p>If <command>dlps2ReadyRepo</command> fails to process a particular
+ID, it may be possible to complete the processing without starting
+over from the beginning. (Such a failure typically occurs when the
+MrSID encoder fails to process a particular image file. MrSID is only
+used for color images, namely figure images and color page
+images.)</p>
+
+  <list>
+
+  <item>Using the on-screen feedback or the log file, determine the
+  file for which processing failed.</item>
+
+  <item>Manually delete the <emph>output</emph> file (<emph>not</emph>
+  the source TIFF) for which processing failed, since it may be
+  incomplete or corrupt. (Normally this will be the last .sid
+  derivative image file to be generated, and will be found in
+  <path>/cenrepo/ReadyRepo/image/<replace>project-name/dlps-id</replace>/uvaHighRes/max</path>.)</item>
+
+  <item>Determine whether any instances of
+  <command>mrsidgeoencoder</command> (the MrSID encoder) are still
+  running:
+
+  <eg>ps -ef | grep <replace>user-id</replace></eg>
+
+  This will provide a list of currently running processes that you
+  initiated. Kill instances of <command>mrsidgeoencoder</command>
+  using the Unix <command>kill</command> command.</item>
+
+  <item>Return to the directory containing the XML file, such as
+  <path>&text_dir;/04postkb/80final/apex</path></item>
+
+  <item>Run <command>dlps2ReadyRepo</command> again, this time using
+  the -R (resume) option:
+  <eg>dlps2ReadyRepo -R -p <replace>project-name</replace> <replace>dlps-id.xml</replace></eg>
+  </item>
+
+  </list>
+
+</admon>
+</item>
+
+<item><command>cd</command> to the directory containing the XML files
+you just copied to the repository:
+
+<eg>cd /cenrepo/ReadyRepo/text/<replace>project-name</replace>/uvaBook/tei</eg>
+
+In some cases, you will use <path>uvaGenText</path> or
+<path>uvaPageBook</path> instead of <path>uvaBook</path>.</item>
+
+<item>Verify that all image files are present and accounted for within
+the <path>ReadyRepo</path> directory structure:
+
+<eg><xref type="scripts">qa_entities</xref> -E -R <replace>project-name</replace> &files;</eg>
+</item>
+
+<item>Fix problems, if any</item>
+
+&cleanup_script;
+
+</list>
+
+<admon type="fyi">
+<p>For each file processed successfully, the &tracksys_xref; gets
+updated automatically as follows:</p>
+<table>
+<row>
+<cell><command>dlps2ReadyRepo</command></cell>
+<cell>Finalization Workflow &rarr; Run dlps2ReadyRepo</cell>
+</row>
+<row>
+<cell><command>qa_entities -R</command></cell>
+<cell>Finalization Workflow &rarr; Verify image files (ReadyRepo)</cell>
+</row>
+</table>
+</admon>
+</div1>
+</body>
+</text>
+</TEI.2>

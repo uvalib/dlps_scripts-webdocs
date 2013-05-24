@@ -1,0 +1,306 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0545 SYSTEM "000000766_0545" NDATA jpg>
+<!ENTITY DSSR_000000766_0546 SYSTEM "000000766_0546" NDATA jpg>
+<!ENTITY DSSR_000000766_0547 SYSTEM "000000766_0547" NDATA jpg>
+<!ENTITY DSSR_000000766_0548 SYSTEM "000000766_0548" NDATA jpg>
+
+<!--<!ENTITY NC62d22a SYSTEM "NC62d22a.jpg" NDATA jpg>
+<!ENTITY NC62d22b SYSTEM "NC62d22b.jpg" NDATA jpg>
+<!ENTITY NC62d22c SYSTEM "NC62d22c.jpg" NDATA jpg>
+<!ENTITY NC62d22d SYSTEM "NC62d22d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NC62d22">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+                        value="1862-04-22">1862 April 22</date></title>
+
+                <author>Tenney, Charles</author>
+                <editor> </editor>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Katie Bagley, Electronic Text Center</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>University of Virginia Library Electronic Text Center.</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">15</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NC62d22</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="1999">1999</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Images of the manuscript pages have been included.</p>
+                </note>
+                <note>
+                    <p>Original punctuation in the letter has been maintained. Note that periods are
+                        often used in place of commas.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Nettleton Civil War Collection: Letter from Charles N. Tenney to
+                            Adelaide E. Case, 1862 April 22</title>
+
+
+                        <author>Charles Tenney</author>
+                        <editor> </editor>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p> </p>
+                    </editionStmt>
+                    <extent>4 p. </extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p> </p>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center. </p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been removed, and the trailing part of a
+                    word has been joined to the preceding line. </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p> </p>
+            </refsDecl>
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-04-22">1862-04-22</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English </language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>fiction</term>
+                    <term>poetry</term>
+                    <term>masculine</term>
+                    <term>American Civil War</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="1999-11">November 1999</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Carolyn Fay, Electronic Text Center</name>
+                </respStmt>
+                <item>Added tei header.</item>
+            </change>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-12">November 12th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 14th, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text id="d1">
+        <body id="d2">
+            <div1 type="letter" n="1862-04-22" id="d3">
+                <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-04-22"
+                        >1862 April 22</date></head>
+
+                <pb n="1" entity="DSSR_000000766_0545"/>
+                <opener>
+                    <dateline>
+                        <name type="place">Camp near New Market</name>
+                        <name type="place">
+                            <orig reg="Virginia">Va</orig>
+                        </name>
+                        <date value="1862-04-22">April 22nd, 1862</date>
+                    </dateline>
+
+                    <salute>My precious <name type="person">Addie</name>;</salute>
+                </opener>
+
+                <p>I cannot apologize for not writing<lb/> sooner for all I could plead would be
+                    a<lb/> march and its attendant miseries.</p>
+
+                <p>We left our camp near <name type="place">Edinburg</name> the<date
+                        value="1862-04-17">17th</date><lb/> inst, and arrived here the same night,
+                    but<lb/> our baggage,did not come up until yesterday,<lb/> and it has rained
+                    quite heavily since until<lb/> this morning. If I did not know it is<lb/> my
+                    duty and that it pleases her for whom I would<lb/>
+                    <hi rend="underline">die</hi>, I would not write<orig reg="today">to-
+                    day</orig>.</p>
+
+                <p>I am not well dear <name type="person">Addie</name>, nor have<lb/> I been for a
+                    week. I caught a severe cold,<lb/> and it has settled upon my lungs, and in
+                    my<lb/> head, leaving me a troublesome cough and<lb/> a severe headache, which
+                    last hangs on in<lb/> spite of every effort to remove it. &mdash;I can<lb/>
+                    hardly see the lines on the paper, so you must excuse the poor writing.<lb/>
+                    <pb n="2" entity="DSSR_000000766_0546"/> But I am still trying to perform
+                    my<lb/> duties in the company, and hope by the<lb/> time I write again I shall
+                    be fully<lb/> well. I wrote a "kind" of letter to you on<lb/> the<date
+                        value="1862-04-11">11th</date>
+                    <orig reg="instant">inst</orig>, and sent it by a friend of mine<lb/> to <name
+                        type="place">Woodstock</name> to be mailed, but it escaped his<lb/> memory,
+                    and he just gave it to me yesterday<lb/> I enclose it in this.</p>
+
+                <p>Our advance to <name type="place">New Market</name> was<lb/> marked by nothing
+                    serious, but it was<lb/> a march of caution, also a series of brilliant<lb/>
+                    dashes. It would be useless for me to <hi rend="underline">attempt</hi><lb/> to
+                    particularize now, for I am not in a<lb/> proper state of mind. We saved the
+                    large<lb/> covered bridge across the <name type="place">Shenandoah</name>,
+                    but<lb/> they tried hard to burn it.</p>
+
+                <p><name type="place"><orig reg="Mount">Mt.</orig> Jackson</name> is a small town
+                    and<lb/> not a very neat one, certainly not one<lb/> half as pretty as <name
+                        type="place">New Market</name>. Our camp is near<lb/> the latter place
+                    distant only about half a mile</p>
+
+                <p>I went across the river a day or two since,<lb/>
+                    <pb n="3" entity="DSSR_000000766_0547"/> and what do you think I found?<lb/>
+                    Nothing more nor less than a genuine, and<lb/>
+                    <hi rend="underline">pretty</hi> Secessionist in the form of a young lady<lb/>
+                    of about fifteen by name <name type="person">Miss Mary Rice</name>.</p>
+
+                <p>Of course I immediately "set my cap" for<lb/> her and when I thought <orig
+                        reg="myself">my self</orig> on the<lb/> verge of success imagine my chagrin
+                    as she<lb/> turned around and with all the sarcastic and<lb/> biting emphasis of
+                    which she is capable, said,<lb/> "Do you know that I <hi rend="underline"
+                    >hate</hi> Yankees?"</p>
+
+                <p>I replied "Do you know I <hi rend="underline">do not</hi>, on the <orig
+                        reg="contrary">con-<lb/> trary</orig>, there is one I regard in a much
+                    more<lb/> amiable manner?" "Who is it, for the love<lb/> of mercy?" was the
+                    answer. I immediately<lb/> showed her the portrait of a certain<orig
+                        reg="handsome">hand-<lb/>some</orig> Ohioan, (<hi rend="underline">I</hi>
+                    wouldn't tell <hi rend="underline">you</hi> who it was,)<lb/> and with a look of
+                    scorn she said, "She isn't<lb/> pretty &mdash; she is a yankee." Said I
+                    &mdash; "she <hi rend="underline">is</hi> pretty,<lb/> and a more handsome
+                    young lady cannot be<lb/> found in <hi rend="underline">any</hi> or all of the
+                    Southern states."</p>
+
+                <p>"You look with partial eyes." said she.<lb/>
+                    <pb n="4" entity="DSSR_000000766_0548"/> "Do you see with <hi rend="underline"
+                        >impartial</hi> ones?" was my response<lb/> Finally she admitted that it was
+                    "pretty, but then<lb/> she is a yankee." By this time, <hi rend="underline"
+                    >my</hi> "righteous<lb/> indignation" began to rise, and I said almost<lb/>
+                    petulantly, "<hi rend="underline">Yes</hi>, she <hi rend="underline">is</hi> a
+                    Yankee girl, and she is<lb/> proud of it, and so <hi rend="underline">am I</hi>.
+                        &mdash; <hi rend="underline">More that that</hi> &mdash;<lb/> she
+                    would die sooner than submit to have<lb/> the glorious Stars and stripes
+                        trampled <orig reg="underfoot">under<lb/> foot</orig> by <hi rend="underline"
+                        >traitors</hi> without giving them their<lb/> just reward <hi
+                        rend="underline">a traitors doom</hi>." and I will<lb/> fight for her and
+                    her country, and rest assured,<lb/>
+                    <hi rend="underline">I'll</hi> not submit or return home, until <hi
+                        rend="underline">your</hi><lb/> unholy flag be trailed in the dust. <hi
+                        rend="underline">aye destroyed</hi>."</p>
+
+                <p>We conversed some time longer, during which<lb/> I did not fail to <orig
+                        reg="instill">instil</orig> into her mind, that<lb/> patriotism, to <orig
+                        reg="one's">ones</orig> country, consists in "obeying<lb/> the constitution
+                    and enforcing the laws." and I<lb/> flatter myself I left her a less violent
+                    secessionist<lb/> than she was when I went there.&mdash; At any rate<lb/>
+                    she condescended to give me my supper, while<lb/> she would not some others who
+                    were there.</p>
+
+                <p>I would answer your kind letters in a more<lb/> detailed and concise form, my
+                    darling but my<lb/> head instead of ceasing to ache. "<hi rend="underline">puts
+                        in harder</hi>."<lb/> As soon as I get better, I will write you a good<lb/>
+                    long &mdash; and I hope more interesting than this &mdash;<lb/> letter.
+                    I will also answer <name type="person">Laurie</name>'s kind letter<lb/> in a day
+                    or so, meanwhile give her my<lb/> kind regards, also. <name type="person"
+                    >Dora</name> and all who inquire<lb/> for me.</p>
+
+                <closer>
+                    <salute>Believe me my darling that I am<lb/> as ever, devotedly yours,<lb/> in
+                        true, fervid, affection<lb/></salute>
+                    <signed>
+                        <name type="person">Charlie</name>
+                    </signed>
+
+                    <seg type="postscript"> Direct the same as heretofore,<lb/> and don't fail to
+                        write very often, your last<lb/> I recieved the<date value="1862-04-16"
+                            >16th</date> <orig reg="instant">inst</orig>. the last letter from
+                        you<lb/> I am really getting alarmed.</seg>
+                </closer>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

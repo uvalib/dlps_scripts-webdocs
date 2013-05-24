@@ -1,0 +1,195 @@
+<!--
+vaco.ent - entity set for use with the 4 volumes of Records of the Virginia Company of London
+
+Greg Murray <gpm2a@virginia.edu>
+Written: 2002-10-14
+Last modified: 2005-08-08
+-->
+
+<!-- ====================================================================== -->
+<!-- characters available in Unicode                                        -->
+<!-- ====================================================================== -->
+
+<!ENTITY scripte "&#x212F;"> <!-- SCRIPT SMALL E -->
+<!ENTITY lett "&#x026B;">    <!-- LATIN SMALL LETTER L WITH MIDDLE TILDE -->
+
+
+<!-- ====================================================================== -->
+<!-- non-Unicode characters for which an approximation has been made        -->
+<!-- ====================================================================== -->
+
+<!ENTITY bl "bl&#x0360;"> <!-- small letters BL strike with tilde -->
+	<!-- No Unicode equivalent. Using "bl" plus combining double tilde. -->
+
+<!ENTITY ble "ble&#x0360;"> <!-- small letters BLE strike with tilde -->
+	<!-- No Unicode equivalent. Using "ble" plus combining double tilde. -->
+
+<!ENTITY dl "dl&#x0360;"> <!-- small letters DL strike with tilde -->
+	<!-- No Unicode equivalent. Using "dl" plus combining double tilde. -->
+
+<!ENTITY GIstrike "G&#x20D2;"> <!-- latin captital letter G strike with I -->
+	<!-- No Unicode equivalent. Using "G" plus combining long vertical line overlay. -->
+
+<!ENTITY lord "ll&#x0360;"> <!-- small letters LL strike with tilde -->
+	<!-- No Unicode equivalent. Using "ll" plus combining double tilde. -->
+
+<!ENTITY Lord "L&#x0303;"> <!-- capital letter L strike with tilde -->
+	<!-- No Unicode equivalent. Using "L" plus combining tilde. -->
+
+<!ENTITY LLord "LL&#x0360;"> <!-- capital letters LL strike with tilde -->
+	<!-- No Unicode equivalent. Using "LL" plus combining double tilde. -->
+
+<!ENTITY per "p&#x0331;"> <!-- small letter P strike below -->
+	<!-- No Unicode equivalent. Using "p" plus combining macron below. -->
+
+<!ENTITY Per "P&#x0331;"> <!-- capital letter P strike below -->
+	<!-- No Unicode equivalent. Using "P" plus combining macron below. -->
+
+<!ENTITY pro "p&#x0333;"> <!-- small letter P with [?] -->
+	<!-- No Unicode equivalent. Using "p" plus combining double low line. -->
+
+<!ENTITY pri "p&#x0322;"> <!-- small letter P with [?] -->
+	<!-- No Unicode equivalent. Using "p" plus combining retroflex hook below. -->
+
+<!ENTITY que "q&#x0322;"> <!-- small letter Q with [?] -->
+	<!-- No Unicode equivalent. Using "q" plus combining retroflex hook below. -->
+
+<!ENTITY ppmacr "p&#x0305;p&#x0305;"> <!-- small letters PP with macron -->
+	<!-- No Unicode equivalent. Using "pp" with two combining overlines. -->
+
+
+<!-- COMBINING MACRON -->
+
+<!ENTITY cmacr "c&#x0304;"> <!-- small letter C with macron -->
+	<!-- No Unicode equivalent. Using "c" plus combining macron. -->
+
+<!ENTITY gmacr "g&#x0304;"> <!-- small letter G with macron -->
+	<!-- No Unicode equivalent. Using "g" plus combining macron. -->
+
+<!ENTITY mmacr "m&#x0304;"> <!-- small letter M with macron -->
+	<!-- No Unicode equivalent. Using "m" plus combining macron. -->
+
+<!ENTITY nmacr "n&#x0304;"> <!-- small letter N with macron -->
+	<!-- No Unicode equivalent. Using "n" plus combining macron. -->
+
+<!ENTITY rmacr "r&#x0304;"> <!-- small letter R with macron -->
+	<!-- No Unicode equivalent. Using "r" plus combining macron. -->
+
+<!ENTITY smacr "s&#x0304;"> <!-- small letter S with macron -->
+	<!-- No Unicode equivalent. Using "s" plus combining macron. -->
+
+<!ENTITY tmacr "t&#x0304;"> <!-- small letter T with macron -->
+	<!-- No Unicode equivalent. Using "t" plus combining macron. -->
+
+<!ENTITY vmacr "v&#x0304;"> <!-- small letter V with macron -->
+	<!-- No Unicode equivalent. Using "v" plus combining macron. -->
+
+<!ENTITY Xmacr "X&#x0304;"> <!-- capital letter X with macron -->
+	<!-- No Unicode equivalent. Using "X" plus combining macron. -->
+
+<!ENTITY zmacr "z&#x0304;"> <!-- small letter Z with macron -->
+	<!-- No Unicode equivalent. Using "z" plus combining macron. -->
+
+
+<!-- COMBINING TILDE -->
+
+<!ENTITY btilde "b&#x0303;"> <!-- small letter B with tilde -->
+	<!-- No Unicode equivalent. Using "b" plus combining tilde. -->
+
+<!ENTITY ctilde "c&#x0303;"> <!-- small letter C with tilde -->
+	<!-- No Unicode equivalent. Using "c" plus combining tilde. -->
+
+<!ENTITY Ctilde "C&#x0303;"> <!-- capital letter C with tilde -->
+	<!-- No Unicode equivalent. Using "C" plus combining tilde. -->
+
+<!ENTITY dtilde "d&#x0303;"> <!-- small letter D with tilde -->
+	<!-- No Unicode equivalent. Using "d" plus combining tilde. -->
+
+<!ENTITY ftilde "f&#x0303;"> <!-- small letter F with tilde -->
+	<!-- No Unicode equivalent. Using "f" plus combining tilde. -->
+
+<!ENTITY gtilde "g&#x0303;"> <!-- small letter G with tilde -->
+	<!-- No Unicode equivalent. Using "g" plus combining tilde. -->
+
+<!ENTITY htilde "h&#x0303;"> <!-- small letter H with tilde -->
+	<!-- No Unicode equivalent. Using "h" plus combining tilde. -->
+
+<!ENTITY ltilde "l&#x0303;"> <!-- small letter L with tilde -->
+	<!-- No Unicode equivalent. Using "l" plus combining tilde. -->
+
+<!ENTITY mtilde "m&#x0303;"> <!-- small letter M with tilde -->
+	<!-- No Unicode equivalent. Using "m" plus combining tilde. -->
+
+<!ENTITY Mtilde "M&#x0303;"> <!-- capital letter M with tilde -->
+	<!-- No Unicode equivalent. Using "M" plus combining tilde. -->
+
+<!ENTITY ptilde "p&#x0303;"> <!-- small letter P with tilde -->
+	<!-- No Unicode equivalent. Using "p" plus combining tilde. -->
+
+<!ENTITY qtilde "q&#x0303;"> <!-- small letter Q with tilde -->
+	<!-- No Unicode equivalent. Using "q" plus combining tilde. -->
+
+<!ENTITY rtilde "r&#x0303;"> <!-- small letter R with tilde -->
+	<!-- No Unicode equivalent. Using "r" plus combining tilde. -->
+
+<!ENTITY stilde "s&#x0303;"> <!-- small letter S with tilde -->
+	<!-- No Unicode equivalent. Using "s" plus combining tilde. -->
+
+<!ENTITY ttilde "t&#x0303;"> <!-- small letter T with tilde -->
+	<!-- No Unicode equivalent. Using "t" plus combining tilde. -->
+
+<!ENTITY Ttilde "T&#x0303;"> <!-- capital letter T with tilde -->
+	<!-- No Unicode equivalent. Using "T" plus combining tilde. -->
+
+<!ENTITY xtilde "x&#x0303;"> <!-- small letter X with tilde -->
+	<!-- No Unicode equivalent. Using "x" plus combining tilde. -->
+
+<!ENTITY ztilde "z&#x0303;"> <!-- small letter Z with tilde -->
+	<!-- No Unicode equivalent. Using "z" plus combining tilde. -->
+
+
+<!-- COMBINING DOUBLE TILDE -->
+
+<!ENTITY sstilde "ss&#x0360;">  <!-- latin small letter SS with tilde -->
+	<!-- No Unicode equivalent. Using "ss" plus combining double tilde. -->
+
+<!ENTITY tttilde "tt&#x0360;"> <!-- latin small letter TT with tilde -->
+	<!-- No Unicode equivalent. Using "tt" plus combining double tilde. -->
+
+
+<!-- COMBINING TILDE OVERLAY -->
+
+<!ENTITY bstrike "b&#x0334;"> <!-- small letter B strike with tilde -->
+	<!-- No Unicode equivalent. Using "b" plus combining tilde overlay. -->
+
+<!ENTITY dstrike "d&#x0334;"> <!-- small letter D strike with tilde -->
+	<!-- No Unicode equivalent. Using "d" plus combining tilde overlay. -->
+
+<!ENTITY Dstrike "D&#x0334;"> <!-- capital letter D strike with tilde -->
+	<!-- No Unicode equivalent. Using "D" plus combining tilde overlay. -->
+
+<!ENTITY fstrike "f&#x0334;"> <!-- small letter F strike with tilde -->
+	<!-- No Unicode equivalent. Using "f" plus combining tilde overlay. -->
+
+<!ENTITY gstrike "g&#x0334;"> <!-- small letter G strike with tilde -->
+	<!-- No Unicode equivalent. Using "g" plus combining tilde overlay. -->
+
+<!ENTITY hstrike "h&#x0334;"> <!-- small letter H strike with tilde -->
+	<!-- No Unicode equivalent. Using "h" plus combining tilde overlay. -->
+
+<!ENTITY lstrike "l&#x0334;"> <!-- small letter L strike with tilde -->
+	<!-- No Unicode equivalent. Using "l" plus combining tilde overlay. -->
+
+<!ENTITY pstrike "p&#x0334;"> <!-- small letter P strike with tilde -->
+	<!-- No Unicode equivalent. Using "p" plus combining tilde overlay. -->
+
+<!ENTITY sstrike "s&#x0334;"> <!-- small letter S strike with tilde -->
+	<!-- No Unicode equivalent. Using "s" plus combining tilde overlay. -->
+
+<!ENTITY Sstrike "S&#x0334;"> <!-- capital letter S strike with tilde -->
+	<!-- No Unicode equivalent. Using "S" plus combining tilde overlay. -->
+
+<!ENTITY zstrike "z&#x0334;"> <!-- small letter Z strike with tilde -->
+	<!-- No Unicode equivalent. Using "z" plus combining tilde overlay. -->
+
+

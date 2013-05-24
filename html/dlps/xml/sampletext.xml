@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- XML declaration -->
+
+<!-- Entity references -->
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+<!ENTITY % ISOdia SYSTEM "http://text.lib.virginia.edu/charent/iso-dia.ent"> %ISOdia;
+<!ENTITY % ISOtech SYSTEM "http://text.lib.virginia.edu/charent/iso-tech.ent"> %ISOtech;
+<!ENTITY % MANUSCRIPT "INCLUDE">
+]>
+<TEI.2 id="UVA" rend="none">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Wise_Some Remarkable Women</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl/>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <handList>
+                <hand id="UK" scribe="UnKnown"/>
+            </handList>
+        </profileDesc>
+    </teiHeader>
+    <text id="t1">
+        <body id="t1-body">
+            <div1 type="chapter" n="IV" id="d3">
+                <pb n="88"/>
+                <div2 type="section" id="d4">
+                    <head><hi rend="gothic">Sister Dora.</hi></head>
+                    <epigraph>
+                        <cit>
+                            <q>"Come, child of misfortune! come hither; <lb/> I'll weep with thee,
+                                tear for tear."</q>
+                            <bibl>&mdash;<author><hi rend="small-caps">Moore.</hi></author></bibl>
+                        </cit>
+                    </epigraph>
+                    <argument>
+                        <p>"But then, you see, she was a real princess."</p>
+                    </argument>
+                    <p><hi rend="small-caps">Who was Sister Dora?</hi></p>
+                    <p>Sister Dora was the daughter of the Rev. <lb/> Mark Pattison, rector of
+                        Hauxwell, Yorkshire, <lb/> England. Her name was <hi rend="small-caps"
+                            >Dorothy <reg orig="Wynd-|Low">WyndLow</reg>
+                            <lb/> Pattison;</hi> but when she joined a Protestant <lb/> sisterhood,
+                        who called themselves "Good <reg orig="Samari-|tans">Samaritans</reg>,"
+                        <lb/> because they devoted their lives to various <lb/> works of mercy, she
+                        became known as Sister Dora. <lb/> I will introduce Miss Pattison to the
+                        reader as she <lb/> appeared in the year 1852, at which date she was <lb/>
+                        twenty years of age.</p>
+                    <p>As described by her biographer,<ref target="n4.1" n="1">*</ref>
+                        <note id="n4.1" place="foot" n="1"><seg type="note-symbol">*</seg>
+                            <p>"Sister Dora: a Biography," by Margaret Lonsdale.</p></note> she was
+                        then <lb/>
+                        <pb n="89"/> a young lady of remarkable personal beauty. Her <lb/> splendid
+                        figure was tall, slender, and uncommonly <lb/> graceful. Her features were
+                        nearly perfect in their <lb/> regularity. Her unusually high and wide
+                        forehead <lb/> indicated the possession of superior mental <reg
+                            orig="quali-|ties">qualities</reg>. <lb/> Her mouth was small when its
+                        full, red lips <lb/> were closed, but quite wide when she spoke or <lb/>
+                        laughed, and in its corners there lay a half-concealed <lb/> expression of
+                        fun. Her brilliant dark-brown eyes <lb/> twinkled in "merry sympathy" with
+                        her lips. Her <lb/> head was covered with "dark, tightly curling, brown
+                        <lb/> hair." To these attractions she added a delicate <lb/> and beautiful
+                        complexion, and she was, says Miss <lb/> Lonsdale, "a fascinating creature
+                        to look upon." <lb/> Her courteous manners and gentle speech <reg
+                            orig="harmon-|ized">harmonized</reg>
+                        <lb/> with her beauty, and made her beloved by her <lb/> friends and popular
+                        with all classes in the <reg orig="neighbor-|hood">neighborhood</reg>
+                        <lb/> of her home. By many she was often <lb/> described as "a real
+                        princess," because of her <reg orig="sweet-|ness">sweetness</reg>
+                        <lb/> and dignity.</p>
+                    <p>Such was Miss Dorothy Pattison at twenty. Her <lb/> life up to this period
+                        had been spent in her father's <lb/> rectory, under external conditions
+                        every way <reg orig="favor-|able">favorable</reg>
+                        <lb/> to the right formation of her character. <reg orig="Haux-|well"
+                            >Hauxwell</reg>
+                        <lb/> itself was a small, "intensely quiet" village of <lb/> only three
+                        hundred inhabitants, situated on the <lb/>
+                    </p>
+                </div2>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

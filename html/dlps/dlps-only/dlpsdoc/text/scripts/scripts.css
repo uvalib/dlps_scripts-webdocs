@@ -1,0 +1,257 @@
+/*
+
+  scripts.css - cascading stylesheet for documentation of local scripts/tools
+
+  Greg Murray <gpm2a@virginia.edu>
+  Written: 2005-12-07
+  Last modified: 2010-05-19
+
+*/
+
+
+/* ============================== */
+/* TAG STYLES                     */
+/* ============================== */
+
+a {
+  background-color: white;
+  color: #006600;  /* dark green */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*
+a:visited {
+  background-color: white;
+  color: gray;
+}
+*/
+
+body {
+  background-color: white;
+  color: black;
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+}
+
+code {
+  background-color: #EEEEEE;   /* light gray */
+  color: black;
+  font-family: monospace;
+  padding-top: 4px;
+  padding-right: 4px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  white-space: nowrap;
+}
+
+/*
+h1, h2 {
+  background-color: white;
+  color: #226622;  /* dark green
+}
+*/
+
+hr {
+  margin-top: 30px;
+}
+
+li {
+  margin-top: 2px;
+  margin-bottom: 0;
+  padding-top: 3px;
+  padding-bottom: 0;
+}
+
+p.heading {
+  /*color: #226622;  /* dark green */
+  font-weight: bold;
+}
+
+pre {
+  background-color: #EEEEEE;  /* light gray */
+  color: black;
+  font-family: monospace;
+  padding: 10px;
+}
+
+span.mono {
+  font-family: monospace;
+  font-weight: bold;
+}
+
+table.bordered {
+  border: 1px solid black;
+}
+
+table.headrow {
+  width: 100%;
+}
+
+table.normal {
+  border: 2px solid black;
+  /*width: 100%;*/
+}
+
+table.script {
+  border: 2px solid black;
+  padding: 0;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+table.script td {
+  border: 1px solid black;
+}
+
+table.args td, table.args th, table.options td, table.options th {
+  border: none !important;
+}
+
+td {
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+  padding: 4px;
+}
+
+td.flat {
+  padding: 0 8px 0 0;
+}
+
+td.headrow {
+  border: none !important;
+  background-color: #337733;  /* dark green */
+  color: white;
+  font-weight: bold;
+}
+
+td.headrowGroupHeadings {
+  border: none !important;
+  background-color: #337733;  /* dark green */
+  color: white;
+  font-weight: bold;
+  text-align: right;
+}
+
+td.label {
+  font-weight: bold;
+}
+
+th {
+border: 1px solid black;
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+  padding: 10px;
+  text-align: right;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 12%;
+}
+
+th.flat {
+  padding: 0 8px 0 0;
+}
+
+table.header th {
+  border: none !important;
+}
+table.index th {
+  border: none !important;
+  padding: 4px 10px 4px 4px;
+}
+
+ul {
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
+ul.synopsis {
+  margin-top: 2px;
+  margin-bottom: 30px;
+}
+
+
+/* ============================== */
+/* <admon> STYLES                 */
+/* ============================== */
+
+div.important {
+  border: 2px solid;
+  border-color: #CC0000;
+  margin-top: 20px;
+  margin-right: 5%;
+  margin-bottom: 20px;
+  margin-left: 5%;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+span.important {
+  background-color: white;
+  color: #CC0000;
+  font-weight: bold;
+}
+
+div.note {
+  border: 2px solid;
+  border-color: #0000CC;
+  margin-top: 20px;
+  margin-right: 5%;
+  margin-bottom: 20px;
+  margin-left: 5%;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+span.note {
+  background-color: white;
+  color: #0000CC;
+  font-weight: bold;
+}
+
+div.tip {
+  border: 2px solid;
+  border-color: #00CC00;
+  margin-top: 20px;
+  margin-right: 5%;
+  margin-bottom: 20px;
+  margin-left: 5%;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+span.tip {
+  background-color: white;
+  color: #00CC00;
+  font-weight: bold;
+}
+
+
+/* ============================== */
+/* CLASSES                        */
+/* ============================== */
+
+.attn {
+  color: #CC0000;
+}
+
+
+.kw {
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.revised {
+  background-color: #FFFFCC;   /* yellow */
+  color: black;
+}

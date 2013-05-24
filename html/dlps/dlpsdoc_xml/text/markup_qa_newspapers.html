@@ -1,0 +1,431 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Markup QA Workflow for Newspapers</title>
+<link rel="stylesheet" type="text/css" href="/dlps/css/teitech.css">
+</head>
+<body>
+<h1>Markup QA Workflow for Newspapers</h1>
+<p>This document describes the workflow for in-house markup QA and
+correction of electronic texts digitized from printed newspapers by
+keyboarding vendors for Digital Library Production Services (DLPS),
+University of Virginia Library. It is intended for use by internal
+DLPS staff.</p>
+
+
+
+
+
+<p><b>Last modified:</b> 1/29/2007</p>
+<hr>
+<h2>Contents</h2>
+<ul>
+<li><a href="#d3">Preliminaries</a></li>
+<li><a href="#d8">Div structure</a></li>
+<li><a href="#d9">Notes</a></li>
+<li><a href="#d10">Cross-references (jumps)</a></li>
+<li><a href="#d11">QA Programs</a></li>
+<li><a href="#d12">Spelling</a></li>
+</ul>
+
+
+
+<hr>
+<a name="d3"><h2>Preliminaries</h2></a>
+
+
+<a name="d4"><h3>Initial steps</h3></a>
+<ul>
+<li>To see which files are ready for markup QA, look in
+<code>59processed</code>. <em>Move</em> (do not copy) files from
+<code>59processed</code> to
+<code>/shares/text/04postkb/60being_markup_checked/to_be_checked</code>
+</li>
+<li>To begin working on an individual file, <em>move</em> (do
+not copy) the file from <code>to_be_checked</code> to your working
+directory</li>
+<li>Open the file in oXygen. Validate the document and fix any
+errors.</li>
+<li>Check the vendor's "readme" file (if any) for problems the
+vendor encountered. Fix as needed. (These files can be found in a
+subdirectory of <code>10received</code> and are named
+<code>[ID]_readme.txt</code>, but they are present only if the vendor
+had any problems worth noting; otherwise, there won't be a readme
+file at all.)
+</li>
+</ul>
+
+
+
+
+<a name="d7"><h3>Additions to TEI header</h3></a>
+<ul><li>
+<b>Revision history</b> &mdash; Add <code>&lt;revisionDesc&gt;</code> to the TEI header: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#revdesc" target="scripts">revdesc</a> <i>cavdaily_*.xml</i></code>
+
+<div class="note">
+<span class="note">NOTE</span><p>This script uses the boilerplate description
+"Minor corrections to vendor markup." If you make significant changes
+to the markup, edit the file to change the <code>&lt;revisionDesc&gt;</code> as
+appropriate.</p>
+</div>
+
+<div class="fyi">
+<span class="fyi">FYI</span><p>If run successfully, this script automatically
+updates the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> to indicate completion of this step
+(Markup QA Workflow → Add revision history).</p>
+</div>
+
+</li></ul>
+
+
+
+
+<a name="d5"><h3>Unknown characters</h3></a>
+
+<p>Apex uses <code>[UNK]</code> or <code>&amp;unknown;</code> to indicate
+unknown characters — characters that the keyboarders were unable
+to identify.</p>
+
+<ul>
+<li>To find unknown characters, choose one of the following:
+  <ul>
+<li>If working from the command line: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#find_unknown_chars" target="scripts">find_unknown_chars</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>If working in oXygen:
+    <ul>
+<li>Search for <code>[UNK]</code>
+</li>
+<li>Search for <code>&amp;lsqb;UNK&amp;rsqb;</code>
+</li>
+<li>Search for <code>&amp;unknown;</code>
+</li>
+</ul>
+  </li>
+</ul>
+</li>
+<li>If any unknown characters are found:
+
+  <ul>
+<li>View the page image to see what the character looks like</li>
+<li>Refer to the Unicode code charts at
+  <a href="http://www.unicode.org/charts/" target="_blank">http://www.unicode.org/charts/</a>
+  and identify the appropriate Unicode character.
+
+  <div class="tip">
+<span class="tip">TIP</span>
+  <p>Often you can tell which code chart(s) to look in first simply by
+  reading the names of the code charts. For example, if you know it's a
+  Greek character, look at the <b>Greek and Coptic</b> code
+  chart.</p>
+
+  <p>If you can't find the character, try searching the
+  <a href="http://www.unicode.org/Public/UNIDATA/NamesList.txt" target="_blank">Unicode Names List</a>
+  for a word that would likely be in the character description.</p>
+  </div>
+  </li>
+<li>When you find the character in the Unicode system, make a note
+  of its numeric code. (If you can't find the character in
+  Unicode, please contact Greg; there may be other ways of tracking it
+  down.)</li>
+<li>
+  In the XML file, replace the <code>[UNK]</code> or
+  <code>&amp;unknown;</code> marker with the Unicode numeric code,
+  preceded by <code>&amp;#x</code> and followed by a semicolon
+  <code>;</code>.
+
+  <p>For example, if you determine that the unknown character is the
+  Arabic alef character, you would look in the <b>Arabic</b>
+  Unicode code chart, where the character described as "ARABIC LETTER
+  ALEF" is assigned the numeric code of 0627, so you would replace the
+  <code>[UNK]</code> marker with <code>&amp;#x0627;</code></p>
+  </li>
+<li>Validate, and fix any validation errors</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> to indicate completion of this
+  step (Markup QA Workflow → Fix unknown characters):
+  <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> -s chars <i>cavdaily_*.xml</i></code>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+<hr>
+<a name="d8"><h2>Div structure</h2></a>
+<ul>
+<li>
+<b>Overall div structure</b> &mdash; Check/correct the vendor's overall div choices.
+  <ul>
+<li>To see the document's current div structure, run this command
+  from the Unix command line:
+
+  <pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#refresh_preview" target="scripts">refresh_preview</a> <i>filename</i></pre>
+
+  (This command copies your file where the TEI Preview tool can
+  display it.) Then use <a href="/cgi-dlps/dlps-only/preview/list.pl" target="_blank">TEI Preview</a> to view the div
+  structure.</li>
+<li>To assess what the div structure <em>should</em> be, refer
+  to the printed table of contents and other page images using the
+  <a href="/cgi-dlps/uva-only/proofreader/start.pl" target="_blank">Proofreader image viewer</a>.</li>
+</ul>
+</li>
+<li>
+<b>View changes</b> &mdash; 
+  <ul>
+<li>If you made any changes to the div structures, update the div
+IDs with this command-line script: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#div_ids" target="scripts">div_ids</a>
+<i>filename</i></code>
+</li>
+<li>To see your changes, run <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#refresh_preview" target="scripts">refresh_preview</a>
+<i>filename</i></code> to re-copy your file to the TEI
+Preview directory, and then use <a href="/cgi-dlps/dlps-only/preview/list.pl" target="_blank">TEI Preview</a> to view the div
+structure</li>
+</ul>
+</li>
+<li>
+<b>Update tracking system</b> &mdash; Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> to indicate completion of this
+step (Markup QA Workflow → Fix div structure):
+<code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> -s divs <i>cavdaily_*.xml</i></code>
+</li>
+</ul>
+
+
+<hr>
+<a name="d9"><h2>Notes</h2></a>
+
+<p>Normally a newspaper will not contain any notes (footnotes,
+endnotes, or marginal notes), but in rare cases footnotes can
+occur.</p>
+
+<p>To determine whether the document contains any notes, search for
+<code>&lt;note</code> with "Find in tags" checked. If there are any
+notes:</p>
+
+<ul>
+<li>
+<b>Supply <code>n</code> attribute</b> &mdash; Run this command-line script to supply the <code>n</code>
+attribute for <code>&lt;note&gt;</code> tags and their corresponding <code>&lt;ref&gt;</code>
+tags:
+<pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#notes_n" target="scripts">notes_n</a> -p <i>cavdaily_*.xml</i></pre>
+</li>
+<li>
+<b>Update tracking system</b> &mdash; Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> to indicate completion of this
+step (Markup QA Workflow → Update notes):
+<code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> -s notes <i>cavdaily_*.xml</i></code>
+</li>
+</ul>
+
+
+<hr>
+<a name="d10"><h2>Cross-references (jumps)</h2></a>
+<ul>
+<li>
+<b>Check for "jumps"</b> &mdash; 
+Newspaper articles are commonly broken into two sections, with the
+continuation on a different page; this is known as a "jump."
+  <ul>
+<li>To determine whether the document contains any jumps, search
+for <code>&lt;ref</code> with "Find in tags" checked.</li>
+<li>If the document has no jumps, skip to the next
+section. Otherwise, proceed as follows.</li>
+</ul>
+</li>
+<li>
+<b>Check jumps for reasonableness</b> &mdash; 
+Use <a href="/cgi-dlps/dlps-only/preview/list.pl" target="_blank">TEI Preview</a> to follow the hyperlink representing the jump, and
+do a quick "reasonableness test" on the article continuation that
+appears.
+
+  <ul>
+<li>the first word of the headline of the continuation should
+normally match the text of the reference</li>
+<li>the continuation should continue the article in an obvious
+way, typically by continuing the sentence where the first section left
+off</li>
+</ul>
+
+<p>The article continuation will often begin with its own
+cross-reference back to the first section. Follow that hyperlink as
+well, to check the reasonableness of the jump.</p>
+</li>
+</ul>
+
+
+<hr>
+<a name="d11"><h2>QA Programs</h2></a>
+<ul>
+<li>
+<b>Command-line QA programs</b> &mdash; 
+  <ul>
+<li>Save and validate the file in oXygen (if open)</li>
+<li>From the Unix command line, run the following script:
+
+  <pre>qa_newspapers <i>filename</i></pre>
+
+  
+Messages with <code>WARNING</code> indicate possible problems that
+should be investigated, and fixed if necessary. <code>ERROR</code>
+messages indicate markup errors that should always be fixed.
+
+<div class="important">
+<span class="important">IMPORTANT</span><p>An <code>ERROR</code> message from a QA
+script should be considered <em>just as serious</em> as a
+validation error from the XML parser. The only difference is that some
+markup rules are enforced by the DTD, while others are enforced by the
+QA programs.</p>
+</div>
+
+
+  <div class="fyi">
+<span class="fyi">FYI</span><p>If run successfully, the
+  <code>qa_newspapers</code> script automatically
+  updates the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> to indicate completion of this step
+  (Markup QA Workflow → Run command-line programs).</p>
+</div>
+
+  <div class="EAF">
+<span class="EAF">SPECIAL INSTRUCTIONS: EAF</span>
+    <p>When processing EAF XML files, also run this additional script:
+    <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#qa_eaf_pb" target="scripts">qa_eaf_pb</a> <i>filename</i></code></p>
+
+    <p>The script finds consecutive page breaks, which typically
+    indicate a page of missing text content. Check the XML file at the
+    line numbers indicated in the <code>WARNING</code> messages. For
+    each page of missing text content, insert a <code>&lt;gap/&gt;</code> tag in
+    the XML file. In the <code>desc</code> attribute, indicate the
+    printed page number of the page for which the text content is missing
+    from the electronic text; for the <code>reason</code>, use
+    <code>unknown</code>. For example:
+
+    <pre>&lt;gap desc="page 17" reason="unknown"/&gt;</pre></p>
+  </div>
+
+  </li>
+</ul>
+</li>
+<li>
+<b>Web-based QA programs</b> &mdash; 
+  <ul>
+<li>Make the current version of the XML file available to the
+  web-based markup QA programs:
+
+  <pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#refresh_preview" target="scripts">refresh_preview</a> <i>filename</i></pre>
+
+  </li>
+<li>In a web browser, go to <a href="/cgi-dlps/dlps-only/markupQA/list.pl" target="_blank">Markup QA Programs</a> and select your file.
+  
+Messages with <code>WARNING</code> indicate possible problems that
+should be investigated, and fixed if necessary. <code>ERROR</code>
+messages indicate markup errors that should always be fixed.
+
+<div class="important">
+<span class="important">IMPORTANT</span><p>An <code>ERROR</code> message from a QA
+script should be considered <em>just as serious</em> as a
+validation error from the XML parser. The only difference is that some
+markup rules are enforced by the DTD, while others are enforced by the
+QA programs.</p>
+</div>
+
+  </li>
+<li>After making corrections, run <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#refresh_preview" target="scripts">refresh_preview</a>
+<i>filename</i></code>, then re-run the web-based QA
+programs</li>
+<li>Continue this process until everything that should be fixed
+has been fixed</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> to indicate completion of this step
+(Markup QA Workflow → Run web-based programs):
+<code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> -s web <i>cavdaily_*.xml</i></code>
+</li>
+</ul>
+</li>
+<li>
+<b>Final steps</b> &mdash; 
+  <ul>
+<li>Save, validate, and close the file in oXygen (if open)</li>
+<li>
+<em>Move</em> the file from your working directory to
+  <code>/shares/text/04postkb/60markup_checked</code>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<hr>
+<a name="d12"><h2>Spelling</h2></a>
+<ul>
+<li>
+<em>Copy</em> files to be spell-checked from
+<code>60markup_checked</code> to
+<code>61being_spellchecked</code>.</li>
+<li>Open the file in oXygen, and choose <b>Edit → Check spelling</b>
+</li>
+<li>oXygen's spell-checking feature is similar to those in word
+processing programs. For each unknown word (each word not contained in
+oXygen's English dictionary), you have several options:
+
+  <ul>
+<li>Click <b>Ignore</b> to keep the unknown word as-is and
+  continue spell-checking.</li>
+<li>Click <b>Ignore all</b> to keep the unknown word
+  as-is, continue spell-checking, and bypass that word for the
+  remainder of the current spell-checking session.</li>
+<li>Select a word from the list of suggestions, then click
+  <b>Replace</b> to replace the unknown word with your
+  selection (or click <b>Replace all</b> to replace all
+  occurrences of the unknown word throughout the document).</li>
+<li>Click <b>Learn</b> to add the unknown word to oXygen's
+  dictionary, so that the word will not come up as unknown in this
+  session or any future spell-checking sessions.</li>
+</ul>
+
+  <div class="important">
+<span class="important">IMPORTANT</span><p>In some cases oXygen will stop on a word
+  simply because it is missing an accent mark. In these cases, keep
+  the original word rather than replacing it. For example, if oXygen
+  stops on the word <code>cliche</code> and suggests
+  <code>cliché</code> as a replacement, click
+  <b>Learn</b> to add <code>cliche</code> (unaccented) to
+  oXygen's dictionary (rather than clicking <b>Replace</b> or
+  <b>Replace all</b>).</p>
+
+  <p>The reasons for this practice are (1) a missing accent mark
+  arguably doesn't <em>really</em> constitute a spelling error;
+  (2) we are keeping the word as it originally appeared in the print
+  source, rather than changing it unnecessarily; (3) the accented
+  characters can cause problems for later processing of the
+  file.</p>
+</div>
+
+</li>
+<li>When spell-checking is complete: save, validate, and close the
+file in oXygen.</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> to indicate completion of this
+step (Markup QA Workflow → Check spelling):
+<code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> -s spell <i>cavdaily_*.xml</i></code>
+</li>
+<li>
+<em>Move</em> the spell-checked file from
+<code>61being_spellchecked</code> to
+<code>61spellchecked</code>.</li>
+</ul>
+
+
+
+<a name=""><h3>Copy to 69processed</h3></a>
+<ul>
+<li>Regardless of what the last step was for a particular file (for
+example, newspapers receive spell-checking, most other files do not),
+always <em>copy</em> the last version of the file to
+<code>69processed</code>.</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a>: Navigate to <code>69processed</code>
+and run this command: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> <i>cavdaily_*.xml</i></code>
+</li>
+</ul>
+
+
+
+
+</body>
+</html>

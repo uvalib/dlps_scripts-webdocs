@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0511 SYSTEM "000000766_0511" NDATA jpg>
+<!ENTITY DSSR_000000766_0512 SYSTEM "000000766_0512" NDATA jpg>
+<!ENTITY DSSR_000000766_0513 SYSTEM "000000766_0513" NDATA jpg>
+<!ENTITY DSSR_000000766_0514 SYSTEM "000000766_0514" NDATA jpg>
+
+<!--<!ENTITY NC62b26a SYSTEM "NC62b26a.jpg" NDATA jpg>
+<!ENTITY NC62b26b SYSTEM "NC62b26b.jpg" NDATA jpg>
+<!ENTITY NC62b26c SYSTEM "NC62b26c.jpg" NDATA jpg>
+<!ENTITY NC62b26d SYSTEM "NC62b26d.jpg" NDATA jpg>-->
+]>
+<TEI.2 id="NC62b26">
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-02-26"
+      >1862 February 26</date></title>
+
+    <author>Tenney, Charles N.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>John R. Barden, University of Richmond Law School Library</name>
+     <resp>Creation of digital images:</resp>
+     <name>University of Virginia Library Electronic Text Center.</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>John R. Barden, University of Richmond Law School Library</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">14</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NC62b26</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2003">2003</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Charles N. Tenney to Adelaide E. Case, 1862 February 26</title>
+
+
+      <author>Charles N. Tenney</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 pp.</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p>All unambiguous end-of-line hyphens have been retained.</p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings.</p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-02-26">1862-02-26</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>masculine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-12">November 12th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">October 14th, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-02-26">February 26, 1862</date>
+
+      <title>Letter from Charles N. Tenney to Adelaide E. Case</title>
+     </bibl>
+    </head>
+    <p> Praises her friendship; happy to receive a letter from her, which he will now answer. Fears
+     that she is suffering on his account, but he is actually very well, as Hallie will assure her.
+     Describes daily routine of the 3d Brigade. Began correspondence with Miss [Swancie?] Holcombe
+     of Oberlin to encourage the dispirited Sergeant Moore to get a similar correspondent; now she
+     has responded, and he wonders whether he shouldn't have Addie's permission to continue the
+     exchange. Recounts comments by fellows sitting around him. Mentions Chauncey Corn, now of Co.
+     A, 29th Regiment. They would like more newspapers, but don't send books, which are hard to
+     transport. Asks after "Auntie," Laurie and Miss [Hegloss]; Will Braden and Sergeant Moore send
+     their regards. </p>
+   </div1>
+  </front>
+  <body id="d4">
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-02-26">1862 February
+      26</date></head>
+    <pb n="1" entity="DSSR_000000766_0511"/>
+
+
+    <opener>
+     <dateline>
+      <name type="place">Camp Tyler, near Paw-Paw, Va,.</name>
+      <date value="1862-02-26">Feby. 26<hi rend="super">th</hi> 1862</date>
+     </dateline>
+     <salute>My dearest Addie:</salute>
+    </opener>
+
+    <p> Few, <hi rend="underline">very</hi> very few, have as kind or as<lb/> good a friend as I find
+     in my darling Addie. Again<lb/> I was made happy by the reception of a letter from her<lb/>
+     whom my heart holds very dear &amp; near. There being no<lb/> more pleasant duty before me
+     this evening, I devote it<lb/> to communicating my scattered thoughts, <hi rend="underline">per
+      paper</hi> to<lb/> you. Now do not imagine that there is <hi rend="underline">any</hi> duty,
+     which,<lb/> in pleasure, comes between us, for such is not the case,</p>
+    <p> Darling, are you not suffering too much, needlessly<lb/> on my account? I can scarcely blame
+     you, either, for<lb/> I know what thoughts <hi rend="underline">must</hi> present themselves,
+     at<lb/> times, but do not imagine that I am unwell for I claim<lb/> to be as healthy a member
+     of the Regt. as our Company<lb/> affords. Hallie well knows this, and will assure you that<lb/>
+     such is the case. I have not been unwell--so to speak--<lb/> since I have been in the service.
+     How strange that you<lb/> have not <orig reg="received">recieved</orig> a letter from me for so
+     long a time.<lb/> I wrote to you. I wrote you a letter the 1<hi rend="super">st</hi> of this
+     month, again<lb/>
+     <pb n="2" entity="DSSR_000000766_0512"/> on the 15<hi rend="super">th</hi>, and the 23<hi
+      rend="super">d</hi> Inst. I wrote again. But I<lb/> will write every day If you do not <orig
+      reg="receive">recieve</orig> my letters until you<lb/> do. Capt Arper has returned, and gave
+     me the letter also the picture<lb/> of <hi rend="underline">My Addie</hi>. How beautiful!
+     Addie--an abrupt question--how did<lb/> you ever happen to love such a <orig reg="verdant"
+      >verdunt</orig>-looking (<hi rend="underline">and acting too</hi>)<lb/> and <hi
+      rend="underline">homely</hi> person as C,N,Tenney? Are you sorry you ever con=<lb/> sented to
+     correspond with him? <hi rend="underline">I'm not</hi>, I'll assure you</p>
+    <p>But what nonsense I am writing. Are you not ashamed<lb/> of me? I must tell you what we have
+     to do now<lb/> While other troops are winning imperishable names in our<lb/> countrys cause,
+     the gallant " <hi rend="underline">3<hi rend="super">d</hi> Brigade.</hi>" is busily engaged <hi
+      rend="underline">in</hi><lb/>
+     <hi rend="underline">the</hi> <hi rend="underline">laudable</hi> <hi rend="underline"
+      >enterprise</hi> <hi rend="underline">of</hi><hi rend="underline">eating</hi><hi
+      rend="underline">Uncle</hi><hi rend="underline">Sam's</hi><hi rend="underline"
+      >provisions</hi>,<hi rend="underline">and</hi><lb/>
+     <hi rend="underline">in</hi> <hi rend="underline">drilling</hi>, though what to prepare us for,
+     I scarcely know, unless<lb/> it is that we may present a military appearance when we<lb/> come
+      home, <hi rend="underline">covered</hi> <hi rend="underline">with</hi> <hi rend="underline"
+      >the</hi> <hi rend="underline">honors</hi> <hi rend="underline">of</hi> <hi rend="underline"
+     >War</hi>. The order of the<lb/> day, as read at Parade is as follows.-- Reveille &amp;
+     Roll Call--6 A.M.<lb/> Surgeon's Call--(for the sick) 8.-- First signal for Guardmounting--
+     8.30<lb/> Guardmounting 9.-- Company Drill from 9.30 to 11.-- Dinner &amp;<lb/> Roll call
+     12.M. Company drill from 1 to 2 P.M.-- Adjutant's<lb/> Call, 4.-- Dress Parade 4.30-- Retreat
+     6.-- Tattoo &amp; Roll Call 8.30<lb/> Extinguish lights, 9. Thus you <orig reg="perceive"
+      >percieve</orig> that our time is<lb/> pretty well occupied. We ought to be able soon to "face
+     the enemy"<lb/> will we not?</p>
+
+    <pb n="3" entity="DSSR_000000766_0513"/>
+
+    <p> I must tell you something which I should have<lb/> mentioned before, and would, had I though
+     of ever hearing<lb/> from it again. It is this. Sergt. Moore, who by the way<lb/> was rather
+     dispirited--&amp; myself, at my suggestion--(which was<lb/> made for his benefit)--wrote a
+     letter each. he one to Miss Julia A.<lb/> Prentiss, &amp; I to
+     Miss <unclear>Luancie</unclear> Holcomb, &amp; sent them to Oberlin. Never<lb/> expecting to
+     hear from <hi rend="underline">mine</hi>, I was surprised on <orig reg="receiving"
+     >recieving</orig> a<lb/> reply the 22<hi rend="super">d</hi> Inst. I hesitated some time before
+     answering<lb/> it, but having commenced it. I considered it ungentlemanly<lb/> to neglect
+     answering it. so wrote again. Hal told me who to write<lb/> to, &amp; named <hi
+      rend="underline">her</hi>. I send you the letter as I <orig reg="received">recieved</orig> it,
+     &amp; and Hal has<lb/> a synopsis of my reply which he will show you. Will you please<lb/>
+     preserve the letters, (for I will send you all I get) as I may have<lb/> occasion to return
+      them <add hand="h1" place="supralinear">which is</add> Nothing unlikely. If you desire it,
+     I<lb/> will instantly discontinue the correspondence. I ought never to<lb/> have commenced it,
+     I know, without your consent, but<lb/> Hallie told me to, &amp; I wrote to please him,
+     &amp; interest my friend<lb/> Moore. I will be guided by your decision. Shall I immediately
+     cease<lb/> writing, or may I continue the correspondence in a reserved manner<add hand="h1"
+      place="supralinear">?</add><lb/> subject to your supervision? Her letter is a very sensible
+     one<lb/> but is not one twentieth part as pretty, or good as your beautiful<lb/> letters. By
+     the Bye, how does Dora do? I consider her<lb/> my friend, as she is <hi rend="underline"
+     >yours</hi>. How is her brother, Alexander? &amp;<lb/> what is he doing?</p>
+
+    <pb n="4" entity="DSSR_000000766_0514"/>
+    <p> You spoke of certain remarks made while writing your<lb/> letter. Similar ones are being
+     made now. One, Charlie Perky<lb/> says "That is rather fine writing for a soldier." Jack
+     Pollock says<lb/> "he must be writing to his duck." Seth says "give her my best<lb/> wishes."
+     Ben. Willson (spelled wrong) says, "I wish I was home with <hi rend="underline">my</hi>
+     love"<lb/> "Charlie Campbell says "How I would like to draw mine to my <hi rend="underline"
+      >throbbin</hi><lb/>
+     <del hand="h1">bosik</del> <hi rend="underline">bosick</hi>." Dont you think we have a loving
+     set?</p>
+    <p> You remember Chauncey Corn, do you not? He is here in<lb/> the 29<hi rend="super">th</hi>
+     and is now Orderly of Co. A. of that Regt. He was over here<lb/> a day or two since, and
+     requested me to give you &amp; Laurie his<lb/> kind regards. Loren is here too in the same
+     company.</p>
+    <p> You ask me if we have plenty of reading here. We have<lb/> only the papers which come now
+     and then, from which we<lb/> obtain the news. Home papers we are glad to see, but books
+     can<lb/> not be easily carried, consequently it is better that they should<lb/> be reserved
+     until we get home. Your kind offer to send me<lb/> some <add hand="h1" place="supralinear"
+     >books</add> gratified me much, and I thank you very much for it</p>
+    <p> Do any of <del hand="h1">my</del> <add hand="h1" place="supralinear">the</add> communications
+     from "Julius" find their way<lb/> into print? I have not seen the C- since the 12<hi
+      rend="super">th</hi> Inst.</p>
+    <p> Why does Hallie not answer some of the numerous<lb/> letters which I have written him? Is he
+     at home now? I<lb/> directed his letter to Warren.</p>
+    <p> I guess Mr. Benton is not very anxious to hear<lb/> from me again, for I have not heard from
+     him yet. I<lb/> wrote at his request, too.</p>
+    <p> Is your Auntie well? and Laurie? How is Miss <unclear>Hegloss</unclear> now?<lb/> you must
+     write me all interesting news.</p>
+    <p> I must close as it is now <orig reg="tattoo">tatoo</orig> over in the 29th<lb/> and will soon
+     be here, and we must all be in line.</p>
+    <p> Write soon &amp; often to your</p>
+    <closer>
+     <salute>Loving</salute>
+     <signed>Charlie W. Tenney</signed>
+     <lb/>
+     <seg type="postscript">Am I not a fancy Pennman!</seg>
+     <lb/>
+     <seg type="postscript">P.S. Will Braden &amp; Sergt Moore send their<lb/> kind regards My
+      love to all.</seg>
+     <lb/>
+    </closer>
+   </div1>
+  </body>
+
+ </text>
+</TEI.2>

@@ -1,0 +1,358 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0071 SYSTEM "000000766_0071" NDATA jpg>
+<!ENTITY DSSR_000000766_0072 SYSTEM "000000766_0072" NDATA jpg>
+<!ENTITY DSSR_000000766_0073 SYSTEM "000000766_0073" NDATA jpg>
+<!ENTITY DSSR_000000766_0074 SYSTEM "000000766_0074" NDATA jpg>
+<!ENTITY DSSR_000000766_0075 SYSTEM "000000766_0075" NDATA jpg>
+<!ENTITY DSSR_000000766_0076 SYSTEM "000000766_0076" NDATA jpg>
+<!ENTITY DSSR_000000766_0077 SYSTEM "000000766_0077" NDATA jpg>
+<!ENTITY DSSR_000000766_0078 SYSTEM "000000766_0078" NDATA jpg>
+
+<!--<!ENTITY NA62b11a SYSTEM "NA62b11a.jpg" NDATA jpg>
+<!ENTITY NA62b11b SYSTEM "NA62b11b.jpg" NDATA jpg>
+<!ENTITY NA62b11c SYSTEM "NA62b11c.jpg" NDATA jpg>
+<!ENTITY NA62b11d SYSTEM "NA62b11d.jpg" NDATA jpg>
+<!ENTITY NA62b11e SYSTEM "NA62b11e.jpg" NDATA jpg>
+<!ENTITY NA62b11f SYSTEM "NA62b11f.jpg" NDATA jpg>
+<!ENTITY NA62b11g SYSTEM "NA62b11g.jpg" NDATA jpg>
+<!ENTITY NA62b11h SYSTEM "NA62b11h.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NA62b11">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-02-11">February 11th, 1862</date></title>
+
+                <author>Case, Adlaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Linda Lisanti; Nadine Ellero</name>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>University of Virginia Library Electronic Text Center</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>University of Virginia Library Electronic Text Center.</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">19</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62b11</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2001">2001</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, February 11th,
+                            1862</title>
+
+
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>8 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: UVA Special Collectiions</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-02-11">1862-02-11</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Women Writers/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-03">November 3rd, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">September 30, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent> 8pp.</extent>
+                        <date value="1862-02-11">February 2, 1862</date>
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenny</title>
+                    </bibl>
+                </head>
+                <p>Adelaide writes to Charlie describing her thoughts concerning the frequency of
+                    their correspondence, her readiness for marriage, her feelings of affection for
+                    him and his being at war(the Battle on the Potomac). </p>
+            </div1>
+
+        </front>
+
+        <body id="d4">
+
+
+
+            <div1 type="letter" n="1862-02-11" id="d5">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-02-11"
+                        >February 11th, 1862</date></head>
+
+                <pb n="1" entity="DSSR_000000766_0071"/>
+                <opener>
+
+                    <dateline>
+                        <name type="place">Mecca</name>
+                        <date value="1862-02-11"> February 11<hi rend="super">th</hi>1862</date>
+                    </dateline>
+                    <lb/>
+                    <lb/>
+                    <salute>Dearest Charlie</salute>
+                </opener>
+
+
+                <p> I guess you will not complain<lb/> because I do not write often enough. for
+                    I<lb/> have sent you a letter every<q>"mail day"</q> for a<lb/> good while. But
+                    I go upon the principle<lb/> that the oftener I write the oftener I<lb/> recieve
+                    and therefore I shall write real often<lb/></p>
+
+                <p>How happy I was last night when I rec'd.<lb/> you darling letters of the 2<hi
+                        rend="super">nd</hi> and 3<hi rend="super">rd</hi> I<lb/> recieved two from
+                    you friday and did not<lb/> expect to recieve another so soon. I thought<lb/> I
+                    should not go to the office last night<lb/> for it was quite muddy but
+                    something-I<lb/> can call it nothing but instinct-seemed to<lb/> tell me to go..
+                    I went and my heart was<lb/>
+                    <unclear>gladdened</unclear>. I am sure I can not tell what<lb/> part of your
+                    letters interest me most<lb/> for they are so full of interest that it is<lb/>
+                    <pb n="2" entity="DSSR_000000766_0072"/> difficult finding the most
+                    interesting<lb/> part. I was pleased with your<q>"Diary letter"</q><lb/> It is
+                    so different from what you generally<lb/> write, but it was Charlie's letter
+                    after all.<lb/> I sympathize with you in the loss of Gen. Lander<lb/> but I hope
+                    your new Gen will <unclear>
+                        <del hand="h1">supply</del>
+                    </unclear><del hand="h1">his</del>prove<lb/> himself as worthy as did Gen.
+                    Leander. I<lb/> believe Banks and Shields take his place<lb/> do they not? I
+                    read in the Cleveland<lb/> Leader that they did but the<q>"Leader"</q>
+                    gives<lb/> us so many wrong reports that I can<lb/> not believe any thing that
+                    they print<lb/> unless it is authenticated in some<lb/> other direction.
+                    Darling, I can not think<lb/> of the battle that <hi rend="underline">must</hi>
+                    be fought on the<lb/> Potomac, without a shudder, and my heart<lb/> clings
+                    closer to my idol. <hi rend="underline">Would to God</hi><lb/> that that battle
+                    would be avoided. Surgeons<lb/> are preparing to go to Washington, from all<lb/>
+                    parts of the country.<lb/>
+                </p>
+
+                <p>I am <hi rend="underline">so</hi> thankful that you enjoy good<lb/>
+                    <pb n="3" entity="DSSR_000000766_0073"/> health, and I am glad that you are
+                    so<lb/> punctual in informing me.<lb/>
+                </p>
+
+                <p>Darling, I do not think Hal would wish you<lb/> to <unclear>insure</unclear> your
+                    own safety for his<sic corr="sake">sak</sic>.<lb/> Charlie, how
+                        your<q>"question"</q> startled me. I can not<lb/> tell you. I had not cast a
+                        thought <unclear>to avoid</unclear><lb/> changing my name to the the one you
+                    have at<lb/> present. I had been so happy in your love<lb/> that I had thought
+                        of<orig reg="nothing">nothink</orig> beyond<lb/> No Charlie, I must maintain
+                    the simple<lb/> name of Addie <unclear>Le</unclear> Case until I am someting<lb/>
+                    wiser, something better than I now am.<lb/> I have aspirations that <hi
+                        rend="underline">must</hi> be reached<lb/> before I bear another name than
+                    this<lb/>
+                </p>
+
+                <p>I wish to make myself worthy of you<lb/> my darling, before I am wholy
+                    yours.<lb/> and your love will strengthen me.<lb/> Be content dearest at
+                    present, and<lb/> remember that it is for the best<lb/> for I could never bestow
+                    my hand<lb/> upon you now. My heart is already<lb/>
+                    <pb n="4" entity="DSSR_000000766_0074"/> yours and even will be, but my<lb/>
+                        hand <hi rend="underline">may</hi> not be for years. It may<lb/> seem a hard
+                    request to grant when I ask<lb/> you to not mention this again until I<lb/> do,
+                    but you <hi rend="underline">will</hi> grant it will you not<lb/> my own
+                        Charlie<unclear>!</unclear> Does it seem a long time<lb/> Charlie? Perhaps
+                    it does, but would you not<lb/> rather wait a few years till I have a
+                    chance<lb/> to cultivate the gifts God has given me<lb/> than to find but too
+                    late that you have<lb/> taken to your heart an unworthy object?<lb/>
+                </p>
+
+                <p>Consider this darling, and answer me,<lb/> Hallie too, my own darling brother
+                    wishes me<lb/> to become a woman in mind as well as<lb/> in body before I can
+                    marry, and could<lb/> I refuse a request from him<unclear>!</unclear> He considers<lb/>
+                    <hi rend="underline">you</hi> worthy one of the noblest of women<lb/> and <hi
+                        rend="underline">God in Heaven helping me I will<lb/> be that one.</hi> You
+                    asked me if father<lb/> knew of our<q>"carrying on"</q> He does not<lb/> He
+                    always said that his daughters would<lb/> never recieve his dictation in
+                    choosing a<lb/> companion, a queer person is my papa<lb/> He seems to think his
+                    children capable of<lb/> choosing for themselves. Perhaps he is right<lb/>
+                    <pb n="5" entity="DSSR_000000766_0075"/> Did you ever see a more lovely day
+                    than<lb/> this one is. It is so warm and pleasant.<lb/> I can scarcely content
+                    remaining in<lb/> the house. Not a cloud is to be seen and<lb/> the sunshine is
+                    dashing through the windows<lb/> so brightly it is such a contrast so the<lb/>
+                    fire which seems feebly burning but auntie<lb/> says it is burning real good and
+                    above<lb/> all the birds - Earth's first and beautiful<lb/> poets are singing so
+                    sweetly. I imagine they<lb/> are singing just as sweet songs now as<lb/> birds
+                    sang to Adam and Eve when<lb/> were in the garden of Eden before that<lb/> one
+                    great sin deprived them forever<del hand="h1">from</del><lb/> of their
+                    happiness. How does Gen. Moore<lb/> get along. I shall never forget his call
+                    to<lb/> our house and my questions I asked him<lb/> of you. I tried to appear
+                    disinterested when<lb/> talking about you, but his honest blue<lb/>
+                    <pb n="6" entity="DSSR_000000766_0076"/> eyes which look right into mine<lb/>
+                    just as if he knew I was doing<lb/> myself an injustice as well as you.<lb/> He
+                    knew that we corresponded with each<lb/> other when he was here. I have a
+                    curiosity<lb/> to know whether that<q>"look"</q> is natural with<lb/> him or
+                    not.<lb/>
+                </p>
+                <p>Dear Charlie I have been thinking today<lb/> of the visit which you made at our
+                    house<lb/> how sad you must have felt when you saw<lb/> Laurie and I caressing
+                    brother and thought<lb/> you too had a sister, but her caresses were<lb/> denied
+                    you. If I had then known of your<lb/> sister nothing in the world would
+                    have<lb/> separated us to express my joy so warmly<lb/> in your presence. I
+                    could not have pursued<lb/> your noble heart so much as my actions<lb/>
+                    undoubtedly did. But if you were only here<lb/> would not I supply the place of
+                    that absent<lb/> sister. Will you not tell me more about<lb/> her. Does she
+                    resemble you? She certainly<lb/>
+                    <pb n="7" entity="DSSR_000000766_0077"/> loves you dear one, who could help
+                    it.<lb/> I do wish you could get her to write<lb/> to you. The thought just
+                    presented<lb/> itself that perhaps this thought would<lb/> not be agreeable to
+                    you and<add place="inline" hand="h1">I</add> am now<lb/> doing just what I would
+                    not do for<lb/> any thing - praising you. If I am darling<lb/> forgive me. But
+                    for fear that I may say<lb/> something which I ought not so I will change<lb/>
+                    the subject.<lb/>
+                </p>
+                <p><unclear>Hallis</unclear> is in Warren yet, he came home<lb/> last friday and
+                    stayed over night but<lb/> went away in the morning. How I<lb/> should loved to
+                    have had him stay<lb/> over the sabbath but when I urged<lb/> him to stay he
+                    looked at me with<lb/> his great black eyes and said "Addie<lb/> can you ask me
+                    to stay when you<lb/> know that duty calls me away?"<lb/>
+                </p>
+                <p>I urged him no more to stay but<lb/> told him to go. What a power my brother<lb/>
+                    <pb n="8" entity="DSSR_000000766_0078"/> has over his sister. One
+                    reproachful<lb/> look from him will bring the tears<lb/> to my eyes and such a
+                    heavy pain will<lb/> gather round my heart that will never<lb/> leave me till I
+                    know that I am forgiven<lb/> for the offense that brought that look.<lb/> Just
+                    such a power I feel and <hi rend="underline">know </hi><lb/> my Charlie has over
+                    me. I can feel it<lb/> when I read your letters and I know<lb/> it is with me in
+                    every action.<lb/></p>
+                <p>Thus it is with this I truly love<lb/> and the deeper my love is
+                    for <unclear>my</unclear> and<lb/> the more strongly do I feel that proven.<lb/></p>
+                <p>But what a letter I am writing you<lb/> to day. I sat down and let my
+                    strengths<lb/> go just as fast and about as curious<lb/> as that<q>"about"</q>
+                    is. But I guess<lb/> you will not find time to read this hurried<lb/>
+                    <q>"thing"</q> if I do not cease.<lb/></p>
+                <p>Do not fail to write often dearest. If,<lb/> more than two mail days pass with
+                    out hearing<lb/> from you the<q>"Blues"</q> get hold of me most<lb/>
+                    unmercifully and no relief can I find<lb/> until I receive a letter from
+                    you.<lb/></p>
+                <closer>
+                    <salute>I guess it is unecessary for me to sign<lb/> my name to this for it you
+                        do not recognize your Adelaide's writing send it back.<lb/></salute>
+
+                </closer>
+            </div1>
+        </body>
+
+
+    </text>
+</TEI.2>

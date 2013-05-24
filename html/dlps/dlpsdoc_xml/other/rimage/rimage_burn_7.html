@@ -1,0 +1,284 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Rimage Workflow for Making Archival Discs</title>
+<link rel="stylesheet" type="text/css" href="/dlps/css/teitech.css">
+</head>
+<body>
+<h1>Rimage Workflow for Making Archival Discs</h1>
+
+<p>This document describes the workflow for making archival DVDs
+using the Rimage systems at Digital Library Production Services (DLPS),
+University of Virginia Library. It is intended for use by internal
+DLPS staff.</p>
+
+<p><b>Note:</b> This documentation pertains to version
+7.0 of the Rimage OfficeNet software.</p>
+
+
+
+
+
+<p><b>Last modified:</b> 11/16/2006</p>
+<hr>
+<h2>Contents</h2>
+<ul>
+<li><a href="#d3">Quick Start</a></li>
+<li><a href="#d4">Explanation</a></li>
+</ul>
+
+
+
+<hr>
+<a name="d3"><h2>Quick Start</h2></a>
+
+<p>The basic steps for making archival DVDs are:</p>
+
+<ul>
+<li>Identify the files to be archived</li>
+<li>Set up the input bin</li>
+<li>Run <code>rimage.pl</code>
+</li>
+</ul>
+
+<p>The details for these steps are:</p>
+
+<ul>
+<li>Identify the files to be archived and copy them to any disk
+accessible to the Rimage PC (typically the E: drive).</li>
+<li>Load the input bin with new recordable DVDs (or CDs). (On the
+Desktop 1500, the input bin is the one with the three prongs to hold
+the discs. On the 2000i, the input bin is the left bin.)</li>
+<li>Open the Rimage System Manager (Start → All Programs →
+Rimage → Rimage System Manager).</li>
+<li>Open the main settings window:
+
+  <ul>
+<li>In the main toolbar, make sure <b>Control Centers</b>
+  is selected.</li>
+<li>In the left-hand navigation pane, select the <b>Control
+  Center</b>.</li>
+<li>Click the <b>Rimage 2000i Settings...</b> button (or
+  <b>Desktop 1500 Settings...</b> button).</li>
+</ul>
+</li>
+<li>In the <b>Bins/Media</b> tab, under the
+<b>Bins:</b> section, click the <b>Reset Input
+Bins...</b> button.</li>
+<li>Under the <b>Media:</b> section, check the <b>Media
+type</b> setting. It will be set to either DVDR or CDR.</li>
+<li>If the setting already corresponds to the type of discs you will
+be burning, then just click <b>OK</b>. If it doesn't, you
+<em>must</em> set it to the type of media you will be using:
+
+  <ul>
+<li>Click the "pause" button (looks like a VCR pause button with
+  the || symbol) near the top of the window.</li>
+<li>Change the <b>Media type</b> setting to DVDR or CDR as
+  appropriate.</li>
+<li>Click <b>OK</b> to save the settings and close the
+  settings window.</li>
+<li>In the left-hand navigation pane, select <b>Production
+  Server</b>.</li>
+<li>Click the "resume server" button (looks like a VCR play button
+  with a green triangle).</li>
+</ul>
+</li>
+<li>Open a command-line window and run the
+<code>rimage.pl</code> Perl script, providing the paths to the
+directories to be burned to DVD:
+
+<pre>perl C:\DLPS\rimage\rimage.pl E:\myFiles</pre>
+
+where myFiles is a directory on disk E: containing files and/or
+subdirectories to be burned to DVD.
+
+<div class="note">
+<span class="note">NOTE</span><p>Open the command-line window using Start →
+Programs → Accessories → Command Prompt. If you use Start
+→ Run... to run the Perl script, the window will close
+automatically as soon as the script is finished running, and you will
+not be able to see any final status or error messages that may have
+been displayed.</p>
+</div>
+
+</li>
+<li>After all discs have been burned successfully, copy the log
+files to the DLPS workspace
+(DLPSadministrative/03archivaldisks/rawfiles), then import the log
+files into the DLPS tracking system.</li>
+</ul>
+
+
+<hr>
+<a name="d4"><h2>Explanation</h2></a>
+
+
+<a name="d5"><h3>Rimage system</h3></a>
+
+<p>The Rimage system (Rimage is the name of the manufacturer; see
+<a href="http://www.rimage.com/" target="_blank">rimage.com</a>)
+is a combination of hardware and software that facilitates
+transferring large sets of data to DVD or CD media. (It also has an
+auto-loader feature for reading large sets of data from existing DVDs
+or CDs, but that's a different workflow.)</p>
+
+<p>The Rimage system produces a disc by first creating a disc image (a
+single file containing all of the data to be burned to disc) and then
+burning that image to the media (DVD or CD disc) as many times as
+necessary to produce the number of copies requested. The process of
+creating the disc image is referred to as "imaging" and is handled by
+the Imaging Server. The process of burning the image to one or more
+discs is referred to as "production" and is handled by the Production
+Server.</p>
+
+
+
+
+<a name="d6"><h3>rimage.pl</h3></a>
+
+<p>The Perl script <code>rimage.pl</code> does the work of
+determining how many files will fit on a disc and how many discs are
+required to encompass the entire set of files. It is not necessary to
+make that determination yourself, arrange the files into any
+particular directory structure, etc.</p>
+
+<p>The only argument required by <code>rimage.pl</code> is the
+path to the directory containing the files to be burned to DVD. So the
+simplest way to run <code>rimage.pl</code> would be:
+
+<pre>perl C:\DLPS\rimage\rimage.pl E:\myFiles</pre>
+
+where myFiles is a directory on disk E: containing files and/or
+subdirectories to be burned to DVD. Alternatively, the script allows
+more than one directory to be specified:
+
+<pre>perl C:\DLPS\rimage\rimage.pl E:\fileset1 E:\fileset2 E:\fileset3</pre>
+</p>
+
+<p>The script has several switches to further control how the discs
+are made:</p>
+
+<table border="1" cellpadding="6">
+<tr>
+<th>Switch</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+<tr>
+<td>-b</td>
+<td>base ID</td>
+<td>Base ID to use when determining disc ID</td>
+<td>Off; defaults to the current date as a 6-digit date in yymmdd format</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>copies</td>
+<td>Number of copies to make of each disc</td>
+<td>2 (The default is 2 because it is standard DLPS practice to burn
+2 copies of each disc and store them in separate locations.)</td>
+</tr>
+<tr>
+<td>-k</td>
+<td>keep</td>
+<td>Keep disc image (.img) files after producing the discs</td>
+<td>Off; default is to delete each disc image when burning from that image is complete</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>label</td>
+<td>Informal name of label template: allowed values are "DLPS", "FKL", "TBRC" and "THDL"</td>
+<td>"DLPS" — uses the standard DLPS label template</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>media</td>
+<td>Type of disc media: allowed values are "DVD" and "CD"</td>
+<td>DVD (In practice, DLPS does not use CDs for archival storage.)</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>test</td>
+<td>Report how many discs will be needed and what their IDs will be,
+but do not create any editlists, log files, etc. and do not actually
+burn any discs</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>verbose</td>
+<td>Display all status messages (in addition to error messages)</td>
+<td>Off; only display error messages</td>
+</tr>
+<tr>
+<td>-I</td>
+<td>imaging only</td>
+<td>Only create disc images; do not produce discs</td>
+<td>Off; create disc images and produce discs</td>
+</tr>
+<tr>
+<td>-P</td>
+<td>production only</td>
+<td>Only produce discs from existing disc images; do not create disc images</td>
+<td>Off; create disc images and produce discs from those images</td>
+</tr>
+</table>
+
+<p>On the command line, the switches must appear before the path
+argument(s). For example:
+
+<pre>perl C:\DLPS\rimage\rimage.pl -c 1 -v E:\fileset1</pre>
+
+tells the script to produce only one copy of the data (one set of
+discs) and to display all status messages.</p>
+
+<p>When using the -P (production only) switch, the path argument
+should be the path to the directory containing the existing disc
+images to use (not the path to the original data, as would normally be
+required).</p>
+
+
+
+
+<a name="d7"><h3>Log files</h3></a>
+
+<p>The <code>rimage.pl</code> script generates log files that
+record important information about each disc, including a list of the
+files contained on the disc. These log files are originally written to
+the C: drive of the Rimage PC, but they need to be copied to the DLPS
+workspace for long-term storage and also imported into the DLPS
+tracking system for searching.</p>
+
+<ul>
+<li>In the DLPS workspace, go to directory
+<code>DLPSadministrative/03archivaldisks/rawfiles</code>. If there is
+a directory indicating the project for which these discs were created,
+use that directory. Otherwise, create a new directory, and name it in
+a way that indicates the project for which these discs were
+created.</li>
+<li>Copy the log files for the discs produced (there will be one log
+file for each disc) from <code>C:\Rimage\Logs</code> on the Rimage PC to
+<code>DLPSadministrative/03archivaldisks/rawfiles/<i>[subdirectory]</i></code>
+where <i>[subdirectory]</i> is the directory from the
+preceding step.</li>
+<li>Log into the DLPS tracking system. In the navigation bar along
+the left, under <b>Archival Discs</b> click <b>Import
+Rimage log file</b>.</li>
+<li>Using this form, import each log file. Use the
+<b>Browse...</b> button to locate each log file to be
+imported. In the <b>Project label</b> field, enter the name of
+the directory (from the preceding step) from which you are
+importing.</li>
+<li>Under <b>Archival Discs</b>, click <b>Search for
+archival discs</b>. Use the first part of the disc ID (which is a
+six-digit date in yymmdd format) to get a list of the discs
+corresponding to the log files you just imported. Make sure all log
+files have been imported.</li>
+</ul>
+
+
+
+
+</body>
+</html>

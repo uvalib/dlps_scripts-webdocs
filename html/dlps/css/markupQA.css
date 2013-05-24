@@ -1,0 +1,77 @@
+/*
+  Basic styles with blue color scheme
+*/
+
+a:link {
+  color: blue;
+}
+
+a:visited {
+  color: gray;
+}
+
+body {
+  color: black;
+  background-color: white;
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+}
+
+p, td {
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+}
+
+h1, h2, h3, h4 {
+  color: #000099;
+}
+
+input, select {
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+}
+
+li {
+  margin: 5px;
+}
+
+table.listing {
+  border: 2px solid #000099;
+}
+
+td.listing {
+  border: 1px solid #000099;
+}
+
+tt {
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.command, .path {
+  font-family: monospace;
+}
+
+.error {
+  color: #CC0000;
+  font-weight: bold;
+}
+
+.hiRow {
+  background-color: #EEEEFF;
+}
+
+.head {
+  color: white;
+  background-color: #000099;
+  font-weight: bold;
+}
+
+.info {
+  font-weight: bold;
+}
+
+.warning {
+  color: #000099;
+  font-weight: bold;
+}

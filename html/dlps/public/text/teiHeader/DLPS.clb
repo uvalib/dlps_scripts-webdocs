@@ -1,0 +1,538 @@
+= V5 MultiLine NoSorting TabWidth=30
+
+
+; Installation: Place this file in C:\Program Files\NoteTab Light\Libraries
+; Close and re-open NoteTab, open the Clipbook (Tools --> Clipbook --> Open Clipbook), and choose
+; DLPS from the pull-down menu.
+
+; Help: Double-click "About these commands..." to view a dialog box with a description of each command.
+
+
+H="About these commands..."
+^!Set %msg%="DLPS clip library for NoteTab^%NL%^%NL%"
+^!Append %msg%="Author: Greg Murray <gpm2a@virginia.edu>^%NL%"
+
+; UPDATE VERSION AND DATE when making changes *****************************************************
+^!Append %msg%="Version: 3.5^%NL%"
+^!Append %msg%="Last modified: 2006-01-06^%NL%^%NL%"
+
+^!Append %msg%="Indicate drive letter for DLPS workspace...^%NL%"
+^!Append %msg%="Displays a dialog box asking for the drive letter used to map the DLPS workspace \\pogo.lib.virginia.edu\text as a Windows network drive, then saves the drive letter for future reference, to be used by other commands.^%NL%^%NL%"
+
+;^!Append %msg%="Minimal TEI header...^%NL%"
+;^!Append %msg%="Displays a dialog box asking for title, author name, DLPS ID, and other data needed for a minimal TEI header. Inserts that data as an XML TEI header into the currently open file at the position of the cursor.^%NL%^%NL%"
+
+^!Append %msg%="TEI document template^%NL%"
+^!Append %msg%="Inserts a template of a DLPS TEI XML document into the currently open file at the position of the cursor.^%NL%^%NL%"
+
+^!Append %msg%="Convert MARC binary to TEI header XML...^%NL%"
+^!Append %msg%="Displays a dialog box asking for the location of the MARC binary file to use as input; click the ... button to browse the file system. Then displays a dialog box asking for the location of the new or existing file to which to write the XML output, along with other data needed to create the TEI header. Converts the MARC binary to a TEI header and opens the resulting XML file.^%NL%^%NL%"
+
+^!Append %msg%="Check well-formedness^%NL%"
+^!Append %msg%="Runs the Xerces XML parser to test whether the currently open file is well-formed XML (that is, whether it adheres to the basic rules of XML syntax). Displays a dialog box with the results.^%NL%^%NL%"
+
+^!Append %msg%="Validate^%NL%"
+^!Append %msg%="Runs the Xerces XML parser to test whether the currently open file is valid XML (that is, whether it adheres to the DTD or schema declared by the XML document). Displays a dialog box with the results.^%NL%^%NL%"
+
+^!Prompt ^%msg%
+
+H=";"
+
+;========================================================================================
+
+H=";NoteTab Setup:"
+
+H="Indicate drive letter for DLPS workspace..."
+
+; Get drive letter previously indicated, if any
+^!Set %default%=^$GetValue(dlps_work)$
+
+; If no drive letter is indicated, set a default
+^!Set %empty%=^$IsEmpty(^%default%)$
+^!If ^%empty% = 1 DefaultEmpty ELSE DefaultNotEmpty
+:DefaultEmpty
+^!Set %default%="F:"
+:DefaultNotEmpty
+
+; Display input dialog asking what letter to use
+^!Set %letter%=^?{Enter drive letter used to map the DLPS workspace as a network drive:=^%default%}
+^!Set %empty%=^$IsEmpty(^%letter%)$
+^!If ^%empty% = 1 BadValue
+
+; Format user input: trim leading & trailing whitespace, convert to upper case,
+; remove backslashes, and remove colons
+^!Set %letter%=^$StrTrim(^%letter%)$
+^!Set %letter%=^$StrUpper(^%letter%)$
+^!Set %letter%=^$StrReplace("\";"";^%letter%;False;False)$
+^!Set %letter%=^$StrReplace(":";"";^%letter%;False;False)$
+
+; Validate user input: must be a single alpha character
+^!Set %test%=^$IsAlpha(^%letter%)$
+^!If ^%test% = 0 BadValue
+^!Set %test%=^$StrSize(^%letter%)$
+^!If ^%test% <> 1 BadValue
+; Add final colon, then save drive letter to NoteTab.ini file and notify user
+^!Append %letter%=":"
+^!SaveValue dlps_work=^%letter%
+^!Set %msg%="Drive letter recorded by NoteTab as ^%letter%^%NL%^%NL%"
+^!Append %msg%="NoteTab will remember your drive letter preference. You do not need to run"
+^!Append %msg%="^%NL%this command again, unless you change the drive letter used for the DLPS workspace."
+^!Prompt ^%msg%
+^!Goto Finish
+
+:BadValue
+^!Prompt "'^%letter%' is not a valid drive letter. Use a single alphabetic letter.^%NL%^%NL%The drive letter has not been saved."
+
+:Finish
+
+H=";"
+
+;========================================================================================
+
+H=";Inserting Markup:"
+
+;H="Minimal TEI header..."
+;^!SetWizardLabel "Minimal TEI header fields:"
+;^!Set %title%=^?{Title}; %firstName%=^?{Author First Name}; %lastName%=^?{Author Last Name}; %dlpsId%=^?{DLPS ID}; %virgoId%=^?{Virgo ID}; %titleControl%=^?{Title Control Number}; %pageImages%=^?{Page images==_bitonal|color|no}; %imagesResp%=^?{Page images created by==_DLPS|Special Collections|Acme|Heckman}
+;^!InsertText <teiHeader>^p
+;^!InsertText <?dlps page-images="^%pageImages%" images-resp="^%imagesResp%"
+;^!InsertText ?>^p
+;^!InsertText <fileDesc>^p
+;^!InsertText <titleStmt>^p
+;^!InsertText <title>^%title%</title>^p
+;^!InsertText <author>^%lastName%, ^%firstName%</author>^p
+;^!InsertText </titleStmt>^p
+;^!InsertText <publicationStmt>^p
+;^!InsertText <publisher>University of Virginia Library</publisher>^p
+;^!InsertText <idno type="DLPS ID">^%dlpsId%</idno>^p
+;^!InsertText <idno type="Virgo ID">^%virgoId%</idno>^p
+;^!InsertText <idno type="title control number">^%titleControl%</idno>^p
+;^!InsertText </publicationStmt>^p
+;^!InsertText <sourceDesc><bibl/></sourceDesc>^p
+;^!InsertText </fileDesc>^p
+;^!InsertText <profileDesc>^p
+;^!InsertText <langUsage>^p<language id="eng">English</language>^p</langUsage>^p
+;^!InsertText </profileDesc>^p
+;^!InsertText </teiHeader>^p
+
+;----------------------------------------------------------------------------------------
+
+H="TEI document template"
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % ISOtech SYSTEM "http://text.lib.virginia.edu/charent/iso-tech.ent"> %ISOtech;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+]>
+<TEI.2>
+<!-- [Insert minimal TEI header here] -->
+<text>
+<body>
+<div1 type="section">
+<p></p>
+</div1>
+</body>
+</text>
+</TEI.2>
+;----------------------------------------------------------------------------------------
+
+H=";"
+
+;========================================================================================
+
+H=";Creating Bibliographic TEI Headers:"
+
+H="Convert MARC binary to TEI header XML..."
+; Greg Murray <gpm2a@virginia.edu>
+; Requirements for this clip:
+;   - The DLPS workspace \\pogo.lib.virginia.edu\text must be mapped as a network drive. (If the
+;     drive letter has not already been set with the "Indicate drive letter..." clip, the user will
+;     be prompted for it.)
+;   - Files required:
+;       [DRIVE]:\05teiHeader\bin\marcxml\marcxml.jar   (from http://www.loc.gov/standards/marcxml/ )
+;       [DRIVE]:\05teiHeader\bin\marcxml\marc4j.jar    (from http://www.loc.gov/standards/marcxml/ )
+;       [DRIVE]:\05teiHeader\bin\saxon\saxon8.jar      (from http://saxon.sourceforge.net/)
+;       [DRIVE]:\05teiHeader\bin\marc2tei\marc2tei.xsl
+;       [DRIVE]:\05teiHeader\bin\marc2tei\strings.xsl
+;   - Directories required:
+;       C:\temp  (for writing temp files and error logs)
+
+^!SetWizardLabel " "
+^!Set %current_year%=^$GetDate(yyyy)$
+
+; Get drive letter mapped to DLPS workspace
+;   Note: I tried running Saxon with the stylesheet location as \\pogo.lib.virginia.edu\text\...
+;   (not as a mapped drive) but it doesn't work; using a mapped drive works fine
+^!Set %dlpsWorkspace%=^$GetValue(dlps_work)$
+^!Set %empty%=^$IsEmpty(^%dlpsWorkspace%)$
+^!If ^%empty% = 1 NEXT ELSE End_GetDriveLetter
+^!Clip "Indicate drive letter for DLPS workspace..."
+^!Set %dlpsWorkspace%=^$GetValue(dlps_work)$
+^!Set %empty%=^$IsEmpty(^%dlpsWorkspace%)$
+^!If ^%empty% = 1 NEXT ELSE End_GetDriveLetter
+^!Prompt "ERROR: Before continuing, specify the drive letter used to map the DLPS workspace as a Windows network drive."
+^!Goto END
+:End_GetDriveLetter
+
+; Test whether bin directory exists
+^!Set %bin%="^%dlpsWorkspace%\05teiHeader\bin"
+^!IfPathExist ^%bin% End_SetBinDir
+^!Prompt "ERROR: Directory '^%bin%' (directory for program files) does not exist or is not accessible. Cannot continue."
+^!Goto END
+:End_SetBinDir
+
+; Test whether temp directory exists
+^!Set %tempdir%="C:\temp"
+^!IfPathExist ^%tempdir% End_SetTempDir
+^!Prompt "ERROR: Directory '^%tempdir%' (directory for temporary files) does not exist or is not accessible. Cannot continue."
+^!Goto END
+:End_SetTempDir
+
+; Set file to be used for capturing standard error
+^!Set %errfile%="^%tempdir%\NoteTab_temp_errors.txt"
+^!SetStdErrorName ^%errfile%
+^!DeleteFile ^%errfile%
+
+; Set file to be used for MARC XML output; this file is temporary and is the
+; intermediary between MARC binary and TEI header XML
+^!Set %tempfile%="^%tempdir%\NoteTab_temp_marc.xml"
+
+; Get default input directory, if available
+;^!Set %inputDir%=^$GetValue(LastInputDir)$
+
+; Get last input file, if available
+^!Set %lastInfile%=^$GetValue(LastInputFile)$
+
+; Get default values for DLPS ID, etc., if available
+^!Set %dlpsID%=^$GetValue(dlpsID)$
+^!Set %virgoID%=^$GetValue(virgoID)$
+^!Set %titleControl%=^$GetValue(titleControl)$
+
+; Get path of MARC binary input file and other parameters
+^!Set %infile%=^?{(T=O;F="MARC files(*.marc)|*.marc")MARC binary input file=^%lastInfile%}; %headerType%=^?{(T=L)Header type==_Regular TEI header|Independent header}; %dlpsID%=^?{DLPS ID=^%dlpsID%}; %virgoID%=^?{Virgo ID=^%virgoID%}; %titleControl%=^?{Title control number=^%titleControl%}
+
+; Test whether input file exists
+^!IfFileExist ^%infile% End_TestInfile
+^!Prompt "ERROR: File '^%infile%' does not exist. Cannot continue processing."
+^!Goto END
+:End_TestInfile
+
+; Save input directory path to NoteTab .ini file
+;^!Set %inputDir%=^$GetPath(^%infile%)$
+;^!IfPathExist ^%inputDir% NEXT ELSE End_SaveInputDir
+;^!SaveValue LastInputDir=^%inputDir%
+;:End_SaveInputDir
+
+; Save input file path to NoteTab .ini file
+^!SaveValue LastInputFile=^%infile%
+
+; Save DLPS ID etc. to NoteTab .ini file
+^!SaveValue dlpsID=^%dlpsID%
+^!SaveValue virgoID=^%virgoID%
+^!SaveValue titleControl=^%titleControl%
+
+;^!SetDebug On
+
+; Determine default output file
+; If doing an independent header, use title control number as default base filename
+; If doing a regular TEI header, use DLPS ID as default base filename
+; If the title control or DLPS ID is not available, use the base filename of the input file
+^!If ^%headerType% = "Independent header" UseTitleControl ELSE UseDlpsID
+:UseTitleControl
+^!Set %empty%=^$IsEmpty(^%titleControl%)$
+^!If ^%empty% = 1 UseInfileName
+^!Set %outfileName%=^%titleControl%
+^!Goto End_GetOutfileName
+:UseDlpsID
+^!Set %empty%=^$IsEmpty(^%dlpsID%)$
+^!If ^%empty% = 1 UseInfileName
+^!Set %outfileName%=^%dlpsID%
+^!Goto End_GetOutfileName
+:UseInfileName
+^!Set %infileName%=^$GetFileName(^%infile%)$
+^!Set %ext%=^$GetExt(^%infile%)$
+^!If ^%ext% = ".marc" RemoveExt Else KeepExt
+:RemoveExt
+; Remove .marc filename extension
+^!Set %outfileName%=^$StrDeleteRight(^%infileName%;5)$
+^!Goto End_GetOutfileName
+:KeepExt
+^!Set %outfileName%=^%infileName%
+:End_GetOutfileName
+
+; Get default output directory, if available
+^!Set %outputDir%=^$GetValue(LastOutputDir)$
+^!Set %empty%=^$IsEmpty(^%outputDir%)$
+^!If ^%empty% = 1 NEXT ELSE End_GetOutputDir
+; Output directory preference unknown; use temp directory as default
+^!Set %outputDir%="^%tempdir%\"
+:End_GetOutputDir
+
+; Append _header.xml to get default value for output file
+^!Set %default%="^%outputDir%^%outfileName%_header.xml"
+
+; Get path of TEI XML output file
+^!Set %outfile%=^?{(T=S;F="XML files(*.xml)|*.xml")TEI XML output file=^%default%}
+
+; Test whether output file already exists; if so, ask whether to overwrite
+^!IfFileExist ^%outfile% NEXT ELSE End_TestOutfile
+^!Continue "^%outfile% already exists. Do you want to replace it?"
+:End_TestOutfile
+
+; Save output directory path to NoteTab .ini file
+^!Set %outputDir%=^$GetPath(^%outfile%)$
+^!IfPathExist ^%outputDir% NEXT ELSE End_SaveOutputDir
+^!SaveValue LastOutputDir=^%outputDir%
+:End_SaveOutputDir
+
+;-------------------------------------------------------
+; Convert MARC binary to MARC XML using LC Java program.
+;-------------------------------------------------------
+
+:Marc2MarcXml
+; Use GetOutput() function (even though program sends nothing to standard output) because it writes
+; standard error to error file set above.
+^!Set %output%=^$GetOutput(java -classpath ^%bin%\marcxml\marcxml.jar;^%bin%\marcxml\marc4j.jar gov.loc.marcxml.MARC2MARC21slim ^%infile% ^%tempfile%)$
+
+; Test for error messages
+^!IfFileExist ^%errfile% NEXT ELSE End_Marc2MarcXml
+^!Set %err%=^$GetFileText(^%errfile%)$
+^!Set %ok%=^$IsEmpty(^%err%)$
+^!If ^%ok% = 1 End_Marc2MarcXml
+
+; Display error messages
+; Replace tabs with spaces (because tabs are displayed as a visible character in NoteTab message boxes)
+^!Set %err%=^$StrReplace(^%TAB%;"    ";^%err%;False;False)$
+^!Prompt "The conversion of MARC binary to MARC XML generated the following error message:^%NL%^%NL%^%err%"
+; Consider an error message to be fatal
+^!Goto END
+:End_Marc2MarcXml
+
+; Make sure MARC XML file exists (and is not empty) before attempting to run scripts on it
+^!IfFileExist ^%tempfile% End_TestTempfileExists
+^!Prompt "ERROR: MARC XML temporary file '^%tempfile%' does not exist. Cannot continue processing."
+^!Goto END
+:End_TestTempfileExists
+^!Set %temp%=^$GetFileText(^%tempfile%)$
+^!Set %empty%=^$IsEmpty(^%temp%)$
+^!If ^%empty% = 1 NEXT ELSE End_TestTempfileEmpty
+^!Prompt "ERROR: MARC XML temporary file '^%tempfile%' exists but is empty (contains zero bytes). Cannot continue processing."
+^!Goto END
+:End_TestTempfileEmpty
+
+:tweakMarcXml
+; Run tweakMarcXml.pl Perl script to remove attribute values from <collection> element of MARC XML
+; file produced by LC marcxml program, because the attributes prevent Saxon from processing the file.
+^!Set %output%=^$GetOutput(perl ^%bin%\marc2tei\tweakMarcXml.pl ^%tempfile%)$
+
+; Test for error messages
+^!IfFileExist ^%errfile% NEXT ELSE End_tweakMarcXml
+^!Set %err%=^$GetFileText(^%errfile%)$
+^!Set %ok%=^$IsEmpty(^%err%)$
+^!If ^%ok% = 1 End_tweakMarcXml
+
+; Display error messages
+^!Set %err%=^$StrReplace(^%TAB%;"    ";^%err%;False;False)$
+^!Prompt ^%err%
+^!Goto END
+:End_tweakMarcXml
+
+:TestHeaderType
+^!If ^%headerType% = "Independent header" NEXT ELSE RegularHeader
+^!Set %headerTypeParam%="standaloneHeader=true"
+^!Goto TestDlpsID
+:RegularHeader
+^!Set %headerTypeParam%=""
+
+:TestDlpsID
+^!Set %empty%=^$IsEmpty(^%dlpsID%)$
+^!If ^%empty% = 1 NEXT ELSE HasDlpsID
+^!Set %dlpsIDParam%=""
+^!Goto TestVirgoID
+:HasDlpsID
+^!Set %dlpsIDParam%="dlpsID=^%dlpsID%"
+
+:TestVirgoID
+^!Set %empty%=^$IsEmpty(^%virgoID%)$
+^!If ^%empty% = 1 NEXT ELSE HasVirgoID
+^!Set %virgoIDParam%=""
+^!Goto TestTitleControl
+:HasVirgoID
+^!Set %virgoIDParam%="virgoID=^%virgoID%"
+
+:TestTitleControl
+^!Set %empty%=^$IsEmpty(^%titleControl%)$
+^!If ^%empty% = 1 NEXT ELSE HasTitleControl
+^!Set %titleControlParam%=""
+^!Goto End_TestTitleControl
+:HasTitleControl
+^!Set %titleControlParam%="titleControl=^%titleControl%"
+:End_TestTitleControl
+
+;------------------------------------------------------------------------------------------------
+; Convert MARC XML to TEI header XML using marc2tei.xsl XSLT stylesheet and Saxon XSLT processor.
+;------------------------------------------------------------------------------------------------
+
+:MarcXml2Tei
+; Use GetOutput() function (even though Saxon sends nothing to standard output, since we're
+; using -o switch) because it writes standard error to error file set above.
+;^!Set %output%=^$GetOutput(java -classpath ^%bin%\saxon\saxon8.jar net.sf.saxon.Transform -o ^%outfile% ^%tempfile% ^%bin%\marc2tei\marc2tei.xsl quiet=true ^%headerTypeParam% ^%titleControlParam% ^%virgoIDParam% ^%dlpsIDParam%)$
+
+^!Set %output%=^$GetOutput(java -classpath ^%bin%\saxon\saxon8.jar net.sf.saxon.Transform ^%tempfile% ^%bin%\marc2tei\marc2tei.xsl quiet=true year=^%current_year% ^%headerTypeParam% ^%titleControlParam% ^%virgoIDParam% ^%dlpsIDParam%)$
+^!TextToFile ^%outfile% ^%output%
+
+; Test for error messages
+^!IfFileExist ^%errfile% NEXT ELSE End_MarcXml2Tei
+^!Set %err%=^$GetFileText(^%errfile%)$
+^!Set %ok%=^$IsEmpty(^%err%)$
+^!If ^%ok% = 1 End_MarcXml2Tei
+
+; Display error messages
+^!Set %err%=^$StrReplace(^%TAB%;"    ";^%err%;False;False)$
+; Show error/warning messages in message box, with option to continue (since might only be warnings)
+^!Continue "The conversion of MARC XML to TEI header XML generated the following message:^%NL%^%NL%^%err%^%NL%Continue processing?"
+:End_MarcXml2Tei
+
+; Make sure TEI output file exists (and is not empty) before attempting to run scripts on it
+^!IfFileExist ^%outfile% End_TestOutputExists
+^!Prompt "ERROR: TEI output file '^%outfile%' does not exist. Cannot continue processing."
+^!Goto END
+:End_TestOutputExists
+^!Set %temp%=^$GetFileText(^%outfile%)$
+^!Set %empty%=^$IsEmpty(^%temp%)$
+^!If ^%empty% = 1 NEXT ELSE End_TestOutputEmpty
+^!Prompt "ERROR: TEI output file '^%outfile%' exists but is empty (contains zero bytes). Cannot continue processing."
+^!Goto END
+:End_TestOutputEmpty
+
+:flipent
+; Run flipent.pl Perl script to "flip" character entity references from hex to mnemonic/named entity refs
+^!Set %output%=^$GetOutput(perl ^%bin%\marc2tei\flipent.pl ^%outfile%)$
+;^!Prompt ^%output%
+
+; Test for error messages
+^!IfFileExist ^%errfile% NEXT ELSE End_flipent
+^!Set %err%=^$GetFileText(^%errfile%)$
+^!Set %ok%=^$IsEmpty(^%err%)$
+^!If ^%ok% = 1 End_flipent
+
+; Display error messages
+^!Set %err%=^$StrReplace(^%TAB%;"    ";^%err%;False;False)$
+^!Prompt ^%err%
+^!Goto END
+:End_flipent
+
+:diacritic2composite
+; Run diacritic2composite.pl Perl script to convert use of combining diacritics (like e&comacute;)
+; to a composite character (like &eacute;) when possible
+^!Set %output%=^$GetOutput(perl ^%bin%\marc2tei\diacritic2composite.pl ^%outfile%)$
+
+; Test for error messages
+^!IfFileExist ^%errfile% NEXT ELSE End_diacritic2composite
+^!Set %err%=^$GetFileText(^%errfile%)$
+^!Set %ok%=^$IsEmpty(^%err%)$
+^!If ^%ok% = 1 End_diacritic2composite
+
+; Display error messages
+^!Set %err%=^$StrReplace(^%TAB%;"    ";^%err%;False;False)$
+^!Prompt ^%err%
+^!Goto END
+:End_diacritic2composite
+
+; Open output file
+^!Open "^%outfile%"
+
+^!Prompt "Conversion completed"
+
+
+;========================================================================================
+
+H=";"
+
+H=";Parsing XML:"
+
+H="Check well-formedness of current document"
+; Greg Murray <gpm2a@virginia.edu>
+; Requirements for this clip:
+;   - The DLPS workspace \\pogo.lib.virginia.edu\text must be mapped as a network drive. (If the
+;     drive letter has not already been set with the "Indicate drive letter..." clip, the user will
+;     be prompted for it.)
+;   - Files required:
+;       [DRIVE]:\bin\bin\xerces\xercesImpl.jar (from http://xml.apache.org/xerces2-j/ )
+;       [DRIVE]:\bin\bin\dlpsParser.jar
+;   - Directories required:
+;       C:\temp  (for writing temp files and error logs)
+
+; Determine whether to validate or not (i.e. whether this clip was called from the "Validate" clip below)
+^!Set %validation%=^&
+^!If ^%validation% <> "-v" NEXT ELSE End_GetValidation
+^!Set %validation%=""
+:End_GetValidation
+
+; Get drive letter mapped to DLPS workspace
+^!Set %dlpsWorkspace%=^$GetValue(dlps_work)$
+^!Set %empty%=^$IsEmpty(^%dlpsWorkspace%)$
+^!If ^%empty% = 1 NEXT ELSE End_GetDriveLetter
+^!Clip "Indicate drive letter for DLPS workspace..."
+^!Set %dlpsWorkspace%=^$GetValue(dlps_work)$
+^!Set %empty%=^$IsEmpty(^%dlpsWorkspace%)$
+^!If ^%empty% = 1 NEXT ELSE End_GetDriveLetter
+^!Prompt "ERROR: Before continuing, specify the drive letter used to map the DLPS workspace as a Windows network drive."
+^!Goto END
+:End_GetDriveLetter
+^!Set %bin%="^%dlpsWorkspace%\05teiHeader\bin"
+
+; Test whether temp directory exists
+^!Set %tempdir%="C:\temp"
+^!IfPathExist ^%tempdir% End_SetTempDir
+^!Prompt "ERROR: The directory for temporary files, '^%tempdir%' does not exist or is not accessible. Cannot continue."
+^!Goto END
+:End_SetTempDir
+
+; Set file to be used for capturing standard error
+^!Set %errfile%="^%tempdir%\NoteTab_temp_errors.txt"
+^!SetStdErrorName ^%errfile%
+^!DeleteFile ^%errfile%
+
+; Use GetOutput() function (even though program sends nothing to standard output) because it writes
+; standard error to error file set above.
+; Use double quotes around the ^** filename parameter in case path includes spaces.
+;^!Set %output%=^$GetOutput(java edu.virginia.lib.dlps.DLPSParser "^**")$
+^!Set %output%=^$GetOutput(java -classpath ^%bin%\dlpsParser.jar;^%bin%\xerces\xercesImpl.jar edu.virginia.lib.dlps.DLPSParser ^%validation% "^**")$
+
+; Test for error messages
+^!IfFileExist ^%errfile% NEXT ELSE End_parse
+^!Set %err%=^$GetFileText(^%errfile%)$
+^!Set %ok%=^$IsEmpty(^%err%)$
+^!If ^%ok% = 1 End_parse
+
+; Display error messages
+; Replace tabs with spaces (because tabs are displayed as a visible character in NoteTab message boxes)
+^!Set %err%=^$StrReplace(^%TAB%;"    ";^%err%;False;False)$
+^!Set %err%=^$StrReplace("|";" | ";^%err%;False;False)$
+^!Prompt "The XML parser reported the following error message:^%NL%^%err%"
+; Consider an error message to be fatal
+^!Goto END
+:End_parse
+
+^!Set %status%="well-formed"
+^!If ^%validation% = "-v" NEXT ELSE ShowStatus
+^!Set %status%="valid"
+:ShowStatus
+^!Prompt "This XML document is ^%status%."
+
+;----------------------------------------------------------------------------------------
+
+H="Validate current document"
+
+^!Clip "Check well-formedness of current document" -v
+
+;----------------------------------------------------------------------------------------

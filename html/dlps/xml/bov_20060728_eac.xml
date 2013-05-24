@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> 
+%dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> 
+%UVAsupp;
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of 
+Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors 
+meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with local 
+customizations)</resp> 
+                    <name>University of Virginia Library</name> </respStmt>
+                <biblScope type="date">
+                    <date value="2006-07-28">July 28, 2006</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">19</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2009">2009</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the  
+University of Virginia</p>
+                    <p n="access">Publicly accessible</p>                   
+                </availability>
+                <idno type="DLPS ID">bov_20060728_eac</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+            
+            
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors 
+minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of 
+Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors 
+meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2006-07-28">July 28, 2006</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>  
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information.  Access to 
+minutes containing salary information will be granted only under the procedures of the Virginia 
+Freedom of  Information Act (Code of Virginia-2.1-340 ff.) or if permission is granted by the 
+Secretary of the Board.  Researchers interested in obtaining access to these records should direct 
+a request in writing to the Office of the Legal Adviser, Madison Hall, University of Virginia.  
+These public minutes have had salary information deleted and bear no restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special 
+Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body which is 
+the legal owner and operator of the institution.  Recorded in the minutes are appointments and 
+other personnel decisions concerning faculty, decisions about construction of facilities, gifts to 
+the university, and all other board actions, decisions and resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        
+        <encodingDesc>
+            &projectDesc;
+            <editorialDecl>
+                &editorial_correction;
+                &editorial_normalization;
+                &editorial_hyphenation;
+                &editorial_quotation;
+                &editorial_stdVals;
+            </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language n="008" id="eng" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body id="d1">
+            <div1 type="report" id="d2">
+            <head>EXTERNAL AFFAIRS COMMITTEE</head>
+                <div2 type="statement" id="d3">
+                    <head>GOALS FOR 2006-07</head>
+                    <p>The External Affairs Committee will have five major objectives for the Universitys 2006-07 fiscal 
+                    year. These goals are: </p>
+                    <list>
+                        <item rend="indent">
+                            1. Successfully launch public phase of $3 billion Capital Campaign with $1.1 billion and 
+                            generate $400 million in new commitments during fiscal year 2007. </item><lb/>
+                        <item rend="indent">                            
+                        2. Increase annual philanthropic cash flow by 10% to $240 million. </item><lb/>
+                        <item rend="indent">                            
+                        3. Implement changes relating to University-wide foundations as per BOV recommendations. </item><lb/>
+                        <item rend="indent">                            
+                            4. Continue to reinforce constituent engagement both regionally and University-wide so as to 
+                            enhance relationships, create awareness and build support among alumni, parents and 
+                            friends of the University. </item><lb/>
+                        <item rend="indent">                            
+                            5. Improve University-wide communications with the establishment of a centralized marketing 
+                            effort, a branding initiative and a crisis management plan. </item><lb/>
+                    </list>
+                    <p>Attached are tactical details and sub-set objectives.</p>
+             
+                </div2>
+                <div2 type="statement" id="d4">
+                    <pb n="2"/>
+                    <head>Tactical Objectives </head>
+                    <div3 type="section" id="d5">
+                        <head>Fund-raising: University Development and University-related Foundations </head>
+                        <list>
+                            <item rend="indent">
+                                1. Provide leadership and oversight in assessing the strengths and weaknesses of the Universitys 
+                                overall fund-raising operation (<date value="2007-06-30">06/30/07</date>) </item>
+                               
+                                    <item rend="indent">
+                                        Lead an institution-wide effort to assess the efficacy and sustainability of current fund-
+                                        raising operations relative to serving the foundation and the University. </item>
+                                    <item rend="indent">
+                                        Provide guidance in determining those peer institutions against which the University should 
+                                        benchmark its current philanthropic efforts. </item>
+                                    <item rend="indent">
+                                        Support the exploration of alternative modelsin structure, in governance and in funding
+                                        that potentially provide more viable long-term support for the Universitys ambitious fund-
+                                        raising goals. </item>
+                                    <item rend="indent">
+                                        Provide counsel to select and implement a sustainable funding mechanism for the centrally-
+                                        based development operation. </item>
+                                    <item rend="indent">
+                                        Lead efforts to insure support and ownership by all interested partiesDeans, Foundations 
+                                        heads, senior administrators, donors, gift officers, and other constituencies. </item>
+                                
+                           
+                            <item rend="indent"> 
+                                2. Continue to provide leadership and oversight of efforts to reach the campaign goal of $3 billion </item><lb/>
+                              
+                                    <item rend="indent">
+                                    Support efforts to generate at least $400 million in new campaign commitments during FY-07. </item>
+                                    <item rend="indent">
+                                        Support strategies toward the goal of increasing new future support commitments by 10% 
+                                        (~$18 million in FY-07). </item>
+                                    <item rend="indent">
+                                        Hold all University gift officers responsible for compliance with standardized performance-
+                                        based management tools that improve discipline and coordination. In year two of this 
+                                        process, increased attention will be given to: (a) tracking of proposals, both planned and 
+                                        active, and (b) evaluating and assessing the appropriateness of individual school and unit 
+                                        contact goals. </item>
+                                    <item rend="indent">
+                                        Motivate ever-increasing integration of University Developments fund-raising efforts with 
+                                        that of the Schools and units. Utilize the Deans Development Forum to foster and nurture 
+                                        cross-University collaboration, particularly around emerging University priorities. </item>
+                                    <item rend="indent">
+                                        Evaluate and approve plans and strategies related to emerging University fund-raising 
+                                        priorities (ie, Science and Technology, the Shannon Center, the Institute on Aging). </item>
+                                    <item rend="indent">
+                                        Focus efforts of President Casteen on the direct solicitation of, or approval of solicitation 
+                                        strategies for, all principal gift prospects at $5M and above. </item>
+                                    <item rend="indent">
+                                        Monitor and evaluate compliance with all mechanisms and policies designed to improve 
+                                        prospect management, particularly new efforts to better qualify, cultivate, and coordinate 
+                                        prospects at the $1M+ level. </item>
+                                    <item rend="indent">
+                                        Formally declare, and participate in the public campaign kick-off weekend 
+                                        (<date value="2006-09-28">September 28</date> - <date value="2006-10-01">October 1, 2006</date>). </item>
+                     
+                        <pb n="3"/>
+                        
+                                     <item rend="indent">
+                                           Launch the public phase of the capital campaign with at least $1.1 billion in campaign 
+                                           commitments. </item>
+                                      <item rend="indent">
+                                           Guide and support planning and implementation of regional kickoffs, helping to maintain 
+                                           focus and visibility through participation where appropriate. </item>
+                                                         
+                            <item rend="indent">
+                                3. Select, support, and assess the progress of those fund-raising initiatives determined to directly or 
+                                indirectly influence the Universitys national ranking and reputation.</item>
+                             
+                                    <item rend="indent">
+                                        Support efforts to assess and insure the continued alignment of campaign goals with the 
+                                        Universitys six- and ten-year plans, as determined by the Special Committee on Planning. </item>
+                                    <item rend="indent">
+                                    Encourage increased giving participation by alumni, parents, and friends through evaluation 
+                                        of the work plan and recommendations of the Annual Giving Advisory Board Task Force, 
+                                        studying best-in-class annual giving practices and programs (Task force created and 
+                                        approved by President-<date value="2005-06-30">06/30/05</date>. Report findings and recommendations to President and 
+                                        BOV no later than 01/07. </item>
+                                    <item rend="indent">
+                                    Increase philanthropic cash flow by 10%, to a total of $240 million per annum. </item>
+                               </list>
+                    </div3>
+                    <div3 type="section" id="d6">
+                        <head>Constituent Engagement</head>
+                        <list>
+                            <item rend="indent">
+                                1. Provide assistance and oversight toward the goal of enhancing relationships, creating awareness, 
+                                and building support among alumni, parents, and friends in the life of the University. </item><lb/>
+                            <item rend="indent">    
+                                2. Promote the value of constituent engagement internally, among the deans and other institutional 
+                                leaders. Maximizing our long-term return on investment will require continued, loyal, and 
+                                visible support. </item><lb/>
+                            <item rend="indent">                                
+                                3. Assist with strategic planning efforts around two prioritiesregional engagement efforts and 
+                                campus partnershipsas efforts to staff this division continue in FY-07. </item><lb/>
+                            <item rend="indent">
+                                4. Support efforts toward a stronger partnership between the University
+                                and the Alumni Association, through joint strategic planning and performance benchmarks. </item><lb/>
+                        </list>
+                    </div3>
+                    <div3 type="section" id="d7">
+                        <head>Public Affairs </head>
+                        <list>
+                            <item rend="indent">
+                                1. Support and guide the creation of a model Public Affairs organization (currently in progress); 
+                                assist as appropriate in the establishment of the academic divisions first centralized 
+                                marketing department. </item><lb/>
+                            <item rend="indent">                                
+                                2. Assess the recommendations of McCann-Erickson regarding the Universitys key messages; 
+                                guide implementation of the Universitys branding initiative. </item><lb/>
+                        </list>
+                        <pb n="4"/>
+                        <list>
+                            <item rend="indent">
+                                3. Provide input and oversight into the development of a crisis management plan, including the 
+                                creation of a SWAT team to implement the plan as needed.</item><lb/> 
+                        </list>
+                    </div3>
+                </div2>
+            </div1>
+        </body>
+    </text>
+</TEI.2>
+
+
+

@@ -1,0 +1,251 @@
+<html>
+<head>
+<title>Preparing Full TEI Headers - DLPS</title>
+<link rel="stylesheet" type="text/css" href="/dlps/css/dlpsdoc.css">
+</head>
+<body>
+<h1>Preparing Full TEI Headers</h1>
+<p><b>Digital Library Production Services, University of Virginia Library</b></p>
+
+<p><b>Overview:</b> This document details the steps in the DLPS
+workflow for converting Virgo records to TEI headers.</p>
+
+<!-- UPDATE DATE MANUALLY WHEN MODIFYING THIS FILE ************************ -->
+<p><b>Last modified:</b> October 31, 2006</p>
+
+<p><b>Note:</b> This workflow requires certain software to be
+installed on the user's local PC. The setup details are
+<a href="teiHeaderSetup.html">documented separately</a>.</p>
+
+<p>The (deprecated) workflow for TEI header creation
+<a href="teiHeader_NoteTab.html">using NoteTab</a> is still
+available.</p>
+
+<hr>
+
+<h2>Review Virgo record</h2>
+
+<ul>
+
+<li>To see which items are ready for Virgo record review:
+
+  <ul>
+  <li>Go to the DLPS web-based tracking system at <br><br>
+
+<a target="_blank" href="/dlps/uva-only/tracksys/">http://pogo.lib.virginia.edu/dlps/uva-only/tracksys/</a><br><br></li>
+
+  <li>Under <b>Text Workflow</b>, click <b>Search for text items</b>.</li>
+
+  <li>For the <b>TEI header status</b> criterion, select <b>Review
+  Virgo record</b>, then click the <b>Search</b> button.</li>
+
+  <li>If there are items you don't want to review at this time,
+  clear the checkboxes next to the DLPS IDs for those items.</li>
+
+  <li>At the bottom of the search results list, select <b>TEI
+  Header</b> and click the <b>View Workflow</b> button.</li>
+
+  </ul>
+</li>
+
+<li>For each item to be reviewed:
+
+  <ul>
+
+  <li>Click the <b>View images</b> link to view the page images in the
+  DLPS web-based image viewer (which will open in a separate browser
+  window).</li>
+
+  <li>Use the Virgo ID or title control number to look up the Virgo
+  record in Workflows.</li>
+
+  <li>Review and correct the Virgo record as needed.</li>
+
+  </ul>
+
+</li>
+
+</ul>
+
+
+<h2>Export Virgo record</h2>
+
+<ul>
+
+<li>Get the Virgo IDs of the Virgo records to be exported.
+
+  <ul>
+
+  <li>To export a single record, just select the Virgo ID
+  from the web page and copy it to the clipboard.</li>
+
+  <li>To export multiple records, select the comma-separated list of
+  Virgo IDs displayed at the bottom of the page, and copy the
+  selection to the clipboard.</li>
+
+  </ul>
+
+</li>
+
+<li>In WorkFlows, click the "Scheduled Reports" button on the
+toolbar.<a href="#n1"><sup>1</sup></a></li>
+
+<li>Go to <b>New</b> &rarr; <b>Custom</b> tab &rarr; "MARC.XML by
+Item ID" &rarr; <b>Setup &amp; Schedule</b> &rarr; <b>Selection
+Criteria</b> tab.<a href="#n2"><sup>2</sup></a></li>
+
+<li>Paste the Virgo IDs (copied to the clipboard previously) into the
+"Item IDs" textbox in Workflows.</li>
+
+<li>Click <b>Schedule</b>. Click <b>OK</b> to accept the default
+settings of "Once" and "ASAP". At the prompt saying the report has
+been scheduled, click <b>Close</b>.</li>
+
+<!--
+<li>Click the "Finished Reports" button on the 
+toolbar.<a href="#n2a"><sup>2a</sup></a></li>
+
+<li>Select the report reflecting the current date and time, which will
+be the first report listed (if not, wait a few minutes and try
+again). Click <b>View</b>. Check the <b>View log</b> checkbox and
+click <b>OK</b>.</li>
+
+<li>The report log indicates the name (date and time) of the MARC
+binary file that was generated.</li>
+-->
+
+<li>Using a web browser, go to <br><br>
+
+<a target="_blank" href="http://virgo.lib.virginia.edu/dlps/">http://virgo.lib.virginia.edu/dlps/</a> <br><br>
+
+The name of each MARC (.marc) file listed reflects the date and time
+that it was created; your file will be the last one in the list. (If
+none of the filenames reflects the current date and time, wait a few
+minutes and refresh the web browser.)</li>
+
+<li>Right-click the link for your MARC file and select "Save Target
+As...". Make sure the <b>Save as type:</b> drop-down is set to "All
+files" (not "Text document"). Save the file to a convenient
+location. (Feel free to rename the file to something more
+human-readable.)</li>
+
+</ul>
+
+
+<h2>Make TEI header</h2>
+
+<ul>
+
+<li>The script to make the TEI header (to convert from MARC binary to
+TEI XML) can be started in three ways:
+
+  <ul>
+
+  <li>Double-click the script file (marc2tei.vbs)</li>
+
+  <li>OR Drag a MARC file and drop it onto the script file (in this
+  case the script will not ask for the MARC file to convert; the
+  dropped file will be converted)</li>
+
+  <li>OR In Oxygen, go to Tools &rarr; External Tools &rarr; MARC to
+  TEI, or just click "MARC to TEI" in the main Oxygen tool bar (see
+  the <a href="teiHeaderSetup.html">setup instructions</a> for details
+  on making the conversion script available within Oxygen)</li>
+
+  </ul>
+</li>
+
+<li>Several dialog boxes will be displayed. Enter the information
+necessary to run the MARC to TEI conversion:
+
+  <ul>
+
+  <li>Specify the location of the MARC binary file you saved
+  previously.</li>
+
+  <li>Supply the DLPS ID, Virgo ID, and title control
+  number.<a href="#n3"><sup>3</sup></a></li>
+
+  <li>Indicate whether to produce an independent header (the "parent"
+  header for serials) or a regular TEI header.</li>
+
+  <li>Specify the new or existing file to which to save the TEI XML
+  output.<a href="#n4"><sup>4</sup></a></li>
+
+  </ul>
+</li>
+
+<li>The conversion script will convert the binary MARC record matching
+the specified title control number to a TEI header XML file. (If an
+error occurs during the conversion process, an error message will be
+displayed in a dialog box and the process will stop.)</li>
+
+<li>Open the resulting TEI XML file in Oxygen.</li>
+
+</ul>
+
+
+<h2>Review TEI header</h2>
+
+<ul>
+
+<li>In Oxygen, review and correct the TEI header.</li>
+
+<li>Validate the TEI XML file. If errors occur, correct them and
+re-validate until the document is valid.</li>
+
+<li>Close the XML file.</li>
+
+<li>Copy the XML file from your working directory to
+<tt>05teiHeader/80final</tt> in the DLPS workspace.</li>
+
+</ul>
+
+
+<h2>Update the Tracking System</h2>
+
+<ul>
+
+<li>Back in the DLPS tracking system: For each step completed, check
+the corresponding checkbox(es), then click the <b>Update</b>
+button.</li>
+
+<li>A confirmation page appears. To commit the changes indicated,
+click the <b>Update</b> button.</li>
+
+</ul>
+
+<hr>
+
+<h2>Notes</h2>
+
+<p><a name="n1">1.</a> The "Scheduled Reports" button icon is a stack
+of paper with "1 2 3" on it. If not present, right-click in the
+toolbar and add a button for "SCHED_REPORTS".</p>
+
+<p><a name="n2">2.</a> Although the custom report is named "MARC.XML
+by Item ID," it actually has been changed to ouput a MARC binary file
+rather than MARC record(s) in XML form.</p>
+
+<!--
+<p><a name="n2a">2a.</a> The "Finished Reports" button icon is a stack
+of paper with a red checkmark on it. If not present, right-click in
+the toolbar and add a button for "FINISHED_REPORTS".</p>
+-->
+
+<p><a name="n3">3.</a> Although the conversion will still run if the
+DLPS ID, Virgo ID, and/or title control number fields are left blank,
+the resulting TEI header will not include these pieces of
+information. Also, if you omit the title control number, the
+conversion program will select the first MARC record in the MARC file;
+if the MARC file contains multiple records, you may end up with the
+wrong bibliographic data in the TEI header.</p>
+
+<p><a name="n4">4.</a> The script attempts to name the output file for
+you and supplies a default value. If you are creating a regular TEI
+header, the DLPS ID is used as the base filename. If you are creating
+an independent header, the title control number is used as the base
+filename.</p>
+
+</body>
+</html>

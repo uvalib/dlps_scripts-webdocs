@@ -1,0 +1,2901 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="scripts.xsl" type="text/xsl"?>
+<!DOCTYPE scripts SYSTEM "scripts.dtd" [
+
+<!ENTITY dlps-bin       "/shares/admin/bin">
+<!ENTITY dlps-bin-text  "/shares/admin/bin/text">
+<!ENTITY dlps-bin-xsl   "/shares/admin/bin/text/xsl">
+<!ENTITY web-qa "/www/doc/dlps/xsl">
+
+<!ENTITY option_E '
+    <option>
+      <optionName expan="errors only">E</optionName>
+      <usage>-E</usage>
+      <desc>Only display error messages (suppress warnings)</desc>
+    </option>
+'>
+
+<!ENTITY option_q '
+    <option>
+      <optionName expan="quiet">q</optionName>
+      <usage>-q</usage>
+      <desc>Suppress status messages (only show warnings and errors)</desc>
+    </option>
+'>
+
+<!ENTITY option_v '
+    <option>
+      <optionName expan="verbose">v</optionName>
+      <usage>-v</usage>
+      <desc>Show status messages (in addition to warnings and errors)</desc>
+    </option>
+'>
+
+<!ENTITY teiFiles '
+    <arg required="yes">
+      <argName><replace>filenames</replace></argName>
+      <desc>TEI XML file(s)</desc>
+    </arg>
+'>
+
+<!ENTITY qaStylesheetRemarks '
+  <p>This QA stylesheet can be run from the command line using <command><ptr target="qa_super"/></command>, or via the <xref url="http://pogo.lib.virginia.edu/cgi-dlps/dlps-only/markupQA/list.pl" type="external">web interface</xref>.</p>
+'>
+
+<!ENTITY copyOverwrite "Copies each input file to <filename>[filename].bak</filename>, then overwrites original input file">
+
+<!ENTITY stdout "Sends messages to standard output (the screen)">
+
+<!ENTITY mdash "&#x2014;"><!-- EM DASH --><!-- from iso-pub.ent -->
+<!ENTITY rarr  "&#x2192;"><!-- RIGHTWARDS ARROW --><!-- from iso-num.ent -->
+]>
+<scripts>
+<scriptsHeader>
+<title type="main">DLPS Scripts for the Text Workflow</title>
+<title type="sub">Digital Library Production Services (DLPS), University of Virginia Library</title>
+<respStmt>
+  <resp>Maintained by</resp>
+  <name>Greg Murray (gpm2a <hi rend="italic">at</hi> virginia <hi rend="italic">dot</hi> edu), DLPS</name>
+</respStmt>
+<summary>
+<p>This documentation describes processing scripts and other software
+tools written and maintained by DLPS (Digital Library Production
+Services, University of Virginia Library) for processing TEI-encoded
+electronic texts. It is intended as a reference for internal DLPS staff.</p>
+</summary>
+<revisionDesc>
+  <change>
+    <date value="2006-05">May 2006</date>
+    <respStmt>
+      <resp>author</resp>
+      <name>Greg Murray, DLPS</name>
+    </respStmt>
+    <changeEntry><p>Produced first published version. Documented about 80 scripts.</p></changeEntry>
+  </change>
+  <change>
+    <date value="2006-07-10">July 10, 2006</date>
+    <respStmt>
+      <resp>author</resp>
+      <name>Greg Murray, DLPS</name>
+    </respStmt>
+    <changeEntry><p>Made minor additions.</p></changeEntry>
+  </change>
+  <change>
+    <date value="2006-08-08">August 8, 2006</date>
+    <respStmt>
+      <resp>author</resp>
+      <name>Greg Murray, DLPS</name>
+    </respStmt>
+    <changeEntry><p>Made minor additions.</p></changeEntry>
+  </change>
+  <change>
+    <date value="2006-10-24">October 24, 2006</date>
+    <respStmt>
+      <resp>author</resp>
+      <name>Greg Murray, DLPS</name>
+    </respStmt>
+    <changeEntry><p>Made minor revisions.</p></changeEntry>
+  </change>
+  <change>
+    <date value="2006-11-30">November 30, 2006</date>
+    <respStmt>
+      <resp>author</resp>
+      <name>Greg Murray, DLPS</name>
+    </respStmt>
+    <changeEntry><p>Made minor additions.</p></changeEntry>
+  </change>
+  <change>
+    <date value="2006-12-08">December 8, 2006</date>
+    <respStmt>
+      <resp>author</resp>
+      <name>Greg Murray, DLPS</name>
+    </respStmt>
+    <changeEntry><p>Made minor additions and revisions.</p></changeEntry>
+  </change>
+  <change>
+    <date value="2007-10-05">October 5, 2007</date>
+    <respStmt>
+      <resp>author</resp>
+      <name>Greg Murray</name>
+    </respStmt>
+    <changeEntry><p>Revised entry for dlps_properties script (updated for use with migrated texts).</p></changeEntry>
+  </change>
+  <change>
+    <date value="2008-07-01">July 1, 2008</date>
+    <respStmt>
+      <resp>author</resp>
+      <name>Greg Murray</name>
+    </respStmt>
+    <changeEntry><p>Revised entry for qa_dates.</p></changeEntry>
+  </change>
+  <change>
+    <date value="2010-05-19">May 19, 2010</date>
+    <respStmt>
+      <resp>author</resp>
+      <name>Greg Murray</name>
+    </respStmt>
+    <changeEntry><p>Revised entry for postkb.</p></changeEntry>
+  </change>
+  <change>
+    <date value="2010-05-25">May 25, 2010</date>
+    <respStmt>
+      <resp>author</resp>
+      <name>Greg Murray</name>
+    </respStmt>
+    <changeEntry><p>Added non-ascii. Removed char2ent.</p></changeEntry>
+  </change>
+</revisionDesc>
+</scriptsHeader>
+
+
+<scriptsDoc>
+<scriptsGroup id="group_processing">
+<head>Processing Scripts</head>
+
+<script id="commit_figures_filenames" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>commit_figures_filenames</head>
+  <desc>Updates <att>entity</att> attribute on <gi>figure</gi> tags, based on instructions in a <filename>[filename].figures_filenames.changes</filename> file</desc>
+  <usage>commit_figures_filenames <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>If the <filename>.changes</filename> file indicates that there is no image file for a <gi>figure</gi> element (which happens when the figure can be fully represented by the page image), the script sets the <gi>figure</gi> tag's <att>entity</att> value to be the same as the <gi>pb</gi> tag's <att>entity</att> value.</p>
+  </remarks>
+  <interaction>For each input file, displays list of proposed changes. User indicates <kw>yes</kw> (make changes to file), <kw>no</kw> (don't make changes to file), or <kw>quit</kw> (stop the script).</interaction>
+  <tracksys>Post-keyboarding Workflow &rarr; Commit figures-filenames changes</tracksys>
+  <context>Post-keyboarding Workflow &rarr; Web Reports</context>
+  <seeAlso>
+    <ptr target="report_figures_filenames"/>
+  </seeAlso>
+</script>
+
+<script id="commit_figures_rend" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>commit_figures_rend</head>
+  <desc>Adds or updates <att>rend</att> attribute on <gi>figure</gi> tags, based on instructions in a <filename>[filename].figures_rend.changes</filename> file</desc>
+  <usage>commit_figures_rend <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <interaction>For each input file, displays list of proposed changes. User indicates <kw>yes</kw> (make changes to file), <kw>no</kw> (don't make changes to file), or <kw>quit</kw> (stop the script).</interaction>
+  <tracksys>Post-keyboarding Workflow &rarr; Commit figures-rend changes</tracksys>
+  <context>Post-keyboarding Workflow &rarr; Web Reports</context>
+  <seeAlso>
+    <ptr target="report_figures_rend"/>
+  </seeAlso>
+</script>
+
+<script id="commit_rehyphenate" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>commit_rehyphenate</head>
+  <desc>Restores hyphen to end-of-line words, based on instructions in a <filename>[filename].rehyphenate.changes</filename> file</desc>
+  <usage>commit_rehyphenate <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <interaction>For each input file, displays list of proposed changes. User indicates <kw>yes</kw> (make changes to file), <kw>no</kw> (don't make changes to file), or <kw>quit</kw> (stop the script).</interaction>
+  <tracksys>Post-keyboarding Workflow &rarr; Commit rehyphenate changes</tracksys>
+  <context>Post-keyboarding Workflow &rarr; Web Reports</context>
+  <seeAlso>
+    <ptr target="report_rehyphenate"/>
+  </seeAlso>
+</script>
+
+<script id="commit_unclears" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>commit_unclears</head>
+  <desc>Makes changes to <gi>unclear</gi> and <gi rend="empty">gap</gi> elements, based on instructions in a <filename>[filename].unclears.changes</filename> file</desc>
+  <usage>commit_unclears <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <interaction>For each input file, displays list of proposed changes. User indicates <kw>yes</kw> (make changes to file), <kw>no</kw> (don't make changes to file), or <kw>quit</kw> (stop the script).</interaction>
+  <tracksys>Post-keyboarding Workflow &rarr; Commit unclears changes</tracksys>
+  <context>Post-keyboarding Workflow &rarr; Web Reports</context>
+  <seeAlso>
+    <ptr target="report_unclears"/>
+  </seeAlso>
+</script>
+
+<script id="count_unclears" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>count_unclears</head>
+  <desc>Counts number of <gi>unclear</gi> and <gi rend="empty">gap</gi> elements in the file and issues warnings if an excessive number of unclears or gaps occurs on a single page (suggesting a bad page image)</desc>
+  <usage>count_unclears [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="number">n</optionName>
+      <usage>-n <replace>number</replace></usage>
+      <desc>Number of unclears/gaps on a single page to consider excessive</desc>
+      <default>10</default>
+    </option>
+    <option>
+      <optionName expan="quiet">q</optionName>
+      <usage>-q</usage>
+      <desc>Suppress warning messages about too many unclears/gaps on a single page</desc>
+    </option>
+  </options>
+  <args>&teiFiles;</args>
+  <output>Prints messages to standard output. No changes to input file.</output>
+  <remarks>
+    <p>To count gaps accurately, the script ignores <gi rend="empty">gap</gi> elements where the <att>desc</att> attribute value is a recognized three-letter language code (typically used to indicate non-Western languages), such as <tag rend="empty">gap desc="chi" reason="editorial"</tag> for Chinese characters.</p>
+  </remarks>
+  <context>Post-keyboarding Workflow &rarr; Web Reports</context>
+</script>
+
+<script id="declare_charents" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>declare_charents</head>
+  <desc>Declares character entity sets as needed</desc>
+  <usage>declare_charents <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>This script looks at the character entity references (such as <code>&amp;copy;</code>) actually used in the XML document, and then declares and inserts any undeclared character-entity-set files (such as <filename>iso-num.ent</filename>).</p>
+    <p>This script is run automatically by the <command><ptr target="flipent"/></command> script.</p>
+  </remarks>
+  <seeAlso><ptr target="flipent"/><ptr target="postkb"/></seeAlso>
+</script>
+
+<script id="declare_entities" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>declare_entities</head>
+  <desc>Adds/updates <kw>ENTITY...NDATA</kw> declarations corresponding to <att>entity</att> attributes on <gi>pb</gi>, <gi>figure</gi>, and related elements</desc>
+  <usage>declare_entities [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="force">F</optionName>
+      <usage>-F</usage>
+      <desc>Update all <kw>ENTITY...NDATA</kw> declarations even if a <kw>SYSTEM</kw> value contains a "uva-lib:..." PID</desc>
+    </option>
+  </options>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>Elements that can have an <att>entity</att> attribute are: <gi>pb</gi>, <gi>figure</gi>, <gi>ornament</gi>, <gi>frontispiece</gi>, and <gi>page</gi> (which is used only in the OCR workflow).</p>
+  </remarks>
+  <beforeAfter>
+    <before>
+      <eg><![CDATA[
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+...
+]>
+]]></eg>
+    </before>
+    <after>
+      <desc>In this example, the page images are bitonal, and the first page contains a full-page figure.</desc>
+      <eg><![CDATA[
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+...
+<!ENTITY b001234567_0001 SYSTEM "b001234567_0001" NDATA uvaBitonal>
+<!ENTITY b001234567_0001_0 SYSTEM "b001234567_0001_0" NDATA uvaHighRes>
+<!ENTITY b001234567_0002 SYSTEM "b001234567_0002" NDATA uvaBitonal>
+<!ENTITY b001234567_0003 SYSTEM "b001234567_0003" NDATA uvaBitonal>
+<!ENTITY b001234567_0004 SYSTEM "b001234567_0004" NDATA uvaBitonal>
+<!ENTITY b001234567_0005 SYSTEM "b001234567_0005" NDATA uvaBitonal>
+...
+]>
+]]></eg>
+    </after>
+  </beforeAfter>
+  <context>Post-keyboarding Workflow &rarr; Synchronizing Page Breaks and Page Images <lb/>
+    Post-keyboarding Workflow &rarr; Web Reports</context>
+</script>
+
+<script id="dehyphenate" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>dehyphenate</head>
+  <desc>Collapses all end-of-line hyphenation</desc>
+  <usage>dehyphenate <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>The script does not delete EOL hyphenation; it <emph>hides</emph> it using the TEI <gi>reg</gi> (regularization) element, like so:</p>
+    <eg><![CDATA[<reg orig='ex-|ample'>example</reg>]]></eg>
+    <p>where the original lineation is captured in the <att>orig</att> attribute. The | (vertical bar character) represents the original line break.</p>
+  </remarks>
+  <beforeAfter>
+    <before>
+      <eg><![CDATA[
+<p>During the past quarter century, as approaches to the history of <lb/>
+women generally have advanced and become more sensitive and as <lb/>
+the handling of the Chinese sources has been refined, our understand- <lb/>
+ing of the position of women in Chinese history has grown more so- <lb/>
+phisticated. Recent research has made it strikingly clear that the picture <lb/>
+]]></eg>
+    </before>
+    <after>
+      <eg><![CDATA[
+<p>During the past quarter century, as approaches to the history of <lb/>
+women generally have advanced and become more sensitive and as <lb/>
+the handling of the Chinese sources has been refined, our <reg orig="understand-|ing">understanding</reg> <lb/>
+of the position of women in Chinese history has grown more <reg orig="so-|phisticated">sophisticated</reg>. <lb/>
+Recent research has made it strikingly clear that the picture <lb/>
+]]></eg>
+    </after>
+  </beforeAfter>
+</script>
+
+<script id="div_ids" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>div_ids</head>
+  <desc>Adds or updates <att>id</att> attributes on major structure elements</desc>
+  <usage>div_ids [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="delete">D</optionName>
+      <usage>-D</usage>
+      <desc>Deletes/overwrites existing IDs whether or not they appear to have been created by this script</desc>
+    </option>
+  </options>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>The elements affected by this script are: <gi>group</gi>, <gi>text</gi>, <gi>front</gi>, <gi>body</gi>, <gi>back</gi>, <gi>div1</gi> through <gi>div7</gi>, and  <gi>titlePage</gi>.</p>
+    <p>The structural elements are simply numbered sequentially in order of occurrence; the resulting IDs have no meaning (do not reflect the name of the element or the nesting of the div hierarchy).</p>
+    <p>By default, any existing IDs are retained if they do not conform to the ID-naming convention used by this script (namely "d" followed by one or more digits), since such IDs were likely added by the keyboarding vendor and are the targets of references.</p>
+  </remarks>
+  <context>Post-keyboarding Workflow &rarr; Scripts (called by <command><ptr target="postkb"/></command>) <lb/>
+    Markup QA Workflow &rarr; Div structure</context>
+  <seeAlso><ptr target="postkb"/></seeAlso>
+</script>
+
+<script id="dlps_properties" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>dlps_properties</head>
+  <desc>Adds or updates <tag>?dlps ...?</tag> document "properties" using data from the DLPS Tracking System (if available; otherwise, uses supplied or default values)</desc>
+  <usage>dlps_properties [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="page-images">p</optionName>
+      <usage>-p <replace>value</replace></usage>
+      <desc>Value to use for <att>page-images=...</att> if no database record is available; must be <val>none</val>, <val>bitonal</val>, or <val>color</val></desc>
+      <default>none</default>
+    </option>
+    <option>
+      <optionName expan="figure-images">f</optionName>
+      <usage>-f <replace>value</replace></usage>
+      <desc>Value to use for <att>figure-images=...</att> if no database record is available; must be <val>no</val> or <val>yes</val></desc>
+      <default>no</default>
+    </option>
+    <option>
+      <optionName expan="transcription">t</optionName>
+      <usage>-t <replace>value</replace></usage>
+      <desc>Value to use for <att>transcription=...</att> if no database record is available; must be <val>none</val>, <val>vendor</val>, <val>ocr</val>, or <val>other</val></desc>
+      <default>none</default>
+    </option>
+  </options>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>If no record exists for a given DLPS ID in the DLPS Tracking System, the script uses the default values listed above unless overridden by the <optionMention>-p</optionMention>, <optionMention>-f</optionMention>, or <optionMention>-t</optionMention> options.</p>
+  </remarks>
+  <beforeAfter>
+    <before>
+      <eg><![CDATA[
+<?xml version="1.0"?>
+]]></eg>
+    </before>
+    <after>
+      <eg><![CDATA[
+<?xml version="1.0"?>
+
+<?dlps id="b000023449"?>
+<?dlps page-images="bitonal" figure-images="yes"?>
+<?dlps transcription="vendor"?>
+]]></eg>
+    </after>
+  </beforeAfter>
+  <seeAlso>
+    <ptr target="postkb"/>
+  </seeAlso>
+</script>
+
+<script id="eaf_fixes" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>eaf_fixes</head>
+  <desc>Corrects minor problems in EAF TEI files</desc>
+  <usage>eaf_fixes <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>The script performs these tasks:</p>
+    <list>
+      <item>changes language codes from 2-letter (ISO 639.1) to 3-letter (ISO 639.2) codes in <gi>language</gi> declarations (in TEI header) and <att>lang</att> attributes (throughout document)</item>
+      <item>fixes <tag rend="empty">pb n="..."</tag> values for covers/spine/edges</item>
+      <item>removes leading zeros from <tag rend="empty">pb n="..."</tag> values</item>
+    </list>
+  </remarks>
+</script>
+
+<script id="figure_entities" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>figure_entities</head>
+  <desc>Adds or updates <att>entity</att> attribute on <gi>figure</gi> tags</desc>
+  <usage>figure_entities <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>The logic for assigning the <att>entity</att> attribute on <gi>figure</gi> is:</p>
+    <list>
+      <item>If figure is full-page:
+        <list>
+          <item>If page images are bitonal: figure entity = pb entity + _0</item>
+          <item>Otherwise: figure entity = pb entity</item>
+        </list>
+      </item>
+      <item>If figure is not full-page:
+        <list>
+          <item>If page images are bitonal: figure entity = pb entity + _1 (or _2, _3, etc. if more than one figure on page)</item>
+          <item>Otherwise: figure entity = pb entity</item>
+        </list>
+      </item>
+    </list>
+  </remarks>
+  <context>Post-keyboarding Workflow &rarr; Web Reports</context>
+</script>
+
+<script id="figure_ids" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>figure_ids</head>
+  <desc>Adds <att>id</att> attribute on <gi>figure</gi> elements</desc>
+  <usage>figure_ids [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="update">u</optionName>
+      <usage>-u</usage>
+      <desc>Updates existing IDs if they conform to the ID-naming convention used by this script (namely "f" followed by one or more digits). Any other existing IDs are retained, since such IDs were likely added by the keyboarding vendor and are the targets of references.</desc>
+    </option>
+  </options>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <seeAlso>
+    <ptr target="run_reports"/>
+  </seeAlso>
+</script>
+
+<script id="find_unclosed_unclears" language="shell" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>find_unclosed_unclears</head>
+  <desc>Finds <gi>unclear</gi> elements spanning more than one line (not opened and closed on the same line)</desc>
+  <usage>find_unclosed_unclears <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>Prints messages to standard output. No changes to input file.</output>
+  <remarks>
+    <p>The script identifies markup such as the following, where the <gi>unclear</gi> element spans more than one line:</p>
+      <eg><![CDATA[
+to the wishes of his colleagues, and actually <unclear>himself <lb/>
+forwarded</unclear> the invitation, there is small reason to think <lb/>
+]]></eg>
+    <p>The script is necessary because the "Unclears" HTML report does not include such occurrences of <gi>unclear</gi>.</p>
+  </remarks>
+  <context>Markup QA Workflow &rarr; Preliminaries &rarr; Unclosed end-of-line unclears</context>
+</script>
+
+<script id="find_unknown_chars" language="shell" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>find_unknown_chars</head>
+  <desc>Finds characters marked by the vendor as unknown (marked as <kw>[UNK]</kw> or <kw>&amp;unknown;</kw>)</desc>
+  <usage>find_unknown_chars <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>Prints messages to standard output. No changes to input file.</output>
+  <context>Markup QA Workflow &rarr; Preliminaries &rarr; Unknown characters</context>
+</script>
+
+<script id="flipent" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>flipent</head>
+  <desc>Converts (flips) character entity references from hexadecimal (like &amp;#xA9;) to mnemonic/named (like &amp;copy;)</desc>
+  <usage>flipent [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="quiet">q</optionName>
+      <usage>-q</usage>
+      <desc>Do not show summary of replacements; only show error messages</desc>
+    </option>
+  </options>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;; also sends a summary of replacements (and of references that couldn't be replaced) to standard output</output>
+  <remarks>
+    <p>The script uses a list of character entities built from the standard SGML (ISO 8879) character-entity sets (<filename>iso-lat1.ent</filename>, etc. plus <filename>uva-supp.ent</filename>). If the input file contains a hexadecimal entity reference that is not on that list, the hex reference simply does not get replaced.</p>
+    <p>After making its replacements, the script runs the <command><ptr target="declare_charents"/></command> script to declare/insert any undeclared character-entity-set files.</p>
+  </remarks>
+  <beforeAfter>
+    <before>
+      <eg><![CDATA[
+<resp>par F. Andr&#xE9; Theuet d'Angoulesme.</resp>
+]]></eg>
+    </before>
+    <after>
+      <eg><![CDATA[
+<resp>par F. Andr&eacute; Theuet d'Angoulesme.</resp>
+]]></eg>
+    </after>
+  </beforeAfter>
+  <context>Post-keyboarding Workflow &rarr; Finalize</context>
+  <seeAlso><ptr target="postkb"/><ptr target="declare_charents"/></seeAlso>
+</script>
+
+<script id="header_date_values" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>header_date_values</head>
+  <desc>Corrects common problems with <att>value</att> attributes on <gi>date</gi> elements in the TEI header</desc>
+  <usage>header_date_values <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="Cataloging mode">C</optionName>
+      <usage>-C</usage>
+      <desc>Output will include an "ATTN Cataloging..." XML comment for any date value in the TEI header that is not a 4-digit year</desc>
+    </option>
+  </options>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <list>
+      <item>The problems corrected by this script are common in TEI headers derived from MARC records. Such problems result in error messages from the <command><ptr target="qa_dates"/></command> script (or <command><ptr target="qa_super"/> -d</command>).</item>
+      <item>The script only changes values in the TEI header; no other part of the file is affected.</item>
+      <item>The script does not change the content of the <gi>date</gi> element (only the attribute values).</item>
+      <item>The script fixes the following problems:
+        <list>
+          <item>if value is enclosed by square brackets, removes them</item>
+          <item>if value ends with "?", removes ? and adds certainty="ca"</item>
+          <item>if value starts with "ca." or "c.", removes it and adds certainty="ca"</item>
+          <item>if value has form "1584 or 5", removes " or #" and adds certainty="ca"</item>
+          <item>if value starts with "after", removes it and adds certainty="after"</item>
+          <item>if value starts with "before", removes it and adds certainty="before"</item>
+          <item>if value starts with "b.", removes b. and adds type="birth"</item>
+          <item>if value has form "1847-" and occurs inside <gi>author</gi>, removes hyphen and adds type="birth"</item>
+          <item>if value starts with "d.", removes d. and adds type="death"</item>
+          <item>if value starts with "fl.", removes fl. and adds type="fl"</item>
+          <item>if value is two years separated by a hyphen, converts to <gi>dateRange</gi></item>
+        </list>
+      </item>
+    </list>
+  </remarks>
+  <examples>
+    <example>
+      <eg>header_date_values *.xml</eg>
+    </example>
+  </examples>
+  <beforeAfter>
+    <before>
+      <eg><![CDATA[<date n="534|c" value="[1859?]">[1859?]</date>]]></eg>
+    </before>
+    <after>
+      <eg><![CDATA[<date n="534|c" ]]><hi rend="attn">value="1859" certainty="ca"</hi><![CDATA[>[1859?]</date>]]></eg>
+    </after>
+    <before>
+      <eg><![CDATA[<date n="100|d" value="b. 1855">b. 1855</date>]]></eg>
+    </before>
+    <after>
+      <eg><![CDATA[<date n="100|d" ]]><hi rend="attn">value="1855" type="birth"</hi><![CDATA[>b. 1855</date>]]></eg>
+    </after>
+    <before>
+      <eg><![CDATA[<date n="100|d" value="1796?-1850">1796?-1850</date>]]></eg>
+    </before>
+    <after>
+      <eg><![CDATA[<]]><hi rend="attn">dateRange</hi><![CDATA[ n="100|d" ]]><hi rend="attn">from="1796" to="1850" exact="to"</hi><![CDATA[>1796?-1850</]]><hi rend="attn">dateRange</hi><![CDATA[>]]></eg>
+    </after>
+    <before>
+      <eg><![CDATA[<date n="100|d" value="fl. 1890-1900">fl. 1890-1900</date>]]></eg>
+    </before>
+    <after>
+      <eg><![CDATA[<]]><hi rend="attn">dateRange</hi><![CDATA[ n="100|d" ]]><hi rend="attn">from="1890" to="1900" type="fl"</hi><![CDATA[>fl. 1890-1900</]]><hi rend="attn">dateRange</hi><![CDATA[>]]></eg>
+    </after>
+  </beforeAfter>
+  <context>Post-keyboarding Workflow &rarr; Insert Full TEI Headers</context>
+</script>
+
+<script id="make_minheaders" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>make_minheaders</head>
+  <desc>Creates minimal TEI header files using data from the DLPS Tracking System</desc>
+  <usage>make_minheaders [options] [DLPS IDs]</usage>
+  <options>
+    <optionGroup>
+      <head>Input options</head>
+      <option>
+        <optionName expan="directory">d</optionName>
+        <usage>-d <replace>directory</replace></usage>
+        <desc>Directory to read for subdirectories named with DLPS ID</desc>
+      </option>
+      <option>
+        <optionName expan="OCR workflow">o</optionName>
+        <usage>-o</usage>
+        <desc>Read <path>/shares/image1/01ocr_in</path> for subdirectories named with DLPS ID</desc>
+      </option>
+      <option>
+        <optionName expan="vendor workflow">v</optionName>
+        <usage>-v</usage>
+        <desc>Read <path>/shares/image1/01bookscanning/50QAed_OUT</path> for subdirectories named with DLPS ID. Also, after making <filename>.header</filename> file, copy <filename>.doc</filename> file to same directory.</desc>
+      </option>
+    </optionGroup>
+    <optionGroup>
+      <head>Output options</head>
+      <option>
+        <optionName expan="force">F</optionName>
+        <usage>-F</usage>
+        <desc>Overwrite output file if it already exists</desc>
+      </option>
+      <option>
+        <optionName expan="output">O</optionName>
+        <usage>-O <replace>directory</replace></usage>
+        <desc>Directory in which to write output files</desc>
+      </option>
+    </optionGroup>
+    <optionGroup>
+      <head>Feedback options</head>
+      <option>
+        <optionName expan="quiet">q</optionName>
+        <usage>-q</usage>
+        <desc>Suppress status messages</desc>
+      </option>
+    </optionGroup>
+    <remarks>
+      <p>If no DLPS IDs are specified as input, one input option (-d or -o or -v) is required.</p>
+    </remarks>
+  </options>
+  <args>
+    <arg required="no">
+      <argName><replace>DLPS IDs</replace></argName>
+      <desc>One or more DLPS IDs for which to create minimal header files</desc>
+    </arg>
+  </args>
+  <output>For each DLPS ID, creates a minimal header file named <filename>[ID].header</filename>. If the DLPS ID was entered as an argument, output file is written by default to current working directory; otherwise, output file is written by default to subdirectory named with corresponding DLPS ID. Use -O option to override default output behavior.</output>
+  <examples>
+    <example>
+      <eg>make_minheaders b001234567</eg>
+      <desc>Creates <filename>b001234567.header</filename> in current working directory</desc>
+    </example>
+    <example>
+      <eg>make_minheaders -o</eg>
+      <desc>Reads <path>/shares/image1/01ocr_in</path> for subdirectories named with DLPS ID; creates each <filename>.header</filename> file in subdirectory named with corresponding DLPS ID</desc>
+    </example>
+    <example>
+      <eg>make_minheaders -d /shares/image1/temp -O /shares/text/temp</eg>
+      <desc>Reads <path>/shares/image1/temp</path> for subdirectories named with DLPS ID; creates <filename>.header</filename> files in <path>/shares/text/temp</path></desc>
+    </example>
+  </examples>
+  <context>Pre-keyboarding Workflow &rarr; Prepare Files for Vendor</context>
+</script>
+
+<script id="notes_n" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>notes_n</head>
+  <desc>Adds or updates the <att>n</att> attribute on <gi>ref</gi>, <gi rend="empty">ptr</gi> and <gi>note</gi> elements</desc>
+  <usage>notes_n [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="div">d</optionName>
+      <usage>-d <replace>element</replace></usage>
+      <desc>Specifies the div element (<gi>div1</gi> through <gi>div7</gi>) at which to reset sequential numbering</desc>
+      <default>Default behavior is to number sequentially throughout entire document</default>
+    </option>
+    <option>
+      <optionName expan="preserve/print source">p</optionName>
+      <usage>-p</usage>
+      <desc>Preserve note numbers/symbols from print source, where possible. Copy note reference symbol to <att>n</att> attribute; if no symbol is present, supply a sequence number.</desc>
+    </option>
+    <option>
+      <optionName expan="preserve/print source">P</optionName>
+      <usage>-P</usage>
+      <desc>Preserve note numbers/symbols from print source. Copy note reference symbol to <att>n</att> attribute; if no symbol is present, omit <att>n</att> attribute.</desc>
+    </option>
+    <option>
+      <optionName expan="scope">s</optionName>
+      <usage>-s <replace>ID</replace></usage>
+      <desc>Specifies ID of structural element to which to limit the scope of the note numbering. Notes/refs outside the specified element will not be changed.</desc>
+    </option>
+  </options>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>The <att>n</att> attribute on <gi>ref</gi>, <gi rend="empty">ptr</gi> and <gi>note</gi> is a number/symbol for display purposes, independent of the number/symbol in the print source (which is captured in the content of the <gi>ref</gi> element and in <tag>seg type="note-symbol"</tag>).</p>
+  </remarks>
+  <examples>
+    <example>
+      <eg>notes_n -d div1 *.xml</eg>
+      <desc>Number notes sequentially, starting over at each <gi>div1</gi></desc>
+    </example>
+    <example>
+      <eg>notes_n -d div1 -s d14 *.xml</eg>
+      <desc>Number notes sequentially, starting over at each <gi>div1</gi>, but only within the element with <att>id="d14"</att></desc>
+    </example>
+    <example>
+      <eg>notes_n -p *.xml</eg>
+      <desc>Preserve print source's numbers/symbols; copy note reference symbol to <att>n</att> attribute</desc>
+    </example>
+  </examples>
+  <beforeAfter>
+    <before>
+      <eg><![CDATA[
+was himself a member of the Faculty. The conditions <lb/>
+that prevailed were more or less chaotic."<ref target="n9.2">*</ref>
+<note id="n9.2" place="foot"><seg type="note-symbol">*</seg><p>From private letter to author.</p></note>
+]]></eg>
+    </before>
+    <after>
+      <desc>After running <command>notes_n -d div1 <replace>filename</replace></command>, note the addition of <att>n="2"</att> on <gi>ref</gi> and <gi>note</gi>, because this is the second note in the <gi>div1</gi>:</desc>
+      <eg><![CDATA[
+was himself a member of the Faculty. The conditions <lb/>
+that prevailed were more or less chaotic."<ref target="n9.2" ]]><hi rend="attn">n="2"</hi><![CDATA[>*</ref>
+<note id="n9.2" place="foot" ]]><hi rend="attn">n="2"</hi><![CDATA[><seg type="note-symbol">*</seg><p>From private letter to author.</p></note>
+]]></eg>
+    </after>
+  </beforeAfter>
+  <context>Markup QA Workflow &rarr; Notes</context>
+</script>
+
+<script id="pb_entities" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>pb_entities</head>
+  <desc>Adds or updates <att>entity</att> attribute on <gi>pb</gi> tags</desc>
+  <usage>pb_entities [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="digits">d</optionName>
+      <usage>-d <replace>number</replace></usage>
+      <desc>Number of digits to use for sequence numbers. Must be an integer from 1 through 5.</desc>
+      <default>4 (as in ..._0001)</default>
+    </option>
+    <option>
+      <optionName expan="filenames">f</optionName>
+      <usage>-f <replace>directory</replace></usage>
+      <desc>Reads directory specified; uses actual image filenames for entity values (rather than default behavior of constructing entity values from ID and sequence number). Directory name can be either named with ID (indicating a specific directory of image files) or a directory containing subdirectories named with IDs (useful for batch processing).</desc>
+    </option>
+    <option>
+      <optionName expan="filenames">F</optionName>
+      <usage>-F <replace>directory</replace></usage>
+      <desc>Like -f, but instead of expecting directory to be named with ID (and if it is not, looking for a subdirectory named with ID), -F always reads directory specified, regardless of directory name.</desc>
+    </option>
+    <option>
+      <optionName expan="newspapers">n</optionName>
+      <usage>-n</usage>
+      <desc>Provides defaults for processing newspapers: causes -d to default to 2 and -f to default to <path>/shares/image1/01bookscanning/52_CCITTCOMPRESS_OUT</path></desc>
+    </option>
+    <option>
+      <optionName expan="Proofreader">p</optionName>
+      <usage>-p</usage>
+      <desc>Like -f, but uses Proofreader directory (<path>/www/doc/dlps/uva-only/proofreader/images</path>) to find actual image filenames.</desc>
+    </option>
+    <remarks><p>Options -f, -F, and -p are mutually exclusive.</p></remarks>
+  </options>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <examples>
+    <example>
+      <eg>pb_entities *.xml</eg>
+      <desc>Adds/updates <att>entity</att> values based on ID and sequence number, without reference to image filenames</desc>
+    </example>
+    <example>
+      <eg>pb_entities -f /shares/image1/01bookscanning/54senttovendor/b001234567 b001234567.xml</eg>
+      <desc>Adds/updates <att>entity</att> values based on actual filenames of image files in directory b001234567</desc>
+    </example>
+    <example>
+      <eg>pb_entities -f /shares/image1/01bookscanning/54senttovendor *.xml</eg>
+      <desc>Adds/updates <att>entity</att> values based on actual filenames of image files in directory 54senttovendor/[ID]</desc>
+    </example>
+    <example>
+      <eg>pb_entities -F /shares/image1/.../foo cavdaily_19690403.xml</eg>
+      <desc>Adds/updates <att>entity</att> values based on actual filenames of image files in directory foo where filenames start with cavdaily_19690403</desc>
+    </example>
+    <example>
+      <eg>pb_entities -p *.xml</eg>
+      <desc>Adds/updates <att>entity</att> values based on actual filenames of image files in Proofreader directory</desc>
+    </example>
+  </examples>
+  <context>Post-keyboarding Workflow &rarr; Synchronizing Page Breaks and Page Images</context>
+</script>
+
+<script id="pb_outside_divs" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>pb_outside_divs</head>
+  <desc>Moves <gi>pb</gi> tags outside the divs and into the <gi>body</gi>; only applicable to newspaper markup</desc>
+  <usage>pb_outside_divs <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>For newspaper markup, where each page contains numerous <gi>div1</gi> elements, the page breaks should be placed outside the divs and directly within <gi>body</gi>. (The opposite is true for books: page breaks are required to be within a div, never directly within <gi>body</gi>.)</p>
+  </remarks>
+  <context>Post-keyboarding Workflow (Newspapers) &rarr; Scripts</context>
+</script>
+
+<script id="pid_attributes" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>pid_attributes</head>
+  <desc>Adds <att>pid</att> attribute to elements that have an <att>entity</att> attribute</desc>
+  <usage>pid_attributes [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="force">F</optionName>
+      <usage>-F</usage>
+      <desc>Update existing <att>pid</att> attributes, if any</desc>
+    </option>
+  </options>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>Elements that can take <att>entity</att> and <att>pid</att> attributes are: <gi>pb</gi>, <gi>figure</gi>, <gi>frontispiece</gi>, <gi>ornament</gi>, and <gi>page</gi>.</p>
+  </remarks>
+  <context>Post-keyboarding Workflow &rarr; Finalize</context>
+</script>
+
+<script id="postkb" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>postkb</head>
+  <desc>Runs a series of post-keyboarding scripts on TEI XML files</desc>
+  <usage>postkb [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="foreign">f</optionName>
+      <usage>-f</usage>
+      <desc>Indicates a foreign-language (non-English) text; skip de-hyphenate script [same effect as -h option; retained for backward compatibility]</desc>
+    </option>
+    <option>
+      <optionName expan="keep hyphenation">h</optionName>
+      <usage>-h</usage>
+      <desc>Skip dehyphenate script</desc>
+    </option>
+    &option_v;
+  </options>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>The scripts run by <command>postkb</command> are:</p>
+    <list>
+      <label><command>dos2unix</command></label>
+      <item>Converts to Unix line endings</item>
+      
+      <label><command>last_line</command></label>
+      <item>Adds a newline at end of file if needed</item>
+      
+      <label><command>UNK2unknown</command></label>
+      <item>Converts vendor <code>[UNK]</code> indicators to <code>&amp;unknown;</code></item>
+      
+      <label><command><ptr target="replace_regexp_chars"/></command></label>
+      <item>Replaces characters ( ) [ ] with character entities</item>
+      
+      <label><command><ptr target="flipent"/></command></label>
+      <item>Flips character entity references from hexadecimal (like &amp;#xA9;) to mnemonic/named (like &amp;copy;)</item>
+      
+      <label><command>multiline_tags</command></label>
+      <item>Fixes start-tags broken across a line break</item>
+      
+      <label><command><ptr target="replace_xml_decl"/></command></label>
+      <item>Adds or replaces XML declaration</item>
+      
+      <label><command><ptr target="dlps_properties"/></command></label>
+      <item>Adds <code>&lt;?dlps ...?&gt;</code> properties</item>
+      
+      <label><command><ptr target="replace_system_paths"/></command></label>
+      <item>Replaces SYSTEM paths (sets locations of DTD files)</item>
+      
+      <label><command><ptr target="vendor2tei"/></command></label>
+      <item>Converts vendor markup to standard TEI markup</item>
+      
+      <label><command><ptr target="div_ids"/></command></label>
+      <item>Adds <att>id</att> attribute on &lt;div#&gt; tags</item>
+      
+      <label><command><ptr target="dehyphenate"/></command></label>
+      <item>Collapses end-of-line hyphenation</item>
+      
+      <label><command><ptr target="declare_charents"/></command></label>
+      <item>Declares character entity sets as needed</item>
+    </list>
+  </remarks>
+  <!--<tracksys>Post-keyboarding Workflow &rarr; Run scripts</tracksys>-->
+  <context>Post-keyboarding Workflow &rarr; Scripts</context>
+</script>
+
+<script id="refresh_filesize" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>refresh_filesize</head>
+  <desc>Updates file size info in TEI header</desc>
+  <usage>refresh_filesize [options] <replace>filenames</replace></usage>
+  <options>
+    &option_q;
+  </options>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>In a full TEI header, the filesize is the "extent" of the electronic file and is recorded in <gi>teiHeader</gi><gi>fileDesc</gi><gi>extent</gi>.</p>
+    <p>The script provides the filesize in the most human-readable form: kilobytes for smaller files, or megabytes if applicable.</p>
+  </remarks>
+  <beforeAfter>
+    <before>
+      <eg><![CDATA[
+<extent>? kilobytes</extent>
+]]></eg>
+    </before>
+    <after>
+      <eg><![CDATA[
+<extent>ca. <num type="kilobytes">407</num> kilobytes</extent>
+]]></eg>
+    </after>
+  </beforeAfter>
+  <context>Post-keyboarding Workflow &rarr; Insert Full TEI Headers</context>
+</script>
+
+<script id="refresh_preview" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>refresh_preview</head>
+  <desc>Copies input files to TEI Preview directory</desc>
+  <usage>refresh_preview <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>No direct output; only copies input files</output>
+  <remarks>
+    <p>The output directory is the web-accessible directory (<path>/www/doc/dlps/xml</path>) used by the <xref type="external" url="http://pogo.lib.virginia.edu/cgi-dlps/dlps-only/preview/list.pl">TEI Preview</xref> tool (for basic web display of TEI XML documents, used by DLPS for QA purposes).</p>
+  </remarks>
+  <context>Markup QA Workflow &rarr; Div structure</context>
+</script>
+
+<script id="refresh_proofreader" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>refresh_proofreader</head>
+  <desc>Refreshes page breaks and copies input file to Proofreader directory</desc>
+  <usage>refresh_proofreader <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;; also copies input file to Proofreader directory, overwriting XML file there, if any</output>
+  <remarks>
+    <p>This script performs the following tasks:</p>
+    <list>
+      <item>Refreshes <att>entity</att> attributes on <gi>pb</gi> tags: <command>pb_entities -p <replace>filename</replace></command></item>
+      <item>Refreshes the corresponding <kw>ENTITY</kw> declarations: <command>declare_entities <replace>filename</replace></command></item>
+      <item>Copies input file to <xref type="external" url="http://pogo.lib.virginia.edu/cgi-dlps/uva-only/proofreader/start.pl">Proofreader</xref> directory (<path>/www/doc/dlps/uva-only/proofreader/images</path>)</item>
+    </list>
+  </remarks>
+  <context>Post-keyboarding Workflow &rarr; Synchronizing Page Breaks and Page Images</context>
+  <seeAlso>
+    <ptr target="pb_entities"/>
+    <ptr target="declare_entities"/>
+  </seeAlso>
+</script>
+
+<script id="replace" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>replace</head>
+  <desc>Performs search-and-replace on multiple files from the command line</desc>
+  <usage>replace <replace>regex</replace> <replace>filenames</replace></usage>
+  <args>
+    <arg required="yes">
+      <argName><replace>regex</replace></argName>
+      <desc>A Perl regular expression indicating the search text and the replacement text</desc>
+    </arg>
+    <arg required="yes">
+      <argName><replace>filenames</replace></argName>
+      <desc>Any text files, including XML/SGML/HTML files</desc>
+    </arg>
+  </args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>The regular expression should be in <kw>s///g</kw> form. The <kw>s</kw> stands for "substitution". The pattern between the first and second / (slash) is the text to search for. The text between the second and third / is the replacement text. The <kw>g</kw> stands for "global" and means that all occurrences of the search text will get replaced, not just the first occurrence on each line.</p>
+    <admon type="important">
+      <p>When using regular expressions, it is easy for the outcome not to match your intention. Always compare the resulting file with the <kw>.bak</kw> file to see whether the change you intended is the change that was actually made.</p>
+    </admon>
+  </remarks>
+  <examples>
+    <example>
+      <eg>replace 's/TJ/Thomas Jefferson/g' *.xml</eg>
+      <desc>Replace "TJ" with "Thomas Jefferson" in all XML files</desc>
+    </example>
+    <example>
+      <eg><![CDATA[replace 's:<abbr expan="Thomas">Thos.</abbr>:<reg orig="Thos.">Thomas</reg>:g' *.xml]]></eg>
+      <desc>Replace <kw><![CDATA[<abbr expan="Thomas">Thos.</abbr>]]></kw> with <kw><![CDATA[<reg orig="Thos.">Thomas</reg>]]></kw> in all XML files</desc>
+    </example>
+    <example>
+      <eg>replace 's/ entity="[^"]*"//g' *.xml</eg>
+      <desc>Removes all <att>entity</att> attributes. (Replaces <kw>entity="..."</kw> with nothing.) The <kw>[^"]*</kw> means 'any character other than " (double quotation mark) zero or more times'.</desc>
+    </example>
+  </examples>
+</script>
+
+<script id="replace_regexp_chars" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>replace_regexp_chars</head>
+  <desc>Replaces certain regular expression characters with entity references</desc>
+  <usage>replace_regexp_chars <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>This script replaces literal ASCII characters used in regular expressions (namely parentheses and square brackets) with their corresponding entity references. (It begins replacing after the close of the TEI header.) This facilitates processing XML files with Perl regular expressions.</p>
+  </remarks>
+  <context>Post-keyboarding Workflow &rarr; Scripts</context>
+  <seeAlso>
+    <ptr target="postkb"/>
+    <ptr target="restore_regexp_chars"/>
+  </seeAlso>
+</script>
+
+<script id="replace_system_paths" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>replace_system_paths</head>
+  <desc>Updates locations of DTD-related files in <kw>DOCTYPE</kw> and <kw>ENTITY</kw> declarations</desc>
+  <usage>replace_system_paths <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>As received from the vendor, the TEI XML file must reside in the same directory as the DTD-related files in order to validate. Such an arrangement would obviously be impractical and undesirable. The script replaces the DTD file locations with URLs, so the TEI XML file can be validated irrespective of its location on disk.</p>
+    <p>The script gets run after TEI XML files are retrieved from the vendor, to make sure the files validate against the DLPS DTD. It is also one of the scripts included within the <command><ptr target="postkb"/></command> script.</p>
+  </remarks>
+  <beforeAfter>
+    <before>
+      <desc>As received from the keyboarding vendor:</desc>
+      <eg><![CDATA[
+<!DOCTYPE TEI.2 SYSTEM "tei2.dtd"[
+<!ENTITY % TEI.extensions.ent SYSTEM "uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "uva-dl-tei.dtd">
+<!ENTITY % ISOlat1 SYSTEM "iso-lat1.ent">%ISOlat1;
+<!ENTITY % ISOpub SYSTEM "iso-pub.ent">%ISOpub;
+<!ENTITY % ISOnum SYSTEM "iso-num.ent">%ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "iso-lat2.ent">%ISOlat2;
+]>
+]]></eg>
+    </before>
+    <after>
+      <desc>After <command>replace_system_paths</command>:</desc>
+      <eg><![CDATA[
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+]>
+]]></eg>
+    </after>
+  </beforeAfter>
+  <context>Post-keyboarding Workflow &rarr; Retrieve from Vendor</context>
+  <seeAlso>
+    <ptr target="postkb"/>
+  </seeAlso>
+</script>
+
+<script id="replace_teiHeader" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>replace_teiHeader</head>
+  <desc>Merges <gi>teiHeader</gi> element in input file with <gi>teiHeader</gi> from a corresponding header file</desc>
+  <usage>replace_teiHeader [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="directory">d</optionName>
+      <usage>-d <replace>directory</replace></usage>
+      <desc>Directory in which to look for corresponding header files</desc>
+      <default><path>/shares/text/05teiHeader/80final</path></default>
+    </option>
+    &option_q;
+    <option>
+      <optionName expan="template">t</optionName>
+      <usage>-t <replace>filename</replace></usage>
+      <desc>File to use as header template for all input files, rather than looking in a directory for corresponding header files; useful for adding headers to newspaper issues and other serials</desc>
+    </option>
+    <option>
+      <optionName expan="EAF">E</optionName>
+      <usage>-E</usage>
+      <desc>Handle special requirements of EAF headers</desc>
+    </option>
+    <option>
+      <optionName expan="notes">N</optionName>
+      <usage>-N</usage>
+      <desc>Do NOT preserve <gi>notesStmt</gi> from existing TEI header (normally useful only for migration files)</desc>
+    </option>
+  </options>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p> Some elements from the existing TEI header will be preserved and merged with the new header:</p>
+    <list>
+      <item><gi>notesStmt</gi></item>
+      <item><gi>language</gi></item>
+      <item><gi>handList</gi></item>
+      <item><gi>revisionDesc</gi></item>
+      <item><gi>idno</gi> (when using a template (-t option) only)</item>
+    </list>
+    <p>For EAF headers (-E option), the following are also preserved:</p>
+    <list>
+      <item><gi>fileDesc</gi><gi>titleStmt</gi><gi>respStmt</gi></item>
+      <item>copyright/publication date</item>
+      <item><gi>encodingDesc</gi><gi>projectDesc</gi></item>
+      <item><gi>profileDesc</gi><gi>textClass</gi><gi>keywords</gi></item>
+    </list>
+  </remarks>
+  <examples>
+    <example>
+      <eg>replace_teiHeader *.xml</eg>
+      <desc>Merge headers in input files with corresponding header files in the default directory: <path>/shares/text/05teiHeader/80final</path></desc>
+    </example>
+    <example>
+      <eg>replace_teiHeader -d '/shares/text/04postkb/temp' *.xml</eg>
+      <desc>Specify the directory containing the corresponding header files</desc>
+    </example>
+    <example>
+      <eg>replace_teiHeader -t '/shares/text/05teiHeader/BOV/production/bov_header_public.xml' bov_*.xml</eg>
+      <desc>Use the same header template for all input files; in this case a BOV (Board of Visitors minutes) template is used</desc>
+    </example>
+    <example>
+      <eg>replace_teiHeader -E -d '/shares/text/05teiHeader/80final/EAF/EAF1Public/individualHeaders' eaf*.xml</eg>
+      <desc>Process EAF files, specifying the directory where the corresponding header files are located</desc>
+    </example>
+  </examples>
+  <tracksys>Finalization Workflow &rarr; Replace TEI header</tracksys>
+  <context>Post-keyboarding Workflow &rarr; Insert Full TEI Headers</context>
+</script>
+
+<script id="replace_teiHeader_cavdaily" language="shell" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>replace_teiHeader_cavdaily</head>
+  <desc>Merges <gi>teiHeader</gi> element in input file with <gi>teiHeader</gi> from a cavdaily-specific template</desc>
+  <usage>replace_teiHeader_cavdaily <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>This is actually a convenience script that simply runs:</p>
+    <eg>replace_teiHeader -q -t /shares/text/05teiHeader/CavDaily/CavDailyPrintRecord_header_template.xml $*</eg>
+  </remarks>
+  <context>Post-keyboarding Workflow (Newspapers) &rarr; Insert Full TEI Headers</context>
+  <seeAlso>
+    <ptr target="replace_teiHeader"/>
+  </seeAlso>
+</script>
+
+<script id="replace_xml_decl" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>replace_xml_decl</head>
+  <desc>Adds or replaces the XML declaration</desc>
+  <usage>replace_xml_decl <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>Although this script is used in the text workflow (called by <command><ptr target="postkb"/></command>) to normalize vendor XML declarations, it is also useful for migration projects &mdash; for example, in programmatically converting SGML documents to XML.</p>
+  </remarks>
+  <seeAlso>
+    <ptr target="postkb"/>
+  </seeAlso>
+</script>
+
+<script id="report_figures_filenames" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>report_figures_filenames</head>
+  <desc>Generates an HTML report of <gi>figure</gi> elements</desc>
+  <usage>report_figures_filenames <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>For each input file, creates an HTML file named <filename>[filename].figures_filenames.html</filename> (for example, <filename>b001234567.figures_filenames.html</filename>)</output>
+  <remarks>
+    <p>For each <gi>figure</gi> element, the report shows the filename to be used for the image file, and allows indicating whether there is/will be an image file for the <gi>figure</gi>.</p>
+    <p>The HTML file is created in the web-accessible directory for "Figures: Filenames" reports (<path>/www/doc/dlps/dlps-only/workreports/figures_filenames</path>). If the document contains no figures, no HTML file is created.</p>
+  </remarks>
+  <tracksys>Post-keyboarding Workflow &rarr; Generate figures-filenames report</tracksys>
+  <context>Post-keyboarding Workflow &rarr; Web Reports</context>
+</script>
+
+<script id="report_figures_rend" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>report_figures_rend</head>
+  <desc>Generates an HTML report of <gi>figure</gi> elements</desc>
+  <usage>report_figures_rend <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>For each input file, creates an HTML file named <filename>[filename].figures_rend.html</filename> (for example, <filename>b001234567.figures_rend.html</filename>)</output>
+  <remarks>
+    <p>For each <gi>figure</gi> element, the report allows indicating whether the figure is rendered as full-page, block, or inline.</p>
+    <p>The HTML file is created in the web-accessible directory for "Figures: Rendering" reports (<path>/www/doc/dlps/dlps-only/workreports/figures_rend</path>). If the document contains no figures, no HTML file is created.</p>
+  </remarks>
+  <context>Post-keyboarding Workflow &rarr; Web Reports</context>
+</script>
+
+<script id="report_rehyphenate" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>report_rehyphenate</head>
+  <desc>Generates an HTML report of previously de-hyphenated words that may need to have the hyphen restored</desc>
+  <usage>report_rehyphenate <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>For each input file, creates an HTML file named <filename>[filename].rehyphenate.html</filename> (for example, <filename>b001234567.rehyphenate.html</filename>)</output>
+  <remarks>
+    <p>The report lists de-hyphenated words that the Unix <command>spell</command> command reports as spelling errors. The user can then indicate which words need to have the hyphen restored.</p>
+    <p>The HTML file is created in the web-accessible directory for "Rehyphenate" reports (<path>/www/doc/dlps/dlps-only/workreports/rehyphenate</path>). If the script does not find any proposed rehyphenation to report, no HTML file is created.</p>
+  </remarks>
+  <context>Post-keyboarding Workflow &rarr; Web Reports</context>
+</script>
+
+<script id="report_unclears" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>report_unclears</head>
+  <desc>Generates an HTML report of <gi>unclear</gi> and <gi rend="empty">gap</gi> elements</desc>
+  <usage>report_unclears <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>For each input file, creates an HTML file named <filename>[filename].unclears.html</filename> (for example, <filename>b001234567.unclears.html</filename>)</output>
+  <remarks>
+    <p>The HTML file is created in the web-accessible directory for "Unclears" reports (<path>/www/doc/dlps/dlps-only/workreports/unclears</path>). If the document contains no unclears or gaps, no HTML file is created.</p>
+    <p>To report gaps accurately, the script ignores <gi rend="empty">gap</gi> elements where the <att>desc</att> attribute value is a recognized three-letter language code (typically used to indicate non-Western languages), such as <tag rend="empty">gap desc="chi" reason="editorial"</tag> for Chinese characters.</p>
+  </remarks>
+  <context>Post-keyboarding Workflow &rarr; Web Reports</context>
+</script>
+
+<script id="restore_regexp_chars" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>restore_regexp_chars</head>
+  <desc>Replaces certain character entities with their ASCII equivalents</desc>
+  <usage>restore_regexp_chars <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>This script is run at the end of the DLPS post-keyboarding workflow, to restore characters previously "escaped" with character entities to facilitate processing XML files with Perl regular expressions.</p>
+    <p>The script replaces character entities &amp;lpar; &amp;rpar; &amp;lsqb; &amp;rsqb; with ( ) [ ] respectively. In other words, it reverses the substitutions made by <command><ptr target="replace_regexp_chars"/></command>.</p>
+  </remarks>
+  <context>Post-keyboarding Workflow &rarr; Finalize</context>
+  <seeAlso>
+    <ptr target="replace_regexp_chars"/>
+  </seeAlso>
+</script>
+
+<script id="revdesc" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>revdesc</head>
+  <desc>Adds or updates the <gi>revisionDesc</gi> element in the TEI header</desc>
+  <usage>revdesc [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="date">d</optionName>
+      <usage>-d <replace>date</replace></usage>
+      <desc>Text to use for the content of the <gi>date</gi> element</desc>
+      <default>[today's date]</default>
+    </option>
+    <option>
+      <optionName expan="value">v</optionName>
+      <usage>-v <replace>yyyy-mm-dd</replace></usage>
+      <desc>Machine-readable date in yyyy-mm-dd form, used for <tag>date value="..."</tag> attribute</desc>
+      <default>[today's date in yyyy-mm-dd form]</default>
+    </option>
+    <option>
+      <optionName expan="name">n</optionName>
+      <usage>-n <replace>name</replace></usage>
+      <desc>Text to use for the content of the <gi>name</gi> element</desc>
+      <default>[name of user running the script] (Digital Library Production Services, University of Virginia Library)</default>
+    </option>
+    <option>
+      <optionName expan="ID">i</optionName>
+      <usage>-i <replace>ID</replace></usage>
+      <desc>ID for <gi>name</gi> element, used for <tag>name id="..."</tag> attribute</desc>
+      <default>[UVA computing ID of user running the script]</default>
+    </option>
+    <option>
+      <optionName expan="resp">r</optionName>
+      <usage>-r <replace>description</replace></usage>
+      <desc>Description of responsibility, used for content of <gi>resp</gi> element</desc>
+      <default>corrector</default>
+    </option>
+    <option>
+      <optionName expan="changes">c</optionName>
+      <usage>-c <replace>description</replace></usage>
+      <desc>Description of the changes made, used for content of <gi>item</gi> element</desc>
+      <default>Minor corrections to vendor markup.</default>
+    </option>
+  </options>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>By default (in the absence of options), this script uses today's date for the date, and relies on the user ID of the user running the script to identify the corrector of the file.</p>
+    <p>When using the <optionMention>-d</optionMention> option, the <optionMention>-v</optionMention> option is required. When using the <optionMention>-n</optionMention> option, the <optionMention>-i</optionMention> option is required.</p>
+    <p>If the <gi>revisionDesc</gi> element already exists, the new <gi>change</gi> element will be added immediately before the closing <gi>/revisionDesc</gi> tag.</p>
+  </remarks>
+  <examples>
+    <example>
+      <eg>revdesc *.xml</eg>
+      <desc>Insert the default revision description, using today's date and the name of the user running the script. For example:
+        <eg><![CDATA[
+<revisionDesc>
+<change>
+<date value="2006-04-28">April 28, 2006</date>
+<respStmt>
+<name id="gpm2a">Greg Murray (Digital Library Production Services,
+University of Virginia Library)</name>
+<resp>corrector</resp>
+</respStmt>
+<item>Minor corrections to vendor markup.</item>
+</change>
+</revisionDesc>
+]]></eg>
+      </desc>
+    </example>
+    <example>
+      <eg>revdesc -d 'October 2006' -v '2006-10' <lb/>
+-n 'Digital Library Production Services, University of Virginia Library' -i 'DLPS' <lb/>
+-r 'markup conversion' -c 'Converted from SGML markup to DLPS TEI XML.' *.xml</eg>
+      <desc>Specify the values to be used in the revision description inserted into each document:
+        <eg><![CDATA[
+<revisionDesc>
+<change>
+<date value="2006-10">October 2006</date>
+<respStmt>
+<name id="DLPS">Digital Library Production Services, University of Virginia Library</name>
+<resp>markup conversion</resp>
+</respStmt>
+<item>Converted from SGML markup to DLPS TEI XML.</item>
+</change>
+</revisionDesc>
+]]></eg>
+      </desc>
+    </example>
+  </examples>
+  <tracksys>Markup QA Workflow &rarr; Add revision history</tracksys>
+  <context>Markup QA Workflow &rarr; Preliminaries &rarr; Additions to TEI header</context>
+</script>
+
+<script id="run_reports" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>run_reports</head>
+  <desc>Runs a series of scripts to generate post-keyboarding HTML reports</desc>
+  <usage>run_reports [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="foreign">f</optionName>
+      <usage>-f</usage>
+      <desc>Indicates a foreign-language (non-English) text; skip rehyphenate report</desc>
+    </option>
+    &option_v;
+  </options>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;; then generates HTML reports</output>
+  <remarks>
+    <p>This script performs the following tasks:</p>
+    <list>
+      <item>Adds <att>id</att> attribute on <gi>figure</gi> tags (in preparation for figure-related reports): <command>figure_ids <replace>filename</replace></command></item>
+      <item>Adds <att>id</att> attribute on <gi>unclear</gi> and <gi rend="empty">gap</gi> tags (in preparation for possible unclear report): <command>unclear_ids <replace>filename</replace></command></item>
+      <item>Generates "Figures: Rendering" report: <command>report_figures_rend <replace>filename</replace></command></item>
+      <item>Generates "Rehyphenate" report: <command>report_rehyphenate <replace>filename</replace></command></item>
+    </list>
+  </remarks>
+  <tracksys>Post-keyboarding Workflow &rarr; Generate reports</tracksys>
+  <context>Post-keyboarding Workflow &rarr; Web Reports</context>
+  <seeAlso>
+    <ptr target="figure_ids"/>
+    <ptr target="unclear_ids"/>
+    <ptr target="report_figures_rend"/>
+    <ptr target="report_rehyphenate"/>
+  </seeAlso>
+</script>
+
+<script id="strip_fw_pageno" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>strip_fw_pageno</head>
+  <desc>Ensures that TEI files do not adhere to the outdated/deprecated markup practice of including <tag>fw type="pageno"</tag> in all page breaks</desc>
+  <usage>strip_fw_pageno [options] <replace>filenames</replace></usage>
+  <options>
+    &option_v;
+  </options>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>Instead of being included in each and every page break, <tag>fw type="pageno"</tag> should only be used when needed, typically for page numbering corrections. For example:</p>
+    <eg><![CDATA[<pb n="238"><fw type="pageno"><corr sic="237">238</corr></fw></pb>]]></eg>
+    <p>The script strips out occurrences of <tag>fw type="pageno"</tag> where the <tag>pb n="..."</tag> value and the content of the <tag>fw type="pageno"</tag> element are identical.</p>
+  </remarks>
+  <beforeAfter>
+    <before>
+      <eg><![CDATA[
+<pb n="123"><fw type="pageno">123</fw></pb>
+]]></eg>
+    </before>
+    <after>
+      <eg><![CDATA[
+<pb n="123"/>
+]]></eg>
+    </after>
+  </beforeAfter>
+  <context>Post-keyboarding Workflow &rarr; Finalize</context>
+</script>
+
+<script id="tei_pidder" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>tei_pidder</head>
+  <desc>Requests a PID (persistent identifier) for the TEI file and each of its associated images, then inserts those PIDs into the TEI file</desc>
+  <usage>tei_pidder <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="test">t</optionName>
+      <usage>-t</usage>
+      <desc>Request dummy/test PIDs, not real ones; don't update tracking system</desc>
+    </option>
+  </options>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>The PID for the TEI file is written into the TEI header, while the PID for each image is written into its <kw>ENTITY</kw> declaration.</p>
+    <p>If the TEI file or the images already have a PID, a new one is <emph>not</emph> requested.</p>
+  </remarks>
+  <tracksys>Finalization Workflow &rarr; Add PIDs</tracksys>
+  <context>Post-keyboarding Workflow &rarr; Finalize</context>
+</script>
+
+<script id="unclear_ids" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>unclear_ids</head>
+  <desc>Adds or updates <att>id</att> attribute on <gi>unclear</gi> and <gi rend="empty">gap</gi> elements</desc>
+  <usage>unclear_ids <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <seeAlso>
+    <ptr target="run_reports"/>
+  </seeAlso>
+</script>
+
+<script id="update_teiHeader_access" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>update_teiHeader_access</head>
+  <desc>Updates the TEI header with the access value from the DLPS tracking system</desc>
+  <usage>update_teiHeader_access [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="force">F</optionName>
+      <usage>-F <replace>keyword</replace></usage>
+      <desc>Bypass DLPS Tracking System; use keyword specified for all input
+        files. Allowed values are: <val>public</val>, <val>viva</val>,
+        <val>uva</val>, <val>restricted</val></desc>
+    </option>
+  </options>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <beforeAfter>
+    <before>
+      <desc>Typically, TEI headers produced by Cataloging will indicate "public" access:</desc>
+      <eg><![CDATA[
+<availability status="public">
+<p n="copyright">Copyright &copy; 2006 by the Rector and Visitors of the University of Virginia</p>
+<p n="access">Publicly accessible</p>
+</availability>
+]]></eg>
+    </before>
+    <after>
+      <desc>If the DLPS tracking system indicates "UVA only", then <command>update_teiHeader_access</command> changes the markup to:</desc>
+      <eg><![CDATA[
+<availability status="uva">
+<p n="copyright">Copyright &copy; 2006 by the Rector and Visitors of the University of Virginia</p>
+<p n="access">UVA only</p>
+</availability>
+]]></eg>
+    </after>
+  </beforeAfter>
+  <tracksys>Finalization Workflow &rarr; Update access level</tracksys>
+  <context>Post-keyboarding Workflow &rarr; Insert Full TEI Headers</context>
+</script>
+
+<script id="update_teiHeader_bov" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>update_teiHeader_bov</head>
+  <desc>Updates the TEI header with data (date, page count) specific to each particular BOV (Board of Visitors) file</desc>
+  <usage>update_teiHeader_bov <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <context>Post-keyboarding Workflow &rarr; Insert Full TEI Headers</context>
+</script>
+
+<script id="update_teiHeader_cavdaily" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>update_teiHeader_cavdaily</head>
+  <desc>updates TEI header of Cavalier Daily files with issue-specific data (volume number, issue number, date, and DLPS ID)</desc>
+  <usage>update_teiHeader_cavdaily <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <tracksys>Finalization Workflow &rarr; Update issue data</tracksys>
+  <context>Post-keyboarding Workflow (Newspapers) &rarr; Insert Full TEI Headers</context>
+</script>
+
+<script id="vendor2tei" language="Perl" type="processing" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>vendor2tei</head>
+  <desc>Converts vendor markup to standard TEI markup</desc>
+  <usage>vendor2tei <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&copyOverwrite;</output>
+  <remarks>
+    <p>In addition to minor miscellaneous tweaks, the script performs the following conversions:</p>
+    <list>
+      <item>replaces | (vertical bar) at end of line with <gi rend="empty">lb</gi></item>
+      <item>converts typographic convenience elements (<gi tei="no">i</gi> <gi tei="no">b</gi> <gi tei="no">u</gi> <gi tei="no">sup</gi> <gi tei="no">sub</gi> <gi tei="no">smcap</gi>) to <tag>hi rend="..."</tag></item>
+      <item>converts newspaper convenience elements (<gi tei="no">ad</gi>, <gi tei="no">cartoon</gi>, <gi tei="no">comicStrip</gi>, <gi tei="no">puzzle</gi>, <gi tei="no">wireArticle</gi>, <gi tei="no">wirePhoto</gi>) to <gi rend="empty">gap desc="..." reason="editorial"</gi></item>
+      <item>converts <gi tei="no">quotedLetter</gi> to <gi>q</gi><gi>text</gi><gi>body</gi><tag>div1 type="quotation"</tag></item>
+      <item>converts <gi tei="no">ps</gi> to <tag>seg type="postscript" rend="block"</tag></item>
+      <item>converts <gi tei="no">ns</gi> to <tag>seg type="note-symbol"</tag></item>
+    </list>
+  </remarks>
+  <seeAlso>
+    <ptr target="postkb"/>
+  </seeAlso>
+</script>
+</scriptsGroup>
+
+<scriptsGroup id="group_qa">
+<head>QA Scripts</head>
+
+<script id="non-ascii" language="Perl" type="QA" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>non-ascii</head>
+  <desc>Displays error messages if the input file appears to contain non-ASCII characters</desc>
+  <usage>non-ascii [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="error count">E</optionName>
+      <usage>-E <replace>number</replace></usage>
+      <desc>maximum number of errors to report</desc>
+      <default>10</default>
+    </option>
+    <option>
+      <optionName expan="force">F</optionName>
+      <usage>-F</usage>
+      <desc>operate on file even if it lacks XML declaration</desc>
+    </option>
+    &option_v;
+  </options>
+  <args>
+    <arg required="yes">
+      <argName><replace>filenames</replace></argName>
+      <desc>XML file(s) encoded in UTF-8</desc>
+    </arg>
+  </args>
+  <output>Displays messages on standard output (because that is the normal
+    output of the script, not an error condition). Makes no changes to
+    the input file.</output>
+  <remarks>
+    <p>This script's purpose is to catch non-ASCII characters in XML
+    files, because some processing scripts in the post-keyboarding
+    workflow don't expect, and can't handle, Unicode characters above
+    the ASCII code block. We ask the keyboarding vendor to use
+    hexadecimal codes to represent non-ASCII characters &mdash; either
+    directly, as in &amp;#x00E9; or by using entities, as in &amp;eacute; &mdash;
+    but we need to QA that practice.</p>
+    <p>The script only operates on UTF-8 XML documents. If the file
+    doesn't have an XML declaration that either declares UTF-8 encoding
+    explicitly or declares no encoding at all (since UTF-8 is the default in XML),
+    the script will issue a warning and skip to the next input file. Use
+    <optionMention>-F</optionMention> to process files even if they lack an XML
+    declaration.</p>
+    <p>The script displays an error message for any of the following:</p>
+    <list>
+      <item>a control character (illegal in XML)</item>
+      <item>a character with a decimal character code greater than 127 (non-ASCII)</item>
+      <item>an XML character reference given in decimal notation (as in &amp;#233;)
+        rather than hexidecimal (as in &amp;#x00E9;)</item>
+    </list>
+  </remarks>
+  <context>Retrieve from Vendor &rarr; Initial QA</context>
+</script>
+
+<script id="parse" language="shell" type="QA" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>parse</head>
+  <desc>Validates (informally speaking, "parses") one or more XML files using the <command>xmllint</command> validating parser</desc>
+  <usage>parse <replace>filenames</replace></usage>
+  <args>
+    <arg required="yes">
+      <argName><replace>filenames</replace></argName>
+      <desc>Any XML files</desc>
+    </arg>
+  </args>
+  <output>Sends messages to standard output and/or standard error.</output>
+  <examples>
+    <example>
+      <eg>parse *.xml</eg>
+      <desc>Validate XML files in the current directory</desc>
+    </example>
+  </examples>
+  <context>(Used throughout the text workflow)</context>
+</script>
+
+<script id="qa_books" language="Perl" type="QA" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>qa_books</head>
+  <desc>Runs a series of QA scripts on TEI XML files digitized from books</desc>
+  <usage>qa_books <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&stdout;</output>
+  <remarks>
+    <p>The scripts run by <command>qa_books</command> are:</p>
+    <list>
+      <item><ptr target="qa_xml"/></item>
+      <item><ptr target="qa_properties"/></item>
+      <item><ptr target="qa_dates"/></item>
+      <item><ptr target="qa_figures"/></item>
+    </list>
+  </remarks>
+  <tracksys>Markup QA Workflow &rarr; Run command-line programs</tracksys>
+  <context>Markup QA Workflow &rarr; QA Programs</context>
+  <seeAlso>
+    <ptr target="qa_xml"/>
+    <ptr target="qa_properties"/>
+    <ptr target="qa_dates"/>
+    <ptr target="qa_figures"/>
+  </seeAlso>
+</script>
+
+<script id="qa_dates" language="Perl" type="QA" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>qa_dates</head>
+  <desc>Performs QA checks on date values in TEI XML documents</desc>
+  <usage>qa_dates [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="errors">e</optionName>
+      <usage>-e <replace>number</replace></usage>
+      <desc>Maximum number of error messages to display</desc>
+      <default>10</default>
+    </option>
+    &option_E;
+  </options>
+  <args>&teiFiles;</args>
+  <output>&stdout;</output>
+  <remarks>
+    <p>Date values (which includes <tag>date value="..."</tag> and <tag>dateRange from="..." to="..."</tag>) must be in one of the following formats:</p>
+    <list>
+      <item>YYYY-MM-DD</item>
+      <item>YYYY-MM</item>
+      <item>YYYY</item>
+      <item>-MM-DD</item>
+      <item>--DD</item>
+    </list>
+    <p>(BC/BCE dates are represented in the same way, but prefixed with a "B".) Each date value must represent a valid date (month must be 1 to 12; day must be 1 to max, based on month).</p>
+    <eg>&lt;date value="1901-08-04">4 Aug., 1901&lt;/date></eg>
+    <eg>&lt;date value="1870-03">March 1870&lt;/date></eg>
+    <eg>&lt;date value="2003">2003&lt;/date></eg>
+    <eg>&lt;date value="B233" type="death">d. 233 B.C.&lt;/date></eg>
+    <eg>&lt;date value="-01-20">Jan. 20th&lt;/date></eg>
+  </remarks>
+  <seeAlso>
+    <ptr target="qa_books"/>
+    <ptr target="qa_newspapers"/>
+    <ptr target="qa_super"/>
+  </seeAlso>
+</script>
+
+<script id="qa_eaf_pb" language="Perl" type="QA" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>qa_eaf_pb</head>
+  <desc>Finds consecutive page breaks (which typically indicate a page of missing text content)</desc>
+  <usage>qa_eaf_pb <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&stdout;</output>
+</script>
+
+<script id="qa_entities" language="Perl" type="QA" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>qa_entities</head>
+  <desc>compares <kw>NDATA</kw> declarations, <att>entity</att> attributes, and image files on disk</desc>
+  <usage>qa_entities [options] <replace>filenames</replace></usage>
+  <options>
+    <optionGroup>
+      <head>Source file options</head>
+      <option>
+        <optionName expan="page images">p</optionName>
+        <usage>-p <replace>directory</replace></usage>
+        <desc>Directory to look in for page-image files</desc>
+        <default><path>/shares/image1/01bookscanning/52_CCITTCOMPRESS_OUT/[ID]</path></default>
+      </option>
+      <option>
+        <optionName expan="figure images">f</optionName>
+        <usage>-f <replace>directory</replace></usage>
+        <desc>Directory to look in for figure-image files</desc>
+        <default><path>/shares/image1/03fig/83figs_final/[ID]_fig</path></default>
+      </option>
+      <option>
+        <optionName expan="ReadyRepo">R</optionName>
+        <usage>-R <replace>project</replace></usage>
+        <desc>Look in specified project directory in ReadyRepo for page-image and figure-images files, rather than default directories (for example, <kw>-R 2006_04</kw>)</desc>
+      </option>
+    </optionGroup>
+    <optionGroup>
+      <head>Feedback options</head>
+      &option_E;
+      &option_v;
+    </optionGroup>
+  </options>
+  <args>&teiFiles;</args>
+  <output>&stdout;</output>
+  <remarks>
+    <p>This script performs several tests:</p>
+    <list>
+      <item>compares <kw>ENTITY...NDATA</kw> declarations to <att>entity</att> attributes, and vice versa, ensuring complete correspondence</item>
+      <item>presence or absence of entity attributes must match <att>page-images="..."</att> and <att>figure-images="..."</att> from <tag>?dlps ...?</tag> properties</item>
+      <item>tests <kw>ENTITY...NDATA</kw> declarations for inherent reasonableness:
+        <list>
+          <item>each <kw>NDATA</kw> declaration must use one of these values: <kw>uvaBitonal</kw>, <kw>uvaHighRes</kw>, <kw>uvaLowRes</kw></item>
+          <item>if the entity is named as a figure (name ends with _ + digit), then it must be declared as <kw>uvaHighRes</kw></item>
+          <item>if the entity is named as a page image and declared as <kw>uvaBitonal</kw>, <tag>?dlps page-images="bitonal"?</tag> must be true</item>
+          <item>if the entity is named as a page image and declared as <kw>uvaHighRes</kw> or <kw>uvaLowRes</kw>, <tag>?dlps page-images="color"?</tag> must be true</item>
+        </list>
+      </item>
+      <item>compares <att>entity</att> attributes to image files on disk (to catch missing images), and vice versa (to catch orphaned images)</item>
+    </list>
+  </remarks>
+  <tracksys>
+    If <kw>-R</kw> option: Finalization Workflow &rarr; Verify image files (ReadyRepo) <lb/>
+    Otherwise: Finalization Workflow &rarr; Verify image files
+  </tracksys>
+  <context>Post-keyboarding Workflow &rarr; Finalize</context>
+</script>
+
+<script id="qa_figures" language="Perl" type="QA" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>qa_figures</head>
+  <desc>Performs QA checks on <gi>figure</gi> elements in TEI XML documents</desc>
+  <usage>qa_figures [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="errors">e</optionName>
+      <usage>-e <replace>number</replace></usage>
+      <desc>Maximum number of error messages to display</desc>
+      <default>10</default>
+    </option>
+    &option_E;
+    <option>
+      <optionName expan="newspapers">N</optionName>
+      <usage>-N</usage>
+      <desc>Run newspaper-specific QA checks</desc>
+    </option>
+  </options>
+  <args>&teiFiles;</args>
+  <output>&stdout;</output>
+  <remarks>
+    <p>Enforces these practices:</p>
+    <list>
+      <item>Attributes 'entity' and 'rend' are required, unless (a) there are no page or figure images associated with the text, or (b) it's a newspaper. (The DTD enforces the vocabulary for rend.)</item>
+    </list>
+  </remarks>
+  <seeAlso>
+    <ptr target="qa_books"/>
+    <ptr target="qa_super"/>
+  </seeAlso>
+</script>
+
+<script id="qa_lib_corr" language="XSLT" type="QA" interface="command-line" diskPath="&web-qa;">
+  <head>qa_lib_corr.xsl</head>
+  <desc>Performs QA checks on TEI corrections, additions, and deletions</desc>
+  <usage>qa_super -c <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&stdout;</output>
+  <remarks>&qaStylesheetRemarks;</remarks>
+  <context>Markup QA Workflow &rarr; QA Programs</context>
+  <seeAlso>
+    <ptr target="qa_super"/>
+    <xref url="http://pogo.lib.virginia.edu/cgi-dlps/dlps-only/markupQA/list.pl" type="external">Web interface to QA programs</xref>
+  </seeAlso>
+</script>
+
+<script id="qa_lib_empty" language="XSLT" type="QA" interface="command-line" diskPath="&web-qa;">
+  <head>qa_lib_empty.xsl</head>
+  <desc>Checks for empty elements, empty attributes, and use of <att>rend="none"</att></desc>
+  <usage>qa_super -e <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&stdout;</output>
+  <remarks>&qaStylesheetRemarks;</remarks>
+  <context>Markup QA Workflow &rarr; QA Programs</context>
+  <seeAlso>
+    <ptr target="qa_super"/>
+    <xref url="http://pogo.lib.virginia.edu/cgi-dlps/dlps-only/markupQA/list.pl" type="external">Web interface to QA programs</xref>
+  </seeAlso>
+</script>
+
+<script id="qa_lib_foreign" language="XSLT" type="QA" interface="command-line" diskPath="&web-qa;">
+  <head>qa_lib_foreign.xsl</head>
+  <desc>Performs QA checks on TEI <gi>foreign</gi> elements and the global <att>lang</att> attribute</desc>
+  <usage>qa_super -g <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&stdout;</output>
+  <remarks>&qaStylesheetRemarks;</remarks>
+  <context>Markup QA Workflow &rarr; QA Programs</context>
+  <seeAlso>
+    <ptr target="qa_super"/>
+    <xref url="http://pogo.lib.virginia.edu/cgi-dlps/dlps-only/markupQA/list.pl" type="external">Web interface to QA programs</xref>
+  </seeAlso>
+</script>
+
+<script id="qa_lib_misc" language="XSLT" type="QA" interface="command-line" diskPath="&web-qa;">
+  <head>qa_lib_misc.xsl</head>
+  <desc>Performs miscellaneous QA checks not already handled by the other <filename>qa_lib...</filename> stylesheets</desc>
+  <usage>qa_super -m <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&stdout;</output>
+  <remarks>
+    &qaStylesheetRemarks;
+    <p>Elements checked by this stylesheet include <gi rend="empty">gap</gi>, <gi>hi</gi>, and <gi>ornament</gi>.</p>
+  </remarks>
+  <context>Markup QA Workflow &rarr; QA Programs</context>
+  <seeAlso>
+    <ptr target="qa_super"/>
+    <xref url="http://pogo.lib.virginia.edu/cgi-dlps/dlps-only/markupQA/list.pl" type="external">Web interface to QA programs</xref>
+  </seeAlso>
+</script>
+
+<script id="qa_lib_notes" language="XSLT" type="QA" interface="command-line" diskPath="&web-qa;">
+  <head>qa_lib_notes.xsl</head>
+  <desc>Performs QA checks on TEI notes and note references (<gi>note</gi>, <gi>ref</gi>, and <gi rend="empty">ptr</gi> elements)</desc>
+  <usage>qa_super -n <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&stdout;</output>
+  <remarks>&qaStylesheetRemarks;</remarks>
+  <context>Markup QA Workflow &rarr; QA Programs</context>
+  <seeAlso>
+    <ptr target="qa_super"/>
+    <xref url="http://pogo.lib.virginia.edu/cgi-dlps/dlps-only/markupQA/list.pl" type="external">Web interface to QA programs</xref>
+  </seeAlso>
+</script>
+
+<script id="qa_lib_pb" language="XSLT" type="QA" interface="command-line" diskPath="&web-qa;">
+  <head>qa_lib_pb.xsl</head>
+  <desc>Performs QA checks on TEI page breaks (<gi>pb</gi> and <gi>fw</gi> elements)</desc>
+  <usage>qa_super -p <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&stdout;</output>
+  <remarks>&qaStylesheetRemarks;</remarks>
+  <context>Markup QA Workflow &rarr; QA Programs</context>
+  <seeAlso>
+    <ptr target="qa_super"/>
+    <xref url="http://pogo.lib.virginia.edu/cgi-dlps/dlps-only/markupQA/list.pl" type="external">Web interface to QA programs</xref>
+  </seeAlso>
+</script>
+
+<script id="qa_lib_structure" language="XSLT" type="QA" interface="command-line" diskPath="&web-qa;">
+  <head>qa_lib_structure.xsl</head>
+  <desc>Performs QA checks on TEI major structure, divisions, and headings</desc>
+  <usage>qa_super -s <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&stdout;</output>
+  <remarks>&qaStylesheetRemarks;</remarks>
+  <context>Markup QA Workflow &rarr; QA Programs</context>
+  <seeAlso>
+    <ptr target="qa_super"/>
+    <xref url="http://pogo.lib.virginia.edu/cgi-dlps/dlps-only/markupQA/list.pl" type="external">Web interface to QA programs</xref>
+  </seeAlso>
+</script>
+
+<script id="qa_lib_tables" language="XSLT" type="QA" interface="command-line" diskPath="&web-qa;">
+  <head>qa_lib_tables.xsl</head>
+  <desc>Performs QA checks on TEI tables, lists, and block quotations</desc>
+  <usage>qa_super -t <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&stdout;</output>
+  <remarks>&qaStylesheetRemarks;</remarks>
+  <context>Markup QA Workflow &rarr; QA Programs</context>
+  <seeAlso>
+    <ptr target="qa_super"/>
+    <xref url="http://pogo.lib.virginia.edu/cgi-dlps/dlps-only/markupQA/list.pl" type="external">Web interface to QA programs</xref>
+  </seeAlso>
+</script>
+
+<script id="qa_newspapers" language="Perl" type="QA" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>qa_newspapers</head>
+  <desc>Runs a series of QA scripts on TEI XML files digitized from newspapers</desc>
+  <usage>qa_newspapers <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&stdout;</output>
+  <remarks>
+    <p>The scripts run by <command>qa_newspapers</command> are:</p>
+    <list>
+      <item><ptr target="qa_xml"/></item>
+      <item><ptr target="qa_properties"/></item>
+      <item><ptr target="qa_dates"/></item>
+      <item><ptr target="qa_pb_newspapers"/></item>
+    </list>
+  </remarks>
+  <tracksys>Markup QA Workflow &rarr; Run command-line programs</tracksys>
+  <context>Markup QA Workflow &rarr; QA Programs</context>
+  <seeAlso>
+    <ptr target="qa_xml"/>
+    <ptr target="qa_properties"/>
+    <ptr target="qa_dates"/>
+    <ptr target="qa_pb_newspapers"/>
+  </seeAlso>
+</script>
+
+<script id="qa_pb_newspapers" language="XSLT" type="QA" interface="command-line" diskPath="&dlps-bin-xsl;">
+  <head>qa_pb_newspapers.xsl</head>
+  <desc>Performs QA checks on page break tags in newspaper markup</desc>
+  <usage>qa_super -p -N <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&stdout;</output>
+  <seeAlso>
+    <ptr target="qa_newspapers"/>
+    <ptr target="qa_super"/>
+  </seeAlso>
+</script>
+
+<script id="qa_properties" language="Perl" type="QA" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>qa_properties</head>
+  <desc>Performs QA checks on <tag>?dlps ...?</tag> "properties" in DLPS TEI XML documents</desc>
+  <usage>qa_properties [options] <replace>filenames</replace></usage>
+  <options>
+    &option_E;
+    <option>
+      <optionName expan="verbose">v</optionName>
+      <usage>-v</usage>
+      <desc>Display property values (in addition to warnings and errors)</desc>
+    </option>
+  </options>
+  <args>
+    <arg required="yes">
+      <argName><replace>filenames</replace></argName>
+      <desc>DLPS TEI XML file(s)</desc>
+    </arg>
+  </args>
+  <output>&stdout;</output>
+  <seeAlso>
+    <ptr target="qa_books"/>
+    <ptr target="qa_newspapers"/>
+    <ptr target="qa_super"/>
+  </seeAlso>
+</script>
+
+<script id="qa_super" language="Perl" type="QA" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>qa_super</head>
+  <desc>Runs the complete suite of DLPS QA programs (Perl scripts and XSLT stylesheets) on TEI XML files</desc>
+  <usage>qa_super [options] <replace>filenames</replace></usage>
+  <options>
+    <optionGroup>
+      <head>Categories of QA checks</head>
+      <option>
+        <optionName expan="all">a</optionName>
+        <usage>-a</usage>
+        <desc>Run all QA checks; true unless one or more categories is specified</desc>
+      </option>
+      <option>
+        <optionName expan="corrections">c</optionName>
+        <usage>-c</usage>
+        <desc>Run QA checks relating to corrections (<filename><ptr target="qa_lib_corr"/></filename>)</desc>
+      </option>
+      <option>
+        <optionName expan="dates">d</optionName>
+        <usage>-d</usage>
+        <desc>Run QA checks relating to <gi>date</gi> elements and <att>value</att> attributes (<command><ptr target="qa_dates"/></command>)</desc>
+      </option>
+      <option>
+        <optionName expan="empty">e</optionName>
+        <usage>-e</usage>
+        <desc>Run QA checks relating to empty elements and empty attributes (<filename><ptr target="qa_lib_empty"/></filename>)</desc>
+      </option>
+      <option>
+        <optionName expan="figures">f</optionName>
+        <usage>-f</usage>
+        <desc>Run QA checks relating to <gi>figure</gi> (<command><ptr target="qa_figures"/></command>)</desc>
+      </option>
+      <option>
+        <optionName expan="foreign">g</optionName>
+        <usage>-g</usage>
+        <desc>Run QA checks relating to foreign phrases (<filename><ptr target="qa_lib_foreign"/></filename>)</desc>
+      </option>
+      <option>
+        <optionName expan="header">h</optionName>
+        <usage>-h</usage>
+        <desc>Run QA checks relating to the TEI header (<filename><ptr target="qa_teiHeader"/></filename>)</desc>
+      </option>
+      <option>
+        <optionName expan="misc">m</optionName>
+        <usage>-m</usage>
+        <desc>Run miscellaneous QA checks not handled by the other categories (<filename><ptr target="qa_lib_misc"/></filename>)</desc>
+      </option>
+      <option>
+        <optionName expan="notes">n</optionName>
+        <usage>-n</usage>
+        <desc>Run QA checks relating to notes and note references (<filename><ptr target="qa_lib_notes"/></filename>)</desc>
+      </option>
+      <option>
+        <optionName expan="page breaks">p</optionName>
+        <usage>-p</usage>
+        <desc>Run QA checks relating to page breaks (<filename><ptr target="qa_lib_pb"/></filename>)</desc>
+      </option>
+      <option>
+        <optionName expan="properties">r</optionName>
+        <usage>-r</usage>
+        <desc>Run QA checks relating to the <tag>?dlps ...?</tag> document "properties" (<command><ptr target="qa_properties"/></command>)</desc>
+      </option>
+      <option>
+        <optionName expan="structure">s</optionName>
+        <usage>-s</usage>
+        <desc>Run QA checks relating to structural elements (<filename><ptr target="qa_lib_structure"/></filename>)</desc>
+      </option>
+      <option>
+        <optionName expan="tables">t</optionName>
+        <usage>-t</usage>
+        <desc>Run QA checks relating to tables, lists, and block quotations (<filename><ptr target="qa_lib_tables"/></filename>)</desc>
+      </option>
+      <option>
+        <optionName expan="XML">x</optionName>
+        <usage>-x</usage>
+        <desc>Run QA checks relating to DLPS XML practices (<command><ptr target="qa_xml"/></command>)</desc>
+      </option>
+    </optionGroup>
+    <optionGroup>
+      <head>Other options</head>
+      &option_E;
+      <option>
+        <optionName expan="newspapers">N</optionName>
+        <usage>-N</usage>
+        <desc>Run newspaper-specific QA checks</desc>
+      </option>
+      <option>
+        <optionName expan="verbose">V</optionName>
+        <usage>-V</usage>
+        <desc>Display status messages (in addition to warnings and errors)</desc>
+      </option>
+      <option>
+        <optionName expan="finalization">Z</optionName>
+        <usage>-Z</usage>
+        <desc>Run QA checks relating to markup features required after the finalization workflow, but not during production</desc>
+      </option>
+    </optionGroup>
+  </options>
+  <args>&teiFiles;</args>
+  <output>Sends messages to standard output and/or standard error</output>
+  <examples>
+    <example>
+      <eg>qa_super *.xml</eg>
+      <desc>Run all categories of QA checks; report warnings and errors</desc>
+    </example>
+    <example>
+      <eg>qa_super -psN *.xml</eg>
+      <desc>Run checks relating to page breaks and structure; also run newspaper-specific checks; report warnings and errors</desc>
+    </example>
+    <example>
+      <eg>qa_super -EZ *.xml</eg>
+      <desc>Run all categories of QA checks; also run finalization checks; report errors only</desc>
+    </example>
+  </examples>
+  <tracksys>
+    If <optionMention>-h</optionMention>: Finalization Workflow &rarr; QA TEI header <lb/>
+    If <optionMention>-Z</optionMention>: Finalization Workflow &rarr; Run QA program
+  </tracksys>
+  <context>Post-keyboarding Workflow &rarr; Finalize</context>
+</script>
+
+<script id="qa_teiHeader" language="XSLT" type="QA" interface="command-line" diskPath="&dlps-bin-xsl;">
+  <head>qa_teiHeader.xsl</head>
+  <desc>Performs QA checks on the TEI header</desc>
+  <usage>qa_super -h <replace>filenames</replace></usage>
+  <args>&teiFiles;</args>
+  <output>&stdout;</output>
+  <context>Post-keyboarding Workflow &rarr; Insert Full TEI Headers</context>
+  <seeAlso>
+    <ptr target="qa_super"/>
+  </seeAlso>
+</script>
+
+<script id="qa_xml" language="Perl" type="QA" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>qa_xml</head>
+  <desc>Checks XML documents for conformance to DLPS XML-related practices</desc>
+  <usage>qa_xml [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="errors">e</optionName>
+      <usage>-e <replace>number</replace></usage>
+      <desc>Maximum number of error messages to display</desc>
+      <default>10</default>
+    </option>
+    <option>
+      <optionName expan="ASCII">A</optionName>
+      <usage>-A</usage>
+      <desc>Skip ASCII test and vertical bar test</desc>
+    </option>
+    &option_E;
+  </options>
+  <args>
+    <arg required="yes">
+      <argName><replace>filenames</replace></argName>
+      <desc>XML file(s)</desc>
+    </arg>
+  </args>
+  <output>&stdout;</output>
+  <remarks>
+    <p>Enforces these practices:</p>
+    <list>
+      <item>XML declaration required</item>
+      <item>In XML declaration, <att>version="1.0"</att> required</item>
+      <item>In XML declaration, <att>encoding</att> must be either set to <val>UTF-8</val> or omitted</item>
+      <item>In XML declaration, <att>standalone</att> must be either set to <val>no</val> or omitted</item>
+      <item>URLs for DTD files should not contain <val>virginia.edu/bin/</val> (outdated path for .dtd and .ent files)</item>
+      <item>If declared, parameter entities must be declared only once</item>
+      <item>If declared, parameter entities for DTD feature selection (<kw>VENDOR</kw>, <kw>POSTKB</kw>, <kw>DICTIONARY</kw>, <kw>MANUSCRIPT</kw>, <kw>NEWSPAPER</kw>, etc.) must be set to either <val>INCLUDE</val> or <val>IGNORE</val></item>
+      <item><kw>VENDOR</kw> and <kw>POSTKB</kw> cannot both be <val>INCLUDE</val>, and cannot both be <val>IGNORE</val></item>
+      <item><kw>DICTIONARY</kw> and <kw>NEWSPAPER</kw> cannot both be <val>INCLUDE</val></item>
+      <item>ASCII characters only; no illegal control characters or super-ASCII characters</item>
+      <item>No occurrences of | (vertical bar) outside of markup (except in TEI header <gi>keywords</gi>)</item>
+      <item>No vendor unknown-character indicators</item>
+    </list>
+  </remarks>
+  <seeAlso>
+    <ptr target="qa_books"/>
+    <ptr target="qa_newspapers"/>
+    <ptr target="qa_super"/>
+  </seeAlso>
+</script>
+
+<script id="xparse" language="shell" type="QA" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>xparse</head>
+  <desc>Same as <command><ptr target="parse"/></command>. Retained because it is referred to throughout the post-keyboarding workflow documentation.</desc>
+  <usage>xparse <replace>filenames</replace></usage>
+  <args>
+    <arg required="yes">
+      <argName><replace>filenames</replace></argName>
+      <desc>Any XML file(s)</desc>
+    </arg>
+  </args>
+  <output>See <ptr target="parse"/>.</output>
+  <context>(Used throughout the text workflow)</context>
+  <seeAlso><ptr target="parse"/></seeAlso>
+</script>
+</scriptsGroup>
+
+<scriptsGroup id="group_admin">
+<head>Administrative/Utility Scripts</head>
+
+<!--
+  TODO: assemble_project is actually an image-project script, not a
+  text script. What's needed is separate documentation for image-project
+  scripts.
+  <script id="assemble_project" language="Perl" type="admin" interface="command-line" diskPath="&dlps-bin;/image">
+  <head>assemble_project</head>
+  <desc>Wraps up an image project by creating image derivatives in a predefined directory structure on pogo.lib</desc>
+  <usage>assemble_project [options]</usage>
+  <options>
+    <option>
+      <optionName expan="force">F</optionName>
+      <usage>-F</usage>
+      <desc>Overwrite output files if they already exist.</desc>
+      <default>By default, if an output file already exists, script will issue a message but will skip to next project, without overwriting any existing file.</default>
+    </option>
+    <option>
+      <optionName expan="resume">R</optionName>
+      <usage>-R</usage>
+      <desc>If an output file already exists, continue processing without overwriting the existing file. This has the effect of resuming processing of a project previously started.</desc>
+      <default>By default, if an output file already exists, script will issue a message but will skip to next project, without overwriting any existing file.</default>
+    </option>
+  </options>
+  <output>The script performs the following tasks for each project directory:
+    <list>
+      <item>Looks for project directories to process in <path>/shares/image2/02_processed/60_copy2ReadyRepo</path></item>
+      <item>Renames image files from <filename>uva-lib_</filename> to <filename>uva-lib:</filename> if needed</item>
+      <item>Creates derivatives under <path>/shares/image2/02_processed</path>
+        <list>
+          <item>MrSID max-size derivatives</item>
+          <item>JPEG screen-size derivatives</item>
+          <item>JPEG preview-size derivatives</item>
+          <item>raw metadata text files (output of <command>identify -verbose</command>)</item>
+        </list>
+      </item>
+      <item>If process succeeds, moves project directory of TIFF images to <path>/shares/image2/02_processed/70_burn</path> and sends email notification</item>
+      <item>Logs all actions in a log file in <path>/shares/admin/bin/image/logs/assemble_project</path></item>
+    </list>
+  </output>
+  <remarks>
+    <p>This script takes no arguments; instead, it reads <path>/shares/image2/02_processed/60_copy2ReadyRepo</path> for project directories to process. Each project directory must be named with the project name and contain the TIFF images to process.</p>
+  </remarks>
+  <examples>
+    <example>
+      <eg>assemble_project</eg>
+    </example>
+  </examples>
+</script>
+-->
+
+<script id="change_group" language="Perl" type="admin" interface="command-line" diskPath="&dlps-bin;">
+  <head>change_group</head>
+  <desc>Finds files and directories owned by the current user and changes the group and/or permissions as specified</desc>
+  <usage>change_group [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="group">g</optionName>
+      <usage>-g <replace>group-name</replace></usage>
+      <desc>Name of Unix group to assign to files/directories you own</desc>
+    </option>
+    <option>
+      <optionName expan="permissions">p</optionName>
+      <usage>-p</usage>
+      <desc>Grant group write permission (chmod g+w) to files/directories you own</desc>
+    </option>
+    <option>
+      <optionName expan="quiet">q</optionName>
+      <usage>-q</usage>
+      <desc>No status messages</desc>
+      <default>Default behavior is to show a status message for each file/directory <emph>changed</emph></default>
+    </option>
+    <option>
+      <optionName expan="verbose">v</optionName>
+      <usage>-v</usage>
+      <desc>Show a status message for <emph>every</emph> file/directory found (whether changed or not)</desc>
+      <default>Default behavior is to show a status message for each file/directory <emph>changed</emph></default>
+    </option>
+    <remarks>
+      <p>At least one main option (-g or -p) is required. Both are allowed.</p>
+      <p>Options -q and -v are mutually exclusive.</p>
+    </remarks>
+  </options>
+  <args>
+    <arg required="yes">
+      <argName><replace>filenames</replace></argName>
+      <desc>Names of one or more files/directories to process</desc>
+    </arg>
+  </args>
+  <output>None. (Status messages are printed to standard output.)</output>
+  <examples>
+    <example>
+      <eg>change_group -g dlpswg *</eg>
+      <desc>Change group to 'dlpswg' for all files/directories you own in current working directory</desc>
+    </example>
+    <example>
+      <eg>change_group -g dlpswg -p /shares/text/04postkb</eg>
+      <desc>Change group to 'dlpswg' and turn on group write for all files/directories you own in 04postkb</desc>
+    </example>
+    <example>
+      <eg>change_group -g repo -p /cenrepo/ReadyRepo</eg>
+      <desc>Change group to 'repo' and turn on group write for all files/directories you own in ReadyRepo</desc>
+    </example>
+  </examples>
+</script>
+
+<script id="dlps2ReadyRepo" language="Perl" type="admin" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>dlps2ReadyRepo</head>
+  <desc>Copies finished electronic texts and associated image files from the DLPS workspace to the repository hand-off point (<path>/cenrepo/ReadyRepo</path>)</desc>
+  <usage>dlps2ReadyRepo [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="archive">a</optionName>
+      <usage>-a <replace>directory</replace></usage>
+      <desc>Specify archive directory, where TIFF images will be moved after processing</desc>
+      <default><path>/shares/image1/09archive</path></default>
+    </option>
+    <option>
+      <optionName expan="directory">d</optionName>
+      <usage>-d <replace>directory</replace></usage>
+      <desc>Specify directory containing page images</desc>
+      <default><path>/shares/image1/01bookscanning/52_CCITTCOMPRESS_OUT</path></default>
+    </option>
+    <option>
+      <optionName expan="log">l</optionName>
+      <usage>-l <replace>path</replace></usage>
+      <desc>Specify log file</desc>
+      <default>Script will create a new log file in <path>/shares/admin/bin/text/logs/dlps2ReadyRepo</path></default>
+    </option>
+    <option>
+      <optionName expan="project">p</optionName>
+      <usage>-p <replace>project-name</replace></usage>
+      <desc>Specify project name to be used if there is no <tag>?dlps project="..."?</tag> property</desc>
+    </option>
+    <option>
+      <optionName expan="project">P</optionName>
+      <usage>-P <replace>project-name</replace></usage>
+      <desc>Specify project name to be used for all input files, regardless of value of <tag>?dlps project="..."?</tag> property</desc>
+    </option>
+    <option>
+      <optionName expan="quiet">q</optionName>
+      <usage>-q</usage>
+      <desc>Suppress status messages sent to standard output (has no effect on what gets logged to log file)</desc>
+    </option>
+    <option>
+      <optionName expan="force">F</optionName>
+      <usage>-F</usage>
+      <desc>Overwrite output files if they already exist</desc>
+      <default>By default, if an output file already exists, the script will issue a message but will skip to the next ID, without overwriting any existing file.</default>
+    </option>
+    <option>
+      <optionName expan="resume">R</optionName>
+      <usage>-R</usage>
+      <desc>If an output file already exists, continue processing without overwriting the existing file. This has the effect of resuming processing of an ID previously started.</desc>
+      <default>By default, if an output file already exists, the script will issue a message but will skip to the next ID, without overwriting any existing file.</default>
+    </option>
+  </options>
+  <args>&teiFiles;</args>
+  <output>The script performs the following tasks:
+    <list>
+      <item>Creates directories in ReadyRepo as needed</item>
+      <item>Copies XML file to ReadyRepo</item>
+      <item>If page images are bitonal
+        <list>
+          <item>copies TIFFs to ReadyRepo</item>
+          <item>creates screen-size GIF derivatives in ReadyRepo</item>
+          <item>creates preview-size GIF derivatives in ReadyRepo</item>
+        </list>
+        If page images are color
+        <list>
+          <item>creates max-size MrSID derivatives in ReadyRepo</item>
+          <item>creates screen-size JPEG derivatives in ReadyRepo</item>
+          <item>creates preview-size JPEG derivatives in ReadyRepo</item>
+        </list>
+      </item>
+      <item>If there are any figure images
+        <list>
+          <item>creates max-size MrSID derivatives in ReadyRepo</item>
+          <item>creates screen-size JPEG derivatives in ReadyRepo</item>
+          <item>creates preview-size JPEG derivatives in ReadyRepo</item>
+        </list>
+      </item>
+      <item>Copies XML file to XML archive directory (<path>/shares/text/04xmlArchive/10final</path>) and copies TIFF files to image archive directory (defaults to <path>/shares/image1/09archive</path>)</item>
+      <item>If entire process succeeds
+        <list>
+          <item>deletes page images, figure images, and XML file from their original locations</item>
+          <item>updates DLPS Tracking System to set "Run dlps2ReadyRepo" to Done</item>
+        </list>
+      </item>
+    </list>
+  </output>
+  <examples>
+    <example>
+      <eg>dlps2ReadyRepo -p 2006_05 *.xml</eg>
+      <desc>Copy the specified items to the May 2006 directory of ReadyRepo</desc>
+    </example>
+    <example>
+      <eg>dlps2ReadyRepo -p 2006_05 -d /shares/image2/source -a /shares/image2/09archive *.xml</eg>
+      <desc>Copy the specified items to the May 2006 directory of ReadyRepo, specifying the location of the page images (-d option) and the archive directory (-a option)</desc>
+    </example>
+  </examples>
+  <tracksys>Finalization Workflow &rarr; Run dlps2ReadyRepo</tracksys>
+  <context>Post-keyboarding Workflow &rarr; Copy to ReadyRepo</context>
+</script>
+
+<script id="eaf_proofreader" language="Perl" type="admin" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>eaf_proofreader</head>
+  <desc>Takes EAF (Early American Fiction) color TIFF page images and makes GIF derivatives for Proofreader (web-based image viewer)</desc>
+  <usage>eaf_proofreader [options] <replace>directories</replace></usage>
+  <options>
+    &option_v;
+  </options>
+  <args>
+    <arg required="yes">
+      <argName><replace>directories</replace></argName>
+      <desc>Names of directories containing TIFF files (named with <kw>.tif</kw>) to process</desc>
+    </arg>
+  </args>
+  <output>The script performs the following tasks for each input directory:
+    <list>
+      <item>Deletes extraneous files created automatically when files are accessed from a Mac</item>
+      <item>Deletes existing GIFs in Proofreader directory, if necessary</item>
+      <item>Creates a GIF file for each TIFF file</item>
+      <item>Moves GIFs to Proofreader directory (<path>/www/doc/dlps/uva-only/proofreader/images</path>)</item>
+      <item>Moves TIFFs to final TIFF directory (<path>/shares/image1/01bookscanning/52_CCITTCOMPRESS_OUT</path>)</item>
+      <item>Logs all actions to a logfile in <path>/shares/admin/bin/text/logs/eaf_proofreader</path></item>
+    </list>
+  </output>
+  <tracksys>Migration Workflow &rarr; Make web images</tracksys>
+</script>
+
+<script id="image_munge_user" language="Perl" type="admin" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>image_munge_user</head>
+  <desc>Prepares page-image files to be shipped to the keyboarding vendor</desc>
+  <usage>image_munge_user</usage>
+  <output>The script performs the following tasks:
+    <list>
+      <item>Reads input directory (<path>/shares/image1/01bookscanning/50QAed_OUT</path>) for directories to process</item>
+      <item>For each subdirectory:
+        <list>
+          <item>Deletes extraneous files created automatically when files are accessed from a Mac</item>
+          <item>Copies files from input directory to working directory (<path>/shares/image1/01bookscanning/52_CCITTCOMPRESS_IN</path>)</item>
+          <item>Deletes files from input directory</item>
+          <item>Sets group to <kw>dlpswg</kw> and enables group write permission on all files</item>
+          <item>Tests for multi-page TIFFs (if found, generates error message and skips that directory/ID)</item>
+          <item>Creates GIF derivatives for Proofreader (web-based image viewer) for in-house use</item>
+          <item>Converts TIFFs to 600 dpi (if necessary)</item>
+          <item>Performs CCITT Group 4 compression on TIFFs (if necessary)</item>
+          <item>Moves TIFFs to output directory (<path>/shares/image1/01bookscanning/52_CCITTCOMPRESS_OUT</path>)</item>
+          <item>Creates ZIP archive (.zip file) in final directory (<path>/shares/image1/01bookscanning/53zipforvendor</path>)</item>
+        </list>
+      </item>
+      <item>Sends email notification containing all error/warning/status messages</item>
+    </list>
+  </output>
+  <remarks>
+    <p>This script runs as a cron job; normally there is no need to run it directly from the command line.</p>
+    <p>The addition of "_user" to the script name distinguishes this script, which runs as user <kw>gpm2a</kw>, from the original <command>image_munge</command> script, which formerly ran as the <kw>root</kw> user.</p>
+  </remarks>
+</script>
+
+<script id="listBaseNames" language="Perl" type="admin" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>listBaseNames</head>
+  <desc>Outputs a list of base filenames</desc>
+  <usage>listBaseNames [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="delimiter">d</optionName>
+      <usage>-d <replace>character</replace></usage>
+      <desc>Delimiter character(s) to place between each list item. Use <kw>\t</kw> for tab, <kw>\n</kw> for newline.</desc>
+      <default>Newline</default>
+    </option>
+    <option>
+      <optionName expan="regular expression">r</optionName>
+      <usage>-r <replace>regexp</replace></usage>
+      <desc>List base filenames by using the regular expression specified. The reg exp may be entered as <kw>'m/regexp/'</kw> or <kw>'/regexp/'</kw> or <kw>'regexp'</kw>.</desc>
+    </option>
+    <option>
+      <optionName expan="extension">x</optionName>
+      <usage>-x <replace>extension</replace></usage>
+      <desc>List base filenames by trimming the filename extension specified.</desc>
+    </option>
+  </options>
+  <args>
+    <arg required="yes">
+      <argName><replace>filenames</replace></argName>
+      <desc>Any filenames</desc>
+    </arg>
+  </args>
+  <output>Sends list to standard output</output>
+  <remarks>
+    <p>If neither -r nor -x are specified, the script will determine the base filename by trimming any 3- or 4-letter filename extension.</p>
+  </remarks>
+  <examples>
+    <example>
+      <eg>listBaseNames *.tif</eg>
+      <desc>Generate a list of TIFF files minus the .tif extension; list one base filename per line</desc>
+    </example>
+    <example>
+      <eg>listBaseNames -d ';' *.xml</eg>
+      <desc>Generate a semicolon-delimited list of DLPS IDs (assuming XML files are named with DLPS ID)</desc>
+    </example>
+    <example>
+      <eg>listBaseNames -r '[bz]\d{9}' -d '\t' *.xml</eg>
+      <desc>Generate a tab-delimited list of only those XML filenames containing a typical DLPS ID ( b-or-z plus 9 digits)</desc>
+    </example>
+  </examples>
+  <context>Post-keyboarding Workflow &rarr; Copy to ReadyRepo</context>
+</script>
+
+<script id="make_filesets" language="Perl" type="admin" interface="command-line" diskPath="&dlps-bin;">
+  <head>make_filesets</head>
+  <desc>Assembles sets of related files; creates a directory for each ID, and moves each input file to its appropriate directory</desc>
+  <usage>make_filesets [options] <replace>names</replace></usage>
+  <options>
+    <option>
+      <optionName expan="output">o</optionName>
+      <usage>-o <replace>directory</replace></usage>
+      <desc>Name of directory in which to create ID directories</desc>
+      <default><path>/shares/image1/01bookscanning/52_CCITTCOMPRESS_OUT</path></default>
+    </option>
+    <option>
+      <optionName expan="pattern">p</optionName>
+      <usage>-p <replace>regexp</replace></usage>
+      <desc>Perl regular expression pattern for determining a file's ID</desc>
+      <default><kw>[Cc]av[Dd]aily_\d{8}</kw> (CavDaily or cavdaily plus underscore plus 8-digit date, for example <kw>cavdaily_19670901</kw>)</default>
+    </option>
+    <option>
+      <optionName expan="verbose">v</optionName>
+      <usage>-v</usage>
+      <desc>Provides a status message for each directory created and each file moved</desc>
+    </option>
+  </options>
+  <args>
+    <arg required="yes">
+      <argName><replace>names</replace></argName>
+      <desc>Either filenames of files to be moved, or name(s) of one or more directories containing files to be moved (or a combination of filenames and directory names)</desc>
+    </arg>
+  </args>
+  <output>Creates a directory for each ID, and moves each input file to its appropriate directory; sends status messages to standard output</output>
+  <examples>
+    <example>
+      <eg>make_filesets *.tif</eg>
+      <desc>Specify files to move</desc>
+    </example>
+    <example>
+      <eg>make_filesets dir1 dir2</eg>
+      <desc>Specify directories containing files to move</desc>
+    </example>
+    <example>
+      <eg>make_filesets -p '[bz]\d{9}' *.tif</eg>
+      <desc>Use standard DLPS IDs rather than cavdaily IDs</desc>
+    </example>
+  </examples>
+  <context>Post-keyboarding Workflow (Newspapers) &rarr; Retrieve from Vendor</context>
+</script>
+
+<script id="make_tei_nontrans" language="Perl" type="admin" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>make_tei_nontrans</head>
+  <desc>Creates non-transcription (images-only) TEI XML files that conform to the DLPS DTD (uva-dl-tei) in <kw>NONTRANS</kw> mode</desc>
+  <usage>make_tei_nontrans [options] <replace>DLPS-IDs</replace></usage>
+  <options>
+    <option>
+      <optionName expan="color">c</optionName>
+      <usage>-c</usage>
+      <desc>Page images are color, not bitonal; output <tag>?dlps page-images="color"?</tag></desc>
+    </option>
+    <option>
+      <optionName expan="directory">d</optionName>
+      <usage>-d <replace>directory</replace></usage>
+      <desc>Path of page-images directory to use rather than default</desc>
+    </option>
+    <option>
+      <optionName expan="figures">f</optionName>
+      <usage>-f <replace>directory</replace></usage>
+      <desc>Path of figure-images directory to use rather than default</desc>
+    </option>
+    <option>
+      <optionName expan="output">o</optionName>
+      <usage>-o <replace>directory</replace></usage>
+      <desc>Path of output directory to use rather than default</desc>
+    </option>
+  </options>
+  <args>
+    <arg required="yes">
+      <argName><replace>DLPS-IDs</replace></argName>
+      <desc>One or more DLPS IDs</desc>
+    </arg>
+  </args>
+  <output>For each DLPS ID, creates a non-transcription TEI XML file</output>
+  <remarks>
+    <p>Default directories:</p>
+    <list>
+      <label><path>/shares/image1/01bookscanning/52_CCITTCOMPRESS_OUT</path></label>
+      <item>Default page-images directory; script looks for a subdirectory named <filename><replace>[DLPS ID]</replace></filename></item>
+      
+      <label><path>/shares/image1/03fig/83figs_final</path></label>
+      <item>Default figure-images directory; script looks for a subdirectory named <filename><replace>[DLPS ID]</replace>_fig</filename></item>
+      
+      <label>/shares/text/04postkb/70being_fullheaders_added</label>
+      <item>Default output directory; each output file is named <filename><replace>[DLPS ID]</replace>.xml</filename></item>
+    </list>
+    <p>When reading a directory, the script assumes that filenames ending with <kw>.tif .tiff .jpg .jpeg .gif</kw> or <kw>.sid</kw> are image files.</p>
+  </remarks>
+  <examples>
+    <example>
+      <eg>make_tei_nontrans b001234567 b007654321</eg>
+    </example>
+  </examples>
+</script>
+
+<script id="pogo2archive" language="Perl" type="admin" interface="command-line" diskPath="&dlps-bin;">
+  <head>pogo2archive</head>
+  <desc>Moves directories from the DLPS production server (pogo.lib) to the StorNext archive at /lib_archive</desc>
+  <usage>pogo2archive [options] <replace>dirnames</replace></usage>
+  <options>
+    <optionGroup>
+      <head>Mode options</head>
+      <option>
+        <optionName expan="image">i</optionName>
+        <usage>-i</usage>
+        <desc>Run in image-workflow mode: copy data to <path>/lib_archive/dlps/image</path></desc>
+      </option>
+      <option>
+        <optionName expan="text">t</optionName>
+        <usage>-t</usage>
+        <desc>Run in text-workflow mode: copy data to <path>/lib_archive/dlps/text</path></desc>
+      </option>
+    </optionGroup>
+    <optionGroup>
+      <head>Feedback options</head>
+      <option>
+        <optionName expan="quiet">q</optionName>
+        <usage>-q</usage>
+        <desc>Suppress status messages (only show warnings and errors); affects screen messages only; has no effect on log file</desc>
+      </option>
+      <option>
+        <optionName expan="verbose">v</optionName>
+        <usage>-v</usage>
+        <desc>Show status messages (in addition to warnings and errors); affects screen messages and log file</desc>
+      </option>
+    </optionGroup>
+  </options>
+  <args>
+    <arg required="yes">
+      <argName>dirnames</argName>
+      <desc>Names of directories to archive</desc>
+    </arg>
+  </args>
+  <output>The script performs the following tasks for each input directory:
+    <list>
+      <item>Copies directory to archive at <path>/lib_archive/dlps</path></item>
+      <item>Verifies the copied files (by checking that each file is present and has the same byte size as the original file)</item>
+      <item>If no errors occur:
+        <list>
+          <item>Deletes directory from original location</item>
+          <item>If name of input directory is a DLPS ID in the DLPS Tracking System, updates tracking system to set "Archive to StorNext" to Done</item>
+        </list>
+      </item>
+      <item>Logs all actions in a log file in <path>/shares/admin/bin/[image|text]/logs/pogo2archive</path></item>
+    </list>
+  </output>
+  <remarks>
+    <p>One of the mode options, either <optionMention>-i</optionMention> or <optionMention>-t</optionMention>, is required.</p>
+  </remarks>
+  <examples>
+    <example>
+      <eg>pogo2archive -i 2006*ART-ARCH</eg>
+      <desc>Move the specified directories to <path>/lib_archive/dlps/image</path></desc>
+    </example>
+    <example>
+      <eg>pogo2archive -t b00*</eg>
+      <desc>Move the specified directories to <path>/lib_archive/dlps/text</path></desc>
+    </example>
+  </examples>
+  <tracksys>(Text Tracking OR Image Tracking) &rarr; Finalization Workflow &rarr; Archive to StorNext</tracksys>
+</script>
+
+<script id="proofprep" language="Perl" type="admin" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>proofprep</head>
+  <desc>Creates GIF derivatives of page images for Proofreader (web-based image viewer)</desc>
+  <usage>proofprep <replace>[config-file]</replace></usage>
+  <args>
+    <arg required="no">
+      <argName><replace>config-file</replace></argName>
+      <desc>The configuration file, which specifies directory locations and which IDs to process. Defaults to <path>&dlps-bin-text;/proofprep.config</path></desc>
+    </arg>
+  </args>
+  <output>The script makes GIF images and, optionally, puts them where Proofreader can use them. Status messages are printed to standard output; warnings and errors are printed to standard error.</output>
+  <remarks>
+    <p><command>proofprep</command> (think "Proofreader preparation") requires a configuration file. The format of the config file is a list of name=value pairs, followed by a list of IDs to process. For example:</p>
+    <eg>source=/shares/image1/01bookscanning/52_CCITTCOMPRESS_OUT
+destination=/www/doc/dlps/uva-only/proofreader/images
+size=480x1000
+move=yes
+verbose=yes
+b001234567
+b007654321</eg>
+    <list>
+      <item><kw>source</kw> indicates main directory, containing subdirectory for each ID, for source (TIFF) images</item>
+      <item><kw>destination</kw> indicates main directory, containing subdirectory for each ID, for output (GIF) images (Proofreader directory)</item>
+      <item><kw>size</kw> is the value to be used by the <command>mogrify</command> command's <kw>-scale</kw> option; format is [width]x[height], where [width] and [height] are integers indicating maximum possible pixels</item>
+      <item><kw>move</kw> is a yes/no value indicating whether or not to move the images to the destination directory after they're created in the source directory</item>
+      <item><kw>verbose</kw> is a yes/no value indicating whether or not to display info messages (as well as warning and error messages, which are always displayed)</item>
+      <item>IDs to be processed must be specified one per line</item>
+    </list>
+    <p>With the exception of the IDs to process, the settings are all optional, since they all have defaults; the default values are indicated in the example config format above.</p>
+  </remarks>
+  <interaction>Displays configuration settings and list of IDs that will be processed. User indicates <kw>yes</kw> (use these settings), or <kw>no</kw> (stop the script).</interaction>
+</script>
+
+<script id="rename" language="Perl" type="admin" interface="command-line" diskPath="&dlps-bin;">
+  <head>rename</head>
+  <desc>Batch-renames files from the command line</desc>
+  <usage>rename <replace>regexp</replace> <replace>[filenames]</replace></usage>
+  <args>
+    <arg required="yes">
+      <argName><replace>regexp</replace></argName>
+      <desc>A Perl regular expression indicating the filename replacement to make</desc>
+    </arg>
+    <arg required="no">
+      <argName><replace>filenames</replace></argName>
+      <desc>Any filenames; if omitted, script reads from standard input</desc>
+    </arg>
+  </args>
+  <output>Renames input files</output>
+  <examples>
+    <example>
+      <eg>rename 's/\.bak$//' *.bak</eg>
+      <desc>Strip .bak extension (replace .bak with nothing)</desc>
+    </example>
+    <example>
+      <eg>rename 's/$/.bak/' *</eg>
+      <desc>Add .bak extension to all files</desc>
+    </example>
+    <example>
+      <eg>rename 's/\.TIF$/\.tif/' *.TIF</eg>
+      <desc>Change .TIF extension to .tif</desc>
+    </example>
+    <example>
+      <eg>rename 'tr/A-Z/a-z/' *</eg>
+      <desc>Translate uppercase letters to lowercase on all files</desc>
+    </example>
+  </examples>
+  <seeAlso><ptr target="renumber_files"/></seeAlso>
+</script>
+
+<script id="renumber_files" language="Perl" type="admin" interface="command-line" diskPath="&dlps-bin;">
+  <head>renumber_files</head>
+  <desc>renames files named with DLPS ID and sequence number by renumbering the sequence-number part of the filename</desc>
+  <usage>renumber_files [options] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="prefix">p</optionName>
+      <usage>-p <replace>prefix</replace></usage>
+      <desc>Use the characters specified to start each filename</desc>
+      <default>Input file's filename up to the sequence number</default>
+    </option>
+    <option>
+      <optionName expan="suffix">s</optionName>
+      <usage>-s <replace>suffix</replace></usage>
+      <desc>Use specified filename extension</desc>
+      <default>Input file's filename extension</default>
+    </option>
+    <option>
+      <optionName expan="test">t</optionName>
+      <usage>-t</usage>
+      <desc>Do not rename files; only show proposed changes</desc>
+    </option>
+  </options>
+  <args>
+    <arg required="yes">
+      <argName><replace>filenames</replace></argName>
+      <desc>Any files named with DLPS ID, underscore, sequence number, dot, extension</desc>
+    </arg>
+  </args>
+  <output>Renames input files and displays how files were renamed (prints to standard output)</output>
+  <examples>
+    <example>
+      <eg>renumber_files -p eaf099 *.tif</eg>
+      <desc>Page images named as two volumes need to be renamed as a single volume with sequential numbering. Script renames files as follows:
+        <eg>eaf099v1_0001.tif --> eaf099_0001.tif
+eaf099v1_0002.tif --> eaf099_0002.tif
+eaf099v1_0003.tif --> eaf099_0003.tif
+eaf099v2_0001.tif --> eaf099_0004.tif
+eaf099v2_0002.tif --> eaf099_0005.tif
+eaf099v2_0003.tif --> eaf099_0006.tif</eg>
+      </desc>
+    </example>
+  </examples>
+  <seeAlso><ptr target="rename"/></seeAlso>
+</script>
+
+<script id="report_teiHeader_cavdaily" language="shell" type="admin" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>report_teiHeader_cavdaily</head>
+  <desc>Generates a report of volume/issue/date data for issues of the Cavalier Daily</desc>
+  <usage>report_teiHeader_cavdaily <replace>filenames</replace></usage>
+  <args>
+    <arg required="yes">
+      <argName><replace>filenames</replace></argName>
+      <desc>cavdaily TEI XML file(s)</desc>
+    </arg>
+  </args>
+  <output>Sends report to standard output</output>
+  <remarks>
+    <p>This is a shell script that uses the <command>grep</command> command to find volume/issue/date metadata for each file, in the following format:</p>
+    <eg><![CDATA[
+cavdaily_19670901.xml:
+<biblScope type="volume"><num value="78">78th Year</num></biblScope>
+<biblScope type="volume"><num value="78">78th Year</num></biblScope>
+<biblScope type="issue"><num value="1">Number 1</num></biblScope>
+<biblScope type="issue"><num value="1">Number 1</num></biblScope>
+<biblScope type="date"><date value="1967-09-01">Friday, September 1, 1967</date></biblScope>
+<biblScope type="date"><date value="1967-09-01">Friday, September 1, 1967</date></biblScope>
+      ]]></eg>
+    <p>Each <gi>biblScope</gi> field is repeated because it occurs in the metadata for the electronic file (<gi>fileDesc</gi>) and for the source material (<gi>sourceDesc</gi>).</p>
+    <p>DLPS sends the report to Cataloging for review.</p>
+  </remarks>
+  <examples>
+    <example>
+      <eg>report_teiHeader_cavdaily cavdaily_*.xml > cavdaily_report.txt</eg>
+      <desc>Generate report for all cavdaily XML files; redirect the output to a file</desc>
+    </example>
+  </examples>
+  <tracksys>Finalization Workflow &rarr; Run &amp; send TEI header report</tracksys>
+  <context>Post-keyboarding Workflow (Newspapers) &rarr; Insert Full TEI Headers</context>
+</script>
+
+<script id="rimage.pl" language="PerlWin32" type="admin" interface="command-line" diskPath="C:\DLPS\rimage">
+  <head>rimage.pl</head>
+  <desc>Creates archival discs using the Rimage DVD burner</desc>
+  <usage>perl C:\DLPS\rimage\rimage.pl [options] <replace>paths</replace></usage>
+  <options>
+    <option>
+      <optionName expan="base ID">b</optionName>
+      <usage>-b <replace>base ID</replace></usage>
+      <desc>Base ID to use when determining disc ID</desc>
+      <default>Defaults to the current date in YYMMDD format</default>
+    </option>
+    <option>
+      <optionName expan="copies">c</optionName>
+      <usage>-c <replace>number</replace></usage>
+      <desc>Number of copies to make of each disc</desc>
+      <default>2 (The default is 2 because it is standard DLPS practice to burn two copies of each disc and store them in separate locations.)</default>
+    </option>
+    <option>
+      <optionName expan="keep">k</optionName>
+      <usage>-k</usage>
+      <desc>Keep disc image (.img) files after producing the discs</desc>
+      <default>Default behavior is to delete each disc image after burning from that image is complete</default>
+    </option>
+    <option>
+      <optionName expan="label">l</optionName>
+      <usage>-l <replace>label name</replace></usage>
+      <desc>Informal name of label template: allowed values are <val>DLPS</val>, <val>FKL</val>, <val>TBRC</val>, <val>SPEC</val> and <val>THDL</val></desc>
+      <default><val>DLPS</val></default>
+    </option>
+    <option>
+      <optionName expan="media">m</optionName>
+      <usage>-m <replace>media name</replace></usage>
+      <desc>Type of disc media: allowed values are <val>DVD</val> and <val>CD</val></desc>
+      <default><val>DVD</val> (In practice, DLPS does not use CDs for archival storage.)</default>
+    </option>
+    <option>
+      <optionName expan="test">t</optionName>
+      <usage>-t</usage>
+      <desc>Report how many discs will be needed and what their IDs will be, but do not create any editlists, log files, disc images, etc. and do not actually burn any discs</desc>
+    </option>
+    &option_v;
+    <option>
+      <optionName expan="imaging only">I</optionName>
+      <usage>-I</usage>
+      <desc>Only create disc images; do not produce discs</desc>
+      <default>Default behavior is to create disc images and produce discs from those images</default>
+    </option>
+    <option>
+      <optionName expan="production only">P</optionName>
+      <usage>-P</usage>
+      <desc>Only produce discs from existing disc images; do not create disc images</desc>
+      <default>Default behavior is to create disc images and produce discs from those images</default>
+    </option>
+    <!--
+    <option>
+      <optionName expan="read">R</optionName>
+      <usage>-R</usage>
+      <desc>Read existing discs (rather than burning new discs). When using <optionMention>-R</optionMention>, other options are irrelevant and will be ignored, except <optionMention>-v</optionMention> (verbose) and <optionMention>-m</optionMention> (media).</desc>
+    </option>
+    -->
+  </options>
+  <args>
+    <arg required="yes">
+      <argName><replace>paths</replace></argName>
+      <desc>Path(s) to one or more directories containing the files to be burned. If using the -P option, the directory (only one) containing the disc images to burn.<!-- If using the -R option, the directory (only one) to which to copy data loaded from existing discs.--></desc>
+    </arg>
+  </args>
+  <output>
+    <p><!--When creating new discs, the-->The main output is a set of burned discs.<!-- When reading existing discs, the main output is the data copied from the existing discs.--></p>
+    <p><!--When creating new discs, the-->The script performs the following tasks:</p>
+    <list>
+      <item>recursively processes each file and subdirectory in the specified input directories</item>
+      <item>calculates how many files will fit on each disc, and determines how many discs will be required</item>
+      <item>creates a "merge" file for each disc &mdash; a comma-separated file with summary info that gets merged into a label template for the disc label (under <path>C:\Rimage\Merge</path>)</item>
+      <item>creates an "editlist" file for each disc &mdash; a list of files to be burned to the disc (under <path>C:\Rimage\Editlist</path>)</item>
+      <item>creates a log file for each disc that records important information about the disc, including a list of the files contained on the disc (under <path>C:\Rimage\Logs</path>)</item>
+      <item>creates a configuration file for the accompanying Java application (<path>C:\Rimage\DLPSRimageConfig.xml</path>)</item>
+      <item>runs a Java command-line application that handles all communication with the Rimage system</item>
+    </list>
+    <!--
+    <p>When reading existing discs, the script performs the following tasks:</p>
+    <list>
+      <item>creates a configuration file for the accompanying Java application (<path>C:\Rimage\DLPSRimageConfig.xml</path>)</item>
+      <item>runs a Java command-line application that handles all communication with the Rimage system</item>
+    </list>
+    -->
+  </output>
+  <remarks>
+    <p>It is the accompanying Java application that actually controls the Rimage system.</p>
+      <list>
+        <item><!--When burning discs, the-->The Java app tells the Rimage to create a disc image file for each disc; as each disc image is completed, that image is burned (as many times as indicated by the <optionMention>-c</optionMention> (copies) option).</item>
+        <!--<item>When reading discs, the Java app tells the Rimage to load discs from the input bin, read them, and copy the data to the specified directory.</item>-->
+      </list>
+  </remarks>
+  <examples>
+    <example>
+      <eg>perl C:\DLPS\rimage\rimage.pl E:\myFiles</eg>
+      <desc>Burn contents of <path>E:\myFiles</path></desc>
+    </example>
+    <example>
+      <eg>perl C:\DLPS\rimage\rimage.pl -t E:\myFiles</eg>
+      <desc>Report how many discs will be needed (and what their IDs will be) to burn the contents of <path>E:\myFiles</path>, but do not produce any discs</desc>
+    </example>
+    <example>
+      <eg>perl C:\DLPS\rimage\rimage.pl E:\project1 E:\project2 E:\project3</eg>
+      <desc>Burn discs for three different projects. Within each project, each disc will contain as many files as possible, but each project will begin on a new disc.</desc>
+    </example>
+    <example>
+      <eg>perl C:\DLPS\rimage\rimage.pl -l TBRC -b TIBXHD03 -c 1 V:\TBRC3_eBooks</eg>
+      <desc>Burn contents of <path>V:\TBRC3_eBooks</path>; use the "TBRC" custom disc label (rather than the DLPS default label); use "TIBXHD03" as the base ID for each disc (rather than a 6-digit date); burn only one copy of each disc (rather than two)</desc>
+    </example>
+    <!--
+    <example>
+      <eg>perl C:\DLPS\rimage\rimage.pl -R E:\</eg>
+      <desc>Read existing DVDs (rather than burning new DVDs); copy the data from the existing DVDs to the root level of the <path>E:</path> drive</desc>
+    </example>
+    -->
+  </examples>
+  <seeAlso>
+    <xref type="external" url="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/other/burn.html">Rimage Workflow for Making Archival Discs</xref>
+  </seeAlso>
+</script>
+    
+<script id="update_tracksys" language="Perl" type="admin" interface="command-line" diskPath="&dlps-bin-text;">
+  <head>update_tracksys</head>
+  <desc>Updates the DLPS Tracking System for the DLPS IDs indicated by the input files; the field updated is based on the current working directory</desc>
+  <usage>update_tracksys [-s <replace>step</replace>] <replace>filenames</replace></usage>
+  <options>
+    <option>
+      <optionName expan="step">s</optionName>
+      <usage>-s <replace>step</replace></usage>
+      <desc>Indicates which workflow step to update. Used when the directory
+        name does not specify the step. Allowed values are:
+        <list>
+          <item>chars  (Markup QA &rarr; Fix unknown characters)</item>
+          <item>divs   (Markup QA &rarr; Fix div structure)</item>
+          <item>notes  (Markup QA &rarr; Update notes)</item>
+          <item>web    (Markup QA &rarr; Run web-based programs)</item>
+          <item>spell  (Markup QA &rarr; Check spelling [newspapers])</item>
+          <item>report (Finalization &rarr; Run &amp; send TEI header report [newspapers])</item>
+        </list>
+      </desc>
+    </option>
+  </options>
+  <args>&teiFiles;</args>
+  <output>For each input file, updates the record in the DLPS Tracking System corresponding to the DLPS ID indicated in the input file</output>
+  <remarks>
+    <p>The field updated in the tracking system is based on the current working directory:</p>
+    <list>
+      <item>10being_received &rarr; Download</item>
+      <item>10parse &rarr; Validate</item>
+      <item>10received &rarr; Download</item>
+      <item>11being_postvendor_fixed &rarr; Fix vendor problems</item>
+      <item>11postvendor_fixed &rarr; Fix vendor problems</item>
+      <item>30being_pbsynced &rarr; Sync pages</item>
+      <item>30pbsynced &rarr; Sync pages</item>
+      <item>59processed &rarr; Copy to 59processed</item>
+      <item>60being_markup_checked &rarr; (use -s option)</item>
+      <item>69processed &rarr; Copy to 69processed</item>
+      <item>70being_fullheaders_added &rarr; (use -s option)</item>
+      <item>70fullheaders_added &rarr; Move to 70fullheaders_added</item>
+      <item>80being_finalized &rarr; Move to 80final</item>
+    </list>
+    <p>It is not necessary to run the script directly within a workflow directory
+      (<path>10being_received</path>, <path>30being_pbsynced</path>, etc.).
+      Running the script from a subdirectory <emph>beneath</emph> the
+      workflow directory is also allowed. See the examples below.</p>
+  </remarks>
+  <examples>
+    <example>
+      <eg>alioth: /shares/text/04postkb/30being_pbsynced/my_work $ update_tracksys *.xml</eg>
+      <desc>Updates the DLPS IDs indicated by the input files to "Sync pages" = Done</desc>
+    </example>
+    <example>
+      <eg>alioth: /shares/text/04postkb/60being_markup_checked/my_work $ update_tracksys -s chars *.xml</eg>
+      <desc>Updates the DLPS IDs indicated by the input files to "Fix unknown characters" = Done</desc>
+    </example>
+  </examples>
+  <interaction>Displays which field will be affected and which DLPS IDs will be updated. User indicates <kw>yes</kw> (make all updates) or <kw>no</kw> (don't make any updates).</interaction>
+  <tracksys>field updated depends on current working directory</tracksys>
+  <context>(Used throughout the text workflow)</context>
+</script>
+</scriptsGroup>
+</scriptsDoc>
+</scripts>

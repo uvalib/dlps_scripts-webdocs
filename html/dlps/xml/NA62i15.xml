@@ -1,0 +1,271 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0195 SYSTEM "000000766_0195" NDATA jpg>
+<!ENTITY DSSR_000000766_0196 SYSTEM "000000766_0196" NDATA jpg>
+<!ENTITY DSSR_000000766_0197 SYSTEM "000000766_0197" NDATA jpg>
+<!ENTITY DSSR_000000766_0198 SYSTEM "000000766_0198" NDATA jpg>
+
+<!--<!ENTITY NA62i15a SYSTEM "NA62i15a.jpg" NDATA jpg>
+<!ENTITY NA62i15b SYSTEM "NA62i15b.jpg" NDATA jpg>
+<!ENTITY NA62i15c SYSTEM "NA62i15c.jpg" NDATA jpg>
+<!ENTITY NA62i15d SYSTEM "NA62i15d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NA62i5a">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-09-15">1862 September 15</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Thea Pratt, General Theological Seminary</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Thea Pratt, General Theological Seminary</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">12</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62i5a</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, 1862 September 15</title>
+
+
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p>The Corinne Carr Nettleton Civil War Collection</p>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p>Page 4 is blank</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-09-15">1862-09-15</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Women Writers/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2001-06"> June 2001</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name> Carolyn Fay, Electronic Text Center</name>
+                </respStmt>
+                <item> Updated TEI header and tags. </item>
+            </change>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-10">November 10th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 7th, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+
+
+    <text id="d1">
+
+
+
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1862-09-15">1862-09-15</date>
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+
+                <p>In a letter to Charlie, Addie forgives him for his infrequent letters. She goes
+                    on to give her opinion on General McClelland, General Pope and the condition of
+                    their troops. She ends her letter with her feelings about her year at school.</p>
+
+            </div1>
+        </front>
+
+
+        <body id="d4">
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-09-15"
+                        >1862 September 15</date></head>
+                <pb n="1" entity="DSSR_000000766_0195"/>
+                <opener>
+                    <dateline>
+                        <name type="place"><abbr expan="East">E.</abbr> Claridon</name>
+                        <date value="1862-09-15">Sept. 15th 1862</date>
+                    </dateline>
+                    <lb/>
+                    <salute>Dearest Charlie.</salute>
+                </opener>
+                <lb/>
+
+                <p>I <abbr expan="received">recd</abbr> your darling<lb/> letter several days ago but
+                    have had no<lb/> opportunity to answer it. I had looked<lb/> long and how
+                    anxiously for some missive <lb/> to assure me of your safety and was<lb/> almost
+                    ready to give up in dispair when<lb/> the welcome assurance came. I <hi
+                        rend="underline">did</hi> suffer<lb/> darling very much but I never for
+                    one<lb/> instant thought you <hi rend="underline">thoughtless</hi>. No. for<lb/>
+                    I know how often your would write had<lb/> you had an opportunity that you would
+                    write<lb/> to me daily could you do so. I trust you<lb/> can soon remain 24
+                    hours in a place<lb/>
+                    <pb n="2" entity="DSSR_000000766_0196"/> so you can write me that "much" of
+                    which you spoke,<lb/> for I must confess I need it to cheer<lb/> me up a little.
+                    Such a dark and gloomy<lb/> position is at present presented to our view<lb/>
+                    that I can not help but partake to some extent<lb/> of the same nature. I am
+                    glad that your<lb/> confidence in Gen. McClellan is so <orig reg="unshaken"
+                        >unsha<lb/> ken</orig> for here at the north his star is fast-<lb/> waning.
+                    The defeat of Gen. Pope was attributed<lb/> to the failure of McClellan to bring
+                    up his troops, and it has been published in the Cleveland Herald that
+                    McClellan's reason's for not bringing his troops up was that that they were
+                        too <hi rend="underline">demoralized to trust</hi> <del hand="h1">them</del><lb/>
+                    <hi rend="underline">them</hi> <hi rend="underline">on</hi> <hi rend="underline"
+                        >the</hi> <hi rend="underline">field</hi>. If that <hi rend="underline"
+                    >was</hi> the reason--if our<lb/> army of Virginia. consisting of hundreds
+                    of<lb/> thousand of once efficient and brave men. have<lb/> become demoralized
+                    so that they can not be<lb/> trusted on a battlefield, then we are truly<lb/> in
+                    a fearful and destitute situation.</p>
+
+
+                <p>But to change the subject. My school<lb/> closes next saturday. I can not say
+                    that<lb/> I am either sorry or glad. It has not<lb/>
+                    <pb n="3" entity="DSSR_000000766_0197"/> been so much of a confinement for
+                    me<lb/> as I last spring anticipated. I have spent<lb/> many very many pleasant
+                    hours with my<lb/> scholars. Perhaps this summer has been spent<lb/> more
+                    pleasantly with me in the school room<lb/> than it would have been had I
+                    remained at<lb/> home in fact I know it has for the duties<lb/> which have
+                    rested upon me have in a great<lb/> measure beguiled the loneliness which<lb/>
+                    otherwise would have oppressed me. But I<lb/> have missed the kind faces of
+                    friends and<lb/> often sighed for their companionship but then<lb/> you know I
+                    can not always be with friends<lb/> at home. But dear Charlie it is nearly<lb/>
+                    school time and I can write no more<lb/> if I would have this go out to day<lb/>
+                    You will write as often as possible dearest<lb/> , will you
+                    not<unclear>?</unclear> God help thee darling and protect thee for your own<lb/>
+                </p>
+                <closer>
+                    <signed>Addie</signed>
+                    <lb/>
+                    <seg type="postscript">Please direct Mecca<lb/>
+                        <del hand="h1" rend="line-through">nice</del><lb/>
+                    </seg>
+                </closer>
+                <pb entity="DSSR_000000766_0198"/>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

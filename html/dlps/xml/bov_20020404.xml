@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+
+<?dlps id="bov_20020404"?>
+<?dlps page-images="none" figure-images="no"?>
+<?dlps transcription="other"?>
+
+
+
+
+
+
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of
+                    Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors
+                    meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with
+                        local customizations)</resp>
+                    <name>University of Virginia Library</name>
+                </respStmt>
+                <biblScope type="date">
+                    <date value="2002-04-04">April 04, 2002</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">10</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2008">2008</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the
+                        University of Virginia</p>
+                    <p n="access">Publicly accessible</p>
+                </availability>
+                <idno type="DLPS ID">bov_20020404</idno>
+                <idno type="uva-pid">uva-lib:498250</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors
+                            minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of
+                            Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors
+                            meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2002-04-04">April 04, 2002</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information. Access to
+                                minutes containing salary information will be granted only under the
+                                procedures of the Virginia Freedom of Information Act (Code of
+                                Virginia-2.1-340 ff.) or if permission is granted by the Secretary
+                                of the Board. Researchers interested in obtaining access to these
+                                records should direct a request in writing to the Office of the
+                                Legal Adviser, Madison Hall, University of Virginia. These public
+                                minutes have had salary information deleted and bear no
+                                restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special
+                                Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body
+                                which is the legal owner and operator of the institution. Recorded
+                                in the minutes are appointments and other personnel decisions
+                                concerning faculty, decisions about construction of facilities,
+                                gifts to the university, and all other board actions, decisions and
+                                resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction;
+                &editorial_normalization; &editorial_hyphenation; &editorial_quotation;
+                &editorial_stdVals; </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language n="008" id="eng" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2008-07-07">July 7, 2008</date>
+                <respStmt>
+                    <name id="ewg4x">Ethan Gruber, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to vendor markup.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+        <body id="b1">
+            <div1 id="d2" type="roll-call">
+                <pb n="6134"/>
+                <head type="main">TENTATIVE MINUTES<lb/> SUBJECT TO THE<lb/> APPROVAL OF THE<lb/>
+                    BOARD OF VISITORS<lb/>
+                    <date value="2002-04-04">April 4, 2002</date></head>
+                <p>The Board of Visitors of the University of Virginia met, in Open Session, at 3:50
+                    p.m., Thursday, <date value="2002-04-04">April 4, 2002</date>, in the Board Room
+                    of the Rotunda to elect a Rector. <name>John P. Ackerly, III, Rector, Thomas J.
+                        Bliley, Jr., Charles M. Caravati, Jr., M.D., William G. Crutchfield, Jr.,
+                        Thomas F. Farrell, II, Charles L. Glazer, Mrs. Elsie Goodwyn Holland, Gordon
+                        F. Rainey, Jr., Terence P. Ross, Thomas A. Saunders, III, Ms. Elizabeth A.
+                        Twohy, Benjamin P.A. Warthen, Ms. Sasha L. Wilson, and Joseph E.
+                        Wolfe</name> were present.</p>
+                <p><name>Herbert Timothy Lovelace, Jr.</name>, the Student Member-elect, also was
+                    present, as were <name>Alexander G. Gilliam, Jr., Paul J. Forch, and Ms. Jeanne
+                        Flippo Bailes</name>.</p>
+                <p>After calling the meeting to order, the Rector gave the gavel to <name>Mr.
+                        Glazer</name>, acting as Rector pro tem vice <name>Mr. Goodwin</name>, and
+                    withdrew from the room. <name>Mr. Glazer</name> asked the Secretary to conduct
+                    the election according to the terms specified in Section 4.11 of the <hi
+                        rend="underline">Manual</hi> of the Board of Visitors.</p>
+                <p>The Secretary opened the floor for nominations; <name>Messrs. Ackerly and
+                        Glazer</name> were nominated. <name>Mr. Glazer</name> withdrew from the
+                    room. After adopting the following motion, the Board went into Executive
+                    Session:</p>
+                <p>That the Board of Visitors of the University of Virginia convene in closed
+                    session to evaluate specific nominations for appointment to the public office of
+                    Rector, as provided for in Section 2.2-3711 A (1) of the <hi rend="underline"
+                        >Code of Virginia</hi>.</p>
+
+                <pb n="6135"/>
+                <p>The Board resumed in Open Session at 4:20 p.m., after adopting the following
+                    resolution attesting to the legality of its Executive Session:</p>
+                <p>"That we vote on and record our certification that, to the best of each Board
+                    member's knowledge, only public business matters lawfully exempted from open
+                    meeting requirements and which were identified in the motion authorizing the
+                    closed session, were heard, discussed or considered in closed session." The
+                    Secretary called for the vote and <name>Mr. Ackerly</name> was elected.</p>
+
+                <p><name>Mr. Glazer</name>, resuming the chair, then called for a resolution
+                    attesting the vote. <name>Mr. Rainey</name> offered the following resolution,
+                    which was adopted by the Board:</p>
+
+                <p>RESOLVED that <name>John P. Ackerly, III</name>, of Richmond, is elected Rector,
+                    to serve until <date value="2006-02-06">28 February, 2006</date>.</p>
+                <ornament type="characters">--------------</ornament>
+                <p>On motion, the meeting was adjourned at 4:30 p.m.</p>
+                <signed>Respectfully submitted,<lb/>
+                    <name>Alexander G. Gilliam, Jr.</name><lb/> Secretary</signed>
+                <epigraph>
+                    <p>AGG:jb</p>
+                </epigraph>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

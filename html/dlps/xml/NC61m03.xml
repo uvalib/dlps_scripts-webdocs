@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0409 SYSTEM "000000766_0409" NDATA jpg>
+<!ENTITY DSSR_000000766_0410 SYSTEM "000000766_0410" NDATA jpg>
+<!ENTITY DSSR_000000766_0411 SYSTEM "000000766_0411" NDATA jpg>
+<!ENTITY DSSR_000000766_0412 SYSTEM "000000766_0412" NDATA jpg>
+
+<!--<!ENTITY NC61m03a SYSTEM "NC61m03a.jpg" NDATA jpg>
+<!ENTITY NC61m03b SYSTEM "NC61m03b.jpg" NDATA jpg>
+<!ENTITY NC61m03c SYSTEM "NC61m03c.jpg" NDATA jpg>
+<!ENTITY NC61m03d SYSTEM "NC61m03d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NC61m03">
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date value="1861-12-03">3
+      December 1861</date></title>
+
+    <author>Tenney, Charles</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Linde, Peter</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>Peter Linde, University of Virginia Library Electronic Text Center.</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">11</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NC61m03</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2000">2000</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Page images have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Charles N. Tenney to Adelaide E. Case, 3 December 1861</title>
+
+
+      <author>Charles Tenney</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4p</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p>All unambiguous end-of-line hyphens have been retained.</p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings.</p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+ 
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1861-12-03">1861-12-03</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>masculine</term>
+     <term>American Civil War:Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-11">November 11th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">October 7th, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+ <text id="d1">
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1861-12-03"> December 3rd, 1861</date>
+
+      <title>Letter from Charles N. Tenney to Adelaide E. Case</title>
+     </bibl>
+    </head>
+    <p>Charles are excusing himself for not writing back to Addie properly. Promise that he from now
+     on will be more "punctual". As excuses for not writing he mentions that the weather lately has
+     been very severe and that his fellow soldiers are so noisy that he can't concentrate his
+     thoughts very well. This situation he blames on the thin, small tents where 12 soldiers spend
+     their nights and free time. Charles praises his health and state of mind and tributes it to the
+     fact that he recently met Addie and her brother. He goes on to thank Addie for the present she
+     sent him. He reassures her of his love and hopes it's mutual. Finally he answers Addies
+     question from an earlier letter about General Fremont. Charles doesnt apporve of the removal of
+     Fremont from command.</p>
+   </div1>
+  </front>
+  <body id="d4">
+
+
+   <div1 type="letter" n="1861-12-03" id="d5">
+    <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1861-12-03">3 December
+      1861</date></head>
+    <pb n="1" entity="DSSR_000000766_0409"/>
+
+    <opener>
+     <dateline>
+      <name type="place">Charleston,<abbr expan="Virginia">Va.</abbr></name>
+      <date value="1861-12-03"><abbr expan="December">Dec</abbr>3rd</date>
+     </dateline>
+     <lb/>
+     <salute>Dearest Addie:-</salute>
+    </opener>
+    <lb/>
+    <p>I owe you more than<lb/> a simple apology for neglecting<lb/> to write the sweetest being
+     God<lb/> ever made (I am not flattering, my heart<lb/> tells me so) but perhaps your
+     throne<lb/> of beauty "may be a throne of<lb/> mercy and its occupant may<lb/>
+     <unclear reason="swedish transcriber">perchaner</unclear> be lenient toward<lb/> an humble
+     subjects and forgive<lb/> me for this time. Shall I act<lb/> the <hi rend="underline"
+     >stately</hi> and say, "Forgive me,<lb/> my Case, and hereafter I will <unclear
+      reason="swedish transcriber">be</unclear>"?<lb/>
+    </p>
+
+    <pb n="2" entity="DSSR_000000766_0410"/>
+    <p> But, dear Addie, I will strive<lb/> hereafter to be more punctual,<lb/> It is not because I
+     did not wish<lb/> to write that I have not sooner<lb/> answered your letters and <orig
+      reg="acknowledge">acknowl-</orig><lb/> edge the recipt of your beautiful<lb/> present, but for
+     reasons which<lb/> are in themselves "cogent," as a<lb/> lawyer would say, (Now is <hi
+      rend="underline">that</hi><lb/> the word? I <orig reg="saw it">sawit</orig> used in that<lb/>
+     way any how,) The weather has<lb/> been very severe, for the past - few<lb/>
+     <del hand="h1">
+      <unclear/>
+     </del> , weeks, (the boys are making such an<lb/> uproar I can <unclear
+      reason="swedish transcriber">seurely</unclear> concentrate my thoughts)<lb/> and we are still
+     in our thin<lb/> Summer tents and we are rather<lb/> crowded, Imagine how twelve<lb/> men would
+     occupy the little<lb/> room in which I staid at your<lb/> home, and you can have an idea<lb/>
+     of our situation.<lb/>
+     <pb n="3" entity="DSSR_000000766_0411"/> my health is very good. never better<lb/> in my life.
+     I will own dear<lb/> Addie, that it is for <hi rend="underline">your</hi> sake<lb/> that it have
+     been so particular<lb/> in regard to my health, as I have<lb/> been, for previous to my visit
+     at<lb/> your happy home, I considered<lb/> myself friendly and alone. Perhaps<lb/> I should
+     have said until I made<lb/> the auquaintance of your noble<lb/> brother, for I owe to him
+      the <orig reg="happiness">happi-</orig><lb/> ness of meeting you and the<lb/> consequent (to
+     me)interesting) correspondend<lb/>
+    </p>
+    <p><abbr expan="Captain">Capt</abbr> <name type="person">Asper</name> gave me the beautiful <del
+      hand="h1" rend="line-through">l</del><lb/> present you so kindly sent me, I<lb/> cannot thank
+     you too much, or show<lb/> you gratitude enough for this express- <hi rend="super">ion</hi><lb/>
+     of your regard for one. How can I<lb/> repay you? I can assure you that<lb/> it is a very
+     useful present, and that<lb/> I will try to win your lasting favor,<lb/>
+    </p>
+
+    <pb n="4" entity="DSSR_000000766_0412"/>
+    <p>You called yourself my &ldquo;Ohio Sister&rdquo;.<lb/> Indeed Addie, you <hi
+      rend="underline">are</hi>, any <hi rend="underline">more</hi><lb/> than sister. and I hope to
+      prove <orig reg="myself">my-</orig><lb/> self worthy of a <hi rend="underline">sister's</hi> <hi
+      rend="underline">love</hi>. May I hope for it?<lb/>
+    </p>
+    <p>You asked <corr sic="once" resp="unknown">one</corr> what I thought of<lb/> the supercedure
+      of <abbr expan="General">Gen.</abbr> <name type="person">Fremont</name>. Now<lb/>
+     <name type="person">Fremont</name>always <hi rend="underline">was</hi> a favorite of mine<lb/>
+     and I think <del hand="h1" rend="super">think</del> that the Government<lb/> has done an
+     irreparable injury to the<lb/> loyal people of <abbr expan="Virginia">Va.</abbr> , in listening
+     to<lb/> the slanders of <name type="person">Frank P. Blair</name>, and<lb/> in the consequent
+     removal of <name type="person">Fremont</name><lb/> from the command of the noble army<lb/> which
+     he alone as I may say, organised<lb/> He won the love of his men, and<lb/> challenged the
+     admiration of the world.<lb/>
+     <abbr expan="General">Gen</abbr> . <name type="name">Halleck</name> will hardly come up to<lb/>
+     the mark <name type="name">Fremont</name>has made.<lb/> I am heartily glad <name type="person"
+      >Fremont's</name> Body-Guard<lb/> took the course they did, and urged their<lb/> being
+     mustered out of service. But<q>"what<lb/> can't be cured, must be endured"</q> you know.<lb/>
+     We soldiers must be chary of <orig reg="complaints">comp-</orig><lb/> laints of the doings of
+     the cabinet.<lb/>
+    </p>
+    <p>You ask me if <name type="place">Camp. Warren</name> is as<lb/> beautifully <corr
+      sic="situated" resp="unknown">situatid</corr> as <name type="place">Camp Dennison</name><lb/> I
+     do not think it is. Still the situation<lb/> is the best that could be found.<lb/>
+    </p>
+    <p>I do not know how soon <name type="person">Hal</name>will<lb/> come home, probably not
+      until <name type="name">Wood</name><lb/> returns. I shall be most happy<lb/> to accompany him
+     when he does<lb/> come, and to make you a visit.<lb/>
+    </p>
+    <p>Really I guess I shall have to <corr sic="buy" resp="unknown">by</corr>another sheet.<lb/>
+    </p>
+   </div1>
+  </body>
+ </text>
+</TEI.2>

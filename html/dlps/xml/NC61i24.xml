@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0389 SYSTEM "000000766_0389" NDATA jpg>
+<!ENTITY DSSR_000000766_0390 SYSTEM "000000766_0390" NDATA jpg>
+<!ENTITY DSSR_000000766_0391 SYSTEM "000000766_0391" NDATA jpg>
+<!ENTITY DSSR_000000766_0392 SYSTEM "000000766_0392" NDATA jpg>
+
+<!--<!ENTITY NC61i24a SYSTEM "NC61i24a.jpg" NDATA jpg>
+<!ENTITY NC61i24b SYSTEM "NC61i24b.jpg" NDATA jpg>
+<!ENTITY NC61i24c SYSTEM "NC61i24c.jpg" NDATA jpg>
+<!ENTITY NC61i24d SYSTEM "NC61i24d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NC61i24">
+ <teiHeader type="migrated">
+  <!-- todo -->
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date value="1861-09-24"
+      >24 September 1861</date></title>
+
+    <author>Tenney, Charles N.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>David Seaman</name>
+     <resp>Creation of digital images:</resp>
+     <name>University of Virginia Library Electronic Text Center</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>ETC</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">10</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NC61i24</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Charles N. Tenney to Adelaide E. Case, 24 September 1861</title>
+      <author>Charles N. Tenney</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 pages</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p> </p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings. </p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+ 
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1861-09-24">1861-09-24</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>masculine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-11">November 11th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1861-09-24">24 September 1861</date>
+
+      <title>Letter from Charles Tenney to Adelaide Case</title>
+     </bibl>
+    </head>
+    <p/>
+   </div1>
+  </front>
+  <body id="d4">
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1861-09-24">24 September
+      1861</date></head>
+    <pb n="1" entity="DSSR_000000766_0389"/>
+    <opener>
+     <dateline>
+      <name type="place">On board Silver Lake</name>
+      <date value="1861-09-24">Sept 24<hi rend="super">th</hi> 1861</date>
+     </dateline>
+     <salute>Dear Addie:</salute>
+    </opener>
+
+
+    <p>Your short but interesting <lb/> note of the 10<hi rend="super">th</hi> Hal gave me this <lb/> morning. and I haste
+     to reply. <lb/>
+    </p>
+
+    <p>I wrote you last week that I <lb/> I was on the Silver Lake as a guard <lb/> with Leiut.
+     Wood. we are still on board <lb/> of her and bound to Gallipolis O. <lb/> where I will mail
+     this. The boat <lb/> trembles so much from the working <lb/> of her engines that it is almost
+     <lb/> impossible to write legably, however <lb/> as the landlord said, "its our best accom-
+     <lb/> modations" and I will do as well as I can <lb/>
+    </p>
+    <pb n="2" entity="DSSR_000000766_0390"/>
+    <p>This is a most beautiful day here, <lb/> the trees and shrubs along the shore <lb/> look as
+     fresh and green as in June while <lb/> a gentle breeze murmurs by and ripples <lb/> the clear
+     and beautiful waters of the <lb/> Kanawha. The Kanawha Valley! I wish <lb/> you could see it in
+     its wild and <lb/> picturesque beauty. I think it the most <lb/> beautiful valley I ever saw,
+     It seems <lb/> almost sacrilege that pitiless war <lb/> should seek to deform such beauty,
+     <lb/> but with a ruthless hand she seeks <lb/> to destroy. We have just passed <lb/> the black
+     scorched timbers which <lb/> alone remain of the once splendid <lb/> steamer "Julia Maffit".
+     When Wise first <lb/> commenced his depredations in the <lb/> Ka Vally he impressed the Julia
+     Moffit <lb/> into the Rebel service; and when Gen. <lb/> Cox was in pursuit of "Wise's flying
+     <lb/> Brigade, Capt. Cotter who commanded <lb/> an artillery company saw a boat <lb/>
+     <pb n="3" entity="DSSR_000000766_0391"/> bearing the Rebel flag coming up <lb/> and at once
+     turned one of his rifle <lb/> cannon upon her and fired the first <lb/> shot went crashing
+     through her <lb/> and all on board made for the shore <lb/> not however till one more daring
+     <lb/> than the others, applied the incendiary <lb/> torch and soon she was a smoking <lb/>
+     hulk. Oh! shall I be so gald when <lb/> this cruel unholy war is ended. it <lb/> seems so like
+     killing friends. but <lb/> in the language of the hoary traitor Wise <lb/> himself, who said at
+     the time of the John <lb/> Brown raid, "Treason must be put <lb/> down", and I could
+     conscientiously <lb/> shoot him and his associates Floyd and <lb/> Lee like dogs. Don't think
+     for a moment <lb/> dear Addie because I say I am tired <lb/> of war, that I am tired of
+     supporting <lb/> the glorious old Stars and Stripes on <lb/> the contrary I would not accept a
+     <lb/> discharge if one was offered me until <lb/> every ______ banner be trampled in <lb/>
+     <pb n="4" entity="DSSR_000000766_0392"/> the dust, and every traitor hung. <lb/> Hal says when
+     he comes home I must <lb/> come with him. I have not yet decided <lb/> whether to come or not.
+     but I think now <lb/> if I can get leave to come I may. </p>
+
+    <p>Can you explain what it is that <lb/> binds me so closely to Hal? I really <lb/> think more
+     of him than my own <lb/> brother. Surely never boasted a sister of a better <lb/> brother. I
+     feel far more interest in his <lb/> welfare than in my own. The boys often <lb/> ask me why it
+     is that I think so much <lb/> of Lieut. Case, Almost invariably my answer <lb/> is, and it
+     comes spontaneously -- "Why should <lb/> not I? He is a brother to me". Is it any <lb/> wonder
+     that I like the sister while the <lb/> brother is so good? "Brave and efficient, a <lb/> very
+     lion." Such are the _______ passed <lb/> on Hal by members of the ______ who know <lb/> him.
+     Pardon me if I say I like you because <lb/> you possess the good qualities of your brother
+     <lb/> for it is true -- and -- more. </p>
+
+    <p>But my letter must be getting uninteresting <lb/> if, indeed, it has been other <lb/> wise so
+     I will close. </p>
+
+    <p>Please excuse this poor paper for it is <lb/> all I could get, and the writing for the <lb/>
+     boat is in a continual tremor. </p>
+
+    <p>Write soon and often, even if you <lb/> do not hear from me every week <lb/> but i will write
+     as often as possible </p>
+    <closer> Believe me Addie <lb/>
+     <salute>I remain Yours ever</salute>
+     <lb/>
+     <signed>Charley</signed>
+     <lb/>
+     <seg type="postscript">P.S. I think somewhat of making my <lb/> future home in Trumbull Co.
+      <lb/> What think you? I mean to make a <lb/> man of myself. perhaps in Warren.</seg>
+     <lb/>
+    </closer>
+   </div1>
+  </body>
+ </text>
+</TEI.2>

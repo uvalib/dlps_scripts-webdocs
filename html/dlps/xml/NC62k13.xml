@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0659 SYSTEM "000000766_0659" NDATA jpg>
+<!ENTITY DSSR_000000766_0660 SYSTEM "000000766_0660" NDATA jpg>
+
+<!--<!ENTITY NC62k13a SYSTEM "NC62k13a.jpg" NDATA jpg>
+<!ENTITY NC62k13b SYSTEM "NC62k13b.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NC62k13">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+                        value="1862-11-13">1862 November 13</date></title>
+
+                <author>Tenney, Charles N.</author>
+                <editor> </editor>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>David Seaman, Electronic Text Center</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>David Seaman, Electronic Text Center</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">10</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NC62k13</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2001">2001</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case, 1862 February 15</title>
+
+
+                        <author>Charles N. Tenney</author>
+                        <editor> </editor>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p> </p>
+                    </editionStmt>
+                    <extent>2 pp. </extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p>The Corinne Carr Nettleton Civil War Collection </p>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center. </p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained. </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p> </p>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-11-13">1862-11-13</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English </language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>masculine</term>
+                    <term>American Civil War/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2001-07">July, 2001</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Jennifer McCarthy, Electronic Text Center</name>
+                </respStmt>
+                <item>Added TEI header; updated tags.</item>
+            </change>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-16">November 16th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 21st, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>2 pp.</extent>
+                        <date value="1862-11-13">1862-11-13</date>
+
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case, 1862 November
+                        13</title>
+                    </bibl>
+                </head>
+
+                <p>Charles apologizes to Adelaide for not more quickly responding to an earlier
+                    letter from her, but explains that he has been ill and is only just recovering.
+                    He promises to reply to her letter as soon as he can. He also comments on a
+                    marriage and asks Adelaide to send his "compliments" to the happy pair. </p>
+            </div1>
+        </front>
+
+        <body id="d4">
+
+
+
+            <div1 type="letter" n="1" id="d5">
+
+                <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-11-13"
+                        >1862 November 13</date></head>
+                <pb n="1" entity="DSSR_000000766_0659"/>
+                <opener>
+                    <dateline>"Office" &mdash;<date value="1862-11-13">Nov 13th 1862</date>.
+                    </dateline>
+                </opener>
+
+                <p> I <orig reg="received">recieved</orig> your charming letter of the <orig reg="2nd"
+                            >2<hi rend="super">d</hi></orig> just<lb/> as I was taking my letter of
+                    the 9th to the office and<lb/> I thought I would wait and answer it. But, <name
+                        type="recipient">Addie</name><lb/> mine, I had no idea of waiting <hi
+                        rend="underline">six days</hi> ere attending<lb/> to that important and <hi
+                        rend="underline">not unpleasant</hi> duty &mdash; but my<lb/> health was
+                    in such a state &mdash; that I was unable to<lb/> attend to "office duties."
+                    But lest I frighten you, I will<lb/> tell you all &mdash; just as it really
+                    was &mdash; I had a slight<lb/> attack of Liver Complaint which troubled me
+                    some, but<lb/> I am recovering from it now &mdash; <hi rend="underline"
+                    >not</hi> in my <hi rend="underline">fancy</hi> &mdash; but really<lb/>
+                    <hi rend="underline">getting well</hi> &mdash; I am somewhat thinner and
+                    weaker than<lb/> I was, but that might have been expected &mdash; During
+                    the<lb/> entire time, I have remained in the office &mdash; so you see I
+                    have<lb/> not been "dangerous" by any means. I should<lb/> not have been so
+                    explicit, but you are so fearful I half conceal<lb/> the real truth, but my
+                        darling <hi rend="underline">rest assured I can conceal</hi><lb/>
+                    <hi rend="underline">nothing</hi> from you &mdash; which I know you so wish
+                    to know,<lb/>
+                </p>
+
+                <p> I will not answer your letter now &mdash; for I cannot &mdash;<lb/> but
+                    I will write an early reply. How kind and trustful<lb/> you are! I can only love
+                    you more and more. Oh! how<lb/> I wish this War would end.<lb/>
+                </p>
+
+                <pb n="2" entity="DSSR_000000766_0660"/>
+
+                <p>So <name type="person">Laurie</name> is no longer "Laurie" but <name type="person"
+                        >"Mrs. Thompson</name>.<lb/> Please present my compliments and all the other
+                    "nice<lb/> things," to the happy pair. Success and happiness<lb/> attend thee my
+                    darling this Winter Do you like Farmington?<lb/>
+                </p>
+                <closer> Please write very soon to<lb/> Your own devoted and loving <signed>Charley
+                    </signed>
+                </closer>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

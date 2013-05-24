@@ -1,0 +1,1780 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serialized>
+  <map>
+    <entry>
+      <String xml:space="preserve">code-templates</String>
+      <codeTemplateItem-array>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xml</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;table>
+&lt;row>
+&lt;cell>&lt;/cell>
+&lt;cell>&lt;/cell>
+&lt;/row>
+&lt;row>
+&lt;cell>&lt;/cell>
+&lt;cell>&lt;/cell>
+&lt;/row>
+&lt;/table></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">table in TEI with two rows, two cols</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">2t</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:annotation>
+      &lt;xs:documentation>${caret}&lt;/xs:documentation>
+&lt;/xs:annotation></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Annotation-Documentation.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ad</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:attributeGroup name="${caret}">
+      
+&lt;/xs:attributeGroup></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Attribute-Group-Name.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">agn</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:attributeGroup ref="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Attribute-Group-Reference.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">agr</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:all>
+      ${caret}
+&lt;/xs:all></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">ALL.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">all</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:attribute name="${caret}">
+    
+&lt;/xs:attribute></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Attribute-Name</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">an</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:attribute name="${caret}">
+      &lt;xs:annotation>
+          &lt;xs:documentation>&lt;/xs:documentation>
+      &lt;/xs:annotation>
+&lt;/xs:attribute></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Attribute-Name-Annotation-documentation.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ana</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:any/>${caret}</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">ANY.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">any</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:any namespace="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">ANY-Namespace.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">anyn</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:complexContent>
+      ${caret}
+&lt;/xs:complexContent></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Complex-Content.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">cc</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:choice>
+      ${caret}
+&lt;/xs:choice></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">CHoice.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ch</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:complexType>
+      ${caret}
+&lt;/xs:complexType></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ct</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:complexType name="${caret}">
+      
+&lt;/xs:complexType></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Complex-Type-Name.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ctn</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:extension base="${caret}">
+      
+&lt;/xs:extension></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Extension.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">e</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:element name="${caret}">
+      
+&lt;/xs:element></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Element-Name.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">en</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:element name="${caret}">
+      &lt;xs:annotation>
+          &lt;xs:documentation>&lt;/xs:documentation>
+      &lt;/xs:annotation>
+&lt;/xs:element></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Element-Name-Annotation-documentation</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ena</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:enumeration value="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Enumeration-Value.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ev</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:enumeration value="${caret}">
+      &lt;xs:annotation>
+          &lt;xs:documentation>&lt;/xs:documentation>
+      &lt;/xs:annotation>
+&lt;/xs:enumeration></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Enumeration-Value-Annotation.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">eva</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:fractionDigits value="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Fraction-Digits</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">fd</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:group name="${caret}">
+      
+&lt;/xs:group></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Group-Name.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">gn</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:group ref="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Group-Reference.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">gr</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:length value="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">LENgth.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">len</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:maxExclusive value="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">MAX-Exclusive.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">maxe</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:maxInclusive value="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">MAX-Inclusive.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">maxi</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:maxLength value="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">MAX-Length.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">maxl</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:minExclusive value="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">MIN-Exclusive.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">mine</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:minInclusive value="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">MIN-Inclusive.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">mini</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:minLength value="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">MIN-Length.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">minl</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:notation name="${caret}" public=""/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Notation.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">n</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:pattern value="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Pattern.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">p</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:restriction>
+      ${caret}
+&lt;/xs:restriction></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Restriction.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">r</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:restriction base="${caret}">
+      
+&lt;/xs:restriction></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Restriction-Base.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">rb</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:simpleContent>
+      ${caret}
+&lt;/xs:simpleContent></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Simple-Content.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">sc</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      ${caret}
+&lt;/xs:schema></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">SCHema</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">sch</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="${caret}">
+      
+&lt;/xs:schema></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">SCHema-Target-namespace</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">scht</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:sequence>
+      ${caret}
+&lt;/xs:sequence></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">SEQuence.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">seq</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:simpleType>
+      ${caret}
+&lt;/xs:simpleType></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Simple-Type.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">st</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:simpleType name="${caret}">
+      
+&lt;/xs:simpleType></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Simple-Type with name</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">stn</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:totalDigits value="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Total-Digits.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">td</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsd</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xs:whiteSpace value="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">White-Space.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ws</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">not(${caret})</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">not-!.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">!</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">number(${caret})</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">to-number-#.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">#</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:apply-imports/>${caret}</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Apply-Imports.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ai</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:attribute name="${caret}">&lt;/xsl:attribute></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Attribute-Name.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">an</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">ancestor-or-self::${caret}</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Ancestor-Or-Self-axix.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">aos</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:attribute-set name="${caret}">
+
+&lt;/xsl:attribute-set></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Attribute-Set-Name.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">asn</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:apply-templates select="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Apply-Templates-Select.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ats</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:apply-templates select="${caret}" mode=""/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Apply-Templates-Select-Mode.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">atsm</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;![CDATA[${caret}]]&gt;</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">CData-section.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">cd</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">ceiling(${caret})</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">CEILing.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ceil</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:copy>${caret}&lt;/xsl:copy></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">COpy.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">co</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:comment>${caret}&lt;/xsl:comment></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">COMent.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">com</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">concat(${caret}, )</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">CONCat.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">conc</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">contains(${caret}, )</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">CONTains.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">cont</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:copy-of select="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Copy-Of-Select.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">cos</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:template match="node() | @*">
+      &lt;xsl:copy>
+          &lt;xsl:apply-templates select="node() | @*"/>
+      &lt;/xsl:copy>
+&lt;/xsl:template>
+      ${caret}</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Copy-Template.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ct</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:call-template name="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Call-Template-Name.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ctn</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:call-template name="${caret}">
+      &lt;xsl:with-param name="" select=""/>
+&lt;/xsl:call-template></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Call-Template-Name-With-Param.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ctnwp</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:choose>
+      &lt;xsl:when test="${caret}">
+        
+      &lt;/xsl:when>
+&lt;/xsl:choose></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Choose-When-Test.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">cwt</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:choose>
+      &lt;xsl:when test="${caret}">
+        
+      &lt;/xsl:when>
+      &lt;xsl:otherwise>
+      
+      &lt;/xsl:otherwise>
+&lt;/xsl:choose></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Choose-When-Test-Otherwise.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">cwto</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">descendant-or-self::${caret}</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Descendant-Or-Self-axis.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">dos</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:element name="${caret}">
+      
+&lt;/xsl:element></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Element-Name.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">en</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:fallback>
+      ${caret}
+&lt;/xsl:fallback></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Fallback.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">f</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:for-each select="${caret}">
+
+&lt;/xsl:for-each></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">For-each-select.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">fes</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">floor(${caret})</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">FLooR.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">flr</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">format-number(${caret}, )</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Format-Number.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">fn</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">following-sibling::${caret}</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Following-Sibling-axis.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">fs</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">generate-id(${caret})</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Generate-Id.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">gi</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:import href="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">IMport-Href.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">imh</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:include href="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">INclude-Href.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">inh</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:if test="${caret}">&lt;/xsl:if></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">If-Test.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">it</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:key name="${caret}" match="" use=""/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Key-name-match-use.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">k</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">last()${caret}</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">LaST.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">lst</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:message>
+      ${caret}
+&lt;/xsl:message></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Message.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">m</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">generate-id(${caret}) = generate-id(key('', ))</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve"> </String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">mm</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:message terminate="${caret}">&lt;/xsl:message></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Message-Terminate.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">mt</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:number${caret}/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Number.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">n</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:number count="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Number-count.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">nc</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">normalize-space(${caret})</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Normalize-Space.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ns</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:otherwise>
+      ${caret}
+&lt;/xsl:otherwise></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Otherwise.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">o</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:output encoding="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Output-Encoding.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">oe</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:output method="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Output-Method.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">om</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:processing-instruction name="${caret}">&lt;/xsl:processing-instruction></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Processing-Instruction-Name.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">pin</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:param name="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Param-Name.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">pn</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">position()${caret}</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">POSition.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">pos</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">preceding-sibling::${caret}</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Preceding-Sibling-axis.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ps</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:preserve-space elements="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Preserve-Space-Elements.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">pse</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">round(${caret})</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">RouND.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">rnd</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+      ${caret}
+&lt;/xsl:stylesheet></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Stylesheet-root-element-v1.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">s</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
+      ${caret}
+&lt;/xsl:stylesheet></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Stylesheet-root-element-v2.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">s2</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">string-length(${caret})</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">String-Length.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">sl</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">system-property(xsl:vendor)${caret}</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">System-Property-VENdor.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">spven</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">system-property(xsl:vendor-url)${caret}</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">System-Property-VENdor-Url.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">spvenu</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">system-property(xsl:version)${caret}</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">System-Property-VERsion.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">spver</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:sort select="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Sort-Select.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ss</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">substring-after(${caret})</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">SubString-After.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ssa</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">substring-before(${caret})</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">SubString-Before.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">ssb</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:strip-space elements="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Strip-Space-Elements.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">sse</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">substring(${caret})</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Sub-STRing.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">sstr</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">string(${caret})</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">to-STRing.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">str</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">sum(${caret})</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">SUM.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">sum</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">starts-with(${caret}, )</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Starts-With.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">sw</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">boolean(${caret})</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">to-boolean-True-False.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">tf</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:template match="${caret}">
+      
+&lt;/xsl:template></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Template-Match.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">tm</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:template match="${caret}" mode="">
+    
+&lt;/xsl:template></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Template-Match-Mode.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">tmm</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:template name="${caret}">
+      
+&lt;/xsl:template></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Template-Name.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">tn</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:template name="${caret}" match="">
+
+&lt;/xsl:template></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Template-Name-Match.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">tnm</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">translate(${caret}, , )</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">TRANslate.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">tran</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">translate(${caret},'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">TRanslate--to-LOwer-case.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">trlo</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">translate(${caret},'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">TRanslate--to-UPper-case.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">trup</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:variable name="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Variable-Name.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">vn</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:variable name="${caret}" select=""/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Variable-Name-Select.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">vns</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:value-of select="${caret}"/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Value-Of-Select.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">vos</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;xsl:with-param name="${caret}" select=""/></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">With-Param-Name.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">wpn</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;?xml version="1.0"?>
+    ${caret}</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Xml-header.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">x</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;?xml version="1.0" encoding="${caret}"?></String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Xml-header-Encoding.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">xe</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;?xml version="1.0" encoding="UTF-8"?>
+  ${caret}</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Xml-header-Encoding-UTF-8.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">xe8</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">&lt;?xml version="1.0" encoding="ISO-8859-1"?>
+  ${caret}</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">Xml-header-Encoding-ISO-8859-1.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">xei</String>
+          </field>
+        </codeTemplateItem>
+        <codeTemplateItem>
+          <field name="contentType">
+            <String xml:space="preserve">text/xsl</String>
+          </field>
+          <field name="unparsedInsertString">
+            <String xml:space="preserve">xmlns:xsl="http://www.w3.org/1999/XSL/Transform"${caret}</String>
+          </field>
+          <field name="descriptionString">
+            <String xml:space="preserve">XSL-namespace.</String>
+          </field>
+          <field name="renderString">
+            <String xml:space="preserve">xsl</String>
+          </field>
+        </codeTemplateItem>
+      </codeTemplateItem-array>
+    </entry>
+  </map>
+</serialized>

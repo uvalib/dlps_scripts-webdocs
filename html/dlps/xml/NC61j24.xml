@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0405 SYSTEM "000000766_0405" NDATA jpg>
+<!ENTITY DSSR_000000766_0406 SYSTEM "000000766_0406" NDATA jpg>
+<!ENTITY DSSR_000000766_0407 SYSTEM "000000766_0407" NDATA jpg>
+<!ENTITY DSSR_000000766_0408 SYSTEM "000000766_0408" NDATA jpg>
+
+<!--<!ENTITY NC61j24a SYSTEM "NC61j24a.jpg" NDATA jpg>
+<!ENTITY NC61j24b SYSTEM "NC61j24b.jpg" NDATA jpg>
+<!ENTITY NC61j24c SYSTEM "NC61j24c.jpg" NDATA jpg>
+<!ENTITY NC61j24d SYSTEM "NC61j24d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NC61j24">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+                        value="1861-10-24">October 24, 1861</date></title>
+
+                <author>Tenney, Charles</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Robert Biggert</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Robert Biggert</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">13</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NC61j24</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case, October 24, 1861</title>
+
+                        <title level="u">[volume title -- i.e., journal title]</title>
+                        <author>Charles Tenney</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p>[Notes about the original source]</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p> </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+          
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1861-10-24">1861-10-24</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>masculine</term>
+                    <term>American Civil War / Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-11">November 11th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 7th, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1861-10-24">October 24th, 1861</date>
+
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case</title>
+                    </bibl>
+                </head>
+
+                <p> Charles indirectly calls Addie "dearest", says he eagerly awaits letters from
+                    her, and compliments her as the "prettiest correspondent". He describes his
+                    guard duty and his Regiment (which is now complete, including the band): its
+                    drills, Parade and current position two miles from Charleston. He will probably
+                    come with Hal to visit her on furlough, as she requests, but is unsure when that
+                    will be. He disavows any deep love for Dora; asks to be remembered to Laurie,
+                    whose advice he recalls; offers Addie a kiss (but then marks this out); and
+                    sends respects from Seth and Will. </p>
+
+            </div1>
+
+        </front>
+
+        <body id="d4">
+
+
+
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1861-10-24"
+                        >October 24, 1861</date></head>
+                <pb n="1" entity="DSSR_000000766_0405"/>
+
+
+                <opener> Maj. Gen McClellan Published by James Gates, Cin. <dateline>
+                        <name type="place">Camp Warren</name>, <date value="1861-10-24">Oct 24th 61</date><lb/>
+                        <name type="place">Charleston</name>Va.<lb/>
+                    </dateline><lb/>
+                    <salute>My dearer Addie</salute>
+                </opener>
+
+                <p> I commenced to say,<lb/> involuntarily too, <hi rend="underline">dearest</hi>
+                    Addie.<lb/> Would it have been right? You<lb/> would not have remonstrated<lb/>
+                    would you? and then it is just<lb/> the way I feel anyhow.<lb/>
+                </p>
+                <p> Your sweet little letter of the<lb/> 12<hi rend="super">th</hi> I received yesterday morning<lb/> and
+                    you can imagine if you can<lb/> with what joy and pleasure I read<lb/> it.
+                    Perhaps you can form some idea<lb/> of the longing and impatience. with<lb/>
+                    which I watch the arrival of the<lb/>
+                    <pb n="2" entity="DSSR_000000766_0406"/> mails for a letter from Addie, when
+                    I<lb/> tell you that Addie is the <hi rend="underline">only</hi> corres-<lb/>
+                    pondent I have. Now you <orig reg="don't">dont</orig> wonder why I want you to
+                    write<lb/> often, do you? </p>
+                <p> But, I flatter myself.<lb/> (not <hi rend="underline">you</hi>,) that I have the
+                    prettiest<lb/> and <hi rend="underline">best</hi> correspondent, that
+                    soldiers<lb/> "or any other man" commonly have.<lb/> that I feel that I am
+                    worthy of<lb/>your kind attention, but I love to<lb/> have some one to whom I
+                    can turn<lb/> and <hi rend="underline">know</hi> and <hi rend="underline"
+                    >feel</hi> that it is indeed<lb/> a friend. Such I believe my Addie to<lb/> be. </p>
+                <p> Do not think I mean to flatter<lb/> you, for it is the truth, and then you<lb/>
+                    told me not to try to flatter you,<lb/> and I won't do what you dont<lb/> want
+                    me to. 'Twas a happy day<lb/> for me when I saw you first.<lb/> But perhaps I am
+                    becoming oppressive,</p>
+
+                <pb n="3" entity="DSSR_000000766_0407"/>
+
+
+                <p> I am on guard today and am now<lb/> momentarily expecting to hear "First<lb/>
+                        Relief, <hi rend="underline">fall in</hi>." then comes two long<lb/> hours of
+                    steady marching up and down<lb/> a long "beat." But then after that I have<lb/>
+                    four hours rest. The <abbr expan="Regiment">Regt</abbr> is out on<lb/> Battalion
+                    drill. in front of the camp, on<lb/> our parade ground. The boys have be-<lb/>
+                    come very efficient in drill. It is not<lb/> as easy to "form close column of
+                    attack<lb/> on fifth company" while on double quick<lb/> time, as it was to
+                    "change front on sixth<lb/> company" while in Camp Dennison.<lb/> but of course
+                    you do not know what-<lb/> those commands mean, so I will stop<lb/> talking
+                    Military. You should see us. <unclear>[.]</unclear><lb/> on dre&longs;
+                    Parade; and see what a neat<lb/> appearance we present, There is to be
+                    dre&longs;<lb/> Parade this afternoon at 3-oclock. How<lb/> I wish you could
+                    be here to see us<lb/>
+                </p>
+                <p> Our camp is situated two miles up<lb/>
+                    <pb n="4" entity="DSSR_000000766_0408"/> from Charleston. and is a very
+                    beautiful<lb/> camp indeed. Our <abbr expan="Regiment">Regt</abbr> is now all
+                    here<lb/> and our band too. I do not know<lb/> when we can get furlough. Nor
+                    does<lb/> Hal. When <hi rend="underline">he</hi> comes, though we cannot<lb/>
+                    tell when it will be, I will probably com-<lb/> ply with your request. and come
+                    with him.<lb/>
+                </p>
+                <p> I do not think there is any<lb/> danger of my falling in love, very deeply<lb/>
+                        with <orig reg="Dora,">Dora.</orig> while <hi rend="underline">you</hi> are
+                    around,<lb/> But you may give her my kind regards<lb/> if not incompatible with
+                    your wishes.<lb/> Also remember me to <orig reg="Laurie,">Laurie.</orig> and
+                    tell<lb/> her I remember her advice. But my <hi rend="underline"
+                    >kindest</hi><lb/> regard are <hi rend="underline">yours</hi> and I remember
+                    you<lb/> kindly and affectionately.<lb/>
+                </p>
+
+                <closer> I must now close as it is nearly<lb/> Three oclock and - "First Relief,
+                    fall in". Did<lb/> you hear that? <hi rend="underline">I</hi> did. Write soon and
+                    long letters.<lb/>
+                    <salute>I remain yours affectionately and forever</salute><lb/>
+                    <signed>Charlie</signed><lb/>
+                    <seg type="postscript">P.S. <del hand="h1" rend="line-through">Would you accept
+                            a <orig reg="kiss;">ki&longs;</orig> if I were to<lb/>enclose
+                        one?</del> Burn this up<orig reg="won't">wont</orig> you?<lb/> Seth and Will
+                        send their respects to you<lb/> and Laurie Your Charlie </seg>
+                    <unclear reason="pen loops"/> Mecca Ohio </closer>
+
+            </div1>
+        </body>
+
+    </text>
+</TEI.2>

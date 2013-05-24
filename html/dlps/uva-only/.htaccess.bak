@@ -1,0 +1,7 @@
+# Do not enable - rad
+# Network restriction handled in main httpd.conf
+AuthName "DLPS"
+AuthType Basic
+order deny,allow 
+deny from all 
+allow from .virginia.edu

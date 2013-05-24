@@ -1,0 +1,503 @@
+<!-- ******************************************************************************************
+
+     teitech.ent
+     Version 1.5
+     2006-06-07
+
+     One of two extension files (see also teitech.dtd) constituting a customization of TEI P4,
+     following the method described in the TEI Guidelines, chapter 29, "Modifying and Customizing
+     the TEI DTD".
+
+       http://www.tei-c.org/P4X/MD.html
+
+     This DTD, teitech, is a simple DTD for marking up technical documentation in TEI.
+
+     Greg Murray <gpm2a@virginia.edu>
+     Digital Library Production Services, University of Virginia Library
+
+     The main customizations are:
+
+       - the addition of elements for technical documentation, such as for marking identifiers
+         (ident), element names (gi), attribute names (att), values such as variable values in
+         programming or attribute values in XML (val), keywords (kw), code fragments (code),
+         commands (command), disk paths (path), GUI elements (gizmo), and user-replaced text
+         (replace)
+
+       - the addition of an element (eg) for indicating examples of code or markup
+
+       - the addition of an element (admon) for the various kinds of admonitions (Tip, Note,
+         Important, etc.) common in technical documentation
+
+     ****************************************************************************************** -->
+
+
+
+<!-- ******************************************************************************************
+     Revision History
+     ******************************************************************************************
+
+     Version  Date        Description
+     1.0      2003-09-15  Initial version.
+     1.1      2004-02-17  Added <replace> (equivalent to <replaceable> in DocBook) and <gizmo>
+                          (equivalent to <guibutton>, <guiicon>, etc. in DocBook).
+     1.2      2005-01-26  Added class a.rend.colors (and added a.rend.colors to a.rend.hi) to
+                          allow a few color values for the rend attribute on <hi>.
+     1.3      2005-11-11  Added "special" as a 'type' of <admon> - for special instructions. Added
+                          'applies' attribute, for use with special (for indicating which project
+                          the special instructions apply to).
+     1.4      2006-04-10  Also added "fyi" as a 'type' of <admon> - for information for which no
+                          action is needed (in workflow documentation). Changed 'applies' attribute
+                          on <admon> from CDATA to enumerated vocabulary.
+     1.5      2006-06-07  Changed content model for <command> and <eg> to include <xref> (so I can
+                          add links to the new scripts documentation).
+-->
+
+
+
+<!-- ******************************************************************************************
+     TEI Keywords
+     ******************************************************************************************
+
+     The tagsets are declared here simply to avoid having to make these declarations in the
+     document instance internal subset.
+-->
+
+<!-- Enable XML, rather than SGML. -->
+<!ENTITY % TEI.XML 'INCLUDE'>
+
+<!-- Enable the prose base. -->
+<!ENTITY % TEI.prose 'INCLUDE'>
+
+<!-- Enable additional tagsets for linking, and for tables and figures. -->
+<!ENTITY % TEI.linking 'INCLUDE'>
+<!ENTITY % TEI.figures 'INCLUDE'>
+
+<!-- Declare keywords used in attribute lists. These are taken verbatim from teikey2.ent but must be
+     declared here before subsequent use. -->
+
+<!ENTITY % INHERITED '#IMPLIED'>
+<!ENTITY % ISO-date 'CDATA'>
+
+
+
+<!-- ******************************************************************************************
+     1. Renamed elements
+     ****************************************************************************************** -->
+
+<!-- No elements are renamed. -->
+
+
+
+<!-- ******************************************************************************************
+     2. Class modifications
+     ****************************************************************************************** -->
+
+<!-- ==========================================================================================
+     2.A. Content-model classes
+     ========================================================================================== -->
+
+<!-- Class:     x.data (extends m.data) (teiclas2.ent)
+     Extend:    Add phrase-level elements for technical identifiers, keywords, etc.
+     Constrain: None
+     Comments:  Elements att, gi, tag, and val are already included in %m.sgmlKeywords;, so they
+                need not (and cannot) be included here, in x.data
+     -->
+<!ENTITY % x.data 'code | command | gizmo | ident | kw | path | replace |'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     x.inter (extends m.inter) (teiclas2.ent)
+     Extend:    Add eg element, a new element added to this DTD.
+     Constrain: None
+     -->
+<!ENTITY % x.inter 'eg |'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     x.chunk (extends m.chunk) (teiclas2.ent)
+     Extend:    Add admon element, a new element added to this DTD.
+     Constrain: None
+     -->
+<!ENTITY % x.chunk "admon |" >
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     x.common (extends m.common) (teiclas2.ent)
+     Extend:    Add eg element, a new element added to this DTD.
+     Constrain: None
+     -->
+<!ENTITY % x.common 'eg |'>
+
+<!-- ========================================================================================== -->
+
+
+
+<!-- ==========================================================================================
+     2.B. Attribute classes
+     ========================================================================================== -->
+
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.pointer (teiclas2.ent)
+     Extend:    None
+     Constrain: Remove default value for 'targOrder' (change default
+                from "U" to "IMPLIED"); change 'resp' datatype from
+                CDATA to IDREF.
+     -->
+<!ENTITY % a.pointer '
+      type CDATA #IMPLIED
+      resp IDREF #IMPLIED
+      crdate CDATA #IMPLIED
+      targType CDATA #IMPLIED
+      targOrder (Y | N | U) #IMPLIED
+      evaluate ( all | one | none ) #IMPLIED'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.rend.align (new class)
+     Extend:    None
+     Constrain: Enumerate alignment values for 'rend' attribute.
+     -->
+<!ENTITY % a.rend.align 'center | left | right'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.rend.colors (new class)
+     Extend:    None
+     Constrain: Enumerate color values for 'rend' attribute.
+     -->
+<!ENTITY % a.rend.colors 'gray | green'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.rend.display (new class)
+     Extend:    None
+     Constrain: Enumerate display values for 'rend' attribute.
+     -->
+<!ENTITY % a.rend.display 'block | inline'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.rend.typo (new class)
+     Extend:    None
+     Constrain: Enumerate typography values for 'rend' attribute.
+     -->
+<!ENTITY % a.rend.typo 'bold | italic | small-caps | sub | super | underline'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.rend.hi (new class)
+     Extend:    (See declaration of <hi>.)
+     Constrain: (See declaration of <hi>.)
+     -->
+<!ENTITY % a.rend.hi 'rend (%a.rend.display; | %a.rend.align; | %a.rend.typo; | %a.rend.colors;) #REQUIRED' >
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.rend.global (new class)
+     Extend:    None
+     Constrain: Enumerate vocabulary for global 'rend' attribute.
+     -->
+<!ENTITY % a.rend.global 'rend (%a.rend.display; | %a.rend.align;) #IMPLIED'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.global (teiclas2.ent)
+     Extend:    None
+     Constrain: Enumerate vocabulary for global 'rend' attribute.
+     -->
+<!ENTITY % a.global '
+      id ID #IMPLIED
+      n CDATA #IMPLIED
+      lang IDREF %INHERITED;
+      %a.rend.global;'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.global.no_rend (new class)
+     Extend:    None
+     Constrain: (Enumerate vocabulary for 'rend' attribute.)
+     Comments:  Identical to a.global except that 'rend' is
+                excluded. Used for elements that need to change
+                definition of 'rend' attribute.
+     -->
+<!ENTITY % a.global.no_rend '
+      id ID #IMPLIED
+      n CDATA #IMPLIED
+      lang IDREF %INHERITED;'>
+
+<!-- ========================================================================================== -->
+
+
+
+<!-- ******************************************************************************************
+     3. Modified elements
+     ****************************************************************************************** -->
+
+<!ENTITY % fileDesc  'IGNORE'>
+<!ENTITY % hi        'IGNORE'>
+
+<!-- In addition, the following elements are modified by extending their attribute lists (which
+     does not require IGNORing then re-declaring the entire element; only requires adding a
+     supplementary ATTLIST declaration):
+
+     date
+     xref
+-->
+
+
+
+<!-- ******************************************************************************************
+     4. Suppressed elements
+     ****************************************************************************************** -->
+
+<!-- Rather than list only elements to be suppressed, all elements from the TEI P4 core and selected
+     tagsets are listed for ease of reference, even though the explicit inclusion of elements here
+     is technically unnecessary. -->
+
+<!ENTITY % TEI.2        'INCLUDE'>
+<!ENTITY % teiCorpus.2              'IGNORE'>
+
+<!-- Chapter 5: TEI Header -->
+<!-- File: teihdr2.dtd -->
+<!ENTITY % teiHeader    'INCLUDE'>
+<!ENTITY % fileDesc     'INCLUDE'>
+<!ENTITY % titleStmt    'INCLUDE'>
+<!ENTITY % sponsor                     'IGNORE'>
+<!ENTITY % funder                      'IGNORE'>
+<!ENTITY % principal                   'IGNORE'>
+<!ENTITY % editionStmt                 'IGNORE'>
+<!ENTITY % edition                     'IGNORE'>
+<!ENTITY % extent                      'IGNORE'>
+<!ENTITY % publicationStmt 'INCLUDE'>
+<!ENTITY % distributor                 'IGNORE'>
+<!ENTITY % authority                   'IGNORE'>
+<!ENTITY % idno         'INCLUDE'>
+<!ENTITY % availability                'IGNORE'>
+<!ENTITY % seriesStmt                  'IGNORE'>
+<!ENTITY % notesStmt                   'IGNORE'>
+<!ENTITY % sourceDesc                  'IGNORE'>
+<!ENTITY % scriptStmt                  'IGNORE'>
+<!ENTITY % recordingStmt               'IGNORE'>
+<!ENTITY % recording                   'IGNORE'>
+<!ENTITY % equipment                   'IGNORE'>
+<!ENTITY % broadcast                   'IGNORE'>
+<!ENTITY % encodingDesc                'IGNORE'>
+<!ENTITY % projectDesc                 'IGNORE'>
+<!ENTITY % samplingDecl                'IGNORE'>
+<!ENTITY % editorialDecl               'IGNORE'>
+<!ENTITY % correction                  'IGNORE'>
+<!ENTITY % normalization               'IGNORE'>
+<!ENTITY % quotation                   'IGNORE'>
+<!ENTITY % hyphenation                 'IGNORE'>
+<!ENTITY % segmentation                'IGNORE'>
+<!ENTITY % stdVals                     'IGNORE'>
+<!ENTITY % interpretation              'IGNORE'>
+<!ENTITY % tagsDecl                    'IGNORE'>
+<!ENTITY % tagUsage                    'IGNORE'>
+<!ENTITY % rendition                   'IGNORE'>
+<!ENTITY % refsDecl                    'IGNORE'>
+<!ENTITY % step                        'IGNORE'>
+<!ENTITY % state                       'IGNORE'>
+<!ENTITY % classDecl                   'IGNORE'>
+<!ENTITY % taxonomy                    'IGNORE'>
+<!ENTITY % category                    'IGNORE'>
+<!ENTITY % catDesc                     'IGNORE'>
+<!ENTITY % fsdDecl                     'IGNORE'>
+<!ENTITY % metDecl                     'IGNORE'>
+<!ENTITY % symbol                      'IGNORE'>
+<!ENTITY % variantEncoding             'IGNORE'>
+<!ENTITY % profileDesc  'INCLUDE'>
+<!ENTITY % creation                    'IGNORE'>
+<!ENTITY % langUsage    'INCLUDE'>
+<!ENTITY % language     'INCLUDE'>
+<!ENTITY % textClass                   'IGNORE'>
+<!ENTITY % keywords                    'IGNORE'>
+<!ENTITY % classCode                   'IGNORE'>
+<!ENTITY % catRef                      'IGNORE'>
+<!ENTITY % revisionDesc 'INCLUDE'>
+<!ENTITY % change       'INCLUDE'>
+
+<!-- Chapter 6: Elements Available in All TEI Documents -->
+<!-- File: teicore2.dtd -->
+<!-- 6.1 Paragraphs -->
+<!ENTITY % p            'INCLUDE'>
+
+<!-- 6.2 Treatment of Punctuation -->
+
+<!-- 6.3 Highlighting and Quotation -->
+<!ENTITY % foreign      'INCLUDE'>
+<!ENTITY % emph         'INCLUDE'>
+<!ENTITY % hi           'INCLUDE'>
+<!ENTITY % distinct                 'IGNORE'>
+<!ENTITY % q                        'IGNORE'>
+<!ENTITY % quote                    'IGNORE'>
+<!ENTITY % cit                      'IGNORE'>
+<!ENTITY % soCalled                 'IGNORE'>
+<!ENTITY % term         'INCLUDE'>
+<!ENTITY % gloss                    'IGNORE'>
+<!ENTITY % mentioned                'IGNORE'>
+
+<!-- 6.4 Names, Numbers, Dates, Abbreviations, and Addresses -->
+<!ENTITY % rs                       'IGNORE'>
+<!ENTITY % name         'INCLUDE'>
+<!ENTITY % address                  'IGNORE'>
+<!ENTITY % addrLine                 'IGNORE'>
+<!ENTITY % street                   'IGNORE'>
+<!ENTITY % postCode                 'IGNORE'>
+<!ENTITY % postBox                  'IGNORE'>
+<!ENTITY % num          'INCLUDE'>
+<!ENTITY % measure                  'IGNORE'>
+<!ENTITY % date         'INCLUDE'>
+<!ENTITY % time         'INCLUDE'>
+<!ENTITY % dateRange                'IGNORE'>
+<!ENTITY % timeRange                'IGNORE'>
+<!ENTITY % abbr         'INCLUDE'>
+<!ENTITY % expan                    'IGNORE'>
+
+<!-- 6.5 Simple Editorial Changes -->
+<!ENTITY % sic          'INCLUDE'>
+<!ENTITY % corr                     'IGNORE'>
+<!ENTITY % reg                      'IGNORE'>
+<!ENTITY % orig                     'IGNORE'>
+<!ENTITY % gap                      'IGNORE'>
+<!ENTITY % unclear                  'IGNORE'>
+<!ENTITY % add                      'IGNORE'>
+<!ENTITY % del                      'IGNORE'>
+
+<!-- 6.6 Simple Links and Cross References -->
+<!ENTITY % ptr          'INCLUDE'>
+<!ENTITY % ref          'INCLUDE'>
+
+<!-- 6.7 Lists -->
+<!ENTITY % list         'INCLUDE'>
+<!ENTITY % item         'INCLUDE'>
+<!ENTITY % label        'INCLUDE'>
+<!ENTITY % head         'INCLUDE'>
+<!ENTITY % headLabel                'IGNORE'>
+<!ENTITY % headItem                 'IGNORE'>
+
+<!-- 6.8 Notes, Annotation, and Indexing -->
+<!ENTITY % note         'INCLUDE'>
+<!ENTITY % index                    'IGNORE'>
+<!ENTITY % divGen                   'IGNORE'>
+
+<!-- 6.9 Reference Systems -->
+<!ENTITY % milestone    'INCLUDE'>
+<!ENTITY % pb           'INCLUDE'>
+<!ENTITY % lb           'INCLUDE'>
+<!ENTITY % cb                       'IGNORE'>
+
+<!-- 6.10 Bibliographic Citations and References -->
+<!ENTITY % bibl         'INCLUDE'>
+<!ENTITY % biblStruct               'IGNORE'>
+<!ENTITY % biblFull                 'IGNORE'>
+<!ENTITY % listBibl                 'IGNORE'>
+<!ENTITY % analytic                 'IGNORE'>
+<!ENTITY % monogr                   'IGNORE'>
+<!ENTITY % series                   'IGNORE'>
+<!ENTITY % title        'INCLUDE'>
+<!ENTITY % author       'INCLUDE'>
+<!ENTITY % editor       'INCLUDE'>
+<!ENTITY % respStmt     'INCLUDE'>
+<!ENTITY % resp         'INCLUDE'>
+<!ENTITY % meeting                  'IGNORE'>
+<!ENTITY % imprint      'INCLUDE'>
+<!ENTITY % pubPlace     'INCLUDE'>
+<!ENTITY % publisher    'INCLUDE'>
+<!ENTITY % biblScope    'INCLUDE'>
+
+<!-- 6.11 Passages of Verse or Drama -->
+<!ENTITY % l            'INCLUDE'>
+<!ENTITY % lg           'INCLUDE'>
+<!ENTITY % sp           'INCLUDE'>
+<!ENTITY % speaker      'INCLUDE'>
+<!ENTITY % stage        'INCLUDE'>
+
+<!-- Chapter 7: Default Text Structure -->
+<!-- File: teistr2.dtd -->
+<!ENTITY % text         'INCLUDE'>
+<!ENTITY % body         'INCLUDE'>
+<!ENTITY % group        'INCLUDE'>
+<!ENTITY % div                      'IGNORE'>
+<!ENTITY % div0                     'IGNORE'>
+<!ENTITY % div1         'INCLUDE'>
+<!ENTITY % div2         'INCLUDE'>
+<!ENTITY % div3         'INCLUDE'>
+<!ENTITY % div4         'INCLUDE'>
+<!ENTITY % div5         'INCLUDE'>
+<!ENTITY % div6         'INCLUDE'>
+<!ENTITY % div7         'INCLUDE'>
+<!ENTITY % trailer      'INCLUDE'>
+<!ENTITY % byline       'INCLUDE'>
+<!ENTITY % dateline     'INCLUDE'>
+<!ENTITY % argument     'INCLUDE'>
+<!ENTITY % epigraph     'INCLUDE'>
+<!ENTITY % opener       'INCLUDE'>
+<!ENTITY % closer       'INCLUDE'>
+<!ENTITY % salute       'INCLUDE'>
+<!ENTITY % signed       'INCLUDE'>
+
+<!-- File: teifron2.dtd -->
+<!ENTITY % front        'INCLUDE'>
+<!ENTITY % titlePage    'INCLUDE'>
+<!ENTITY % docTitle     'INCLUDE'>
+<!ENTITY % titlePart    'INCLUDE'>
+<!ENTITY % docAuthor    'INCLUDE'>
+<!ENTITY % imprimatur   'INCLUDE'>
+<!ENTITY % docEdition   'INCLUDE'>
+<!ENTITY % docImprint   'INCLUDE'>
+<!ENTITY % docDate      'INCLUDE'>
+
+<!-- File: teiback2.dtd -->
+<!ENTITY % back         'INCLUDE'>
+
+<!-- Chapter 8: Prose (included) -->
+<!-- File: teipros2.dtd -->
+<!-- Defines no extra elements; prose elements are included in the TEI
+     core. -->
+
+<!-- Chapter 9: Verse  (excluded) -->
+<!-- Chapter 10: Drama (excluded) -->
+<!-- Chapter 11: Transcriptions of Speech (excluded) -->
+<!-- Chapter 12: Print Dictionaries (excluded) -->
+<!-- Chapter 13: Terminological Data (excluded) -->
+<!-- Mixed Bases (excluded) -->
+
+<!-- Chapter 14: Linking, Segmentation, and Alignment (excluded) -->
+<!-- File: teilink2.dtd -->
+<!ENTITY % link                     'IGNORE'>
+<!ENTITY % linkGrp                  'IGNORE'>
+<!ENTITY % xref         'INCLUDE'>
+<!ENTITY % xptr                     'IGNORE'>
+<!ENTITY % anchor                   'IGNORE'>
+<!ENTITY % ab           'INCLUDE'>
+<!ENTITY % seg          'INCLUDE'>
+<!ENTITY % when                     'IGNORE'>
+<!ENTITY % timeline                 'IGNORE'>
+<!ENTITY % join                     'IGNORE'>
+<!ENTITY % joinGrp                  'IGNORE'>
+<!ENTITY % alt                      'IGNORE'>
+<!ENTITY % altGrp                   'IGNORE'>
+
+<!-- Chapter 15: Simple Analytic Mechanisms (excluded) -->
+<!-- Chapter 16: Feature Structures (excluded) -->
+<!-- Chapter 17: Certainty and Responsibility (excluded) -->
+<!-- Chapter 18: Transcription of Primary Sources (excluded) -->
+<!-- Chapter 19: Critical Apparatus (excluded) -->
+<!-- Chapter 20: Names and Dates (excluded) -->
+<!-- Chapter 21: Graphs, Networks, and Trees (excluded) -->
+
+<!-- Chapter 22: Tables, Formulae, and Graphics -->
+<!-- File:  teifig2.dtd -->
+<!ENTITY % table        'INCLUDE'>
+<!ENTITY % row          'INCLUDE'>
+<!ENTITY % cell         'INCLUDE'>
+<!ENTITY % formula      'INCLUDE'>
+<!ENTITY % figure       'INCLUDE'>
+<!ENTITY % figDesc      'INCLUDE'>
+
+<!-- Chapter 23: Language Corpora (excluded) -->
+
+<!-- END OF teitech.ent -->

@@ -1,0 +1,299 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0135 SYSTEM "000000766_0135" NDATA jpg>
+<!ENTITY DSSR_000000766_0136 SYSTEM "000000766_0136" NDATA jpg>
+<!ENTITY DSSR_000000766_0137 SYSTEM "000000766_0137" NDATA jpg>
+<!ENTITY DSSR_000000766_0138 SYSTEM "000000766_0138" NDATA jpg>
+
+<!--<!ENTITY NA62e18a SYSTEM "NA62e18a.jpg" NDATA jpg>
+<!ENTITY NA62e18b SYSTEM "NA62e18b.jpg" NDATA jpg>
+<!ENTITY NA62e18c SYSTEM "NA62e18c.jpg" NDATA jpg>
+<!ENTITY NA62e18d SYSTEM "NA62e18d.jpg" NDATA jpg>-->
+]>
+
+<TEI.2 id="NA62e18">
+
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-05-18">May 18, 1862</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Loren Scherbak, Archives of American Art, Smithsonian Institution</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Loren Scherbak, Archives of American Art, Smithsonian Institution</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">16</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62e18</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2004">2004</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Illustrations have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney,</title>
+
+                        <author>Adelaide E. Case</author>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-05-18">1862-05-18</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Women Writers/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-09">November 9th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1862-05-18">May 18, 1862</date>
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+                <p> Addie tells Charlie about her recuperation from a bad headache by listening to
+                    music. She also describes a visit with a mother of one of her students. While
+                    there, the mother read a part of a letter from the mother's brother. The letter
+                    describes the lack of feeling by the soldier upon seeing the dead and dying on
+                    the field on the day after a battle. Addie expresses her shock at his callous
+                    observations.</p>
+            </div1>
+
+        </front>
+
+        <body id="d4">
+            <div1 type="letter" n="1" id="d5">
+
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-05-18"
+                        >May 18, 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0135"/>
+                <opener>
+                    <dateline><name type="place">East Claridon</name>,<date value="1862-05-18">May
+                            18th '62</date></dateline>.<lb/>
+                    <lb/>
+                    <salute>My darling Charlie,</salute><lb/>
+                </opener>
+
+                <p> Few, very few are the days<lb/> which I have spent equal to this.<lb/> I am not
+                    happy to day, darling, far from<lb/> it in fact. I am not well. A violent<lb/>
+                    headache has <unclear>clinnig</unclear> to me all day, which<lb/> added to the
+                    oppressiveness of the atmosphere<lb/> makes me feel miserable.&mdash; Oh!
+                    what a<lb/> refreshing breeze has just swept by &mdash; and<lb/> then almost
+                    two weeks have passed since<lb/> I recieved the letter that you wrote last.<lb/>
+                    Dearest why do you not write ofterer would<lb/> that you know how much happiness<lb/>
+                    <pb n="2" entity="DSSR_000000766_0136"/> your darling letters brought; and
+                    how<lb/> unhappy I feel when so long a time passes<lb/> without recieving one.
+                    Do you hear that music<lb/> Charlie? Grand isn't it? It is down stairs in<lb/>
+                    the parlor. Who is it do you ask? Libbie Armstrong<lb/> one of my scholars. (Did
+                    I mention that two<lb/> families live in this house.) She has just<lb/> played
+                    and sang, "Red, White, and Blue". I<lb/> imagine I can see Charlie, <hi
+                        rend="underline">my</hi> best and<lb/>
+                    <hi rend="underline">truest friend</hi> <unclear>bearing</unclear> that glorious
+                    flag on to<lb/> liberty. Go on <hi rend="underline">dear one</hi>, the prayers
+                    and blessings<lb/> of Addie attend thee. Listen to those sweet strains<lb/>
+                    another piece she is performing now, How quickly<lb/> will music draw the heart
+                    to its gentle accents.<lb/> What language is in music. Do you see the great<lb/>
+                    tears which almost <unclear>throws</unclear> these lives into obscurity.<lb/> It
+                    is not sorrow that brings them now, but<lb/> it is the influence of that gentle
+                    music.<lb/> Leibbie is not a good player neither is she<lb/> a good singer but I
+                    am just far enough<lb/> away to have it sound more like the <pb n="3"
+                        entity="DSSR_000000766_0137"/> chanting of angels than like the effect of a
+                    human<lb/> being's voice and hands. I promised in<lb/> my last to give you my
+                    experience in<lb/> &ldquo;boarding round&rdquo; the second night. In
+                    my<lb/> &ldquo;experience&rdquo; that I gave you last, I think<lb/> in
+                    fact, I know I gave you the wrong<lb/> date. It was the 1st and I gave you the
+                    14th did<lb/> I not? All for the sake of contrast here goes, </p>
+                <p> May 14, A beautiful day this has been, pleasant<lb/> both in and out of the
+                    schoolroom. My little &ldquo;summer<lb/> protoges&rdquo;. (I know not
+                    what else to call them) have been<lb/> very good. I can see that my school is
+                    dayly impro<lb/> -ving. What implicit confidence they place in my Heavenly<lb/>
+                    Father. sustain me and guide me in this duty, help me<lb/> to lead them in the
+                    paths of right, All unexpecteded<lb/> I came to <unclear>mother Green's</unclear>
+                    this evening. I came with<lb/> Charlie Green, (one of my scholars) and found his
+                    mother<lb/> absent; She had gone to the &ldquo;Soldiers Aid,&rdquo;
+                    After waiting<lb/>
+                    <unclear>perhaps</unclear> fifteen minutes she came. A small lady she<lb/> is
+                    with an intellectual and pleasant countinance. She<lb/> did not exhibit any
+                    surprise upon seeing me but gave<lb/>
+                    <pb n="4" entity="DSSR_000000766_0138"/> me a kind and pleasant welcome. How I
+                    thanked her<lb/> for that she then invited me into the parlor and soon left
+                    me,<lb/> I there had an opportunity of drawing contrasts, the room was<lb/> not
+                    richly but tastefully furnished, every thing betakened<lb/> an air of neatnesss.
+                    Choice books and pamphlets lay on a<lb/> center table, looking so inviting and a
+                    vase of splendid flowers<lb/> stood there <unclear>by them</unclear> lending an
+                    air of sweetness not often<lb/>
+                    <unclear/> I took up a <unclear>pamphlet</unclear> documents hundred days in
+                    Missourian court<lb/> busiest myself <unclear>till commenced</unclear>
+                        to <unclear>tea</unclear>, What a neat family<lb/> group Husband, wife and
+                    child, constituted the family circle.<lb/> After tea we conversed on various
+                    topics such as &ldquo;war&rdquo; <unclear/>,<lb/> till &mdash;
+                    &ldquo;conscience!&rdquo; how fast time flew &mdash; half past ten,
+                    While<lb/> conversing on the subject of war I learned that she had a<lb/>
+                    brother who was in the engagements of Donilson and Pittsburgh<lb/> Landing. She
+                    then read a portion of one of his letters written<lb/> after viewing the battle
+                    field. He says, &ldquo;I went out this morning<lb/> to survey the battle
+                    ground of yesterday, Men died and dying<lb/> lay there on that fearful field.
+                        A <hi rend="underline">fearful</hi> sight it was sister<lb/> but our hearts
+                    have become so callous that the sight of a<lb/> dead man has little or no
+                    effect.&rdquo; Heartless, wretch!<lb/> I could have exclaimed, but I
+                        I <unclear>forbore</unclear>. I wonder<lb/> if all soldiers feel so, I hope
+                    not but I must retire<lb/> for it is late, what a pleasant room this is so cozy
+                    and<lb/> nice and how tempting that bed does look? </p>
+                <p> There Charlie, you have my second nights' experience. You<lb/> can imagine which
+                    of the two which I have given you<lb/> pleased me the most, but that racking
+                    pain in my<lb/> head is so tedious that I will soon close. I wish<lb/> you would
+                    write oftener darling, it is such hard work<lb/> to wait in anxious expectation
+                    and then be disappointed. </p>
+                <p> You must excuse my pencil marks for I had not<lb/> a decent pen to write with
+                    and I have written<lb/> in a hurry too. <unclear/> will not withhold her<lb/>
+                    blessing from the <unclear/></p>
+
+                <closer>
+                    <salute>Please write soon</salute> D,<lb/>
+                    <signed>Addie</signed>. <seg type="postscript"> Evening<ref target="n1" n="1">1</ref>
+                        <lb/> Charlie I wish you could seem us in our room <unclear/> Dora, Alma Leak
+                        Libbie and Ellen Armstrong and<lb/> I, myself. we all occupy one room. Dora
+                        sends love. Al,<lb/> says tell him, &ldquo;she is happy,&rdquo; she
+                        dont know who I am<lb/> writing to I guess. Oh what comments upon my
+                        writing<lb/> Dora recieved a letter from one of her army friends last
+                        eve.<lb/> and she she seems quite happy. How I wish I could get one from
+                        Charlie, you <unclear/><lb/>
+                        <lb/> Good night, my dear Charlie, </seg>
+                </closer>
+
+            </div1>
+            <div1 type="notes" n="1" id="d6">
+                <head>Notes</head>
+
+                <note id="n1" n="1" place="end">
+                    <seg type="note-symbol">1</seg>
+                    <p> The postscript is written in the top margin of page 1.</p>
+                </note>
+            </div1>
+
+
+        </body>
+
+
+    </text>
+
+</TEI.2>

@@ -1,0 +1,170 @@
+/*
+
+  practices.css - cascading stylesheet for documentation of local markup practices
+
+  Greg Murray <gpm2a@virginia.edu>
+  Written: 2005-08-09
+  Last modified: 2005-08-26
+
+*/
+
+
+/* ============================== */
+/* TAG STYLES                     */
+/* ============================== */
+
+body {
+    background-color: white;
+    color: black;
+    font-family: Verdana, sans-serif;
+    font-size: 10pt;
+}
+
+div.example {
+    background-color: #FFFFEE;  /* pale yellow */
+    border: 2px solid;
+    padding: 10px;
+}
+
+hr {
+    margin-top: 30px;
+}
+
+li {
+	margin-top: 2px;
+	margin-bottom: 0;
+    padding-top: 3px;
+    padding-bottom: 0;
+}
+
+pre {
+    font-family: monospace;
+    background-color: #EEEEEE;  /* light gray */
+    padding: 10px;
+}
+
+table.headrow {
+	width: 100%;
+}
+
+table.normal {
+	width: 100%;
+}
+
+table.practice {
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+td {
+    font-family: Verdana, sans-serif;
+    font-size: 10pt;
+}
+
+td.headrow {
+    background-color: #EEEEFF;  /* pale blue */
+    font-weight: bold;
+}
+
+td.headrowGroupHeadings {
+    background-color: #EEEEFF;  /* pale blue */
+    font-weight: bold;
+    text-align: right;
+}
+
+th, td.label {
+    text-align: right;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 12%;
+    font-family: Verdana, sans-serif;
+    font-size: 10pt;
+}
+
+ul {
+	margin-top: 2px;
+	margin-bottom: 0;
+}
+
+ul.synopsis {
+	margin-top: 2px;
+	margin-bottom: 30px;
+}
+
+
+/* ============================== */
+/* <admon> STYLES                 */
+/* ============================== */
+
+div.important {
+    border: 2px solid;
+    border-color: #CC0000;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+span.important {
+    color: #CC0000;
+    font-weight: bold;
+}
+
+div.note {
+    border: 2px solid;
+    border-color: #0000CC;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+span.note {
+    color: #0000CC;
+    font-weight: bold;
+}
+
+div.tip {
+    border: 2px solid;
+    border-color: #00CC00;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+span.tip {
+    color: #00CC00;
+    font-weight: bold;
+}
+
+
+/* ============================== */
+/* CLASSES                        */
+/* ============================== */
+
+.attn {
+    color: #CC0000;
+}
+
+.hi {
+    color: #CC0000;
+}
+
+.mono {
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.revised {
+    background-color: #FFFFCC;   /* yellow */
+}

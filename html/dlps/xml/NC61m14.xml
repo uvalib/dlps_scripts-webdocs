@@ -1,0 +1,391 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0417 SYSTEM "000000766_0417" NDATA jpg>
+<!ENTITY DSSR_000000766_0418 SYSTEM "000000766_0418" NDATA jpg>
+<!ENTITY DSSR_000000766_0419 SYSTEM "000000766_0419" NDATA jpg>
+<!ENTITY DSSR_000000766_0420 SYSTEM "000000766_0420" NDATA jpg>
+
+<!--<!ENTITY NC61m14a SYSTEM "NC61m14a.jpg" NDATA jpg>
+<!ENTITY NC61m14b SYSTEM "NC61m14b.jpg" NDATA jpg>
+<!ENTITY NC61m14c SYSTEM "NC61m14c.jpg" NDATA jpg>
+<!ENTITY NC61m14d SYSTEM "NC61m14d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NC61m14">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+                        value="1861-12-14">December 14, 1861</date></title>
+
+                <author>Tenney, Charles</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Donna J. Drucker</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Donna J. Drucker</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">19</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NC61m14</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case, December 14, 1861</title>
+
+
+                        <author>Charles Tenney</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p> </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1861-12-14">1861-12-14</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>masculine</term>
+                    <term>American Civil War / Special Collections</term>
+                </keywords>
+                <keywords >
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-11">November 11th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 14th, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+
+    <text id="d1">
+
+
+        <front id="d2">
+
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1861-12-14">December 14, 1861</date>
+
+                        <title>Letter from Charles Tenney to Adelaide Case</title>
+                    </bibl>
+                </head>
+                <p> Charles writes about a railroad trip with his regiment beginning in Parkersburg
+                    and ending in Green Spring Run. He is poetic in his description, in passing
+                    through Grafton he describes "the silver beams of morning...scattering darkness
+                    away." The trip continues through Oakland and Cumberland, in the latter the
+                    regiment was "warmly welcomed" by the townspeople. The journey is physically
+                    uncomfortable but the scenery is beautiful. He asks Addie if she has been
+                    sleighing yet, asks after her family, and details a new type of powder
+                    explosive. He discusses some military news, gives her his newest address and
+                    requests a long letter the next time. </p>
+            </div1>
+        </front>
+
+
+
+        <body id="d4">
+
+
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1861-12-14"
+                        >December 14, 1861</date></head>
+                <pb n="1" entity="DSSR_000000766_0417"/>
+
+
+                <opener>
+                    <dateline><name type="place">Green Spring Run</name>, B &amp; O R.R.<lb/>
+                        <date value="1861-12-14">Dec 14<hi rend="super">th</hi> 1861</date></dateline>
+
+                    <salute>My dear friend;- </salute>
+
+                </opener>
+
+                <p> Lest you toss all knowledge<lb/> of our whereabouts, I again send you a few<lb/>
+                    lines. We are well and in good spirits, but<lb/> as yet uncertain as to where we
+                    shall be<lb/> sent. We are now under <name type="person">Brig. Gen.
+                    Kelley's</name><lb/> command and he was to come to us <orig reg="yesterday"
+                        >yester-<lb/> day</orig>, but owing to illne&longs;s he did not
+                    come,<lb/> consequently we are now awaiting orders.<lb/>
+                </p>
+
+                <p> I must give you a brief account of our<lb/> ride from <name type="place"
+                        >Parkersburg</name>, where I wrote to you on<lb/> the 9<hi rend="super"
+                    >th</hi>. We left that place at 5 O'clock P.M.<lb/> in low freight cars. There
+                    are three seats<lb/> in each car running lengthwise of the car.<lb/> Two cars
+                    were allowed to a company. Of the<lb/> country through which we came that
+                    night<lb/> I know but little save that is very rough,<lb/> amounting even to the
+                    mountainous. You can<lb/> judge of that when I say that we pa&longs;sed<lb/>
+                    through thirteen tunnels in twenty-seven<lb/> miles. We pa&longs;sed
+                        through <name type="place">Clarksburg</name> about<lb/> half past three in
+                    the morning. Here is where<lb/> we left the R. R. when we came into Va.<lb/>
+                </p>
+
+                <pb n="2" entity="DSSR_000000766_0418"/>
+
+                <p> Just (there isn't that a beautiful letter?)<ref target="n1" n="1">1</ref> before
+                    day light<lb/> we pa&longs;sed through <name type="place">Grafton</name>, and
+                    just as the silver beams<lb/> of morning were scattering darkne&longs;s
+                    away, we were<lb/> instantaneously plunged into total darkne&longs;s; an
+                        interva<hi rend="super">l</hi><lb/> of several minutes, and as suddenly we
+                    emerged into<lb/> almost broad daylight. We had pa&longs;sed through a<lb/>
+                    tunnel seven eighths of a mile in length.<lb/>
+                </p>
+
+                <p> We stopped at <name type="place">Oakland</name> in Maryland and cooked<lb/> our
+                    breakfast, dinner and supper. <orig reg="about">About</orig> ten A.M. we<lb/>
+                    again started on, and arrived at <name type="place">Cumberland, Md.</name><lb/>
+                    just at dark. Here we were warmly welcomed<lb/> by hundreds of Ladies and
+                    gentlemen, we <orig reg="remained">re-<lb/> mained</orig> here about half an
+                    hour, and then we<lb/> were dragged on by our tirele&longs;s Iron horse
+                        to <name type="place">Green<lb/> Spring Run</name> where we now are.<lb/>
+                </p>
+
+                <p> Now dear <name type="person">Addie</name>, imagine yourself a soldier<lb/> jolted
+                    along for hundreds of miles in a cold <orig reg="uncomfortable">uncom-<lb/>
+                        fortable</orig> freight car, night and day, and then when<lb/> you stopped
+                    be obliged to lie wherever you could<lb/>
+                    <sic corr="perchance">perechance</sic> in a cold corner of a car, or
+                    perhaps<lb/> "<hi rend="underline">en bivouack</hi>" by the side of a fire which
+                    you must<lb/> often replenish, or freeze. Suppose for a moment<lb/> you were
+                    there situated and you have some idea<lb/> of our way of living. We are now
+                    without tents<lb/> but expecting new ones every day.<lb/>
+                </p>
+
+                <p> But you remember the old adage "there<lb/> is no great lo&longs;s without
+                    some small gain."<lb/>
+                </p>
+
+                <pb n="3" entity="DSSR_000000766_0419"/>
+
+                <p> Although we <hi rend="super">will</hi> have probably le&longs;s pleasure here
+                    than<lb/> if we had <orig reg="stayed">staid</orig> at <name type="place"
+                        >Charleston</name>, yet I have had an old<lb/> wish realized, that of
+                    visiting the valley of the<lb/> upper Potomac. From <name type="place"
+                    >Oakland</name> we descended into the<lb/> valley. From this point the scenery
+                    was delightful<lb/> still I think I <unclear>seen</unclear> that more beautiful,
+                    but none<lb/> so grand and wild. Hillsides were covered with<lb/> rocks on one
+                    side, while on the other they were<lb/> covered with fertile fields. Here were
+                        abrupt <orig reg="precipices">preci-<lb/> pices</orig> hundreds of feet high
+                    and here luxuriant valleys.<lb/> I would give much to see this region of country
+                    in<lb/> the height of Summer.<lb/>
+                </p>
+
+                <p> You would laugh if you could see us, <name type="person">Hal</name><lb/>
+                    &amp; I sitting under a <orig reg="straw-stack.">straw-stack</orig> He
+                    engaged in<lb/> writing a letter to his friend the "Democrat," and<lb/> I one to
+                    my friend "the Lovely."<lb/>
+                </p>
+
+                <p> Well. <name type="person">Hal</name> has finished his letter &amp; is
+                    now<lb/> waiting for me. I don't care: he can wait for me<lb/> or go to the
+                    other boys. Am I not independent?<lb/>
+                </p>
+
+                <p> I would like to see you now. I suppose you<lb/> have sleighing now, do you not?
+                    Please take<lb/> one ride for me, will you not, and be happy and<lb/> joyous as
+                    you can. I know you remember me<lb/> for I seem to feel your presence every day
+                    and<lb/> night. I never felt happier in my life than since<lb/> I knew you loved
+                    me well enough to style <orig reg="yourself">your<lb/> self</orig> my sister; am
+                    I worthy of being called a brother?<lb/>
+                </p>
+
+                <pb n="4" entity="DSSR_000000766_0420"/>
+
+                <p> Hal is now writing another letter while I am done.<ref target="n2" n="2">2</ref>
+                </p>
+
+                <p> Is <name type="person">Laurie</name> well? and your mother and Father?<lb/> How
+                    is Oil-dom generally? By the bye, I learn of a<lb/> new use for Mecca Oil.
+                        A <name type="person">Mr. Trowbridge</name> of<lb/>
+                    <name type="place">Meadville Pa</name> has applied for a patent for a new<lb/>
+                    bomb-shell. A quantity of <orig reg="rock oil">Rock Oil</orig> is put into<lb/>
+                    the shell with the <orig reg="powder">Powder</orig> so when the shell
+                    explodes<lb/> the oil ignites and fires whatever it touches.<lb/> Novel is it
+                    not?<lb/>
+                </p>
+
+                <p> What do you think of the movements of <name type="person">Gen.<lb/>
+                    McClellan</name>? Is his policy one of those brilliant actions<lb/> which
+                    characterized the first <name type="person">Napoleon</name>?<lb/>
+                </p>
+
+                <p> And <name type="person">Gen. Halleck</name> too? What do you think<lb/> of his
+                    grand withdrawl of troops from central <orig reg="Missouri">Mo</orig>?<lb/>
+                    Perhaps though, as <name type="person">Price's</name> plan is to remove the
+                    field<lb/> to <name type="place">Kansas</name>. <name type="person">Halleck</name>
+                    wishes to lure him back<lb/> to <name type="place">Mi&longs;souri</name>, and
+                    severely whip him but he is not<lb/>
+                    <name type="person">Fremont</name>. I suppose from henceforth you will<lb/>
+                    anxiously look for tidings from the army of the<lb/>
+                    <name type="place">Potomac</name>, instead of that of <unclear>Westim</unclear>
+                    Va. Very natural<lb/> though. I hope <name type="person">Gen. McClellan</name>
+                    will begin to draw<lb/> in the lines which he has so successfully extended<lb/>
+                    around the Rebels, soon, and if he does you may<lb/> look for exciting news from
+                        the <name type="place">Potomac</name>.<lb/>
+                </p>
+
+                <p> But I fear this is getting uninteresting to you, if<lb/> indeed you can read it
+                    all. But perhaps you<lb/> will excuse me, and if as Paddy says " <hi
+                        rend="underline">If you can't<lb/>
+                        <orig reg="read">rade</orig> this <orig reg="please">pleze</orig> sent it
+                        back.</hi>" <lb/>
+                </p>
+
+                <p> You will write soon, will you not? and<lb/> direct your letters to me in leave
+                        of <name type="person">Capt. Arper</name>,<lb/> 7<hi rend="super">th</hi>
+                    Ohio Reg't. Valley of Virginia <hi rend="sub">Via Cumberland.</hi><lb/>
+                </p>
+
+                <p> When you write, please write me a <hi rend="underline">good long</hi><lb/> letter
+                    and remember you are writing to one<lb/> who loves you dearly, and would if
+                    necessary die for<lb/> you.<lb/>
+                </p>
+
+                <closer> I must now bid you farewell for the<lb/> present.<salute>Remaining yours
+                        forever </salute>
+                    <signed>Charlie Tenney<lb/>
+                    </signed>
+                    <seg type="postscript">P.S. I write on a rough board in my lap sitting<lb/> in
+                        the smoke, so please excuse the poor writing.<lb/> Respects to all &amp;
+                        Love and Heavens blessings for the dearest<lb/>
+                        <hi rend="sub">Addie</hi>. </seg>
+                </closer>
+
+            </div1>
+        </body>
+
+
+        <back id="d6">
+
+            <div1 type="notes" n="1" id="d7">
+                <head>Notes</head>
+                <p>
+                    <note id="n1" place="end" n="1"><seg type="note-symbol">1</seg>
+                        <p>Charles is referring to the fact that he wrote a decorative "J" in the
+                            word "Just."</p>
+                    </note>
+                    <note id="n2" place="end" n="2"><seg type="note-symbol">2</seg>
+                        <p>This line of text is written along the left side of the page.</p>
+                    </note>
+                </p>
+            </div1>
+        </back>
+
+
+
+    </text>
+
+</TEI.2>

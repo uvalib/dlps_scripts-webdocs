@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0159 SYSTEM "000000766_0159" NDATA jpg>
+<!ENTITY DSSR_000000766_0160 SYSTEM "000000766_0160" NDATA jpg>
+<!ENTITY DSSR_000000766_0161 SYSTEM "000000766_0161" NDATA jpg>
+<!ENTITY DSSR_000000766_0162 SYSTEM "000000766_0162" NDATA jpg>
+<!ENTITY long "s" > <!-- long s as typically found in 18thc -->
+
+
+
+<!--<!DOCTYPE TEI.2 SYSTEM 'teixlite.dtd'[
+
+<!NOTATION jpg SYSTEM "JPEG">  
+ 
+	<!ENTITY NA62m17a SYSTEM "NA62m17a.jpg" NDATA jpg>  
+	<!ENTITY NA62m17b SYSTEM "NA62m17b.jpg" NDATA jpg> 
+	<!ENTITY NA62m17c SYSTEM "NA62m17c.jpg" NDATA jpg> 
+	<!ENTITY NA62m17d SYSTEM "NA62m17d.jpg" NDATA jpg> 
+
+
+
+	<!ENTITY % ISOlat1 SYSTEM "ISOlat1.pen"> %ISOlat1;  
+	<!ENTITY % ISOlat2 SYSTEM "ISOlat2.pen"> %ISOlat2;  
+	<!ENTITY % ISOnum SYSTEM "ISOnum.pen"> %ISOnum;  
+	<!ENTITY % ISOpub SYSTEM "ISOpub.pen"> %ISOpub;  
+	<!ENTITY % ISOtech SYSTEM "ISOtech.pen"> %ISOtech; -->
+	
+	
+	
+	]>
+
+<TEI.2 id="NA62m17">
+
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-12-17"
+      >17 December 1862</date></title>
+    <author>Case, Adelaide E., fl 1861-1863</author>
+
+    <respStmt>
+     <resp>Transcription and TEIXLITE encoding.</resp>
+     <name>Julian Aiken. Rare Book School 2005.</name>
+    </respStmt>
+
+   </titleStmt>
+
+   <publicationStmt>
+    <publisher>Albert H. Small Special Collections Library, University of Virginia</publisher>
+    <pubPlace>Charlottesville, VA</pubPlace>
+    <idno type="etext">NA62m17</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2005">2005</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Adelaide E. Case to Charles N. Tenney, 17 December 1862</title>
+      <author>Case, Adelaide E., fl 1861-1863</author>
+     </titleStmt>
+     <publicationStmt>
+      <publisher>Albert H. Small Special Collections Library, University of Virginia</publisher>
+      <pubPlace>Charlottesville, VA</pubPlace>
+      <date value="1862-12-17">1862-12-17</date>
+     </publicationStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <profileDesc>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2009-11-19">November 10th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+
+ <text id="d1">
+
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+
+    <head>
+     <bibl>
+      <abbr>AL</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-12-17">December 17, 1862</date>
+      <!--<idno rend="suppress">NA62m17</idno>-->
+      <title>Letter from Adelaide E. Case to Charles N. Tenney </title>
+     </bibl>
+    </head>
+
+    <p> Case discusses the fighting at Fredericksburg, and expresses both relief that Tenney was not
+     there and anxieties for his future safety. Case refers to her hopes that Tenney might obtain a
+     discharge, and goes on to provide a description of the daily routine at her school. </p>
+   </div1>
+  </front>
+
+  <body id="d4">
+
+
+
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-12-17">17 December
+      1862</date></head>
+    <pb n="1" entity="DSSR_000000766_0159"/>
+    <opener>
+
+     <!--<seg>
+      <figure rend="page" entity="NA62m17a">
+       <figDesc/>
+      </figure>
+     </seg>-->
+
+     <dateline>
+      <name type="place">Farmington</name>
+      <date value="1862-12-17">Dec 17<hi rend="super">th</hi> 1862</date>
+     </dateline>
+     <lb/>
+
+     <salute>My <hi rend="underline">own dear precious</hi> Charlie,</salute>
+     <lb/>
+    </opener>
+
+    <p> Much has<lb/> transpired since last I wrote you -<lb/> one week ago today, both in <name
+      type="place">Virginia</name><lb/>
+     <name type="place">Tennessee</name> and perhaps in <name type="place">Ohio</name>.<lb/> We have
+     the accounts of the fight<lb/> at <name type="place">Fredericksburg</name><ref target="n1"
+      n="1">1</ref>, and of the almost<lb/> certain destruction of that city, and<lb/> is it any
+     wonder that I am <orig reg="thankful">thank-<lb/>ful</orig>
+     <hi rend="underline">
+      <name type="recipient">Charlie</name>
+     </hi> is not an actor there<lb/> among the scenes of strife and blood.<lb/> But how many are
+     there engaged.<lb/> They may not all be <name type="recipient">Charlies</name>, but<lb/> they
+     are probably somebody's father<lb/> husband, <hi rend="underline">friend</hi> or brother, fighting<lb/>
+     <pb n="2" entity="DSSR_000000766_0160"/>
+     <!--<figure rend="page" entity="NA62m17b">
+      <figDesc/>
+     </figure>--> desperately for
+     Union and Liberty, and<lb/> how many torn and bleeding hearts<lb/> will there <add hand="h1"
+      place="supralinear">be </add>when the names of those who<lb/> have fallen a sacrifice to foul,
+     wicked<lb/> treason are recorded. Yet I have no<lb/> proof that you are not there. All<lb/> I
+     know is your allusion to the<lb/> probability of the 1<hi rend="super">st</hi> Brigade remaining<lb/>
+     <del hand="h1">at</del><add hand="h1" place="inline">in</add>
+     <name type="place">Harpers Ferry</name> during the winter, and<lb/> that you were <del
+      hand="h1">
+      <unclear>(there)</unclear>
+     </del> in the <abbr expan="Provost">Pro.</abbr> Marshall's<lb/> office. But then your last
+     letter was<lb/> written long ago - <date value="1862-12-17">nov. 25<hi rend="super">th</hi></date> and many<lb/>
+     changes may have taken place with the<lb/> 7<hi rend="super">th</hi> Ohio, and - with my darling, since<lb/> then. I
+     am truly sorry that you<lb/> are in a position where you can not<lb/> write oftener to <hi
+      rend="underline">your <name type="sender">Addie</name></hi> for it is<lb/> a source of great
+     anxiety to me that<lb/> I do not oftener hear from you, but<lb/> I have so often told you this
+     that it<lb/> is useless repeating it.<lb/>
+    </p>
+   </div1>
+
+
+   <div1 type="letter" n="2" id="d6">
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, Evening of <date value="1862-12-17">17
+      December 1862</date></head>
+
+    <opener>
+     <salute>Good evening Darling</salute>
+    </opener>
+    <lb/>
+
+
+    <p> I was obliged<lb/>
+     <pb n="3" entity="DSSR_000000766_0161"/>
+     <!--<figure rend="page" entity="NA62m17c">
+      <figDesc/>
+     </figure>--> to cease writing
+     this afternoon on<lb/> account of a recitation coming<lb/> at 2.30p.m. and another at<lb/> 3.15
+     p.m., but school has closed<lb/> for today, tea has been served,<lb/> and now I am ready to
+     resume<lb/> my writing. Winter has made<lb/> his appearence in force, and now<lb/> the snow
+     lies upon the ground about<lb/> four or five inches deep, but as the<lb/> ground did not freeze
+     solid there<lb/> is no sleighing. I should enjoy<lb/> a good sleighride very much, but<lb/>
+     with no one but thee <hi rend="underline">darling</hi>.<lb/> Oh well; the time may come when<lb/>
+     <hi rend="underline">we</hi> can enjoy life, <hi rend="underline">God grant it may</hi><lb/> as
+     I have not heard from you lately<lb/> I know no more about your coming<lb/> home, Oh <name
+      type="recipient">Charlie</name>, dear darling loved<lb/> one could I but for one hour
+     enjoy<lb/> your society, I would be happy.<lb/> Can you obtain a discharge? Please<lb/> write
+     and tell me for this standing<lb/>
+     <pb n="4" entity="DSSR_000000766_0162"/>
+     <!--<figure rend="page" entity="NA62m17d">
+      <figDesc/>
+     </figure>--> between hope and
+     fear is too <orig reg="tantalizing.">tantal-<lb/>-izing.</orig> At times I am elated<lb/> with
+     hope and at other times<lb/> find myself bordering on <orig reg="despondency."
+      >despond-<lb/>-ency.</orig> But these thoughts will only<lb/> tend to sadden you, so forgive
+     me<lb/> darling.<lb/>
+    </p>
+
+
+    <p>Do you hear that? No, well it is<lb/> the bell, telling us that it is six<lb/> o'clock; the
+     hour when students must<lb/> be in their rooms. Thank fortune it<lb/> does not tell us that we
+     must not<lb/> write to friends after six.<lb/> Do you not wish you <orig reg="were">was</orig>
+     a student<lb/> Oh, it is sport, this going to school.<lb/> Would you like to know the
+     several<lb/> rules of our school? I will tell you<lb/> first we must arise at six (although
+     we<lb/> must retire ere we can arise yet as<lb/> this is the first act we perform in<lb/> the
+     morning, I thought I would give<lb/> it first) 2<hi rend="super">nd</hi> studying an hour before<lb/> Roll-call, 3<hi rend="super">rd</hi>
+     Being present at roll-call<lb/> and morning prayers, 4<hi rend="super">th</hi> not whispering<lb/> during recitation,
+     5<hi rend="super">th</hi> making no <orig reg="unnecessary">unnec-<lb/>essary</orig> noise about the seminary<lb/>
+     6<hi rend="super">th</hi> Being present at all of our <orig reg="recitations.">recita-<lb/>tions.</orig>
+    </p>
+   </div1>
+
+  </body>
+
+  <back id="d7">
+   <div1 type="notes" n="1" id="d8">
+    <head>Notes</head>
+
+    <note id="n1" place="end" n="1">
+     <seg type="note-symbol">1</seg>
+     <p>The Battle of Fredericksburg, December 13th, 1862.</p>
+    </note>
+
+   </div1>
+  </back>
+
+ </text>
+
+</TEI.2>

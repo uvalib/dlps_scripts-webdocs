@@ -1,0 +1,99 @@
+/*
+   tei.css - cascading stylesheet for use by the DLPS TEI Preview tool (for previewing TEI XML transformed to HTML)
+
+   Greg Murray <gpm2a@virginia.edu)
+   Last modified: 2005-03-17
+
+   2005-03-17: gpm2a: For td, added "vertical-align: top"
+*/
+
+body, th, td {
+  background-color: white;
+  color: black;
+  font-family: Verdana;
+  font-size: 10pt;
+}
+
+td {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+  text-align: center;
+}
+
+table.metadata {
+  border: 1px solid black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.gap {
+  color: #CC0000;
+}
+
+.gothic {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.hang {
+  margin-left: 2em;
+  text-indent: -2em;
+}
+
+.indent {
+  text-indent: 2em;
+}
+.indent2 {
+  text-indent: 4em;
+}
+.indent3 {
+  text-indent: 6em;
+}
+.indent4 {
+  text-indent: 8em;
+}
+.indent5 {
+  text-indent: 10em;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.salute_closer {
+  text-align: right;
+}
+
+.signed {
+  text-align: right;
+}
+
+.smcap {
+  font-variant: small-caps;
+
+  /* here underlining is used as an additional indicator for
+     small-caps, since browsers don't always render it correctly */
+  text-decoration: underline;
+}
+
+.unclear {
+  color: #CC0000;
+}
+
+.unknown {
+  /* here line-through is used for <hi rend="..."> values not
+     handled by the XSLT stylesheet, as a debugging aid */
+  text-decoration: line-through;
+}

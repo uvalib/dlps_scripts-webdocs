@@ -1,0 +1,1778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+
+
+<!ENTITY DSSR_000000961_0001 SYSTEM "000000961_0001" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0002 SYSTEM "000000961_0002" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0003 SYSTEM "000000961_0003" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0004 SYSTEM "000000961_0004" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0005 SYSTEM "000000961_0005" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0006 SYSTEM "000000961_0006" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0007 SYSTEM "000000961_0007" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0008 SYSTEM "000000961_0008" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0009 SYSTEM "000000961_0009" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0010 SYSTEM "000000961_0010" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0011 SYSTEM "000000961_0011" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0012 SYSTEM "000000961_0012" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0013 SYSTEM "000000961_0013" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0014 SYSTEM "000000961_0014" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0015 SYSTEM "000000961_0015" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0016 SYSTEM "000000961_0016" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0017 SYSTEM "000000961_0017" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0018 SYSTEM "000000961_0018" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0019 SYSTEM "000000961_0019" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0020 SYSTEM "000000961_0020" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0021 SYSTEM "000000961_0021" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0022 SYSTEM "000000961_0022" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0023 SYSTEM "000000961_0023" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0024 SYSTEM "000000961_0024" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0025 SYSTEM "000000961_0025" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0026 SYSTEM "000000961_0026" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0027 SYSTEM "000000961_0027" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0028 SYSTEM "000000961_0028" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0029 SYSTEM "000000961_0029" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0030 SYSTEM "000000961_0030" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0031 SYSTEM "000000961_0031" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0032 SYSTEM "000000961_0032" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0033 SYSTEM "000000961_0033" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0034 SYSTEM "000000961_0034" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0035 SYSTEM "000000961_0035" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0036 SYSTEM "000000961_0036" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0037 SYSTEM "000000961_0037" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0038 SYSTEM "000000961_0038" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0039 SYSTEM "000000961_0039" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0040 SYSTEM "000000961_0040" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0041 SYSTEM "000000961_0041" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0042 SYSTEM "000000961_0042" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0043 SYSTEM "000000961_0043" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0044 SYSTEM "000000961_0044" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0045 SYSTEM "000000961_0045" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0046 SYSTEM "000000961_0046" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0047 SYSTEM "000000961_0047" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0048 SYSTEM "000000961_0048" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0049 SYSTEM "000000961_0049" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0050 SYSTEM "000000961_0050" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0051 SYSTEM "000000961_0051" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0052 SYSTEM "000000961_0052" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0053 SYSTEM "000000961_0053" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0054 SYSTEM "000000961_0054" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0055 SYSTEM "000000961_0055" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0056 SYSTEM "000000961_0056" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0057 SYSTEM "000000961_0057" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0058 SYSTEM "000000961_0058" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0059 SYSTEM "000000961_0059" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0060 SYSTEM "000000961_0060" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0061 SYSTEM "000000961_0061" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0062 SYSTEM "000000961_0062" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0063 SYSTEM "000000961_0063" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0064 SYSTEM "000000961_0064" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0065 SYSTEM "000000961_0065" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0066 SYSTEM "000000961_0066" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0067 SYSTEM "000000961_0067" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0068 SYSTEM "000000961_0068" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0069 SYSTEM "000000961_0069" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0070 SYSTEM "000000961_0070" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0071 SYSTEM "000000961_0071" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0072 SYSTEM "000000961_0072" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0073 SYSTEM "000000961_0073" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0074 SYSTEM "000000961_0074" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0075 SYSTEM "000000961_0075" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0076 SYSTEM "000000961_0076" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0077 SYSTEM "000000961_0077" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0078 SYSTEM "000000961_0078" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0079 SYSTEM "000000961_0079" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0080 SYSTEM "000000961_0080" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0081 SYSTEM "000000961_0081" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0082 SYSTEM "000000961_0082" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0083 SYSTEM "000000961_0083" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0084 SYSTEM "000000961_0084" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0085 SYSTEM "000000961_0085" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0086 SYSTEM "000000961_0086" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0087 SYSTEM "000000961_0087" NDATA uvaHighRes>
+<!ENTITY DSSR_000000961_0088 SYSTEM "000000961_0088" NDATA uvaHighRes>
+]>
+
+<TEI.2 id="D12021">
+    <!-- Matt; I had to add a 'D' in front of the id #  -->
+    <teiHeader type="AACR2">
+
+        <fileDesc>
+            <titleStmt>
+
+                <title type="main">JOURNAL OF EPHRAIM A. WOOD</title>
+
+                <author>Wood, Ephraim A.</author>
+                <respStmt>
+                    <resp>Creation of machine-readable version: </resp>
+                    <name>Digital Curation Services , University of Virginia Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Digital Curation Services</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Creation of digital images:</resp>
+                    <name>Digitization Services, University of Virginia Library</name>
+                </respStmt>
+
+            </titleStmt>
+
+            <extent>ca. <num type="kilobytes">136</num> kilobytes</extent>
+
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia </pubPlace>
+                <idno type="DCS">D12021</idno>
+                <date value="2009">2009</date>
+            </publicationStmt>
+            
+            <seriesStmt>                        
+                        <title>University of Virginia Library, Text collection</title>                        
+                        <idno type="uva-set">UVA-LIB-Text</idno>                             
+                        <idno type="uva-set">UVA-LIB-CivilWar</idno>                        
+                    </seriesStmt>
+
+            <sourceDesc>
+
+                <biblFull>
+                    <titleStmt>
+                        <title type="main">Journal of Private Wood, [manuscript], <dateRange
+                                from="1862-06-29" to="1862-09-13">1862 June 29-September
+                            13</dateRange></title>
+                        <title type="sort">journal of private wood 1862 june 29-september 13</title>
+                        <author>Wood, Ephraim A. 1841-</author>
+                    </titleStmt>
+                    <extent>1 vol.</extent>
+                    <publicationStmt>
+                        <idno type="Accession No.">mss 12021</idno>
+                        <idno type="Virgo ID">3731954-1001</idno>
+                        <idno type="title control number">a3731954 </idno>
+                        <availability>
+                            <p> Albert &amp; Shirley Small Special Collections, University of
+                                Virginia Library, Charlottesville, Virginia, USA</p>
+                        </availability>
+                    </publicationStmt>
+                    
+                </biblFull>
+
+            </sourceDesc>
+
+
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <!-- Per Matt we need to work on this statement-->
+                <p> Prepared for the University of Virginia Library by Digital Curation Services
+                    staff and volunteer Mary Roy Dawson Edwards, Transcriber. November 2001.</p>
+            </projectDesc>
+        </encodingDesc>
+
+        <profileDesc>
+            <langUsage>
+                <language id="eng" usage="main">English</language>
+            </langUsage>
+            <handList>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+        </profileDesc>
+
+    </teiHeader>
+    <text id="d1">
+        <body id="d2">
+            <div1 id="d3" type="part">
+                <pb entity="DSSR_000000961_0001" n="np"/>
+                <head>JOURNAL OF PRIVATE WOOD, <dateRange from="1862-06-29" to="1862-09-13">1862
+                        June 29-September 13</dateRange></head>
+                <div2 id="d4" type="section">
+                    <head>1862</head>
+                    <div3 id="d5" type="entry">
+                        <head><hi rend="underline">Journal</hi>
+                            <lb/>Sunday <date value="1862-06-29">June 29<hi rend="super">th</hi>
+                                1862</date></head>
+
+                        <p>Pleasant all day. also very warm. We had some baked beans for Breakfast
+                            which were <add hand="author" place="top">very</add> good. All we wanted
+                            to make it a splendid Breakfast was <del hand="author">
+                                <hi rend="line-through">hard</hi>
+                            </del> brown bread, some thing that I have not seen for a good while.
+                            Inspection was at seven O clock.</p>
+                        <p>At Dinner time, Mitchell and myself bought a dozen eggs for twenty five
+                            cents. (No dinner was given us, except hard bread) I got a piece of
+                            pork, and a spider and fried six of them. Which made a very good dinner
+                            for us. In the Afternoon I walked down to the Run and took a bath. I
+                            crossed the run and went to a house about a mile from where I crossed;
+                            up the creek was the Battle field. I went into the House and asked for a
+                            drink of water, which was given me. I asked the man, that was <pb
+                                entity="DSSR_000000961_0002" n="np"/> in the House, if he was there
+                            when the Battle took place. He said his Family was there, but he himself
+                            was at Manassas, The Rebels had ordered him there, to join the Secesh
+                            Army, a few days before the Battle. He had got rid some way or reather,
+                            of going into the ranks, and the Rebels had concluded to let him return
+                            home. He was at Manassas waiting for an opportunity to return home when
+                            the Battle took place. The woman that was in the house said that she was
+                            frightened most to death, and never wanted to be so near two Army's
+                            again. I have never been over all the Battle ground yet, but think I
+                            shall some day. The man said that he had never been on to the field, and
+                            never shall if he can help it. He went to the edge of it the day after
+                                <pb entity="DSSR_000000961_0003" n="np"/> the Battle He saw three
+                            dead bodies laying on the ground, which sickened him of going any
+                            farther. The Chaplain preached reather a curious Sermon to us to day,
+                            but a very good one, Where do you think he took his text from. From Mark
+                            Tapley, a Character in one of Dickens Novels.<ref n="1" target="n1">{1}</ref>
+                            The text is always be jolly He went on to say that, <del
+                                hand="author">
+                                <hi rend="line-through">if</hi>
+                            </del> a person who was always jolly, knew how to live. In what ever
+                            circumstances he may be placed if things had gone wrong with him and
+                            every thing look gloomy, be jolly under the circumstance. He said <unclear>
+                                <del hand="author">
+                                    <hi rend="line-through">[a word lined through]</hi>
+                                </del>
+                            </unclear> that there was no class of people who ought to be more jolly
+                            than Soldiers. He said if a Soldier started on a March with a Knapsack
+                            weighing from twenty to thirty pounds, should grumble, complain and
+                            weep, the Knapsack would weigh <pb entity="DSSR_000000961_0004" n="np"/>
+                            one hundred and sixty pounds before he had got ten miles, But if a
+                            Soldiers starts off with a Knapsack weighing thirty pounds, and is jolly
+                            when he reaches the end of ten miles his Knap would weigh thirty pounds
+                            still, it might in some cases weigh sixty but never over. He did not
+                            mean by being jolly to laugh at all the bad jokes that some got off, or
+                            to made bad jokes, but good innocent jokes, something that our Concience
+                            approved off. Mark Tapley was a man, that in what ever circumstances he
+                            was placed in to be always jolly. I think <add hand="author" place="top"
+                                >our Chaplain</add>
+                            <del hand="author">
+                                <hi rend="line-through">he</hi>
+                            </del> lives up to his doctrine for he is always jolly. After services
+                            we had dress Parade.</p>
+
+                    </div3>
+
+                    <div3 id="d6" type="entry">
+                        <pb entity="DSSR_000000961_0005" n="5"/>
+                        <head>Journal Continued<lb/> Monday, <date value="1862-06-30">June 30<hi
+                                    rend="super">th</hi> 1862</date></head>
+
+                        <p>To day is the last day of June. At ten O clock we were mustered in for
+                            our pay, by the Magor In the afternoon, there was a Brigade drill under
+                            Gen Hartsuff, as there was only twelve files to go out when it is a
+                            Brigade drill I was was one that was excused. Mitchell and myself bought
+                            a paper of Corn Starch of the Sutler for twenty five cts, also some
+                            sugar, and for supper we had some tasty pudding, the first that I have
+                            yet had. It was first rate. No dress Parade, pleasant all day.</p>
+                    </div3>
+                    <div3 id="d7" type="entry">
+                        <head>Tuesday <date value="1862-07-01">July 1<hi rend="super">st</hi>
+                            1862</date></head>
+
+                        <p>Pleasant and warm all day. We drilled this morning in the Skirmishing.
+                            After drill I stole out of Camp and went about <pb
+                                entity="DSSR_000000961_0006" n="np"/> three miles towards Warrenton,
+                            before I came to a House, in which I found nothing but colored people
+                            who informed me that their Master and Mistress had gone South when the
+                            Rebels left here. The man has two sons in the Rebel Army. I tried to get
+                            some milk but could not, going back I found some black berries, which
+                            are just beginning to get ripe. I got back about three O clock, and
+                            found Mitchell had got some Corn Starch pudding made for me. We had no
+                            Battalion drill or Dress Parade this afternoon as the Col is unwell and
+                            the Magor is Brigade Officer of the Day </p>
+                    </div3>
+
+                    <div3 id="d8" type="entry">
+                        <head>Wednesday <date value="1862-07-02">July 2<hi rend="super">nd</hi>
+                            1862</date></head>
+                        <p> Rained hard all day, and read write and slept. Received letters from
+                            Father Sophia &amp; Durant. </p>
+                        <pb entity="DSSR_000000961_0007" n="np"/>
+                        <div4 id="d9" type="letter">
+                            <head><date value="1862-11-07">No 24</date><lb/> Thursday <date
+                                    value="1862-07-03">July 3<hi rend="super">rd</hi> 1862</date></head>
+                            <opener>Dear Sister Sophia</opener>
+                            <p rend="indent2">Enclosed in Fathers letter I received one from you
+                                marked <date value="1862-11-24">No 24</date> I received by the same
+                                mail a lot of Ledgers and a journal, they arrived just in the right
+                                time, as it was rainy and gloomy. I was anxious to have something to
+                                read. I had been studying Hardee all the forenoon. It has cleared
+                                off this morning. The Sanitary Committee were out here day before
+                                yesterday. They condemned these ponchos tents and we have been
+                                ordered to make out requisitions for Libby tents, which will add to
+                                our comfort a good deal. To Morrow is <unclear>
+                                    <del hand="author">
+                                        <hi rend="line-through">[a word lined through]</hi>
+                                    </del>
+                                </unclear> fourth of July. I hope you will enjoy yourself, and I
+                                guess <pb entity="DSSR_000000961_0008" n="np"/> you will if you are
+                                going to spend that day at Miss Hurds. I wish it was so that I could
+                                be there with you. I have sent a kind of journal which will let you
+                                know what I have been doing the last few days. My love to Mother and
+                                all the Family. </p>
+                            <closer>
+                                <salute> With much love I remain your affectionate Bro</salute>
+                                <signed>Albert</signed>
+                            </closer>
+                        </div4>
+
+
+                        <div4 id="d10" type="envelope">
+
+
+                            <p> Miss Sophia A. W. Wood<lb/> Wellesley<lb/> Mass.<lb/> Formerly West
+                                Needham Mass<lb/> Care Henry Wood Sq<lb/> Color Manufacturer<lb/>
+                                near Lake Waban<ref n="2" target="n2">{2}</ref></p>
+                        </div4>
+                    </div3>
+                    <pb entity="DSSR_000000961_0009" n="7"/>
+                    <div3 id="d11" type="entry">
+                        <head>Page 7<lb/> Journal Continued<lb/> Thursday <date value="1862-07-03"
+                                >July 3<hi rend="super">rd</hi>/62</date></head>
+                        <p> Pleasant. We had no drill today neither Dress Parade. Very Warm, In the
+                            evening a number of Bon Fires were built and the Boys acted, as though
+                            they intended to have a merry night of it. They were quite noisy after
+                            taps. The Officer of the day had to speak to quite a number. Our Captain
+                            told us to keep quiet till morning, and then we could have as good a
+                            time as we wanted. </p>
+                    </div3>
+                    <div3 id="d12" type="entry">
+                        <head>Friday <date value="1862-07-04">July 4<hi rend="super">th</hi>
+                            1862</date></head>
+
+                        <p> Independence has come. The Sun came out warm and it proved to be a very
+                            hot day. We had breakfast at Six Oclock. At half past six, we received
+                            orders to prepare to march at <pb entity="DSSR_000000961_0010" n="8"/>
+                            eight Oclock. It was a great disappointment to a New York Regt, in
+                            Rickets Brigade. They had got their Camp fixed up splendidly, and had
+                            commenced to put up fire<ref n="3" target="n3">{3}</ref> which were sent
+                            to them by their Friends. They had made walks through their Camp with,
+                                <del hand="author">
+                                <hi rend="line-through">with</hi>
+                            </del> arches of evergreens over head, on which they were a going to
+                            hang their Chinese lanterns. The Friend of the Regt from New York had
+                            got up an excursion and were <add hand="author" place="top"> comming
+                            </add> this day to see them. They received notice that the Excursion
+                            party had reached Washington the night before. When that Excursion party
+                            arrived at Manassas, the loved ones that they expected to see, had been
+                            gone about <pb entity="DSSR_000000961_0011" n="9"/> an hour. It was to
+                            bad, some of those friends, if not most of them, were probably Fathers
+                            Mothers Sisters and brothers. We marched ten miles, towards Warrenton.
+                            At the end of our days march, I had all the Cherries and blackberries
+                            that I could eat.</p>
+                    </div3>
+                    <div3 id="d13" type="entry">
+                        <head> Saturday, <date value="1862-07-05">July 5<hi rend="super">th</hi>
+                            /62</date></head>
+                        <p> Pleasant, and very warm. Marched at seven O clock. We marched very slow
+                            stopping often to rest, it was so warm We had marched eight miles, and
+                            were resting in some woods when the news reached us that Mc Clellan had
+                            taken Richmond <del hand="author">
+                                <hi rend="line-through">with</hi>
+                            </del>
+                            <add hand="author" place="top">and</add> twenty thousand prisoners. Such
+                            a noise, you never heard, as <add hand="author" place="top">we</add>
+                            made. If you can imagine the <add hand="author" place="top">noise</add>
+                            that eight Regts would make, each one yelling as loud <pb
+                                entity="DSSR_000000961_0012" n="10"/> as he could, you would have a
+                            slight idea of it. We marched two miles farther which brought us within
+                            a mile and a half of Warrenton, here we pitched our Camp. Warrenton is
+                            about ten miles from Warrenton Junction. I had all the Cherries and
+                            blackberries that I could eat.</p>
+                    </div3>
+                    <div3 id="d14" type="entry">
+                        <head>Sunday <date value="1862-07-06">July 6<hi rend="super">th</hi>
+                            /62</date></head>
+                        <p> The warmest day I think that we have had. I went to a brook and had a
+                            bath, after inspection. Also got all the Cherries that I wanted. I went
+                            down to Warrenton It is a very pretty place about as large as
+                            Martinsburg. There is a great many beautiful Residences in the Town.
+                            Most of the Women seem to be dress in mourning.</p>
+
+
+                    </div3>
+
+                    <pb entity="DSSR_000000961_0013" n="11"/>
+                    <div3 id="d15" type="entry">
+                        <head>Page 11<lb/> Journal Continued<lb/> Monday, <date value="1862-07-07"
+                                >July 7<hi rend="super">th</hi> 1862</date></head>
+
+                        <p> I was supernumery of the Guard this morning. After Guard mounting I went
+                            to the brook and had a bath. I then went and got all the Cherries that I
+                            wanted to eat. I took a walk around the Country. On my travels I came to
+                            a mill, the owner of which was close by sitting, on a stone wall talking
+                            with a couple of Soldiers. He seemed anxious to have our forces whip the
+                            Rebels at Richmond, and that the War would end as soon as possible. The
+                            opinion I formed of him was, that he sympathized with the South, but
+                            that he thought it was useless for them to hold out any longer and was
+                            in hope our forces would conquor as soon <pb
+                                entity="DSSR_000000961_0014" n="12"/> as possible. He denounced the
+                            Rebel Leaders. The next house I came to I stoped and took dinner, as it
+                            was after two Oclock. I had been away from Camp ever since eight Oclock.
+                            I found the people here very pleasant and kind. There was two persons in
+                            the House, one a Lady of about the age of Fifty, and her daughter, who
+                            was about twenty five or six years of age. Here I met two Soldiers, one
+                            from this Regt, and one from the New York Ninth. The Youngest Lady
+                            entertained us for nearly three hours. She said that she had three
+                            brothers in the Rebel Army, whose time of enlistment had expired some
+                            time ago, but the Conscript Law that was passed, held them in Service
+                            over their time. She thought that Law very unjust, and denounced the <pb
+                                entity="DSSR_000000961_0015" n="13"/> the Rebel Leaders more
+                            severly, then the Miller did. She tried to prevent her Brothers from
+                            joining the Army in the first place. When the Rebel forces were at
+                            Manassas, she said that Gen Johnsons Wife boarded in Warrenton The
+                            Slavery question was brought up. She thought that they were better off
+                            with their Masters, then they would be if free. She said she did not
+                            approve of selling them. She had cried many a time at seeing an infant
+                            separated from its Mother and sold to the hightest bidder. I got back to
+                            Camp a little before six Oclock, just in time to escape a heavy shower
+                            It was <add hand="author" place="top">said</add> that the thermometer
+                            yesterday in the shade stood at a hundred and ten degrees. To day one
+                            hundred and three. Very Warm Weather.</p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0016" n="14"/>
+                    <div3 id="d16" type="entry">
+                        <head>Tuesday <date value="1862-07-08">July 8<hi rend="super">th</hi>
+                            1862</date></head>
+                        <p> I wrote three letters this morning One each to Father, Sophia, and
+                            Edmund. I then went in bathing, after which I went to the house where I
+                            took dinner yesterday I found that some of the troops belonging to
+                            Duryeas Brigade, had been acting very rudely. They came to the house and
+                            killed some of their Chickens Geese and Sheep, broke into their Spring
+                            House and took all their Butter and Milk. All this was done right before
+                            the face and eyes of the women of the House. When I was there they would
+                            sit on the front door step and shout at the Geese and Turkeys in the
+                            yard. I tried to persuade them not to act so, but it did not do any
+                            good. The man of the Farm went off to the Generals to try and get a
+                            guard. The folks were glad to see me and they persuaded me to stop to
+                            Dinner, and what Soldiers, that were in the yard that had acted right,
+                            they gave some dinner </p>
+                        <pb entity="DSSR_000000961_0017" n="15"/>
+                        <p>Journal Continued</p>
+                        <p>After dinner, I walked along the road leading to Town. I passed a House
+                            belonging to a free Negro, and saw two Soldiers trying to catch his
+                            Chickens. The next house I came to belonged to a poor Widow Woman. Her
+                            Husband died in March last, and her daughter in May leaving her all
+                            alone with an old Negro Servant. The Soldiers had been there took all
+                            the bees she had except one hive, all the vegetables she had in her
+                            small garden, broke into her spring house, stole two jars of pickled
+                            Cherries, and every thing they could lay their hands on. All these
+                            depradations seem to be committed by one Regt the 104 New York,
+                            belonging to Duryeas Brigade. Never since I have been in the Army have I
+                            seen such actions before <pb entity="DSSR_000000961_0018" n="16"/> I
+                            never came across any people, that have treated me <add hand="author"
+                                place="top">any better</add> than they have in this Neighborhood,
+                            and as long as they treat me well, I shall treat them well. When I came
+                            to the edge of the Town, I found a guard stationed there, who forbid me
+                            going further without a pass, So I turned about and came back to Camp.
+                            Dress Parade at Sunset. For Supper I made some Corn Starch pudding The
+                            weather was pleasant all day</p>
+                    </div3>
+                    <div3 id="d17" type="entry">
+                        <head>Wednesday <date value="1862-07-09">July 9<hi rend="super">th</hi>
+                            /62</date></head>
+                        <p>Strict orders have been <unclear>
+                                <del hand="author">
+                                    <hi rend="line-through">[word lined through]</hi>
+                                </del>
+                            </unclear> issued this morning, in regard to the Soldiers leaving Camp,
+                            as a great many complains have been made of the bad conduct of some of
+                            the troops. A double guard had been order to be put on, and no one to
+                            leave Camp without a pass. I thought I would get out of Camp before
+                            Guard <reg orig="Moun-|ting">Mounting</reg>, so at seven Oclock I
+                            started I went to the brook and had a bath after which, I went off for
+                                <pb entity="DSSR_000000961_0019" n="17"/> a walk, taking a different
+                            direction from what I went yesterday. After walking about a mile I found
+                            a splendid Cherry tree. The fruit looked to tempting to pass, so up the
+                            tree I went, and eat my fill. I walked about a mile farther and came to
+                            a road that branched off to the right. I followed this rode till I came
+                            to a house, which belonged to a Widow Women by the name of Edmunds.
+                            There was a number of Women in the House, and several young Ladies. I
+                            went to the door and asked for a drink of Water, which was given me.
+                            They were siting at the door, and they handed me a chair, and asked me
+                            to sit down. I asked them if they had been troubled any by the Soldiers,
+                            and I found that they had been served about as hard as their Neighbors.
+                            In our <reg orig="conversa-|tion">conversation</reg>, the Old Lady
+                            mentioned a Clock <pb entity="DSSR_000000961_0020" n="18"/> that She had
+                            that wanted repairing. I told her that I used to repair Clocks once, and
+                            would look at it if she wanted me to. The Clock was brought into the
+                            Entry and lay upon a table. It was an old Wooden Clock. I took it to
+                            pieces and found the trouble was with the rope attached to the weight.
+                            It had got off of the wheel and got twisted up. I fixed it and oiled it
+                            a little, and set it to running which pleased the old Lady very much.
+                            She wanted to pay me, but I told her I wanted nothing that she was
+                            welcome to services that I had done her. She persuaded me to stop to
+                            dinner. One of the Young Ladies name was Parrott, and lives in
+                            Alexandrier. She came here to visit, about a year ago, and had not had
+                            an opportunity <pb entity="DSSR_000000961_0021" n="19"/> Journal
+                            Continued <lb/>of returning home yet. They all complimented me, on being
+                            the most Gentlemanly Soldier they had yet seen. They sympathized with
+                            the South, but did not know what Secession meant any more then, the Old
+                            Dog Corporal that is here in the Regt. (There is a dog here that we call
+                            Corporal) The next house I came to was a Log Cabin, in which lived a man
+                            about the age of fifty that had been a cripple for seven years. He was a
+                            Cobbler, but could work but very little. His wife had to do most of the
+                            work. They said that they made between them, fifty to seventy five cents
+                            a day which supported them. He had not walked for seven years and his
+                            spine was crooked, the effects of Rhumatism <pb
+                                entity="DSSR_000000961_0022" n="20"/> I thought, if I only had the
+                            means to place them in a more comfortable position. what a happy man it
+                            would make me. I reached camp about five Oclock. After Dress Parade I
+                            bought some Coffee of the Sutler, and went to the House where I dined
+                                yesterday.<add hand="author" place="top">Mr Vowells.</add> I gave
+                            them the Coffee and got two Canteens of milk. They said the Soldiers
+                            troubled them yesterday, after I left guarding then they did when I was
+                            there The Gen had furnished them with two guards. As I was coming away,
+                            they stoped me and made me take Supper with them. They said they wished
+                            I was on guard there. I got back to Camp at half past eight just in time
+                            to answer to my name at role call. Mitchell and myself made some
+                            Cornstarch pudding, using <pb entity="DSSR_000000961_0023" n="21"/> milk
+                            instead of water. We layed it aside for Breakfast. Pleasant all day,
+                            very warm</p>
+                    </div3>
+                    <div3 id="d18" type="entry">
+                        <head>Thursday. <date value="1862-07-10">July 10<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>The pudding that Mitchell and I made last night, tasted first rate, and
+                            it made us a good Breakfast. It rained till about three Oclock. In the
+                            morning the Band came out and played in honor of the Colonels birth day.
+                            At five Oclock, I was detached with a party of eight, to report to
+                            Brigade Headquarters for Fatigue. We had to go to the Depot, and unload
+                            Cases of Clothing from the Cars, into Wagons. We loaded thirty Wagons,
+                            and it took us till ten Oclock before we got through. It was nearly
+                            midnight when <pb entity="DSSR_000000961_0024" n="22"/> we reached
+                        Camp.</p>
+                    </div3>
+                    <div3 id="d19" type="entry">
+                        <head>Friday <date value="1862-07-11">July 11<hi rend="super">th</hi></date></head>
+                        <p>Cloudy nearly all day, but no rain. I am on guard. The Regt had Company
+                            drill in morning and Battalion drill in the afternoon. Received orders
+                            to be ready to march at any hour, but I think it will be a number of
+                            days before we march. I heard to day that Governor Andrews had <unclear>
+                                <del hand="author">
+                                    <hi rend="line-through">[ word lined through]</hi>
+                                </del>
+                            </unclear> issued a proclamation, which said he would allow ten days for
+                            the people of Massachusetts to volunteer to enlist, after which he
+                            should commence to draft. I hear that Natick has got to furnish over a
+                            hundred. The Countersigh to night is Stewart. Capt Cary Officer of the
+                            day. Lieut Fox <abbr expan="&#x3003;" type="shorthand expansion"
+                                >Officer</abbr> of Guard Sergeant Tower of Co B Sergeant of <abbr
+                                expan="&#x3003;" type="shorthand expansion">Guard</abbr>
+                        </p>
+                        <!--ask about ditto marks see add for officer-->
+                    </div3>
+                    <pb entity="DSSR_000000961_0025" n="23"/>
+                    <div3 id="d20" type="entry">
+                        <head>Journal Continued <lb/> Saturday <date value="1862-07-12">July 12<hi
+                                    rend="super">th 1862</hi></date></head>
+                        <p>Pleasant all day.</p>
+                        <p rend="indent2">Releived from Guard at half past eight.</p>
+                        <p>Went down to the brook and had a bath. I then took a walk over to Mr
+                            Vowells. They told me, when I was after milk the other night, that they
+                            had a Clock that wanted repairing, and I told them that when I came
+                            again I would look at it. I found the Clock was pretty well worn, but
+                                <reg orig="man-|aged">managed</reg> to set it to running. I returned
+                            to Camp about three Oclock so as to be prepared for the Battalion drill,
+                            which came off at half past five.</p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0026" n="24"/>
+                    <div3 id="d21" type="entry">
+                        <head>Sunday <date value="1862-07-13">July 13<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>Pleasant all day</p>
+                        <p rend="indent2">Inspection at eight Oclock, after which Mitchell and
+                            myself went to the brook, and had a bath. I washed my Shirt and pants.
+                            After the pants got dry enough to put on, we went to Mrs Edmunds. There
+                            was so many soldiers there, that we did not stop but a few minutes.
+                            After eating all the Cherries and blackberries we wanted, we returned to
+                            Camp. Lieutenant <add hand="author" place="top">Colonel</add> Batchelder
+                            is here to day. He is detached from the Regt, <del hand="author">
+                                <hi rend="line-through">has</hi>
+                            </del> and is provost Marshall in Banks Corps. Banks is a few miles from
+                            here on the road to Ganesville. Services at half past six after which we
+                            had a short drill</p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0027" n="25"/>
+                    <div3 id="d22" type="entry">
+                        <head>Page 25<lb/> Journal Continued<lb/> Monday <date value="1862-07-14"
+                                >July 14<hi rend="super">th</hi> 1862</date></head>
+                        <p>Pleasant all day. Received orders to march at half past one Oclock, by
+                            which time we were in line. We went a few rods, and then haulted, opened
+                            ranks and were inspected by the Colonel. We then marched back again to
+                            Camp, cleaned it up, and pitched our tents The order to march was given
+                            so as to get the Regt into marching orders and have the Camp cleaned up.
+                            It has been a very warm day. At half past six we had a Battalion drill
+                            In the evening the Band came out, and played a few tune, one of which
+                            was Sounds from Home, my favorite</p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0028" n="26"/>
+                    <div3 id="d23" type="entry">
+                        <head>Tuesday <date value="1862-07-15">July 15<hi rend="super">th</hi>
+                            /62</date></head>
+                        <p>Pleasant and warm On Fatigue. In forenoon I went to the brook and had a
+                            bath, after which I went to Mr John White the miller, where I took
+                            dinner. I stopped there till after three o clock, and then returned to
+                            Camp, to help get the Water, to make Coffee for Supper. There was no
+                            dress Parade this evening</p>
+                    </div3>
+                    <div3 id="d24" type="entry">
+                        <head>Wednesday <date value="1862-07-16"> July 16<hi rend="super">th</hi>
+                                /62</date></head>
+                        <p>One year ago to day, I was sworn into the Service of the United States. I
+                            am on Guard. Capt Fox Officer of the day. Lieut Cary Officer of the
+                            Guard, Sergeant Shepard. Sergeant of the guard. At six O clock the <pb
+                                entity="DSSR_000000961_0029" n="27"/> first Releif was detailed to
+                            go down to the Depot to unload Cars. We got back to Camp at eight O
+                            clock, and were excused from further guard duty, during the twenty four
+                            hours. When we were at the Depot a heavy shower came up. At half past
+                            eight Major General Banks came into Camp. We were prepared for him, and
+                            when he entered, the Band played hail to the Chief amid the Cheers of
+                            the Regt He made a short speech, and, said he I am happy to say that I
+                            am again to have the old Brigade with me. At this announcement <del
+                                hand="author">
+                                <hi rend="line-through">cheer after cheer</hi>
+                            </del> the <reg orig="enthu-|siasm">enthusiasm</reg> of the Regt was so
+                            great, that it was some <pb entity="DSSR_000000961_0030" n="28"/> time
+                            before he could again speak, so as to be heard, Said he I was very much
+                            grieved when I left you, or <add hand="author" place="top">rather</add>
+                            when you left me, or I might say when we were separated, for we never
+                            would have separated our selves, I would not leave you, and I know you
+                            would not separate from me, (cries of no no) therefore some one did that
+                            little job for us. Since you left me, we had a quick race before us. We
+                            were one to five, if we had been one to four, we would have held our
+                            ground from that day till this. If you had been with me, we should not
+                            have run the race at all. I have been invited to Boston, to speak in Old
+                            Fanuel Hall. It would give me great pleasure to do so and if I can spare
+                            the time I will go You fellow soldiers can do a great deal in the cause.
+                            Every mail that go from this Camp there should be earnest appeals to
+                            your Friends to come into the field and help you fight for the best
+                            Government on earth After bidding us good night, and shaking hands with
+                            the Officers he departed. </p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0031" n="29"/>
+                    <div3 id="d25" type="entry">
+                        <head>Page 29<lb/> Journal Continued<lb/> Thursday <date value="1862-07-17"
+                                >July 17<hi rend="super">th</hi></date></head>
+                        <p>In the morning I went to the brook and had a bath. At ten O clock I was
+                            detailed for Fatigue at the Depot with nine others. ( one from each
+                            Company) We are to stop there perhaps for weeks. We are in charge of
+                            Coporal Brigham of Co B. Our quarters are in an old building near the
+                            Depot. We have hired a Darkey to do our cooking, and I think I shall
+                            like the change very well. Our work is unloading Cars of Commisary
+                            Stores, and loading teams. If we are here over ten days we shall draw
+                            twenty five cents a day extra pay <pb entity="DSSR_000000961_0032"
+                                n="30"/> One of us, have to stop in charge of the things at our
+                            quarters. I stoped to day</p>
+                    </div3>
+                    <div3 id="d26" type="entry">
+                        <head>Friday <date value="1862-07-18">July 18<hi rend="super">th</hi></date></head>
+                        <p>Rained hard all day.</p>
+                        <p>Our work to day, was carrying hard bread up stairs, and packing it away.
+                            We handled about fifty Thousand pounds of it. It is in cases of fifty
+                            pounds each.</p>
+                        <p>Received letters to day, from Mary H. and Sophia.</p>
+                    </div3>
+                    <div3 id="d27" type="entry">
+                        <head>Saturday <date value="1862-07-19">July 19<hi rend="super">th</hi>
+                            /62</date></head>
+                        <p>Pleasant, Our Work to day was loading teams, We must have loaded nearly
+                            two hundred of them. The pay Master came to day. In the afternoon a
+                            Squad of men came to our relief, while we went to <pb
+                                entity="DSSR_000000961_0033" n="31"/> Camp to get our pay. We got
+                            back to our quarters about dark, Received letters from Sophia &amp;
+                            George also some papers.</p>
+                    </div3>
+                    <div3 id="d28" type="entry">
+                        <head>Sunday <date value="1862-07-20">July 20<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>Pleasant all day</p>
+                        <p rend="indent2">Went to the Depot and worked hard all day. Did not get
+                            through till nine O clock in evening. Loaded nearly two hundred
+                        teams.</p>
+                    </div3>
+                    <div3 id="d29" type="entry">
+                        <head>Monday <date value="1862-07-21">July 21<hi rend="super"
+                            >st</hi>/62</date></head>
+                        <p>Worked hard all day at the Depot.</p>
+                    </div3>
+                    <div3 id="d30" type="entry">
+                        <head>Tuesday <date value="1862-07-21">July 21<hi rend="super"
+                            >st</hi>/62</date></head>
+                        <p>Cloudy all day, a little rain in morning. I started to go to Camp this
+                            morn, but met the Regt. They were on the march for Warrenton Springs
+                            eight miles <pb entity="DSSR_000000961_0034" n="32"/> from here situated
+                            on the Banks of the Rappahannock River I drew a new pr of pants from the
+                            Orderly the other day. I took them this morning to a woman to shorten
+                            the legs, and put on a strap, for which I paid a Quarter. She was a
+                            Rebel When I went to the house I told her, I supposed She Sympathysied
+                            with the Rebels. She said she did. She though<ref n="4" target="n4"
+                            >{4}</ref> the name of Rebel was reather harsh. I asked her, if a person
+                            violated the laws of the United States if it was not Rebeling, therefore
+                            she must be a Rebel. Said I during the old Revolution we were Rebels,
+                            and gloried in that name for the Rebellion was just, therefore She had
+                            not ought to think that the name of Rebel was any harsher than Southern
+                                <ref n="5" target="n5">{5}</ref>sympathyser. We laughed and joked
+                            about it for some time and parted very good friends.</p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0035" n="33"/>
+                    <div3 id="d31" type="entry">
+                        <head>Page 33<lb/> Journal Continued <lb/> Wednesday <date
+                                value="1862-07-23">July 23<hi rend="super">rd</hi> 1862</date></head>
+                        <p>Pleasant.</p>
+                        <p rend="indent2"> Worked hard all day at the Depot. In the evening went up
+                            to Warrenton House and listened to the music of the New York ninth
+                        band</p>
+                    </div3>
+                    <div3 id="d32" type="entry">
+                        <head>Thursday <date value="1862-07-24">July 24/62</date></head>
+                        <p>Pleasant</p>
+                        <p rend="indent2">Worked all day Received letters from Sophia &amp; John
+                            Howorth.</p>
+                        <p>In the evening went about a mile from the Town and had a bath Showery
+                            through the night </p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0036" n="34"/>
+                    <div3 id="d33" type="entry">
+                        <head>Friday <date value="1862-07-25">July 25<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>Pleasant in forenoon Showery during afternoon and evening Worked as usual
+                            at the Depot </p>
+                    </div3>
+                    <div3 id="d34" type="entry">
+                        <head>Saturday <date value="1862-07-26">July 26/62</date></head>
+                        <p>Pleasant all day</p>
+                        <p>Worked at the depot in the forenoon. When we were at dinner Richard White
+                            of the 13th came in and said that he had got an order for us to report
+                            to the Regt. He brought it to the Provost Marshall. We did not work in
+                            afternoon. Wrote a letter for one of the Negroes that work at the
+                        Depot.</p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0037" n="35"/>
+                    <div3 id="d35" type="entry">
+                        <head>Sunday <date value="1862-07-27">July 27/62</date></head>
+                        <p>Pleasant but very warm There was not much doing this forenoon. In
+                            afternoon we unload, and pack away teams <add hand="author" place="top"
+                                >which brought</add> hard bread from the Depot. In the afternoon
+                                <del hand="author">
+                                <hi rend="line-through">there was very little</hi>
+                            </del> Private Seabray Healy &amp; Kendall came here, from the
+                            Hospittal at Alexandria. The stoped at my quarters over night The order
+                            that white brought was not for us)</p>
+                    </div3>
+                    <div3 id="d36" type="entry">
+                        <head>Monday <date value="1862-07-28">July 28/62</date></head>
+                        <p>Pleasant &amp; very warm</p>
+                        <p>In forenoon worked at the Court House unloading teams In afternoon
+                            unloaded Cars Capt Smith has got so many darkies now that our work the
+                            last two <pb entity="DSSR_000000961_0038" n="36"/> has been very light</p>
+                        <p>Privates Healy Seabray &amp; Kendall went to the Regt this morning
+                            Sent two old Ledgers by them to John Mitchell.</p>
+                    </div3>
+                    <div3 id="d37" type="entry">
+                        <head>Tuesday <date value="1862-07-29">July 29/62</date></head>
+                        <p>Went to the Depot this morning but found very little to do. So came back
+                            to house and went to writing. After dinner I went to depot, and we found
+                            that we had been relieved and were all rejoin our Regt, As there is a
+                            prospect of a Fight, I am glad it is so. Capt Smith said he was sorry to
+                            have us leave, we attended to our duty so well</p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0039" n="37"/>
+                    <div3 id="d38" type="entry">
+                        <head>Page 37 <lb/>Journal Continued<lb/> Wednesday <date value="1862-07-30"
+                                >July 30<hi rend="super">th</hi> 1862</date></head>
+                        <p>Pleasant</p>
+                        <p rend="indent">Last night I went out of Town to Mr Vowells. They were
+                            reather surprised to see me as they thought I was with the Regt. They
+                            invited me to stop over night. I slept on a feather bed, the first one I
+                            think that I have slept on since leaving Boston. I could not sleep two
+                            hours together. I was so restless. If I had layed on the floor I should
+                            have slept sound. This morning at Breakfast Mr Vowell told me that his
+                            sons had left the Southern army, there time being up He said they were
+                            some where near our lines, but did not dare to come home for fear they
+                            would be arrested. Miss Vowell told me if I <pb
+                                entity="DSSR_000000961_0040" n="38"/> should be so unfortunate as to
+                            get sick or wounded to come to her house <add hand="author" place="top"
+                                >if I could</add> and she would take good care of me. After
+                            Breakfast I bid them good bye and went back to my quarters in Town. I
+                            found the Boys had just got up and were eating their breakfast. At nine
+                            O clock we strapped our Knapsacks to our backs and started for the Regt.
+                            It was very warm; and we did not hurry. We would march about a mile, and
+                            then hault for an hour. We reached the Regt distance of seven or eight
+                            miles, about four O clock in the afternoon. We found the Regt camped on
+                            the side of a hill, near, five or six buildings, which is called
+                            Waterloo. There was some mills here, but were burnt The Camp is in a
+                            healthy locality and the water is very good </p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0041" n="39"/>
+                    <div3 id="d39" type="entry">
+                        <head>Thursday <date value="1862-07-31">July 31<hi rend="super"
+                            >st</hi>/62</date></head>
+                        <p>Clowdy</p>
+                        <p rend="indent">Monthly inspection came off this morning at Seven O clock,
+                            after which I went with a party of others down to the Creek to bath. The
+                            creek is a branch of the Rappadan river, which helps to form the
+                            Rappahannock. The Water is over our heads, and it is the best place we
+                            have had for swimming, since leaving the Potomac</p>
+                        <p>We had no more then got into the Water, when some one told us we were
+                            wanted back as soon as possible. We got back just in time to fall into
+                            the Ranks. The Regt was formed into line and we remained at <pb
+                                entity="DSSR_000000961_0042" n="40"/> Parade rest while the Colonel
+                            read to us the Presidents order. To day being the day of the burial of
+                            Ex President Martin Van Buren. All the troops of the United States are
+                            ordered to Parade at ten oclock today and from this day for six months
+                            The Officers have to wear crape on their left arm, and on their Swoard,
+                            and the Colors of the Several Regiments, are <del hand="author">
+                                <hi rend="line-through">to have their Co</hi>
+                            </del>to be draped in mourning for the period of Six Months. We marched
+                            around the Camp at reversed arms, the Band playing a Solemn dirge, after
+                            which the Chaplain offered up a prayer A Salute was fired in morning and
+                            a Gun is to be fired at <del hand="author">
+                                <hi rend="line-through">intervals</hi>
+                            </del> intervals of half an hour, till Sun Set, when our National Salute
+                            will be fired. </p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0043" n="41"/>
+                    <div3 id="d40" type="entry">
+                        <head>Page 41<lb/> Journal Continued<lb/> Friday <date value="1862-08-01"
+                                >August 1<hi rend="super">st</hi>/62</date></head>
+                        <p>Pleasant</p>
+                        <p rend="indent2">This morning Revelle beat at half past four Oclock. At six
+                            Oclock we were in line to be review by Gen Pope, who got along about
+                            half past seven Oclock. He looks very much like Gen Hartsuff, but no so
+                            heavy a man. His Photograph in Frank Leslies, looks very much like him.
+                            After the great American Pope had gone, we went to our quarters. After
+                            nine Oclock, I went to the creek and had a bath, and got some apples
+                            which I stewed for dinner. After dinner I layed down and slept till
+                            nearly supper time. Had dress Parade in evening and a short drill. The
+                            late orders are that every light shall be put out at taps, and they are
+                            strictly enforced.</p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0044" n="42"/>
+                    <div3 id="d41" type="entry">
+                        <head>Saturday <date value="1862-08-02">Aug 2<hi rend="super"
+                            >nd</hi>/62</date></head>
+                        <p>Pleasant.</p>
+                        <p rend="indent2"> Last night was quite cool. It felt good to get round fire
+                            this morning but by nine Oclock, I should think the <reg
+                                orig="thermom-|oter">thermomoter</reg> must have been over a hundred
+                            and ten. I think the nights here are a great deal cooler then in <reg
+                                orig="Mass-|achusetts">Massachusetts</reg>. We had a drill at seven
+                            Oclock, after which went to Creek and had a Swim. This afternoon there
+                            is a beautiful breeze.</p>
+                        <p>Dress Parade and a short Battalion drill in the evening.</p>
+                    </div3>
+                    <div3 id="d42" type="entry">
+                        <head>Sunday <date value="1862-08-03">Aug 3<hi rend="super"
+                            >rd</hi>/62</date></head>
+                        <p>Pleasant.</p>
+                        <p rend="indent2">Was excused from Expection this morning for policeing the
+                            Company street (picking up pieces <add hand="author" place="top"
+                            >paper</add> and C) At nine O clock went <pb
+                                entity="DSSR_000000961_0045" n="43"/> to the creek and had a swim.
+                            Very warm, I layed in my tent nearly all day, reading. Had services at
+                            Sun down and dress Parade. <del hand="author">
+                                <hi rend="line-through"> (Part of the Company went</hi>
+                            </del>
+                            <del hand="author">
+                                <hi rend="line-through">on Picket) I remained at the Camp.</hi>
+                            </del>
+                        </p>
+                    </div3>
+                    <div3 id="d43" type="entry">
+                        <head>Monday <date value="1862-08-04">Aug 4<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>Pleasant.</p>
+                        <p rend="indent2">At seven O clock, had a Company drill under one of the
+                            Sergeants, the Capt and Lieut being on duty. After drill went to brook
+                            and had a swim. At three Oclock part of the Company went on picket. I
+                            remained at the Camp. At night we heard that we were to march in the
+                                <reg orig="morn-|ing"> morning</reg>.</p>
+                    </div3>
+                    <div3 id="d44" type="entry">
+                        <head>Tuesday <date value="1862-08-05">Aug. 5<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>Reville beat this morning at three Oclock. The pickets came in about <pb
+                                entity="DSSR_000000961_0046" n="44"/> the same time. At five oclock
+                            we had everything packed and we marched. We went about a half of a mile
+                            and then <reg orig="haul-|ted">haulted</reg>, till nearly Seven O clock.
+                            We then started, and marched to the North fork of the Rappahannock
+                            river, distance eight miles. The sun was very warm, and we were all day
+                            in marching it. It was so warm that I did not mind whether I kept with
+                            the Regt or not. I would march about a mile, and then lay down for an
+                            hour or more. The Thermometer stood at one hundred and twenty in the
+                            Shade, and over one hundred and thirty in the Sun. In the evening I had
+                            a bath in the River. The force consisted of Gen Ricketts <del
+                                hand="author">
+                                <hi rend="line-through">Brigade</hi>
+                            </del> Division, composed of Hartsuffs, Duryea and Towers Brigades, </p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0047" n="45"/>
+                    <div3 id="d45" type="entry">
+                        <head>Wednesday <date value="1862-08-06">Aug 6<hi rend="super">th</hi>
+                            /62</date></head>
+                        <p>Reville this morning at three Oclock, Marched promptly at five. Our Regt
+                            had the right of the Brigade, and Col Leonard marched us three miles
+                            before haulting. After haulting us half an hour we marched two miles
+                            farther, the next march was a mile and a half. The next a mile and a
+                            half. We then haulted till the Gen picked out a Camp for us, it was then
+                            about nine Oclock. After the Camp ground was found we marched to it the
+                            distance of a little over a mile. We have got a pretty place to Camp,
+                            but we have to go a mile and a half to get a chance to bath. We are
+                            within a mile and a half of Culpepper</p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0048" n="46"/>
+                    <div3 id="d46" type="entry">
+                        <head>Wednesday <date value="1862-08-07">Aug 7<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>After Breakfast, I went out of Camp with one of the privates of this
+                            Company to try and find a place to bath. We went to a number of houses,
+                            to try and get some thing to eat, as we had had nothing for two day, but
+                            hard bread. One house we went to we found it guarded. The people were
+                            union, the Gentleman that owned the place was in Washington, he is the
+                            editor of the Washington Star. The Secretary of War gave orders to have
+                            his property protected. The next house we came to we had some bread milk
+                            and honey. We at last found a mill pond, where we had a good swim, and
+                            washed our cloths. Got back to Camp about one Oclock. Dress parade at
+                            seven Oclock.</p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0049" n="47"/>
+                    <div3 id="d47" type="entry">
+                        <head>Friday <date value="1862-08-08">Aug 8<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>Very warm. At three Oclock in the afternoon, we had orders to prepare to
+                            march immediately. We were soon on our way, we marched through the town,
+                            and went into Camp about two miles from the Town, distance of four miles
+                            from the old Camp. We heard that the Rebels were only seven miles from
+                            us, and this side of the Rappadan river. We went to sleep at night, with
+                            the prospects of <add hand="author" place="top">Battle</add> tomorrow.
+                            Co. N. was left in the Town to do Provost guard, When we marched through
+                            the Town, most of the Ladies were crying, probably most of them knew the
+                            Rebels were near, and had Fathers Sons or Brothers with them and seeing
+                            such a strong force of <pb entity="DSSR_000000961_0050" n="48"/> Yankees
+                            going to meet them, must have made them feel bad. Nearby the house we
+                            came to I saw a young Lady with a handkerchief to her face crying as
+                            though her heart would brake. A little ways furthur on there was a woman
+                            sitting by the Window and as we passed her, she cast her eyes heaven
+                            ward, and her lips moved as if in prayer. She was probably <add
+                                hand="author" place="top">praying for the Lord</add> to bring down
+                            curses upon our heads.</p>
+                    </div3>
+                    <div3 id="d48" type="entry">
+                        <head>Saturday <date value="1862-08-09">Aug 9<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>We were called up very early this morning, and after eating some hard
+                            bread (I happened to have a little milk with mine) we formed into line,
+                            and marched about two miles, towards the Rappadan, here we stacked arms
+                            and made ourselves comfortable as possible till further orders</p>
+                        <pb entity="DSSR_000000961_0051" n="49"/>
+                        <p>Our Wagons came along and delivered out to us two days rations of hard
+                            bread and Coffee.</p>
+                        <p>About twelve Oclock we heard the report of a Cannon from the direction of
+                            the river. The Reports came oftener till it was one continuous war of
+                            Artilery. We knew then that the fighting had commenced, We were a little
+                            to far off to hear musketry except <del hand="author">
+                                <hi rend="line-through">unless</hi>
+                            </del> once in a while we could hear a Volley. This Division composed of
+                            Hartsuffs Towers and Duryea s Brigades were the reserve and here we
+                            stoped till nearly dark, which did not suit us when the fighting was
+                            only three miles distance A little before dark we were ordered to the
+                            Battle field, on our way we met many Ambulances filled with the wounded,
+                            and many on foot that had slight wounds, some limping on one foot and
+                            some <pb entity="DSSR_000000961_0052" n="50"/> with their hands in
+                            slings, and many I am sorry to say that were not hurt at all, and were
+                            nothing more than Cowards getting away from the field as soon as
+                            possible. Most every one we met said that their Regt was all cut to
+                            pieces. We knew their stories could not all be true, and were sorry to
+                            see them coming back. The nearer we got to the battle field we could
+                            hear the rifle shots quite plainly. It sounded like corn popping. Every
+                            one we met said that the second Mass V were all cut to pieces. It was
+                            dark before we reached the Battle field and the firing had stoped except
+                            once in a while one occasional shot. We marched up near the front and
+                            stacked arms in a field. We had our Canteens filled, and were laying
+                            down on the grass to rest, (our Knapsack &amp; blanket were left in
+                            a corn field two miles back) When Towers Brigade marched into the field,
+                            their drums and fifes playing Dixie. It was bright moon light, and the
+                            Rebels could probably see our guns glitter, <del hand="author">
+                                <hi rend="line-through">in the moonlight</hi>
+                            </del> and I guess they did not like <del hand="author">
+                                <hi rend="line-through">th</hi>
+                            </del> our playing Dixie, as they opened their Artilery upon <del
+                                hand="author">
+                                <hi rend="line-through">us</hi>
+                            </del> the camp, the shells came amongst us pretty thick,</p>
+                        <pb entity="DSSR_000000961_0053" n="51"/>
+                        <p>Page 51<lb/>Journal Continued<lb/> We immediately fell in and took our
+                            arms from the stacks, and marched direct ahead. The Shells flew around
+                            us in grand style, some plowed through the ground near us, but most of
+                            them went to high. One, we thought came very near sweeping the heads of
+                            most of our Company, it came so near. A number of the 11th PA were
+                            wounded, and one killed and one wounded in the Ninth New York. We
+                            advanced onto a piece of Woods, and had got within a hundred feet of it,
+                            when we were fired upon. The Rebel pickets were in this woods. We were
+                            marching, in column, and at trail arms. When we were fired upon, the Col
+                            gave the order right blique<ref n="6" target="n6">{6}</ref>. We doubled
+                            quick right bliquee, and the men squat so low to the ground that it was
+                                <pb entity="DSSR_000000961_0054" n="52"/> hard to see us. After
+                            going this way about a hundred feet, we marched direct ahead and then
+                            filed right. We did not return the shots. The 12th Mass V were behind us
+                            and fired a few return shots. Capt Shirtleff of the 12 was shot through
+                            the neck, and two more Officers and a private were wounded. Our Regt was
+                            the only one of the Brigade that came off unharmed, and I think it was
+                            the Cols order that saved us, for we were in the most dangerous place
+                            being nearest to the woods. We went off to the right several hundred
+                            yards, and behind a little hill, here we stacked arms. The role was
+                            call, so as to see how many there was to go into battle, and to find out
+                            who the cowards were, as a number had left the ranks on our way here. I
+                            was sorry to see that two of this company had left. We then layed down
+                            and <pb entity="DSSR_000000961_0055" n="53"/> tried to get a little
+                            sleep. We had to lay on the ground, we having left our Rubber blankets
+                            this time. The Battery belonging to this Brigade was on our left. We had
+                            layed on the ground but a short time, when the Rebels commenced throwing
+                            shells at our Battery, which returned the fire. The Shells most of them
+                            landed on a woods behind us about seventy or eighty yds. It looked
+                            beautiful to see them go through the air. It looked like stars shooting.
+                            They were beautiful but not very agreeable, if they came to near. After
+                            remaining in this position about one hour. We received the order to fall
+                            in and we went a little farther to the right, and again I layed down to
+                            rest about one oclock the Artilery stoped firing and I fell asleep. We
+                            were in the advance and layed very near the Rebels. We were as you might
+                            say on picket. We had to lay with our <pb entity="DSSR_000000961_0056"
+                                n="54"/> Equipment on and within reach of our guns. There was a
+                            spring within twenty feet of us and so near were we the Rebels that we
+                            captured two or three that came to the Spring for Water, they not
+                            knowing we were so near. Every order was given in a low tone. About
+                            three oclock we were ordered to fallin and we marched to the rear
+                            through a piece of woods, and into a corn field, where we again stacked
+                            arms. We was close by a house where many of our wounded were. I layed
+                            down again and went to sleep. <add hand="author" place="top">Sunday
+                                    <date value="1862-08-10">Aug. 10</date></add> I did not wake up,
+                            till the Sun was up. Every thing was quiet, which reather supprised all
+                            of us as we expect a great battle to day </p>
+                    </div3>
+                    <div3 id="d49" type="entry">
+                        <head>Sunday <date value="1862-08-10">Aug 10<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>We could see the troops of our side in line of Battle, but nothing of the
+                            Rebels. A force of Cavalry have gone out to see where they be. We learn
+                            that our Division was the only troops that were before the Enemy last
+                            night. The others <unclear>
+                                <hi rend="line-through">[word lined through]</hi>
+                            </unclear> got frightened and fell back some ways, but this morning they
+                            are back again and in line of battle. Gen Pope paid quite a compliment
+                            to this Division for their cool behavior last night. I went over to the
+                            house where the wounded are, and the scene was awful. All around the
+                            yard they layed some with arms off some legs, another with gash in his
+                            head and some dead<ref n="7" target="n7">{7}</ref> I never want to see
+                            such another sight. Their wounds were all in sight.</p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0057" n="55"/>
+                    <div3 id="d50" type="entry">
+                        <head>Page 55 <lb/>Journal Continued <lb/> Monday <date value="1862-08-11"
+                                >Aug 11<hi rend="super">th</hi> /62</date></head>
+                        <p>This morning the Rebels proposed Armistice, till two oclock so that each
+                            could bury their dead. I went down onto the Battle field. The sight was
+                            horrible. I saw nearly two hundred dead bodies, the Sun made terrible
+                            work with the dead. The Stench was very bad. The Rebels were the burying
+                            their dead, and our men ours The rebels and Federal Soldiers were quite
+                            sociable, drank from each others Canteens and talked of the War. They
+                            are as sick of the work as we are. I saw two Soldiers one Federal and
+                            one Rebel, recognize each other, as old acquaintances, both belonged in
+                            the Same town somewhere in Western Virginia. The shook hands and had a
+                            long talk together. Gen Hartsuff of this Brigade, and Gen Stuart of the
+                            Rebel Cavalry (formerly of the same Class at West Point) spent two hours
+                            together under a shady tree talking of old times. I was into the Rebel
+                            lines some ways and nearly into their Camp. A Rebel Major rode up to me
+                            and told me that I was farther then we were allowed to go. I told him,
+                            that I guess I would turn about then. Some wounded were found on the
+                            field this morning, having layed there since Saturday. The Battle field
+                            was nearest to the Rebels lines, but neither side could go onto the
+                            Battle field without danger of the other. We expected a fight after two
+                            Oclock, but every thing remain quiet.</p>
+                    </div3>
+                    <div3 id="d51" type="entry">
+                        <head>Tuesday <date value="1862-08-12">Aug 12<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>The Enemy Skedaddled last night, our Cavalry and Artilery have gone in
+                            pursuit. Our team came up today <pb entity="DSSR_000000961_0058" n="56"
+                            /> Seth Johnson came up from Culpepper last Sunday So as to be with us
+                            if we had a fight. He was down on the Battle field with me
+                        yesterday.</p>
+                    </div3>
+                    <div3 id="d52" type="entry">
+                        <head>Wednesday <date value="1862-08-13">Aug 13<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p> I went off this forenoon with one of the Company to forage About two
+                            miles from Camp we found a wounded sheep We caught him and dress him,
+                            and took him into Camp</p>
+                    </div3>
+                    <div3 id="d53" type="entry">
+                        <head>Thursday <date value="1862-08-14"> Aug 14<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>Pleasant and warm, I stoped in Camp all day At night we received orders
+                            that we were to march early in the morning</p>
+                    </div3>
+                    <div3 id="d54" type="entry">
+                        <head>Friday <date value="1862-08-15">Aug 15<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>Marched this fornoon, We crossed the Battle field and marched to
+                            Robinsons Creek near the Rappadan distance Six miles.</p>
+                    </div3>
+                    <div3 id="d55" type="entry">
+                        <head>Saturday</head>
+                        <p>I went down to Corn field and got some Corn which I boiled, and to gether
+                            with some liver that I bought I made out quite a dinner</p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0059" n="np"/>
+                    <div3 id="d56" type="entry">
+                        <!--Company C, 4th Battalion Rifles,
+                            Boston<lb/> HEAD- QUARTERS,<lb/> Camp<lb/> 13Tth REGIMENT<lb/> ALWAYS
+                            READY<lb/> MASSACHUSETTS VOLUNTEERS<lb/> 1862.-->
+                        <head><ref n="8" target="n8">{8}</ref>Sunday <date value="1862-08-17">Aug
+                                    17<hi rend="super">th</hi> 1862</date></head>
+                        <p>Went down to Robinson river about <del hand="author">
+                                <hi rend="line-through">a</hi>
+                            </del> half a mile distance and had a swim. Gen Carroll was out near the
+                            pickets this morning and was shot in the Shoulder by a Rebel picket.
+                            Towards night we struck tents and marched back three miles toward
+                            Culpepper, going on the opposite side of the Mountain to which we came.
+                            We camped near the foot of Cedar Mountain and about two miles from the
+                            Battle ground.</p>
+                    </div3>
+                    <div3 id="d57" type="entry">
+                        <head>Monday <date value="1862-08-18">Aug 18<hi rend="super">th</hi></date></head>
+                        <p>About eighty <pb entity="DSSR_000000961_0060" n="np"/> Recruits came for
+                            the Regt. The Band came out and played, and we received them very
+                            warmly. The poor fellows looked tired, having marched about eight miles
+                            today. At five Oclock we received orders to prepare to march, we were
+                            soon ready. We layed around till after dark and pitched our tents again,
+                            with orders to be ready to fall in at any moment. I had been quite
+                            unwell all day, having a severe pain in my stomach. I went to the Dr.
+                            for the first time since I have been in the Army and he gave me two
+                            Opium pills which helped me a great deal. When we had the orders to
+                            march I did not feel able to carry my Knap Sack and with permission from
+                            the Dr it was put upon the Co team which started off towards Culpepper
+                            before dark, as did all the teams.</p>
+                    </div3>
+                    <div3 id="d58" type="entry">
+                        <head>Tuesday <date value="1862-08-19">Aug 19<hi rend="super">th</hi>
+                            1862</date></head>
+                        <p>Last night at eleven Oclock we were call up and marched two miles towards
+                            Culpepper where we haulted till nine Oclock next morning. We then
+                            started and marched through Culpepper and towards Rappahannock station
+                            on the road to Warrenton Junction. We did not know what to make of this,
+                            backward movement, When about three miles this side of Culpepper. Our
+                            Brigadier Gen Hartsuff told us that we were in the centre of a long
+                            column, and we had to march as they marched, that before the march was
+                            ended, it would be the hardest march we have yet born, So far we had
+                            done it well and he hoped that we would continue on till the end, The
+                            Brigade gave him three cheers, The roads were very dusty, about nine
+                            Oclock in the evening <pb entity="DSSR_000000961_0061" n="np"/> we
+                            crossed the Rappahannock and bivouacked, The distance we had marched was
+                            twenty miles. We did not think it was too hard a march as we have done
+                            before The recruits got along very well, The Company teams it seems went
+                            to Warrenton Junction and therefore I got not yet my Knappy. I had to
+                            beg half of one of my Companions blankets.</p>
+                    </div3>
+                    <div3 id="d59" type="entry">
+                        <head>Wednesday <date value="1862-08-20">Aug 20<hi rend="super">th</hi>
+                            1862</date></head>
+                        <p>The number of troops on the march yesterday was probably nearly a hundred
+                            thousand. The Wagon train that went ahead of us was nearly twenty miles
+                            long. The troops are all about us. The Brigade is camped in a space
+                            about half as large as our Camp at Williams port used to be This morning
+                            I went to the Rappa hannock river and had a swim. About noon we fell
+                            into line (This Regt) and marched across the Bridge and took up our
+                            quarters behind a little hill two pieces of Artillery came across. The
+                            Rebels had made their appearance at the edge of the woods about a mile
+                            distant, We have got a beautiful position and one Brigade could keep a
+                            whole army back (nearly) as there a level plain of a
+                            <unclear>[-]</unclear> long between us and the woods. If any attempt to
+                            cross. we could mow them down by the hundreds, We have Artilery still
+                            placed along the north back of the river. a little skirmish took place a
+                            little before dark by the Artileryists. The rest of the Brigade came
+                            across before dark. At night four Companies from each Regt went on
+                            picket. </p>
+                    </div3>
+                    <div3 id="d60" type="entry">
+                        <head>Thursday <date value="1862-08-21">Aug 21</date></head>
+                        <p>Every thing quiet at this place today <pb entity="DSSR_000000961_0062"
+                                n="np"/> heavy firing has been going on at the right of us, probably
+                            at Warrenton Springs, We <del hand="author">
+                                <hi rend="line-through">could</hi>
+                            </del> can see the Rebel pickets quite plainly from hear We have
+                            commenced to throw up entrenchments a short distance from hear. We all
+                            have to work about ten hours a day. Sixty rounds of cartridges were
+                            given out to us making in all one hundred rounds, We have to keep our
+                            Canteens fill, and are ready at any moment to fall into line of
+                        Battle.</p>
+                    </div3>
+                    <div3 id="d61" type="entry">
+                        <head>Friday <date value="1862-08-22">Aug 22<hi rend="super">nd</hi>
+                            1862</date></head>
+                        <p>Cannonading has been going on at the right and left of us a little firing
+                            occurred here. Col of the <unclear>[-]</unclear> Pa had a horse shot and
+                            one of the artillery were killed. Our Company were in picket to
+                        night</p>
+                    </div3>
+                    <div3 id="d62" type="entry">
+                        <head>Saturday, <date value="1862-08-23">Aug 23</date></head>
+                        <p>We had a heavy shower yesterday which made the river rise five feet.
+                            There is danger of the Bridge being washed away and we had to cross on
+                            to the other side we haulted in a field near the river. We had a very
+                            severe Battle here to day with Artilery . A great many of the shells
+                            came near us but only one man was wounded he belongs in Company K Lieut
+                                <unclear>Godbelt</unclear> of the Battery <pb
+                                entity="DSSR_000000961_0063" n="np"/>
+                            <ref n="9" target="n9">{9}</ref>
+                            <!--Company C, 4th Battalion Rifles,
+                            Boston.<lb/> HEAD-QUARTERS<lb/> Camp<lb/> 13th REGIMENT<lb/> ALWAYS
+                            READY<lb/> MASSACHUSETTS VOLUNTEERS <lb/> 1862-->
+                            had a leg shot off, A number were killed and wounded. Our Artilery
+                            silenced the rebels. In Afternoon our forces burnt the bridge and we all
+                            marched towards Warrenton Bivouacked within three miles of Warrenton. On
+                            our way we passed Gen Pope and Mc Dowell</p>
+                    </div3>
+                    <div3 id="d63" type="entry">
+                        <head>Sunday <date value="1862-08-24">Aug 24</date>
+                        </head>
+                        <p>Marched early this morning. About within sight of Warrenton and then cut
+                            across the fields to the road going to the Spring and marched again
+                            towards the river We camped about three miles from the town making our
+                            march about six miles I went to a brook had a swim and washed my
+                        shirt</p>
+                    </div3>
+                    <div3 id="d64" type="entry">
+                        <head>Monday <date value="1862-08-25">Aug 25</date></head>
+                        <p>In afternoon we marched across the country to the road leading to
+                            Waterloo distance of three miles. We could hear Cannonading near the
+                            river.</p>
+                    </div3>
+                    <div3 id="d65" type="entry">
+                        <head>Tuesday.</head>
+                        <p>Marched back to where we were yesterday morn, and then received orders to
+                            march back <pb entity="DSSR_000000961_0064" n="np"/> again. Went to
+                            brook had a wash and then went into a Corn field and got some Corn which
+                            I roasted. Last Wednesday a Company of Rebel Cavalry went a round about
+                            way and got down to Warrenton Junction twelve miles in the rear of our
+                            Army and destroy one or two teams Our forces rallied so quick that they
+                            could do but little damage the took several prisoner, Captured Gen Popes
+                            Headquarter teams, Which they destroyed and they took away two Stallions
+                            belonging to Pope It was rather a bold dash but knowing the Country so
+                            well it was very easy for them to do it.</p>
+                    </div3>
+                    <div3 id="d66" type="entry">
+                        <head>Wednesday <date value="1862-08-27">Aug 27 1862</date></head>
+                        <p>It is now nearly nine Oclock and we have had orders to be in ready ness
+                            to march. We are not allowed to write home but our band has got their
+                            dis charge and they are going this morning, They kindly offered to take
+                            letters for us. I have not yet got my Knapsack.</p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0065" n="np"/>
+                    <div3 id="d67" type="entry">
+                        <head>Wednesday <date value="1862-08-27"> Aug 27/62</date></head>
+                        <div4 id="d68" type="letter">
+                            <opener>Dear Sister Sophia</opener>
+                            <p>I have written this Journal very hurriedly having but a short time to
+                                write it in We can not write home now till again permitted by Gen-
+                                erals but I hope to hear from you the same. I received from Edmund
+                                the other day a letter inclosed was one from you. I am well in grand
+                                spirits, received this morning some papers from you as well as
+                                Household Journal, except my thanks, I have not yet opened them. My
+                                love to all</p>
+                            <closer>
+                                <salute>From your Affectionate bro</salute>
+                                <signed>Albert</signed>
+                                <seg rend="block" type="postscript">P.S. I will write when an
+                                    opportunity offers.</seg>
+                            </closer>
+                        </div4>
+                    </div3>
+                    <pb entity="DSSR_000000961_0066"/>
+                    <pb entity="DSSR_000000961_0067" n="61"/>
+                    <div3 id="d69" type="entry">
+                        <head>Page 61<lb/> Journal Continued,<lb/>
+                            <date value="1862-08-27">Aug 27<hi rend="super">th</hi>/62</date><lb/>
+                            Wednesday, Continued</head>
+                        <p>About the middle of the afternoon we marched. We went through Warrenton
+                            and on the road to Ganesville, on the route for Manassas. We were till
+                            three Oclock the next morning, in marching eight miles. We had to halt
+                            for the wagon train that was ahead of us which made it a very tiresome
+                            march for us. At three oclock Thursday morning we turned into a field
+                            and went to sleep.</p>
+                    </div3>
+                    <div3 id="d70" type="entry">
+                        <head>Thursday <date value="1862-08-28">Aug 28<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>At day light we were called up, not having had but one hour and a half to
+                            sleep. We marched to Hay Market. Before we got to Hay Market, the colum
+                            moved so slow and I was so tired and sleepy that I layed down under a
+                            shady tree and went to sleep. I must have slept a number of hours for
+                            when I awoke the rear guard was just going by. They said the Rebels were
+                            not a great ways behind. I marched on as rapidly as possible. After
+                            going two miles which brought me to New Market, I found that our Brigade
+                            had left their Knapsacks and had gone to the Gap distance four miles
+                            (Thorougherfair) to keep in check some Rebels that were there. The other
+                            Brigades were throwing off their Knapsacks and marching to the Gap. <pb
+                                entity="DSSR_000000961_0068" n="62"/> I had got within two miles of
+                            the Gap when I heard the report of Musketry. When I got to the Gap I did
+                            not know where my Reg. was. Some one told me it was in the Gap and I
+                            came very near running right into the hands of the Rebels. I went into
+                            the woods, on the right and found two Regts of the Brigade having it hot
+                            and heavy I went in with them but did not get a chance to fire but one
+                            shot. I was so afraid of shooting some of our own men. The balls came
+                            thick and fast, through some blunder. Some of a Virginia Regt (Federal)
+                            and some of our Brigade got to firing upon each other, it being in the
+                            woods, it was very easy to make such a mistake. I thought I would get
+                            out of such a scrape and try and find my own Regt, which I found on the
+                            left, laying behind a hill. Our Gen was very foolish to lead his men in
+                            such a place without knowing the place, and what force he had to contend
+                            with, a thousand men in that Gap could keep back nearly twenty thousand.
+                            (Gen. Hardsuff is sick and Col Stiles had command of Brigade) Gen.
+                            Ricketts is in command of the Division, which is composed of four
+                            Brigades. While on the right with those in the woods I saw some terrible
+                            wounds, one poor fellow had both under eye lids of his eyes torn down
+                            nearly two inches. How a ball could make such a wound I do not see.
+                            After laying behind the hill a short time we were ordered back to a
+                            woods about two hundred yards to the rear. In going across the field
+                            Sergeant Lemoyne of this Company was wounded in the hip. We had been in
+                            the woods but a short time when we were marched back to Hay Market, got
+                                <pb entity="DSSR_000000961_0069" n="63"/> their Knapsack, and
+                            marched three miles, and Bivouack near Ganesville. In the affair at the
+                            Gap Private Clark of Co. E was killed, Corporal Jackson Co. E was
+                            wounded and since died. Private Robins of Co D. wounded and has since
+                            died and from five to eight wounded.</p>
+                    </div3>
+                    <div3 id="d71" type="entry">
+                        <head>Friday <date value="1862-08-29">29<hi rend="super">th</hi>/62</date></head>
+                        <p>At Sun rise, we marched towards Bristol which is four miles South west of
+                            Manassas. We took this road because we heard that Jackson was on the
+                            road which went to Manassas. We had been gone from Ganesville but two
+                            hours when Jackson came there in hopes to capture us, which he would
+                            have been likely to have done if we had been there. We haulted at
+                            Bristel a number of hours and then marched to Manassas. We haulted here
+                            till nearly night and then marched to the battle field of Bull run,
+                            having marched nearly eighteen miles. Many have been left along the road
+                            side a great many bare footed. Most of the straglers were probably taken
+                            prisoners. They have been fighting nearly all day here. To night our
+                            forces hold the battle field.</p>
+                    </div3>
+                    <div3 id="d72" type="entry">
+                        <head>Saturday <date value="1862-08-30">Aug 30<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>Our rations were out yesterday and for Breakfast I had to put up with a
+                            mug of Coffee and two or three crumbs of hard cracker. About nine
+                            Oclock, we were ordered to the front, being considered as fresh troops.
+                            The Col is sick and has not been with us since leaving <pb
+                                entity="DSSR_000000961_0070" n="64"/> the Gap. The Major is in
+                            command of the Regt. He thought after our hardships of the past week
+                            that we were very fresh troops, very few of us having had any breakfast.
+                            The advance skirmisher were firing nearly all day, but no engagement
+                            took place till about three oclock in the afternoon. This Brigade
+                            changed their position several times during the day. About two Oclock we
+                                <sic>we</sic> ordered towards the left, and haulted in a field near
+                            the road. Shortly after this the Fight became general on the right and
+                            Centre and was working round towards the left. McDowell came along, and
+                            ordered us toward the Centre. We went double quick up a hill and on
+                            right by file into line of Battle before we were aware that we were so
+                            near them (the Rebels) The Rebels were in the hollow beyond the hill as
+                            thick as they could be, it seemed impossible to fire without hitting
+                            some of them they were so thick. Our position was as near as I can
+                            judge, on the right of the left wing, If we had have stayed in our <add
+                                hand="author" place="top">position</add> on the road I think we
+                            should have been of some service then where we were placed for the
+                            Rebels came round to the left and flanked us whereas if we had been on
+                            the road they could not have done it so easily. We were exposed to a
+                            severe <pb entity="DSSR_000000961_0071" n="65"/> cross fire, which mowed
+                            us down <del hand="author">
+                                <hi rend="line-through">like</hi>
+                            </del> very rapidly. Our moving on to the hill placed us in front of our
+                            Artillery which of course had to stop firing. One Battery came up on the
+                            hill and opened upon the Rebels with Canister and Grape. Our Regt had
+                            the order to fix Bayonets. And we thought it was <unclear>[-]</unclear>
+                            for a charge and we started and went several rods yelling as loud as we
+                            could, when we were ordered to stop. A line of Rebels happen to be
+                            coming up the hill at the same time. What little charge we did make was
+                            enough to break there line and they run back to the main body as fas as
+                            they could go. They was so much noise that it was impossible to hear any
+                            orders. The left wing had orders to pull back. I did not hear it, and
+                            seeing no one around me <unclear>[-]</unclear> turned round and saw them
+                            some ways in the rear. I has turned to join them and keep in line as
+                            much as possible. The Rebels made a charge up the hill and captured a
+                            Piece of Artilery. I was within fifty feet of them. The Officers that
+                            led them on the charge and the color bearer was shot dead the moment
+                            they reached the Gun. The color bearer jumped upon the Gun and waved his
+                            flag when he fell. By this time our Brigade, and got all mixed up. It
+                            was impossible to find my place. The Regt I since learned was ordered to
+                            the left into the woods, but I guess they were very <del hand="author">
+                                <hi rend="line-through">fef</hi>
+                            </del> few to go . I got into a little ravine and behind a tree, and
+                            began the Bushwhacking style, could not have gone any farther. I was so
+                            tired, I sat down in the ravine <pb entity="DSSR_000000961_0072" n="66"
+                            /> and drank some water, and then commenced to load and fire. I took
+                            good aim, and it seemed impossible for my ball to miss them they were so
+                            thick. In the front rank I saw three fall that I fired at, either from
+                            my ball or some one else that might have fired at the same man at the
+                            same time. I fired till my Gun became foul and I could not fire it. I
+                            was so buisy firing that I did not notice that the line of Battle had
+                            fallen back and was much supprised to find that I was about half way
+                            between the two armies and in danger of being shot by my own men. I
+                            carried my Gun at right shoulder shift and Squat as low as possible and
+                            made as straight a line to our line of Battle as possible. I was not
+                            long going over the ground I can tell you. The balls and shells whistled
+                            around me like bees One ball hit my Gun barrel, and, but for my Gun I
+                            should have had a ball in my brain. I met the Major going off of the
+                            field and he said he was going to try and form the Regt. in the rear. We
+                            went back to a house some ways in the <pb entity="DSSR_000000961_0073"
+                                n="67"/> rear, where we found about twenty belonging to the 12 and
+                            13 Mas. We stoped here till dark. When we were ordered to cross the the
+                            run. All the forces are falling back. About two miles from the run we
+                            haulted for the night Gen Duryea with part of his Brigade was with us,
+                            he was slightly wounded in the hand.</p>
+                    </div3>
+                    <div3 id="d73" type="entry">
+                        <head>Sunday <date value="1862-08-31">Aug 31<hi rend="super"
+                            >st</hi>/62</date></head>
+                        <p>Early this morning we started for Centreville. It rained hard. The
+                            remains of our Regt haulted near Centreville. We soon learned that
+                            another Squad of the Regt were the other side of Centreville. We went to
+                            them and soon after another guard under a Lieut came up. A number of the
+                            wounded of our Company were there and the Capt saw them safely aboard of
+                            hacks that came from Washington. We marched about two miles from
+                            Centrevill and Camped or rather Bivouaked in amongst some stumps of
+                            trees, formerly a forest. A great many of the straglers came up to day.
+                            Our loss is very heavy. Our Company had Sixteen wounded that we are sure
+                            of, three killed and there is eight I think missing. We do not know
+                            whether they are killed wounded or taken prisoners. The other Companies
+                            have lost in like proportion. Among the killed and wounded in this
+                            Company is Cop Blanchard killed, Private Dickinson killed Hastings
+                            Bennett of Brighton who attended Mr Allens School the same time Sophia
+                            and I did, killed. <pb entity="DSSR_000000961_0074" n="68"/> John Arnott
+                            wounded , J Halstrick, John Keith, Henry Loard, Frank Mann, Chas. Page,
+                            Henry Richards, John Richardson, George Sawyer. All wounded. Other that
+                            I forget the names of a number of recruits wounded and missing Joe
+                            Keeting was wounded. John Mitchell is missing and I have heard since
+                            that he was wounded and in Washington but cannot tell for certain. Among
+                            the missing are Walter Colender Private Palfrey David Walke Albert
+                            Lescolm and some of the Recruits. There is very few but what can show
+                            some mark of a bullett about their clothing A great many had holes shot
+                            through their canteens. The Regt threw off their Knapsacks before going
+                            into Battle and the Rebel have got them. </p>
+                    </div3>
+                    <div3 id="d74" type="entry">
+                        <head><date value="1862-09-01">Sept 1</date><lb/> Monday Afternoon.</head>
+                        <p>We marched towards Fairfax. When within about two miles of there we
+                            crossed over on the Leesburg road, and marched on this road about a
+                            mile, where we found troops drawn up in line of Battle. We went into
+                            line of Battle behind a fence used in the edge of a woods. There was
+                            another line of Battle in the woods ahead of us and before night there
+                            was quite a battle but we were not <pb entity="DSSR_000000961_0075"
+                                n="69"/> brought into it. We layed behind this fence till nearly
+                            noon the next day. It rained hard the better part of the afternoon and
+                            the first of the evening.</p>
+                    </div3>
+                    <div3 id="d75" type="entry">
+                        <head>Tuesday <date value="1862-09-02">Sept 2<hi rend="super"
+                            >nd</hi>/62</date></head>
+                        <p>About noon we marched through Fairfax and toward Alexandria. I had an
+                            attack of Reumatism in my left shins and right shoulder so that I could
+                            hardly walk. I told my Captain that I was unable to go farther with out
+                            resting. He told me that I must get a pass from the Surgeon to fall to
+                            the rear. I went to the Surgeon, and he told me to keep with the Regt,
+                            that marching would do the Rhumatism good. I told him that I should have
+                            to take of my things and rest, and I steped one side, took them off and
+                            rested. We had a hundred rounds of Catridges given to us the day before
+                            and I destroyed half of them. It was killing me to carry them. If the
+                            Doctor had give me a pass I could have rode on an Ambulance. After
+                            resting half an hour I started on again. The Regt went towards Hall
+                            Church At night I stoped over night in a barn with two privates of the
+                            Ninth New York.</p>
+                    </div3>
+                    <div3 id="d76" type="entry">
+                        <head>Wednesday <date value="1862-09-03">Sep 3<hi rend="super"
+                            >rd</hi>/62</date></head>
+                        <p>This morning we enquired where Ricketts Division had gone. Two Brigadier
+                            Generals told us that they had gone towards Alexandria. We had gone
+                            three <pb entity="DSSR_000000961_0076" n="70"/> miles when we met a
+                            private of the 12 Mass and he said that he met our supply train going
+                            towards halls hill where they said the Division was. We about faced and
+                            went to halls hill where we found them. We are in sight of the Capitol,
+                            the view is splendid. The distance from here to Washington is about
+                            eight miles. Toward night I went with the Company on picket.</p>
+                    </div3>
+                    <div3 id="d77" type="entry">
+                        <head>Thursday <date value="1862-09-04">Sept 4<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>This morning I went to a field and got some potatoes which I fried for
+                            Breakfast. I found about three hundred digging in the field. During the
+                            forenoon I went down to the brook washing, and I saw one of the 35
+                            Massachusetts Boys He said his Regt was down near fort Cregg about three
+                            miles distance. He said that there was twenty Needham boys in his
+                            Company. I asked him if they was any one by the name of Stevens or
+                            Morse. He thought there was, but was not sure. Towards night we were
+                            relieved from picket.</p>
+                    </div3>
+                    <div3 id="d78" type="entry">
+                        <head>Friday <date value="1862-09-05">Sept 5<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>The Sutler came this morning I was on guard at his tent for a short time,
+                            there was such a large crowd to bye something. About ten Oclock I left
+                            Camp and went over to the 35 Mass Regt. I did not find any one that I
+                            knew, the other part of the Needham quota went in the 38 which I think
+                            is in Maryland</p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0077" n="71"/>
+                    <div3 id="d79" type="entry">
+                        <head>Page 71<lb/> Journal Continued <lb/> Saturday <date value="1862-09-06"
+                                >Sep 6<hi rend="super">th</hi>/62</date></head>
+                        <p>I went to the brook this forenoon had a wash, and washed my things.
+                            Rumors of marching to night. The swelling on my face has turned out to
+                            be a bile the first I have had since being in the Army. I think it must
+                            be from the effects of eating so much salt pork while in Virginia. I
+                            must be careful how I eat it here after. About dark we received orders
+                            to march. We pack up and were soon on our way. We marched to ac-
+                            quiaduct bridge, passed through Georgetown and Washington. General
+                            Ricketts must have been either mad or crazy for he marched us over six
+                            miles without a hault <pb entity="DSSR_000000961_0078" n="72"/> The Boys
+                            were unable to march so, and the consequences were that the road was
+                            lined with Straglers. I fell out of the ranks while passing through
+                            Washington. I sat down on the steps of a beautiful Mansion. It was about
+                            One Oclock Sunday morning. The owner of the House happened to be up
+                            watching the Soldiers go by. He saw me and came out, had a talk with me
+                            and gave me an Apple and a couple of peaches. After resting a little
+                            while I marched on again, and took the road that went to Rockville.
+                            About two miles from Washington I went to a house, spread my blanket on
+                            the Piazza, and went to sleep. The people of the house were up talking
+                            with some Soldiers </p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0079" n="73"/>
+                    <div3 id="d80" type="entry">
+                        <head>Sunday <date value="1862-09-07">Sept 7<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>I awoke a little after Sun rise There was two Ladies siting on the Pzza
+                            and they asked me if I Slept well. There was plenty of Soldiers about.
+                            trying to buy a Breakfast The Ladies said that there had been so many
+                            Soldiers about that they had eat them all out of every thing and they
+                            thought it was doubtful if they could get anything for their own
+                            breakfast, but we were welcome to go into the Kitchen, use the fire to
+                            cook our Coffee, and anything that we could use to help get out
+                            breakfast. I made my self at home, and soon had my Coffee cooked. After
+                            eating my hard bread and drinking my Coffee I strapped on my Knapsack
+                            and started. I had gone but a little ways <pb
+                                entity="DSSR_000000961_0080" n="74"/> when I found Shuttle, Dyer and
+                            Parker of my own Mess cooking their breakfast by the roadside. I stoped
+                            and when they got through, we four started on to- gether. We reached the
+                            Regt (which was in Camp about twelve miles from Washington) a little
+                            before dark. When the Regt reached there they only had eight men, the
+                            12th they say had only the Major come in. We four got in long before our
+                            Captain did. I heard many Officers say that they thought Gen Ricketts
+                            must be crazy to march the men the way he did. It is not always the
+                            distance that tires the men the most. It is the manner in which we are
+                            made to march it. If we don't march but six miles, if the Gen marches us
+                            that distance without a hault he will have very few men come in with
+                            him. We marched through the upper part of Washington and did not have a
+                            chance to see the Capitol close to even by night. I was in hopes we
+                            would pass through there in the day time. </p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0081" n="75"/>
+                    <div3 id="d81" type="entry">
+                        <head>Page 75 <lb/>Journal Continued<lb/> Monday <date value="1862-09-08"
+                                >Sept 8<hi rend="super">th</hi>/62</date></head>
+                        <p>Stragglers have been coming in all day many bare footed If we could only
+                            remain in one place a day or two we could have our necessities supplied
+                            The Sutler was prompt with his load, and I made a Good dinner out of
+                            Corn Starch. In the afternoon went to a brook and had a good bath.</p>
+                    </div3>
+                    <div3 id="d82" type="entry">
+                        <head>Tuesday <date value="1862-09-09">Sept 9<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p> The teams came from Washington to day with Knapsacks blankets Canteens
+                            for those that lost theirs by the Rebels. Shoes &amp; C will get
+                            along tomorrow. About three Oclock packed up and <pb
+                                entity="DSSR_000000961_0082" n="76"/> marched nine miles to
+                            Mechanicsville on the way to Frederick.</p>
+                    </div3>
+                    <div3 id="d83" type="entry">
+                        <head>Wednesday <date value="1862-09-10">Sept 10<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p rend="indent">Shoes &amp; C came from <reg orig="Washing-|ton"
+                                >Washington</reg> this morning. I have not drawn a pr, as I have a
+                            good pr. that I bought of Saml Currier nearly two months ago, they have
+                            not commenced to wear out. It afternoon packed up and got into line
+                            ready to march, but orders came to go into Camp again.</p>
+                    </div3>
+                    <div3 id="d84" type="entry">
+                        <head>Thursday <date value="1862-09-11">Sept 11<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p rend="indent">Marched this forenoon. My Knapsack seem to get the best of
+                            me to day, and after marching about eight miles I told the Lieut that I
+                            should have to rest before going further. He told <pb
+                                entity="DSSR_000000961_0083" n="77"/> me to stop then, and come
+                            along when I felt able. After siting by the road side a little while
+                            James Leeds of Co. A, (Son of Mr Leeds Police detector of Boston) came
+                            along, and it being near supper time we concluded to go to some house
+                            and get some supper.</p>
+                        <p>We went to a House that was some way back from the road. The people had
+                            seen but very few Soldiers, only two having been there before us. We
+                            asked them if we could buy some supper. They said we could have some
+                            supper, <add hand="author" place="top">but</add> would not take any pay
+                            for it. When we had got nearly through a man came along who it appears
+                            was a clock maker. We did not like his talk at all He seemed to be very
+                            intimate with the people, by his talk I judged he was a Seceshionist <pb
+                                entity="DSSR_000000961_0084" n="78"/> Just as we had finished eating
+                            a Soldier came along and asked the Woman if she could give him a bite to
+                            eat. She told him to sit down, and went to work preparing him a supper.
+                            This citizen went to her and told her not to get any that she would have
+                            to work all night if she was agoing to feed soldiers. He then came to us
+                            and told us that there was a young fellow that was sick in another room
+                            that wanted to see us. Said he, he is manager of things here and
+                            probably want to collect pay for the suppers. We went to him and it was
+                            even so. He told us to pay the Women folks for our supper. We did so but
+                            they did not want to take it. We forced it upon them. This other Soldier
+                            then told the Woman that he would not trouble her to get any thing for
+                            him as he had no money. This Citizen told him that he could not expect
+                            any supper then.</p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0085" n="79"/>
+                    <div3 id="d85" type="entry">
+                        <head>Page 79 <lb/> Journal Continues</head>
+                        <p>The Woman said she did not want his money, but to sit down and eat. She
+                            then told the Citizen that she had no Sons in the Army to help fight for
+                            the Country, and she thought it was no more then right for her to feed
+                            one or two Soldiers. The Citizen told her she would ruin her self if she
+                            was agoin to feed the Army. Said she I don't intend to feed an Army and
+                            as to my coming to want, I have plenty to last me through this life, and
+                            some to leave for my children. If it had not been for this Citizen I
+                            feel confident that she would have asked us to stay all night. We put on
+                            our Knapsack, and went out to the barn and slept on the Hay mough. It
+                            rained <pb entity="DSSR_000000961_0086" n="80"/>hard all night.</p>
+                    </div3>
+                    <div3 id="d86" type="entry">
+                        <head>Friday <date value="1862-09-12">Sept 12<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>Before we got up this Citizen that made so much fuss the night before,
+                            made his appear- ance at the top of the Lader Said he you did not go far
+                            last night. We told him we did not. About half an hour after this we had
+                            got ready to trot along. A Boy came out of the house and said the sick
+                            man wanted to see us before we went. We went in and he wanted to know if
+                            we troubled any thing out at the Barn. We told him we guessed not. He
+                            said if we wanted any Breakfast we could have some if we had got the
+                            money to pay for it. The Breakfast table was all set for us. We told him
+                            that we did not want any <pb entity="DSSR_000000961_0087" n="81"/>
+                            Breakfast. We passed through the Breakfast room in going out. The Woman
+                            asked us to sit down to Breakfast. We told her that we did not want any.
+                            She said the Clockmaker told her that we ordered breakfast. We turned to
+                            the Clock tinker and told him that he seemed to be making a great deal
+                            of trouble. We gave him a good talking to and left. At the next house we
+                            had some Breakfast. We did not hurry at all, and the Brigade marched
+                            again before we got up to it. They Camped <add hand="author" place="top"
+                                >last night</add> about four miles beyond where we had our Breakfast
+                            between the Towns of Cooksville and Lisbon. We caught up with the Regt
+                            before they had marched far. The marched to day was only Six miles. We
+                            camped at night close by the Town of Ridgeville. </p>
+                    </div3>
+                    <pb entity="DSSR_000000961_0088" n="82"/>
+                    <div3 id="d87" type="entry">
+                        <head>Saturday, <date value="1862-09-13">Sept 13<hi rend="super"
+                            >th</hi>/62</date></head>
+                        <p>We draw rations this forenoon a number from the Regt have been taken for
+                            guards, for the Citizens. Maryland and Virginia, there is some
+                            difference. This being a loyal state we have to guard the Citizens
+                            property. I pity that old Clock tinker if he was in Virginia and I
+                            should come upon any of his property. I should not have much mercy for
+                            him.</p>
+
+                    </div3>
+                </div2>
+            </div1>
+                <!--Ephraim A. Wood
+                [Ephraim A. Wood, a twenty-year-old from West Needham, Massachusetts, enlisted on
+                        <date value="1861-06-29">29 June 1861</date> as a Private. On <date
+                        value="1861-07-16">16 July 1861</date>, he mustered into "C" Co., MA 13th
+                    Infantry. He was discharged for wounds on <date value="1862-11-18">18 November
+                        1862</date> at Harrisburg, Pa. On <date value="1863-07-20">20 July
+                    1863</date>, he was commissioned a First Lieutenant and joined "H" Co.,
+                    Massachusetts 55th Infantry. He was discharged on <date value="1863-11-20">20
+                        November 1863</date>. The period covered in this journal includes the
+                    battles of Cedar Mountain and Second Manassas.
+
+                    12021
+                    Page 1-->
+            <div1 id="d88" type="notes">
+                <head>Notes </head>
+                <!--<p><handShift resp="cataloger"/>[Diary of Private E.A. Wood, Co. C. 13th Mass
+                    Infantry, Wounded in Action at Antietam, also 2nd Manassas. ]<handShift
+                        resp="author"/></p>-->
+                
+                <p>[The transcriber has used the notation '^' to indicate a word or 
+                    words inserted above the line, with the inserted words 
+                    bracketed thusly, ^ 'words inserted'.  If a word cannot
+                    be discerned, a hyphen in square brackets is inserted for each missing 
+                    word.  For example, [---] would indicate three missing words. 
+                    The transcription is as literal as possible, copying the spelling, 
+                    capitalization, and punctuation as practiced by Mr. Wood.]
+                    
+                    <!---Mary Roy Dawson Edwards, Transcriber.   November 2001--></p>
+
+                <note id="n1" n="1" place="end">
+                    <seg type="note-symbol">{1}</seg>
+                    <p>[Mark Tapley appears in Martin Chuzzlewit.] </p>
+                </note>
+
+                <note id="n2" n="2" place="end">
+                    <seg type="note-symbol">{2}</seg>
+                    <p> [The address appears on the center section of page 8 which has obviously
+                        been folded to use as the envelope. All of the preceding pages are folded as
+                        well. Ephraim must have sent this entire section of his journal to his
+                        sister as he mentions on page 8.].</p>
+
+                </note>
+
+                <note id="n3" n="3" place="end">
+                    <seg type="note-symbol">{3}</seg>
+                    <p>[perhaps he means fire lanterns. See below.]</p>
+                </note>
+
+                <note id="n4" n="4" place="end">
+                    <seg type="note-symbol">{4}</seg>
+                    <p>[perhaps he means thought.]</p>
+                </note>
+
+                <note id="n5" n="5" place="end">
+                    <seg type="note-symbol">{5}</seg>
+                    <p>[The following two lines are written in the margin and perpendicular to the
+                        rest of the letter.]</p>
+                </note>
+
+                <note id="n6" n="6" place="end">
+                    <seg type="note-symbol">{6}</seg>
+                    <p>[Must mean 'oblique']</p>
+                </note>
+
+                <note id="n7" n="7" place="end">
+                    <seg type="note-symbol">{7}</seg>
+                    <p>[Written in the left margin on this page:]</p>
+                </note>
+
+                <note id="n8" n="8" place="end">
+                    <seg type="note-symbol">{8}</seg>
+                    <p> [This page has a printed heading which reads as follows:]<lb/> Company C,
+                        4th Battalion Rifles, Boston.<lb/> HEAD-QUARTERS<lb/> Camp<lb/> 13th
+                        REGIMENT<lb/> ALWAYS READY<lb/> MASSACHUSETTS VOLUNTEERS <lb/> 1862 </p>
+                </note>
+
+                <note id="n9" n="9" place="end">
+                    <seg type="note-symbol">{9}</seg>
+                    <p> [This page has a printed heading which reads as follows:]<lb/> Company C,
+                        4th Battalion Rifles, Boston.<lb/> HEAD-QUARTERS<lb/> Camp<lb/> 13th
+                        REGIMENT<lb/> ALWAYS READY<lb/> MASSACHUSETTS VOLUNTEERS <lb/> 1862 </p>
+                </note>
+
+
+
+            </div1>
+        </body>
+    </text>
+</TEI.2>

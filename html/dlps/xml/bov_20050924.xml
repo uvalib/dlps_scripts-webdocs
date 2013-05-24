@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+
+<!ENTITY % xref 'INCLUDE'>
+<!ATTLIST xref url CDATA #IMPLIED>
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with
+                        local customizations)</resp>
+                    <name>University of Virginia Library</name>
+                </respStmt>
+                <biblScope type="date">
+                    <date value="2005-09-24">September 24, 2005</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">20</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2009">2009</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the
+                        University of Virginia</p>
+                    <p n="access">Publicly accessible</p>
+                </availability>
+                <idno type="DLPS ID">bov_20050924</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors
+                            minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of
+                            Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors
+                            meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2005-09-24">September 24, 2005</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information. Access to
+                                minutes containing salary information will be granted only under the
+                                procedures of the Virginia Freedom of Information Act (Code of
+                                Virginia-2.1-340 ff.) or if permission is granted by the Secretary
+                                of the Board. Researchers interested in obtaining access to these
+                                records should direct a request in writing to the Office of the
+                                Legal Adviser, Madison Hall, University of Virginia. These public
+                                minutes have had salary information deleted and bear no
+                                restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special
+                                Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body
+                                which is the legal owner and operator of the institution. Recorded
+                                in the minutes are appointments and other personnel decisions
+                                concerning faculty, decisions about construction of facilities,
+                                gifts to the university, and all other board actions, decisions and
+                                resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction;
+                &editorial_normalization; &editorial_hyphenation; &editorial_quotation;
+                &editorial_stdVals; </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language n="008" id="eng" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+    <revisionDesc>
+<change>
+<date value="2011-06-10">June 10, 2011</date>
+<respStmt>
+<name id="lsc6v">Lorrie Chisholm, University of Virginia Library</name>
+<resp>corrector</resp>
+</respStmt>
+<item>Minor corrections to student markup.</item>
+</change>
+</revisionDesc>
+</teiHeader>
+    <text id="d1">
+        <body id="d2">
+            <div1 type="contents" id="d3">
+                <head type="main"> RESOLUTIONS ADOPTED BY THE BOARD OF VISITORS </head>
+                <head type="sub">SEPTEMBER 24, 2005 </head>
+                <p>
+                    <table cols="2" rows="3">
+                        <row>
+                            <cell/>
+                            <cell role="label">PAGE</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of the Six-Year Institutional Plan Pursuant<lb/> to the
+                                Restructured Higher Education Financial and Administrative <lb/>
+                                Operations Act </cell>
+                            <cell>7032 </cell>
+                        </row>
+                        <row>
+                            <cell>Approval of the Management Agreement Pursuant to <lb/> Subchapter
+                                3 of the Restructured Higher Education<lb/> Financial and
+                                Administrative Operations Act </cell>
+                            <cell>7033 </cell>
+                        </row>
+                    </table>
+                </p>
+               
+            </div1>
+            <div1 type="roll-call" id="d4">
+                <pb n="7030"/>
+                <head type="main">TENTATIVE MINUTES<lb/> SUBJECT TO THE <lb/> APPROVAL OF THE <lb/> BOARD OF
+                    VISITORS </head>
+                <head type="sub">
+                    <date value="2005-09-24">September 24, 2005</date>
+                </head>
+              <p> The Board of Visitors of the University of Virginia met, in Open
+                    Session, at 12:00 noon, Saturday, <date value="2005-09-24">September 24,
+                    2005</date>, in the President’s Conference Room at Madison Hall; <name>Thomas F.
+                        Farrell, II, Rector presided. Alan A. Diamonstein, Ms. Susan Y. Dorsey, Ms.
+                        Georgia Willis Fauber, G. Slaughter Fitz-Hugh, Jr., Ms. Glynn D. Key,
+                        Vincent J. Mastracco, Jr., Lewis F. Payne, Gordon F. Rainey, Jr., Warren M.
+                        Thompson, and Ms. Catherine S. Neale </name> were present. </p>
+              <p><name>Don R. Pippin</name> participated by telephone. </p>
+              <p>Present as well were <name>John T. Casteen, III, Leonard W.
+                        Sandridge, Alexander G. Gilliam, Jr., Paul J. Forch, Gene D. Block, R.
+                        Edward Howell, Ms. Colette Sheehy, and Ms. Jeanne Flippo Bailes</name>. </p>
+              <p>The Rector asked <name>Mr. Sandridge</name>, Executive Vice
+                    President and Chief Operating Officer, to present the Agenda. <name>Mr.
+                        Sandridge </name> reminded the Board of the task at hand: a discussion of
+                  the Six- Year Plans that must be submitted to the State by October 1<hi rend="super">st</hi>. He asked
+                        <name>Ms. Sheehy</name>, Vice President for Management and Budget, to
+                    describe the two plans, one for the Academic Division and the Medical Center
+                    combined, and the other for The University of Virginia’s College at Wise. Both
+                    plans are divided into four parts: narrative; response to goals set by the
+                    state; revenue and spending plan; and enrollment plan. </p>
+              <p>In response to the State’s goals, the Plan for the Academic
+                    Division would fully implement AccessUVa, continue the newly instituted College
+                    Guide Program to provide advising to high school students and increase
+                    enrollment by 1500 students over ten years. The University will agree, among
+                    other responses to the State’s goals, to introduce and “expand availability of
+                    new degree programs in high need areas,” to maintain a “continuous assessment”
+                    of academic programs, to maintain our high graduation rate, to expand the Arts
+                    &amp; Sciences advising fellows program, and to implement articulation
+                    agreements with all 23 community 
+                  <pb n="7031"/> 
+                  colleges. As for research goals,
+                    the University would construct new facilities, hire “national academy” caliber
+                    faculty, and work to attain research expenditures of $307million by 2012.</p>
+              <p><name>Ms. Sheehy</name> next outlined several proposed revenue and
+                    spending plans. </p>
+              <p>As for the Medical Center, its strategic direction reflects the
+                    goals of the Medical Center Operating Board, agreed upon this past summer. It
+                    aims to continue to deliver superior medical care, while operating
+                    competitively, and to meet the needs of both the aging and growing population in
+                    the region. Its growth, however, is dependent on increasing the number of
+                    patient beds. The Medical Center’s projected operating margin is 5% over this
+                    six year period. </p>
+              <p>Responding both to the State’s goals and to the needs of Southwest
+                    Virginia, The University of Virginia’s College at Wise wants, among other
+                    things, to increase access and affordability, broaden its range of academic
+                    offerings, establish an Office of Economic Development and improve student
+                    retention. <name>Ms. Sheehy</name> noted that on July 19<hi rend="super">th</hi>, the State Council approved Wise
+                    enrollment targets – previously approved by the Board – to add 215 students over
+                    seven years. </p>
+                <p><name>Mr. Sandridge</name> pointed out that the Management Agreements, required
+                    by the legislation approved by the General Assembly at the last Session, are
+                    still under negotiation with Richmond. According to the established schedule,
+                    the Governor will have approved the management agreements in time to include
+                    them with his budget recommendations to the General Assembly in December. If the
+                    General Assembly approves them in the next Session, they will go into effect on
+                    <date value="2006-07-01">July 1, 2006</date>. </p>
+              <p>After discussion of the details of the proposed Six Year Plans, the
+                    Board adopted the following resolution approving them: </p>
+               
+            </div1>
+            <div1 type="resolution" id="d5">
+                <pb n="7032"/>
+                <head type="main">APPROVAL OF THE SIX-YEAR INSTITUTIONAL PLAN PURSUANT TO THE RESTRUCTURED
+                    HIGHER EDUCATION FINANCIAL AND ADMINISTRATIVE OPERATIONS ACT </head>
+             
+                    <p>WHEREAS, the 2005 General Assembly passed HB 2866 and SB 1327 known as the
+                        Restructured Higher Education Financial and Administrative Operations Act,
+                        as amended by the Governor; and </p>
+                   
+                    <p>WHEREAS, on <date value="2005-06-11">June 11, 2005</date>, the Board of
+                        Visitors of the University of Virginia passed a resolution committing to the
+                        Governor and to the General Assembly that it will meet the goals as set
+                        forth in the Act, in addition to such other responsibilities as prescribed
+                        by law as they pertain to the University of Virginia, the Medical Center,
+                        and the College at Wise; and </p>
+                   
+                    <p>WHEREAS, § 23-9.2:3.02 of the Act requires governing boards of the public
+                        institutions of higher education to develop and adopt biennially a six-year
+                        plan and submit that plan to the State Council, the Governor, and the
+                        respective chairs of the House Committee on Appropriations and the Senate
+                        Committee on Finance no later than October 1st of each odd-numbered year; </p>
+                  
+                    <p>RESOLVED, the Board of Visitors approves the six-year plans of the
+                        University’s Academic Division, the Medical Center, and the College at Wise;
+                        and </p>
+                  
+                    <p>RESOLVED FURTHER, the President is authorized to transmit the six-year
+                        plans to the State Council, the Governor, and the respective chairs of the
+                        House Committee on Appropriations and the Senate Committee on Finance. </p>
+                   
+                    <ornament type="characters">- - - - - - - - - - </ornament>
+                    
+                    <p>There was further discussion of the proposed Management Agreement, and the
+                        Board adopted the following resolution approving the Agreement so far, and
+                        authorizing the administration of the University to continue negotiations
+                        and to finalize the Agreement before November 15<hi rend="super">th</hi>: </p>
+                
+               
+            </div1>
+            <div1 type="resolution" id="d6">
+                <pb n="7033"/>
+                <head type="main">APPROVAL OF THE MANAGEMENT AGREEMENT PURSUANT TO SUBCHAPTER 3 OF THE
+                    RESTRUCTURED HIGHER EDUCATION FINANCIAL AND ADMINISTRATIVE OPERATIONS ACT </head>
+             
+                    <p> WHEREAS, the Restructured Higher Education Financial and Administrative
+                        Operations Act includes a provision titled Subchapter 3, Alternative
+                        Authority for Covered Institutions (23-38.91 <hi rend="italic">et seq</hi>.), which sets out the
+                        requirements for a public university or college of the Commonwealth to gain
+                        the greatest degree of authority over financial and administrative
+                        operations, subject to certain accountability, audit and reporting measures
+                        specified by the General Assembly of Virginia; </p>
+                   
+                    <p>WHEREAS, on <date value="2005-06-11">June 11, 2005</date> the Board of
+                        Visitors passed a resolution stating that the University is qualified to be,
+                        and should be, governed by the authorizations and requirements set forth in
+                        Subchapter 3 and as may otherwise be prescribed by applicable law; and</p>
+                   
+                    <p>WHEREAS, in that same resolution the Board of Visitors of the University
+                        attests to the ability of the institution to manage successfully its
+                        administrative and financial operations without jeopardizing its financial
+                        integrity and stability; and accordingly authorized the University President
+                        and the Executive Vice President and Chief Operating Officer to enter into
+                        negotiations with the Governor to develop a management agreement with the
+                        Commonwealth as provided for in the Act that will grant the greatest degree
+                        of financial and managerial autonomy to the University as provided in
+                        Subchapter 3, </p>
+                   
+                    <p>RESOLVED, the Board of Visitors approves the management agreement
+                        negotiated by the University for the benefit of the Academic Division, the
+                        Medical Center, and the College at Wise; and </p>
+                   
+                    <p>RESOLVED FURTHER, the Board of Visitors authorizes the President and the
+                        Executive Vice President and Chief Operating Officer, with the concurrence
+                        of the Rector, to continue negotiations and to finalize the management
+                        agreement prior to <date value="2005-11-15">November 15, 2005</date>. </p>
+                  
+                
+                <ornament type="characters">- - - - - - - - - - </ornament>
+               
+                <pb n="7034"/>
+              <p>On motion, the meeting was adjourned at 12:50 p.m. </p>
+                <signed>Respectfully submitted, <lb/>Alexander G. Gilliam, Jr.<lb/>Secretary, Board
+                    Visitors,<lb/>University of Virginia</signed>
+                <trailer>AGG:lah These minutes have been posted to the University of Virginia’s
+                    Board of Visitors website. <xref
+                        url="http://www.virginia.edu/bov/publicminutes.html"
+                        >http://www.virginia.edu/bov/publicminutes.html</xref>
+                </trailer>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

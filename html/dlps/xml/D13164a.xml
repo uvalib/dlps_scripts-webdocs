@@ -1,0 +1,2480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % ISOtech SYSTEM "http://text.lib.virginia.edu/charent/iso-tech.ent"> %ISOtech;
+<!ENTITY DSSR_000005742_0001 SYSTEM "000005742_0001" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0002 SYSTEM "000005742_0002" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0003 SYSTEM "000005742_0003" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0004 SYSTEM "000005742_0004" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0005 SYSTEM "000005742_0005" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0006 SYSTEM "000005742_0006" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0007 SYSTEM "000005742_0007" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0008 SYSTEM "000005742_0008" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0009 SYSTEM "000005742_0009" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0010 SYSTEM "000005742_0010" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0011 SYSTEM "000005742_0011" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0012 SYSTEM "000005742_0012" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0013 SYSTEM "000005742_0013" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0014 SYSTEM "000005742_0014" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0015 SYSTEM "000005742_0015" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0016 SYSTEM "000005742_0016" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0017 SYSTEM "000005742_0017" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0018 SYSTEM "000005742_0018" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0019 SYSTEM "000005742_0019" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0020 SYSTEM "000005742_0020" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0021 SYSTEM "000005742_0021" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0022 SYSTEM "000005742_0022" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0023 SYSTEM "000005742_0023" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0024 SYSTEM "000005742_0024" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0025 SYSTEM "000005742_0025" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0026 SYSTEM "000005742_0026" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0027 SYSTEM "000005742_0027" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0028 SYSTEM "000005742_0028" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0029 SYSTEM "000005742_0029" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0030 SYSTEM "000005742_0030" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0031 SYSTEM "000005742_0031" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0032 SYSTEM "000005742_0032" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0033 SYSTEM "000005742_0033" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0034 SYSTEM "000005742_0034" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0035 SYSTEM "000005742_0035" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0036 SYSTEM "000005742_0036" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0037 SYSTEM "000005742_0037" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0038 SYSTEM "000005742_0038" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0039 SYSTEM "000005742_0039" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0040 SYSTEM "000005742_0040" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0041 SYSTEM "000005742_0041" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0042 SYSTEM "000005742_0042" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0043 SYSTEM "000005742_0043" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0044 SYSTEM "000005742_0044" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0045 SYSTEM "000005742_0045" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0046 SYSTEM "000005742_0046" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0047 SYSTEM "000005742_0047" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0048 SYSTEM "000005742_0048" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0049 SYSTEM "000005742_0049" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0050 SYSTEM "000005742_0050" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0051 SYSTEM "000005742_0051" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0052 SYSTEM "000005742_0052" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0053 SYSTEM "000005742_0053" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0054 SYSTEM "000005742_0054" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0055 SYSTEM "000005742_0055" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0056 SYSTEM "000005742_0056" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0057 SYSTEM "000005742_0057" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0058 SYSTEM "000005742_0058" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0059 SYSTEM "000005742_0059" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0060 SYSTEM "000005742_0060" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0061 SYSTEM "000005742_0061" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0062 SYSTEM "000005742_0062" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0063 SYSTEM "000005742_0063" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0064 SYSTEM "000005742_0064" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0065 SYSTEM "000005742_0065" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0066 SYSTEM "000005742_0066" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0067 SYSTEM "000005742_0067" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0068 SYSTEM "000005742_0068" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0069 SYSTEM "000005742_0069" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0070 SYSTEM "000005742_0070" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0071 SYSTEM "000005742_0071" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0072 SYSTEM "000005742_0072" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0073 SYSTEM "000005742_0073" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0074 SYSTEM "000005742_0074" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0075 SYSTEM "000005742_0075" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0076 SYSTEM "000005742_0076" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0077 SYSTEM "000005742_0077" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0078 SYSTEM "000005742_0078" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0079 SYSTEM "000005742_0079" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0080 SYSTEM "000005742_0080" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0081 SYSTEM "000005742_0081" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0082 SYSTEM "000005742_0082" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0083 SYSTEM "000005742_0083" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0084 SYSTEM "000005742_0084" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0085 SYSTEM "000005742_0085" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0086 SYSTEM "000005742_0086" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0087 SYSTEM "000005742_0087" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0088 SYSTEM "000005742_0088" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0089 SYSTEM "000005742_0089" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0090 SYSTEM "000005742_0090" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0091 SYSTEM "000005742_0091" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0092 SYSTEM "000005742_0092" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0093 SYSTEM "000005742_0093" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0094 SYSTEM "000005742_0094" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0095 SYSTEM "000005742_0095" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0096 SYSTEM "000005742_0096" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0097 SYSTEM "000005742_0097" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0098 SYSTEM "000005742_0098" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0099 SYSTEM "000005742_0099" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0100 SYSTEM "000005742_0100" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0101 SYSTEM "000005742_0101" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0102 SYSTEM "000005742_0102" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0103 SYSTEM "000005742_0103" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0104 SYSTEM "000005742_0104" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0105 SYSTEM "000005742_0105" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0106 SYSTEM "000005742_0106" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0107 SYSTEM "000005742_0107" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0108 SYSTEM "000005742_0108" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0109 SYSTEM "000005742_0109" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0110 SYSTEM "000005742_0110" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0111 SYSTEM "000005742_0111" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0112 SYSTEM "000005742_0112" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0113 SYSTEM "000005742_0113" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0114 SYSTEM "000005742_0114" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0115 SYSTEM "000005742_0115" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0116 SYSTEM "000005742_0116" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0117 SYSTEM "000005742_0117" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0118 SYSTEM "000005742_0118" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0119 SYSTEM "000005742_0119" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0120 SYSTEM "000005742_0120" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0121 SYSTEM "000005742_0121" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0122 SYSTEM "000005742_0122" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0123 SYSTEM "000005742_0123" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0124 SYSTEM "000005742_0124" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0125 SYSTEM "000005742_0125" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0126 SYSTEM "000005742_0126" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0127 SYSTEM "000005742_0127" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0128 SYSTEM "000005742_0128" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0129 SYSTEM "000005742_0129" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0130 SYSTEM "000005742_0130" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0131 SYSTEM "000005742_0131" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0132 SYSTEM "000005742_0132" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0133 SYSTEM "000005742_0133" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0134 SYSTEM "000005742_0134" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0135 SYSTEM "000005742_0135" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0136 SYSTEM "000005742_0136" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0137 SYSTEM "000005742_0137" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0138 SYSTEM "000005742_0138" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0139 SYSTEM "000005742_0139" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0140 SYSTEM "000005742_0140" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0141 SYSTEM "000005742_0141" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0142 SYSTEM "000005742_0142" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0143 SYSTEM "000005742_0143" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0144 SYSTEM "000005742_0144" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0145 SYSTEM "000005742_0145" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0146 SYSTEM "000005742_0146" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0147 SYSTEM "000005742_0147" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0148 SYSTEM "000005742_0148" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0149 SYSTEM "000005742_0149" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0150 SYSTEM "000005742_0150" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0151 SYSTEM "000005742_0151" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0152 SYSTEM "000005742_0152" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0153 SYSTEM "000005742_0153" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0154 SYSTEM "000005742_0154" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0155 SYSTEM "000005742_0155" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0156 SYSTEM "000005742_0156" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0157 SYSTEM "000005742_0157" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0158 SYSTEM "000005742_0158" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0159 SYSTEM "000005742_0159" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0160 SYSTEM "000005742_0160" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0161 SYSTEM "000005742_0161" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0162 SYSTEM "000005742_0162" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0163 SYSTEM "000005742_0163" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0164 SYSTEM "000005742_0164" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0165 SYSTEM "000005742_0165" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0166 SYSTEM "000005742_0166" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0167 SYSTEM "000005742_0167" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0168 SYSTEM "000005742_0168" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0169 SYSTEM "000005742_0169" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0170 SYSTEM "000005742_0170" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0171 SYSTEM "000005742_0171" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0172 SYSTEM "000005742_0172" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0173 SYSTEM "000005742_0173" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0174 SYSTEM "000005742_0174" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0175 SYSTEM "000005742_0175" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0176 SYSTEM "000005742_0176" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0177 SYSTEM "000005742_0177" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0178 SYSTEM "000005742_0178" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0179 SYSTEM "000005742_0179" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0180 SYSTEM "000005742_0180" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0181 SYSTEM "000005742_0181" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0182 SYSTEM "000005742_0182" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0183 SYSTEM "000005742_0183" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0184 SYSTEM "000005742_0184" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0185 SYSTEM "000005742_0185" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0186 SYSTEM "000005742_0186" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0187 SYSTEM "000005742_0187" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0188 SYSTEM "000005742_0188" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0189 SYSTEM "000005742_0189" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0190 SYSTEM "000005742_0190" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0191 SYSTEM "000005742_0191" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0192 SYSTEM "000005742_0192" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0193 SYSTEM "000005742_0193" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0194 SYSTEM "000005742_0194" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0195 SYSTEM "000005742_0195" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0196 SYSTEM "000005742_0196" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0197 SYSTEM "000005742_0197" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0198 SYSTEM "000005742_0198" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0199 SYSTEM "000005742_0199" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0200 SYSTEM "000005742_0200" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0201 SYSTEM "000005742_0201" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0202 SYSTEM "000005742_0202" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0203 SYSTEM "000005742_0203" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0204 SYSTEM "000005742_0204" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0205 SYSTEM "000005742_0205" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0206 SYSTEM "000005742_0206" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0207 SYSTEM "000005742_0207" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0208 SYSTEM "000005742_0208" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0209 SYSTEM "000005742_0209" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0210 SYSTEM "000005742_0210" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0211 SYSTEM "000005742_0211" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0212 SYSTEM "000005742_0212" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0213 SYSTEM "000005742_0213" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0214 SYSTEM "000005742_0214" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0215 SYSTEM "000005742_0215" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0216 SYSTEM "000005742_0216" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0217 SYSTEM "000005742_0217" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0218 SYSTEM "000005742_0218" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0219 SYSTEM "000005742_0219" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0220 SYSTEM "000005742_0220" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0221 SYSTEM "000005742_0221" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0222 SYSTEM "000005742_0222" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0223 SYSTEM "000005742_0223" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0224 SYSTEM "000005742_0224" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0225 SYSTEM "000005742_0225" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0226 SYSTEM "000005742_0226" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0227 SYSTEM "000005742_0227" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0228 SYSTEM "000005742_0228" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0229 SYSTEM "000005742_0229" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0230 SYSTEM "000005742_0230" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0231 SYSTEM "000005742_0231" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0232 SYSTEM "000005742_0232" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0233 SYSTEM "000005742_0233" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0234 SYSTEM "000005742_0234" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0235 SYSTEM "000005742_0235" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0236 SYSTEM "000005742_0236" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0237 SYSTEM "000005742_0237" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0238 SYSTEM "000005742_0238" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0239 SYSTEM "000005742_0239" NDATA uvaHighRes>
+<!ENTITY DSSR_000005742_0240 SYSTEM "000005742_0240" NDATA uvaHighRes>
+]>
+
+<TEI.2 id="D13164">
+    <teiHeader type="AACR2">
+
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Civil War Pocket Diaries of William H. Smith</title>
+                <author>Smith, William H.</author>
+
+                <respStmt>
+                    <resp>Creation of machine-readable version: </resp>
+                    <name>Digital Curation Services , University of Virginia Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Digital Curation Services</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Creation of digital images:</resp>
+                    <name>Digitization Services, University of Virginia Library</name>
+                </respStmt>
+            </titleStmt>
+            
+
+            <extent>ca. <num type="kilobytes">173</num> kilobytes</extent>
+
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia </pubPlace>
+                <idno type="DCS">D13164</idno>
+                <date value="2009">2009</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-CivilWar</idno>
+            </seriesStmt>
+            
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title type="main">Papers of William H. Smith [manuscript], <dateRange
+                                from="1864" to="1866">1864-1866.</dateRange></title>
+                        <title type="sort">papers of william h. smith, <dateRange from="1864"
+                                to="1866">1864-1865</dateRange></title>
+                        <author>Smith, Willaim H., fl. <dateRange from="1864" to="1866"
+                            >1864-1866.</dateRange></author>
+                    </titleStmt>
+                    <extent>1 vol.</extent>
+                    <publicationStmt>
+                        <idno type="Accession No.">mss 13164</idno>
+                        <idno type="Virgo ID">4184236-1001</idno>
+                        <idno type="title control number">a4184236</idno>
+                        <availability>
+                            <p> Albert &amp; Shirley Small Special Collections, University of
+                                Virginia Library, Charlottesville, Virginia, USA</p>
+                        </availability>
+                    </publicationStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        
+        <encodingDesc>
+            <projectDesc>
+                <!-- Per Matt we need to work on this statement-->
+                <p> Prepared for the University of Virginia Library by Digital Curation Services
+                    staff and volunteer Mary Roy Dawson Edwards, Transcriber. April 2005.</p>
+            </projectDesc>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language id="eng" usage="main">English</language>
+            </langUsage>
+        </profileDesc>
+
+        <profileDesc>
+            <handList>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+        </profileDesc>
+
+    </teiHeader>
+    <text id="d1">
+        <body id="d2"> 
+            <div1 id="d3" type="part">
+                <pb n="spine" entity="DSSR_000005742_0001"/>
+                <pb n="front" entity="DSSR_000005742_0002"/>
+                <pb n="back" entity="DSSR_000005742_0003"/>
+                <pb n="head" entity="DSSR_000005742_0004"/>
+                <pb n="tail" entity="DSSR_000005742_0005"/>
+                <pb n="foredge" entity="DSSR_000005742_0006"/>
+                <pb n="np" entity="DSSR_000005742_0007"/>
+                <pb n="np" entity="DSSR_000005742_0008"/>
+                <pb n="np" entity="DSSR_000005742_0009"/>
+                <pb n="np" entity="DSSR_000005742_0010"/>
+                
+                <head type="main">Civil War Pocket Diaries of William H. Smith </head>
+                <!--<p>[This diary of William H. Smith, Co. E.,
+            7th Michigan Volunteers is 3" X 4 frac34; and is bound in black leather. On the first page he
+            has written:] -->
+                <pb n="np" entity="DSSR_000005742_0009"/>
+                <head type="sub">Wm. H. Smith<lb/> Prisoner of War<lb/> Camp Sumpter<lb/> Andersonville<lb/>
+                Georgia</head>
+                <pb n="title" entity="DSSR_000005742_0010"/>
+                <head type="desc">William H. Smith<lb/> Company E<lb/> 7<hi rend="super">th</hi> Michigan Vol.</head>
+                
+            
+                    <p>POCKET<lb/> DIARY<lb/> 1864<lb/> PUBLISHED ANNUALLY<lb/> FOR THE TRADE<lb/>
+                    1864.</p>
+                <pb n="np" entity="DSSR_000005742_0011"/>
+                <pb n="np" entity="DSSR_000005742_0012"/>
+                <p><ref target="n1" n="1">{1}</ref></p>
+                <pb n="np" entity="DSSR_000005742_0013"/>
+                <pb n="np" entity="DSSR_000005742_0014"/>
+                <pb n="np" entity="DSSR_000005742_0015"/>
+                <pb n="np" entity="DSSR_000005742_0016"/>
+                <pb n="np" entity="DSSR_000005742_0017"/>
+                <pb n="np" entity="DSSR_000005742_0018"/>
+                <pb n="np" entity="DSSR_000005742_0019"/>
+                <pb n="np" entity="DSSR_000005742_0020"/>
+                <pb n="np" entity="DSSR_000005742_0021"/>
+                <pb n="np" entity="DSSR_000005742_0022"/>
+                <pb n="np" entity="DSSR_000005742_0023"/>
+                <pb n="np" entity="DSSR_000005742_0024"/>
+                <pb n="np" entity="DSSR_000005742_0025"/>
+                
+                
+                <!--To conserve paper, the
+                        transcriber is not starting a new line every time the diarist does. However, the hyphens
+                        he uses are included. Please see transcription notes on page 43. A second diary, written
+                        by an unknown soldier from the 20th Indiana and added to by Smith begins on page 44.]-->
+                <div2 id="d4" type="section">                
+                    <head>1864</head>
+                    <div3 id="d5" type="entry">
+                        <pb n="np" entity="DSSR_000005742_0026"/>
+                        <head><date value="1864-01-01">Friday, January 1</date></head>
+                        <p>A very pleasant day no news as yet of any exchange two or three men
+                        get was -hed to day because they are dirty and filthy. The first (First) of January I
+                        ever remember of see<!--[i]-->ng with-out snow on the ground I took tea one year ago to-day at
+                        Horace Hubbards some difference from my meal this evening.</p>
+                    </div3>
+                    <div3 type="entry" id="d6">
+                        <head>Saturday <date value="1864-01-02">2</date></head> 
+                        <p>This morning is
+                        very cold the water pipes are froze up got our water to day from the canal we get only
+                        one meal. I write down the names of those who the Dr vaccinates pass of the time in
+                        play-ing poker for pins No news of exchanges<ref target="n2" n="2">{2}</ref></p>
+                        
+                        
+                        <pb n="np" entity="DSSR_000005742_0027"/>
+                        <pb n="np" entity="DSSR_000005742_0028"/>
+                        <pb n="np" entity="DSSR_000005742_0029"/>
+                        <pb n="np" entity="DSSR_000005742_0030"/>
+                        <pb n="np" entity="DSSR_000005742_0031"/>
+                        <pb n="np" entity="DSSR_000005742_0032"/>
+                        <pb n="np" entity="DSSR_000005742_0033"/>
+                        <pb n="np" entity="DSSR_000005742_0034"/>
+                        <pb n="np" entity="DSSR_000005742_0035"/>
+                        <pb n="np" entity="DSSR_000005742_0036"/>
+                        <pb n="np" entity="DSSR_000005742_0037"/>
+                        <pb n="np" entity="DSSR_000005742_0038"/>
+                        <pb n="np" entity="DSSR_000005742_0039"/>
+                        <pb n="np" entity="DSSR_000005742_0040"/>
+                    </div3>
+                    <div3 type="entry" id="d7">
+                        <pb n="np" entity="DSSR_000005742_0041"/>
+                        <head>Monday, <date value="1864-02-01">February 1</date></head>
+                        <p>I am so lame this morning that I can scarsely walk it rains is
+                        rather colder - again no trade to day only a few loavs of bread &amp; some pies the boys
+                        are playing cards for fun.</p>
+                    </div3>
+                    <div3 type="entry" id="d8">
+                        <pb n="np" entity="DSSR_000005742_0042"/>
+                        <head>Tuesday, <date value="1864-02-02">February 2, 1864.</date></head>
+                        <p>Clark only gets 4 loaves of bread
+                        this morning. The guard don't want to trade A preacher comes up here and makes a few
+                        remarks my rheumatism bothers me some yet. Playing for pins most of the
+                        day</p>
+                    </div3>
+                    <div3 type="entry" id="d9">
+                        <head>Wednesday <date value="1864-02-03">3</date></head>
+                        <p>
+                        Nothing new going on only we have roll call earlyer than usual. I get a letter from
+                        Mother Hamblin Jennie has gone to Saginau Mich Thos has been home and gone
+                        back</p>
+                    </div3>
+                    <div3 type="entry" id="d10">
+                        <pb n="np" entity="DSSR_000005742_0043"/>
+                        <head>
+                        Thursday, <date value="1864-02-04">February 4, 1864</date>.</head>
+                        <p>I am so lame this morning that I can hardly move Cold - and
+                        clear - a fight here while giving out the rations we get a vegetable soup in place of
+                        rice also beef &amp; beans it is reported that a flag of truce is up.</p>
+                    </div3>
+                    <div3 type="entry" id="d11">
+                        <head>Friday <date value="1864-02-05">5</date></head>
+                        <p>This
+                        morning we dont get much stuff 16 loavs of bread - and two sheets of rough - and ready
+                        it all sells before night a lot of men sent here from hospital and Castle Thundr Some of
+                        them think there will be an Exchange soon.</p>
+                    </div3>
+                    <div3 type="entry" id="d12">
+                        <pb n="np" entity="DSSR_000005742_0044"/>
+                        <head>Saturday, <date value="1864-02-06">February 6, 1864.</date></head>
+                        <p>This morning up
+                        rather early - getting some bread and rough and ready. I write to Mother Hamblin and
+                        Bessie I give my rations of beans to Burns he then does my Washing This evening I stirp
+                        <!--[strip]--> and wash and change my cloths the water cold.</p>
+                    </div3>
+                    <div3 type="entry" id="d13">
+                        <head>Sunday <date value="1864-02-07">7</date></head>
+                        <p>Sunday has again rooled
+                        <!--[rolled]--> around. Burns does my wash-ing I write to Mother Hamblin The city is all
+                        excitement the Yankees are coming up the peninsula We all hope so </p>
+                    </div3>
+                    <div3 type="entry" id="d14">
+                        <pb n="np" entity="DSSR_000005742_0045"/>
+                        <head>Monday, <date value="1864-02-08">February 8, 1864.</date></head>
+                        <p>This morning we get $5 worth of bread and a sheet of rough and ready He (Clark)
+                        gets some tobacco a flag of truce up again</p>
+                    </div3>
+                    <div3 type="entry" id="d15">
+                        <head>Tuesday <date value="1864-02-09">9</date></head>
+                        <p>Get up this morning with a head
+                        ache feel sick all day take a dose of salts The boys put me in Sergt of the Mess We have
+                        the Police work to do a detail is made to go out side and sweep up the
+                        streets.</p>
+                    </div3>
+                    <div3 type="entry" id="d16">
+                        <pb n="np" entity="DSSR_000005742_0046"/>
+                        <head>Wednesday, <date value="1864-02-10">February 10, 1864.</date></head>
+                        <p>Get up this morning feeling about the same but feel better
+                        after stirring around No news of any importance only the men are taken from the first
+                        floor and sent to Bell Island. The weather fine</p>
+                    </div3>
+                    <div3 type="entry" id="d17">
+                        <head>Thursday <date value="1864-02-11">11</date></head>
+                        <p>We get up this morning at 5
+                        A.M. Robberts and I make mush while Clark gets the bread. We have a very good breakfast
+                        I get a can of Condensed milk for two loaves of bread.</p>
+                    </div3>
+                    <div3 type="entry" id="d18">
+                        <pb n="np" entity="DSSR_000005742_0047"/>
+                        <head>Friday, <date value="1864-02-12">February 12, 1864.</date></head>
+                        <p>I get
+                        a paper this morning no particular news it speaks about the Officers getting away from
+                        the Libby over one hundred make their escape by digging a tunnel Weather
+                        clear and cold.</p>
+                    </div3>
+                    <div3 type="entry" id="d19">
+                        <head>Saturday <date value="1864-02-13">13</date></head>
+                        <p>I hear this morning that 8 of the Officers have been retaken at night 12
+                        more are sent in the tunnel is said to be a verry nice affair and must took some time to
+                        complete it.</p>
+                    </div3>
+                    <div3 type="entry" id="d20">
+                        <pb n="np" entity="DSSR_000005742_0048"/>
+                        <head>Sunday, <date value="1864-02-14">February 14, 1864.</date></head>
+                        <p>Clark gets some bread &amp; coffe<!--[e]--> and half a
+                        sheet of rough of rough and ready This morning papers say that six more of the Yankee
+                        officers have been recaptured A few words in it of an exchange of
+                        prisoners</p>
+                    </div3>
+                    <div3 type="entry" id="d21">
+                        <head>Monday <date value="1864-02-15">15</date></head>
+                        <p>I
+                        change my cloths cloths morning one of the boys does my washing as the cold water gives
+                        me the rheumatism Burns and I lay abead all day to keep warm, Snowing this evening the
+                        buildings are white, no trade whatever </p>
+                    </div3>
+                    <div3 type="entry" id="d22">
+                        <pb n="np" entity="DSSR_000005742_0049"/>
+                        <head>Tuesday, <date value="1864-02-16">February 16, 1864.</date></head>
+                        <p>We all get up early
+                        this morning Clark goes to get bread Roberts and I make the mush for our Breakf-ast. 70
+                        men are taken from this floor and placed on the first We hear that we are all going to
+                        be sent to Georgia soon Weather clear &amp; cold</p>
+                    </div3>
+                    <div3 type="entry" id="d23">
+                        <head>Wednesday <date value="1864-02-17">17</date></head>
+                        <p>This morning I get up
+                        early and make coffe<!--[e]--> and get the breakfast before day light We are all taken from
+                        this floor and sent on the one next to this the other side of the buil-ding and we shall
+                        start tomorrow for Ga </p>
+                    </div3>
+                    <div3 type="entry" id="d24">
+                        <pb n="np" entity="DSSR_000005742_0050"/>
+                        <head>Thursday, <date value="1864-02-18">February 18, 1864.</date></head>
+                        <p>We leave the building at three a.m.
+                        and take the cars We change at Petersburg in box cars We reach Gascon N.C. at dark and
+                        change cars again start for Raleigh Weather is very cold we nearly freeze in
+                        the cars</p>
+                    </div3>
+                    <div3 type="entry" id="d25">
+                        <head>Friday <date value="1864-02-19">19</date></head>
+                        <p>We slept very well last night the cars go very slow hardly make 10 miles an
+                        hour We get to Raleigh at 3 P.M. and then go in camp about 4 miles from the city make
+                        fires and cook <add place="top" hand="author">our</add> coffe<!--[e]-->
+                        Weather still cold people say the coldest of the winter</p>
+                    </div3>
+                    <div3 type="entry" id="d26">
+                        <pb n="np" entity="DSSR_000005742_0051"/>
+                        <head>Saturday, <date value="1864-02-20">February 20, 1864.</date></head>
+                        <p>We get up early cook our coffe<!--[e]--> eat our breakfast and get
+                        ready for another start. Weather not as cold as yestardy <!--[sic]--> sit around our fires
+                        untill 3 am When we draw our rations &amp; get aboard the cars one of our men dies last
+                        night.</p>
+                    </div3>
+                    <div3 type="entry" id="d27">
+                        <head>Sunday <date value="1864-02-21">21</date></head>
+                        <p>Last night about midnight we run off the track no one hurt the Engine
+                        upset three cars run off. The car I am in is off a bar of iron jams through the car
+                        above my feet We are at a place called Thomas ville N.C. A train of furlough soldiers
+                        pass us from Lees army We trade with the Citizens for grub</p>
+                    </div3>
+                    <div3 type="entry" id="d28">
+                        <pb n="np" entity="DSSR_000005742_0052"/>
+                        <head>Monday, <date value="1864-02-22">February 22, 1864.</date></head>
+                        <p>Still at Thomasville the Officers say we will get away at eleven oclock I give a
+                        testament to a little girl she gives me some thing to eat. Again under way see a few
+                        Yankee prisoners at Salsburry We arrive at Charlott at six oclock P.M. and
+                        go into camp</p>
+                    </div3>
+                    <div3 type="entry" id="d29">
+                        <head><date value="1864-02-23">Tuesday 23</date></head>
+                        <p>We start this morning at 7 P.M.<ref target="n3" n="3">{3}</ref>  we cross the Catawby
+                        river River in South Carolina We reach Chester change cars this morning we buy some
+                        eatibles of the nigers People are making garden Weather warm.</p>
+                    </div3>
+                    <div3 type="entry" id="d30">
+                        <pb n="np" entity="DSSR_000005742_0053"/>
+                        <head>Wednesday, <date value="1864-02-24">February 24, 1863.</date></head>
+                        <p>Last night we did not run much a poor nights sleep We pass through Columbia in the
+                        night change cars three miles from there we draw 4 hard tack each We pass through Branch
+                        ville at 5 oclock We cross the Savannah river at Augusta Ga.</p>
+                    </div3>
+                    <div3 type="entry" id="d31">
+                        <head>Tuesday <date value="1864-02-25">25</date></head>
+                        <p>We leave Augusta
+                        at 7 A.M. get rations here of crackers and meat, the Country low and Swampy. We arrive
+                        at Macon at Sun Sun set, the Guard is chan <add place="top"
+                            hand="author">ged</add> We lay down to sleep but it is very
+                            warm Citizens guard us. </p>
+                    </div3>
+                    <div3 type="entry" id="d32">
+                        <pb n="np" entity="DSSR_000005742_0054"/>
+                        <head>Friday, <date value="1864-02-26">February 26, 1864.</date></head>
+                        <p>We arrive at our place of Destonation
+                        <!--[sic]--> last night at 11 P.M. go to sleep on the ground No barracks are up for us but we
+                        are surrounded by a Stockaad 12 ft high we are put in squads of 100 drew rations and do
+                        our cooking I am in the 5<hi rend="super">th</hi> hundred</p>
+                    </div3>
+                    <div3 type="entry" id="d33">
+                        <head>Saturday <date value="1864-02-27">27</date></head>
+                        <p>This place is called Camp Sumpter Ga. To
+                        day we build us a brush house to keep us from the weather Robberts makes a corn bred for
+                        supper Reid goes to the Hospital as Steward The boys are making brier wood
+                        pipes</p>
+                    </div3>
+                    <div3 type="entry" id="d34">
+                        <pb n="np" entity="DSSR_000005742_0055"/>
+                        <head>Sunday, <date value="1864-02-28">February 28, 1864.</date></head>
+                        <p>Last night another lot of Prisoners came in some old Prisoners from
+                        my Regt 2 from my Company Fuller &amp; Sarsney Clark has poisend himself in
+                            the <del hand="author"><hi rend="line-through">swamp</hi></del>
+                            by being in the swamp Still warm for the season</p>
+                    </div3>
+                    <div3 type="entry" id="d35">
+                        <head>Monday <date value="1864-02-29">29</date></head>
+                        <p>Every thing
+                        about as usual in camp The Sailors came in to day We get no potatoes to day I make meal
+                        Slapjacks for supper and bake a loaf of corn Dodger<ref target="n4" n="4">{4}</ref></p>
+                    </div3>
+             
+                    <div3 type="entry" id="d36">
+                        <pb n="np" entity="DSSR_000005742_0090"/>
+                        <head>Sunday, <date value="1864-05-08">May 8, 1864.</date></head>
+                        <p>Dr White sends in word that I must stay
+                        inside of the Stockade if I am Commissary and attend to bringing in the medicine the
+                        reason for this is Ed and Reid had a row about the Quinine. A verry
+                        pleas-ant day</p>
+                    </div3>
+                    <div3 type="entry" id="d37">
+                        <head>Monday <date value="1864-05-09">9</date></head>
+                        <p>Dr White and some other Officers inspect the Hospital. Ed brings in plenty of Hospital
+                        supp-lies to day. No particular news of the battle before Richmond. Think it is nearly a
+                        draw-game</p>
+                    </div3>
+                    <div3 type="entry" id="d38">
+                        <pb n="np" entity="DSSR_000005742_0091"/>
+                        <head>Tuesday, <date value="1864-05-10">May 10, 1864.</date></head>
+                        <p>Rather Cloudy and looks like rain but is hot &amp;
+                        sultry Dr White sends in two turkeys to make broth of for the sick We have now over 700
+                        sick in North &amp; South Hospital - a light diet for the number</p>
+                    </div3>
+                    <div3 type="entry" id="d39">
+                        <head>Wednesday <date value="1864-05-11">11</date></head>
+                        <p>I go to
+                        the Dispensary with the Dr to get some black pepper The bakery has now got in opperation
+                        and we get plenty of bread for all hands. it has rained nearly all day. no more news in
+                        regard to the battle before Richmond </p>
+                    </div3>
+                    <div3 type="entry" id="d40">
+                        <pb n="np" entity="DSSR_000005742_0092"/>
+                        <head>Thursday, <date value="1864-05-12">May 12, 1864.</date></head>
+                        <p>The weather more cool. Ed
+                        is sick - does not go-out side to day Frank Halstead comes over to see the boys. Receive
+                        a letter from Mother Hamblin it was wrote the 22<hi rend="super">nd</hi> of
+                        April only 20 days on the way</p>
+                    </div3>
+                    <div3 type="entry" id="d41">
+                        <head><date value="1864-05-13">Friday 13</date></head>
+                        <p>We make out a morning report of - all in Hospital and send
+                            to Head Quarters I get a verry large ration of fresh beef the most I have had at any one time Dilly sends
+                        me in some paper and Envellopes. The old Capt finds a tunnel under the
+                            Stockad <!--[sic]-->
+                            below the Hospital</p>
+                    </div3>
+                    <div3 type="entry" id="d42">
+                        <pb n="np" entity="DSSR_000005742_0093"/>
+                        <head>Saturday, <date value="1864-05-14">May 14, 1864.</date></head>
+                        <p>Nothing new in the reports today. the
+                        Garrison is Reviewed by Gen Cobb. A large number of Ladies - are present A sham battle
+                        is fought I wash and change my clothing. We think we shall be Exch-anged when the Spring
+                        Campaign is over</p>
+                    </div3>
+                    <div3 type="entry" id="d43">
+                        <head>Sunday <date value="1864-05-15">15</date></head>
+                        <p>The Drs sat that the Hospital is going to be moved out side
+                        of the Stockade soon <del hand="author"><hi rend="line-through">The
+                            Senty</hi></del> one of the sentinels shoot the old one
+                        leged man for getting - across the dead line. it is still warm as usual. no particular
+                        news to day</p>
+                    </div3>
+                    <div3 type="entry" id="d44">
+                        <pb n="np" entity="DSSR_000005742_0094"/>
+                        <head>Monday, <date value="1864-05-16">May 16, 1864.</date></head>
+                        <p>Quartermaster don't send me in full rations of meat to
+                        day it is most plaguey warm To day my tearm of enlistment expires having served the US
+                        Government in the Volunteer Services three years</p>
+                    </div3>
+                    <div3 type="entry" id="d45">
+                        <head>Tuesday <date value="1864-05-17">17</date></head>
+                        <p>We hear to day that we shall
+                        undoubtedly move out side this week. We hear that Dalton is now in our hands No news
+                        from Virginia that we can rely on the Rebels say that Grant has been drove back but we
+                        cant see the point</p>
+                    </div3>
+                    <div3 type="entry" id="d46">
+                        <pb n="np" entity="DSSR_000005742_0095"/>
+                        <head>Wednesday, <date value="1864-05-18">May 18, 1864.</date></head>
+                        <p>Dr Alexander tells Ed that the Exchange is
+                        going on, hope it is so and that we may be started towards our lines in a few days I
+                        write a letter to Mother Hamblin this afternoon. Frank Beverstock comes over to see Ed
+                        and myself</p>
+                    </div3>
+                    <div3 type="entry" id="d47">
+                        <head>Thursday <date value="1864-05-19">19</date></head>
+                        <p>I go over to see Frank Garland to have him do some tattooing for
+                        me. We have a game of cards this even ing to pass away the time Weather still hot. no
+                        news from the fronts</p>
+                    </div3>
+                    <div3 type="entry" id="d48">
+                        <pb n="np" entity="DSSR_000005742_0096"/>
+                        <head>Friday, <date value="1864-05-20">May 20, 1864.</date></head>
+                        <p>We have rool <!--[roll]--> call at 7 AM earlier than
+                        usual The Dr tells me that we shall be moved soon but they have told it so many times it
+                        has got to be an old story weather <unclear>Host</unclear> &amp; dry</p>
+                    </div3>
+                    <div3 type="entry" id="d49">
+                        <head>Saturday <date value="1864-05-21">21</date></head>
+                        <p>I get up early
+                        and have Frank prick the Godess of Liberty on my arm. at ten Oclock we go out side with
+                        the Hospital it is in a verry pleas-ant grove but it is tedious moving the sick. I have
+                        put a blister on my arm to take out the ink that was pricked in the
+                        morning.</p>
+                    </div3>
+                    <div3 type="entry" id="d50">
+                        <pb n="np" entity="DSSR_000005742_0097"/>
+                        <head>Sunday, <date value="1864-05-22">May 22, 1864.</date>
+                        </head>
+                        <p>The north Hospital is moved out to day it is hot as fury I have to carey my
+                        arm in a sling it is so sore Dr White - comes in and gives me full charge of the
+                        Commassary Department No news to day from the front.</p>
+                    </div3>
+                    <div3 type="entry" id="d51">
+                        <head>Monday <date value="1864-05-23">23</date></head>
+                        <p>We have 172 new patients
+                        admitted to hospital it is verry hot and we have but few nurses they have to work verry
+                        hard. Another new lot of fedral prisoners come in the stockade some of them
+                            from the 5<hi rend="super">th</hi>
+                            Army Corps</p>
+                    </div3>
+                    <div3 type="entry" id="d52">
+                        <pb n="np" entity="DSSR_000005742_0098"/>
+                        <head>Tuesday, <date value="1864-05-24">May 24, 1864.</date></head>
+                        <p>Not as warm as yestardy - a cool breeze blowing, a few
+                        new admission to Hospital. More Fedral Prisoners come in. news from our Armies is
+                        cheering Grant is driving Lee back towards Richmond</p>
+                    </div3>
+                    <div3 type="entry" id="d53">
+                        <head>Wednesday <date value="1864-05-25">25</date></head>
+                        <p>My arm not much better
+                        it looks verry bad We have more patients admitted to Hospital so that we now have some
+                        over 800 patients - and 100 attend-ants - and I have plenty of work to do. It is warm
+                        and sultry</p>
+                    </div3>
+                    <div3 type="entry" id="d54">
+                        <pb n="np" entity="DSSR_000005742_0099"/>
+                        <head>Thursday, <date value="1864-05-26">May 26, 1864</date></head>
+                        <p>We have a lot more sick admitted from the stockades
+                        Robinson lets three of us go out to the creek and have a swim, still hot as ever The
+                        policeman and myself fix up my tent so that I can keep my stores from being
+                        stole.</p>
+                    </div3>
+                    <div3 type="entry" id="d55">
+                        <head> Friday <date value="1864-05-27">27</date></head>
+                        <p>My arm is getting worse inflammation has got in it and it is verry sore The
+                        Garreson are in line of battle nearly all day as they expect that the boys will make a
+                        break</p>
+                    </div3>
+                    <div3 type="entry" id="d56">
+                        <pb n="np" entity="DSSR_000005742_0100"/>
+                        <head>Saturday, <date value="1864-05-28">May 28, 1864.</date></head>
+                        <p>Every thing about as usual no news of any exchange we hear
+                        that our Army under Gen Sherman is within 15 miles of Atlanta and Gen Jo Johnston is
+                        more than skedadling to keep him from taking the place.. 60 more patients
+                        admitted</p>
+                    </div3>
+                    <div3 type="entry" id="d57">
+                        <head>Sunday <date value="1864-05-29">29</date></head>
+                        <p>Nothing new going on 1100 more prisoners came in to-day, part of them lately
+                        captured in the battles before Richmond they bring - cheering news say Grant is driving
+                        Lee back every day </p>
+                    </div3>
+                    <div3 type="entry" id="d58">
+                        <pb n="np" entity="DSSR_000005742_0101"/>
+                        <head>Monday, <date value="1864-05-30">May 30, 1864.</date></head>
+                        <p>Charley Tabor goes out side - and Dr White
+                        gives him - a pass to pass out &amp; in when he pleases. A lot more prisoners come in to
+                        day from the Army of the Potomac All the news we get from there is cheering for us Grant
+                        has captured 87 pieces of cannon</p>
+                    </div3>
+                    <div3 type="entry" id="d59">
+                        <head>Tuesday <date value="1864-05-31">31</date></head>
+                        <p>I send a note in to Frenchy to find out how
+                        many of my Regt have lately come inside of the Stockade. We hear nothing from the seat
+                        of war to day of any importance.</p>
+                    </div3>
+                    <div3 type="entry" id="d60">
+                        <pb n="np" entity="DSSR_000005742_0102"/>
+                        <head>Wednesday, <date value="1864-06-01">June 1, 1864.</date></head>
+                        <p>Rumors again around Camp that
+                        we are to be exch-anged soon or paroled and is to take place the 10<hi
+                            rend="underline">th</hi> or 15<hi rend="super">th</hi> of the
+                            month We have a fine shower of rain it is verry hot for an hour or two.</p>
+                    </div3>
+                    <div3 type="entry" id="d61">
+                        <head>Thursday <date value="1864-06-02">2</date></head>
+                        <p>This
+                        afternoon it clouds up and rains very hard I set and play cards with Bishop, Snider and
+                        Ed Burns no reports - going round to day still hot</p></div3>
+                    <div3 type="entry" id="d62">
+                        <pb n="np" entity="DSSR_000005742_0103"/>
+                        <head>Friday, <date value="1864-06-03">June 3, 1864.</date></head>
+                        <p>It is verry hot
+                        and dry the sand sokes up all the rain it rains again to- day verry hard We hear again
+                        that we shall be exchanged soon I hope it may be so</p>
+                    </div3>
+                    <div3 type="entry" id="d63">
+                        <head>Saturday <date value="1864-06-04">4</date></head>
+                        <p>We have to make only one
+                        kettle of gruel this morning it has rained nearly all-day Dr White comes in and inspects
+                        the Camp I get only half rations of bread to day when I got full rations part of it
+                        spoils</p>
+                    </div3>
+                    <div3 type="entry" id="d64">
+                        <pb n="np" entity="DSSR_000005742_0104"/>
+                        <head>Sunday, <date value="1864-06-05">June 5, 1864.</date></head>
+                        <p>I change my Cloths wash up - and get my work - done up in
+                        good season. News is scarse again I buy 2.50 in gold to day at a preamium of 75 cts. I
+                        am offered at the rate of three for one for it</p>
+                    </div3>
+                    <div3 type="entry" id="d65">
+                        <head>Monday <date value="1864-06-06">6</date></head>
+                        <p>It is warm and muggy it clouds
+                        up and rains. the Dr says Grant is within 6 miles of Richmond and he seems to think that
+                        Richmond is going up.</p>
+                    </div3>
+                    <div3 type="entry" id="d66">
+                        <pb n="np" entity="DSSR_000005742_0105"/>
+                        <head>Tuesday, <date value="1864-06-07">June 7, 1864.</date></head>
+                        <p>I go out side to day and - get the Syrup;
+                        and try to - get more skillets &amp; bucketts 600 more Union Prisoners come in to day
+                        from Va They bring no particular news - how the fight is going but think Grant will be
+                        successful</p>
+                    </div3>
+                    <div3 type="entry" id="d67">
+                        <head>Wednesday <date value="1864-06-08">8</date></head>
+                        <p>I have a plenty of bread come in again, to day but verry little
+                        rice - it is reported that Atlanta is in our hands The news from Rich mond is cheering
+                        Gen Lee is now within his Fortifica tions in front of the City</p>
+                    </div3>
+                    <div3 type="entry" id="d68">
+                        <pb n="np" entity="DSSR_000005742_0106"/>
+                        <head>Thursday, <date value="1864-06-09">June 9, 1864.</date>
+                        </head>
+                        <p>I
+                        get a new pair of pants pay one dollar for - getting them made - and one Dollar for the
+                        bags. it rains - again to day. The papers say the Commi-sssoners - are together again
+                        trying to fix up an exchange hope they will - aggree and we poor Devels have a chance to
+                        see home again</p>
+                    </div3>
+                    <div3 type="entry" id="d69">
+                        <head>Friday <date value="1864-06-10">10</date></head>
+                        <p>Very warm - again. it is reported that Richmond is ours but the
+                        report is contradicted - the papers say Grant had fought with them at Gains Mill - and
+                        that is within 7 miles of the City</p>
+                    </div3>
+                    <div3 type="entry" id="d70">
+                        <pb n="np" entity="DSSR_000005742_0107"/>
+                        <head>Saturday, <date value="1864-06-11">June 11, 1864.</date></head>
+                        <p>Every thing about as usual
+                        re news from the front.. I get Rations of fresh beef also a lot of greens for the skirvy
+                        cases but there is not a taste for one half of the patients</p>
+                    </div3>
+                    <div3 type="entry" id="d71">
+                        <head>Sunday <date value="1864-06-12">12</date></head>
+                        <p>I have some work
+                        to do this morning in cleaning up my tent. I write a short letter to Mother Hamblin this
+                        evening; it clouds up and rains like the old scratch for an hour or more.</p>
+                    </div3>
+                    <div3 type="entry" id="d72">
+                        <pb n="np" entity="DSSR_000005742_0108"/>
+                        <head>Monday, <date value="1864-06-13">June 13, 1864</date>.</head>
+                        <p>This morning I get no bread for the sick nothing but pork isshued I have to
+                        ishue rations of rice to the attend-ants to supply the place of bread I write a letter
+                        to my Sister Jennie at Saginau Michigan I now have three to mail to night it is a rainy
+                        day I buy a watch for $30 </p>
+                    </div3>
+                    <div3 type="entry" id="d73">
+                        <head>Tuesday <date value="1864-06-14">14</date></head>
+                        <p>It has been a wet cold nasty day rains about half
+                        of the time Frank is rather better I buy a <add place="top" hand="author">small</add> chicken for him pay 75 cts for it.
+                        Ed heard to day that President Lincoln has ishued an order that all prisoners were to be
+                        exchanged or paroled immediately </p>
+                    </div3>
+                    <div3 type="entry" id="d74">
+                        <pb n="np" entity="DSSR_000005742_0109"/>
+                        <head>Wednesday, <date value="1864-06-15">June 15, 1864</date></head>
+                        <p>I go out side to day to get
+                        molasses. We get two pails full of it. 1100 more Federal Prisoners came in Captured in
+                        Va I see three from my Regiment that have reenlisted Dr White gives me a pass to pass
+                        out and in hospital A few Officers exchanged from Macon</p>
+                    </div3>
+                    <div3 type="entry" id="d75">
+                        <head>Thursday <date value="1864-06-16">16</date></head>
+                        <p>This morning I get
+                        up I see it is a gain <!--[again]--> cloudy it has tried to rain most of the day but has not
+                        made it out. Frank is rather weaker - 1100 more Federal Prisoners come in Some of them
+                        captured at Petersburg Va News Encourageing for us</p>
+                    </div3>
+                    <div3 type="entry" id="d76">
+                        <pb n="np" entity="DSSR_000005742_0110"/>
+                        <head>Friday, <date value="1864-06-17">June 17, 1864.</date></head>
+                        <p>Still rains
+                        continually has rained every day this month so far. We get a fine lot of greens cooked
+                        to day. I sell a watch to Charles Tabor for $55.00 Major Bogle comes in to the Hospital
+                        as a patient. We hear no news of any kind from the Army</p>
+                    </div3>
+                    <div3 type="entry" id="d77">
+                        <head>Saturday <date value="1864-06-18">18</date></head>
+                        <p>This has been a
+                        verry wet nas <add place="top" hand="author">ty</add> day - cold and chilly. the papers say that the wheat is growing in
+                        some places Torpedo Jack are sentenced to be hung. Gen Winder paroled them and sends
+                        them to the penetentary - during the war no news from the fronts Frank a little better</p>
+                    </div3>
+                    <div3 type="entry" id="d78">
+                        <pb n="np" entity="DSSR_000005742_0111"/>
+                        <head>Sunday, <date value="1864-06-19">June 19, 1864</date></head>
+                        <p>I wash up and change my cloths and go out to the dispinsary after
+                        molasses - and vinegar but get none I came back to my tent and write a letter to Maria
+                        Hayden Frank thinks he is not as well to day This is a clear sunshiny day no rain</p>
+                    </div3>
+                    <div3 type="entry" id="d79">
+                        <head>Monday <date value="1864-06-20">20</date></head>
+                        <p>We think we are going to have a verry fine day as it is clear as crystal but about 4
+                        O.Clock P M it clouds up and rains for a coupple of hours very heard <!--[hard]-->. my rations
+                        when they come in are verry wet I get a ration of fresh beef the cooks cook out at night</p>
+                    </div3>
+                    <div3 type="entry" id="d80">
+                        <pb n="np" entity="DSSR_000005742_0112"/>
+                        <head>Tuesday, <date value="1864-06-21">June 21, 1864.</date></head>
+                        <p>Frank not quite so well to-day has been eating stewed plums I
+                        get molasses again to day. It has been verry pleasant and rained but little. Some more
+                        news of an Exchange say it is to take place some time next month I put away $30.00 for
+                        future use.</p>
+                    </div3>
+                    <div3 type="entry" id="d81">
+                        <head>Wednesday <date value="1864-06-22">22</date></head>
+                        <p>When I get up this mor-ning I feel rather down the mouth -
+                        don't do any work until evening when the flour comes in then I isshue out 800 rations it
+                        is reported that our sco-uts were within 7 miles of here a day ago. Corpl Wm O
+                        Dillingham Died June 20<hi rend="super">th</hi> Co I Mich Infty No of grave <unclear>2278</unclear> <!--[or 2248]-->
+                        </p>
+                    </div3>
+                    <div3 type="entry" id="d82">
+                        <pb n="np" entity="DSSR_000005742_0113"/>
+                        <head>Thursday, <date value="1864-06-23">June 23, 1864.</date></head>
+                        <p>This has been a verry warm day and no rain hope we shall have no more for a week
+                        There is some talk that we shall be Exchanged undoubtedly next month. We hear to-day
+                        that we are going to be searched Burns &amp; I put away some over $200. Frank better</p>
+                    </div3>
+                    <div3 type="entry" id="d83">
+                        <head>Friday <date value="1864-06-24">24</date></head>
+                        <p>This has been a verry warm day the warmest of any we have yet had I get a lot
+                        of greens and a large ration of fresh beef We hear no particular news of any Exchange
+                        any more than we shall likely be exchanged some time next month</p>
+                    </div3>
+                    <div3 type="entry" id="d84">
+                        <pb n="np" entity="DSSR_000005742_0114"/>
+                        <head>Saturday, <date value="1864-06-25">June 25, 1864.</date></head>
+                        <p>We get another quantity of Vegetables. the Cooks are verry busy cooking greens and fresh
+                        beef. Frank is gaining finely We have some good news from Gen Grant he is within 3 miles
+                        of Petersburgh has captured 6 Batteries from Lee. Buley <!--[Bully]--> for us</p>
+                    </div3>
+                    <div3 type="entry" id="d85">
+                        <head>Sunday <date value="1864-06-26">26</date></head>
+                        <p>This
+                        has been a verry warm day. We get more fresh beef and Vegt <unclear>[-]</unclear> makes a fine potatoes
+                        stew and Blackberry Duff Two years ago to day the 7 days battles - commenced on the
+                        Peninsula Va commen-cing at Mechanicsville.</p>
+                    </div3>
+                    <div3 type="entry" id="d86">
+                        <pb n="np" entity="DSSR_000005742_0115"/>
+                        <head>Monday, <date value="1864-06-27">June 27, 1864.</date></head>
+                        <p>This has been a verry
+                        warm day We really melt with heat. Gaines goes out with us to help bring in the vinegar
+                        and molasses Fresh beef again to-day We hear that Sherman and Johnson are again fighting
+                        at Marrietta Ga 2 Years to day the 7 days battles <add place="top" hand="author">commenced</add></p>
+                    </div3>
+                    <div3 type="entry" id="d87">
+                        <head>Tuesday <date value="1864-06-28">28</date></head>
+                        <p>Rather more
+                        air stiring than usual. I go up to Head Quarters twice to day. Get more molasses than
+                        usual. We hear that cars are being fixed up to transport the sick in when the Exch-ange
+                        takes place hope it will be soon</p>
+                    </div3>
+                    <div3 type="entry" id="d88">
+                        <pb n="np" entity="DSSR_000005742_0116"/>
+                        <head>Wednesday, <date value="1864-06-29">June 29, 1864.</date></head>
+                        <p>This has been a verry warm
+                        day. As good luck will have it I get no fresh beef, but about 35 bags of vegetables I
+                        ishue no flour to the pat-ients <unclear>[Line inserted that is not discernable.]</unclear> We hear that
+                        Gen Winder has received ord ers that there will be no Exchanges during the war</p>
+                    </div3>
+                    <div3 type="entry" id="d89">
+                        <head>Thursday <date value="1864-06-29">30</date></head>
+                        <p>Great Excitement in Camp the raiders have been taken out of the stock- ade and are
+                        having a Jury trial, by our own men. Public opinion cries loud -ly to hang them 2 men
+                        have been found in one of there teants dead still hot and Sultry.</p>
+                    </div3>
+                    <div3 type="entry" id="d90">
+                        <pb n="np" entity="DSSR_000005742_0117"/>
+                        <head>Friday, <date value="1864-07-01">July 1, 1864.</date></head>
+                        <p>
+                        This has been a verry hot day. I don't go after my Vinegar and molasses untill 7 Oclock.
+                        The news from Northern Ga and Virginia about as us- ual. 2 years ago today the Battle of
+                        Malvern Hill Col Woodburry of the 7<hi rend="super">th</hi> Mich Killed.</p>
+                    </div3>
+                    <div3 type="entry" id="d91">
+                        <head>Saturday <date value="1864-07-02">2</date></head>
+                        <p>Still warm and sultry I
+                        get a quantity of bags again any ammount of squashes given out the boys in the new
+                        stock-ad 1 year ago Col Jeffes of the 7 Mich Killed at Gettysburg Pa News from Va
+                        cheering from Grants army. Petersburg is ours</p>
+                    </div3>
+                    <div3 type="entry" id="d92">
+                        <pb n="np" entity="DSSR_000005742_0118"/>
+                        <head>Sunday, <date value="1864-07-03">July 3, 1864.</date></head>
+                        <p>This has been
+                        another hot day. I go up to Hd Qtrs early and get my syrrup <!--[sic]--> Vinegar &amp; salt.
+                        This after noon a party of us go over to the creek and have a fine bath. I buy one Doz
+                        of eggs pay $2 for them We hear no news of any importance</p>
+                    </div3>
+                    <div3 type="entry" id="d93">
+                        <head>Monday <date value="1864-07-04">4</date></head>
+                        <p>I finish reading the
+                        Bible through this morning. I then go and get my mol-asses it rains about two hours -
+                        and has been rather a dry Independance to us prisoners. Jim cooks a fine Blackburry
+                        <!--[sic]--> Duff for supper. No Whiskey at Hd Quarters for patients</p>
+                    </div3>
+                    <div3 type="entry" id="d94">
+                        <pb n="np" entity="DSSR_000005742_0119"/>
+                        <head>Tuesday, <date value="1864-07-05">July 5, 1864.</date></head>
+                        <p>
+                        This has been another warm day. nearly hot enough to suffocate a person I go out early
+                        to get molasses &amp; vinegar Henan goes with me. <unclear>Newton</unclear> owns up that Grant has
+                        possission of Petersburg and that we hold Danville.</p>
+                    </div3>
+                    <div3 type="entry" id="d95">
+                        <head>Wednesday <date value="1864-07-06">6</date></head>
+                        <p>Last night Ed and I got
+                        rather more liquor down than we can hold - consequently we heave up Jonah - and have
+                        both been sick all day neither of us has done any work. The Cooks boil three kettles of
+                        Simlins for sick. Weather still hot.</p>
+                    </div3>
+                    <div3 type="entry" id="d96">
+                        <pb n="np" entity="DSSR_000005742_0120"/>
+                        <head>Thursday, <date value="1864-07-07">July 7, 1864.</date></head>
+                        <p>This has been another verry
+                        warm day We hear it reported that Johnson has been whipped from Marrietta and is now
+                        within nine miles of Atlanta We also hear that Kilpatrick is making a raid on Macon and
+                        he is expected here. The Women have been ordered away from here.</p>
+                    </div3>
+                    <div3 type="entry" id="d97">
+                        <head>Friday <date value="1864-07-08">8</date></head>
+                        <p>I go up to Hhd
+                        Qters early. help Frank Hunt put up a tent. I have to give a receipt for what molasses
+                        &amp; vinegar I draw for Hospital use. Cars all runing hourly by here. The address of
+                        Miss O.M. Smith is Nottoway T. Kalamazoo Mich. Still Hot.</p>
+                    </div3>
+                    <div3 type="entry" id="d98">
+                        <pb n="np" entity="DSSR_000005742_0121"/>
+                        <head>Saturday, <date value="1864-07-09">July 9, 1864.</date></head>
+                        <p>This
+                        morning I go up to Hhd Qtrs rather early and get the molasses &amp; vinegar. About 800
+                        prisoners just came in from the Army of the Potomac - captured at Petersburg Mrs Hunt is
+                        blessed with a young son. A fine shower this evening.</p>
+                    </div3>
+                    <div3 type="entry" id="d99">
+                        <head>Sunday <date value="1864-07-10">10</date></head>
+                        <p>This is the hottest day
+                        we have had. I have to cut rations of meat for the attendants. Another lot of Federal
+                        Prisoners - are brought in We hear that Sherman has taken Atlanta Tim gives us a
+                        blackburry Duff for dinner. A shower coming up.</p>
+                    </div3>
+                    <div3 type="entry" id="d100">
+                        <pb n="np" entity="DSSR_000005742_0122"/>
+                        <head>Monday, <date value="1864-07-11">July 11, 1864.</date></head>
+                        <p>This morning at 8
+                        AM Frank captures a thief in our tent stealing meat we keep him tied untill after day
+                        light when I let him go. Dr White sends in another Kettle for cooking purposses The six
+                        <del hand="author"><hi rend="line-through">Deserters</hi></del> Raiders are hung to day at 5 oclock Haines &amp; I go out and
+                        see them</p>
+                    </div3>
+                    <div3 type="entry" id="d101">
+                        <head>Tuesday <date value="1864-07-12">12</date></head>
+                        <p>This morning I take two of the boys and go out and get some crotches
+                        and fix my tent I now have it higher and much more convenient. Old Charley tells me that
+                        the Pirate 21 is distroyed and that Atlanta is now in yankee hands Still hot. No news
+                        from Rich-mond</p>
+                    </div3>
+                    <div3 type="entry" id="d102">
+                        <pb n="np" entity="DSSR_000005742_0123"/>
+                        <head>Wednesday, <date value="1864-07-13">July 13, 1864.</date></head>
+                        <p>I get a chance to see todays paper. it states
+                        that Sherm-an has crossed the Chattahoechi - also that Gen Early is now in Maryland and
+                        that Gen Grant has returned to the north bank of the James River. This has been the
+                        warmest day we have had Theremometer ranging 105</p>
+                    </div3>
+                    <div3 type="entry" id="d103">
+                        <head>Thursday <date value="1864-07-14">14</date></head>
+                        <p>This morning a general
+                        reno-vation of camp takes place and streets are lade <!--[sic]--> out and it is now much more
+                        pleas-ant. I have to move my tent. keeps Ed and I busy for an hour or two. This morning
+                        I get a wagon load of bread but is now all given out. The alarm guns all fire</p>
+                    </div3>
+                    <div3 type="entry" id="d104">
+                        <pb n="np" entity="DSSR_000005742_0124"/>
+                        <head>Tuesday, <date value="1864-07-19">July 19, 1864.</date></head>
+                        <p>To day I go up to head Qtrs get 2 bucketts of Molasses and I get 7 sacks
+                        flour. We hear that our Cavelry is making a raid this way. I hear that six delegates are
+                        to start tomor-row for our lines to see if an exchange cant be mad<!--[e]--> so as to benefit
+                        us prisoners. We have a cotellian <!--[sic]--> this evening still hot</p>
+                    </div3>
+                    <div3 type="entry" id="d105">
+                        <head>Wednesday <date value="1864-07-20">20</date></head>
+                        <p>This morning
+                        the rebs set a party of Darkies atwork throwing up breast- works - Newton tells me that
+                        Our forces are expe-cted here to night or to morrow. They have burnt Columbia 55 miles
+                        from here The weather still very hot No news from Grant</p>
+                    </div3>
+                    <div3 type="entry" id="d106">
+                        <pb n="np" entity="DSSR_000005742_0125"/>
+                        <head>Thursday, <date value="1864-07-21">July 21, 1864.</date></head>
+                        <p>When I
+                        go up to Hhd. Qtrs after molasses I see that the Rebs have about 300 Niggers throwing up
+                        breas-works we heard that Fighting is going on near Altanta hope we may be successful
+                        Reported that Johnson is supper -sceeded <!--[sic]--> by Gen Hood</p>
+                    </div3>
+                    <div3 type="entry" id="d107">
+                        <head>Friday <date value="1864-07-22">22</date></head>
+                        <p>To day the same old
+                        thing as usual no news from the front. We hear that 90 of our cavelry that made the raid
+                        to Columbus have been captured. The weather still hot. Reports in the papers say that
+                        Gen Grant is dead but we don't believe it</p>
+                    </div3>
+                    <div3 type="entry" id="d108">
+                        <pb n="np" entity="DSSR_000005742_0126"/>
+                        <head>Saturday, <date value="1864-07-23">July 23, 1864.</date></head>
+                        <p>To-day has been
+                        rather cool the Rebs are now throwing up rifle pits over the run. We also hear that the
+                        rebels commenced evacuating Atlanta last night, but the papers say that Sherman is
+                        whipped and 4 Generals killed I go to Dr Barrows tent &amp; we have some fine music</p>
+                    </div3>
+                    <div3 type="entry" id="d109">
+                        <head>Sunday <date value="1864-07-24">24</date></head>
+                        <p>I go up to Hhd Quarters about noon and get my molasses. Such a time as I have
+                        in giving it out the boys are so thick it is almost impossible to move I cut a whip to
+                        lick a few of them it has been rather windy. Report says that Sherman has been Defeated</p>
+                    </div3>
+                    <div3 type="entry" id="d110">
+                        <pb n="np" entity="DSSR_000005742_0127"/>
+                        <head>Monday, <date value="1864-07-25">July 25, 1864.</date></head>
+                        <p>Last night about midnight the guard shoots one of the patients
+                        through the leg Dr White amputates it to day. We have a Devel <!--[devil]--> of an uproar about
+                        the flour no Attendants now - are allowed - any We get some greens and a few early green
+                        corn Charly gives me $10. </p>
+                    </div3>
+                    <div3 type="entry" id="d111">
+                        <head>Tuesday <date value="1864-07-26">26</date></head>
+                        <p>Nothing new to day we hear no news from the Armies.
+                        The Rebs have 8 more pieces of artilery <!--[sic]--> here now making 16 in all They are at work
+                        on the Fortifications but no guns in position. We have new potatoes &amp; corn for tea</p>
+                    </div3>
+                    <div3 type="entry" id="d112">
+                        <pb n="np" entity="DSSR_000005742_0128"/>
+                        <head>Wednesday, <date value="1864-07-27">July 27, 1864.</date></head>
+                        <p>This morning I am feeling rather down - and don't do much work
+                        Tom Lyles goes up to Hhd Quarters in my place and gets the molasses. A lot of wounded
+                        prisoners come in to day Captured near Atlanta. They say that we are whipping Hood every
+                        day Still hot</p>
+                    </div3>
+                    <div3 type="entry" id="d113">
+                        <head>Thursday <date value="1864-07-28">28</date></head>
+                        <p>I am feeling better again to day I go out and get the
+                        molasses. The rebs have their fort nearly finished, and 8 guns in position. The Captain
+                        fires a shell over the Stockade to scare the men a lot more are put in taken at Atlanta</p>
+                    </div3>
+                    <div3 type="entry" id="d114">
+                        <pb n="np" entity="DSSR_000005742_0129"/>
+                        <head>Friday, <date value="1864-07-29">July 29, 1864.</date></head>
+                        <p>This morning - another Detail comes out of the Stockade. We have
+                        now about 1700 patients and about 300 of them are wounded half of them wounded near
+                        Atlanta We are rather getting the best of them there.</p>
+                    </div3>
+                    <div3 type="entry" id="d115">
+                        <head>Saturday <date value="1864-07-03">30</date>
+                        </head>
+                        <p>This has been another
+                        verry warm day I go up to Hhd Qatrs about noon and get my molasses. Ed and I buy a large
+                        watermellon and a verry nice one Report says the Yankees are shelling Atlanta - every
+                        body scared here Guns are got into position <unclear>[-]</unclear></p>
+                    </div3>
+                    <div3 type="entry" id="d116">
+                        <pb n="np" entity="DSSR_000005742_0130"/>
+                        <head>Sunday, <date value="1864-07-31">July 31, 1864.</date></head>
+                        <p>This morning I
+                        hurry up the ward masters and have them draw their flour &amp; beans and at 10 oclock I
+                        am done my work and cloths changed We hear that our forces all at Macon and have burnt
+                        the Pistol Factory it is thought they will be here tomorrow</p>
+                    </div3>
+                    <div3 type="entry" id="d117">
+                        <head>Monday, <date value="1864-08-01">August 1</date></head>
+                        <p>The
+                        excitement is now - at ebb but the trees have all been cut to make room for artillery
+                        practice 12 guns are now mounted in the fort Ed is now Steward of a ward. I write to
+                        Mother Hamblin and Sister Jennie more rumors of an Exchange.</p>
+                    </div3>
+                    <div3 type="entry" id="d118">
+                        <pb n="np" entity="DSSR_000005742_0131"/>
+                        <head>Tuesday, <date value="1864-08-02">August 2, 1864.</date></head>
+                        <p>
+                        Warm as usual - but no news of importance but it is rumored that General Stoneman and
+                        staff have been Captured we cant half believe it We get a very heavy shower this
+                        after-noon A few more sick come in again we expect 500 to be admitted tomorrow </p>
+                    </div3>
+                    <div3 type="entry" id="d119">
+                        <head>Wednesday <date value="1864-08-03">3</date></head>
+                        <p>This morning I send in the Stockade to get Joe Stevens out for a nurse. 600 sick are
+                        admitted to Hospital - we have hardly room - enough to accommodate a <unclear>&frac14;</unclear><!--[or &frac12;]--> of them.
+                        It is rumored that the Hospital is going to be removed.</p>
+                    </div3>
+                    <div3 type="entry" id="d120">
+                        <pb n="np" entity="DSSR_000005742_0132"/>
+                        <head>Thursday, <date value="1864-08-04">August 4, 1864.</date></head>
+                        <p>It is
+                        a hard looking sight this morning to see so many sick men laying on the ground The
+                        attendents have to give up their tents for patients. 25 Detailed men come out of
+                        Stock-ade for nurses Mighty hot - day no news </p>
+                    </div3>
+                    <div3 type="entry" id="d121">
+                        <head>Friday <date value="1864-08-05">5</date></head>
+                        <p>To day there is more rumors that
+                        the exchange is to be resumed and that 6000 of the trans Misaspi <!--[sic]--> prisoners have
+                        been excha-nged under the new cartel 300 more patients have been admitted to day we have
+                        no place to put them Still hot and dry</p>
+                    </div3>
+                    <div3 type="entry" id="d122">
+                        <pb n="np" entity="DSSR_000005742_0133"/>
+                        <head>Saturday, <date value="1864-08-06">August 6, 1864.</date></head>
+                        <p>This morning Frank is
+                        detailed for Assint. Steward in 3<hi rend="super">rd</hi> Division under <unclear>Mason</unclear> The Rebs have commenced
+                        throwing up breast works south of Hospital they now have 7 Forts two of them finished We
+                        get no molasses to day I send in Stockade for </p>
+                    </div3>
+                    <div3 type="entry" id="d123">
+                        <head>Sunday <date value="1864-08-07">7</date></head>
+                        <p>This morning big excite-ment in
+                        camp we hear that six men are agoing to start tomorrow with Dispatches to our
+                        Governm-ent to try and affect an exhange I write a letter to Mason to send with them To
+                        days paper says the exchange is agreed upon</p>
+                    </div3>
+                    <div3 type="entry" id="d124">
+                        <pb n="np" entity="DSSR_000005742_0134"/>
+                        <head>Monday, <date value="1864-08-08">August 8, 1864.</date></head>
+                        <p>Last night I am
+                        taken with the colic - about 11 P.M. Ed gets up and goes and gets me some medicine I
+                        feel bad and lay abead all day do no work. Rains like fury for a few moments Joe Stevens
+                        comes out of the Stockade on Detail he tells me lots of news</p>
+                    </div3>
+                    <div3 type="entry" id="d125">
+                        <head>Tuesday <date value="1864-08-09">9</date></head>
+                        <p>Today it rains
+                        very hard the Stockade falls over in 4 different places. The garison is all turned out
+                        and the fort is filled with men. Now days I have more corn bread than I know what to do
+                        with Dr Mc Veigh says 1500 men are to be sent to Beaufort S.C. </p>
+                    </div3>
+                    <div3 type="entry" id="d126">
+                        <pb n="np" entity="DSSR_000005742_0135"/>
+                        <head>Wednesday, <date value="1864-08-10">August 10</date></head>
+                        <p>To
+                        day we hear no particular news of the Exchange but it is thought we shall get away from
+                        here next month To day it rains verry hard for two hours the Senter <!--[center]--> of the
+                        Stockade falls over in front &amp; Rear.</p>
+                    </div3>
+                    <div3 type="entry" id="d127">
+                        <head>Thursday <date value="1864-08-11">11</date></head>
+                        <p>Last night rains most of the time I
+                        go up to Hhd Qtrs for molasses but get none. Some one goes into my knapsack and steals a
+                        pint flask of whiskey that I have laid away for some future use rains again to day every
+                        thing <unclear>[-]</unclear> In <unclear>[--]</unclear></p></div3>
+                    <div3 type="entry" id="d128">
+                        <pb n="np" entity="DSSR_000005742_0136"/>
+                        <head>Friday, <date value="1864-08-12">August 12, 1864.</date></head>
+                        <p>To day I have to isshue flour in the
+                        afternoon. I give out 1600 rations without getting up from my seat - No particular news
+                        from the armies but Newton tells me that Mobiel is clostly invested by the Yankee forces
+                        Still warm</p>
+                    </div3>
+                    <div3 type="entry" id="d129">
+                        <head>Saturday <date value="1864-08-13">13</date></head>
+                        <p>This morning I don't get as much bread by six hundred pounds but
+                        get more rice Ed goes to bead <!--[bed]--> early but I sit up half of the night it is so hot
+                        Sergt Paul of the regiment gets on a bum No news from the Army </p>
+                    </div3>
+                    <div3 type="entry" id="d130">
+                        <pb n="np" entity="DSSR_000005742_0137"/>
+                        <head>Sunday, <date value="1864-08-14">August 14, 1864.</date></head>
+                        <p>
+                        To day has been a dull lonesom day not much to day to do until the flour comes in then I
+                        ishue 1904 rations some few admissions are made from the Stockade I go up to Hhd Qtrs
+                        and get salt then down to the creek and have a swim </p>
+                    </div3>
+                    <div3 type="entry" id="d131">
+                        <head>Monday <date value="1864-08-15">15</date></head>
+                        <p>No special news to day
+                        some excitement in regard to Citizens but I don't think it will amount to much. Not as
+                        warm as usual I have been thinking of when I am going to get home I wish to see Father
+                        &amp; Mother also Jennie and Maria. I hope they are well</p>
+                    </div3>
+                    <div3 type="entry" id="d132">
+                        <pb n="np" entity="DSSR_000005742_0138"/>
+                        <head>Tuesday, <date value="1864-08-16">August 16, 1864.</date></head>
+                        <p>
+                        Nothing new going on to day. We hear no news from Richmond think there is no
+                        communication. The Drs are telling the sick that a lot of them are going to be sent to
+                        Macon in a few days as the accommodations are better there Weather still hot. A shower
+                        this eve.</p>
+                    </div3>
+                    <div3 type="entry" id="d133">
+                        <head>Wednesday <date value="1864-08-17">17</date></head>
+                        <p>We hear to day that the Exchange is going on and notices of it
+                        are stuck up in the Stockade and all are in good spirits I think it is all a hoax Rumor
+                        says that Capt <unclear>[-]</unclear> is dead died of Typhoid Fever. Still hot as ever.</p>
+                    </div3>
+                    <div3 type="entry" id="d134">
+                        <pb n="np" entity="DSSR_000005742_0139"/>
+                        <head>Thursday, <date value="1864-08-18">August 18, 1864.</date></head>
+                        <p>I go out side and have a fine bath water over 7 feet deep Molley came near
+                        drowning get in to water over his head I help him out. three more prisoners come in to
+                        day they think we all are to be Exchanged soon. No news from the Army.</p>
+                    </div3>
+                    <div3 type="entry" id="d135">
+                        <head>Friday <date value="1864-08-19">19</date></head>
+                        <p>To day
+                        they are moving Hhd Qtrs the Drug room is now moved in the camp of the 55<hi rend="super">th</hi> Georgia We
+                        have a fine shower this even-ing. No new reports to day about the Exchange I feel verry
+                        confidant that we shall be exchanged next month. Still hot</p>
+                    </div3>
+                    <div3 type="entry" id="d136">
+                        <pb n="np" entity="DSSR_000005742_0140"/>
+                        <head>Saturday, <date value="1864-08-20">August 20, 1864.</date></head>
+                        <p>
+                        Nothing new to day there-fore I have not much to do or to write about I go up to Hhd
+                        Qtrs but find it is moved. Not as hot to day as usual we have a shower this afternoon I
+                        get a yestardays paper find that the Exchange has been made between Gens Jones and Gen
+                        <unclear>Lee</unclear> </p>
+                    </div3>
+                    <div3 type="entry" id="d137">
+                        <head>Sunday <date value="1864-08-21">21</date></head>
+                        <p>I get my cloths changed early and Ed and I think of going out and
+                        getting some watermelons but it commences raining and we cant go Rations come in verry
+                        late I <unclear>[-]</unclear> out every bit of Flour 600 pounds We now cook our beef at night for
+                        conveniance sake</p>
+                    </div3>
+                    <div3 type="entry" id="d138">
+                        <pb n="np" entity="DSSR_000005742_0141"/>
+                        <head>Monday, <date value="1864-08-22">August 22, 1864.</date></head>
+                        <p>To day is the same old thing over every day
+                        brings the same ro<!--[u]-->tine of business No particular news of the Exchange. The papers are
+                        blowing because the Government is Exchanging the Officers &amp; leaving the Privates to
+                        languish in this miserable hole. Still hot as ever</p>
+                    </div3>
+                    <div3 type="entry" id="d139">
+                        <head>Tuesday <date value="1864-08-23">23</date></head>
+                        <p>This forenoon Tabor and I
+                        go out prospecting but mostly in search of Grapes but don't succeed in finding any Flour
+                        in early I am all done ishueing at noon I am not bothered to death with orders from the
+                        Drs to patients Succotash for Dinner. Still hot and sultry</p>
+                    </div3>
+                    <div3 type="entry" id="d140">
+                        <pb n="np" entity="DSSR_000005742_0142"/>
+                        <head>Wednesday, <date value="1864-08-21">August 24, 1864.</date></head>
+                        <p>
+                        Nothing comes in to day that we can speculate on. one of the boys at the bakery sends in
+                        some ginger Cakes and onions. No rumors to day. We hear that the off-icers are to be
+                        taken out of the Stockade and sent to Charleston for Exchange <ref target="n5" n="5">{5}</ref>
+                        </p>
+                    </div3>
+                    <div3 type="entry" id="d141">
+                        <head>Thursday <date value="1864-08-25">25</date></head>
+                        <p>Ed and I go over to see Ed and Frenchy we come back and stop in the woods
+                        and have a swim - a stream called the Sweet water. I get on a drunk this evening - get
+                        sick and have a time of Vomiting then don't feel so well.</p>
+                    </div3>
+                    <div3 type="entry" id="d142">
+                        <pb n="np" entity="DSSR_000005742_0143"/>
+                        <head>Friday, <date value="1864-08-26">August 26, 1864.</date></head>
+                        <p>Nothing special this morning and no news from the front. But this afternoon there is
+                        great Excitement News in the papers say that the (2) Two Governments have aggreed uppon
+                        an immediate exchange Most every one is hopeful I think it is all a Gammon</p>
+                    </div3>
+                    <div3 type="entry" id="d143">
+                        <head>Saturday <date value="1864-08-27">27</date></head>
+                        <p>
+                        This morning a fine lot of Delicacies are sent to the Sick by the Ladies of Americus.
+                        Lieut Davis says he is expecting orders every day to send Prisoners from here to be
+                        Exchanged. A small amount of clothing is ishued this morning I get a Blouse Sent from
+                        Richmond Still hot</p>
+                    </div3>
+                    <div3 type="entry" id="d144">
+                        <pb n="np" entity="DSSR_000005742_0144"/>
+                        <head>Sunday, <date value="1864-08-28">August 28, 1864.</date></head>
+                        <p>My work is done up this morning at 9 am
+                        Flour is in before the Corn- bread. I go up to Dr White about getting more flour as I am
+                        100 lbs short Charley gets on a tight is sick a part of the day More news in the papers
+                        about an Exchange</p>
+                    </div3>
+                    <div3 type="entry" id="d145">
+                        <head>Monday <date value="1864-08-29">29</date></head>
+                        <p>This has been a very warm day. There has been a lot of new
+                        tents put up for the use of the Sick. Dr White gives me one for a sleeping tent as my
+                        old one is not large enough for what I have to keep in it. Ed and I go out and have a
+                        fine swim No particular news of the Exchange </p>
+                    </div3>
+                    <div3 type="entry" id="d146">
+                        <pb n="np" entity="DSSR_000005742_0145"/>
+                        <head>Tuesday, <date value="1864-08-30">August 30, 1864.</date></head>
+                        <p>We hear it
+                        rumored this morning that the R.R. Co have been ordered by the Government Authorities
+                        that they must do all of their ship-ing between now and the 10<hi rend="super">th</hi> of Sept as they will be
+                        taken for to trans-port prisoners from here but I cant see the Transfers</p>
+                    </div3>
+                    <div3 type="entry" id="d147">
+                        <head>Wednesday <date value="1864-08-31">31</date></head>
+                        <p>No
+                        news of importance to be relied upon I see the paper a few words about the exch-ange it
+                        says that every thing is satisfactorily arranged and that it will take place in a few
+                        days. I go over to the Burial yard</p>
+                    </div3>
+                    <div3 type="entry" id="d148">
+                        <pb n="np" entity="DSSR_000005742_0146"/>
+                        <head>Thursday, <date value="1864-09-01">September 1, 1864.</date></head>
+                        <p>To day the Passes given
+                        by Dr White play out Capt Wirz now has to give all Tomorrow they say we have got to give
+                        up the old ones and if we need another it will be given us. No Flour as yet but a plenty
+                        of Corn bread 208 Cards this morning none this Evening</p>
+                    </div3>
+                    <div3 type="entry" id="d149">
+                        <head>Friday <date value="1864-09-02">2</date>
+                        </head>
+                        <p>No particular news this
+                        morning about the old Rosencrans advancing on Macon We hear that Gen Sherman is falling
+                        back from Atlanta the Rebs think he cant ret-reat far as Forrest is in his rear A few
+                        more words concerning the Exchange</p>
+                    </div3>
+                    <div3 type="entry" id="d150">
+                        <pb n="np" entity="DSSR_000005742_0147"/>
+                        <head>Saturday, <date value="1864-09-03">September 3, 1864.</date></head>
+                        <p>This morning we here no
+                        reports from the front The paper this afternoon say that Hood cannot hold Atlanta.
+                        Sherman has made a flank move and drawn them out then he swings his left in and captures
+                        15000 prisoners so says reports in paper</p>
+                    </div3>
+                    <div3 type="entry" id="d151">
+                        <head>Sunday <date value="1864-09-04">4</date></head>
+                        <p>This has been a very ple-asant day. I
+                        have been out in the woods sitting in the shade thinking of loved ones at home &amp;
+                        wondering if they all were well. Dance gives me 15 gallons of Molasses to ishue I give
+                        some to all the Attendants A few more words of Exchange in to day</p>
+                    </div3>
+                    <div3 type="entry" id="d152">
+                        <pb n="np" entity="DSSR_000005742_0148"/>
+                        <head>Monday, <date value="1864-09-05">September 5, 1864.</date></head>
+                        <p><unclear>News to day come in the report that Atlanta has fallen</unclear><ref target="n6" n="6">{6}</ref>Sherman captured the City and 18000 Priso-ners Some of
+                        them don't like to own it and say that it is just a flying report We are short of
+                        rations of meat 200 pounds Flour again 600 lbs the best ever I have drawn </p>
+                    </div3>
+                    <div3 type="entry" id="d153">
+                        <head>Tuesday <date value="1864-08-06">6</date></head>
+                        <p>This
+                        morning I hear that Sherman captured 28000 prisoners. Papers say 5000 Charley and I go
+                        out to get syrup and a barrel to make beer in 2 years ago to night I got <unclear>Home</unclear> in
+                        <unclear>Chittenary</unclear> Report says that a lot of Prisoners are to leave here <unclear>[---]</unclear> sent for
+                        Exchange<ref target="n7" n="7">{7}</ref></p>
+                    </div3>
+                    <div3 type="entry" id="d154">
+                        <pb n="np" entity="DSSR_000005742_0149"/>
+                        <head>Wednesday, <date value="1864-09-07">September 7, 1864.</date></head>
+                        <p>
+                        This morning at 9 A.M. 800 prisoners leave here said to be going to Charles-ton &amp;
+                        Savannah about three hundred go from the Hospital Taber goes also Tim Ed and I pack up
+                        to go but conclude to wait until tomorrow I am rather fea-rful that is a hoax</p>
+                    </div3>
+                    <div3 type="entry" id="d155">
+                        <head>Thursday <date value="1864-09-08">8</date></head>
+                        <p>
+                        We hear this morning that 3000 prisoners have now left the Stockade I try and go the Dr
+                        wants me to wait until the hospital is sent. Exciteme- nt runs high all want to go. This
+                        evening we hear that it is only a removal of prisoners from this post.</p>
+                    </div3>
+                    <div3 type="entry" id="d156">
+                        <pb n="np" entity="DSSR_000005742_0150"/>
+                        <head>Friday, <date value="1864-09-09">September 9, 1864.</date>
+                        </head>
+                        <p>Burns goes to see Leenox about the exchange he says he knows it to be so says
+                        he is going when the Hospit-al is sent. I want to go to night I hear that the
+                        trans-ports are at Savannah waiting for prisoners (Federal) as they have brought down
+                        20000 Rebels. We hear that a part of the sick will go Monday</p>
+                    </div3>
+                    <div3 type="entry" id="d157">
+                        <head>Saturday <date value="1864-09-10">10</date></head>
+                        <p>No special news
+                        to day - only 2 trains go away to day. We hear that no exch-ange has been affected and
+                        the removal is made to keep the prisoners from falling in our mens <unclear>hands</unclear> the Rebs
+                        are afraid Sherman may send a raiding party here to relieve us</p>
+                    </div3>
+                    <div3 type="entry" id="d158">
+                        <pb n="np" entity="DSSR_000005742_0151"/>
+                        <head>Sunday, <date value="1864-09-11">September 11,
+                        1864.</date></head> 
+                        <p><ref target="n8" n="8">{8}</ref>This has been a long lones-ome day I
+                        get my work done early and go out side A large lot taken from the Stockade to day Two
+                        years ago to night Mother and Marcia made a party for me as I was at home still <unclear>[-]</unclear>
+                        </p>
+                    </div3>
+                    <div3 type="entry" id="d159">
+                        <head>Monday <date value="1864-09-12">12</date></head>
+                        <p>No news to day of any kind The prisoners are still being removed from the
+                        Stockade We hear to day that there is no exchange we are being removed from here to keep
+                        us from fa'lly <!--[falling]--> into Shermans hands if he should make a raid down here. Still
+                        warm</p>
+                    </div3>
+                    <div3 type="entry" id="d160">
+                        <pb n="np" entity="DSSR_000005742_0152"/>
+                        <head>Tuesday, <date value="1864-08-13">September 13, 1864.</date>
+                        </head>
+                        <p>I go over to Hhd Qtrs and get 20 gallons molasses for
+                        hospital use all hands get some it is said there is only 5000 men now left in the
+                        Stockade I hear that they are sent to Savannah and are laying there under Guard within
+                        1 &frac12;miles of the city sell my pipe for $39</p>
+                    </div3>
+                    <div3 type="entry" id="d161">
+                        <head>Wednesday <date value="1864-08-14">14</date></head>
+                        <p>This morning I see a few of the
+                        men that were wounded by the cars running of<!--[f]--> the track one man had his foot
+                        amp-utated 14 were killed outright The fireman died here this morning was a negro was
+                        scalded so that his skin hung in ribbons No more news of the exchange.</p>
+                    </div3>
+                    <div3 type="entry" id="d162">
+                        <pb n="np" entity="DSSR_000005742_0153"/>
+                        <head>Thursday, <date value="1864-09-15">September 15, 1864.</date></head>
+                        <p>No particular news from the Army Sherman &amp; Hood have aggreed
+                        uppon a ten day armistice The Drs now say that the prisoners sent away from here have
+                        been sent to Millen Ga to another prison Charley Tabers Father came here last night to
+                        see him has gone to Savannah to day</p>
+                    </div3>
+                    <div3 type="entry" id="d163">
+                        <head>Friday <date value="1864-09-16">16</date></head>
+                        <p>We get up a petition to send Gen <unclear>[-]</unclear> to
+                        see if we cant get a committee sent to Gen Sherman to affect an exchange for this
+                        Hospital I lend Ezra C. Jones 2.50. cts his Pa Address is Ezra Jones. Canoga Seneca Co.
+                        N. York still hot and dry Sherman &amp; Hood trying to exchange 2000 men</p>
+                    </div3>
+                    <div3 type="entry" id="d164">
+                        <pb n="np" entity="DSSR_000005742_0154"/>
+                        <head>Saturday, <date value="1864-09-17">September 17, 1864.</date></head>
+                        <p>Nothing new going on here this <del hand="author"><hi rend="line-through">evening</hi></del> morning Dr Kerr
+                        comes in to take out one of the men to put him in the Stocks for stealing meat. This
+                        after noon great excitement is created news comes that 2000 prisoners are to be
+                        exchanged between Hood and Sherman I put my name down to go but now think it is a hoax</p>
+                    </div3>
+                    <div3 type="entry" id="d165">
+                        <head>Sunday <date value="1864-09-18">18</date></head>
+                        <p>Last night was a rainy one has been cloudy all day 700 men go from the
+                        Stockade we go tomorrow it is said to shermans lines for Special Exchange. This is my
+                        birth day 25 years of age. Wish I was home with Mother Hamblin and Maria think I would
+                        be contented.</p>
+                    </div3>
+                    <div3 type="entry" id="d166">
+                        <pb n="np" entity="DSSR_000005742_0155"/>
+                        <head>Monday, <date value="1864-09-19">September 19, 1864.</date></head>
+                        <p>Ed and I get our washing done up it is said we
+                        shall leave between six and 12 this evening but we don't go 1100 are taken from the
+                        Stockade if we go to our lines we must go between now and Thurs-day morning as then the
+                        armistice expires</p>
+                    </div3>
+                    <div3 type="entry" id="d167">
+                        <head>Tuesday <date value="1864-09-20">20</date></head>
+                        <p>More news this morning it is rumored that the Hospital has
+                        orders to be ready to move at a moments notice 1200 more are expected to leave to night.
+                        We think we shall stand a chance of going this time no news lately from Richmond</p>
+                    </div3>
+                    <div3 type="entry" id="d168">
+                        <pb n="np" entity="DSSR_000005742_0156"/>
+                        <head>Wednesday, <date value="1864-09-21">September 21, 1864.</date></head>
+                        <p>This has been a wet day and looks some like fall of the
+                        year in the northern states We hear it reported that this 200 men are held in reserve
+                        and will be sent Some think we shall go to night I have about give up our going but
+                        still have hopes of it No news from the front</p>
+                    </div3>
+                    <div3 type="entry" id="d169">
+                        <head>Thursday <date value="1864-09-22">22</date></head>
+                        <p>We hear nothing to day that we
+                        can place any reliance uppon The Sergt of the gate says that two trains are waiting at
+                        the Depot for prisoners that 200 are going to Sherman lines and 200 Sailors are going to
+                        Charleston</p>
+                    </div3>
+                    <div3 type="entry" id="d170">
+                        <pb n="np" entity="DSSR_000005742_0157"/>
+                        <head>Friday, <date value="1864-09-23">September 23, 1864.</date></head>
+                        <p>No news to day of any imp-ortance we hear that
+                        one regiment of Ga troops turned back after leaving Jones-bourough but took the oath of
+                        alleigance rather than come back in the Confederacy it tries very hard to rain the most
+                        of the day Skirmishing again at the Front</p>
+                    </div3>
+                    <div3 type="entry" id="d171">
+                        <head>Saturday <date value="1864-09-24">24</date></head>
+                        <p>We have had two verry fine showers
+                        to day Joe has been telling some of his yarns I have been writing to Jennie and Mother
+                        Hamblin we hear that a regiment of Georgians took the oath of allegiance to our
+                        Government rather than be exchanged and fight again</p>
+                    </div3>
+                    <div3 type="entry" id="d172">
+                        <pb n="np" entity="DSSR_000005742_0158"/>
+                        <head>Sunday, <date value="1864-09-25">September 25, 1864.</date></head>
+                        <p>This has
+                        been rather a long day this forenoon I wrote to Maria Hayden then ishued out the flour
+                        to patients read a macon paper and finished reading a book entitled Dictionary of Love
+                        Ed Has <!--[has]--> been writing home this afternoon a warm day.</p>
+                    </div3>
+                    <div3 type="entry" id="d173">
+                        <head>Monday <date value="1864-09-26">26</date></head>
+                        <p>This morning Burns
+                        &amp; I go over to the grave yard We hear that old Jeffy Davis is coming here to see
+                        this Camp tomorrow We also hear that he says he will release all prisoners whose times
+                        are out before he will feed them this winter.</p>
+                    </div3>
+                    <div3 type="entry" id="d174">
+                        <pb n="np" entity="DSSR_000005742_0159"/>
+                        <head>Tuesday, <date value="1864-09-27">September 27, 1864.</date></head>
+                        <p>To day the
+                        Sailors are taken from here to be sent away for exchange but the engine is broke down
+                        and they are sent back and are now awaiting orders to move We hear nothing more about
+                        going to Shermans lines Weather moderate</p>
+                    </div3>
+                    <div3 type="entry" id="d175">
+                        <head>Wednesday <date value="1964-09-28">28</date></head>
+                        <p>Last night at 8 P.M. Sailors left
+                        here <unclear>Glunt</unclear> goes with them They carry three letters for me I get a paper to day. No
+                        news in it rega-rding the Armys They keep harping on the fall of Atlanta and wonder why
+                        old Jeff D don't take it back</p>
+                    </div3>
+                    <div3 type="entry" id="d176">
+                        <pb n="np" entity="DSSR_000005742_0160"/>
+                        <head>Thursday, <date value="1864-09-29">September 29, 1864</date></head>
+                        <p>Last night I take two pills
+                        of blue mass and this morning a dose of oil and laudanum have felt rather down the most
+                        of the day Ed and Jhony wheel in some new sand in the tent We heard last night that
+                        Sherman hade <!--[sic]--> been whipped back from Atlanta no news of it to day</p>
+                    </div3>
+                    <div3 type="entry" id="d177">
+                        <head>Friday <date value="1864-09-30">30</date></head>
+                        <p>This
+                        morning I am feeling fine well as usual the papers say that Butler and Old have aggreed
+                        to Exchange 5000 sick and wounded the Exchange point Fort Pulaski When it is to take
+                        place we know not No news from the Armies Ed and I go out and wash</p>
+                    </div3>
+                    <div3 type="entry" id="d178">
+                        <pb n="np" entity="DSSR_000005742_0161"/>
+                        <head>Saturday, <date value="1864-10-01">Oct. 1, 1864</date></head>
+                        <p>A few sick admitted from the stockade we now have about 1700 patients I get nine
+                        sacks flour ishue it all out We hear no news from the armies. We finish the oven in 2nd
+                        Division and commence one in the 1<hi rend="super">st</hi> I lay a few brick Warm for the first</p>
+                    </div3>
+                    <div3 type="entry" id="d179">
+                        <head>Sunday <date value="1864-10-02">2 </date></head>
+                        <p>I
+                        hurray <!--[sic]--> and do up my morning work wash shave off my whiskers and then go over to
+                        the Depot, and see a few of the boys there <unclear>Eislick</unclear> is now cooking for the Detectives
+                        I hear that all Soldiers whose tearms of enlistment have not exp-ired are to be
+                        exchanged</p>
+                    </div3>
+                    <div3 type="entry" id="d180">
+                        <pb n="np" entity="DSSR_000005742_0162"/>
+                        <head>Monday, <date value="1864-10-03">October 3, 1864</date></head>
+                        <p>We hear no news to day about the exchange We div-ide
+                        up here and I now ishue to the Division Commissary which makes it much more convenient
+                        We get a verry heavy shower lasting nearly an hour. A confederate engineer comes here
+                        for the wheelbarrow. fortifying at Millan</p>
+                    </div3>
+                    <div3 type="entry" id="d181">
+                        <head>Tuesday <date value="1864-10-04">4</date></head>
+                        <p>This morning the Commis-sarys of
+                        each Division ishue to their own attendants. Dr Kerr gives me a pair of platform scales
+                        to weigh out supplies I give out flour and rice by weight Burns and Len put a fly over
+                        the tent weather fair</p>
+                    </div3>
+                    <div3 type="entry" id="d182">
+                        <pb n="np" entity="DSSR_000005742_0163"/>
+                        <head>Wednesday, <date value="1864-10-05">October 5, 1864.</date></head>
+                        <p>Nothing new to day in regard to news I
+                        get a paper of the 4th a few dispatches from Richmond but nothing from Sherman Rumor
+                        says that Gen Bureguard now has com-mand of Hoods Army.</p>
+                    </div3>
+                    <div3 type="entry" id="d183">
+                        <head>Thursday <date value="1864-10-06">6</date></head>
+                        <p>To day has passed
+                        about like yestardy Ed gets a paper news rather scarse <unclear>[-]</unclear> made Division Steward of 3rd
+                        Division. I have been reading most of the day a book called Vio-let or the Cross &amp;
+                        Crown Weather Cool.</p>
+                    </div3>
+                    <div3 type="entry" id="d184">
+                        <pb n="np" entity="DSSR_000005742_0164"/>
+                        <head>Friday, <date value="1864-10-07">October 7, 1864.</date></head>
+                        <p>I finish reading my book and then do my
+                        ishueing flour and rice Ed and three others of us play poker most of the afternoon, it
+                        is very warm for Oct William is sent to Stockade this morning for stea-ling patients
+                        whiskey</p>
+                    </div3>
+                    <div3 type="entry" id="d185">
+                        <head>Saturday <date value="1864-10-08">8</date></head>
+                        <p>Last night there was a great change in the weat-her it is cold enough
+                        to chill and a fire feels very comfortable We get a large lot of sweet po- tatoes and
+                        one bag of irish also a few dried apples No news from the front.</p>
+                    </div3>
+                    <div3 type="entry" id="d186">
+                        <pb n="np" entity="DSSR_000005742_0165"/>
+                        <head>Sunday, <date value="1864-10-09">October 9, 1864.</date></head>
+                        <p>Last night Hogan and four other men from the out side run away it is reported that
+                        they were armed. The dogs have been out but could not strike the trail. Success to them
+                        in their undertaking Nothing from the Army</p>
+                    </div3>
+                    <div3 type="entry" id="d187">
+                        <head>Monday <date value="1864-10-10">10</date></head>
+                        <p>We hear no news from the Army of
+                        the west some Telegraph news from Petersburg Va Grant is again man-uvering his army. We
+                        hear it reported by Officers that Hood is in the rear of Sherman destroying the Rail
+                        Road</p>
+                    </div3>
+                    <div3 type="entry" id="d188">
+                        <pb n="np" entity="DSSR_000005742_0166"/>
+                        <head>Tuesday, <date value="1864-10-11">October 11, 1864.</date></head>
+                        <p>This morning it is rep-orted that Forest has captured
+                        Gen Sherman as he was returning from Washington we don't believe the report. A few more
+                        prisoners are bro-ught here from Va. Last night Hogan was brought back and placed in
+                        Stock</p>
+                    </div3>
+                    <div3 type="entry" id="d189">
+                        <head>Wednesday <date value="1864-10-12">12</date></head>
+                        <p>Weather is again more pleasant but cool morning and evening Some new
+                        rumors in regard to the exchange of sick and wou-nded some say that Maj Mulford is on
+                        his way to Savannah with 10 000 confederate Soldiers to be exchanged for a like number
+                        of ours.</p>
+                    </div3>
+                    <div3 type="entry" id="d190">
+                        <pb n="np" entity="DSSR_000005742_0167"/>
+                        <head>Thursday, <date value="1864-10-13">October 13, 1864.</date></head>
+                        <p>We hear this morning that Hood has tore up the rail
+                        road and destroyed Shermans Communications and captured larg<!--[e]--> trains of supplies. Also
+                        that Sherman has fallen back from Atlanta and burnt the City. Hogan released from the
+                        Stocks and <add place="top" hand="author">in stockade.</add>
+                        </p>
+                    </div3>
+                    <div3 type="entry" id="d191">
+                        <head>Friday <date value="1864-10-14">14</date></head>
+                        <p>No news to day from Gen Sherman we think that he
+                        is yet all right. Some of the boys go out and help Dr Credill put up a log house. More
+                        cool again. I write a few receipts and finish read<!--[in]-->g a book entitled Machard A
+                        Southern Yarn of the War.</p>
+                    </div3>
+                    <div3 type="entry" id="d192">
+                        <pb n="np" entity="DSSR_000005742_0168"/>
+                        <head>Saturday, <date value="1864-10-15">October 15, 1864.</date></head>
+                        <p>The confederates say that Gen
+                        Sherman has gone to Washington they are making calculations to capture him so they say
+                        we don't see the capture We now don't get but 6 or 700 lbs beef daily I get 104 gallons
+                        molasses in place of meet <!--[meat]-->, one gallon for 18 men A very pleasant day.</p>
+                    </div3>
+                    <div3 type="entry" id="d193">
+                        <head>Sunday <date value="1864-10-16">16</date></head>
+                        <p>
+                        This morning Burns and I wheel in some sand to fill up the tent. We treat all our
+                        friends on beer as we have a barrel full of <del hand="author"><hi rend="line-through"><unclear>[word lined out]</unclear></hi></del> made of corn meal,
+                        molasses, and water Len is getting the Syrup. No news from the front. I write a letter
+                        to Maria Hayden</p>
+                    </div3>
+                    <div3 type="entry" id="d194">
+                        <pb n="np" entity="DSSR_000005742_0169"/>
+                        <head>Monday, <date value="1864-10-17">October 17, 1864.</date></head>
+                        <p>This has been rather of cloudy hazy day and
+                        looks very much like fall of the year. I get 73 gallons syrup to day we hear no news
+                        from the front only it is rumo-red that Gen Hood is in rather clost quarters with no
+                        chance of escape unless he fights and cuts his way out.</p>
+                    </div3>
+                    <div3 type="entry" id="d195">
+                        <head>Tuesday <date value="1864-10-18">18</date></head>
+                        <p>Last night some 18<unclear>[-]</unclear>
+                        men escaped from here last night, the guard snapped his gun at them and three came back
+                        Eleven more of them were catched by the dogs the rest are at large Weather has been more
+                        moderate and warm for the days.</p>
+                    </div3>
+                    <div3 type="entry" id="d196">
+                        <pb n="np" entity="DSSR_000005742_0170"/>
+                        <head>Wednesday, <date value="1864-10-19">October 19, 1864.</date></head>
+                        <p>A lot of convalescants are
+                        sent to the Stockade this morning We have been play-ing cards and pitching pen-nys most
+                        all day to pass away the time I buy me apair of shoes pay $2.00 and then 50 cts to have
+                        them pegged I call the rool <!--[roll]--> this morning</p>
+                    </div3>
+                    <div3 type="entry" id="d197">
+                        <head>Thursday <date value="1864-10-20">20</date></head>
+                        <p>We get a few more sweet
+                        potatoes this morning also 54 gallons syrup We hear that Richmond is taken The Doctors
+                        say it is in the papers Ed Joe Mart and I play cards nearly all day in the evening we
+                        exercise with 2 / 32. lb cannon shot,</p>
+                    </div3>
+                    <div3 type="entry" id="d198">
+                        <pb n="np" entity="DSSR_000005742_0171"/>
+                        <head>Friday, <date value="1864-10-21">October 21, 1864.</date></head>
+                        <p>This morning we go out
+                        side to see what is for us get nothing I cut some bush for a broom Seen and I fix up our
+                        tent. I go over to Frank Hunts a while We hear no news this <del hand="author"><hi rend="line-through">morning</hi></del>
+                        evening Weather fair</p>
+                    </div3>
+                    <div3 type="entry" id="d199">
+                        <head>Saturday <date value="1864-10-22">22</date></head>
+                        <p>This morning Len, Ed Joe and I go to work and fix up
+                        our tent stake it down for it is getting to be rather cold We get only 104 lbs flour to
+                        day and 40 gallons molasses but more meat than usual. I get 951 lbs. No news from the
+                        Armies. Weather cool.</p>
+                    </div3>
+                    <div3 type="entry" id="d200">
+                        <pb n="np" entity="DSSR_000005742_0172"/>
+                        <head>Sunday, <date value="1864-10-23">October 23, 1864.</date></head>
+                        <p>This morning it is so chilly that we
+                        have to sit around the fire to keep warm I dress in my Military clothes Dr Bates offers
+                        me $20, <unclear>boot</unclear> to trade vests with him I get no flour to day and 39 gallons syrup. I
+                        hear that all the prisoners are to be sent here again soon</p>
+                    </div3>
+                    <div3 type="entry" id="d201">
+                        <head>Monday <date value="1864-10-24">24</date></head>
+                        <p>Last night was very
+                        cold for this place. the sick suffer with the cold about 30 die during the night We get
+                        no flour as yet. corn meal in place of it I buy a few plugs of tobacco from Newton play
+                        cards nearly all of the day. No news from the armies</p>
+                    </div3>
+                    <div3 type="entry" id="d202">
+                        <pb n="np" entity="DSSR_000005742_0173"/>
+                        <head>Tuesday, <date value="1864-10-25">October 25, 1864.</date></head>
+                        <p>Newton
+                        tells me that he hears it rumored that ten thousand sick and wounded are to be exchanged
+                        at Richmond soon. Thinks it will take all who are in hospital here. Has been rather
+                        warmer to day than usual. Buy a pipe for $3 </p>
+                    </div3>
+                    <div3 type="entry" id="d203">
+                        <head>Wednesday <date value="1864-10-26">26</date></head>
+                        <p>Rumored in camp to day that
+                        Petersburg Va has fallen Early has had another fight in the valley papers say that they
+                        have lost 60 pieces of cannon - and a large number of prisoners Weather looks like rain</p>
+                    </div3>
+                    <div3 type="entry" id="d204">
+                        <pb n="np" entity="DSSR_000005742_0174"/>
+                        <head>Thursday, <date value="1864-10-27">October 27, 1864.</date></head>
+                        <p>This has been a cold wet rainy day the water runs through my
+                        house in a large stream I get 695 lbs flour, 460 rice and 846 of beef also 41 gallons
+                        Syrup We hear that 10,000 letters are being examined at Capt Wirz quarters</p>
+                    </div3>
+                    <div3 type="entry" id="d205">
+                        <head>Friday <date value="1864-10-28">28</date>
+                        </head>
+                        <p>
+                        Rumors this morning say that all the well prisoners are to be sent to Millen Papers say
+                        that Gen Hood is going into Tennessee with his army Another rumor of an ex-change is
+                        going the rou <add place="top" hand="author">nds</add> with the patients Dr Carr is here most of the day.</p>
+                    </div3>
+                    <div3 type="entry" id="d206">
+                        <pb n="np" entity="DSSR_000005742_0175"/>
+                        <head>Saturday, <date value="1864-10-29">October 29, 1864.</date></head>
+                        <p>New orders are out to day in regard to ishueing meat. All Hospital
+                        atten-dants must now draw their meat cooked. Beef comes in to day about noon Dr Kerr
+                        tells me that he is going to take me out side in a few days to do the Commissary Duty.</p>
+                    </div3>
+                    <div3 type="entry" id="d207">
+                        <head>Sunday <date value="1864-10-30">30</date></head>
+                        <p>This has been a long lonesome day nothing going on Ed and I go out side a
+                        while We hear that all the sick are going to be paro-led. Get a large lot of meat this
+                        evening I ishue &frac12; lb to each man in Hospital.</p>
+                    </div3>
+                    <div3 type="entry" id="d208">
+                        <pb n="np" entity="DSSR_000005742_0176"/>
+                        <head>Monday, <date value="1864-10-31">October 31, 1864.</date></head>
+                        <p>I go out and get
+                        7 bush-els of potatoes and one bag of red peppers. then go out and see about the bread
+                        it comes in very late I get 800 lbs of flour 224 of bacon and 594 of rice We hear no
+                        news from the Army and noth-ing from the exchange. </p>
+                    </div3>
+                    <div3 type="entry" id="d209">
+                        <head>Tuesday, <date value="1864-11-01">November 1</date></head>
+                        <p>A lot of
+                        Convaleseants all taken from their wards and sent to the Stock- ade and another lot of
+                        sick are admitted to hos-pital. The hospital in Stockade is going to be broke up and all
+                        who are able to be sent to Millen Weather cool.</p>
+                    </div3>
+                    <div3 type="entry" id="d210">
+                        <pb n="np" entity="DSSR_000005742_0177"/>
+                        <head>Wednesday, <date value="1864-11-02">November 2, 1864.</date></head>
+                        <p><ref target="n9" n="9">{9}</ref>Last night it comme-nced raining and has kept up all
+                        day is cold and disagreeable and not much going on. News scarse.</p>
+                    </div3>
+                    <div3 type="entry" id="d211">
+                        <head>Thursday <date value="1864-11-03">3</date></head>
+                        <p>This morning
+                        Len and I go to the new Commis-sary and draw 8 bushels potatoes (sweet) Cold and rainy
+                        again stay at home and darn my stockings We get two bbls Syrup again and more than the
+                        usual quantity Flour.</p>
+                    </div3>
+                    <div3 type="entry" id="d212">
+                        <pb n="np" entity="DSSR_000005742_0178"/>
+                        <head>Friday, <date value="1864-11-04">November 4, 1864.</date></head>
+                        <p>This morning it is very cold for the
+                        time of year it tries to rain but only mists the wind North-west. Hogan and 11 other men
+                        are paroled and came in from the Stockade We have a meeting this eve to make
+                        arrangements for election I am chosen Chairmand</p>
+                    </div3>
+                    <div3 type="entry" id="d213">
+                        <head>Saturday <date value="1864-11-05">5</date></head>
+                        <p>More pleasant again and quite
+                        warm during the day. I go out side to work to day feel rather tired this evening. We are
+                        now making calcu- lations to hold Election - an Tuesday next are now getting up the
+                        ticketts for McClelean and Lincoln </p>
+                    </div3>
+                    <div3 type="entry" id="d214">
+                        <pb n="np" entity="DSSR_000005742_0179"/>
+                        <head>Sunday, <date value="1864-11-06">November 6, 1864.</date></head>
+                        <p>More pleasant this forenoon
+                        than it has been for some time but it clouds up the latter part of the day an<!--[d]--> rains
+                        some. I go to the bakery and cook house this afternoon We hear nothing about the
+                        exch-ange Commissioners meet to <add place="top" hand="author">day</add></p>
+                    </div3>
+                    <div3 type="entry" id="d215">
+                        <head>Monday <date value="1864-11-07">7</date></head>
+                        <p>Today Len and I have been out to the
+                        commiss-ary at work all day Burns goes out with us this after noon 7 days rations come
+                        in to day - and we have a hard days work but Dance gives us a good snort of whiskey
+                        which makes us feel good Burns Bushed</p>
+                    </div3>
+                    <div3 type="entry" id="d216">
+                        <pb n="np" entity="DSSR_000005742_0180"/>
+                        <head>Tuesday, <date value="1864-11-08">November 8, 1864.</date></head>
+                        <p>Last night we have a
+                        bonfire in the street and stump speaking several speeches are made I am chosen chairman
+                        I make a short speech Election to day 1740 votes pulled Lincoln gets 150 majority It has
+                        rained all day and we are all wet out side but nothing to wet us inside No fight-ing
+                        going on, in camp. (Cold &amp; wet)</p>
+                    </div3>
+                    <div3 type="entry" id="d217">
+                        <head>Wednesday <date value="1864-11-09">9</date></head>
+                        <p>The weather has been more pleasant to
+                        day. The Confed-rates don't like the result of the election they rather would see
+                        McClellan elected here. Seem to think that the sick are all loony as the ma-jority of
+                        them voted for A. Lincoln I commence work making a set of chess men.</p>
+                    </div3>
+                    <div3 type="entry" id="d218">
+                        <pb n="np" entity="DSSR_000005742_0181"/>
+                        <head>Thursday, <date value="1864-11-10">November
+                        10, 1864.</date></head>
+                        <p>I go up to the Commissary this morning as soon as break-fast is over and send
+                        the flour to the bakery A lot of potatoes come in more Exchange new again The sick and
+                        wounded to be exchanged Papers say to day that Mc Clellan 40 000 Majority in New York
+                        City and a large majority in the army</p>
+                    </div3>
+                    <div3 type="entry" id="d219">
+                        <head>Friday <date value="1864-11-11">11</date></head>
+                        <p>I go out this morning before roll call
+                        and send the Flour and meal to the bakery. We get 11 bushels of sweet potatoes this
+                        mor-ning and a lot of greens Len stays here and gives out the bread and other rat-ions A
+                        lot of clothing comes from our lines for the <unclear>[-]</unclear> all go from the Stockade</p>
+                    </div3>
+                    <div3 type="entry" id="d220">
+                        <pb n="np" entity="DSSR_000005742_0182"/>
+                        <head>Saturday, <date value="1864-11-12">November 12, 1864.</date></head>
+                        <p>I am outside this morni-ng before seven oclock have considerable work
+                        to do to day I burst one barrel of Syrup tak-ing it out of the wagon, have 100 bushels
+                        of potatoes come in carry them all in the cellar I buy me a pair of boots pay $10 ten
+                        Dollars for them in our money. More news of an exchange</p>
+                    </div3>
+                    <div3 type="entry" id="d221">
+                        <head>Sunday <date value="1864-11-13">13</date></head>
+                        <p>This morning I go out
+                        and do the mornings work but our Darky do not come with the cart to take potatoes to
+                        Hospital, and we don't get any to day. A limited amount of Sanitary clothing has come
+                        from our lines consis- ting of Pants Drawers socks <unclear>[-]</unclear> and blankets I write to Jennie to
+                        day</p>
+                    </div3>
+                    <!-- missing trascription for nov 14,15,16,17-->
+                    <div3 type="entry" id="d222">
+                        <pb n="np" entity="DSSR_000005742_0183"/>
+                        <pb n="np" entity="DSSR_000005742_0184"/>
+                        <pb n="np" entity="DSSR_000005742_0185"/>
+                        <head>Friday, <date value="1864-11-18">November 18, 1864.</date></head>
+                        <p><ref target="n10" n="10">{10}</ref></p></div3>
+                    <div3 type="entry" id="d223">
+                        <head>Saturday  <date value="1864-11-19">19</date></head>
+                        <p>More excitement to day about the Yankees raid towards Macon
+                        some say that a battle was fought Last night a train loaded with Wounded went down to
+                        day They are packing up Hospital. Stores and I prepare to Skedaddle at the first
+                        approach. </p>
+                    </div3>
+                    <div3 type="entry" id="d224">
+                        <pb n="np" entity="DSSR_000005742_0186"/>
+                        <head>Sunday, <date value="1864-11-20">November 20, 1864.</date></head>
+                        <p>The news to day says that Sherman has passed by
+                        Macon leaving it at his right and that he is marching toward Savannah some think he will
+                        release the prisoners at Milan hope he may weather rather wet and drizzley I have a fine
+                        joke played on me by tending Mrs Hunts baby</p>
+                    </div3>
+                    <div3 type="entry" id="d225">
+                        <head>Monday <date value="1864-11-21">21</date></head>
+                        <p>This has been ration day have got
+                        in for 9 days it has been some work to do for one. We hear that our advance fired into
+                        <unclear>Macon</unclear> at two oclock this morning Dance is still packing up his traps rather think
+                        they will have to leave here Rainy cold this morning</p>
+                    </div3>
+                    <div3 type="entry" id="d226">
+                        <pb n="np" entity="DSSR_000005742_0187"/>
+                        <head>Tuesday, <date value="1864-11-22">November 22, 1864.</date></head>
+                        <p>I have
+                        not done much work to day it has been the coldest day we have had as yet we don't hear
+                        much news to day about Sherman but think he is all right I get noisy about noon by
+                        drinking punch sleep most of the after noon</p>
+                    </div3>
+                    <div3 type="entry" id="d227">
+                        <head>Wednesday <date value="1864-11-23">23</date></head>
+                        <p>Last night the ground froze
+                        quite hard and it pinches one up very much Len and I commence to put a chimney in our
+                        tent Reported to day that She-rman is captured 1900 priso-ners and 17 pieces artillery
+                        don't see the capture. Juliaett 25 years old to day</p>
+                    </div3>
+                    <div3 type="entry" id="d228">
+                        <pb n="np" entity="DSSR_000005742_0188"/>
+                        <head>Thursday, <date value="1864-11-24">November 24, 1864.</date></head>
+                        <p>This
+                        morning Bob Allen and myself commence to put up a log house for Frank Hunt we get it up
+                        and covered have worked hard most of the day News from Shermans Army scarse. A report
+                        here in Camp that the prisoners at Millan have been paroled and sent to our lines Don't
+                        believe it.</p>
+                    </div3>
+                    <div3 type="entry" id="d229">
+                        <head>Friday <date value="1864-11-25">25</date></head>
+                        <p>Not as cold as the past three days have been at work at Franks
+                        house most of the day Dance sends the bread here now to have it baked News from Sherman
+                        to day says he is at Griswoldville and fortifying Troops pass over the Road said to be
+                        going to Savannah Battery <unclear>[-]</unclear> marching orders</p>
+                    </div3>
+                    <div3 type="entry" id="d230">
+                        <pb n="np" entity="DSSR_000005742_0189"/>
+                        <head>Saturday, <date value="1864-11-26">November 26, 1864.</date></head>
+                        <p>We hear
+                        nothing new about Sherman movements to day only that they have had a brush at
+                        Griswoldville. they say that they whipped Sherman and they think that they will soon
+                        capture him weather more pleasant we finish Franks house.</p>
+                    </div3>
+                    <div3 type="entry" id="d231">
+                        <head>Sunday <date value="1864-11-27">27</date></head>
+                        <p>This morning I don't
+                        feel verry well eat to many persimmons last night I go over to the Depot and see Easlick
+                        hear that our scouts were seen within four miles from here Just one year ago to day I
+                        was cap-tured how long yet must I stay in this Confederacy </p>
+                    </div3>
+                    <div3 type="entry" id="d232">
+                        <pb n="np" entity="DSSR_000005742_0190"/>
+                        <head>Monday, <date value="1864-11-28">November 28, 1864.</date></head>
+                        <p>We
+                        hear no news to day in regard to Shermans movements we hear that we have a fleet of
+                        transports at Savannah Gen Hooker in command thought to be 50000 troops aboard. Some
+                        think we will be paroled soon one year ago to day I went into Richmond. Weather warm</p>
+                    </div3>
+                    <div3 type="entry" id="d233">
+                        <head> Tuesday <date value="1864-11-29">29</date></head>
+                        <p>This morning one of the guard shoots one of the pa-tients for asking him for
+                        a chew tobacco. I dream of home last night I see Maria kiss her and have a good time but
+                        it is all vanity No news to day. Weather warm for time of year. Finish Fra-nks house
+                        this forenoon</p>
+                    </div3>
+                    <div3 type="entry" id="d234">
+                        <pb n="np" entity="DSSR_000005742_0191"/>
+                        <head>Wednesday, <date value="1864-11-30">November 30, 1864.</date></head>
+                        <p>I stay in hospital all day Len goes out and
+                        does the work and so the ishueing to Divis it has been a verry warm day have worn my
+                        vest wrong side out all day. I have a tailor rip up my overcoat to make Sack coat</p>
+                    </div3>
+                    <div3 type="entry" id="d235">
+                        <head>Tuesday, <date value="1864-12-01">December 1</date></head>
+                        <p>This the first day of win-ter and it is verry warm and pleasant
+                        seems verry much like spring We hear nothing said in regard to Shermans movements only
+                        that he destroys every thing in his march Dr Dillard raises a muss about the meat
+                        Receive 8 days rations</p>
+                    </div3>
+                    <div3 type="entry" id="d236">
+                        <pb n="np" entity="DSSR_000005742_0192"/>
+                        <head>Friday, <date value="1864-12-02">December 2, 1864.</date></head>
+                        <p>We hear that Gen Butler is now
+                        Secretary of War I hardly believe it a rumor also has it that the Sick are all to be
+                        paroled if an exchange cant be affected we hear so much news that I hardly believe any
+                        that I hear the weather verry ple-asant.</p>
+                    </div3>
+                    <div3 type="entry" id="d237">
+                        <head>Saturday <date value="1864-12-03">3</date></head>
+                        <p>The paper of to day says that the
+                        Confederate forces have had a fight with She-rman claim to have whip-ed him and taken
+                        2000 pr-isoners Dr Eiland gets back he says the Sick at Savannah have been exchanged and
+                        thinks we will be soon Rainy this evening</p>
+                    </div3>
+                    <div3 type="entry" id="d238">
+                        <pb n="np" entity="DSSR_000005742_0193"/>
+                        <head>Sunday, <date value="1864-12-04">December 4, 1864.</date></head>
+                        <p>I go over to the
+                        Depot but hear no news only the Federal prisoners are to be paroled soon hope it may be
+                        so Sitzer <!--[or "Sitger"]--> fin-ishes my coat to day no paper to be got and the Rebels say
+                        nothing about Sherman only he will go to <add place="top" hand="author">Savann</add>
+                        </p>
+                    </div3>
+                    <div3 type="entry" id="d239">
+                        <head>Monday <date value="1864-12-05">5</date></head>
+                        <p>This has been a long
+                        lonesome day nothing going on and no news from any quarter I work all the forenoon in
+                        aranging supplies in Commissary we get on some vinegar and soap New regulation in the
+                        Divisons 3<hi rend="super">rd</hi> <!--[may be 5th]--> Div's now is composed of Convalescants Weather cool.</p>
+                    </div3>
+                    <div3 type="entry" id="d240">
+                        <pb n="np" entity="DSSR_000005742_0194"/>
+                        <head>Tuesday, <date value="1864-12-06">December 6, 1864.</date></head>
+                        <p>No special news about an exchange the paper speaks about paroling the
+                        prisoners at Savannah also that Hood and Thomas have had a heavy battle loss heavy on
+                        both sides claim they have taken 600 prisoners Dr Kerr starts for Tennesee The boys
+                        serenade me with guittar Rainy this afternoon</p>
+                    </div3>
+                    <div3 type="entry" id="d241">
+                        <head>Wednesday <date value="1864-12-07">7</date></head>
+                        <p>This has been another long
+                        lone-some day no news of interest Dr Thornburg says that the Confed-erate government has
+                        concluded to put the negro in the field Weather to day is changeable part of the time
+                        sunny rainy and windy and cloolar <!--[cooler]--> than the last few days past. Not much work to
+                        day.</p>
+                    </div3>
+                    <div3 type="entry" id="d242">
+                        <pb n="np" entity="DSSR_000005742_0195"/>
+                        <head>Thursday, <date value="1864-12-08">December 8, 1864.</date></head>
+                        <p>Tuller is up and gets brea-kfast at 5 oclock this
+                        mo-rning I have to go out at sun rise as it is ration day get in for 7 days ful rather
+                        tired this evening Dance give len <!--[Len]--> and I a house in the Camp think we will move
+                        next week Weather fine</p>
+                    </div3>
+                    <div3 type="entry" id="d243">
+                        <head>Friday <date value="1864-12-09">9</date></head>
+                        <p>This has been a cold dis-agreeable day wind north-east.
+                        Rains this afternoon not much work to do. No news as yet from She-rmans Army we hear
+                        that Hood lost 7 Generals in his fight with Thomas and 6000 prisoners the Rebels claim a
+                        victory </p>
+                    </div3>
+                    <div3 type="entry" id="d244">
+                        <pb n="np" entity="DSSR_000005742_0196"/>
+                        <head>Saturday, <date value="1864-12-10">December 10, 1864.</date></head>
+                        <p>Len and I go and put a floor in our house think we
+                        can move in about Tuesday I hear to day that Sherman is within 30 miles of Savannah The
+                        rebs thinks he will go through without any serious opposition Negro Jack gets 51 lashes
+                        for telling lies about Mrs Hunt</p>
+                    </div3>
+                    <div3 type="entry" id="d245">
+                        <head>Sunday <date value="1864-12-11">11</date></head>
+                        <p>I go over to the upper cook house a while to
+                        see limber Jim. Then up to Head Quarters and cut up the meat for tomorrow. It is verry
+                        cold to day but pleasant. No news to day from the Armys but it is rumor that Hood has
+                        captured Nashville Tenn</p>
+                    </div3>
+                    <div3 type="entry" id="d246">
+                        <pb n="np" entity="DSSR_000005742_0197"/>
+                        <head>Monday, <date value="1864-12-12">December 12, 1864.</date></head>
+                        <p>Len and I both go out this morning to
+                        attend to the rations. One of the reb. now has to be here to see that it is equally
+                        ishued to the Divisions. We do some work at the house but it is so cold we cant do much
+                        I hear that Gen Sherman has cut the central RR </p>
+                    </div3>
+                    <div3 type="entry" id="d247">
+                        <head>Tuesday <date value="1864-12-13">13</date></head>
+                        <p>Still cold as Greenland the
+                        rebels are all shiver-ing over their fires most of them with Yankee overco-ats We finish
+                        the House to day it is now ready to move in think we Shall move tomorrow We hear an-
+                        other rumor about paroling the prisoners</p>
+                    </div3>
+                    <div3 type="entry" id="d248">
+                        <pb n="np" entity="DSSR_000005742_0198"/>
+                        <head>Wednesday, <date value="1864-12-14">December 14, 1864.</date></head>
+                        <p>This has been
+                        verry much like a spring day has grown warm verry fast all day. The blew <!--[blue]--> birds
+                        are singing and it almost makes me home sick Len and I move out side to day we have a
+                        fine cabin like it verry much we have plenty of company this evening </p>
+                    </div3>
+                    <div3 type="entry" id="d249">
+                        <head>Thursday <date value="1864-12-15">15</date></head>
+                        <p>This is
+                        ration day again but we don't get all that is due us expect 12000 bu meal tomorrow. I
+                        hurt my back this morning it is verry lame this evening <unclear>[-]</unclear> news from the Army some talk
+                        about an exchange the particulars I have not heard. </p>
+                    </div3>
+                    <div3 type="entry" id="d250">
+                        <pb n="np" entity="DSSR_000005742_0199"/>
+                        <head>Friday, <date value="1864-12-16">December 16, 1864.</date></head>
+                        <p>Not much
+                        to do the first part of the day only to serve the rations to Hospital and to the
+                        carpenters after dinner we get our din-ner we take in 7000 lbs meal We hear that Hood
+                        and Thomas have had a battle at Franklin </p>
+                    </div3>
+                    <div3 type="entry" id="d251">
+                        <head>Saturday <date value="1864-12-17">17</date></head>
+                        <p>To day we have not had much to do
+                        but ishue rations to Hospital and workman news is that Sherman has taken Savan-nah and
+                        the papers say that Mobiel <!--[Mobile]--> is threatened by a raid from Baton Roushe <!--[Baton
+                        Rouge]--> Weather still fine no exchange news</p>
+                    </div3>
+                    <div3 type="entry" id="d252">
+                        <pb n="np" entity="DSSR_000005742_0200"/>
+                        <head>Sunday, <date value="1864-12-18">December 18, 1864.</date></head>
+                        <p>This has been
+                        truly a long lonesom day have been read-ing most of the time only go to the Hospital and
+                        then for dinner Fuller gives us some splendid roast beef. no news from Sherman. The cow
+                        chokes on a potatoe help relieve her now ten oclock PM. J E A Six years ago to night of
+                        what are you thinking</p>
+                    </div3>
+                    <div3 type="entry" id="d253">
+                        <head>Monday <date value="1864-12-19">19</date></head>
+                        <p>Nothing going on to day of any importance and no news
+                        from the Army rumor has it that the names of those whose times are not out all to have
+                        their na-mes taken down and then ex-changed. I hardly believe it I finish reading a book
+                        entitled the Star and the Crown or the Daughters love. tries to rain</p>
+                    </div3>
+                    <div3 type="entry" id="d254">
+                        <pb n="np" entity="DSSR_000005742_0201"/>
+                        <head>Tuesday, <date value="1864-12-20">December
+                        20, 1864.</date></head>
+                        <p>This has been rather of a cold wet disagreeable day not rained verry hard but
+                        enough to make it lonesome The paper of to day says that Gen Sherman has taken Fort Mc
+                        Alister and the garrison and states that he can take Savannah without much opposition
+                        from Confederate forces</p>
+                    </div3>
+                    <div3 type="entry" id="d255">
+                        <head>Wednesday <date value="1864-12-21">21</date></head>
+                        <p>Last night rained verry hard but to day no rain but
+                        verry hard wind and has grown cold verry fast the rafters blown down on three of the
+                        buildings in course of construction we get three barrels of whiskey and one keg of
+                        brandy this afternoon Capt Wirz gets high</p>
+                    </div3>
+                    <div3 type="entry" id="d256">
+                        <pb n="np" entity="DSSR_000005742_0202"/>
+                        <head>Thursday, <date value="1864-12-22">December 22, 1864.</date></head>
+                        <p>When we get up
+                        this mor-ning it is verry cold every thing frozen wind blowing hard nothing going no
+                        news from Sherman Papers say that Hood is on the retreat Thomas pursueing has cap-tured
+                        1000 prisoners and 16 pieces artillery I cut up two hogs this evening.</p>
+                    </div3>
+                    <div3 type="entry" id="d257">
+                        <head>Friday <date value="1864-12-23">23</date></head>
+                        <p>This
+                        morning Len and I pack the two hogs and have cut the meat for sausage Mrs Robertson
+                        &amp; Hunt have been busy making cake for Chris- tmas We get 3500 lbs Flour this
+                        afternoon 1000 of the old pris-oners have returned back to the Stockade We hear that the
+                        authorities are exchanging at Charleston at the rate of 1000 per day more pleasant</p>
+                    </div3>
+                    <div3 type="entry" id="d258">
+                        <pb n="np" entity="DSSR_000005742_0203"/>
+                        <head>Saturday, <date value="1864-12-24">December 24, 1864.</date></head>
+                        <p>This has been rather more pleasant not as cold as yesterday
+                        Len and I do all of our work up to day so that tomorrow we shall have nothing to do. A
+                        part of the Artillery comes back to day some of the boys have to move out of their
+                        shantys. I expect to move </p>
+                    </div3>
+                    <div3 type="entry" id="d259">
+                        <head>Sunday <date value="1864-12-25">25</date></head>
+                        <p>Christmas morning not so pleasant as yesterday I
+                        write a letter to Mother Hamblin this morning there is nothing going on here to day
+                        Fuller gives us roast Beef and warm bisc-uit for dinner J.E.A. do you remember what you
+                        told me six years ago to night, Rain</p>
+                    </div3>
+                    <div3 type="entry" id="d260">
+                        <pb n="np" entity="DSSR_000005742_0204"/>
+                        <head>Monday, <date value="1864-12-26">December 26, 1864.</date></head>
+                        <p>This morning the Battery
+                        boys come back and 400 prisoners with them Len and I have to give up our house to the
+                        original owne <add place="top" hand="author">rs</add> We move back to the Hos-pital untill we can build another house or
+                        untill the we can build on. We hear that Stevenson has been relieved from Duty here</p>
+                    </div3>
+                    <div3 type="entry" id="d261">
+                        <head>Tuesday <date value="1864-12-27">27</date></head>
+                        <p>This morning we go out and do up our work and cut some beef and mix with pork
+                        Saus-age. This afternoon we have been building us a chimney expect to move in a day or
+                        two. I hear that Jeff Davis has gone to Europe if so the Confederacy is nearly played
+                        Killpatrick reported to be at Thomas-ville </p>
+                    </div3>
+                    <div3 type="entry" id="d262">
+                        <pb n="np" entity="DSSR_000005742_0205"/>
+                        <head>Wednesday, <date value="1864-12-28">December 28, 1864.</date></head>
+                        <p>To day Len and
+                        I have been at work building a chimney and fire place as we are got to move out side
+                        again We hear it rumored around that Jeff Davis and two of his Gen-erals have gone to
+                        Europe to turn over the Confederacy to the English Government Weather cold </p>
+                    </div3>
+                    <div3 type="entry" id="d263">
+                        <head>Thursday <date value="1864-12-29">29</date></head>
+                        <p>
+                        We finish up our chi-mney this fore noon it is a cold job a lot of Confederates are
+                        tight Len and I move again this afternoon Dance says we must move Capt Wirz takes our
+                        passes away from us cold and clammy News none </p>
+                    </div3>
+                    <div3 type="entry" id="d264">
+                        <pb n="np" entity="DSSR_000005742_0206"/>
+                        <head>Friday, <date value="1864-12-30">December 30, 1864.</date></head>
+                        <p>We have not
+                        done much of any kind of work only to atte-nd to the rations We build our chimney rather
+                        higher to make more draught and put the flie over the tent Dance has slept in here most
+                        of the afternoon Papers of to day say that Hood was badly whipped in Tenn. We now do our
+                        own cooking. Cool winds </p>
+                    </div3>
+                    <div3 type="entry" id="d265">
+                        <head>Saturday <date value="1864-12-31">31</date></head>
+                        <p>This fore noon I go down to Hospital get shaved and
+                        wash up Len and I cut some wood to last over Sunday rains a verry little We get one load
+                        of Meal from Commissary send to Hospital I must now close my Diary and close my chapter
+                        for 1864. Wm. H. Smith.</p>
+                    </div3>
+                    <div3 type="memorandum" id="d266">
+                        <pb n="np" entity="DSSR_000005742_0207"/>
+                        <head>MEMORANDA</head>
+                        <p>Mr. Frank Beverstock <lb/>
+                            Lexington <lb/>
+                            Richland County <lb/>
+                            Ohio<lb/></p>
+                        <p>Mr. Chas A Tabor <lb/>
+                            Columbus <lb/>
+                            Ohio <lb/>
+                        </p></div3>
+                    <div3 type="memorandum" id="d267">
+                        <pb n="np" entity="DSSR_000005742_0208"/>
+                        <head>MEMORANDA</head>
+                        <p>Ed C. Burns <lb/>
+                            Fremont <lb/>
+                            Steuben County <lb/>
+                            Ind </p>
+                        <p>Thos Lyles No. 486 Style St. <lb/>
+                            Baltimore, Md </p>
+                        <p>C. A. Haines <lb/>
+                            Farmington <lb/>
+                            Fulton Co <lb/>
+                            Ill. </p>
+                        <p>Andrew T Furgison<lb/>
+                            Geneseo. Livingston Co. NY </p>
+                        <p>E. J. Burlingham <lb/>
+                            Otsego. Allegan Co <lb/>
+                            Michigan </p>
+                        <p>H K Lawrence<lb/>
+                            Newville. De Kalb Co <lb/>
+                            Indiana </p>
+                    </div3>
+                    <div3 type="memorandum" id="d268">
+                        <pb n="np" entity="DSSR_000005742_0237"/>
+                        <head>MEMORANDA</head>
+                        <p>James M Newton <lb/>
+                            Co F 55 Ga Vo C<lb/>
+                            hicago Ill <lb/>
+                            Camp Douglas </p>
+                        <p>Mrs. Jerome B. Howard <lb/>
+                            New Haven <lb/>
+                            Huron Co <lb/>
+                            Ohio </p>
+                        <p>Papers sent by F. Beaverstoc</p>
+                        <pb n="np" entity="DSSR_000005742_0238"/>
+                        <p><ref target="n11" n="11">{11}</ref></p>
+                       <p>My home is Perry Ville<lb/> Madison County<lb/> N. York <lb/>
+                            Please Address - Mr Wm Hamblin <lb/>
+                            And Oblige Wm. H. Smith </p>
+                        <pb n="np" entity="DSSR_000005742_0229"/>
+                        <pb n="np" entity="DSSR_000005742_0240"/>
+                        <p>Miss Maria Hayden<lb/>
+                            Perry Ville <lb/>
+                            Madison Co <lb/>
+                            NY </p>
+                        <p>Miss Maria Hayden <lb/>
+                            Perry Ville <lb/>
+                            Madison Co <lb/>
+                            N. York</p>
+                        </div3>
+                    
+                        
+                </div2>
+            </div1>
+            <div1 type="notes" id="d269">
+                <head>Notes</head>
+                <p>
+                </p>
+                <note id="n1" n="1" place="end">
+                    <seg type="note-symbol">{1}</seg>
+                    <p>[The next pages contain an 1864 calendar, rates of postage, five pages entitled "a
+                        table of stamp duties", a page devoted to eclipses in 1864, and an 1864 almanac of five
+                        pages. Next are the dairy pages with preprinted dates. </p>
+                </note>
+                <note id="n2" n="2" place="end">
+                    <seg type="note-symbol">{2}</seg>
+                    <p>[The diary pages are blank until 1 February
+                        1864.]</p>
+                </note>
+                <note id="n3" n="3" place="end">
+                    <seg type="note-symbol">{3}</seg>
+                    <p>[Smith must mean 7 A.M.]</p>
+                </note>
+                <note id="n4" n="4" place="end">
+                    <seg type="note-symbol">{4}</seg>
+                    <p>[No further entries are made in
+                    diary until May 8, 1864.]</p>
+                </note>
+                 <note id="n5" n="5" place="end">
+                    <seg type="note-symbol">{5}</seg>
+                    <p>[This page is very faded.]</p>
+                 </note>
+                <note id="n6" n="6" place="end">
+                    <seg type="note-symbol">{6}</seg>
+                    <p>[This first sentence is so
+                        faded that words are a guess.]</p>
+                </note>
+                <note id="n7" n="7" place="end">
+                    <seg type="note-symbol">{7}</seg>
+                    <p>[The last two lines are too faded to transcribe.]</p>
+                </note>
+                <note id="n8" n="8" place="end">
+                    <seg type="note-symbol">{8}</seg>
+                    <p>[On this date, a piece of paper is pasted over the original faded script . The ink
+                        on the pasted paper matchs the rest of the page.]</p>
+                </note>
+                 <note id="n9" n="9" place="end">
+                    <seg type="note-symbol">{9}</seg>
+                    <p> [Pasted
+                        over the right side of the original script for 2 November is another piece of paper
+                        which also includes a diary entry.] [Original script (as much as can be seen]: New
+                        orders are day in regard [ish]ueing meat all ital attendants draw their meet [meat] it
+                        comes in to day noon. Dr Kerr that he is going me out side to to the Commissary [Paper
+                        pasted over the original script:]</p>
+                    
+                 </note>
+                <note id="n10" n="10" place="end">
+                    <seg type="note-symbol">{10}</seg>
+                    <p> [The ink on this day's entry is so faded that it is not
+                        discernible.]</p>
+                    
+                </note>
+                <note id="n11" n="11" place="end">
+                    <seg type="note-symbol">{11}</seg>
+                    <p> [The following names and addresses are written on the end papers:]</p>
+                </note>
+               
+             
+            </div1>
+            <!--[A brier wood pipe was included with the
+                        gift to the Small/Harrison Library of the University of Virginia of this diary and
+                        another one. Pipes are mentioned several times in this diary, on Feb. 24th, "The boys
+                        are making brier wood pipes", on Sept. 13th, "...sell my pipe for $39", and on Oct. 25th,
+                        "Buy a pipe for $3..." On the 18th of September 1864, Smith writes, "This is my birth day
+                        25 years of age." On the 27 of November, he writes, "Just one year ago to day I was
+                        captured..." Smith mentions the titles of four books that he read at the prison. They are
+                        Dictionary of Love by Theocritus, published in 1858 by Dick &amp; Fitzgerald, (Alderman
+                        Library owns this book on microfilm); Violet or The Cross &amp; Crown, Marchand A
+                        Southern Yarn of the War, and Star and the Crown or Daughters Love. - Mary Roy Dawson
+                        Edwards, Transcriber March 2, 2005.] -->
+        </body>
+    </text>
+</TEI.2>

@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0231 SYSTEM "000000766_0231" NDATA jpg>
+<!ENTITY DSSR_000000766_0232 SYSTEM "000000766_0232" NDATA jpg>
+<!ENTITY DSSR_000000766_0233 SYSTEM "000000766_0233" NDATA jpg>
+<!ENTITY DSSR_000000766_0234 SYSTEM "000000766_0234" NDATA jpg>
+
+<!--<!ENTITY NA62k16a SYSTEM "NA62k16a.jpg" NDATA jpg>
+<!ENTITY NA62k16b SYSTEM "NA62k16b.jpg" NDATA jpg>
+<!ENTITY NA62k16c SYSTEM "NA62k16c.jpg" NDATA jpg>
+<!ENTITY NA62k16d SYSTEM "NA62k16d.jpg" NDATA jpg>-->
+ <!ENTITY longs  "s" ><!-- long s -->
+]>
+<TEI.2 id="NA62k16">
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles Tenney, <date value="1862-11-16">16
+      November 1862</date>
+    </title>
+    <author>Case, Adelaide E. </author>
+    <editor> </editor>
+    <respStmt>
+     <resp> </resp>
+     <name> </name>
+     <resp>Creation of machine-readable version: </resp>
+     <name>Russell S. Koonts </name>
+     <resp>Conversion to TEI.2-conformant markup: </resp>
+     <name>Russell S. Koonts, University of Virginia Library Electronic Text Center. </name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">13</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library </publisher>
+    <pubPlace>Charlottesville, Virginia </pubPlace>
+    <idno type="etext">NA62k16 </idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2000">2000 </date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Page images have been included from the original source. </p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Adelaide E. Case to Charles Tenney, 16 November 1862 </title>
+      <title type="parallel"> </title>
+      <title level="u"> </title>
+      <author>Adelaide E. Case </author>
+      <editor> </editor>
+      <respStmt>
+       <resp> </resp>
+       <name> </name>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p> </p>
+     </editionStmt>
+     <extent>4 p. </extent>
+     <publicationStmt>
+      <publisher> </publisher>
+      <pubPlace> </pubPlace>
+      <idno type="callNo"/>
+     </publicationStmt>
+     <seriesStmt>
+      <p> </p>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p> </p>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center. </p>
+   </projectDesc>
+   <editorialDecl>
+    <p>All unambiguous end-of-line hyphens have been retained. </p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings. </p>
+   </editorialDecl>
+   <refsDecl>
+    <p> </p>
+   </refsDecl>
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-11-16">1862-11-16 </date>
+   </creation>
+   <langUsage>
+    <language id="eng">English </language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction </term>
+     <term>prose </term>
+     <term>feminine </term>
+     <term>American Civil War; Women Writers; Special Collections </term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH </term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-10">November 10th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+ <text id="d1">
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-11-16">November 16, 1862</date>
+      <title>Letter from Adelaide E. Case to Charles Tenney</title>
+     </bibl>
+    </head>
+    <p><name type="person">Addie</name> admonishes <name type="person">Charlie</name> for not having
+     written her in almost three weeks, and then apologizes for opening a letter that he wrote to
+      <name type="person">Hal</name>. She promises to forward the letter, delivered by <name
+      type="person">Lieutenant J. P. Hurlburt</name> from <name type="place">Camp Cleveland</name>,
+     to <name type="person">Hal</name> in <name type="place">Ann Arbor, Michigan</name> where he is
+     finishing school. <name type="person">Laurie</name>, she informs <name type="person"
+     >Charlie</name>, has married <name type="person">Mr. Thompson</name> and the newlyweds are on
+     their "tour" of <name type="person">Mr. Thompson</name>'s friends in <name type="place"
+      >Columbiana County</name>. She prays that <name type="person">Laurie</name> never regrets her
+     decision, but continues, "I can not dwell on the matter without pain." She shows her support
+     for <name type="person">General George McClellan</name> and expresses her disapproval of <name
+      type="person">President Abraham Lincoln</name>'s removing <name type="person">General
+      McClellan</name> from command, going as far as calling the President a traitor. Jealousy and
+     political influences she feels have kept the best officers from positions of leadership, thus
+     prolonging the war. She closes with a plea for a letter, promising to write to a member of his
+     company to inquire about his health if she does not receive one soon. </p>
+   </div1>
+  </front>
+  <body id="d4">
+
+
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Adelaide E. Case to Charles Tenney, <date value="1862-11-16">16 November
+     1862</date></head>
+    <pb n="1" entity="DSSR_000000766_0231"/>
+    <opener>
+     <dateline>
+      <name type="place">Mecca</name>
+      <date value="1862-11-16"><abbr expan="November">Nov.</abbr>16<hi rend="super">th</hi>
+      1862</date>
+     </dateline>
+     <salute>My darling <name type="person">Charlie</name></salute>
+    </opener>
+    <p>How much <lb/> longer must I endure this <orig reg="dreadful">dread- <lb/> ful</orig>
+     suspense. Almost three weeks have <lb/> passed since I last received one of thy <lb/> darling
+     missives, Papa brought one <lb/> home last night, from you for <name type="person">Hal</name>.
+     <lb/> and you need not think but that <lb/> I opened it. I should not have <lb/> done <del
+      hand="h1">it</del> so but I wished so much to <lb/> know how and where you was. <lb/> It was
+     written the <date value="1862-10-27">27<hi rend="super">th</hi> of <abbr expan="October"
+      >Oct.</abbr></date> and <lb/> directed to <name type="place">Camp Cleveland</name>. <lb/>
+     <name type="person">J. P. Hurlburt</name> took it from <lb/> the office with the intention of
+      <orig reg="bringing">bring- <pb n="2" entity="DSSR_000000766_0232"/>ing</orig> it to <name
+      type="place">Mecca</name> (He thought <name type="person">Hal</name>
+     <lb/> was at home) but papa took it and <lb/> brought it to me. I will send it <lb/> to <name
+      type="person">Hal</name> immediately. As there is a <lb/> very important question in it <add
+      hand="h1" place="supralinear">to</add> which <lb/> you ought to have received an <lb/> answer
+     long ago. You will forgive <lb/> me for opening it will you not dear? </p>
+    <p><name type="person">Hallie</name> is now in <name type="place">Ann Arbor<abbr
+       expan=", Michigan"> Mich.</abbr></name>
+     <lb/> which is his address. I wrote you that <lb/> he and <name type="person">Dwight
+     Wilbur</name> had gone to <lb/>
+     <name type="place">Cleveland</name>. <orig reg="They">they</orig> did go there with <lb/> the
+     intention of entering the Law <lb/> school, but <name type="person">Hal</name> writes that they
+     <lb/> were disappointed in the institution <lb/> and other things and concluded <lb/> to go on
+     to <name type="place">Ann Arbor</name>. He will <lb/> probably graduate in a few months. </p>
+    <p>Well darling, <name type="person">Laurie</name> is married <lb/> and gone on their "tour" to
+      <name type="person">Mr <lb/> Thompsons</name> friends in <name type="place"><orig
+       reg="Columbiana">Columbianora</orig>
+      <lb/> county</name>, and I know not when <lb/> she will return. The were married <lb/>
+     <pb n="3" entity="DSSR_000000766_0233"/>in <name type="place">Warren</name> at <name
+      type="place">Camps Hotel</name> last <lb/>
+     <orig reg="Wednesday">wednesday</orig> at half past three P.M. <lb/> and started off
+     immediately. </p>
+    <p>Dear sister, God grant that she <lb/> may never regret the life she has <lb/> taken. But I
+     can not dwell on <lb/> this subject without pain. </p>
+    <p>My darling, pardon me but I am <lb/> afraid your prophecies in regard to <lb/>
+     <name type="person">McClellan</name> will never be realized. <lb/> I was exceedingly sorry that
+     our <lb/> president saw fit to remove him- <lb/> or at least I am sorry that <lb/> he found it
+     necessary to remove <lb/> him He seems to have made an <lb/> ignominious failure, but I do not
+     <lb/> think he would have done so had <lb/> it not been for a few scheming <lb/> politicians.
+     Although many have <lb/> charged him with treason long <lb/> ago, yet my reply was that if <lb/>
+     <name type="person"><abbr expan="General">Gen.</abbr> McClellan</name> was a traitor <name
+      type="person">President <lb/> Lincoln</name> was also a traitor or <lb/>
+     <pb n="4" entity="DSSR_000000766_0234"/> an imbecile I do not think <lb/>
+     <name type="person">McClellan</name> has always been as <orig reg="expeditious">expedi- <lb/>
+      tious</orig> as he might have been, but <lb/> where would you find the man <lb/> that has
+     moved with such caution <lb/> Even the friendly face of the <orig reg="Chronicle">Chron- <lb/>
+      icle</orig> comes out in strong terms <lb/> against him. But <name type="person"
+     >Charlie</name>, listen <lb/> to my prophesy, &ldquo;As long as there <lb/> is so much
+     jealousy in regard <lb/> to officers, our armies <hi rend="underline">can</hi> never <lb/>
+     accomplish much.&rdquo; Jealousy and <lb/> political influences together have <lb/>
+     prolonged this war more than <lb/> any thing else. It has kept <lb/> some of our best and
+     truest <lb/> officers back and placed others <lb/> in the situation that they <lb/> ought to
+     have occupied that <lb/> are not much more fit for <lb/> the position that I am <lb/> Look at
+      <name type="person">Banks</name> and <name type="person">Mitchell</name>
+     <lb/> two of our best men have <ref target="n1" n="1">1</ref> been kept back simply because
+     politicians were afraid they <lb/> would accomplish something The death of <name type="person"
+      >Mitchell</name> is <lb/> deeply lamented all over the northern states </p>
+    <p>
+     <ref target="n2" n="2">2</ref> But darling I have two <lb/> more letters to write <lb/> to day
+     as you will <lb/> pardon this short and <lb/> imperfect one will <lb/> you not? <lb/>
+    </p>
+    <p><hi rend="underline">Please</hi> write <hi rend="underline">very</hi> soon <lb/> will you not
+     dear? <lb/> If <del hand="h1">you</del>
+     <add hand="h1" place="supralinear">I</add> do not receive <lb/> a letter this week I <lb/>
+     shall be strong <lb/> tempted to write to <lb/> some member of your <lb/>
+     <orig reg="company">co.</orig> and enquire of <lb/> your health, <orig reg="etcetera"
+      >&amp;c.</orig>
+     <lb/> Please remember me kindly <lb/> to the boys and accept <lb/> the prayers and love of your
+     own </p>
+    <closer>
+     <signed>
+      <name type="person">Addie</name>
+     </signed>
+    </closer>
+   </div1>
+  </body>
+  <back id="d6">
+   <div1 type="notes" id="d7">
+    <head>Notes</head>
+    <note id="n1" place="end" n="1">
+     <seg type="note-symbol">1</seg>
+     <p>The following sentences are written vertically on the left hand margin of the letter (see
+      image of page four). </p>
+    </note>
+    <note id="n2" place="end" n="2">
+     <seg type="note-symbol">2</seg>
+     <p>The following closing remarks and signature are vertically at the top and left hand margin
+      of the first page (see image of page one). </p>
+    </note>
+   </div1>
+  </back>
+ </text>
+</TEI.2>

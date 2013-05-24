@@ -1,0 +1,629 @@
+<!--
+  chadwyck.ent
+
+  This file contains character entities defined in evd.dtd, the
+  Chadwyck-Healey SGML DTD for the English Verse Drama database. They
+  are listed here in XML form, on an as-needed basis.
+-->
+
+<!ENTITY sblank "*"><!-- a deliberately omitted single character -->
+<!ENTITY wblank "---"><!-- a deliberately omitted word or string of characters -->
+<!ENTITY lblank "------"><!-- a deliberately omitted string of words -->
+<!ENTITY blank "------">
+<!ENTITY gmdash "----">
+
+<!ENTITY aeligac "&#x00E6;"><!-- The meaning of Chadwyck's aeligac is unknown; using &aelig; -->
+<!ENTITY aeligsh "&#x00E6;"><!-- The meaning of Chadwyck's aeligsh is unknown; using &aelig; -->
+
+<!ENTITY super1 '<hi rend="super">1</hi>'>
+<!ENTITY super2 '<hi rend="super">2</hi>'>
+<!ENTITY super3 '<hi rend="super">3</hi>'>
+<!ENTITY super4 '<hi rend="super">4</hi>'>
+<!ENTITY super5 '<hi rend="super">5</hi>'>
+
+<!ENTITY supera '<hi rend="super">a</hi>'>
+<!ENTITY superb '<hi rend="super">b</hi>'>
+<!ENTITY superc '<hi rend="super">c</hi>'>
+<!ENTITY superd '<hi rend="super">d</hi>'>
+<!ENTITY supere '<hi rend="super">e</hi>'>
+<!ENTITY superf '<hi rend="super">f</hi>'>
+<!ENTITY superg '<hi rend="super">g</hi>'>
+<!ENTITY superh '<hi rend="super">h</hi>'>
+<!ENTITY superi '<hi rend="super">i</hi>'>
+<!ENTITY superk '<hi rend="super">k</hi>'>
+<!ENTITY superl '<hi rend="super">l</hi>'>
+<!ENTITY superm '<hi rend="super">m</hi>'>
+<!ENTITY supern '<hi rend="super">n</hi>'>
+<!ENTITY supero '<hi rend="super">o</hi>'>
+<!ENTITY superp '<hi rend="super">p</hi>'>
+<!ENTITY superr '<hi rend="super">r</hi>'>
+<!ENTITY supers '<hi rend="super">s</hi>'>
+<!ENTITY supert '<hi rend="super">t</hi>'>
+<!ENTITY superu '<hi rend="super">u</hi>'>
+<!ENTITY superv '<hi rend="super">v</hi>'>
+<!ENTITY superw '<hi rend="super">w</hi>'>
+<!ENTITY superx '<hi rend="super">x</hi>'>
+<!ENTITY supery '<hi rend="super">y</hi>'>
+
+<!ENTITY superA '<hi rend="super">A</hi>'>
+<!ENTITY superB '<hi rend="super">B</hi>'>
+<!ENTITY superC '<hi rend="super">C</hi>'>
+<!ENTITY superD '<hi rend="super">D</hi>'>
+<!ENTITY superE '<hi rend="super">E</hi>'>
+<!ENTITY superF '<hi rend="super">F</hi>'>
+<!ENTITY superH '<hi rend="super">H</hi>'>
+<!ENTITY superI '<hi rend="super">I</hi>'>
+<!ENTITY superL '<hi rend="super">L</hi>'>
+<!ENTITY superM '<hi rend="super">M</hi>'>
+<!ENTITY superN '<hi rend="super">N</hi>'>
+<!ENTITY superO '<hi rend="super">O</hi>'>
+<!ENTITY superP '<hi rend="super">P</hi>'>
+<!ENTITY superR '<hi rend="super">R</hi>'>
+<!ENTITY superS '<hi rend="super">S</hi>'>
+<!ENTITY superT '<hi rend="super">T</hi>'>
+<!ENTITY superU '<hi rend="super">U</hi>'>
+
+<!ENTITY sgrave "s&#x0300;"><!-- s + combining grave accent -->
+
+<!ENTITY qacute "q&#x0301;"><!-- q + combining acute accent -->
+
+<!ENTITY ncirc "n&#x0302;"><!-- n + combining circumflex -->
+<!ENTITY rcirc "r&#x0302;"><!-- r + combining circumflex -->
+<!ENTITY vcirc "v&#x0302;"><!-- v + combining circumflex -->
+
+<!ENTITY mtilde "m&#x0303;"><!-- m + combining tilde -->
+
+<!ENTITY bmacr "b&#x0304;"><!-- b + combining macron -->
+<!ENTITY cmacr "c&#x0304;"><!-- c + combining macron -->
+<!ENTITY dmacr "d&#x0304;"><!-- d + combining macron -->
+<!ENTITY gmacr "g&#x0304;"><!-- g + combining macron -->
+<!ENTITY hmacr "h&#x0304;"><!-- h + combining macron -->
+<!ENTITY lmacr "l&#x0304;"><!-- l + combining macron -->
+<!ENTITY mmacr "m&#x0304;"><!-- m + combining macron -->
+<!ENTITY nmacr "n&#x0304;"><!-- n + combining macron -->
+<!ENTITY pmacr "p&#x0304;"><!-- p + combining macron -->
+<!ENTITY qmacr "q&#x0304;"><!-- q + combining macron -->
+<!ENTITY rmacr "r&#x0304;"><!-- r + combining macron -->
+<!ENTITY smacr "s&#x0304;"><!-- s + combining macron -->
+<!ENTITY tmacr "t&#x0304;"><!-- t + combining macron -->
+<!ENTITY xmacr "x&#x0304;"><!-- x + combining macron -->
+
+<!ENTITY Mmacr "M&#x0304;"><!-- M + combining macron -->
+<!ENTITY Nmacr "N&#x0304;"><!-- N + combining macron -->
+<!ENTITY Pmacr "P&#x0304;"><!-- P + combining macron -->
+<!ENTITY Rmacr "R&#x0304;"><!-- P + combining macron -->
+<!ENTITY Smacr "S&#x0304;"><!-- S + combining macron -->
+
+<!ENTITY ybreve "y&#x0306;"><!-- y + combining breve -->
+
+<!ENTITY ocedil "o&#x0327;"><!-- o + combining cedilla -->
+
+
+<!-- The following Chadwyck entities are headed with the comment
+"Manuscript derived abbreviations" in the Chadwyck DTD. -->
+<!ENTITY con "con">
+<!ENTITY with "with">
+<!ENTITY quod "quod">
+<!ENTITY quoth "quoth">
+<!ENTITY per "per">
+<!ENTITY us "us">
+<!ENTITY que "que">
+<!ENTITY par "par">
+<!ENTITY pro "pro">
+<!ENTITY pre "pre">
+<!ENTITY dab "d">
+<!ENTITY es "es">
+<!ENTITY qui "qui">
+<!ENTITY com "com">
+<!ENTITY ter "ter">
+<!ENTITY finales "es">
+<!ENTITY ver "ver">
+<!ENTITY der "der">
+<!ENTITY er "er">
+
+<!ENTITY PER "PER">
+<!ENTITY US "US">
+<!ENTITY QUE "QUE">
+<!ENTITY PAR "PAR">
+<!ENTITY ES "ES">
+<!ENTITY FINALES "ES">
+
+
+<!-- The following Chadwyck entities are headed with the comment
+"Miscellaneous punctuation" in the Chadwyck DTD. -->
+<!ENTITY point " . "><!-- centred point -->
+<!ENTITY semiup " ; "><!-- upside down semi-colon --><!-- Not in Unicode -->
+
+
+<!-- The following Chadwyck entities appear to be related to scansion
+of poetic lines. They are commented with "long scansion mark" and
+"short scansion mark" respectively in the Chadwyck DTD for English
+Verse Drama. The use of "/" and "^" is a best guess.-->
+<!ENTITY long "/">
+<!ENTITY short "^">
+
+
+<!-- The following Chadwyck entities are headed with the comment
+"Mathematical symbols and characters" in the Chadwyck DTD for English
+Verse Drama.-->
+<!ENTITY fracpq "p/q"><!-- mathematical division p/q -->
+<!ENTITY fracqp "q/p"><!-- mathematical division q/p -->
+<!ENTITY fracpqqp "pq/qp"><!-- mathematical division pq/qp -->
+
+
+<!-- The following Chadwyck entity names for Greek characters are
+idiosyncratic/non-standard and are, for the most part, not documented
+in the Chadwyck DTD. In many cases there is no way to know with
+certainty which accents, breathing marks, etc. are intended. For this
+reason, these entity names are here resolved to the corresponding
+Greek letter, without any accent marks. (This is still an improvement
+over the Chadwyck DTD, which simply maps the Greek letters to their
+nearest Latin/ASCII equivalents.) -->
+
+<!ENTITY grAs "&Agr;">
+<!ENTITY graa "&agr;">
+<!ENTITY grag "&agr;">
+<!ENTITY grac "&agr;">
+<!ENTITY gracd "&agr;">
+<!ENTITY grad "&agr;">
+<!ENTITY gradc "&agr;">
+<!ENTITY grar "&agr;">
+<!ENTITY gras "&agr;">
+<!ENTITY grasd "&agr;">
+<!ENTITY GRAa "&Agr;">
+<!ENTITY GRAg "&Agr;">
+<!ENTITY GRAc "&Agr;">
+<!ENTITY GRAd "&Agr;">
+<!ENTITY GRAr "&Agr;">
+<!ENTITY GRAs "&Agr;">
+<!ENTITY grea "&egr;">
+<!ENTITY greg "&egr;">
+<!ENTITY grec "&egr;">
+<!ENTITY gred "&egr;">
+<!ENTITY grei "&egr;">
+<!ENTITY grer "&egr;">
+<!ENTITY gres "&egr;">
+<!ENTITY GREa "&Egr;">
+<!ENTITY GREg "&Egr;">
+<!ENTITY GREc "&Egr;">
+<!ENTITY GREd "&Egr;">
+<!ENTITY GREr "&Egr;">
+<!ENTITY GREs "&Egr;">
+<!ENTITY grEs "&Egr;">
+<!ENTITY grha "&eegr;">
+<!ENTITY grhg "&eegr;">
+<!ENTITY grhc "&eegr;">
+<!ENTITY grhcd "&eegr;">
+<!ENTITY grhcri "&eegr;">
+<!ENTITY grhd "&eegr;">
+<!ENTITY grhr "&eegr;">
+<!ENTITY grhrd "&eegr;">
+<!ENTITY grhs "&eegr;">
+<!ENTITY GRHa "&EEgr;">
+<!ENTITY GRHg "&EEgr;">
+<!ENTITY GRHc "&EEgr;">
+<!ENTITY GRHd "&EEgr;">
+<!ENTITY GRHr "&EEgr;">
+<!ENTITY grHr "&EEgr;">
+<!ENTITY GRHs "&EEgr;">
+<!ENTITY gria "&igr;">
+<!ENTITY grig "&igr;">
+<!ENTITY gric "&igr;">
+<!ENTITY grid "&igr;">
+<!ENTITY grir "&igr;">
+<!ENTITY gris "&igr;">
+<!ENTITY grisd "&igr;">
+<!ENTITY GRIa "&Igr;">
+<!ENTITY GRIg "&Igr;">
+<!ENTITY GRIc "&Igr;">
+<!ENTITY GRId "&Igr;">
+<!ENTITY GRIr "&Igr;">
+<!ENTITY grIr "&Igr;">
+<!ENTITY GRIs "&Igr;">
+<!ENTITY groa "&ogr;">
+<!ENTITY grog "&ogr;">
+<!ENTITY groc "&ogr;">
+<!ENTITY grod "&ogr;">
+<!ENTITY groi "&ogr;">
+<!ENTITY gror "&ogr;">
+<!ENTITY gros "&ogr;">
+<!ENTITY grosdc "&ogr;">
+<!ENTITY GROa "&Ogr;">
+<!ENTITY GROg "&Ogr;">
+<!ENTITY GROc "&Ogr;">
+<!ENTITY GROd "&Ogr;">
+<!ENTITY GROdc "&Ogr;">
+<!ENTITY GROr "&Ogr;">
+<!ENTITY grOr "&Ogr;">
+<!ENTITY GROs "&Ogr;">
+<!ENTITY grOs "&Ogr;">
+<!ENTITY grua "&ugr;">
+<!ENTITY grug "&ugr;">
+<!ENTITY grui "&ugr;">
+<!ENTITY gruc "&ugr;">
+<!ENTITY grud "&ugr;">
+<!ENTITY grur "&ugr;">
+<!ENTITY grurdc "&ugr;">
+<!ENTITY grus "&ugr;">
+<!ENTITY GRUa "&Ugr;">
+<!ENTITY GRUg "&Ugr;">
+<!ENTITY GRUc "&Ugr;">
+<!ENTITY GRUd "&Ugr;">
+<!ENTITY GRUr "&Ugr;">
+<!ENTITY GRUs "&Ugr;">
+<!ENTITY grwa "&ohgr;">
+<!ENTITY grwg "&ohgr;">
+<!ENTITY grwgi "&ohgr;">
+<!ENTITY grwc "&ohgr;">
+<!ENTITY grwcd "&ohgr;">
+<!ENTITY grwd "&ohgr;">
+<!ENTITY grwdc "&ohgr;">
+<!ENTITY grwr "&ohgr;">
+<!ENTITY grwrd "&ohgr;">
+<!ENTITY grws "&ohgr;">
+<!ENTITY GRWa "&OHgr;">
+<!ENTITY GRWg "&OHgr;">
+<!ENTITY GRWc "&OHgr;">
+<!ENTITY GRWd "&OHgr;">
+<!ENTITY GRWr "&OHgr;">
+<!ENTITY GRWs "&OHgr;">
+<!ENTITY graca "&agr;">
+<!ENTITY gracg "&agr;">
+<!ENTITY graac "&agr;">
+<!ENTITY graag "&agr;">
+<!ENTITY grasa "&agr;">
+<!ENTITY grasad "&agr;">
+<!ENTITY grasg "&agr;">
+<!ENTITY grara "&agr;">
+<!ENTITY grarg "&agr;">
+<!ENTITY GRAca "&Agr;">
+<!ENTITY GRAcg "&Agr;">
+<!ENTITY GRAac "&Agr;">
+<!ENTITY GRAag "&Agr;">
+<!ENTITY GRAsa "&Agr;">
+<!ENTITY GRAsg "&Agr;">
+<!ENTITY GRAra "&Agr;">
+<!ENTITY GRArg "&Agr;">
+<!ENTITY greca "&egr;">
+<!ENTITY grecg "&egr;">
+<!ENTITY greac "&egr;">
+<!ENTITY greag "&egr;">
+<!ENTITY gresa "&egr;">
+<!ENTITY gresad "&egr;">
+<!ENTITY gresg "&egr;">
+<!ENTITY grera "&egr;">
+<!ENTITY grerg "&egr;">
+<!ENTITY GREca "&Egr;">
+<!ENTITY GREcg "&Egr;">
+<!ENTITY GREac "&Egr;">
+<!ENTITY GREag "&Egr;">
+<!ENTITY GREsa "&Egr;">
+<!ENTITY GREsg "&Egr;">
+<!ENTITY GREra "&Egr;">
+<!ENTITY GRErg "&Egr;">
+<!ENTITY grhca "&eegr;">
+<!ENTITY grhcg "&eegr;">
+<!ENTITY grhac "&eegr;">
+<!ENTITY grhag "&eegr;">
+<!ENTITY grhsa "&eegr;">
+<!ENTITY grhsg "&eegr;">
+<!ENTITY grhra "&eegr;">
+<!ENTITY grhrg "&eegr;">
+<!ENTITY GRHca "&EEgr;">
+<!ENTITY GRHcg "&EEgr;">
+<!ENTITY GRHac "&EEgr;">
+<!ENTITY GRHag "&EEgr;">
+<!ENTITY GRHsa "&EEgr;">
+<!ENTITY GRHsg "&EEgr;">
+<!ENTITY GRHra "&EEgr;">
+<!ENTITY GRHrg "&EEgr;">
+<!ENTITY grica "&igr;">
+<!ENTITY gricg "&igr;">
+<!ENTITY griac "&igr;">
+<!ENTITY griag "&igr;">
+<!ENTITY grisa "&igr;">
+<!ENTITY grisg "&igr;">
+<!ENTITY grira "&igr;">
+<!ENTITY grirg "&igr;">
+<!ENTITY GRIca "&Igr;">
+<!ENTITY GRIcg "&Igr;">
+<!ENTITY GRIac "&Igr;">
+<!ENTITY GRIag "&Igr;">
+<!ENTITY GRIsa "&Igr;">
+<!ENTITY GRIsg "&Igr;">
+<!ENTITY GRIra "&Igr;">
+<!ENTITY GRIrg "&Igr;">
+<!ENTITY groca "&ogr;">
+<!ENTITY grocg "&ogr;">
+<!ENTITY groac "&ogr;">
+<!ENTITY groag "&ogr;">
+<!ENTITY grosa "&ogr;">
+<!ENTITY grosg "&ogr;">
+<!ENTITY grora "&ogr;">
+<!ENTITY grorg "&ogr;">
+<!ENTITY GROca "&Ogr;">
+<!ENTITY GROcg "&Ogr;">
+<!ENTITY GROac "&Ogr;">
+<!ENTITY GROag "&Ogr;">
+<!ENTITY GROsa "&Ogr;">
+<!ENTITY GROsg "&Ogr;">
+<!ENTITY GROar "&Ogr;">
+<!ENTITY GROra "&Ogr;">
+<!ENTITY GROrg "&Ogr;">
+<!ENTITY gruca "&ugr;">
+<!ENTITY grucg "&ugr;">
+<!ENTITY gruac "&ugr;">
+<!ENTITY gruag "&ugr;">
+<!ENTITY grusa "&ugr;">
+<!ENTITY grusg "&ugr;">
+<!ENTITY grura "&ugr;">
+<!ENTITY grurg "&ugr;">
+<!ENTITY GRUca "&Ugr;">
+<!ENTITY GRUcg "&Ugr;">
+<!ENTITY GRUac "&Ugr;">
+<!ENTITY GRUag "&Ugr;">
+<!ENTITY GRUsa "&Ugr;">
+<!ENTITY GRUsg "&Ugr;">
+<!ENTITY GRUra "&Ugr;">
+<!ENTITY GRUrg "&Ugr;">
+<!ENTITY grwca "&ohgr;">
+<!ENTITY grwcg "&ohgr;">
+<!ENTITY grwac "&ohgr;">
+<!ENTITY grwag "&ohgr;">
+<!ENTITY grwsa "&ohgr;">
+<!ENTITY grwsg "&ohgr;">
+<!ENTITY grwra "&ohgr;">
+<!ENTITY grwrg "&ohgr;">
+<!ENTITY GRWca "&OHgr;">
+<!ENTITY GRWcg "&OHgr;">
+<!ENTITY GRWac "&OHgr;">
+<!ENTITY GRWag "&OHgr;">
+<!ENTITY GRWsa "&OHgr;">
+<!ENTITY GRWsg "&OHgr;">
+<!ENTITY GRWra "&OHgr;">
+<!ENTITY GRWrg "&OHgr;">
+<!ENTITY gragd "&agr;">
+<!ENTITY gradg "&agr;">
+<!ENTITY graad "&agr;">
+<!ENTITY grada "&agr;">
+<!ENTITY GRAgd "&Agr;">
+<!ENTITY GRAdg "&Agr;">
+<!ENTITY GRAad "&Agr;">
+<!ENTITY GRAda "&Agr;">
+<!ENTITY gregd "&egr;">
+<!ENTITY gredg "&egr;">
+<!ENTITY gread "&egr;">
+<!ENTITY greda "&egr;">
+<!ENTITY GREgd "&Egr;">
+<!ENTITY GREdg "&Egr;">
+<!ENTITY GREad "&Egr;">
+<!ENTITY GREda "&Egr;">
+<!ENTITY grhgd "&eegr;">
+<!ENTITY grhdg "&eegr;">
+<!ENTITY grhad "&eegr;">
+<!ENTITY grhda "&eegr;">
+<!ENTITY GRHgd "&EEgr;">
+<!ENTITY GRHdg "&EEgr;">
+<!ENTITY GRHad "&EEgr;">
+<!ENTITY GRHda "&EEgr;">
+<!ENTITY grigd "&igr;">
+<!ENTITY gridg "&igr;">
+<!ENTITY griad "&igr;">
+<!ENTITY grida "&igr;">
+<!ENTITY GRIgd "&Igr;">
+<!ENTITY GRIdg "&Igr;">
+<!ENTITY GRIad "&Igr;">
+<!ENTITY GRIda "&Igr;">
+<!ENTITY grogd "&ogr;">
+<!ENTITY grodg "&ogr;">
+<!ENTITY groad "&ogr;">
+<!ENTITY groda "&ogr;">
+<!ENTITY GROgd "&Ogr;">
+<!ENTITY GROdg "&Ogr;">
+<!ENTITY GROad "&Ogr;">
+<!ENTITY GROda "&Ogr;">
+<!ENTITY grugd "&ugr;">
+<!ENTITY grudg "&ugr;">
+<!ENTITY gruad "&ugr;">
+<!ENTITY gruda "&ugr;">
+<!ENTITY GRUgd "&Ugr;">
+<!ENTITY GRUdg "&Ugr;">
+<!ENTITY GRUad "&Ugr;">
+<!ENTITY GRUda "&Ugr;">
+<!ENTITY grwgd "&ohgr;">
+<!ENTITY grwdg "&ohgr;">
+<!ENTITY grwad "&ohgr;">
+<!ENTITY grwda "&ohgr;">
+<!ENTITY GRWgd "&OHgr;">
+<!ENTITY GRWdg "&OHgr;">
+<!ENTITY GRWad "&OHgr;">
+<!ENTITY GRWda "&OHgr;">
+<!ENTITY gracr "&agr;">
+<!ENTITY gracs "&agr;">
+<!ENTITY grarc "&agr;">
+<!ENTITY grasc "&agr;">
+<!ENTITY GRAcr "&Agr;">
+<!ENTITY GRAcs "&Agr;">
+<!ENTITY GRArc "&Agr;">
+<!ENTITY GRAsc "&Agr;">
+<!ENTITY grecr "&egr;">
+<!ENTITY grecs "&egr;">
+<!ENTITY grerc "&egr;">
+<!ENTITY gresc "&egr;">
+<!ENTITY GREcr "&Egr;">
+<!ENTITY GREcs "&Egr;">
+<!ENTITY GRErc "&Egr;">
+<!ENTITY GREsc "&Egr;">
+<!ENTITY grhcr "&eegr;">
+<!ENTITY grhcs "&eegr;">
+<!ENTITY grhrc "&eegr;">
+<!ENTITY grhsc "&eegr;">
+<!ENTITY GRHcr "&EEgr;">
+<!ENTITY GRHcs "&EEgr;">
+<!ENTITY GRHrc "&EEgr;">
+<!ENTITY GRHsc "&EEgr;">
+<!ENTITY gricr "&igr;">
+<!ENTITY grics "&igr;">
+<!ENTITY grirc "&igr;">
+<!ENTITY grisc "&igr;">
+<!ENTITY GRIcr "&Igr;">
+<!ENTITY GRIcs "&Igr;">
+<!ENTITY GRIrc "&Igr;">
+<!ENTITY GRIsc "&Igr;">
+<!ENTITY grocr "&ogr;">
+<!ENTITY grocs "&ogr;">
+<!ENTITY grorc "&ogr;">
+<!ENTITY grosc "&ogr;">
+<!ENTITY GROcr "&Ogr;">
+<!ENTITY GROcs "&Ogr;">
+<!ENTITY GROrc "&Ogr;">
+<!ENTITY GROsc "&Ogr;">
+<!ENTITY grucr "&ugr;">
+<!ENTITY grucs "&ugr;">
+<!ENTITY grurc "&ugr;">
+<!ENTITY grusc "&ugr;">
+<!ENTITY GRUcr "&Ugr;">
+<!ENTITY GRUcs "&Ugr;">
+<!ENTITY GRUrc "&Ugr;">
+<!ENTITY GRUsc "&Ugr;">
+<!ENTITY grwcr "&ohgr;">
+<!ENTITY grwcs "&ohgr;">
+<!ENTITY grwrc "&ohgr;">
+<!ENTITY grwsc "&ohgr;">
+<!ENTITY GRWcr "&OHgr;">
+<!ENTITY GRWcs "&OHgr;">
+<!ENTITY GRWrc "&OHgr;">
+<!ENTITY GRWsc "&OHgr;">
+<!ENTITY grwi "&ohgr;">
+<!ENTITY grwis "&ohgr;">
+<!ENTITY grwir "&ohgr;">
+<!ENTITY grwsi "&ohgr;">
+<!ENTITY grwri "&ohgr;">
+<!ENTITY grhi "&eegr;">
+<!ENTITY grhid "&eegr;">
+<!ENTITY grhis "&eegr;">
+<!ENTITY grhir "&eegr;">
+<!ENTITY grhsi "&eegr;">
+<!ENTITY grhri "&eegr;">
+<!ENTITY grwic "&ohgr;">
+<!ENTITY grwci "&ohgr;">
+<!ENTITY grwicr "&ohgr;">
+<!ENTITY grwirc "&ohgr;">
+<!ENTITY grwric "&ohgr;">
+<!ENTITY grwrci "&ohgr;">
+<!ENTITY grwics "&ohgr;">
+<!ENTITY grwisc "&ohgr;">
+<!ENTITY grwsic "&ohgr;">
+<!ENTITY grwsci "&ohgr;">
+<!ENTITY grhic "&eegr;">
+<!ENTITY grhci "&eegr;">
+<!ENTITY grhics "&eegr;">
+<!ENTITY grhisc "&eegr;">
+<!ENTITY grhsic "&eegr;">
+<!ENTITY grhsci "&eegr;">
+<!ENTITY grhicr "&eegr;">
+<!ENTITY grhirc "&eegr;">
+<!ENTITY grhric "&eegr;">
+<!ENTITY grhrci "&eegr;">
+<!ENTITY grwig "&ohgr;">
+<!ENTITY grhig "&eegr;">
+<!ENTITY grwia "&ohgr;">
+<!ENTITY grwai "&ohgr;">
+<!ENTITY grwias "&ohgr;">
+<!ENTITY grwisa "&ohgr;">
+<!ENTITY grwsia "&ohgr;">
+<!ENTITY grwsai "&ohgr;">
+<!ENTITY grwiar "&ohgr;">
+<!ENTITY grwira "&ohgr;">
+<!ENTITY grwria "&ohgr;">
+<!ENTITY grwrai "&ohgr;">
+<!ENTITY grhia "&eegr;">
+<!ENTITY grhai "&eegr;">
+<!ENTITY grhias "&eegr;">
+<!ENTITY grhisa "&eegr;">
+<!ENTITY grhsia "&eegr;">
+<!ENTITY grhsai "&eegr;">
+<!ENTITY grhiar "&eegr;">
+<!ENTITY grhira "&eegr;">
+<!ENTITY grhria "&eegr;">
+<!ENTITY grhrai "&eegr;">
+<!ENTITY grhiac "&eegr;">
+<!ENTITY grwiac "&ohgr;">
+<!ENTITY grhica "&eegr;">
+<!ENTITY grwica "&ohgr;">
+<!ENTITY grwicg "&ohgr;">
+<!ENTITY grhicg "&eegr;">
+<!ENTITY grwigc "&ohgr;">
+<!ENTITY grhigc "&eegr;">
+<!ENTITY GRWi "&OHgr;">
+<!ENTITY GRHi "&EEgr;">
+<!ENTITY GRWic "&OHgr;">
+<!ENTITY GRHic "&EEgr;">
+<!ENTITY GRWia "&OHgr;">
+<!ENTITY GRHia "&EEgr;">
+<!ENTITY GRWig "&OHgr;">
+<!ENTITY GRHig "&EEgr;">
+<!ENTITY GRWiac "&OHgr;">
+<!ENTITY GRHiac "&EEgr;">
+<!ENTITY GRWica "&OHgr;">
+<!ENTITY GRHica "&EEgr;">
+<!ENTITY GRWicg "&OHgr;">
+<!ENTITY GRHicg "&EEgr;">
+<!ENTITY GRWigc "&OHgr;">
+<!ENTITY GRHigc "&EEgr;">
+<!ENTITY grai "&agr;">
+<!ENTITY graic "&agr;">
+<!ENTITY graci "&agr;">
+<!ENTITY graics "&agr;">
+<!ENTITY graisc "&agr;">
+<!ENTITY grasi "&agr;">
+<!ENTITY grasic "&agr;">
+<!ENTITY grasci "&agr;">
+<!ENTITY graicr "&agr;">
+<!ENTITY grairc "&agr;">
+<!ENTITY graric "&agr;">
+<!ENTITY grarci "&agr;">
+<!ENTITY graig "&agr;">
+<!ENTITY graia "&agr;">
+<!ENTITY grais "&agr;">
+<!ENTITY graias "&agr;">
+<!ENTITY graisa "&agr;">
+<!ENTITY grasia "&agr;">
+<!ENTITY grasai "&agr;">
+<!ENTITY graiar "&agr;">
+<!ENTITY graira "&agr;">
+<!ENTITY graria "&agr;">
+<!ENTITY grarai "&agr;">
+<!ENTITY graiac "&agr;">
+<!ENTITY graica "&agr;">
+<!ENTITY graicg "&agr;">
+<!ENTITY graigc "&agr;">
+<!ENTITY GRAi "&Agr;">
+<!ENTITY GRAic "&Agr;">
+<!ENTITY GRAia "&Agr;">
+<!ENTITY GRAig "&Agr;">
+<!ENTITY GRAiac "&Agr;">
+<!ENTITY GRAica "&Agr;">
+<!ENTITY GRAicg "&Agr;">
+<!ENTITY GRAigc "&Agr;">
+<!ENTITY grra "&rgr;">
+<!ENTITY grrg "&rgr;">
+<!ENTITY grrs "&rgr;">
+<!ENTITY grrr "&rgr;">
+<!ENTITY grrra "&rgr;">
+<!ENTITY grrrg "&rgr;">
+<!ENTITY GRRs "&Rgr;">
+<!ENTITY GRRr "&Rgr;">
+
+<!ENTITY grV "&#x03DC;"><!-- GREEK LETTER DIGAMMA -->
+<!ENTITY grv "&#x03DD;"><!-- GREEK SMALL LETTER DIGAMMA -->
+
+<!ENTITY gr ""><!-- CH English Poetry DTD has this comment: "no value for ? in Greek" -->
+<!ENTITY gldquo "&ldquo;"><!-- left double quotes in Greek text -->
+<!ENTITY grdquo "&rdquo;"><!-- right double quotes in Greek text-->
+<!ENTITY glsquo "&lsquo;"><!-- left single quote in Greek text-->
+<!ENTITY grsquo "&rsquo;"><!-- right single quote in Greek text-->
+<!ENTITY grap "&apos;"><!-- apostrophe in Greek text -->
+<!ENTITY grqu ";"><!-- Greek question mark -->
+<!ENTITY grcolon ":">
+<!ENTITY grdot "."><!-- missing character dot -->

@@ -1,0 +1,2471 @@
+<?xml version="1.0"?>
+
+<?dlps id="bov_20000225"?>
+<?dlps page-images="none" figure-images="no"?>
+<?dlps transcription="other"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of
+                    Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors
+                    meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with
+                        local customizations)</resp>
+                    <name>University of Virginia Library</name>
+                </respStmt>
+                <biblScope type="date">
+                    <date value="2000-02-25">February 25, 2000</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">105</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2008">2008</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the
+                        University of Virginia</p>
+                    <p n="access">Publicly accessible</p>
+                </availability>
+                <idno type="DLPS ID">bov_20000225</idno>
+                <idno type="uva-pid">uva-lib:498155</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors
+                            minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of
+                            Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors
+                            meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2000-02-25">February 25, 2000</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information. Access to
+                                minutes containing salary information will be granted only under the
+                                procedures of the Virginia Freedom of Information Act (Code of
+                                Virginia-2.1-340 ff.) or if permission is granted by the Secretary
+                                of the Board. Researchers interested in obtaining access to these
+                                records should direct a request in writing to the Office of the
+                                Legal Adviser, Madison Hall, University of Virginia. These public
+                                minutes have had salary information deleted and bear no
+                                restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special
+                                Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body
+                                which is the legal owner and operator of the institution. Recorded
+                                in the minutes are appointments and other personnel decisions
+                                concerning faculty, decisions about construction of facilities,
+                                gifts to the university, and all other board actions, decisions and
+                                resolutions.</p>
+                        </note>
+                        <note>The xml file for this document was derived from the html file. No pdf
+                            was available on the BOV site for this set of minutes. the minutes are
+                            continuous and contain no page breaks.</note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction;
+                &editorial_normalization; &editorial_hyphenation; &editorial_quotation;
+                &editorial_stdVals; </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language n="008" id="eng" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2008-06-10">June 10, 2008</date>
+                <respStmt>
+                    <name id="ewg4x">Ethan Gruber, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to vendor markup.</item>
+            </change>
+        <change>
+<date value="2011-06-29">June 29, 2011</date>
+<respStmt>
+<name id="lsc6v">Lorrie Chisholm, University of Virginia Library</name>
+<resp>corrector</resp>
+</respStmt>
+<item>Additional corrections to  markup.</item>
+</change>
+</revisionDesc>
+    </teiHeader>
+    <text id="d1">
+        <body id="d2">
+            <div1 type="contents" id="d3">
+
+                <head type="main">RESOLUTIONS ADOPTED BY THE BOARD OF VISITORS<lb/>
+                    <dateRange from="2000-02-25" to="2000-02-26">February 25-26,
+                    2000</dateRange></head>
+                
+                    <table rows="51" cols="2">
+                        <row>
+                            <cell>Establishment of the Sidman P. Poole Professorship in
+                                Environmental Sciences</cell>
+                      
+                        </row>
+                        <row>
+                            <cell>Establishment of the Elwood R. Quesada Professorship in
+                                Architecture</cell>
+                        
+                        </row>
+                        <row>
+                            <cell>Establishment of the Ward K. Ensminger Distinguished Professorship
+                                in Geriatric Medicine Establishment of the Edward Watson Hook
+                                Distinguished Professorship in Internal Medicine</cell>
+                          
+                        </row>
+                        <row>
+                            <cell>Establishment of the John W. Kluge Distinguished Professorship in
+                                Urology</cell>
+                          
+                        </row>
+                        <row>
+                            <cell>Renaming of the E. James Kelly, Jr., Research Professorship in Law
+                                as the E. James Kelly, Jr., Class of 1965 Research Professorship in
+                                Law</cell>
+                        
+                        </row>
+                        <row>
+                            <cell>Conflict of Interest Exemption (Upstate Biotechnology, Inc.</cell>
+                           
+                        </row>
+                        <row>
+                            <cell>Conflict of Interest Exemption (DirectGene, Inc.)</cell>
+                           
+                        </row>
+                        <row>
+                            <cell>Approval of the Architectural Design Guidelines for the Monroe
+                                Lane Student Residence Project</cell>
+                            
+                        </row>
+                        <row>
+                            <cell>Approval to Remove Gildersleeve Apartment Building</cell>
+                           
+                        </row>
+                        <row>
+                            <cell>Approval to Remove the Holly House</cell>
+                           
+                        </row>
+                        <row>
+                            <cell>Approval to Remove Caf&Atilde;&copy; North</cell>
+                          
+                        </row>
+                        <row>
+                            <cell>Ratification of the Approval to Acquire the Orange Medical Office
+                                Building</cell>
+                         
+                        </row>
+                        <row>
+                            <cell>Approval of the Schematic and Preliminary Design for the
+                                Fayerweather Hall Renovation Project </cell>
+                          
+                        </row>
+                        <row>
+                            <cell>Approval of the Schematic Design for the White Burkett Miller
+                                Center Addition and Renovation Project</cell>
+                            
+                        </row>
+                        <row>
+                            <cell>Approval of the Preliminary Design for the NRAO Addition and
+                                Renovation Project</cell>
+                           
+                        </row>
+                        <row>
+                            <cell>Approval of the Preliminary Design for the Darden School
+                                Expansion</cell>
+                           
+                        </row>
+                        <row>
+                            <cell>Approval of the Preliminary Design for the White Burkett Miller
+                                Center Addition and Renovation Project </cell>
+                           
+                        </row>
+                        <row>
+                            <cell>Approval of the Preliminary Design for the Law School Expansion
+                                Project</cell>
+                            
+                        </row>
+                        <row>
+                            <cell>Approval of Student Housing Rates for 2000-2001</cell>
+                            
+                        </row>
+                        <row>
+                            <cell>Approval of Summary of Audit Findings</cell>
+                          
+                        </row>
+                        <row>
+                            <cell>Approval to Rename the Division of Continuing Education the School
+                                of Continuing and Professional Studies</cell>
+                            
+                        </row>
+                        <row>
+                            <cell>Resolution on Fraternities and Sororities</cell>
+                            
+                        </row>
+                        <row>
+                            <cell>Report on Actions Taken by the Executive Committee</cell>
+                           
+                        </row>
+                        <row>
+                            <cell rend="indent">&bull;&emsp;Approval of Medical Center Employees
+                                Salary Adjustments </cell>
+                            
+                        </row>
+                        <row>
+                            <cell rend="indent">&bull;&emsp;Salary Recommendations for the President
+                                and the Chancellor of the University of Virginia's College at Wise </cell>
+                           
+                        </row>
+                        <row>
+                            <cell rend="indent">&bull;&emsp;Extension of Lease on Pavilion IX </cell>
+                            
+                        </row>
+                        <row>
+                            <cell>Approval of the Sale of the Wertland Street Property</cell>
+                           
+                        </row>
+                        <row>
+                            <cell>Approval of the Acquisition of City Property</cell>
+                           
+                        </row>
+                        <row>
+                            <cell>Approval to Purchase Kidney Dialysis Unit</cell>
+                         
+                        </row>
+                        <row>
+                            <cell>Approval of Additional Swap Transactions</cell>
+                           
+                        </row>
+                        <row>
+                            <cell>Faculty Personnel Actions</cell>
+                            
+                        </row>
+                        <row>
+                            <cell rend="indent">Elections </cell>
+                           
+                        </row>
+                        <row>
+                            <cell rend="indent">Actions Relating to Chairholders </cell>
+                           
+                        </row>
+                        <row>
+                            <cell rend="indent">Promotions </cell>
+                            
+                        </row>
+                        <row>
+                            <cell rend="indent">Resignations </cell>
+                           
+                        </row>
+                        <row>
+                            <cell rend="indent">Retirements </cell>
+                          
+                        </row>
+                        <row>
+                            <cell rend="indent">Appointments </cell>
+                          
+                        </row>
+                        <row>
+                            <cell rend="indent">Reappointments </cell>
+                           
+                        </row>
+                        <row>
+                            <cell rend="indent">Election of Professors Emeriti </cell>
+                           
+                        </row>
+                        <row>
+                            <cell rend="indent">Election of Associate Professor Emeritus</cell>
+                         
+                        </row>
+                        <row>
+                            <cell rend="indent">Death </cell>
+                         
+                        </row>
+                        <row>
+                            <cell rend="indent">Change in the Retirement of <name>Mr. J. Christopher
+                                    Crocker</name>
+                            </cell>
+                           
+                        </row>
+                        <row>
+                            <cell rend="indent">Change in the Election of Professor Emeritus of
+                                    <name>Mr. J. Christopher Crocker</name>
+                            </cell>
+                          
+                        </row>
+                        <row>
+                            <cell rend="indent">Change in the Election of <name>Ms. Sarah E.
+                                    Harrell</name>
+                            </cell>
+                          
+                        </row>
+                        <row>
+                            <cell rend="indent">Change in the Election of <name>Ms. Sepideh
+                                    Khorasanizadeh</name>
+                            </cell>
+                            
+                        </row>
+                        <row>
+                            <cell rend="indent">Change in the Election of <name>Mr. Dylan C.
+                                    Penningroth</name>
+                            </cell>
+                           
+                        </row>
+                        <row>
+                            <cell rend="indent">Change in the Election of <name>Ms. Karen Van
+                                    Lengen</name>
+                            </cell>
+                           
+                        </row>
+                        <row>
+                            <cell rend="indent">Re-election of <name>Peter W. Low</name> as Vice
+                                President and Provost </cell>
+                          
+                        </row>
+                        <row>
+                            <cell rend="indent">The University of Virginia's College at Wise </cell>
+                            
+                        </row>
+                        <row>
+                            <cell rend="indent2">Elections </cell>
+                            
+                        </row>
+                        <row>
+                            <cell rend="indent2">Resignation </cell>
+                           
+                        </row>
+                    </table>
+            </div1>
+            <div1 type="roll-call" id="d4">
+                <p> The Board of Visitors of the University of Virginia met, in Open Session, at
+                    8:05 a.m., Friday, <date value="2000-02-25">February 25, 2000</date>, in the
+                    East Oval Room of the Rotunda; <name>John P. Ackerly, III</name>, Rector,
+                    presided. <name type="present">Charles M. Caravati, Jr., M.D., Champ Clark,
+                        William G. Crutchfield, Jr., William H. Goodwin, Jr., T. Keister Greer,
+                        Timothy B. Robertson, Terence P. Ross, Albert H. Small, Ms. Elizabeth A.
+                        Twohy, Henry L. Valentine, II, Benjamin P.A. Warthen, James C. Wheat, III,
+                        Joseph E. Wolfe, and Robert G. Schoenvogel</name> were present. </p>
+                <p> Also present were <name type="present">John T. Casteen, III, Leonard W.
+                        Sandridge, Jr., Alexander G. Gilliam, Jr., Paul J. Forch, Robert W.
+                        Cantrell, M.D., Peter W. Low, Ms. Colette Sheehy, Ernest H. Ern, Robert E.
+                        Reynolds, M.D., Gene D. Block, and Ms. Jeanne Flippo Bailes</name>. </p>
+            </div1>
+            <div1 type="section" id="d5">
+                <p> The Minutes of the Board meetings of <dateRange from="1999-10-14"
+                        to="1999-10-16">October 14-16, 1999</dateRange>, and January 11, January 22,
+                    and <date value="2000-02-16">February 16, 2000</date>, were approved. </p>
+                <p> The President reported on several bills before the General Assembly this session
+                    that are of interest to the University. He noted, too, that the Blue Ribbon
+                    Commission on Education presented its final report to the Governor on February
+                    3rd. He also reported on the progress of the Commonwealth's Budget for the next
+                    biennium through the General Assembly. Finally, he noted the administrative
+                    realignments that have taken place in the President's Office. </p>
+                <p> The Rector commended the President for his work with the Legislature this
+                    session on behalf of the University. </p>
+                <p> With regard to the Blue Ribbon Commission report, the Rector asked that
+                        <name>Mr. Greer</name>, as Chair of the Educational Policy Committee,
+                        <name>Mr. Robertson</name>, as a member of the Blue Ribbon Commission, and a
+                    member of the Administration, all study the Commission's report and suggest
+                    recommendations on its implementation to the full Board at the April Board
+                    meeting. </p>
+                <p>The meeting was recessed at 8:25 a.m.</p>
+            </div1>
+            <div1 type="roll-call" id="d6">
+                <p> The full Board resumed its meeting in Open Session, with the Rector presiding,
+                    at 2:30 p.m., Friday, <date value="2000-02-25">February 25, 2000</date>, in the
+                    East Oval Room of the Rotunda. All Members were present except <name
+                        type="absent">Mr. Goodwin</name>.</p>
+            </div1>
+            <div1 type="resolution" id="d7">
+                <p> On motion, the Board adopted the following motions permitting it to meet in
+                    Executive Session according to the exemptions specified in the Virginia Freedom
+                    of Information Act:</p>
+                <p>That the Finance Committee of the Board of Visitors of the University of Virginia
+                    go into Executive Session for the purpose of discussing a proposed acquisition
+                    and proposed disposition of two parcels of real estate, which if made public
+                    initially would adversely affect the University's bargaining position and
+                    financial interests, as provided for in Section 2.1-344 (A)(3) of the Code of
+                    Virginia. </p>
+                <p>That the Finance Committee of the Board of Visitors of the University of Virginia
+                    go into Executive Session for the discussion and consideration of the status and
+                    terms of a proposed gift of property to the University, as provided for in
+                    Section 2.1-344 (A)(8) of the Code of Virginia. </p>
+                <p> That the Finance Committee of the Board of Visitors of the University of
+                    Virginia go into Executive Session to discuss and consider hedging a part of the
+                    Endowment where competition and bargaining is involved, and where, if made
+                    public initially, the financial interest of the University would be adversely
+                    affected, as provided for in Section 2.1-344 (A)(6) of the Code of Virginia.</p>
+                <p> That the Finance Committee of the Board of Visitors of the University of
+                    Virginia go into Executive Session to analyze and discuss proprietary
+                    business-related information pertaining to the operations of the Medical Center
+                    regarding acquisition of a clinic operation, as well as the restructuring of an
+                    existing joint venture, and Medicaid reimbursement rates impacting Medical
+                    Center contracting and cost reduction strategies, where disclosure thereof would
+                    adversely affect the competitive position of the Medical Center, as provided for
+                    in Section 2.1-344 (A)(23) of the Code of Virginia. </p>
+                <p>That the Audit Committee of the Board of Visitors of the University of Virginia
+                    go into Executive Session for the purpose of discussing the University Auditor's
+                    performance evaluations of University departments and programs, which will
+                    necessarily involve discussion of the performance of specific employees, as
+                    provided for in Section 2.1-344 (A) (1) of the Code of Virginia. </p>
+                <p>That the Board of Visitors of the University of Virginia go into Executive
+                    Session to consult with General Counsel on the present disposition of pending
+                    litigation and further litigation strategy, as provided for in Section 2.1-344
+                    (A) (7) of the Code of Virginia. </p>
+                <p>That the Educational Policy Committee of the Board of Visitors go into Executive
+                    Session for the purpose of discussing personnel matters pertaining to the
+                    appointment, assignment, reappointment, promotion, performance, compensation,
+                    discipline, separation and resignation of specific faculty members of the
+                    University of Virginia, as provided for in Section 2.1-344 (A) (1) of theCode of
+                    Virginia. </p>
+                <p>That the Executive Committee of the Board of Visitors go into Executive Session
+                    for the purpose of considering the appointment of a student member to the Board
+                    of Visitors in accordance with Section 2.1-344 (A) (1) of the Code of Virginia. </p>
+                <p>That the Board of Visitors of the University of Virginia go into Executive
+                    Session to review the performance and present and future assignments of senior
+                    University administrators and related fund-raising expectations to finance
+                    University operations, as provided for in Section 2.1-344 (A)(1) and (8) of the
+                    Code of Virginia. </p>
+
+                <p>The Board went into Executive Session at 2:35 p.m. and continued to 4:00 p.m.,
+                    when it recessed the Executive Session until Saturday morning, February 26th.
+                </p>
+            </div1>
+            <div1 type="section" id="d8">
+                <p>The full Board resumed its meeting in Open Session at 4:00 p.m. in the Dome Room
+                    of the Rotunda with all Members present save Mr. Goodwin; the Rector
+                    presided.</p>
+                <p> On motion, the Board adopted the following resolutions: </p>
+            </div1>
+            <div1 type="resolution" id="d9">
+                <head type="main"> ESTABLISHMENT OF THE <name>SIDMAN P. POOLE</name> PROFESSORSHIP
+                    IN ENVIRONMENTAL SCIENCES </head>
+
+
+                <p>WHEREAS, <name>Sidman P. Poole</name>, a native of New York and an alumnus of
+                    Syracuse University and the University of Chicago, joined the faculty of the
+                    University of Virginia as Professor of Geography after World War II; and </p>
+                <p>WHEREAS, <name>Mr. Poole</name> died in 1955 and Mrs. Poole in 1999; and </p>
+                <p>WHEREAS, <name>Mrs. Poole</name> made a generous gift to the University to
+                    establish a professorship in honor of <name>Mr. Poole</name>; </p>
+                <p>RESOLVED that the Board of Visitors establishes the <name>Sidman P. Poole</name>
+                    Professorship in Environmental Sciences, to be held in the Department of
+                    Environmental Sciences, and in so doing honors the contributions of Professor
+                    and <name>Mrs. Poole</name> to the University of Virginia. </p>
+
+            </div1>
+            <div1 type="resolution" id="d10">
+                <head type="main">ESTABLISHMENT OF THE ELWOOD R. QUESADA PROFESSORSHIP IN
+                    ARCHITECTURE </head>
+
+                <p>WHEREAS, <name>General Elwood R. Quesada</name> made significant contributions to
+                    American aviation; and </p>
+                <p>WHEREAS, <name>General Quesada's</name> sons <name>T. Ricardo Quesada</name> and
+                        <name>Peter W. Quesada</name>, and his granddaughter <name>Charlotte
+                        Quesada</name>, are alumni of the University of Virginia; and </p>
+                <p>WHEREAS, the Quesada family has made a generous gift to the School of
+                    Architecture to establish a professorship in memory of <name>General
+                        Quesada</name>; and</p>
+                <p>WHEREAS, <name>Mr. and Mrs. Thomas A. Saunders III, and Calvert Saunders
+                        Moore</name> gave generously to the School of Architecture to establish
+                    professorships; and </p>
+                <p>WHEREAS, the Quesada gift and a portion of the Saunders family gift will be used
+                    to create a chair to honor <name>General Quesada</name>; </p>
+                <p>RESOLVED that the Board of Visitors establishes the <name>Elwood R.
+                        Quesada</name> Professorship in Architecture, to be held in the School of
+                    Architecture, and thanks the Quesada and Saunders families for their generosity
+                    and support. </p>
+
+            </div1>
+            <div1 type="resolution" id="d11">
+                <head type="main">ESTABLISHMENT OF THE WARD K. ENSMINGER DISTINGUISHED PROFESSORSHIP
+                    IN GERIATRIC MEDICINE</head>
+
+                <p>WHEREAS, <name>Mr. Ward K. Ensminger</name>, a native of Ohio but a resident of
+                    Charlottesville in his later years, established the Ward K. Ensminger Charitable
+                    Trust; and </p>
+                <p>WHEREAS, <name>Mrs. Virginia G. Shepherd</name>, trustee of the Ensminger Trust,
+                    has made a gift from the Trust to honor the memory of <name>Mr. Ensminger</name>
+                    and his interest in geriatrics; </p>
+                <p>RESOLVED that the Board of Visitors establishes the Ward K. Ensminger
+                    Distinguished Professorship in Geriatric Medicine, to be held in the School of
+                    Medicine, expresses appreciation to Mrs. Shepherd for her interest, and honors
+                    the memory of <name>Mr. Ensminger</name> who made this gift possible. </p>
+
+            </div1>
+            <div1 type="resolution" id="d12">
+                <head type="main">ESTABLISHMENT OF THE EDWARD WATSON HOOK DISTINGUISHED
+                    PROFESSORSHIP IN INTERNAL MEDICINE</head>
+
+                <p>WHEREAS, <name>Dr. Edward Watson Hook</name>, a native of South Carolina, joined
+                    the University of Virginia in 1969 as Henry B. Mulholland Professor of Medicine
+                    and Chairman of the Department of Medicine; and </p>
+                <p>WHEREAS, <name>Dr. Hook</name> developed his Department into one of the most
+                    distinguished departments of internal medicine in the country; and </p>
+                <p>WHEREAS, <name>Dr. Hook</name> is remembered as a superb physician, teacher and
+                    scholar, and for his many contributions to the life of the University of
+                    Virginia; and </p>
+                <p>WHEREAS, <name>Dr. Hook</name> died in 1998; and </p>
+                <p>WHEREAS, friends, colleagues, patients, former students and the family of
+                        <name>Dr. Hook</name> have given generously to establish a professorship in
+                    his memory; </p>
+                <p>RESOLVED that the Board of Visitors establishes the Edward Watson Hook
+                    Distinguished Professorship in Internal Medicine and in so doing honors the life
+                    and achievements of <name>Dr. Hook</name>. </p>
+
+            </div1>
+            <div1 type="resolution" id="d13">
+                <head type="main">ESTABLISHMENT OF THE JOHN W. KLUGE DISTINGUISHED PROFESSORSHIP IN
+                    UROLOGY </head>
+
+                <p> WHEREAS, John W. Kluge has been a most generous supporter of the University of
+                    Virginia, the range of his benefactions reflecting the broad spectrum of his
+                    interests; and</p>
+                <p>WHEREAS, <name>Mr. Kluge</name> has a particular interest in medicine and in
+                    prostate cancer research; and</p>
+                <p>WHEREAS, <name>Mr. Kluge</name> has made a generous gift to the University to
+                    establish a professorship in urology;</p>
+                <p>RESOLVED that the Board of Visitors establishes the John W. Kluge Distinguished
+                    Professorship in Urology, to be held in the Department of Urology at the School
+                    of Medicine, and expresses its appreciation to Mr. Kluge for this latest
+                    instance of his generosity and support. </p>
+
+            </div1>
+            <div1 type="resolution" id="d14">
+                <head type="main">RENAMING OF THE E. JAMES KELLY, JR., RESEARCH PROFESSORSHIP IN LAW
+                    AS THE E. JAMES KELLY, JR., CLASS OF 1965 RESEARCH PROFESSORSHIP IN LAW </head>
+
+                <p> WHEREAS, the Law School Class of 1965 raised more than &dollar;425,000 for their
+                    25th reunion class gift in 1990, more than had ever before been raised by a 25th
+                    reunion law class; and</p>
+                <p> WHEREAS, the greater part of that gift was used for the E. James Kelly, Jr.,
+                    Research Professorship in Law, established by the Board of Visitors in 1991 to
+                    honor the memory of ><name>Mr. Kelly</name> who was a member of the Class of
+                    1965; and</p>
+                <p> WHEREAS, the leaders of the Class's fundraising effort have asked that the name
+                    of the Professorship be changed to recognize their classmates' generosity</p>
+                <p> RESOLVED that the E. James Kelly, Jr., Research Professorship in Law, be changed
+                    to the E. James Kelly, Jr. - Class of 1965 Research Professorship in Law. </p>
+
+                <p>On further motion, the Board adjourned for the day at 4:30 p.m. </p>
+            </div1>
+            <div1 type="roll-call" id="d15">
+                <p>The full Board resumed its recessed Executive Session meeting at 8:30 a.m.,
+                    Saturday, <date value="2000-02-16">February 26, 2000</date>, in the East Oval
+                    Room of the Rotunda. The Rector presided and all Members were present.</p>
+                <p>The meeting lasted in Executive Session until 10:15 a.m. when the Board recessed
+                    and resumed in Open Session. </p>
+                <p>Continuing a discussion that began at the Board meeting on January 22nd, Mr.
+                    Sandridge gave a presentation on the possible aspirations for the future of the
+                    University, along with some of the costs involved. The discussion centered on
+                    what national ranking the University wants to achieve and sustain. </p>
+                <p>The Board recessed at 11:05 a.m.</p>
+                <p>At 11:20 a.m., the Board resumed in Executive Session and continued in camera,
+                    except for a short recess for lunch, until 4:20 p.m. </p>
+                <p>The full Board resumed its meeting in Open Session at 4:20 p.m., the Rector
+                    presiding, with the following Members present: <name type="present">Charles M.
+                        Caravati, Jr., M.D., Champ Clark, William G. Crutchfield, Jr., William H.
+                        Goodwin, Jr., T. Keister Greer, Mrs. Elsie Goodwyn Holland, Terence P. Ross,
+                        Albert H. Small, Benjamin P.A. Warthen, James C. Wheat, III, Joseph E.
+                        Wolfe, and Robert G. Schoenvogel</name>. </p>
+                <p>Also present were <name type="present">John T. Casteen, III, Leonard W.
+                        Sandridge, Jr., Alexander G. Gilliam, Jr., Paul J. Forch, Robert D. Sweeney,
+                        and Ms. Jeanne Flippo Bailes</name>. </p>
+            </div1>
+            <div1 type="resolution" id="d16">
+                <head type="main">CONFLICT OF INTEREST EXEMPTION (Upstate Biotechnology, Inc.) </head>
+                <p> The following resolution was adopted:</p>
+                <p> WHEREAS, the School of Medicine wishes to enter into a sponsored research
+                    contract with Upstate Biotechnology Inc., a New York Corporation, for funding
+                    research in and commercialization of innovative and hard to find bioreagents;
+                    and </p>
+                <p>WHEREAS, David Allis, Ph.D., receives annual income in excess of &dollar;10,000
+                    from Upstate Biotechnology Inc., and the University's entry into a research
+                    agreement with Upstate Biotechnology, Inc., would thereby expose him to
+                    violation of the Conflicts of Interest Act unless the conflict is approved by
+                    the Board as permitted by Section 2.1-639.6 (c) (7) of the Code of Virginia;</p>
+                <p>RESOLVED that the conflict is approved by the Board of Visitors in order to
+                    permit the University to negotiate and enter into a proposed contract for the
+                    development of immunological reagents directed at the chemical modifications of
+                    histone proteins; provided, as required by the law, the faculty file the
+                    required annual disclosure statement of personal income from Upstate
+                    Biotechnology Inc., the University files the required annual report concerning
+                    the contract with the Secretary of the Commonwealth, and the department chair
+                    vigilantly oversees application of University resources and personnel engaged in
+                    the transaction so as to ensure the continuing best interests of the University
+                    and compliance with University policy. </p>
+            </div1>
+
+            <div1 type="resolution" id="d17">
+                <head type="main">CONFLICT OF INTEREST EXEMPTION (DirectGene, Inc.)</head>
+                <p> The following resolution was adopted: (<name>Dr. Caravati</name> abstained from
+                    voting). </p>
+                <p> WHEREAS, the School of Medicine wishes to enter into a sponsored research
+                    contract with DirectGene, Inc., a Delaware Corporation, for developing
+                    adenoviral based gene therapies for cancer and bone repair; and </p>
+                <p>WHEREAS, <name>Leland W.K. Chung, Ph.D.</name>, and spouse, <name>Haiyen E. Zhau,
+                        Ph.D.</name>, and daughters, <name>Lynna K. Chung and Shunney H.C. Nair,
+                        Chinghai Kao, Ph.D.</name>, and spouse, <name>Meei-Huey Jeng, Ph.D.</name>,
+                    have disclosed in advance their equity interests of 1.2, 2.7, 2.2, 2.2, 1.2, 2.1
+                    percent, respectively, in DirectGene, Inc., and the University's entry into a
+                    research agreement with DirectGene, Inc. would thereby expose them to violation
+                    of the Conflicts of Interest Act unless approved by the Board as permitted by
+                    Section 2.1-639.6 (c) (7) of the Code of Virginia;</p>
+                <p>RESOLVED that the conflict is approved by the Board of Visitors in order to
+                    permit the University to negotiate and enter into a proposed contract for
+                    developing adenoviral based gene therapies; provided, as required by the law,
+                    the faculty file the required annual disclosure statement of personal interests
+                    in DirectGene, Inc., the University files the required annual report concerning
+                    the contract with the Secretary of the Commonwealth, and the department chair
+                    vigilantly oversees application of University resources in the best interests of
+                    the University and in accordance with policy. </p>
+            </div1>
+            <div1 type="resolution" id="d18">
+                <head type="main">APPROVAL OF THE ARCHITECTURAL DESIGN GUIDELINES FOR THE MONROE
+                    LANE STUDENT RESIDENCE PROJECT </head>
+                <p> The following resolution was adopted:</p>
+                <p> RESOLVED that the architectural design guidelines, dated February 25, 2000,
+                    prepared by the Architect for the University, for the Monroe Lane Student
+                    Residence project, are approved; and </p>
+                <p>RESOLVED FURTHER that the project will be presented for further review at the
+                    schematic design level of development. </p>
+            </div1>
+            <div1 type="resolution" id="d19">
+                <head type="main">APPROVAL TO REMOVE GILDERSLEEVE APARTMENT BUILDING</head>
+                <p> The following resolution was adopted:</p>
+                <p> WHEREAS, the University owns the Gildersleeve Apartment Building (FAACS Building
+                    Number: 207-2135) at 400/402 Monroe Lane, the 412 Monroe Lane Residence (FAACS
+                    Building Number: 207-2133), and the Monroe Alley Residence (FAACS Building
+                    Number: 207-2134) in Charlottesville; and</p>
+                <p>WHEREAS, these structures must be demolished to allow the construction of the
+                    Monroe Lane Student Residence; and </p>
+                <p>WHEREAS, the Governor of Virginia delegated to the Board of Visitors, pursuant to
+                    Executive Order Number Thirty-Four (98), dated November 10, 1998, the authority
+                    of the Governor to approve the removal of buildings on state property, with the
+                    advice and counsel of the Art and Architectural Review Board, and the review of
+                    the Department of Historic Resources;</p>
+                <p>RESOLVED that the removal of the Gildersleeve Apartment Building (207-2135), the
+                    412 Monroe Lane Residence (207-2133), and the Monroe Alley Residence (207-2134)
+                    is approved by the Board of Visitors pending approval by the Art and
+                    Architectural Review Board and the Department of Historic Resources; and </p>
+                <p>RESOLVED FURTHER that the Executive Vice President and Chief Operating Officer is
+                    authorized to execute any and all documents pertaining to the removal of the
+                    aforementioned buildings, and that the said officer ensure that the required
+                    report regarding the building removal is sent to the Department of General
+                    Services. </p>
+            </div1>
+            <div1 type="resolution" id="d20">
+                <head type="main">APPROVAL TO REMOVE THE HOLLY HOUSE </head>
+                <p> The following resolution was adopted:</p>
+                <p> WHEREAS, the University owns the Holly House building (FAACS Building Number:
+                    207-2604) at 285 Faulkner Drive in Albemarle County; and</p>
+                <p>WHEREAS, this structure must be demolished to allow the addition to the White
+                    Burkett Miller Center of Public Affairs; and</p>
+                <p>WHEREAS, the Governor of Virginia delegated to the Board of Visitors, pursuant to
+                    Executive Order Number Thirty-Four (98), dated <date value="1998-11-10">November
+                        10, 1998</date>, the authority of the Governor to approve the removal of
+                    buildings on state property, with the advice and counsel of the Art and
+                    Architectural Review Board, and the review of the Department of Historic
+                    Resources;</p>
+                <p>RESOLVED that the removal of the Holly House (207-2604) is approved by the Board
+                    of Visitors pending approval by the Art and Architectural Review Board and the
+                    Department of Historic Resources; and</p>
+                <p>RESOLVED FURTHER that the Executive Vice President and Chief Operating Officer is
+                    authorized to execute any and all documents pertaining to the removal of the
+                    aforementioned building, and that the said officer ensure that the required
+                    report regarding the building removal is sent to the Department of General
+                    Services. </p>
+            </div1>
+            <div1 type="resolution" id="d21">
+                <head type="main">APPROVAL TO REMOVE CAFI NORTH </head>
+                <p> The following resolution was adopted:</p>
+                <p> WHEREAS, the University owns Cafi North (FAACS Building Number: 207-0530) at the
+                    University's North Grounds in Albemarle County; and</p>
+                <p>WHEREAS, this structure must be demolished for the expansion of the Law School;
+                    and </p>
+                <p>WHEREAS, the Governor of Virginia delegated to the Board of Visitors, pursuant to
+                    Executive Order Number Thirty-Four (98), dated <date value="1998-11-10">November
+                        10, 1998</date>, the authority of the Governor to approve the removal of
+                    buildings on state property, with the advice and counsel of the Art and
+                    Architectural Review Board, and the review of the Department of Historic
+                    Resources; </p>
+                <p>RESOLVED that the removal of Cafi North (207-0530) is approved by the Board of
+                    Visitors pending approval by the Art and Architectural Review Board and the
+                    Department of Historic Resources; and </p>
+                <p>RESOLVED FURTHER that the Executive Vice President and Chief Operating Officer is
+                    authorized to execute any and all documents pertaining to the removal of the
+                    aforementioned building, and that the said officer ensure that the required
+                    report regarding the building removal is sent to the Department of General
+                    Services. </p>
+            </div1>
+            <div1 type="resolution" id="d22">
+                <head type="main">RATIFICATION OF THE APPROVAL TO ACQUIRE THE ORANGE MEDICAL OFFICE
+                    BUILDING</head>
+                <p> The following resolution was adopted:</p>
+                <p> WHEREAS, the University of Virginia wishes to purchase real estate located at
+                    661 University Lane, Orange, Virginia, from the Health Services Foundation to
+                    support the Health System's mission of providing accessible primary care
+                    services throughout Central Virginia; and</p>
+                <p>WHEREAS, the Board of Visitors has previously approved the issuance of bonds to
+                    acquire the Orange Medical Office Building; and </p>
+                <p>WHEREAS, in 1998, the General Assembly authorized the acquisition of the Orange
+                    Medical Office Building project; </p>
+                <p>RESOLVED that the acquisition of the Orange Medical Office Building, as
+                    recommended by the Executive Vice President and Chief Operating Officer, is
+                    approved by the Board of Visitors. </p>
+                <p>RESOLVED FURTHER that the Executive Vice President and Chief Operating Officer is
+                    authorized to execute any and all contracts or documents pertaining to the
+                    acquisition of the aforementioned property. </p>
+            </div1>
+            <div1 type="resolution" id="d23">
+                <head type="main">APPROVAL OF THE SCHEMATIC AND PRELIMINARY DESIGN FOR THE
+                    FAYERWEATHER HALL RENOVATION PROJECT </head>
+                <p> The following resolution was adopted:</p>
+                <p> RESOLVED that the schematic and preliminary design, dated <date
+                        value="1999-11-23">November 23, 1999</date>, and prepared by Dagit Saylor of
+                    Philadelphia, for the Fayerweather Renovation project, is approved for further
+                    development and construction. </p>
+            </div1>
+            <div1 type="resolution" id="d24">
+                <head type="main">APPROVAL OF THE SCHEMATIC DESIGN FOR THE WHITE BURKETT MILLER
+                    CENTER ADDITION AND RENOVATION PROJECT </head>
+                <p> The following resolution was adopted: </p>
+                <p> RESOLVED that the schematic design, dated<date value="1999-11-23">November 23,
+                        1999</date>
+                    <date value="1999-11-23">November 23, 1999</date>, and prepared by Geier Brown
+                    Renfrow of Alexandria, for the White Burkett Miller Center Addition and
+                    Renovation project is approved; and</p>
+                <p>RESOLVED FURTHER that the project will be presented for further review at the
+                    preliminary design level of development. </p>
+            </div1>
+            <div1 type="resolution" id="d25">
+                <head type="main">APPROVAL OF THE PRELIMINARY DESIGN FOR THE NRAO ADDITION AND
+                    RENOVATION PROJECT </head>
+                <p> The following resolution was adopted:</p>
+                <p> RESOLVED that the preliminary design, dated <date value="1999-11-23">November
+                        23, 1999</date>, and prepared by the Greenwood Partnership of Williamsburg,
+                    for the National Radio Astronomy Observatory Addition and Renovation project, is
+                    approved for further development and construction. </p>
+            </div1>
+            <div1 type="resolution" id="d26">
+                <head type="main">APPROVAL OF THE PRELIMINARY DESIGN FOR THE DARDEN SCHOOL EXPANSION </head>
+                <p> The following resolution was adopted:</p>
+                <p> RESOLVED that the preliminary design, dated <date value="2000-02-25">February
+                        25, 2000</date>, and prepared by Ayers/Saint/Gross of Baltimore, for the
+                    Darden School Expansion project is approved for further development and
+                    construction. The design of the central pavilion of the Bookstore end of the
+                    Sponsors Hall Addition, however, is to be reworked and presented for review,
+                    with the understanding that the modifications in the plan will not affect the
+                    construction schedule for the project. </p>
+            </div1>
+            <div1 type="resolution" id="d27">
+                <head type="main">APPROVAL OF THE PRELIMINARY DESIGN FOR THE WHITE BURKETT MILLER
+                    CENTER ADDITION AND RENOVATION PROJECT </head>
+                <p> The following resolution was adopted:</p>
+                <p> RESOLVED that the preliminary design, dated <date value="2000-02-25">February
+                        25, 2000</date>, and prepared by <name>Geier Brown Renfrow</name> of
+                    Alexandria, for the White Burkett Miller Center Addition and Renovation project,
+                    is approved for further development and construction.</p>
+            </div1>
+            <div1 type="resolution" id="d28">
+                <head type="main">APPROVAL OF THE PRELIMINARY DESIGN FOR THE LAW SCHOOL EXPANSION
+                    PROJECT </head>
+                <p> The following resolution was adopted:</p>
+                <p> RESOLVED that the preliminary design, dated <date value="2000-02-25">February
+                        25, 2000</date>, and prepared by Train &amp; Spencer of Charlottesville, for
+                    the Law School Expansion project, is approved for further development and
+                    construction. </p>
+            </div1>
+            <div1 type="resolution" id="d29">
+                <head type="main">APPROVAL OF STUDENT HOUSING RATES FOR 2000-2001</head>
+                <p> The following resolution was adopted:</p>
+                <p> RESOLVED that rental increases for student housing facilities be approved as
+                    shown below, effective beginning with the 2000-2001 session: </p>
+                <div2 type="resolution" id="d30">
+                    <pb n="1"/>
+                    <head type="main">APPROVAL OF STUDENT HOUSING RATES FOR 2000-2001</head>
+                    <p> The following resolution was adopted:</p>
+                    <p> RESOLVED that rental increases for student housing facilities be approved
+                        as shown below, effective beginning with the 2000-2001
+                        sessions:</p>
+
+                    <table rows="27" cols="5">
+                        <row>
+                            <cell role="label" cols="5">Room Rent</cell>
+                        </row>
+                        <row>
+                            <cell role="label">Facility</cell>
+                            <cell role="label">Actual<lb/>1999-2000<lb/>Per Student<lb/>Per
+                                Session</cell>
+                            <cell role="label">Amount of<lb/>Increase</cell>
+                            <cell role="label">Percentage<lb/>Increase</cell>
+                            <cell role="label"><lb/>Proposed <lb/>2000-2001<lb/>Per Student<lb/>Per
+                                Session</cell>
+                        </row>
+                        <row>
+                            <cell cols="5">Academic Division<lb/>DORMITORIES</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"></cell>
+                        </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">Alderman/Observatory Houses</hi></cell>
+                       
+                        </row>
+                        <row>
+                            <cell rend="indent">Double Room</cell>
+                            <cell>&dollar;2,020</cell>
+                            <cell>&dollar;80</cell>
+                            <cell>4.0&percnt;</cell>
+                            <cell>&dollar;2,100</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">Brown College</hi></cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Double Room</cell>
+                            <cell>&dollar;2,530</cell>
+                            <cell>&dollar;100</cell>
+                            <cell>3.9&percnt;</cell>
+                            <cell>&dollar;2,630</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">McCormick Road</hi></cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Double Room</cell>
+                            <cell>&dollar;1,930</cell>
+                            <cell>&dollar;70</cell>
+                            <cell>3.6&percnt;</cell>
+                            <cell>&dollar;2,000</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Small Double Room</cell>
+                            <cell>&dollar;1,750</cell>
+                            <cell>&dollar;70</cell>
+                            <cell>4.0&percnt;</cell>
+                            <cell>&dollar;1,820</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Single</cell>
+                            <cell>&dollar;2,030</cell>
+                            <cell>&dollar;80</cell>
+                            <cell>3.9&percnt;</cell>
+                            <cell>&dollar;2,110</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Per Day Rate</cell>
+                            <cell>&dollar;8</cell>
+                            <cell>&dollar;0</cell>
+                            <cell>0.0&percnt;</cell>
+                            <cell>&dollar;8</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">Lawn</hi></cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Small Single</cell>
+                            <cell>&dollar;2,410</cell>
+                            <cell>&dollar;90</cell>
+                            <cell>3.7&percnt;</cell>
+                            <cell>&dollar;2,500</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Regular Single</cell>
+                            <cell>&dollar;2,410</cell>
+                            <cell>&dollar;90</cell>
+                            <cell>3.7&percnt;</cell>
+                            <cell>&dollar;2.500</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Small Single<lb/>&emsp;*(no fireplace)</cell>
+                            <cell>&dollar;2,340</cell>
+                            <cell>&dollar;90</cell>
+                            <cell>3.8&percnt;</cell>
+                            <cell>&dollar;2.430</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">Range</hi></cell>
+                         </row>
+                        <row>
+                            <cell rend="indent">Regular Single</cell>
+                            <cell>&dollar;2,410</cell>
+                            <cell>&dollar;90</cell>
+                            <cell>3.7&percnt;</cell>
+                            <cell>&dollar;2,500</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">Crackerbox</hi></cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Single Room</cell>
+                            <cell>&dollar;2,410</cell>
+                            <cell>&dollar;90</cell>
+                            <cell>3.7&percnt;</cell>
+                            <cell>&dollar;2,500</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">Mary Munford/Roberta Gwathmey</hi></cell>
+                         </row>
+                        <row>
+                            <cell rend="indent">Double Room</cell>
+                            <cell>&dollar;2,020</cell>
+                            <cell>&dollar;80</cell>
+                            <cell>4.0&percnt;</cell>
+                            <cell>&dollar;2,100</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Single Room</cell>
+                            <cell>&dollar;2,410</cell>
+                            <cell>&dollar;90</cell>
+                            <cell>3.7&percnt;</cell>
+                            <cell>&dollar;2,500</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">Sprigg (Lewis/Hoxton)</hi></cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Double Room</cell>
+                            <cell>&dollar;2,300</cell>
+                            <cell>&dollar;90</cell>
+                            <cell>3.9&percnt;</cell>
+                            <cell>&dollar;2,390</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">single Room</cell>
+                            <cell>&dollar;2,570</cell>
+                            <cell>&dollar;100</cell>
+                            <cell>3.9&percnt;</cell>
+                            <cell>&dollar;2,670</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Single Room (w/bath)</cell>
+                            <cell>&dollar;2,710</cell>
+                            <cell>&dollar;100</cell>
+                            <cell>3.7&percnt;</cell>
+                            <cell>&dollar;2,810</cell>
+                        </row>
+                    </table>
+                    <pb n="2"/>
+                    <table rows="28" cols="5">
+                        <row>
+                            <cell role="label" cols="5">Room Rent </cell>
+                        </row>
+                        <row>
+                            <cell role="label">Facility</cell>
+                            <cell role="label">Actual<lb/>1999-2000<lb/>Per Student<lb/>Per
+                                Session</cell>
+                            <cell role="label">Amount of<lb/>Increase</cell>
+                            <cell role="label">Percentage<lb/>Increase</cell>
+                            <cell role="label"><lb/>Proposed <lb/>2000-2001<lb/>Per Student<lb/>Per
+                                Session</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">Gooch / Dillard</hi></cell>
+                          </row>
+                        <row>
+                            <cell rend="indent">Double Room</cell>
+                            <cell>&dollar;2,300</cell>
+                            <cell>&dollar;90</cell>
+                            <cell>3.9&percnt;</cell>
+                            <cell>&dollar;2,390</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Single Room</cell>
+                            <cell>&dollar;2,570</cell>
+                            <cell>&dollar;100</cell>
+                            <cell>3.9&percnt;</cell>
+                            <cell>&dollar;2,670</cell>
+                        </row>
+                        <row>
+                            <cell cols="5" rend="indent2">Twelve Month Rate:</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Single Room</cell>
+                            <cell>&dollar;3,650</cell>
+                            <cell>&dollar;140</cell>
+                            <cell>3.8&percnt;</cell>
+                            <cell>&dollar;3,790</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">Hereford College</hi></cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Double Room</cell>
+                            <cell>&dollar;2,410</cell>
+                            <cell>&dollar;90</cell>
+                            <cell>3.7&percnt;</cell>
+                            <cell>&dollar;2,500</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Single Room</cell>
+                            <cell>&dollar;2,530</cell>
+                            <cell>&dollar;100</cell>
+                            <cell>3.9&percnt;</cell>
+                            <cell>&dollar;2,630</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">French House</hi></cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Triple Room</cell>
+                            <cell>&dollar;2,180</cell>
+                            <cell>&dollar;80</cell>
+                            <cell>3.7&percnt;</cell>
+                            <cell>&dollar;2,260</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Double Room</cell>
+                            <cell>&dollar;2,300</cell>
+                            <cell>&dollar;90</cell>
+                            <cell>3.9&percnt;</cell>
+                            <cell>&dollar;2,390</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Single Room</cell>
+                            <cell>&dollar;2,620</cell>
+                            <cell>&dollar;100</cell>
+                            <cell>3.8&percnt;</cell>
+                            <cell>&dollar;2,720</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">German House</hi></cell>
+
+                        </row>
+                        <row>
+                            <cell rend="indent">Single Room</cell>
+                            <cell>&dollar;2,340</cell>
+                            <cell>&dollar;90</cell>
+                            <cell>3.8&percnt;</cell>
+                            <cell>&dollar;2,430</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">Russia House</hi></cell>
+                          </row>
+                        <row>
+                            <cell rend="indent">Double Room</cell>
+                            <cell>&dollar;2,220</cell>
+                            <cell>&dollar;80</cell>
+                            <cell>3.6&percnt;</cell>
+                            <cell>&dollar;2,300</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Single Room</cell>
+                            <cell>&dollar;2,560</cell>
+                            <cell>&dollar;100</cell>
+                            <cell>3.9&percnt;</cell>
+                            <cell>&dollar;2,660</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">Spanish House</hi></cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Double Room</cell>
+                            <cell>&dollar;2,340</cell>
+                            <cell>&dollar;90</cell>
+                            <cell>3.8&percnt;</cell>
+                            <cell>&dollar;2,430</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Single Room</cell>
+                            <cell>&dollar;2,620</cell>
+                            <cell>&dollar;100</cell>
+                            <cell>.8&percnt;</cell>
+                            <cell>&dollar;2,720</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"/>
+                        </row>
+                        
+                        <row>
+                            <cell cols="5"><hi rend="bold">APARTMENTS - SINGLE STUDENT</hi></cell>
+                        </row>
+                        <row>
+                            <cell cols="5"/>
+                        </row>
+                        
+                        <row>
+                            <cell cols="5"><hi rend="bold">Copeley Hill III, IV,<lb/>Lambeth
+                                Field</hi></cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Two Bedroom (double<lb/>&emsp;occupancy)</cell>
+                            <cell>&dollar;2,330</cell>
+                            <cell>&dollar;90</cell>
+                            <cell>3.9&percnt;</cell>
+                            <cell>&dollar;2,420</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Three Bedroom (double<lb/>&emsp;occupancy)</cell>
+                            <cell>&dollar;2,240</cell>
+                            <cell>&dollar;80</cell>
+                            <cell>3.6&percnt;</cell>
+                            <cell>&dollar;2,320</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">Bice House</hi></cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Two Bedroom (double<lb/>&emsp;occupancy)</cell>
+                            <cell>&dollar;2,330</cell>
+                            <cell>&dollar;90</cell>
+                            <cell>3.8&percnt;</cell>
+                            <cell>&dollar;2,420</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Three Bedroom (double<lb/>&emsp;occupancy)</cell>
+                            <cell>&dollar;2,240</cell>
+                            <cell>&dollar;80</cell>
+                            <cell>3.6&percnt;</cell>
+                            <cell>&dollar;2,320</cell>
+                        </row>
+                    </table>
+                    <pb n="3"/>
+                    <table rows="22" cols="5">
+                        <row>
+                            <cell role="label" cols="5">Room Rent</cell>
+                        </row>
+                        <row>
+                            <cell role="label">Facility</cell>
+                            <cell role="label">Actual<lb/>1999-2000<lb/>Per Student<lb/>Per
+                                Session</cell>
+                            <cell role="label">Amount of<lb/>Increase</cell>
+                            <cell role="label">Percentage<lb/>Increase</cell>
+                            <cell role="label"><lb/>Proposed <lb/>2000-2001<lb/>Per Student<lb/>Per
+                                Session</cell>
+                        </row>
+
+                        <row>
+                            <cell cols="5"><hi rend="bold">Faulkner (Hench, Mitchell,<lb/>Younger)</hi></cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Single</cell>
+                            <cell>&dollar;2,610</cell>
+                            <cell>&dollar;100</cell>
+                            <cell>3.8&percnt;</cell>
+                            <cell>&dollar;2,710</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Large Single</cell>
+                            <cell>&dollar;3,200</cell>
+                            <cell>&dollar;120</cell>
+                            <cell>3.7&percnt;</cell>
+                            <cell>&dollar;3,320</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">APARTMENTS - FAMILY (per month)</hi></cell>
+                         </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">Copeley Hill I &amp; II</hi></cell>
+                         </row>
+                        <row>
+                            <cell rend="indent">One Bedroom (furnished)</cell>
+                            <cell>&dollar;497</cell>
+                            <cell>&dollar;19</cell>
+                            <cell>3.8&percnt;</cell>
+                            <cell>&dollar;516</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">One Bedroom (unfurnished)</cell>
+                            <cell>&dollar;471</cell>
+                            <cell>&dollar;17</cell>
+                            <cell>3.6&percnt;</cell>
+                            <cell>&dollar;488</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Two Bedroom (furnished)</cell>
+                            <cell>&dollar;548</cell>
+                            <cell>&dollar;21</cell>
+                            <cell>3.8&percnt;</cell>
+                            <cell>&dollar;569</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Two Bedroom (unfurnished)</cell>
+                            <cell>&dollar;521</cell>
+                            <cell>&dollar;20 </cell>
+                            <cell>3.8&percnt;</cell>
+                            <cell>&dollar;541</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Three Bedroom (furnished)</cell>
+                            <cell>&dollar;594</cell>
+                            <cell>&dollar;23</cell>
+                            <cell>3.9&percnt;</cell>
+                            <cell>&dollar;617</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Three Bedroom (unfurnished)</cell>
+                            <cell>&dollar;568</cell>
+                            <cell>&dollar;21</cell>
+                            <cell>3.7&percnt;</cell>
+                            <cell>&dollar;589</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">University Gardens</hi></cell>
+                          </row>
+                        <row>
+                            <cell rend="indent">One Bedroom (furnished)</cell>
+                            <cell>&dollar;481</cell>
+                            <cell>&dollar;19</cell>
+                            <cell>3.9&percnt;</cell>
+                            <cell>&dollar;500</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">One Bedroom (unfurnished)</cell>
+                            <cell>&dollar;454</cell>
+                            <cell>&dollar;18</cell>
+                            <cell>4.0&percnt;</cell>
+                            <cell>&dollar;472</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Two Bedroom (furnished)</cell>
+                            <cell>&dollar;520 </cell>
+                            <cell>&dollar;20</cell>
+                            <cell>3.8&percnt;</cell>
+                            <cell>&dollar;540</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Two Bedroom (unfurnished)</cell>
+                            <cell>&dollar;493</cell>
+                            <cell>&dollar;19</cell>
+                            <cell>3.8&percnt;</cell>
+                            <cell>&dollar;512</cell>
+                        </row>
+                        <row>
+                            <cell cols="5"><hi rend="bold">Clinch Valley College</hi></cell>
+                          </row>
+                        <row>
+                            <cell rend="indent">McCraray, Crockett,<lb/>Martha Randolph</cell>
+                            <cell>&dollar;2,400</cell>
+                            <cell>&dollar;68</cell>
+                            <cell>2.8&percnt;</cell>
+                            <cell>&dollar;2,468</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Asbury, Thompson,<lb/>Townhouse</cell>
+                            <cell>&dollar;2,774</cell>
+                            <cell>&dollar;78</cell>
+                            <cell>2.8&percnt;</cell>
+                            <cell>&dollar;2,852</cell>
+                        </row>
+                        <row>
+                       <cell cols="5"> 
+                           <list>  
+                         <item><hi rend="underline">Notes:</hi></item>
+                          <item>&bull;&emsp;These rates include utility charges, Cable TV (in
+                            apartments) and Post office box rental.</item>
+                        <item>&bull;&emsp;The furnished apartment rate in Copeley Hill and
+                        University Gardens will go into effect as the units turn over.</item>
+                           </list>
+                       </cell>  
+                        </row>
+                       
+                        </table>
+                    <pb/>
+                    <table>
+                        <row>
+                            <cell role="label" cols="7">MOUNTAIN LAKE BIOLOGICAL STATION RATES</cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell role="label">Actual<lb/>1999</cell>
+                            <cell role="label">Inflation<lb/>Rate</cell>
+                            <cell role="label">Inflation<lb/>Increase</cell>
+                            <cell role="label">Total</cell>
+                            <cell role="label">Proposed<lb/>2000 Rate</cell>
+                            <cell role="label">Percent Increase</cell>
+                        </row>
+                        <row>
+                            <cell cols="7">*BOARD RATES PER TERM (4 weeks)</cell>
+                        </row>
+                        <row>
+                            <cell>Persons 17 years 4 older</cell>
+                            <cell>&dollar;415.00</cell>
+                            <cell>2.6&percnt;</cell>
+                            <cell>&dollar;10.79</cell>
+                            <cell>&dollar;425.79</cell>
+                            <cell>&dollar;426.00</cell>
+                            <cell>2.65&percnt;</cell>
+                        </row>
+                        <row>
+                            <cell>Persons 10-16 years old</cell>
+                            <cell>&dollar;223.00</cell>
+                            <cell>2.6&percnt;</cell>
+                            <cell>&dollar;5.80</cell>
+                            <cell>&dollar;228.80</cell>
+                            <cell>&dollar;229.00</cell>
+                            <cell>2.69&percnt;</cell>
+                        </row>
+                        <row>
+                            <cell>Persons 9 yrs 6 younger</cell>
+                            <cell>&dollar;138.00</cell>
+                            <cell>2.6&percnt;</cell>
+                            <cell>&dollar;3.59</cell>
+                            <cell>&dollar;141.59</cell>
+                            <cell>&dollar;142.00</cell>
+                            <cell>2.90&percnt;</cell>
+                        </row>
+                        <row>
+                            <cell cols="7">*SUMMER HOUSING RATES PER TERM(4 weeks)</cell>
+                        </row>
+                        <row>
+                            <cell>CABINS</cell>
+                            <cell>&dollar;158.00</cell>
+                            <cell>2.6&percnt;</cell>
+                            <cell>&dollar;4.11</cell>
+                            <cell>&dollar;162.11</cell>
+                            <cell>&dollar;162.00</cell>
+                            <cell>2.53&percnt;</cell>
+                        </row>
+                        <row>
+                            <cell>LAING APTS</cell>
+                            <cell>&dollar;121.00</cell>
+                            <cell>2.6&percnt;</cell>
+                            <cell>&dollar;3.15</cell>
+                            <cell>&dollar;124.15</cell>
+                            <cell>&dollar;124.00</cell>
+                            <cell><unclear id="u1">2.49&percnt; </unclear></cell>
+                        </row>
+                        <row>
+                            <cell>DORM/SINGLES</cell>
+                            <cell>&dollar;86.00</cell>
+                            <cell>2.6&percnt;</cell>
+                            <cell>&dollar;2.24</cell>
+                            <cell>&dollar;88.24</cell>
+                            <cell>&dollar;88.00</cell>
+                            <cell>2.33&percnt;</cell>
+                        </row>
+                        <row>
+                            <cell cols="7">NEW DORM:</cell>
+                         </row>
+                        <row>
+                            <cell rend="indent">Apts (2 rooms)</cell>
+                            <cell>&dollar;138.00</cell>
+                            <cell>2.6&percnt;</cell>
+                            <cell>&dollar;3.59</cell>
+                            <cell>&dollar;141.59</cell>
+                            <cell>&dollar;142.00</cell>
+                            <cell>2.90&percnt;</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">2nd bedroom (family)</cell>
+                            <cell>&dollar;44.00</cell>
+                            <cell>2.6&percnt;</cell>
+                            <cell>&dollar;1.14</cell>
+                            <cell>&dollar;45.14</cell>
+                            <cell>&dollar;45.00</cell>
+                            <cell>2.27&percnt;</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">singles</cell>
+                            <cell>&dollar;98.00</cell>
+                            <cell>2.6&percnt;</cell>
+                            <cell>&dollar;2.55</cell>
+                            <cell>&dollar;100.55</cell>
+                            <cell>&dollar;101.00</cell>
+                            <cell>3.06&percnt;</cell>
+                        </row>
+                        <row>
+                            <cell cols="7">OFF SEASON RATES<lb/>Singles/Guests:</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Night</cell>
+                            <cell>&dollar;10.00</cell>
+                            <cell>2.6&percnt;</cell>
+                            <cell>&dollar;0.26 </cell>
+                            <cell>&dollar;10.26</cell>
+                            <cell>&dollar;10.00</cell>
+                            <cell>0.00&percnt;</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Week</cell>
+                            <cell>&dollar;46.00</cell>
+                            <cell>2.6&percnt;</cell>
+                            <cell>&dollar;1.20</cell>
+                            <cell>&dollar;47.20</cell>
+                            <cell>&dollar;50.00</cell>
+                            <cell>8.70&percnt;</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Month</cell>
+                            <cell>&dollar;184.00</cell>
+                            <cell>2.6&percnt;</cell>
+                            <cell>&dollar;4.78</cell>
+                            <cell>&dollar;158.78</cell>
+                            <cell>&dollar;200.00</cell>
+                            <cell>8.70&percnt;</cell>
+                        </row>
+                        <row>
+                            <cell cols="7">Family:</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Night</cell>
+                            <cell>&dollar;13.00</cell>
+                            <cell>2.6&percnt;</cell>
+                            <cell>&dollar;0.34</cell>
+                            <cell>&dollar;13.34</cell>
+                            <cell>&dollar;13.50</cell>
+                            <cell>3.85&percnt;</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Week</cell>
+                            <cell>&dollar;65.00</cell>
+                            <cell>2.6&percnt;</cell>
+                            <cell>&dollar;1.69</cell>
+                            <cell>&dollar;66.69</cell>
+                            <cell>&dollar;367.50</cell>
+                            <cell>3.05&percnt;</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Month</cell>
+                            <cell>&dollar;260.00</cell>
+                            <cell>2.6&percnt;</cell>
+                            <cell>&dollar;6.76</cell>
+                            <cell>&dollar;266.76</cell>
+                            <cell>&dollar;270.00</cell>
+                            <cell>3.85&percnt;</cell>
+                        </row>
+                        <row>
+                            <cell cols="7">GROUP USE FEES (OFF-SEASON)</cell>
+                        </row>
+                        <row>
+                            <cell rend="indent">Classroom/day</cell>
+                            <cell>&dollar;25.00 </cell>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell rend="indent">Dining Hall/day</cell>
+                            <cell>&dollar;50.00</cell>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell rend="indent">New Dorm Kitchen/day</cell>
+                            <cell>&dollar;25.00</cell>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell rend="indent">Auditorium/day</cell>
+                            <cell>&dollar;25.00</cell>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell rend="indent">Pavilion only</cell>
+                            <cell>No charge</cell>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                            <cell/>
+                        </row>
+                         <row>
+                            <cell cols="7">
+                                <list>
+                                    <item><hi rend="underline">Notes:</hi></item>
+                        <item>&bull; New Summer Term is 4 Weeks. 1999 figures reflect 4/5" adjustment.</item>
+                                <item><hi rend="underline">Cabins</hi>:&emsp;Hariot. Leconte,
+                                    Catesby, Banister, Cattinger, Holbrook, Mitchell, Maphis,
+                                    Schoew, Rafinesqus, Michaux, Sums, Clayton, Hentz-Mohr and
+                                    Nashington. <hi rend="underline">Laing
+                                    Apartments</hi>:&emsp;Laing South, North, Center, Northwest and
+                                    West <hi rend="underline">Dorms/Singles</hi>:&emsp;Chapman,
+                                    Elliott, DeSchweinitz, Audubon, Laing Singles, Laundry and other
+                                    cottages when used as dorms.</item>
+                                </list>
+                            </cell>
+                             </row>
+                    </table>
+                </div2>
+            </div1>
+            <div1 type="resolution" id="d31">
+                <head type="main">APPROVAL OF SUMMARY OF AUDIT FINDINGS</head>
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that the Summary of Audit Findings for the period September 1, 1999
+                    through December 31, 1999, as presented by the Director of Audits, is approved
+                    as recommended by the Audit Committee. </p>
+            </div1>
+            <div1 type="resolution" id="d32">
+                <head type="main">APPROVAL OF SUMMARY OF AUDIT FINDINGS </head>
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that the Summary of Audit Findings for the period <dateRange
+                        from="1999-09-01" to="1999-12-31">September 1, 1999 through December 31,
+                        1999</dateRange>, as presented by the Director of Audits, is approved as
+                    recommended by the Audit Committee. </p>
+            </div1>
+            <div1 type="resolution" id="d33">
+                <head type="main">APPROVAL TO RENAME THE DIVISION OF CONTINUING EDUCATION THE SCHOOL
+                    OF CONTINUING AND PROFESSIONAL STUDIES</head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, the Division of Continuing Education was designated as a School of the
+                    University from 1961 until 1977; and</p>
+                <p>WHEREAS, the Board of Visitors adopted its present name in 1977; and </p>
+                <p>WHEREAS, the Division of Continuing Education has been a credit-granting unit of
+                    the University for many years and, as a result of action by the Board of
+                    Visitors in 1999, is now authorized to award the degree of Bachelor of
+                    Interdisciplinary Studies (BIS); and </p>
+                <p>WHEREAS, it is appropriate to recognize the credit-granting and degree-granting
+                    status of the Division by redesignating it as a School of the University; and
+                    WHEREAS, redesignating the Division as a School of the University will enhance
+                    the University's role in life-long learning through continuing education and
+                    reaffirm the Board's commitment to educational outreach throughout the
+                    Commonwealth; </p>
+                <p>RESOLVED that the name "Division of Continuing Education" be changed to="School
+                    of Continuing and Professional Studies," effective <date value="2000-02-26"
+                        >February 26, 2000</date>. </p>
+            </div1>
+            <div1 type="resolution" id="d34">
+                <head type="main">RESOLUTION ON FRATERNITIES AND SORORITIES </head>
+
+                <p>The following resolution was adopted:</p>
+                <p>RESOLVED that the Board of Visitors supports the University's fraternities and
+                    sororities and recognizes the importance of their roles in the life of
+                    students;</p>
+                <p>RESOLVED that the Board of Visitors declines to involve itself in the setting of
+                    rush dates unless it is established at a future date that the delay of rush
+                    seriously prejudices the financial stability of fraternities or sororities; </p>
+                <p>RESOLVED that the Board of Visitors affirms the authority of the Administration
+                    to determine the start date of rush for first-year students; </p>
+                <p>RESOLVED FURTHER that the Board of Visitors directs the University administration
+                    to work with the fraternity and sorority leadership to promote the good health
+                    and strength of the fraternity and sorority systems and to report to the Board
+                    at its June meeting of steps taken to strengthen the fraternity and sorority
+                    systems. </p>
+            </div1>
+            <div1 type="report" id="d35">
+                <head type="main">GIFTS, GRANTS, AND CONTRACTS</head>
+                <p>The President made his customary report on gifts, grants, and contracts realized
+                    since the October Board meeting. The report was accepted. </p>
+            </div1>
+            <div1 type="report" id="d36">
+                <head type="main">REPORT ON ACTIONS TAKEN BY THE EXECUTIVE COMMITTEE </head>
+                <p>The Executive Vice President and Chief Operating Officer, <name>Mr.
+                        Sandridge</name>, reported on the following actions taken by the Executive
+                    Committee on <date value="1999-11-17">November 17, 1999</date>, and on <date
+                        value="2000-02-24">February 24, 2000</date>: </p>
+                <div2 type="resolution" id="d37">
+                    <head type="sub">&bull;&emsp;APPROVAL OF MEDICAL CENTER EMPLOYEES SALARY
+                        ADJUSTMENTS (November 17, 1999)</head>
+                    <p>The following resolution was adopted:</p>
+                    <p>WHEREAS, the codified autonomy legislation expanded the Board of Visitors
+                        authority to establish compensation plans; and </p>
+                    <p>WHEREAS, compensation surveys and trend data of salaries paid by area, state
+                        and regional health care and other employers have been conducted and
+                        analyzed; and </p>
+                    <p>WHEREAS, the results of this information support an average salary increase
+                        of 4&percnt;, for Medical Center employees, effective <date
+                            value="2000-01-09">January 9, 2000</date>;</p>
+                    <p> RESOLVED that the performance based salary adjustments of 4&percnt; of
+                        payroll and adjustment of salary ranges by 1&percnt; at the minimum and
+                        3&percnt; at the maximum are approved. </p>
+                </div2>
+                <div2 type="resolution" id="d38">
+                    <head type="main">&bull;&emsp;SALARY RECOMMENDATIONS FOR THE PRESIDENT AND THE
+                        CHANCELLOR OF THE UNIVERSITY OF VIRGINIA'S COLLEGE AT WISE (<date
+                            value="1999-11-17">November 17, 1999</date>) </head>
+                    <p>The following resolution was adopted:</p>
+                    <p>RESOLVED that the Rector and Visitors of the University of Virginia approve
+                        the 1999-2000 salary recommendations for the President of the University of
+                        Virginia and for the Chancellor of The University of Virginia's College at
+                        Wise; </p>
+                    <p>RESOLVED FURTHER that the Rector and Visitors of the University of Virginia
+                        attest to their positive evaluation of the performances of <name>President
+                            John T. Casteen, III, and Chancellor L. Jay Lemons</name>. </p>
+                </div2>
+                <div2 type="resolution" id="d39">
+                    <head type="sub">&bull;&emsp;EXTENSION OF LEASE ON PAVILION IX (<date
+                            value="2000-02-24">February 24, 2000</date>)</head>
+                    <p>The following resolution was adopted:</p>
+                    <p>RESOLVED that the lease on Pavilion IX for <name>Karen van Lengen</name>,
+                        Dean of the School of Architecture, and her family, be extended for one year
+                        from <date value="2000-08-17">August 17, 2000</date>, its present date of
+                        termination, to <date value="2001-08-16">August 16, 2001</date>. </p>
+
+                </div2>
+            </div1>
+            <div1 type="resolution" id="d40">
+                <head type="main">APPROVAL OF THE SALE OF THE WERTLAND STREET PROPERTY </head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, the University wishes to sell real estate at the north end of the U4
+                    Parking Lot, which is located near the intersection of Wertland Street and 14th
+                    Street in Charlottesville, to the Renaissance Investment Corporation; and</p>
+                <p>WHEREAS, the land sale was approved by the Secretary of Administration, as the
+                    Governor's representative, pursuant to Section 2.1-512 and Section 23-4.1 of the
+                    Code of Virginia; </p>
+                <p>RESOLVED that the sale of University property on Wertland Street, as recommended
+                    by the Executive Vice President and Chief Operating Officer, be approved by the
+                    Board of Visitors; and</p>
+                <p>RESOLVED FURTHER that the Executive Vice President and Chief Operating Officer is
+                    authorized to execute any and all contracts or documents pertaining to the sale
+                    of the aforementioned property. </p>
+            </div1>
+            <div1 type="resolution" id="d41">
+                <head type="main">APPROVAL OF THE ACQUISITION OF CITY PROPERTY</head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, the University wishes to purchase from the City of Charlottesville real
+                    estate located on the east side of Emmet Street at the intersection of Emmet
+                    Street and Massie Road in Charlottesville, to support future University growth
+                    and to protect and enhance one of the University's major entrance corridors; and </p>
+                <p>WHEREAS, the land may be acquired through a blanket capital outlay authorization
+                    approved in 1998 by the General Assembly; and </p>
+                <p>WHEREAS, University staff have represented to the Board that all required
+                    internal policies, procedures, guidelines, reviews and approvals have been
+                    complied with in connection with the purchase; and </p>
+                <p>WHEREAS, the City of Charlottesville wants to receive real estate taxes or their
+                    equivalent for the assessed value of the Emmet Street Property; and </p>
+                <p>WHEREAS, the University agrees to add approximately &dollar;1,750 annually to the
+                    base amount the University pays to the City as a voluntary fire services
+                    contribution, which is an amount equivalent to the city tax rate for the Emmet
+                    Street property; and </p>
+                <p>WHEREAS, approval of the acquisition of real estate under 2.1-504.2 of the Code
+                    of Virginia has been delegated to the Board of Visitors; </p>
+                <p>RESOLVED that the Board of Visitors approves the purchase of the property owned
+                    by the City of Charlottesville and located on Emmet Street, for a price not to
+                    exceed the appraised value as determined by an outside independent appraisal,
+                    plus reasonable costs of the transaction. </p>
+                <p>RESOLVED FURTHER that the Executive Vice President and Chief Operating Officer is
+                    authorized to execute any and all contracts or documents pertaining to the
+                    acquisition of the aforementioned property. </p>
+            </div1>
+            <div1 type="resolution" id="d42">
+                <head type="main">APPROVAL TO PURCHASE KIDNEY DIALYSIS UNIT </head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, the University of Virginia intends to expand its kidney dialysis
+                    business to continue and further its mission of clinical care, teaching, and
+                    research; and </p>
+                <p>WHEREAS, there is an opportunity for expansion by the acquisition of an existing
+                    kidney dialysis unit; and </p>
+                <p>WHEREAS, the financial analysis indicates that purchasing the kidney dialysis
+                    unit is economically viable for the University; </p>
+                <p>RESOLVED that the Board of Visitors of the University of Virginia approves the
+                    purchase of the kidney dialysis unit business for a price not to exceed the
+                    appraised value as determined by an outside independent appraisal, plus
+                    reasonable costs of the transaction; </p>
+                <p>RESOLVED FURTHER that the Executive Vice President and Chief Operating Officer,
+                    with the consent of the Chair of the Finance Committee, and in consultation with
+                    the General Counsel, is authorized to negotiate and execute contracts and other
+                    documents pertaining to the acquisition of the aforementioned kidney dialysis
+                    unit. </p>
+            </div1>
+            <div1 type="resolution" id="d43">
+                <head type="main">APPROVAL OF ADDITIONAL SWAP TRANSACTIONS</head>
+                <p>The following resolution was adopted:</p>
+                <p>WHEREAS, it is in the best interest of the University to provide for its officers
+                    to execute and deliver contracts, agreements and other documentation which
+                    relate to its endowment involving selling shares short, option contracts, and/
+                    or swap agreements; and</p>
+                <p>WHEREAS, such contracts and agreements may constitute a borrowing and/or pledge
+                    of securities, assets and rights held by the endowment as authorized by Virginia
+                    Code 23-30.01 with at least two-thirds vote of the Board of Visitors and
+                    approval of the Governor; and</p>
+                <p>WHEREAS on <date value="2000-01-11">January 11, 2000</date>, the Board of
+                    Visitors authorized the execution of a swap agreement under certain terms and
+                    conditions, which was amended by its Resolution of <date value="2000-02-16"
+                        >February 16, 2000</date> in order to extend the time for executing the
+                    contemplated transactions; and</p>
+                <p>WHEREAS, the University of Virginia Investment Management Company has recommended
+                    further authorization to undertake additional swap transactions as hereafter
+                    provided; </p>
+                <p>RESOLVED, subject to the approval of the Governor, the Board of Visitors hereby
+                    approves additional swap transactions with an investment banking firm or
+                    financial institution in order to protect the endowment fund against market
+                    correction, provided that such agreements are executed on or before <date
+                        value="2000-06-30">June 30, 2000</date>, do not exceed a term of more than
+                    one year and shall not affect more than ten stocks held within the University's
+                    venture capital portfolio; </p>
+                <p>RESOLVED FURTHER, The Treasurer of the University of Virginia, or such other
+                    University officer as the Board of Visitors may direct, is authorized to execute
+                    and deliver such related contracts and documents as necessary or advisable to
+                    complete the swap transactions, provided such documents shall not constitute a
+                    pledge of the full faith and credit of the Commonwealth, the University or the
+                    Governor of Virginia. Any such agreements executed by the University Treasurer,
+                    or such other authorized officer, shall be reported to the Board of Visitors at
+                    its next regular meeting. The University shall forthwith seek the approval of
+                    the Governor of Virginia so as to protect the significant gains in the new
+                    technology stocks held in the University's endowment. </p>
+            </div1>
+            <div1 type="resolution" id="d44">
+                <head type="main">FACULTY PERSONNEL ACTIONS </head>
+                <div2 type="resolution" id="d45">
+                    <head type="sub">ELECTIONS</head>
+                    <p>The following resolution was adopted:</p> 
+                            <p>RESOLVED that the following persons are elected to the
+                            faculty:</p>
+                    <list>
+                            <item><name>Mr. Tarek F. Abdelzaher</name> as Assistant Professor of
+                                Computer Science, for three academic years, effective <date
+                                    value="1999-08-25">August 25,1999</date>. </item>
+                            <item><name>Dr. Larry Borish</name> as Associate Professor of Internal
+                                Medicine, for three years, effective <date value="1999-07-01">July
+                                    1, 1999</date>. </item>
+                            <item><name>Mr. Viktor E. Bovbjerg</name> as Assistant Professor of
+                                Health Evaluation Sciences, for three years, effective <date
+                                    value="1999-08-27">August 27, 1999</date>. </item>
+                            <item><name>Mr. Curtis A. Bradley</name> as Visiting Associate Professor
+                                of Law, for one academic year, effective <date value="1999-08-25"
+                                    >August 25,1999</date>. </item>
+                            <item><name>Mr. James E. Casanova</name> as Associate Professor of Cell
+                                Biology, for three years, effective <date value="1999-09-01"
+                                    >September 1, 1999</date>. </item>
+                            <item><name>Dr. Barbara A. Castro</name> as Assistant Professor of
+                                Anesthesiology, for three years, effective <date value="1999-01-08"
+                                    >August 1,1999</date>. </item>
+                            <item><name>Mr. Andrew D. Catling</name> as Assistant Professor of
+                                Research in Microbiology, for one year, effective <date
+                                    value="1999-09-01">September 1, 1999</date>. </item>
+                            <item><name>Dr. Edward G. Chekan</name> as Assistant Professor of
+                                Surgery, for three years, effective <date value="1999-09-01"
+                                    >September 1, 1999</date>. </item>
+                            <item><name>Dr. Meng Chen</name> as Assistant Professor of Research in
+                                Internal Medicine, for two years, effective <date value="1999-09-13"
+                                    >September 13, 1999</date>. </item>
+                            <item><name>Mr. David G. Coleman</name> as Assistant Professor, General
+                                Faculty, for three years, effective <date value="1999-11-24"
+                                    >November 25, 1999</date>. </item>
+                            <item><name>Dr. Catherine B. Custalow</name> as Assistant Professor of
+                                Emergency Medicine, for three years, effective <date
+                                    value="1999-10-15">October 15, 1999</date>. </item>
+                            <item><name>Mr. Joseph E. Davis</name> as Assistant Professor of
+                                Sociology, for one academic year, effective <date value="1999-08-25"
+                                    >August 25,1999</date>. </item>
+                            <item><name>Dr. Allan Doctor</name> as Assistant Professor of
+                                Pediatrics, for three years, effective <date value="1999-09-02"
+                                    >August 2, 1999</date>. </item>
+                            <item><name>Mr. David E. Evans</name> as Assistant Professor of Computer
+                                Science, for three academic years, effective <date
+                                    value="1999-11-15">November 15, 1999</date>. </item>
+                            <item><name>Ms. Jennifer L. Geddes</name> as Research Assistant
+                                Professor of Religious Studies, for one academic year, effective
+                                    <date value="1999-08-25">August 25,1999</date>. </item>
+                            <item><name>Mr. Boris Gelmont</name> as Research Associate Professor of
+                                Electrical Engineering, for three years, effective <date
+                                    value="1999-11-25">November 25, 1999</date>. </item>
+                            <item><name>Ms. Monica M. Gillespie</name> as Assistant Professor of
+                                Education, General Faculty, for one academic year, effective <date
+                                    value="1999-08-25">August 25,1999</date>. </item>
+                            <item><name>Ms. Jiali Gu</name> as Assistant Professor of Research in
+                                Internal Medicine, for two years, effective <date value="1999-09-20"
+                                    >September 20, 1999</date>. </item>
+                            <item><name>Ms. Stephanie A. Guerlain</name> as Assistant Professor of
+                                Systems Engineering, for three academic years, effective <date
+                                    value="1999-08-25">August 25,1999</date>. </item>
+                            <item><name>Mr. Tommy R. Guess</name> as Assistant Professor of
+                                Electrical Engineering, for three academic years, effective <date
+                                    value="1999-08-25">August 25,1999</date>. </item>
+                            <item><name>Ms. Lisa A. Heaton</name> as Assistant Professor of
+                                Education, for one academic year, effective <date value="1999-08-25"
+                                    >August 25,1999</date>. </item>
+                            <item><name>Ms. Catherine C. Hedrick</name> as Assistant Professor of
+                                Internal Medicine, for three years, effective <date
+                                    value="1999-10-25">October 25,1999</date>. </item>
+                            <item><name>Dr. Steven W. Heim</name> as Assistant Professor of Clinical
+                                Family Medicine, for three years, effective <date value="1999-01-08"
+                                    >August 1,1999</date>. </item>
+                            <item><name>Ms. Cheryl B. Henig</name> as Assistant Professor of
+                                Education, General Faculty, for one academic year, effective <date
+                                    value="1999-08-25">August 25,1999</date>. </item>
+                            <item><name>Dr. Christopher P. Holstege</name> as Assistant Professor of
+                                Emergency Medicine, for three years, effective <date
+                                    value="1999-08-15">August 15,1999</date>. </item>
+                            <item><name>Dr. Kathie L. Hullfish</name> as Assistant Professor of
+                                Obstetrics and Gynecology, for three years, effective <date
+                                    value="1999-04-25">October 4,1999</date>. </item>
+                            <item><name>Dr. Gwendolyn V. Kelly</name> as Assistant Professor of
+                                Clinical Obstetrics and Gynecology, for three years, effective <date
+                                    value="1999-01-08">August 1,1999</date>. </item>
+                            <item><name>Mr. Alexander S. Khromov</name> as Assistant Professor of
+                                Research in Molecular Physiology and Biological Physics, for the
+                                period <dateRange from="1999-10-25" to="2000-09-30">October 25, 1999
+                                    through September 30, 2000</dateRange>. </item>
+                            <item><name>Ms. Joan S. Kindig</name> as Assistant Professor, General
+                                Faculty, for one year, effective <date value="1999-08-25">August
+                                    25,1999</date>. </item>
+                            <item><name>Mr. Jack Knight-Scott</name> as Assistant Professor of
+                                Biomedical Engineering, for the period <dateRange from="1999-09-15"
+                                    to="2002-06-25">September 15, 1999 through June 25,
+                                    2002.</dateRange>
+                            </item>
+                            <item><name>Dr. Stilianos E. Kountakis</name> as Associate Professor of
+                                Otolaryngology/Head and Neck Surgery, for three years, effective
+                                    <date value="1999-08-25">August 25,1999</date>. </item>
+                            <item><name>Dr. Christopher M. Kramer</name> as Associate Professor of
+                                Radiology and Associate Professor of Clinical Internal Medicine, for
+                                three years, effective <date value="1999-04-25">October
+                                    4,1999</date>. </item>
+                            <item><name>Mr. James P. Landers</name> as Associate Professor of
+                                Chemistry, for four academic years, effective <date
+                                    value="1999-08-25">August 25,1999</date>. </item>
+                            <item><name>Ms. Deborah Lawrence</name> as Assistant Professor of
+                                Environmental Sciences, for four academic years, effective <date
+                                    value="1999-08-25">August 25,1999</date>. </item>
+                            <item><name>Mr. Jae K. Lee</name> as Assistant Professor of Health
+                                Evaluation Sciences, for three years, effective <date
+                                    value="1999-10-01">October 1,1999</date>. Dr. Keith E.
+                                Littlewood as Associate Professor of Anesthesiology, for three
+                                years, effective <date value="1999-11-25">November 25, 1999</date>. </item>
+                            <item><name>Ms. Clarisa Long</name> as Associate Professor of Law, for
+                                five academic years, effective <date value="1999-08-25">August
+                                    25,1999</date>. </item>
+                            <item><name>Mr. John E. Loschmann</name> as Assistant Professor of
+                                Drama, for four academic years, effective <date value="1999-08-25"
+                                    >August 25,1999</date>. </item>
+                            <item><name>Ms. Despina A. Louca</name> as Assistant Professor of
+                                Physics, for four academic years, effective <date value="1999-08-25"
+                                    >August 25,1999</date>. </item>
+                            <item><name>Ms. Lucy F. Pemberton</name> as Assistant Professor of
+                                Microbiology, for the period October 26, 1999 through October 24,
+                                2000. </item>
+                            <item><name>Mr. Edward Perez-Reyes</name> as Associate Professor of
+                                Pharmacology, effective <date value="1999-09-01">September 1,
+                                    1999</date>. </item>
+                            <item><name>Dr. Dheerendra Prasad</name> as Assistant Professor of
+                                Clinical Neurosurgery, for one year, effective <date
+                                    value="1999-08-25">August 25,1999</date>. </item>
+                            <item><name>Mr. Lee M. Ritterband</name> as Assistant Professor of
+                                Research in Psychiatric Medicine, for one year, effective <date
+                                    value="1999-09-01">September 1, 1999</date>. </item>
+                            <item><name>Dr. Ralph J. Riviello</name> as Assistant Professor of
+                                Emergency Medicine, for three years, effective <date
+                                    value="1999-08-15">August 15,1999</date>. </item>
+                            <item><name>Dr. Habib Samady</name> as Assistant Professor of Internal
+                                Medicine, for three years, effective <date value="1999-07-19">July
+                                    19, 1999</date>. </item>
+                            <item><name>Ms. Lynn M. Sanders</name> as Associate Professor of
+                                Government and Foreign Affairs, for four academic years, effective
+                                    <date value="1999-08-25">August 25,1999</date>. </item>
+                            <item><name>Ms. Emily E. Scida</name> as Assistant Professor of Spanish,
+                                Italian &amp; Portuguese Languages and Literature, for three
+                                academic years, effective <date value="1999-08-25">August
+                                    25,1999</date>. </item>
+                            <item><name>Mr. Kevin Skadron</name> as Assistant Professor of Computer
+                                Science, for three academic years, effective <date
+                                    value="1999-08-25">August 25,1999</date>. </item>
+                            <item><name>Mr. Jeffrey S. Smith</name> as Assistant Professor of
+                                Biochemistry and Molecular Genetics, for three years, effective
+                                    <date value="1999-09-01">September 1, 1999</date>. </item>
+                            <item><name>Mr. Uwe Steiner</name> as Visiting Professor of Germanic
+                                Languages and Literature, for one semester, effective <date
+                                    value="1999-08-25">August 25,1999</date>. </item>
+                            <item><name>Mr. Wolfgang Struck</name> as Visiting Professor of Germanic
+                                Languages and Literature, for the period <dateRange
+                                    from="1999-08-25" to="2000-05-24">August 25, 1999 through May
+                                    24, 2000.</dateRange>
+                            </item>
+                            <item><name>Mr. Peter T. Stukenberg</name> as Assistant Professor of
+                                Biochemistry and Molecular Genetics, for three years, effective
+                                    <date value="1999-11-01">November 1, 1999</date>. </item>
+                            <item><name>Dr. Yoshio Takagaki</name> as Assistant Professor of
+                                Internal Medicine, for three years, effective <date
+                                    value="1999-09-01">September 1, 1999</date>. </item>
+                            <item><name>Mr. Augustine Thompson</name> as Associate Professor of
+                                Religious Studies, effective <date value="1999-08-25">August
+                                    25,1999</date>. </item>
+                            <item><name>Mr. John W. Thornley</name> as Assistant Professor of
+                                Computer Science, for three academic years, effective <date
+                                    value="1999-08-25">August 25,1999</date>. </item>
+                            <item><name>Ms. Alda Vidrich</name> as Associate Professor of Research
+                                in Internal Medicine, for three years, effective <date
+                                    value="1999-11-01">November 1, 1999</date>. </item>
+                            <item><name>Mr. Yeshao Wen</name> as Assistant Professor of Research in
+                                Internal Medicine, for two years, effective <date value="1999-08-30"
+                                    >August 30, 1999</date>. </item>
+                            <item><name>Dr. Mark R. Wick</name> as Professor of Pathology, without
+                                term, and Professor of Dermatology, for five years, effective <date
+                                    value="1999-07-01">July 1, 1999</date>. </item>
+                            <item><name>Dr. Mark E. Williams</name> as Professor of Internal
+                                Medicine, effective <date value="1999-09-01">September 1,
+                                    1999</date>. </item>
+                            <item><name>Mr. David Wotton</name> as Assistant Professor of
+                                Biochemistry, for the period <dateRange from="1999-10-26"
+                                    to="2000-10-24">October 26, 1999 through October 24,
+                                    2000</dateRange>. </item>
+                            <item><name>Dr. Zandong Yang</name> as Assistant Professor of Research
+                                in Internal Medicine, for two years, effective <date
+                                    value="1999-09-13">September 13, 1999</date>. </item>
+                            <item><name>Mr. Sean Xiong Yu</name> as Assistant Professor of Research
+                                in Biochemistry and Molecular Genetics, for three years, effective
+                                    <date value="1999-07-01">July 1, 1999</date>. </item>
+                            <item><name>Mr. Xiaowang Zhou</name> as Research Assistant Professor of
+                                Materials Science and Engineering, for three years, effective
+                                September 25, 1999. </item>
+                        </list>
+                </div2>
+                <div2 type="resolution" id="d46">
+
+                    <head type="sub">ACTIONS RELATING TO CHAIRHOLDERS</head>
+                    <p>The following resolution was adopted:</p>
+                    <p>RESOLVED that the actions relating to the chairholders are approved as shown
+                        below: </p>
+                    <div3 type="section" id="d47">
+                        <head type="sub">(a) Election of Chairholder(s)</head>
+                        <list>
+                            <item><name>Mr. James H. Aylor</name> as Louis T. Rader Professor of
+                                Electrical Engineering, effective <date value="1999-11-25">November
+                                    25, 1999</date>. Mr. Aylor will continue as Professor of
+                                Electrical Engineering, without term. </item>
+                            <item><name>Ms. Barbara M. Brodie</name> as Madge M. Jones Professor of
+                                Nursing, for three academic years, effective <date
+                                    value="1999-07-01">July 1, 1999</date>. <name>Ms. Brodie</name>
+                                will continue as Professor of Nursing, without term. </item>
+                            <item><name>Ms. Anita K. Jones</name> as Lawrence R. Quarles Professor
+                                of Engineering and Applied Science, effective <date
+                                    value="1999-11-25">November 25, 1999</date>. <name>Ms.
+                                    Jones</name> will continue as University Professor and Professor
+                                of Computer Science, without term. </item>
+                            <item><name>Mr. James M. Kauffman</name> as Charles S. Robb Professor of
+                                Education, effective <date value="1999-06-25">June 25, 1999</date>.
+                                    <name>Mr. Kauffman</name> will continue as Professor of
+                                Education, without term. </item>
+                            <item><name>Dr. Jerry L. Nadler</name> as Kenneth R. Crispell Professor
+                                of Internal Medicine and Professor of Internal Medicine, effective
+                                    <date value="1999-08-09">August 9, 1999</date>. </item>
+                            <item><name>Ms. Lisa A. Reilly</name> as Horace W. Goldsmith
+                                Distinguished Teaching Professor in the Humanities, for three years,
+                                effective <date value="1999-08-25">August 25, 1999</date>. <name>Ms.
+                                    Reilly</name> will continue as Associate Professor of
+                                Architecture, without term. </item>
+                            <item><name>Mr. Michael J. Smith</name> as Thomas C. Sorensen Professor
+                                of Political and Social Thought, for three academic years, effective
+                                    <date value="1999-08-25">August 25, 1999</date>. <name>Mr.
+                                    Smith</name> will continue as Associate Professor of Government
+                                and Foreign Affairs, without term. </item>
+                            <item><name>Mr. Christopher H. Stinson</name> as Morris Plan Associate
+                                Professor of Consumer Credit and Associate Professor of Business
+                                Administration, for three academic years, effective <date
+                                    value="1999-08-25">August 25, 1999</date>. </item>
+                            <item><name>Ms. Ann G. Taylor</name> as Betty Norman Norris Professor of
+                                Nursing, for three academic years, effective <date
+                                    value="1999-07-01">July 1, 1999</date>. <name>Ms. Taylor</name>
+                                will continue as Professor of Nursing, without term. </item>
+                            <item><name>Dr. Curtis G. Tribble</name> as Claude A. Jessup Professor
+                                of Surgery, effective <date value="1999-10-01">October 1,
+                                    1999</date>. <name>Dr. Tribble</name> will continue as Professor
+                                of Surgery, without term. </item>
+                            <item><name>Mr. Michael J. Weber</name> as Marion McNulty Weaver and
+                                Malvin C. Weaver Professor of Oncology, effective <date
+                                    value="1997-01-01">January 1, 1997</date>. <name>Mr.
+                                    Weber</name> will continue as Professor of Oncology, without
+                                term. </item>
+                            <item><name>Ms. Maureen R. Weiss</name> as Linda K. Bunker Professor,
+                                effective <date value="1999-08-25">August 25, 1999</date>. <name>Ms.
+                                    Weiss</name> will continue as Professor of Education, without
+                                term. </item>
+
+                        </list>
+                    </div3>
+                    <div3 type="section" id="d48">
+                        <head type="sub">(b) Change of Title of Chairholders</head>
+                        <list>
+                            <item><name>Ms. Annette Gibbs</name> from Linda K. Bunker Professor to
+                                Professor of Education, effective <date value="1999-08-25">August
+                                    25, 1999</date>. </item>
+                            <item><name>Mr. W. Dean Harman</name> from Cavaliers' Distinguished
+                                Teaching Professor to Professor of Chemistry, effective <date
+                                    value="1999-06-25">June 25, 1999</date>. </item>
+                            <item><name>Mr. Lester A. Hoe</name> from Janet Scott Hamilton and John
+                                Dowman Hamilton Professor of Civil Engineering to L.A. Lacy
+                                Distinguished Professor of Engineering, effective <date
+                                    value="1999-11-25">November 25, 1999</date>. </item>
+                        </list>
+                    </div3>
+                    <div3 type="section" id="d49">
+                        <head type="sub">(c) Retirement of Chairholder</head>
+                        <list>
+                            <item><name>Dr. B. Lewis Barnett, Jr.</name>, Walter M. Seward Professor
+                                of Family Medicine, effective <date value="2000-02-01">February 1,
+                                    2000</date>. <name>Dr. Barnett</name> has been a member of the
+                                faculty since 1977. </item>
+                        </list>
+                    </div3>
+                    <div3 type="section" id="d50">
+                        <head>(e) Resignations of Chairholders</head>
+                        <list>
+                            <item><name>Ms. Mary Anne C. Case</name> as Class of 1966 Research
+                                Professor of Law, effective<date value="1999-08-24"> August 24,
+                                    1999</date>, to accept another position. </item>
+                            <item><name>Mr. Paul E. Gold</name> as Commonwealth Professor of
+                                Psychology, effective <date value="1999-05-24">May 24, 1999</date>,
+                                to accept another position. </item>
+                            <item><name>Dr. Robert M. Morse</name> as B. Lewis Barnett, Jr.
+                                Professor of Family Medicine, effective <date value="1999-10-31"
+                                    >October 31, 1999</date>, to accept another position. </item>
+                            <item><name>Dr. William D. Spotnitz</name> as Claude A. Jessup Professor
+                                of Surgery, effective <date value="1999-08-15">August 15,
+                                    1999</date>, to accept another position. </item>
+                        </list>
+                    </div3>
+                </div2>
+                <div2 type="resolution" id="d51">
+                    <head type="sub">PROMOTIONS</head>
+                    <p>The following resolution was adopted: </p>
+                    <p>RESOLVED that the following persons are promoted:</p>
+                    <list>
+                        <item><name>Mr. Joseph P. Allen</name> from Associate Professor of
+                            Psychology to Professor of Psychology, effective <date
+                                value="1999-08-25">August 25, 1999</date>. </item>
+                        <item><name>Dr. Gregory A. Helm</name> from Assistant Professor of
+                            Neurosurgery to Associate Professor of Neurosurgery, for one year,
+                            effective <date value="1999-07-01">July 1, 1999</date>. </item>
+                        <item><name>Ms. Gail Kongable-Beckman</name> from Clinical Assistant
+                            Professor of Neurological Surgery, Virginia Neurological Institute to
+                            Research Associate Professor of Neurological Surgery, Virginia
+                            Neurological Institute, for the period <date value="1999-09-01"
+                                >September 1, 1999</date> through <date value="2000-06-30">June 30,
+                                2000</date>. </item>
+                        <item><name>Ms. Juanita Reigle</name> from Assistant Professor, General
+                            Nursing Faculty, to Associate Professor, General Nursing Faculty, for
+                            one year, effective <date value="2000-06-25">June 25, 2000</date>. </item>
+                        <item><name>Ms. Susan C. Skalak</name> from Assistant Professor of
+                            Mechanical Engineering, to Associate Professor of Mechanical
+                            Engineering, effective <date value="1999-08-25">August 25, 1999</date>. </item>
+                        <item><name>Ms. Deborah A. Verstegen</name> from Associate Professor of
+                            Education to Professor of Education, effective <date value="2000-02-25"
+                                >February 25, 2000</date>.</item>
+                    </list>
+                </div2>
+                <div2 type="resolution" id="d52">
+                    <head type="sub">SPECIAL SALARY ACTIONS - DELETED RESIGNATIONS </head>
+                    <p>The following resignations were announced:</p>
+                    <list>
+                        <item><name>Ms. Sara B. Blair</name>, Associate Professor of English,
+                            effective <date value="1999-05-24">May 24, 1999</date>, to accept
+                            another position. </item>
+                        <item><name>Mr. Michael B. Blank</name>, Assistant Professor, General
+                            Nursing Faculty, effective <date value="1999-10-01">October 1,
+                                1999</date>, to accept another position. </item>
+                        <item><name>Ms. Sarah C. Cargile</name>, Assistant Professor of Nursing,
+                            General Nursing faculty, effective <date value="1999-08-23">August 23,
+                                1999</date>, for personal reasons. </item>
+                        <item><name>Mr. Douglas L. Costa</name>, Professor of Mathematics, effective
+                                <date value="1999-05-24">May 24, 1999</date>, to accept another
+                            position. </item>
+                        <item><name>Ms. Kara M. Dawson</name>, Assistant Professor of Education,
+                                effective<date value="1999-08-02"> August 2, 1999</date>, to accept
+                            another position. </item>
+                        <item><name>Mr. J. Hunter Downs, III</name>, Assistant Professor of Research
+                            in Neurosurgery, Virginia Neurological Institute, effective <date
+                                value="1999-11-03">November 3, 1999</date>, to accept another
+                            position. </item>
+                        <item><name>Dr. David A. Eberhard</name>, Assistant Professor of Research in
+                            Pharmacology, effective <date value="1999-10-15">October 15,
+                            1999</date>, to accept another position. </item>
+                        <item><name>Ms. Wei L. Fang</name>, Associate Professor of Research in
+                            Medical Education, effective <date value="1999-10-31">October 31,
+                                1999</date>, to accept another position. </item>
+                        <item><name>Dr. Michael J. Fisch</name>, Assistant Professor of Internal
+                            Medicine, effective <date value="1999-11-01">November 1, 1999</date>, to
+                            accept another position. </item>
+                        <item><name>Dr. Daniel W. Fort</name>, Assistant Professor of Clinical
+                            Pediatrics, effective <date value="1999-10-15">October 15, 1999</date>,
+                            for personal reasons. </item>
+                        <item><name>Dr. Thomas A. Gardner</name>, Assistant Professor of Research in
+                            Urology, effective <date value="1999-09-30">September 30, 1999</date>,
+                            to accept another position. </item>
+                        <item><name>Mr. John W. Garland</name>, Assistant Professor, General
+                            Faculty, effective <date value="1999-08-12">August 12, 1999</date>, to
+                            accept another position. </item>
+                        <item><name>Ms. Tatiana Globus</name>, Visiting Associate Professor of
+                            Electrical Engineering, effective <date value="1999-11-24">November 24,
+                                1999</date>, to accept another position. </item>
+                        <item><name>Dr. Ming Cui Gong</name>, Assistant Professor of Research in
+                            Molecular Physiology and Biological Physics, effective November 30,
+                            1999, to accept another position. </item>
+                        <item><name>Mr. Gary J. Gorbsk</name>y, Associate Professor of Cell Biology,
+                            effective <date value="1999-09-01">September 1, 1999</date>, to accept
+                            another position. Ms. Catherine A. Hill, Assistant Professor of
+                            Architecture, effective <date value="1999-05-24">May 24, 1999</date>, to
+                            accept another position. </item>
+                        <item><name>Ms. Cheryl B. Jones</name>, Assistant Professor of Nursing,
+                            General Nursing Faculty, effective <date value="2000-01-01">January 1,
+                                2000</date>, to accept another position. </item>
+                        <item><name>Mr. Larry R. Karns</name>, Assistant Professor of Research in
+                            Biomedical Engineering, effective <date value="1999-09-01">September 1,
+                                1999</date>, to accept another position. </item>
+                        <item><name>Dr. George S. Leisure</name>, Associate Professor of
+                            Anesthesiology, effective <date value="1999-09-10">September 10,
+                                1999</date>, to accept another position. </item>
+                        <item><name>Mr. Hong-Bo Lin</name>, Assistant Professor of Research in
+                            Biochemistry and Molecular Genetics, effective <date value="1999-08-25"
+                                >August 25, 1999</date>, to accept another position. </item>
+                        <item><name>Dr. Mark A. Lovell</name>, Associate Professor of Clinical
+                            Pathology and Associate Professor of Clinical Pediatrics, effective
+                                <date value="1999-08-24">August 24, 1999</date>, to accept another
+                            position. </item>
+                        <item><name>Dr. Rajesh K. Malik</name>, Assistant Professor of Pediatrics,
+                            effective <date value="2000-01-10">January 10, 2000</date>, to accept
+                            another position. </item>
+                        <item><name>Dr. Lin Mei</name>, Assistant Professor of Pharmacology,
+                            effective <date value="1999-09-01">September 1, 1999</date>, to accept
+                            another position. </item>
+                        <item><name>Dr. Robert S. Michel</name>, Clinical Associate Professor of
+                            Pediatrics, effective <date value="2000-01-31">January 31, 2000</date>,
+                            to accept another position. </item>
+                        <item><name>Dr. Jeffrey P. Raffensperger</name>, Assistant Professor of
+                            Environmental Sciences, effective <date value="1999-05-24">May 24,
+                                1999</date>, for personal reasons. </item>
+                        <item><name>Dr. Alan D. Rogol</name>, Professor of Pediatrics, effective
+                                <date value="1999-12-01">December 1, 1999</date>, to accept another
+                            position. </item>
+                        <item><name>Ms. Carrie E. Schaffer</name>, Assistant Professor of Clinical
+                            Psychiatric Medicine, effective <date value="1999-10-01">October 1,
+                                1999</date>, to accept another position. </item>
+                        <item><name>Mr. Niholas D. Sidiropoulos</name>, Assistant Professor of
+                            Electrical Engineering, effective <date value="2000-01-09">January 9,
+                                2000</date>, to accept another position.</item>
+                        <item><name>Ms. Cardella D. Stephens</name>, Assistant Librarian, General
+                            Faculty, Alderman Library, effective <date value="1999-12-24">December
+                                24, 1999</date>, to accept another position. </item>
+                        <item><name>Dr. Michael J. Wilkowski</name>, Associate Professor of Internal
+                            Medicine, effective <date value="1999-08-30">August 30, 1999</date>, for
+                            personal reasons.</item>
+                    </list>
+                </div2>
+                <div2 type="resolution" id="d53">
+                    <head type="sub">RETIREMENTS</head>
+                    <p>The following retirements were announced:</p>
+                    <list>
+                        <item><name>Mr. John C. Fletcher</name>, Professor of Biomedical Ethics in
+                            Internal Medicine, effective <date value="1999-08-31">August 31,
+                                1999</date>. Mr. Fletcher has been a member of the faculty since
+                            1987. </item>
+                        <item><name>Mr. Roger A. Rydin</name>, Associate Professor of Nuclear
+                            Engineering, effective <date value="2000-01-09">January 9, 2000</date>.
+                            Mr. Rydin has been a member of the faculty since <date
+                                value="1970-09-01">September 1, 1970</date>. </item>
+                    </list>
+                </div2>
+                <div2 type="resolution" id="d54">
+                    <head type="sub">APPOINTMENTS</head>
+                    <p>The following appointments were announced:</p>
+                    <list>
+                        <item><name>Mr. Julian M. Bivins</name>, Jr. as Assistant Vice President of
+                            Development Services, for three years, effective <date
+                                value="1999-11-25">November 25, 1999</date>. </item>
+                        <item><name>Ms. Elizabeth A. Flanagan</name> as Assistant Vice President and
+                            Director of Individual and Planned Gifts, for three years, effective
+                                <date value="1998-01-25">January 25, 1998</date>. </item>
+                        <item><name>Mr. Robert D. Hardie</name> as Staff Assistant to the Executive
+                            Vice President and Chief Operating Officer, for one year, effective
+                                <date value="1999-09-01">September 1, 1999</date>. </item>
+                        <item><name>Ms. Margaret G. Klosko</name> as Assistant to the President, for
+                            five years, effective <date value="1999-08-09">August 9, 1999</date>.
+                        </item>
+                    </list>
+                </div2>
+                <div2 type="resolution" id="d55">
+                    <head type="sub">RE-APPOINTMENTS </head>
+                    <p>The following re-appointments were announced:</p>
+                    <list>
+                        <item><name>Mr. Staige D. Blackford</name> as Editor, Virginia Quarterly
+                            Review, for three years, effective <date value="1999-07-01">July 1,
+                                1999</date>. </item>
+                        <item><name>Mr. David W. Breneman</name> as Dean, Curry School of Education,
+                            for five years, effective <date value="2000-07-01">7/1/00</date>. </item>
+                        <item><name>Mr. Charles T. Gillet</name> as Assistant Vice President for
+                            Finance, for three years, effective <date value="1999-10-01">October 1,
+                                1999</date>. </item>
+                        <item><name>Ms. Laura F. Hawthorne</name> as Coordinator for Public Service
+                            Programs, for three years, effective <date value="1999-09-01">September
+                                1, 1999</date>. </item>
+                        <item><name>Mr. David J. Hudson</name> as Associate Vice Provost for
+                            Research, for three years, effective <date value="1999-10-25">October
+                                25, 1999</date>. </item>
+                        <item><name>Ms. Barbara Nolan</name> as Vice Provost for Instructional
+                            Development and Innovation, for two years, effective <date
+                                value="1999-07-01">July 1, 1999</date>. </item>
+                        <item><name>Ms. E. Clorisa Phillips</name> as Director, Special Projects,
+                            for three years, effective <date value="1999-09-25">September 25,
+                                1999</date>. </item>
+                        <item><name>Ms. Nancy A. Rivers</name> as Assistant to the Vice President
+                            for Management and Budget, for three years, effective <date
+                                value="1999-08-26">August 26, 1999</date>. </item>
+                        <item><name>Ms. Deborah A. Ryan</name> as Head Coach, Women's Basketball,
+                            for one year, effective <date value="1999-06-25">June 25, 1999</date>. </item>
+                        <item><name>Mr. Keith D. VanDerbeek</name> as Associate Athletic Director,
+                            Business Operations, for one year, effective <date value="1999-06-25"
+                                >June 25, 1999</date>. </item>
+                    </list>
+                </div2>
+                <div2 type="resolution" id="d56">
+                    <head type="sub">ELECTION OF PROFESSORS EMERITI </head>
+                    <p>The following resolution was adopted:</p>
+                    <p>RESOLVED that the following persons are elected Professor Emeritus: </p>
+                    <list>
+                        <item><name>Dr. B. Lewis Barnett, Jr.</name>, Walter M. Seward Professor of
+                            Family Medicine, effective <date value="2000-02-01">February 1,
+                                2000</date>. </item>
+                        <item><name>Mr. John C. Fletcher</name>, Professor of Biomedical Ethics in
+                            Internal Medicine, effective <date value="1999-08-31">August 31,
+                                1999</date>. </item>
+                    </list>
+                </div2>
+                <div2 type="resolution" id="d57">
+                    <head type="sub">ELECTION OF ASSOCIATE PROFESSOR EMERITUS </head>
+                    <p>The following resolution was adopted: </p>
+                    <p>RESOLVED that the following person is elected Associate Professor Emeritus: </p>
+                    <list>
+                        <item><name>Mr. Roger A. Rydin</name>, Associate Professor of Nuclear
+                            Engineering, effective <date value="2000-01-09">January 9, 2000</date>.
+                        </item>
+                    </list>
+                </div2>
+                <div2 type="announcement" id="d58">
+                    <head type="sub">DEATH </head>
+                    <p><name>Mr. Thaddeus Braxton Woody</name>, Professor Emeritus of French, died
+                            <date value="2000-01-09">January 9, 2000</date>. <name>Mr. Woody</name>
+                        was a member of the faculty from 1928 until his retirement, effective <date
+                            value="1971-07-30">June 30, 1971</date>. </p>
+                </div2>
+                <div2 type="resolution" id="d59">
+                    <head type="sub">CHANGE IN THE RETIREMENT OF <name>MR. J. CHRISTOPHER
+                            CROCKER</name></head>
+                    <p>The retirement of <name>Mr. J. Christopher Crocker</name>, Professor of
+                        Anthropology, effective <date value="1999-05-24">May 24, 1999</date>, as
+                        shown in the Minutes of the meeting of <date value="1999-03-27">March 27,
+                            1999</date>, was changed to read as follows:</p>
+                    <list>
+                        <item><name>Mr. J. Christopher Crocker</name>, Professor of Anthropology,
+                            effective November 24, 1999. </item>
+                    </list>
+                </div2>
+                <div2 type="resolution" id="d60">
+                    <head type="sub">CHANGE IN THE ELECTION OF PROFESSOR EMERITUS OF MR. J.
+                        CHRISTOPHER CROCKER </head>
+                    <p>The following resolution was adopted:</p>
+
+                    <p>RESOLVED that the election of <name>Mr. J. Christopher Crocker</name>,
+                        Professor of Anthropology, effective <date value="1999-05-24">May 24,
+                            1999</date>, as shown in the Minutes of the meeting of <date
+                            value="1999-03-27">March 27, 1999</date>, be changed to read as
+                        follows:</p>
+                    <list>
+                        <item><name>Mr. J. Christopher Crocker</name>, Professor of Anthropology,
+                            effective November 24, 1999.</item>
+                    </list>
+                </div2>
+                <div2 type="resolution" id="d61">
+                    <head type="sub">CHANGE IN THE ELECTION OF <name>MS. SARAH E.
+                        HARRELL</name></head>
+                    <p>The following resolution was adopted: </p>
+                    <p>RESOLVED that the election of <name>Ms. Sarah E. Harrell</name> as Visiting
+                        Assistant Professor of Classics, for one academic year, effective <date
+                            value="1999-08-25">August 25, 1999</date>, as shown in the Minutes of
+                        the meeting of <date value="1999-10-16">October 16, 1999</date>, be changed
+                        to read as follows:</p>
+                    <list>
+                        <item><name>Ms. Sarah E. Harrell</name> as Lecturer, General Faculty, for
+                            one academic year, effective <date value="1999-08-25">August 25,
+                                1999</date>. </item>
+                    </list>
+                </div2>
+                <div2 type="resolution" id="d62">
+                    <head type="sub">CHANGE IN THE ELECTION OF <name>MS. SEPIDEH
+                            KHORASANIZADEH</name></head>
+                    <p>The following resolution was adopted:</p>
+                    <p>RESOLVED that the election of <name>Ms. Sepideh Khorasanizadeh</name> as
+                        Assistant Professor of Biochemistry and Molecular Genetics, for three years,
+                        effective <date value="1999-07-01">July 1, 1999</date>, as shown in the
+                        Minutes of the Meeting of <date value="1999-10-16">October 16, 1999</date>,
+                        be changed to read as follows:</p>
+                    <list>
+                        <item><name>Ms. Sepideh Khorasanizadeh</name> as Assistant Professor of
+                            Biochemistry and Molecular Genetics, for the period of <date
+                                value="1999-07-01">July 1, 1999</date> through <date
+                                value="2000-07-11">July 11, 2000</date>. </item>
+                    </list>
+                </div2>
+                <div2 type="resolution" id="d63">
+                    <head type="sub">CHANGE IN THE ELECTION OF <name>MR. DYLAN C. PENNINGROTH</name>
+                    </head>
+                    <p>The following resolution was adopted:</p>
+                    <p>RESOLVED that the election of <name>Mr. Dylan C. Penningroth</name> as
+                        Assistant Professor of History, for one academic year, effective <date
+                            value="1999-08-25">August 25, 1999</date>, as shown in the Minutes of
+                        the meeting of <date value="1999-10-16">October 16, 1999</date>, be changed
+                        to read as follows: </p>
+                    <list>
+                        <item><name>Mr. Dylan C. Penningroth</name> as Assistant Professor of
+                            History, for four academic years, effective <date value="1999-08-25"
+                                >August 25, 1999</date>. </item>
+                    </list>
+                </div2>
+                <div2 type="resolution" id="d64">
+                    <head type="sub">CHANGE IN THE ELECTION OF <name>MS. KAREN VAN
+                        LENGEN</name></head>
+                    <p>The following resolution was adopted:</p>
+                    <p>RESOLVED that the election of <name>Ms. Karen Van Lengen</name> as Edward E.
+                        Elson Professor of Architecture, effective <date value="1999-06-25">June 25,
+                            1999</date>, as shown in the Minutes of the meeting of <date
+                            value="1999-05-15">May 15, 1999</date>, be changed to read as follows: </p>
+                    <list>
+                        <item><name>Ms. Karen Van Lengen</name> as Edward E. Elson Professor of
+                            Architecture, effective <date value="1999-06-25">June 25, 1999</date>.
+                        </item>
+                    </list>
+                </div2>
+                <div2 type="resolution" id="d65">
+                    <head type="sub">RE-ELECTION OF <name>PETER W. LOW</name> AS VICE PRESIDENT AND
+                        PROVOST </head>
+                    <p>The following resolution was adopted:</p>
+                    <p>RESOLVED that <name>Peter W. Low</name> is re-elected as Vice President and
+                        Provost, for two years, effective <date value="1999-07-01">July 1,
+                            1999</date>. </p>
+                </div2>
+            </div1>
+            <div1 type="section" id="d66">
+                <head type="main">THE UNIVERSITY OF VIRGINIA'S COLLEGE AT WISE</head>
+                <div2 type="resolution" id="d67">
+                    <head type="sub">ELECTIONS </head>
+                    <p>The following resolution was adopted:</p>
+                    <list>
+                            <item><name>Mr. Kylo-Patrick R. Hart</name> as Assistant Professor of
+                                Mass Communication, The University of Virginia's College at Wise,
+                                for two academic years, effective <date value="1999-08-25">August
+                                    25, 1999</date>.</item>
+                            <item><name>Mr. Donald R. Hill</name> as Assistant Professor of
+                                Accounting, The University of Virginia's College at Wise, for two
+                                academic years, effective <date value="1999-08-25">August 25,
+                                    1999</date>. </item>
+                            <item><name>Mr. James E. Horton</name> as Assistant Professor of
+                                Psychology, The University of Virginia's College at Wise, for two
+                                academic years, effective <date value="1999-08-25">August 25,
+                                    1999</date>. </item>
+                            <item><name>Mr. George W. Moss</name> as Assistant Professor of
+                                Mathematics, The University of Virginia's College at Wise, for two
+                                academic years, effective <date value="1999-08-25">August 25,
+                                    1999</date>. </item>
+                            <item><name>Ms. Mary Kelly Persyn</name> as Assistant Professor of
+                                English, The University of Virginia's College at Wise, for two
+                                academic years, effective <date value="1999-08-25">August 25,
+                                    1999</date>. </item>
+                            <item><name>Ms. Cynthia L. Wilkey</name> as Assistant Professor of
+                                History, The University of Virginia's College at Wise, for two
+                                academic years, effective <date value="1999-08-25">August 25,
+                                    1999</date>. </item>
+                        </list>
+                </div2>
+                <div2 type="resolution" id="d68">
+                    <head type="sub">RESIGNATION</head>
+                    <p>The following resignation was announced:</p>
+                    <list>
+                            <item><name>Mr. Robert D. VanGundy</name>, Assistant Professor of
+                                Physics and Earth Science, The University of Virginia's College at
+                                Wise, effective <date value="1999-05-24">May 24, 1999</date>, to
+                                accept another position. </item>
+                        </list>
+                </div2>
+            </div1>
+            <div1 type="section" id="d69">
+                <p>The Rector noted Mr. Small's retirement from the Board on the expiration of his
+                    term, and thanked him for his service and for his contributions to the Board and
+                    to the life of the University. On motion, the meeting was adjourned at 4:40 p.m. </p>
+
+                <signed>Respectfully submitted, <lb/>
+                    <name>Alexander G. Gilliam</name>, Jr. Secretary </signed>
+                <epigraph>
+                    <p>AGG:jb </p>
+                </epigraph>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

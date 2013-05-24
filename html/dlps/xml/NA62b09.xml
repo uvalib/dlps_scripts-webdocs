@@ -1,0 +1,370 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0063 SYSTEM "000000766_0063" NDATA jpg>
+<!ENTITY DSSR_000000766_0064 SYSTEM "000000766_0064" NDATA jpg>
+<!ENTITY DSSR_000000766_0065 SYSTEM "000000766_0065" NDATA jpg>
+<!ENTITY DSSR_000000766_0066 SYSTEM "000000766_0066" NDATA jpg>
+<!ENTITY DSSR_000000766_0067 SYSTEM "000000766_0067" NDATA jpg>
+<!ENTITY DSSR_000000766_0068 SYSTEM "000000766_0068" NDATA jpg>
+<!ENTITY DSSR_000000766_0069 SYSTEM "000000766_0069" NDATA jpg>
+<!ENTITY DSSR_000000766_0070 SYSTEM "000000766_0070" NDATA jpg>
+
+<!--<!ENTITY NA62b09a SYSTEM "NA62b09a.jpg" NDATA jpg>
+<!ENTITY NA62b09b SYSTEM "NA62b09b.jpg" NDATA jpg>
+<!ENTITY NA62b09c SYSTEM "NA62b09c.jpg" NDATA jpg>
+<!ENTITY NA62b09d SYSTEM "NA62b09d.jpg" NDATA jpg>
+<!ENTITY NA62b09e SYSTEM "NA62b09e.jpg" NDATA jpg>
+<!ENTITY NA62b09f SYSTEM "NA62b09f.jpg" NDATA jpg>
+<!ENTITY NA62b09g SYSTEM "NA62b09g.jpg" NDATA jpg>
+<!ENTITY NA62b09h SYSTEM "NA62b09h.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NA62b09">
+    <teiHeader type="migrated">
+        <!-- todo -->
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-02-09">9 February 1862</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>David Seaman</name>
+                    <resp>Creation of digital images:</resp>
+                    <name>University of Virginia Library Electronic Text Center</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>ETC</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">21</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62b09</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p>Publicly accessible</p>
+                    <p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>
+                    <p>copyright 2005, by the Rector and Visitors of the University of Virginia</p>
+                </availability>
+                <date value="2001">2001</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Illustrations have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, 9 February 1862</title>
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>8 pages</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p> </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>
+                        <title>Library of Congress Subject Headings</title>
+                    </bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-02-09">1862-02-09</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Special Collections</term>
+                </keywords>
+                <keywords scheme="LCSH">
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-03">November 3rd, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>8 pp.</extent>
+                        <date value="1862-02-09">February 09, 1862</date>
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+                <p/>
+            </div1>
+        </front>
+
+        <body id="d4">
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-02-09">9
+                        February 1862</date></head>
+
+                <pb entity="DSSR_000000766_0063" n="1"/>
+                <opener>
+
+                    <dateline>
+                        <name type="place">Mecca</name>
+                        <date value="1862-02-09">February 9th 1862</date>
+                    </dateline>
+                    <lb/>
+                    <salute>
+                        <hi rend="underline">My Darling</hi>
+                    </salute>
+                </opener>
+
+                <p>"<unclear>Grays</unclear> Ohio is deficient<lb/> in paper mills" will be the<lb/>
+                    first exclamation which passes<lb/> Charlies's lips on the receival<lb/> of
+                    this. I did not<unclear>know</unclear><lb/> that I was so<unclear>very</unclear>
+                    destitute<lb/> of paper until I went to<lb/> my desk and lo!<unclear/><unclear/><lb/>
+                    <unclear/> sheet was to be found<lb/> but I feel lonesome and thought<lb/> I
+                    would resort to some remedy<lb/> The best one I have know of, or the<lb/>
+                    <pb entity="DSSR_000000766_0064" n="2"/> 
+                    best one within my reach is this<lb/> one. Your "good works" of the
+                    26th &amp;<lb/> 2<unclear>8</unclear>th arrived the same day, friday.<lb/>
+                    It is<unclear>almost</unclear> useless to tell you they<lb/> were joyfully
+                    received for that would not<lb/> expess one<unclear>tenth</unclear> part of my
+                    feelings.</p>
+                <p>I do not think I suffer<hi rend="underline">needlessly</hi><lb/> on you account
+                    for it you knew<lb/> my heart and knew how I<hi rend="underline">love</hi><lb/>
+                    the image<unclear>engraved</unclear> there you would<lb/>
+                    <add place="inline" hand="h1">not</add> wonder at my anxiety for your
+                    safety<lb/> How happy I am darling in this<lb/> new love, reciprocated with so
+                    much<lb/> tenderness and devotion. But my<lb/> mind is wandering from the
+                    answer<lb/> to your letter.</p>
+
+                <p>Charlie your "abrupt question"<lb/> seemed but an echo to one I have<lb/> often
+                    asked myself in reference to<lb/> you and that it this How did the<lb/> noble
+                    Charlie Tenney ever chance to<lb/> love such a little country rustic<lb/> like
+                    myself. The only answer that I<lb/> can give is that you were so<lb/> good I
+                    could not help but love you<lb/> The only difficulty I could find was that it
+                    was too easy.<lb/> I am not ashamed of you far<lb/> from it. I am proud of my
+                    darling.<lb/> You seem to be quite discontented<lb/> with your<unclear/>
+                        and<unclear>monotonous</unclear><lb/> life I can not blame you either,
+                    I<lb/> know how anxious you must be to<lb/> have<unclear>this</unclear>
+                        unholy<unclear>I can</unclear> call it no<lb/> better, war close. I too
+                        am<hi rend="underline">very</hi><lb/>
+                    <pb entity="DSSR_000000766_0065" n="3"/> 
+                    impatient to see the end, but<lb/> Him alone can tell<unclear>I
+                    was</unclear> greatly<lb/> surprised at your informing me<lb/> of your new
+                    correspondent and<lb/> far greater the surprise when I<lb/> discovered that you
+                    had enclosed<lb/> in your<unclear>Miss. Holcomb's</unclear> letter.<lb/> I was
+                    almost pained when I read<lb/> of your letters being subject to my<lb/>
+                    supervision. Darling do you think<lb/> that I have no confidence in<lb/> the one
+                    to whom I have given my<lb/> love? Do you think I can not<lb/> trust the man
+                    whom I believe<lb/> the noblest, the best of human<lb/> beings, to correspond
+                    with a lady<lb/> friend without my eyes scrutinizing<lb/> every ine that is
+                    written? God<lb/> forbid.<hi rend="underline">Never never</hi> would I<lb/>
+                    bestow upon you such an ungrate-<lb/> ful heart. I would<unclear/><lb/>
+                    <unclear/> be in the<unclear/> of<lb/> the betrayed then that of the<lb/>
+                    betrayer. Now dearest please do not,<lb/> unless you wish her letters
+                    preserved<lb/> and think I can better do it<lb/> than you send me any more<lb/>
+                        of<unclear>Miss Holcomb's</unclear> letters. I ask<lb/> it as a simple
+                    request will<lb/> you grant it? Only<unclear>relieve</unclear> your<lb/>
+                    confidence in as unhesitating<lb/> manner as I have given mine<lb/> and I will
+                    be happy. Bless you<lb/> darling, I have<unclear/> correspondents<lb/> in the
+                    army besides my darling<lb/>
+                    <pb entity="DSSR_000000766_0066" n="4"/> 
+                    one in South Carolina -- W. J. Donald-<lb/> son -- the other
+                        in<unclear>Mansas, Milton<lb/> Irwin</unclear>. I had not thought of<lb/>
+                    gaining your consent before<lb/> writing to them, but if you<lb/> will not take
+                    it as an<lb/> insult, Addie will say one of<lb/> her prettiest pleases and<lb/>
+                    say "Please Mr. Tenney may I<lb/> correspond with Will -- my "Good<lb/>
+                    <unclear>Templar</unclear>" brother, and<unclear>Miltie</unclear> --<lb/> my
+                    little playmate? and if<lb/> she could she would give one<lb/> of her sweetest
+                    kisses, which<lb/> is a great sacrifice for I never<lb/> kiss only my papa and brother<lb/>
+                    <unclear>Remmington I mean</unclear>. If you wish<lb/> it I will send all of
+                    my<lb/> letters that I get from them<lb/> and also all of my answers<lb/> for
+                    Heaven knows that I would<lb/> not wrong you so much as to<lb/> write them
+                    anything that I<lb/> would not show to the world<lb/> if necessary. Do not be
+                    offended<lb/> with me will you darling for<lb/>
+                    <unclear>this</unclear> answer. I could not<lb/> bear that thought of your<lb/>
+                    sending all of her letters<lb/> for my inspection and remem<lb/> ber Addie
+                    wishes you to write<lb/> to her or any other lady<lb/> just as
+                    you<unclear>see</unclear> fit. I know<lb/> your true heart well enough to<lb/>
+                    know that you would not<lb/> wrong me.</p>
+
+                <pb entity="DSSR_000000766_0067" n="5"/>
+
+                <p> (3rd)<lb/> Our friend Dora is well and<lb/> the same good girl that she was<lb/>
+                    last fall. Her brother is in<lb/>
+                    <unclear>Claridon</unclear>. Her parents have moved<lb/> there and she is
+                    keeping house<lb/> for <add hand="h1" place="inline">her</add> brother Orin
+                        Leaslie<unclear/><unclear>Mecca</unclear><lb/> Oh! yes<unclear/> I do remember<lb/>
+                    <unclear>Channey Bown</unclear>, by the bye, he was<lb/> one of my "instant
+                    admirers"<lb/> I did not return the compliment<lb/> very well for I did not like
+                    him.<lb/> Of the two I thought more of<lb/> Seth than of Channey<lb/>
+                    <unclear/> letters have been published<lb/>
+                    <unclear/><unclear/><unclear>urge</unclear> of you once more to<lb/>
+                    <unclear/> your<unclear/> Hallie has written<lb/>
+                    <unclear/> letters to you, he says since he<lb/> came home. You say darling that you<lb/>
+                    <unclear>was</unclear> gratified to know that your rehersal<lb/> of
+                        your<unclear>first life</unclear> strengthened my<lb/> confidence in you. I
+                    will answer<lb/> just as I felt when reading that<lb/> rehersal also when you
+                    asked me<lb/> if I could accept<unclear>of</unclear> you knowing all<lb/> this
+                    accept of you just as you are<lb/> This one thought presented itself<lb/>
+                        Are<unclear>the</unclear><unclear/> less beautiful because<lb/>
+                    <pb entity="DSSR_000000766_0068" n="6"/> 
+                    a cloud is over<unclear>them</unclear> thus you<lb/> are to me. Are
+                    you less worthy because<lb/> you have sorrows? No, indeed. I love you<lb/>
+                    better for it. Are you satisfied with my<lb/> answer? I do not wish any
+                    references<lb/> to establish your character and integrity.<lb/> If I cannot love
+                    you as you are<lb/> without inquiring of this fickle world<lb/> whether you are
+                    the man that I can<lb/> love or not I will strive to forget that<lb/> I ever
+                    was. Father always said I was<lb/> too confiding in those I love but I do<lb/>
+                    not believe it. There are but few people<lb/> in this world that I do love I
+                    have<lb/> but few, what is<unclear>termed</unclear> confidential<lb/> friends
+                        indeed<unclear>out of there</unclear> are but<unclear>two</unclear><lb/>
+                    <unclear/><unclear/><unclear/>my own relation lady friends I<lb/> mean of course
+                    I have no confidential male<lb/> friends<unclear>beside</unclear> my brother
+                    and<unclear/> the other<lb/> ones to whom I would reveal one of my<lb/> hearts
+                    secrets one is Dora the other<lb/>
+                    <unclear>Miss Lenny Leagan</unclear> the latter is Laurie's<lb/> confidential
+                    friend. Darling I was deeply<lb/> interested in your religious sentiments<lb/>
+                    and I was thankful for them.<lb/> I had often thought of sending you<lb/> a
+                    Bible but the thought that you<lb/> certainly possessed one restrained me.<lb/>
+                        I<hi rend="underline">was</hi> surprised and astonished when<lb/> you wrote
+                    that there was not one<lb/> christian in your company.<unclear>I</unclear><lb/>
+                    shudder when I think of the<unclear>end</unclear><lb/> I would urge your return
+                    much<lb/> more than I now do, but I<unclear>do</unclear><lb/></p>
+                <pb entity="DSSR_000000766_0069" n="7"/>
+
+                <p>(4)<lb/> not wish to make you dis-<lb/> contented but I should be<hi
+                        rend="underline">very<lb/> very</hi> happy to see you<unclear/> is<lb/> fast
+                        approaching.<unclear>Lehent Briggins</unclear><lb/>
+                    <unclear/> keep his<unclear/><unclear/><lb/> of you often! Why darling I
+                    should<lb/> have been more suprised if you<lb/> had told me to forget more
+                    often<lb/> than I was<unclear>at that</unclear> I think of<lb/> you often! you
+                    are in my thoughts<lb/> but night and by day. Thank<lb/> God for dreams dearest
+                    for then<lb/> you are with me. I have the<lb/>
+                        music<unclear>to</unclear><unclear>"Dixie'</unclear> but not the<lb/> words.
+                    If I can get<unclear>"Ever oft thee"</unclear><lb/> at the music store I will do
+                    so<lb/> and play it for your sake.<lb/>
+                    <unclear>Laurie</unclear><unclear/><unclear/> thoughtful as<lb/> ever Charlie I
+                    have a<unclear/><unclear/><lb/> to give you some day of my black<lb/> eyed
+                    sister. I will tell you what<lb/> robbed her of her girlhood but<lb/> I have
+                    neither time nor dispo -<lb/> sistion to tell you now besides<lb/> I wish to
+                    reserve it for the<lb/> happy time when you come home<lb/> What a gay and
+                    careless girl she<lb/> was one year ago<unclear/> how<lb/> changed! Instead of
+                    the gay<lb/> and light-hearted girl, she is<lb/> now the sad thoughtful<lb/>
+                    woman she is at times now<lb/>
+                    <unclear>gleeful</unclear> and "funny" but she<lb/> is not truly happy, when she<lb/>
+                    <unclear/> away from excitement<lb/> there will be such a mournful<lb/>
+                    <pb entity="DSSR_000000766_0070" n="8"/> 
+                    longing expression in her grave<lb/> black eyes that my heart<del
+                        hand="h1"/>aches<lb/> for her but I will tell my<lb/> story if I am not careful<lb/>
+                    <unclear>Laurie</unclear> is well or was this morning<lb/> Did you know she was
+                    more than<lb/> half in love with my brother?<lb/> But what am I writing.</p>
+
+                <p><unclear/><unclear>says</unclear> that I am very much<lb/> obliged for Mr.
+                    Tenney's love and<lb/> return mine also my best<lb/> wishes
+                        really<unclear>auntie</unclear> is getting<lb/>
+                    <unclear/><unclear/> Laurie sends<lb/> love she<unclear>say</unclear> tell him
+                    to<lb/> give my respects to<unclear/><unclear/><lb/> Remember me to the
+                    boys<lb/> and give my love to the one<lb/> I send it to.</p>
+
+                <p>But I must close God<lb/> bless and protect<unclear/> dearest.</p>
+
+                <closer>
+                    <salute>Write often to your</salute>
+                    <signed>Addie</signed>
+                </closer>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

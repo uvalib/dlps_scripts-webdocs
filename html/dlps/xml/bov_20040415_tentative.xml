@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?dlps id="bov_20040415_tentative"?>
+<?dlps page-images="none" figure-images="no"?>
+<?dlps transcription="ocr"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with
+                        local customizations)</resp>
+                    <name>University of Virginia Library</name>
+                </respStmt>
+                <biblScope type="date">
+                    <date value="2004-04-15">April 15,2004</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">14</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2008">2008</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the
+                        University of Virginia</p>
+                    <p n="access">Publicly accessible</p>
+                </availability>
+                <idno type="DLPS ID">bov_20040415_tentative</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-BoardOfVisitorsMinutes"</idno>
+            </seriesStmt>
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors
+                            minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of
+                            Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors
+                            meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2004-04-14">April 15, 2004</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information. Access to
+                                minutes containing salary information will be granted only under the
+                                procedures of the Virginia Freedom of Information Act (Code of
+                                Virginia-2.1-340 ff.) or if permission is granted by the Secretary
+                                of the Board. Researchers interested in obtaining access to these
+                                records should direct a request in writing to the Office of the
+                                Legal Adviser, Madison Hall, University of Virginia. These public
+                                minutes have had salary information deleted and bear no
+                                restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special
+                                Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body
+                                which is the legal owner and operator of the institution. Recorded
+                                in the minutes are appointments and other personnel decisions
+                                concerning faculty, decisions about construction of facilities,
+                                gifts to the university, and all other board actions, decisions and
+                                resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction;
+                &editorial_normalization; &editorial_hyphenation; &editorial_quotation;
+                &editorial_stdVals; </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language id="eng" n="008" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2008-10-09">October 9, 2008</date>
+                <respStmt>
+                    <name id="aet7f">Andrew Tarne, University of Virginia Library</name>
+                    <resp>Marker</resp>
+                </respStmt>
+                <item>Marked up the raw text</item>
+            </change>
+        <change>
+<date value="2011-05-25">May 25, 2011</date>
+<respStmt>
+<name id="lsc6v">Lorrie Chisholm, University of Virginia Library</name>
+<resp>corrector</resp>
+</respStmt>
+<item>Minor corrections to student markup.</item>
+</change>
+</revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+        <body id="d2">
+
+            <div1 id="d3" type="roll-call">
+                <pb n="6631"/>
+                <head> TENTATIVE MINUTES SUBJECT TO THE APPROVAL OF THE BOARD OF
+                    VISITORS 
+                    <date value="2004-04-15">April 15, 2004</date>
+                </head>
+
+                <p>The Board of Visitors met, in Open Session, in the Dome Room of the
+                    Rotunda at 4:30 p.m., Thursday, <date value="2004-04-15">April 15, 2004</date>,
+                    to vote on the establishment of a professorship and the naming of the Grounds of
+                    the Darden School. <name>Gordon F. Rainey, Jr.</name>, Rector, presided. <name
+                        type="present">William G. Crutchfield, Jr., Ms. Susan Y. Dorsey, G.
+                        Slaughter Fitz-Hugh, Jr., W. Heywood Fralin, Ms. Glynn D. Key, Mark J.
+                        Kington, Lewis F. Payne, Don R. Pippin, Thomas A. Saunders, III, Warren M.
+                        Thompson, Ms. Georgia M. Willis, John O. Wynne, and John R.M. Rodney</name>
+                    were present. </p>
+                <p><name type="present">James W. Head</name>, the Student
+                    Member-elect, also was present.</p>
+                <p>Present as well were <name type="present">John T. Casteen, II,
+                        Leonard W. Sandridge, Alexander G. Gilliam, Jr., Robert D. Sweeney and Ms.
+                        Jeanne Flippo Bailes.</name>
+                </p>
+                <p>The Board adopted the following resolution establishing the
+                    MasterCard Professorship in Business Administration: </p>
+            </div1>
+            <div1 id="d4" type="resolution">
+                <head type="main">ESTABLISHMENT OF THE MASTERCARD PROFESSORSHIP IN BUSINESS
+                    ADMINISTRATION </head>
+               
+                        <p>WHEREAS, MasterCard International, Inc., at the
+                            instigation of <name>H. Eugene Lockhart, Jr.</name>, an alumnus of the
+                            University and then the President and Chief Executive Officer of
+                            MasterCard, made a generous pledge in 1996 to provide funds for a
+                            professorship at the University; and </p>
+                        
+                        <p>WHEREAS, the pledge has been fulfilled and subsequently
+                            augmented by funds from the Batten Family Challenge; and </p>
+                        
+                        <p>WHEREAS, it is the intent of MasterCard that the
+                            professorship be based in the Darden School and that it emphasize
+                            entrepreneurial leadership; </p>
+                        
+                        <p> RESOLVED, the Board of Visitors establishes the
+                            MasterCard Professorship in Business Administration, to be held in the
+                            Darden Graduate School of Business Administration, and expresses its
+                            appreciation to <name>H. Eugene Lockhart, Jr.</name>, MasterCard
+                            International, Inc., and the Batten Family Challenge for their
+                            generosity and support. </p>
+
+                <pb n="6632"/>
+
+                <p rend="indent">The Board next adopted the following resolution naming the Grounds
+                    of the Darden Graduate School of Business Administration in honor of
+                        <name>William H. Goodwin, Jr.</name>: </p>
+            </div1>
+            <div1 id="d5" type="resolution">
+                <head type="main">NAMING OF THE WILLIAM H. GOODWIN, JR., GROUNDS AT THE DARDEN
+                    SCHOOL</head>
+                
+                        <p>WHEREAS, <name>William H. Goodwin, Jr.</name>, of
+                            Richmond, a distinguished alumnus of the Darden School and a recent and
+                            devoted Member of the Board of Visitors, and his wife, <name>Alice T.
+                                Goodwin</name>, have been extraordinarily generous friends of the
+                            Darden School; and </p>
+                        
+                        <p>WHEREAS, <name>Mr. Goodwin</name> has been principally
+                            involved in the planning and development of the present Darden buildings
+                            and grounds; and </p>
+                       
+                        <p>WHEREAS, the University Names Committee has proposed
+                            that the grounds of the Darden School be named in honor of <name>Mr.
+                                Goodwin</name>; </p>
+                        
+                        <p>RESOLVED, the Board of Visitors names the grounds of the
+                            Darden Graduate School of Business Administration the <name>William H.
+                                Goodwin, Jr.</name>, Grounds, and in so doing thanks <name>Mr.
+                                Goodwin</name>, its friend and former colleague, for his devotion
+                            and service to the Darden School, to the Board of Visitors, and to the
+                            University of Virginia. </p>
+                <ornament type="characters">- - - - - - - - - - </ornament>
+            </div1>
+            <div1 id="d6" type="statement">
+                <p>On motion, the meeting was adjourned at 4:40 p.m.</p>
+                <signed>Respectfully submitted, <lb/>
+                    <name>Alexander G. Gilliam, Jr.</name>
+                    <lb/> Secretary</signed>
+                <trailer> AGG:jb <lb/> These minutes have been posted to the University of
+                    Virginia’s <lb/> Board of Visitors website. <lb/>
+                    http://www.virginia.edu/bov/upmeeting.html <lb/>
+                </trailer>
+
+            </div1>
+        </body>
+    </text>
+</TEI.2>

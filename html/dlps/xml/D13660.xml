@@ -1,0 +1,2353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % ISOtech SYSTEM "http://text.lib.virginia.edu/charent/iso-tech.ent"> %ISOtech;
+
+<!ENTITY DSSR_000004401_0026 SYSTEM "000004401_0026" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0027 SYSTEM "000004401_0027" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0028 SYSTEM "000004401_0028" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0029 SYSTEM "000004401_0029" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0030 SYSTEM "000004401_0030" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0031 SYSTEM "000004401_0031" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0032 SYSTEM "000004401_0032" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0033 SYSTEM "000004401_0033" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0034 SYSTEM "000004401_0034" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0035 SYSTEM "000004401_0035" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0036 SYSTEM "000004401_0036" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0037 SYSTEM "000004401_0037" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0038 SYSTEM "000004401_0038" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0039 SYSTEM "000004401_0039" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0040 SYSTEM "000004401_0040" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0041 SYSTEM "000004401_0041" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0042 SYSTEM "000004401_0042" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0043 SYSTEM "000004401_0043" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0044 SYSTEM "000004401_0044" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0045 SYSTEM "000004401_0045" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0046 SYSTEM "000004401_0046" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0047 SYSTEM "000004401_0047" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0048 SYSTEM "000004401_0048" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0049 SYSTEM "000004401_0049" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0050 SYSTEM "000004401_0050" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0051 SYSTEM "000004401_0051" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0052 SYSTEM "000004401_0052" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0053 SYSTEM "000004401_0053" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0054 SYSTEM "000004401_0054" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0055 SYSTEM "000004401_0055" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0056 SYSTEM "000004401_0056" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0057 SYSTEM "000004401_0057" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0058 SYSTEM "000004401_0058" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0059 SYSTEM "000004401_0059" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0060 SYSTEM "000004401_0060" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0061 SYSTEM "000004401_0061" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0062 SYSTEM "000004401_0062" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0063 SYSTEM "000004401_0063" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0064 SYSTEM "000004401_0064" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0065 SYSTEM "000004401_0065" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0066 SYSTEM "000004401_0066" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0067 SYSTEM "000004401_0067" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0068 SYSTEM "000004401_0068" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0069 SYSTEM "000004401_0069" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0070 SYSTEM "000004401_0070" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0071 SYSTEM "000004401_0071" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0072 SYSTEM "000004401_0072" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0073 SYSTEM "000004401_0073" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0074 SYSTEM "000004401_0074" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0075 SYSTEM "000004401_0075" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0076 SYSTEM "000004401_0076" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0077 SYSTEM "000004401_0077" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0078 SYSTEM "000004401_0078" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0079 SYSTEM "000004401_0079" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0080 SYSTEM "000004401_0080" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0081 SYSTEM "000004401_0081" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0082 SYSTEM "000004401_0082" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0083 SYSTEM "000004401_0083" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0084 SYSTEM "000004401_0084" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0085 SYSTEM "000004401_0085" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0086 SYSTEM "000004401_0086" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0087 SYSTEM "000004401_0087" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0088 SYSTEM "000004401_0088" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0089 SYSTEM "000004401_0089" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0090 SYSTEM "000004401_0090" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0091 SYSTEM "000004401_0091" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0092 SYSTEM "000004401_0092" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0093 SYSTEM "000004401_0093" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0094 SYSTEM "000004401_0094" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0095 SYSTEM "000004401_0095" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0096 SYSTEM "000004401_0096" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0097 SYSTEM "000004401_0097" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0098 SYSTEM "000004401_0098" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0099 SYSTEM "000004401_0099" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0100 SYSTEM "000004401_0100" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0101 SYSTEM "000004401_0101" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0102 SYSTEM "000004401_0102" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0103 SYSTEM "000004401_0103" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0104 SYSTEM "000004401_0104" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0105 SYSTEM "000004401_0105" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0106 SYSTEM "000004401_0106" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0107 SYSTEM "000004401_0107" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0108 SYSTEM "000004401_0108" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0109 SYSTEM "000004401_0109" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0110 SYSTEM "000004401_0110" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0111 SYSTEM "000004401_0111" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0112 SYSTEM "000004401_0112" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0113 SYSTEM "000004401_0113" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0114 SYSTEM "000004401_0114" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0115 SYSTEM "000004401_0115" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0116 SYSTEM "000004401_0116" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0117 SYSTEM "000004401_0117" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0118 SYSTEM "000004401_0118" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0119 SYSTEM "000004401_0119" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0120 SYSTEM "000004401_0120" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0121 SYSTEM "000004401_0121" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0122 SYSTEM "000004401_0122" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0123 SYSTEM "000004401_0123" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0124 SYSTEM "000004401_0124" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0125 SYSTEM "000004401_0125" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0126 SYSTEM "000004401_0126" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0127 SYSTEM "000004401_0127" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0128 SYSTEM "000004401_0128" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0129 SYSTEM "000004401_0129" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0130 SYSTEM "000004401_0130" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0131 SYSTEM "000004401_0131" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0132 SYSTEM "000004401_0132" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0133 SYSTEM "000004401_0133" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0134 SYSTEM "000004401_0134" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0135 SYSTEM "000004401_0135" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0136 SYSTEM "000004401_0136" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0137 SYSTEM "000004401_0137" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0138 SYSTEM "000004401_0138" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0139 SYSTEM "000004401_0139" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0140 SYSTEM "000004401_0140" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0141 SYSTEM "000004401_0141" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0142 SYSTEM "000004401_0142" NDATA uvaHighRes>
+<!ENTITY DSSR_000004401_0143 SYSTEM "000004401_0143" NDATA uvaHighRes>
+]>
+
+<TEI.2 id="D13660">
+    <teiHeader type="AACR2">
+
+        <fileDesc>
+            <titleStmt>
+
+                <title type="main">Civil War Diary of George W. Hichborn</title>
+
+                <author>Hichborn, George W.</author>
+                <respStmt>
+                    <resp>Creation of machine-readable version: </resp>
+                    <name>Digital Curation Services , University of Virginia Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Digital Curation Services</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Creation of digital images:</resp>
+                    <name>Digitization Services, University of Virginia Library</name>
+                </respStmt>
+
+            </titleStmt>
+
+            <extent>ca. <num type="kilobytes">152</num> kilobytes</extent>
+
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia </pubPlace>
+                <idno type="DCS">D13660</idno>
+                <date value="2009">2009</date>
+            </publicationStmt>
+            
+            <seriesStmt>                
+                <title>University of Virginia Library, Text collection</title>                
+                <idno type="uva-set">UVA-LIB-Text</idno>                
+                <idno type="uva-set">UVA-LIB-CivilWar</idno>                
+            </seriesStmt>
+
+            <sourceDesc>
+
+                <biblFull>
+                    <titleStmt>
+                        <title type="main">Diary of George W. Hichborn [manuscript], <date
+                                value="1864">1864.</date></title>
+                        <title type="sort">diary of george w. hichborn, <date value="1864"
+                            >1864</date></title>
+                        <author>Hichborn, George W., <date value="1834">1834-</date></author>
+                    </titleStmt>
+                    <extent>1 vol.</extent>
+                    <publicationStmt>
+                        <idno type="Accession No.">mss 13660</idno>
+                        <idno type="Virgo ID">4376398-1001</idno>
+                        <idno type="title control number">a4376398</idno>
+                        <availability>
+                            <p> Albert &amp; Shirley Small Special Collections, University of
+                                Virginia Library, Charlottesville, Virginia, USA</p>
+                        </availability>
+                    </publicationStmt>
+                </biblFull>
+
+            </sourceDesc>
+
+
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <!-- Per Matt we need to work on this statement-->
+                <p> Prepared for the University of Virginia Library by Digital Curation Services
+                    staff and volunteer Mary Roy Dawson Edwards, Transcriber. August 2007.</p>
+            </projectDesc>
+        </encodingDesc>
+
+        <profileDesc>
+            <langUsage>
+                <language id="eng" usage="main">English</language>
+            </langUsage>
+            <handList>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+        </profileDesc>
+
+    </teiHeader>
+    <text id="d1">
+        <body id="d2">
+            <div1 type="text" id="d3">
+                <head>Civil War Diary of George W. Hichborn</head>
+                
+                <div2 type="section" id="d4">
+                    <head>1864</head>
+                    <div3 type="entry" id="d5">
+                        <pb entity="DSSR_000004401_0026" n="np"/>
+                        <head>FRIDAY, <date value="1864-01-01">JANUARY 1, 1864.</date></head>
+                        <p>Cold &amp; windy this A M on picket very mudy rained in the morning
+                            went in camp for rations at night </p>
+                    </div3>
+                    <div3 type="entry" id="d6">
+                        <head>
+                            <date value="1864-01-02">SATURDAY 2</date>
+                        </head>
+                        <p>Cold and clear this morning froze very hard last night got A letter from
+                            home to day with the reciept for my express box</p>
+                    </div3>
+                    <div3 type="entry" id="d7">
+                        <head>SUNDAY <date value="1864-01-03">3</date></head>
+                        <p>very Pleasant this morning clouds up in the forenoon. came off from
+                            picket cloudy this evening &amp; looks like snow</p>
+                    </div3>
+                    <div3 type="entry" id="d8">
+                        <pb entity="DSSR_000004401_0027" n="np"/>
+                        <head>MONDAY, <date value="1864-01-04">JANUARY 4, 1864.</date></head>
+                        <p>Plesant this morning clouds up about ten A.M and began to snow sold my
+                            pipe to Charles A <unclear>Skillings</unclear>
+                            <!--<unclear>[?]</unclear>-->
+                            <unclear>[--]</unclear> three dollars to day write a letter to brother
+                            John</p>
+                    </div3>
+                    <div3 type="entry" id="d9">
+                        <head>TUESDAY <date value="1864-01-05">5</date></head>
+                        <p>Cloudy in the morning pass away about noon Sun comes out in the afternoon
+                            very cold</p>
+                    </div3>
+                    <div3 type="entry" id="d10">
+                        <head>WEDNESDAY <date value="1864-01-06">6</date></head>
+                        <p>cloudy this morning A squad of the first Maine Cavalry took fifteen
+                            prisoners up at Brandy Station this morning captured them at Manassas
+                            Gap</p>
+                    </div3>
+                    <div3 type="entry" id="d11">
+                        <pb entity="DSSR_000004401_0028" n="np"/>
+                        <head>THURSDAY, <date value="1864-01-07">JANUARY 7, 1864</date>.</head>
+                        <p>Clear and very cold indeed fetched water to wash with Went over to
+                            Brigade Headquarters and got my express box found Every thing all right
+                            began to snow 3 P M </p>
+                    </div3>
+                    <div3 type="entry" id="d12">
+                        <head>FRIDAY <date value="1864-01-08">8</date></head>
+                        <p>Snowed all night clears away this A.M. and very plesant sunshine all day
+                            write a letter to mother to day and Sarah </p>
+                    </div3>
+                    <div3 type="entry" id="d13">
+                        <head>SATURDAY <date value="1864-01-09">9</date></head>
+                        <p>A fine day nothing to do laid A flags <!--[paving stones?]--> in my tent
+                                <unclear>Sanders</unclear><!--[?]--> and Gould came to the Regt to
+                            day A detail for picket but I did not have to go <unclear>[--]</unclear>
+                        </p>
+                    </div3>
+                    <div3 type="entry" id="d14">
+                        <pb entity="DSSR_000004401_0029" n="np"/>
+                        <head>SUNDAY, <date value="1864-01-10">JANUARY 10, 1864</date></head>
+                        <p>Clear and cold nothing to do Freeman on picket and I have read every
+                            thing that I can <unclear>[---]</unclear> A letter from Jap W. Day write
+                            an answer to it. was detailed for guard <unclear>[--]</unclear>
+                        </p>
+                    </div3>
+                    <div3 type="entry" id="d15">
+                        <head>MONDAY <date value="1864-01-11">11</date></head>
+                        <p>Clear and cold to day Went on guard this morn took the third Relief
+                            rather dull times to day received two letters to day one from Mother and
+                            one from Marshall W. Sawyer </p>
+                    </div3>
+                    <div3 type="entry" id="d16">
+                        <head>TUESDAY <date value="1864-01-12">12</date></head>
+                        <p>Clear and cold came off Guard this morn at 9 Oclock been busy writing to
+                            day A detail went out of our Regt this morn on picket and Railroad a
+                            Freeman came in he </p>
+                    </div3>
+                    <div3 type="entry" id="d17">
+                        <pb entity="DSSR_000004401_0030" n="np"/>
+                        <head>WEDNESDAY, <date value="1864-01-13">JANUARY 13, 1864</date>.</head>
+                        <p>Pleasant and warm clouds <unclear>[-]</unclear> in the afternoon looks
+                            like rain or snow nothing to do to day but Sleep and cut wood no news
+                            every thing quiet on the Potomac </p>
+                    </div3>
+                    <div3 type="entry" id="d18">
+                        <head>THURSDAY <date value="1864-01-14">14</date></head>
+                        <p>Cloudy and warm the snow melted fast to day was detailed for picket to
+                            morrow nothing new to day plenty of hard tack to eat</p>
+                    </div3>
+                    <div3 type="entry" id="d19">
+                        <head>FRIDAY <date value="1864-01-15">15</date></head>
+                        <p><unclear>[--]</unclear> Cloudy in the forenoon cleared away at noon
+                                <unclear>[---]</unclear> on picket this <unclear>[-]</unclear> Capt
+                            W. G. <unclear>Merrill</unclear>
+                            <!--[?]--> had command of the Picket line I had ten men in my Relief</p>
+                    </div3>
+                    <div3 type="entry" id="d20">
+                        <pb entity="DSSR_000004401_0031" n="np"/>
+                        <head>SATURDAY, <date value="1864-01-16">JANUARY 16, 1864</date>.</head>
+                        <p>went to camp this morn as soon as I came off <unclear>[-]</unclear> get
+                            Paid off beans for all the boys on Picket warm and Pleasant Get Letters
+                            from Home M W S F T O D </p>
+                    </div3>
+                    <div3 type="entry" id="d21">
+                        <head>SUNDAY <date value="1864-01-17">17</date></head>
+                        <p>Pleasant and very warm clouds up about noon and looks like rain so am
+                            still on Picket shall be relieved to morrow</p>
+                    </div3>
+                    <div3 type="entry" id="d22">
+                        <head>MONDAY <date value="1864-01-18">18</date></head>
+                        <p>Rains this morn began about 2 Oclock we wer<!--[e]--> relieved at nine
+                            Rained hard all the fore noon cloudy all day ><unclear>[-]</unclear> in
+                            the afternoon</p>
+                    </div3>
+                    <div3 type="entry" id="d23">
+                        <pb entity="DSSR_000004401_0032" n="np"/>
+                        <head>TUESDAY, <date value="1864-01-19">JANUARY 19, 1864</date>.</head>
+                        <p>Cloudy and windy grows cold very fast to night was detailed for fatique
+                            to morrow to Corps Head Quarters the <unclear>[---]</unclear> did not
+                            have to go</p>
+                    </div3>
+                    <div3 type="entry" id="d24">
+                        <head>WEDNESDAY <date value="1864-01-20">20</date></head>
+                        <p>Clear and warm nothing to do but eat two Recruits came to night for our
+                            Co was detailed for <del hand="author">
+                                <hi rend="line-through">[word lined out]</hi>
+                            </del> Railroad to morrow Bought ten of Orlando Green</p>
+                    </div3>
+                    <div3 type="entry" id="d25">
+                        <head>THURSDAY <date value="1864-01-21">21</date></head>
+                        <p>Clear and warm went down to Bealton this morn to Guard the Railroad came
+                            up to camp in the afternoon was Supernumery <unclear>[?]</unclear> Sergt
+                            Griffin O'Neil Pace enlisted to day</p>
+                    </div3>
+                    <div3 type="entry" id="d26">
+                        <pb entity="DSSR_000004401_0033" n="np"/>
+                        <head>FRIDAY, <date value="1864-01-22">JANUARY 22, 1864</date></head>
+                        <p>Clear and warm on Railroad guard got nothing to do but sleep George W
+                            Hichborn Co B 20th Maine</p>
+                    </div3>
+                    <div3 type="entry" id="d27">
+                        <head>SATURDAY <date value="1864-01-23">23</date></head>
+                        <p>Clear and very warm <unclear>[-]</unclear> to camp this morn stayed all
+                            day <unclear>[-]</unclear> orders to drill three times a week received
+                            four letters one from Home G C Campbell Elle &amp; Dan
+                                <unclear>Chase</unclear>
+                            <!--[?]--></p>
+                    </div3>
+                    <div3 type="entry" id="d28">
+                        <head>SUNDAY <date value="1864-01-24">24</date></head>
+                        <p>Cloudy and windy looks like rain to day was relieved from Railroad this
+                            morning at 9 Oclock no inspection this morn write A Letter to Mother to
+                            day </p>
+                    </div3>
+                    <div3 type="entry" id="d29">
+                        <pb entity="DSSR_000004401_0034" n="np"/>
+                        <head>MONDAY, <date value="1864-01-25">JANUARY 25, 1864</date>.</head>
+                        <p>Clear and warm was detailed to go with three men to guard the
+                                <unclear>[-]</unclear> that the <unclear>Fifth</unclear>
+                            <!--[?]--> New York left we wanted them for the Hospital for their are
+                            symptoms of the smallpox</p>
+                    </div3>
+                    <div3 type="entry" id="d30">
+                        <head>TUESDAY <date value="1864-01-26">26</date></head>
+                        <p>Clear and windy but very warm was relieved this morn at 9 Oclock we have
+                            had orders to get <unclear>[-]</unclear> in the <unclear>[-]</unclear>
+                            three times A week Dress Parade at 4 Oclock PM was detailed for Camp
+                            Guard </p>
+                    </div3>
+                    <div3 type="entry" id="d31">
+                        <head>WEDNESDAY <date value="1864-01-27">27</date></head>
+                        <p>Went on Guard this morn my Relief was the 3rd. Very plesant &amp;
+                            Warm <unclear>[-]</unclear> to Corp H Q to be
+                            <unclear>gon</unclear><!--[?]--> 2.4 hours Dress Parade</p>
+                    </div3>
+                    <div3 type="entry" id="d32">
+                        <pb entity="DSSR_000004401_0035" n="np"/>
+                        <head>THURSDAY, <date value="1864-01-28">JANUARY 28, 1864</date></head>
+                        <p>Clear and warm was relieved this morn from Guard no drill to day Dress
+                            Parade to night nothing to do times <unclear>[-]</unclear> away very
+                            slow this winter wrote A <!--[letter]--> to Father</p>
+                    </div3>
+                    <div3 type="entry" id="d33">
+                        <head>FRIDAY <date value="1864-01-29">29</date></head>
+                        <p>Clear and warm Co drill at 2 Oclock in the after noon Parade at the usual
+                            hour A detail for Picket &amp; did not have to go did not get the
+                            mail last night </p>
+                    </div3>
+                    <div3 type="entry" id="d34">
+                        <head>SATURDAY <date value="1864-01-20">30</date></head>
+                        <p>was detailed for Picket this morn the Picket line extends from
+                                Vernan<unclear>[?]</unclear> Ford to Bealton Station Cloudy looks
+                            like rain </p>
+                    </div3>
+                    <div3 type="entry" id="d35">
+                        <pb entity="DSSR_000004401_0036" n="np"/>
+                        <head>SUNDAY, <date value="1864-01-31">JANUARY 31, 1864</date>.</head>
+                        <p>Cloudy and <unclear>[-]</unclear> little this morn no news to day</p>
+                    </div3>
+                    <div3 type="entry" id="d36">
+                        <head>MONDAY, <date value="1864-02-01">FEBRUARY 1</date></head>
+                        <p>Still Cloudy but has not rained any yet shall be relieved to morrow
+                            cleared away about noon </p>
+                    </div3>
+                    <div3 type="entry" id="d37">
+                        <head>TUESDAY <date value="1864-02-02">2</date></head>
+                        <p>Cloudy and warm this morn was relieved this morn the 83<hi rend="super"
+                                >rd</hi>. relieved us Heavy Thunder showers to night</p>
+                    </div3>
+                    <div3 type="entry" id="d38">
+                        <pb entity="DSSR_000004401_0037" n="np"/>
+                        <head>WEDNESDAY, <date value="1864-02-03">FEBRUARY 3, 1864</date>.</head>
+                        <p>Clear and cold their was eight recruits came to our company to day
+                            nothing to do to day but sleep write a letter to Mother to day</p>
+                    </div3>
+                    <div3 type="entry" id="d39">
+                        <head>THURSDAY <date value="1864-02-04">4</date></head>
+                        <p>Clear and warm was A detail for Picket did not have to go not much to do
+                            no drill nor Parade Hughes was detailed to go home to Recruit</p>
+                    </div3>
+                    <div3 type="entry" id="d40">
+                        <head>FRIDAY <date value="1864-02-05">5</date></head>
+                        <p> Clear and warm Tom is on camp guard to day Freeman came in from Picket
+                            this morn We had to Recite our Lesson to Night Parade at the usual hour
+                            no Letters to night</p>
+                    </div3>
+                    <div3 type="entry" id="d41">
+                        <pb entity="DSSR_000004401_0038" n="np"/>
+                        <head>SATURDAY, <date value="1864-02-06">FEBRUARY 6, 1864</date>.</head>
+                        <p>Cloudy and rained some. Heavy Cannonading this forenoon Musketry firing
+                            in the afternoon towards the Rapidan received A Letter from home to
+                            night one from BDC and A Mr Si</p>
+                    </div3>
+                    <div3 type="entry" id="d42">
+                        <head>SUNDAY <date value="1864-02-07">7</date></head>
+                        <p>n. Clear and cold went on camp guard this morn my relief was the 3rd. no
+                            news from the fight that took place yesterday no inspection to day</p>
+                    </div3>
+                    <div3 type="entry" id="d43">
+                        <head>MONDAY <date value="1864-02-08">8</date></head>
+                        <p>Clear and cold and windy was relieved this morn At last went on Picket
+                            Freeman went to Corps H Q nothing new to day had to Recite A Lesson to
+                            night No Parade</p>
+                    </div3>
+                    <div3 type="entry" id="d44">
+                        <pb entity="DSSR_000004401_0039" n="np"/>
+                        <head>TUESDAY, <date value="1864-02-09">FEBRUARY 9, 1864</date>.</head>
+                        <p>Clear and warm to day two Officers and 10 enlisted men went from our Regt
+                            to day to go home Recruiting no news Parade at the usual hour No Letters
+                            to night</p>
+                    </div3>
+                    <div3 type="entry" id="d45">
+                        <head>WEDNESDAY <date value="1864-02-10">10</date></head>
+                        <p>Clear and very warm to day A detail for Corps H Q to day did not have to
+                            go was detailed to go to Brigade H Q with ten men on fatigue had about
+                            an hours work to do. detailed for Picket to morrow </p>
+                    </div3>
+                    <div3 type="entry" id="d46">
+                        <head>THURSDAY <date value="1864-02-11">11</date></head>
+                        <p>Clear and very warm went on Railroad Guard this morn had to go to Bealton
+                            and Relieve 83rd. Penn Plesant time to day</p>
+                    </div3>
+                    <div3 type="entry" id="d47">
+                        <pb entity="DSSR_000004401_0040" n="np"/>
+                        <head>FRIDAY, <date value="1864-02-12">FEBRUARY 12, 1864</date>.</head>
+                        <p>Cloudy in the forenoon and looked like rain cleared away about three
+                            Oclock in the afternoon very warm got A Letter from Father &amp;
+                            Mother to night very Plesant evening </p>
+                    </div3>
+                    <div3 type="entry" id="d48">
+                        <head>SATURDAY <date value="1864-02-13">13</date></head>
+                        <p>Clear and very warm to day on Railroad Guard yet Shall be relieved to
+                            morrow nothing to do Coln <!--[Colonel]--> Hare &amp; Capt Merrill
+                            made us A call to see that everything was right</p>
+                    </div3>
+                    <div3 type="entry" id="d49">
+                        <head>SUNDAY <date value="1864-02-14">14</date></head>
+                        <p>Clear and warm was relieved this morn by 83rd. Penn got to camp about ten
+                            Oclock orders to have an inspection at four Oclock was inspected by Maj
+                            Ellis Spears Hughs <unclear>Beck</unclear><!--[?]--></p>
+                    </div3>
+                    <div3 type="entry" id="d50">
+                        <pb entity="DSSR_000004401_0041" n="np"/>
+                        <head>MONDAY, <date value="1864-02-15">FEBRUARY 15, 1864</date>.</head>
+                        <p>Clear in the morn clouded up about ten A M began to snow about two P M
+                            and snowed all the rest of the afternoon two Recruits came to day
+                                <unclear>Vetsoms</unclear><!--[?]--> been home on 35 days Furlough
+                            he was detailed CG </p>
+                    </div3>
+                    <div3 type="entry" id="d51">
+                        <head>TUESDAY <date value="1864-02-16">16</date></head>
+                        <p>Cloudy and looks like rain had orders for A Gen inspection at ten Oclock
+                            began to rain about 9 &frac12; Oclock did not have to go on Guard this morn was
+                            inspected by Capt Nash <unclear>[--]</unclear> away about 11 Oclock</p>
+                    </div3>
+                    <div3 type="entry" id="d52">
+                        <head>WEDNESDAY <date value="valu
+                            1864-02-17"
+                            >17</date></head>
+                        <p>Clear cold and windy the coldest for the winter froze my ears to day no
+                            news to day had to Recite out Lessons to night A detail from our Regt
+                            went on Picket &amp; did not have to go No Parade</p>
+                    </div3>
+                    <div3 type="entry" id="d53">
+                        <pb entity="DSSR_000004401_0042" n="np"/>
+                        <head>THURSDAY, <date value="1864-02-18">FEBRUARY 18, 1864</date>.</head>
+                        <p>Clear and very cold nothing to do but sleep have A very bad cold and sore
+                            throat no news time wares away very slow especially this month was
+                            detailed for Camp Guard to morrow</p>
+                    </div3>
+                    <div3 type="entry" id="d54">
+                        <head>FRIDAY <date value="1864-02-19">19</date></head>
+                        <p>Clear and very warm went on Guard this morn my Relief was the first four
+                            men in A relief no news to day no letter was expecting one Parade at the
+                            usual hour</p>
+                    </div3>
+                    <div3 type="entry" id="d55">
+                        <head>SATURDAY <date value="1864-02-20">20</date>
+                        </head>
+                        <p>Clear and very warm came off Guard this morn A detail for Picket Railroad
+                            and Corps H Q took every man nothing new to day Williard came back to
+                            night Dress Parade at the usual <add place="top" hand="author"
+                            >hour</add></p>
+                    </div3>
+                    <div3 type="entry" id="d56">
+                        <pb entity="DSSR_000004401_0043" n="np"/>
+                        <head>SUNDAY, <date value="1864-02-21">FEBRUARY 21, 1864</date>.</head>
+                        <p>Another lovely day the Paymaster came to day we shall be Payed to morrow
+                            signed the Pay Roll to day orders for inspection at four but we did not
+                            have it recieved a letter from home</p>
+                    </div3>
+                    <div3 type="entry" id="d57">
+                        <head>MONDAY <date value="1864-02-22">22</date></head>
+                        <p>Cloudy and looked like rain was Payed to day went on Picket and relieved
+                            Tom so that he could come and get his Pay received A Letter from Sarah
+                            write one to Father and one to Ell </p>
+                    </div3>
+                    <div3 type="entry" id="d58">
+                        <head>TUESDAY <date value="1864-02-23">23</date></head>
+                        <p>Clear and very warm write A letter to Sarah and <unclear>[-]</unclear> A
+                            detail went on Picket the 16<hi rend="super">th</hi> Mish <!--[Michigan]--> came back to day
+                            Sergt Griffin Page Marden Griffin &amp; Breen goes home to morrow
+                            Parade at <unclear>[-]</unclear></p>
+                    </div3>
+                    <div3 type="entry" id="d59">
+                        <pb entity="DSSR_000004401_0044" n="np"/>
+                        <head>WEDNESDAY, <date value="1864-02-24">FEBRUARY 24, 1864</date>.</head>
+                        <p> Cloudy and warm nothing new to day drill in the afternoon Co drill
+                                <unclear>[-]</unclear> at the usual hours no Letters to night the
+                                16<hi rend="super">th</hi> Mich went to D H Q today they guard the
+                            railroad and Co H Q </p>
+                    </div3>
+                    <div3 type="entry" id="d60">
+                        <head>THURSDAY <date value="1864-02-25">25</date></head>
+                        <p>Clear cold and windy Co drill in the forenoon Battalion drill in the
+                            afternoon one Recruit to day Pennel Co K was shot dead axidently by
+                            Smith of K no news wrote A letter to Meda and Mary Parade at four</p>
+                    </div3>
+                    <div3 type="entry" id="d61">
+                        <head>FRIDAY <date value="1864-02-26">26</date></head>
+                        <p>Clear cold and windy to day wrote A letter to cousin john was detailed
+                            for camp Guard to morrow no news to night except from Hugh he is at
+                        home</p>
+                    </div3>
+                    <div3 type="entry" id="d62">
+                        <pb entity="DSSR_000004401_0045" n="np"/>
+                        <head>SATURDAY, <date value="1864-02-27">FEBRUARY 27, 1864</date>.</head>
+                        <p>Clear and very warm on Guard to day my Releif was the Guard had four men
+                            in it Melanie Gilman Waterhouse and Merriam K A B V H saw Bill and
+                            Charles they mount to day the cavalry is on A said
+                            <unclear>[?]</unclear></p>
+                    </div3>
+                    <div3 type="entry" id="d63">
+                        <head>SUNDAY <date value="1864-02-28">28</date></head>
+                        <p> Clear morn and windy orders to have an inspection at eleven Oclock was
+                            inspected by Maj Spear got letter from home last night and one from
+                            devine Services at ten Oclock</p>
+                    </div3>
+                    <div3 type="entry" id="d64">
+                        <head>MONDAY 29</head>
+                        <p>Clear and warm in the morn was detailed to go to Warrenton Junction took
+                            the cars at Rap. Station seven Oclock got to the Junct &amp; went to
+                            three mile <unclear>[-]</unclear> and camped for the night </p>
+                    </div3>
+                    <div3 type="entry" id="d65">
+                        <pb entity="DSSR_000004401_0046" n="np"/>
+                        <head>TUESDAY, <date value="1864-03-01">MARCH 1, 1864</date>.</head>
+                        <p>Cloudy in the morn began to snow about 8 Oclock snowed all day we are
+                            still heare the workmen did not come out to day was on Guard to night my
+                            relief was the fourth no news </p>
+                    </div3>
+                    <div3 type="entry" id="d66">
+                        <head>WEDNESDAY <date value="1864-03-02">2</date></head>
+                        <p>Clear and cold went with five men from my Regt went out about half A mile
+                            established the Picket line stayed till night then went back to the
+                            Reserve nothing new to day</p>
+                    </div3>
+                    <div3 type="entry" id="d67">
+                        <head>THURSDAY <date value="1864-03-03">3</date></head>
+                        <p>Another lovely day went out again this morn not much to do went up to A
+                            Secess House and bought my dinner Payed 50 cts got A letter from Home to
+                            night no Gurrellers yet</p>
+                    </div3>
+                    <div3 type="entry" id="d68">
+                        <pb entity="DSSR_000004401_0047" n="np"/>
+                        <head>FRIDAY, <date value="1864-03-04">MARCH 4, 1864</date>.</head>
+                        <p>Cloudy and rain windy no Rastions to day nothing to do to day Got my
+                            dinner and Supper up to our friends they are real Secss
+                            <!--[Secessionists]--> and are not afraid to <del hand="author">
+                                <hi rend="line-through">[word lined out]</hi>
+                            </del> talk and own it</p>
+                    </div3>
+                    <div3 type="entry" id="d69">
+                        <head>SATURDAY <date value="1864-03-05">5</date></head>
+                        <p>Cloudy and rainy not Releived yet no Rastions either we started for camp
+                            at 12 Oclock went out to the Junction took the 2 Oclock Train went to
+                            Rapp. Station they was just getting ready to send A relief out </p>
+                    </div3>
+                    <div3 type="entry" id="d70">
+                        <head>SUNDAY <date value="1864-03-06">6</date></head>
+                        <p>Cloudy and windy inspection at four Oclock by Major Ellis Spear Parade at
+                            four no news to day write A Letter to Mother to day all quiet on the
+                            Rappahannock <unclear>[-]</unclear></p>
+                    </div3>
+                    <div3 type="entry" id="d71">
+                        <pb entity="DSSR_000004401_0048" n="np"/>
+                        <head>MONDAY, <date value="1864-03-07">MARCH 7, 1864</date>.</head>
+                        <p>Clear and windy Co drill in the forenoon Battalion in the afternoon had
+                            to drill two Pleas the <unclear>Leasides</unclear><!-- [?]--> of the
+                                20<hi rend="super">th</hi> Maine Great Performances now Maj Spear is
+                            in command Parade at the usual hour </p>
+                    </div3>
+                    <div3 type="entry" id="d72">
+                        <head>TUESDAY <date value="1864-03-08">8</date></head>
+                        <p>Rained all the forenoon cleared away about noon and the sun came out I
+                            went on guard this morn my Relief was the 32nd. four men in A relief
+                            nothing new no Letters to night</p>
+                    </div3>
+                    <div3 type="entry" id="d73">
+                        <head>WEDNESDAY <date value="1864-03-09">9</date></head>
+                        <p>Another lovely day came of<!--[f]--> guard this morn at nine Oclock
+                            Freeman on Railroad I am on Corps H Q Guard been to work on my Rifle to
+                            day Parade at the usual Hour No Drill to day</p>
+                    </div3>
+                    <div3 type="entry" id="d74">
+                        <pb entity="DSSR_000004401_0049" n="np"/>
+                        <head>THURSDAY, <date value="1864-03-10">MARCH 10, 1864</date>.</head>
+                        <p>Cloudy this morn looks like rain began to rain about ten. rained all day
+                            was detailed to go on Camp Guard to morrow nothing new to day no Letters
+                            Co drill 9 &frac12; AM </p>
+                    </div3>
+                    <div3 type="entry" id="d75">
+                        <head>FRIDAY <date value="1864-03-11">11</date></head>
+                        <p>Went on Guard this morn my Relief was the 2 four men in A relief began to
+                            rain about 11 Oclock rained all the rest of the day no News no letters
+                            guess that the folks have all gon to sleep to home</p>
+                    </div3>
+                    <div3 type="entry" id="d76">
+                        <head>SATURDAY <date value="1864-03-12">12</date></head>
+                        <p>Another lovely day was relieved At nine this morn from Guard Orders for
+                            inspection worked on my Rifle about all day no Letters to night Parade
+                            at the usual hour</p>
+                    </div3>
+                    <div3 type="entry" id="d77">
+                        <pb entity="DSSR_000004401_0050" n="np"/>
+                        <head>SUNDAY, <date value="1864-03-13">MARCH 13, 1864</date>.</head>
+                        <p>Clear and windy Co inspection at 10 Oclock by Capt W. G. Merrill Parade
+                            At the usual hour</p>
+                    </div3>
+                    <div3 type="entry" id="d78">
+                        <head>MONDAY <date value="1864-03-14">14</date></head>
+                        <p>Clear and very warm went to Corps HQ Orders for Gen Inspections to morrow
+                            write three letters this eve one to Addie Eliza Ell no Parade to night
+                            received two letters Eliza Ell</p>
+                    </div3>
+                    <div3 type="entry" id="d79">
+                        <head>TUESDAY <date value="1864-03-15">15</date></head>
+                        <p>Windy and cold inspection was inspected by Capt Nash Gen inspecting
+                            officer 3<hi rend="super">rd</hi>. Birgad/ 4<hi rend="super">th</hi>
+                            Division 5 A Corps write two letters one to Dan Chase one to Lizzie
+                            Codill 2 PM </p>
+                    </div3>
+                    <div3 type="entry" id="d80">
+                        <pb entity="DSSR_000004401_0051" n="np"/>
+                        <head>WEDNESDAY, <date value="1864-03-16">MARCH 16, 1864</date>.</head>
+                        <p>Clear and windy Squad drill at 10 A M there is A Ball over to Division
+                            Head Quarters to night Grand time I expect was detailed for Corps Head
+                            Quarters to morrow No Parade </p>
+                    </div3>
+                    <div3 type="entry" id="d81">
+                        <head>THURSDAY <date value="1864-03-17">17</date></head>
+                        <p> Clear and windy went over to Corps Head Qr as Guard this morn Relieved
+                            the 83<hi rend="super">rd</hi>. Penn dull times to day not nothing to do
+                            till to night my Releif is the 1<hi rend="super">st</hi> four men</p>
+                    </div3>
+                    <div3 type="entry" id="d82">
+                        <head>FRIDAY <date value="1864-03-18">18</date></head>
+                        <p>Another lovely day Co Drill this AM cancel Drill this PM quite exciting
+                            times this evening Fell in three lines and <unclear>manhunt</unclear>
+                            <!--[?]--> yet 9 Oclock PM</p>
+                    </div3>
+                    <div3 type="entry" id="d83">
+                        <pb entity="DSSR_000004401_0052" n="np"/>
+                        <head>SATURDAY, <date value="1864-03-19">MARCH 19, 1864</date>.</head>
+                        <p>Another Lovely day no drill the Regt had to fall in and have their
+                            Potografs <!--[Photographs]--> taken today received A letter to night from
+                            Sarah and wrote an answer to it nothing new no Parade all quiet to
+                        night</p>
+                    </div3>
+                    <div3 type="entry" id="d84">
+                        <head>SUNDAY <date value="1864-03-20">20</date></head>
+                        <p>Another clear and very plesant day wind blew this afternoon had to fall
+                            in at 9 Oclock AM and stack arms all quiet to night on the Rappahannock
+                            no Parade got a letter from home </p>
+                    </div3>
+                    <div3 type="entry" id="d85">
+                        <head>MONDAY <date value="1864-03-21">21</date></head>
+                        <p>Clear and warm William Weymouth was here to day Charles is A prisnor at
+                            Richmond was taken in Kilpatricks raid <unclear>[-]</unclear> big washing to day</p>
+                    </div3>
+                    <div3 type="entry" id="d86">
+                        <pb entity="DSSR_000004401_0053" n="np"/>
+                        <head>TUESDAY, <date value="1864-03-22">MARCH 22, 1864</date>.</head>
+                        <p>Cloudy and the wind blew in the forenoon began to snow about 2 Oclock
+                            snows very hard to night very cold did not get the mail to night no news
+                            all quiet on the Banks of Brandy </p>
+                    </div3>
+                    <div3 type="entry" id="d87">
+                        <head>WEDNESDAY <date value="1864-03-23">23</date></head>
+                        <p>Clear and very plesant about one foot of snow the wind blew some in the
+                            forenoon but the snow melted very fast all day was detailed for Picket
+                            to morrow orders to shoot at Practice shooting at target</p>
+                    </div3>
+                    <div3 type="entry" id="d88">
+                        <head>THURSDAY <date value="1864-03-24">24</date></head>
+                        <p>Another Lovely day and I went on Picket my Relief was the first five men
+                            in A Relief received A Letter from Meda all quiet to night </p>
+                    </div3>
+                    <div3 type="entry" id="d89">
+                        <pb entity="DSSR_000004401_0054" n="np"/>
+                        <head>FRIDAY, <date value="1864-03-25">MARCH 25, 1864</date>.</head>
+                        <p>Cold and cloudy this morn began to rain at four <unclear>A M</unclear>
+                            <!--[?]--> rained very hard until 12 Oclock then cleared away cold and
+                            the wind blew very hard all quiet to night</p>
+                    </div3>
+                    <div3 type="entry" id="d90">
+                        <head>SATURDAY <date value="1864-03-26">26</date></head>
+                        <p><del hand="author">
+                                <hi rend="line-through">[Word lined out.]</hi>
+                            </del>Cold and cloudy to day went into camp at noon shall be relieved to
+                            morrow all quiet to night Maj Gen Hughes is appointed Superseded by
+                            Warren<ref target="n1" n="1">{1}</ref></p>
+                    </div3>
+                    <div3 type="entry" id="d91">
+                        <head>SUNDAY <date value="1864-03-27">27</date></head>
+                        <p>Another Lovely day was relieved this morn got to camp 10 AM Orders for
+                            inspection at 4 PM inspected by Maj Spears the 15 New York heavy
+                            Artillery went to the front to day </p>
+                    </div3>
+                    <div3 type="entry" id="d92">
+                        <pb entity="DSSR_000004401_0055" n="np"/>
+                        <head>MONDAY, <date value="1864-03-28">MARCH 28, 1864</date>.</head>
+                        <p>Another lovely day co drill 10 AM 2 PM write three letters to day one
+                            from to Father one from to Meda and one to Nella received one from
+                            Father Parade at the usual hour </p>
+                    </div3>
+                    <div3 type="entry" id="d93">
+                        <head>TUESDAY <date value="1864-03-29">29</date></head>
+                        <p>Cloudy and cold began to rain about 4 PM rained very hard no news all
+                            quiet on the Rappahannock Geo. W Hichborn Medford Maine</p>
+                    </div3>
+                    <div3 type="entry" id="d94">
+                        <head>WEDNESDAY <date value="1864-03-30">30</date></head>
+                        <p>Awoke up this morn and it was still raining very hard rained until 10 AM
+                            cloudy the rest of the day the river very high carried the east end of
+                            the Bridge down river so that the trains <add place="top" hand="author"
+                                >did not run</add>
+                        </p>
+                    </div3>
+                    <div3 type="entry" id="d95">
+                        <pb entity="DSSR_000004401_0056" n="np"/>
+                        <head>THURSDAY, <date value="1864-03-31">MARCH 31, 1864</date>.</head>
+                        <p>Cloudy and very cold day I was detailed to get wood had A good Squad out
+                            15 loads and got back to camp at 2 Oclock PM Company drill 10 AM
+                            Battalion drill at 3 PM</p>
+                    </div3>
+                    <div3 type="entry" id="d96">
+                        <head>FRIDAY, <date value="1864-04-01">APRIL 1</date></head>
+                        <p>Cloudy and began to rain about 2 Oclock PM Marsdan Griffin and Lieut
+                            Griffin came to day they have been home on Furlough Co Drill 10 AM
+                            received three letters Lizzie wrote two one to Lizzie and Mother</p>
+                    </div3>
+                    <div3 type="entry" id="d97">
+                        <head>SATURDAY <date value="1864-04-02">2</date></head>
+                        <p>Cold and windy this morn went on Picket <unclear>[--]</unclear> ordered
+                            to go to the Right of the line and relieve the 16<hi rend="line-through"
+                                >th</hi> Mich Capt <unclear>Chernberlin</unclear>
+                            <!--[?]--> had command of the detail from our Regt</p>
+                    </div3>
+                    <div3 type="entry" id="d98">
+                        <pb entity="DSSR_000004401_0057" n="np"/>
+                        <head>SUNDAY, <date value="1864-04-03">APRIL 3, 1864</date>.</head>
+                        <p>Very cold this morn and the wind blows A perfect Hurricane on Picket to
+                            day my Relief is the fourth Seven men on a relief no news to day </p>
+                    </div3>
+                    <div3 type="entry" id="d99">
+                        <head>MONDAY <date value="1864-04-04">4</date></head>
+                        <p>Very cold this morn and Cloudy began to rain about two Oclock PM rained
+                            all night went to camp this morn for Raitions shall be Relieved to
+                            morrow no news to day</p>
+                    </div3>
+                    <div3 type="entry" id="d100">
+                        <head>TUESDAY <date value="1864-04-05">5</date></head>
+                        <p>Still raining this morn was relieved at ten Oclock got to camp about 12
+                            Oclock not all ones going in got A letter from Sade and wrote an answer
+                            to it still A raining 10 Oclock PM </p>
+                    </div3>
+                    <div3 type="entry" id="d101">
+                        <pb entity="DSSR_000004401_0058" n="np"/>
+                        <head>WEDNESDAY, <date value="1864-04-06">APRIL 6, 1864</date>.</head>
+                        <p>Cleared away this morn and was very warm in camp all day nothing to do
+                            worked on my Rifle <unclear>[-]</unclear> all the afternoon no Parade to
+                            night all quiet to night at Rappa<!--[hannock]-->
+                        </p>
+                    </div3>
+                    <div3 type="entry" id="d102">
+                        <head>
+                            <date value="1864-04-07">APRIL 7</date>
+                        </head>
+                        <p>Very Plesant to day and warm Co Drill 9 &frac12; AM Co Drill 1 &frac12; PM George W
+                            Hichborn Johan F <unclear>Hodgden</unclear>
+                            <!--[?]--> Samuel <unclear>Freeman</unclear>
+                            <!--[?]-->
+                            <unclear>VDM Williams</unclear>
+                            <!--[?]--></p>
+                    </div3>
+                    <div3 type="entry" id="d103">
+                        <head>
+                            <date value="1864-04-08">APRIL 8</date>
+                        </head>
+                        <p>Another fine day Co Drill 9 &frac12; AM was detailed for guard to morrow Field
+                            Parade at 5 &frac12; <add place="top" hand="author">Oclock</add> PM </p>
+                    </div3>
+                    <div3 type="entry" id="d104">
+                        <pb entity="DSSR_000004401_0059" n="np"/>
+                        <head>SATURDAY, <date value="1864-04-09">APRIL 9, 1864</date>.</head>
+                        <p>Cold and rainy this morn went on camp guard my Relief was the third three
+                            men in A relief nothing new to day rains very hard this afternoon no
+                            Letters to night All quiet on the Rappahannock</p>
+                    </div3>
+                    <div3 type="entry" id="d105">
+                        <head>SUNDAY <date value="1864-04-10">10</date></head>
+                        <p>Clear and cold this morn the River is very high the highest it has been
+                            in the Spring Orders for Inspection at four PM was inspected by Maj
+                            Spear commanding the Regt no Mail to night Bull Run Bridge <add
+                                place="top" hand="author">was carried away by the Freshet</add>
+                        </p>
+                    </div3>
+                    <div3 type="entry" id="d106">
+                        <head>MONDAY <date value="1864-04-11">11</date></head>
+                        <p>Another Lovely day A detail for Picket went out this morn the cars do not
+                            run yet Co Drill 9 &frac12; Oclock AM Co Drill 1 &frac12; PM Parade at the usual hour
+                            drew one pair of Pants Drawers Socks </p>
+                    </div3>
+                    <div3 type="entry" id="d107">
+                        <pb entity="DSSR_000004401_0060" n="np"/>
+                        <head>TUESDAY, <date value="1864-04-12">APRIL 12, 1864</date>.</head>
+                        <p>Another lovely day went on Camp Guard this morning Relief was the first
+                                <unclear>ve</unclear>
+                            <!--[?]--> was Payed to day for the Months of Jan &amp; Febuary
+                            Received Two Letters to night one from Father and one John</p>
+                    </div3>
+                    <div3 type="entry" id="d108">
+                        <head>WEDNESDAY <date value="1864-04-13">13</date></head>
+                        <p>Another lovely day <unclear>[----]</unclear> yesterday Co Drill AM Co
+                            Drill PM wrote two letters one to Father and one to Cousin John Parade
+                            at the usual hour</p>
+                    </div3>
+                    <div3 type="entry" id="d109">
+                        <head>THURSDAY <date value="1864-04-14">14</date></head>
+                        <p>Clear and very warm indeed Target Shooting this fore noon I was detailed
+                            to get wood Parade at the usual hour </p>
+                    </div3>
+                    <div3 type="entry" id="d110">
+                        <pb entity="DSSR_000004401_0061" n="np"/>
+                        <head>FRIDAY, <date value="1864-04-15">APRIL 15, 1864</date>.</head>
+                        <p>Another lovely day Co Drill in the forenoon Packed up our overcoats this
+                            PM received two Letters one from Father and one from Cousin Eliza
+                            answered them both Parade at the usual hour </p>
+                    </div3>
+                    <div3 type="entry" id="d111">
+                        <head>SATURDAY <date value="1864-04-16">16</date></head>
+                        <p>Cloudy this morn began to Rain about eight AM rained all day very hard
+                            then was on detail for Picket I did not have to go the Sutlers left to
+                            day for Washington no news </p>
+                    </div3>
+                    <div3 type="entry" id="d112">
+                        <head>SUNDAY <date value="1864-04-17">17</date></head>
+                        <p> Another lovely day but very <unclear>murky</unclear>
+                            <!--[?]--> no Inspection to day was detailed for camp Guard tomorrow no
+                            News to day </p>
+                    </div3>
+                    <div3 type="entry" id="d113">
+                        <pb entity="DSSR_000004401_0062" n="np"/>
+                        <head>MONDAY, <date value="1864-04-18">APRIL 18, 1864</date>.</head>
+                        <p>Another lovely day and I was on guard all quiet to day orders for A Gen
+                            Inspection to morrow at 10 Oclock all quiet to day had to stay to the
+                            Guard <unclear>[--]</unclear></p>
+                    </div3>
+                    <div3 type="entry" id="d114">
+                        <head>TUESDAY <date value="1864-04-19">19</date></head>
+                        <p>Warm and very Plesant indeed was inspected by Capt Baxter of the 118 OV
+                            the guard was inspected before guard mount A detail for Picket and I am
+                            in luck once more did not have to <add place="top" hand="author"
+                            >go</add>
+                        </p>
+                    </div3>
+                    <div3 type="entry" id="d115">
+                        <head>WEDNESDAY <date value="1864-04-20">20</date></head>
+                        <p>Cloudy to day and very warm looks like rain went over to the Ambulance
+                            Corps to get my Boots mended Co Drill 10 AM Co Drill 1 PM Parade at the
+                            usual Hour</p>
+                    </div3>
+                    <div3 type="entry" id="d116">
+                        <pb entity="DSSR_000004401_0063" n="np"/>
+                        <head>THURSDAY, <date value="1864-04-21">APRIL 21, 1864</date>.</head>
+                        <p>Cold and windy this morn was relieved from Railroad this morn went out
+                            target Shooting in the forenoon Battalion Drill 2 PM Parade at the usual
+                            hour no news to day</p>
+                    </div3>
+                    <div3 type="entry" id="d117">
+                        <head>FRIDAY <date value="1864-04-22">22</date></head>
+                        <p>Very warm to day Co drill 10 AM Battalion Drill 2 PM by Maj Ellis Spears
+                            no news to day the engineer Corps began to build A Stoc<!--[k]-->ade to
+                            day to defend the Bridge</p>
+                    </div3>
+                    <div3 type="entry" id="d118">
+                        <head>SATURDAY <date value="1864-04-23">23</date></head>
+                        <p>Another lovely day went on Picket this morn I went with three men to the
+                            River and we Relieved ourselves all quiet to night no news</p>
+                    </div3>
+                    <div3 type="entry" id="d119">
+                        <pb entity="DSSR_000004401_0064" n="np"/>
+                        <head>SUNDAY, <date value="1864-04-24">APRIL 24, 1864</date>.</head>
+                        <p>Went to camp this morn Very warm and plesant nothing new to day the
+                            Division orders of the day was here all quiet to night</p>
+                    </div3>
+                    <div3 type="entry" id="d120">
+                        <head>MONDAY <date value="1864-04-25">25</date></head>
+                        <p>Cold and windy this morn rained hard all last night all quiet to day went
+                            to camp to get Rations this morn</p>
+                    </div3>
+                    <div3 type="entry" id="d121">
+                        <head>TUESDAY <date value="1864-04-26">26</date></head>
+                        <p>Another lovely day was relieved this morn at ten Oclock worked the rest
+                            of the forenoon on My Rifle Co drill 2 PM Parade at the usual hour all
+                            quiet </p>
+                    </div3>
+                    <div3 type="entry" id="d122">
+                        <pb entity="DSSR_000004401_0065" n="np"/>
+                        <head>WEDNESDAY, <date value="1864-04-27">APRIL 27, 1864</date>.</head>
+                        <p>Very plesant this morn Knapsack drill this AM 9 &frac12; Oclock Battalion 2 PM
+                            was drilled by Maj Ellis Spear Parade at the usual time all quiet to
+                            night no Letters</p>
+                    </div3>
+                    <div3 type="entry" id="d123">
+                        <head>THURSDAY <date value="1864-04-28">28</date></head>
+                        <p>Another lovely day Knapsack drill 10 AM nothing new to day the report is
+                            that Gen Burnsides Head Quarters is at Manassas Parade at 4 &frac12; </p>
+                    </div3>
+                    <div3 type="entry" id="d124">
+                        <head>FRIDAY <date value="1864-04-29">29</date></head>
+                        <p>Very warm to day Co drill 10 AM Co drill 2 &frac12; PM Parade at 5 all quiet the
+                            44th came back to day </p>
+                    </div3>
+                    <div3 type="entry" id="d125">
+                        <pb entity="DSSR_000004401_0066" n="np"/>
+                        <head>SATURDAY, <date value="1864-04-30">APRIL 30, 1864</date>.</head>
+                        <p>Cloudy to day but very warm we was mustered the <unclear>IVRS</unclear>
+                            <!--[?]--> Corps crossed the river to day for the front the 67 Mass came
+                            up to night and are in camp &amp;just across the Railroad </p>
+                    </div3>
+                    <div3 type="entry" id="d126">
+                        <head>SUNDAY, <date value="1864-05-01">MAY 1</date></head>
+                        <p>Cloudy to day we wer<!--[e]--> awake this morn at five by the drums and
+                            had orders to be ready to move at nine the 57 relieved and we went to
+                            Brandy Station and <add place="top" hand="author">camped for the
+                            night</add></p>
+                    </div3>
+                    <div3 type="entry" id="d127">
+                        <head>MONDAY <date value="1864-05-02">2</date></head>
+                        <p>In camp to day I went on guard this morn all quiet we have six days
+                            raitions on hand received A letter from Sarah to night</p>
+                    </div3>
+                    <div3 type="entry" id="d128">
+                        <pb entity="DSSR_000004401_0067" n="np"/>
+                        <head>TUESDAY, <date value="1864-05-03">MAY 3, 1864</date>.</head>
+                        <p>Was relieved this morn very plesant the bugle blew at 1 Oclock to pack up
+                            we marched about 5 miles and went into camp for the night </p>
+                    </div3>
+                    <div3 type="entry" id="d129">
+                        <head>WEDNESDAY <date value="1864-05-04">4</date></head>
+                        <p>Very warm started this morn at 1 Oclock and marched till 3 PM we marched
+                            about 18 miles and went into camp for the night all quiet to night</p>
+                    </div3>
+                    <div3 type="entry" id="d130">
+                        <head>THURSDAY <date value="1864-05-05">5<ref target="n2" n="2">{2}</ref></date></head>
+                        <p>threw up breast works this morn and remained till noon when we was
+                            ordered to advance <unclear>[-]</unclear> was badly cut up I was
+                        wounded</p>
+                    </div3>
+                    <div3 type="entry" id="d131">
+                        <pb entity="DSSR_000004401_0068" n="np"/>
+                        <head>FRIDAY, <date value="1864-05-05">MAY 5, 1864</date>.</head>
+                        <!-- Date should be the May 6-->
+                        <p>here I am A Prisnor and wounded in the face Len Green is here with me his
+                            leg broke </p>
+                    </div3>
+                    <div3 type="entry" id="d132">
+                        <head>SATURDAY <date value="1864-05-07">7</date></head>
+                        <p>here I am yet nothing to eat and my wound not dressed either
+                                <unclear>Pinkham</unclear>
+                            <!--[?]-->
+                            <unclear>[-]</unclear> Elliot died last night</p>
+                    </div3>
+                    <div3 type="entry" id="d133">
+                        <head>SUNDAY <date value="1864-05-08">8</date></head>
+                        <p>nothing that I can eat yet my mouth is very <unclear>[-]</unclear> raw
+                            Lieut <unclear>[-]</unclear> to day we are expecting to go to
+                        Richmond</p>
+                    </div3>
+                    <div3 type="entry" id="d134">
+                        <pb entity="DSSR_000004401_0069" n="np"/>
+                        <head>MONDAY, <date value="1864-05-09">MAY 9, 1864</date>.</head>
+                        <p>to <unclear>[-]</unclear> got some gruel to day very warm Bled very bad
+                            to day </p>
+                    </div3>
+                    <div3 type="entry" id="d135">
+                        <head>TUESDAY <date value="1864-05-10">10</date></head>
+                        <p>rainy to day bled again to day I am so weak that I cannot walk all that I
+                            can eat is beef tea and flour gruel </p>
+                    </div3>
+                    <div3 type="entry" id="d136">
+                        <head>WEDNESDAY <date value="1864-05-11">11</date></head>
+                        <p>no letters bled again last night cloudy and cold drank A little beef tea
+                            this morn am very weak </p>
+                    </div3>
+                    <div3 type="entry" id="d137">
+                        <pb entity="DSSR_000004401_0070" n="np"/>
+                        <head>THURSDAY, <date value="1864-05-12">MAY 12, 1864</date>.</head>
+                        <p>very bad this morn got wet last night Seen is growing worse had some
+                            flour gruel could not eat much</p>
+                    </div3>
+                    <div3 type="entry" id="d138">
+                        <head>FRIDAY <date value="1864-05-13">13</date></head>
+                        <p>As I am so tired of lying here on the ground what shall I do so weak that
+                            I cannot get out of the tent Seen had his leg amputated to day</p>
+                    </div3>
+                    <div3 type="entry" id="d139">
+                        <head>SATURDAY <date value="1864-05-14">14</date></head>
+                        <p>A little better to day rainy and cold got some meal gruel and beef tea
+                        </p>
+                    </div3>
+                    <div3 type="entry" id="d140">
+                        <pb entity="DSSR_000004401_0071" n="np"/>
+                        <head>SUNDAY, <date value="1864-05-15">MAY 15, 1864</date>.</head>
+                        <p>A good deal better to day crawled out of the tent this morn but cannot
+                            walk can just stand up nothing to eat to day but hard bread </p>
+                    </div3>
+                    <div3 type="entry" id="d141">
+                        <head>MONDAY <date value="1864-05-16">16</date></head>
+                        <p>not much better to day</p>
+                    </div3>
+                    <div3 type="entry" id="d142">
+                        <head>TUESDAY <date value="1864-05-17">17</date></head>
+                        <p>A little better to day Seen died last night about <unclear>seven</unclear>
+                            <!--[?]--> Oclock <ref target="n3" n="3">{3}</ref>
+                        </p>
+                    </div3>
+                    <div3 type="entry" id="d143">
+                        <pb entity="DSSR_000004401_0072" n="np"/>
+                        <head>WEDNESDAY, <date value="1864-05-18">MAY 18, 1864</date>.</head>
+                        <p>quite easy this morn cloudy and cold Heavy cannonading this morn coffee
+                            for Breakfast showers in the afternoon very comfortable to night</p>
+                    </div3>
+                    <div3 type="entry" id="d144">
+                        <head>TUESDAY <date value="1864-05-19">19</date></head>
+                        <p>about the same this morn quite cool but the sun shines <unclear>some</unclear>
+                            <!--[?]-->
+                            <unclear>Dan</unclear>
+                            <!--[?]--> this morn <unclear>bled</unclear>
+                            <!--[?]--> quite comfortable very quiet to night had my tent moved to
+                            day</p>
+                    </div3>
+                    <div3 type="entry" id="d145">
+                        <head>FRIDAY <date value="1864-05-20">20</date></head>
+                        <p>very plesant this morn about the same not any pains got half pint of nice
+                            watter for Breakfast quite easy to night d rew Rations to night </p>
+                    </div3>
+                    <div3 type="entry" id="d146">
+                        <pb entity="DSSR_000004401_0073" n="np"/>
+                        <head>SATURDAY, <date value="1864-05-21">MAY 21, 1864</date>.</head>
+                        <p>Very plesent this morn got on<!--[e]--> cake for Breakfast I feel quite
+                            well this morn thunder showers at night </p>
+                    </div3>
+                    <div3 type="entry" id="d147">
+                        <head>SUNDAY <date value="1864-05-22">22</date></head>
+                        <p>warm and very plesent do not feel quite so well this morn got two cakes
+                            and cup full of rice soup they sent all that could walk to Orange </p>
+                    </div3>
+                    <div3 type="entry" id="d148">
+                        <head>MONDAY <date value="1864-05-23">23</date></head>
+                        <p>cloudy and quite cool this morn no news about the same did not rest very
+                            well last night</p>
+                    </div3>
+                    <div3 type="entry" id="d149">
+                        <pb entity="DSSR_000004401_0074" n="np"/>
+                        <head>TUESDAY, <date value="1864-05-24">MAY 24, 1864</date>.</head>
+                        <p>Very plesent this morn went to creek and washed myself this morn feel
+                            pretty well to day get about 2/3 as much as want to eat thunder
+                        shower</p>
+                    </div3>
+                    <div3 type="entry" id="d150">
+                        <head>WEDNESDAY <date value="1864-05-25">25</date></head>
+                        <p>Clear and very warm this morn about the same cannonading this morn
+                            thunder shower about dark <unclear>[-]</unclear> in perfect
+                            <unclear>[-]</unclear></p>
+                    </div3>
+                    <div3 type="entry" id="d151">
+                        <head>THURSDAY <date value="1864-05-26">26</date></head>
+                        <p>Cloudy and warm feel about the same this morn gruel for dinner cleared
+                            away about noon another shower to night </p>
+                    </div3>
+                    <div3 type="entry" id="d152">
+                        <pb entity="DSSR_000004401_0075" n="np"/>
+                        <head>FRIDAY, <date value="1864-05-27">MAY 27, 1864</date>.</head>
+                        <p>Clear and very plesent about the same this morn went to the brook and
+                            washed got pancake for supper</p>
+                    </div3>
+                    <div3 type="entry" id="d153">
+                        <head>SATURDAY <date value="1864-05-28">28</date></head>
+                        <p>Very plesent this morn got to hard crackers for breakfast</p>
+                    </div3>
+                    <div3 type="entry" id="d154">
+                        <head>SUNDAY <date value="1864-05-29">29</date></head>
+                        <p>very plesent this morn feel prety well p<!--[l]-->enty to eat to day
+                            bought it of A citizen had to pay prety dear for it </p>
+                    </div3>
+                    <div3 type="entry" id="d155">
+                        <pb entity="DSSR_000004401_0076" n="np"/>
+                        <head>MONDAY, <date value="1864-05-30">MAY 30, 1864</date>.</head>
+                        <p>Cloudy in the morn cleared away about nine do not feel quite so well to
+                            day feel better since I got some milk to drink</p>
+                    </div3>
+                    <div3 type="entry" id="d156">
+                        <head>TUESDAY <date value="1864-05-31">31</date></head>
+                        <p>clear and very warm about the same I get some milk to day herd that Gen
+                            Lee was killed but don't know whether it is true or not </p>
+                    </div3>
+                    <div3 type="entry" id="d157">
+                        <head>WEDNESDAY, <date value="1864-06-01">JUNE 1</date></head>
+                        <p>Very plesent and warm about the same my face is swollen pretty bad got
+                            some milk and pie</p>
+                    </div3>
+                    <div3 type="entry" id="d158">
+                        <pb entity="DSSR_000004401_0077" n="np"/>
+                        <head>THURSDAY, <date value="1864-06-02">JUNE 2, 1864</date>.</head>
+                        <p>Cloudy and very cool feel pretty well to day bought some buttermilk payed
+                            50 cts canteen full rained in the afternoon </p>
+                    </div3>
+                    <div3 type="entry" id="d159">
+                        <head>FRIDAY <date value="1864-06-03">3</date></head>
+                        <p>warm and very plesent this morn they sent A squad to Orange Court house
+                            Leyford went</p>
+                    </div3>
+                    <div3 type="entry" id="d160">
+                        <head>SATURDAY <date value="1864-06-04">4</date></head>
+                        <p>Clear and very windy Radman Snyder and Geary left this morn for the
+                            Potomac no milk to day about the same clouded up about noon </p>
+                    </div3>
+                    <div3 type="entry" id="d161">
+                        <pb entity="DSSR_000004401_0078" n="np"/>
+                        <head>SUNDAY, <date value="1864-06-05">JUNE 5, 1864</date>.</head>
+                        <p>Cloudy and cool got up very early went to the creek and washed feel
+                            pretty well did not get rations till late got some bread and milk
+                            started for Orange </p>
+                    </div3>
+                    <div3 type="entry" id="d162">
+                        <head>MONDAY <date value="1864-06-06">6</date></head>
+                        <p>Camped last night at Minervill started this morn at five arrived at
+                            Orange at 10 s<!--[t]-->ayed till 1 then left for Lynchburg
+                            s<!--[t]-->oped at Gordonsville at night</p>
+                    </div3>
+                    <div3 type="entry" id="d163">
+                        <head>TUESDAY <date value="1864-06-07">7</date></head>
+                        <p>Stoped at Gordonsville all day get plenty to eat my jaw is prety soar to
+                            day very warm bought some milk </p>
+                    </div3>
+                    <div3 type="entry" id="d164">
+                        <pb entity="DSSR_000004401_0079" n="np"/>
+                        <head>WEDNESDAY, <date value="1864-06-08">JUNE 8, 1864</date>.</head>
+                        <p>still at Gordonsville expect to leave soon the Rebs is moving troops to
+                            Staunton it is reported that Grant has faling back from Richmond no news
+                            to day they bring my meals to me</p>
+                    </div3>
+                    <div3 type="entry" id="d165">
+                        <head>THURSDAY <date value="1864-06-09">9</date></head>
+                        <p>do not feel quite so well to day as usual cloudy and quite cool was moved
+                            from Ward Se K very warm in the afternoon got my hair cut and shaved
+                            paid 75</p>
+                    </div3>
+                    <div3 type="entry" id="d166">
+                        <head>FRIDAY 10</head>
+                        <p>very warm about the same mush and milk for breakfast rice and milk for
+                            dinner our cavalry reported within four miles of here left for Lynchburg
+                            9</p>
+                    </div3>
+                    <div3 type="entry" id="d167">
+                        <pb entity="DSSR_000004401_0080" n="np"/>
+                        <head>SATURDAY, <date value="1864-06-11">JUNE 11, 1864</date>.</head>
+                        <p>cloudy and cool <unclear>[-]</unclear> stoped <add place="top"
+                                hand="author">arrived</add> at Charlotsvill about 2 in the morn
+                            stoped all night left Charlottsvill 2 PM went about 30 miles and came
+                            back again the yanks wer to near the Road </p>
+                    </div3>
+                    <div3 type="entry" id="d168">
+                        <head>SUNDAY <date value="1864-06-12">12</date></head>
+                        <p>lay at Charlottsvill all day waiting for the Rebs to repair the Railroad
+                            that Hunters cavalry tore up lay in the cars all day let out and about
+                            half an hour feel pretty well</p>
+                    </div3>
+                    <div3 type="entry" id="d169">
+                        <head>MONDAY <date value="1864-06-13">13</date></head>
+                        <p>Another day at Charlottsvill had to stop in the cars all day no event to
+                            day of importance very warm do not feel so well to day</p>
+                    </div3>
+                    <div3 type="entry" id="d170">
+                        <pb entity="DSSR_000004401_0081" n="np"/>
+                        <head>TUESDAY, <date value="1864-06-14">JUNE 14, 1864</date>.</head>
+                        <p>very warm we left the cars this morn about 10 and walked back to town
+                            they had put up some tents for us I drew some meal and mad<!--[e]-->
+                            gruel</p>
+                    </div3>
+                    <div3 type="entry" id="d171">
+                        <head>WEDNESDAY <date value="1864-06-15">15</date></head>
+                        <p>very plesant and warm had some gruel and coffee for breakfast they
+                            brought in five cavalry men to day that wer wounded near Gordens</p>
+                    </div3>
+                    <div3 type="entry" id="d172">
+                        <head>THURSDAY <date value="1864-06-16">16</date></head>
+                        <p>here at Charlottesvill yet very warm got some milk to day Ewells Corps
+                            encamped nere here to night an <unclear>[-]</unclear> for Lynchburg</p>
+                    </div3>
+                    <div3 type="entry" id="d173">
+                        <pb entity="DSSR_000004401_0082" n="np"/>
+                        <head>FRIDAY, <date value="1864-06-17">JUNE 17, 1864</date>.</head>
+                        <p>very warm feel pretty well Ewells Corps is passing on the cars to day on
+                            rout for Lynchburg we are still at Charlottesvill yet drew soft bread to
+                            day</p>
+                    </div3>
+                    <div3 type="entry" id="d174">
+                        <head>SATURDAY <date value="1864-06-18">18</date></head>
+                        <p>very warm about the same got some milk and cakes to day no news to day
+                            drew soft bread to day</p>
+                    </div3>
+                    <div3 type="entry" id="d175">
+                        <head>SUNDAY <date value="1864-06-19">19</date></head>
+                        <p>warm and very plesant no news of importance to day got some chicken soup
+                            and milk for supper some eggs</p>
+                    </div3>
+                    <div3 type="entry" id="d176">
+                        <pb entity="DSSR_000004401_0083" n="np"/>
+                        <head>MONDAY, <date value="1864-06-20">JUNE 20, 1864</date>.</head>
+                        <p>very warm we left charlottesvill at three PM arrived at 9 &frac12; PM we stoped
+                            at the Wayside Hospital all night in the morn we wer sent to the C lot
+                            in Hospital</p>
+                    </div3>
+                    <div3 type="entry" id="d177">
+                        <head>TUESDAY <date value="1864-06-21">21</date></head>
+                        <p>A good days rest had soup for dinner did not eat much supper very warm no
+                            news about 3 AM we <unclear>[-]</unclear> did arrived to day they come
+                            into the same Hg</p>
+                    </div3>
+                    <div3 type="entry" id="d178">
+                        <head>WEDNESDAY <date value="1864-06-22">22</date></head>
+                        <p>very warm they sent two Squads away to day Avery went in the second <del
+                                hand="author">
+                                <hi rend="line-through">[Two words are lined out.]</hi>
+                            </del> Clayton Hospital <unclear>[---]</unclear>
+                        </p>
+                    </div3>
+                    <div3 type="entry" id="d179">
+                        <pb entity="DSSR_000004401_0084" n="np"/>
+                        <head>THURSDAY, <date value="1864-06-23">JUNE 23, 1864</date>.</head>
+                        <p>very warm I was sent to another Hosp ward NO 5 Dinner No 2 their was A
+                            Squad came from Gordensvill Clark Haines Hoffman came</p>
+                    </div3>
+                    <div3 type="entry" id="d180">
+                        <head>FRIDAY <date value="1864-06-24">24</date></head>
+                        <p>A good days rest feel about the same to day very warm corn bread and soup
+                            for dinner bread and coffee for Supper Bacon Bread and coffee for
+                            Breakfast</p>
+                    </div3>
+                    <div3 type="entry" id="d181">
+                        <head>SATURDAY <date value="1864-06-25">25</date></head>
+                        <p>A fine day about the same got some milk for Breakfast had my face painted
+                            to day to take the swelling out</p>
+                    </div3>
+                    <div3 type="entry" id="d182">
+                        <pb entity="DSSR_000004401_0085" n="np"/>
+                        <head>SUNDAY, <date value="1864-06-26">JUNE 26, 1864</date>.</head>
+                        <p>very warm about the same was painted again to day no news the Yankees
+                            burned the station at depot at fawns Station and tore the track up</p>
+                    </div3>
+                    <div3 type="entry" id="d183">
+                        <head>MONDAY <date value="1864-06-27">27</date></head>
+                        <p>very warm no better yet the negroes are all ordered to danvill to work on
+                            the forfications at that place Shower this afternoon quite cool this
+                            evening</p>
+                    </div3>
+                    <div3 type="entry" id="d184">
+                        <head>TUESDAY <date value="1864-06-28">28</date></head>
+                        <p>Cloudy and very cool this morn about the same no news of any importance A
+                            rumer that we are to be paroled soon Breakfast at 5 D 12 S at 5 &frac12; </p>
+                    </div3>
+                    <div3 type="entry" id="d185">
+                        <pb entity="DSSR_000004401_0086" n="np"/>
+                        <head>WEDNESDAY, <date value="1864-06-29">JUNE 29, 1864</date>.</head>
+                        <p>Very cool they sent A Squad of seven away to day to the Provost Marshalls
+                            Office about the my jaw not Swollen quite so bad </p>
+                    </div3>
+                    <div3 type="entry" id="d186">
+                        <head>THURSDAY <date value="1864-06-30">30</date></head>
+                        <p>cloudy and cool to day 23 Prisoners from Petersburg passed here to day on
+                            rout for Georgia all belonging to the 2<hi rend="super">nd</hi> A C
+                            captured at the 22 near Petersburg </p>
+                    </div3>
+                    <div3 type="entry" id="d187">
+                        <head>FRIDAY, <date value="1864-07-01">JULY 1</date></head>
+                        <p>warm and very ples this morn thunder Showers about two Oclock A Squad of
+                            prisoners went by to day all wounded and convalescents</p>
+                    </div3>
+                    <div3 type="entry" id="d188">
+                        <pb entity="DSSR_000004401_0087" n="np"/>
+                        <head>SATURDAY, <date value="1864-07-02">JULY 2, 1864</date>.</head>
+                        <p>warm to day about the same to day another Squad of Yankee Convalescents
+                            went by to day they went to prison about half m mile distant cooler this
+                            evening</p>
+                    </div3>
+                    <div3 type="entry" id="d189">
+                        <head>SUNDAY <date value="1864-07-03">3</date></head>
+                        <p>cloudy and warm this morn I think that I am A little better cooler this
+                            afternoon about the same tea and Bread for Breakfast Soup and Bread for
+                            Dinner Bread and tea for Supper</p>
+                    </div3>
+                    <div3 type="entry" id="d190">
+                        <head>MONDAY <date value="1864-07-04">4</date></head>
+                        <p>cloudy and cool to day no celabration to day does not seem like the
+                            fourthe but it has played out with the Southern confederacy all quiet to
+                            night</p>
+                    </div3>
+                    <div3 type="entry" id="d191">
+                        <pb entity="DSSR_000004401_0088" n="np"/>
+                        <head>TUESDAY <date value="1864-07-05">JULY 5, 1864</date>.</head>
+                        <p>very warm about the same write A Letter to Father and Mother to it is
+                            very uncertain whether they will ever get it or not Sergt Hayem give me
+                            the Paper and envelopes</p>
+                    </div3>
+                    <div3 type="entry" id="d192">
+                        <head>WEDNESDAY <date value="1864-07-06">6</date></head>
+                        <p>quite cool to day about the same no news the Doctor took all the names of
+                            them that had limbs of<!--[f]--> are <!--[or]--> broken bones news to
+                            night that they are Pardoning all wounded Prisoners at Richmond </p>
+                    </div3>
+                    <div3 type="entry" id="d193">
+                        <head>THURSDAY <date value="1864-07-07">7</date></head>
+                        <p>very warm and clear feel A little better to day The Doctor took our names
+                            again to day all quiet to night no news very Plesant evening and here I
+                            am a Prisnor </p>
+                    </div3>
+                    <div3 type="entry" id="d194">
+                        <pb entity="DSSR_000004401_0089" n="np"/>
+                        <head>FRIDAY, <date value="1864-07-08">JULY 8, 1864</date>.</head>
+                        <p>very warm was sent from Fords Hospital to <unclear>Nites</unclear>
+                            <!--[?]--> Hospital about 150 yards from Fords do not like the change
+                            very well wheat Bread and coffee for Supper</p>
+                    </div3>
+                    <div3 type="entry" id="d195">
+                        <head>SATURDAY <date value="1864-07-09">9</date></head>
+                        <p>A good nights rest feel well this morn bread and has<!--[h]--> for
+                            Breakfast cloudy and cool this morn better living then we had down to
+                            Fords Hospital warm this evening </p>
+                    </div3>
+                    <div3 type="entry" id="d196">
+                        <head>SUNDAY <date value="1864-07-10">10</date></head>
+                        <p>clear and very warm about the same this morn dull times nothing to read
+                            another Sabbath has passed and here I am a Prisnor yet<ref target="n3" n="3">{3}</ref></p>
+                    </div3>
+                    <div3 type="entry" id="d197">
+                        <pb entity="DSSR_000004401_0090" n="np"/>
+                        <head>MONDAY, <date value="1864-07-11">JULY 11, 1864</date>.</head>
+                        <p>warm and very clear this morn Grant reported to be falling back clouded
+                            up about noon about the same to day as usual thunder showers this
+                            evening </p>
+                    </div3>
+                    <div3 type="entry" id="d198">
+                        <head>TUESDAY <date value="1864-07-12">12</date></head>
+                        <p>Another day has passed and brought no change <add place="top"
+                                hand="author">s</add> with it to me just the same we cannot go any
+                            where <unclear>[-]</unclear> no one came near us cool and cloudy</p>
+                    </div3>
+                    <div3 type="entry" id="d199">
+                        <head>WEDNESDAY <date value="1864-07-13">13</date></head>
+                        <p>Another lovely day has passed away no news except the Rebs was repulsed
+                            at Fredrick City Md on the 7 inst about the same yet traded pants got
+                            $5.00 </p>
+                    </div3>
+                    <div3 type="entry" id="d200">
+                        <pb entity="DSSR_000004401_0091" n="np"/>
+                        <head>THURSDAY, <date value="1864-07-14">JULY 14, 1864</date>.</head>
+                        <p>clear and very warm this morn clouded up about noon Cap Early Reported to
+                            be within two miles of Washington about the same to day</p>
+                    </div3>
+                    <div3 type="entry" id="d201">
+                        <head>FRIDAY <date value="1864-07-15">15</date></head>
+                        <p>cloudy and cool this morn do not feel quite so well this morn as usual
+                            mush and milk for dinner nothing new from the Rebel raid</p>
+                    </div3>
+                    <div3 type="entry" id="d202">
+                        <head>SATURDAY <date value="1864-07-16">16</date></head>
+                        <p>windy and cool to day the 6th and 2nd A Corps reported to have left
+                            Petersburg and gone to Washington 95 Prisnors came in to day captured in
+                            Md </p>
+                    </div3>
+                    <div3 type="entry" id="d203">
+                        <pb entity="DSSR_000004401_0092" n="np"/>
+                        <head>SUNDAY, <date value="1864-07-17">JULY 17, 1864</date>.</head>
+                        <p>Another lovely day the Rebel Raiders reported to be falling back across
+                            the Potomac at Edwards Ferry Grant is still at work in front of
+                            Petersburg about the same to day </p>
+                    </div3>
+                    <div3 type="entry" id="d204">
+                        <head>MONDAY <date value="1864-07-18">18</date></head>
+                        <p>warm and very Plesent the Doctor took Davis and my <unclear>[-]</unclear>
+                            to send us away to the <unclear>[--]</unclear> we left at 6 and
+                                <unclear>[--]</unclear> no news from the raiders very warm<ref target="n4" n="4">{4}</ref>
+                            </p>
+                    </div3>
+                    <div3 type="entry" id="d205">
+                        <head>TUESDAY <date value="1864-07-19">19</date></head>
+                        <p>did not sleep much last night do not like the Prison very well got one
+                            Small loaf of bread for todays rations no meat plenty of water
+                                <unclear>[----]</unclear></p>
+                    </div3>
+                    <div3 type="entry" id="d206">
+                        <pb entity="DSSR_000004401_0093" n="np"/>
+                        <head>WEDNESDAY, <date value="1864-07-20">JULY 20, 1864</date>.</head>
+                        <p>cloudy and cool out doors Lynchburg Prison is hot enough to suffocate any
+                            one do not get much to eat my jaw is very Soar to day </p>
+                    </div3>
+                    <div3 type="entry" id="d207">
+                        <head>THURSDAY <date value="1864-07-21">21</date></head>
+                        <p>Another lovely day and here we are in Lynchburg Prison on half Rations
+                            hardly room for us to lay down about the same to day left the Prison at
+                            6 PM</p>
+                    </div3>
+                    <div3 type="entry" id="d208">
+                        <head>FRIDAY <date value="1864-07-22">22</date></head>
+                        <p>very Plesent we left Lynchburg at 7 AM for Danville Farmvill Station is A
+                            sight small place Berksvill Junction looks as though the Yanks had been
+                            there</p>
+                    </div3>
+                    <div3 type="entry" id="d209">
+                        <pb entity="DSSR_000004401_0094" n="np"/>
+                        <head>SATURDAY, <date value="1864-07-23">JULY 23, 1864</date>.</head>
+                        <p>we arrived at Danvill at 2 this morn lay in the cars till 7 then went to
+                            Prison and stayed all day drew rations half loaf of corn bread half
+                            pound of bacon pint of beans <add place="top" hand="author">
+                                <unclear>[-]</unclear>
+                            </add>
+                        </p>
+                    </div3>
+                    <div3 type="entry" id="d210">
+                        <head>SUNDAY <date value="1864-07-24">24</date></head>
+                        <p>was awoke up this morn at two and marched to the depot and took the cars
+                            for Greenbrier arrived at 2 NC very poor looking country arrived at 12
+                            took cars for Charlotte</p>
+                    </div3>
+                    <div3 type="entry" id="d211">
+                        <head>MONDAY <date value="1864-07-25">25</date></head>
+                        <p>arrived at Charlott at 2 in the morn and they took us out to a peice of
+                            woods and we slept to morn then we took the cars for Columbia SC arrived
+                            at 7 at eve</p>
+                    </div3>
+                    <div3 type="entry" id="d212">
+                        <pb entity="DSSR_000004401_0095" n="np"/>
+                        <head>TUESDAY, <date value="1864-07-26">JULY 26, 1864</date>.</head>
+                        <p>lay in the cars all night at the depot took the cars again at 11 &frac12; Oclock
+                            for Augusta GA good many nice looking towns along the road
+                                <unclear>Boenchvill</unclear>
+                            <!--[?]--> Station GA</p>
+                    </div3>
+                    <div3 type="entry" id="d213">
+                        <head>WEDNESDAY <date value="1864-07-27">27</date></head>
+                        <p>arrived at Augusta at 11 AM drew rations and left at three PM for
+                            Andersonvill distance 180 miles passed through quite A number of prety
+                            towns</p>
+                    </div3>
+                    <div3 type="entry" id="d214">
+                        <head>THURSDAY <date value="1864-07-28">28</date></head>
+                        <p>here we are at Macon GA this morn the Officers left us this morn took
+                            cars for and <!--[?]--> Andersonvill arrived at 7 PM</p>
+                    </div3>
+                    <div3 type="entry" id="d215">
+                        <pb entity="DSSR_000004401_0096" n="np"/>
+                        <head>FRIDAY, <date value="1864-07-29">JULY 29, 1864</date></head>
+                        <p>here we are in the field had no water since yesterday now 10 AM took our
+                            names and put us in the pen with the rest of the Prisners drew rations
+                        </p>
+                    </div3>
+                    <div3 type="entry" id="d216">
+                        <head>SATURDAY <date value="1864-07-30">30</date></head>
+                        <p>very warm I went into tent with Warner and same Co I boys Sergt Thomas is
+                            here drew rations for thirty men today corn bread and pork</p>
+                    </div3>
+                    <div3 type="entry" id="d217">
+                        <head>SUNDAY <date value="1864-07-31">31</date></head>
+                        <p>warm do not like very well corn Bread and very poor meat </p>
+                    </div3>
+                    <div3 type="entry" id="d218">
+                        <pb entity="DSSR_000004401_0097" n="np"/>
+                        <head>MONDAY, <date value="1864-08-01">AUGUST 1, 1864</date>.</head>
+                        <p>cloudy and warm rumers that we are to be Paroled the Rebs are moveing the
+                            Sick from the Hospital do not feel very well to day cool this eve</p>
+                    </div3>
+                    <div3 type="entry" id="d219">
+                        <head>TUESDAY <date value="1864-08-02">2</date></head>
+                        <p>cloudy and warm to day and here I am at Camp Sumter GA ther's is about
+                            30,000 Prisners here I am about the same as I have been for the last two
+                            months</p>
+                    </div3>
+                    <div3 type="entry" id="d220">
+                        <head>WEDNESDAY <date value="1864-08-03">3</date></head>
+                        <p>warm to day A few more Prisners arrived to day Gen Stoneman is reported
+                            to be taken captured 24 miles from Macon GA </p>
+                    </div3>
+                    <div3 type="entry" id="d221">
+                        <pb entity="DSSR_000004401_0098" n="np"/>
+                        <head>THURSDAY, <date value="1864-08-04">AUGUST 4, 1864</date>.</head>
+                        <p>very warm to day no better no news to day </p>
+                    </div3>
+                    <div3 type="entry" id="d222">
+                        <head>FRIDAY <date value="1864-08-05">5</date></head>
+                        <p>Another lovely day and here I am in the Bull Pen Near Andersonvill GA
+                            been a Prisnor just three months to day and not much Sign of getting out
+                        </p>
+                    </div3>
+                    <div3 type="entry" id="d223">
+                        <head>SATURDAY <date value="1864-08-06">6</date></head>
+                        <p>cloudy and warm to day Dittmore died to day of Co A taken the 5<hi
+                                rend="super">th</hi> May no news of importance one man Shot for
+                            getting under the dead line</p>
+                    </div3>
+                    <div3 type="entry" id="d224">
+                        <pb entity="DSSR_000004401_0099" n="np"/>
+                        <head>SUNDAY, <date value="1864-08-07">AUGUST 7, 1864</date>.</head>
+                        <p>very warm to day no news to day of importance to day camp rumors are as
+                            Prevalent as ever but not reliable</p>
+                    </div3>
+                    <div3 type="entry" id="d225">
+                        <head>MONDAY <date value="1864-08-08">8</date></head>
+                        <p>cloudy and warm thunder Showers in the fore noon and one in the evening.
+                            my face is about the same we draw very poor rations</p>
+                    </div3>
+                    <div3 type="entry" id="d226">
+                        <head>TUESDAY <date value="1864-08-09">9</date></head>
+                        <p>cloudy and warm real dog days weath weather very heavy showers about 2
+                            Oclock perfect Stream ran through the tent no rations</p>
+                    </div3>
+                    <div3 type="entry" id="d227">
+                        <pb entity="DSSR_000004401_0100" n="np"/>
+                        <head>WEDNESDAY, <date value="1864-08-10">AUGUST 10, 1864</date>.</head>
+                        <p>very warm to day A very heavy thunder Shower drew two days Rations to day
+                            The Rebs have began to build Barraks and enlarge the Stockade</p>
+                    </div3>
+                    <div3 type="entry" id="d228">
+                        <head>THURSDAY <date value="1864-08-11">11</date></head>
+                        <p>warm and showery to day our Officers at Macon have been exchanged no news
+                            as to when we Shall get out Roll call this morn</p>
+                    </div3>
+                    <div3 type="entry" id="d229">
+                        <head>FRIDAY <date value="1864-08-12">12</date></head>
+                        <p>very warm and Showery col cooler this evening</p>
+                    </div3>
+                    <div3 type="entry" id="d230">
+                        <pb entity="DSSR_000004401_0101" n="np"/>
+                        <head>SATURDAY, <date value="1864-08-13">AUGUST 13, 1864</date>.</head>
+                        <p>Another lovely day and very warm drew two days rations of meat and beans
+                            &amp; Bread Rumor camp rumors is that we are to be Paroled on
+                        Monday</p>
+                    </div3>
+                    <div3 type="entry" id="d231">
+                        <head>SUNDAY <date value="1864-08-14">14</date></head>
+                        <p>very fine morn and warm do not feel very well to day drew bread and beans
+                            no meat</p>
+                    </div3>
+                    <div3 type="entry" id="d232">
+                        <head>MONDAY <date value="1864-08-15">15</date></head>
+                        <p>cloudy and A little cooler to day drew pork this morn bread and beef this
+                            evening</p>
+                    </div3>
+                    <div3 type="entry" id="d233">
+                        <pb entity="DSSR_000004401_0102" n="np"/>
+                        <head>TUESDAY, <date value="1864-08-16">AUGUST 16, 1864</date>.</head>
+                        <p>A fine day and no rain to Spi do not feel very well to day </p>
+                    </div3>
+                    <div3 type="entry" id="d234">
+                        <head>WEDNESDAY <date value="1864-08-17">17</date></head>
+                        <p>A fine day and very warm feel better to day</p>
+                    </div3>
+                    <div3 type="entry" id="d235">
+                        <head>THURSDAY <date value="1864-08-18">18</date></head>
+                        <p>Another fine day A little cooler no news to day camp rumors sh has played
+                            out</p>
+                    </div3>
+                    <div3 type="entry" id="d236">
+                        <pb entity="DSSR_000004401_0103" n="np"/>
+                        <head>FRIDAY, <date value="1864-08-19">AUGUST 19, 1864</date></head>
+                        <p>cloudy and cool rained some in the afternoon but we got our rations the
+                            old detachments drew beef and salt in the forenoon</p>
+                    </div3>
+                    <div3 type="entry" id="d237">
+                        <head>SATURDAY <date value="1864-08-20">20</date></head>
+                        <p>cloudy and warm showery all day by Spells do not feel very well to day
+                            did not draw meat to night </p>
+                    </div3>
+                    <div3 type="entry" id="d238">
+                        <head>SUNDAY <date value="1864-08-21">21</date></head>
+                        <p>Still cloudy and rainey to day quite cool</p>
+                    </div3>
+                    <div3 type="entry" id="d239">
+                        <pb entity="DSSR_000004401_0104" n="np"/>
+                        <head>MONDAY, <date value="1864-08-22">AUGUST 22, 1864</date>.</head>
+                        <p>cloudy and warm had good wash this morn and washed my Shirt do not feel
+                            very well to day drew bread and molasses to day</p>
+                    </div3>
+                    <div3 type="entry" id="d240">
+                        <head>TUESDAY <date value="1864-08-23">23</date></head>
+                        <p>fine day drew beans this morn for yesterday drew pork and bread to night
+                            all quiet to night about the Same</p>
+                    </div3>
+                    <div3 type="entry" id="d241">
+                        <head>WEDNESDAY <date value="1864-08-24">24</date></head>
+                        <p>very clear and plesant morn quite A breese this evening drew our rations
+                            this eve</p>
+                    </div3>
+                    <div3 type="entry" id="d242">
+                        <pb entity="DSSR_000004401_0105" n="np"/>
+                        <head>THURSDAY, <date value="1864-08-25">AUGUST 25, 1864</date>.</head>
+                        <p> clear and warm we made quite A change with our <!--[rations]--> give raw
+                            rations now in place of cooked ones drew beef</p>
+                    </div3>
+                    <div3 type="entry" id="d243">
+                        <head>FRIDAY <date value="1864-08-26">26</date></head>
+                        <p>very warm to day the warmest for the month Oroas left to day and went
+                            over with the 1<hi rend="super">st</hi> Maine boys we drew molasses pork
+                            beef Salt and bread rice to day</p>
+                    </div3>
+                    <div3 type="entry" id="d244">
+                        <head>SATURDAY <date value="1864-08-27">27</date></head>
+                        <p>A fine day and very warm my throat is getting very Saor [word lined out]
+                            we drew wood to day for the first time</p>
+                    </div3>
+                    <div3 type="entry" id="d245">
+                        <pb entity="DSSR_000004401_0106" n="np"/>
+                        <head>SUNDAY, <date value="1864-08-28">AUGUST 28, 1864</date>.</head>
+                        <p>very plesant morn feel pretty well camp rumors is that there is to be an
+                            exchange but I do not know whether it is true or not cool this
+                        evening</p>
+                    </div3>
+                    <div3 type="entry" id="d246">
+                        <head>MONDAY <date value="1864-08-29">29</date></head>
+                        <p>cloudy and quite cool to day drew beef this morn no news to day to day
+                            makes one month in the Bull Pen in GA do not stand it very well</p>
+                    </div3>
+                    <div3 type="entry" id="d247">
+                        <head>TUESDAY <date value="1864-08-30">30</date></head>
+                        <p>warm went to see the Doctor this morn got A Bandage for my head no
+                            medicen given and I feel very weak to day</p>
+                    </div3>
+                    <div3 type="entry" id="d248">
+                        <pb entity="DSSR_000004401_0107" n="np"/>
+                        <head>WEDNESDAY, <date value="1864-08-31">AUGUST 31, 1864</date>.</head>
+                        <p>quite cool to day some better to day no news yet about the exchanging of
+                            Prisnors</p>
+                    </div3>
+                    <div3 type="entry" id="d249">
+                        <head>THURSDAY, <date value="1864-09-01">SEPTEMBER 1</date></head>
+                        <p>A fine day for the first day of fall do not feel very well to day</p>
+                    </div3>
+                    <div3 type="entry" id="d250">
+                        <head>
+                            <date value="1864-09-01">FRIDAY 2</date>
+                        </head>
+                        <p>Another lovely day had the absis on my neck lanced to day by A Hospital
+                            Steward from the 8 Mich<ref target="n5" n="5">{5}</ref> </p>
+                    </div3>
+                    <div3 type="entry" id="d251">
+                        <pb entity="DSSR_000004401_0108" n="np"/>
+                        <head>SATURDAY, <date value="1864-09-03">SEPTEMBER 3, 1864</date>.</head>
+                        <p>cloudy and quite cool C Richardson died last night he belonged to Co D
+                                81<hi rend="super">st</hi> Maine was wounded at the battle of
+                            Spotsylvania May 11<hi rend="super">th</hi> feel pretty well to day</p>
+                    </div3>
+                    <div3 type="entry" id="d252">
+                        <head>SUNDAY <date value="1864-09-04">4</date></head>
+                        <p>cloudy and quite cool to day another Sabbath has come and brought no
+                            change although camp rumors is as prevelant as ever but we cannot feel
+                            any dependence on them</p>
+                    </div3>
+                    <div3 type="entry" id="d253">
+                        <head>MONDAY <date value="1864-09-05">5</date></head>
+                        <p>A fine day and very warm more Prisners from Shermans army Atlanta
+                            reported to be taken and 8,000 Prisnors with it</p>
+                    </div3>
+                    <div3 type="entry" id="d254">
+                        <pb entity="DSSR_000004401_0109" n="np"/>
+                        <head>TUESDAY, <date value="1864-09-06">SEPTEMBER 6, 1864</date>.</head>
+                        <p>another lovely morn got up pretty early this morn feel pretty well this
+                            morn 18 detachments ordered to be ready to leave in the morn quite
+                        warm</p>
+                    </div3>
+                    <div3 type="entry" id="d255">
+                        <head>WEDNESDAY <date value="1864-09-07">7</date></head>
+                        <p>another lovely day and the camp is all excited this morn 10 detach left
+                            this morn four of them came back the cars did not arrive they left again
+                            at eve</p>
+                    </div3>
+                    <div3 type="entry" id="d256">
+                        <head>THURSDAY <date value="1864-09-08">8</date></head>
+                        <p>another lovely day and they are still to work takeing out the old Bell
+                            island Prisnors the report is that the there is to be a general
+                        exchange</p>
+                    </div3>
+                    <div3 type="entry" id="d257">
+                        <pb entity="DSSR_000004401_0110" n="np"/>
+                        <head>FRIDAY, <date value="1864-09-09">SEPTEMBER 9, 1864</date>.</head>
+                        <p>cloudy and quite cool to day do not feel very well the Chickamauga
+                            Prisnors left to day part of them came back for want of
+                        transportation</p>
+                    </div3>
+                    <div3 type="entry" id="d258">
+                        <head>SATURDAY <date value="1864-09-10">10</date></head>
+                        <p>another lovely day <unclear>83</unclear>
+                            <!--[?]--> detachments left at 2 Oclcok this morn quite cool this
+                            evening</p>
+                    </div3>
+                    <div3 type="entry" id="d259">
+                        <head>SUNDAY <date value="1864-09-11">11</date></head>
+                        <p>A fine day from 19 to 38 left to day about all the boys from the 20 left
+                            except <!--[?]--> Avery Davis and myself</p>
+                    </div3>
+                    <div3 type="entry" id="d260">
+                        <pb entity="DSSR_000004401_0111" n="np"/>
+                        <head>MONDAY, <date value="1864-09-12">SEPTEMBER 12, 1864</date>.</head>
+                        <p>A fine day and the rebs are Still hurrying up with the yanks 20 more
+                            detachments left to night we get very poor rations more bread and
+                            molasses no meat</p>
+                    </div3>
+                    <div3 type="entry" id="d261">
+                        <head>TUESDAY <date value="1864-09-13">13</date>
+                        </head>
+                        <p>Another lovely day and very warm</p>
+                    </div3>
+                    <div3 type="entry" id="d262">
+                        <head>WEDNESDAY <date value="1864-09-14">14</date></head>
+                        <p>very warm quite a serious axident happened to day on the railroad killed
+                            7 yankees and one Darky will delay the transportations</p>
+                    </div3>
+                    <div3 type="entry" id="d263">
+                        <pb entity="DSSR_000004401_0112" n="np"/>
+                        <head>THURSDAY, <date value="1864-09-15">SEPTEMBER 15, 1864</date>.</head>
+                        <p>very warm Church left to day they took A load of the sick that could
+                        walk</p>
+                    </div3>
+                    <div3 type="entry" id="d264">
+                        <head>FRIDAY <date value="1864-09-16">16</date></head>
+                        <p>Another lovely day and every thing is quiet to day no Prisnors taken out
+                            to day cannot get transportation</p>
+                    </div3>
+                    <div3 type="entry" id="d265">
+                        <head>SATURDAY <date value="1864-09-17">17</date></head>
+                        <p>warm and cloudy all quiet to day 700 Shermans men left to night for
+                            Atlanta</p>
+                    </div3>
+                    <div3 type="entry" id="d266">
+                        <pb entity="DSSR_000004401_0113" n="np"/>
+                        <head>SUNDAY, <date value="1864-09-18">SEPTEMBER 18, 1864</date>.</head>
+                        <p>cloudy and rainy but very warm no news to day every thing is quiet in
+                            regard to the exchange</p>
+                    </div3>
+                    <div3 type="entry" id="d267">
+                        <head>MONDAY <date value="1864-09-19">19</date></head>
+                        <p>cloudy and warm they took 1300 Shermans men out to night drew meat and
+                            molasses to night and soaked beans got shaved to day</p>
+                    </div3>
+                    <div3 type="entry" id="d268">
+                        <head>TUESDAY <date value="1864-09-20">20</date></head>
+                        <p>cloudy and warm nothing new to day the removal of Prisnors is very Slow
+                            on account of Transportation</p>
+                    </div3>
+                    <div3 type="entry" id="d269">
+                        <pb entity="DSSR_000004401_0114" n="np"/>
+                        <head>WEDNESDAY, <date value="1864-09-21">SEPTEMBER 21, 1864</date>.</head>
+                        <p>cloudy and quite warm did not feel very well to day did not draw Molasses
+                            it run out before it come to ours</p>
+                    </div3>
+                    <div3 type="entry" id="d270">
+                        <head>THURSDAY <date value="1864-09-22">22</date></head>
+                        <p>cloudy the rebs has been reorganizeing the old detachments and we are now
+                            filled up and our number is 57 drew beef beans bread to day little
+                            better this evening</p>
+                    </div3>
+                    <div3 type="entry" id="d271">
+                        <head>FRIDAY <date value="1864-09-23">23</date></head>
+                        <p>cool and cloudy this morn sun come out A little while in the afternoon
+                            drew beef Salt Meal and beans </p>
+                    </div3>
+                    <div3 type="entry" id="d272">
+                        <pb entity="DSSR_000004401_0115" n="np"/>
+                        <head>SATURDAY, <date value="1864-09-24">SEPTEMBER 24, 1864</date>.</head>
+                        <p>cloudy and cool Sun came out about ten Oclock no news to day dull time in
+                            camp live on half rations and very poor at that cool to night</p>
+                    </div3>
+                    <div3 type="entry" id="d273">
+                        <head>SUNDAY <date value="1864-09-25">25</date></head>
+                        <p>very cold this morn the cildest <!--[chilliest]--> that we have had since
+                            we have been in the Bull Pen quite warm this afternoon drew beans beef
+                            and Bread</p>
+                    </div3>
+                    <div3 type="entry" id="d274">
+                        <head>MONDAY <date value="1864-09-26">26</date></head>
+                        <p>A fine day and quite cool this morn had roll call this morn</p>
+                    </div3>
+                    <div3 type="entry" id="d275">
+                        <pb entity="DSSR_000004401_0116" n="np"/>
+                        <head>TUESDAY, <date value="1864-09-27">SEPTEMBER 27, 1864</date>.</head>
+                        <p> warm to day no news all quiet beans meat Salt and Molasses to day for
+                            rations quite exciteing times this evening the Rebs took out the Mariens
+                            <!--[Marines]--> and 3 detachments</p>
+                    </div3>
+                    <div3 type="entry" id="d276">
+                        <head>WEDNESDAY <date value="1864-09-28">28</date></head>
+                        <p>Another lovely morn very warm feel well to day another train load left
+                            this eve</p>
+                    </div3>
+                    <div3 type="entry" id="d277">
+                        <head>THURSDAY <date value="1864-09-29">29</date></head>
+                        <p>cool and cloudy to day all quiet to day there was no one left to day
+                            beans bacon beef and Soup meal to day small quantities of each</p>
+                    </div3>
+                    <div3 type="entry" id="d278">
+                        <pb entity="DSSR_000004401_0117" n="np"/>
+                        <head>FRIDAY, <date value="1864-09-30">SEPTEMBER 30, 1864</date>.</head>
+                        <p>cool to day no one left all quiet</p>
+                    </div3>
+                    <div3 type="entry" id="d279">
+                        <head>SATURDAY, <date value="1864-10-01">OCTOBER 1</date></head>
+                        <p>A fine day four detachments left this evening </p>
+                    </div3>
+                    <div3 type="entry" id="d280">
+                        <head>SUNDAY <date value="1864-10-02">2</date></head>
+                        <p>A fine day and very quiet we expect to leave this evening</p>
+                    </div3>
+                    <div3 type="entry" id="d281">
+                        <pb entity="DSSR_000004401_0118" n="np"/>
+                        <head>MONDAY, <date value="1864-10-03">OCTOMBER 3, 1864</date>.</head>
+                        <p>cloudy and cool thunder Showers this 3d M <!--[Monday]--> beef beans
+                            bacon bread and very small quantities at that </p>
+                    </div3>
+                    <div3 type="entry" id="d282">
+                        <head>TUESDAY <date value="1864-10-04">4</date></head>
+                        <p>A fine day drew beans beef bacon and bread four detachments left this
+                            evening took one mess out of 57 we had to come back again</p>
+                    </div3>
+                    <div3 type="entry" id="d283">
+                        <head>WEDNESDAY <date value="1864-10-05">5</date></head>
+                        <p>cloudy and cool to day </p>
+                    </div3>
+                    <div3 type="entry" id="d284">
+                        <pb entity="DSSR_000004401_0119" n="np"/>
+                        <head>THURSDAY, <date value="1864-10-06">OCTOBER 6, 1864</date>.</head>
+                        <p>still cloudy but no rain yet packed up and expected to go but did not</p>
+                    </div3>
+                    <div3 type="entry" id="d285">
+                        <head>FRIDAY <date value="1864-10-07">7</date></head>
+                        <p>cool and cloudy to day drew beef beans bacon and bread
+                            <unclear>[-]</unclear> we expected to leave to night took down our tent
+                            and packed all up </p>
+                    </div3>
+                    <div3 type="entry" id="d286">
+                        <head>SATURDAY <date value="1864-10-08">8</date></head>
+                        <p>A fine day and the <unclear>[-]</unclear> Sergt. came in very
+                            e<!--[a]-->rly and ordered every man to pack up and go over to the
+                                <unclear>South</unclear>
+                            <!--[?]--> gate to be formed into new detachment</p>
+                    </div3>
+                    <div3 type="entry" id="d287">
+                        <pb entity="DSSR_000004401_0120" n="np"/>
+                        <head>SUNDAY, <date value="1864-10-09">OCTOBER 9, 1864</date>.</head>
+                        <p>I was one day ahead of time by being car<!--[e]-->less on Saturday and
+                            not writing there is 5 detachments and one hundred over</p>
+                    </div3>
+                    <div3 type="entry" id="d288">
+                        <head>MONDAY <date value="1864-10-10">10</date></head>
+                        <p>A fine day and very warm but cold nights feel some better today</p>
+                    </div3>
+                    <div3 type="entry" id="d289">
+                        <head>TUESDAY <date value="1864-10-11">11</date></head>
+                        <p>A fine day and very quiet 370 Prisnors came in this evening from Shermans
+                            army very small rations to day</p>
+                    </div3>
+                    <div3 type="entry" id="d290">
+                        <pb entity="DSSR_000004401_0121" n="np"/>
+                        <head>WEDNESDAY, <date value="1864-10-12">OCTOBER 12, 1864</date>.</head>
+                        <p>another lovely day here <unclear>[-]</unclear> the confederates and no
+                            hopes of getting out very soon the report is that Grant is fighting
+                            before Richmond now and is within 4 &frac12; miles</p>
+                    </div3>
+                    <div3 type="entry" id="d291">
+                        <head>THURSDAY <date value="1864-10-13">13</date></head>
+                        <p>very warm had to move to day we are now about mid<!--[d]-->le way of the
+                            Stoc<!--[k]-->ade and about half way from the dead line to main street
+                            no better to day</p>
+                    </div3>
+                    <div3 type="entry" id="d292">
+                        <head>FRIDAY <date value="1864-10-14">14</date></head>
+                        <p>cloudy and quite warm to day fixed our tent to day</p>
+                    </div3>
+                    <div3 type="entry" id="d293">
+                        <pb entity="DSSR_000004401_0122" n="np"/>
+                        <head>SATURDAY, <date value="1864-10-15">OCTOBER 15, 1864</date>.</head>
+                        <p>very cool</p>
+                    </div3>
+                    <div3 type="entry" id="d294">
+                        <head>SUNDAY <date value="1864-10-16">16</date></head>
+                        <p>cloudy and cool</p>
+                    </div3>
+                    <div3 type="entry" id="d295">
+                        <head>MONDAY <date value="1864-10-17">17</date></head>
+                        <p>cloudy and cool do not feel well to day am very lame want to see the
+                            Doctor he sent me back to my quarters</p>
+                    </div3>
+                    <div3 type="entry" id="d296">
+                        <pb entity="DSSR_000004401_0123" n="np"/>
+                        <head>TUESDAY, <date value="1864-10-18">OCTOBER 18, 1864</date>.</head>
+                        <p>A fine day and quite cool drew our back Rations of Bread to day beef and
+                            bread beans Pork</p>
+                    </div3>
+                    <div3 type="entry" id="d297">
+                        <head>WEDNESDAY <date value="1865-10-19">19</date></head>
+                        <p>A fine day and very warm </p>
+                    </div3>
+                    <div3 type="entry" id="d298">
+                        <head>THURSDAY <date value="1864-10-20">20</date></head>
+                        <p>warm and and very plesent for this time of year</p>
+                    </div3>
+                    <div3 type="entry" id="d299">
+                        <pb entity="DSSR_000004401_0124" n="np"/>
+                        <head>FRIDAY, <date value="1864-10-21">OCTOBER 21, 1864</date>.</head>
+                        <p>another lovely day and no news yet</p>
+                    </div3>
+                    <div3 type="entry" id="d300">
+                        <head>SATURDAY <date value="1864-10-22">22</date></head>
+                        <p>quite cool this evening</p>
+                    </div3>
+                    <div3 type="entry" id="d301">
+                        <head>SUNDAY <date value="1864-10-23">23</date></head>
+                        <p>another fine day but very cold nights camp rumors says that all eastern
+                            troops to be sent to Charlott NC </p>
+                    </div3>
+                    <div3 type="entry" id="d302">
+                        <pb entity="DSSR_000004401_0125" n="np"/>
+                        <head>MONDAY, <date value="1864-10-24">OCTOBER 24, 1864</date>.</head>
+                        <p>cool and clear</p>
+                    </div3>
+                    <div3 type="entry" id="d303">
+                        <head>TUESDAY <date value="1864-10-25">25</date></head>
+                        <p>another cool and cloudy day no news yet in regard to being exchanged</p>
+                    </div3>
+                    <div3 type="entry" id="d304">
+                        <head>WEDNESDAY <date value="1864-10-26">26</date></head>
+                        <p>cloudy and warm</p>
+                    </div3>
+                    <div3 type="entry" id="d305">
+                        <pb entity="DSSR_000004401_0126" n="np"/>
+                        <head>THURSDAY, <date value="1864-10-27">OCTOBER 27, 1864</date>.</head>
+                        <p>cloudy and warm rained in the forenoon very hard</p>
+                    </div3>
+                    <div3 type="entry" id="d306">
+                        <head>FRIDAY <date value="1864-10-28">28</date></head>
+                        <p>A fine day and very warm Bread beans and Beef</p>
+                    </div3>
+                    <div3 type="entry" id="d307">
+                        <head>SATURDAY <date value="1864-10-29">29</date></head>
+                        <p>A fine day my legs are A Little better</p>
+                    </div3>
+                    <div3 type="entry" id="d308">
+                        <pb entity="DSSR_000004401_0127" n="np"/>
+                        <head>SUNDAY, <date value="1864-10-30">OCTOBER 30, 1864</date>.</head>
+                        <p>another lovely day the first and second detachments got orders to be
+                            ready at 8 Oclock to leave</p>
+                    </div3>
+                    <div3 type="entry" id="d309">
+                        <head>MONDAY <date value="1864-10-31">31</date></head>
+                        <p>cloudy and warm the first second and 200 of the third left this
+                        morning</p>
+                    </div3>
+                    <div3 type="entry" id="d310">
+
+                        <head>TUESDAY, <date value="1864-11-01">NOVEMBER 1, 1864</date>.</head>
+                        <p>cloudy and warm </p>
+                    </div3>
+                    <div3 type="entry" id="d311">
+                        <pb entity="DSSR_000004401_0128" n="np"/>
+                        <head>WEDNESDAY, <date value="1864-11-02">NOVEMBER 2, 1864</date>.</head>
+                        <p>A fine day we expected to leave to day but did not</p>
+                    </div3>
+                    <div3 type="entry" id="d312">
+                        <head>THURSDAY <date value="1864-11-03">3</date></head>
+                        <p>get orders this morn to be ready to leave at 11 Oclock AM but did not
+                            leave until 9 Oclock PM</p>
+                    </div3>
+                    <div3 type="entry" id="d313">
+                        <head>FRIDAY <date value="1864-11-04">4</date></head>
+                        <p>arrived at Macon at 4 AM stoped about one hour took the Savannah road
+                            arrived at Lorten<ref target="n6" n="6">{6}</ref>
+                            at 10 AM got out of the cars and marched up to the Prison</p>
+                    </div3>
+                    <div3 type="entry" id="d314">
+                        <pb entity="DSSR_000004401_0129" n="np"/>
+                        <head>SATURDAY, <date value="1864-11-05">NOVEMBER 5, 1864</date>.</head>
+                        <p>got about 5 hours sleep last night got up and found the wind blowing
+                            perfect gale from the North just was put in Prison about 7 AM</p>
+                    </div3>
+                    <div3 type="entry" id="d315">
+                        <head>SUNDAY <date value="1864-11-05">6</date></head>
+                        <p>A little warmer to day did have no tent yet hard night</p>
+                    </div3>
+                    <div3 type="entry" id="d316">
+                        <head>MONDAY <date value="1864-11-07">7</date></head>
+                        <p>another lovely day and here we are ar at camp Lorten <!--[Lawton]-->
+                            without Shelter of any kind no money or Friends</p>
+                    </div3>
+                    <div3 type="entry" id="d317">
+                        <pb entity="DSSR_000004401_0130" n="np"/>
+                        <head>TUESDAY, <date value="1864-11-08">NOVEMBER 8, 1864</date>.</head>
+                        <p>A fine day went to the Presidential Election Linco<!--[l]-->n got 950
+                            Majority big thing for Prisoners to do Rumors of an Exchange</p>
+                    </div3>
+                    <div3 type="entry" id="d318">
+                        <head>WEDNESDAY <date value="1864-11-09">9</date></head>
+                        <p>A fine day not very well fixed my tent to day</p>
+                    </div3>
+                    <div3 type="entry" id="d319">
+                        <head>THURSDAY <date value="1864-11-10">10</date></head>
+                        <p>it was raining when I awoke up this morn but faired awarr <!--[away?]-->
+                            about 10 Oclock and was very warm</p>
+                    </div3>
+                    <div3 type="entry" id="d320">
+                        <pb entity="DSSR_000004401_0131" n="np"/>
+                        <head>FRIDAY, <date value="1864-11-11">NOVEMBER 11, 1864</date>.</head>
+                        <p>cloudy and cold no more news about the exchange </p>
+                    </div3>
+                    <div3 type="entry" id="d321">
+                        <head>SATURDAY <date value="1864-11-12">12</date></head>
+                        <p>cold and the wind blows A Perfect gale </p>
+                    </div3>
+                    <div3 type="entry" id="d322">
+                        <head>SUNDAY <date value="1864-11-13">13</date></head>
+                        <p>A fine day the Reb Surgeon examined the sick and wounded did not reach
+                            ours</p>
+                    </div3>
+                    <div3 type="entry" id="d323">
+                        <pb entity="DSSR_000004401_0132" n="np"/>
+                        <head>MONDAY, <date value="1864-11-14">NOVEMBER 14, 1864</date></head>
+                        <p>cold and windy went for wood</p>
+                    </div3>
+                    <div3 type="entry" id="d324">
+                        <head>TUESDAY <date value="1864-11-15">15</date></head>
+                        <p>One Thousand of sick and wounded was taken to the depot but had to come
+                            back for want of Transportation are to go on Friday</p>
+                    </div3>
+                    <div3 type="entry" id="d325">
+                        <head>WEDNESDAY <date value="1864-11-16">16</date></head>
+                        <p>cloudy and warm rained some</p>
+                    </div3>
+                    <div3 type="entry" id="d326">
+                        <pb entity="DSSR_000004401_0133" n="np"/>
+                        <head>THURSDAY, <date value="1864-11-17">NOVEMBER 17, 1864</date>.</head>
+                        <p>cloudy and warm rained in the afternoon </p>
+                    </div3>
+                    <div3 type="entry" id="d327">
+                        <head>FRIDAY <date value="1864-11-18">18</date></head>
+                        <p>One thousand left to day for exchange they go to Savannah the Doctors was
+                            in again to day they take 25 out of A Division</p>
+                    </div3>
+                    <div3 type="entry" id="d328">
+                        <head>SATURDAY <date value="1864-11-19">19</date></head>
+                        <p>cloudy and warm this morn Avery was examined last night and Passed
+                            Started to day but did not go they took on<!--[e]--> thousand</p>
+                    </div3>
+                    <div3 type="entry" id="d329">
+                        <pb entity="DSSR_000004401_0134" n="np"/>
+                        <head>SUNDAY, <date value="1864-11-20">NOVEMBER 20, 1864</date>.</head>
+                        <p>cold and cloudy big breakfast this morning Avery left to day feeling
+                        well</p>
+                    </div3>
+                    <div3 type="entry" id="d330">
+                        <head>MONDAY <date value="1864-11-21">21</date></head>
+                        <p>no rations to day we left this evening went to the depot and stayed till
+                            midnight took cars for Savannah arrived at 4 AM very cold got
+                            of<!--[f]--> the cars and <add place="top" hand="author">camped right at
+                                the depot</add></p>
+                    </div3>
+                    <div3 type="entry" id="d331">
+                        <head>TUESDAY <date value="1864-11-22">22</date></head>
+                        <p>was up all night coldest night I ever saw was up all night bringing wood
+                            to keep from Freesang <!--[Freezing]--> drew <unclear>[-]</unclear> hard
+                            tack &amp; spoonfuls of Molasses</p>
+                    </div3>
+                    <div3 type="entry" id="d332">
+                        <pb entity="DSSR_000004401_0135" n="np"/>
+                        <head>WEDNESDAY, <date value="1864-11-23">NOVEMBER 23, 1864</date>.</head>
+                        <p>another cold night and here we are at Savannah all kinds of Stories
+                            afloat about the exchange drew beef this morn I got cheated out of mine
+                            rations to day</p>
+                    </div3>
+                    <div3 type="entry" id="d333">
+                        <head>THURSDAY <date value="1864-11-24">24</date></head>
+                        <p>was examined this morn and Passed they took Five Hundred Sick and marched
+                            us to Head Quarters to <unclear>[-]</unclear></p>
+                    </div3>
+                    <div3 type="entry" id="d334">
+                        <head>FRIDAY <date value="1864-11-25">25</date></head>
+                        <p>one day I missed Skiped this week</p>
+                    </div3>
+                    <div3 type="entry" id="d335">
+                        <pb entity="DSSR_000004401_0136" n="np"/>
+                        <head>SATURDAY, <date value="1864-11-26">NOVEMBER 26, 1864</date>.</head>
+                        <p>the Rebs took us on board of their <unclear>[-]</unclear> of trueo boat
+                            and took us down the bay to our boats where we got rations and new
+                            clothes and A good <unclear>coat</unclear><!--[?]--></p>
+                    </div3>
+                    <div3 type="entry" id="d336">
+                        <head>SUNDAY <date value="1864-11-27">27</date></head>
+                        <p>Another lovely Sabbath morn it finds me in Prety good health and board of
+                            one of the Unites States <unclear>Schooners</unclear><!--[?]--> left for
+                            Annapolis at 4 PM</p>
+                    </div3>
+                    <div3 type="entry" id="d337">
+                        <head>MONDAY <date value="1864-11-28">28</date></head>
+                        <p>Very fine day good breeze and we are making good time on our way home we
+                            Passed Fort Palaskis<ref target="n7" n="7">{7}</ref>
+                            last evening just as they fired the Sunset Gun</p>
+                    </div3>
+                    <div3 type="entry" id="d338">
+                        <pb entity="DSSR_000004401_0137" n="np"/>
+                        <head>TUESDAY, <date value="1864-11-29">NOVEMBER 29, 1864</date>.</head>
+                        <p> another lovely day and we are making good time for Annapolis A fair wind
+                            Passed Cape Hattaras 6 PM it was very smooth very few sea Sick</p>
+                    </div3>
+                    <div3 type="entry" id="d339">
+                        <head>WEDNESDAY <date value="1864-11-30">30</date></head>
+                        <p>another fine day we are in the Chesepeak Bay now of<!--[f]--> Fortress
+                            Monroe 3 Oclock PM we are not going to stop at the Fort and so ends the
+                            last day of the month</p>
+                    </div3>
+                    <div3 type="entry" id="d340">
+                        <head>THURSDAY, <date value="1864-12-01">DECEMBER 1</date></head>
+                        <p>A fine morning and very cool arrived at Annapolis at 12 Oclock</p>
+                    </div3>
+                    <div3 type="entry" id="d341">
+                        <pb entity="DSSR_000004401_0138" n="np"/>
+                        <head>FRIDAY, <date value="1864-12-02">DECEMBER 2, 1864</date>.</head>
+                        <p>cool and rained in the afternoon drew another Suit of clothes to day and
+                            had A wash all over warm water got full rig now</p>
+                    </div3>
+                    <div3 type="entry" id="d342">
+                        <head>SATURDAY <date value="1864-12-03">3</date></head>
+                        <p>A fine morn we fell in at 10 AM to go to camp Parole was Searched to see
+                            if we had any extra Blankets they found A good many Signed the Pay rolls
+                            found <unclear>Layfeld</unclear>
+                            <!--[?]--> D B </p>
+                    </div3>
+                    <div3 type="entry" id="d343">
+                        <head>SUNDAY <date value="1864-12-04">4</date></head>
+                        <p>cold and cloudy was Payed to day got $36 dollars</p>
+                    </div3>
+                    <div3 type="entry" id="d344">
+                        <pb entity="DSSR_000004401_0139" n="np"/>
+                        <head>MONDAY, <date value="1864-12-05">DECEMBER 5, 1864</date>.</head>
+                        <p>quite cool to day no news to day</p>
+                    </div3>
+                    <div3 type="entry" id="d345">
+                        <head>TUESDAY <date value="1864-12-06">6</date></head>
+                        <p>warm nothing done yet about our Furloughs</p>
+                    </div3>
+                    <div3 type="entry" id="d346">
+                        <head>WEDNESDAY <date value="1864-12-07">7</date></head>
+                        <p>A fine day do not feel very <!--[well]--> today</p>
+                    </div3>
+                    <div3 type="entry" id="d347">
+                        <pb entity="DSSR_000004401_0140" n="np"/>
+                        <head>THURSDAY, <date value="1864-12-08">DECEMBER 8, 1864</date>.</head>
+                        <p>cold and windy no better to day</p>
+                    </div3>
+                    <div3 type="entry" id="d348">
+                        <head>FRIDAY <date value="1864-12-09">9</date></head>
+                        <p>clear and cold A little better to day no news of</p>
+                    </div3>
+                    <div3 type="entry" id="d349">
+                        <head>SATURDAY <date value="1864-12-10">10</date></head>
+                        <p><unclear>[-]</unclear> last night and is quite warm to day was mustered
+                            for ration money to day went to Headquarters and had our
+                            <unclear>[-]</unclear> lists taken</p>
+                    </div3>
+                    <div3 type="entry" id="d350">
+                        <pb entity="DSSR_000004401_0141" n="np"/>
+                        <head>SUNDAY, <date value="1864-12-11">DECEMBER 11, 1864</date>.</head>
+                        <p> cloudy and warm &amp; very wet under foot we expected to start for
+                            home but did not cleared off and grows cold very fast</p>
+                    </div3>
+                    <div3 type="entry" id="d351">
+                        <head>MONDAY <date value="1864-12-12">12</date>
+                        </head>
+                        <p>cold and windy</p>
+                    </div3>
+                    <div3 type="entry" id="d352">
+                        <head>TUESDAY <date value="1864-12-13">13</date></head>
+                        <p>still very cold we got our certificates for our commutation money to
+                        day</p>
+                    </div3>
+                    <div3 type="entry" id="d353">
+                        <pb entity="DSSR_000004401_0142" n="np"/>
+                        <head>WEDNESDAY, <date value="1864-12-14">DECEMBER 14, 1864</date>.</head>
+                        <p> cold and cloudy</p>
+                    </div3>
+                    <div3 type="entry" id="d354">
+                        <head>THURSDAY <date value="1864-12-15">15</date></head>
+                        <p>cool and clear this morn we fell in and went to Head Quarters to get our
+                            furlough did not get then until we got down town took us <!--[by]-->
+                            boat for Baltimore</p>
+                    </div3>
+                    <div3 type="entry" id="d355">
+                        <head>FRIDAY <date value="1864-12-16">16</date></head>
+                        <p>arrived in Philedelphia about 2 Oclock AM got very good Breakfast at the
+                                <unclear>Union</unclear>
+                            <!--[?]-->relief Saloon left ther New York at 4 AM 2 PM</p>
+                    </div3>
+                    <div3 type="entry" id="d356">
+                        <pb entity="DSSR_000004401_0143" n="np"/>
+                        <head>SATURDAY, <date value="1864-12-17">DECEMBER 17, 1864</date>.</head>
+                        <p>we arrived in Boston 8 Oclock AM f left for Portland at 2 PM at 81/2 got
+                            A <unclear>[-]</unclear> Supplies at the depot and then went to the
+                            Soldiers <unclear>[-]</unclear> and stayed all night</p>
+                    </div3>
+                </div2>
+            </div1>
+            <div1 type="note" id="d357">
+                <head>Notes</head>
+                <p>This diary, covered in black leather, measures 3" X 4 7/8". </p>
+                <p>[Transcription Notes: At the beginning,
+                    this diary is written in ink Howeve, after Hichborn is captured, he uses pencil. He used
+                    no punctuation and so to make reading this transcript easier, three spaces have been
+                    left blank after each complete thought. Spelling is as found. Words written above the
+                    line are shown thusly; ^'arrived'. [-] indicates a word that can not be deciphered. If a
+                    word or proper name is unclear, a question mark is inserted, such as Wirlister [?].]</p>
+                <note id="n1" n="1" place="end">
+                    <seg type="note-symbol">{1}</seg>
+                        <p>[Gouverneur Kemble Warren]</p>
+                </note>
+                <note id="n2" n="2" place="end">
+                    <seg type="note-symbol">{2}</seg>
+                        <p>[BATTLE OF THE WILDERNESS BEGINS.]</p>
+                </note>
+                <note id="n3" n="3" place="end">
+                    <seg type="note-symbol">{3}</seg>
+                        <p>[The last three lines are too faded to decipher.]</p>
+                </note>
+                <note id="n4" n="4" place="end">
+                    <seg type="note-symbol">{4}</seg>
+                    <p>[One line is marked through and is illegible.]</p>
+                </note>
+                <note id="n5" n="5" place="end">
+                    <seg type="note-symbol">{5}</seg>
+                    <p>[last word not discernible]</p>
+                </note>
+                <note id="n6" n="6" place="end">
+                    <seg type="note-symbol">{6}</seg>
+                    <p>[Hichborn must mean Camp Lawton.
+                    It was on the railroad line going to Savannah and was located in Millen, GA.]</p></note>
+                <note id="n7" n="7" place="end">
+                    <seg type="note-symbol">{7}</seg>
+                    <p>[Fort Pulaski, GA guards the sea approach to
+                    Savannah.]</p></note>
+                
+                
+            </div1>
+            <!-- <p>[Quoting from Charles
+                Apfelbaum, from whom it was purchased in 2006, "Charlottesville in the Civil
+                War: 115 page manuscript diary, for all of 1864, written by George W. Hichborn
+                (Company B, 20th Maine Regiment - related in some way to Paul Revere). He writes
+                good entries every day, but on May 5th [at the Battle of the Wilderness] he is
+                wounded in the face...in June he is in Charlottesville...and from July to November
+                he is at Andersonville Prison and tells of the harsh treatment and the poor food
+                or lack of food there." See transcription notes at the end of this document.]</p>
+
+
+            [Here ends the 1864 diary of George Hichborn, Company B, 20th Maine Regiment. In the
+                        rear of this diary are several lists of names of soldiers that Hichborn knew or with
+                        whom he served. Here follows the most legible list, numbered 1-30: La Voy Rathbun
+                        England Avery Cooper Mc Graw Vider Mc Connell Depper Tusler Lantz Naylor Jones Wright
+                        Warner Westfall Campbell J N Poulton Davis Harris Kepler Knollkemper Johnson Murphy
+                        Perkins O'Hara McComb Thompson Bonds Hichborn  Mary
+                        Roy Dawson Edwards, Transcriber August 2007.] 13660 Page 1 -->
+        </body>
+    </text>
+</TEI.2>
+

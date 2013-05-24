@@ -1,0 +1,359 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0633 SYSTEM "000000766_0633" NDATA jpg>
+<!ENTITY DSSR_000000766_0634 SYSTEM "000000766_0634" NDATA jpg>
+<!ENTITY DSSR_000000766_0635 SYSTEM "000000766_0635" NDATA jpg>
+<!ENTITY DSSR_000000766_0636 SYSTEM "000000766_0636" NDATA jpg>
+<!ENTITY DSSR_000000766_0637 SYSTEM "000000766_0637" NDATA jpg>
+<!ENTITY DSSR_000000766_0638 SYSTEM "000000766_0638" NDATA jpg>
+
+<!--<!ENTITY N620925a SYSTEM "620925a.jpg" NDATA jpg>
+<!ENTITY N620925b SYSTEM "620925b.jpg" NDATA jpg>
+<!ENTITY N620925c SYSTEM "620925c.jpg" NDATA jpg>
+<!ENTITY N620925d SYSTEM "620925d.jpg" NDATA jpg>
+<!ENTITY N620925e SYSTEM "620925e.jpg" NDATA jpg>
+<!ENTITY N620925f SYSTEM "620925f.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NC62i25">
+    <teiHeader type="migrated">
+        <!-- todo -->
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+                        value="1862-09-25">25 September 1862</date></title>
+
+                <author>Tenney, Charles N.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>David Seaman</name>
+                    <resp>Creation of digital images:</resp>
+                    <name>University of Virginia Library Electronic Text Center</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>ETC</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">21</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NC62i25</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2001">2001</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Illustrations have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case, 25 September 1862</title>
+                        <author>Charles N. Tenney</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>6 pages</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p> </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-09-25">1862-09-25</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>masculine</term>
+                    <term>American Civil War/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-16">November 16th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+        <front id="d2">
+
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>6 pp.</extent>
+                        <date value="1862-09-25">25 September 1862</date>
+
+                        <title>Letter from Charles Tenney to Adelaide Case</title>
+                    </bibl>
+                </head>
+                <p/>
+            </div1>
+        </front>
+        <body id="d4">
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-09-25">25
+                        September 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0633"/>
+
+                <opener>
+                    <salute>My own loved Addie;</salute>
+                </opener>
+
+
+                <p> Here I am once more in Virginia-- again on sacred soil. Not only in Va. but way
+                    up on the Blue Ridge, where the very clouds are often under our feet. It would
+                    be very pleasant, if it were not for two very serious drawbacks.-- It is quite
+                    cold, and we have to go down the mountain half a mile for water, There is a kind
+                    of Block house up here, from which and we have a splendid view of the
+                    surrounding country, particularly to the north and west. We can see the
+                    church-spires of Martinsburg with the aid of a field glass.- 21 miles distant
+                    and were it not for intervening hills and forest we could see Winchester. Away
+                    as far as the eye can reach the Alleghenies raise their lofty peaks, far above
+                    the heights of North Mountain and the Shenandoah Mountains both of which
+                    intervene. As far as romance goes, this is by far the most interesting place we
+                    have been in. </p>
+
+                <pb n="2" entity="DSSR_000000766_0634"/>
+
+                <p> Well, we are here, and romance of reality, we must bear all without a murmur. I
+                    wrote you from Maryland Heights a few days since, just to assure you of my
+                    safety, and said I had two letters to answer. Last evening, I was again
+                    gladdened by the receipt of another of your priceless <unclear/> , and as there
+                    is our prosepect of immediate removal, I thought I would devote my time to
+                    replying to the three still unanswered, so "here goes." </p>
+                <p> I was very much pleased with your description of and comments upon the marriage
+                    of Mr. Hathaway. Indeed, I think if I were a lady, and were engaged to a young
+                    man, at such a crisis as existed at the breaking out of the Rebellion, I should
+                    have strenuous <unclear/> my <unclear/> to the reserve of our glorious Union;
+                    and if he were disposed to <hi rend="underline"> display the white
+                    feather</hi>,-- as in the case of Hathaway-- I should have summarily dismissed
+                    him as unworthy the respect not to say <hi rend="underline"> love</hi> of any
+                    patriotic minded person. Indeed in any estimation, the love of our country
+                    should be paramount to all but the <hi rend="underline">"love of God."</hi> If I
+                    do battle for my country; am I not vindicating the cause of all we hold dear? --
+                    am I not resenting an insult to every loyal heart; whether male or female? Most
+                    assuredly I am, and, should count myself unworthy the least of <hi
+                        rend="underline">your</hi>notice, <hi rend="underline"> my treasure, </hi>
+                    were I to sit idly by, at this <unclear/> moment. Turly "coward is his name. <hi
+                        rend="underline"> "Love honor, and obey." God bless you </hi> for your
+                    outspoken indignation at such a man. So you thought our national sky very much
+                    darkened, about the 10th of Sept. Has the osbcurity been removed at all within
+                    the past 10 days? Yes, it did sound stragely "Maryland and Ohio invaded." and
+                    one would <pb n="3" entity="DSSR_000000766_0635"/> have thought we stood sadly
+                    in need of a man of nerve and fortitude, as in truth, we did, but has not Gen.
+                    McClellan sustained all I ascribed to him? Has he not resisted the charges of
+                    "Ultra" peep of the north, such as daily emanated from the N.Y. Tribune? </p>
+                <p> You know the Tribune has always claimed to be the organ of the Union party?
+                    Well, its influence in the border states has been anything but favorable to our
+                    cause, -- on the contrary, by its indiscriminate attacks upon Gen. McClellan,
+                    and other generals who did not precisely agree with that sheet, in every <hi
+                        rend="underline"> political</hi> point of view, however slight. It has
+                    tended to sow distrust and discontent. I have conversed with very many of the
+                    Army of the Peninsula, both officers and men, and they love McClellan with a
+                    feeling beyond mere respect. No one knows the result of an engagement better
+                    than the men who participate therein and I have not conversed with a soldier,
+                    officer, or private, who will say that McClellan was defeated in either of the
+                    battles before Richmond but on the contrary, they say that in every case, the
+                    enemy was driven from the field. But in the case of the six days fighting where
+                    the aim of McClellan was to change his base of supplies to a point, where if he
+                    could not have the cooperation the troops <hi rend="underline"> promised hims by
+                        the Secretary of War</hi> he could at least be in a position where the
+                    famous Raid upon Tunstall's Stn. could not be renewed, -- in this case, each
+                    day, with its victory, left him in a situation equally as critical as at first,
+                    so the only alternative was to secure his point at Harrison's Landing, as he had
+                    not the support requisite to an advance upon the works at Richmond. But those
+                    cavillers, ready to use the least seeming advan-tage to cry down a really good
+                    general, put their fingers to their 
+                    
+                    <pb n="4" entity="DSSR_000000766_0636"/>
+                    ears, and ran toward Fortress Monroe, crying <hi rend="underline"> defeat,
+                        defeat. </hi> I know not what the "C. Herald" based its assertion upon that
+                    Gen. McClellan's army was demoralized, but if I know anything of a body of
+                    men,-- and having been in the army 17 months, I ought to.-- then Gen.
+                    McClellan's army was very far from being demoralized, but on the contrary were
+                    in a high state of discipline, though very faint and weary. The plain truth is,
+                    if <hi rend="underline">any</hi> army was "demoralized", it was John Pope's-- a
+                    portion of it commanded by McDowell notwithstanding the Herald's adoration of
+                    Gen. Pope. I am sorry Gen. McClellan has no more friends in the north, but I am
+                    sure if the people of the north knew this brave man as well as the army does,
+                    they would say with us, <hi rend="underline"> and against the N.Y. Tribune</hi>
+                    "he is the man for the times." I venture prophecy--<hi rend="underline"> Gen.
+                        McClellan's star shall rise, and the nation will praise his valour and
+                        statesmanlike conduct.</hi> Have you not noticed that the Herlad, &amp;
+                    Tribune have all along evinced a disposition to condemnation our noble
+                    president? The aim is the same-- to destory the present administration as
+                    Secretary Seward told G.F. Train a few days since <hi rend="underline">"Put out
+                        McClellan and break up the administration."</hi> You ask "what will become
+                    of the country?" I will tell you as "Mr. Seward told Mr. Train--<hi
+                        rend="underline">"You cannot stop God's waterworks; the great wheels turn
+                        around, the wheat comes down, the big millstones move, and the wheat will
+                        come out flour in all good time." </hi> Be of good cheer my love to me the
+                    prospect seems clearer than it has since at any time for the past three months
+                    and we must recollect that "tis darkest just before day." </p>
+                <p> Our men "conquered" no, never: while a hundred patriot hearts remain, a traitor
+                    shall not prosper. I admire your adherence to this belief, and that you may
+                    never have cause to change yours. </p>
+
+                <pb n="5" entity="DSSR_000000766_0637"/><!-- Missing transcription-->
+                <pb n="6" entity="DSSR_000000766_0638"/>
+                <p> But you made inquiry about "the boys". <hi rend="underline">"Is he [Gen. Moore]
+                        my friend too?"</hi> A naive question, turly. Of course, he is. Who is not,
+                    who knows you, or have seen your lovely features? But he is really your friend,
+                    and often requests to be remembered to you. I must tell you what he told me once
+                    on his return from home last winter. Said he, -- "Charlie were it not that you
+                    have a better claim upon her affections, I would be tempted to love her myself.
+                    She is the most interesting and <hi rend="underline">noble</hi> young lady I
+                    ever saw." How he learned that I love you, I could not say: I never told him,
+                    and yet he said, "she loves you." George is a noble boy, (boy-ha!-ha!) and is
+                    doing well, I learn. John Chafee was in the engagement at Culpepper and at
+                    Sharpsburg, from both of which he came our all right. He is well. </p>
+                <p> Bishop hasx never been wit the regt since the Winchester Battle, and we recieved
+                    official notice of his discharge a few days since. No one mourns his exit from
+                    the company--"requiescat-in pace." The other boys are doing well. </p>
+                <p> Now that "Maryland, my Maryland" is liberated from "southern scum", the
+                    apprehensions of the North must be relived in a measure. Certin it is that
+                    Pennsylvania is safe, and if we soldies of 17 months standing made be allowed to
+                    judge the rebel horders might be driven to a more genial atmosphere to their
+                    polluted hearts than the north, and that in double quick time. Here is one thing
+                    which inspires me with confidence in "Little Mac." In conversing with a capture
+                    rebel lieutenant, he told me that "so long as Pop was in command, they
+                    entertained no fears but that the incusion into Maryland would prove a sweep;
+                    but as soon as Gen. McClellan took command, they began to tremble. For while
+                    they despised Pope, they respected and feared McClellan." He said that "he for
+                    his part, knew as soon as he learned, that he had taken Pope's commany that <hi
+                        rend="underline"> they were a whipped army.</hi> Is not proof from the enemy
+                    conclusive? </p>
+                <p> I have not yet heard from Hallie. <del hand="h1">yet</del> I supposed he has
+                    been mustered out of the service ere this, and resumed his duties in his office,
+                    has he not? Addie, has your paper ever mentioned to you the fact of my writing
+                    to him from Alexandira, asking his consent to our union at a time specified by
+                    you? I wrote you concerning it from <unclear/> peper, but I guess the letter has
+                    not been sent, and is still in the Captain's trunk. I recieved for a reply one
+                    which gave me great satisfation, and which places me under a thousand
+                    obligations to your- <hi rend="underline"> our father</hi> He says <hi
+                        rend="underline"> "If it is your and Addie's wish to connect your destinies
+                        for life, you shall have my best wishes and approval, unless that I shall
+                        learn of some dishonor attached to you or her." </hi>
+                </p>
+
+                <!-- See first page.
+first page continuation -->
+
+                <p> Those words have given me most unalloyed pleasure, and ought I not to be
+                    grateful? Truly it was a happy day for me when I first saw my darling Addie. You
+                    have a good Father and may God grant that I may always enjoy his love and
+                    esteem. I am patiently waiting for this unfathomable war to be terminated, so
+                    that I may return to claim my precious one; and at the same time I pray that
+                    ours may not be the wedding of a <hi rend="underline">Hathaway</hi>. How I wish
+                    I had materials for sketching? I would like to send you sketches of the things
+                    of interest around the memorable "Harper's Ferry." Here is the ruins of the
+                    arsenal which John Brown took possession of at his famous insurrection. and the
+                    Engine house where he confirmed his prisoners,-- the ruins of the bridges across
+                    the two rivers,-- the rocky crags wehre Brown was wont to observe the
+                    proceedings of the people below, and a hundred other interesting scenes. </p>
+                <p> But as I have no conviences for carrying the materials, that pleasure must be
+                    forbidden. But I percieve that my space is fast becoming limited, so I must soon
+                    close. Then I have written quite a lengthy epistle have I not? and does it weary
+                    you to read so long ones? You must write soon and good long letters, and
+                    remember that your Charlies is ever faithful, and though he may sometimes be in
+                    a situation where he cannot write as often or as extended as he would like, yet
+                    he will do so as often as possible, and will try to make them as interesting as
+                    is possible. </p>
+                <closer>
+                    <salute>Give my love to all and write soon to your loving</salute>
+                    <signed>Charlie</signed>. </closer>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

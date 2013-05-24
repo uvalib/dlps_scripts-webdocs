@@ -1,0 +1,368 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0647 SYSTEM "000000766_0647" NDATA jpg>
+<!ENTITY DSSR_000000766_0648 SYSTEM "000000766_0648" NDATA jpg>
+<!ENTITY DSSR_000000766_0649 SYSTEM "000000766_0649" NDATA jpg>
+<!ENTITY DSSR_000000766_0650 SYSTEM "000000766_0650" NDATA jpg>
+
+<!--<!ENTITY NC62j13a SYSTEM "NC62j13a.jpg" NDATA jpg>
+<!ENTITY NC62j13b SYSTEM "NC62j13b.jpg" NDATA jpg>
+<!ENTITY NC62j13c SYSTEM "NC62j13c.jpg" NDATA jpg>
+<!ENTITY NC62j13d SYSTEM "NC62j13d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NC62j13">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+                        value="1862-10-13">13 October 1862</date></title>
+
+                <author>Tenney, Charles</author>
+                <editor/>
+                <respStmt>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Nora Yeh</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Nora Yeh, University of Virginia Library Electronic Text Center.</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">22</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NC62j13</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Illustrations have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case, October 13, 1862</title>
+
+
+                        <author>Charles Tenney</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 p.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+           
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-10-13">1862-10-13</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>masculine</term>
+                    <term>American Civil War;Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-16">November 16th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 14th, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text id="d1">
+
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1862-10-13">October 13th, 1862</date>
+
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case</title>
+                    </bibl>
+                </head>
+
+                <p>Charlie write to Addie from Harper's Ferry, Va. He was very happy about Hal's
+                    promotion and talked about the temporary replacement by Seth Coon to be his
+                    partner. He and several partners built a log house for themselves because there
+                    was little space for new recruits. He went through lengthy details explaining
+                    his delay to respond to two letters from her. He also told her why General Rope
+                    was defeated. And what he expects a wife to do in the matter of housekeeping.
+                    The postscript told Addie that they might stay put for the winter.</p>
+            </div1>
+        </front>
+        <body id="d4">
+
+
+            <div1 type="letter" n="1862-10-13" id="d5">
+                <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-10-13">13
+                        October 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0647"/>
+
+                <opener>
+                    <abbr expan="October">Oct.</abbr>
+                     <name type="place">Harper's Ferry, Va.,</name>
+                    <date value="1862-10-13"><abbr expan="October">Oct.</abbr> 13<hi rend="super"
+                        >th</hi> 1862</date>
+                    <lb/>
+                    <salute>My own darling:</salute>
+                </opener>
+                <lb/>
+                <p>Permit me to address a few lines to you, hoping to<lb/> interest you for a few
+                    moments. There, is not that in style? Now that<lb/> I am to correspond with a <hi
+                        rend="underline">Colonel</hi>'s sister, I suppose I must "put on a<lb/>
+                    little style." I - I - <hi rend="underline">can't</hi>, -- dont know how. I
+                    evo-(come pretty near<lb/> writing a naughty word)- rather not try, as I shall
+                    do as I see proper, unless<lb/> there be certain contingencies arising. How is
+                        it? <hi rend="underline">Must</hi> I?<lb/>
+                </p>
+                <p>Your Charlie is well as usual, and of course as happy as he<lb/> can be away from
+                    thee, so you need not fear for me. I was so<lb/> glad to hear of Hal's
+                    promotion, I threw my cap into the air and laughed<lb/> for joy. How do you
+                    suppose it made Brig. <abbr expan="General">Gen.</abbr> <name type="person">E. R.
+                        Tyler</name> feel<lb/> when he learned that, that Lieutenant whom he
+                    persecuted and affected<lb/> "taken down." It nettled Lt. Col. <name
+                        type="person">Asper</name> considerably. I understood that<lb/> "he thought
+                    the military committee might have selected some one <hi rend="underline"
+                    >older</hi> and<lb/> more fitted for the position than Case, especially since he
+                    had that rupture<lb/> with <abbr expan="General">Gen.</abbr> <name type="person"
+                        >Tyler</name>. Now <hi rend="underline">I</hi> think he would like the
+                        position <hi rend="underline">himself</hi>.<lb/> but he is eminently <hi
+                        rend="underline">dis</hi>qualified for any office higher than the one he
+                    now<lb/> occupies. <unclear/> other officers in the regiment, who thought that by
+                    taking<lb/> sides with Tyler they would court his favor, and gain his influences
+                    to<lb/> promote <hi rend="underline">themselves</hi>, also feel rather annoyed at
+                    his (Hal's) rapid rise<lb/> For my part I congratulate him and tender to him my
+                    warmest<lb/> sympathies and earnest goodwill. May God be with him.<lb/>
+                </p>
+                <p>But I forget that I have two letters from you to answer, and<lb/> you will wonder
+                    why I have not sooner replied seeing that we remain<lb/>
+                    <pb n="2" entity="DSSR_000000766_0648"/> in camp. I will explain. Since I wrote
+                    you last we have<lb/> changed the immediate location of the Camp,
+                        our <unclear>Sabley</unclear>tents have come,<lb/> and we had to clear
+                        off <orig reg="off">offas</orig> the ground before pitching them, and
+                    when<lb/> we got them up as nice as you please, a lot of recruits came, and
+                    it<lb/> was found that we had not tents enough. Accordingly <name type="person"
+                        >Seth Coon</name>,<lb/> myself and <hi rend="underline">another</hi>
+                    enterprising young man set to work and built a log<lb/> house, 8ftx10. for
+                        our <orig reg="special">especial</orig> accommodation, exclusive of recruits,
+                    Said house<lb/> is heated by means of a stove, manufactured of sheet iron, by
+                    our selves, and<lb/> lighted by means of a canvass skylight. Altogether, when
+                    finished (for it is not<lb/> yet complete,) it will be a comfortable dwelling
+                    place for three U.S. privates.<lb/> My time has been so completely taken up in
+                    this work, with my usual "guard duty, (We are now Headquarter guards to <abbr
+                        expan="General">Gen.</abbr> <name type="person">Georg.</name>) that I could
+                    not sooner write<lb/> - and this is my reason. <hi rend="underline">Now</hi>
+                        for <unclear>practically</unclear> replying.<lb/>
+                </p>
+                <p>I was not at all pained to learn that you were housekeeping, nor<lb/> was I ever
+                    of young Powers' mind. I not only respect a lady who can act<lb/> in both
+                    capacities but on the contrary, I consider no lady's accomplishments are<lb/>
+                    perfect unless she has a <hi rend="underline">general</hi>, if not a
+                    complete<!-- overstrike -->understanding knowledge of house<lb/> keeping. Yet I
+                    do not hold as a sequence that every lady <hi rend="underline">must</hi>, of <hi
+                        rend="underline">necessity</hi> or <hi rend="underline">choice</hi>, <hi
+                        rend="underline">be</hi> a housekeeper; by no manner of means, yet it is
+                        a <hi rend="underline">conveneince</hi>, at<lb/> times, to understand how to
+                    bake a little bread, or even to sweep a floor.<lb/> But do not think that I
+                    would make a servant of <hi rend="underline">my</hi> wife, <hi rend="underline"
+                        >not for the world</hi><lb/> would I. Next your God, you love me but," <hi
+                        rend="underline">God bless you</hi>.<lb/> darling, for such devotion. Did
+                    you know that your love gives more strength<lb/> to do my duty, and that "Love
+                    makes the hours go lightly by"? No, love I will <hi rend="underline"
+                    >not</hi><lb/> "scold" you for loving me thus well, indeed I fear I shall
+                    deserve a treatment of<lb/> that "antidote for wrong" for not being good enough
+                    for you. But my heart, my<lb/> all is yours, and <hi rend="underline">yours
+                        forever</hi>.</p>
+                <p>Now for the military department of my letter. You make inquiries<lb/> of <abbr
+                        expan="General">Gen.</abbr> <name type="person">Pope</name> - why he was
+                    defeated on the <name type="place">Rappahannock</name> etc.<lb/>
+                    <pb n="3" entity="DSSR_000000766_0649"/> To begin I will make this
+                        statement. <abbr expan="General">Gen.</abbr> <name type="person">Pope</name>,
+                    although he should<lb/> himself competent to handle a single corpo in the field,
+                    while in the West;<lb/> is insufficient in himself to wield an enormous army of
+                    120,000 men.<lb/> Other men are so, not only in the North but in the South, but
+                    unfortunately<lb/> for us the South understands this better than ourselves,
+                    hence, although it was the <orig reg="popular">pop-<lb/> pular</orig> wish of the
+                    people that <name type="person">Jackson</name> should be placed at the head of
+                    the Confederate<lb/>
+                    <date value="1862-10-13">Oct. 17</date>Gen army, he was assigned to only a
+                        single <hi rend="underline">corpo d'armee</hi>, while. <name type="person"
+                    >Lee</name>, although lacking<lb/> in that peculiar quality- <hi rend="underline"
+                        >dash</hi>- was made first in command, because he could plan<lb/> a campaign
+                    on a <hi rend="underline">large scale</hi>, and handle the entire force with
+                    ease, leaving for<lb/> generals of smaller commands the rapid moves to. Now <abbr
+                        expan="General">Gen.</abbr> <name type="person">Rope</name><lb/> was
+                    altogether too fast in making his advances into <name type="place"
+                    >Virginia</name>, for while he was <orig reg="making"><lb/> ing</orig> the bold
+                    advance directly upon the rebel <name type="place">Capitol</name>, he did not
+                        sufficiently <hi rend="underline">guard</hi><lb/>
+                    <hi rend="underline">the flanks</hi>. Thus the Valley of Va. was comparatively
+                    free from our army, while<lb/> there should have been a strong force acting in
+                    concert with the grand army.<lb/> And in like manner the line of the <name
+                        type="place">Rappahannock</name> from the edge of Culpepper County<lb/> was
+                    left without <hi rend="underline">even</hi> a <hi rend="underline">picket
+                    line</hi>, to <hi rend="underline">within eight miles of <name type="place"
+                            >Fredericksburg</name>!</hi><lb/>
+                </p>
+                <p>You will see that as <abbr expan="General">Gen.</abbr> <name type="person"
+                    >Pope</name> had his entire army maped in the vicinity of<lb/> Culpepper,
+                    nothing was easier for the enemy than to turn either flunk. When this<lb/> at
+                    last became evident to the worthy General, instead of having <name type="person"
+                        >Burnside</name> and<lb/>
+                    <name type="person">McClellan</name> come to his relief <hi rend="underline"
+                        >via</hi> <name type="place">Fredericksburg</name> and the <name type="place"
+                        >Rappahannock</name>, he ordered<lb/> them to come to his rear by way of
+                    Alexandria, and the same course taken<lb/> by himself, so that is <name
+                        type="person">McClellan</name> had been two days earlier, he would have<lb/>
+                    been on the <name type="place">Rappahannock</name> and <name type="place"
+                        >Washington</name> <hi rend="underline">unprotected</hi>; for the "dash" of<lb/>
+                    <name type="person">Jackson</name> <hi rend="underline">by <name type="person"
+                        >Lee</name>'s order</hi>, had completely outfluncked <name type="person"
+                    >Pope</name>'s entire army, placing it<lb/> in the greatest danger of <unclear/>
+                    annihilation, had it not been for the timely presence of <abbr expan="General"
+                        >Gen.</abbr> <name type="person">McClellan</name><lb/> which retarded <name
+                        type="person">Jackson</name> materially. But you will say that it<lb/>
+                        was <name type="person">Pope</name>'s men who fought the disastrous 2<hi
+                        rend="super">d</hi> Battle of Bull Run. In part, it was and<lb/> in part
+                        by <name type="person">McClellan</name>'s men, but had it not been for the
+                    presence of the army of the<lb/> Peninsula, the "grand advance" of the rebel
+                    army would have been neither more nor less<lb/>
+                    <pb n="4" entity="DSSR_000000766_0650"/> than an assault upon our own <name
+                        type="place">Capitol</name>. While we came upon the<orig reg="Rappahannock"
+                        ><lb/> pahannock</orig>, we could see plainly the rebel troop across the
+                    river, moving around to our<lb/> right, and <abbr expan="General"
+                        >Gen.</abbr> <name type="person">Sigel</name> requested permission to
+                    intercept the movement, (as might have<lb/> been done by guarding the passes of
+                        the <name type="place">Blue Ridge</name> and Thoroughfare Units.) but <abbr
+                        expan="General">Gen.</abbr><lb/>
+                    <name type="person">Pope</name> told him it was but a ruse, and that he should
+                    be needed on the river.<lb/> Sigel was right, <name type="person">Pope</name> was
+                    wrong. The rebels went around, and <abbr expan="General">Gen.</abbr> <name
+                        type="person">Banks</name><lb/> corps which was the rear-guard -- just where
+                    the advance should have been was once<lb/> cut off and surrounded, but by the
+                    superior skill of <abbr expan="General">Gen.</abbr> <name type="person"
+                    >Banks</name> we were <orig reg="extricated">extrica-<lb/> ted</orig>. Haven't
+                    made the matter any clearer for you. By the way, <abbr expan="General"
+                        >Gen.</abbr> <name type="person">Halleck</name> said<lb/> at the time <name
+                        type="person">Pope</name> was appointed that he had but little confidence in
+                    him.</p>
+
+                <p>Since I<del hand="h1" rend="line-through">wrote you last</del>commenced painting
+                    this, we haven't around our camp down the hill<lb/> nearer to water but our
+                    splendid view is impaired some what; I was interrupted<lb/> while writing for
+                    that purpose, thus we have the labor of clearing another encampment to<lb/>
+                    perform. You ask me who is my partner, <name type="person">Seth Coon</name>, sho
+                    has<lb/> been absent all summer, in the Pioneer Corps, is acting in that
+                    capacity now, while my<lb/> regular partner, Bob. Murray is still in the
+                    Hospital, having been surrounded at<lb/> Cedar Mountain.</p>
+
+                <closer>But I must close this as the boys are waiting for me to help fix the tent.
+                    Please give my love to all. not forgetting <hi rend="underline">Addie</hi>,<lb/>
+                    and write soon, to<lb/>
+                    <salute>Your own loving</salute><signed>
+                        <name type="person">Charley,</name>
+                    </signed><lb/>
+                    <seg type="postscript">It is said that we remain here this
+                winter.</seg></closer>
+            </div1>
+        </body>
+
+    </text>
+</TEI.2>

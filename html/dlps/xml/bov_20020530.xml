@@ -1,0 +1,2791 @@
+<?xml version="1.0"?>
+
+<?dlps id="bov_20020530"?>
+<?dlps page-images="none" figure-images="no"?>
+<?dlps transcription="other"?>
+
+
+
+
+
+
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+]>
+
+
+<TEI.2>
+  <teiHeader type="AACR2">
+    <fileDesc>
+      <titleStmt>
+        <title n="245|a" type="main">Board of Visitors minutes</title>
+        <title type="sort">board of visitors minutes</title>
+        <title n="246" type="alternate">Public minutes of meeting of the Board of Visitors</title>
+        <title n="246" type="alternate">Public minutes of the Board of Visitors meeting</title>
+        <author n="110">
+          <name n="110|a" type="corporate">University of Virginia</name>
+          <name n="110|b" type="sub-unit">Board of Visitors</name>
+        </author>
+        <respStmt>
+          <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with local
+            customizations)</resp>
+          <name>University of Virginia Library</name>
+        </respStmt>
+        <biblScope type="date">
+          <date value="2002-05-30">May 30, 2002</date>
+        </biblScope>
+      </titleStmt>
+      <extent>ca. <num type="kilobytes">146</num> kilobytes</extent>
+      <publicationStmt>
+        <publisher>University of Virginia Library</publisher>
+        <pubPlace>Charlottesville, Virginia</pubPlace>
+        <date value="2008">2008</date>
+        <availability status="public">
+          <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the University of
+            Virginia</p>
+          <p n="access">Publicly accessible</p>
+        </availability>
+        <idno type="DLPS ID">bov_20020530</idno>
+        <idno type="uva-pid">uva-lib:498314</idno>
+      </publicationStmt>
+      <seriesStmt>
+        <title>University of Virginia Library, Text collection</title>
+        <idno type="uva-set">UVA-LIB-Text</idno>
+      </seriesStmt>
+
+
+      <sourceDesc>
+        <biblFull>
+          <titleStmt>
+            <title n="245|a" type="main">Board of Visitors minutes</title>
+            <title type="sort">board of visitors minutes</title>
+            <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+            <title n="246" type="alternate">BOV minutes</title>
+            <title n="246" type="alternate">University of Virginia Board of Visitors minutes</title>
+            <title n="246" type="alternate">Public minutes of meeting of the Board of
+              Visitors</title>
+            <title n="246" type="alternate">Public minutes of the Board of Visitors meeting</title>
+            <author n="110">
+              <name n="110|a" type="corporate">University of Virginia</name>
+              <name n="110|b" type="sub-unit">Board of Visitors</name>
+            </author>
+            <biblScope type="date">
+              <date value="2002-05-30">May 30, 2002</date>
+            </biblScope>
+          </titleStmt>
+          <editionStmt>
+            <edition>Public minutes</edition>
+          </editionStmt>
+          <extent n="300">?? pages</extent>
+          <publicationStmt>
+            <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+            <idno type="UVa Title Control Number">a2846310</idno>
+          </publicationStmt>
+          <notesStmt>
+            <note n="500">
+              <p n="500|a">The official minutes contain salary information. Access to minutes
+                containing salary information will be granted only under the procedures of the
+                Virginia Freedom of Information Act (Code of Virginia-2.1-340 ff.) or if permission
+                is granted by the Secretary of the Board. Researchers interested in obtaining access
+                to these records should direct a request in writing to the Office of the Legal
+                Adviser, Madison Hall, University of Virginia. These public minutes have had salary
+                information deleted and bear no restrictions.</p>
+            </note>
+            <note n="524">
+              <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special Collections
+                Dept., University of Virginia, Charlottesville, Va.</p>
+            </note>
+            <note n="520">
+              <p n="520|a">Minutes of meetings of the university's governing body which is the legal
+                owner and operator of the institution. Recorded in the minutes are appointments and
+                other personnel decisions concerning faculty, decisions about construction of
+                facilities, gifts to the university, and all other board actions, decisions and
+                resolutions.</p>
+            </note>
+          </notesStmt>
+        </biblFull>
+      </sourceDesc>
+    </fileDesc>
+
+    <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction; &editorial_normalization;
+        &editorial_hyphenation; &editorial_quotation; &editorial_stdVals; </editorialDecl>
+      <classDecl>
+        <taxonomy id="LCSH">
+          <bibl>Library of Congress Subject Headings</bibl>
+        </taxonomy>
+        <taxonomy id="AAT">
+          <bibl>Art &amp; Architecture Thesaurus</bibl>
+        </taxonomy>
+        <taxonomy id="uva-form">
+          <bibl>UVa Library Form Categories</bibl>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language n="008" id="eng" usage="main">English</language>
+      </langUsage>
+      <textClass>
+        <keywords scheme="LCSH">
+          <term n="610">University of Virginia</term>
+        </keywords>
+        <keywords scheme="AAT">
+          <term n="655">Minutes</term>
+        </keywords>
+        <keywords scheme="uva-form">
+          <term>serial volume</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change>
+        <date value="2008-07-17">July 17, 2008</date>
+        <respStmt>
+          <name id="ewg4x">Ethan Gruber, University of Virginia Library</name>
+          <resp>corrector</resp>
+        </respStmt>
+        <item>Minor corrections to vendor markup.</item>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text id="d1">
+    <body id="body1">
+      <div1 id="d3" type="contents">
+        <head type="main">RESOLUTIONS ADOPTED BY THE BOARD OF VISITORS<lb/>
+          <dateRange from="2002-05-30" to="2002-06-01">MAY 30-JUNE 1, 2002</dateRange></head>
+        <table rows="15" cols="2">
+          <row>
+            <cell/>
+            <cell role="label">PAGE</cell>
+          </row>
+          <row>
+            <cell>Election of the Executive Committee </cell>
+            <cell>6190</cell>
+          </row>
+          <row>
+            <cell>Resolution to Approve Additional Action Items </cell>
+            <cell>6191</cell>
+          </row>
+          <row>
+            <cell>Approval of Architectural Design Guidelines for the South Lawn Project</cell>
+            <cell>6194</cell>
+          </row>
+          <row>
+            <cell>Approval of Architectural Design Guidelines for the New Arena</cell>
+            <cell>6194</cell>
+          </row>
+          <row>
+            <cell> Approval of Architectural Design Guidelines for the Campbell Hall Addition
+              Project</cell>
+            <cell>6194</cell>
+          </row>
+          <row>
+            <cell>Approval to Remove Four Buildings at the Davis Farm &mdash; Vivarium Complex on
+              Routh 20 South</cell>
+            <cell>6194</cell>
+          </row>
+          <row>
+            <cell>Approval of Intent to Issue Bonds for the Arts &amp; Sciences Building, the
+              Aquatic &amp; Fitness Center, the Emmet Street Parking Structure and the Cancer Center
+              Renovation Project</cell>
+            <cell>6195</cell>
+          </row>
+          <row>
+            <cell>Conflict of Interest Exemption (Adenosine Therapeutics LLC)</cell>
+            <cell>6197</cell>
+          </row>
+          <row>
+            <cell>Approval of Miller Center Council Members </cell>
+            <cell>6198</cell>
+          </row>
+          <row>
+            <cell>Approval of Schematic Design for the New Arena </cell>
+            <cell>6198</cell>
+          </row>
+          <row>
+            <cell>Approval of Preliminary Design for the Materials Science Engineering and
+              Nanotechnology Building</cell>
+            <cell>6198</cell>
+          </row>
+          <row>
+            <cell> Approval of Schematic and Preliminary Design, Hospital Expansion Project</cell>
+            <cell>6198</cell>
+          </row>
+          <row>
+            <cell> Approval of the 2002-2003 Operating Budget for the Academic Division</cell>
+            <cell>6198</cell>
+          </row>
+          <row>
+            <cell>Approval of the 2002-2003 Operating Budget for the University of Virginia's
+              College at Wise</cell>
+            <cell>6199</cell>
+          </row>
+        </table>
+        <pb n="2"/>
+        <table rows="27" cols="2">
+          <row>
+            <cell/>
+            <cell>PAGE</cell>
+          </row>
+          <row>
+            <cell> Approval of the 2002-2003 Operating and Capital Budget for the University of
+              Virginia Medical Center</cell>
+            <cell>6199</cell>
+          </row>
+          <row>
+            <cell>Approval of Pratt Fund Distribution for 2002-2003 </cell>
+            <cell>6199</cell>
+          </row>
+          <row>
+            <cell> Approval of Bond Issuance </cell>
+            <cell>6199</cell>
+          </row>
+          <row>
+            <cell>Amendment to Approval of Bond Issuance </cell>
+            <cell>6204</cell>
+          </row>
+          <row>
+            <cell>Approval of Re-appointment to the Board of the University of Virginia Investment
+              Management Company</cell>
+            <cell>6205</cell>
+          </row>
+          <row>
+            <cell> Recommendation Regarding Fiscal Year 2003 Medical Center Operating Budget and
+              Approval of Medical Center Employee Bonus Plan</cell>
+            <cell>6205</cell>
+          </row>
+          <row>
+            <cell> Approval of Changes to Medical Center Retirement Benefits</cell>
+            <cell>6206</cell>
+          </row>
+          <row>
+            <cell>Approval of Audit Schedule </cell>
+            <cell>6206</cell>
+          </row>
+          <row>
+            <cell>Approval of the 2003 Board Meeting Dates </cell>
+            <cell>6207</cell>
+          </row>
+          <row>
+            <cell>Memorial Resolution for <name>Mr. A. Vincent Shea</name></cell>
+            <cell>6207</cell>
+          </row>
+          <row>
+            <cell> Approval of the Summary of Audit Findings </cell>
+            <cell>6208</cell>
+          </row>
+          <row>
+            <cell>Approval of Future Property Acquisitions</cell>
+            <cell>6208</cell>
+          </row>
+          <row>
+            <cell cols="2">Faculty Personnel Actions</cell>
+          </row>
+
+          <row>
+            <cell>Elections </cell>
+            <cell>6209</cell>
+          </row>
+          <row>
+            <cell cols="2">Actions Relating to Chairholders</cell>
+          </row>
+          <row>
+            <cell rend="indent">Elections of Chairholders </cell>
+            <cell>6210</cell>
+          </row>
+          <row>
+            <cell rend="indent">Change in Titles of Chairholders </cell>
+            <cell>6212</cell>
+          </row>
+          <row>
+            <cell rend="indent">Special Salary Actions of Chairholders </cell>
+            <cell>6213</cell>
+          </row>
+          <row>
+            <cell rend="indent">Resignation of Chairholder </cell>
+            <cell>6214</cell>
+          </row>
+          <row>
+            <cell rend="indent">Retirements of Chairholders </cell>
+            <cell>6214</cell>
+          </row>
+          <row>
+            <cell>Promotions </cell>
+            <cell>6214</cell>
+          </row>
+          <row>
+            <cell>Special Salary Actions </cell>
+            <cell>6223</cell>
+          </row>
+          <row>
+            <cell>Resignations </cell>
+            <cell>6226</cell>
+          </row>
+          <row>
+            <cell>Retirements </cell>
+            <cell>6228</cell>
+          </row>
+          <row>
+            <cell>Change in the Title of the Retirement of <name>Mr. George B. Thomas,
+              Jr.</name></cell>
+            <cell>6228</cell>
+          </row>
+          <row>
+            <cell>Appointments </cell>
+            <cell>6228</cell>
+          </row>
+          <row>
+            <cell>Re-Appointments </cell>
+            <cell>6229</cell>
+          </row>
+        </table>
+        <pb n="3"/>
+        <table rows="15" cols="2">
+          <row>
+            <cell/>
+            <cell role="label">PAGE</cell>
+          </row>
+          <row>
+            <cell> Election of <name>Dr. R. Ariel Gomez</name> as Interim Vice President for
+              Research and Graduate Studies</cell>
+            <cell>6229</cell>
+          </row>
+          <row>
+            <cell>Election of Professors Emeriti </cell>
+            <cell>6229</cell>
+          </row>
+          <row>
+            <cell>Change in the Emeritus Title of <name>Mr. George B. Thomas, Jr.</name>
+            </cell>
+            <cell>6230</cell>
+          </row>
+          <row>
+            <cell>Election of Associate Professor Emeritus </cell>
+            <cell>6230</cell>
+          </row>
+          <row>
+            <cell>Change in the Election of <name>Mr. R. Edward Howell</name></cell>
+            <cell>6230</cell>
+          </row>
+          <row>
+            <cell>Deaths </cell>
+            <cell>6231</cell>
+          </row>
+          <row>
+            <cell cols="2">The University of Virginia's College at Wise</cell>
+          </row>
+          <row>
+            <cell>Resignation </cell>
+            <cell>6231</cell>
+          </row>
+          <row>
+            <cell>Approval of a Permanent Easement for the University of Virginia Across Property
+              Owned by Wisteria Properties, L.C. Located at 2015 Ivy Road</cell>
+            <cell>6231</cell>
+          </row>
+          <row>
+            <cell> Approval of a Permanent Easement for the University of Virginia Across Property
+              Owned by University of Virginia Real Estate Foundation Located at 132 Emmet Street and
+              at the Cavalier Inn at the Intersection of Emmet Street and Ivy Road</cell>
+            <cell>6232</cell>
+          </row>
+          <row>
+            <cell>Approval of Architectural Design Guidelines for the Children's Medical Center
+              Addition and Renovation Project</cell>
+            <cell>6232</cell>
+          </row>
+          <row>
+            <cell>Approval of Schematic and Preliminary Design for the MRI Addition</cell>
+            <cell>6232</cell>
+          </row>
+          <row>
+            <cell>Resolution on the Bond Issue </cell>
+            <cell>6232</cell>
+          </row>
+          <row>
+            <cell>Assignment of Lower Apartment, Pavilion VIII, East Lawn </cell>
+            <cell>6233</cell>
+          </row>
+        </table>
+
+      </div1>
+
+      <div1 id="d4" type="roll-call">
+        <pb n="6190"/>
+        <head type="main">TENTATIVE MINUTES<lb/> SUBJECT TO THE<lb/> APPROVAL OF THE<lb/> BOARD OF VISITORS<lb/>
+          <dateRange from="2002-05-30" to="2002-06-01">May 30-June 1, 2002</dateRange></head>
+        <p>The Board of Visitors of the University of Virginia met, in Open Session, at 4:15 p.m,
+          Thursday, <date value="2002-05-30">May 30, 2002</date>, in the East Oval Room of the
+          Rotunda; <name>John P. Ackerly, III</name>, Rector, presided. <name type="present">William
+            G. Crutchfield, Jr., Charles L. Glazer, William H. Goodwin, Jr., T. Keister Greer, Mark
+            J. Kington, H. Timothy Lovelace, Jr., Don R. Pippin, Gordon F. Rainey, Jr., Terence P.
+            Ross, Warren M. Thompson, Ms. Elizabeth A. Twohy, and E. Darracott Vaughan, Jr.,
+            M.D.</name>, were present.</p>
+        <p>Also present were <name type="present">John T. Casteen, III, Leonard W. Sandridge,
+            Alexander G. Gilliam, Jr., Paul J. Forch, Gene D. Block, Ms. Colette Sheehy, Ms.
+            Patricia M. Lampkin, Robert E. Reynolds, M.D., R. Ariel Gomez, M.D., Steven H. Kaplan,
+            and Ms. Jeanne Flippo Bailes</name>.</p>
+        <p>The Rector introduced the new Members of the Board: <name type="present">Mark J. Kington,
+            Don R. Pippin, Warren M. Thompson, and E. Darracott Vaughan, Jr., M.D. He then expressed
+            appreciation to the retiring Members: Charles M. Caravati, Jr., M.D., Timothy B.
+            Robertson, Benjamin P.A. Warthen, and Joseph E. Wolfe</name>.</p>
+        <p>The Rector called for a motion approving the Minutes of the <dateRange from="2002-04-04"
+            to="2002-04-06">April 4-6, 2002</dateRange>, meeting of the Board. By vote, the Minutes
+          were approved.</p>
+        <ornament type="characters">---------------</ornament>
+      </div1>
+      <div1 id="d5" type="resolution">
+        <head type="main">ELECTION OF THE EXECUTIVE COMMITTEE</head>
+        <p>On motion, the Executive Committee was elected: <name>John P. Ackerly, III, Thomas F.
+            Farrell, II, William H. Goodwin, Jr., Gordon F. Rainey, Jr., and Ms. Elizabeth A.
+            Twohy</name>.</p>
+        <ornament type="characters">---------------</ornament>
+      </div1>
+      <div1 id="d6" type="resolution">
+        <pb n="6191"/>
+        <head type="main">RESOLUTION TO APPROVE ADDITIONAL ACTION ITEMS</head>
+        <p>By resolution, as required in the Manual, the Board agreed to consider several items
+          which were not previously on the Agenda.</p>
+        <p>RESOLVED that a resolution authorizing five consent resolutions be considered by the
+          Buildings and Grounds Committee and if approved by the Committee, by the full Board. The
+          proposed resolutions were brought to the attention of the Board after the setting of the
+          Agenda.</p>
+        <ornament type="characters">---------------</ornament>
+      </div1>
+      <div1 id="d7" type="report">
+        <p>The President then gave his customary report on gifts and grants received since the
+          previous meeting of the Board. By vote the Board accepted these.</p>
+        <p>The President also discussed the General Obligation Bond Issue, for the benefit of higher
+          education, which was approved by the General Assembly and the Governor and will be
+          submitted to the voters of the Commonwealth in a referendum in November. <name>Mr.
+            Ross</name> suggested a formal resolution of the Board affirming its support of the Bond
+          Issue and encouraging the approval of the voters.</p>
+        <ornament type="characters">---------------</ornament>
+        <p>The Board adjourned as the full Board at 4:30 p.m. to begin Committee meetings.</p>
+        <ornament type="characters">---------------</ornament>
+      </div1>
+      <div1 id="d8" type="resolution">
+        <p>The Board resumed in Open Session in the East Oval Room at 2:25 p.m, Friday, <date
+            value="2002-05-31">May 31, 2002</date>. In addition to the Members present for the
+          preliminary meeting on May 30th, <name type="present">Thomas F. Farrell, II, Mrs. Elsie
+            Goodwyn Holland, and Thomas A. Saunders, III</name>, were in attendance.</p>
+        <p>The Board approved the following motions permitting it to meet in Executive Session:</p>
+        <pb n="6192"/>
+
+        <p>That the Educational Policy Committee of the Board of Visitors of the University of
+          Virginia go into Executive Session for the purpose of discussing personnel matters
+          pertaining to the appointment, assignment, reappointment, promotion, performance,
+          compensation, discipline, separation and resignation of specific faculty members of the
+          University of Virginia; under law as provided for in Section 2.2-3711 (A) (1) of the <hi
+            rend="underline">Code of Virginia</hi>.</p>
+        <p>That the Board of Visitors of the University of Virginia go into Executive Session to be
+          advised by and discuss with General Counsel pending and probable litigation involving the
+          University, and the legality of our admissions procedures, and to seek legal counsel with
+          respect to a contested personnel termination; under law as provided for in Section
+          2.2-3711 (A) (1) and (7) of the <hi rend="underline">Code of Virginia</hi>.</p>
+        <p> That the Buildings and Grounds Committee of the Board of Visitors of the University of
+          Virginia go into Executive Session to discuss acquisition of real estate by the
+          University, where disclosure at this time would adversely affect the bargaining position
+          and our negotiation strategy; under law as provided for in Section 2.2-3711 (A) (3) of the
+            <hi rend="underline">Code of Virginia</hi>.</p>
+        <p> That the Board of Visitors of the University of Virginia go into Executive Session to
+          discuss and seek legal counsel concerning the proper investment and distribution of Gift
+          Endowment Income, where if made public initially, the financial interest of the University
+          would be adversely affected; under law as provided for in Section 2.2-3711 (A) (6), (7)
+          and (8) of the <hi rend="underline">Code of Virginia</hi>.</p>
+        <p> That the Board of Visitors go into Executive Session to discuss the investing of public
+          funds relating to foundation-owned businesses where competition and bargaining is
+          involved, and to discuss the potential expansion of the business operations, where
+          disclosure at this time would adversely affect the University's financial interests; under
+          law as provided for in Section 2.2-3711 (A) (5) and (6) of the <hi rend="underline">Code
+            of Virginia</hi>.</p>
+
+        <pb n="6193"/>
+        <p>That the Board of Visitors of the University of Virginia go into Executive Session to
+          discuss potential gifts and fund-raising strategy for the benefit of the Medical Center
+          through a related foundation, as well as to consider a facility naming which may have
+          future gift implications; under law as provided for in Section 2.1-3711 (A) (4) and (8) of
+          the <hi rend="underline">Code of Virginia</hi>.</p>
+        <p> That the Board of Visitors of the University of Virginia go into Executive Session to be
+          briefed on anticipated litigation and our legal obligations with respect to proposed real
+          property disposition, where public discussion at this time would adversely affect the
+          University's negotiations and legal strategy; under law as provided for in Section
+          2.1-3711 (A) (3), (6) and (7) of the <hi rend="underline">Code of Virginia</hi>.</p>
+        <p> That the Board of Visitors of the University of Virginia go into Executive Session to be
+          briefed on our legal authority with respect to procurement policies governing vendor
+          compensation requirements; under law as provided for in Section 2.1-3711 (A) (7) of the
+            <hi rend="underline">Code of Virginia</hi>.</p>
+
+      </div1>
+      <div1 id="d9" type="resolution">
+        <head type="main">NAMING OF CRISPELL DRIVE</head>
+        <p>The Board went into Executive Session at 2:30 p.m., and recessed at 4:30 p.m., to move to
+          the Lower West Oval Room for a ceremony and reception marking the naming of Crispell
+          Drive. At the ceremony, the President reported that Crispell Drive, a road which runs from
+          15th Street, S.W., to Lane Road just south of the University Hospital, was being named in
+          memory of <name>Dr. Kenneth W. Crispell</name> (1916-1996), a former Dean of the School of
+          Medicine and later Vice President for Health Affairs. <name>Dr. Crispell's</name> widow
+          and a number of family members and old colleagues and friends were present for the
+          ceremony.</p>
+        <p>The Board resumed its meeting in Executive Session at 11:15 a.m., Saturday, <date
+            value="2002-06-01">June 1, 2002</date>. All Members present on Friday, save <name
+            type="absent">Messrs. Glazer and Saunders</name>, were present for this meeting. The
+          Board recessed at 12:20 p.m.</p>
+        <p>The Board resumed its meeting, in Open Session, at 12:30 p.m. All Members present for the
+          earlier session, save <name type="absent">Mr. Ross</name>, were present.</p>
+        <p>The Board adopted the following resolutions:</p>
+
+      </div1>
+      <div1 id="d10" type="resolution">
+        <pb n="6194"/>
+        <head type="main">APPROVAL OF ARCHITECTURAL DESIGN GUIDELINES FOR THE SOUTH LAWN
+          PROJECT</head>
+
+        <p>RESOLVED that the architectural design guidelines, dated <date value="2002-06-01">June 1,
+            2002</date>, prepared by the Architect for the University, for the South Lawn project,
+          are approved; and</p>
+        <p> RESOLVED FURTHER that the project will be presented for further review at the schematic
+          design level of development.</p>
+      </div1>
+      <div1 id="d11" type="resolution">
+        <head type="main">APPROVAL OF ARCHITECTURAL DESIGN GUIDELINES FOR THE NEW ARENA</head>
+
+        <p>RESOLVED that the architectural design guidelines, dated <date value="2002-05-09">May 9,
+            2002</date>, prepared by the Architect for the University, for the New Arena project,
+          are approved; and</p>
+        <p> RESOLVED FURTHER that the project will be presented for further review at the schematic
+          design level of development.</p>
+      </div1>
+      <div1 id="d12" type="resolution">
+        <head type="main">APPROVAL OF ARCHITECTURAL DESIGN GUIDELINES FOR THE CAMPBELL HALL ADDITION
+          PROJECT</head>
+
+        <p>RESOLVED that the architectural design guidelines, dated <date value="2002-05-09">May 9,
+            2002</date>, prepared by the Architect for the University, for the Campbell Hall
+          Addition project, are approved; and</p>
+        <p> RESOLVED FURTHER that the project will be presented for further review at the schematic
+          design level of development.</p>
+      </div1>
+      <div1 id="d13" type="resolution">
+        <head type="main">APPROVAL TO REMOVE FOUR BUILDINGS AT THE DAVIS FARM &mdash; VIVARIUM
+          COMPLEX ON ROUTE 20 SOUTH</head>
+
+        <p>WHEREAS, the University owns four buildings (FAACS Building Numbers: 207-1678, 207-1681,
+          207-1682, and <reg orig="207-|1683)">2071683)</reg> at the Davis Farm &mdash; Vivarium
+          Complex on Route 20 South in Albemarle County; and</p>
+        <p> WHEREAS, these structures are no longer used, and the site is needed for the
+          construction of a new vivarium</p>
+
+        <pb n="6195"/>
+        <p>WHEREAS, the Governor of Virginia delegated to the Board of Visitors, pursuant to
+          Executive Order Number Thirty-Four (98), dated <date value="1998-11-10">November 10,
+            1998</date>, the authority of the Governor to approve the removal of buildings on state
+          property, with the advice and counsel of the Art and Architectural Review Board, and the
+          review of the Department of Historic Resources; and</p>
+        <p> WHEREAS, the Art and Architectural Review Board and the Department of Historic Resources
+          have approved the removal of these structures;</p>
+        <p> RESOLVED that the removal of these buildings (FAACS Building Numbers: 207-1678,
+          207-1681, 207-1682, and 207-1683) at the Davis Farm &mdash; Vivarium Complex on Route 20
+          South, in Albemarle County, is approved by the Board of Visitors; and</p>
+        <p> RESOLVED FURTHER that the Executive Vice President and Chief Operating Officer is
+          authorized to execute any and all documents pertaining to the removal of the
+          aforementioned buildings, and that the said officer ensure that the required reports
+          regarding the building removals are sent to the Department of General Services.</p>
+      </div1>
+      <div1 id="d14" type="resolution">
+        <head type="main">APPROVAL OF INTENT TO ISSUE BONDS FOR THE ARTS &amp; SCIENCES BUILDING,
+          THE AQUATIC &amp; FITNESS CENTER, THE EMMET STREET PARKING STRUCTURE AND THE CANCER CENTER
+          RENOVATION PROJECT</head>
+
+        <p>WHEREAS, The Rector and Visitors of the University of Virginia (the "Institution") has
+          undertaken or will undertake the acquisition of the School of Medicine research building,
+          the construction of the Arts &amp; Sciences building, an addition to the Aquatic &amp;
+          Fitness Center, the expansion of the Institution's hospital, the construction of the Emmet
+          Street parking structure and the renovation of the Institution's Cancer Center facilities
+          (collectively, the "Project"); and</p>
+        <p> WHEREAS, on <date value="2000-11-09">November 9, 2000</date>, the Board of Visitors of
+          the Institution adopted a resolution declaring its official intent under Treasury
+          Regulations Section 1.150-2 in connection with the acquisition of the School of Medicine
+          research building, a portion of the Project, to issue indebtedness in the amount of
+          &dollar;17,000,000 from which it expressed its expectation to reimburse itself for
+          expenditures with the proceeds thereof; and</p>
+
+        <pb n="6196"/>
+        <p>WHEREAS, on <date value="2001-10-19">October 19, 2001</date>, the Board of Visitors of
+          the Institution adopted a resolution declaring its official intent under Treasury
+          Regulations Section 1.150-2 in connection with the expansion of the Institution's hospital
+          and the construction of the Emmet Street parking structure, each a portion of the Project,
+          to issue indebtedness in the amounts of &dollar;54,000,000 and &dollar;14,000,000,
+          respectively, from which it expressed its expectation to reimburse itself for expenditures
+          with the proceeds thereof. With respect to the portion of the Project consisting of the
+          construction of the Emmet Street parking structure, the Board of Visitors of the
+          Institution now expects to issue an additional &dollar;3,500,000 in indebtedness; and</p>
+        <p> WHEREAS, the Institution has made or will make expenditures (the "Expenditures") in
+          connection with the Project; and</p>
+        <p> WHEREAS, the Institution may determine that the funds advanced and to be advanced to pay
+          Expenditures will be reimbursed to the Institution from the proceeds of one or more
+          obligations to be issued by the Institution (the "Indebtedness"); and</p>
+        <p> RESOLVED that:</p>
+        <list>
+          <item>1.&emsp;With respect to the portion of the Project consisting of the construction of
+            the Emmet Street parking structure, the Board of Visitors of the Institution now expects
+            to issue an additional &dollar;3,500,000 in Indebtedness from which the Institution
+            expects to reimburse itself for Expenditures as provided herein and in the <date
+              value="2001-10-19">October 19, 2001</date>, resolution and to such extent hereby so
+            modifies the October 19, 2001, resolution. Other than as modified hereby, the <date
+              value="2001-10-19">October 19, 2001</date>, resolution remains in full force and
+            effect.</item>
+          <lb/>
+          <item> 2.&emsp;With respect to the portions of the Project not consisting of the
+            acquisition of the School of Medicine research building, the construction of the Emmet
+            Street parking structure and the expansion of the Institution's hospital, the Board of
+            Visitors of the Institution hereby adopts this declaration of official intent under
+            Treasury Regulations Section 1.150-2 and declares that the Institution intends to
+            reimburse itself with the proceeds of Indebtedness for Expenditures made on, after or
+            within 60 days prior to <pb n="6197"/> the date of the adoption of this Resolution with
+            respect to the Project, except that Expenditures made more than 60 days prior to the
+            date hereof may be reimbursed as to certain <hi rend="italic">de minimis</hi> or preliminary expenditures
+            described in Treasury Regulations Section 1.150-2(f) and as to other expenditures
+            permitted under applicable Treasury Regulations.</item>
+          <lb/>
+          <item> 3.&emsp;The maximum principal amount of Indebtedness expected to be issued for (i)
+            the portion of the Project consisting of the Emmet Street parking structure is
+            &dollar;17,500,000 and (ii) those portions of the Project excluding the acquisition of
+            the School of Medicine research building, the construction of the Emmet Street parking
+            structure and the expansion of the Institution's hospital is &dollar;19,500,000.</item>
+          <lb/>
+          <item> 4.&emsp;This Resolution shall take effect immediately upon its adoption.</item>
+        </list>
+      </div1>
+      <div1 id="d15" type="resolution">
+        <head type="main">CONFLICT OF INTEREST EXEMPTION (ADENOSINE THERAPEUTICS, LLC)</head>
+
+        <p>WHEREAS, the University of Virginia wishes to enter into sponsored research contracts
+          with Adenosine Therapeutics, LLC, a Virginia Corporation, for developing therapeutic
+          agents; and</p>
+        <p> WHEREAS, <name>George A. Beller, M.D., Irving L. Kron, M.D., Joel M. Linden, Ph.D.,
+            Timothy L. MacDonald, Ph.D., and Gail W. Sullivan, Ph.D.</name>, have disclosed in
+          advance their equity interests of four percent, six percent, 25 percent, eight percent and
+          four percent, respectively, in Adenosine Therapeutics, LLC, and the University's entry
+          into a research agreement with Adenosine Therapeutics, LLC, would thereby expose them to
+          violation of the Conflict of Interests Act unless approved by the Board as permitted by
+          &sect;2.1-639.6(C)(7) of the <hi rend="italic">Code of Virginia</hi>;</p>
+        <p> RESOLVED that waiver of conflict of interest of <name>Dr. Beller, Dr. Kron, Mr. Linden,
+            Mr. MacDonald, and Ms. Sullivan</name> is approved by the Board of Visitors in order to
+          permit the University to negotiate and enter into proposed contracts for developing
+          therapeutic agents. This approval is granted provided, as required by the law, the faculty
+          file the required annual disclosure statement of personal interests in Adenosine
+          Therapeutics, LLC, the University files the required annual report concerning the contract
+          with the <pb n="6198"/> Secretary of the Commonwealth, and the appropriate department
+          chairs and deans vigilantly oversee application of University resources in the best
+          interests of the University and in accordance with policy.</p>
+      </div1>
+      <div1 id="d16" type="resolution">
+        <head type="main">APPROVAL OF MILLER CENTER COUNCIL MEMBERS</head>
+        <p>RESOLVED that <name>Mr. Michael R. Beschloss, Mr. Mortimer M. Caplin, Mr. John William
+            Galbraith, and Ms. Glynn D. Key</name> be elected to the Council of the White Burkett
+          Miller Center of Public Affairs, each for a term of three years.</p>
+      </div1>
+      <div1 id="d17" type="resolution">
+        <head type="main">APPROVAL OF SCHEMATIC DESIGN FOR THE NEW ARENA</head>
+
+        <p>RESOLVED that the schematic design, dated <date value="2002-05-09">May 9, 2002</date>,
+          and prepared by VMDO Architects of Charlottesville, for the New Arena, is approved;
+          and</p>
+        <p> RESOLVED FURTHER that the project will be presented for further review at the
+          preliminary design level of development.</p>
+      </div1>
+      <div1 id="d18" type="resolution">
+        <head type="main">APPROVAL OF PRELIMINARY DESIGN FOR THE MATERIALS SCIENCE ENGINEERING and
+          NANOTECHNOLOGY BUILDING</head>
+        <p>RESOLVED that the preliminary design, dated <date value="2002-05-09">May 9, 2002</date>,
+          and prepared by VMDO Architects of Charlottesville, for the Materials Science Engineering
+          and Nanotechnology Building, is approved for further development and construction.</p>
+      </div1>
+      <div1 id="d19" type="resolution">
+        <head type="main">APPROVAL OF THE SCHEMATIC AND PRELIMINARY DESIGN, HOSPITAL EXPANSION
+          PROJECT</head>
+        <p>RESOLVED that the schematic and preliminary design, dated <date value="2002-05-09">May 9,
+            2002</date>, and prepared by RTKL Associates of Baltimore, for the Hospital Expansion
+          Project, is approved for further development and construction.</p>
+      </div1>
+      <div1 id="d20" type="resolution">
+        <head type="main">APPROVAL OF THE 2002-2003 OPERATING BUDGET FOR THE ACADEMIC
+          DIVISION</head>
+        <p>RESOLVED that the 2002-2003 Operating Budget for the Academic Division is approved, as
+          recommended by the President and the Chief Financial Officer.</p>
+        
+      </div1>
+      <div1 id="d21" type="resolution">
+        <pb n="6199"/>
+        <head type="main">APPROVAL OF THE 2002-2003 OPERATING BUDGET FOR THE UNIVERSITY OF
+          VIRGINIA'S COLLEGE AT WISE</head>
+        <p>RESOLVED that the 2002-2003 Operating Budget for The University of Virginia's College at
+          Wise is approved, as recommended by the President and the Chief Financial Officer.</p>
+      </div1>
+      <div1 id="d22" type="resolution">
+        <head type="main">APPROVAL OF THE 2002-2003 OPERATING AND CAPITAL BUDGET FOR THE UNIVERSITY
+          OF VIRGINIA MEDICAL CENTER</head>
+        <p>RESOLVED that the 2002-2003 Operating and Capital Budget for the University of Virginia
+          Medical Center, which includes hospital room and ancillary service rate increases of 5.0
+          percent and bonuses equal to a minimum of 2.5 percent of base pay for eligible employees,
+          is approved, as recommended by the President and the Chief Financial Officer.</p>
+      </div1>
+      <div1 id="d23" type="resolution">
+        <head type="main">APPROVAL OF PRATT FUND DISTRIBUTION FOR 2002-2003</head>
+        <p>RESOLVED that the budget for the expenditure of funds from the Estate of John Lee Pratt
+          be approved to supplement appropriations made by the Commonwealth of Virginia for the
+          School of Medicine and Departments of Biology, Chemistry, Mathematics and Physics in the
+          College of Arts &amp; Sciences.</p>
+        <p>The normal allocations, not to exceed &dollar;2.6 million for 
+           2002-2003, are suggested by the department chairs and recommended by the dean of
+          each school. The special distributions are not to exceed &dollar;3,533,000 for 2002-2003.
+          To the extent the annual income from the endowment is not adequate to meet the recommended
+          distribution, the principal of the endowment will be disinvested to provide funds for the
+          approved budgets.</p>
+      </div1>
+      <div1 id="d24" type="resolution">
+        <head type="main">APPROVAL OF BOND ISSUANCE</head>
+
+        <p>WHEREAS, pursuant to Chapter 3.2, Title 23 of the <hi rend="italic">Code of Virginia</hi>
+          of 1950, as amended (the "Act"), the General Assembly of Virginia has authorized the
+          Virginia College Building Authority (the "Authority") to develop a pooled bond program
+          (the "Program") to purchase bonds and other debt instruments issued by public institutions
+          of higher education in the Commonwealth of Virginia (the "Institutions") to finance or
+          refinance the construction of projects of capital improvement specifically included in a
+          bill passed by a majority of those elected to each house of the General Assembly of
+          Virginia (the "Projects"); and</p>
+
+        <pb n="6200"/>
+        <p>WHEREAS, the Authority intends to issue from time to time under the Program its
+          Educational Facilities Revenue Bonds (Public Higher Education Financing Program) (the
+          "Bonds") to finance the purchase of bonds and other debt instruments issued by the
+          Institutions to finance or refinance the Projects, all in the furtherance of the purposes
+          of the Act and the Program; and</p>
+        <p> WHEREAS, the Board of Visitors of The Rector and Visitors of the University of Virginia
+          (the "Board") may from time to time wish to finance or refinance Projects of the
+          University of Virginia (the "Institution") through the Program; and</p>
+        <p> WHEREAS, if the Institution wishes to finance or refinance a Project through the
+          Program, it will be necessary for the Institution to enter into a Loan Agreement (a "Loan
+          Agreement") between the Authority and the Institution and to evidence the loan to be made
+          by the Authority to the Institution pursuant to the Loan Agreement by issuing the
+          Institution's promissory note (the "Note") pursuant to Section 23-19 of the Code of
+          Virginia of 1950, as amended, and pursuant to the Loan Agreement, the Authority will agree
+          to issue its Bonds and to use certain proceeds of the Bonds to purchase the Note issued by
+          the Institution and the Institution will agree to use the proceeds received from the
+          Authority to finance or refinance the construction of the Project and to make payments
+          under the Loan Agreement and the Note in sums sufficient to pay, together with certain
+          administrative and arbitrage rebate payments, the principal of premium, if any, and
+          interest due on that portion of the Bonds issued to purchase the Note; and</p>
+        <p> WHEREAS, the Institution now proposes to sell to the Authority its Note (the "2002A
+          Note") to be issued under a Loan Agreement (the "2002A Loan Agreement") to finance or
+          refinance from the proceeds of Bonds issued by the Authority in 2002 (the "2002A Bonds")
+          all or a portion of the costs of the acquisition of the School of Medicine research
+          building, the construction of the Arts and Sciences building, an addition to the Aquatic
+          and Fitness Center, the expansion of the Institution's hospital, the construction of the
+          Emmet Street parking structure and the renovation of the Institution's cancer center, all
+          located on the Institution's Charlottesville campus (collectively, the "2002A Project");
+          and</p>
+
+        <pb n="6201"/>
+        <p>WHEREAS, it is the desire of the Board to delegate to such Authorized Officers (as
+          hereinafter defined) of the Institution the authority to approve the form of the 2002A
+          Loan Agreement and the form of the 2002A Note on behalf of the Board and, similarly, to
+          authorize such Authorized Officers of the Institution to execute, deliver and issue in the
+          name of and on behalf of the Institution, the 2002A Loan Agreement, the 2002A Note and any
+          and all documents necessary to effectuate the financing or refinancing of all or a portion
+          of the costs of the 2002A Project through the Program with the Authority and to facilitate
+          the purchase of the 2002A Note by the Authority; and</p>
+        <p> WHEREAS, it is the desire of the Board to approve the further participation by the
+          Institution in the Program in order to finance and refinance the 2002A Project and to
+          authorize the execution, delivery and issuance of such other Loan Agreements and Notes on
+          terms and conditions substantially similar to the 2002A Loan Agreement and 2002A Note, as
+          to be approved by the Authorized Officers or either of them, and to similarly authorize
+          such authorized Officers of the Institution to execute, deliver and issue in the name of
+          and on behalf of the Institution, all Loan Agreements, all Notes and any and all future
+          documents necessary to effectuate the Program by financing or refinancing the 2002A
+          Project with the Authority and to facilitate the purchase of the Notes by the
+          Authority.</p>
+        <p> RESOLVED:</p>
+      
+          <p>Section 1. The 2002A Project is hereby designated a Project to be undertaken and
+            financed or refinanced by the Authority and, accordingly, the President of the
+            Institution and the Executive Vice President and Chief Operating Officer of the
+            Institution (the "Authorized Officers"), or either of them, are hereby delegated and
+            invested with full power and authority to approve the form of the 2002A Loan Agreement
+            and the 2002A Note, and any pledge to the payment of the 2002A Note of the Institution's
+            total gross university sponsored overhead, unrestricted endowment income, tuition and
+            fees, indirect cost recoveries, auxiliary enterprise revenues, general and nongeneral
+            fund appropriations and other revenues not required by law or restricted by a gift
+            instrument to be used for another purpose, any of which are not required by law or by
+            binding contract entered into on or prior to the date of issuance of the 2002A Bonds to
+            be devoted to some other purpose on a basis that is senior in priority to the <pb
+              n="6202"/> 2002A Bonds, as may be provided in the 2002A Loan Agreement, and such
+            approval is hereby authorized, subject to the provisions of Section 4 hereof.</p>
+          
+          <p> Section 2. Subject to the provisions of Section 4 hereof, the Authorized Officers,
+            or either of them, are each hereby delegated and invested with full power and authority
+            to execute, deliver and issue on behalf of the Board, (a) the 2002A Loan Agreement and
+            the 2002A Note whose approval of such documents in accordance with Section 1 shall be
+            evidenced conclusively by the execution and issuance of the 2002A Note and (b) any and
+            all other documents, instruments or certificates as may be deemed necessary to
+            consummate the financing or refinancing of all or a portion of the costs of the 2002A
+            Project through the Program, the construction of the 2002A Project and the Institution's
+            participation in the Program, and to further carry out the purposes and intent of this
+            Resolution. The Authorized Officers are directed to take such steps and deliver such
+            certificates prior to the delivery of the 2002A Note as may be required under existing
+            obligations of the Institution.</p>
+        
+          <p> Section 3. The Authorized Officers, or either of them, are each hereby delegated
+            and invested with full power and authority to execute and deliver, on behalf of the
+            Board, (a) such future Loan Agreements in substantially the form of the 2002A Loan
+            Agreement, as to be approved by the Authorized Officers or either of them, with such
+            changes, insertions or omissions as may be approved by the Authorized Officers, whose
+            approval shall be evidenced exclusively by the execution and delivery of the future Loan
+            Agreement, (b) such future Notes in substantially the form of the 2002A Note, as to be
+            approved by the Authorized Officers or either of them, with such changes, insertions or
+            omissions as may be approved by the Authorized Officers, whose approval shall be
+            evidenced exclusively by the execution and delivery of the future Note, and (c) any and
+            all other documents, instruments or certificates as may be deemed necessary in the
+            future to consummate the Program, the construction, financing or refinancing of the
+            2002A Project and the Institution's participation in the Program, and to further carry
+            out the purposes and intent of this Resolution in the future, it being the intent of the
+            Board that no further action on behalf of the Board shall be necessary to empower the
+            Authorized Officers, or either of them, to execute, deliver and issue such future Loan
+            Agreements, future Notes and other documents as may be deemed necessary in order for the
+            Institution to participate in the Program in the future.</p>
+          <lb/>
+
+          <pb n="6203"/>
+          <p>Section 4. The authorizations given above as to the approval, execution, delivery
+            and issuance of the 2002A Loan Agreement and the 2002A Note are subject to the following
+            parameters: (a) that the principal amount to be paid under the 2002A Note shall not be
+            greater than the aggregate amount authorized for the 2002A Project by the General
+            Assembly of Virginia, including any adjustments required or permitted by law, (b) that
+            the interest rate payable under the 2002A Note shall not exceed a "true" or "Canadian"
+            interest cost more than 50 basis points higher than the interest rate for "AA" rated
+            securities with comparable maturities, as reported by Delphis-Hanover, or another
+            comparable service or index, on the date that the interest rates on the 2002A Note are
+            determined, taking into account original issue discount or premium, if any, (c) that the
+            weighted average maturity of the principal payments due under the 2002A Note shall not
+            be in excess of 20 years, (d) that the last principal payment date under the 2002A Note
+            shall not extend beyond the period of the reasonably expected economic life of the 2002A
+            Project, (e) that the financing of the 2002A Project and the terms and provisions of the
+            2002A Loan Agreement and the 2002A Note will comply with the Alternative Construction
+            and Financing Guidelines issued by the Commonwealth's Secretary of Finance, and (f) that
+            the actual interest rates, maturities, and date of the 2002A Note shall be approved by
+            an Authorized Officer, which approval will be evidenced by the execution of the 2002A
+            Note.</p>
+         
+          <p> Section 5. The authorizations given above as to the execution, delivery and
+            issuance of any future Loan Agreements and future Notes are subject to the following
+            parameters: (a) that the principal amount to be paid under such Notes shall not be
+            greater than the amount authorized for the Projects being financed by the General
+            Assembly of Virginia, including any adjustments required or permitted by law, (b) that
+            the interest rate payable under such Notes shall not exceed a "true" or "Canadian"
+            interest cost more than 50 basis points higher than the interest rate for "AA" rated
+            securities with comparable maturities, as reported by Delphis-Hanover, or another
+            comparable service or index on the dates that the interest rates on the Notes are
+            determined, taking into account original issue discount or premium, if any, (c) that the
+            weighted average maturity of the principal payments due under such Notes shall not be in
+            excess of 20 years, (d) that the last principal payment date under such Notes shall not
+            extend beyond the period of the reasonably expected economic life of the Projects being
+              <pb n="6204"/> financed, and (e) that the financing of such Projects and the terms and
+            provisions of such Loan Agreements and Notes will comply with the then current
+            Alternative Construction and Financing Guidelines issued by the Commonwealth's Secretary
+            of Finance.</p>
+         
+          <p> Section 6. The Board acknowledges, on behalf of the Institution, that if the
+            Institution fails to make any payments of debt service due under any Loan Agreement or
+            Note, including the 2002A Loan Agreement and the 2002A Note, the Program authorizes the
+            State Comptroller to charge against the appropriations available to the Institution all
+            future payments of debt service on that Loan Agreement and Note when due and payable and
+            to make such payments to the Authority or its designee, so as to ensure that no future
+            default will occur on such Loan Agreement or Note.</p>
+          <p> Section 7. The Board agrees that if the Authority determines that the Institution
+            is an "obligated person" under Rule 15c2-12 of the Securities and Exchange Commission
+            with respect to any issue of Bonds, the Institution will enter into a continuing
+            disclosure undertaking in form and substance satisfactory to the Authority and the
+            Institution and will comply with the provisions and disclosure obligations contained
+            therein.</p>
+          <p> Section 8. This resolution shall take effect immediately upon its adoption.</p>
+        
+      </div1>
+      <div1 id="d25" type="resolution">
+        <head type="main">AMENDMENT TO APPROVAL OF BOND ISSUANCE</head>
+        <p>RESOLVED FURTHER that in the event the total costs of financing the 2002A Project through
+          the Virginia College Building Authority Pooled Bond Program are higher than issuing bonds
+          through the Institution (University), the President and the Executive Vice President and
+          Chief Operating Officer, or either of them, are hereby delegated and invested with full
+          power and authority, with the approval of the Executive Committee of the Board, to
+          approve, execute, deliver, and issue, any and all documents necessary to effectuate the
+          financing or refinancing of the 2002A Project through the Institution rather than through
+          the Virginia College Building Authority Pooled Bond Program.</p>
+
+      </div1>
+      <div1 id="d26" type="resolution">
+        <pb n="6205"/>
+        <head type="main">APPROVAL OF RE-APPOINTMENT TO THE BOARD OF THE UNIVERSITY OF VIRGINIA
+          INVESTMENT MANAGEMENT COMPANY</head>
+
+        <p>WHEREAS, the policies of the Board of Visitors authorize appointment of up to four public
+          members to the Board of the University of Virginia Investment Management Company, who
+          shall be alumni of the University, to serve as non-voting members in staggered initial
+          terms not to exceed four years, and the aforesaid policies further provide that no member
+          shall be eligible to serve more than two successive four-year terms.</p>
+        <p> RESOLVED that A. Macdonald Caputo of New York is re-appointed to serve as a public
+          member of the University of Virginia Investment Management Company Board, for a term of
+          four years beginning <date value="2002-07-01">July 1, 2002</date>.</p>
+      </div1>
+      <div1 id="d27" type="resolution">
+        <head type="main">RECOMMENDATION REGARDING FISCAL YEAR 2003 MEDICAL CENTER OPERATING BUDGET
+          AND APPROVAL OF MEDICAL CENTER EMPLOYEE BONUS PLAN</head>
+
+        <p>WHEREAS, the Medical Center Operating Board has reviewed the Fiscal Year 2003 Medical
+          Center operating budget; and</p>
+        <p>WHEREAS, the Medical Center Operating Board recommends to the Finance Committee and the
+          Board of Visitors approval of the Fiscal Year 2003 Medical Center operating budget;
+          and</p>
+        <p> WHEREAS, Section 2.2-2905 of the <hi rend="italic">Code of Virginia</hi> authorizes
+          the Board of Visitors to establish compensation plans for employees of the Medical Center;
+          and</p>
+        <p> WHEREAS, the Medical Center proposes to pay an employee bonus equal to a minimum of
+          2.5&percnt; of base salary for eligible employees;</p>
+        <p> RESOLVED that the Fiscal Year 2003 Medical Center operating budget as recommended by the
+          Medical Center Operating Board, is approved;</p>
+        <p> RESOLVED FURTHER that the payment in August, 2002, of a one-time bonus equal to a
+          minimum of 2.5&percnt; of base salary for eligible Medical Center employees is approved;
+          the exact <pb n="6206"/> payment is to be determined by the Vice President and Chief
+          Executive Officer of the Medical Center, with the concurrence of the Chair of the Medical
+          Center Operating Board and the Executive Vice President and Chief Operating Officer of the
+          University.</p>
+      </div1>
+      <div1 id="d28" type="resolution">
+        <head type="main">APPROVAL OF CHANGES TO MEDICAL CENTER RETIREMENT BENEFITS</head>
+
+        <p>WHEREAS, the Medical Center desires to amend the Medical Center's retirement plan
+          benefits on a prospective basis; and</p>
+        <p> WHEREAS, the Medical Center Operating Board after careful review believes it is in the
+          best interest of the Medical Center to amend the retirement plan benefits;</p>
+        <p> RESOLVED that the Medical Center is authorized to amend the retirement plan benefits to
+          provide for (i) a 4&percnt; employer contribution, (ii) an employer matching contribution
+          of 50&percnt; on 403(b) contributions of up to 4&percnt; of pay and (iii) a vesting period
+          of two years for the employer contributions; and</p>
+        <p> RESOLVED FURTHER that such amendment shall become effective no earlier than <date
+            value="2002-10-01">October 1, 2002</date>, and shall apply to Medical Center employees
+          hired on or after such effective date; and</p>
+        <p> RESOLVED FURTHER that the Vice President and Chief Executive Officer of the Medical
+          Center, with the concurrence of the Chair of the Medical Center Operating Board and the
+          Executive Vice President and Chief Operating Officer of the University, and in
+          consultation with the General Counsel, is authorized to execute appropriate amendments and
+          other legal documents to effectuate these changes to the Medical Center retirement
+          plan.</p>
+      </div1>
+      <div1 id="d29" type="resolution">
+        <head type="main">APPROVAL OF AUDIT SCHEDULE</head>
+        <p>RESOLVED that the Audit Schedule for Fiscal Year 2002-2003, is approved as recommended by
+          the Audit Committee.</p>
+
+      </div1>
+      <div1 id="d30" type="resolution">
+        <pb n="6207"/>
+        <head type="main">APPROVAL OF THE 2003 BOARD MEETING DATES</head>
+        <p>RESOLVED that the Board meeting dates for 2003 are as follows:</p>
+        <list>
+          <item>Friday and Saturday<lb/> January 31 and February 1</item>
+          <lb/>
+          <item>Friday and Saturday<lb/> April 4 and 5</item>
+          <lb/>
+          <item> Friday and Saturday<lb/> May 30 and 31</item>
+          <lb/>
+          <item> Friday and Saturday<lb/> July 11 and 12 (RETREAT)</item>
+          <lb/>
+          <item> Friday and Saturday<lb/> October 3 and 4</item>
+        </list>
+      </div1>
+      <div1 id="d31" type="resolution">
+        <head type="main">MEMORIAL RESOLUTION FOR <name>MR. A. VINCENT SHEA</name></head>
+
+        <p>WHEREAS, <name>A. Vincent Shea</name>, a native of Richmond, took a B.A. from the
+          University in 1934 and an M.A. in 1935, and pursued further graduate studies at the
+          University of Chicago and at Stanford University; and</p>
+        <p> WHEREAS, <name>Mr. Shea</name> returned to the University in 1936 to join the faculty;
+          and</p>
+        <p> WHEREAS, after service in the United States Navy during World War II, <name>Mr.
+            Shea</name> continued at the University until his retirement in 1982; and</p>
+        <p> WHEREAS, <name>Mr. Shea</name> served, sometimes simultaneously, as Bursar, Assistant to
+          President Darden, Secretary to the Board of Visitors, Comptroller, Vice President for
+          Business and Finance, Chairman of the Department of Government and Foreign Affairs, and
+          Secretary of the Alumni Board of Trustees; and</p>
+        <p> WHEREAS, <name>Mr. Shea</name>, during his years of distinguished service to the
+          University, was the trusted advisor of three Presidents and a succession of Rectors;
+          and</p>
+
+        <pb n="6208"/>
+        <p>WHEREAS, <name>Mr. Shea</name> received both the Raven Award and the Thomas Jefferson
+          Award in recognition of his service to the University, and was a member of the Seven
+          Society; and</p>
+        <p> WHEREAS, <name>Mr. Shea</name> died on <date value="2002-05-18">May 18, 2002</date>;</p>
+        <p> RESOLVED that the Board of Visitors remembers with admiration and gratitude the devotion
+          and service of <name>A. Vincent Shea</name> to the University of Virginia, and notes his
+          passing with profound regret.</p>
+      </div1>
+      <div1 id="d32" type="resolution">
+        <head type="main">APPROVAL OF THE SUMMARY OF AUDIT FINDINGS</head>
+
+        <p>RESOLVED that the Summary of Audit Findings for the period <dateRange from="2002-02-01"
+            to="2002-04-30">February 1, 2002, through April 30, 2002</dateRange>, as presented by
+          the Director of Audits, is approved as recommended by the Audit Committee.</p>
+      </div1>
+      <div1 id="d33" type="resolution">
+        <head type="main"> APPROVAL OF FUTURE PROPERTY ACQUISITIONS</head>
+        <p> WHEREAS, the Board has from time to time authorized the Executive Vice President and
+          Chief Operating Officer to acquire properties for University purposes;</p>
+        <p> WHEREAS, it is appropriate to update and extend that authority;</p>
+        <p> RESOLVED that the Executive Vice President and Chief Operating Officer is authorized to:
+          1) negotiate an appropriate price for properties that have been identified for future
+          acquisition, when they become available, subject to the approval of the Chair of the
+          Finance Committee and 2) execute any and all contracts or documents pertaining to their
+          acquisition.</p>
+
+      </div1>
+      <div1 id="d34" type="resolution">
+        <pb n="6209"/>
+        <head type="main">FACULTY PERSONNEL ACTIONS</head>
+        <div2 id="d35" type="resolution">
+          <head type="sub">ELECTIONS</head>
+
+          <p>RESOLVED that the following persons are elected to the faculty:</p>
+          <list>
+            <item><name>Mr. A. Craig Burnside</name> as Professor of Economics, effective <date
+                value="2002-08-25">August 25, 2002</date>, at an academic year salary of
+              &dollar;115,000.</item>
+            <item>
+              <name>Ms. Anne E. Chapin</name> as Assistant Professor of Medical Education, for one
+              year, effective April 15, 2002, at an annual salary of &dollar;57,000.</item>
+            <item>
+              <name>Dr. John B. Cousar, Jr.</name>, as Professor of Clinical Pathology, for three
+              years, effective February 1, 2002, at an annual salary of &dollar;100,000.</item>
+            <item>
+              <name>Ms. Sue E. Delos</name> as Assistant Professor of Research in Cell Biology, for
+              one year, effective <date value="2002-01-25">January 25, 2002</date>, at an annual
+              salary of &dollar;42,400.</item>
+            <item>
+              <name>Mr. Itancho Devedjiev</name> as Assistant Professor of Research in Molecular
+              Physiology and Biological Physics, for the period <dateRange from="2002-02-01"
+                to="2002-10-27">February 1, 2002, through October 27, 2002</dateRange>, at an annual
+              salary of &dollar;43,300.</item>
+            <item>
+              <name>Ms. Emily E. Drake</name> as Assistant Professor, General Nursing Faculty, for
+              one academic year, effective <date value="2002-08-25">August 25, 2002</date>, at an
+              academic year salary of &dollar;49,400.</item>
+            <item>
+              <name>Dr. Brian G. Fuller</name> as Assistant Professor of Research in Radiation
+              Oncology, for two years, effective April 1, 2002, at an annual salary of
+              &dollar;100,000.</item>
+            <item>
+              <name>Mr. Michael A. Harding</name> as Assistant Professor of Research in Urology, for
+              one year, effective <date value="2002-03-01">March 1, 2002</date>, at an annual salary
+              of &dollar;50,000.</item>
+            <item>
+              <name>Ms. Gwenith A. Jones</name> as Assistant Professor of Research in Pharmacology,
+              for the period <date value="2002-01-01">January 1, 2002</date>, through <date
+                value="2002-06-30">June 30, 2002</date>, at an annual salary of
+              &dollar;63,900.</item>
+
+            <pb n="6210"/>
+            <item><name>Dr. D. Casey Kerrigan</name> as Professor of Physical Medicine and
+              Rehabilitation, effective April 1, 2002, at an annual salary of
+              &dollar;100,000.</item>
+            <item>
+              <name>Mr. Craig H. Meyer</name> as Assistant Professor of Biomedical Engineering, for
+              three years, effective <date value="2002-01-01">January 1, 2002</date>, at an annual
+              salary of &dollar;110,000.</item>
+            <item>
+              <name>Ms. Marian C. Moore</name> as Professor of Business Administration, effective
+                <date value="2002-08-25">August 25, 2002</date>, at an academic year salary of
+              &dollar;135,000.</item>
+            <item>
+              <name>Mr. John D. Quale</name> as Visiting Assistant Professor of Architecture, for
+              one academic year, effective <date value="2002-08-25">August 25, 2001</date>, at an
+              academic year salary of &dollar;40,000.</item>
+            <item>
+              <name>Ms. Judith M. (Jude) Reagan</name> as Assistant Professor, General Faculty, for
+              three years, effective <date value="2002-04-25">April 25, 2002</date>, at an annual
+              salary of &dollar;47,500.</item>
+            <item>
+              <name>Ms. Kathryn B. Reid</name> as Assistant Professor, General Nursing Faculty, for
+              one year, effective <date value="2002-08-25">August 25, 2002</date>, at an annual
+              salary of &dollar;49,700.</item>
+            <item>
+              <name>Mr. Walter J. Rogers, Jr.</name>, as Acting Associate Professor of Research in
+              Radiology, for one year, effective <date value="2002-01-30">January 30, 2002</date>,
+              at an annual salary of &dollar;130,000.</item>
+            <item>
+              <name>Mr. Jeffrey A. Smith</name> as Assistant Professor of Research in Pathology, for
+              three years, effective <date value="2002-01-25">January 25, 2002</date>, at an annual
+              salary of &dollar;50,000.</item>
+            <item>
+              <name>Ms. Audrey E. Snyder</name> as Assistant Professor, General Nursing Faculty, for
+              one year, effective August 25, 2002, at an annual salary of &dollar;45,700.</item>
+          </list>
+        </div2>
+        <div2 id="d36" type="resolution">
+          <head type="sub">ACTIONS RELATING TO CHAIRHOLDERS</head>
+
+          <p>RESOLVED that the actions relating to the chairholders are approved as shown below:</p>
+          <div3 id="d37" type="section">
+            <head type="sub">(a) Elections of Chairholders</head>
+            <list>
+              <item><name>Mr. Kenneth S. Abraham</name> as Class of 1966 Research Professor of Law,
+                for three years, effective <date value="2002-05-25">May 25, 2002</date>. <name>Mr.
+                  Abraham</name> will continue as Professor of Law, and Robert E. Scott
+                Distinguished Professor of Law, without term.</item>
+
+              <pb n="6211"/>
+              <item><name>Mr. Raul A. Baragiola</name> as Alice and Guy A. Wilson Professor of
+                Engineering, effective <date value="2002-08-25">August 25, 2002</date>. <name>Mr.
+                  Baragiola</name> will continue as Professor of Engineering Physics and Materials
+                Science, without term.</item>
+              <item>
+                <name>Dr. Jonathan M. Evans</name> as Harry T. Peters, Jr., Associate Professor of
+                Internal Medicine, effective <date value="2002-02-25">February 25, 2002</date>.
+                  <name>Dr. Evans</name> will continue as Associate Professor of Internal Medicine,
+                with term.</item>
+              <item>
+                <name>Mr. Kim A. Forde-Mazrui</name> as Barron F. Black Research Professor of Law,
+                for three years, effective <date value="2002-05-25">May 25, 2002</date>. <name>Mr.
+                  Forde-Mazrui</name> will continue as Professor of Law, without term.</item>
+              <item>
+                <name>Mr. Michael Fowler</name> as Maxine S. and Jesse W. Beams Professor of
+                Physics, effective <date value="1999-08-25">August 25, 1999</date>. <name>Mr.
+                  Fowler</name> will continue as Professor of Physics, without term.</item>
+              <item>
+                <name>Mr. Robert Hull</name> as Charles Henderson Professor of Engineering,
+                effective <date value="2002-08-25">August 25, 2002</date>. <name>Mr. Hull</name>
+                will continue as Professor of Materials Science and Engineering, without
+                term.</item>
+              <item>
+                <name>Mr. Kevin A. Kordana</name> as Nicholas E. Chimicles Research Professor of
+                Business Law and Regulation, for three years, effective <date value="2002-05-25">May
+                  25, 2002</date>. <name>Mr. Kordana</name> will continue as Professor of Law,
+                without term.</item>
+              <item>
+                <name>Mr. Jody S. Kraus</name> as Caddell and Chapman Professor of Law, for three
+                years, effective <date value="2002-05-25">May 25, 2002</date>. <name>Mr.
+                  Kraus</name> will continue as Professor of Law, without term.</item>
+              <item>
+                <name>Mr. Graham C. Lilly</name> as Elizabeth D. and Richard A. Merrill Professor of
+                Law, for three years, effective <date value="2002-05-25">May 25, 2002</date>.
+                  <name>Mr. Lilly</name> will continue as Professor of Law, without term.</item>
+              <item>
+                <name>Mr. John T. Monahan</name> as David A. Harrison III Professor of Law, for
+                three years, effective <date value="2002-05-25">May 25, 2002</date>. <name>Mr.
+                  Monahan</name> will continue as Professor of Law, without term.</item>
+              <item>
+                <name>Mr. Robert C. Pianta</name> as William Clay Parrish, Jr., Professor of
+                Education, effective <date value="2000-11-25">November 25, 2000</date>. <name>Mr.
+                  Pianta</name> will continue as Professor of Education, without term.</item>
+
+              <pb n="6212"/>
+              <item><name>Ms. Mildred W. Robinson</name> as Henry L. and Grace Doherty Charitable
+                Foundation Professor of Law, effective <date value="2002-08-25">August 25,
+                  2002</date>. <name>Ms. Robinson</name> will continue as Professor of Law, without
+                term.</item>
+              <item>
+                <name>Ms. Elizabeth S. Scott</name>as Harrison Foundation Research Professor of Law,
+                for three years, effective <date value="2002-05-25">May 25, 2002</date>. <name>Ms.
+                  Scott</name> will continue as University Professor, and Class of 1962 Professor of
+                Law, without term.</item>
+              <item>
+                <name>Mr. J. Hoult Verkerke</name> as Thomas F. Bergin Teaching Professor of Law,
+                for three years, effective <date value="2002-05-25">May 25, 2002</date>. <name>Mr.
+                  Verkerke</name> will continue as Professor of Law, without term.</item>
+              <item>
+                <name>Mr. Haydn N. Wadley</name> as University Professor, effective <date
+                  value="2002-08-25">August 25, 2002</date>. <name>Mr. Wadley</name> will continue
+                as Edgar A. Starke, Jr., Research Professor of Materials Science, and Professor of
+                Materials Science, without term.</item>
+              <item>
+                <name>Mr. Alfred C. Weaver</name> as Lucien Carr, III, Professor of Engineering and
+                Applied Science, for two academic years, effective <date value="2002-08-25">August
+                  25, 2002</date>. <name>Mr. Weaver</name> will continue as Professor of Computer
+                Science, without term.</item>
+              <item>
+                <name>Mr. G. Edward White</name> as Sullivan and Cromwell Professor of Law, for
+                three years, effective <date value="2002-05-25">May 25, 2002</date>. <name>Mr.
+                  White</name> will continue as John Barbee Minor Professor of Law and History, and
+                University Professor of Law, without term.</item>
+              <item>
+                <name>Mr. Stephen G. Wilson</name> as Lucien Carr, III, Professor of Engineering and
+                Applied Science, for one academic year, effective <date value="1998-08-25">August
+                  25, 1998</date>. <name>Mr. Wilson</name> will continue as Professor of Electrical
+                and Computer Engineering, without term.</item>
+            </list>
+          </div3>
+          <div3 id="d38" type="section">
+            <head type="sub">(b) Change of Titles of Chairholders</head>
+            <list>
+              <item><name>Mr. Kenneth S. Abraham</name> from Class of 1962 Professor of Law to
+                Robert E. Scott Distinguished Professor of Law, effective <date value="2002-08-25"
+                  >August 25, 2002</date>. <name>Mr. Abraham</name> will continue as Class of 1966
+                Research Professor of Law, with term.</item>
+              <item>
+                <name>Ms. Lillian R. BeVier</name> from Henry L. and Grace Doherty Charitable
+                Foundation Professor of Law to John S. Shannon Distinguished Professor of Law,
+                effective <date value="2002-08-25">August 25, 2002</date>. <name>Ms. BeVier</name>
+                will continue as Class of 1963 Research Professor of Law, with term.</item>
+
+              <pb n="6213"/>
+              <item><name>Dr. Robert M. Carey</name> from James Carroll Flippin Professor of Medical
+                Science to University Professor and Dean Emeritus, effective <date
+                  value="2002-06-25">June 25, 2002</date>. <name>Dr. Carey</name> will continue as
+                Professor of Internal Medicine, without term.</item>
+              <item>
+                <name>Dr. Charles B. Greyson</name> from Priscilla Bonner and Margerie Bonner Lowry
+                Professor in the Division of Personality Studies to Carlson Professor of Psychiatry,
+                effective <date value="2002-03-25">March 25, 2002</date>. <name>Dr. Greyson</name>
+                will continue as Professor of Psychiatry, without term.</item>
+            </list>
+          </div3>
+          <div3 id="d39" type="section">
+            <head type="sub">(c) Special Salary Actions of Chairholders</head>
+            <list>
+              <item>
+                <name>Mr. Paul N. Adler</name>, William R. Kenan, Jr., Professor of Biology,
+                effective <date value="2002-04-25">April 25, 2002</date>, at an annual salary of
+                &dollar;119,300.</item>
+              <item>
+                <name>Mr. Peter C. Brunjes</name>, Commonwealth Professor of Psychology, effective
+                  <date value="2002-04-25">April 25, 2002</date>, at an academic year salary of
+                &dollar;95,700.</item>
+              <item>
+                <name>Dr. R. Ariel Gomez</name>, Professor of Pediatrics and Robert J. Roberts
+                Professor of Pediatrics, effective <date value="2002-08-25">August 25, 2001</date>,
+                at an annual salary of &dollar;205,000.</item>
+              <item>
+                <name>Mr. Robert M. Grainger</name>, W. L. Lyons Brown Professor of Biology,
+                effective <date value="2002-04-25">April 25, 2002</date>, at an annual salary of
+                &dollar;135,700.</item>
+              <item>
+                <name>Dr. Irving L. Kron</name>, William H. Muller, Jr., Professor of Surgery,
+                effective <date value="2002-01-01">January 1, 2002</date>, at an annual salary of
+                &dollar;350,000.</item>
+              <item>
+                <name>Mr. Stephen E. Plog</name>, Commonwealth Professor of Anthropology, effective
+                  <date value="2002-04-25">April 25, 2002</date>, at an academic year salary of
+                &dollar;118,000.</item>
+              <item>
+                <name>Mr. Peter A. Todd</name>, Chesapeake and Potomac Telephone Company Professor
+                of Commerce, effective <date value="2001-08-25">August 25, 2001</date>, at an
+                academic year salary of &dollar;181,500.</item>
+              <item>
+                <name>Mr. Carl P. Zeithaml</name>, F. S. Cornell Professor of Free Enterprise,
+                effective <date value="2002-06-25">June 25, 2002</date>, at an annual salary of
+                &dollar;275,000.</item>
+            </list>
+          </div3>
+          <div3 id="d40" type="section">
+            <pb n="6214"/>
+            <head type="sub">(d) Resignation of Chairholder</head>
+            <list>
+              <item><name>Mr. Daryl J. Levinson</name>, Professor of Law and Harrison Foundation
+                Research Professor of Law, effective <date value="2002-05-24">May 24, 2002</date>,
+                to accept another position.</item>
+            </list>
+          </div3>
+          <div3 id="d41" type="section">
+            <head type="sub">(e) Retirements of Chairholders</head>
+            <list>
+              <item><name>Dr. Robert M. Epstein</name>, Harold Carron Professor of Anesthesiology,
+                effective <date value="2002-06-30">June 30, 2002</date>. <name>Dr. Epstein</name>
+                has been a member of the faculty since <date value="1972-06-01">June 1,
+                1972</date>.</item>
+              <item>
+                <name>Mr. Matthew Holden, Jr.</name>, Henry L. and Grace Doherty Charitable
+                Foundation Professor of Government and Foreign Affairs, effective <date
+                  value="2002-05-24">May 24, 2002</date>. <name>Mr. Holden</name> has been a member
+                of the faculty since <date value="1981-09-01">September 1, 1981</date>.</item>
+            </list>
+          </div3>
+        </div2>
+        <div2 id="d42" type="resolution">
+          <head type="sub">PROMOTIONS</head>
+
+          <p>RESOLVED that the following persons are promoted:</p>
+          <list>
+            <item>
+              <name>Mr. Scott T. Acton</name> from Associate Professor of Electrical Engineering,
+              with term, to Associate Professor of Electrical Engineering, without term, effective
+                <date value="2002-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Mr. Gerard Alexander</name> from Assistant Professor of Politics to Associate
+              Professor of Politics, effective <date value="2002-08-25">August 25,
+              2002</date>.</item>
+            <item>
+              <name>Mr. George S. (Yiorgos) Allayannis</name> from Assistant Professor of Business
+              Administration to Associate Professor of Business Administration, effective <date
+                value="2002-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Dr. Joseph A. Aloi</name> from Assistant Professor of Clinical Internal Medicine
+              to Associate Professor of Clinical Internal Medicine, for three years, effective <date
+                value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Dr. John F. Angle</name> from Associate Professor of Radiology, with term, to
+              Associate Professor of Radiology, without term, effective <date value="2002-07-01"
+                >July 1, 2002</date>.</item>
+            <item>
+              <name>Mr. Peter B. Arnold</name> from Assistant Professor of Physics to Associate
+              Professor of Physics, effective August 25, 2002.</item>
+
+            <pb n="6215"/>
+            <item><name>Mr. Z. Gregory Arone</name> from Assistant Professor of Mathematics to
+              Associate Professor of Mathematics, effective <date value="2002-08-25">August 25,
+                2002</date>.</item>
+            <item>
+              <name>Mr. David T. Auble</name> from Assistant Professor of Biochemistry and Molecular
+              Genetics to Associate Professor of Biochemistry and Molecular Genetics, for four
+              years, effective <date value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Dr. Kenneth A. Ballew</name> from Assistant Professor of Clinical Internal
+              Medicine to Associate Professor of Clinical Internal Medicine, for three years,
+              effective <date value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Ms. Paula Q. Barrett</name> from Associate Professor of Pharmacology to
+              Professor of Pharmacology, effective <date value="2002-07-01">July 1,
+              2002</date>.</item>
+            <item>
+              <name>Mr. Timothy Beatley</name> from Associate Professor of Urban and Environmental
+              Planning to Professor of Urban and Environmental Planning, effective <date
+                value="2002-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Mr. Timothy P. Bender</name> from Associate Professor of Microbiology to
+              Professor of Microbiology, effective <date value="2002-07-01">July 1,
+              2002</date>.</item>
+            <item>
+              <name>Dr. Carl L. Berg</name> from Assistant Professor of Internal Medicine to
+              Associate Professor of Internal Medicine, for three years, effective <date
+                value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Dr. Larry C. Borish</name> from Associate Professor of Internal Medicine to
+              Professor of Internal Medicine, effective <date value="2002-07-01">July 1,
+              2002</date>.</item>
+            <item>
+              <name>Dr. Stephen H. Caldwell</name> from Associate Professor of Internal Medicine,
+              with term, to Associate Professor of Internal Medicine, without term, effective <date
+                value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Mr. James E. Casanova</name> from Associate Professor of Cell Biology, with
+              term, and Associate Professor of Microbiology, with term, to Associate Professor of
+              Cell Biology, without term, and Associate Professor of Microbiology, for three years,
+              effective <date value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Mr. Mark R. Conaway</name> from Associate Professor of Health Evaluation
+              Sciences to Professor of Health Evaluation Sciences, effective <date
+                value="2002-07-01">July 1, 2002</date>.</item>
+
+            <pb n="6216"/>
+            <item><name>Ms. Susan D. Dalebout</name> from Assistant Professor of Education, General
+              Faculty, to Associate Professor of Education, General Faculty, for one academic year,
+              effective <date value="2002-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Mr. Robert J. Davis</name> from Associate Professor of Chemical Engineering to
+              Professor of Chemical Engineering, effective <date value="2002-08-25">August 25,
+                2002</date>.</item>
+            <item>
+              <name>Mr. Patrick J. Dennis</name> from Assistant Professor of Commerce to Associate
+              Professor of Commerce, effective <date value="2002-08-25">August 25,
+              2002</date>.</item>
+            <item>
+              <name>Ms. Nancy L. Desmond</name> from Assistant Professor of Research in Neurosurgery
+              to Associate Professor of Research in Neurosurgery, for three years, effective <date
+                value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Dr. Paul T. Diamond</name> from Associate Professor of Physical Medicine and
+              Rehabilitation, with term, to Associate Professor of Physical Medicine and
+              Rehabilitation, without term, effective <date value="2002-07-01">July 1,
+              2002</date>.</item>
+            <item>
+              <name>Mr. Edmond C. Dukes</name> from Associate Professor of Physics to Professor of
+              Physics, effective <date value="2002-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Mr. Dana M. Elzey</name> from Research Assistant Professor of Materials Science
+              and Engineering to Research Associate Professor of Materials Science and Engineering,
+              for three years, effective <date value="2002-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Dr. Richard I. Enelow</name> from Associate Professor of Internal Medicine, with
+              term, to Associate Professor of Internal Medicine, without term, effective <date
+                value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Mr. Paul Fendley</name> from Assistant Professor of Physics to Associate
+              Professor of Physics, effective <date value="2001-08-25">August 25,
+              2002</date>.</item>
+            <item>
+              <name>Mr. Brent A. French</name> from Associate Professor of Biomedical Engineering,
+              with term, and Associate Professor of Research in Radiology, with term, to Associate
+              Professor of Biomedical Engineering, without term, and Associate Professor of Research
+              in Radiology, for three years, effective <date value="2002-07-01">July 1,
+              2002</date>.</item>
+
+            <pb n="6217"/>
+            <item><name>Dr. Deborah K. Froh</name> from Assistant Professor of Clinical Pediatrics
+              to Associate Professor of Clinical Pediatrics, for three years, effective <date
+                value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Mr. Robert P. Geraci</name> from Assistant Professor of History to Associate
+              Professor of History, effective <date value="2001-08-25">August 25,
+              2002</date>.</item>
+            <item>
+              <name>Ms. Joanna B. Goldberg</name> from Associate Professor of Microbiology to
+              Professor of Microbiology, effective <date value="2002-07-01">July 1,
+              2002</date>.</item>
+            <item>
+              <name>Ms. Wendy L. Golden</name> from Associate Professor of Pediatrics to Professor
+              of Pediatrics, effective <date value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Dr. Adam N. Goldfarb</name> from Associate Professor of Pathology, with term, to
+              Associate Professor of Pathology, without term, effective <date value="2002-07-01"
+                >July 1, 2002</date>.</item>
+            <item>
+              <name>Mr. Kevin P. Granata</name> from Assistant Professor of Orthopaedics, with term,
+              and Assistant Professor of Research in Biomedical Engineering, with term, to Associate
+              Professor of Orthopaedics, without term, and Associate Professor of Research in
+              Biomedical Engineering, for three years, effective <date value="2002-07-01">July 1,
+                2002</date>.</item>
+            <item>
+              <name>Mr. Jeffrey A. Grossman</name> from Assistant Professor of German to Associate
+              Professor of German, effective <date value="2001-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Ms. Ruth Ann Hill</name> from Assistant Professor of Spanish to Associate
+              Professor of Spanish, effective <date value="2001-08-25">August 25,
+              2002</date>.</item>
+            <item>
+              <name>Mr. Andrew C. Hillier</name> from Assistant Professor of Chemical Engineering to
+              Associate Professor of Chemical Engineering, effective <date value="2002-08-25">August
+                25, 2002</date>.</item>
+            <item>
+              <name>Dr. Martin A. Hoard</name> from Assistant Professor of Clinical Plastic Surgery
+              and Assistant Professor of Clinical Dentistry to Associate Professor of Clinical
+              Plastic Surgery and Associate Professor of Clinical Dentistry, for three years,
+              effective <date value="2002-07-01">July 1, 2002</date>.</item>
+
+            <pb n="6218"/>
+            <item><name>Mr. Jeffrey J. Holt</name> from Assistant Professor of Mathematics, General
+              Faculty, to Associate Professor of Mathematics, General Faculty, for three years,
+              effective <date value="2002-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Dr. Ross B. Isaacs</name> from Assistant Professor of Clinical Internal Medicine
+              to Associate Professor of Clinical Internal Medicine, for three years, effective <date
+                value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Dr. Karen C. Johnston</name> from Assistant Professor of Neurology and Assistant
+              Professor of Research in Health Evaluation Sciences to Associate Professor of
+              Neurology and Associate Professor of Research in Health Evaluation Sciences, for three
+              years, effective <date value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Mr. Robert R. Jones, Jr.</name>, from Associate Professor of Physics to
+              Professor of Physics, effective <date value="2002-08-25">August 25,
+              2002</date>.</item>
+            <item>
+              <name>Mr. Daniel M. Keenan</name> from Associate Professor of Statistics to Professor
+              of Statistics, effective <date value="2002-08-25">August 25, 2002</date>. <name>Mr.
+                James P. Landers</name> from Associate Professor of Chemistry to Professor of
+              Chemistry, effective <date value="2002-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Ms. Edith G. Lawrence</name> from Associate Professor of Education, General
+              Faculty, to Professor of Education, General Faculty, for one academic year, effective
+                <date value="2002-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Mr. Rong Li</name> from Assistant Professor of Biochemistry and Molecular
+              Genetics to Associate Professor of Biochemistry and Molecular Genetics, effective
+                <date value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Dr. Kant Y.K. Lin</name> from Associate Professor of Plastic Surgery, with term,
+              and Associate Professor of Clinical Pediatrics, with term, to Associate Professor of
+              Plastic Surgery, without term, and Associate Professor of Clinical Pediatrics, for
+              three years, effective <date value="2002-07-01">July 1, 2002</date>.</item>
+
+            <pb n="6219"/>
+            <item><name>Dr. Jonathan R. Lindner</name> from Assistant Professor of Internal Medicine
+              to Associate Professor of Internal Medicine, for three years, effective <date
+                value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Ms. Ann B. Loper</name> from Associate Professor of Education, General Faculty,
+              to Professor of Education, General Faculty, for one year, effective <date
+                value="2002-06-25">June 25, 2002</date>.</item>
+            <item>
+              <name>Ms. Sandra I. Lopez-Baez</name> from Assistant Professor of Education, General
+              Faculty, to Associate Professor of Education, General Faculty, for two years,
+              effective <date value="2002-06-25">June 25, 2002</date>.</item>
+            <item>
+              <name>Ms. M. Elizabeth Magill</name> from Associate Professor of Law, to Professor of
+              Law, effective <date value="2002-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Ms. Bernice A. Marcopulos</name> from Assistant Professor of Clinical
+              Psychiatric Medicine to Associate Professor of Clinical Psychiatric Medicine, for
+              three years, effective <date value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Mr. John E. Mason</name> from Assistant Professor of History to Associate
+              Professor of History, effective<date value="2001-08-25"> August 25,
+              2002</date>.</item>
+            <item>
+              <name>Dr. Eugene D. McGahren, III</name>, from Associate Professor of Surgery, with
+              term, and Associate Professor of Clinical Pediatrics, with term, to Associate
+              Professor of Surgery, without term, and Associate Professor of Pediatrics, for three
+              years, effective <date value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Ms. Karen J. McGlathery</name> from Assistant Professor of Environmental
+              Sciences to Associate Professor of Environmental Sciences, effective <date
+                value="2002-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Mr. Wladek Minor</name> from Associate Professor of Molecular Physiology and
+              Biological Physics to Professor of Molecular Physiology and Biological Physics,
+              effective <date value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Dr. J. Randall Moorman</name> from Associate Professor of Internal Medicine to
+              Professor of Internal Medicine, effective <date value="2002-07-01">July 1,
+              2002</date>.</item>
+
+            <pb n="6220"/>
+            <item><name>Dr. Christopher A. Moskaluk</name> from Assistant Professor of Pathology and
+              Assistant Professor of Research in Biochemistry and Molecular Genetics to Associate
+              Professor of Pathology and Associate Professor of Research in Biochemistry and
+              Molecular Genetics, for three years, effective <date value="2002-07-01">July 1,
+                2002</date>.</item>
+            <item>
+              <name>Ms. Rachel Most</name> from Assistant Professor, General Faculty, to Associate
+              Professor, General Faculty, for three years, effective <date value="2002-08-25">August
+                25, 2002</date>.</item>
+            <item>
+              <name>Mr. Fernando Opere</name> from Associate Professor of Spanish, Italian and
+              Portuguese to Professor of Spanish, Italian and Portuguese, effective <date
+                value="2002-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Mr. John M. Owen</name> from Assistant Professor of Politics to Associate
+              Professor of Politics, effective <date value="2002-08-25">August 25,
+              2002</date>.</item>
+            <item>
+              <name>Dr. Diane E. Pappas</name> from Assistant Professor of Clinical Pediatrics to
+              Associate Professor of Clinical Pediatrics, for three years, effective <date
+                value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Dr. Jayashree S. Parekh</name> from Assistant Professor of Clinical Radiology to
+              Associate Professor of Clinical Radiology, for one year, effective <date
+                value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Mr. Bryce M. Paschal</name> from Assistant Professor of Biochemistry and
+              Molecular Genetics to Associate Professor of Biochemistry and Molecular Genetics, for
+              four years, effective <date value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Mr. Dylan Penningroth</name> from Assistant Professor of History to Associate
+              Professor of History, effective <date value="2001-08-25">August 25,
+              2002</date>.</item>
+            <item>
+              <name>Ms. Susan E. Perry</name> from Associate Professor of Commerce to Professor of
+              Commerce, effective <date value="2002-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Dr. Clifford D. Phillips</name> from Associate Professor of Radiology, without
+              term, Associate Professor of Neurosurgery, with term, and Associate Professor of
+              Otolaryngology &mdash; Head and Neck Surgery, with term, to Professor of Radiology,
+              without term, Professor of Neurosurgery, for three years, and Professor of
+              Otolaryngology &mdash; Head and Neck Surgery, for three years, effective <date
+                value="2002-07-01">July 1, 2002</date>.</item>
+
+            <pb n="6221"/>
+            <item><name>Ms. Mary R. Prendergast</name> from Affiliate Librarian, General Faculty,
+              Alderman Library, to Assistant Librarian, General Faculty, Alderman Library, for three
+              years, effective <date value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Dr. Mark S. Quigg</name> from Assistant Professor of Neurology to Associate
+              Professor of Neurology, for three years, effective <date value="2002-07-01">July 1,
+                2002</date>.</item>
+            <item>
+              <name>Mr. Michael L. Reed</name> from Associate Professor of Electrical Engineering to
+              Professor of Electrical Engineering, effective <date value="2002-08-25">August 25,
+                2002</date>.</item>
+            <item>
+              <name>Mr. Paul V. Rittelmeyer</name> from Affiliate Librarian, General Faculty,
+              Alderman Library, to Assistant Librarian, General Faculty, Alderman Library, for three
+              years, effective <date value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Ms. Marion E. Roberts</name> from Associate Professor of Art to Professor of
+              Art, effective <date value="2002-08-25">August 25, 2002</date>. <name>Mr. Gabriel
+                Robins</name> from Associate Professor of Computer Science to Professor of Computer
+              Science, effective <date value="2002-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Ms. Caroline M. Rody</name> from Assistant Professor of English to Associate
+              Professor of English, effective <date value="2001-08-25">August 25,
+              2002</date>.</item>
+            <item>
+              <name>Ms. Sophia A. Rosenfeld</name> from Assistant Professor of History to Associate
+              Professor of History, effective <date value="2002-08-25">August 25,
+              2002</date>.</item>
+            <item>
+              <name>Mr. James E. Ryan</name> from Associate Professor of Law to Professor of Law,
+              effective <date value="2002-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Ms. Karen L. Ryan</name> from Associate Professor of Slavic Languages and
+              Literatures to Professor of Slavic Languages and Literatures, effective <date
+                value="2002-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Mr. Chris W. Sanchirico</name> from Associate Professor of Law, to Professor of
+              Law, effective <date value="2002-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Dr. Hilary A. Sanfey</name> from Associate Professor of Surgery, with term, to
+              Associate Professor of Surgery, without term, effective <date value="2002-07-01">July
+                1, 2002</date>.</item>
+
+            <pb n="6222"/>
+            <item><name>Dr. Jocelyn K. Schauer</name> from Assistant Professor of Clinical
+              Pediatrics to Associate Professor of Clinical Pediatrics, for three years, effective
+                <date value="2002-07-01">July 1, 2002</date>.</item>
+            <item><name>Mr. Herman M. Schwartz</name> from Associate Professor of Politics to
+              Professor of Politics, effective <date value="2002-08-25">August 25,
+              2002</date>.</item>
+            <item>
+              <name>Ms. Heidi Scrable</name> from Assistant Professor of Neuroscience to Associate
+              Professor of Neuroscience, for three years, effective <date value="2002-07-01">July 1,
+                2002</date>.</item>
+            <item>
+              <name>Mr. Michael F. Smith, Jr.</name>, from Assistant Professor of Internal Medicine
+              and Assistant Professor of Microbiology to Associate Professor of Internal Medicine,
+              for the period <dateRange from="2002-07-01" to="2006-04-30">July 1, 2002, through
+                April 30, 2006</dateRange>, and Associate Professor of Microbiology for the period
+                <date value="2002-07-01">July 1, 2002</date>, through <date value="2002-04-30">April
+                30, 2006</date>.</item>
+            <item>
+              <name>Mr. Mircea R. Stan</name> from Assistant Professor of Electrical Engineering to
+              Associate Professor of Electrical Engineering, effective <date value="2002-08-25"
+                >August 25, 2002</date>.</item>
+            <item>
+              <name>Ms. Ann E. Sutherland</name> from Assistant Professor of Cell Biology to
+              Associate Professor of Cell Biology, for three years, effective <date
+                value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Ms. Elizabeth F. Thompson</name> from Assistant Professor of History to
+              Associate Professor of History, effective <date value="2002-08-25">August 25,
+                2002</date>.</item>
+            <item>
+              <name>Mr. Dariuz Tolczyk</name> from Assistant Professor of Slavic Languages and
+              Literatures to Associate Professor of Slavic Languages and Literatures, effective
+                <date value="2002-08-25">August 25, 2002</date>.</item>
+            <item>
+              <name>Dr. Amy L. Tucker</name> from Assistant Professor of Internal Medicine to
+              Associate Professor of Internal Medicine, for three years, effective <date
+                value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Ms. Janet I. Warren</name> from Associate Professor of Clinical Psychiatric
+              Medicine to Professor of Clinical Psychiatric Medicine, for three years, effective
+                <date value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Mr. Michael C. Wiener</name> from Assistant Professor of Molecular Physiology
+              and Biological Physics to Associate Professor of Molecular Physiology and Biological
+              Physics, for three years, effective <date value="2002-07-01">July 1,
+              2002</date>.</item>
+
+            <pb n="6223"/>
+            <item><name>Dr. Terrance A. Yemen</name> from Associate Professor of Anesthesiology,
+              with term, and Associate Professor of Pediatrics, with term, to Associate Professor of
+              Anesthesiology, without term, and Associate Professor of Pediatrics, for three years,
+              effective <date value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Dr. Wei Yue</name> from Assistant Professor of Research in Internal Medicine to
+              Associate Professor of Research in Internal Medicine, for three years, effective <date
+                value="2002-07-01">July 1, 2002</date>.</item>
+          </list>
+        </div2>
+        <div2 id="d43" type="resolution">
+          <head type="sub">SPECIAL SALARY ACTIONS</head>
+
+          <p>RESOLVED that the following persons shall receive the salary indicated:</p>
+          <list>
+            <item>
+              <name>Ms. Mary P. Abouzeid</name>, Professor, General Faculty, effective <date
+                value="2002-04-25">April 25, 2002</date>, at an annual salary of
+              &dollar;71,500.</item>
+            <item>
+              <name>Mr. Suresh K. Agarwal</name>, Professor of Clinical Radiation Oncology,
+              effective <date value="2002-03-25">March 25, 2002</date>, at an annual salary of
+              &dollar;124,800.</item>
+            <item>
+              <name>Mr. Alan Aqualino</name>, Assistant Professor, General Medical Faculty,
+              effective <date value="2002-03-25">March 25, 2002</date>, at an annual salary of
+              &dollar;96,400.</item>
+            <item>
+              <name>Ms. Susan J. Chaplinsky</name>, Professor of Business Administration, effective
+                <date value="2002-04-25">April 25, 2002</date>, at an academic year salary of
+              &dollar;140,700.</item>
+            <item>
+              <name>Ms. Lynda F. Clendenning</name>, Associate Librarian, General Faculty, Alderman
+              Library, effective <date value="2002-05-01">May 1, 2002</date>, at an annual salary of
+              &dollar;69,500.</item>
+            <item>
+              <name>Mr. Scott A. Coonrod</name>, Assistant Professor of Research in Cell Biology,
+              effective <date value="2002-03-25">March 25, 2002</date>, at an annual salary of
+              &dollar;51,600.</item>
+            <item>
+              <name>Mr. Adam R. Daniel</name>, Lecturer, General Faculty, effective <date
+                value="2002-01-25">January 25, 2002</date>, at an annual salary of
+              &dollar;60,000.</item>
+            <item>
+              <name>Ms. Sue E. Delos</name>, Assistant Professor of Research in Cell Biology,
+              effective <date value="2002-02-25">February 25, 2002</date>, at an annual salary of
+              &dollar;46,000.</item>
+
+            <pb n="6224"/>
+            <item><name>Mr. Maxim P. Engers</name>, Professor of Economics, effective <date
+                value="2002-04-25">April 25, 2002</date>, at an academic year salary of
+              &dollar;88,900.</item>
+            <item>
+              <name>Ms. Roseanne M. Ford</name>, Professor of Chemical Engineering, effective <date
+                value="2002-03-25">March 25, 2002</date>, at an academic year salary of
+              &dollar;89,100.</item>
+            <item>
+              <name>Mr. Kim A. Forde-Mazrui</name>, Professor of Law, effective <date
+                value="2002-04-25">April 25, 2002</date>, at an academic year salary of
+              &dollar;124,800.</item>
+            <item>
+              <name>Ms. Cassandra L. Fraser</name>, Associate Professor of Chemistry, effective
+                <date value="2002-04-25">April 25, 2002</date>, at an academic year salary of
+              &dollar;66,200.</item>
+            <item>
+              <name>Mr. Scot A. French</name>, Assistant Professor, General Faculty, effective <date
+                value="2002-04-25">April 25, 2002</date>, at an academic year salary of
+              &dollar;52,500.</item>
+            <item>
+              <name>Mr. Jose C. Fuentes</name>, Associate Professor of Environmental Sciences,
+              effective <date value="2002-04-25">April 25, 2002</date>, at an academic year salary
+              of &dollar;59,200.</item>
+            <item>
+              <name>Mr. Michael J. Furlough</name>, Assistant Librarian, General Faculty, Alderman
+              Library, effective <date value="2002-05-01">May 1, 2002</date>, at an annual salary of
+              &dollar;62,000.</item>
+            <item>
+              <name>Mr. John L. Gittleman</name>, Professor of Biology, effective <date
+                value="2002-04-25">April 25, 2002</date>, at an academic year salary of
+              &dollar;69,200.</item>
+            <item>
+              <name>Mr. Gilbert D. Glennie</name>, Instructor of Clinical Radiation Oncology,
+              effective <date value="2002-03-25">March 25, 2002</date>, at an annual salary of
+              &dollar;84,000.</item>
+            <item>
+              <name>Mr. Charles M. Grisham</name>, Professor of Chemistry, effective <date
+                value="2002-01-25">January 25, 2002</date>, at an annual salary of &dollar;97,300.
+                <name>Mr. Jonathan D. Haidt</name>, Associate Professor of Psychology, effective
+                <date value="2002-04-25">April 25, 2002</date>, at an academic year salary of
+              &dollar;61,200.</item>
+
+            <pb n="6225"/>
+            <item><name>Mr. Gary D. Hartwell</name>, Assistant Professor of Radiology, General
+              Medical Faculty, effective <date value="2002-03-25">March 25, 2002</date>, at an
+              annual salary of &dollar;95,200.</item>
+            <item><name>Ms. C. Jill Hartz</name>, Lecturer, General Faculty, effective <date
+                value="2002-03-01">March 1, 2002</date>, at an annual salary of
+              &dollar;100,000.</item>
+            <item>
+              <name>Mr. Paul W. Kingston</name>, Professor of Sociology, effective <date
+                value="2002-04-25">April 25, 2002</date>, at an academic year salary of
+              &dollar;82,500.</item>
+            <item>
+              <name>Dr. Susan E. Kirk</name>, Assistant Professor of Internal Medicine, effective
+                <date value="2002-01-25">January 25, 2002</date>, at an annual salary of
+              &dollar;100,000.</item>
+            <item>
+              <name>Mr. Kevin A. Kordana</name>, Professor of Law, effective <date
+                value="2002-04-25">April 25, 2002</date>, at an academic year salary of
+              &dollar;124,800.</item>
+            <item>
+              <name>Mr. Harold L. Langsam</name>, Associate Professor of Philosophy, effective <date
+                value="2002-04-25">April 25, 2002</date>, at an academic year salary of
+              &dollar;54,400.</item>
+            <item>
+              <name>Mr. Victor E. Laubach</name>, Assistant Professor of Research in Surgery,
+              effective <date value="2001-12-25">December 25, 2001</date>, at an annual salary of
+              &dollar;65,400.</item>
+            <item>
+              <name>Ms. Adria J. LaViolette</name>, Associate Professor of Anthropology, effective
+                <date value="2002-04-25">April 25, 2002</date>, at an academic year salary of
+              &dollar;55,300.</item>
+            <item>
+              <name>Mr. Zongli Lin</name>, Associate Professor of Electrical Engineering, effective
+                <date value="2002-03-25">March 25, 2002</date>, at an academic year salary of
+              &dollar;74,690.</item>
+            <item>
+              <name>Mr. Ian G. Macara</name>, Professor of Pharmacology, effective <date
+                value="2002-01-25">January 25, 2002</date>, at an annual salary of
+              &dollar;120,000.</item>
+            <item>
+              <name>Ms. Barbara D. MacCluer</name>, Professor of Mathematics, effective <date
+                value="2002-04-25">April 25, 2002</date>, at an academic year salary of
+              &dollar;83,800.</item>
+            <item>
+              <name>Mr. Daniel P. McShane</name>, Lecturer, General Faculty, effective <date
+                value="2002-02-25">February 25, 2002</date>, at an annual salary of
+              &dollar;45,100.</item>
+
+            <pb n="6226"/>
+            <item><name>Ms. Carol A. Mershon</name>, Associate Professor of Politics, effective
+                <date value="2002-04-25">April 25, 2002</date>, at an academic year salary of
+              &dollar;58,000.</item>
+            <item>
+              <name>Ms. Karen S. Myers</name>, Associate Professor of Classics, effective <date
+                value="2002-04-25">April 25, 2002</date>, at an academic year salary of
+              &dollar;54,100.</item>
+            <item>
+              <name>Mr. Ammasi Periasamy</name>, Research Professor of Biology, General Faculty,
+              effective <date value="2002-04-25">April 25, 2002</date>, at an annual salary of
+              &dollar;77,300.</item>
+            <item>
+              <name>Ms. E. Clorisa Phillips</name>, Lecturer, General Faculty, effective <date
+                value="2002-06-25">June 25, 2002</date>, at an annual salary of
+              &dollar;92,400.</item>
+            <item>
+              <name>Mr. Lin Pu</name>, Associate Professor of Chemistry, effective <date
+                value="2002-04-25">April 25, 2002</date>, at an academic year salary of
+              &dollar;65,700.</item>
+            <item>
+              <name>Mr. Timothy T. Redden</name>, Lecturer, General Faculty, effective <date
+                value="2002-02-25">February 25, 2002</date>, at an annual salary of
+              &dollar;107,000.</item>
+            <item>
+              <name>Mr. Paul V. Rittelmeyer</name>, Affiliate Librarian, General Faculty, Alderman
+              Library, effective <date value="2002-03-25">March 25, 2002</date>, at an annual salary
+              of &dollar;60,000.</item>
+            <item>
+              <name>Mr. Shiv P. Srivastava</name>, Instructor of Radiation Oncology, effective <date
+                value="2002-03-25">March 25, 2002</date>, at an annual salary of
+              &dollar;39,600.</item>
+            <item>
+              <name>Ms. Sondra F. Stallard</name>, Professor, General Faculty, effective <date
+                value="2002-06-25">June 25, 2002</date>, at an annual salary of
+              &dollar;183,995.</item>
+            <item>
+              <name>Mr. Gregory C. Townsend</name>, Assistant Professor of Internal Medicine,
+              effective <date value="2002-01-25">January 25, 2002</date>, at an annual salary of
+              &dollar;100,000.</item>
+            <item>
+              <name>Ms. Anne P. Watkins</name>, Lecturer, General Faculty, effective <date
+                value="2002-03-25">March 25, 2002</date>, at an annual salary of
+              &dollar;85,000.</item>
+          </list>
+        </div2>
+        <div2 id="d44" type="announcement">
+          <head type="sub">RESIGNATIONS</head>
+
+          <p>The following resignations were announced:</p>
+          <list>
+            <item><name>Mr. Alan B. Diekman</name>, Assistant Professor of Research in Cell Biology,
+              effective <date value="2002-04-17">April 17, 2002</date>, to accept another
+              position.</item>
+
+            <pb n="6227"/>
+            <item><name>Mr. Jin-Tang Dong</name>, Associate Professor of Pathology and Associate
+              Professor of Research in Biochemistry and Molecular Genetics, effective <date
+                value="2002-03-01">March 31, 2002</date>, to accept another position.</item>
+            <item>
+              <name>Dr. Russell A. Faust</name>, Assistant Professor of Otolaryngology &mdash; Head
+              and Neck Surgery, effective <date value="2002-03-29">March 29, 2002</date>, to accept
+              another position.</item>
+            <item>
+              <name>Ms. Kyra D. Gaunt</name>, Assistant Professor of Music, effective <date
+                value="2002-05-24">May 24, 2002</date>, to accept another position.</item>
+            <item><name>Mr. Jagadananda Ghosh</name>, Assistant Professor of Research in Internal
+              Medicine, effective <date value="2002-04-15">April 15, 2002</date>, to accept another
+              position.</item>
+            <item>
+              <name>Dr. David F. Kallmes</name>, Assistant Professor of Radiology and Neurosurgery,
+              effective <date value="2002-04-11">April 11, 2002</date>, to accept another
+              position.</item>
+            <item>
+              <name>Dr. Mildred Lam</name>, Associate Professor of Clinical Internal Medicine,
+              effective <date value="2002-06-21">June 21, 2002</date>, to accept another
+              position.</item>
+            <item>
+              <name>Mr. Timothy J. Newman</name>, Research Assistant Professor of Physics and
+              Biology, effective <date value="2002-05-24">May 24, 2002</date>, to accept another
+              position.</item>
+            <item>
+              <name>Mr. Frank D. Nidiffer, Jr.</name>, Assistant Professor of Clinical Pediatrics,
+              effective <date value="2002-06-30">June 30, 2002</date>, to accept another
+              position.</item>
+            <item>
+              <name>Ms. Wendy M. Novicoff</name>, Assistant Professor of Research in Health
+              Evaluation Sciences, effective <date value="2002-02-03">February 3, 2002</date>, to
+              accept another position.</item>
+            <item>
+              <name>Ms. Laurie A. Pohl</name>, Assistant Professor, General Faculty, effective <date
+                value="2002-05-14">May 14, 2002</date>, to accept another position.</item>
+            <item><name>Dr. Ralph J. Riviello</name>, Assistant Professor of Emergency Medicine,
+              effective <date value="2002-06-30">June 30, 2002</date>, to accept another
+              position.</item>
+            <item>
+              <name>Ms. Kathryn M. Rohe</name>, Associate Professor of Drama, effective <date
+                value="2002-05-24">May 24, 2002</date>, for personal reasons.</item>
+          </list>
+        </div2>
+
+        <div2 id="d45" type="announcement">
+          <pb n="6228"/>
+          <head type="sub">RETIREMENTS</head>
+
+          <p>The following retirements were announced:</p>
+          <list>
+            <item>
+              <name>Dr. Bennett A. Alford</name>, Professor of Radiology and Professor of
+              Pediatrics, effective <date value="2002-06-30">June 30, 2002</date>. <name>Dr.
+                Alford</name> has been a member of the faculty since <date value="1988-09-16"
+                >September 16, 1988</date>.</item>
+            <item>
+              <name>Mr. Ronald E. Comfort</name>, Associate Professor of Education, effective <date
+                value="2002-02-24">February 24, 2002</date>. <name>Mr. Comfort</name> has been a
+              member of the faculty since <date value="1971-09-01">September 1, 1971</date>.</item>
+            <item>
+              <name>Dr. Cosmo A. Difazio</name>, Professor of Anesthesiology, effective <date
+                value="2002-06-01">June 1, 2002</date>. <name>Dr. Difazio</name> has been a member
+              of the faculty since <date value="1964-10-01">October 1, 1964</date>.</item>
+            <item>
+              <name>Ms. Luciana M. Wlassics</name>, Assistant Professor, General Faculty, Alderman
+              Library, effective <date value="2002-07-01">July 1, 2002</date>. <name>Ms.
+                Wlassics</name> has been a member of the faculty since <date value="1998-06-01">June
+                1, 1981</date>.</item>
+          </list>
+        </div2>
+        <div2 id="d46" type="announcement">
+          <head type="sub">CHANGE IN THE TITLE OF THE RETIREMENT OF <name>MR. GEORGE B. THOMAS,
+              JR.</name></head>
+
+          <p>The President announced that the title of <name>Mr. George B. Thomas, Jr.</name>, as
+            Professor of Philosophy, effective <date value="2002-05-24">May 24, 2002</date>, as
+            shown in the retirement section of the Minutes of the meeting of the Board of Visitors
+            dated <date value="2002-04-06">April 6, 2002</date>, be changed to read as follows:</p>
+          <list>
+            <item>
+              <name>Mr. George B. Thomas, Jr.</name>, Associate Professor of Philosophy, effective
+                <date value="2002-05-24">May 24, 2002</date>. <name>Mr. Thomas</name> has been a
+              member of the faculty since <date value="1963-09-01">September 1, 1963</date>.</item>
+          </list>
+        </div2>
+        <div2 id="d47" type="announcement">
+          <head type="sub">APPOINTMENTS</head>
+
+          <p>The following appointments were announced:</p>
+          <list>
+            <item>
+              <name>Mr. Stephen A. Kimata</name> as Assistant Vice President for Finance and
+              Comptroller, for two years, effective <date value="2002-04-01">April 1,
+              2002</date>.</item>
+            <item>
+              <name>Mr. Richard A. Kovatch</name> as Associate Vice President for Business
+              Operations, for three years, effective <date value="2001-03-01">March 1,
+              2001</date>.</item>
+
+            <pb n="6229"/>
+            <item><name>Ms. E. Clorisa Phillips</name> as Associate Provost for Institutional
+              Advancement, for five years, effective <date value="2002-06-25">June 25,
+              2002</date>.</item>
+          </list>
+        </div2>
+        <div2 id="d48" type="announcement">
+          <head type="sub">RE-APPOINTMENTS</head>
+
+          <p>The following re-appointments were announced:</p>
+          <list>
+            <item>
+              <name>Mr. Staige D. Blackford</name> as Editor, Virginia Quarterly Review, for five
+              years, effective <date value="2002-07-01">July 1, 2002</date>.</item>
+            <item>
+              <name>Mr. Eric N. Denby</name> as Director of Procurement Services, for three years,
+              effective <date value="2002-06-25">June 25, 2002</date>.</item>
+            <item>
+              <name>Mr. W. Nathaniel Howell</name> as Director, Institute for Global Policy
+              Research, for three years, effective <date value="2002-06-25">June 25,
+              2002</date>.</item>
+            <item>
+              <name>Mr. W. Edmund Moomaw</name> as Executive Director of Institutional Assessment
+              and Studies, for two years, effective <date value="2002-07-01">July 1,
+              2002</date>.</item>
+            <item>
+              <name>Mr. William B. Quandt</name> as Vice Provost for International Affairs, for one
+              year, effective <date value="2002-07-25">July 25, 2002</date>.</item>
+            <item>
+              <name>Ms. Deborah A. Ryan</name> as Head Coach, Women's Basketball, for four years,
+              effective <date value="2002-06-25">June 25, 2001</date>.</item>
+          </list>
+        </div2>
+        <div2 id="d49" type="announcement">
+          <head type="sub">ELECTION OF <name>DR. R. ARIEL GOMEZ</name> AS INTERIM VICE PRESIDENT FOR
+            RESEARCH AND GRADUATE STUDIES</head>
+          <p>RESOLVED that <name>Dr. R. Ariel Gomez</name> is elected Interim Vice President for
+            Research and Graduate Studies, for one year, effective <date value="2002-08-25">August
+              25, 2002</date>.</p>
+        </div2>
+        <div2 id="d50" type="announcement">
+          <head type="sub">ELECTION OF PROFESSORS EMERITI</head>
+
+          <p>RESOLVED that the following persons are elected Professor Emeritus:</p>
+          <list>
+            <item>
+              <name>Dr. Bennett A. Alford</name>, Professor of Radiology and Professor of
+              Pediatrics, effective <date value="2002-06-30">June 30, 2002</date>.</item>
+            <item>
+              <name>Dr. Cosmo A. Difazio</name>, Professor of Anesthesiology, effective <date
+                value="2002-06-01">June 1, 2002</date>.</item>
+
+            <pb n="6230"/>
+            <item><name>Dr. Robert M. Epstein</name>, Harold Carron Professor of Anesthesiology,
+              effective <date value="2002-06-30">June 30, 2002</date>.</item>
+            <item>
+              <name>Mr. Matthew Holden, Jr.</name>, Henry L. and Grace Doherty Charitable Foundation
+              Professor of Government and Foreign Affairs, effective <date value="2002-05-24">May
+                24, 2002</date>.</item>
+          </list>
+        </div2>
+        <div2 id="d51" type="announcement">
+          <head type="sub">CHANGE IN THE EMERITUS TITLE OF <name>MR. GEORGE B. THOMAS,
+            JR.</name></head>
+
+          <p>The President announced that the Emeritus title of <name>Mr. George B. Thomas,
+              Jr.</name>, as Professor of Philosophy, effective <date value="2002-05-24">May 24,
+              2002</date>, as shown in the Minutes of the meeting of the Board of Visitors dated
+              <date value="2002-04-06">April 6, 2002</date>, be changed to read as follows:</p>
+          <list>
+            <item>
+              <name>Mr. George B. Thomas, Jr.</name>, Associate Professor of Philosophy, effective
+                <date value="2002-05-24">May 24, 2002</date>.</item>
+          </list>
+        </div2>
+        <div2 id="d52" type="resolution">
+          <head type="sub">ELECTION OF ASSOCIATE PROFESSOR EMERITUS</head>
+
+          <p>RESOLVED that the following person is elected Associate Professor Emeritus:</p>
+          <list>
+            <item>
+              <name>Mr. Ronald E. Comfort</name>, Associate Professor of Education, effective <date
+                value="2002-02-24">February 24, 2002</date>.</item>
+          </list>
+        </div2>
+        <div2 id="d53" type="announcement">
+          <head type="sub">CHANGE IN THE ELECTION OF <name>MR. R. EDWARD HOWELL</name></head>
+
+          <p>RESOLVED that the election of <name>Mr. R. Edward Howell</name> as Vice President and
+            Chief Executive Officer of the University of Virginia Medical Center, for five years,
+            effective <date value="2002-02-25">February 25, 2002</date>, at an annual salary of
+            &dollar;500,000, as shown in the Minutes of the meeting of the Board of Visitors dated
+              <date value="2002-01-26">January 26, 2002</date>, be changed to read as follows:</p>
+          <p> RESOLVED that <name>Mr. R. Edward Howell</name> is elected as Vice President and Chief
+            Executive Officer of the University of Virginia Medical Center, for three years,
+            effective <date value="2002-02-25">February 25, 2002</date>, at an annual salary of
+            &dollar;500,000.</p>
+        </div2>
+
+        <div2 id="d54" type="announcement">
+          <pb n="6231"/>
+          <head type="sub">DEATHS</head>
+
+          <p>The following deaths were announced:</p>
+          <list>
+            <item><name>Mr. William A. Elwood</name>, Associate Professor Emeritus of English, died
+                <date value="2002-04-27">April 27, 2002</date>. <name>Mr. Elwood</name> was a member
+              of the faculty from 1964 until his retirement in 1996.</item>
+            <item>
+              <name>Mr. Howard L. Hamilton</name>, Professor Emeritus of Biology, died <date
+                value="2002-04-15">April 15, 2002</date>. <name>Mr. Hamilton</name> was a member of
+              the faculty from 1962 until his retirement in 1982.</item>
+          </list>
+        </div2>
+      </div1>
+      <div1 id="d55" type="resolution">
+        <head type="main">THE UNIVERSITY OF VIRGINIA'S COLLEGE AT WISE</head>
+        <div2 id="d56" type="resolution">
+          <head type="sub">RESIGNATION</head>
+
+          <p>The following resignation was announced:</p>
+          <list>
+            <item>
+              <name>Ms. Brenda K. Cooper</name>, Assistant Professor of Nursing, effective <date
+                value="2002-05-31">May 31, 2002</date>, to accept another position.</item>
+          </list>
+        </div2>
+        <div2 id="d57" type="resolution">
+          <head type="sub">APPROVAL OF A PERMANENT EASEMENT FOR THE UNIVERSITY OF VIRGINIA ACROSS
+            PROPERTY OWNED BY WISTERIA PROPERTIES, L.C. LOCATED AT 2015 IVY ROAD</head>
+
+          <p>RESOLVED that the request for an easement, dated <date value="2002-06-01">June 1,
+              2002</date>, from Wisteria Properties for a storm water line for the Emmet Street
+            Parking Garage across the property owned by Wisteria Properties located at 2015 Ivy Road
+            in Charlottesville is approved; and</p>
+          <p> RESOLVED FURTHER that appropriate officers of the University are authorized to execute
+            said dedication and easement.</p>
+        </div2>
+
+      </div1>
+      <div1 id="d58" type="resolution">
+        <pb n="6232"/>
+        <head type="main">APPROVAL OF A PERMANENT EASEMENT FOR THE UNIVERSITY OF VIRGINIA ACROSS
+          PROPERTY OWNED BY UNIVERSITY OF VIRGINIA REAL ESTATE FOUNDATION LOCATED AT 132 EMMET
+          STREET AND AT THE CAVALIER INN AT THE INTERSECTION OF EMMET STREET AND IVY ROAD</head>
+
+        <p>RESOLVED that the request for an easement, dated <date value="2002-06-01">June 1,
+            2002</date>, from the University of Virginia Real Estate Foundation for an access road
+          and waterline for the Emmet Street parking structure across property owned by the
+          Foundation located at 132 Emmet street and at the Cavalier Inn is approved; and</p>
+        <p> RESOLVED FURTHER that appropriate officers of the University are authorized to execute
+          said dedication and easement.</p>
+      </div1>
+      <div1 id="d59" type="resolution">
+        <head type="main">APPROVAL OF ARCHITECTURAL DESIGN GUIDELINES FOR THE CHILDREN'S MEDICAL
+          CENTER ADDITION AND RENOVATION PROJECT</head>
+
+        <p>RESOLVED that the architectural design guidelines, dated <date value="2002-06-01">June 1,
+            2002</date>, prepared by the Architect for the University, for the Children's Medical
+          Center Addition and Renovation project, are approved; and</p>
+        <p> RESOLVED FURTHER that the project will be presented for further review at the schematic
+          design level of development.</p>
+      </div1>
+      <div1 id="d60" type="resolution">
+        <head type="main">APPROVAL OF SCHEMATIC AND PRELIMINARY DESIGN FOR THE MRI ADDITION</head>
+        <p>RESOLVED that the schematic and preliminary design, dated <date value="2002-06-01">June
+            1, 2002</date>, and prepared by LKPW Architects of Richmond, for the MRI Addition, is
+          approved for further development and construction.</p>
+      </div1>
+      <div1 id="d61" type="resolution">
+        <head type="main">RESOLUTION ON THE BOND ISSUE</head>
+
+        <p>WHEREAS, the General Assembly at the 2002 Session approved the Commonwealth of Virginia
+          Educational Facilities Bond Act of 2002; and</p>
+
+        <pb n="6233"/>
+        <p>WHEREAS, the citizens of Virginia will be asked to approve this General Obligation Bond
+          issue in a referendum to be held on <date value="2002-11-05">November 5, 2002</date>;
+          and</p>
+        <p> WHEREAS, the proposed bond issue would provide funds for a number of projects vital to
+          higher education in general in Virginia, as well as money for several cultural
+          institutions; and</p>
+        <p> WHEREAS, the bond issue includes &dollar;68,319,000 for nine projects at the University
+          in Charlottesville, and &dollar;9,475,000 for one project at The University of Virginia's
+          College at Wise, all of them important to the mission the two institutions;</p>
+        <p> RESOLVED that the Board of Visitors endorses the bond issue, expresses its gratitude to
+          the Governor and to the General Assembly for this approval of projects that are vital to
+          higher education in Virginia, and encourages supporters of the University of Virginia and
+          The University of Virginia's College at Wise to do everything possible to promote the
+          approval of the bond issue in November.</p>
+
+      </div1>
+      <div1 id="d62" type="resolution">
+        <head type="main">ASSIGNMENT OF LOWER APARTMENT, PAVILION VIII, EAST LAWN</head>
+
+        <p>The Secretary reported that the Executive Committee, by agreement on May 31<hi
+            rend="super">st</hi>, assigned the Lower Apartment in Pavilion VIII to <name>Dr. Arthur
+            Garson, Jr.</name> for one year, commencing in August, 2002.</p>
+        <p> RESOLVED that the Executive Committee of the Board of Visitors assigns the Lower
+          Apartment in Pavilion VIII, East Lawn, to <name>Arthur Garson, Jr.</name>, M.D., for one
+          year, commencing in August, 2002.</p>
+        <ornament type="characters">-------------</ornament>
+
+      </div1>
+      <div1 id="d63" type="announcement">
+        <pb n="6234"/>
+        <p>The following actions taken by the Board of Directors of the University of Virginia
+          Investment Management Company (UVIMCO) since the last meeting of the Board of Visitors, do
+          not require action by the Board of Visitors and are listed here as a matter of record:</p>
+        <list>
+          <item>Approved the investment of &dollar;20million with Audax Mezzanine Fund, L.P.</item>
+          <lb/>
+          <item> Approved the investment of &dollar;25million with the Boston Company.</item>
+          <lb/>
+          <item> Approved the investment of &dollar;25million with H.I.G. Capital Partners,
+            III.</item>
+          <lb/>
+          <item> Approved the investment of &dollar;50million with Viking Global Equities,
+            III.</item>
+          <lb/>
+          <item> Approved the investment of &dollar;35million with Lone Kauri. Approved the Farm
+            Team Program.</item>
+        </list>
+        <ornament type="characters">-------------</ornament>
+
+      </div1>
+      <div1 id="d64" type="resolution">
+        <p>The following resolutions adopted by the Medical Center Operating Board at its meeting on
+            <date value="2002-05-31">May 31, 2002</date>, do not require action by the full Board
+          and are listed here as a matter of record.</p>
+        <div2 id="d65" type="resolution">
+          <head type="sub">RECOMMENDATION REGARDING FISCAL YEAR 2003 MEDICAL CENTER OPERATING BUDGET
+            AND APPROVAL OF MEDICAL CENTER EMPLOYEE BONUS PLAN</head>
+
+          <p>WHEREAS, the Medical Center Operating Board has reviewed the Fiscal Year 2003 Medical
+            Center operating budget; and</p>
+          <p> WHEREAS, the Medical Center Operating Board recommends to the Finance Committee and
+            the Board of Visitors approval of the Fiscal Year 2003 Medical Center operating budget;
+            and</p>
+          <p> WHEREAS, Section 2.2-2905 of the <hi rend="italic">Code of Virginia</hi> authorizes the Board of Visitors to
+            establish compensation plans for employees of the Medical Center; and</p>
+          <p> WHEREAS, the Medical Center proposes to pay an employee bonus equal to a minimum of
+            2.5&percnt; of base salary for eligible employees; and</p>
+
+          <pb n="6235"/>
+          <p>RESOLVED that the Fiscal Year 2003 Medical Center operating budget as recommended by
+            the Medical Center Operating Board, is approved;</p>
+          <p> RESOLVED FURTHER that the payment in August, 2002, of a one-time bonus equal to a
+            minimum of 2.5&percnt; of base salary for eligible Medical Center employees is approved;
+            the exact payment is to be determined by the Vice President and Chief Executive Officer
+            of the Medical Center, with the concurrence of the Chair of the Medical Center Operating
+            Board and the Executive Vice President and Chief Operating Officer of the
+            University.</p>
+
+        </div2>
+        <div2 id="d66" type="resolution">
+          <head type="sub">APPROVAL OF CHANGES TO MEDICAL CENTER RETIREMENT BENEFITS</head>
+
+          <p>WHEREAS, the Medical Center desires to amend the Medical Center's retirement plan
+            benefits on a prospective basis; and</p>
+          <p> WHEREAS, the Medical Center Operating Board after careful review believes it is in the
+            best interest of the Medical Center to amend the retirement plan benefits;</p>
+          <p> RESOLVED that the Medical Center is authorized to amend the retirement plan benefits
+            to provide for (i) a 4&percnt; employer contribution, (ii) an employer matching
+            contribution of 50&percnt; on 403(b) contributions of up to 4&percnt; of pay and (iii) a
+            vesting period of two years for the employer contributions; and</p>
+          <p> RESOLVED FURTHER that such amendment shall become effective no earlier than <date
+              value="2002-10-01">October 1, 2002</date>, and shall apply to Medical Center employees
+            hired on or after such effective date; and</p>
+          <p> RESOLVED FURTHER that the Vice President and Chief Executive Officer of the Medical
+            Center, with the concurrence of the Chair of the Medical Center Operating Board and the
+            Executive Vice President and Chief Operating Officer of the University, and in
+            consultation with the General Counsel, is authorized to execute appropriate amendments
+            and other legal documents to effectuate these changes to the Medical Center retirement
+            plan.</p>
+        </div2>
+      </div1>
+      <div1 id="d67" type="resolution">
+        <pb n="6236"/>
+        <head type="main">CREDENTIALING AND RECREDENTIALING ACTIONS</head>
+        <div2 id="d68" type="section">
+          <head type="sub">NEW APPOINTMENTS TO THE CLINICAL STAFF</head>
+
+          <p>RESOLVED that the recommendations of the Medical Policy Council for appointment to the
+            clinical staff of the University of Virginia Medical Center and the granting of specific
+            privileges to the following practitioners are approved:</p>
+          <list>
+            <item><name>Albert, Martin P., M.D.</name>, Physician in the Department of Family
+              Medicine; Attending Staff Status; Period of Appointment: <dateRange from="2002-03-01"
+                to="2003-02-28">March 1, 2002, through February 28, 2003</dateRange>; Privileged in
+              Family Medicine.</item>
+            <item><name>Behar, Jeffery V., M.D.</name>, Radiologist in the Department of Radiology;
+              Fellow/Clinical Instructor Staff Status; Period of Appointment: <dateRange
+                from="2002-03-06" to="2003-06-30">March 6, 2002, through June 30, 2003</dateRange>;
+              Privileged in Radiology.</item>
+            <item><name>Cousar, John B., M.D.</name>, Pathologist in the Department of Pathology;
+              Attending Staff Status; Period of Appointment: <dateRange from="2002-04-02"
+                to="2003-01-31">April 2, 2002, through January 31,2003</dateRange>; Privileged in
+              Pathology.</item>
+            <item><name>Glover, William L., M.D.</name>, Urologist in the Department of Urology;
+              Short Term Visiting Professor Status; Period of Appointment: <dateRange
+                from="2002-03-26" to="2002-03-26">March 26, 2002, through March 26,
+              2002</dateRange>; Privileged in Urology.</item>
+            <item><name>Johnson, Michael A., M.D.</name>, Ophthalmologist in the Department of
+              Ophthalmology; Attending Staff Status; Period of Appointment: <dateRange
+                from="2002-03-04" to="2003-01-31">March 4, 2002, through January 31,
+                2003</dateRange>; Privileged in Ophthalmology.</item>
+            <item><name>Lazar, Andrew E., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Appointment: <dateRange from="2002-04-05"
+                to="2002-05-05">April 5, 2002, through May 5, 2002</dateRange>; Privileged in
+              Internal Medicine.</item>
+            <item><name>Nicklas, Edward W., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Appointment: <dateRange from="2002-07-01"
+                to="2003-06-30">July 1, 2002, through June 30, 2003</dateRange>; Privileged in
+              Internal Medicine.</item>
+            <pb n="6237"/>
+            <item><name>Shore, Neal D., M.D.</name>, Urologist in the Department of Urology; Short
+              Term Visiting Professor Status; Period of Appointment: <dateRange from="2002-03-12"
+                to="2002-03-12">March 12, 2002, through March 12, 2002</dateRange>; Privileged in
+              Urology.</item>
+            <item><name>Vanderbrook, Richard C., M.D.</name>, Radiologist in the Department of
+              Radiology; Fellow/Clinical Instructor Staff; Period of Appointment: <dateRange
+                from="2002-03-06" to="2002-06-30">March 6, 2002, through June 30, 2002</dateRange>;
+              Privileged in Radiology.</item>
+          </list>
+        </div2>
+        <div2 id="d69" type="resolution">
+          <head type="sub">RE-APPOINTMENTS TO THE CLINICAL STAFF</head>
+
+          <p>RESOLVED that the recommendations of the Medical Policy Council for re-appointment to
+            the clinical staff of the University of Virginia Medical Center and the granting of
+            specific privileges to the following practitioners are approved:</p>
+          <list>
+            <item><name>Adams, Reid B., M.D.</name>, Surgeon in the Department of Surgery; Attending
+              Staff Status; Period of Re-appointment: <dateRange from="2002-07-01" to="2004-06-30">
+                July 1, 2002, through June 30, 2004</dateRange>; Privileged in Surgery.</item>
+            <item><name>Ayers, Carlos R., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Barber, Jack W., M.D.</name>, Psychiatrist in the Department of Psychiatric
+              Medicine; Attending Staff Status; Period of Re-appointment: <dateRange
+                from="2002-07-01" to="2003-06-30">July 1, 2002, through June 30, 2003</dateRange>;
+              Privileged in Psychiatry.</item>
+            <item><name>Beller, George A., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Bolton, Warren K., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Buckman, John, M.D.</name>, Psychiatrist in the Department of Psychiatric
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Psychiatry.</item>
+
+            <pb n="6238"/>
+            <item><name>Calfee, David P., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Canterbury, Randolph, M.D.</name>, Psychiatrist in the Department of
+              Psychiatric Medicine; Attending Staff Status; Period of Re-appointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Psychiatry.</item>
+            <item><name>Chu, Kyo U., M.D.</name>, Surgeon in the Department of Surgery; Attending
+              Staff Status; Period of Re-appointment: <dateRange from="2002-07-01" to="2004-06-30">
+                July 1, 2002, through June 30, 2004</dateRange>; Privileged in Surgery.</item>
+            <item><name>Clark, Pamela, M.D.</name>, Pathologist in the Department of Pathology;
+              Visiting Staff Status; Period of Re-appointment: <dateRange from="2002-04-01"
+                to="2004-03-31">April 1, 2002, through March 31, 2004</dateRange>; Privileged in
+              Pathology.</item>
+            <item><name>Clayton, Anita, M.D.</name>, Psychiatrist in the Department of Psychiatric
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Psychiatry.</item>
+            <item><name>Cohen, Bruce J., M.D.</name>, Psychiatrist in the Department of Psychiatric
+              Medicine; Attending Staff Status; Period of Re-appointment:<dateRange
+                from="2002-07-01" to="2004-06-30"> July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Psychiatry.</item>
+            <item><name>Constable, William C., M.D.</name>, Radiologist Oncologist in the Department
+              of Radiation Oncology; Attending Staff Status; Period of Re-appointment: <dateRange
+                from="2002-07-01" to="2003-06-30">July 1, 2002, through June 30, 2003</dateRange>;
+              Privileged in Radiation Oncology.</item>
+            <item><name>Conway, Brian P., M.D.</name>, Opthalmologist in the Department of
+              Ophthalmology; Attending Staff Status; Period of Re-appointment: <dateRange
+                from="2002-07-01" to="2003-06-30">July 1, 2002, through June 30, 2003</dateRange>;
+              Privileged in Ophthalmology.</item>
+            <item><name>Cook, Andrew J., Ph.D.</name>, Psychologist in the Department of
+              Anesthesiology; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-05-31">July 1, 2002, through May 31, 2004</dateRange>;
+              Privileged in Psychology.</item>
+            <item><name>Crampton, Richard S., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-04-01" to="2002-12-31">April 1, 2002, through December 31,
+                2002</dateRange>; Privileged in Internal Medicine.</item>
+
+            <pb n="6239"/>
+            <item><name>Davis, Walter S., M.D.</name>, Physician in the Department of Physical
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-05-01" to="2003-05-30">May 1, 2002, through April 30, 2003</dateRange>;
+              Privileged in Physical Medicine.</item>
+            <item><name>DeGood, Douglas E., Ph.D.</name>, Psychologist in the Department of
+              Anesthesiology; Period of Re-appointment: <dateRange from="2001-02-14" to="2002-12-31"
+                >February 14, 2001, through December 31, 2002</dateRange>; Privileged in
+              Psychology.</item>
+            <item><name>Densmore, John J., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Donowitz, Gerald R., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Evans, William S., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Fagerli, Julian, M.D.</name>, Urologist in the Department of Urology;
+              Attending Staff Status; Period of Re-appointment: <dateRange from="2002-05-23"
+                to="2002-05-29">May 23, 2002, through May 29, 2002</dateRange>; Privileged in
+              Urology.</item>
+            <item><name>Gomez, Carlos F., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-04-01" to="2003-03-31">April 1, 2002, through March 31, 2003</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Goodman, Matthew J., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Gwaltney, Jack M., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+
+            <pb n="6240"/>
+            <item><name>Haines, David E., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Hammond, William R., M.D.</name>, Physician in the Department of Internal
+              Medicine; Visiting Staff Status; Period of Reappointment: <dateRange from="2002-03-01"
+                to="2003-02-27">March 1, 2002, through February 27, 2003</dateRange>; Privileged in
+              Internal Medicine.</item>
+            <item><name>Hanks, John B., M.D.</name>, Surgeon in the Department of Surgery; Attending
+              Staff Status; Period of Re-appointment: <dateRange from="2002-07-01" to="2004-06-30">
+                July 1, 2002, through June 30, 2004</dateRange>; Privileged in Surgery.</item>
+            <item><name>Hashisaki, George T., M.D.</name>, Otolaryngologist in the Department of
+              Otolaryngology; Attending Staff Status; Period of Re-appointment:<dateRange
+                from="2002-07-01" to="2004-06-30"> July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Otolaryngology.</item>
+            <item><name>Hayden, Frederick G., M.D.</name>, Pathologist in the Department of
+              Pathology; Attending Staff Status; Period of Re-appointment:<dateRange
+                from="2002-07-01" to="2004-06-30"> July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Heald, Evan B., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-04-01" to="2004-03-31">April 1, 2002, through March 31, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Heller, Jay R., M.D.</name>, Psychiatrist in the Department of Psychiatric
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2003-06-30">July 1, 2002, through June 30, 2003</dateRange>;
+              Privileged in Psychiatry.</item>
+            <item><name>Hess, Charles E., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Hewlett, Erik L., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+
+            <pb n="6241"/>
+            <item><name>Hobbs, William R., M.D.</name>, Psychiatrist in the Department of
+              Psychiatric Medicine; Attending Staff Status; Period of Re-appointment:<dateRange
+                from="2002-07-01" to="2004-06-30"> July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Psychiatry.</item>
+            <item><name>Huff, John S., M.D.</name>, Physician in the Department of Emergency
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-06-16" to="2004-06-15">June 16, 2002, through June 15, 2004</dateRange>;
+              Privileged in Emergency Medicine.</item>
+            <item><name>Irvin, William P., M.D.</name>, Obstetrician and Gynecologist in the
+              Department of Obstetrics and Gynecology; Attending Staff Status; Period of
+              Re-appointment: February 1, 2002, through January 31, 2004; Privileged in Obstetrics
+              and Gynecology.</item>
+            <item><name>Jones, Herbert C., M.D.</name>, Obstetrician and Gynecologist in the
+              Department of Obstetrics and Gynecology; Visiting Staff Status; Period of
+              Re-appointment: <dateRange from="2002-04-01" to="2003-03-31">April 1, 2002, through
+                March 31, 2003</dateRange>; Privileged in Obstetrics and Gynecology.</item>
+            <item><name>Jones, Rayford S., M.D.</name>, Surgeon in the Department of Surgery;
+              Attending Staff Status; Period of Re-appointment: <dateRange from="2002-07-01"
+                to="2004-06-30"> July 1, 2002, through June 30, 2004</dateRange>; Privileged in
+              Surgery.</item>
+            <item><name>Jordan, Cami U., M.D.</name>, Pediatrician in the Department of Pediatrics;
+              Attending Staff Status; Period of Reappointment: <dateRange from="2002-05-15"
+                to="2002-06-30">May 15, 2002, through June 30, 2002</dateRange>; Privileged in
+              Pediatrics.</item>
+            <item><name>Kantor, Edward M., M.D.</name>, Psychiatrist in the Department of
+              Psychiatric Medicine; Attending Staff Status; Period of Re-appointment:<dateRange
+                from="2002-07-01" to="2004-06-30"> July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Psychiatry.</item>
+            <item><name>Kiselica, Daria, M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-05-02" to="2004-05-01">May 2, 2002, through May 1, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Kornetsky, Kenneth M., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Re-appointment: <dateRange
+                from="2002-07-01" to="2002-12-31">July 1, 2002, through December 31,
+                2002</dateRange>; Privileged in Internal Medicine.</item>
+
+            <pb n="6242"/>
+            <item><name>Leslie, Catherine A., M.D.</name>, Psychiatrist in the Department of
+              Psychiatric Medicine; Attending Staff Status; Period of Re-appointment: <dateRange
+                from="2002-07-01" to="2002-11-24">July 1, 2002, through November 24,
+                2002</dateRange>; Privileged in Psychiatry.</item>
+            <item><name>Levine, Paul A., M.D.</name>, Otolaryngologist in the Department of
+              Otolaryngology; Attending Staff Status; Period of Re-appointment:<dateRange
+                from="2002-07-01" to="2004-06-30"> July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Otolaryngology.</item>
+            <item><name>Marvin, Robert S., M.D.</name>, Psychologist in the Department of
+              Psychiatric Medicine; Attending Staff Status; Period of Re-appointment: <dateRange
+                from="2002-04-01" to="2003-03-31">April 1, 2002, through March 31, 2003</dateRange>;
+              Privileged in Psychology.</item>
+            <item><name>Mason, John C., M.D.</name>, Otolaryngologist in the Department of
+              Otolaryngology; Attending Staff Status; Period of Re-appointment:<dateRange
+                from="2002-07-01" to="2004-06-30"> July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Otolaryngology.</item>
+            <item><name>Mayo, Mary Anne S., M.D.</name>, Pediatrician in the Department of
+              Pediatrics; Attending Staff Status; Period of Re-appointment: <dateRange
+                from="2002-05-01" to="2003-04-30">May 1, 2002, through April 30, 2003</dateRange>;
+              Privileged in Pediatrics.</item>
+            <item><name>Mitchell, Thomas S., M.D.</name>, Urologist in the Department of Urology;
+              Visiting Staff Status; Period of Re-appointment: <dateRange from="2002-04-06"
+                to="2002-12-31">April 6, 2002, through December 31, 2002</dateRange>; Privileged in
+              Urology.</item>
+            <item><name>Nadler, Jerry L., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Okusa, Mark D., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Park, Stephen S., M.D.</name>, Otolaryngologist in the Department of
+              Otolaryngology; Attending Staff Status; Period of Re-appointment:<dateRange
+                from="2002-07-01" to="2004-06-30"> July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Otolaryngology.</item>
+
+            <pb n="6243"/>
+            <item><name>Pearson, Richard D., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Penberthy, Jennifer K., Ph.D.</name>, Psychologist in the Department of
+              Psychiatric Medicine; Attending Staff Status; Period of Re-appointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Psychology.</item>
+            <item><name>Perrotto, Judith A., M.D.</name>, Radiologist in the Department of
+              Radiology; Attending Staff Status; Period of Re-appointment: <dateRange
+                from="2002-05-01" to="2003-02-24">May 1, 2002, through February 24,
+              2003</dateRange>; Privileged in Radiology.</item>
+            <item><name>Petri, William A., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Philbrick, John T., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Phillips, Frank H., M.D.</name>, Anesthesiologist in the Department of
+              Anesthesiology; Attending Staff Status; Period of Re-appointment: <dateRange
+                from="2002-05-01" to="2003-05-01">May 2, 2002, through May 1, 2003</dateRange>;
+              Privileged in Anesthesiology.</item>
+            <item><name>Platts-Mills, Thomas A., M.D.</name>, Physician in the Department of
+              Internal Medicine; Attending Staff Status; <dateRange from="2002-07-01"
+                to="2004-06-30">Period of Re-appointment: July 1, 2002, through June 30,
+                2004</dateRange>; Privileged in Internal Medicine.</item>
+            <item><name>Rein, Michael F., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Ross, William T., M.D.</name>, Anesthesiologist in the Department of
+              Anesthesiology; Attending Staff Status; Period of Re-appointment:<dateRange
+                from="2002-07-01" to="2004-06-30"> July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Anesthesiology.</item>
+
+            <pb n="6244"/>
+            <item><name>Schenk, Worthington G., M.D.</name>, Surgeon in the Department of Surgery;
+              Attending Staff Status; Period of Reappointment: <dateRange from="2002-07-01"
+                to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>; Privileged in
+              Surgery.</item>
+            <item><name>Schlager, Theresa A., M.D.</name>, Physician in the Department of Emergency
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Emergency Medicine.</item>
+            <item><name>Shepard, Michael L., M.D.</name>, Psychiatrist in the Department of
+              Psychiatric Medicine; Attending Staff Status; Period of Re-appointment: <dateRange
+                from="2002-07-01" to="2003-06-30">July 1, 2002, through June 30, 2003</dateRange>;
+              Privileged in Psychiatry.</item>
+            <item><name>Slingluff, Craig L., M.D.</name>, Surgeon in the Department of Surgery;
+              Attending Staff Status; Period of Re-appointment: <dateRange from="2002-07-01"
+                to="2004-06-30"> July 1, 2002, through June 30, 2004</dateRange>; Privileged in
+              Surgery.</item>
+            <item><name>Somlyo, Andrew P., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2002-12-31">July 1, 2002, through December 31,
+                2002</dateRange>; Privileged in Internal Medicine.</item>
+            <item><name>Syverud, Scott A., M.D.</name>, Physician in the Department of Emergency
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Emergency Medicine.</item>
+            <item><name>Thompkins, Dorothy G., M.D.</name>, Pediatrician in the Department of
+              Pediatrics; Attending Staff Status; Period of Re-appointment: <dateRange
+                from="2002-05-01" to="2003-04-30">May 1, 2002, through April 30, 2003</dateRange>;
+              Privileged in Pediatrics.</item>
+            <item><name>Thorner, Michael O., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Tribble, Curtis G., M.D.</name>, Surgeon in the Department of Surgery;
+              Attending Staff Status; Period of Re-appointment: <dateRange from="2002-07-01"
+                to="2004-06-30"> July 1, 2002, through June 30, 2004</dateRange>; Privileged in
+              Surgery.</item>
+            <item><name>Tucker, Jim, M.D.</name>, Psychiatrist in the Department of Psychiatric
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Psychiatry.</item>
+
+            <pb n="6245"/>
+            <item><name>Vance, Mary Lee, M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Wheby, Munsey S., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+            <item><name>Wilson, David C., M.D.</name>, Psychiatrist in the Department of Psychiatric
+              Medicine; Attending Staff Status; Period of Re-appointment: <dateRange
+                from="2002-07-01" to="2003-06-30">July 1, 2002, through June 30, 2003</dateRange>;
+              Privileged in Psychiatry.</item>
+            <item><name>Wispelwey, Brian, M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Period of Reappointment: <dateRange
+                from="2002-07-01" to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>;
+              Privileged in Internal Medicine.</item>
+          </list>
+        </div2>
+        <div2 id="d70" type="resolution">
+          <head type="sub">RESIGNATIONS FROM THE CLINICAL STAFF</head>
+
+          <p>RESOLVED that the recommendations of the Medical Policy Council for the resignations of
+            clinical privileges to the following practitioners are approved:</p>
+          <list>
+            <item><name>Kallmes, David F., M.D.</name>, Radiologist in the Department of Radiology;
+              Attending Staff Status; Effective date of Resignation: <date value="2002-04-11">April
+                11, 2002</date>.</item>
+            <item><name>Reynolds, Robert E., M.D.</name>, Physician in the Department of Internal
+              Medicine; Attending Staff Status; Effective date of Resignation: <date
+                value="2002-02-14">February 14, 2002</date>.</item>
+          </list>
+        </div2>
+        <div2 id="d71" type="resolution">
+          <head type="sub">NEW APPOINTMENTS OF HEALTHCARE PROFESSIONALS TO THE CLINICAL STAFF</head>
+          
+              <p>RESOLVED that the recommendations of the Medical Policy Council for the granting
+                of credentials to the following healthcare professionals for appointment to the
+                clinical staff of the University of Virginia Medical Center are approved:</p>
+          <list>
+              <item><name>Blackwood, Hilary S., R.N., N.P.</name>, Acute Care Nurse Practitioner in
+                Digestive Health/Surgical Services; Period of Appointment: <dateRange
+                  from="2002-04-12" to="2003-04-11">April 12, 2002, through April 11,
+                  2003</dateRange>; Privileged as Acute Care Nurse Practitioner.</item>
+
+              <pb n="6246"/>
+              <item><name>Carmel, Nail, R.N., N.P.</name>, Family Nurse Practitioner in the
+                Emergency Department; Period of Appointment: <dateRange from="2001-12-10"
+                  to="2002-12-09">December 10, 2001, through December 9, 2002</dateRange>;
+                Privileged as Family Nurse Practitioner.</item>
+              <item><name>Emory, Heather J., R.N., N.P.</name>, Family Nurse Practitioner in the
+                Teen Health Center; Period of Appointment: <dateRange from="2002-02-18"
+                  to="2003-02-17">February 18, 2002, through February 17, 2003</dateRange>;
+                Privileged as Family Nurse Practitioner.</item>
+              <item><name>Khidr, Aliaa, Ph.D.</name>, Speech Pathologist in the Curry School of
+                Education; Period of Appointment: <dateRange from="2002-04-12" to="2003-04-11">April
+                  12, 2002, through April 11, 2003</dateRange>; Privileged as Speech
+                Pathologist.</item>
+              <item><name>Overstreet, Dana, R.N., N.P.</name>, Family Nurse Practitioner in the
+                Urology Clinic; Period of Appointment: <dateRange from="2002-02-25" to="2003-02-24"
+                  >February 25, 2002, through February 24, 2003</dateRange>; Privileged as Family
+                Nurse Practitioner.</item>
+              <item><name>Rabin, Elizabeth A., M.A.</name>, Audiologist in the Otolaryngology
+                Clinic; Period of Appointment: <dateRange from="2002-02-18" to="2003-02-05">February
+                  18, 2002, through February 5, 2003</dateRange>; Privileged as Audiologist.</item>
+            </list>
+        </div2>
+        <div2 id="d72" type="resolution">
+          <head type="sub">RE-APPOINTMENT OF HEALTHCARE PROFESSIONALS TO THE CLINICAL STAFF</head>
+
+          <p>RESOLVED that the recommendations of the Medical Policy Council for the re-appointment
+            of the following healthcare professionals to the clinical staff of the University of
+            Virginia Medical Center are approved:</p>
+          <list>
+            <item><name>Cochran, Patricia M., CRNA</name>, Licensed Certified Nurse Anesthetist in
+              the Operating Room; Re-appointment: <dateRange from="2002-03-01" to="2004-02-29">March
+                1, 2002, through February 29, 2004</dateRange>; Privileged as Licensed Certified
+              Nurse Anesthetist.</item>
+            <item><name>Coleman, Joanne K., R.N., N.P.</name>, Licensed Family Nurse Practitioner in
+              University Medical Associates; Reappointment: <dateRange from="2002-03-18"
+                to="2004-02-29">March 18, 2002, through February 29, 2004</dateRange>; Privileged as
+              Family Nurse Practitioner.</item>
+            <item><name>Duran, Robyn E., R.N., N.P.</name>, Licensed Family Nurse Practitioner in
+              Women's Place; Re-appointment: <dateRange from="2002-03-23" to="2004-02-22">March 23,
+                2002, through March 22, 2004</dateRange>; Privileged as Family Nurse
+              Practitioner.</item>
+
+            <pb n="6247"/>
+            <item><name>Forch, Edwina T., R.N., N.P.</name>, Licensed Geriatric Nurse Practitioner
+              in Senior Services; Re-appointment: <dateRange from="2002-05-01" to="2004-04-30">May
+                1, 2002, through April 30, 2004</dateRange>; Privileged as Geriatric Nurse
+              Practitioner.</item>
+            <item><name>Krausz, Linda J., R.N., N.P.</name>, Licensed Acute Care Nurse Practitioner
+              in Cardiac Catheterization Lab; Re-appointment: <dateRange from="2002-07-01"
+                to="2004-06-30">July 1, 2002, through June 30, 2004</dateRange>; Privileged as Acute
+              Care Nurse Practitioner.</item>
+            <item><name>Lawton, Beth L., R.N., N.P.</name>, Licensed Pediatric Nurse Practitioner in
+              Kluge Children's Rehabilitation Clinic; Reappointment: <dateRange from="2002-05-01"
+                to="2004-04-30">May 1, 2002, through April 30, 2004</dateRange>; Privileged as
+              Pediatric Nurse Practitioner.</item>
+            <item><name>Miller, Susan B., R.N., N.P.</name>, Licensed Adult Nurse Practitioner in
+              Transplant Center; Re-appointment: <dateRange from="2002-07-01" to="2004-06-30">July
+                1, 2002, through June 30, 2004</dateRange>; Privileged as Adult Nurse
+              Practitioner.</item>
+            <item><name>Noland, Lynn R., R.N., N.P.</name>, Licensed Family Nurse
+              Practitioner/Pediatric Nurse Practitioner in Nephrology; Reappointment: <dateRange
+                from="2002-05-19" to="2004-04-30">May 19, 2002, through May 18, 2004</dateRange>;
+              Privileged as Pediatric and Family Nurse Practitioner.</item>
+            <item><name>Porterfield, Patricia B., L.C.S.W.</name>, Licensed Clinical Social Worker
+              in the Department of Psychiatric Medicine; Reappointment: <dateRange from="2002-04-01"
+                to="2004-03-31">April 1, 2002, through March 31, 2004</dateRange>; Privileged as
+              Licensed Clinical Social Worker.</item>
+            <item><name>Sims, Terran W., R.N., N.P.</name>, Acute Care Nurse Practitioner in
+              Surgical Services; Re-appointment: <dateRange from="2002-04-01" to="2004-03-31">April
+                1, 2002, through March 31, 2004</dateRange>; Privileged as Acute Care Nurse
+              Practitioner.</item>
+            <item><name>Vest, Stephen M., O.D.</name>, Optometrist in the Ophthalmology Clinic;
+              Re-appointment: <dateRange from="2002-04-03" to="2002-10-02">April 3, 2002, through
+                October 2, 2002</dateRange>; Privileged as Optometrist.</item>
+            <item><name>Zavacky, Barbara, R.N., N.P.</name>, Acute Care Nurse Practitioner in Heart
+              Center Cardiac Catheterization Lab; Re-appointment:<dateRange from="2002-07-01"
+                to="2004-06-30"> July 1, 2002, through June 30, 2004</dateRange>; Privileged as
+              Acute Care Nurse Practitioner.</item>
+          </list>
+        </div2>
+
+        <div2 id="d73" type="resolution">
+          <pb n="6248"/>
+          <head type="sub">RESIGNATIONS OF HEALTHCARE PROFESSIONALS</head>
+
+          <p>RESOLVED that the recommendations of the Medical Policy Council for the resignations of
+            clinical privileges to the following healthcare professionals are approved:</p>
+          <list>
+            <item><name>Cecchini, Todd F., P.A.</name>, Physician's Assistant in the Department of
+              Surgery; Effective date of Resignation: <date value="2002-03-18">March 18,
+              2002</date>.</item>
+            <item><name>Easter, Catherine R., R.N., N.P.</name>, Licensed Family Nurse Practitioner
+              in Department of Emergency Medicine; Effective date of Resignation: <date
+                value="2001-11-01">November 1, 2001</date>.</item>
+            <item><name>Maxwell-Thomson, Carol, R.N., N.P.</name>, Family Nurse Practitioner in
+              Northridge Internal Medicine; Effective date of Resignation: <date value="2002-01-31"
+                >January 31, 2002</date>.</item>
+            <item><name>Wu, Feng L., R.N., N.P.</name>, Certified Registered Nurse Anesthetist in
+              the Operating Room; Effective date of Resignation: <date value="2001-03-29">March 29,
+                2001</date>.</item>
+          </list>
+          <ornament type="characters">----------</ornament>
+          <p> On motion, the meeting was adjourned at 12:45 p.m.</p>
+          <signed>Respectfully submitted,<lb/>
+            <name> Alexander G. Gilliam, Jr.</name><lb/> Secretary</signed>
+          <epigraph>
+            <p>AGG:jb</p>
+          </epigraph>
+        </div2>
+       
+      </div1>
+      <div1 id="d74" type="addenda">
+        <pb/>
+        <head type="main">ADDENDUM TO THE OFFICIAL MINUTES OF THE MEETING OF THE<lb/> BOARD OF
+          VISITORS OF THE UNIVERSITY OF VIRGINIA<lb/> Meeting Date: <dateRange from="2002-05-30"
+            to="2002-06-01">May 30-June 1, 2002</dateRange></head>
+        <head type="sub">CERTIFICATION OF EXECUTIVE MEETING</head>
+        <p>The Board of Visitors, sitting in Open Session, unanimously adopted a resolution
+          certifying that while meeting in Executive Session &mdash; as permitted by the relevant
+          provisions of the <hi rend="underline">Code of Virginia</hi> &mdash; only public business
+          authorized by its motion and lawfully exempted from considered in closed session.</p>
+        <signed><name> Alexander G. Gilliam, Jr.</name><lb/> Secretary, Board of Visitors,<lb/>
+          University of Virginia</signed>
+      </div1>
+    </body>
+  </text>
+</TEI.2>

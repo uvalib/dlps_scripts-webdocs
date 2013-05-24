@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+
+<!-- =============================================================== -->
+<!-- NOTE: Update last modified date manually when editing this file -->
+<!-- =============================================================== -->
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % TEI.extensions.ent SYSTEM "http://pogo.lib.virginia.edu/dlps/dtd/tei/teitech/teitech.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://pogo.lib.virginia.edu/dlps/dtd/tei/teitech/teitech.dtd">
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % common_entities SYSTEM 'common.ent'> %common_entities;
+]>
+<TEI.2>
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Non-transcription Workflow</title>
+<author>Greg Murray (gpm2a@virginia.edu), Digital Library Production Services</author>
+</titleStmt>
+<publicationStmt>
+<publisher>Digital Library Production Services, University of Virginia Library</publisher>
+</publicationStmt>
+</fileDesc>
+</teiHeader>
+
+<text id="d1">
+<body id="d2">
+<argument>
+<p>This document describes the workflow for creating non-transcription
+texts at Digital Library Production Services (DLPS), University of
+Virginia Library. It is intended for use by internal DLPS staff.</p>
+
+<p>A "non-transcription text" is a TEI resource that has associated
+page images and a complete TEI header, but no full-text transcription.</p>
+
+<!-- =============================================================== -->
+<!-- NOTE: Update last modified date manually when editing this file -->
+<!-- =============================================================== -->
+
+<p><hi rend="bold">Last modified:</hi> <date type="last-modified" value="2006-07-21">7/21/2006</date></p>
+</argument>
+
+<div1 id="d3">
+<head>Create TEI XML Files</head>
+
+<p>The script that creates non-transcription TEI XML files is
+<xref type="scripts">make_tei_nontrans</xref>. Because it
+uses predefined input and output directories, the script can be run from any
+location.</p>
+
+<list>
+<item>Determine page image type: if bitonal, no special options are needed; if
+the page images are color, use the <code>-c</code> option, as shown below</item>
+
+<item>Run the script, indicating the DLPS IDs for which to create TEI XML files:
+<eg>make_tei_nontrans -c b001234567 b007654321</eg></item>
+
+<item>For each DLPS ID specified, the script creates a TEI XML file in
+<path>/shares/text/04postkb/70being_fullheaders_added</path></item>
+
+</list>
+</div1>
+
+<div1 id="d4">
+<head>Continue Processing</head>
+<list>
+
+<item>Follow the <xref url="/cgi-dlps/saxon/SaxonCGI.pl?source=http://pogo.lib.virginia.edu/dlps/dlpsdoc_xml/text/postkb_books.xml&amp;style=http://pogo.lib.virginia.edu/dlps/xsl/teitech.xsl&amp;filename=postkb_books.xml">Post-keyboarding
+Workflow for Books</xref>, starting with inserting full TEI headers and
+continuing through finalization.
+
+	<admon type="tip">
+		<p>After inserting the full TEI headers, the QA program will complain
+		that "the TEI header should not contain any
+		<![CDATA['&resp_transcription...;' or '&resp_markup...;' or '&resp_ocr...;']]>
+		entity references." This message is correct; for non-transcription TEI
+		files it doesn't make sense to specify who was responsible for the
+		transcription or the markup. Search the TEI files for the kinds of
+		entity references specified in the error message, and remove them.</p>
+	</admon>
+</item>
+
+</list>
+</div1>
+</body>
+</text>
+</TEI.2>

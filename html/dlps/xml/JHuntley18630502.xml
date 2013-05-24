@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000002759_0051 SYSTEM "000002759_0051" NDATA uvaHighRes>
+<!ENTITY DSSR_000002759_0052 SYSTEM "000002759_0052" NDATA uvaHighRes>
+<!ENTITY DSSR_000002759_0053 SYSTEM "000002759_0053" NDATA uvaHighRes>
+<!ENTITY DSSR_000002759_0054 SYSTEM "000002759_0054" NDATA uvaHighRes>
+]>
+
+<TEI.2 id="JHuntley18630502">
+    <teiHeader type="AACR2">
+        
+        <fileDesc>
+            <titleStmt>
+                
+                <title>James Huntley to Brother <date value="1863-05-02">May the 2nd 1863</date>
+                </title>
+                <author>Huntley, James</author> <!-- Author entry not from authoritz file. -->
+                <respStmt>
+                    <resp>Creation of machine-readable version: </resp>
+                    <name>Digital Curation Services , University of Virginia Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Digital Curation Services</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Creation of digital images:</resp>
+                    <name>Digitization Services, University of Virginia Library</name>
+                </respStmt>
+                
+            </titleStmt>
+            
+            <extent>ca. <num type="kilobytes">8</num> kilobytes</extent>
+            
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia </pubPlace>
+                <idno type="DCS">JHuntley18630502</idno>
+                <date value="2010">2010</date>
+            </publicationStmt>
+            
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-VACivilWar-letters</idno>
+            </seriesStmt>
+            
+            <sourceDesc>
+                
+                <biblFull>
+                    <titleStmt>
+                        <title>Letters from Federal soldiers stationed in Virginia, to friends at home [manuscript], 1861-1864.</title>
+                        <author></author>
+                    </titleStmt>
+                    <extent>4 page</extent>
+                    <publicationStmt>
+                        
+                        <idno type="Accession No.">MSS 828</idno>
+                        <idno type="Virgo ID">3929607-1001</idno>
+                        <idno type="title control number">a3929607 </idno>
+                        
+                        <availability>
+                            <p> Albert &amp; Shirley Small Special Collections, University of
+                                Virginia Library, Charlottesville, Virginia, USA</p>
+                        </availability>
+                    </publicationStmt>
+                </biblFull>
+                
+            </sourceDesc>
+            
+            
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <!-- Per Matt we need to work on this statement-->
+                <p> Prepared for the University of Virginia Library by Digital Curation Services staff
+                    and volunteer Mary Roy Dawson Edwards, Transcriber. 2005.</p>
+            </projectDesc>
+        </encodingDesc>
+        
+        <profileDesc>
+            <handList>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+        </profileDesc>
+        
+    </teiHeader>
+    
+    <text id="d1">
+        <body id="d2">
+            <!-- [Each of the following three letters is headed with an engraving in brown and white containing tents, 
+            	an American flag, a soldier, an American eagle and a buffalo with "Indiana."  inscribed below it.] -->
+            
+            <div1 type="letter" id="d3">
+            	<pb entity="DSSR_000002759_0051"/>
+            	<head>James Huntley to Brother <date value="1863-05-02">May the 2nd 1863</date></head>
+            
+            <opener>
+            <dateline>
+            <name type="place">Battery Cameron<lb/>
+            Washington D C</name><lb/>
+            <date value="1863-05-02">May the 2<hi rend="super">nd</hi> 1863</date><lb/>
+            </dateline>
+            	
+            <salute>Dear Brother</salute>
+            </opener>
+            	
+            <p>	
+            I received your letter the 1<lb/>
+            day of may and it found us<lb/>
+            bouth in good health
+            </p>
+            <p>
+            I suppose that there was a plenty<lb/>
+            of girls to go a maying with<lb/>
+            this year but there is not need of<lb/>
+            it out this way for the grass<lb/>
+            is five or six inches high here<lb/>
+            in the fields <del hand="author" rend="line-through">al</del> and the apples<lb/>
+            and peach trees are in bloom
+            
+            <pb entity="DSSR_000002759_0052" n="[page 2]"/>
+            	
+            and the trees is all leiving <!--[leafing]--><lb/> 
+            out and the woods is full<lb/>
+            of flowers it is indeed very<lb/>
+            plesant here for the month<lb/>
+            of May The News is here in<lb/>
+            the papers that old Jo Hooker<lb/>
+            is accrost the river and fighting<lb/>
+            he is having a pretty hard time<lb/>
+            but i guess that he will do<lb/>
+            something yet or i hope so
+            </p>
+            <p>
+            the 6 Maine has lost 6 Killed<lb/>
+            and 8 wounded but i don't know<lb/>
+            who they wer it has bin as<lb/>
+            hot here to day as it was any<lb/>
+            day last July down home and<lb/>
+            we have bin out on battalion<lb/>
+            drill and had a good time to<lb/>
+            our extra pay is due now for<lb/>
+            a spell but i guess not a great<lb/>
+            while they paid us off last<lb/>
+            Wedensday and i am going to<lb/>
+            send home<del hand="author" rend="line-through">d</del> 20 dollers to mother<lb/>
+            and you may put this out for
+            
+            <pb entity="DSSR_000002759_0053" n="[page 3]"/>
+            	
+            for her if you please or<lb/>
+            let James Halbot have it<lb/>
+            to help pay for the plice <!--[place]--><lb/>
+            just as you think best and<lb/>
+            if you want any of it<lb/>
+            you Can have it
+            </p>
+            <p>
+            they paid us 4 months<lb/>
+            pay this and they say that<lb/>
+            they will pay us again this<lb/>
+            month but i don't know<lb/>
+            how it will bee
+            </p>
+            <p>	
+            Oh by the way you did<lb/>
+            not say weather you get that<lb/>
+            picture that i sent you before<lb/>
+            that one that i sent to<lb/> 
+            Friend did you get it or not<lb/>
+            if you did not get it i will make<lb/>
+            you another one as soon as<lb/>
+            i go to the City again<lb/>
+            i had <del hand="author" rend="line-through">[letter scratched out]</del> 2 letters last night<lb/>
+            and i <!--[1]--> night before and i have<lb/>
+            got to answer them all<lb/>
+            to night if i can get time
+            
+            <pb entity="DSSR_000002759_0054" n="[page 4]"/>
+            	
+            times is dull and i am<lb/>
+            in a hurry now and i must<lb/>
+            leave you this time but<lb/>
+            will write you again
+            </p>
+            	
+            <closer>	
+            <salute>this is from your
+            brother</salute>
+            <signed>James <unclear>[-]</unclear> Huntley</signed>
+            </closer>
+            	
+            </div1>
+        </body>
+    </text>
+	</TEI.2>

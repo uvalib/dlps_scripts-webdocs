@@ -1,0 +1,314 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0027 SYSTEM "000000766_0027" NDATA jpg>
+<!ENTITY DSSR_000000766_0028 SYSTEM "000000766_0028" NDATA jpg>
+<!ENTITY DSSR_000000766_0029 SYSTEM "000000766_0029" NDATA jpg>
+<!ENTITY DSSR_000000766_0030 SYSTEM "000000766_0030" NDATA jpg>
+<!ENTITY longs "s" >
+
+<!--<!ENTITY NA62d13a SYSTEM "NA62d13a.jpg" NDATA jpg>
+<!ENTITY NA62d13b SYSTEM "NA62d13b.jpg" NDATA jpg>
+<!ENTITY NA62d13c SYSTEM "NA62d13c.jpg" NDATA jpg>
+<!ENTITY NA62d13d SYSTEM "NA62d13d.jpg" NDATA jpg>-->
+
+]>
+
+<TEI.2 id="NA62d13">
+
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-04-13">April 13, 1862</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Christine M. Kirkham, University of Illinois at Urbana-Champaign</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Christine M. Kirkham, University of Illinois at Urbana-Champaign</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">16</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62d13</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2004">2004</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Illustrations have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney,</title>
+                        <author>Adelaide E. Case</author>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p>Letter includes an oval-shaped papermaker`s logo containing the words
+                                HOLYOKE CO. embossed onto the upper left corner of each recto page,
+                                e.g. on pages 1 and 3, with the reverse of the logo showing through
+                                on pages 2 and 4.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-04-13">1862-04-13</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Women Writers/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-06">November 6th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">September 30, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1862-04-23">April 23, 1862</date>
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+                <p>Addie mentions being upset after reading about the battle of Pittsburg Landing,
+                    and she anticipates with dread the Battle of Yorktown, which she expects to
+                    occur soon. She asks Charlie to send her a full-length photograph of himself,
+                    and she mentions the burial of Wallace Coburn of Bazetta, a nearby township, who
+                    was a soldier in the Seventh Ohio Regiment.</p>
+            </div1>
+        </front>
+
+        <body id="d4">
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-04-13"
+                        >April 13, 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0027"/>
+                <opener>
+                    <dateline>
+                        <name type="place">Mecca,</name>
+                        <date value="1862-04-13"> April 13<hi rend="super">th</hi> 1862.</date>
+                    </dateline>
+
+                    <salute>Good morning. dear Charlie..</salute>
+                </opener>
+
+                <p> Would you not like<lb/> to converse a short time with Addie this mor-<lb/> ning?
+                    Perhaps I can not be quiet long enough<lb/> to write much of a letter. for I
+                    heard this<lb/> morning. that <name type="person">Hallie</name>is over to
+                    Auntie's and<lb/> I wish very much to see him. I do not<lb/> know whether he
+                    will come over home<lb/> or not. I presume I can be more contented<lb/> when
+                    writing to you than any other way..<lb/> I do not feel very contented any way to
+                    day.<lb/> the battle of <name type="battle">Pittsburg Landing</name> has
+                    occupied<lb/> my thoughts most of the time since<lb/> thursday. How frightful! I
+                    have been reading<lb/> the particulars of it this morning. and<lb/> it causes me
+                    to tremble. I would so like<lb/> to know if you are safe to day dear <orig
+                        reg="Charlie">Charley</orig>
+                    <pb n="2" entity="DSSR_000000766_0028"/> I feel so lonely and sad to day that
+                    all manner<lb/> of thoughts enter my mind. Perhaps it is wrong<lb/> but I
+                    sometimes wish that you were not in the<lb/> army. but I feel that it is your
+                    duty to<lb/> be there, therefore I will try and be reconciled.<lb/> I do not
+                    wish to discourage you dear one,<lb/> but my heart sometimes rebels.</p>
+
+                <p> I dread reading of the future battle of<lb/>
+                    <name type="battle">Yorktown</name>, which is daily expected.</p>
+
+                <p> Charlie, dear will you grant me one favor?<lb/> I wish your photograph very
+                    much.. A full length<lb/> one. if you please. (you <orig reg="perceive"
+                    >percieve</orig> I am writing just<lb/> as if I already had the promise of it)
+                    Darling<lb/> will you please send me one when you <add place="inline" hand="h1"
+                        >have</add> a chance<lb/>
+                    <name type="person">Laurie</name>was speaking of it last week and said<lb/> she
+                    wished I had one. so you see I have concluded<lb/> to ask you for one,</p>
+
+                <p>
+                    <name type="person">Wallace Coburn</name> of the Seventh Ohio <abbr
+                        expan="Regiment">Regt.</abbr> was<lb/> buried in <name type="place"
+                    >Bazetta</name> friday. Poor boy! I think<lb/> that he was the first <name
+                        type="place">Trumbull <abbr expan="County">Co.</abbr></name>soldier that<lb/>
+                    has been killed in battle. I have heard of <pb n="3"
+                        entity="DSSR_000000766_0029"/> none other.</p>
+
+                <p> Oh Charlie. the &ldquo;Mecca Youths&rdquo; are to give a<lb/> concert at
+                        Oildom<ref target="n1" n="1">1</ref> next wednesday eve. for the<lb/>
+                    benefit of the &ldquo;Soldier's Aid Society&rdquo; a noble<lb/> cause
+                    for the children to engage in is it not?<lb/> I <orig reg="guess"
+                        >gue&longs;s</orig> <hi rend="underline">you</hi> had better come and be<lb/>
+                    <hi rend="underline">my</hi> &ldquo;Chaperon&rdquo; had you not? I
+                    am<lb/> certain that I should feel highly hon-<lb/> ored and perhaps proud. <name
+                        type="person"> <orig reg="Miss">Mi&longs;s</orig> Poole</name><lb/> and I
+                    walked about two miles last<lb/> eve to attend a singing school, and I<lb/> have
+                    not got rested yet. We went. because<lb/> we wished to say we had been to
+                    one<lb/> regular singing. school during the year of<lb/> 1862. Mecca folks are
+                    not able to support<lb/> a singing teacher. therefore we have had<lb/> no school
+                    during the past winter<lb/> We generally have two or three different<lb/>
+                    teachers and schools during the winter.</p>
+
+                <p>Dearest. I wish the &ldquo;blockade&rdquo; could be run<lb/> a little
+                    oftener so that I could <pb n="4" entity="DSSR_000000766_0030"/>
+                    <orig reg="receive">recieve</orig> letters oftener than I now do.<lb/> I never
+                    had so few correspondents since<lb/> I was a &ldquo;little girl.&rdquo;
+                    as I have this spring<lb/> For some reason I know not what
+                    I <unclear>have</unclear><lb/> not written to my correspondents &amp;
+                    conseque<lb/> ntly they do not write to me. I will<lb/> tell you who they (the
+                    present ones I mean) <orig reg="are">ar</orig>,<lb/> My darling Charlie
+                        first. <name type="person">Dora</name> next <orig reg="Miss">Mi&longs;s</orig><lb/>
+                    <name type="person">Susie <orig reg="Ross">Ro&longs;s</orig></name>. and &ldquo;<unclear>
+                         <name type="person">Lu</name>
+                    </unclear> &amp; <name type="person">Mollie</name>.&rdquo; <name
+                        type="person">Will. Donald<lb/> son</name>. and <name type="person">Miltie
+                        Irwin</name>. are all.</p>
+
+                <p>Charlie the <orig reg="Miss">Mi&longs;s</orig> Braden of whom you<lb/> spoke
+                    in your list of lady friends is her<lb/> name <name type="person">Libbie
+                    Braden</name>? I am acquainted with<lb/>
+                    <orig reg="Miss">Mi&longs;s</orig> Libbie Braden of <name type="place"
+                        >Gustavus</name>.</p>
+
+                <p>Darling write to me as often as possible will you not? Please remember me to the
+                    boys. Tell <name type="person">Geo. Moore</name>. I congratulate him upon
+                        his <orig reg="success">succe&longs;s</orig> in the fight at <name
+                        type="battle">Winchester</name>. Write real often dearest. and may <name
+                        type="place">Heaven</name> <orig reg="bless">ble&longs;s</orig> you</p>
+
+                <closer> As ever your <signed> <name type="sender">Addie</name>..</signed><lb/>
+                    <seg type="postscript">To darling Charlie..</seg>
+                </closer>
+            </div1>
+        </body>
+        <back id="d6">
+            <div1 type="notes" n="1" id="d7">
+                <head>Notes</head>
+                <note id="n1" place="end" n="1">
+                    <seg type="note-symbol">1</seg>
+                    <p>A search for &ldquo;Oildom&rdquo; in several web sites listing
+                        historical Ohio place names revealed no Ohio town or township by this name.
+                        However, it's possible that Addie uses the term to refer to a area of
+                        petroleum exploration in or around Trumbull County. An 1897 history of Ohio
+                        counties, which has been transcribed (or scanned?) and posted on a
+                        genealogical web site, refers to an area in Wood County, Ohio, where oil
+                        exploration was pursued during the mid-19th century. In the following quote,
+                        the term &ldquo;oildom&rdquo; is used to refer to this area:
+                        &ldquo;The early ventures of oildom south of the village, though
+                        earnest, did not succeed in finding petroleum 'in paying quantities, though
+                        latterday explorations in Troy and Lake leave little room for doubting the
+                        existence of a pool in the old territory.&rdquo; [SOURCE: COMMEMRATIVE
+                        (SIC) HISTORICAL AND BIOGRAPHICAL RECORD OF WOOD COUNTY, OHIO; ITS PAST AND
+                        PRESENT. CHICAGO: J. H. BEERS &amp; CO., 1897, Chapter XLIV, p. 405,
+                        accessed 8 January 2004 at
+                        http://www.heritagepursuit.com/Wood/WoodChapXLIV.htm.]</p>
+                </note>
+            </div1>
+        </back>
+    </text>
+</TEI.2>

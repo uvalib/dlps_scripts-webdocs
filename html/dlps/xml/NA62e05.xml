@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0123 SYSTEM "000000766_0123" NDATA jpg>
+<!ENTITY DSSR_000000766_0124 SYSTEM "000000766_0124" NDATA jpg>
+<!ENTITY DSSR_000000766_0125 SYSTEM "000000766_0125" NDATA jpg>
+<!ENTITY DSSR_000000766_0126 SYSTEM "000000766_0126" NDATA jpg>
+
+]>
+
+<TEI.2 id="NA62e05">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-05-05">May 5, 1862</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Lesliediana Jones, Jacob Burns Law Library, George Wash. Univ. Law School</name>
+                    <resp>Creation of digital images:</resp>
+                    <name>University of Virginia Library Electronic Text Center</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Lesliediana Jones</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">13</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62e05</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2001">2001</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, May 5th, 1862</title>
+
+
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-05-05">1862-05-05</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Women Writers/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-06">November 6th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">September 30, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent> 4 pp.</extent>
+                        <date value="1862-05-05">May 5th, 1962</date>
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+                <p>Addie writes to Charles about her first day as a schoolmarm. She tells him about
+                    the antics of her young students and the benefits she derives from students that
+                    are the same age as herself. She also, in glowing terms, decribes the
+                    countryside near the Cuyahoga river.</p>
+            </div1>
+
+        </front>
+
+        <body id="d4">
+            <div1 type="letter" n="1862-05-05" id="d5">
+
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-05-05"
+                        >May 5, 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0123"/>
+                <opener>
+                    <name type="place">East Claridon</name>
+                    <date value="1862-05-05">May 5th, 1962</date>                   
+                </opener> 
+                <salute>My darling <name type="recipient">Charlie</name>. </salute>
+
+                <p> My <q>"first day"</q> in teaching<lb/> has passed and here am I in my room at<lb/>
+                    <name type="person">Mrs. Leslie's</name> seated as quietly as you please
+                    giving<lb/> my <q>"soldier boy"</q> the <q>
+                        <orig reg="particulars">"perticelars"</orig>
+                    </q> What a splendid<lb/> landscape! I presume that even more beautiful are<lb/>
+                    the scenes which you have witnessed within a year<lb/> than are those on the
+                    banks of the little<lb/>
+                    <q>
+                        <name type="place">"Cuyahoga"</name>
+                    </q> but without any exceptions it is the<lb/> lovliest place that I ever was in
+                        Oh! <name type="person">Charlie</name><lb/> you <hi rend="underline">must</hi>
+                    come home and draw a sketch of<lb/> this romantic little place. Just as if I
+                    did<lb/> not want you to come to see me. As I went<lb/> to my<q>"home"</q>this
+                    morning. half a dozen<lb/>
+                    <pb n="2" entity="DSSR_000000766_0124"/>little faces - although quite early -
+                    peeped out to<lb/> get a sight of the new<q>"school ma'am."</q> What<lb/> queer
+                    specimens of human nature! I could <orig reg="hardly">hard<lb/> -ly</orig> keep
+                    back the laugh that made my side<lb/> ache. (Bless me what language!) to hold
+                        <del hand="h1"><unclear>[unclear]</unclear></del> in.<lb/> Some little fit of mischiviousness
+                    would seize<lb/> hold of <del hand="h1"><unclear>[unclear]</unclear></del> one of them and they
+                    would turn<lb/> to perform the act when lo! my eye would chance<lb/> some how,
+                    to be looking right that way when<lb/> oh! what a penitent reverential look the
+                    little<lb/> fellow would cast at me . guess I couldn't give him<lb/> a
+                    reprimand! Is not a school room the place to<lb/> study human nature! I have
+                    some ladies as old as<lb/> myself attending school. one <name type="person">
+                        Lillie Armstrong</name>lives<lb/> in the same house with <name type="person"
+                        >Mrs Leslie</name>. I have a class<lb/> in algebra. I am real glad that my
+                    scholars<lb/> are so far advanced for they may learn me<lb/> something. <name
+                        type="person">Dora</name>sits here by me. she has just<lb/>
+                    <orig reg="received">recd</orig> a letter from one of her friends Miss<lb/>
+                    <name type="person">Anna Williams</name>. Why could not I receive<lb/> a letter
+                    from Charlie. By the way darling<lb/> three weeks <del hand="h1"><unclear>[unclear]</unclear></del>
+                    ago next friday was the<lb/>
+                    <pb n="3" entity="DSSR_000000766_0125"/>last "happy day" that I have had. for
+                    you<lb/> know that I am not truly happy only<lb/> while hearing from you I can
+                    not censure<lb/> you for not writing oftener for I know how<lb/>
+                        the<q>"blockade"</q> interferes with my happiness.<lb/> I have been
+                        teasing <name type="person">Dora</name> to write to you but<lb/> she is
+                    afraid it will not be acceptable.<lb/> Oh: Charlie write <name type="person"
+                        >Laura</name>real often <sic corr="won't">wont</sic><lb/> you my darling? She
+                    will be so lonesome now as<lb/> Addie is not with her to drive off the
+                    blues.<lb/> Charlie do you hear that noise? The frogs<lb/> over in yonder
+                    millpond are having a regu<lb/> -lar jubilee. I guess they <sic corr="don't"
+                    >dont</sic> know what<lb/> fearful state our country is in. Oh: any thing<lb/>
+                    but war. When men fight to quell a rebellion<lb/> or to cease some awful wrong
+                    it is just<lb/> but when they fight as some of the rebels<lb/> seem to <del
+                        hand="h1"><unclear>[unclear]</unclear></del> only to kill it is horrible.<lb/> What a strain of
+                    thoughts those disagreeable<lb/> frogs have led me into. I will try to
+                    drive<lb/> it away.<lb/> I do not know of any news that has<lb/>
+                    <pb n="4" entity="DSSR_000000766_0126"/>transpired in <name type="place"
+                    >Mecca</name> but that <name type="person">Jim Beebe</name><lb/> has moved out of
+                    town strange to say he<lb/> does not seem to be missed. </p>
+
+                <closer>But darling<lb/> it is getting late and I must close or<lb/> they will
+                    accuse me of being out "sparking."<lb/> Sister used to say this was the next
+                    thing<lb/> to it. But good night dearest. May heaven<lb/> guard thee for<lb/>
+                    <signed>Addie</signed>
+                    <seg type="postscript">Please write soon direct <name type="place">East
+                            Claridon<lb/> Geauga Co. Ohio</name></seg>
+                </closer>
+            </div1>
+
+        </body>
+
+    </text>
+
+</TEI.2>

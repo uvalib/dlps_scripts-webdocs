@@ -1,0 +1,36 @@
+<!--
+
+  common.ent - contains general entity declarations (replacement
+    text) for use with internal workflow documentation, Digital
+    Library Production Services (DLPS), University of Virginia Library
+
+  Greg Murray <gpm2a@virginia.edu>, DLPS
+  Last modified: 2006-05-26
+
+-->
+
+<!ENTITY files '<replace>*.xml</replace>'>
+
+<!ENTITY text_dir '/shares/text'>
+<!ENTITY image_dir '/shares/image1'>
+
+<!ENTITY tei_preview_xref '<xref url="/cgi-dlps/dlps-only/preview/list.pl" type="external">TEI Preview</xref>'>
+
+<!ENTITY qa_programs_xref '<xref url="/cgi-dlps/dlps-only/markupQA/list.pl" type="external">Markup QA Programs</xref>'>
+
+<!ENTITY proofreader_xref '<xref url="/cgi-dlps/uva-only/proofreader/start.pl" type="external">Proofreader image viewer</xref>'>
+
+<!ENTITY tracksys_xref '<xref type="external" url="/dlps/uva-only/tracksys/">DLPS tracking system</xref>'>
+
+<!ENTITY scripts_url 'http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html'>
+
+<!ENTITY update_tracksys 'Update the &tracksys_xref; to reflect the steps you have completed on these items'>
+
+<!ENTITY update_tracksys_item '<item>Update the &tracksys_xref; to reflect the steps you have completed on these items.</item>'>
+
+<!ENTITY update_tracksys_div2 '<div2>
+<head>Update DLPS tracking system</head>
+<list>
+<item>Update the &tracksys_xref; to reflect the steps you have completed on these items.</item>
+</list>
+</div2>'>

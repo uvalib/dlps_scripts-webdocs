@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0325 SYSTEM "000000766_0325" NDATA jpg>
+<!ENTITY DSSR_000000766_0326 SYSTEM "000000766_0326" NDATA jpg>
+<!ENTITY DSSR_000000766_0327 SYSTEM "000000766_0327" NDATA jpg>
+<!ENTITY DSSR_000000766_0328 SYSTEM "000000766_0328" NDATA jpg>
+
+<!--<!ENTITY NA61m26a SYSTEM "NA61m26a.jpg" NDATA jpg>
+<!ENTITY NA61m26b SYSTEM "NA61m26b.jpg" NDATA jpg>
+<!ENTITY NA61m26c SYSTEM "NA61m26c.jpg" NDATA jpg>
+<!ENTITY NA61m26d SYSTEM "NA61m26d.jpg" NDATA jpg>
+<!ENTITY N611226a SYSTEM "611226a.jpg" NDATA jpg>
+<!ENTITY N611226b SYSTEM "611226b.jpg" NDATA jpg>
+<!ENTITY N611226c SYSTEM "611226c.jpg" NDATA jpg>
+<!ENTITY N611226d SYSTEM "611226d.jpg" NDATA jpg>
+<!ENTITY N611226aa SYSTEM "611226aa.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NA61m26">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1861-12-26">December 26, 1861</date></title>
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Mary McCaskill</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Mary McCaskill</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">15</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA61m26</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, December 26, 1861</title>
+
+
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p> </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1861-12-26">1861-12-26</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War / Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2009-11-03">November 3rd, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">September 30, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+        <front id="d2">
+
+
+
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1861-12-26">December 26, 1861</date>
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+                <p> In a hastily written letter, Addie reassures Charlie that she has both received
+                    letters from him and sent weekly letters to him. She comments upon her daily
+                    activities (tea, Lodge, Lyceum), mentions mutual friends and family (Hal and
+                    Laurie), and wishes Charlie a belated Merry Christmas. </p>
+            </div1>
+        </front>
+        <body id="d4">
+
+
+            <div1 type="letter" n="1" id="d5">
+                <pb n="1" entity="DSSR_000000766_0325"/>
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1861-12-26"
+                        >December 26, 1861</date></head>
+
+                <opener>
+                    <dateline>
+                        <name type="place">Mecca</name>
+                        <date value="1861-12-26">
+                            <abbr expan="December">Dec.</abbr> 26<hi rend="super">th</hi>
+                        1861</date>
+                    </dateline>
+                    <lb/>
+                    <salute>My dear friend,</salute>
+                </opener>
+
+                <p>Thanks for<lb/> your kind and welcome letters<lb/> which have but lately <abbr
+                        expan="received">recd.</abbr><lb/> I am surprised that you<lb/> have not
+                    heard from me<lb/> for so long a time. I have<lb/> written, I may say,
+                    weekly<lb/> I do not doubt but<lb/> that some <add hand="h1" place="supralinear"
+                        >letters</add> are at <name type="place">
+                        <orig reg="Charleston.">Charleston</orig>
+                    </name><lb/> I have not written but<lb/> one since I heard that<lb/> you had
+                        left <name type="place">Charleston</name> owing to the fact that<lb/> I did
+                    not know your<lb/>
+                    <orig reg="addre&longs;s.">addre&longs;s</orig> But away to other<lb/>
+                    subjects. I have just been to<lb/>
+                    <pb n="2" entity="DSSR_000000766_0326"/> tea, wished very much<lb/> that you had
+                    been here<lb/> to partake.</p>
+                <lb/>
+                <p> Dear <name type="person">Charlie</name> I have just<lb/> returned from<name
+                        type="person">Mr. Hegle&longs;s.</name><lb/>
+                    <name type="person">Sadie Hegle&longs;s</name> wished me to<lb/> go to
+                    Lyceum with her <orig reg="tonight">to night</orig>.<lb/> I will <add hand="h1"
+                        place="supralinear">now</add> try to finish this<lb/> uninteresting sheet.
+                        Dear <name type="person">Charlie</name><lb/> I cannot concentrate my thoughts<lb/>
+                    <orig reg="tonight">to night</orig> and you may think<lb/> this a rather
+                    unceremonious letter<lb/> but I imagined that you<lb/> would be anxious to
+                    hear<lb/> from me and that I would<lb/> strive to <orig reg="write."
+                    >write</orig><lb/></p>
+                <p>How shall I thank you, <hi rend="underline">dear<lb/> brother</hi> for your
+                    kindne&longs;s in<lb/> sending that sketch. <orig reg="Remember"
+                    >Rembember</orig><lb/> that your gifts are treasured<lb/>
+                    <unclear/> and I trust that the day<lb/> may come when you may see <pb n="3"
+                        entity="DSSR_000000766_0327"/> them again. Our Lodge is<lb/> slowly
+                    prospering, or<del hand="h1">is</del> <add hand="h1" place="supralinear">I</add>
+                    suppose it is.<lb/> I have not attended it for two<lb/>
+                    <orig reg="months.">months</orig> I gue&longs;s I should enjoy it<lb/> very
+                    much &mdash; but I am so far<lb/> away from it that I can not get<lb/>
+                    there. I find in the <orig reg="columns">colums</orig><lb/> of the news papers
+                        that <name type="person"><abbr expan="General">Gen.</abbr><lb/>
+                    Kelly's</name> command is marching<lb/> towards <name type="place"
+                    >Winchester</name>. I suppose<lb/> you are under his <orig reg="command."
+                    >command</orig><lb/></p>
+                <p><hi rend="underline">May our ble&longs;sed Father protect<lb/> thee from all
+                        danger.</hi> Nothing<lb/> else <hi rend="underline">can</hi> protect you <hi
+                        rend="underline">my</hi> <hi rend="underline">brother.</hi><lb/> I wrote a
+                    very painful (to me)<lb/> letter to you and sent it to<lb/> Warren for <name
+                        type="person"><abbr expan="Captain">Capt.</abbr> Wood</name> to take<lb/> to
+                    you. I have some strange<lb/> thoughts dear <name type="person">Charlie</name> at times.<lb/>
+                     <name type="person">Laurie</name> sits here. <orig reg="She">she</orig> <orig
+                        reg="says">say</orig> put<lb/> down <unclear>&ldquo;and, thi go</unclear>
+                        back <unclear>C ther</unclear><lb/>she did that </p>
+
+                <pb n="4" entity="DSSR_000000766_0328"/>
+                <p> Dear <name type="person">Charlie</name>, how often I<lb/> have regretted that I
+                    would<lb/> not lay my life on the alter of<lb/> my country but fate decrees<lb/>
+                    otherwise.</p>
+                <p>Did I hear you say &ldquo;How do<lb/> you like your school? Oh, real
+                    well<lb/> I shall go to <name type="place">Oberlin</name> in February<lb/> if
+                    nothing prevents then I shall<lb/> be in my elements.<lb/>
+                </p>
+                <p><name type="person">Hal's</name> letter that he wrote<lb/>under the straw stack,
+                    I<lb/> had the gratification to read this<lb/> morning. I <hi rend="underline"
+                    >do</hi> hope that this<lb/> cruel war will soon close and<lb/> restore our much
+                    loved friends<lb/> to our aching hearts. <name type="person">Laurie</name>
+                    says<lb/> send a bushel of <unclear>&nbsp;&nbsp;&nbsp;&nbsp;done
+                        up</unclear><lb/> in <name type="person">Cris kringle's</name> hat. I
+                    gue&longs;s<lb/> I will have to wish you Merry<lb/> Christmas, it may be
+                    rather late.<lb/>
+                     <name type="person">Laurie</name> won't let me rest <orig reg="til"
+                    >till</orig><lb/> I ask you if you got intoxicated<lb/> when you
+                        left <unclear>C&nbsp;&nbsp;&nbsp;</unclear> <name type="person"
+                        >Hal</name> wrote<lb/> in his letter to the <hi rend="underline"
+                    >Democrat</hi><lb/> that a great many were intoxicated<lb/> at that time. I
+                    presume you will<lb/> be obliged to answer it for her <orig reg="sake."
+                    >sake</orig></p>
+                <lb/>
+                <p>
+                    <ref target="n1" n="1">1</ref>Last week I received two letters from you and
+                        one <orig reg="yesterday.">yesterday</orig><lb/> I would that I could hear as
+                    often every <orig reg="week.">week</orig><lb/></p>
+                <p>
+                    <ref target="n2" n="2">2</ref>Please excuse all mistakes and poor writing<lb/>
+                    for I am in great haste<lb/> as it is <orig reg="late.">late</orig></p>
+
+
+
+                <closer>
+
+                    <ref target="n3" n="3">3</ref>
+
+                    <salute>Write soon and often<lb/> to your <hi rend="underline">sister</hi></salute>
+                    <lb/>
+                    <signed>
+                        <name type="person">Addie</name>
+                    </signed>
+                    <lb/>
+                </closer>
+
+            </div1>
+        </body>
+
+        <back id="d6">
+
+            <div1 type="notes" n="1" id="d7">
+                <head>Notes</head>
+
+                <note id="n1" place="end" n="1">
+                    <seg type="note-symbol">1</seg>
+                    <p>The following sentence is written vertically on the left hand margin of the
+                        letter (see image of page four).</p>
+                </note>
+
+
+                <note id="n2" place="end" n="2">
+                    <seg type="note-symbol">2</seg>
+                    <p>The following sentence begins in the upper right hand margin, curving around
+                        to an inverted position at the top of the page (see image of page four>.</p>
+                </note>
+
+                <note id="n3" place="end" n="3">
+                    <seg type="note-symbol">3</seg>
+                    <p>The following closing remarks and signature are found inverted at the top of
+                        the first page (see image of page one).</p>
+                </note>
+            </div1>
+        </back>
+    </text>
+</TEI.2>

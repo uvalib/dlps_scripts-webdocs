@@ -1,0 +1,306 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0131 SYSTEM "000000766_0131" NDATA jpg>
+<!ENTITY DSSR_000000766_0132 SYSTEM "000000766_0132" NDATA jpg>
+<!ENTITY DSSR_000000766_0133 SYSTEM "000000766_0133" NDATA jpg>
+<!ENTITY DSSR_000000766_0134 SYSTEM "000000766_0134" NDATA jpg>
+
+<!--<!ENTITY NA62e16a SYSTEM "NA62e16a.jpg" NDATA jpg>
+<!ENTITY NA62e16b SYSTEM "NA62e16b.jpg" NDATA jpg>
+<!ENTITY NA62e16c SYSTEM "NA62e16c.jpg" NDATA jpg>
+<!ENTITY NA62e16d SYSTEM "NA62e16d.jpg" NDATA jpg>-->
+]>
+
+<TEI.2 id="NA62e16">
+
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-05-16"
+      >1862 May 16</date></title>
+
+    <author>Case, Adelaide E.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Karen B. Weiss, RBS student Jan. 2004</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>Karen B. Weiss, RBS student Jan. 2004</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">13</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NA62e16</idno>
+    <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+                    <p n="copyright"/>
+                </availability>
+    <date value="2004">2004</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title/>
+      <author>Adelaide E. Case</author>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 pp.</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p>All unambiguous end-of-line hyphens have been retained </p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings. </p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-05-15">1862-05-15</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>feminine</term>
+     <term>American Civil War/Women Writers/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-09">November 9th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">September 30, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent> 4 pp.</extent>
+      <date value="1862-05-16">May 16, 1862</date>
+
+      <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+     </bibl>
+    </head>
+    <p> Addie writes of being proud to be a &ldquo;Yankee girl&rdquo;; her anger that women
+     cannot show their patriotism by fighting; and her physical appearance. She describes to Charlie
+     her first experience as a traveling teacher, which she refers to as &ldquo;boarding
+     around.&rdquo; </p>
+   </div1>
+
+  </front>
+
+  <body id="d4">
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-05-16">1862 May
+     16</date></head>
+    <pb n="1" entity="DSSR_000000766_0131"/>
+    <opener>
+     <dateline>Thursday morn. <date value="1862-05-16">May 16<hi rend="super">th</hi>, 1862</date>, </dateline>
+     <salute>My darling </salute>
+    </opener>
+
+    <p>Who would have thought when I<lb/> wrote you last that more than a week would<lb/> elapse
+     before I should write you again. But how<lb/> fast time does fly. I know you will forgive<lb/>
+     me darling for you know how little time a teacher<lb/> gets to write especially where they<lb/>
+     &quot;board around.&quot; I should have written sunday<lb/> but I attended church both
+     in the daytime<lb/> and evening and between the meetings I wrote<lb/> to Hal. I <sic
+      corr="received">recieved</sic>your letter of the 11<hi rend="super">th</hi><lb/> and 22<hi rend="super">nd</hi> of April last evening.
+     Laura forwarded<lb/> them from <unclear>Mecca</unclear> Had I not heard from<lb/> you since then
+     I should be real anxious<lb/> for you wrote that you was not well, <pb n="2"
+      entity="DSSR_000000766_0132"/> but I can hardly conceal my anxiety now<lb/> for I have <sic
+      corr="received">recieved</sic> but one letter from you<lb/> since I commenced my school with
+     the exception<lb/> of the one I read last eve. You are not ill<lb/> are you dearest? I feel
+     confident that you would<lb/> let me know if you were. (I am writing in<lb/> such a hurry this
+     morning as it is almost school<lb/> time) I was very thankful for your letters<add
+      place="inline" hand="h1">although</add> written<lb/> so long ago, besides one
+      from <unclear>Laurie accompaniament there<lb/> Indecent</unclear>(how correct that is spelled)
+     Dear Charlie<lb/> you seem to be quite eloquent in your praises of your<lb/> &quot;Ohio
+     girl&quot; I do not blame miss Rice for replying<lb/> to you that I was not pretty, for I
+     too think<lb/> you must look with a partial eye, for I can<lb/> trace no expressions of beauty
+     in my ugly <unclear>phyg.</unclear><lb/> although I &mdash; don't try much. I dont see
+     how<lb/> she could &quot;hate Yankees&quot; after conversing with you,<lb/>
+     <hi rend="underline">I would not</hi>. Yes darling I am proud of it, I<lb/> mean that I am a
+     Yankee, and if you should<lb/> ever see her again please tell her &quot;that the
+     Yankee<lb/> girls&quot; would not only sacrifice home<lb/> friends, dear friends but even
+     lie to protect their country and <pb n="3" entity="DSSR_000000766_0133"/> their flag. Oh
+     Charlie how I should love to<lb/> see a regt of ladies armied equipped and<lb/> ready for
+     battle, but that we must remain at<lb/> home and donate a little to the &quot;Aid
+     society,&quot;<lb/> every week while our friends and protectors<lb/> fall and die alone
+     with no friend near. Oh it makes<lb/> me so indignant. But what could we do? Do!<lb/> we could
+     fight, fight like patriots as we are,<lb/> but perhaps you will say you guess our
+     patriotism<lb/> would cool down by the time we march one or<lb/> two thousand miles, strong if
+      it <unclear>unclear</unclear>!<lb/>
+    </p>
+
+    <p> After school.<lb/>
+    </p>
+
+    <p> Dear Charlie I did not have time to finish<lb/> this this morning; therefore one more day
+     will<lb/> pass ere you will <sic corr="receive">recieve</sic> it; but I will try<lb/> to answer
+     or rather finish this. Do you think<lb/> darling that I am dilatory about my writing<lb/> to
+     you? If so remember that I can not<lb/> always do, as I would were I at home, but<lb/> I will
+     write as often as possible.<lb/> You wished me to give you my experience in<lb/> boarding
+     round. I will give you my experiences <pb n="4" entity="DSSR_000000766_0134"/> of two evenings
+     by way of contrast I have chosen these.<lb/> You must pardon the crude form in which it is <orig
+      reg="expressed">expressed</orig><lb/> for I wrote it down hastily, in my--what shall I
+     call<lb/> it, &quot;Experience Diary&quot; I guess, and copy from that<lb/> Tuesdday
+     eve, May 14th, &quot;Really this looks like boarding around!&quot;<lb/> I wonder if all
+     teachers have the same form, Emily Buell<lb/> told me to day that &quot;her <hi
+      rend="underline">father</hi> wanted me to come<lb/> to <hi rend="underline">his</hi> house to
+     night&quot; I will go was my answer<lb/> accompanied with a wonder where her mother was.
+     Started with the girls<lb/> Emily and Evaline and &mdash; came as I came through the<lb/>
+     gate I involuntarily turned partially up to a side door.<lb/> &quot;This is the
+     way&quot; the girls said and I followed, around the<lb/> through<lb/> through house we went
+     till we came to a kind of alley through<lb/> which we passed and after going through a shed
+     entered<lb/> an underground kitchen, I was introduced to &quot;my sister&quot;<lb/> a
+     girl about twenty years of age, and &quot;my grandmother&quot; an<lb/> old lady sitting
+     in a straight backed armchair smoking,<lb/> on her head was a night ccap and around her
+     head<lb/> passing from her chin up was a kind of bandage.<lb/> I afterword learned that
+     &quot;my Grandmother's&quot; name was<lb/> Mrs. <unclear>Duelley</unclear>, and that the
+     reason of her wearing the<lb/> bandage was that she was afflicted with a cancer.<lb/> Mr. Buell
+     did not enter the house until after tea which<lb/> consisted of meat potato beans pork and
+     indian<lb/> pudding baked. I sat there by the window (or rather<lb/> under it) for I had to
+     stand in under to look<lb/> out &mdash; vainly endeavoring to draw some one into
+     conversation<lb/> with me. At eight oclock I was requested to be shown<lb/> my room and went
+     but what a soute to get to a<lb/> sleeping apartment; after ascending a narrow flight of<lb/>
+     stairs we pass (my &quot;sister&quot; and I) though two rooms<lb/> and then ascended
+     another flight of stairs going through a hall<lb/> and entered &quot;my room,&quot; I
+     turned to ask the <unclear>unclear<lb/>
+     </unclear> a question but she had sat the candle down and left<lb/> there, and here I find my
+     self. and I also find myself<lb/> writing my first experience in &quot;boarding
+     around,&quot; but of<lb/> written till late and must retire alone. I would<lb/> willingly
+     accept of one of the the girls for a &quot;bedfellow.&quot; but<lb/> I suppose they are
+     in that dismal kitchen perhaps conversing<lb/> of the new school ma'am and I will not<lb/>
+     disturb them&quot;</p>
+
+    <p> Darling, I have given my experience while at one<lb/> family, or the evening experience
+     nothing of importance<lb/>
+     <unclear>unclear</unclear>in the morning <unclear>unclear</unclear> I was about to<lb/> start in
+     the morning for school. I was cooly invited to<lb/>
+     <unclear>brand</unclear> them &quot;my past&quot; Grief. <unclear>I will</unclear> but I
+     have not<lb/> time to write my other experience but will soon. </p>
+
+    <closer>
+     <salute>The<ref target="n1" n="1">1</ref> boy is awaiting to carry this to the office and if I
+      do not send it now I can not<lb/> this week therefore I will close yours forever</salute>
+     <signed>Addie</signed>
+     <lb/>
+     <seg type="postscript">I<ref target="n2" n="2">2</ref> must bid you good bye darling
+       although <unclear>undoubtably</unclear><lb/> I have written in such a hurry that I fear
+      you<lb/> will not be able to read it but guess what you can<lb/> not read. I forgot to mention
+      that I have some<lb/> twenty-eight scholars, write often darling, Addie </seg>
+
+    </closer>
+
+   </div1>
+  </body>
+  <back id="d6">
+   <div1 type="notes" n="1" id="d7">
+    <head>Notes</head>
+    <note id="n1" place="end" n="1">
+     <seg type="note-symbol">1</seg>
+     <p> The next sentence begins at the bottom left side of the page and runs to the top of the
+      page.</p>
+    </note>
+    <note id="n2" place="end" n="2">
+     <seg type="note-symbol">2</seg>
+     <p>The following is written in the top margin of page 1.</p>
+    </note>
+   </div1>
+  </back>
+ </text>
+</TEI.2>

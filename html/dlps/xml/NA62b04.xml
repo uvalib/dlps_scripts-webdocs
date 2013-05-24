@@ -1,0 +1,332 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0055 SYSTEM "000000766_0055" NDATA jpg>
+<!ENTITY DSSR_000000766_0056 SYSTEM "000000766_0056" NDATA jpg>
+<!ENTITY DSSR_000000766_0057 SYSTEM "000000766_0057" NDATA jpg>
+<!ENTITY DSSR_000000766_0058 SYSTEM "000000766_0058" NDATA jpg>
+
+<!--<!ENTITY NA62b04a SYSTEM "NA62b04a.jpg" NDATA jpg>
+<!ENTITY NA62b04b SYSTEM "NA62b04b.jpg" NDATA jpg>
+<!ENTITY NA62b04c SYSTEM "NA62b04c.jpg" NDATA jpg>
+<!ENTITY NA62b04d SYSTEM "NA62b04d.jpg" NDATA jpg>-->
+ ]>
+
+<TEI.2 id="NA62b04">
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-02-04"
+      >1862 February 4</date></title>
+
+    <author>Case, Adelaide E.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Claudia V. Weston, National Agricultural Library</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>Claudia V. Weston, National Agricultural Library</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">13</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NA62b04</idno>
+    <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+    <date value="2000">2000</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Page images have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Adelaide E. Case to Charles N. Tenney, 1862 February 4</title>
+
+
+      <author>Adelaide E. Case</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 p.</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p>The Corinne Carr Nettleton Civil War Collection</p>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p>All unambiguous end-of-line hyphens have been retained.</p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings.</p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-02-04">1862-02-04</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>feminine</term>
+     <term>American Civil War Women Writers Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2001-05">May 2001</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Carolyn Fay, Electronic Text Center</name>
+    </respStmt>
+    <item>Updated TEI header and tags. </item>
+   </change>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-03">November 3rd, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">September 30, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-02-04">1862-02-04</date>
+
+      <title>Letter from Adelaide E. Case to Charles N. Tenney, February 4, 1862</title>
+     </bibl>
+    </head>
+
+    <p>After expressing her love, Addie explains to Charlie the work of the Soldiers Aid Society.
+     Other topics she covers in the letter are the closing of the school and the drilling of another
+     oil well in Mecca.</p>
+
+   </div1>
+  </front>
+
+  <body id="d4">
+
+
+   <div1 type="letter" n="1862-02-04" id="d5">
+    <pb n="1" entity="DSSR_000000766_0055"/>
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-02-04">1862 February
+      4</date></head>
+    <opener>
+     <dateline>
+      <name type="place">Mecca</name>
+      <date value="1862-02-04">February 4<hi rend="super">th</hi> 1862</date>
+     </dateline>
+     <lb/>
+     <salute><hi rend="underline">Charlie</hi> My <hi rend="underline">Darling</hi></salute>
+    </opener>
+    <p> Do you know<lb/> how sweet those three word sound<lb/> to me? and also how dear?<lb/> No
+     wonder I love to linger on these words<lb/> but I <hi rend="underline">must</hi> turn to other
+     subjects.<lb/> I must give you an account of my "days<lb/> works." I have been engaged, (I
+     think) in<lb/> a good work to day.. not as <hi rend="underline">noble</hi> a<lb/> work as <hi
+      rend="underline">you</hi> are engaged in, but it is<lb/> the best that I could do. I have
+     been<lb/> to the "Soldiers Aid Society" working <hi rend="underline">real hard</hi><lb/> Do I
+     hear your approval? Oh: <hi rend="underline">how</hi> I wish<lb/> you could have been there.. It
+     is really<lb/> amusing to see old and young gathered<lb/> in the "Union Hall" for the
+     benefit<lb/> of the soldiers. Here in one corner of the<lb/> "Hall" sits a group of "Mecca
+     Belles"<lb/> busily sewing bandages or some garment or<lb/>
+     <pb n="2" entity="DSSR_000000766_0056"/> perhaps "scraping lint." I hope you will<lb/> never
+     see that, and in another place sits<lb/> the "young married people" engaged in<lb/> the same
+     way, while the older<sic corr="ladies">laidies</sic><lb/> are standing over the table and stove
+     cooking<lb/> chickens to send to the hospitals, What<lb/> a dreadful night last night was for
+     the<lb/> four "chickees" A perfect massacre <sic corr="By" resp="h1">Bye</sic> the<lb/> way
+     Charlie do you not think it a wise<lb/> idea, that of canning chickens for the sick<lb/>
+     soldiers, now when some supplies arrive from<lb/>
+     <name type="place">Cleveland</name> for the hospital just "play<lb/> sick" a little while long
+     enough to get<lb/> some "Mecca goodies" But Charlie will<lb/> not do so will he? dont mind
+     me<lb/> this time, Dear Charlie, do you wonder<lb/> at my little simple letters. <name
+      type="person">Laurie</name> has<lb/> just been here and she would read<corr resp="unknown"
+      sic="this">it</corr><lb/> I know just by the smile she had<lb/> on her face that she thought
+     there was<lb/> simplicity enough about this, and perhaps<lb/> a slight attack of silliness. May
+     be so<lb/> but I have tried to make my letters<lb/>
+     <pb n="3" entity="DSSR_000000766_0057"/> as cheerful as possible so that you<lb/> would not get
+     homesick. Let <name type="person">Laurie</name> look<lb/> if she wants<sic corr="to" resp="h1"
+      >too</sic>, do you care?<lb/>
+    </p>
+    <p> Our school closes tomorrow. I do<lb/> not regret that it does for our teacher<lb/> has been
+     so faithful in his instructions<lb/> to <name type="person">
+      <unclear>Miss Hezles</unclear>
+     </name> that he has neglected<lb/> his other scholars, therefore I do not feel<lb/> much
+      edified <name type="person">Sadie</name> says that he is<lb/> not handsome but "fine looking"
+     might be<lb/> appropriately applied to him, any way his<lb/> mouth is crooked. I may be allowed
+     the<lb/> expression as our minister used it, that<lb/> he had been kissed so much his
+     mouth<lb/> had been drawn to one side<lb/>
+    </p>
+    <p> Oh: what a benevolent town <name type="place">Mecca</name> is.<lb/> We have had four
+     donations here from the<lb/> four different ministers that watch over<lb/> their flocks and now
+     we are to have<lb/> one for <name type="person">Mr Duncan</name> the
+     singing <unclear>teacher</unclear><lb/> that was.<lb/>
+    </p>
+    <p>
+     <name type="person">Hallie</name> is in <name type="place">Warren</name> again studying.
+     How<lb/> much better it seems to <hi rend="underline">know</hi> that he<lb/>
+     <pb n="4" entity="DSSR_000000766_0058"/> is not encountering
+      the <unclear>insolent</unclear> <unclear>for</unclear><lb/> He thinks of renting a house
+     and<lb/> taking his sisters with him to friends over<lb/> it in his absence. Hope you will make
+     us<lb/> a visit when the Misses <unclear>Dignitaries</unclear> get<lb/> to keeping house,
+     Charlie I wish you would<lb/> step in and fix our lamp <add hand="h1" place="inline">it</add> is
+     making an<lb/> awful sputtering. first it will flash <unclear>out</unclear> and<lb/> give
+      a <unclear>"splat"</unclear> and then repeat it, but <name type="person">Laurie</name><lb/> is
+     getting frightened and has blown it out<lb/>
+    </p>
+    <p>
+     <hi rend="underline">Oil city is not dead</hi> There are some wells<lb/> in<sic
+      corr="operation">opperation</sic> down in <name type="place">"Dixie"</name> as good as
+     ever<lb/> were known <name type="person">Mr Wilbur</name> also has started<lb/> a well which
+     yields the liquid money as<lb/> well as any on his farm. But as you pass<lb/> along you would
+     not know that such a<lb/> thing as "Mecca Oil" was ever known only<lb/> by the deserted
+     shanties which stare at you<lb/> and an occasional glimpse of the steam<lb/>
+     <unclear>puffing</unclear> out of the roof of their engine<lb/> houses. There are but few wells
+     in opperation<lb/> at present, but what are<sic corr="yield">yeild</sic> very plentifully<lb/>
+     The war excitement has mounted the throne<lb/> in precedence of the oil excitement.<lb/>
+    </p>
+    <p> My health is good yours is, is it not?<lb/> Auntie sends her <unclear>double</unclear> and
+     twisted respects<lb/> she does not know that I am writing<lb/> that remark. <name type="person"
+      >Laurie</name> is anxiously waiting<lb/> an answer for her letter that she sent<lb/> in mine.</p>
+    <closer>but it is getting late and<lb/> I must "away to my <unclear>couch</unclear>" write
+     often<lb/> to your Addie<lb/>
+    </closer>
+
+   </div1>
+
+   <div1 type="letter" id="d6">
+    <head>n.d.</head>
+    <p> I noticed in a letter from <name type="person">"Julius"</name> the correspondent of the
+     "Chronicle" that<lb/> you had but little writing paper. I send two sheets when I can<lb/> get
+     some more I will send some <ref target="n1" n="1">[1]</ref><lb/>
+    </p>
+   </div1>
+
+   <div1 type="letter" id="d7">
+    <head>n.d.</head>
+    <p> If I was in your place I would send this back for some<lb/> sense. Addie ate so much supper
+     her thought have<lb/> gone to the winds,</p>
+    <closer> adieu Laurie<ref target="n2" n="2">[2]</ref>
+    </closer>
+   </div1>
+
+   <div1 type="letter" id="d8">
+    <head>n.d.</head>
+    <p> I shall offer no apology for this for one of our neighbors has<lb/> been in here all the
+     evening talking with <unclear>auntie</unclear>
+     <ref target="n3" n="3">[3]</ref>
+    </p>
+   </div1>
+
+  </body>
+  <back id="d9">
+   <div1 type="notes" id="d10">
+    <head>Notes</head>
+
+    <note id="n1" place="end" n="1">
+     <seg type="note-symbol">[1]</seg>
+     <p>This message appears along the left margin of the first page of the letter.</p>
+    </note>
+
+    <note id="n2" place="end" n="2">
+     <seg type="note-symbol">[2]</seg>
+     <p>This message appears along the left margin of the third page of the letter.</p>
+    </note>
+
+    <note id="n3" place="end" n="3">
+     <seg type="note-symbol">[3]</seg>
+     <p>This message appears along the left margin of the fourth page of the letter.</p>
+    </note>
+
+   </div1>
+  </back>
+ </text>
+</TEI.2>

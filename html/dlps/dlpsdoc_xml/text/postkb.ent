@@ -1,0 +1,339 @@
+<!--
+
+  postkb.ent - contains general entity declarations (replacement
+    text) for use with internal workflow documentation, Digital
+    Library Production Services (DLPS), University of Virginia Library
+
+  Greg Murray <gpm2a@virginia.edu>, DLPS
+  Last modified: 2010-05-25
+
+-->
+
+<!ENTITY workreports_xref '<xref url="/cgi-dlps/dlps-only/workreports/list.pl" type="external">http://pogo.lib.virginia.edu/cgi-dlps/dlps-only/workreports/list.pl</xref>'>
+
+<!ENTITY parse '<item>Validate: <command><xref type="scripts">xparse</xref> &files;</command></item>
+<item>Fix parsing errors, if any</item>'>
+
+<!ENTITY additional_scripts ''>
+
+<!ENTITY text_programmer 'Greg'>
+
+<!ENTITY qa_commandline_script '<xref type="scripts">qa_books</xref>'>
+
+<!ENTITY qa_super '<xref type="scripts">qa_super</xref>'>
+
+<!-- ====================================================================== -->
+
+<!ENTITY full_teiHeader_ref '
+<p>The preparation of full (bibliographic) TEI headers is normally
+performed by Cataloging and is documented separately. For details, see
+<xref url="/dlps/public/text/teiHeader/teiHeader.html">Preparing
+Full TEI Headers</xref>.</p>
+'>
+
+<!-- ====================================================================== -->
+
+<!ENTITY retrieval1 '
+<head>Retrieve from Vendor</head>
+<p>The keyboarding vendor will send us a delivery notification by
+e-mail when a batch of files is finished and ready for us to
+retrieve.</p>
+<div2>
+<head>Download</head>
+<list>
+<item>Open an FTP program
+(if you&apos;re on a Windows workstation, 
+<xref url="http://www.itc.virginia.edu/desktop/securefx/securefx.html" type="external">SecureFX</xref>
+is recommended)</item>
+<item>Connect to the keyboarding vendor&apos;s FTP server</item>
+<item>Connect to the DLPS server</item>
+<item>Transfer files from the vendor&apos;s FTP server to <path>&text_dir;/04postkb/10being_received</path></item>
+<item>Close connections and exit the FTP program</item>
+
+<item>If the downloaded files are contained within .zip archive(s):
+  <list>
+  <item>In Windows, open the DLPS text workspace as a mapped network
+drive, then right-click the .zip file(s) and select <gizmo>WinZip
+&rarr; Extract to here</gizmo></item>
+  <item>Delete the .zip file(s)</item>
+  </list>
+</item>
+
+<item>Update the &tracksys_xref;: From the Unix command line, navigate
+to <path>10being_received</path> and run this command:
+<command><xref type="scripts">update_tracksys</xref> &files;</command></item>
+</list>
+</div2>
+'>
+
+<!ENTITY retrieval2 '
+<div2>
+<head>Initial QA</head>
+<list>
+<item>From the Unix command line, run this command: <command><xref type="scripts">non-ascii</xref> &files;</command> <lb/>
+
+This script checks for unexpected characters in the XML file and
+displays error messages if any are found. The error messages specify
+exactly where each unexpected character occurs (line number, and
+character position within the line). If any errors are found, take
+appropriate action, which typically means asking the vendor to fix the
+files according to our <xref
+url="http://pogo.lib.virginia.edu/dlps/public/text/vendor/vendor.html#charent">vendor
+encoding guidelines for handling special characters</xref>.
+
+</item>
+</list>
+</div2>
+
+<div2>
+<head>Validate</head>
+<list>
+<item><emph>Copy</emph> the XML files from
+<path>10being_received</path> to <path>10parse</path></item>
+
+<item>From the Unix command line, navigate to <path>10parse</path> and
+run this command: <command><xref type="scripts">replace_system_paths</xref> &files;</command></item>
+
+<item>Validate: <command><xref type="scripts">xparse</xref> &files;</command></item>
+
+<item>If errors occur, contact &text_programmer;</item>
+
+<item>If the files are valid:
+  <list>
+  <item>Update the &tracksys_xref;: From <path>10parse</path>, run
+    this command: <command><xref type="scripts">update_tracksys</xref> &files;</command></item>
+
+  <item>Delete the files in <path>10parse</path>: <command>rm &files;</command></item>
+
+  <item><emph>Move</emph> the files from <path>10being_received</path>
+    to <path>10received/<replace>subdirectory</replace></path>, where
+    <replace>subdirectory</replace> is a directory for grouping and
+    identifying this particular set of XML files</item>
+  </list>
+</item>
+</list>
+</div2>
+
+<div2>
+<head>Write-protect</head>
+<list>
+<item>In <path>10received/<replace>subdirectory</replace></path>, make
+the files read-only for all users: <command>chmod 444 &files;</command></item>
+</list>
+</div2>
+'>
+
+<!-- ====================================================================== -->
+
+<!ENTITY scripts '
+<head>Scripts</head>
+<div2>
+<head>Copy to processing directory</head>
+<list>
+
+<item><emph>Copy</emph> files to <path>20being_scripted</path> <lb/>
+  <list>
+  <item>First, check directory <path>11postvendor_fixed</path> for the
+file(s) to be processed; if present, copy the files from
+<path>11postvendor_fixed</path> to <path>20being_scripted</path>
+  </item>
+  <item>Otherwise, copy the file(s) from <path>10received/<replace>subdirectory</replace></path>
+to <path>20being_scripted</path>
+  </item>
+  </list>
+</item>
+
+<item>Grant write permissions for yourself and group: <command>chmod 664 &files;</command></item>
+
+&parse;
+</list>
+</div2>
+
+<div2>
+<head>Run scripts</head>
+<list>
+<item>Run the main post-keyboarding script.
+  <list>
+  <item>If the texts are mainly in English: <command><xref type="scripts">postkb</xref> &files;</command></item>
+  <item>If the texts are mainly in a foreign language: <command>postkb -f &files;</command> (where -f indicates foreign-language input files; the end-of-line hyphenation does not get collapsed)</item>
+  </list>
+
+  <admon type="tip"><p>If you prefer to see a status message
+indicating each script being run against each input file, use the -v
+(verbose) option: <command>postkb -v &files;</command></p></admon>
+
+</item>
+<item>Check the script&apos;s screen messages for errors and warnings; take appropriate action</item>
+&additional_scripts;
+&parse;
+<item><emph>Move</emph> files to <path>20scripted</path></item>
+</list>
+
+<!--
+<admon type="fyi"><p>For each file processed successfully, the
+<command>postkb</command> script automatically updates the
+&tracksys_xref; to indicate completion of this step (Post-keyboarding
+Workflow &rarr; Run scripts).</p></admon>
+-->
+</div2>
+'>
+
+<!-- ====================================================================== -->
+
+<!ENTITY pb_entities_messages '
+<item>The script issues warning messages if the number of page breaks
+(<gi>pb</gi> tags) in the XML file does not match the number of
+page-image files, or if the page-image files appear not to be named
+sequentially. If this occurs, the warning messages should help you
+pinpoint the nature of the problem (whether the XML file contains too
+many or too few page breaks) and where the problem begins, so you can
+take corrective action.</item>
+'>
+
+<!-- ====================================================================== -->
+
+<!ENTITY copy_to_59processed '
+<div2 id="copy59processed">
+<head>Copy to 59processed</head>
+<list>
+<item>Regardless of what the last step was for a particular file (for
+example, some files do not have figures and do not require completing
+the figure-related web reports), always <emph>copy</emph> the last
+version of the file to <path>59processed</path>.</item>
+
+<item>Update the &tracksys_xref;: Navigate to <path>59processed</path>
+and run this command: <command><xref type="scripts">update_tracksys</xref> &files;</command></item>
+</list>
+</div2>
+'>
+
+<!-- ====================================================================== -->
+
+<!ENTITY finalize '
+<head>Finalize</head>
+<list>
+<item><emph>Copy</emph> files to <path>80being_finalized</path></item>
+
+<item>Run a few final scripts:
+
+  <list>
+  <item>Eliminate an outdated markup practice:
+  <command><xref type="scripts">strip_fw_pageno</xref> &files;</command></item>
+
+  <item>Convert numeric character entities to mnemonic/named character
+  entities (from <code>&amp;#xA9;</code> to <code>&amp;copy;</code> for
+  example):
+  <command><xref type="scripts">flipent</xref> &files;</command></item>
+
+  <item>Convert certain character entities back to normal characters:
+  <command><xref type="scripts">restore_regexp_chars</xref> &files;</command></item>
+  </list>
+
+</item>
+
+<item>Verify that an image file exists for each image entity
+referenced in the XML file: <command><xref type="scripts">qa_entities</xref> &files;</command></item>
+
+<item>Fix problems, if any; this may require working with Kristy to
+assess/fix the problems</item>
+
+<item>Run the following scripts to supply PIDs (persistent IDs) to the XML files:
+<eg><xref type="scripts">tei_pidder</xref> &files;
+<xref type="scripts">pid_attributes</xref> &files;
+</eg>
+</item>
+
+<item>Run the comprehensive QA program: <command>&qa_super; -E -Z &files;</command></item>
+
+<item>Fix errors, if any</item>
+
+<item>Update the file size recorded in the TEI header: <command><xref type="scripts">refresh_filesize</xref> &files;</command></item>
+
+&parse;
+
+<item>Update the &tracksys_xref;: From <path>80being_finalized</path>,
+run this command: <command><xref type="scripts">update_tracksys</xref> &files;</command>
+
+<admon type="important"><p>Running <command>update_tracksys</command>
+here updates the tracking system to indicate that the files specified
+have been moved to <path>80final</path>. It is essential to
+immediately proceed to the next step and actually move the files to
+<path>80final</path>.</p></admon>
+</item>
+
+<item><emph>Move</emph> files to
+<path>80final/<replace>subdirectory</replace></path>, substituting the
+appropriate subdirectory:
+  <list>
+  <item>For most books received from Apex, use <path>80final/apex</path></item>
+  <item>For Cavalier Daily files, use <path>80final/cavdaily</path></item>
+  <item>For EAF files, use <path>80final/eaf</path></item>
+  </list>
+</item>
+
+</list>
+
+<admon type="fyi">
+<p>For each file processed successfully, the &tracksys_xref; gets
+updated automatically as follows:</p>
+<table>
+<row>
+<cell><command>qa_entities</command></cell>
+<cell>Finalization Workflow &rarr; Verify image files</cell>
+</row>
+<row>
+<cell><command>tei_pidder</command></cell>
+<cell>Finalization Workflow &rarr; Add PIDs</cell>
+</row>
+<row>
+<cell><command>qa_super -Z</command></cell>
+<cell>Finalization Workflow &rarr; Run QA program</cell>
+</row>
+</table>
+</admon>
+'>
+
+<!-- ====================================================================== -->
+
+<!ENTITY cleanup_script "
+<item>Run the web-based cleanup script:
+
+  <list>
+
+    <item>Generate a semicolon-delimited list of DLPS IDs
+    corresponding to the items you copied to <path>ReadyRepo</path> in
+    a previous step:
+
+    <eg><xref type='scripts'>listBaseNames</xref> -d ';' &files;</eg>
+
+    Copy the list to the clipboard; you'll need it in a moment.</item>
+
+    <item>Go to the web-based
+    <xref type='external' url='/cgi-dlps/dlps-only/cleanup/dirman.pl'>Cleanup Manager</xref></item>
+
+    <item>Paste the semicolon-separated list of the DLPS IDs you
+    generated earlier, then click <gizmo>Search</gizmo></item>
+
+    <item>Review the files and directories found, and check those you
+    want to remove. Normally you will check all checkboxes.</item>
+
+    <item>Click <gizmo>Remove</gizmo>. The files and directories you
+    checked will be deleted when the cleanup script runs
+    overnight (cron job).</item>
+
+    <item>Update the &tracksys_xref;:
+      <list>
+
+      <item>Use the semicolon-separated list of the DLPS IDs generated
+      earlier (with the <command>listBaseNames</command> script) to
+      search for these items in the tracking system</item>
+
+      <item>In the <gizmo>Finalization</gizmo> workflow view, check
+      the <gizmo>Run cleanup script</gizmo> step for these items,
+      <emph>and also mark them as <gizmo>FINISHED</gizmo></emph></item>
+
+      </list>
+    </item>
+  </list>
+</item>
+">

@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0171 SYSTEM "000000766_0171" NDATA jpg>
+<!ENTITY DSSR_000000766_0172 SYSTEM "000000766_0172" NDATA jpg>
+<!ENTITY DSSR_000000766_0173 SYSTEM "000000766_0173" NDATA jpg>
+<!ENTITY DSSR_000000766_0174 SYSTEM "000000766_0174" NDATA jpg>
+
+<!--<!ENTITY NA62g17a SYSTEM "NA62g17a.jpg" NDATA jpg>
+<!ENTITY NA62g17b SYSTEM "NA62g17b.jpg" NDATA jpg>
+<!ENTITY NA62g17c SYSTEM "NA62g17c.jpg" NDATA jpg>
+<!ENTITY NA62g17d SYSTEM "NA62g17d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NA62g17">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-07-17">1862 July 17</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>John Kane, National Agricultural Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>John Kane, National Agricultural Library</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">14</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62g17</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, <date
+                                value="1862-07-17">1862 July 17</date></title>
+
+
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p>The Corinne Carr Nettleton Civil War Collection</p>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-07-17">1862-07-17</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Women Writers/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2001-06"> June 2001</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name> Carolyn Fay, Electronic Text Center</name>
+                </respStmt>
+                <item> Updated TEI header and tags.</item>
+            </change>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-09">November 9th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 7th, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>pp.</extent>
+                        <date value="1862-07-17"> 1862-07-17</date>
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, July 17,
+                        1862</title>
+                    </bibl>
+                </head>
+
+                <p>Addie says she has read the military order prohibiting furloughs, even for sick
+                    and wounded, and admonishes Charles to be careful of his health so she won't
+                    worry. She further talks about mutual friends and a photograph she received from
+                    Charlie.</p>
+
+            </div1>
+
+        </front>
+        <body id="d4">
+
+
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-07-17"
+                        >1862 July 17</date></head>
+                <pb n="1" entity="DSSR_000000766_0171"/>
+                <opener>
+                    <dateline>
+                        <name type="place">Mecca</name>
+                        <date value="1862-07-17">July 17th 1862</date>
+                    </dateline>
+                    <salute>My Darling <name type="recipient">Charlie</name></salute>
+
+
+                </opener>
+                <p> Even to old Mecca<lb/> your precious letter found its way and how<lb/> joyfully
+                    I received and read it.<lb/> Dearest, while reading your noble and true
+                    thoughts<lb/> I can hardly realize that <orig reg="hundreds">hun<lb/>
+                    dreds</orig> and hundreds of miles separate us. I seem to see<lb/> you and
+                    listen to your darling words. your<lb/> presence seems ever near me
+                    strengthening<lb/> me to bear this ordeal through which I<lb/> am passing - our
+                    separation. But I sat down<lb/> to answer your letter.<lb/> How sorry I was dear
+                    that you could not<lb/> obtain a leave of absence. I read the order<lb/>
+                    <pb n="2" entity="DSSR_000000766_0172"/>
+                    <orig reg="prohibiting">prohibitting</orig> furloughs - even to the sick
+                    and<lb/> wounded. I think it too bad Dost wonder<lb/> dearest that I read it
+                    with a sinking heart.<lb/> Now Charlie you must be <hi rend="underline">very</hi>
+                     <hi rend="underline">very</hi> careful in<lb/> regard to your health for should
+                    you be taken<lb/> ill, the blessed boon of "coming home" would<lb/> be refused
+                    and think you I could live knowing<lb/> that Charlie was ill and suffering :
+                    no<lb/> never! I am glad that you have some more<lb/> favorable approximation of
+                    writing for I have missed<lb/> your welcome letters very much but darling after<lb/>
+                    <del hand="h1" rend="line-through">g</del> receiving such a reproof I trust I
+                    shall<lb/> never again be guilty of scolding you even if you<lb/> do not write
+                        but <hi rend="underline">once</hi> <hi rend="underline">a</hi> <hi
+                        rend="underline">month</hi>. Your rebuke<lb/> was the more affectual because
+                    it was given so<lb/> quietly but I will try <hi rend="underline">never</hi> to
+                    mind one again.<lb/> Am I not a good girl for <orig reg="promising"
+                    >promissing</orig> so readily ?<lb/> Wait and see how well I fullfil it. So
+                    be<lb/> sure darling. I should love to receive the
+                    __<unclear>kiss</unclear><lb/> but I should prefer receiving it from a
+                    different<lb/> motive No, no dearest I do not needlessly<lb/> suffer on account
+                    of you and Hallie for if you<lb/> and Hal should be taken away what oh what<lb/>
+                    <pb n="3" entity="DSSR_000000766_0173"/> would be life ? A wilderness deprived
+                    of all<lb/> its charms?. Do not call it needless anxiety<lb/> Oh! what a letter
+                    her Hal wrote me a few days<lb/> since. He says "Addie", Charlie is <hi
+                        rend="underline">very</hi> dear to<lb/> you, so is your brother but rather
+                        than <orig reg="protract">pro-<lb/> tract</orig> this war by a final defeat
+                    at Richmond<lb/> let us both be found dead on the field and<lb/> let our last
+                    words be "Onward to Victory<lb/> and Union!" Why did Hallie write me such<lb/> a
+                    letter. Ah! how fearfully my heart beat while<lb/> reading it and it does now.
+                    But I will<lb/> not dwell on such thoughts. Jesus will<lb/> spare you darling
+                    and I know God will.<lb/> I had not heard of Edwin Williams death<lb/> His pooor
+                    sister Heda ! If she loved him a<lb/> sincerely as he did her I fear the
+                    knowledge<lb/> was a fearful blow. While speaking of her<lb/> I have seen the
+                    tears spring to his eyes<lb/> and she would be obliged to leave the room<lb/>
+                    because he would not repress his emotions.<lb/> How many a noble youth has
+                    fallen while striving<lb/> to supress this rebellion "I think you are a learned
+                    man<lb/> is all the answer I shall make in regard to<lb/>
+                    <pb n="4" entity="DSSR_000000766_0174"/> the remarks you made upon
+                    Catholicism<lb/> You gave me a beautiful description of the 4th.<lb/> I believe
+                    I have written once or twice how I spent<unclear/><lb/> "When future favors
+                    Charlie will come " When did you not<lb/> say. "When the coming present favours
+                    you" for the future<lb/> never comes. Strange that you do not hear from Hal<lb/>
+                    He tells me that he writes often to you. Laura has<lb/> answered for herself and
+                    Dora might answer if she<lb/> would but she she says she does not know whether
+                    she<lb/> is an idiot or a girl of sense for it is so warm<lb/> and she attended
+                    a party last evening and feels<lb/> the effects of it. You wrote me in regards
+                    to Laurie's<lb/> initiative. Certainly you can have it if she will let<lb/> you
+                    but you may receive a "No sire" I guess not though.<lb/>
+                </p>
+
+                <p>Your photograph darling I do not think is natural<lb/> at least not as you looked
+                    when I last<add place="inline" hand="h1"> also first</add> saw you<lb/> I like
+                    the position very much. I was very thankful<lb/> for it darling. Oh Charlie if
+                    you could but<lb/> hear the conversation between Laura Dora and<lb/> Auntie.
+                    Dora is just lived enough to be full<lb/> of fun and let them converse about
+                    what they<lb/> will Dora will make them laugh<lb/>
+                </p>
+
+                <p> But time flies and I must close write<lb/> often as you can and may guardian
+                    angels attend<lb/> you in all your wanderings.<lb/>
+                </p>
+
+                <closer>
+                    <salute>As ever your true </salute>
+                    <signed>
+                        <name type="sender">Addie</name>
+                    </signed>
+                </closer>
+
+            </div1>
+        </body>
+    </text>
+</TEI.2>

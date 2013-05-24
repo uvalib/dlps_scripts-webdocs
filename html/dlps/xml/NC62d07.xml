@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0533 SYSTEM "000000766_0533" NDATA jpg>
+<!ENTITY DSSR_000000766_0534 SYSTEM "000000766_0534" NDATA jpg>
+<!ENTITY DSSR_000000766_0535 SYSTEM "000000766_0535" NDATA jpg>
+<!ENTITY DSSR_000000766_0536 SYSTEM "000000766_0536" NDATA jpg>
+
+<!ENTITY longs "s"><!-- as typically used in 18th c -->
+]>
+
+<!--<!DOCTYPE TEI.2 SYSTEM 'teixlite.dtd'[
+
+	<!NOTATION jpg SYSTEM "JPEG">   
+
+	<!ENTITY NC62d07a SYSTEM "NC62d07a.jpg" NDATA jpg> 
+	<!ENTITY NC62d07b SYSTEM "NC62d07b.jpg" NDATA jpg> 
+	<!ENTITY NC62d07c SYSTEM "NC62d07c.jpg" NDATA jpg>
+	<!ENTITY NC62d07d SYSTEM "NC62d07d.jpg" NDATA jpg>
+
+	<!ENTITY longs "s" > long s 
+
+	<!ENTITY % ISOlat1 SYSTEM "ISOlat1.pen"> %ISOlat1;  
+	<!ENTITY % ISOlat2 SYSTEM "ISOlat2.pen"> %ISOlat2;  
+	<!ENTITY % ISOnum SYSTEM "ISOnum.pen"> %ISOnum;  
+	<!ENTITY % ISOpub SYSTEM "ISOpub.pen"> %ISOpub;  
+	<!ENTITY % ISOtech SYSTEM "ISOtech.pen"> %ISOtech; ]>-->
+
+<TEI.2 id="NC62d07">
+
+
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+                        value="1862-04-07">7 April 1862</date></title>
+                <author>Tenney, Charles. fl. 1861-1863</author>
+                <respStmt>
+                    <resp>Transcription and TEIXLITE encoding.</resp>
+                    <name>Barrie L. Howard. Digital Library Federation. Rare Book School
+                    2005.</name>
+                </respStmt>
+
+            </titleStmt>
+
+            <publicationStmt>
+                <publisher>Albert H. Small Special Collections Library</publisher>
+                <pubPlace>University of Virginia, Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NC62d07</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2001">2001</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case, 7 April 1862</title>
+                        <author>Tenney, Charles. fl. 1861-1863</author>
+                    </titleStmt>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <date value="1862-04-07">1862-04-07</date>
+                    </publicationStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2009-11-12">November 12th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+
+                <head>
+                    <bibl>
+                        <abbr>AL</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1861-01-01">April 7, 1862</date>
+                        <!--<idno rend="suppress">NC62d07</idno>-->
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case</title>
+                    </bibl>
+                </head>
+
+                <p>Tenney comments on the atrocity of warfare, frustration about undependable postal
+                    service, previous correspondence, and concern about the spread of disease. He
+                    recounts recent events in which he has found inspiration: canned food delivered
+                    to the sick by the Soldiers Aid Society; a religious service with a reading from
+                    Proverbs 23: 32, a provocative sermon from Chaplain B. Wright, and the singing
+                    of "Hail, Columbia!," "A Charge to Keep I Have," and "Bonny Doon"; and
+                    recreational reading of Pope's translation of <title>The Iliad</title> and a
+                    speech by Union General Carl Shurg, printed in a newspaper that Adelaide E. Case
+                    sent to him previously. </p>
+
+            </div1>
+        </front>
+
+        <body id="d4">
+
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-04-07">7
+                        April 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0533"/>
+                <opener>
+
+                    <!--<seg>
+                        <figure rend="page" entity="NC62d07a">
+                            <figDesc/>
+                        </figure>
+                    </seg>-->
+
+                    <dateline>
+                        <name type="place">In Camp near Woodstock Va.</name>
+                        <ref target="n1" n="1">1</ref>
+                        <date value="1862-04-07">April 7th 1862</date>
+                    </dateline>
+
+                    <lb/>
+
+                    <salute>My own dear <name type="Adelaide E. Case">Addie</name>;-</salute>
+
+                    <lb/>
+
+                </opener>
+
+                <p> I know you must be very<lb/> anxious to know the reason why I do not<lb/>
+                    oftener write to you, but much as I would<lb/> love to have constant
+                    correspondence with<lb/> you, even <hi rend="underline">daily</hi>, yet it seems
+                    as if the<lb/> "fortunes of War", or <hi rend="underline">something else</hi>,
+                    are against<lb/> me; Every day since I wrote last&mdash;(the last<lb/> of
+                        March<ref target="n2" n="2">2</ref>) I have inquired if letters could<lb/>
+                    be sent, and invariably received a<lb/> negative answer. But I have grown<lb/>
+                    impatient at the delay, so write, hoping<lb/> to see some one I know, going to
+                        <orig reg="Winchester">Win=<lb/>
+                        <pb n="2" entity="DSSR_000000766_0534"/>
+                        <!--<seg>
+                            <figure rend="page" entity="NC62d07b">
+                                <figDesc/>
+                            </figure>
+                        </seg>-->
+                        chester</orig><ref target="n3" n="3">3</ref>, with whom I can send this<lb/>
+                    and thus,"run the Blockade".<lb/>
+                </p>
+
+                <p> I can see no reason why we should<lb/> be cut off from mail facilities, as I am
+                    sure<lb/> there is nothing of special importance<lb/> transpiring in this
+                    department that should<lb/> be kept so profoundly secret, and if it<lb/> would
+                    do any good, I would "enter my<lb/> protest" against it.<lb/>
+                </p>
+
+                <p> Every day since I wrote, we have<lb/> had shirmishes with the enemy, but<lb/>
+                    two or three men have been killed on our<lb/> side, and it is known that many
+                    of<lb/> the rebels have fallen victims to the<lb/> unerring aim of our gunners.
+                    Even while<lb/> I write, skirmishing, and pretty sharp<lb/> too, is going on
+                    about two and a half<lb/> miles from here.<lb/>
+                </p>
+
+                <p> How full of horrors is this unholy<lb/> unnatural war! No one can fully <orig
+                        reg="comprehend">com=<lb/> prehend</orig> the horrors of war, unless
+                    brought<lb/> into direct contact with it. But it<lb/> must be repugnant to you,
+                    so I will<lb/>
+                    <pb n="3" entity="DSSR_000000766_0535"/>
+                    <!--<figure rend="page" entity="NC62d07c">
+                        <figDesc/>
+                    </figure>-->
+                    change the subject.<lb/>
+                </p>
+
+                <p> As for "my poor unworthy self," I am<lb/> enjoying good health, and in spite
+                    of<lb/> my longing desire for some of those canned<lb/> "<hi rend="underline"
+                        >goodies</hi>" which the noble <orig reg="Soldiers Aid Society">"Aid
+                        Society"</orig><ref target="n4" n="4">4</ref> has<lb/> kindly sent to our
+                    sick soldiers, <hi rend="underline">I can<lb/> not get sick</hi>. Yet, it is no
+                    great loss.<lb/>
+                </p>
+
+                <p> We have pleasant weather, and fine<lb/> times. Chaplain B&mdash;I would
+                    write Brown<lb/> if I could&mdash;Wright addressed us <orig reg="today"
+                        >to-day</orig><lb/> from Prov. 23C, 32V. His remarks<lb/> were opportune and
+                    well made: if <orig reg="properly">prop=<lb/> erly</orig> applied, would benefit
+                    us very much.<lb/>
+                </p>
+
+                <p> The application was like this&mdash;<lb/> "The cardinal sins of the army,
+                    are&mdash;<lb/> Intemperance; Profanity; Murmuring; and<lb/> Robbery. These,
+                    sooner or later, will "bite<lb/> like a serpent, and sting like an adder"<lb/>
+                    The pieces sung, were "Happy Land<ref target="n5" n="5">5</ref>; A charge<lb/>
+                    to keep I have,&mdash;Boylston<ref target="n6" n="6">6</ref>; and Once on
+                    the<lb/> stormy seas I rode,&mdash;Bonny Doon<ref target="n7" n="7"
+                    >7</ref>."<lb/>
+                </p>
+
+                <p> It was sublimity itself to hear those<lb/> old hymns sung in the woods, <orig
+                        reg="accompanied">accom=<lb/>
+                        <pb n="4" entity="DSSR_000000766_0536"/>
+                        <!--<seg>
+                            <figure rend="page" entity="NC62d07d">
+                                <figDesc/>
+                            </figure>
+                        </seg>-->
+                        panied</orig> by our band. You should have<lb/> heard it.<lb/>
+                </p>
+
+                <p> Will Braden<ref target="n8" n="8">8</ref> is sitting by me, talk=<lb/> ing with
+                        Moore<ref target="n9" n="9">9</ref>,&mdash;subject <orig reg="cowardice"
+                        >cowardise</orig>.<lb/> Their talk reminds me of the negro's contro=<lb/>
+                    versy. "Me and Ma&longs;sa had a argument<lb/>
+                    <orig reg="today">to-day</orig> I said corn would grow best on<lb/> sandy soil,
+                    and he said so too. And there<lb/> we sputed and sputed." He, Will, just
+                    said<lb/> tell her "if I fall in battle I could not find<lb/> a better death" He
+                    had reference to him<lb/> self. I wonder why he does not write to<lb/> Laurie, I
+                    know he wants too bad enough.<lb/>
+                </p>
+
+                <p> I enclose you a "gem" of Southern literature, a verbatim<lb/> et literatim<ref
+                        target="n10" n="10">10</ref> copy of a poem found by Sergt<lb/> Moore. I <hi
+                        rend="italic">is</hi> a genuine secession document.<lb/>
+                </p>
+
+                <p> My spare time now is employed in reading<lb/> "Pope's translation of Homer's
+                        <orig reg="Iliad">Illiad</orig><ref target="n11" n="11">11</ref>". Did
+                    you<lb/> ever read it? By the way, I received a<lb/> Tribune from you,
+                    yesterday, for which I am<lb/> a thousand times obliged. Don't you<lb/> think
+                    Carl <orig reg="Schurz's">Shurg's</orig> speech was excellent?<lb/> I read it to
+                    the boys last night. My friend,<lb/> Bob Murray says "you benefited the
+                    me&longs;s as much as Charley" in sending me the<lb/> paper. Bob is a noble
+                    boy, and will some day make a great<lb/> man or I fail to be a prophet.<lb/>
+                </p>
+            </div1>
+
+        </body>
+
+        <back id="d6">
+            <div1 type="notes" n="1" id="d7">
+                <head>Notes</head>
+
+                <note id="n1" place="end" n="1"><seg type="note-symbol">1</seg>
+                    <p>Woodstock is about a half an hour's drive southwest of Winchester, Virginia.
+                    </p>
+                </note>
+                <lb/>
+                <note id="n2" place="end" n="2"><seg type="note-symbol">2</seg>
+                    <p>March 28, 1862 is the last dated letter in this collection and is collocated
+                        with a letter from March 21, 1862. </p>
+                </note>
+                <lb/>
+                <note id="n3" place="end" n="3"><seg type="note-symbol">3</seg>
+                    <p>The location of Winchester, Virginia is NAD 83 Northbounding +39.1857,
+                        Westbounding -078.1633.</p>
+                </note>
+                <lb/>
+                <note id="n4" place="end" n="4"><seg type="note-symbol">4</seg>
+                    <p>See "Letter from Adelaide E. Case to Charles N. Tenney, 1862 July 31."</p>
+                </note>
+                <lb/>
+                <note id="n5" place="end" n="5"><seg type="note-symbol">5</seg>
+                    <p>Written in 1798 by John Hopkinson and referenced as the first United States
+                        national anthem.</p>
+                </note>
+                <lb/>
+                <note id="n6" place="end" n="6"><seg type="note-symbol">6</seg>
+                    <p>Written in 1762 by Charles Wesley, brother to John Wesley of the Methodist
+                        movement. The musical composition is attributed to Galway Boylston.</p>
+                </note>
+                <lb/>
+                <note id="n7" place="end" n="7"><seg type="note-symbol">7</seg>
+                    <p>Perhaps an adaptation of "The Banks O' Doon," written by Robert Burns ca.
+                        1792.</p>
+                </note>
+                <lb/>
+                <note id="n8" place="end" n="8"><seg type="note-symbol">8</seg>
+                    <p>See Will Breden mentioned in "Letter from Adelaide E. Case to Charles N.
+                        Tenney, 1862 February 2."</p>
+                </note>
+                <lb/>
+                <note id="n9" place="end" n="9"><seg type="note-symbol">9</seg>
+                    <p>See George Moore mentioned in "Letter from Charles N. Tenney to Adelaide E.
+                        Case, 13 August 1862."</p>
+                </note>
+                <lb/>
+                <note id="n10" place="end" n="10"><seg type="note-symbol">10</seg>
+                    <p>Translates as word for word and letter for letter.</p>
+                </note>
+                <lb/>
+                <note id="n11" place="end" n="11"><seg type="note-symbol">11</seg>
+                    <p>Pope, Alexander (1688-1744). Translation of The Iliad, 1715.</p>
+                </note>
+                <lb/>
+
+            </div1>
+        </back>
+
+    </text>
+
+</TEI.2>

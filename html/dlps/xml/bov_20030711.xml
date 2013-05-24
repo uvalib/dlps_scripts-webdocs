@@ -1,0 +1,1566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with
+                        local customizations)</resp>
+                    <name>University of Virginia Library</name>
+                </respStmt>
+                <biblScope type="date">
+                    <date value="2003-07-11">July 11, 2003</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">111</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2008">2009</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the
+                        University of Virginia</p>
+                    <p n="access">Publicly accessible</p>
+                </availability>
+                <idno type="DLPS ID">bov_20030711</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-BoardOfVisitorsMinutes"</idno>
+            </seriesStmt>
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors
+                            minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of
+                            Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors
+                            meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2003-07-11">July 11, 2003</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information. Access to
+                                minutes containing salary information will be granted only under the
+                                procedures of the Virginia Freedom of Information Act (Code of
+                                Virginia-2.1-340 ff.) or if permission is granted by the Secretary
+                                of the Board. Researchers interested in obtaining access to these
+                                records should direct a request in writing to the Office of the
+                                Legal Adviser, Madison Hall, University of Virginia. These public
+                                minutes have had salary information deleted and bear no
+                                restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special
+                                Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body
+                                which is the legal owner and operator of the institution. Recorded
+                                in the minutes are appointments and other personnel decisions
+                                concerning faculty, decisions about construction of facilities,
+                                gifts to the university, and all other board actions, decisions and
+                                resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction;
+                &editorial_normalization; &editorial_hyphenation; &editorial_quotation;
+                &editorial_stdVals; </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language id="eng" n="008" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+                      <change>
+                <date value="2011-04-20">April 20, 2011</date>
+                <respStmt>
+                    <name id="lsc6v">Lorrie Chisholm, (Digital Curation Services, University of Virginia Library)</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to TEI markup.</item>
+                      </change>
+            <change>            
+                <date value="2011-04-22">April 22, 2011</date>
+                <respStmt>          
+                    <name >Lorrie Chisholm, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>         
+                <item>Additional corrections to student markup.</item>
+            </change>   
+        </revisionDesc>
+    </teiHeader>
+
+
+    <text id="d1">
+        <body id="d2">
+            <div1 id="d3" type="contents">
+                <head type="main">RESOLUTIONS ADOPTED BY THE BOARD OF VISITORS <lb/><dateRange from="2003-07-11"
+                        to="2003-07-12"> JULY 11-12, 2003</dateRange></head>
+             
+                    <table>
+                        <row>
+                            <cell/>
+                            <cell role="label">PAGE</cell>
+                        </row>
+                        <row>
+                            <cell>University of Virginia Medical Center Legislative Proposal</cell>
+                            <cell>6493</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of Architect Selection for the Performing Arts Center</cell>
+                            <cell>6497</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of Architect Selection for the New Residence <lb/> Hall
+                                at The University of Virginia’s College at Wise </cell>
+                            <cell>6497</cell>
+                        </row>
+                        <row>
+                            <cell> Approval of Engineer Selection for a Term Contract<lb/> for
+                                Traffic Engineering Services</cell>
+                            <cell>6497</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of Architect Selections for Term Contracts<lb/>for Health
+                                System Projects</cell>
+                            <cell>6497</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of Engineer Selections for Term Contracts <lb/> for
+                                Mechanical, Electrical and Plumbing Projects</cell>
+                            <cell>6497</cell>
+                        </row>
+                        <row>
+                            <cell>Approval of a Permanent Easement for Virginia Electric <lb/> and
+                                Power Company for a Power Line on University<lb/>Property at the
+                                East End of the Emmet Street Parking <lb/> Garage</cell>
+                            <cell>6498</cell>
+                        </row>
+                    </table>
+                
+            </div1>
+            <div1 id="d4" type="roll-call">
+                <pb n="6493"/>
+                <head type="main"> TENTATIVE MINUTES - <lb/> SUBJECT TO THE <lb/> APPROVAL OF THE <lb/> BOARD OF
+                    VISITORS <lb/>
+                    <dateRange from="2003-07-11" to="2003-07-12"> July 11-12, 2003</dateRange></head>
+                <p>The Board of Visitors of the University of Virginia met in Retreat
+                    on Friday, <date value="2003-07-11">July 11</date>, and Saturday, <date
+                        value="2003-07-12">July 12, 2003</date>, at Upper Brandon in Prince George
+                    County. All save two of the sessions were held in Open Session; all were led by
+                    the Rector, <name>Gordon F. Rainey, Jr. The following Members attended: Thomas
+                        J. Bliley, Jr., William G. Crutchfield, Jr., Ms. Susan Y. Dorsey, Thomas F.
+                        Farrell, II, Charles L. Glazer, William H. Goodwin, Jr., Mark J. Kington,
+                        Lewis F. Payne, Don R. Pippin, Thomas A. Saunders, III, Warren M. Thompson,
+                        E. Darracott Vaughan, Jr., M.D., Ms. Georgia M. Willis, John O. Wynne, and
+                        John R.M. Rodney. </name></p>
+                <p>Also present were <name>John T. Casteen, III, Leonard W. Sandridge, Alexander G.
+                        Gilliam, Jr., Paul J. Forch, Ms. Amy D. Cronin, Ms. Carol Wood, and Ms.
+                        Jeanne Flippo Bailes.</name>
+                    <name>John A. Blackburn</name> attended the evening session on July 11th.</p>
+                <p>The Rector opened the meeting at 2:00 p.m., on Friday, July 11th,
+                    with a very brief business session before the beginning of the Retreat proper.</p>
+                <p> The Board considered and approved a resolution authorizing the
+                    University to submit to Richmond for consideration by the General Assembly in
+                    the 2004 Session a proposal that would exempt the Medical Center from State
+                    information technology oversight requirements which were enacted recently.</p>
+                <p> The follow resolution was adopted:</p>
+            </div1>
+            <div1 id="d5" type="resolution">
+                <head type="main">UNIVERSITY OF VIRGINIA MEDICAL CENTER LEGISLATIVE PROPOSAL</head>
+                
+                   
+                        <p>WHEREAS, the Board of Visitors has reviewed a proposed
+                            legislative action to amend Section 2.2-2001 of the <hi rend="underline">Code of Virginia</hi> to provide autonomy for the University of
+                            Virginia 
+                        
+                    <pb n="6494"/>
+                   
+                       Medical Center from state centralized information
+                            technology planning, oversight and procurement requirements; and </p>
+                      
+                        <p>WHEREAS, the Board of Visitors concludes that the
+                            proposed changes are prudent and in the best interest of the Medical
+                            Center; </p>
+                      
+                        <p>RESOLVED that the Executive Vice President and Chief
+                            Operating Officer is authorized to seek legislation accomplishing the
+                            above-described purpose. </p>
+                <ornament type="characters"> - - - - - - - - - - - </ornament>
+                
+            </div1>
+            <div1 id="d6" type="report">
+                
+                <p> Mr. Crutchfield, as Chair of the Board’s Committee on The
+                    University of Virginia’s College at Wise, reported changes in the Wise Advisory
+                    Board: <name>Mr. William Sturgill</name> has retired as Chair and <name>Mr. Jim
+                        Gott</name> has been elected in his stead. <name>Ms. Marcia Gilliam</name>
+                        has been elected as Vice- Chair. </p>
+                
+                <ornament type="characters"> - - - - - - - - - - - </ornament>
+            </div1>
+            <div1 id="d7" type="report">
+               
+                <p>The Secretary reported that Dr. Vaughan, as Chair of the Medical
+                    Center Operating Board, was authorized by the MCOB at its May meeting to approve
+                    credentialing and recredentialing actions when approval is needed between
+                    meetings of the MCOB. <name>Dr. Vaughan</name> approved a set of actions on July
+                    1st, and the listing is appended to these Minutes as Attachment A. No action by
+                    the Board of Visitors is required and the listing is in these Minutes simply as
+                    a matter of record. </p>
+                <p>The first two items on the Retreat Agenda had to do with the
+                    operations of the Board, and were grouped under two headings: “How can the Board
+                    of Visitors add greatest value to the University?” and “What is – and is not – a
+                    Board issue and why?” Discussion on these was done in Open Session and lasted
+                    from shortly after 2:00 p.m., until 4:00 p.m., when the Board recessed. </p>
+                <p>In discussion, Members concurred that the new format of Board
+                    meetings where much of the Board’s work has been <pb n="6495"/> pushed down to
+                    the committee level, is the correct approach but that refinements are needed.
+                    Thursday and Friday of Board meeting weekends should be reserved for committee
+                    meetings. The President suggested that Members attend conferences and programs
+                    organized by the Association of Governing Boards of Universities and Colleges
+                    (AGB). There was a feeling that the Board needs to be concerned more about
+                    academic affairs, recognizing, of course, that there is a line in such matters
+                    beyond which the Board should not go. </p>
+                <p>The Board resumed its deliberations at 4:15 p.m., with a report
+                    from the Special Committee on Diversity made by the Committee Chair, <name>Mr.
+                        Thompson</name>. <name>Mr. Thompson</name> presented the following draft
+                    mission statement: </p>
+            </div1>
+            <div1 id="d8" type="statement">
+                <head type="main">DRAFT MISSION STATEMENT</head>
+                <p>The mission of the Special Committee on Diversity of the Board of
+                    Visitors is the encouragement and support of an atmosphere at the University
+                    that ensures that the diverse elements of the University of Virginia community
+                    are treated equally and fairly. The accomplishment of this mission is essential
+                    to creating an educational experience for our students to prepare them for
+                    productive and responsible citizenship in the world beyond this community. </p>
+                <p>The Special Committee defines diversity to include race and
+                    ethnicity, gender, disability status, sexual orientation, religious and national
+                    origin, socio-economic status, and other aspects of individual experience and
+                    identity. </p>
+            </div1>
+            <div1 id="d9" type="section">
+                <ornament type="characters"> - - - - - - - - - -</ornament>
+                <p>Board Members suggested several changes and the Chair and the Board
+                    Secretary will work these into a new version of the mission statement. <name>Ms.
+                        Cronin</name>, the President’s Chief of Staff, reported on the organization
+                    of the Commission on Diversity and Equity, which is being appointed by the
+                    President. </p>
+                <p><name>Mr. Farrell</name>, the Vice Rector and Chair of the Special
+                    Committee on Governance, reported on matters considered by the Committee over
+                    the last several months. </p>
+                <pb n="6496"/>
+                <p> The Board recessed for dinner at 6:15 p.m.</p>
+                <p> The Board resumed its meeting at 8:30 p.m., and after adopting the
+                    following motion, went into Executive Session: </p>
+                <p>That the Board of Visitors of the University of Virginia go into
+                    Executive Session to discuss with General Counsel the two recent Supreme Court
+                    decisions concerning admissions and his report on pending litigation risk
+                    affecting the University, as provided for in Section 2.2- 3711 (A) (7) of the
+                        <hi rend="underline">Code of Virginia</hi>. </p>
+                <p>The Board resumed in Open Session and after adopting the following
+                    resolution certifying that its discussions had been held in accordance with the
+                    exemptions afforded by the Virginia Freedom of Information Act, adjourned at
+                    9:45 p.m.: </p>
+                <p><name>Mr. Rector</name>, I move that we vote on and record our
+                    certification that, to the best of each Board member’s knowledge, only public
+                    business matters lawfully exempted from open meeting requirements and which were
+                    identified in the motion(s) authorizing the closed session, were heard,
+                    discussed or considered in closed session. </p>
+                <ornament type="characters">- - - - - - - - - -</ornament>
+                <p>The Board resumed in Open Session at 8:45 a.m., on Saturday, April
+                    12th. There was a short business session during which the Board ratified its
+                    meeting dates for 2004: February 5, 6 and 7; April 15, 16 and 17; June 10, 11,
+                    and 12; and September 30, and October 1 and 2. The Retreat was set for July 30
+                    and 31 at Montpelier in Orange County. </p>
+                <p>From 8:50 a.m., to 9:00, the Buildings and Grounds Committee met
+                    concurrently with the full Board to consider six Consent Agenda resolutions:
+                    three of these were for architect selections, two for the selection of engineers
+                    and the last for an easement. The resolutions are listed below (see also the
+                    separate Minutes of the Buildings and Grounds Committee, <date
+                        value="2003-07-12">July 12, 2003</date>); all were approved by the full
+                    Board. </p>
+               
+            </div1>
+            <div1 id="d10" type="resolution">
+                <pb n="6497"/>
+                <head type="main">APPROVAL OF ARCHITECT SELECTION FOR THE PERFORMING ARTS CENTER</head>
+                
+                        <p>RESOLVED that Barton Myers Associates, Inc., of Los
+                            Angeles, is approved for the performance of architectural and
+                            engineering services for the Performing Arts Center. </p>
+            </div1>
+            <div1 id="d11" type="resolution">
+                <head type="main">APPROVAL OF ARCHITECT SELECTION FOR THE NEW <lb/> RESIDENCE HALL AT THE
+                    UNIVERSITY OF VIRGINIA’S<lb/> COLLEGE AT WISE</head>
+                
+                        <p>RESOLVED that Ken Ross Architects, Inc., of Johnson
+                            City, Tennessee, is approved for the performance of architectural and
+                            engineering services for the new residence hall at The University of
+                            Virginia’s College at Wise. </p>
+            </div1>
+            <div1 id="d12" type="resolution">
+                <head type="main">APPROVAL OF ENGINEER SELECTION FOR A TERM CONTRACT <lb/> FOR TRAFFIC
+                    ENGINEERING SERVICES</head>
+                
+                        <p>RESOLVED that Kimley Horn and Associates, Inc., of
+                            Chesapeake, is approved for the performance of architectural and
+                            engineering services initiated under the term contract for traffic
+                            engineering services. </p>
+            </div1>
+            <div1 id="d13" type="resolution">
+                <head type="main"> APPROVAL OF ARCHITECT SELECTIONS FOR TERM CONTRACTS<lb/> FOR HEALTH SYSTEM
+                    PROJECTS</head>
+                
+                        <p>RESOLVED that the Smith Group, Inc., of Washington,
+                            D.C., and Hillier of Washington, D.C., are approved for the performance
+                            of architectural and engineering services initiated under the term
+                            contracts for Health System projects. </p>
+            </div1>
+            <div1 id="d14" type="resolution">
+                <head type="main">APPROVAL OF ENGINEER SELECTIONS FOR TERM CONTRACTS <lb/> FOR MECHANICAL,
+                    ELECTRICAL AND PLUMBING PROJECTS</head>
+                
+                        <p>RESOLVED that Carter Burgess of Raleigh, and Affiliated
+                            Engineers of Chapel Hill, are approved for the performance of
+                            architectural and engineering services initiated under the term
+                            contracts for mechanical, electrical and plumbing projects. </p>
+                
+            </div1>
+            <div1 id="d15" type="resolution">
+                <pb n="6498"/>
+                <head type="main">APPROVAL OF A PERMANENT EASEMENT FOR VIRGINIA <lb/> ELECTRIC AND POWER COMPANY
+                    FOR A POWER LINE ON<lb/> UNIVERSITY PROPERTY AT THE EAST END OF THE EMMET<lb/>
+                    STREET PARKING GARAGE</head>
+               
+                        <p>RESOLVED that the granting of a permanent easement,
+                            dated <date value="2003-07-12">July 12, 2003</date>, to Virginia
+                            Electric and Power Company for a power line at the Emmet Street Parking
+                            Garage on property owned by The Rector and Visitors of the University of
+                            Virginia, is approved; and </p>
+                       
+                        <p>RESOLVED FURTHER that appropriate officers of the
+                            University are authorized to execute said dedication and easement.
+                        </p>
+            </div1>
+            <div1 id="d16" type="section">
+                <ornament type="characters">- - - - - - - - - -</ornament>
+                <p>The Board resumed, in Open Session, in Retreat at 9:00 to discuss
+                    faculty compensation. In preparation for this discussion at the Retreat, the
+                    Finance Committee met on July 7th, to consider a report by Mr. Sandridge on
+                    faculty compensation questions raised at the June Board meeting. A memorandum
+                    summarizing the Committee’s discussions and Mr. Sandridge’s report was
+                    distributed to the Board at the Retreat and formed the basis for discussion (a
+                    copy of the memorandum is appended as Attachment B). </p>
+                <p>The Board is concerned about faculty and staff morale and the
+                    effects of salary freezes, brought on by the State budget crisis, on both salary
+                    and retirement plan accumulations. There was strong consensus that compensation
+                    of faculty and staff must be competitive with the University’s national peer
+                    institutions. There was agreement, however, that more information is needed. The
+                    administration is to collect this, under the direction of the President and
+                        <name>Mr. Sandridge</name>, and report to the Board at the October meeting.
+                    The Educational Policy Committee will consider some of these questions at its
+                    meeting on August 29th. </p>
+                <p>Following this discussion, there was a brief report by the
+                    President on the expansion of the Atlantic Coast Conference. </p>
+                <pb n="6499"/>
+                <p> The Board recessed at 10:25 a.m., and resumed at 10:35. On motion,
+                    the Board then went into Executive Session. </p>
+                <p>That the Board of Visitors of the University of Virginia go into
+                    Executive Session to discuss the performance of specific employees of the
+                    University as provided for in Section 2.2-3711 (A)(1) of the <hi rend="underline">Code of Virginia</hi>. </p>
+                <p>The Board resumed in Open Session at 12:00 noon, after voting on
+                    the following resolution certifying that its Executive Session discussions had
+                    been conducted in accordance with the exemptions granted by the Virginia Freedom
+                    of Information Act: </p>
+                <p>The Board of Visitors, sitting in Open Session, unanimously adopted
+                    a resolution certifying that while meeting in Executive Session – as permitted
+                    by the relevant provisions of the <hi rend="underline">Code of Virginia</hi> –
+                    only public business authorized by its motion and lawfully exempted from
+                    consideration in closed session.</p>
+                <p>On motion, the meeting was adjourned at 12:05 p.m.</p>
+                <signed>Respectfully submitted,<lb/> <name>Alexander G. Gilliam, Jr.</name><lb/> Secretary</signed>
+                <trailer>AGG:jb</trailer>
+            </div1>
+            <div1 id="d17" type="addenda">
+                <pb n="6500"/>
+                <head type="main">ADDENDUM TO THE OFFICIAL MINUTES OF THE MEETING OF<lb/> THE BOARD OF VISITORS
+                    OF THE UNIVERSITY OF VIRGINIA<lb/></head>
+                <p>Meeting Date: <dateRange from="2003-07-11" to="2003-07-12">July
+                        11-12, 2003</dateRange></p>
+                <div2 id="d18" type="resolution">
+                    <head type="sub">CERTIFICATION OF EXECUTIVE MEETING</head>
+                    <p>The Board of Visitors, sitting in Open Session, unanimously
+                        adopted a resolution certifying that while meeting in Executive Session – as
+                        permitted by the relevant provisions of the <hi rend="underline">Code of Virginia</hi> – only public business authorized by its motion and
+                        lawfully exempted from consideration in closed session.</p>
+                </div2>
+                <signed>Respectfully submitted,<lb/> <name>Alexander G. Gilliam, Jr.</name><lb/> Secretary</signed>
+                <pb/>
+            </div1>
+            <div1 id="d19" type="addenda">
+                <pb/>
+                <head rend="right" type="divisional">ATTACHMENT A</head>
+                <head type="main">MEDICAL CENTER OPERATING BOARD<lb/>UNIVERSITY OF VIRGINIA<lb/> July, 2003</head>
+                <p/>
+            </div1>
+
+            <div1 id="d20" type="resolution">
+                <pb n="1"/>
+                <head type="main">RECOMMENDED CREDENTIALING AND RECREDENTIALING <lb/>ACTIONS </head>
+                <p>
+                    RESOLVED that pursuant to the delegation of authority
+                            contained in the <date value="2003-05-08">May 8, 2003</date>, Resolution
+                            of the Medical Center Operating Board, the undersigned Chair of the
+                            Medical Center Operating Board hereby approves the following
+                            Credentialing and Recredentialing Actions as specifically set forth
+                            below: 
+                </p>
+                <div2 id="d21" type="resolution">
+                    <head type="sub">1. NEW APPOINTMENTS TO THE CLINICAL STAFF</head>
+                    
+                      
+                            <p>RESOLVED that the recommendations of the Clinical
+                                Staff Executive Committee for appointment to the Clinical Staff of
+                                the University of Virginia Medical Center and the granting of
+                                specific privileges to the following practitioners are approved: </p>
+                          <list>
+                            <item><name>Caswell, Kenneth L., M.D.</name>, Radiologist
+                                in the Department of Radiology; Attending Staff Status; Period of
+                                Appointment: <dateRange from="2003-07-01" to="2004-06-30">July 1,
+                                    2003, through June 30, 2004</dateRange>; Privileged in
+                                Radiology. </item>
+                           
+                              <item><name>Chen, Donna T., M.D.</name>, Psychiatrist in
+                                the Department of Psychiatric Medicine; Attending Staff Status;
+                                Period of Appointment: <dateRange from="2003-05-13" to="2004-03-21"
+                                    >May 13, 2003, through March 31, 2004</dateRange>; Privileged in
+                                Psychiatric Medicine. </item>
+                            <lb/>
+                              <item><name>Fulmer, Brant R., M.D.</name>, Urologist in
+                                the Department of Urology; Attending Staff Status; Period of
+                                Appointment: <dateRange from="2003-05-09" to="2004-05-04">May 9,
+                                    2003, through May 4, 2004</dateRange>; Privileged in Urology. </item>
+                            <lb/>
+                              <item><name>Ham, Peter S., M.D.</name>, Physician in the
+                                Department of Family Medicine; Attending Staff Status; Period of
+                                Appointment: <dateRange from="2003-07-14" to="2004-07-13">July 14,
+                                    2003, through July 13, 2004</dateRange>; Privileged in Family
+                                Medicine. </item>
+                            <lb/>
+                              <item><name>Kelly, Heather C., M.D.</name>,
+                                Anesthesiologist in the Department of Anesthesiology; Attending
+                                Staff Status; Period of Appointment: <dateRange from="2003-04-13"
+                                    to="2004-03-31">April 17, 2003, through March 31,
+                                2004</dateRange>; Privileged in Anesthesiology. </item>
+                            <lb/>
+                              <item><name>Laurencin, Cato T., M.D.</name>, Ph.D.,
+                                Orthopedic Surgeon in Chief in the Department of Orthopedic Surgery;
+                                Attending Staff Status; Period of Appointment: <dateRange
+                                    from="2003-05-10" to="2004-01-31">May 10, 2003, through January
+                                    31, 2004</dateRange>; Privileged in Orthopedic Surgery. </item>
+                        
+                        <pb n="2"/>
+                       
+                              <item><name>Maedgen, Jennifer W., Ph.D.</name>,
+                                Psychologist in the Department of Psychiatric Medicine; Attending
+                                Staff Status; Period of Appointment: <dateRange from="2003-05-06"
+                                    to="2004-04-30">May 6, 2003, through April 30, 2004</dateRange>;
+                                Privileged in Psychology. </item>
+                            <lb/>
+                              <item><name>Pirttima, Steven T., M.D.</name>, Radiologist
+                                in the Department of Radiology; Attending Staff Status; Period of
+                                Appointment: <dateRange from="2003-07-01" to="2004-06-30">July 1,
+                                    2003, through June 30, 2004</dateRange>; Privileged in
+                                Radiology. </item>
+                            <lb/>
+                              <item><name>Snyder, Kevin E. M.D.</name>, Radiologist in
+                                the Department of Radiology; Attending Staff Status; Period of
+                                Appointment: <dateRange from="2003-07-01" to="2004-06-30">July 1,
+                                    2003, through June 30, 2004</dateRange>; Privileged in
+                                Radiology. </item>
+                            <lb/>
+                              <item><name>Westfield, Wendy K., M.D.</name>, Physician in
+                                Regional Primary Care; Attending Staff Status; Period of
+                                Appointment: <dateRange from="2003-05-12" to="2004-05-11">May 12,
+                                    2003, through May 11, 2004</dateRange>; Privileged in Internal
+                                Medicine. </item>
+                          </list>
+                    
+                </div2>
+                <div2 id="d22" type="resolution">
+                    <head type="sub">2. LOCUM TENENS APPOINTMENT TO THE CLINICAL STAFF</head>
+                  
+                        
+                            <p>RESOLVED that the recommendation of the Clinical
+                                Staff Executive Committee for the appointment as a locum tenens for
+                                appointment to the clinical staff of the University of Virginia
+                                Medical Center and the granting of specific privileges to the
+                                following practitioner is approved: </p>
+                            <list>
+                                <item><name>Beitinjaneh, Firas, M.D.</name>, Neurologist
+                                in the Department of Neurology; Locum Tenens Staff Status; Period of
+                                Appointment: <dateRange from="2003-05-12" to="2003-06-30">May 12,
+                                    2003, through June 30, 2003</dateRange>; Privileged in
+                                Neurology. </item>
+                        </list>
+                    
+                </div2>
+                <div2 id="d23" type="resolution">
+                    <head type="sub">3. REAPPOINTMENTS TO THE CLINICAL STAFF</head>
+                   
+                       
+                            <p>RESOLVED that the recommendations of the Clinical
+                                Staff Executive Committee for reappointment to the Clinical Staff of
+                                the University of Virginia Medical Center and the granting of
+                                specific privileges to the following practitioners are approved: </p>
+                            <list>
+                                <item><name>Abdrabbo, M. Khalouck, M.D.</name> , Physician
+                                in the Department of Internal Medicine; Attending Staff Status;
+                                Period of Reappointment: <dateRange from="2003-08-01"
+                                    to="2005-07-31">August 1, 2003, through July 31,
+                                2005</dateRange>; Privileged in Internal Medicine. </item>
+                        
+                        <pb n="3"/>
+                        
+                                <item><name>Abdullah, David C., M.D.</name> , Radiologist
+                                in the Department of Radiology; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-09-02" to="2005-09-01"
+                                    >September 2, 2003, through September 1, 2005</dateRange>;
+                                Privileged in Radiology. </item>
+                            <lb/>
+                                <item><name>Alford, Bennett A., M.D.</name> , Radiologist
+                                in the Department of Radiology; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-07-01" to="2004-06-30">July 1,
+                                    2003, through June 30, 2004</dateRange>; Privileged in
+                                Radiology. </item>
+                            <lb/>
+                                <item><name>Angle, John F., M.D.</name> , Radiologist in
+                                the Department of Radiology; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-07-31">August
+                                    1, 2003, through July 31, 2005</dateRange>; Privileged in
+                                Radiology. </item>
+                            <lb/>
+                                <item><name>Ardesia, John A., D.O.</name> , Physician in
+                                Regional Primary Care; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-06-30">August
+                                    1, 2003, through June 30, 2005</dateRange>; Privileged in
+                                Internal Medicine. </item>
+                            <lb/>
+                                <item><name>Barrett, Michael A., M.D.</name> , Physician
+                                in Regional Primary Care; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-09-01" to="2005-08-31"
+                                    >September 1, 2003, through August 31, 2005</dateRange>;
+                                Privileged in Internal Medicine. </item>
+                            <lb/>
+                                <item><name>Borowitz, Stephen M., M.D.</name> ,
+                                Pediatrician in the Department of Pediatrics; Attending Staff
+                                Status; Period of Reappointment: <dateRange from="2003-09-01"
+                                    to="2005-08-31">September 1, 2003, through August 31,
+                                2005</dateRange>; Privileged in Pediatrics. </item>
+                            <lb/>
+                                <item><name>Brenin, Christiana M., M.D.</name> , Physician
+                                in the Department of Internal Medicine; Attending Staff Status;
+                                Period of Reappointment: <dateRange from="2003-09-09"
+                                    to="2005-09-08">September 9, 2003, through September 8,
+                                2005</dateRange>; Privileged in Internal Medicine. </item>
+                            <lb/>
+                                <item><name>Calhoun, Alice O., M.D.</name> , Physician in
+                                Regional Primary Care; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-09-01" to="2005-08-31"
+                                    >September 1, 2003, through August 31, 2005</dateRange>;
+                                Privileged in Family Medicine. </item>
+                            <lb/>
+                                <item><name>Calhoun, Robert B., M.D.</name> , Physician in
+                                Regional Primary Care; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-07-31">August
+                                    1, 2003, through July 31, 2005</dateRange>; Privileged in Family
+                                Medicine. </item>
+                        
+                        <pb n="4"/>
+                       
+                                <item><name>Chander, Nivedita, M.D.</name> , Physician in
+                                the Department of Internal Medicine; Attending Staff Status; Period
+                                of Reappointment: <dateRange from="2003-08-01" to="2004-12-31"
+                                    >August 1, 2003, through December 31, 2004</dateRange>;
+                                Privileged in Internal Medicine. </item>
+                            <lb/>
+                                <item><name>Chhabra, Abhinav B., M.D.</name> , Orthopedic
+                                Surgeon in the Department of Orthopedic Surgery; Attending Staff
+                                Status; Period of Reappointment: <dateRange from="2003-08-25"
+                                    to="2005-08-24">August 25, 2003, through August 24,
+                                2005</dateRange>; Privileged in Orthopedic Surgery. </item>
+                            <lb/>
+                                <item><name/> Courtney, Andrea U., M.D., Physician in the
+                                Department of Family Medicine; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-07-31">August
+                                    1, 2003, through July 31, 2005</dateRange>; Privileged in Family
+                                Medicine. </item>
+                            <lb/>
+                                <item><name/> Davison, John S., M.D., Physician in
+                                Regional Primary Care; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-07-31">August
+                                    1, 2003, through July 31, 2005</dateRange>; Privileged in Family
+                                Medicine. </item>
+                            <lb/>
+                                <item><name>Degnan, Gregory G., M.D.</name> , Orthopedic
+                                Surgeon in the Department of Orthopedic Surgery; Attending Staff
+                                Status; Period of Reappointment: <dateRange from="2003-09-01"
+                                    to="2005-08-31">September 1, 2003, through August 31,
+                                2005</dateRange>; Privileged in Orthopedic Surgery. </item>
+                            <lb/>
+                                <item><name>Friedman, Daniel L., M.D.</name> , Physician
+                                in the Department of Internal Medicine; Visiting Staff Status;
+                                Period of Reappointment: <dateRange from="2003-08-01"
+                                    to="2005-07-31">August 1, 2003, through July 31,
+                                2005</dateRange>; Privileged in Internal Medicine. </item>
+                            <lb/>
+                                <item><name>Froh, Deborah K., M.D.</name> , Pediatrician
+                                in the Department of Pediatrics; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-09-15" to="2005-09-14"
+                                    >September 15, 2003, through September 14, 2005</dateRange>;
+                                Privileged in Pediatrics. </item>
+                            <lb/>
+                                <item><name>Gaare, John D., M.D.</name> , Radiologist in
+                                the Department of Radiology; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-09-02" to="2004-06-30"
+                                    >September 2, 2003, through June 30, 2004</dateRange>;
+                                Privileged in Radiology. </item>
+                            <lb/>
+                                <item><name>Gomez, R. Ariel, M.D.</name> , Pediatrician in
+                                the Department of Pediatrics; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-07-31">August
+                                    1, 2003, through July 31, 2005</dateRange>; Privileged in
+                                Pediatrics. </item>
+                        
+                        <pb n="5"/>
+                        
+                                <item><name>Goodkin, Howard P., M.D.</name> , Neurologist
+                                in the Department of Neurology; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-07-31">August
+                                    1, 2003, through July 31, 2005</dateRange>; Privileged in
+                                Neurology. </item>
+                            <lb/>
+                                <item><name>Griffin, Mary P., M.D.</name> , Pediatrician
+                                in the Department of Pediatrics; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-09-01" to="2005-08-31"
+                                    >September 1, 2003, through August 31, 2005</dateRange>;
+                                Privileged in Pediatrics. </item>
+                            <lb/>
+                                <item><name>Gutgesell, Howard, M.D.</name> , Pediatrician
+                                in the Department of Pediatrics; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-09-01" to="2005-08-31"
+                                    >September 1, 2003, through August 31, 2005</dateRange>;
+                                Privileged in Pediatrics. </item>
+                            <lb/>
+                                <item><name>Hauck, Fern R., M.D.</name> , Physician in the
+                                Department of Family Medicine; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-09-01" to="2005-08-31"
+                                    >September 1, 2003, through August 31, 2005</dateRange>;
+                                Privileged in Family Medicine. </item>
+                            <lb/>
+                                <item><name>Hellems, Martha A., M.D.</name> , Pediatrician
+                                in the Department of Pediatrics; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-07-31">August
+                                    1, 2003, through July 31, 2005</dateRange>; Privileged in
+                                Pediatrics. </item>
+                            <lb/>
+                                <item><name>Hoffman, Daniel M., M.D.</name> , Urologist in
+                                the Department of Urology; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-07-25" to="2004-06-24">June 25,
+                                    2003, through June 24, 2004</dateRange>; Privileged in Urology. </item>
+                            <lb/>
+                                <item><name>Huerta, Milagros G., M.D.</name> ,
+                                Pediatrician in the Department of Pediatrics; Attending Staff
+                                Status; Period of Reappointment: <dateRange from="2003-08-01"
+                                    to="2005-07-31">August 1, 2003, through July 31,
+                                2005</dateRange>; Privileged in Pediatrics. </item>
+                            <lb/>
+                                <item><name>Hughes, Molly A., M.D.</name> , Physician in
+                                the Department of Internal Medicine; Attending Staff Status; Period
+                                of Reappointment: <dateRange from="2003-07-01" to="2005-06-30">July
+                                    1, 2003, through June 30, 2005</dateRange>; Privileged in
+                                Internal Medicine. </item>
+                            <lb/>
+                                <item><name>Hulvey, J. Thomas, M.D.</name> , Orthopedic
+                                Surgeon in the Department of Orthopedic Surgery; Attending Staff
+                                Status; Period of Reappointment: <dateRange from="2003-08-01"
+                                    to="2004-07-31">August 1, 2003, through July 31,
+                                2004</dateRange>; Privileged in Orthopedic Surgery. </item>
+                        
+                        <pb n="6"/>
+                        
+                                <item><name>Keats, Theodore E., M.D.</name> , Radiologist
+                                in the Department of Radiology; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-07-31">August
+                                    1, 2003, through July 31, 2005</dateRange>; Privileged in
+                                Radiology. </item>
+                            <lb/>
+                                <item><name>Kiselica, Daria, M.D.</name> , Physician in
+                                the Department of Internal Medicine; Attending Staff Status; Period
+                                of Reappointment: <dateRange from="2003-08-01" to="2005-07-31"
+                                    >August 1, 2003, through July 31, 2005</dateRange>; Privileged
+                                in Internal Medicine. </item>
+                            <lb/>
+                                <item><name>Kupfer, Gary M., M.D.</name> , Pediatrician in
+                                the Department of Pediatrics; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-07-31">August
+                                    1, 2003, through July 31, 2005</dateRange>; Privileged in
+                                Pediatrics. </item>
+                            <lb/>
+                                <item><name>Lee, Laura W., M.D.</name> , Physiatrist in
+                                the Department of Physical Medicine; Attending Staff Status; Period
+                                of Reappointment: <dateRange from="2003-07-01" to="2005-06-30">July
+                                    1, 2003, through June 30, 2005</dateRange>; Privileged in
+                                Physical Medicine. </item>
+                            <lb/>
+                                <item><name>Lin, Kant Y., M.D.</name> , Plastic and
+                                Maxillofacial Surgeon in the Department of Plastic Surgery;
+                                Attending Staff Status; Period of Reappointment: <dateRange
+                                    from="2003-09-01" to="2005-08-31">September 1, 2003, through
+                                    August 31, 2005</dateRange>; Privileged in Plastic Surgery. </item>
+                            <lb/>
+                                <item><name>Lynch, Carl, M.D., Ph.D.</name> ,
+                                Anesthesiologist in Chief in the Department of Anesthesiology;
+                                Attending Staff Status; Period of Reappointment: <dateRange
+                                    from="2003-07-01" to="2005-06-30">July 1, 2003, through June 30,
+                                    2005</dateRange>; Privileged in Anesthesiology. </item>
+                            <lb/>
+                                <item><name>Mason, J. Holland M., M.D.</name> ,
+                                Anesthesiologist in the Department of Anesthesiology; Attending
+                                Staff Status; Period of Reappointment: <dateRange from="2003-08-25"
+                                    to="2005-08-24">August 25, 2003, through August 24,
+                                2005</dateRange>; Privileged in Anesthesiology. </item>
+                            <lb/>
+                                <item><name>Matsumoto, Julie A., M.D.</name> , Radiologist
+                                in the Department of Radiology; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-07-31">August
+                                    1, 2003, through July 31, 2005</dateRange>; Privileged in
+                                Radiology. </item>
+                            <lb/>
+                                <item><name>McGahren, Eugene D., M.D.</name> , Surgeon in
+                                the Department of Surgery; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-16" to="2005-08-15">August
+                                    16, 2003, through August 15, 2005</dateRange>; Privileged in
+                                Surgery. </item>
+                        
+                        <pb n="7"/>
+                       
+                                <item><name>Mendelsohn, Mark, M.D.</name> , Pediatrician
+                                in the Department of Pediatrics; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-07-31">August
+                                    1, 2003, through July 31, 2005</dateRange>; Privileged in
+                                Pediatrics. </item>
+                            <lb/>
+                                <item><name>Mirmira, Raghavendra G., M.D.</name> ,
+                                Physician in the Department of Internal Medicine; Attending Staff
+                                Status; Period of Reappointment: <dateRange from="2003-09-01"
+                                    to="2005-08-31">September 1, 2003, through August 31,
+                                2005</dateRange>; Privileged in Internal Medicine. </item>
+                            <lb/>
+                                <item><name>Moran, Ruth E., M.D.</name> , Radiologist in
+                                the Department of Radiology; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-07-31">August
+                                    1, 2003, through July 31, 2005</dateRange>; Privileged in
+                                Radiology. </item>
+                            <lb/>
+                                <item><name>Moskaluk, Christopher A., M.D.</name> ,
+                                Pathologist in the Department of Pathology; Attending Staff Status;
+                                Period of Reappointment: <dateRange from="2003-09-01"
+                                    to="2005-08-31">September 1, 2003, through August 31,
+                                2005</dateRange>; Privileged in Pathology. </item>
+                            <lb/>
+                                <item><name>Mulligan, Kimberly A., M.D.</name> ,
+                                Anesthesiologist in the Department of Anesthesiology; Attending
+                                Staff Status; Period of Reappointment: <dateRange from="2003-01-30"
+                                    to="2004-07-26">January 30, 2003, through July 26,
+                                2004</dateRange>; Privileged in Anesthesiology. </item>
+                            <lb/>
+                                <item><name>Older, Robert A., M.D.</name> , Radiologist in
+                                the Department of Radiology; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-07-31">August
+                                    1, 2003, through July 31, 2005</dateRange>; Privileged in
+                                Radiology. </item>
+                            <lb/>
+                                <item><name>Osborn, Tiffany M., M.D.</name> , Physician in
+                                the Department of Emergency Medicine; Attending Staff Status; Period
+                                of Reappointment: <dateRange from="2003-08-15" to="2005-08-14"
+                                    >August 15, 2003, through August 14, 2005</dateRange>;
+                                Privileged in Emergency Medicine. </item>
+                            <lb/>
+                                <item><name>Pannunzio, Michael E., M.D.</name> ,
+                                Orthopedic Surgeon in the Department of Orthopedic Surgery;
+                                Attending Staff Status; Period of Reappointment: <dateRange
+                                    from="2003-09-01" to="2005-08-31">September 1, 2003, through
+                                    August 31, 2005</dateRange>; Privileged in Orthopedic Surgery. </item>
+                            <lb/>
+                                <item><name>Payne, Nancy Jean, M.D.</name> , Pediatrician
+                                in the Department of Pediatrics; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-07-31">August
+                                    1, 2003, through July 31, 2005</dateRange>; Privileged in
+                                Pediatrics. </item>
+                        
+                        <pb n="8"/>
+                        
+                                <item><name>Preston, Mary B., M.D.</name> , Physician in
+                                the Department of Internal Medicine; Attending Staff Status; Period
+                                of Reappointment: <dateRange from="2003-09-01" to="2005-08-31"
+                                    >September 1, 2003, through August 31, 2005</dateRange>;
+                                Privileged in Internal Medicine. </item>
+                            <lb/>
+                                <item><name>Quillian, Heather R., M.D.</name> ,
+                                Pediatrician in the Department of Pediatrics; Attending Staff
+                                Status; Period of Reappointment: <dateRange from="2003-08-01"
+                                    to="2005-07-31">August 1, 2003, through July 31,
+                                2005</dateRange>; Privileged in Pediatrics. </item>
+                            <lb/>
+                                <item><name>Raymond, Colleen A., M.D.</name> ,
+                                Obstetrician and Gynecologist in the Department of Obstetrics and
+                                Gynecology; Attending Staff Status; Period of Reappointment:
+                                    <dateRange from="2003-08-01" to="2005-07-31">August 1, 2003,
+                                    through July 31, 2005</dateRange>; Privileged in Obstetrics and
+                                Gynecology. </item>
+                            <lb/>
+                                <item><name>Redick, Dana L., M.D.</name> , Obstetrician
+                                and Gynecologist in the Department of Obstetrics and Gynecology;
+                                Attending Staff Status; Period of Reappointment: <dateRange
+                                    from="2003-09-01" to="2005-08-31">September 1, 2003, through
+                                    August 31, 2005</dateRange>; Privileged in Obstetrics and
+                                Gynecology. </item>
+                            <lb/>
+                                <item><name>Reikersdorfer, Christian G., M.D.</name> ,
+                                Anesthesiologist in the Department of Anesthesiology; Attending
+                                Staff Status; Period of Reappointment: <dateRange from="2003-08-01"
+                                    to="2005-07-31">August 1, 2003, through July 31,
+                                2005</dateRange>; Privileged in Anesthesiology. </item>
+                            <lb/>
+                                <item><name>Rich, Tyvin A., M.D.</name> , Radiologist
+                                Oncologist in the Department of Radiation Oncology; Attending Staff
+                                Status; Period of Reappointment: <dateRange from="2003-09-01"
+                                    to="2005-08-31">September 1, 2003, through August 31,
+                                2005</dateRange>; Privileged in Radiation Oncology. </item>
+                            <lb/>
+                                <item><name>Riddervold, Hans O., M.D.</name> , Radiologist
+                                in the Department of Radiology; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-07-31">August
+                                    1, 2003, through July 31, 2005</dateRange>; Privileged in
+                                Radiology. </item>
+                            <lb/>
+                                <item><name>Rizk, Alex H., M.D.</name> , Physician in
+                                Regional Primary Care; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-09-01" to="2005-08-31"
+                                    >September 1, 2003, through August 31, 2005</dateRange>;
+                                Privileged in Family Medicine. </item>
+                            <lb/>
+                                <item><name>Ross, Pamela, M.D.</name> , Physician in the
+                                Department of Emergency Medicine; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-09-01" to="2005-08-31"
+                                    >September 1, 2003, through August 31, 2005</dateRange>;
+                                Privileged in Emergency Medicine. </item>
+                        
+                        <pb n="9"/>
+                       
+                                <item><name>Ryan, Eileen P., D.O.</name> , Psychiatrist in
+                                the Department of Psychiatric Medicine; Attending Staff Status;
+                                Period of Reappointment: <dateRange from="2003-09-03"
+                                    to="2005-09-02">September 3, 2003, through September 2,
+                                2005</dateRange>; Privileged in Psychiatric Medicine. </item>
+                            <lb/>
+                                <item><name>Schofield, William P., M.D.</name> ,
+                                Psychiatrist in the Department of Psychiatric Medicine; Visiting
+                                Staff Status; Period of Reappointment: <dateRange from="2003-08-14"
+                                    to="2004-08-31">August 14, 2003, through August 31,
+                                2004</dateRange>; Privileged in Psychiatric Medicine. </item>
+                            <lb/>
+                                <item><name>Silverman, Lawrence M., Ph.D.</name> ,
+                                Pathologist in the Department of Pathology; Attending Staff Status;
+                                Period of Reappointment: <dateRange from="2003-09-02"
+                                    to="2005-06-30">September 2, 2003, through June 30,
+                                2005</dateRange>; Privileged in Pathology. </item>
+                            <lb/>
+                                <item><name>Smolkin, Mitchell T., M.D.</name> , Physician
+                                in Regional Primary Care; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-09-01" to="2005-06-30"
+                                    >September 1, 2003, through June 30, 2005</dateRange>;
+                                Privileged in Internal Medicine. </item>
+                            <lb/>
+                                <item><name>Staiger, Linda F., M.D.</name> , Orthopedic
+                                Surgeon in the Department of Orthopedic Surgery; Attending Staff
+                                Status; Period of Reappointment: <dateRange from="2003-07-25"
+                                    to="2005-07-24">July 25, 2003, through July 24,
+                                2005</dateRange>; Privileged in Orthopedic Surgery. </item>
+                            <lb/>
+                                <item><name>Sturgill, Benjamin C., M.D.</name> ,
+                                Pathologist in the Department of Pathology; Attending Staff Status;
+                                Period of Reappointment: <dateRange from="2003-07-02"
+                                    to="2005-07-01">July 2, 2003, through July 1, 2005</dateRange>;
+                                Privileged in Pathology. </item>
+                            <lb/>
+                                <item><name>Troiano, Jason J., M.D.</name> , Physician in
+                                Regional Primary Care; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-07-31">August
+                                    1, 2003, through July 31, 2005</dateRange>; Privileged in Family
+                                Medicine. </item>
+                            <lb/>
+                                <item><name>Waldron, Peter E., M.D.</name> , Pediatrician
+                                in the Department of Pediatrics; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-09-01" to="2005-08-31"
+                                    >September 1, 2003, through August 31, 2005</dateRange>;
+                                Privileged in Pediatrics. </item>
+                            <lb/>
+                                <item><name>Wallace, Karl K., M.D.</name> , Radiologist in
+                                the Department of Radiology; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-07-31">August
+                                    1, 2003, through July 31, 2005</dateRange>; Privileged in
+                                Radiology. </item>
+                        
+                        <pb n="10"/>
+                        
+                                <item><name>Wenger, Jennifer B., M.D.</name> ,
+                                Obstetrician and Gynecologist in the Department of Obstetrics and
+                                Gynecology; Attending Staff Status; Period of Reappointment:
+                                    <dateRange from="2003-08-01" to="2005-07-31">August 1, 2003,
+                                    through July 31, 2005</dateRange>; Privileged in Obstetrics and
+                                Gynecology. </item>
+                            <lb/>
+                                <item><name>White, H. George, M.D.</name> , Orthopedic
+                                Surgeon in the Department of Orthopedic Surgery; Attending Staff
+                                Status; Period of Reappointment: <dateRange from="2003-08-01"
+                                    to="2005-07-31">August 1, 2003, through July 31,
+                                2005</dateRange>; Privileged in Orthopedic Surgery. </item>
+                            <lb/>
+                                <item><name>Woods, William, M.D.</name> , Physician in the
+                                Department of Emergency Medicine; Attending Staff Status; Period of
+                                Reappointment: <dateRange from="2003-08-01" to="2005-07-31">August
+                                    1, 2003, through July 31, 2005</dateRange>; Privileged in
+                                Emergency Medicine. </item>
+                        
+                    </list>
+                </div2>
+                <div2 id="d24" type="resolution">
+                    <head type="sub">4. SECONDARY REAPPOINTMENTS TO THE CLINICAL STAFF</head>
+                    
+                            <p>RESOLVED that the recommendations of the Clinical
+                                Staff Executive Committee for secondary reappointment to the
+                                Clinical Staff of the University of Virginia Medical Center and the
+                                granting of specific privileges to the following practitioner are
+                                approved: </p>
+                            <lb/>
+                            <p><name>MacKnight, John M., M.D.</name> , Orthopedic
+                                Surgeon in the Department of Orthopedic Surgery; Attending Staff
+                                Status; Period of Secondary Reappointment: <dateRange
+                                    from="2003-09-01" to="2005-08-31">September 1, 2003, through
+                                    August 31, 2005</dateRange>; Privileged in Orthopedic Surgery.
+                            </p>
+                </div2>
+                <div2 id="d25" type="resolution">
+                    <head type="sub">5. RESIGNATIONS FROM THE CLINICAL STAFF</head>
+                    
+                            <p>RESOLVED that the recommendations of the Clinical
+                                Staff Executive Committee for the resignation of clinical privileges
+                                to the following practitioners are approved: </p>
+                            <list>
+                                <item><name>Aldrich, C. Knight, M.D.</name> , Psychiatrist
+                                in the Department of Psychiatric Medicine; Visiting Staff Status;
+                                Effective date of Resignation: <date value="2003-06-30">June 30,
+                                    2003</date>. </item>
+                            <lb/>
+                                <item><name>Baer, Alexander B., M.D.</name> , Physician in
+                                the Department of Emergency Medicine; Attending Staff Status;
+                                Effective date of Resignation: <date value="2003-06-30">June 30,
+                                    2003</date>. </item>
+                        
+                        <pb n="11"/>
+                       
+                       <item><name>Barnett, Lisa C., M.D.</name> , Pathologist in
+                                the Department of Pathology; Attending Staff Status; Effective date
+                                of Resignation: <date value="2003-06-30">June 30, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Brown, Devin L., M.D.</name> , Neurologist in
+                                the Department of Neurology; Attending Staff Status; Effective date
+                                of Resignation: <date value="2003-06-30">June 30, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Buckley, Ralph S., M.D.</name> , Physician in
+                                the Department of Internal Medicine; Attending Staff Status;
+                                Effective date of Resignation: <date value="2003-06-13">June 13,
+                                    2003</date>. </item>
+                            <lb/>
+                                <item><name>Burtner, Melissa G., M.D.</name> ,
+                                Obstetrician and Gynecologist in the Department of Obstetrics and
+                                Gynecology; Attending Staff Status; Effective date of Resignation:
+                                    <date value="2003-06-30">June 30, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Burwell, Lawrence R., M.D.</name> , Physician
+                                in the Department of Internal Medicine; Attending Staff Status;
+                                Effective date of Resignation: <date value="2003-05-12">May 12,
+                                2003</date>. </item>
+                            <lb/>
+                                <item><name>Buss, William C., M.D.</name> , Radiologist in
+                                the Department of Radiology; Attending Staff Status; Effective date
+                                of Resignation: <date value="2003-06-30">June 30, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Cantrell, Robert W., M.D.</name> ,
+                                Otolaryngologist Head and Neck Surgeon in the Department of
+                                Otolaryngology; Attending Staff Status; Effective date of
+                                Resignation: <date value="2003-06-30">June 30, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Coggins, Claire A., M.D.</name> , Radiologist
+                                in the Department of Radiology; Attending Staff Status; Effective
+                                date of Resignation: <date value="2003-06-30">June 30, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Corley, Sarah T., M.D.</name> , Physician in
+                                the Department of Internal Medicine; Attending Staff Status;
+                                Effective date of Resignation: <date value="2003-08-17">August 17,
+                                    2003</date>. </item>
+                            <lb/>
+                                <item><name>Dillingham, Rebecca A.</name> , Physician in
+                                the Department of Internal Medicine; Attending Staff Status;
+                                Effective date of Resignation: <date value="2003-06-30">June 30,
+                                    2003</date>. </item>
+                            <lb/>
+                                <item><name>Dunn, John T., M.D.</name> , Physician in the
+                                Department of Internal Medicine; Attending Staff Status; Effective
+                                date of Resignation: <date value="2003-06-30">June 30, 2003</date>.
+                            </item>
+                        
+                        <pb n="12"/>
+                       
+                                <item><name>Eagleson, Christine A., M.D.</name> ,
+                                Physician in the Department of Internal Medicine; Attending Staff
+                                Status; Effective date of Resignation: <date value="2003-06-30">June
+                                    30, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Enelow, Richard I., M.D.</name> , Physician in
+                                the Department of Internal Medicine; Attending Staff Status;
+                                Effective date of Resignation: <date value="2003-07-31">July 31,
+                                    2003</date>. </item>
+                            <lb/>
+                                <item><name>English, Joseph C., III, M.D.</name> ,
+                                Physician in the Department of Internal Medicine; Attending Staff
+                                Status; Effective date of Resignation: <date value="2003-07-17">July
+                                    17, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Haines, David E., M.D.</name> , Physician in
+                                the Department of Internal Medicine; Attending Staff Status;
+                                Effective date of Resignation: <date value="2003-07-06">July 6,
+                                2003</date>. </item>
+                            <lb/>
+                                <item><name>Johnson, Michael A., M.D.</name> ,
+                                Ophthalmologist in the Department of Ophthalmology; Attending Staff
+                                Status; Effective date of Resignation: <date value="2003-06-30">June
+                                    30, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Leisure, Marketa, M.D.</name> , Pediatrician
+                                in Regional Primary Care; Attending Staff Status; Effective date of
+                                Resignation: <date value="2003-03-01">March 1, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Lynde, James L., M.D.</name> , Radiologist in
+                                the Department of Radiology; Attending Staff Status; Effective date
+                                of Resignation: <date value="2003-04-16">April 16, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Marx, William F. M.D.</name> , Radiologist in
+                                the Department of Radiology; Attending Staff Status; Effective date
+                                of Resignation: <date value="2003-06-02">June 2, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Mather, Cheri C., M.D.</name> , Physician in
+                                the Department of Internal Medicine; Attending Staff Status;
+                                Effective date of Resignation: <date value="2003-08-01">August 1,
+                                    2003</date>. </item>
+                            <lb/>
+                                <item><name>Miesfeldt, Susan, M.D.</name> , Physician in
+                                the Department of Internal Medicine; Attending Staff Status;
+                                Effective date of Resignation: <date value="2003-07-25">July 25,
+                                    2003</date>. </item>
+                            <lb/>
+                                <item><name>Morgan, John C., M.D.</name> , Neurologist in
+                                the Department of Neurology; Attending Staff Status; Effective date
+                                of Resignation: <date value="2003-06-30">June 30, 2003</date>.
+                            </item>
+                        
+                        <pb n="13"/>
+                       
+                                <item><name>Mullick, Tarun, M.D.</name> , Physician in the
+                                Department of Internal Medicine; Attending Staff Status; Effective
+                                date of Resignation: <date value="2003-06-30">June 30, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Nunes, Kenneth J., M.D.</name> , Obstetrician
+                                and Gynecologist in the Department of Obstetrics and Gynecology;
+                                Attending Staff Status; Effective date of Resignation: <date
+                                    value="2003-07-31">July 31, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Parlette, Harry L., M.D.</name> ,
+                                Dermatologist in the Department of Dermatology; Attending Staff
+                                Status; Effective date of Resignation: <date value="2003-06-30">June
+                                    30, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Perron, Andrew D., M.D.</name> , Physician in
+                                the Department of Emergency Medicine; Attending Staff Status;
+                                Effective date of Resignation: <date value="2003-06-30">June 30,
+                                    2003</date>. </item>
+                            <lb/>
+                                <item><name>Pope, James S., M.D.</name> , Physician in the
+                                Department of Internal Medicine; Attending Staff Status; Effective
+                                date of Resignation: <date value="2003-06-30">June 30, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Prichard, Jennifer M., M.D.</name> ,
+                                Pediatrician in the Department of Pediatrics; Attending Staff
+                                Status; Effective date of Resignation: <date value="2003-06-30">June
+                                    30, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Razack, Nasser, M.D.</name> , Radiologist in
+                                the Department of Radiology; Attending Staff Status; Effective date
+                                of Resignation: <date value="2003-06-30">June 30, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Rupp, Theresa A., M.D.</name> , Physician in
+                                the Department of Family Medicine; Visiting Staff Status; Effective
+                                date of Resignation: <date value="2003-06-30">June 30, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Samady, Habib, M.D.</name> , Physician in the
+                                Department of Internal Medicine; Attending Staff Status; Effective
+                                date of Resignation: <date value="2003-08-31">August 31,
+                                2003</date>. </item>
+                            <lb/>
+                                <item><name>Savory, John, Ph.D.</name> , Pathologist in
+                                the Department of Pathology; Attending Staff Status; Effective date
+                                of Resignation: <date value="2003-06-30">June 30, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Scott, J. Ryland, M.D.</name> , Surgeon in the
+                                Department of Surgery; Attending Staff Status; Effective date of
+                                Resignation: <date value="2003-06-30">June 30, 2003</date>. </item>
+                        
+                        <pb n="14"/>
+                        
+                                <item><name>Shepard, Robert C., M.D.</name> , Physician in
+                                the Department of Internal Medicine; Attending Staff Status;
+                                Effective date of Resignation: <date value="2003-06-30">June 30,
+                                    2003</date>. </item>
+                            <lb/>
+                                <item><name>Smith, Teresa L., M.D.</name> , Neurologist in
+                                the Department of Neurology; Attending Staff Status; Effective date
+                                of Resignation: <date value="2003-06-30">June 30, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Spellman, Michael J., M.D.</name> ,
+                                Radiologist in the Department of Radiology; Attending Staff Status;
+                                Effective date of Resignation: <date value="2003-06-30">June 30,
+                                    2003</date>. </item>
+                            <lb/>
+                                <item><name>Tabbara, Imad A., M.D.</name> , Physician in
+                                the Department of Internal Medicine; Attending Staff Status;
+                                Effective date of Resignation: <date value="2003-06-30">June 30,
+                                    2003</date>. </item>
+                            <lb/>
+                                <item><name>Tom, Jennifer V., M.D.</name> , Physician in
+                                the Department of Emergency Medicine; Attending Staff Status;
+                                Effective date of Resignation: <date value="2003-06-30">June 30,
+                                    2003</date>. </item>
+                            <lb/>
+                                <item><name>Tufro, Alda, M.D.</name> , Pediatrician in the
+                                Department of Pediatrics; Attending Staff Status; Effective date of
+                                Resignation: <date value="2003-06-30">June 30, 2003</date>. </item>
+                            </list>
+                </div2>
+                <div2 id="d26" type="resolution">
+                    <head type="sub">6. PRIVILEGES FOR NEW ALLIED HEALTH PROFESSIONALS</head>
+                    
+                            <p>RESOLVED that the recommendations of the Clinical
+                                Staff Executive Committee for the granting of privileges to the
+                                following Allied Health Professionals are approved: </p>
+                            <list>
+                                <item><name>Ballew, Carole C., R.N., A.N.P.</name> , Acute
+                                Care Nurse Practitioner in Cardiology Clinic; Period of Privileging:
+                                    <dateRange from="2003-04-04" to="2004-04-03">April 4, 2003,
+                                    through April 3, 2004</dateRange>; Privileged as an Acute Care
+                                Nurse Practitioner. </item>
+                            <lb/>
+                                <item><name>Diepold, Amy E., R.N., A.N.P.</name> , Acute
+                                Care Nurse Practitioner 6 Central Neurosurgery; Period of
+                                Privileging: <dateRange from="2003-05-28" to="2004-02-09">May 28,
+                                    2003, through February 9, 2004</dateRange>; Privileged as an
+                                Acute Care Nurse Practitioner. </item>
+                            <lb/>
+                                <item><name>Exline, Charlene G., R.N., F.N.P.</name> ,
+                                Family Nurse Practitioner in Gamma Knife; Period of Privileging:
+                                    <dateRange from="2003-05-20" to="2004-05-19">May 20, 2003,
+                                    through May 19, 2004</dateRange>; Privileged as a Family Nurse
+                                Practitioner. </item>
+                        
+                        <pb n="15"/>
+                        
+                                <item><name>Fisher, Charles A., R.N., A.N.P.</name> ,
+                                Acute Care Nurse Practitioner on TCV-PO; Period of Privileging:
+                                    <dateRange from="2003-04-25" to="2004-04-24">April 25, 2003,
+                                    through April 24, 2004</dateRange>; Privileged as an Acute Care
+                                Nurse Practitioner. </item>
+                            <lb/>
+                                <item><name>Jaeger-Landis, Beth A., R.N., A.N.P.</name> ,
+                                Acute Care Nurse Practitioner in UMA Clinic; Period of Privileging:
+                                    <dateRange from="2003-05-20" to="2004-05-19">May 20, 2003,
+                                    through May 19, 2004</dateRange>; Privileged as an Acute Care
+                                Nurse Practitioner. </item>
+                            <lb/>
+                                <item><name>Powers, Kathleen M., R.N., E.N.P.</name> ,
+                                Emergency Nurse Practitioner in Nephrology; Period of Privileging:
+                                    <dateRange from="2003-06-16" to="2004-06-15">June 16, 2003,
+                                    through June 15, 2004</dateRange>; Privileged as an Emergency
+                                Nurse Practitioner. </item>
+                            <lb/>
+                                <item><name>Register, Angela L., R.N., F.N.P.</name> ,
+                                Family Nurse Practitioner in Fontaine Orthopedic Clinic; Period of
+                                Privileging: <dateRange from="2003-04-04" to="2004-04-03">April 4,
+                                    2003, through April 3, 2004</dateRange>; Privileged as a Family
+                                Nurse Practitioner. </item>
+                            <lb/>
+                                <item><name>Roy, Arika B., R.N., A.N.P.</name> , Pediatric
+                                Nurse Practitioner in Pediatric Neurology; Period of Privileging:
+                                    <dateRange from="2003-05-20" to="2004-04-20">May 20, 2003,
+                                    through April 20, 2004</dateRange>; Privileged as a Pediatric
+                                Nurse Practitioner. </item>
+ </list>
+                </div2>
+                <div2 id="d27" type="resolution">
+                    <head type="sub">7. RENEWED PRIVILEGES FOR ALLIED HEALTH PROFESSIONALS</head>
+                   
+                            <p>RESOLVED that the recommendations of the Clinical
+                                Staff Executive Committee for the renewal of privileges to the
+                                following Allied Health Professionals are approved: </p>
+                            <list>
+                                <item><name>Aurisy, Laura L., R.N., N.N.P.</name> ,
+                                Neonatal Nurse Practitioner in NICU; Period of Privileging:
+                                    <dateRange from="2003-09-19" to="2005-09-18">September 19, 2003,
+                                    through September 18, 2005</dateRange>; Privileged as a Neonatal
+                                Nurse Practitioner. </item>
+                            <lb/>
+                                <item><name>Bender, Catherine H., R.N., C.R.N.A.</name> ,
+                                Certified Nurse Anesthetist in the Operating Room; Period of
+                                Privileging: <dateRange from="2003-08-20" to="2005-08-19">August 20,
+                                    2003, through August 19, 2005</dateRange>; Privileged as a
+                                Certified Nurse Anesthetist. </item>
+                            <lb/>
+                                <item><name>Cherniawski, Patricia M., R.N.,
+                                C.R.N.A.</name> , Certified Nurse Anesthetist in the Operating Room;
+                                Period of Privileging: <dateRange from="2003-08-01" to="2005-07-31"
+                                    >August 1, 2003, through July 31, 2005</dateRange>; Privileged
+                                as a Certified Nurse Anesthetist. </item>
+                      
+                        <pb n="16"/>
+                       
+                                <item><name>Edwards, Jodie A., R.N., C.R.N.A.</name> ,
+                                Certified Nurse Anesthetist in the Operating Room; Period of
+                                Privileging: <dateRange from="2003-08-27" to="2005-08-26">August 27,
+                                    2003, through August 26, 2005</dateRange>; Privileged as a
+                                Certified Nurse Anesthetist. </item>
+                            <lb/>
+                                <item><name>Enterline, Leslie C., P.A.</name> ,
+                                Physician’s Assistant in the Hematology Oncology Clinic; Period of
+                                Privileging: <dateRange from="2003-08-11" to="2004-05-31">August 11,
+                                    2003, through May 31, 2004</dateRange>; Privileged as a
+                                Physician’s Assistant. </item>
+                            <lb/>
+                                <item><name>Foster, Lisa W., P.A.</name> , Physician’s
+                                Assistant in Neurosurgery; Period of Privileging: <dateRange
+                                    from="2003-08-09" to="2003-09-07">September 8, 2003, through
+                                    September 7, 2003</dateRange>; Privileged as a Physician’s
+                                Assistant. </item>
+                            <lb/>
+                                <item><name>Gibson, Harriette E., L.C.S.W.</name> ,
+                                Licensed Clinical Social Worker in the Department of Psychiatric
+                                Medicine; Period of Privileging: <dateRange from="2003-09-01"
+                                    to="2004-08-31">September 1, 2003, through August 31,
+                                2004</dateRange>; Privileged as a Licensed Clinical Social Worker. </item>
+                            <lb/>
+                                <item><name>Green, Colleen, P.A.</name> , Physician’s
+                                Assistant in Gastroenterology; Period of Privileging: <dateRange
+                                    from="2003-08-01" to="2004-07-31">August 1, 2003, through July
+                                    31, 2004</dateRange>; Privileged as a Physician’s Assistant. </item>
+                            <lb/>
+                                <item><name>Hart, Jennifer A., P.A.</name> , Physician’s
+                                Assistant in McCue Center; Period of Privileging: <dateRange
+                                    from="2003-09-15" to="2004-09-14">September 15, 2003, through
+                                    September 14, 2004</dateRange>; Privileged as a Physician’s
+                                Assistant. </item>
+                            <lb/>
+                                <item><name>Lee, Virginia K., R.N., A.N.P.</name> , Adult
+                                Nurse Practitioner in Senior Service; Period of Privileging:
+                                    <dateRange from="2003-08-01" to="2005-07-31">August 1, 2003,
+                                    through July 31, 2005</dateRange>; Privileged as an Adult Nurse
+                                Practitioner. </item>
+                            <lb/>
+                                <item><name>Molnar, Helen M., R.N., A.N.P.</name> , Acute
+                                Care Nurse Practitioner in Cardiac Cath Lab Heart Center; Period of
+                                Privileging: <dateRange from="2003-08-01" to="2005-07-31">August 1,
+                                    2003, through July 31, 2005</dateRange>; Privileged as an Acute
+                                Care Nurse Practitioner. </item>
+                            <lb/>
+                                <item><name>Perry, Lois M., R.N., F.N.P.</name> , Family
+                                Nurse Practitioner in Neurology Oncology Clinic; Period of
+                                Privileging: <dateRange from="2003-07-18" to="2005-07-17">July 18,
+                                    2003, through July 17, 2005</dateRange>; Privileged as a Family
+                                Nurse Practitioner. </item>
+                        
+                        <pb n="17"/>
+                      
+                                <item><name>Rainey, Joan, R.N., F.N.P.</name> , Family
+                                Nurse Practitioner in Infectious Diseases Clinic; Period of
+                                Privileging: <dateRange from="2003-05-22" to="2005-05-21">May 22,
+                                    2003, through May 21, 2005</dateRange>; Privileged as a Family
+                                Nurse Practitioner. </item>
+                            <lb/>
+                                <item><name>Ryan, Beverly J., R.N., A.N.P.</name> , Acute
+                                Care Nurse Practitioner in Lung Transplant; Period of Privileging:
+                                    <dateRange from="2003-08-01" to="2005-07-31">August 1, 2003,
+                                    through July 31, 2005</dateRange>; Privileged as an Acute Care
+                                Nurse Practitioner. </item>
+                            <lb/>
+                                <item><name>Strider, David V., R.N., A.N.P.</name> , Acute
+                                Care Nurse Practitioner in Heart Center; Period of Privileging:
+                                    <dateRange from="2003-08-01" to="2005-07-31">August 1, 2003,
+                                    through July 31, 2005</dateRange>; Privileged as an Acute Care
+                                Nurse Practitioner. </item>
+                            <lb/>
+                                <item><name>Wallace, Ellen, F., R.N., N.N.P.</name> ,
+                                Neonatal Care Nurse Practitioner in NICU; Period of Privileging:
+                                    <dateRange from="2003-08-01" to="2005-07-31">August 1, 2003,
+                                    through July 31, 2005</dateRange>; Privileged as a Neonatal
+                                Nurse Practitioner. </item>
+                 </list>
+                </div2>
+                <div2 id="d28" type="resolution">
+                    <head type="sub">8. SECONDARY APPOINTMENT RENEWED PRIVILEGES FOR ALLIED<lb/>
+                        HEALTH PROFESSIONALS</head>
+                   
+                            <p>RESOLVED that the recommendations of the Clinical
+                                Staff Executive Committee for the secondary appointment renewal of
+                                privileges to the following Allied Health Professional is approved: </p>
+                            <list>
+                                <item><name>Snyder, Audrey L., R.N., A.N.P.</name> , Acute
+                                Nurse Practitioner in Neurosurgery; Period of Privileging:
+                                    <dateRange from="2003-05-05" to="2004-06-11">May 5, 2003,
+                                    through June 11, 2004</dateRange>; Privileged as an Acute Nurse
+                                    Practitioner. </item>
+                                </list>
+                </div2>
+                <div2 id="d29" type="resolution">
+                    <head type="sub">9. RESIGNATIONS OF ALLIED HEALTH PROFESSIONALS</head>
+                   
+                            <p>RESOLVED that the recommendations of the Clinical
+                                Staff Executive Committee for the resignation of privileges to the
+                                following Allied Health Professionals are approved: </p>
+                            <list>
+                                <item><name>Doty, Elissa, P.A.</name> , Physician’s
+                                Assistant in TCV Surgery; Effective Date of Resignation: <date
+                                    value="2003-06-04">June 4, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Guarini, Eleanor J., R.N., F.N.P.</name> ,
+                                Family Nurse Practitioner in the Heart Center; Effective Date of
+                                Resignation: <date value="2002-10-19">October 19, 2002</date>.
+                            </item>
+                        
+                        <pb n="18"/>
+                        
+                                <item><name>Krausz, Linda J., R.N., A.N.P.</name> , Acute
+                                Care Nurse Practitioner in Cardiac Cath Lab; Effective Date of
+                                Resignation: <date value="2003-02-02">February 2, 2003</date>. </item>
+                            <lb/>
+                                <item><name>Simpkins, Lynn H., R.N., F.N.P.</name> ,
+                                Family Nurse Practitioner in Kidney Center; Effective Date of
+                                Resignation: <date value="2003-03-14">March 14, 2003</date>. </item>
+                            </list>
+                    <signed> ______________ <lb/><name>E. Darracott Vaughan, Jr., M.D.</name><lb/> Chair,
+                        Medical Center Operating<lb/> Board </signed>
+                               
+                </div2>
+            </div1>
+
+            <div1 id="d30" type="addenda">
+                <pb n="1"/>
+                <head rend="right" type="divisional">ATTACHMENT B</head>
+                <head type="sub"> BOARD OF VISITORS RETREAT<lb/> Report on Faculty Compensation<lb/>
+                    9:00-10:00 a.m. – <date value="2003-07-12">Saturday, July 12, 2003</date>
+                </head><ab/>
+                <div2 id="d31" type="section">
+                    <head type="sub">PURPOSE OF THE RETREAT DISCUSSION:</head>
+                    <p>1) Report on results of July 7 Finance Committee meeting do not intend to arrive at a decision on compensation
+                        (salaries and benefits) during the Retreat; and 2) consider a process and
+                        timeline for a broader review of relevant topics leading to a policy
+                        statement on faculty compensation. </p>
+                </div2>
+                <div2 id="d32" type="section">
+                    <head type="sub">REPORT ON RESULTS OF <date value="2003-07-07">JULY 7,
+                        2003</date> FINANCE COMMITTEE<lb/> MEETING:</head>
+                    <p> The Finance Committee asked the administration during the June 2003 Board
+                        meeting to determine the cost of moving faculty salaries to the 60th
+                        percentile of the SCHEV rankings; and how to provide the funding. During the
+                        July 7 meeting, the Finance Committee a) heard a report that supplemental
+                        increases of approximately 3.5% each year for three years, in addition to
+                        assumed state authorized increases of 2.25%, are needed to achieve the 60th
+                        percentile of the SCHEV rankings and b) received confirmation that funding
+                        could be provided from a combination of sources. However, to the extent that
+                        the increases were funded from local sources, the actual SCHEV percentile
+                        ranking would not be impacted. The Committee also received information on
+                        companion salary improvement programs for administrative and professional
+                        faculty and classified staff. </p>
+                </div2>
+                <div2 id="d33" type="section">
+                    <head type="sub">BROADER DISCUSSION LEADING TO A CONCLUSION ON
+                        FACULTY/STAFF<lb/> COMPENSATION:</head>
+                    <p> During the course of the July 7 Finance Committee discussion, it became
+                        apparent that there are a series of important questions that should be
+                        addressed before a decision is made to commit University funds for special
+                        compensation increases. The questions deal with priorities, justification,
+                        risk/reward, return on investment/relative value added and strategies, with
+                        the objective of developing a Board of Visitors policy statement on faculty
+                        and staff compensation and a timeline to address the issue. </p>
+                    <p> A series of questions that reflect the Finance Committee’s discussion on
+                        July 7, is provided below as a basis for further consideration of this topic
+                        during the Retreat: </p><pb n="2"/>
+                        <list>
+                            <item> 1. What resources are required to be marketcompetitive and to
+                                influence faculty recruitment and retention, i.e., salary, benefits,
+                                laboratories, facilities, graduate students and spousal hiring? Why
+                                do we lose faculty and why are offers not accepted? </item>
+                            <lb/>
+                            <item> 2. How do we evaluate the return on the University’s investment
+                                in faculty? What is the academic process for evaluating teaching
+                                loads, research productivity and service (advising, committees,
+                                etc.)? </item>
+                            <lb/>
+                            <item> 3. What is the process for allocating compensation increases
+                                across categories of faculty and staff on the basis of merit? What
+                                performance assessment processes are used? How does the allocation
+                                of compensation increases reflect market factors, academic
+                                disciplines and historic funding patterns? </item>
+                            <lb/>
+                            <item> 4. Are compensation adjustments the highest institutional
+                                priority relative to the opportunity costs of investing in research,
+                                graduate support, libraries, technology, etc.? </item>
+                            <lb/>
+                            <item> 5. Should we complete a comprehensive segmentation analysis of
+                                compensation, recruitment and retention across schools, disciplines,
+                                ranks and length of service before deciding what actions are
+                                appropriate? </item>
+                            <lb/>
+                            <item> 6. What is the proper role of cost of living indices in analyzing
+                                and setting faculty and staff compensation? </item>
+                            <lb/>
+                            <item> 7. Do we purposely invest in faculty resources that are committed
+                                to areas of strength and programs where we aspire to be truly
+                                outstanding? How are such centers of excellence identified? </item>
+                            <lb/>
+                            <item> 8. How do we balance the immediate need to boost faculty and
+                                staff morale while we gather the information and perform the
+                                analyses necessary to reach sound decisions with regard to
+                                compensation increases? </item>
+                        </list>
+                        <pb n="3"/>
+                        <list>
+                            <item> 9. Does the state acknowledge its long-term responsibility to
+                                support faculty and staff compensation? What can the University do
+                                to increase the likelihood that the state will replace institutional
+                                funds used to address compensation issues? </item>
+                            <lb/>
+                            <item> 10. Can we secure reasonable assurances from the state that the
+                                University of Virginia’s Board of Visitors will have the tuition
+                                authority to support its decision on compensation increases? </item>
+                            <lb/>
+                            <item> 11. Given the several funding options/sources identified in the
+                                Proposed Supplemental Compensation Plan presented to the Finance
+                                Committee, what are the relative risks and advantages of each
+                                source? To what degree is each source sustainable? If not
+                                sustainable or if sustainable for only a limited period of time,
+                                what are the University’s options? </item>
+                        </list>
+                   
+                    <p> Each of the questions and discussion topics require data collection and
+                        analysis. Each topic calls for careful deliberation. The purpose of the
+                        discussion at the Retreat is to identify additional information needed to
+                        support the decision process, highlight good quality assurance practices and
+                        note processes that should be strengthened. </p>
+                </div2>
+                <div2 id="d34" type="section">
+                    <head type="sub">NEXT STEPS:</head>
+                    <p> Many of the questions listed relate to academic priorities, programs and
+                        opportunities. It is suggested that the Rector consider asking the
+                        Educational Policy Committee (or some combination of Committees) to
+                        undertake a review and assessment of the underlying issues with the
+                        objective of having the Educational Policy Committee provide a status report
+                        and, if appropriate, recommendations to the full Board of Visitors at the
+                        October 2003, meeting. </p>
+                    <pb/>
+                </div2>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

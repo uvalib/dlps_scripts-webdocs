@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0491 SYSTEM "000000766_0491" NDATA jpg>
+<!ENTITY DSSR_000000766_0492 SYSTEM "000000766_0492" NDATA jpg>
+<!ENTITY DSSR_000000766_0493 SYSTEM "000000766_0493" NDATA jpg>
+<!ENTITY DSSR_000000766_0494 SYSTEM "000000766_0494" NDATA jpg>
+
+<!--<!ENTITY NC62a18a SYSTEM "NC62a18a.jpg" NDATA jpg>
+<!ENTITY NC62a18b SYSTEM "NC62a18b.jpg" NDATA jpg>
+<!ENTITY NC62a18c SYSTEM "NC62a18c.jpg" NDATA jpg>
+<!ENTITY NC62a18d SYSTEM "NC62a18d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NC62a18">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+                        value="1862-01-18">1862 Jan 18</date></title>
+
+                <author>Tenney, Charles N.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name/>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name/>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">9</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NC62a18</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2001">2001</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title/>
+                        <author/>
+                    </titleStmt>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                    </publicationStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-01-23">1862-01-23</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>masculine</term>
+                    <term>American Civil War/Special Collections</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-11">November 11th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 14th, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <body id="d2">
+
+            <div1 type="letter" n="1" id="d3">
+                <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-01-18"
+                        >1862 Jan 18</date></head>
+                <pb entity="DSSR_000000766_0491"/>
+                <opener>
+                    <dateline>
+                        <name type="place">Camp Kelley <abbr expan="Virginia">Va.</abbr></name>
+                        <date value="1862-01-18">Jan 18th<lb/>1862<lb/></date>
+                    </dateline>
+
+                    <salute>My dearest Addie:-</salute>
+                    <lb/>
+                </opener>
+
+                <p> Your favor of the<lb/> 12th <abbr expan="instant">inst.</abbr> is at hand,
+                    and<lb/> I have made it a rule to answer<lb/> promptly all letters from my
+                    Addie<lb/> consequently I now apply myself<lb/> to the very pleasant task of
+                    addressing<lb/> a few lines to you.<lb/>
+                </p>
+
+                <p> As all is known, now, dear Addie<lb/> need we have any secrets? I mean<lb/> as
+                    regards the feelings predominant<lb/> in our hearts. Addie, I cannot<lb/>
+                    refrain from telling you all.<lb/> Pardon me, <hi rend="underline">I love
+                    you</hi>,<lb/> Addie,<lb/>
+                    <pb n="2" entity="DSSR_000000766_0492"/> not with that momentary <sic
+                        corr="effervescence">effervessence</sic><lb/> of feeling, common among boys,
+                    but<lb/> with a pure. fervent affection, which<lb/> comes welling up from my
+                    heart, all<lb/> unbidden, but irresistable. It may<lb/> perhaps be wrong -- you
+                    are far above<lb/> me, in worth and position -- but<lb/> my love is from the
+                    heart, and ?<lb/> increases in strength daily. Addie is<lb/> in my thoughts by
+                    night and by<lb/> day. But for thy darling letters, and<lb/> the impression on
+                    my heart when I<lb/> saw you -- I might have become<lb/> demoralized and lost
+                    forever.<lb/> Addie, do I love in vain? Do my<lb/> feelings meet with no
+                    response in<lb/> your heart? With you, dear Addie<lb/> rests my future. Will it
+                    be a<lb/> happy one, happy in your love<lb/> or must I be doomed to live<lb/> a
+                    wretched miserable life.<lb/>
+                    <pb n="3" entity="DSSR_000000766_0493"/> with no one to love, or to care
+                    for<lb/> me? I shall wait anxiously for<lb/> an answer, dear Addie, will it
+                    be<lb/> a favorable one?<lb/>
+                </p>
+                <p> My position in life, it is true,<lb/> is not an elevated one, but I know<lb/>
+                    and feel that I shall make a<lb/> mark in life. God has given me<lb/> talents
+                    and I shall improve them<lb/> I love you, Addie, and nothing else<lb/> Dare I
+                    hope that I am loved in return<lb/>
+                </p>
+                <p> Do not censure me, Addie, but<lb/> remember that I have none to<lb/> love or
+                    care for me.<lb/>
+                </p>
+                <p> But I must, however reluc-<lb/> tantly, turn to other subjects.<lb/> My mind is
+                    so tumultuous that<lb/> I can think of nothing interesting<lb/> to write. You
+                    asked me if <name type="person">Seth<lb/> Coon</name> got married. No, I
+                    believe<lb/> not. He says that engagement<lb/>
+                    <pb n="4" entity="DSSR_000000766_0494"/> was broken off. <hi rend="underline">and
+                        a new one<lb/> formed in another direction</hi>! We<lb/> must possess queer
+                    sentiments in<lb/> regard to such affairs, dont you think<lb/> so? A person so
+                    unstable in character<lb/> as that, I have but little sympathy<lb/> for. The
+                    Seventh is in the third<lb/> brigade, (Tyler's) of the Shenandoah (Landing)<lb/>
+                    department. It consists of the<lb/> 7th Ohio, 7th Indiana, 1st Virginia<lb/> and
+                    the 110th Pennsylvania Regts.<lb/> the "Bloody Seventh," (ours) on the
+                    right.<lb/>
+                </p>
+
+                <closer> But I must close. <name type="person">Hallie</name> is<lb/> nearly well, and
+                    encloses a line.<lb/> Hoping to soon <sic corr="receive">recieve</sic> an<lb/>
+                    answer confirming my hopes.<lb/>
+                    <salute>I remain yours affectionately and<lb/> forever</salute><signed>Charlie
+                        N. Tenney.</signed><lb/> To. dear <name type="recipient">Addie</name>.
+                </closer>
+            </div1>
+        </body>
+    </text>
+
+</TEI.2>

@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> 
+%dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> 
+%UVAsupp;
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of 
+Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors 
+meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with local 
+customizations)</resp> 
+                    <name>University of Virginia Library</name> </respStmt>
+                <biblScope type="date">
+                    <date value="2006-07-28">July 28, 2006</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">24</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2009">2009</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the  
+University of Virginia</p>
+                    <p n="access">Publicly accessible</p>                   
+                </availability>
+                <idno type="DLPS ID">bov_20060728_scop</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+            
+            
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors 
+minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of 
+Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors 
+meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2006-07-28">July 28, 2006</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>  
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information.  Access to 
+minutes containing salary information will be granted only under the procedures of the Virginia 
+Freedom of  Information Act (Code of Virginia-2.1-340 ff.) or if permission is granted by the 
+Secretary of the Board.  Researchers interested in obtaining access to these records should direct 
+a request in writing to the Office of the Legal Adviser, Madison Hall, University of Virginia.  
+These public minutes have had salary information deleted and bear no restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special 
+Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body which is 
+the legal owner and operator of the institution.  Recorded in the minutes are appointments and 
+other personnel decisions concerning faculty, decisions about construction of facilities, gifts to 
+the university, and all other board actions, decisions and resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        
+        <encodingDesc>
+            &projectDesc;
+            <editorialDecl>
+                &editorial_correction;
+                &editorial_normalization;
+                &editorial_hyphenation;
+                &editorial_quotation;
+                &editorial_stdVals;
+            </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language n="008" id="eng" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+    </teiHeader>
+ <text>
+  <body id="d1">
+   <div1 type="report" id="d2">
+    <pb n="Page 1 of 4"/>
+    <head>UNIVERSITY OF VIRGINIA BOARD OF VISITORS <lb/>SPECIAL COMMITTEE ON PLANNING </head>
+    <div2 type="contents" id="d3">
+     <head>2005-2006 GOALS STATUS REPORT</head>
+     
+      <p><hi rend="bold">
+          1. Complete six-year revenue/expense/academic plan for submission to the state as required by 
+          the Restructuring legislation prior to October 1; extend the plan to cover a ten-year period 
+          (including all fund sources) in support of the institutional objectives and ranking goals that 
+          will be established by the Board.</hi></p>
+       <list>
+        <item rend="indent">
+           The Full Board approved the six-year plan on <date value="2005-09-24">September 24, 2005</date>.</item><lb/>
+        <item rend="indent">
+           The Special Committee on Planning reviewed a preliminary ten-year financial plan at its 
+           February and June 2006 meetings. </item><lb/>
+        <item rend="indent">
+           The preliminary ten-year financial plan was developed by including all University resources 
+          and applying at least the same level of sophistication as used in the development of the six-year 
+          plan. </item><lb/>
+        <item rend="indent">
+           The preliminary ten-year financial plan includes the necessary financial resources over the 
+          ten-year period to ensure that we are on track to meet Board commitments related to Access 
+          UVa, research enhancement, compensation, diversity, maintenance of facilities, international 
+          programs, alumni engagement, and the student information system. </item><lb/>
+        <item rend="indent">
+           The preliminary ten-year financial plan will be refined throughout the fall and winter and 
+           finalized in conjunction with the academic plan in February 2007. </item><lb/>
+        <item rend="indent">
+        Goal ongoing. </item><lb/>
+       </list>
+ 
+      <p><hi rend="bold">
+       2. Reconsider and propose policies, based on existing policies and assumptions, to ensure that 
+       they are up-to-date and appropriate in support of the ten-year plan.</hi></p>
+       <list>
+        <item rend="indent">
+         The Finance Committee discussed a review of the 20-25 most significant financial policies 
+        and recommended preparation of new policies as appropriate. This work included identification and 
+        examination of each policys purpose, its adequacy to sustain the intended purpose, and the 
+        need for revision. </item><lb/>
+        <item rend="indent">
+        It was determined that the Board of Visitors recently examined and validated several policies 
+       (compensation/salaries, research, tuition, enrollment, deferred maintenance, Access UVa, and 
+       self-sufficiency agreements for professional schools) which did not require further review. </item><lb/>
+        <item rend="indent">
+        At its April 2006 meeting, the Finance Committee approved revisions to the debt policy, the 
+       interest rate risk management policy, and approved new policies for operating, maintenance, 
+       replacement and renewal reserves. </item><lb/>
+        <item rend="indent">
+        The Full Board heard a report on the issue of graduate student fellowships and funding at its 
+        June 2006 meeting. </item><lb/>
+        <item rend="indent">
+        The Full Board will continue its policy review by examining the funding of central 
+        development activities and the policy on University-related foundations during 2006-07. </item><lb/>
+        <item rend="indent">
+        Goal completed. </item><lb/>
+       </list>
+     
+      <p><hi rend="bold">
+         3. Review existing Board commitments and priorities related to compensation, research, 
+         deferred maintenance, diversity, alumni engagement and financial aid and assess the impact 
+         of these commitments on the University's ten-year plan and infrastructure requirements. </hi></p>
+       <list>
+        <item rend="indent">
+          The preliminary ten-year financial plan includes the necessary financial resources over the 
+         ten-year period to ensure that we are on track to meet Board commitments related to Access UVa, 
+         research enhancement, compensation, diversity, maintenance of facilities, international 
+         programs, alumni engagement, and the student information system.</item>
+       </list>
+       <p rend="left">
+     Source: Office of the Executive Vice President and Chief Operating Officer <lb/>
+     Date: <date value="2006-07-20">July 20, 2006</date></p>
+     <pb n="Page 2 of 4"/>
+    
+       <list>
+        <item rend="indent">
+           The preliminary academic plan, which will be presented to the Full Board at its Retreat, 
+           contains initiatives that may serve as strategic advantages for the University in the future. These 
+           initiatives will require resources beyond those identified in the preliminary ten-year financial 
+           plan or in the current Capital Campaign goal. The Special Committee on Planning and 
+           University administrators have begun to identify alternative financial strategies to support these initiatives. 
+           These alternative financial strategies were discussed on a preliminary basis by the Committee at 
+           its May and June meetings. The work of the Special Committee on Planning will continue to 
+           focus on this preliminary assessment of financial options that may be available to fund these 
+           initiatives. </item><lb/>
+        <item rend="indent">Goal completed.</item>
+       </list>
+ 
+      <p><hi rend="bold">
+           4. Determine appropriate aspirational position for the University; develop measures to assess 
+           whether we are making progress toward attainment of institutional objectives.<lb/> 
+           <hi rend="italic">Aspirational Position: </hi></hi></p>
+       <list>
+        <item rend="indent">
+            The Special Committee heard the Top 15 (<hi rend="italic">US News</hi>) gap analysis at the February 2006 
+           meeting, which outlined what resources are needed based on the information available to us 
+           from the <hi rend="italic">U.S. News and World Report</hi> data, the Universitys preliminary ten-year financial plan and 
+           known priorities to achieve a Top 15 status within ten years.</item><lb/>
+        <item rend="indent">
+            The Special Committee on Planning also heard information on research rankings and the 
+           results of an overall external analysis in which rankings were analyzed in an effort to understand how 
+           to improve in key evaluation categories. </item><lb/>
+        <item rend="indent">
+            At its April 2006 meeting, the Special Committee on Planning discussed the financial realities 
+           of meeting the top 15 goal  that it may be nearly impossible to raise enough money to close the 
+           gap. The Committee concluded that the University should proceed by protecting our <hi rend="italic">US News 
+           and World Report</hi> ranking through targeting specific areas identified by gap analysis. At the 
+           Retreat, the Board will hear a rankings improvement plan, designed to help guide the University 
+           through a long-term strategy to realize its aspirations. </item><lb/>
+        <item rend="indent">
+            At the April meeting, the Special Committee on Planning concluded that the University will 
+           only excel by taking aggressive steps to strategically position itself relative to its peers in certain 
+           areas, while also protecting <hi rend="italic">US News</hi> ranking. At the Retreat, the Board will focus on the 
+           preliminary academic plan and identification of major initiatives, or big ideas on which the 
+           University can focus its resources and effort to obtain national and global preeminence. </item><lb/>
+        <item rend="indent">Goal completed. </item>
+       </list>
+   
+        <p><hi rend="bold"><hi rend="italic">Performance Measures:</hi></hi></p>
+       <list>
+        <item rend="indent">
+         The Special Committee on Planning reviewed the proposed performance measures at the 
+        February, April, and June 2006 meetings. A set of performance measures which address critical 
+        areas of academic quality, financial and physical resources, diversity, and the Medical Center 
+        will be presented at the Retreat. </item><lb/>
+        <item rend="indent">
+         The performance measures will be further refined in 2006-07 as the academic plan is 
+         finalized. </item><lb/>
+        <item rend="indent">
+         The Board will continue to receive updates on the implementation of Restructuring, including 
+        the performance metrics associated with each state goal, and each of the six core functional 
+        areas. </item><lb/>
+        <item rend="indent">Goal ongoing. </item><lb/>
+       </list>
+
+     <p>
+      Source: Office of the Executive Vice President and Chief Operating Officer <lb/>
+      Date: <date value="2006-07-20">July 20, 2006 </date></p>
+   
+    </div2>
+    <div2 type="section" id="d4">
+        <pb n="Page 3 of 4"/>
+     <head>UNIVERSITY OF VIRGINIA BOARD OF VISITORS<lb/> 
+       SPECIAL COMMITTEE ON PLANNING <lb/>
+       2006-2007 GOALS </head>
+     <p>
+        The focus of this period will be to conclude the planning process with Board of Visitors 
+        input, having fully developed strategic alternatives, identified the proper support for 
+        programs, and aligned the priorities reflected in the Capital Campaign with those in the 
+        academic plan. By February 2007, we will present a final ten-year academic and financial 
+        plan, having identified funds for the initiatives included therein. </p>
+     <list>
+      <item rend="indent"><hi rend="bold">
+          1.	Complete ten-year academic and financial plan in support of the institutional objectives 
+          and ranking goals established by the Board. Work to further define the academic plan 
+          with appropriate faculty and administrative committees.</hi></item><lb/>
+      <item rend="indent"><hi rend="bold">          
+          2. Retain a consultant to continue the examination of the Universitys strengths, weaknesses, 
+          opportunities and threats. </hi></item><lb/>
+      <item rend="indent"><hi rend="bold">          
+          3. Propose and select major initiatives, or big ideas to strategically position and further 
+          strengthen the University based on an in-depth assessment of existing strengths, 
+          opportunities and threats, as well as known strategies of appropriate elite universities. 
+          Explore viable financing alternatives to identify funds to support these major initiatives. 
+      </hi></item><lb/>
+      <item rend="indent"><hi rend="bold">          
+       4. Ensure the academic plan and the capital campaign case statement are complementary. </hi></item><lb/>
+      <item rend="indent"><hi rend="bold">          
+          5. Refine performance measures to assess whether we are making progress toward attainment 
+          of institutional objectives. </hi></item>
+     </list>
+  
+     <p>
+        Source: Office of the Executive Vice President and Chief Operating Officer <lb/>
+        Date: <date value="2006-07-20">July 20, 2006</date></p>
+   
+    </div2>
+    <div2 type="section" id="d5">
+        <pb n="Page 4 of 4"/>
+     <head>UNIVERSITY OF VIRGINIA BOARD OF VISITORS <lb/>
+     SPECIAL COMMITTEE ON PLANNING <lb/>
+     2006-2007 WORK PLAN </head>
+   
+      <p><hi rend="bold">     
+          1. Complete ten-year academic and financial plan in support of the institutional objectives and 
+          ranking goals established by the Board. Work to further define the academic plan with 
+          appropriate faculty and administrative committees. </hi></p>
+       <list>
+        <item rend="indent"><hi rend="bold">
+           Fall 2006:</hi> Provost will work with appropriate faculty and administrative committees to further 
+          define the preliminary academic plan. The results of this effort will be reported to the Special 
+          Committee on Planning at its November meeting. </item><lb/>
+        <item rend="indent"><hi rend="bold">
+           February 2007:</hi> Executive Vice President and Provost to present a final ten-year academic 
+           and financial plan, having identified funds for the initiatives included therein. </item><lb/>
+       </list>
+ 
+      <p><hi rend="bold">
+          2. Retain a consultant to continue the examination of the Universitys strengths, weaknesses, 
+          opportunities and threats.</hi></p>
+       <list>
+        <item rend="indent"><hi rend="bold">
+          Summer 2006:</hi> Consultant to be retained. </item><lb/>
+        <item rend="indent"><hi rend="bold">
+           August 2006:</hi> Consultant to meet with the Chair of the Special Committee on Planning. </item><lb/>
+        <item rend="indent"><hi rend="bold">
+           November/December 2006:</hi> Results of the situation analysis to be presented to the Special 
+           Committee on Planning, depending on availability. </item><lb/>
+       </list>
+  
+      <p><hi rend="bold">
+          3. Propose and select major initiatives, or big ideas to strategically position and further 
+          strengthen the University based on an in-depth assessment of existing strengths, 
+          opportunities and threats, as well as known strategies of appropriate elite universities. 
+          Explore viable financing alternatives to identify funds to support these major initiatives.</hi></p>
+       <list>
+        <item rend="indent"><hi rend="bold">
+           Summer 2006:</hi> Provost to present preliminary identification of major initiatives to the Board 
+           of  Visitors at its Retreat. </item><lb/>
+        <item rend="indent"><hi rend="bold">
+           Fall 2006:</hi> Conduct situation analysis; use results to inform criteria for selection. Discuss 
+          criteria setting with Special Committee on Planning at the November or December 2006 
+          meetings, based on availability of situation analysis results. </item><lb/>
+        <item rend="indent"><hi rend="bold">
+           November 2006:</hi> Review strategies of appropriate elite universities with Special Committee 
+           on  Planning. </item><lb/>
+        <item rend="indent"><hi rend="bold">
+           December 2006:</hi> Review financing alternatives to fund major initiatives with Special 
+           Committee on Planning. </item><lb/>
+         <item rend="indent"><hi rend="bold">
+           January 2007:</hi> Special Committee on Planning to use criteria to decide on major initiatives to 
+           include in final academic plan. </item><lb/>
+        <item rend="indent"><hi rend="bold">
+           February 2007:</hi> Present final major initiatives and financial alternatives incorporated in final 
+           ten-year academic and financial plans. </item><lb/>
+       </list>
+ 
+      <p><hi rend="bold">
+      4. Ensure the academic plan and the capital campaign case statement are complementary. </hi></p>
+       <list>
+        <item rend="indent"><hi rend="bold">
+           Fall - Winter 2007:</hi> Revisit the capital campaign case statement as academic plan is refined 
+           and finalized to ensure goals are congruous. </item><lb/>
+       </list>
+  
+        <p><hi rend="bold">          
+          5. Refine performance measures to assess whether we are making progress toward attainment 
+          of institutional objectives.</hi></p>
+         <list>
+          <item rend="indent"><hi rend="bold">
+           Fall - Winter 2007:</hi> Incorporate additional metrics necessary to measure the efficiency and 
+           effectiveness of meeting the goals and objectives outlined in the final academic plan. </item><lb/>
+          <item rend="indent"><hi rend="bold">
+           January 2007:</hi> Report to the full Board the specific performance measures the Board is 
+          required to monitor associated with the Governors twelve goals and each of the six core 
+          functional areas. </item><lb/>
+         </list>
+
+     <p>
+          Source: Office of the Executive Vice President and Chief Operating Officer <lb/>
+          Date: <date value="2006-07-20">July 20, 2006</date></p>
+    </div2>
+   </div1>
+  </body>
+ </text>
+</TEI.2>
+
+
+

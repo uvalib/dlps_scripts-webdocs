@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+<!ENTITY longs "s" >
+
+<!ENTITY DSSR_000000766_0293 SYSTEM "000000766_0293" NDATA jpg>
+<!ENTITY DSSR_000000766_0294 SYSTEM "000000766_0294" NDATA jpg>
+
+<!--<!ENTITY NA61j03a SYSTEM "NA61j03a.jpg" NDATA jpg>
+<!ENTITY NA61j03b SYSTEM "NA61j03b.jpg" NDATA jpg>
+<!ENTITY NA61j03c SYSTEM "NA61j03c.jpg" NDATA jpg>
+<!ENTITY NA61j03d SYSTEM "NA61j03d.jpg" NDATA jpg>-->
+]>
+
+<TEI.2 id="NA61j03">
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date value="1861-10-03">3
+      October 1861</date></title>
+    <author>Case, Adelaide E.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Cokie Anderson, Oklahoma State University</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>Cokie Anderson, University of Virginia Library Electronic Text Center.</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">11</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NA61j03</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/rbs/2000/</p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2000">2000</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Page images have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Adelaide E. Case to Charles N. Tenney, 3 October 1861</title>
+
+
+      <author>Adelaide E. Case</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>2 p.</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p>All unambiguous end-of-line hyphens have been retained.</p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings.</p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1861-10-03">1861-10-03</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>feminine</term>
+     <term>American Civil War; Women Writers; Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-02">November 2nd, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">September 30, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+ <text id="d1">
+
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>2 pp.</extent>
+      <date value="1861-10-03">1861-10-03</date>
+
+      <title>Letter from Adelaide E. Case to Charles N. Tenney, 3 October 1861</title>
+     </bibl>
+    </head>
+
+    <p>Addie apologizes for writing in pencil, assuring Charlie that this does not indicate a change
+     in her feelings for him, but merely her lack of a pen and her need to write immediately as she
+     has the chance to send the letter by Captain Aspen. She wonders what he is doing, and is quite
+     anxious about him, having a "presentiment of evil" which she is struggling to overcome. She
+     encloses a gift she has made for him, and urges him to come visit soon. She also expresses
+     anxiety for and a wish to see Hal.</p>
+   </div1>
+
+  </front>
+  <body id="d4">
+
+
+   <div1 type="letter" n="1861-10-03" id="d5">
+    <pb n="1" entity="DSSR_000000766_0293"/>
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1861-10-03">3 October
+     1861</date></head>
+    <opener>
+     <dateline>
+      <name type="place">At Home</name>
+      <date value="1861-10-03">October 3<hi rend="super">rd</hi> 1861</date>
+     </dateline>
+     <salute>Dear<name type="person">
+       <orig reg="Charlie,">Charlie</orig>
+      </name></salute>
+    </opener>
+    <p>I have heard gentlemen<lb/> make the remark that when ladies<lb/> began to write with a lead
+     pencil<lb/> to them, they gue&longs;sed she wished<lb/> to discontinue their <orig
+      reg="correspondence.">correspondence</orig><lb/> But when you receive this, written<lb/> with
+     a pencil and on such paper<lb/> I imagine that you will think<lb/> worse than that, but do
+     not<lb/> harbor the thought for one <orig reg="instant,">instan</orig><lb/> dear <orig
+      reg="Charlie,">Charlie</orig> that my feelings are<lb/> such for indeed they are <orig
+      reg="not.">not</orig><lb/> I have no other paper, and my pens<lb/> have all &ldquo;got
+     poor&rdquo; therefore you will excuse<lb/> this will you not? for I thought it<lb/>
+     necessary to write immediately as<lb/>
+     <name type="person"><abbr expan="Captain">Capt.</abbr> Aspen</name> is in <name type="place"
+      >Warren</name> and I do not<lb/> know as I will get a chance to<lb/> send again, nor do I know
+     when he<lb/> returns to war. Where are you <orig reg="today?">to day</orig><lb/>
+     <orig reg="Are">are</orig> you engaged in some bloody battle<lb/> or are you reposing in
+     security in<lb/> your tent or on some bed of <orig reg="sickness?">sickne&longs;s.</orig>
+     How<lb/> often my thoughts<lb/>
+     <del hand="h1" type="overstrike">thoughts</del> <orig reg="have been">been</orig> with you <orig
+      reg="today.">to day</orig><lb/> There seems to be a presentiment of evil<lb/> hovering <orig
+      reg="around">round</orig> me, and my thoughts are<lb/> with <name type="person">Hal</name>
+      and <orig reg="yourself.">yourself,</orig> Can it be<lb/> that you are in danger and some rebel<lb/>
+     <unclear>strike</unclear>&mdash;<hi rend="underline">God forbid</hi>. I must dispel<lb/>
+     such thoughts. But would that I<lb/> were near you. <orig reg="Then">then</orig> I could feel
+     that<lb/> let come what might I would know<lb/> all. I have a sad and gloomy spirit<lb/>
+     <orig reg="today,">to day</orig> not much like the gay and<lb/> joyous Addie that <name
+      type="person">Hal</name> used to<lb/> tell <orig reg="about,">about</orig> but last<abbr
+      expan="evening">eve</abbr>I was to a<lb/> sewing bee for the <orig reg="soldiers,"
+     >soldiers.</orig> and <orig reg="it">I</orig><lb/> caused a strange feeling to thrill<lb/>
+     through me which is hard to <orig reg="dispel.">dispel</orig><lb/>
+    </p>
+    <p>What a beautiful evening, the sun<lb/> has just sunk beneath the western<lb/> horizon and the
+     day is gently falling<lb/> as if shedding silent tears over the<lb/>
+     <pb n="2" entity="DSSR_000000766_0294"/>green robed earth. The pretty feathered<lb/> warblers
+     have retired to rest and the<lb/> stealing twilight finds me seated<lb/> at my window
+     scribbling away as fast<lb/> as my poor <unclear>tallent</unclear> and ability will<lb/>
+     <orig reg="admit.">admit</orig> <name type="person"> Dora</name> has just <orig reg="left. She"
+      >left she</orig> and<lb/> I mi&longs;s my <orig reg="light-hearted,">light hearted</orig>
+     joyous<lb/> friend very much indeed. We have<lb/> been very busy completing some<lb/>
+     <orig reg="trifling">triffling</orig> work which you will see when<lb/> you receive this. It
+     consists of some<lb/> bachelor <unclear>needle</unclear> <orig reg="books.">books,</orig> She has
+     made<lb/> one for one of her friends in the army<lb/> and I for one of mine. <orig reg="Will"
+      >will</orig> you <orig reg="accept">accep</orig><lb/>
+     <orig reg="it,">it</orig> dear Charlie, as a slight testimony<lb/> of my friendship and in
+     honor of<lb/> the cause in which you are engaged?<lb/> I know it is but a trifle but<lb/>
+     perhaps you will make it <orig reg="useful.">useful</orig><lb/> I was in hopes that you would
+     come<lb/> home so that I could deliver it in<lb/> person but I have looked so long in<lb/> vain
+     that I will now send it with<lb/>
+     <name type="person">
+      <abbr expan="Captain">
+       <orig reg="Capt.">Capt,</orig>
+      </abbr>
+      <orig reg="Aspen.">Aspen</orig>
+     </name> I do hope that <name type="person">Hal</name><lb/> will come home soon for I wish<lb/>
+     to see him very <orig reg="much.">much</orig> Do not fail<lb/> to accompany him when he
+     comes<lb/> for I do not relish disappointment<lb/> in anticipated <orig reg="pleasure."
+     >pleasure</orig> Tell <name type="person">Hal</name><lb/> that two weeks have pa&longs;sed
+     since we<lb/> received a letter from him. If I<lb/> had not heard from you in
+     le&longs;s<lb/> time than that I should feel<lb/> quite <orig reg="anxious.">anxious</orig>
+     But I must <orig reg="close.">close</orig><lb/>
+    </p>
+    <closer>Please excuse all <orig reg="mistakes.">mistakes</orig> Write soon<lb/> and often and
+     oblige your friend<lb/>
+     <signed>Addie</signed></closer>
+   </div1>
+  </body>
+ </text>
+</TEI.2>

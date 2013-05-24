@@ -1,0 +1,1376 @@
+<!-- ******************************************************************************************
+
+     uva-dl-tei.ent
+     Version 1.58
+     2008-11-03
+
+     One of two extension files (see also uva-dl-tei.dtd) constituting a customization of TEI P4,
+     following the method described in the TEI Guidelines, chapter 29, "Modifying and Customizing
+     the TEI DTD".
+
+       http://www.tei-c.org/P4X/MD.html
+
+     This DTD is used for initial document production (keyboarding vendor encoding and subsequent
+     in-house post-keyboarding processing) by Digital Library Production Services (DLPS),
+     University of Virginia Library.
+
+     Greg Murray <gpm2a@virginia.edu>, DLPS
+
+     ****************************************************************************************** -->
+
+
+<!-- ******************************************************************************************
+     Contents
+     ******************************************************************************************
+
+     Revision History
+     Feature Selection
+     TEI Keywords
+     Notation Declarations
+     1. Renamed elements
+     2. Class modifications
+       2.A. Content-model classes
+       2.B. Attribute classes
+     3. Modified elements
+     4. Suppressed elements
+-->
+
+
+
+<!-- ******************************************************************************************
+     Revision History
+     ******************************************************************************************
+
+     Version  Date        Description
+     1.0      2003-03-20  First production release.
+     1.0.1    2003-03-24  Added 'notice' to a.divtype.
+     1.0.2    2003-04-14  Added TEI.dictionaries additional tagset. Changed type attribute on stage
+                          element from REQUIRED to IMPLIED.
+     1.0.3    2003-04-28  Changed n attribute on cb to REQUIRED.
+     1.0.4    2003-05-12  Enumerated vocabulary for 'type' attribute on <head>.
+     1.0.5    2003-05-20  Removed customization of item element content model.
+     1.0.6    2003-05-23  Added "related" to enumerated values for 'type' attribute on <title>.
+     1.0.7    2003-05-27  Added "divisional-title" to a.divtype; needed for composite texts, as in
+                          group/text/front/div1 type="divisional-title".
+     1.0.8    2003-06-26  Added "afterword" to a.divtype.
+     1.0.9    2003-06-27  Changed <dateline> to allow note references and notes.
+     1.0.10   2003-07-07  Added customized declarations for the %formulaContent; and
+                          %formulaNotations; parameter entities to allow informal, textual
+                          representation of mathematical formulae.
+     1.0.11   2003-07-16  Added "series-title" to a.divtype. Added "edition", "series", and
+                          "volume" to the enumerated vocabulary for attribute 'type' on <head>
+                          (useful for <head> types within <div1 type="half-title">).
+     1.0.12   2003-07-17  Changed datatype of 'resp' attribute from CDATA to IDREF on elements
+                          <note>, <reg> (orig element has been suppressed), <sic> (already changed
+                          on <corr>), and <unclear>, and on attribute class a.pointer.
+     1.0.13   2003-07-22  Added "no-indent" to a.rend.indent (for use when a paragraph etc. is not
+                          indented, but surrounding paragraphs are).
+     1.0.14   2003-07-28  Added "series" to enumerated vocabulary for attribute 'type' on <titlePart>.
+     1.0.15   2003-07-29  Added "text" to a.divtype.
+     1.0.16   2003-08-01  Added "script" to enumerated vocabulary for 'rend' on <hi> (for
+                          handwriting-like typefaces).
+     1.0.17   2003-08-11  Added 'type' attribute to <date> with enumerated vocabulary (e.g. birth,
+                          death, flourished). Changed 'certainty' attribute datatype from CDATA to
+                          enumerated vocabulary.
+     1.0.18   2003-08-21  Added "part" to enumerated vocabulary for attribute 'type' on <title> (to
+                          correspond with MARC field 245|p, the cataloging designation for the title
+                          of a part/section of a work). Added "resp" to enumerated vocabulary for
+                          attribute 'type' on <titlePart> and changed it from default "main" to
+                          IMPLIED. On <pb/>, removed attribute 'rend' for VENDOR.
+     1.0.19   2003-08-29  No actual changes; reworked organization and presentation of modifications.
+     1.0.20   2003-09-29  Restored <orig> to POSTKB mode only and changed its 'resp' attribute from
+                          CDATA to IDREF.
+     1.0.21   2003-10-27  Added "open" to a.rend.hi.
+     1.0.22   2003-11-04  Changed content model for <figure> to allow m.chunk rather than just <p>.
+     1.0.23   2003-11-11  Added new element <frontispiece>, which is a <figure> that can occur
+                          within m.divtop. <figure> itself cannot be added to m.divtop because
+                          doing so creates an ambiguous content model, since <figure> is allowed
+                          further down in the div. Added <frontispiece> to x.divtop.
+     1.0.24   2003-11-24  Added "alternate" to enumerated vocabulary for attribute 'type' on <title>.
+     1.0.25   2003-12-10  Added vendor convenience elements for the types of gaps encountered when
+                          encoding newspapers (Cavalier Daily project): ad, cartoon, comicStrip,
+                          puzzle, wireArticle, wirePhoto (VENDOR mode only).
+     1.0.26   2003-12-16  Added "uniform" to enumerated vocabulary for attribute 'type' on <title>.
+                          Added to a.divtype types of divisions needed for encoding newspapers
+                          (Cavalier Daily project): classifieds, ad (VENDOR only), op-ed
+     1.0.27   2004-01-05  Added 'epistle' to a.divtype.
+     1.1      2004-01-07  Added <byline> to content model for <figure>, for marking credits for
+                          illustrations, photos, etc.
+     1.2      2004-01-17  Enabled elements <add> and <del> (POSTKB only). For <add>, made attribute
+                          'resp' required. For <del>, made 'resp' required and changed 'status'
+                          from default value "unremarkable" to IMPLIED. Added value "desc" to
+                          enumerated vocabulary for attribute 'type' on <title>.
+     1.3      2004-01-20  No changes. Renamed extension files from uvalib_kb.ent and uvalib_kb.dtd
+                          to uva-dl-tei.ent and uva-dl-tei.dtd to better reflect their role not only
+                          as a keyboarding vendor DTD but also as the post-keyboarding DTD used for
+                          the remainder of the document's lifetime (post-keyboarding processing at
+                          DLPS through inclusion in the Digital Library).
+     1.4      2004-01-27  Added 'figure', 'nameplate', and 'filler' to a.divtype. (These div types
+                          are mainly needed for encoding newspapers: 'figure' is needed when a photo
+                          between articles requires its own div; 'nameplate' is used for the main
+                          heading/name of the newspaper at the top of the first page; 'filler' is
+                          for a short blurb, usually enclosed enclosed in a box, that fills the end
+                          of a column.) Added %m.editIncl; to the content model of <front>, <body>,
+                          and <back> to allow gaps within these elements.
+     1.5      2004-02-02  Added feature selection entity NEWSPAPER to allow newspaper-specific
+                          parts of the DTD to be included or excluded by the document instance as
+                          appropriate.
+     1.6      2004-02-09  Changed content model of <figure> so that <byline> (added previously: see
+                          1.1, 2004-01-07) occurs at the same level as <head>, not the level of <p>
+                          and other chunk elements. This follows the example of m.divtop in div#
+                          elements and is how <byline> should have been added in the first place.
+                          Added feature selection entity DICTIONARY to allow dictionary-specific
+                          parts of the DTD to be included or excluded by the document instance as
+                          appropriate.
+     1.7      2004-02-20  No substantive changes. Improved handling of feature selection switches
+                          VENDOR and POSTKB, such that enabling POSTKB in document's internal
+                          subset automatically disables VENDOR (so VENDOR does not have to be
+                          explicitly disabled).
+     1.8      2004-03-18  Added attribute 'altEntity' on <pb>, to be used in cases where page
+                          images are bitonal and a grayscale or color figure image exists for a
+                          full-page figure. In such a case, the bitonal page image's base filename
+                          is the value of the 'entity' attribute; the color/grayscale figure image's
+                          base filename is the value of the 'altEntity' attribute. Also removed
+                          attribute 'rend' on <pb> for POSTKB (already had been removed for VENDOR).
+     1.9      2004-03-24  Added 'ref' to a.divtype.newspaper (NEWSPAPER only); needed for isolated
+                          headlines/blocks of text that refer to another section, with no
+                          accompanying article.
+     1.10     2004-03-29  Changed controlled vocabulary of 'status' attribute on <availability> to
+                          UVa-specific terms (public | uva | viva | restricted).
+     1.11     2004-03-31  Changed content model for <body> to allow <pb> (NEWSPAPER only). Needed for
+                          cases where page break occurs in midst of a series of gaps (ads, comic
+                          strips, etc.) such that there is no div to contain the pb.
+     1.12     2004-04-23  Added feature selection entity STANDALONE_HEADER to allow validation of
+                          <standaloneHeader> documents. These documents are analogous to <ihs>
+                          (independent headers) documents (except that the content model of <ihs>
+                          allows one or more <teiHeader> elements, while the content model of
+                          <standaloneHeader> allows exactly one <teiHeader>). Because the ihs DTD is
+                          not extensible, any customization of TEI header-related elements cannot be
+                          applied to <ihs> documents. For this reason the ability to validate
+                          standalone headers has been incorporated into this DTD, rather than using
+                          the TEI ihs DTD.
+     1.13     2004-04-26  Added attribute 'altType' on <title>. It is intended to be used in the TEI
+                          header when type="alternate" (corresponds to MARC field 246) to indicate
+                          the type of alternate title.
+     1.14     2004-05-20  Added "issue" "date" and "former" to enumerated vocabulary for attribute
+                          'type' on <title>.
+     1.15     2004-08-31  Dispensed with attribute 'altType' on <title> and instead moved values
+                          "portion" "parallel" etc. corresponding to MARC 246 2nd indicator into
+                          enumerated vocabulary for attribute 'type'.
+     1.16     2004-09-23  [Changes not implemented]
+     1.17     2004-10-08  Added "sort" to enumerated values for 'type' attribute on <title>. The
+                          "sort" title is the main title with nonfiling characters moved to the end
+                          - e.g. "Cavalier Daily, The " (4 nonfiling characters). Removed "gmd"
+                          from enumerated values for 'type' attribute on <title>.
+     1.18     2004-10-15  Added feature selection entities TRANS and NONTRANS to allow using this
+                          DTD to validate non-transcription (page-image-only) TEI documents.
+     1.19     2004-10-25  Added <biblScope> to <titleStmt> and <seriesStmt>. Needed for TEI headers
+                          for issues of a serial or volumes of a multi-volume set, to specify scope
+                          of item in hand, e.g. volume number, issue number, or issue date.
+     1.20     2004-12-09  Changed <fileDesc> to allow more than one <seriesStmt> as requested by
+                          Metadata Steering Group (changed from ? to *). Also removed <table> from
+                          content model for <row>. (Nested tables are still allowed within <cell>.)
+     1.21     2004-12-13  Removed <cb/> and <pb/> from content model for <row> and <cell>. (Column
+                          and page breaks are allowed between table rows, but not within them.)
+                          Also removed values "date" and "issue" from allowed values for attribute
+                          'type' on <title>, since these values are no longer being used
+                          (see 1.14, 2004-05-20 above).
+     1.22     2005-01-07  Changed content model of <front> to allow zero or more <pb/> elements at
+                          the beginning of <front> (POSTKB only). Needed for cases where the first
+                          several page breaks are the front cover, spine, back cover, etc. These
+                          pb's should be placed directly within <front>, rather than in a div1,
+                          because they are not part of the "content," which for our purposes means
+                          transcriptional content.
+     1.23     2005-02-02  Changed content model of <front> to allow one or more <pb/> elements, with
+                          no other content. Needed for cases where the front matter contains only
+                          page breaks for the front cover, spine, back cover, etc.
+     1.24     2005-02-18  Changed attribute 'type' on <titlePage> from CDATA to enumerated
+                          vocabulary. Reverted 'resp' on <corr> from REQUIRED back to its original
+                          status of %INHERITED; (when converting existing markup to this DTD, you
+                          don't always know who made the corrections).
+     1.25     2005-02-25  Added feature selection entity MANUSCRIPT to allow manuscript-specific
+                          parts of the DTD to be included or excluded by the document instance as
+                          appropriate.
+     1.26     2005-03-24  Added 'pid' attribute on <pb> and <figure> elements, to facilitate
+                          delivery of TEI documents containing unparsed entities for page images
+                          and figure images.
+     1.27     2005-03-31  - Changed <fileDesc> to allow more than one <publicationStmt> as
+                            requested by Metadata Steering Group (changed from one to +).
+                          - Added new elements for encoding manuscript letters: <postmark>, <to>,
+                            <from>, and <stamp> (MANUSCRIPT only). These are allowed within
+                            <opener>; they are needed for identifying the addressing information
+                            found on the envelope accompanying a manuscript letter (or written on
+                            the back of a folded letter page, etc.). Added 'enclosure' to a.divtype
+                            (MANUSCRIPT only - for enclosures accompanying manuscript letters).
+     1.28     2005-05-02  Added 'announcement', 'report', 'resolution', 'roll-call', and 'statement'
+                          to a.divtype for use with meeting minutes (namely Board of Visitors
+                          minutes). Also added 'memorandum' to a.divtype.
+     1.29     2005-05-06  Changed 'hand' attribute on <add> and <del> from %INHERITED; to #REQUIRED.
+                          Also reverted 'resp' attribute from #REQUIRED back to its original TEI
+                          status of %INHERITED;. Reading the TEI Guidelines (element reference)
+                          reveals that for <add> and <del>, resp "signifies the editor or
+                          transcriber responsible for identifying the hand of the deletion", whereas
+                          hand "signifies the hand of the agent which made the deletion" (which is
+                          what we were erroneously using 'resp' for previously).
+     1.30     2005-06-16  Added figure element to x.common (thus adding it to m.common class).
+                          Previous versions of the TEI DTD files included <figure> in m.common, but
+                          the current version (dated 2004-07-15) does not. It is appropriate to
+                          allow <figure> to be in m.common - so that, for example, figure can be
+                          the one and only child of a div. Similarly added <figure> to x.inter and
+                          x.tpParts, for the same reason. Also removed <figure> from m.Incl. The
+                          current version of the TEI DTD files includes <figure> in m.Incl, but we
+                          view <figure> as a content element, not as an element on a par with <pb/>,
+                          <gap/>, etc.
+     1.31     2005-07-07  Relaxed 'type' attribute on <lg> from REQUIRED to original TEI status of
+                          IMPLIED. Reason: The type of a line group is not always obvious,
+                          especially to encoding vendors, and requiring it was leading to heavy use
+                          of type="group", which is meaningless and should be avoided.
+     1.32     2005-07-21  Restored 'level' attribute on <title> for POSTKB mode only.
+     1.33     2005-07-29  Added 'altRend' attribute on <gap/>; used when reason="editorial" and
+                          print source has a specific manner of rendering editorial omissions, such
+                          as multiple asterisks, multiple em dashes, etc.
+                          Also changed 'place' attribute on <add> from CDATA to enumerated
+                          vocabulary (using the values suggested in the TEI Guidelines) and changed
+                          from IMPLIED to REQUIRED.
+                          Also added values "inscription" (for signatures, handwritten dedications,
+                          etc.), "obituary" (for death notices), "insert" (for loose or bound pages
+                          added into a book), and "page" (for any single page of content, typically
+                          a manuscript page) to a.divtype.
+     1.34     2005-08-08  Added "addenda" to a.divtype.
+     1.35     2005-09-21  Added 'pid' attribute to <frontispiece> and <ornament>, because these
+                          elements have 'entity' attributes, like <figure> and <pb>. ('pid' had
+                          previously been added for <figure> and <pb>; see 1.26, 2005-03-24 above.)
+     1.36     2005-10-26  Added 'type' attribute on <dateRange>, for consistency with same attribute
+                          on <date>.
+     1.37     2005-11-18  Added "unknown" as a value for 'reason' attribute on <gap/> (POSTKB only).
+                          Mainly useful for migration projects where the reason for an omission
+                          really is unknown.
+     1.38     2006-01-13  Added feature selection entity OCR to allow OCR-specific parts of the DTD
+                          (markup features designed for use with electronic transcriptions created
+                          via OCR rather than double keyboarding) to be included or excluded by the
+                          document instance as appropriate.
+     1.39     2006-02-09  Added 'canto' to a.divtype.
+     1.40     2006-03-22  Changed 'agent' and 'extent' attributes on <damage> to REQUIRED. Also
+                          added <damage> to content model for <stamp>. (These changes apply to
+                          MANUSCRIPT only.)
+     1.41     2006-04-04  Changed to allow <gap/> at the beginning of <front> (in addition to <pb>).
+     1.42     2006-04-05  Added <note> to content model for <signed>. Reason:
+                          Notes should be allowed wherever note references (ref or ptr) are allowed. But
+                          adding <note> to m.loc (which is part of m.phrase) is not possible because doing so
+                          creates an ambiguous content model (conflicts with <note> in m.inter, I suspect),
+                          so we have no choice but to add <note> directly to the content models of those
+                          elements that need it.
+     1.43     2006-04-28  Changed to allow <figure> (in addition to <pb>) within <div1> for NONTRANS texts.
+     1.44     2006-06-05  Changed 'type' attribute on <seg> to REQUIRED, with an enumerated vocabulary.
+                          Also added <figure> to content model for <docImprint> and <closer>. (We have
+                          excluded <figure> from m.Incl [see 1.30, 2005-06-16 above], but in the
+                          case of <docImprint> and <closer> there is a genuine need for <figure>.)
+     1.45     2006-06-06  Added feature selection entity RUBY to allow ruby markup. Added ruby-specific
+                          elements, based on the W3C Recommedation: http://www.w3.org/TR/ruby/
+     1.46     2006-06-12  Added <note> to content model for <closer>, <salute> and <byline>. (See
+                          comment for 1.42, 2006-04-05 above.)
+     1.47     2006-09-18  Added 'argument' to a.divtype. Yes, there is an element <argument>, but
+                          there are times when an argument is preceded by a preface, prologue, etc.
+                          that must be marked as a div. A div cannot be followed by an <argument>
+                          element. For this reason, 'argument' is needed as a div type.
+     1.48     2006-09-27  Added feature selection entity VERSE. This switch does *not* enable the
+                          TEI base tag set for verse. Instead, the base tag set for prose remains
+                          in effect and a limited number of verse-related features are enabled -
+                          namely, the <caesura> element is available. In the TEI P4 class system,
+                          <caesura> is a phrase-level element (member of m.phrase) that can occur
+                          just about anywhere. To limit the use of <caesura> to <l>, which is what
+                          we want, it will be necessary to use an external QA mechanism (XSLT QA
+                          stylesheet).
+     1.49     2006-10-25  Added values "before" and "after" to enumerated vocabulary for 'certainty'
+                          attribute on <date> element.
+     1.50     2006-12-15  Added 'contract' and 'manuscript' to a.divtype. Added 'envelope' to
+                          a.divtype.manuscript.
+     1.51     2007-01-16  Make <extent> repeatable (change from zero-or-one to zero-or-more) in
+                          biblFull (thus affecting sourceDesc, but not fileDesc); add 'type'
+                          attribute on <extent>. These changes are needed for sheet music, which
+                          has both physical dimensions (MARC 300) and playing time (MARC 306). Also
+                          reverted 'id' attribute on <language> from REQUIRED back to IMPLIED. This
+                          is needed in cases where a language is used in more than one way - for
+                          example the same language is declared twice, once for usage="main" and
+                          again for usage="accompanying material" or other use.
+     1.52     2007-04-18  Add <stage> to content model for <lg>. There is a case where <stage> is
+                          legitimately needed within <lg>: verse drama. <stage> is, of course,
+                          allowed in <sp>, and there is no reason why it shouldn't be allowed if
+                          the verse speech happens to be divided into line groups.
+     1.53     2007-06-08  Added "parent" to enumerated values for 'type' attribute on <title>, as
+                          requested by Cataloging (Erin Stalberg) for use in TEI headers
+                          representing a work (short story, poem, etc.) that is part of a larger
+                          monographic work (collection, anthology, etc.). The larger work (parent)
+                          will be identified (in the header for the child work) using
+                          <title type="parent">.
+     1.54     2007-06-24  Added 'decree' and 'postscript' to a.divtype. (pdr4h)
+     1.55     2007-06-27  Added 'anon' to enumerated vocabulary for the type attribute on seg.
+                          A <seg> with this type is analogous to <ab>, existing inline instead of
+                          as a block. (pdr4h)
+     1.56     2008-01-11  Changed attributes on <teiHeader>: Changed 'type' attribute from CDATA to
+                          enumerated vocabulary and made it REQUIRED. Changed 'creator' attribute
+                          from CDATA to enumerated vocabulary. Changed 'status' from default value
+                          "new" to IMPLIED. See declaration of <teiHeader> for additional comments.
+                          (gpm2a)
+     1.57     2008-01-18  Changed 'type' attribute on <title> from default value "main" to IMPLIED.
+                          This reverts to out-of-the-box TEI. Default attribute values are evil,
+                          and I don't know why we added one here. If a <title> has no 'type'
+                          attribute, it makes no claim as to its type; it cannot be assumed
+                          (especially in teiHeader) to be the main title.
+     1.58     2008-11-03  Reverted content model for <note> to out-of-the-box TEI, which allows
+                          phrase-level markup or block-level markup or both. Previously we had
+                          allowed block-level markup only (no phrase-level markup except initial
+                          <seg type="note-symbol"> for note symbol). There are many, many cases in
+                          which a <note> contains only a phrase and cannot reasonably be considered
+                          to require a <p> or even an <ab>. The <note> itself is a block. What we
+                          really want to is to allow either phrase-level or block-level but not both
+                          simulataneously, but this is not possible in a DTD because it causes an
+                          ambiguous content model. Enforcing that requires an external
+                          post-validation QA check.
+-->
+
+
+
+<!-- ******************************************************************************************
+     Feature Selection
+     ******************************************************************************************
+
+     This DTD is intended for use in two distinct ways: as a keyboarding DTD used by third-party
+     keyboarding vendors, and for post-keyboarding in-house processing. The VENDOR and POSTKB
+     "switches" allow invoking the DTD for either purpose. By default, the switches are set for
+     use as a vendor DTD. For use as a post-keyboarding DTD, the POSTKB switch must be enabled in
+     the document's internal subset, like so:
+
+       <!DOCTYPE TEI.2 SYSTEM "tei2.dtd" [
+       <!ENTITY % POSTKB "INCLUDE">
+       <!ENTITY % TEI.extensions.ent SYSTEM "uva-dl-tei.ent">
+       <!ENTITY % TEI.extensions.dtd SYSTEM "uva-dl-tei.dtd">
+-->
+
+<!-- By default, POSTKB features are disabled. -->
+<!ENTITY % POSTKB "IGNORE">
+
+<!-- If POSTKB has been enabled in the internal subset, then VENDOR must be disabled;
+     otherwise, VENDOR defaults to being enabled. -->
+<![%POSTKB;[
+<!ENTITY % VENDOR "IGNORE">
+]]>
+<!ENTITY % VENDOR "INCLUDE">
+
+
+<!--
+     This DTD can be used to encode electronic texts derived from books, newspapers, or
+     manuscripts. The DTD requirements specific to newspapers and manuscripts are disabled by
+     default. When encoding newspapers, the NEWSPAPER switch must be enabled in the document's
+     internal subset:
+
+       <!ENTITY % NEWSPAPER "INCLUDE">
+
+     When encoding manuscripts, the MANUSCRIPT switch must be enabled in the document's internal
+     subset:
+
+       <!ENTITY % MANUSCRIPT "INCLUDE">
+
+     This DTD can also be used to encode dictionaries using the TEI tagset for printed dictionaries.
+     The DTD requirements specific to dictionaries are disabled by default; when encoding
+     dictionaries, the DICTIONARY switch must be enabled in the document's internal subset:
+
+       <!ENTITY % DICTIONARY "INCLUDE">
+
+     To enable advanced features for encoding verse (see revision history for 1.48, 2006-09-27),
+     enable the VERSE switch in the document's internal subset:
+
+       <!ENTITY % VERSE "INCLUDE">
+
+     The NEWSPAPER, MANUSCRIPT, DICTIONARY and VERSE switches are unrelated to, and independent of,
+     the VENDOR and POSTKB switches.
+-->
+
+<!ENTITY % NEWSPAPER  "IGNORE">
+<!ENTITY % MANUSCRIPT "IGNORE">
+<!ENTITY % DICTIONARY "IGNORE">
+<!ENTITY % VERSE "IGNORE">
+
+
+<!--
+     This DTD can be used to validate standalone TEI headers. See revision history entry above for
+     version 1.12, 2004-04-23.
+-->
+
+<!ENTITY % STANDALONE_HEADER "IGNORE">
+
+
+<!--
+     This DTD can be used to validate TEI documents containing electronic transcriptions created
+     via OCR (optical character recognition) software. Such a document has a full TEI header, but
+     the <text> element contains only a <body> with a single <div1> containing only <page>
+     elements. Each <page> element contains one page of OCR-created text.
+
+     By default, OCR features are disabled. But if OCR has been enabled in the document instance
+     internal subset, then TRANS and NONTRANS must be disabled.
+-->
+
+<!ENTITY % OCR "IGNORE">
+
+<![%OCR;[
+<!ENTITY % TRANS "IGNORE">
+<!ENTITY % NONTRANS "IGNORE">
+]]>
+
+
+<!--
+     This DTD can be used to validate non-transcription (page-image-only) TEI documents. Such a
+     document has a full TEI header, but the <text> element contains only a <body> with a single
+     <div1> containing only <pb/> elements.
+
+     By default, transcription (TRANS) features are enabled, and non-transcription (NONTRANS)
+     features are disabled. But if NONTRANS has been enabled in the document instance internal
+     subset, then TRANS must be disabled.
+-->
+
+<!ENTITY % NONTRANS "IGNORE">
+
+<![%NONTRANS;[
+<!ENTITY % TRANS "IGNORE">
+]]>
+<!ENTITY % TRANS "INCLUDE">
+
+
+<!--
+     This DTD accommodates ruby markup. "Ruby" is a feature common in Japanese and other East Asian
+     texts in which a short span of text (the base text) is glossed by a short annotation (the ruby
+     text). The ruby markup scheme used here is based on the W3C Recommendation for ruby markup:
+     http://www.w3.org/TR/ruby/
+
+     As the W3C Recommendation explains, there are two main kinds of ruby markup: simple and
+     complex. This DTD allows both kinds.
+
+     By default, ruby features are disabled; to use ruby markup, the RUBY switch must be enabled in
+     the document's internal subset:
+
+       <!ENTITY % RUBY "INCLUDE">
+
+     This makes simple ruby markup possible. To use complex ruby markup, the RUBY_COMPLEX switch
+     must be enabled *in addition to* the RUBY switch:
+
+       <!ENTITY % RUBY "INCLUDE">
+       <!ENTITY % RUBY_COMPLEX "INCLUDE">
+-->
+
+<!ENTITY % RUBY "IGNORE">
+<!ENTITY % RUBY_COMPLEX "IGNORE">
+
+
+
+<!-- ******************************************************************************************
+     TEI Keywords
+     ******************************************************************************************
+
+     The tagsets are declared here simply to avoid having to make these declarations in the
+     document instance internal subset.
+-->
+
+<!-- Enable XML, rather than SGML. -->
+<!ENTITY % TEI.XML 'INCLUDE'>
+
+<!-- Always enable the prose base tagset. -->
+<!ENTITY % TEI.prose 'INCLUDE'>
+
+<!-- For dictionaries only, enable the 'general' base, which allows any given div to use either the
+     prose base or the dictionaries base. In theory, no single div can combine features of both. In
+     practice, because the prose base does not enable any elements not already available in the TEI
+     core, a single div can combine dictionary entries with prose features such as paragraphs and
+     lists. -->
+<![%DICTIONARY;[
+<!ENTITY % TEI.general 'INCLUDE'>
+<!ENTITY % TEI.dictionaries 'INCLUDE'>
+]]>
+
+<!-- Enable additional tagsets for linking (includes <anchor>, <ab>, and <seg>), tables and figures,
+     and transcription of primary sources (includes <fw>). -->
+<!ENTITY % TEI.linking 'INCLUDE'>
+<!ENTITY % TEI.figures 'INCLUDE'>
+<!ENTITY % TEI.transcr 'INCLUDE'>
+
+<!-- Declare keywords used in attribute lists. These are taken verbatim from teikey2.ent but must be
+     declared here before subsequent use. -->
+<!ENTITY % INHERITED '#IMPLIED'>
+<!ENTITY % ISO-date 'CDATA'>
+
+
+<!-- Override parameter entities for encoding mathematical formulae. The goal here is simply to
+     allow **informal** textual representation of the occasional mathematical formula in prose
+     humanities texts.
+
+     %formulaContent; controls the content model of <formula>; it is modified here to allow <hi> as
+     well as PCDATA. %formulaNotations; defines the datatype of the 'notation' attribute on
+     <formula>; it is modified here (from the default CDATA) to an enumerated vocabulary, for which
+     "informal" is the only possible value.
+
+     Markup example:
+
+     knew not enough mathematics even to figure a formula beyond <lb/>
+     the schoolboy <formula notation="informal">s=gt<hi rend="super">2</hi> / 2</formula>. If
+     Kepler and Newton could take liberties <lb/>
+-->
+
+<!ENTITY % formulaContent '(#PCDATA | hi)*'>
+<!ENTITY % formulaNotations '(informal)'>
+
+
+
+<!-- ******************************************************************************************
+     Notation Declarations
+     ****************************************************************************************** -->
+
+<!NOTATION uvaBitonal SYSTEM 'uvaBitonal'>
+<!NOTATION uvaHighRes SYSTEM 'uvaHighRes'>
+<!NOTATION uvaLowRes  SYSTEM 'uvaLowRes'>
+
+
+
+<!-- ******************************************************************************************
+     1. Renamed elements
+     ****************************************************************************************** -->
+
+<!-- No elements are renamed. -->
+
+
+
+<!-- ******************************************************************************************
+     2. Class modifications
+     ****************************************************************************************** -->
+
+<!-- ==========================================================================================
+     2.A. Content-model classes
+     ========================================================================================== -->
+
+<!-- Class:     m.pb (new class)
+     Extend:    None
+     Constrain: None
+     Comments:  For newspapers only, allow pb in certain contexts where disallowed for books,
+                namely within <body>; see ELEMENT declaration for <body>.
+     -->
+<![%NEWSPAPER;[
+<!ENTITY % m.pb 'pb |'>
+]]>
+
+<!ENTITY % m.pb ''>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     x.common (extends m.common) (teiclas2.ent)
+     Extend:    Add <figure>
+     Constrain: None
+     Comments:  See revision history comment for 1.30, 2005-06-16 above.
+     -->
+<!ENTITY % x.common 'figure |'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     x.divtop (extends m.divtop) (teiclas2.ent)
+     Extend:    Add <frontispiece>.
+     Constrain: None
+     Comments:  Sometimes a figure at the top of a div is needed.
+     -->
+<!ENTITY % x.divtop 'frontispiece |'>
+
+<!-- ========================================================================================== -->
+
+<![%VENDOR;[
+<![%NEWSPAPER;[
+<!-- Class:     x.editIncl (extends m.editIncl) (teiclas2.ent)
+     Extend:    Add convenience elements for the types of gaps encountered when encoding newspapers
+     Constrain: None
+     -->
+<!ENTITY % x.editIncl 'ad | cartoon | comicStrip | puzzle | wireArticle | wirePhoto |'>
+]]>
+]]>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     x.hqinter (extends m.hqinter) (teiclas2.ent)
+     Extend:    Add <quotedLetter>.
+     Constrain: None
+     -->
+<!ENTITY % x.hqinter 'quotedLetter |'>
+
+<!-- ========================================================================================== -->
+
+<![%VENDOR;[
+<!-- Class:     x.hqphrase (extends m.hqphrase) (teiclas2.ent)
+     Extend:    Add convenience elements for typographic changes
+     Constrain: None
+     -->
+<!ENTITY % x.hqphrase 'i | b | u | sup | sub | smcap |'>
+]]>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     x.phrase (extends m.phrase) (teiclas2.ent)
+     Extend:    Add <ruby> (RUBY only)
+     Constrain: None
+     Comments:  Allows <ruby> to occur at the phrase level, but only when the instance document
+                sets the RUBY switch to INCLUDE.
+     -->
+<![%RUBY;[
+<!ENTITY % x.phrase 'ruby |'>
+]]>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     x.refsys (extends m.refsys) (teiclas2.ent)
+     Extend:    Add <cols/> and <ornament>
+     Constrain: None
+     Comments:  Thus cols and ornament can occur anywhere milestone elements can occur.
+     -->
+<!ENTITY % x.refsys 'cols | ornament |'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     x.tpParts (extends m.tpParts (title page parts)) (teiclas2.ent)
+     Extend:    Add <figure>.
+     Constrain: None
+     Comments:  See revision history comment for 1.30, 2005-06-16 above.
+     -->
+<!ENTITY % x.tpParts 'figure |'>
+
+<!-- ========================================================================================== -->
+
+<!-- Declare classes referred to in m.Incl. These are taken verbatim from teiclas2.ent but must be
+     declared here before subsequent use. -->
+
+<!ENTITY % x.metadata "" >
+<!ENTITY % m.metadata "%x.metadata; alt | altGrp | certainty | fLib | fs | fsLib | fvLib | index |
+  interp | interpGrp | join | joinGrp | link | linkGrp | respons | span | spanGrp | timeline">
+
+<!ENTITY % x.refsys "" >
+<!ENTITY % m.refsys "%x.refsys; cb | fw | lb | milestone | pb">
+
+<!ENTITY % x.editIncl "" >
+<!ENTITY % m.editIncl "%x.editIncl; addSpan | delSpan | gap">
+
+<!-- Class:     m.Incl (teiclas2.ent)
+     Extend:    None
+     Constrain: Exclude <figure>.
+     Comments:  To modify m.Incl, it is necessary to declare it here and manually remove <figure>.
+                See revision history comment for 1.30, 2005-06-16 above.
+     -->
+<!ENTITY % x.Incl "" >
+<!ENTITY % m.Incl "%x.Incl; anchor | %m.editIncl; | %m.metadata; | %m.refsys;">
+
+<!-- ========================================================================================== -->
+
+<!-- Declare classes referred to in m.inter. These are taken verbatim from teiclas2.ent but must be
+     declared here before subsequent use. -->
+
+<!ENTITY % x.bibl "">
+<!ENTITY % m.bibl "%x.bibl; bibl | biblFull | biblStruct">
+
+<!ENTITY % x.hqinter "">
+<!ENTITY % m.hqinter "%x.hqinter; cit | q | quote">
+
+<!ENTITY % x.lists "">
+<!ENTITY % m.lists "%x.lists; label | list | listBibl">
+
+<!ENTITY % x.notes "">
+<!ENTITY % m.notes "%x.notes; note | witDetail">
+
+<!ENTITY % x.stageDirection "">
+<!ENTITY % m.stageDirection "%x.stageDirection; camera | caption | move | sound | tech | view">
+
+<!-- Class:     x.inter (extends m.inter) (teiclas2.ent)
+     Extend:    Add <figure>.
+     Constrain: None
+     Comments:  See revision history comment for 1.30, 2005-06-16 above.
+     -->
+<!ENTITY % x.inter 'figure |'>
+
+<!-- Class:     m.inter (teiclas2.ent)
+     Extend:    None
+     Constrain: Exclude <text>.
+     Comments:  To modify m.inter, it is necessary to declare it here and manually remove <text>.
+     -->
+<!ENTITY % m.inter "%x.inter; %m.bibl; | castList | %m.hqinter; | %m.lists; | %m.notes; | stage |
+      %m.stageDirection; | table">
+
+<!-- ========================================================================================== -->
+
+
+<!-- ==========================================================================================
+     2.B. Attribute classes
+     ========================================================================================== -->
+
+<!-- Class:     a.divtype.vendor (new class)
+     Extend:    None
+     Constrain: Enumerate division types applicable only to vendor encoding.
+     -->
+<![%VENDOR;[
+<![%NEWSPAPER;[
+<!ENTITY % a.divtype.vendor 'ad |'>
+]]>
+]]>
+
+<!ENTITY % a.divtype.vendor ''>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.divtype.newspaper (new class)
+     Extend:    None
+     Constrain: Enumerate division types applicable only to encoding newspapers.
+     -->
+<![%NEWSPAPER;[
+<!ENTITY % a.divtype.newspaper 'classifieds | filler | masthead | nameplate | op-ed | ref | univ-notices |'>
+]]>
+
+<!ENTITY % a.divtype.newspaper ''>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.divtype.manuscript (new class)
+     Extend:    None
+     Constrain: Enumerate division types applicable only to encoding manuscripts.
+     -->
+<![%MANUSCRIPT;[
+<!ENTITY % a.divtype.manuscript 'enclosure | envelope |'>
+]]>
+
+<!ENTITY % a.divtype.manuscript ''>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.divtype (new class)
+     Extend:    None
+     Constrain: Require 'type' attribute on div elements; enumerate vocabulary.
+     -->
+<!ENTITY % a.divtype '
+      type (%a.divtype.vendor; %a.divtype.newspaper; %a.divtype.manuscript; abstract
+            | acknowledgements | act | addenda | advertisement | afterword | announcement | appendix
+            | argument | article | ballad | bibliography | bio | book | book-plate | canto | castlist
+            | chapter | chronology | colophon | conclusion | contents | contract | decree | dedication | dialogue
+            | divisional-title | entry | epigraph | epilogue | epistle | errata | essay | figure
+            | fly-title | foreword | frontispiece | glossary | half-title | index | inscription
+            | insert | introduction | letter | limitation-notice | manuscript | memorandum | note | notes
+            | notice | obituary | page | part | plates | play | poem | postscript | preface | prologue
+            | quotation | report | resolution | roll-call | scene | section | series-title | song
+            | speech | statement | story | subsection | summary | text | volume | work) #REQUIRED'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.entity (new class)
+     Extend:    Add 'pid' attribute (POSTKB only).
+     Constrain: None
+     Comments:  This class is used to group the 'entity' and 'pid' attributes together, since
+                wherever 'entity' is allowed 'pid' also should be allowed.
+                The 'pid' attribute facilitates delivery by making the UVa Library PID (persistent
+                identifier) directly available to delivery stylesheets/programs.
+     -->
+<![%VENDOR;[
+<!ENTITY % a.entity ''>
+]]>
+
+<![%POSTKB;[
+<!ENTITY % a.entity '
+      entity ENTITY #IMPLIED
+      pid CDATA #IMPLIED'>
+]]>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.linking (teiclas2.ent)
+     Extend:    None
+     Constrain: Restrict a.linking to corresp, next, and prev (as in TEI Lite)
+     -->
+<!-- <!ENTITY % a.terminology ''> -->
+<!ENTITY % a.linking '
+      corresp IDREFS #IMPLIED
+      next IDREF #IMPLIED
+      prev IDREF #IMPLIED'>
+<!-- <!ENTITY % a.analysis ''> -->
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.pointer (teiclas2.ent)
+     Extend:    None
+     Constrain: Remove default value for 'targOrder' (change default from "U" to "IMPLIED"); change
+                'resp' datatype from CDATA to IDREF.
+     -->
+<!ENTITY % a.pointer '
+      type CDATA #IMPLIED
+      resp IDREF #IMPLIED
+      crdate CDATA #IMPLIED
+      targType CDATA #IMPLIED
+      targOrder (Y | N | U) #IMPLIED
+      evaluate ( all | one | none ) #IMPLIED'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.rend.align (new class)
+     Extend:    None
+     Constrain: Enumerate alignment values for 'rend' attribute.
+     -->
+<!ENTITY % a.rend.align 'center | left | right'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.rend.display (new class)
+     Extend:    None
+     Constrain: Enumerate display values for 'rend' attribute.
+     -->
+<!ENTITY % a.rend.display 'block | inline | none'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.rend.indent (new class)
+     Extend:    None
+     Constrain: Enumerate indentation values for 'rend' attribute.
+     -->
+<!ENTITY % a.rend.indent 'indent | indent2 | indent3 | indent4 | indent5 | hang | no-indent'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.rend.typo (new class)
+     Extend:    None
+     Constrain: Enumerate typography values for 'rend' attribute.
+     -->
+<![%VENDOR;[
+<!-- For the vendor DTD, exclude 'rend' values for which convenience elements already exist. -->
+<!ENTITY % a.rend.typo ''>
+]]>
+
+<![%POSTKB;[
+<!ENTITY % a.rend.typo 'bold | italic | small-caps | sub | super | underline |'>
+]]>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.rend.extended (new class)
+     Extend:    
+     Constrain: Enumerate additional values for 'rend' attribute.
+     -->
+<!ENTITY % a.rend.extended 'gothic | line-through | open | overline | red-letter | roman | script | slash-through'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.rend.global (new class)
+     Extend:    None
+     Constrain: Enumerate vocabulary for global 'rend' attribute.
+     -->
+<!ENTITY % a.rend.global 'rend (%a.rend.display; | %a.rend.align; | %a.rend.indent;) #IMPLIED'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.global (teiclas2.ent)
+     Extend:    None
+     Constrain: Enumerate vocabulary for global 'rend' attribute.
+     Comments:  Limiting 'rend' in this way:
+                (a) disallows arbitrary rend values ("italics", "italic", "ital" for same feature)
+		(b) only allows values for alignment and indentation (not typographic changes)
+		(c) requires typographic rendering to be indicated within structural markup
+                    (e.g. <p><hi rend="italic">...</hi></p> not <p rend="italic">...</p>).
+                For elements that need other 'rend' values, a.global will not be used; instead
+                a.global.no_rend will be used and 'rend' will be declared with a different
+                enumerated vocabulary.
+-->
+<!ENTITY % a.global '
+      %a.linking;
+      id ID #IMPLIED
+      n CDATA #IMPLIED
+      lang IDREF %INHERITED;
+      %a.rend.global;'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.global.no_rend (new class)
+     Extend:    None
+     Constrain: (Enumerate vocabulary for 'rend' attribute.)
+     Comments:  Identical to a.global except that 'rend' is excluded. Used for elements that need
+                to change definition of 'rend' attribute.
+     -->
+<!ENTITY % a.global.no_rend '
+      %a.linking;
+      id ID #IMPLIED
+      n CDATA #IMPLIED
+      lang IDREF %INHERITED;'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.global.id_required (new class)
+     Extend:    None
+     Constrain: (Require 'id' attribute.)
+     Comments:  Identical to a.global except that 'id' is required.
+     -->
+<!ENTITY % a.global.id_required '
+      %a.linking;
+      id ID #REQUIRED
+      n CDATA #IMPLIED
+      lang IDREF %INHERITED;
+      %a.rend.global;'>
+
+<!-- ========================================================================================== -->
+
+<!-- Class:     a.global.n_required (new class)
+     Extend:    None
+     Constrain: (Require 'n' attribute.)
+     Comments:  Identical to a.global except that 'n' is required.
+     -->
+<!ENTITY % a.global.n_required '
+      %a.linking;
+      id ID #IMPLIED
+      n CDATA #REQUIRED
+      lang IDREF %INHERITED;
+      %a.rend.global;'>
+
+<!-- ========================================================================================== -->
+
+
+
+<!-- ******************************************************************************************
+     3. Modified elements
+     ****************************************************************************************** -->
+
+<!ENTITY % add       'IGNORE'>
+<!ENTITY % availability 'IGNORE'>
+<!ENTITY % back      'IGNORE'>
+<!ENTITY % biblFull  'IGNORE'>
+<!ENTITY % body      'IGNORE'>
+<!ENTITY % byline    'IGNORE'>
+<!ENTITY % cb        'IGNORE'>
+<!ENTITY % cell      'IGNORE'>
+<!ENTITY % cit       'IGNORE'>
+<!ENTITY % closer    'IGNORE'>
+<!ENTITY % corr      'IGNORE'>
+<!ENTITY % damage    'IGNORE'>
+<!ENTITY % date      'IGNORE'>
+<!ENTITY % dateline  'IGNORE'>
+<!ENTITY % dateRange 'IGNORE'>
+<!ENTITY % del       'IGNORE'>
+<!ENTITY % div1      'IGNORE'>
+<!ENTITY % div2      'IGNORE'>
+<!ENTITY % div3      'IGNORE'>
+<!ENTITY % div4      'IGNORE'>
+<!ENTITY % div5      'IGNORE'>
+<!ENTITY % div6      'IGNORE'>
+<!ENTITY % div7      'IGNORE'>
+<!ENTITY % docImprint 'IGNORE'>
+<!ENTITY % extent    'IGNORE'>
+<!ENTITY % figure    'IGNORE'>
+<!ENTITY % fileDesc  'IGNORE'>
+<!ENTITY % front     'IGNORE'>
+<!ENTITY % fw        'IGNORE'>
+<!ENTITY % gap       'IGNORE'>
+<!ENTITY % group     'IGNORE'>
+<!ENTITY % head      'IGNORE'>
+<!ENTITY % hi        'IGNORE'>
+<!ENTITY % idno      'IGNORE'>
+<!ENTITY % language  'IGNORE'>
+<!ENTITY % lg        'IGNORE'>
+<!ENTITY % note      'IGNORE'>
+
+<![%MANUSCRIPT;[
+<!ENTITY % opener    'IGNORE'>
+]]>
+
+<!ENTITY % orig      'IGNORE'>
+<!ENTITY % pb        'IGNORE'>
+<!ENTITY % q         'IGNORE'>
+<!ENTITY % ref       'IGNORE'>
+<!ENTITY % reg       'IGNORE'>
+<!ENTITY % row       'IGNORE'>
+<!ENTITY % salute    'IGNORE'>
+<!ENTITY % seg       'IGNORE'>
+<!ENTITY % seriesStmt 'IGNORE'>
+<!ENTITY % sic       'IGNORE'>
+<!ENTITY % signed    'IGNORE'>
+<!ENTITY % stage     'IGNORE'>
+<!ENTITY % teiHeader 'IGNORE'>
+<!ENTITY % text      'IGNORE'>
+<!ENTITY % title     'IGNORE'>
+<!ENTITY % titlePage 'IGNORE'>
+<!ENTITY % titlePart 'IGNORE'>
+<!ENTITY % titleStmt 'IGNORE'>
+<!ENTITY % unclear   'IGNORE'>
+
+<!-- Note: The content model for <formula> has been modified as well, but this is controlled by the
+     %formulaContent; parameter entity, so there is no need to IGNORE formula here and provide a
+     custom declaration elsewhere. -->
+
+
+
+<!-- ******************************************************************************************
+     4. Suppressed elements
+     ****************************************************************************************** -->
+
+<!-- Rather than list only elements to be suppressed, all elements from the TEI P4 core and selected
+     tagsets are listed for ease of reference, even though the explicit inclusion of elements here
+     is technically unnecessary. -->
+
+<![%STANDALONE_HEADER;[
+<!ENTITY % TEI.2                    'IGNORE'>
+<!ENTITY % standaloneHeader 'INCLUDE'>
+]]>
+
+<!ENTITY % TEI.2        'INCLUDE'>
+<!ENTITY % teiCorpus.2              'IGNORE'>
+<!ENTITY % standaloneHeader         'IGNORE'>
+
+<!-- Chapter 5: TEI Header -->
+<!-- File: teihdr2.dtd -->
+<![%VENDOR;[
+<!ENTITY % teiHeader    'INCLUDE'>
+<!ENTITY % fileDesc     'INCLUDE'>
+<!ENTITY % titleStmt    'INCLUDE'>
+<!ENTITY % sponsor                     'IGNORE'>
+<!ENTITY % funder                      'IGNORE'>
+<!ENTITY % principal                   'IGNORE'>
+<!ENTITY % editionStmt                 'IGNORE'>
+<!ENTITY % edition                     'IGNORE'>
+<!ENTITY % extent                      'IGNORE'>
+<!ENTITY % publicationStmt 'INCLUDE'>
+<!ENTITY % distributor                 'IGNORE'>
+<!ENTITY % authority                   'IGNORE'>
+<!ENTITY % idno         'INCLUDE'>
+<!ENTITY % availability                'IGNORE'>
+<!ENTITY % seriesStmt                  'IGNORE'>
+<!ENTITY % notesStmt                   'IGNORE'>
+<!ENTITY % sourceDesc   'INCLUDE'>
+<!ENTITY % scriptStmt                  'IGNORE'>
+<!ENTITY % recordingStmt               'IGNORE'>
+<!ENTITY % recording                   'IGNORE'>
+<!ENTITY % equipment                   'IGNORE'>
+<!ENTITY % broadcast                   'IGNORE'>
+<!ENTITY % encodingDesc                'IGNORE'>
+<!ENTITY % projectDesc                 'IGNORE'>
+<!ENTITY % samplingDecl                'IGNORE'>
+<!ENTITY % editorialDecl               'IGNORE'>
+<!ENTITY % correction                  'IGNORE'>
+<!ENTITY % normalization               'IGNORE'>
+<!ENTITY % quotation                   'IGNORE'>
+<!ENTITY % hyphenation                 'IGNORE'>
+<!ENTITY % segmentation                'IGNORE'>
+<!ENTITY % stdVals                     'IGNORE'>
+<!ENTITY % interpretation              'IGNORE'>
+<!ENTITY % tagsDecl                    'IGNORE'>
+<!ENTITY % tagUsage                    'IGNORE'>
+<!ENTITY % rendition                   'IGNORE'>
+<!ENTITY % refsDecl                    'IGNORE'>
+<!ENTITY % step                        'IGNORE'>
+<!ENTITY % state                       'IGNORE'>
+<!ENTITY % classDecl                   'IGNORE'>
+<!ENTITY % taxonomy                    'IGNORE'>
+<!ENTITY % category                    'IGNORE'>
+<!ENTITY % catDesc                     'IGNORE'>
+<!ENTITY % fsdDecl                     'IGNORE'>
+<!ENTITY % metDecl                     'IGNORE'>
+<!ENTITY % symbol                      'IGNORE'>
+<!ENTITY % variantEncoding             'IGNORE'>
+<!ENTITY % profileDesc  'INCLUDE'>
+<!ENTITY % creation                    'IGNORE'>
+<!ENTITY % langUsage    'INCLUDE'>
+<!ENTITY % language     'INCLUDE'>
+<!ENTITY % textClass                   'IGNORE'>
+<!ENTITY % keywords                    'IGNORE'>
+<!ENTITY % classCode                   'IGNORE'>
+<!ENTITY % catRef                      'IGNORE'>
+<!ENTITY % revisionDesc                'IGNORE'>
+<!ENTITY % change                      'IGNORE'>
+]]>
+
+<!-- For POSTKB DTD, no header elements are suppressed. -->
+
+
+<!-- Chapter 6: Elements Available in All TEI Documents -->
+<!-- File: teicore2.dtd -->
+<!-- 6.1 Paragraphs -->
+<!ENTITY % p            'INCLUDE'>
+
+<!-- 6.2 Treatment of Punctuation -->
+
+<!-- 6.3 Highlighting and Quotation -->
+<!ENTITY % foreign      'INCLUDE'>
+<!ENTITY % emph                     'IGNORE'>
+<!ENTITY % hi           'INCLUDE'>
+<!ENTITY % distinct                 'IGNORE'>
+<!ENTITY % q            'INCLUDE'>
+<!ENTITY % quote                    'IGNORE'>
+<!ENTITY % cit          'INCLUDE'>
+<!ENTITY % soCalled                 'IGNORE'>
+
+<![%VENDOR;[
+<!ENTITY % term                     'IGNORE'>
+]]>
+
+<![%POSTKB;[
+<!-- term needed in teiHeader/profileDesc/textClass/keywords -->
+<!ENTITY % term         'INCLUDE'>
+]]>
+
+<!ENTITY % gloss                    'IGNORE'>
+<!ENTITY % mentioned                'IGNORE'>
+
+<!-- 6.4 Names, Numbers, Dates, Abbreviations, and Addresses -->
+<!ENTITY % rs                       'IGNORE'>
+<!ENTITY % name         'INCLUDE'>
+<!ENTITY % address      'INCLUDE'>
+<!ENTITY % addrLine     'INCLUDE'>
+<!ENTITY % street                   'IGNORE'>
+<!ENTITY % postCode                 'IGNORE'>
+<!ENTITY % postBox                  'IGNORE'>
+<!ENTITY % num          'INCLUDE'>
+<!ENTITY % measure                  'IGNORE'>
+<!ENTITY % date         'INCLUDE'>
+<!ENTITY % time         'INCLUDE'>
+<!ENTITY % dateRange    'INCLUDE'>
+<!ENTITY % timeRange                'IGNORE'>
+<!ENTITY % abbr         'INCLUDE'>
+<!ENTITY % expan                    'IGNORE'>
+
+<!-- 6.5 Simple Editorial Changes -->
+<!ENTITY % sic          'INCLUDE'>
+
+<![%VENDOR;[
+<!ENTITY % corr                     'IGNORE'>
+<!ENTITY % reg                      'IGNORE'>
+<!ENTITY % orig                     'IGNORE'>
+]]>
+<![%POSTKB;[
+<!ENTITY % corr         'INCLUDE'>
+<!ENTITY % reg          'INCLUDE'>
+<!ENTITY % orig         'INCLUDE'>
+]]>
+
+<!ENTITY % gap          'INCLUDE'>
+<!ENTITY % unclear      'INCLUDE'>
+
+<![%MANUSCRIPT;[
+<!ENTITY % add          'INCLUDE'>
+<!ENTITY % del          'INCLUDE'>
+]]>
+
+<!ENTITY % add                      'IGNORE'>
+<!ENTITY % del                      'IGNORE'>
+
+<!-- 6.6 Simple Links and Cross References -->
+<!ENTITY % ptr          'INCLUDE'>
+<!ENTITY % ref          'INCLUDE'>
+
+<!-- 6.7 Lists -->
+<!ENTITY % list         'INCLUDE'>
+<!ENTITY % item         'INCLUDE'>
+<!ENTITY % label        'INCLUDE'>
+<!ENTITY % head         'INCLUDE'>
+<!ENTITY % headLabel                'IGNORE'>
+<!ENTITY % headItem                 'IGNORE'>
+
+<!-- 6.8 Notes, Annotation, and Indexing -->
+<!ENTITY % note         'INCLUDE'>
+<!ENTITY % index                    'IGNORE'>
+<!ENTITY % divGen                   'IGNORE'>
+
+<!-- 6.9 Reference Systems -->
+<!ENTITY % milestone    'INCLUDE'>
+<!ENTITY % pb           'INCLUDE'>
+<!ENTITY % lb           'INCLUDE'>
+<!ENTITY % cb           'INCLUDE'>
+
+<!-- 6.10 Bibliographic Citations and References -->
+<!ENTITY % bibl         'INCLUDE'>
+<!ENTITY % biblStruct               'IGNORE'>
+
+<![%VENDOR;[
+<!ENTITY % biblFull                 'IGNORE'>
+]]>
+
+<![%POSTKB;[
+<!-- biblFull needed in teiHeader/fileDesc/sourceDesc -->
+<!ENTITY % biblFull     'INCLUDE'>
+]]>
+
+<!ENTITY % listBibl     'INCLUDE'>
+<!ENTITY % analytic                 'IGNORE'>
+<!ENTITY % monogr                   'IGNORE'>
+<!ENTITY % series                   'IGNORE'>
+<!ENTITY % title        'INCLUDE'>
+<!ENTITY % author       'INCLUDE'>
+<!ENTITY % editor       'INCLUDE'>
+<!ENTITY % respStmt     'INCLUDE'>
+<!ENTITY % resp         'INCLUDE'>
+<!ENTITY % meeting                  'IGNORE'>
+<!ENTITY % imprint      'INCLUDE'>
+<!ENTITY % pubPlace     'INCLUDE'>
+<!ENTITY % publisher    'INCLUDE'>
+<!ENTITY % biblScope    'INCLUDE'>
+
+<!-- 6.11 Passages of Verse or Drama -->
+<!ENTITY % l            'INCLUDE'>
+<!ENTITY % lg           'INCLUDE'>
+<!ENTITY % sp           'INCLUDE'>
+<!ENTITY % speaker      'INCLUDE'>
+<!ENTITY % stage        'INCLUDE'>
+
+<!-- Chapter 7: Default Text Structure -->
+<!-- File: teistr2.dtd -->
+<!ENTITY % text         'INCLUDE'>
+<!ENTITY % body         'INCLUDE'>
+<!ENTITY % group        'INCLUDE'>
+<!ENTITY % div                      'IGNORE'>
+<!ENTITY % div0                     'IGNORE'>
+<!ENTITY % div1         'INCLUDE'>
+<!ENTITY % div2         'INCLUDE'>
+<!ENTITY % div3         'INCLUDE'>
+<!ENTITY % div4         'INCLUDE'>
+<!ENTITY % div5         'INCLUDE'>
+<!ENTITY % div6         'INCLUDE'>
+<!ENTITY % div7         'INCLUDE'>
+<!ENTITY % trailer      'INCLUDE'>
+<!ENTITY % byline       'INCLUDE'>
+<!ENTITY % dateline     'INCLUDE'>
+<!ENTITY % argument     'INCLUDE'>
+<!ENTITY % epigraph     'INCLUDE'>
+<!ENTITY % opener       'INCLUDE'>
+<!ENTITY % closer       'INCLUDE'>
+<!ENTITY % salute       'INCLUDE'>
+<!ENTITY % signed       'INCLUDE'>
+
+<!-- File: teifron2.dtd -->
+<!ENTITY % front        'INCLUDE'>
+<!ENTITY % titlePage    'INCLUDE'>
+<!ENTITY % docTitle     'INCLUDE'>
+<!ENTITY % titlePart    'INCLUDE'>
+<!ENTITY % docAuthor    'INCLUDE'>
+<!ENTITY % imprimatur   'INCLUDE'>
+<!ENTITY % docEdition   'INCLUDE'>
+<!ENTITY % docImprint   'INCLUDE'>
+<!ENTITY % docDate      'INCLUDE'>
+
+<!-- File: teiback2.dtd -->
+<!ENTITY % back         'INCLUDE'>
+
+<!-- Chapter 8: Prose (included) -->
+<!-- File: teipros2.dtd -->
+<!-- Defines no extra elements; prose elements are included in the TEI
+     core. -->
+
+<!-- Chapter 9: Verse  (excluded) -->
+<!-- Chapter 10: Drama (excluded) -->
+<!-- Chapter 11: Transcriptions of Speech (excluded) -->
+
+<![%DICTIONARY;[
+<!-- Chapter 12: Print Dictionaries -->
+<!-- File: teidict2.dtd -->
+<!-- 12.2.1: Dictionary entries and their structure-->
+<!ENTITY % superEntry   'INCLUDE'>
+<!ENTITY % entry        'INCLUDE'>
+<!ENTITY % entryFree                'IGNORE'>
+<!ENTITY % hom          'INCLUDE'>
+<!ENTITY % sense        'INCLUDE'>
+<!ENTITY % dictScrap    'INCLUDE'>
+<!-- 12.3.1: The form group-->
+<!ENTITY % form         'INCLUDE'>
+<!ENTITY % orth         'INCLUDE'>
+<!ENTITY % pron         'INCLUDE'>
+<!ENTITY % hyph         'INCLUDE'>
+<!ENTITY % syll         'INCLUDE'>
+<!ENTITY % stress       'INCLUDE'>
+<!ENTITY % gram         'INCLUDE'>
+<!ENTITY % gen          'INCLUDE'>
+<!ENTITY % number       'INCLUDE'>
+<!ENTITY % case         'INCLUDE'>
+<!ENTITY % per          'INCLUDE'>
+<!ENTITY % tns          'INCLUDE'>
+<!ENTITY % mood         'INCLUDE'>
+<!ENTITY % itype        'INCLUDE'>
+<!-- 12.3.2: The gram group-->
+<!ENTITY % gramGrp      'INCLUDE'>
+<!ENTITY % pos          'INCLUDE'>
+<!ENTITY % subc         'INCLUDE'>
+<!ENTITY % colloc       'INCLUDE'>
+<!-- 12.3.3.1: Definition text-->
+<!ENTITY % def          'INCLUDE'>
+<!-- 12.3.3.2: Translation information-->
+<!ENTITY % trans        'INCLUDE'>
+<!-- 12.3.4: Etymologies-->
+<!ENTITY % etym         'INCLUDE'>
+<!ENTITY % lang         'INCLUDE'>
+<!-- 12.3.5.1: Examples and citations-->
+<!ENTITY % eg           'INCLUDE'>
+<!-- 12.3.5.2: Usage information-->
+<!ENTITY % usg          'INCLUDE'>
+<!ENTITY % lbl          'INCLUDE'>
+<!-- 12.3.5.3: Cross References-->
+<!ENTITY % xr           'INCLUDE'>
+<!-- 12.3.6: Related entries-->
+<!ENTITY % re           'INCLUDE'>
+<!-- 12.4: Headword references-->
+<!ENTITY % oRef         'INCLUDE'>
+<!ENTITY % oVar         'INCLUDE'>
+<!ENTITY % pRef         'INCLUDE'>
+<!ENTITY % pVar         'INCLUDE'>
+]]>
+
+<!-- Chapter 13: Terminological Data (excluded) -->
+<!-- Mixed Bases (excluded) -->
+
+<!-- Chapter 14: Linking, Segmentation, and Alignment -->
+<!-- File: teilink2.dtd -->
+<!ENTITY % link                     'IGNORE'>
+<!ENTITY % linkGrp                  'IGNORE'>
+<!ENTITY % xref                     'IGNORE'>
+<!ENTITY % xptr                     'IGNORE'>
+<!ENTITY % anchor       'INCLUDE'>
+<!ENTITY % ab           'INCLUDE'>
+<!ENTITY % seg          'INCLUDE'>
+<!ENTITY % when                     'IGNORE'>
+<!ENTITY % timeline                 'IGNORE'>
+<!ENTITY % join                     'IGNORE'>
+<!ENTITY % joinGrp                  'IGNORE'>
+<!ENTITY % alt                      'IGNORE'>
+<!ENTITY % altGrp                   'IGNORE'>
+
+<!-- Chapter 15: Simple Analytic Mechanisms (excluded) -->
+<!-- Chapter 16: Feature Structures (excluded) -->
+<!-- Chapter 17: Certainty and Responsibility (excluded) -->
+
+<!-- Chapter 18: Transcription of Primary Sources -->
+<!-- File: teitran2.dtd -->
+<![%MANUSCRIPT;[
+<!ENTITY % addSpan      'INCLUDE'>
+<!ENTITY % delSpan      'INCLUDE'>
+<!ENTITY % restore      'INCLUDE'>
+<!ENTITY % supplied     'INCLUDE'>
+<!ENTITY % hand         'INCLUDE'>
+<!ENTITY % handShift    'INCLUDE'>
+<!ENTITY % handList     'INCLUDE'>
+<!ENTITY % damage       'INCLUDE'>
+<!ENTITY % space        'INCLUDE'>
+]]>
+<!-- In the absence of the MANUSCRIPT switch, these elements are suppressed. -->
+<!ENTITY % addSpan                  'IGNORE'>
+<!ENTITY % delSpan                  'IGNORE'>
+<!ENTITY % restore                  'IGNORE'>
+<!ENTITY % supplied                 'IGNORE'>
+<!ENTITY % hand                     'IGNORE'>
+<!ENTITY % handShift                'IGNORE'>
+<!ENTITY % handList                 'IGNORE'>
+<!ENTITY % damage                   'IGNORE'>
+<!ENTITY % space                    'IGNORE'>
+
+<!-- The fw element is always included, irrespective of the MANUSCRIPT switch. -->
+<!ENTITY % fw           'INCLUDE'>
+
+<!-- Chapter 19: Critical Apparatus (excluded) -->
+<!-- Chapter 20: Names and Dates (excluded) -->
+<!-- Chapter 21: Graphs, Networks, and Trees (excluded) -->
+
+<!-- Chapter 22: Tables, Formulae, and Graphics -->
+<!-- File:  teifig2.dtd -->
+<!ENTITY % table        'INCLUDE'>
+<!ENTITY % row          'INCLUDE'>
+<!ENTITY % cell         'INCLUDE'>
+<!ENTITY % formula      'INCLUDE'>
+<!ENTITY % figure       'INCLUDE'>
+<!ENTITY % figDesc      'INCLUDE'>
+
+<!-- Chapter 23: Language Corpora (excluded) -->
+
+<!-- END OF uva-dl-tei.ent -->

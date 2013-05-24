@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0549 SYSTEM "000000766_0549" NDATA jpg>
+<!ENTITY DSSR_000000766_0550 SYSTEM "000000766_0550" NDATA jpg>
+<!ENTITY DSSR_000000766_0551 SYSTEM "000000766_0551" NDATA jpg>
+<!ENTITY DSSR_000000766_0552 SYSTEM "000000766_0552" NDATA jpg>
+<!ENTITY longs "s">
+
+]>
+
+<!--<!DOCTYPE TEI.2 SYSTEM 'teixlite.dtd'[
+
+	<!NOTATION jpg SYSTEM "JPEG">
+
+	<!ENTITY NC62d28a SYSTEM "NC62d28a.jpg" NDATA jpg>  
+  <!ENTITY NC62d28b SYSTEM "NC62d28b.jpg" NDATA jpg>
+  <!ENTITY NC62d28c SYSTEM "NC62d28c.jpg" NDATA jpg>  
+  <!ENTITY NC62d28d SYSTEM "NC62d28d.jpg" NDATA jpg> 
+
+<!ENTITY longs "s">long s as typically found in 18th c
+
+	<!ENTITY % ISOlat1 SYSTEM "ISOlat1.pen"> %ISOlat1;  
+	<!ENTITY % ISOlat2 SYSTEM "ISOlat2.pen"> %ISOlat2;  
+	<!ENTITY % ISOnum SYSTEM "ISOnum.pen"> %ISOnum;  
+	<!ENTITY % ISOpub SYSTEM "ISOpub.pen"> %ISOpub;  
+	<!ENTITY % ISOtech SYSTEM "ISOtech.pen"> %ISOtech; ]>-->
+
+<TEI.2 id="NC62d28">
+
+
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-04-28"
+      >28 April 1862</date></title>
+    <author>Tenney, Charles, fl. 1861-1863</author>
+
+    <respStmt>
+     <resp>Transcription and TEIXLITE encoding.</resp>
+     <name>Risa B. Lapidow. Media Cybernetics, Inc. Rare Book School 2005.</name>
+    </respStmt>
+
+   </titleStmt>
+
+   <publicationStmt>
+    <publisher>Albert H. Small Special Collections Library, University of Virginia</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NC62d28</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2005">2005</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Charles M. Tenney to Adelaide E. Case, 28 April 1862</title>
+      <author>Tenney, Charles, fl. 1861-1863</author>
+     </titleStmt>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <date value="1862-04-28">1862-04-28</date>
+     </publicationStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <profileDesc>
+   <langUsage>
+    <language id="eng">English </language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>fiction</term>
+     <term>poetry</term>
+     <term>masculine</term>
+     <term>American Civil War</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2009-11-16">November 16th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>AL</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-04-28">April 28, 1862</date>
+      <!--<idno rend="suppress">NC62d28</idno>-->
+      <title> Letter from Charles N. Tenney to Adelaide E. Case </title>
+     </bibl>
+    </head>
+
+    <p>Charlie comments favorably on Addie's new school teaching career. He reminds her that she is
+     free to make her own decisions, and that he would do anything for her. He glories over the
+     beautiful spring and reminds her that he will be 21 years old soon.</p>
+
+   </div1>
+  </front>
+
+
+
+  <body id="d4">
+
+
+
+   <div1 type="letter" n="1" id="d5">
+    <pb n="1" entity="DSSR_000000766_0549"/>
+    <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-04-28">28 April
+     1862</date></head>
+    <opener>
+
+     <!--<seg>
+      <figure rend="page" entity="NC62d28a">
+       <figDesc/>
+      </figure>
+     </seg>-->
+
+     <dateline>
+      <name type="place">New Market, Va.</name>
+      <date value="1862-04-28">April 28 1862</date>
+      <lb/>
+     </dateline>
+
+     <salute>My Darling Addie,</salute>
+     <lb/>
+
+    </opener>
+
+    <p> So you are going away from <lb/>
+     <name type="place">Mecca</name> to be <name type="recipient">"Addie"</name> no longer, but
+      <orig reg="Mistress">Mistre&longs;s</orig><ref target="n1" n="1">1</ref>. <lb/> To leave
+      "<name type="place">Maple Grove</name>", Papa, <name type="person"
+     >Laurie</name><!-- Addie's sister Laura -->, and <lb/> Auntie (to say nothing of the rest.) and
+     install <lb/> yourself as head of a large school, to "teach <lb/> the young scholars how to
+     shoot". I fancy I <lb/> see you just ringing the first bell; then as <lb/> that strange motley
+     crowd gathers in and <lb/> by pairs sort themselves, and then then as <lb/> you tap the bell to
+     secure order. I seem to<lb/> see you look around as if seeking if some <lb/>
+     <hi rend="underline">friend</hi> were there. Did I hear aright?<lb/> Methought I heard a
+     chapter from the Bible<lb/> by way of introduction. Then I heard that silvery<lb/> voice -
+     perhaps at first tremblingly - addressing<lb/> the school in accents of <orig reg="kindness"
+      >kindne&longs;s</orig> saying you<lb/> will love and wish to be loved. Do not <lb/> fear,
+     my love. I have been in the same place.<lb/>
+    </p>
+
+    <pb n="2" entity="DSSR_000000766_0550"/>
+    <!--    <p>
+     <figure rend="page" entity="NC62d28b">
+      <figDesc/>
+     </figure>
+    </p>-->
+
+    <p> I just upset my ink, and the sutler had nothing<lb/> but blue. I received your letters of
+     the <lb/> 16th and 17th this morning a few moments <lb/> before drill, and I actually believe
+     that they<lb/> have cured my headache, which I have had <lb/> for some time. I suppose that you
+     have broken<lb/> the ice ere this, and commenced your school <lb/> and I trust you will have
+     perfect <orig reg="success">succe&longs;s</orig>.<lb/> I cannot see why you did not receive
+     a letter <lb/> from me relative to your teaching. I left it<lb/> all to yourself, for I cannot
+     believe it my duty<lb/> to decide whether you <hi rend="underline">can</hi> or <hi
+      rend="underline">cannot</hi> do a <lb/> thing - by no means - for on the contrary your<lb/>
+     wishes should be, and are <hi rend="underline">my law</hi>. It is<lb/> perhaps well that you
+     are to teach this summer<lb/> I should love to have seen you and have had<lb/> a good long
+     visit before you commenced. but - I <lb/> could not. "Get ready for inspection in half an <lb/>
+     hour," is the order, and "orders must be obeyed."</p>
+    <lb/>
+    <p> You must describe <name type="place">Claridon</name> and its people <lb/> for me. <hi
+      rend="super"><add hand="h1" place="supralinear">Give me your "experience.</add>"</hi>
+     <lb/> Do you board around? If so please<lb/>
+    </p>
+
+    <pb n="3" entity="DSSR_000000766_0551"/>
+    <!--    <p>
+     <figure rend="page" entity="NC62d28c">
+      <figDesc/>
+     </figure>
+    </p>-->
+    <p> Well, "inspection" is over, and I will<lb/> write until "<orig reg="Dress"
+     >Dre&longs;s</orig> Parade", when of course<lb/> I shall have to go.</p>
+    <p>What a beautiful<lb/> day! But then of course, you have them<lb/> at home. We had quite a
+     heavy fall of<lb/> snow the 23rd and<ref target="n2" n="2">2</ref> 24th, and it contrasted<lb/>
+     strangely - but beautifully, with the dark<lb/> Cedar and bright Peach <orig reg="blossoms"
+      >blo&longs;soms</orig>, as it hung<lb/> in wreaths upon the boughs. But it did <lb/> not
+     last long. Rain came, and the ground<lb/> was soon covered with <hi rend="underline">mud</hi>,
+     instead<lb/> of the pure white snow.<lb/>
+    </p>
+
+    <p> I too love flowers and the sight of<lb/> those familiar flowers, which I have often<lb/>
+     gathered "when spring time comes." filled<lb/> my heart with joy, and I almost wished<lb/> "I
+     were a boy again," - ha! ha! What am I yet,<lb/> but a <hi rend="underline">boy</hi>? My
+     twenty-first year commences<lb/> the 8th of next month, when, - well - <hi rend="underline"
+     >I</hi> can't <lb/> tell what. I <orig reg="guess">gue&longs;s </orig>I shall love you <hi
+      rend="underline">more</hi>, and<lb/> with a more manly affection. <hi rend="super">
+      <add hand="h1" place="supralinear">to increase in hope as in years</add>
+     </hi><lb/> Hadn't I ought.<lb/>
+    </p>
+
+    <pb n="4" entity="DSSR_000000766_0552"/>
+    <!--    <p>
+     <figure rend="page" entity="NC62d28d">
+      <figDesc/>
+     </figure>
+    </p>-->
+    <p> Indeed, <name type="person">Hallie</name>
+     <!-- Addie's brother Hal --> must have an exalted opinion<lb/> of "darkies." Truly! But I am
+     proud to know<lb/> he loves me, and if I <hi rend="underline">do not</hi> merit all his<lb/>
+     commendations, I cannot but be proud of<lb/> the compliment. Of <hi rend="underline">him</hi>,
+     I can but say, he<lb/> is Nature's nobleman - a man worthy the love<lb/> of a people.</p>
+    <p>Is Dora to be one of your<lb/> scholars this summer? If so, you must not<lb/> allow too much
+      <abbr expan="familiarity">fam</abbr> in school, - I mean, you <lb/> may do just as you please. </p>
+    <p>You will have<lb/> many trials and privations this summer, but<lb/> remember that upon
+     yourself depends all, and<lb/> God will sustain and protect you. If I can be<lb/> of any <orig
+      reg="assistance">a&longs;sistance</orig> to you in any manner, <hi rend="underline">do
+      not<lb/> fail to </hi>let me know, and I will gladly <lb/> render it. You know, my heart well
+     enough<lb/> by this time, to know that anything I <lb/> can do for you, I would do, even die
+     for your <lb/> sake. </p>
+    <p>Whirr-r-r-r tap-tap-tap-tap. <abbr expan="Adjutant's">Adjuts</abbr>.<lb/> Call. A large mail
+     has come. Is there<lb/> anything for me? Oh yes. A paper. Pshaw, why<lb/> don't a letter come?
+     Just as I wrote-thought-<lb/> last word, I heard my name called, and<lb/> to my joy, more mail
+     had come, and yours<lb/> and Laurie's letter was included. Now I<lb/> shall write a little
+     longer.<lb/>
+    </p>
+
+    <p> I shall try another sheet of paper.<lb/> Perhaps I can fill it.<lb/>
+    </p>
+   </div1>
+
+  </body>
+
+  <back id="d6">
+   <div1 type="notes" n="1" id="d7">
+    <head>Notes</head>
+    <note id="n1" place="end" n="1"><seg type="note-symbol">1</seg>
+     <p>A note on the handwriting: In words containing a double letter 's' Charlie uses the 'long S'
+      character for the first of the two letters.</p>
+    </note>
+    <note id="n2" place="end" n="2"><seg type="note-symbol">2</seg>
+     <p>In the original, Charlie uses an ampersand in place of the word "and".</p>
+    </note>
+   </div1>
+  </back>
+
+
+ </text>
+
+</TEI.2>

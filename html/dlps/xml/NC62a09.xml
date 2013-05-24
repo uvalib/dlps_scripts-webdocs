@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0477 SYSTEM "000000766_0477" NDATA jpg>
+<!ENTITY DSSR_000000766_0478 SYSTEM "000000766_0478" NDATA jpg>
+<!ENTITY DSSR_000000766_0479 SYSTEM "000000766_0479" NDATA jpg>
+<!ENTITY DSSR_000000766_0480 SYSTEM "000000766_0480" NDATA jpg>
+
+<!--<!ENTITY NC62a09a SYSTEM "NC62a09a.jpg" NDATA jpg>
+<!ENTITY NC62a09b SYSTEM "NC62a09b.jpg" NDATA jpg>
+<!ENTITY NC62a09c SYSTEM "NC62a09c.jpg" NDATA jpg>
+<!ENTITY NC62a09d SYSTEM "NC62a09d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NC62a09">
+
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-01-09"
+      >1862 January 9</date></title>
+
+    <author>Tenney. Charles N.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Cindy Lu</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>Cindy Lu</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">10</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NC62a09</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letters of Charles Tenney</title>
+
+
+      <author>Charles N. Tenney</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 pp.</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p>The Corinne Carr Nettleton Civil War Collection</p>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p>All unambiguous end-of-line hyphens have been removed, and the trailing part of a word has
+     been joined to the preceding line. </p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings. </p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-01-09">1862-01-09</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>masculine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-11">November 11th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">October 14th, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-01-09">January 9, 1862</date>
+
+      <title>Charles' Letter to Adelaide from Camp Keys, Romney, Virginia</title>
+     </bibl>
+    </head>
+    <p> Tenney tells of four inches of snow and of fighting at [Blew's Gap], sixteen miles from
+     Romney, with Federals breaking and running. However, Tenney did not participate because he was
+     on picket guard. </p>
+   </div1>
+  </front>
+
+  <body id="d4">
+   <div1 type="letter" n="1862-1-9" id="d5">
+    <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-01-09">1862 January
+     9</date></head>
+
+    <pb n="1" entity="DSSR_000000766_0477"/>
+
+    <opener>
+     <dateline>
+      <name type="place">Camp Keys 7<hi rend="super">th</hi> O.V. Romney Va.</name>
+      <date value="1862-01-09">Jan 9<hi rend="super">th</hi> 62</date>
+     </dateline>
+     <salute><hi rend="underline">Darling</hi><hi rend="underline">Sister</hi>:-</salute>
+    </opener>
+
+    <p> Last night, I had<lb/> the pleasure of recieving your<lb/> kind and interesting letter<lb/>
+     of the 1<hi rend="super">st</hi>, and you may<lb/> be sure I was highly entertain-<add place="top" hand="author">[ed</add><lb/>
+     How very kind of you to <orig reg="remember">remem<lb/> ber</orig> me, and to take a
+     sisterly<lb/> interest in my wellbeing.</p>
+
+    <p> "<hi rend="underline">Darling sister</hi>!" What emotions<lb/> the writing of that word
+     caus-<add place="top" hand="author">[es</add><lb/> in my heart! It seems so<lb/> strange to feel that after so<lb/> long a time as
+     has elapsed<lb/> since her whom I onlce loved<lb/> to address by the <del hand="h1">lov</del>
+     endearing<lb/> name of "sister" has <hi rend="underline">deigned</hi><lb/>
+     <pb n="2" entity="DSSR_000000766_0478"/> to write to me. I can say<lb/> at last "I have a
+      sister <corr sic="." resp="unknown">,</corr>" <unclear>yet</unclear><lb/>
+     <hi rend="underline">more</hi> than sister. Heaven help<lb/> me<corr sic="." resp="unknown"
+     >,</corr> that I may be worthy of<lb/> your love as a brother ought.</p>
+    <p> But I must banish these<lb/> unhappy thoughts from my<lb/> mind, else I shall go
+     distrated<lb/> Forgive my, dear Addie for this<lb/> expression of feeling. I will try<lb/> and
+     be more cheerful.</p>
+    <p> There is now, here, about<lb/> four inches of snow<corr sic="." resp="unknown">,</corr> and
+     of<lb/> course, there must be more up<lb/> north. You must be now<lb/> enjoying the pleasures
+     incident<lb/> to the coming of Old King Winter<lb/> Well, be happy and joyous, Addie<lb/>
+     darling, and take my share of<lb/> the pleasure. But there are<lb/> pleasures in war, too<corr
+      sic="." resp="unknown">,</corr> not that<lb/> it is a pleasure to kill, burn,<lb/>
+     <pb n="3" entity="DSSR_000000766_0479"/> and destroy, far from it<corr sic="." resp="unknown"
+     >,</corr> but<lb/> as Ferrold used to say " <hi rend="underline"><orig reg="There">there</orig>
+      is no<lb/> employment in life, but has its<lb/> moments of pleasure, <del hand="h1">"</del>
+      even a grave<lb/> digger has his pleasure. There are<lb/> men whose graves I would love<lb/>
+      to dig</hi>." I force myself to enjoy<lb/> the pleasures of Camp, but little<lb/> do the boys
+     know the feelings<lb/> which pass within.</p>
+    <p> Have you the reports<lb/> of the skirmish at Blew's Gap?<lb/> The fighting men of the different<lb/>
+      <abbr expan="Regiments">Regts.</abbr> here were ordered toward<lb/> Winchester, and at half
+     past 7<lb/> of the 7<hi rend="super">th</hi> inst. they arrived at the<lb/> Gap. 16 miles from
+     here, where<lb/> the rebels were entrenched, about<lb/> 1000 strong. (The 114<hi rend="super"
+      >th</hi> Va. Militia) and<lb/> after a few rounds, they broke &amp;<lb/> run, with a loss
+     of 9 killed 3 or 4<lb/> wounded, 13 prisoners, 3 cannon<lb/>
+     <pb n="4" entity="DSSR_000000766_0480"/> 10 horses, 2 wagons, all their<lb/> camp equipage,
+     commissary stores<lb/> and a large number of guns, and<lb/> a quantity of ammunition. Our<lb/>
+     loss was nothing. Hal &amp; myself<lb/> did not go<corr sic="." resp="unknown">,</corr>
+     owing to the fact that<lb/> we were on Picket guard. I would<lb/> not have missed going for <add
+      hand="h1" place="supralinear">a</add> good deal<lb/> Perhaps I may go next time.<lb/> We are
+     prepared for an attack here<lb/> at any time, all our extra baggage<lb/> being sent to
+     Cumberland.</p>
+
+    <p> Thank you, Addie darling, for<lb/> your prayers on my behalf. I love to<lb/> think that
+     there is one at least who<lb/> can remember me before the throne<lb/> of mercy. "God in heaven,
+     preserve you<lb/> from harm, and shower the <unclear>choicest</unclear><lb/> blessings of Heaven
+     upon you" Addie, dear<lb/> is my earnest prayer.</p>
+    <p> Perhaps I may come home<lb/> in a few days if I can get permission<lb/> of the Major.</p>
+    <p> But I must close this <orig reg="uninteresting">uninteres<lb/> ting</orig> letter hoping to
+     recieve another<lb/> letter from you soon. Hal is well<lb/> as ever. Give my kind regards<lb/>
+     to Laurie.<corr sic="be" resp="unknown"> Be</corr> happy, and kindly<lb/> remember the poor
+     soldier.</p>
+
+    <closer>
+     <salute>Trust me. I remain yours forever and affectionalely</salute>
+     <signed>
+      <name type="person">Charlie</name>
+     </signed>
+
+     <seg type="postscript"> Capt Wood has not yet arrived here nor has he sent your letter, nor
+      Hal's.</seg>
+
+     <add hand="h1" place="left">Hal is not reduced in rank but is now 1<hi rend="super">st</hi>
+      Lieut.</add>
+    </closer>
+   </div1>
+  </body>
+
+ </text>
+</TEI.2>

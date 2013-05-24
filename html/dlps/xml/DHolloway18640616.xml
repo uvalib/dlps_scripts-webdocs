@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000002759_0075 SYSTEM "000002759_0075" NDATA uvaHighRes>
+<!ENTITY DSSR_000002759_0076 SYSTEM "000002759_0076" NDATA uvaHighRes>
+
+]>
+
+<TEI.2 id="DHolloway18640616">
+    <teiHeader type="AACR2">
+        
+        <fileDesc>
+            <titleStmt>
+                
+                <title>D. Holloway to George Gilbert  <date value="1864-06-16">June 16th 64</date>
+                </title>
+                <author>Holloway, D.</author> <!-- Author entry is not from the Authority file. -->
+                <respStmt>
+                    <resp>Creation of machine-readable version: </resp>
+                    <name>Digital Curation Services , University of Virginia Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Digital Curation Services</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Creation of digital images:</resp>
+                    <name>Digitization Services, University of Virginia Library</name>
+                </respStmt>
+                
+            </titleStmt>
+            
+            <extent>ca. <num type="kilobytes">5</num> kilobytes</extent>
+            
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia </pubPlace>
+                <idno type="DCS">DHolloway18640616</idno>
+                <date value="2010">2010</date>
+            </publicationStmt>
+            
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-VACivilWar-letters</idno>
+            </seriesStmt>
+            
+            <sourceDesc>
+                
+                <biblFull>
+                    <titleStmt>
+                        <title>Letters from Federal soldiers stationed in Virginia, to friends at home [manuscript], 1861-1864.</title>
+                        <author></author>
+                    </titleStmt>
+                    <extent>2 page</extent>
+                    <publicationStmt>
+                        
+                        <idno type="Accession No.">MSS 828</idno>
+                        <idno type="Virgo ID">3929607-1001</idno>
+                        <idno type="title control number">a3929607 </idno>
+                        
+                        <availability>
+                            <p> Albert &amp; Shirley Small Special Collections, University of
+                                Virginia Library, Charlottesville, Virginia, USA</p>
+                        </availability>
+                    </publicationStmt>
+                </biblFull>
+                
+            </sourceDesc>
+            
+            
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <!-- Per Matt we need to work on this statement-->
+                <p> Prepared for the University of Virginia Library by Digital Curation Services staff
+                    and volunteer Mary Roy Dawson Edwards, Transcriber. 2005.</p>
+            </projectDesc>
+        </encodingDesc>
+        
+        <profileDesc>
+            <handList>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+        </profileDesc>
+        
+    </teiHeader>
+    
+    <text id="d1">
+        <body id="d2">
+        	<div1 type="letter" id="d3">
+        		<pb entity="DSSR_000002759_0075"/>
+        		<head>D. Holloway to George Gilbert <date value="1864-06-16">June 16th 64</date></head>
+        		
+            <!-- [The letterhead is an engraving of an eagle perched upon a shield and the letters "Protect The Union".] -->
+        	
+        	<opener>
+        		<dateline>           
+            <name type="place"><unclear>Leesburg</unclear></name> <date value="1864-06-16">June 16<hi rend="super">th</hi> 64</date>
+        		</dateline><lb/>
+        		<salute>George Gilbert</salute>
+        	</opener>
+        		
+        		<p>
+            I received thine of the 6<hi rend="super">th</hi> Inst<lb/>
+            and Contents noticed<lb/>
+            I will take 85 cts per pound<lb/>
+            for my Wool at the Wool<lb/>
+            house here all round &amp;<lb/>
+            If thee wants it at that<lb/>
+            prise thee can Telegraph<lb/>
+            to My Brother W W Holloway<lb/>
+            at Bridgeport, B, Co, Ohio as<lb/>
+            early as possible and if<lb/>
+            not Sold thee can have<lb/>
+            it when I get thy answer<lb/>
+        		</p>
+        		
+        		<closer>
+            <signed>Daniel Holloway</signed>
+        			
+            <seg type="postscript">
+            Please write to me on<lb/>
+            reception of this and oblig<lb/>
+            thy friend        D Holloway<lb/>
+            
+            
+            <pb entity="DSSR_000002759_0076" n="[page 2]"/>
+            
+            <!--D. Holloway-->
+            </seg>
+        		</closer>
+        		
+            </div1>
+        </body>
+    </text>
+	</TEI.2>

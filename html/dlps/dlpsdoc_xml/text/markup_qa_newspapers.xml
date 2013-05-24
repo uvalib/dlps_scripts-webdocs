@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+
+<!-- =============================================================== -->
+<!-- NOTE: Update last modified date manually when editing this file -->
+<!-- =============================================================== -->
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % TEI.extensions.ent SYSTEM "http://pogo.lib.virginia.edu/dlps/dtd/tei/teitech/teitech.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://pogo.lib.virginia.edu/dlps/dtd/tei/teitech/teitech.dtd">
+<!ENTITY % ISOlat1  SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOnum   SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub   SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+
+<!ENTITY files '<replace>cavdaily_*.xml</replace>'>
+<!ENTITY qa_commandline_script 'qa_newspapers'>
+<!ENTITY % markup_qa_entities  SYSTEM 'markup_qa.ent'> %markup_qa_entities;
+<!ENTITY % common_entities  SYSTEM 'common.ent'> %common_entities;
+]>
+<TEI.2>
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Markup QA Workflow for Newspapers</title>
+<author>Greg Murray (gpm2a@virginia.edu), Digital Library Production Services</author>
+</titleStmt>
+<publicationStmt>
+<publisher>Digital Library Production Services, University of Virginia Library</publisher>
+</publicationStmt>
+</fileDesc>
+</teiHeader>
+
+<text id="d1">
+<body id="d2">
+<argument>
+<p>This document describes the workflow for in-house markup QA and
+correction of electronic texts digitized from printed newspapers by
+keyboarding vendors for Digital Library Production Services (DLPS),
+University of Virginia Library. It is intended for use by internal
+DLPS staff.</p>
+
+<!-- =============================================================== -->
+<!-- NOTE: Update last modified date manually when editing this file -->
+<!-- =============================================================== -->
+
+<p><hi rend="bold">Last modified:</hi> <date type="last-modified" value="2007-01-29">1/29/2007</date></p>
+</argument>
+
+<div1 id="d3">
+<head>Preliminaries</head>
+<div2 id="d4">
+&initial_steps;
+</div2>
+
+<div2 id="d7">
+<head>Additions to TEI header</head>
+<list>
+&teiHeader_revisionDesc;
+</list>
+</div2>
+
+<div2 id="d5">
+&unknown_chars;
+</div2>
+</div1>
+
+<div1 id="d8">
+<head>Div structure</head>
+<list>
+&divs_structure;
+&divs_view_changes;
+&divs_update_tracksys;
+</list>
+</div1>
+
+<div1 id="d9">
+<head>Notes</head>
+
+<p>Normally a newspaper will not contain any notes (footnotes,
+endnotes, or marginal notes), but in rare cases footnotes can
+occur.</p>
+
+<p>To determine whether the document contains any notes, search for
+<code>&lt;note</code> with "Find in tags" checked. If there are any
+notes:</p>
+
+<list>
+
+<label>Supply <att>n</att> attribute</label>
+
+<item>Run this command-line script to supply the <att>n</att>
+attribute for <gi>note</gi> tags and their corresponding <gi>ref</gi>
+tags:
+<eg><xref type="scripts">notes_n</xref> -p &files;</eg>
+</item>
+
+&notes_update_tracksys;
+
+</list>
+</div1>
+
+<div1 id="d10">
+<head>Cross-references (jumps)</head>
+<list>
+<label>Check for "jumps"</label>
+<item>
+<p>Newspaper articles are commonly broken into two sections, with the
+continuation on a different page; this is known as a "jump."</p>
+  <list>
+  <item>To determine whether the document contains any jumps, search
+for <code>&lt;ref</code> with "Find in tags" checked.</item>
+  <item>If the document has no jumps, skip to the next
+section. Otherwise, proceed as follows.</item>
+  </list>
+</item>
+
+<label>Check jumps for reasonableness</label>
+<item>
+<p>Use &tei_preview_xref; to follow the hyperlink representing the jump, and
+do a quick "reasonableness test" on the article continuation that
+appears.</p>
+
+  <list>
+  <item>the first word of the headline of the continuation should
+normally match the text of the reference</item>
+  <item>the continuation should continue the article in an obvious
+way, typically by continuing the sentence where the first section left
+off</item>
+  </list>
+
+<p>The article continuation will often begin with its own
+cross-reference back to the first section. Follow that hyperlink as
+well, to check the reasonableness of the jump.</p>
+</item>
+</list>
+</div1>
+
+<div1 id="d11">
+<head>QA Programs</head>
+<list>
+&qa_programs_commandline;
+&qa_programs_web;
+&final_steps;
+</list>
+</div1>
+
+<div1 id="d12">
+<head>Spelling</head>
+<list>
+
+<item><emph>Copy</emph> files to be spell-checked from
+<path>60markup_checked</path> to
+<path>61being_spellchecked</path>.</item>
+
+<item>Open the file in oXygen, and choose <gizmo>Edit &rarr; Check spelling</gizmo></item>
+
+<item>oXygen's spell-checking feature is similar to those in word
+processing programs. For each unknown word (each word not contained in
+oXygen's English dictionary), you have several options:
+
+  <list>
+
+  <item>Click <gizmo>Ignore</gizmo> to keep the unknown word as-is and
+  continue spell-checking.</item>
+
+  <item>Click <gizmo>Ignore all</gizmo> to keep the unknown word
+  as-is, continue spell-checking, and bypass that word for the
+  remainder of the current spell-checking session.</item>
+
+  <item>Select a word from the list of suggestions, then click
+  <gizmo>Replace</gizmo> to replace the unknown word with your
+  selection (or click <gizmo>Replace all</gizmo> to replace all
+  occurrences of the unknown word throughout the document).</item>
+
+  <item>Click <gizmo>Learn</gizmo> to add the unknown word to oXygen's
+  dictionary, so that the word will not come up as unknown in this
+  session or any future spell-checking sessions.</item>
+
+  </list>
+
+  <admon type="important"><p>In some cases oXygen will stop on a word
+  simply because it is missing an accent mark. In these cases, keep
+  the original word rather than replacing it. For example, if oXygen
+  stops on the word <code>cliche</code> and suggests
+  <code>clich&eacute;</code> as a replacement, click
+  <gizmo>Learn</gizmo> to add <code>cliche</code> (unaccented) to
+  oXygen's dictionary (rather than clicking <gizmo>Replace</gizmo> or
+  <gizmo>Replace all</gizmo>).</p>
+
+  <p>The reasons for this practice are (1) a missing accent mark
+  arguably doesn't <emph>really</emph> constitute a spelling error;
+  (2) we are keeping the word as it originally appeared in the print
+  source, rather than changing it unnecessarily; (3) the accented
+  characters can cause problems for later processing of the
+  file.</p></admon>
+
+</item>
+
+<item>When spell-checking is complete: save, validate, and close the
+file in oXygen.</item>
+
+<item>Update the &tracksys_xref; to indicate completion of this
+step (Markup QA Workflow &rarr; Check spelling):
+<command><xref type="scripts">update_tracksys</xref> -s spell &files;</command></item>
+
+<item><emph>Move</emph> the spell-checked file from
+<path>61being_spellchecked</path> to
+<path>61spellchecked</path>.</item>
+
+</list>
+
+&copy_to_69processed;
+</div1>
+</body>
+</text>
+</TEI.2>

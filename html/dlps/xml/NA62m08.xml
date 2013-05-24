@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0239 SYSTEM "000000766_0239" NDATA jpg>
+<!ENTITY DSSR_000000766_0240 SYSTEM "000000766_0240" NDATA jpg>
+<!ENTITY DSSR_000000766_0241 SYSTEM "000000766_0241" NDATA jpg>
+<!ENTITY DSSR_000000766_0242 SYSTEM "000000766_0242" NDATA jpg>
+
+<!--<!ENTITY NA62m08a SYSTEM "NA62m08a.jpg" NDATA jpg>
+<!ENTITY NA62m08b SYSTEM "NA62m08b.jpg" NDATA jpg>
+<!ENTITY NA62m08c SYSTEM "NA62m08c.jpg" NDATA jpg>
+<!ENTITY NA62m08d SYSTEM "NA62m08d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NA62m08">
+ <teiHeader type="migrated">
+  <!-- todo -->
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-12-08">8
+      December 1862</date>
+    </title>
+
+    <author>Case, Adelaide E.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>David Seaman</name>
+     <resp>Creation of digital images:</resp>
+     <name>University of Virginia Library Electronic Text Center</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>ETC</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">11</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NA62m08</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Adelaide E. Case to Charles N. Tenney, 8 December 1862</title>
+      <author>Adelaide E. Case</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 pages</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p> </p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings. </p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-12-08">1862-12-08</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>feminine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-10">November 10th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-12-08">8 December 1862</date>
+
+      <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+     </bibl>
+    </head>
+    <p/>
+   </div1>
+  </front>
+  <body id="d4">
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-12-08">8 December
+      1862</date></head>
+    <pb n="1" entity="DSSR_000000766_0239"/>
+    <opener>
+     <dateline>
+      <name type="place">Farmington </name>
+      <date value="1862-12-08">Dec. 8<hi rend="super">th</hi> 1862</date>
+     </dateline>
+     <salute> My dear darling Charlie</salute>
+    </opener>
+
+
+
+    <p> What a cold <lb/> winter evening is this, but not cold <lb/> enough to <sic>dirive</sic>
+     away warm loving though<add place="inline" hand="h1">ts</add>
+     <lb/> from the heart. But with those same <lb/> loving thoughts of <hi rend="underline">thee
+      dear one</hi> are strange= <lb/> =ly mingled sad ones. And for several days <lb/> previous to
+     this. those same sad thoughts <lb/> those.--I am almost tempted to say <lb/> uncwelcome
+     forebodings. have lingered <lb/> about my heart. at times <add place="inline" hand="h1"
+       ><unclear>coming[?]</unclear> in</add> to feel so <lb/> very depressed in spirit. as to not
+     care <lb/> whether life or death were near. and at <lb/> other times the warm tears would gush
+     <lb/> forth in torrents, and still I would <lb/>
+     <pb n="2" entity="DSSR_000000766_0240"/> not know for what I wept.. <lb/> Is it owing the fact
+     that I do not <lb/> oftener hear from you dearest? I know <lb/> of nothing else that could
+     cause such <lb/> feeling in <hi rend="underline">my</hi> heart.. I know I am <lb/> an
+     ungrateful <hi rend="underline">child</hi>. but then you <lb/> know the heart will be human in
+     spite <lb/> of our efforts to make it appear different <lb/> at times, Oh. darling. how very
+     much I <lb/> desire to see you.. How very many long <lb/> months have passed since "last we
+     met" <lb/> and God only knos how many more <lb/> will pass before we shall meet again, <lb/>
+     And you dear patient Charlie bear this <lb/> seperation without a murmur.--you way <lb/> off
+     deprived of the common comforts of <lb/> life, patiently endure, not only this <unclear/>
+     <lb/> seperation but toil privation and suffering <lb/> while I surrounded <del hand="h1"
+     >say</del> all that can make <lb/> me happy except thy presence dearest, am <lb/> bitterly
+     complaning against an all wise <lb/> Providence. who sees fit to seperate us <lb/>
+     <pb n="3" entity="DSSR_000000766_0241"/> for<ref target="n1" n="1">1</ref> an indefinate time,
+     Ought I not to <lb/> be whipped? <lb/>
+    </p>
+    <p> Yesterday! oh - guess how I spent the day, <lb/> In reading all all of thy darling letters
+     <lb/> I told Carrie that if I would not be <lb/> the reciever of a letter from you I would
+     <lb/> read old ones. No they are not <hi rend="underline">old</hi>
+     <lb/> darling. your letters can <hi rend="underline">never</hi> grow old. <lb/> any more than
+     our love. Whil<unclear>[e]</unclear> reperusing <lb/> those precious treasures strange but
+     pleasing <lb/> emotions filled my heart, Although I have <lb/> read them <hi rend="underline"
+      >many</hi> times before. yet I <lb/> never before read them with such happiness <lb/>
+     <sic>cominngling</sic> with that same feeling of sad= <lb/> ness of which I have before
+     written. allow<unclear>[?]</unclear>
+     <lb/> me to recapitulate some of your writings a <lb/> little. The first-of your letters gave a
+     <lb/> description of Camp Dennison. then came the <lb/> several letters written
+      whil<unclear>[e]</unclear> you were in <lb/> W. Virginia. Your trip to Cincinnati <lb/> the
+     Charleston flood, battle of Cross Lanes <lb/> Floyds Pursuit and many other interesting <lb/>
+     facts which you so kindly acquainted me <lb/>
+    </p>
+
+
+    <pb n="4" entity="DSSR_000000766_0242"/>
+    <p>with. then your transfer into E. Virginia, and <lb/> amid all this came the declaration of
+     your love <lb/> for me. Oh with what rapture did my heart <lb/> respond to those precious
+     words.. How very happy was I then darling. Can those letters ever grow <lb/> old to me dearest?
+     No never while life remain<unclear>[s?]</unclear>
+     <lb/> But I wander. Next came those, relating your <lb/> different adventures whil in the
+     Potomac. then <lb/> forward move of the "Grand Army." Soon the <lb/> fight aaat Winchester in
+     which you suffered <lb/> so cruuelly then the march up the valley of <lb/> Shenandoah. and all
+     the marches backward <lb/> and forward. your march to Fredericksburg and <lb/> back finally
+     your retreeat and so many different <lb/> relations that it would be almost impossible <lb/>
+     for me to repeat them all. So I will write <lb/> no more of this. once again I ask can those
+     <lb/> letters <hi rend="underline">ever</hi> grow old? And once again I <lb/> repeat. No never!
+     <lb/>
+    </p>
+    <p> Only listen to Carrie playing on her guitar. <lb/> She is now playing the Star Spangled
+     banner <lb/> She has played "Hark I hear an angle sing" <lb/> "Lorena" Kingdom am a coming" and
+     various others <lb/> But dearest I have <sic>severall</sic> lessons to learn <lb/> yet this
+     evening so you will excuse the short= <lb/> ness of this will you not? Also the writing <lb/>
+     for I have been in a hurry. Will you not <lb/> write <hi rend="underline">very</hi> soon love?
+     Pleaaase do. Could you <lb/> know how very much I wish to hear from <lb/> you. you certainly
+     would not fail <unclear/>
+     <lb/> writing as often as once a week. if not oftener <lb/> God belss thee to
+     <unclear>aught</unclear> darling and always <lb/>
+    </p>
+    <closer>
+     <salute>As ever <hi rend="underline">your own true</hi></salute>
+     <lb/>
+     <signed>Addie</signed>
+    </closer>
+   </div1>
+   <div1 type="notes" n="1" id="d6">
+    <head>Notes</head>
+
+    <note id="n1" place="end" n="1"><seg type="note-symbol">1</seg>
+     <p> Only listen to Carrie playing on her guitar, The girl I left behind me <lb/> and singing
+      also </p>
+    </note>
+   </div1>
+
+
+
+  </body>
+ </text>
+</TEI.2>

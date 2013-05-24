@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0111 SYSTEM "000000766_0111" NDATA jpg>
+<!ENTITY DSSR_000000766_0112 SYSTEM "000000766_0112" NDATA jpg>
+<!ENTITY DSSR_000000766_0113 SYSTEM "000000766_0113" NDATA jpg>
+<!ENTITY DSSR_000000766_0114 SYSTEM "000000766_0114" NDATA jpg>
+
+<!--<!ENTITY NA62d01a SYSTEM "NA62d01a.jpg" NDATA jpg>
+<!ENTITY NA62d01b SYSTEM "NA62d01b.jpg" NDATA jpg>
+<!ENTITY NA62d01c SYSTEM "NA62d01c.jpg" NDATA jpg>
+<!ENTITY NA62d01d SYSTEM "NA62d01d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NA62d01T">
+
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-04-01"
+      >April 1, 1862</date></title>
+
+    <author>Case, Adelaide E.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Andrea Coles (Rare Book School)</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>Andrea Coles</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">11</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NA62d01</idno>
+    <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+    <date value="2004">2004</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Adelaide E. Case to Charles N. Tenney,</title>
+
+      <author>Adelaide E. Case</author>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 pp.</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p>All unambiguous end-of-line hyphens have been retained.</p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings.</p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-04-01">1862-04-01</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>feminine</term>
+     <term>American Civil War/Women Writers/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-06">November 6th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">September 30, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>AL</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-04-01">April 1, 1862</date>
+
+      <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+     </bibl>
+    </head>
+    <p> Addie expresses concern about Charles' wounded arm and her belief that he is downplaying its
+     severity, as well as sadness for others (Fred; Arthur Cavanah) who were wounded or died. She
+     mentions a conversation she had with a friend, Laurie. Addie worried when she heard about a
+     battle and then did not hear from him for three weeks. Having been offered a six month position
+     as a teacher, she seeks his opinion on whether or not she should accept. She urges him to come
+     home before she starts teaching. At the end, she asks if Charlie knows Edwin Williams and Will
+     Braden of the 29th Ohio Regiment. </p>
+   </div1>
+  </front>
+  <body id="d4">
+
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-04-01">April 1,
+     1862</date></head>
+    <pb n="1" entity="DSSR_000000766_0111"/>
+    <opener>
+     <dateline>
+      <name type="place">Home</name>
+      <date value="1862-04-01">April 1<hi rend="super">st</hi> '62</date>
+     </dateline>
+    </opener>
+
+    <p> Heaven reward you and <orig reg="bless">ble&longs;s</orig> you, <hi rend="underline">my
+      own</hi><lb/>
+     <hi rend="underline">my dear darling Charlie</hi> for your kind and<lb/> precious letter of the
+      25<hi rend="super">th</hi> <unclear>inst.</unclear>. Darling, you<lb/> do not know how much it
+     relieved my<lb/> heart. of an almost sinking fear and pain.<lb/> Although it relieved me of my
+     worst<lb/> fears, yet it brought painful information<lb/> that you did not escape unharmed. </p>
+    <p> Dearest, I know that you<sic corr="were">was</sic> injured<lb/> far worse than you
+     represented yourself to be.<lb/> Do you not think that I could see in the<lb/> very tone of
+     your letter that it was with<lb/>
+     <orig reg="extreme">extrem</orig> pain that you could trace those<lb/> dear lines? Oh, dear
+     Charlie, please tell me<lb/> just how badly your arm was hurt.. Darling,<lb/> why should you
+     attempt to conceal from me<lb/> your sufferings. Who should sooner know of <pb n="2"
+      entity="DSSR_000000766_0112"/> your sufferings than one who has plighted her<lb/> love,
+      aye, <hi rend="underline">even her life</hi> if necessary to you<lb/> I could not feel
+     worse.dearest to know the<lb/> entire truth than I now do. What. my Charlie<lb/> trying to
+     conceal from me - the one who should<lb/> be with him through the hours of
+     pain <unclear>the</unclear><lb/> extent of his wounds! Oh, do not my darling.<lb/> The very
+     thought is but frenzy. Why is it<lb/> that I can not be with you. God only knows<lb/> what I
+     have suffered since I heard of that<lb/> fearful battle.. I had not heard from you<lb/> for
+      some <orig reg="time">tim</orig> before that and when I read<lb/> of the fight. and still no
+     word from Charlie.<lb/> then and only <hi rend="underline">till</hi> then did I realize<lb/>
+     what life would be worth to me without<lb/> you. I said to Laurie last sabbath.
+     &ldquo;What<lb/> does it mean. three weeks ago tomorrow since<lb/> I have heard from
+     Charlie&rdquo;? She replied<lb/> &ldquo;Have hope Addie. Do not give up in dispair<lb/>
+     for oh, that is a hard word when forced<lb/> upon you.&rdquo; Darling do you wonder that my
+      <pb n="3" entity="DSSR_000000766_0113"/> faith in the protection of an All wise Father<lb/>
+     was beginning to totter? </p>
+    <p> I sympathize with you in the <orig reg="loss">lo&longs;s</orig> of your<lb/> comrade.
+      Fred. <unclear>lo__</unclear> and also with the wounded.<lb/> Arthur Cavanah. I have seen
+     several times.<lb/> He formerly kept the &ldquo;Livery Stable&rdquo; at Powers<lb/>
+     corners. did he not? What a sickening sight a<lb/> battle field must be. The discription of
+     it<lb/> which you gave me is enough. I never wish<lb/> to see one. </p>
+    <p> Darling. how would you like it if I should<lb/> teach school this summer. There is a school
+     in<lb/> Claridon that is not engaged. and they wish<lb/> very much to have me teach it. Should
+     I<lb/> dear. They wish for a six months school<lb/> rather long but <orig reg="nevertheless"
+      >neverthele&longs;s</orig> it will do.<lb/> I do so dread this inactive, monotonous<lb/>
+     life I am now leading. besides I have no<lb/> desire to live at home this summer. but<lb/> I
+     will be guided by your decision. The school<lb/> is in <unclear>Miss</unclear> Leslie's
+     district.. <pb n="4" entity="DSSR_000000766_0114"/> How I should love to have you come
+     home<lb/> darling. If I teach I wish very much to have<lb/> you come before I commence my
+     school. can<lb/> you come? If you were but with me now. Oh, my<lb/> darling. I am fearful that
+     your wound is much more<lb/> than you . yourself think. but I must hope for<lb/> the best. Is
+     not this day. beautiful? Oh the<lb/> world is full of beauty when the heart is full of<lb/>
+     love.is it not. Charlie. </p>
+    <p> The twenty ninth Ohio <abbr expan="Regiment">Regt</abbr>. was engaged in<lb/> that fight were
+     they not? Are you acquainted<lb/> with Edwin Williams of that Regt. he is a brother<lb/> of
+     mine in the Templars <unclear>curse</unclear>. Ed. and<lb/> Will. Braden are or were firm
+     friends . when<lb/> here in Mecca, He formerly belonged to the Seventh<lb/> Ohio I think. But I
+     have not time<lb/> to write longer as papa is going over to<lb/> the office tonight and I must
+     send this<lb/> while I have a chance these muddy<lb/> roads! Remember me to the boys. and<lb/>
+     darling. be careful of your health. Do not get<lb/> cold in your arm<lb/>
+    </p>
+    <closer>
+     <salute>Write often very often to cheer the heart of<lb/> your Addie</salute>
+    </closer>
+   </div1>
+
+  </body>
+
+ </text>
+
+</TEI.2>

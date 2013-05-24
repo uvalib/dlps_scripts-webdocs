@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0235 SYSTEM "000000766_0235" NDATA jpg>
+<!ENTITY DSSR_000000766_0236 SYSTEM "000000766_0236" NDATA jpg>
+<!ENTITY DSSR_000000766_0237 SYSTEM "000000766_0237" NDATA jpg>
+<!ENTITY DSSR_000000766_0238 SYSTEM "000000766_0238" NDATA jpg>
+
+<!--<!ENTITY NA62k23a SYSTEM "NA62k23a.jpg" NDATA jpg>
+<!ENTITY NA62k23b SYSTEM "NA62k23b.jpg" NDATA jpg>
+<!ENTITY NA62k23c SYSTEM "NA62k23c.jpg" NDATA jpg>
+<!ENTITY NA62k23d SYSTEM "NA62k23d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NA62k23">
+ <teiHeader type="migrated">
+  <!-- todo -->
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-11-23"
+      >23 November 1862</date></title>
+
+    <author>Case, Adelaide E.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>David Seaman</name>
+     <resp>Creation of digital images:</resp>
+     <name>University of Virginia Library Electronic Text Center</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>ETC</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">10</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NA62k23</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Adelaide E. Case to Charles N. Tenney, 23 November 1862</title>
+      <author>Adelaide E. Case</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 pages</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p> </p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings. </p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-11-23">1862-11-23</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>feminine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-10">November 10th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-11-23">23 November 1862</date>
+
+      <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+     </bibl>
+    </head>
+    <p/>
+   </div1>
+  </front>
+  <body id="d4">
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-11-23">23 November
+      1862</date></head>
+    <pb n="1" entity="DSSR_000000766_0235"/>
+
+    <opener>
+     <dateline>
+      <name type="place">Farmington.</name>
+      <date value="1862-11-23">Nov.. 23<hi rend="super">rd</hi> 1862</date>
+     </dateline>
+     <salute>My own loved Charlie</salute>
+    </opener>
+
+    <p> How very much <lb/> I thank you for your darling letter <lb/> that arrived last evening. You
+     know <lb/> not dearest how long and anxuously <lb/> I had looked for a letter since you <lb/>
+     wrote of your recent indisposition..-- <lb/> how I had prayed God to watch over <lb/>
+     <hi rend="underline">thee</hi> in sickness and in health,-- <lb/> how I had mour[n]ed over the
+     fate <lb/> that has kept such a barrier of miles <lb/> twixt <hi rend="underline">thee</hi> and
+     me. best beloved-- <lb/> until I was nearly ill.. If you would <lb/> spare me pain my love <hi
+      rend="underline">write often</hi>
+     <lb/>
+     <pb n="2" entity="DSSR_000000766_0236"/> True your excuses were sufficient. and <lb/> I forgive
+     you Indeed the joy of once <lb/> again hearing from you--of once again <lb/> reading your own
+     dear loving thoughts <lb/> addressed to <hi rend="underline">me</hi> darling more than <lb/>
+     cancled all the pain I had suffered <lb/> And art thou now well now darling? <lb/> Art thou
+     suffering far away from me-- <lb/> with no kind hand to alleviate the pain <lb/> Look to God
+     dearest. He can relieve <lb/> and be with you. for much as I regret <lb/> it I can not be with
+     you only in spirit <lb/> and that--<hi rend="underline">always</hi>. How very thankful <lb/> I
+     am darling that you are in the <lb/> position you now occupy instead of <lb/> performing the
+     arduous duties of camp <lb/> life and marching As Carrie said-- <lb/> our Carrie Kibbee)-- when
+     I told her <lb/> where you were. "Oh! Addie, are'nt you <lb/>
+     <hi rend="underline">so</hi> glad". and <add place="inline" hand="h1">in</add> the. dear girls
+     joy . she <lb/> actually--kissed me. </p>
+    <p> Oh. darling how I wish you to come <lb/> home, Were you here I do believe you <lb/>
+     <pb n="3" entity="DSSR_000000766_0237"/> would regain health and strength much <lb/> faster
+     than you now do. I would devote <lb/> myself so much to your happiness that <lb/> you could not
+     help but get well, <lb/> Do you not thing so dear? <lb/>
+    </p>
+    <p> Did you intend darling to bid me <lb/>
+     <hi rend="underline">hope</hi> when you said if the thing were <lb/> possible you would come
+     home this winter; <lb/> If so. that you a thousand times, How <lb/> much I wish you to return.
+     why you <lb/>
+     <hi rend="underline">can not</hi> know.. But you will wish to <lb/> know about my self will you
+     not dear? <lb/> I am well. much better than I was <lb/> before I recieved you precious letter.
+     and <lb/> am enjoying myself as well as I can-- <lb/> from <hi rend="underline">thee</hi>, I
+     like Farmington very much <lb/> indeed, also the school. Although I <lb/> have not as yet
+     become acquainted with <lb/> many of the students yet time passes <lb/> swiftly and pleasantly.
+     Indeed I see <lb/> no reason why it should not. Altho. <lb/> Hallie and papa would not premit
+     <lb/> me to take as many studies as <lb/>
+     <pb n="4" entity="DSSR_000000766_0238"/> I wished to do. yet with the splendid <lb/> company of
+      M<hi rend="super">r</hi> Kibbee's family with whom <lb/> I am boarding time does not lag I can
+     <lb/> assure you. How much I desire you to <lb/> become acquainted with Carrie and Emma, <lb/>
+     they are such splendid girls <lb/> Would you like to know the subjects of <lb/> my studies?
+     They are Algebra. Latin and <lb/> Music. I wished very much to take another <lb/> study, but
+     Hal. would not listen to it. <lb/> It affords me an opportunity of reading more <lb/> than I
+     could otherwise do, We spend very <lb/> pleasant evenings in reading useful and <lb/>
+     appropriate books, Would you not like to <lb/> join our circle some evening? I should dearly
+     <lb/> love to have you do so, But darling, it is <lb/> getting late besides here are Mr, and
+     Mrs. <lb/> Kibbee. Carrie and Emma, Miss Michalson. <lb/> (an assistant teacher in the
+     seminary) and <lb/> Mr Wolcott, son-in-law of Mr. Kibbee's, <lb/> all discussing the one common
+     theme--War <lb/> Quite an interesting discussion, <lb/> You will excuse this short letter
+     darling? <lb/> I would write more in the morning but <lb/> the mail goes out quite early and I
+     will <lb/> not have time. Be very careful of your <lb/> health dearest, and write very soon too </p>
+    <closer>
+     <salute>your own true</salute>
+     <lb/>
+     <signed>Addie</signed>
+    </closer>
+   </div1>
+  </body>
+ </text>
+</TEI.2>

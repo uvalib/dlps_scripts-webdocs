@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> 
+%dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> 
+%UVAsupp;
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of
+                    Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors
+                    meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with
+                        local customizations)</resp>
+                    <name>University of Virginia Library</name>
+                </respStmt>
+                <biblScope type="date">
+                    <date value="2006-07-28">July 28, 2006</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">34</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2009">2009</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the
+                        University of Virginia</p>
+                    <p n="access">Publicly accessible</p>
+                </availability>
+                <idno type="DLPS ID">bov_20060728_fc</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors
+                            minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of
+                            Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors
+                            meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2006-07-28">July 28, 2006</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information. Access to
+                                minutes containing salary information will be granted only under the
+                                procedures of the Virginia Freedom of Information Act (Code of
+                                Virginia-2.1-340 ff.) or if permission is granted by the Secretary
+                                of the Board. Researchers interested in obtaining access to these
+                                records should direct a request in writing to the Office of the
+                                Legal Adviser, Madison Hall, University of Virginia. These public
+                                minutes have had salary information deleted and bear no
+                                restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special
+                                Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body
+                                which is the legal owner and operator of the institution. Recorded
+                                in the minutes are appointments and other personnel decisions
+                                concerning faculty, decisions about construction of facilities,
+                                gifts to the university, and all other board actions, decisions and
+                                resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction;
+                &editorial_normalization; &editorial_hyphenation; &editorial_quotation;
+                &editorial_stdVals; </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language n="008" id="eng" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <list>
+                        <item>University of Virginia::Board of Visitors</item>
+                    </list>
+                </keywords>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2011-06-23">June 23, 2011</date>
+                <respStmt>
+                    <name id="lsc6v">Lorrie Chisholm, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to student markup.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body id="d1">
+            <div1 type="report" id="d2">
+                <pb n="Page 1 of 5"/>
+                <head>FINANCE COMMITTEE</head>
+                <div2 type="contents" id="d3">
+                    <head>2005-2006 GOALS/WORKPLAN STATUS REPORT</head>
+
+                    <p>
+                        <hi rend="bold"> 1. Provide relevant financial data and support to the
+                            Special Committee on Planning to facilitate the necessary policy
+                            decisions regarding fundamental University operations and priorities in
+                            order to complete a detailed ten-year financial plan. </hi>
+                    </p>
+
+                    <list>
+                        <item rend="indent">The Full Board approved the management agreement,
+                            six-year plan, and policies. </item>
+
+                        <item rend="indent">Special Committee on Planning reviewed a preliminary
+                            ten-year financial plan, preliminary situation analysis, gap analysis,
+                            performance measures and external analysis. </item>
+
+                        <item rend="indent">The Full Board discussed the issue of funding central
+                            Development. </item>
+
+                        <item rend="indent"> The Full Board approved the 2006-2007 operating budget
+                            which reflects the changes and resources necessary to comply with the
+                            management agreement. </item>
+
+                        <item rend="indent">Management Agreement effective <date value="2006-07-01"
+                                >July 1, 2006</date>.</item>
+
+                        <item rend="indent">Goal ongoing.</item>
+                        <lb/>
+                    </list>
+
+                    <p>
+                        <hi rend="bold"> 2. Fulfill Restructuring requirements at the maximum level
+                            to enable the University to take full advantage of the enabling
+                            legislation.</hi>
+                    </p>
+
+                    <list>
+                        <item rend="indent"> The Full Board approved the management agreement,
+                            six-year plan, and policies.</item>
+
+                        <item rend="indent">The Full Board approved tuition and fees for 2006-2007. </item>
+
+                        <item rend="indent">Management agreement effective <date value="2006-07-01"
+                                >>July 1, 2006</date>.</item>
+
+                        <item rend="indent">Goal completed. </item>
+
+                    </list>
+
+                    <p>
+                        <hi rend="bold"> 3. Establish a debt policy that preserves the Universitys
+                            Aaa bond rating, with special attention to accelerating the development
+                            of research facilities. </hi>
+                    </p>
+
+                    <list>
+                        <item rend="indent"> The Finance Committee thoroughly evaluated existing
+                            debt policy, and approved revisions to both the debt policy and the
+                            interest rate risk management policy. </item>
+
+                        <item rend="indent">Goal completed. </item>
+                    </list>
+
+                    <p>
+                        <hi rend="bold"> 4. Ensure the Universitys benefits plan is cost-effective
+                            and competitive with best-in-class institutions of higher education.
+                        </hi></p>
+
+                    <list>
+                        <item rend="indent"> The Finance Committee received its annual report on the
+                            UVa Health Plan, including an external assessment of the Universitys
+                            benefits plan which benchmarked it against other plans. The UVa plan
+                            compared very favorably. </item>
+
+                        <item rend="indent">Goal completed.</item>
+
+                    </list>
+
+                    <p>
+                        <hi rend="bold"> 5. Develop appropriate policies to establish operating,
+                            maintenance, replacement, and renewal reserves. </hi>
+                    </p>
+
+                    <list>
+                        <item rend="indent"> The Finance Committee thoroughly evaluated different
+                            categories of reserves at the University and approved revisions to the
+                            capital and operating reserve policies based on that review. </item>
+
+                        <item rend="indent"> The Executive Vice President will work in 2006-2007 to
+                            ensure appropriate procedures are in place such that reserves are
+                            established and maintained consistent with the Finance Committees
+                            evaluation. </item>
+
+                        <item rend="indent">Goal completed. </item>
+
+                    </list>
+
+                    <p> Source: Office of the Executive Vice President and Chief Operating
+                        Officer<lb/> Date: <date value="2006-07-17">July 17, 2006 </date></p>
+
+                </div2>
+                <div2 type="section" id="d4">
+                    <pb n="Page 2 of 5 "/>
+                    <head>2006-2007 GOALS</head>
+
+                    <p><hi rend="bold"> 1. Explore viable financing alternatives to identify funds
+                            to support key initiatives that may serve as strategic advantages for
+                            the University consistent with the ten-year plan. Finalize ten-year
+                            financial plan as ten-year academic plan is refined. </hi></p>
+                    <p>In the coming months, the Board of Visitors will review the preliminary
+                        academic plan, which will contain initiatives that may serve as strategic
+                        advantages for the University in the future. These initiatives, which will
+                        continue to emerge over the next several months, will most likely require
+                        resources beyond those identified in the preliminary ten-year financial plan
+                        or in the current Capital Campaign goal. Accordingly, the Special Committee
+                        on Planning and the administration have begun a preliminary analysis to
+                        identify alternative financial strategies to support these initiatives. The
+                        Special Committee on Planning is seeking the advice of the Finance Committee
+                        to assess alternative financial options that may be available to fund these
+                        initiatives. </p>
+
+                    <p><hi rend="bold"> 2. Implement processes to comply with responsibilities in
+                            the Management Agreement in the six core functional areas (Capital
+                            Projects, Leases, Information Technology, Procurement, Human Resources,
+                            and Financial Administration). Continue efforts to educate the
+                            University community about Restructuring. </hi></p>
+                    <p> Our long-term success depends on our ability to a) manage our operations
+                        under policies established by the Board of Visitors, b) rely on tuition and
+                        private support as stable revenue streams, and c) position ourselves to act
+                        quickly, efficiently, and effectively as an organization, free of
+                        unnecessary limitations imposed by the state. Over almost two decades, we
+                        have seen our status evolve from a traditional governmental agency to a
+                        major research university with substantial responsibilities and authority to
+                        manage our affairs. We have gained many operational benefits since
+                        1995-1996, when codified autonomy was established for the Medical Center. On
+                        April 6, 2005, the Restructuring legislation was passed, advancing our
+                        position as we aspire to become a top-ranked institution of higher
+                        education. </p>
+
+                    <p>We have focused our efforts this past year to implement the restructuring
+                        initiative by meeting the specific requirements of the Act, which provides a
+                        broad framework to enable us to redefine our relationship with the
+                        Commonwealth in a manner befitting our established credibility and
+                        integrity. The Full Board has approved the management agreement, six-year
+                        plan, and policies, as well as tuition and fees for 2006-2007. The
+                        management agreement became effective <date value="2006-07-01">July 1,
+                            2006</date>. </p>
+
+                    <p>In 2006-2007, in order to continue with the effective implementation of the
+                        restructuring initiative, the University must facilitate processes to assist
+                        the six core functional areas (Capital Projects, Leases, Information
+                        Technology, Procurement, Human Resources, and Financial Administration) in
+                        complying with responsibilities in the management agreement in their
+                        respective areas. Of particular importance will be the responsibility of the
+                        Finance Committee to monitor the development of the new Human Resources
+                        system to accommodate University staff.</p>
+
+                    <p> Source: Office of the Executive Vice President and Chief Operating Officer
+                        <lb/> Date: <date value="2006-07-17">July 17, 2006</date></p>
+                    <pb n="Page 3 of 5"/>
+
+                    <p> The Finance Committee will provide oversight to a) an ongoing program of
+                        education for faculty and staff related to the functioning and purposes of
+                        restructuring; b) the development of management reports that will
+                        demonstrate compliance with and achievement of the expectations associated
+                        with restructuring; and c) strategies for keeping legislative staff and
+                        legislators informed about the results of restructuring for the purpose of
+                        building trust and confidence in the work done at UVa. </p>
+                    <p><hi rend="bold"> 3. Explore funding options for development activities to
+                            free up Rector and Visitors unrestricted endowment funds. Ensure the
+                            foundations compliance with the policy on University-related
+                            foundations. </hi></p>
+                    <p>The assessment of the funding of development operations is a key element of,
+                        and closely related to, the charge given to the External Affairs Committee
+                        by the Rector to examine the relationship between the University and its
+                        related foundations. The Finance Committee could assist the External Affairs
+                        Committee in the assessment of the need and identification of resources to
+                        fund adequately development activities for the next several years. Resource
+                        requirements have reached a level such that unrestricted endowment income
+                        can no longer solely support development activities. The Finance Committee
+                        will continue to discuss and share with the Full Board the available options
+                        to address the funding requirements through alternative sources. </p>
+                    <p> The trend in recent years is for gifts, including endowment gifts, to be
+                        deposited with university-affiliated foundations instead of with the Rector
+                        and Visitors. The proliferation of foundations has created inefficiencies in
+                        the form of excessive overhead expenses. In the longer run, there is also
+                        the potential for different foundations to manage endowments to different
+                        policies (including investment and spending policies) but more critically,
+                        to develop their own funding priorities, instead of supporting
+                        university-wide strategic directions. </p>
+                    <p> In support of work being conducted by the External Affairs Committee, the
+                        Finance Committee, the External Affairs Committee, and indeed the Full Board
+                        will continue to discuss these topics in more depth in order to free up
+                        Rector and Visitors unrestricted endowment funds, examine compliance with
+                        the Universitys policy on University-related foundations and identify ways
+                        to ensure consistent and supportive practices among University-related
+                        foundations. Also in conjunction with the External Affairs Committee, we are
+                        prepared to include a review of the current system of financial oversight of
+                        foundations and to propose revisions necessary to achieve the level of
+                        oversight of University-related foundations that the Board of Visitors
+                        expects. </p>
+
+                    <p><hi rend="bold"> 4. Create a funding model for research, paying particular
+                            attention to unique research needs related to animal care and restricted
+                            research. </hi></p>
+                    <p> The Finance Committee will examine options for funding research in the
+                        humanities and social sciences, as well as the hard sciences - at the
+                        University. The work will encompass what is required to provide flexible
+                        space on a cost-effective basis for research, addressing graduate student
+                        funding needs and providing an appropriate research infrastructure,
+                        including compliance. In assessing these issues, the Committee will focus on
+                        providing the right incentives to further the institutions overall research
+                        goals in fields which provide special opportunities for sponsored funding
+                        and growth. This effort is justified in part to meet the Governors goals for
+                        research accomplishments and economic development in the management
+                        agreements. </p>
+
+                    <p>Source: Office of the Executive Vice President and Chief Operating Officer
+                        <lb/> Date: <date value="2006-07-17">July 17, 2006</date></p>
+                    <pb n="Page 4 of 5"/>
+
+                    <p> Special emphasis will be placed on understanding the unique funding issues
+                        associated with the need for animal care facilities. The University has
+                        barely kept up with the needs for this kind of space and has seldom had any
+                        capacity beyond immediate needs. If it is possible to provide space for
+                        research and animals ahead of immediate demands, the University will create
+                        a market advantage that will improve its competitiveness in this area of
+                        academic work.</p>
+                    <p> Recently it has become clear that the University must examine whether it
+                        will conduct restricted research an area that is growing as the emphasis on
+                        homeland security grows. What is even more noteworthy is the fact that some
+                        research is migrating to the restricted category, when it would not have
+                        been previously considered as such, especially in Engineering. The conduct
+                        of restricted research comes with unique facility needs and requirements.
+                        The Finance Committee will examine the fiscal implications of providing this
+                        type of space. </p>
+
+                    <p><hi rend="bold"> 5. Develop a financial plan to support the emphasis of the
+                            Educational Policy and the Student Affairs and Athletics Committees on
+                            improving the undergraduate experience, in particular the quality of
+                            undergraduate advising. </hi></p>
+                    <p> Several Board of Visitors committees have emphasized the important role of
+                        student advising, especially at the undergraduate level. The Finance
+                        Committee intends to understand the financial implications of improved
+                        advising in order to be ready to respond to the fiscal impact assessments in
+                        this area. To a large extent this may be a function of the resources
+                        routinely provided to a school or department for teaching and research.
+                        However, there may be ways the University can truly distinguish itself among
+                        its peers with appropriate collaborative planning. This goal will require
+                        those staffing the Finance Committee to be fully cognizant and involved in
+                        the work of other committees. </p>
+
+                    <p> Source: Office of the Executive Vice President and Chief Operating
+                        Officer<lb/> Date: <date value="2006-07-17">July 17, 2006 </date></p>
+
+                </div2>
+                <div2 type="section" id="d7">
+                    <pb n="Page 5 of 5"/>
+                    <head>2006-2007 WORKPLAN</head>
+
+
+                    <p><hi rend="bold"> 1. Explore viable financing alternatives to identify funds
+                            to support key initiatives that may serve as strategic advantages for
+                            the University consistent with the ten-year plan. Finalize the ten-year
+                            financial plan as ten-year academic plan is refined. </hi></p>
+                    <list>
+                        <item rend="indent"><hi rend="bold"> July 2006:</hi> Full Board to discuss
+                            preliminary academic plan and strategic advantages.</item>
+
+                        <item rend="indent"><hi rend="bold"> Fall 2006:</hi> Full Board to discuss
+                            academic plan and strategic advantages, after review with faculty and
+                            key constituents. </item>
+
+                        <item rend="indent"><hi rend="bold"> Fall and Winter 2006:</hi> Finance
+                            Committee to continue identification of financing alternatives. </item>
+
+                        <item rend="indent"><hi rend="bold"> January 2007:</hi> Finance Committee to
+                            decide on recommended financing alternatives. </item>
+
+                        <item rend="indent"><hi rend="bold"> February 2007:</hi> Provost and
+                            Executive Vice President to present final academic plan and strategic
+                            advantages, along with ten-year financial plan and financing
+                            alternatives proposal to the Full Board.</item>
+
+                    </list>
+
+                    <p><hi rend="bold"> 2. Implement processes to comply with responsibilities in
+                            the Management Agreement in the six core functional areas (Capital
+                            Projects, Leases, Information Technology, Procurement, Human Resources,
+                            and Financial Administration). Continue efforts to educate the
+                            University community about Restructuring. </hi></p>
+                    <list>
+                        <item rend="indent"><hi rend="bold"> Fall 2006:</hi> Develop quarterly
+                            reporting templates for internal and external purposes. </item>
+
+                        <item rend="indent"><hi rend="bold"> January 2007:</hi> Report to the full
+                            Board on the specific performance measures the Board is required to
+                            monitor associated with the Governors twelve goals. </item>
+
+                        <item rend="indent"><hi rend="bold"> June 2007:</hi> Report on restructuring
+                            implementation progress in each of the six areas and unit- specific and
+                            institution-wide restructuring education efforts. </item>
+
+                    </list>
+
+                    <p><hi rend="bold"> 3. Explore funding options for development activities to
+                            free up Rector and Visitors unrestricted endowment funds. Ensure the
+                            foundations compliance with the policy on University-related
+                            foundations.</hi></p>
+                    <list>
+                        <item rend="indent"><hi rend="bold"> July 2006:</hi> Full Board to discuss
+                            issue at Board of Visitors Retreat.</item>
+
+                        <item rend="indent"><hi rend="bold"> January 2007:</hi> Present an
+                            assessment of foundation compliance monitoring. </item>
+
+                        <item rend="indent"><hi rend="bold"> April 2007:</hi> Provide plan for
+                            consideration in University budget for 2007-2008. </item>
+
+                    </list>
+
+                    <p><hi rend="bold"> 4. Create a funding model for research, paying particular
+                            attention to unique research needs related to animal care and restricted
+                            research. </hi></p>
+                    <list>
+                        <item rend="indent"><hi rend="bold"> January 2007:</hi> Present a
+                            preliminary report on funding alternatives and strategies.</item>
+
+                        <item rend="indent"><hi rend="bold"> June 2007:</hi> Prepare a final report
+                            for inclusion in 2007-2008 budget. </item>
+
+                    </list>
+
+                    <p><hi rend="bold"> 5. Develop a financial plan to support the emphasis of the
+                            Educational Policy and the Student Affairs and Athletics Committees on
+                            improving the undergraduate experience, in particular the quality of
+                            undergraduate advising. </hi></p>
+                    <list>
+                        <item rend="indent"><hi rend="bold"> April 2007:</hi> Present financial plan
+                            (or as needed).</item>
+
+                    </list>
+
+                    <p> Source: Office of the Executive Vice President and Chief Operating Officer
+                        <lb/> Date: <date value="2006-07-17">July 17, 2006</date></p>
+                </div2>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

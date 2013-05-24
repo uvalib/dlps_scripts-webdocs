@@ -1,0 +1,551 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Post-keyboarding Workflow for Newspapers</title>
+<link rel="stylesheet" type="text/css" href="/dlps/css/teitech.css">
+</head>
+<body>
+<h1>Post-keyboarding Workflow for Newspapers</h1>
+
+<p>This document describes the workflow for in-house processing of
+electronic texts digitized from printed newspapers by keyboarding
+vendors for Digital Library Production Services (DLPS), University of
+Virginia Library. It is intended for use by internal DLPS staff.</p>
+
+
+
+
+
+<p><b>Last modified:</b> 9/26/2006</p>
+<hr>
+<h2>Contents</h2>
+<ul>
+<li><a href="#d3">TEI Headers</a></li>
+<li><a href="#d6">Retrieve from Vendor</a></li>
+<li><a href="#d7">Scripts</a></li>
+<li><a href="#d8">Associating Page Breaks and Page Images</a></li>
+<li><a href="#d10">Web Reports</a></li>
+<li><a href="#d11">Markup QA and Correction</a></li>
+<li><a href="#d12">Insert Full TEI Headers</a></li>
+<li><a href="#d13">Finalize</a></li>
+<li><a href="#d14">[Don't] Copy to ReadyRepo</a></li>
+</ul>
+
+
+
+<hr>
+<a name="d3"><h2>TEI Headers</h2></a>
+
+<a name="d4"><h3>Minimal TEI header</h3></a>
+<p>There is no need to prepare a minimal TEI header for each newspaper
+issue. Instead, the vendor is instructed to use the same header
+template for all issues in the newspaper project.</p>
+
+<p>For the Cavalier Daily project, the template looks like this:
+<pre>
+&lt;teiHeader&gt;
+&lt;fileDesc&gt;
+&lt;titleStmt&gt;
+&lt;title&gt;The Cavalier Daily&lt;/title&gt;
+&lt;/titleStmt&gt;
+&lt;publicationStmt&gt;
+&lt;publisher&gt;University of Virginia Library&lt;/publisher&gt;
+&lt;/publicationStmt&gt;
+&lt;sourceDesc&gt;&lt;bibl/&gt;&lt;/sourceDesc&gt;
+&lt;/fileDesc&gt;
+&lt;profileDesc&gt;
+&lt;langUsage&gt;
+&lt;language id="eng"&gt;English&lt;/language&gt;
+&lt;/langUsage&gt;
+&lt;/profileDesc&gt;
+&lt;/teiHeader&gt;
+</pre>
+</p>
+
+
+
+<a name="d5"><h3>Full TEI header</h3></a>
+
+<p>The preparation of full (bibliographic) TEI headers is normally
+performed by Cataloging and is documented separately. For details, see
+<a href="/dlps/public/text/teiHeader/teiHeader.html">Preparing
+Full TEI Headers</a>.</p>
+
+
+
+
+<hr>
+
+<a name="d6"><h2>Retrieve from Vendor</h2></a>
+<p>The keyboarding vendor will send us a delivery notification by
+e-mail when a batch of files is finished and ready for us to
+retrieve.</p>
+
+<a name=""><h3>Download</h3></a>
+<ul>
+<li>Open an FTP program
+(if you're on a Windows workstation, 
+<a href="http://www.itc.virginia.edu/desktop/securefx/securefx.html" target="_blank">SecureFX</a>
+is recommended)</li>
+<li>Connect to the keyboarding vendor's FTP server</li>
+<li>Connect to the DLPS server</li>
+<li>Transfer files from the vendor's FTP server to <code>/shares/text/04postkb/10being_received</code>
+</li>
+<li>Close connections and exit the FTP program</li>
+<li>If the downloaded files are contained within .zip archive(s):
+  <ul>
+<li>In Windows, open the DLPS text workspace as a mapped network
+drive, then right-click the .zip file(s) and select <b>WinZip
+→ Extract to here</b>
+</li>
+<li>Delete the .zip file(s)</li>
+</ul>
+</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a>: From the Unix command line, navigate
+to <code>10being_received</code> and run this command:
+<code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> <i>cavdaily_*.xml</i></code>
+</li>
+</ul>
+
+
+
+<a name=""><h3>Rename</h3></a>
+<ul><li>Rename all files (XML files and TIFF files, if included) from
+"CavDaily..." to "cavdaily..." (all lower case). Use your
+batch-renaming tool of choice, or use the following command from the
+Unix command line: <code>rename 's/CavDaily/cavdaily/' CavDaily*</code>
+</li></ul>
+
+
+
+<a name=""><h3>Move image files</h3></a>
+<p>If the .zip file from the vendor included page images, those images
+need to be moved to the appropriate image directory.</p>
+<ul>
+<li>From the Unix command line, navigate to the directory where the
+image files were unzipped and renamed, normally
+<code>/shares/text/04postkb/10being_received</code>
+</li>
+<li>To move the images into
+<code>01bookscanning/52_CCITTCOMPRESS_OUT</code> grouped into
+subdirectories by ID, run this command:
+
+<pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#make_filesets" target="scripts">make_filesets</a> cavdaily*.tif</pre>
+</li>
+</ul>
+
+
+
+<a name=""><h3>Initial QA</h3></a>
+<ul><li>From the Unix command line, run this command: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#non-ascii" target="scripts">non-ascii</a> <i>cavdaily_*.xml</i></code> <br>
+
+This script checks for unexpected characters in the XML file and
+displays error messages if any are found. The error messages specify
+exactly where each unexpected character occurs (line number, and
+character position within the line). If any errors are found, take
+appropriate action, which typically means asking the vendor to fix the
+files according to our <a href="http://pogo.lib.virginia.edu/dlps/public/text/vendor/vendor.html#charent">vendor
+encoding guidelines for handling special characters</a>.
+
+</li></ul>
+
+
+
+<a name=""><h3>Validate</h3></a>
+<ul>
+<li>
+<em>Copy</em> the XML files from
+<code>10being_received</code> to <code>10parse</code>
+</li>
+<li>From the Unix command line, navigate to <code>10parse</code> and
+run this command: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#replace_system_paths" target="scripts">replace_system_paths</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>If errors occur, contact Greg</li>
+<li>If the files are valid:
+  <ul>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a>: From <code>10parse</code>, run
+    this command: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>Delete the files in <code>10parse</code>: <code>rm <i>cavdaily_*.xml</i></code>
+</li>
+<li>
+<em>Move</em> the files from <code>10being_received</code>
+    to <code>10received/<i>subdirectory</i></code>, where
+    <i>subdirectory</i> is a directory for grouping and
+    identifying this particular set of XML files</li>
+</ul>
+</li>
+</ul>
+
+
+
+<a name=""><h3>Write-protect</h3></a>
+<ul><li>In <code>10received/<i>subdirectory</i></code>, make
+the files read-only for all users: <code>chmod 444 <i>cavdaily_*.xml</i></code>
+</li></ul>
+
+
+
+
+<hr>
+
+<a name="d7"><h2>Scripts</h2></a>
+
+<a name=""><h3>Copy to processing directory</h3></a>
+<ul>
+<li>
+<em>Copy</em> files to <code>20being_scripted</code> <br>
+  <ul>
+<li>First, check directory <code>11postvendor_fixed</code> for the
+file(s) to be processed; if present, copy the files from
+<code>11postvendor_fixed</code> to <code>20being_scripted</code>
+  </li>
+<li>Otherwise, copy the file(s) from <code>10received/<i>subdirectory</i></code>
+to <code>20being_scripted</code>
+  </li>
+</ul>
+</li>
+<li>Grant write permissions for yourself and group: <code>chmod 664 <i>cavdaily_*.xml</i></code>
+</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>Fix parsing errors, if any</li>
+</ul>
+
+
+
+<a name=""><h3>Run scripts</h3></a>
+<ul>
+<li>Run the main post-keyboarding script.
+  <ul>
+<li>If the texts are mainly in English: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#postkb" target="scripts">postkb</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>If the texts are mainly in a foreign language: <code>postkb -f <i>cavdaily_*.xml</i></code> (where -f indicates foreign-language input files; the end-of-line hyphenation does not get collapsed)</li>
+</ul>
+
+  <div class="tip">
+<span class="tip">TIP</span><p>If you prefer to see a status message
+indicating each script being run against each input file, use the -v
+(verbose) option: <code>postkb -v <i>cavdaily_*.xml</i></code></p>
+</div>
+
+</li>
+<li>Check the script's screen messages for errors and warnings; take appropriate action</li>
+<li>Adjust page breaks for newspaper markup: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#pb_outside_divs" target="scripts">pb_outside_divs</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>Fix parsing errors, if any</li>
+<li>
+<em>Move</em> files to <code>20scripted</code>
+</li>
+</ul>
+
+
+
+
+
+
+<hr>
+<a name="d8"><h2>Associating Page Breaks and Page Images</h2></a>
+<ul>
+<li>
+<em>Copy</em> files to <code>30being_pbsynced</code>
+</li>
+<li>To associate a page image with each page break, add
+<code>entity</code> attributes to <code>&lt;pb&gt;</code> tags:
+
+<pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#pb_entities" target="scripts">pb_entities</a> -n <i>cavdaily_*.xml</i></pre>
+
+(-n is for "newspapers"; the -n switch uses defaults appropriate to the cavdaily files)
+</li>
+<li>The script issues warning messages if the number of page breaks
+(<code>&lt;pb&gt;</code> tags) in the XML file does not match the number of
+page-image files, or if the page-image files appear not to be named
+sequentially. If this occurs, the warning messages should help you
+pinpoint the nature of the problem (whether the XML file contains too
+many or too few page breaks) and where the problem begins, so you can
+take corrective action.</li>
+<li>When no warning messages appear, run these commands:
+
+<pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#declare_entities" target="scripts">declare_entities</a> <i>cavdaily_*.xml</i>
+<a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#qa_entities" target="scripts">qa_entities</a> <i>cavdaily_*.xml</i></pre>
+</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>Fix parsing errors, if any</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a>: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>
+<em>Move</em> files to <code>30pbsynced</code>
+</li>
+</ul>
+
+
+<hr>
+<a name="d10"><h2>Web Reports</h2></a>
+<ul>
+<li>
+<em>Copy</em> files to <code>51being_rehyphenated</code>
+</li>
+<li>Run the re-hyphenate report (shows words for which the
+end-of-line hyphen, programmatically collapsed previously by the
+<code>postkb</code> script, may need to be restored)
+
+<pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#report_rehyphenate" target="scripts">report_rehyphenate</a> <i>cavdaily_*.xml</i></pre>
+</li>
+<li>For each XML file, view the report online: <a href="/cgi-dlps/dlps-only/workreports/list.pl" target="_blank">http://pogo.lib.virginia.edu/cgi-dlps/dlps-only/workreports/list.pl</a>
+<br>
+Follow the instructions at the top of the report, fill out the report,
+and save the data when finished</li>
+<li>Update the XML files: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#commit_rehyphenate" target="scripts">commit_rehyphenate</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>Fix parsing errors, if any</li>
+<li>
+<em>Move</em> files to <code>51rehyphenated</code>
+</li>
+</ul>
+
+
+
+<a name="copy59processed"><h3>Copy to 59processed</h3></a>
+<ul>
+<li>Regardless of what the last step was for a particular file (for
+example, some files do not have figures and do not require completing
+the figure-related web reports), always <em>copy</em> the last
+version of the file to <code>59processed</code>.</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a>: Navigate to <code>59processed</code>
+and run this command: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> <i>cavdaily_*.xml</i></code>
+</li>
+</ul>
+
+
+
+
+<hr>
+<a name="d11"><h2>Markup QA and Correction</h2></a>
+<p>The markup QA/correction workflow is documented separately. See
+<a href="http://pogo.lib.virginia.edu/cgi-dlps/saxon/SaxonCGI.pl?source=http://pogo.lib.virginia.edu/dlps/dlpsdoc_xml/text/markup_qa_newspapers.xml&amp;style=http://pogo.lib.virginia.edu/dlps/xsl/teitech.xsl&amp;docid=markup_qa_newspapers">Markup
+QA and Correction for Newspapers</a>.</p>
+
+
+<hr>
+<a name="d12"><h2>Insert Full TEI Headers</h2></a>
+<ul>
+<li>
+<em>Move</em> files from <code>69processed</code> to <code>70being_fullheaders_added</code>
+</li>
+<li>Replace the minimal TEI header already in the XML file with the
+full TEI header contained in the appropriate template header file. For
+the Cav Daily project, the command is:
+<pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#replace_teiHeader_cavdaily" target="scripts">replace_teiHeader_cavdaily</a> <i>cavdaily_*.xml</i></pre>
+</li>
+<li>Update the TEI header to include the volume number, issue
+number, date, etc. for that particular newspaper issue. For the Cav
+Daily project, the command is:
+<pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_teiHeader_cavdaily" target="scripts">update_teiHeader_cavdaily</a> <i>cavdaily_*.xml</i></pre>
+</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>Fix parsing errors, if any</li>
+<li>Run this command to normalize line endings: <code>dos2unix <i>cavdaily_*.xml</i></code>
+</li>
+<li>Update the access status (public, UVA only, etc.) recorded in
+the TEI header: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_teiHeader_access" target="scripts">update_teiHeader_access</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>Update the file size recorded in the TEI header: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#refresh_filesize" target="scripts">refresh_filesize</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>Correct common problems with date values (carried over from the MARC record used to create the TEI header): <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#header_date_values" target="scripts">header_date_values</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>Fix parsing errors, if any</li>
+<li>Run QA checks on the TEI header: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#qa_super" target="scripts">qa_super</a> -h <i>cavdaily_*.xml</i></code>
+</li>
+<li>Fix problems, if any; this may require working with Cataloging to assess/fix the problems</li>
+<li>
+<em>Move</em> files to <code>70fullheaders_added</code>
+</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> to reflect the steps you have completed on these items.</li>
+</ul>
+
+<div class="fyi">
+<span class="fyi">FYI</span>
+<p>For each file processed successfully, the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> gets
+updated automatically as follows:</p>
+<table border="1" cellpadding="6">
+<tr>
+<td><code>replace_teiHeader</code></td>
+<td>Finalization Workflow → Replace TEI header</td>
+</tr>
+<tr>
+<td><code>update_teiHeader_cavdaily</code></td>
+<td>Finalization Workflow → Update issue data</td>
+</tr>
+<tr>
+<td><code>update_teiHeader_access</code></td>
+<td>Finalization Workflow → Update access level</td>
+</tr>
+<tr>
+<td><code>qa_super -h</code></td>
+<td>Finalization Workflow → QA TEI header</td>
+</tr>
+<tr>
+<td><code>report_teiHeader_cavdaily</code></td>
+<td>Finalization Workflow → Run &amp; send TEI header report</td>
+</tr>
+</table>
+</div>
+
+
+<hr>
+
+<a name="d13"><h2>Finalize</h2></a>
+<ul>
+<li>
+<em>Copy</em> files to <code>80being_finalized</code>
+</li>
+<li>Run a few final scripts:
+
+  <ul>
+<li>Eliminate an outdated markup practice:
+  <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#strip_fw_pageno" target="scripts">strip_fw_pageno</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>Convert numeric character entities to mnemonic/named character
+  entities (from <code>&amp;#xA9;</code> to <code>&amp;copy;</code> for
+  example):
+  <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#flipent" target="scripts">flipent</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>Convert certain character entities back to normal characters:
+  <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#restore_regexp_chars" target="scripts">restore_regexp_chars</a> <i>cavdaily_*.xml</i></code>
+</li>
+</ul>
+
+</li>
+<li>Verify that an image file exists for each image entity
+referenced in the XML file: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#qa_entities" target="scripts">qa_entities</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>Fix problems, if any; this may require working with Kristy to
+assess/fix the problems</li>
+<li>Run the following scripts to supply PIDs (persistent IDs) to the XML files:
+<pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#tei_pidder" target="scripts">tei_pidder</a> <i>cavdaily_*.xml</i>
+<a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#pid_attributes" target="scripts">pid_attributes</a> <i>cavdaily_*.xml</i>
+</pre>
+</li>
+<li>Run the comprehensive QA program: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#qa_super" target="scripts">qa_super</a> -N -E -Z <i>cavdaily_*.xml</i></code>
+</li>
+<li>Fix errors, if any</li>
+<li>Update the file size recorded in the TEI header: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#refresh_filesize" target="scripts">refresh_filesize</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>cavdaily_*.xml</i></code>
+</li>
+<li>Fix parsing errors, if any</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a>: From <code>80being_finalized</code>,
+run this command: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> <i>cavdaily_*.xml</i></code>
+
+<div class="important">
+<span class="important">IMPORTANT</span><p>Running <code>update_tracksys</code>
+here updates the tracking system to indicate that the files specified
+have been moved to <code>80final</code>. It is essential to
+immediately proceed to the next step and actually move the files to
+<code>80final</code>.</p>
+</div>
+</li>
+<li>
+<em>Move</em> files to
+<code>80final/<i>subdirectory</i></code>, substituting the
+appropriate subdirectory:
+  <ul>
+<li>For most books received from Apex, use <code>80final/apex</code>
+</li>
+<li>For Cavalier Daily files, use <code>80final/cavdaily</code>
+</li>
+<li>For EAF files, use <code>80final/eaf</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="fyi">
+<span class="fyi">FYI</span>
+<p>For each file processed successfully, the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> gets
+updated automatically as follows:</p>
+<table border="1" cellpadding="6">
+<tr>
+<td><code>qa_entities</code></td>
+<td>Finalization Workflow → Verify image files</td>
+</tr>
+<tr>
+<td><code>tei_pidder</code></td>
+<td>Finalization Workflow → Add PIDs</td>
+</tr>
+<tr>
+<td><code>qa_super -Z</code></td>
+<td>Finalization Workflow → Run QA program</td>
+</tr>
+</table>
+</div>
+
+
+
+<hr>
+<a name="d14"><h2>[Don't] Copy to ReadyRepo</h2></a>
+
+<p>At this time, issues of <i>The Cavalier Daily</i> are not
+being delivered via the central repository, so we do not copy finished
+<code>cavdaily</code> files to ReadyRepo as we would for digitized
+books.</p>
+
+<ul>
+<li>
+<b>Hand off:</b> Notify Melinda, Kristy, and Greg
+as to which <code>cavdaily</code> items have been copied to
+<code>80final</code>. (Normally Greg contacts Chris R. to coordinate
+where to copy the files for hand-off to the indexing and delivery
+process.)</li>
+<li>
+<b>Archive:</b> After the files have been copied
+to the hand-off point, the files should be archived as appropriate.</li>
+<li>Run the web-based cleanup script:
+
+  <ul>
+<li>Generate a semicolon-delimited list of DLPS IDs
+    corresponding to the items you copied to <code>ReadyRepo</code> in
+    a previous step:
+
+    <pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#listBaseNames" target="scripts">listBaseNames</a> -d ';' <i>cavdaily_*.xml</i></pre>
+
+    Copy the list to the clipboard; you'll need it in a moment.</li>
+<li>Go to the web-based
+    <a href="/cgi-dlps/dlps-only/cleanup/dirman.pl" target="_blank">Cleanup Manager</a>
+</li>
+<li>Paste the semicolon-separated list of the DLPS IDs you
+    generated earlier, then click <b>Search</b>
+</li>
+<li>Review the files and directories found, and check those you
+    want to remove. Normally you will check all checkboxes.</li>
+<li>Click <b>Remove</b>. The files and directories you
+    checked will be deleted when the cleanup script runs
+    overnight (cron job).</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a>:
+      <ul>
+<li>Use the semicolon-separated list of the DLPS IDs generated
+      earlier (with the <code>listBaseNames</code> script) to
+      search for these items in the tracking system</li>
+<li>In the <b>Finalization</b> workflow view, check
+      the <b>Run cleanup script</b> step for these items,
+      <em>and also mark them as <b>FINISHED</b></em>
+</li>
+</ul>
+    </li>
+</ul>
+</li>
+</ul>
+
+
+</body>
+</html>

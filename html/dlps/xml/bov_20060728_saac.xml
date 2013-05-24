@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> 
+%dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> 
+%UVAsupp;
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with
+                        local customizations)</resp>
+                    <name>University of Virginia Library</name>
+                </respStmt>
+                <biblScope type="date">
+                    <date value="2006-07-28">July 28, 2006</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">24</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2009">2009</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the
+                        University of Virginia</p>
+                    <p n="access">Publicly accessible</p>
+                </availability>
+                <idno type="DLPS ID">bov_20060728_saac</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors
+                            minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of
+                            Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors
+                            meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2006-07-28">July 28, 2006</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information. Access to
+                                minutes containing salary information will be granted only under the
+                                procedures of the Virginia Freedom of Information Act (Code of
+                                Virginia-2.1-340 ff.) or if permission is granted by the Secretary
+                                of the Board. Researchers interested in obtaining access to these
+                                records should direct a request in writing to the Office of the
+                                Legal Adviser, Madison Hall, University of Virginia. These public
+                                minutes have had salary information deleted and bear no
+                                restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special
+                                Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body
+                                which is the legal owner and operator of the institution. Recorded
+                                in the minutes are appointments and other personnel decisions
+                                concerning faculty, decisions about construction of facilities,
+                                gifts to the university, and all other board actions, decisions and
+                                resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction;
+                &editorial_normalization; &editorial_hyphenation; &editorial_quotation;
+                &editorial_stdVals; </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language n="008" id="eng" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body id="d1">
+            <div1 type="report" id="d2">
+                <pb n="1"/>
+                <head>STUDENT AFFAIRS AND ATHLETICS COMMITTEE<lb/> 2006-2007 GOALS</head>
+               
+                    <p> 1. Sustain the core value of self-governance in the context
+                        of continued growth and the changing student needs </p>
+                        <p> The success of a community depends on its members
+                            commitment to personal responsibility and accountability.
+                            Self-governance entails collaborating with students to support their
+                            ownership in the creation, modification and implementation of policies
+                            and practices that define the community in which they live, while
+                            ensuring that basic institutional responsibilities of safety, legality
+                            and fiscal soundness are not compromised. Student Affairs strives to
+                            maintain a balance between letting students take risks and learn from
+                            their success and failures, and direct involvement on issues that demand
+                            institutional oversight. The Universitys Judiciary and Honor Committees,
+                            Residence Life program and Student Council exemplify self- governance at
+                            UVa. Student Affairs works closely with students -- individually and
+                            collectively -- to manage opportunities and challenges which surface
+                            from this model, as well as with parents who can both support and
+                            question this approach. This model should enrich students during their
+                            tenure at the University, and upon graduation help instill a sense of
+                            community membership, personal responsibility and civic engagement that
+                            will assist them in their lives as educated citizens and leaders. </p>
+                        <p> The Universitys projected enrollment growth, coupled with
+                            changing needs and demands of students, are factors that need to be
+                            addressed proactively in order to uphold this core value. Discussions
+                            this year will focus on securing and maintaining the resources needed to
+                            support this model, on strategies to work effectively with parents in
+                            supporting the Universitys approach in this regard, and on developing
+                            the appropriate metrics to measure the impact of self-governance and
+                            involvement beyond a students time at the University. </p>
+
+                    <p> 2. Strengthen residential programs for first years and
+                        upper class students, particularly transfers. </p>
+                        <p> For the past two years, Student Affairs has been working
+                            with the Provost and the Vice President for Finance to define how the
+                            University supports the student experience through residence life.
+                            Elements being addressed in this planning process include: determining
+                            current and future demands for housing; defining the goals of specific
+                            residential life experiences (e.g., first-year housing, residential
+                            colleges, language houses); and affirming program objectives by student
+                            populations (i.e., first-year, transfer, and other upper class
+                            students). In April 2005 the Board confirmed its support for the
+                            first-year residential program and preliminary plans to move forward
+                            with changes to the Alderman Residences. We will continue to discuss how
+                            we support the academic experience of first years through residence
+                            life, as well as our residential program objectives for upper class
+                            students. In particular, we will work on establishing a new arts
+                            residential college and a new residential program specifically for
+                            transfer students. </p>
+
+                <p>Student Affairs and Athletics</p>
+                <pb n="2"/>
+                
+                    <p> 3. Promote student involvement through appropriate
+                        strategies, programs and allocations of resources </p>
+                        <p> Student Affairs works to promote an environment in which
+                            students feel safe, welcomed and supported so that they may fully
+                            realize their academic pursuits and other opportunities that define the
+                            student experience. Outreach and dissemination of information about
+                            services, resources and opportunities are critical to ensure that
+                            students know about the support thats available to them, and to engage
+                            them in community life. Student Affairs strives to provide physical
+                            spaces and programs that establish meaningful connections between
+                            academics and life outside the classroom; that promote interactions
+                            between students and faculty, or between individuals and groups that
+                            might not otherwise collaborate; that foster a sense of community and
+                            involvement in University life; and that purposefully immerse students
+                            in experiences that expose them to different perspectives and provide
+                            them with an opportunity to learn. </p>
+                        <p> Student Affairs will be updating the Board on several
+                            initiatives this year including the implementation of a first-year
+                            multicultural and diversity education program that incorporates
+                            structured workshops, efforts to promote general safety and security on
+                            Grounds (e.g., physical safety, on-line safety); and strategies to
+                            complement efforts in the College of Arts and Sciences to improve
+                            undergraduate advising. </p>
+            
+                <div2 type="section" id="d3">
+                    <head>Student Affairs Work Plan:</head>
+                    <p>Sustain the core value of self-governance in the context of continued growth
+                        and the changing student needs. </p>
+                    <list>
+                        <item rend="indent"> September 2006: Student Council presents its goals for
+                            the year. Vice President provides overview of critical student life
+                            issues. </item>
+                        <lb/>
+                        <item rend="indent"> September 2006-April 2007: develop data collection and
+                            tracking mechanism for student involvement at UVA to serve as baseline
+                            for future analysis of level and effects of student engagement. </item>
+                        <lb/>
+                        <item rend="indent"> October 2006: Analysis of Honor faculty complete;
+                            planning underway to incorporate results into future effort. </item>
+                        <lb/>
+                        <item rend="indent"> September 2006-May 2007: collect data on parent
+                            interactions. </item>
+                        <lb/>
+                        <item rend="indent"> February 2007: Honor and UJC present their major
+                            initiatives. </item>
+                        <lb/>
+                    </list>
+                    <p>Strengthen residential programs for first-years and upper class students,
+                        particularly transfers. </p>
+                    <list>
+                        <item rend="indent"> August December 2006: Finalize assessment of student
+                            and resident staff experiences, and develop plan to address any
+                            challenges in the program.</item>
+                        <lb/>
+                        <item rend="indent"> November 2006: Residential plan for transfer students
+                            complete for implementation in 2007-08. </item>
+                        <lb/>
+                        <item rend="indent"> August 2006 February 2007: Assessment of residential
+                            college model complete </item>
+                        <lb/>
+                        <item rend="indent"> April 2007: Present major initiatives related to
+                            residence life. </item>
+                        <lb/>
+                    </list>
+                    <lb/>
+                    <lb/>
+                    <p rend="left">Student Affairs and Athletics</p>
+                    <pb n="3"/>
+                    <p>Promote student involvement through appropriate strategies, programs and
+                        allocations of resources </p>
+                    <list>
+                        <item rend="indent"> August December 2006: Complete analysis and outline
+                            proposed changes appropriate to major orientation initiatives for new
+                            students (e.g., summer orientation). Goal would be to implement changes
+                            by summer 2007. </item>
+                        <lb/>
+                        <item rend="indent"> August 2006-May 2007: Track and analyze data collected
+                            and response to incidents reported via on-line incident reporting
+                            system. </item>
+                        <lb/>
+                        <item rend="indent"> February 2007: Update on key safety initiatives </item>
+                        <lb/>
+                        <item rend="indent"> April 2007: Update on Diversity residential program for
+                            firstyears (during spring to cover changes intended for spring 07
+                            changes) </item>
+                        <lb/>
+                        <item rend="indent"> May 2007: Outline initiatives between Student Affairs
+                            and the college of Arts and Sciences aimed at strengthening advising
+                            (e.g., University Career Services, Residence Life) </item>
+                        <lb/>
+                    </list>
+                </div2>
+                <div2 type="section" id="d4">
+                    <head>Athletics Goals and Work Plan:</head>
+                  
+                        <p> 1. Create a system of measurement and enhance the
+                            academic success rates for student- athletes.</p>
+                            <list>
+                                <item rend="indent"> Complete the search for the Assistant Director
+                                    for Football Academic Support and create a support structure for
+                                    incoming and continuing football student-athletes that will
+                                    allow for assessment of academic strengths and weaknesses. Based
+                                    on each assessment, a specific academic success plan will be
+                                    developed, implemented and monitored on an ongoing basis. The
+                                    Department has developed the proper personnel infrastructure
+                                    over the last 18 months to support this effort. </item>
+                                <lb/>
+                                <item rend="indent"> The Academic Affairs unit will develop a
+                                    semester by semester summary report that will provide
+                                    information relative to individual and team academic progress
+                                    (successes and failures). </item>
+                                <lb/>
+                                <item rend="indent"> The Department will conduct a search, in
+                                    conjunction with the Registrar's office, to add a dedicated
+                                    position in which monitoring and certifying continuing
+                                    eligibility of all student- athletes would take place. </item>
+                              </list>
+                      
+                        <p>2. Establish a nationally competitive athletics
+                            programs.</p>
+                            <list>
+                                <item rend="indent"> Win multiple national championships and
+                                    continue to climb the ladder in the Director's Cup standings. </item>
+                                <lb/>
+                                <item rend="indent"> Place as many teams in NCAA championship
+                                    competition as possible and have those teams advance in their
+                                    championships' respective brackets. </item>
+                                <lb/>
+                                <item rend="indent"> Recruit the best possible student-athletes in
+                                    support of championship efforts. </item>
+                                <lb/>
+                                <item rend="indent"> With each coaching vacancy, hire a high
+                                    performing coach that will thrive in an environment with an
+                                    expectation of winning national championships within a highly
+                                    competitive academic environment. </item>
+                         </list>
+
+                    <p>Student Affairs and Athletics </p>
+                    <pb n="4"/>
+                        <list>
+                                <item rend="indent"> Continue to hold head coaches accountable for
+                                    the sustained success in the academic and athletic performances
+                                    of their teams. </item>
+                      </list>
+                        <p> 3. Eliminate the structural deficiency in the
+                            Department of Athletics' operating budget. </p>
+                            <list>
+                                <item rend="indent"> The Senior Staff in Athletics will analyze
+                                    carefully the unit-by-unit trends in allocations and
+                                    expenditures to determine the cause of the structural
+                                    deficiency. </item>
+                                <lb/>
+                                <item rend="indent"> The Senior Staff will assess the efficiencies
+                                    (cost benefit analysis) in the use of current resources. </item>
+                                <lb/>
+                                <item rend="indent"> The Senior Staff will pursue options for
+                                    maximizing or generating new revenue streams. </item>
+                                <lb/>
+                                <item rend="indent"> All unit supervisors will operate with
+                                    operating budgets held constant in fiscal 2006-07 </item>
+                                <lb/>
+                            </list>
+                    <p rend="left">Student Affairs and Athletics</p>
+                </div2>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

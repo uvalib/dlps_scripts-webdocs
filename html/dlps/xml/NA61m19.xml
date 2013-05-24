@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+<!NOTATION jpg SYSTEM "JPEG">
+
+<!--<!ENTITY NA61m19a SYSTEM "NA61m19a" NDATA jpg>
+<!ENTITY NA61m19b SYSTEM "NA61m19b" NDATA jpg>
+<!ENTITY NA61m19c SYSTEM "NA61m19c" NDATA jpg>
+<!ENTITY NA61m19d SYSTEM "NA61m19d" NDATA jpg>-->
+
+<!ENTITY longs "s" >
+<!ENTITY DSSR_000000766_0321 SYSTEM "000000766_0321" NDATA jpg>
+<!ENTITY DSSR_000000766_0322 SYSTEM "000000766_0322" NDATA jpg>
+<!ENTITY DSSR_000000766_0323 SYSTEM "000000766_0323" NDATA jpg>
+<!ENTITY DSSR_000000766_0324 SYSTEM "000000766_0324" NDATA jpg>
+]>
+
+<TEI.2 id="NA61m19">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1861-12-19">December 19th, 1861</date></title>
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Laura Kennelly</name>
+                    <resp>Creation of digital images:</resp>
+                    <name>, Riemenschneider Bach Institute, Baldwin-Wallace College</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Laura Kennelly</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">12</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <!--<idno type="ETC">NA61m19</idno>-->
+                <idno type="callNo">MSS 11616</idno>
+                <idno type="etext">NA61m19</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2001">2001</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, December 19th,
+                            1861</title>
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1861-12-19">1861-12-19</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Women Writers/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-10-30">October 30th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1861-12-19">December 19th, 1861</date>
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+                <p> Addie insists that she can only think of Charlie as a brother, not as a
+                    sweetheart. She asks him to do the same. She worries that his move to Romney
+                    from Charleston means more danger. </p>
+            </div1>
+
+        </front>
+
+
+        <body id="d4">
+
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1861-12-19"
+                        >December 19th, 1861</date></head>
+
+                <opener>
+
+                    <pb n="1" entity="DSSR_000000766_0321"/>
+
+                    <dateline><date value="1861-12-19">
+                            <add hand="h1" place="inline">Dec 19</add>
+                        </date>
+                        <!-- added in different hand -->
+                        <lb/>After school </dateline>
+
+                    <salute>
+                        <name type="person">Dear Charlie</name>
+                    </salute>
+                </opener>
+
+                <p>I have returned<lb/> from school but how should I answer<lb/> your kind letter:
+                    If I should answer<lb/> it as I<orig reg="received">recieved</orig>it; it would
+                    be<lb/> with bitter oh, <hi rend="underline">such bitter</hi> tears.<lb/> Should
+                    I tell you <hi rend="underline">why</hi> I wept?<lb/> No, dear Charlie I <hi
+                        rend="underline">cannot now</hi> perhaps<lb/> I <hi rend="underline"
+                    >never</hi> can, but be assured my<lb/> reasons are resistless. Dear
+                    Charlie<lb/> my spirit has <hi rend="underline">striven</hi> to watch<lb/> over
+                    and guard thee, and hourly<lb/> &amp; fervant prayers has risen to the<lb/>
+                    throne of Grace for your safety.<lb/> But that prayer was only as a<lb/>
+                    <hi rend="underline">true</hi> and <hi rend="underline">loving</hi> <hi
+                        rend="underline">sister</hi> would<lb/> pray for a <hi rend="underline"
+                        >brother.</hi> I have striven<lb/> aquired any other feeling save a<lb/>
+                    sisterly love and Dear Charlie<del hand="h1">I</del><lb/>
+                    <pb n="2" entity="DSSR_000000766_0322"/> if I have caused any other<lb/> feeling
+                    to rise in your heart save<lb/> the feeling of friendship I <hi rend="underline"
+                        >entreat</hi><lb/> of you to forgive me for I did<lb/> it unintentionly. And
+                    if you<lb/> cherish such feelings toward me<lb/> Dear Charlie for my sake
+                    and<lb/> for the sake of your future happiness<lb/> quench them. Promise me
+                    that<lb/> you will. Only rem<add place="inline" hand="h1">em</add>ber me as a
+                    sister or a friend.<lb/></p>
+
+                <p> One would perhaps conclude<lb/> that I was the affiancied of an-<lb/> other, but
+                    dear Charlie, <hi rend="underline">thank God<lb/> I am not</hi>--this may seem
+                    strange<lb/> to you and if you demand my<lb/> reasons lay the case open
+                    before<lb/> God, and he may give them.<lb/> But dear Charlie ought I to<lb/> be
+                    recognized even as your<lb/>
+                    <q>&ldquo;Ohio Sister,&rdquo;</q>; I fear if you knew<lb/> my reasons
+                    you would but<lb/>
+                    <pb n="3" entity="DSSR_000000766_0323"/> curse me, but it is<lb/> getting dark.</p>
+
+            </div1>
+
+            <div1 type="letter" n="2" id="d6">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, Morning of <date
+                        value="1861-12-20">December 20th, 1861</date></head>
+                <opener>
+                    <dateline>Friday Morn. Dec 20th<lb/></dateline>
+                    <salute>Dear Charley,</salute></opener>
+
+                <p> I thought I should<lb/> finish this, to me, painful letter<lb/> last night, but
+                    found myself so<lb/> excited that I could not.<lb/> I will now try to do
+                    it.<lb/>
+                </p>
+
+                <p>Dear Charlie, how your last letter<lb/> saddened the heart of Addie. In
+                    speaking<lb/> of the possibility that you might<lb/> fall in the defense of your
+                    country.<lb/></p>
+                <p>Yes, dear Charlie you would be<lb/> deeply regretted by Addie. She<lb/> would be
+                    deprived of <hi rend="underline">one true<lb/> friend</hi>. But I must
+                    dispel<lb/> such thoughts. I regretted very<lb/> much your leaving
+                    Charleston.<lb/> I fear that you will be in a<lb/> much more dangerous
+                    position<lb/> at Romney than at Charleston.<lb/>
+                    <pb n="4" entity="DSSR_000000766_0324"/> but to Him who watches the<lb/>
+                    sparrows when they fall would<lb/> I commend thee my brother.<lb/></p>
+                <p> My efforts to protect thee are vain<lb/> without His assistance.<lb/></p>
+                <p> I will send this by Capt. Wood<lb/> when he goes to his company.<lb/></p>
+
+                <p> Please send me your address as<lb/> soon as convenient.<lb/>
+                </p>
+
+                <closer>Laurie sends love.<lb/> Believe me yours in sisterly love,<lb/>
+                    <signed>Addie</signed></closer>
+            </div1>
+        </body>
+
+    </text>
+</TEI.2>

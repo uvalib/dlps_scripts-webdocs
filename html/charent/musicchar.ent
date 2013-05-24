@@ -1,0 +1,287 @@
+
+<!-- musicchar.ent - Unicode music characters
+Perry Roland <pdr4h@virginia.edu>
+Written: 2006/08/29
+Last modified: 2006/08/29 
+-->
+
+<!-- ====================================================================== -->
+<!-- music characters available in Unicode -->
+<!-- ====================================================================== -->
+<!-- 1D100 Musical Symbols 1D1FF -->
+
+<!-- Bars -->
+<!ENTITY bar            "&#x1D100;"> <!-- MUSICAL SYMBOL SINGLE BARLINE -->
+<!ENTITY dblbar         "&#x1D101;"> <!-- MUSICAL SYMBOL DOUBLE BARLINE -->
+<!ENTITY finalbar       "&#x1D102;"> <!-- MUSICAL SYMBOL FINAL BARLINE -->
+<!ENTITY rfinalbar      "&#x1D103;"> <!-- MUSICAL SYMBOL REVERSE FINAL BARLINE -->
+<!ENTITY dashedbar      "&#x1D104;"> <!-- MUSICAL SYMBOL DASHED BARLINE -->
+<!ENTITY shortbar       "&#x1D105;"> <!-- MUSICAL SYMBOL SHORT BARLINE -->
+<!ENTITY lrepeat        "&#x1D106;"> <!-- MUSICAL SYMBOL LEFT REPEAT SIGN -->
+<!ENTITY rrepeat        "&#x1D107;"> <!-- MUSICAL SYMBOL RIGHT REPEAT SIGN -->
+<!ENTITY repeatdots     "&#x1D108;"> <!-- MUSICAL SYMBOL REPEAT DOTS -->
+<!ENTITY dalsegno       "&#x1D109;"> <!-- MUSICAL SYMBOL DAL SEGNO -->
+<!ENTITY dacapo         "&#x1D10A;"> <!-- MUSICAL SYMBOL DA CAPO -->
+<!ENTITY segno          "&#x1D10B;"> <!-- MUSICAL SYMBOL SEGNO (Mup) -->
+<!ENTITY coda           "&#x1D10C;"> <!-- MUSICAL SYMBOL CODA (Mup) -->
+<!ENTITY rptfig1        "&#x1D10D;"> <!-- MUSICAL SYMBOL REPEATED FIGURE-1 -->
+<!ENTITY rptfig2        "&#x1D10E;"> <!-- MUSICAL SYMBOL REPEATED FIGURE-2 (Mup) -->
+<!ENTITY rptfig3        "&#x1D10F;"> <!-- MUSICAL SYMBOL REPEATED FIGURE-3 -->
+<!ENTITY ferm           "&#x1D110;"> <!-- MUSICAL SYMBOL FERMATA (Mup) -->
+<!ENTITY fermbelow      "&#x1D111;"> <!-- MUSICAL SYMBOL FERMATA BELOW (Mup) -->
+<!ENTITY breath         "&#x1D112;"> <!-- MUSICAL SYMBOL BREATH MARK -->
+<!ENTITY caesura        "&#x1D113;"> <!-- MUSICAL SYMBOL CAESURA (Mup) -->
+<!ENTITY brace          "&#x1D114;"> <!-- MUSICAL SYMBOL BRACE -->
+<!ENTITY bracket        "&#x1D115;"> <!-- MUSICAL SYMBOL BRACKET -->
+
+<!-- Staves -->
+<!ENTITY staff1         "&#x1D116;"> <!-- MUSICAL SYMBOL ONE-LINE STAFF -->
+<!ENTITY staff2         "&#x1D117;"> <!-- MUSICAL SYMBOL TWO-LINE STAFF -->
+<!ENTITY staff3         "&#x1D118;"> <!-- MUSICAL SYMBOL THREE-LINE STAFF -->
+<!ENTITY staff4         "&#x1D119;"> <!-- MUSICAL SYMBOL FOUR-LINE STAFF -->
+<!ENTITY staff5         "&#x1D11A;"> <!-- MUSICAL SYMBOL FIVE-LINE STAFF -->
+<!ENTITY staff6         "&#x1D11B;"> <!-- MUSICAL SYMBOL SIX-LINE STAFF -->
+
+<!-- Tablature -->
+<!ENTITY fret6          "&#x1D11C;"> <!-- MUSICAL SYMBOL SIX-STRING FRETBOARD -->
+<!ENTITY fret4          "&#x1D11D;"> <!-- MUSICAL SYMBOL FOUR-STRING FRETBOARD -->
+
+<!-- Clefs -->
+<!ENTITY Gclef          "&#x1D11E;"> <!-- MUSICAL SYMBOL G CLEF (Mup) -->
+<!ENTITY Gclef8va       "&#x1D11F;"> <!-- MUSICAL SYMBOL G CLEF OTTAVA ALTA -->
+<!ENTITY Gclef8vb       "&#x1D120;"> <!-- MUSICAL SYMBOL G CLEF OTTAVA BASSA -->
+<!ENTITY Cclef          "&#x1D121;"> <!-- MUSICAL SYMBOL C CLEF (Mup) -->
+<!ENTITY Fclef          "&#x1D122;"> <!-- MUSICAL SYMBOL F CLEF (Mup) -->
+<!ENTITY Fclef8va       "&#x1D123;"> <!-- MUSICAL SYMBOL F CLEF OTTAVA ALTA -->
+<!ENTITY Fclef8vb       "&#x1D124;"> <!-- MUSICAL SYMBOL F CLEF OTTAVA BASSA -->
+<!ENTITY drumclef1      "&#x1D125;"> <!-- MUSICAL SYMBOL DRUM CLEF-1 -->
+<!ENTITY drumclef2      "&#x1D126;"> <!-- MUSICAL SYMBOL DRUM CLEF-2 -->
+
+<!-- Accidentals -->
+<!ENTITY flat           "&#x266D;"> <!-- MUSIC FLAT SIGN -->
+<!ENTITY nat            "&#x266E;"> <!-- MUSIC NATURAL SIGN -->
+<!ENTITY sharp          "&#x266F;"> <!-- MUSIC SHARP SIGN -->
+<!ENTITY dblsharp       "&#x1D12A;"> <!-- MUSICAL SYMBOL DOUBLE SHARP (Mup) -->
+<!ENTITY dblflat        "&#x1D12B;"> <!-- MUSICAL SYMBOL DOUBLE FLAT (Mup) -->
+<!ENTITY flatup         "&#x1D12C;"> <!-- MUSICAL SYMBOL FLAT UP -->
+<!ENTITY flatdown       "&#x1D12D;"> <!-- MUSICAL SYMBOL FLAT DOWN -->
+<!ENTITY natup          "&#x1D12E;"> <!-- MUSICAL SYMBOL NATURAL UP -->
+<!ENTITY natdown        "&#x1D12F;"> <!-- MUSICAL SYMBOL NATURAL DOWN -->
+<!ENTITY sharpup        "&#x1D130;"> <!-- MUSICAL SYMBOL SHARP UP -->
+<!ENTITY sharpdown      "&#x1D131;"> <!-- MUSICAL SYMBOL SHARP DOWN -->
+<!ENTITY qtrtonesharp   "&#x1D132;"> <!-- MUSICAL SYMBOL QUARTER TONE SHARP -->
+<!ENTITY qtrtoneflat    "&#x1D133;"> <!-- MUSICAL SYMBOL QUARTER TONE FLAT -->
+
+<!-- Time signatures -->
+<!ENTITY common         "&#x1D134;"> <!-- MUSICAL SYMBOL COMMON TIME (Mup) -->
+<!ENTITY cut            "&#x1D135;"> <!-- MUSICAL SYMBOL CUT TIME (Mup) -->
+
+<!-- Octaves -->
+<!ENTITY _8va           "&#x1D136;"> <!-- MUSICAL SYMBOL OTTAVA ALTA -->
+<!ENTITY _8vb           "&#x1D137;"> <!-- MUSICAL SYMBOL OTTAVA BASSA -->
+<!ENTITY _15va          "&#x1D138;"> <!-- MUSICAL SYMBOL QUINDICESIMA ALTA -->
+<!ENTITY _15vb          "&#x1D139;"> <!-- MUSICAL SYMBOL QUINDICESIMA BASSA -->
+
+<!-- Rests -->
+<!ENTITY multirest      "&#x1D13A;"> <!-- MUSICAL SYMBOL MULTI REST -->
+<!ENTITY rest1          "&#x1D13B;"> <!-- MUSICAL SYMBOL WHOLE REST (Mup) -->
+<!ENTITY rest2          "&#x1D13C;"> <!-- MUSICAL SYMBOL HALF REST (Mup) -->
+<!ENTITY rest4          "&#x1D13D;"> <!-- MUSICAL SYMBOL QUARTER REST (Mup) -->
+<!ENTITY rest8          "&#x1D13E;"> <!-- MUSICAL SYMBOL EIGHTH REST (Mup) -->
+<!ENTITY rest16         "&#x1D13F;"> <!-- MUSICAL SYMBOL SIXTEENTH REST (Mup) -->
+<!ENTITY rest32         "&#x1D140;"> <!-- MUSICAL SYMBOL THIRTY-SECOND REST (Mup) -->
+<!ENTITY rest64         "&#x1D141;"> <!-- MUSICAL SYMBOL SIXTY-FOURTH REST (Mup) -->
+<!ENTITY rest128        "&#x1D142;"> <!-- MUSICAL SYMBOL ONE HUNDRED TWENTY-EIGHTH REST (Mup) -->
+
+<!-- Noteheads -->
+<!ENTITY xnote          "&#x1D143;"> <!-- MUSICAL SYMBOL X NOTEHEAD (Mup) -->
+<!ENTITY plusnote       "&#x1D144;"> <!-- MUSICAL SYMBOL PLUS NOTEHEAD -->
+<!ENTITY cxnote         "&#x1D145;"> <!-- MUSICAL SYMBOL CIRCLE X NOTEHEAD -->
+<!ENTITY sqw            "&#x1D146;"> <!-- MUSICAL SYMBOL SQUARE NOTEHEAD WHITE -->
+<!ENTITY sqb            "&#x1D147;"> <!-- MUSICAL SYMBOL SQUARE NOTEHEAD BLACK -->
+<!ENTITY triuw          "&#x1D148;"> <!-- MUSICAL SYMBOL TRIANGLE NOTEHEAD UP WHITE -->
+<!ENTITY triub          "&#x1D149;"> <!-- MUSICAL SYMBOL TRIANGLE NOTEHEAD UP BLACK -->
+<!ENTITY trilw          "&#x1D14A;"> <!-- MUSICAL SYMBOL TRIANGLE NOTEHEAD LEFT WHITE -->
+<!ENTITY trilb          "&#x1D14B;"> <!-- MUSICAL SYMBOL TRIANGLE NOTEHEAD LEFT BLACK -->
+<!ENTITY trirw          "&#x1D14C;"> <!-- MUSICAL SYMBOL TRIANGLE NOTEHEAD RIGHT WHITE -->
+<!ENTITY trirb          "&#x1D14D;"> <!-- MUSICAL SYMBOL TRIANGLE NOTEHEAD RIGHT BLACK -->
+<!ENTITY tridw          "&#x1D14E;"> <!-- MUSICAL SYMBOL TRIANGLE NOTEHEAD DOWN WHITE -->
+<!ENTITY tridb          "&#x1D14F;"> <!-- MUSICAL SYMBOL TRIANGLE NOTEHEAD DOWN BLACK -->
+<!ENTITY triurw         "&#x1D150;"> <!-- MUSICAL SYMBOL TRIANGLE NOTEHEAD UP RIGHT WHITE -->
+<!ENTITY triurb         "&#x1D151;"> <!-- MUSICAL SYMBOL TRIANGLE NOTEHEAD UP RIGHT BLACK -->
+<!ENTITY moonw          "&#x1D152;"> <!-- MUSICAL SYMBOL MOON NOTEHEAD WHITE -->
+<!ENTITY moonb          "&#x1D153;"> <!-- MUSICAL SYMBOL MOON NOTEHEAD BLACK -->
+<!ENTITY trirdw         "&#x1D154;"> <!-- MUSICAL SYMBOL TRIANGLE-ROUND NOTEHEAD DOWN WHITE -->
+<!ENTITY trirdb         "&#x1D155;"> <!-- MUSICAL SYMBOL TRIANGLE-ROUND NOTEHEAD DOWN BLACK -->
+<!ENTITY parennote      "&#x1D156;"> <!-- MUSICAL SYMBOL PARENTHESIS NOTEHEAD -->
+<!ENTITY opennote       "&#x1D157;"> <!-- MUSICAL SYMBOL VOID NOTEHEAD (Mup) -->
+<!ENTITY blacknote      "&#x1D158;"> <!-- MUSICAL SYMBOL NOTEHEAD BLACK (Mup) -->
+<!ENTITY nullnote       "&#x1D159;"> <!-- MUSICAL SYMBOL NULL NOTEHEAD -->
+<!ENTITY clustw         "&#x1D15A;"> <!-- MUSICAL SYMBOL CLUSTER NOTEHEAD WHITE -->
+<!ENTITY clustb         "&#x1D15B;"> <!-- MUSICAL SYMBOL CLUSTER NOTEHEAD BLACK -->
+
+<!-- Notes -->
+<!ENTITY breve          "&#x1D15C;"> <!-- MUSICAL SYMBOL BREVE (Mup) -->
+<!ENTITY note1          "&#x1D15D;"> <!-- MUSICAL SYMBOL WHOLE NOTE (Mup) -->
+<!ENTITY note2          "&#x1D15E;"> <!-- MUSICAL SYMBOL HALF NOTE : 1D157 1D165 (Mup) -->
+<!ENTITY note4          "&#x1D15F;"> <!-- MUSICAL SYMBOL QUARTER NOTE : 1D158 1D165 (Mup) -->
+<!ENTITY note8          "&#x1D160;"> <!-- MUSICAL SYMBOL EIGHTH NOTE : 1D15F 1D16E (Mup) -->
+<!ENTITY note16         "&#x1D161;"> <!-- MUSICAL SYMBOL SIXTEENTH NOTE : 1D15F 1D16F (Mup) -->
+<!ENTITY note32         "&#x1D162;"> <!-- MUSICAL SYMBOL THIRTY-SECOND NOTE : 1D15F 1D170 (Mup) -->
+<!ENTITY note64         "&#x1D163;"> <!-- MUSICAL SYMBOL SIXTY-FOURTH NOTE : 1D15F 1D171 (Mup) -->
+<!ENTITY note128        "&#x1D164;"> <!-- MUSICAL SYMBOL ONE HUNDRED TWENTY-EIGHTH NOTE : 1D15F 1D172 (Mup) -->
+
+<!-- Stems -->
+<!ENTITY stem           "&#x1D165;"> <!-- MUSICAL SYMBOL COMBINING STEM -->
+<!ENTITY sprechstem     "&#x1D166;"> <!-- MUSICAL SYMBOL COMBINING SPRECHGESANG STEM -->
+
+<!-- Tremolos -->
+<!ENTITY trem1          "&#x1D167;"> <!-- MUSICAL SYMBOL COMBINING TREMOLO-1 -->
+<!ENTITY trem2          "&#x1D168;"> <!-- MUSICAL SYMBOL COMBINING TREMOLO-2 -->
+<!ENTITY trem3          "&#x1D169;"> <!-- MUSICAL SYMBOL COMBINING TREMOLO-3 -->
+<!ENTITY ftrem1         "&#x1D16A;"> <!-- MUSICAL SYMBOL FINGERED TREMOLO-1 -->
+<!ENTITY ftrem2         "&#x1D16B;"> <!-- MUSICAL SYMBOL FINGERED TREMOLO-2 -->
+<!ENTITY ftrem3         "&#x1D16C;"> <!-- MUSICAL SYMBOL FINGERED TREMOLO-3 -->
+
+<!-- Augmentation dot -->
+<!ENTITY dot            "&#x1D16D;"> <!-- MUSICAL SYMBOL COMBINING AUGMENTATION DOT (Mup) -->
+
+<!-- Flags -->
+<!ENTITY flag8          "&#x1D16E;"> <!-- MUSICAL SYMBOL COMBINING FLAG-1 (Mup) -->
+<!ENTITY flag16         "&#x1D16F;"> <!-- MUSICAL SYMBOL COMBINING FLAG-2 -->
+<!ENTITY flag32         "&#x1D170;"> <!-- MUSICAL SYMBOL COMBINING FLAG-3 -->
+<!ENTITY flag64         "&#x1D171;"> <!-- MUSICAL SYMBOL COMBINING FLAG-4 -->
+<!ENTITY flag128        "&#x1D172;"> <!-- MUSICAL SYMBOL COMBINING FLAG-5 -->
+
+<!-- Beams and slurs -->
+<!ENTITY beam           "&#x1D173;"> <!-- MUSICAL SYMBOL BEGIN BEAM -->
+<!ENTITY ebeam          "&#x1D174;"> <!-- MUSICAL SYMBOL END BEAM -->
+<!ENTITY tie            "&#x1D175;"> <!-- MUSICAL SYMBOL BEGIN TIE -->
+<!ENTITY etie           "&#x1D176;"> <!-- MUSICAL SYMBOL END TIE -->
+<!ENTITY slur           "&#x1D177;"> <!-- MUSICAL SYMBOL BEGIN SLUR -->
+<!ENTITY eslur          "&#x1D178;"> <!-- MUSICAL SYMBOL END SLUR -->
+<!ENTITY phrase         "&#x1D179;"> <!-- MUSICAL SYMBOL BEGIN PHRASE -->
+<!ENTITY ephrase        "&#x1D17A;"> <!-- MUSICAL SYMBOL END PHRASE -->
+
+<!-- Articulation -->
+<!ENTITY acc            "&#x1D17B;"> <!-- MUSICAL SYMBOL COMBINING ACCENT (Mup) -->
+<!ENTITY stacc          "&#x1D17C;"> <!-- MUSICAL SYMBOL COMBINING STACCATO -->
+<!ENTITY ten            "&#x1D17D;"> <!-- MUSICAL SYMBOL COMBINING TENUTO (Mup) -->
+<!ENTITY stacciss       "&#x1D17E;"> <!-- MUSICAL SYMBOL COMBINING STACCATISSIMO (Mup) -->
+<!ENTITY marc           "&#x1D17F;"> <!-- MUSICAL SYMBOL COMBINING MARCATO (Mup) -->
+<!ENTITY marc-stacc     "&#x1D180;"> <!-- MUSICAL SYMBOL COMBINING MARCATO-STACCATO -->
+<!ENTITY acc-marc       "&#x1D181;"> <!-- MUSICAL SYMBOL COMBINING ACCENT-STACCATO -->
+<!ENTITY loure          "&#x1D182;"> <!-- MUSICAL SYMBOL COMBINING LOURE -->
+<!ENTITY arp            "&#x1D183;"> <!-- MUSICAL SYMBOL ARPEGGIATO UP -->
+<!ENTITY arpdn          "&#x1D184;"> <!-- MUSICAL SYMBOL ARPEGGIATO DOWN -->
+<!ENTITY doit           "&#x1D185;"> <!-- MUSICAL SYMBOL COMBINING DOIT -->
+<!ENTITY rip            "&#x1D186;"> <!-- MUSICAL SYMBOL COMBINING RIP -->
+<!ENTITY flip           "&#x1D187;"> <!-- MUSICAL SYMBOL COMBINING FLIP -->
+<!ENTITY smear          "&#x1D188;"> <!-- MUSICAL SYMBOL COMBINING SMEAR -->
+<!ENTITY bend           "&#x1D189;"> <!-- MUSICAL SYMBOL COMBINING BEND -->
+<!ENTITY dbltng         "&#x1D18A;"> <!-- MUSICAL SYMBOL COMBINING DOUBLE TONGUE -->
+<!ENTITY tritng         "&#x1D18B;"> <!-- MUSICAL SYMBOL COMBINING TRIPLE TONGUE -->
+<!ENTITY r              "&#x1D18C;"> <!-- MUSICAL SYMBOL RINFORZANDO -->
+<!ENTITY s              "&#x1D18D;"> <!-- MUSICAL SYMBOL SUBITO -->
+<!ENTITY z              "&#x1D18E;"> <!-- MUSICAL SYMBOL Z -->
+
+<!-- Dynamics -->
+<!ENTITY p              "&#x1D18F;"> <!-- MUSICAL SYMBOL PIANO -->
+<!ENTITY m              "&#x1D190;"> <!-- MUSICAL SYMBOL MEZZO -->
+<!ENTITY f              "&#x1D191;"> <!-- MUSICAL SYMBOL FORTE -->
+<!ENTITY cresc          "&#x1D192;"> <!-- MUSICAL SYMBOL CRESCENDO -->
+<!ENTITY dim            "&#x1D193;"> <!-- MUSICAL SYMBOL DECRESCENDO -->
+
+<!-- Ornaments -->
+<!ENTITY gracesl        "&#x1D194;"> <!-- MUSICAL SYMBOL GRACE NOTE SLASH -->
+<!ENTITY grace          "&#x1D195;"> <!-- MUSICAL SYMBOL GRACE NOTE NO SLASH -->
+<!ENTITY tr             "&#x1D196;"> <!-- MUSICAL SYMBOL TR (Mup) -->
+<!ENTITY turn           "&#x1D197;"> <!-- MUSICAL SYMBOL TURN -->
+<!ENTITY invturn        "&#x1D198;"> <!-- MUSICAL SYMBOL INVERTED TURN -->
+<!ENTITY turns          "&#x1D199;"> <!-- MUSICAL SYMBOL TURN SLASH -->
+<!ENTITY turnup         "&#x1D19A;"> <!-- MUSICAL SYMBOL TURN UP -->
+<!ENTITY orn1           "&#x1D19B;"> <!-- MUSICAL SYMBOL ORNAMENT STROKE-1 -->
+<!ENTITY orn2           "&#x1D19C;"> <!-- MUSICAL SYMBOL ORNAMENT STROKE-2 -->
+<!ENTITY orn3           "&#x1D19D;"> <!-- MUSICAL SYMBOL ORNAMENT STROKE-3 -->
+<!ENTITY orn4           "&#x1D19E;"> <!-- MUSICAL SYMBOL ORNAMENT STROKE-4 -->
+<!ENTITY orn5           "&#x1D19F;"> <!-- MUSICAL SYMBOL ORNAMENT STROKE-5 -->
+<!ENTITY orn6           "&#x1D1A0;"> <!-- MUSICAL SYMBOL ORNAMENT STROKE-6 -->
+<!ENTITY orn7           "&#x1D1A1;"> <!-- MUSICAL SYMBOL ORNAMENT STROKE-7 -->
+<!ENTITY orn8           "&#x1D1A2;"> <!-- MUSICAL SYMBOL ORNAMENT STROKE-8 -->
+<!ENTITY orn9           "&#x1D1A3;"> <!-- MUSICAL SYMBOL ORNAMENT STROKE-9 -->
+<!ENTITY orn10          "&#x1D1A4;"> <!-- MUSICAL SYMBOL ORNAMENT STROKE-10 -->
+<!ENTITY orn11          "&#x1D1A5;"> <!-- MUSICAL SYMBOL ORNAMENT STROKE-11 -->
+
+<!-- Analytics -->
+<!ENTITY haupt          "&#x1D1A6;"> <!-- MUSICAL SYMBOL HAUPTSTIMME -->
+<!ENTITY neben          "&#x1D1A7;"> <!-- MUSICAL SYMBOL NEBENSTIMME -->
+<!ENTITY estimme        "&#x1D1A8;"> <!-- MUSICAL SYMBOL END OF STIMME -->
+<!ENTITY degslash       "&#x1D1A9;"> <!-- MUSICAL SYMBOL DEGREE SLASH (Mup) -->
+
+<!-- Instrumentation -->
+<!ENTITY dnbow          "&#x1D1AA;"> <!-- MUSICAL SYMBOL COMBINING DOWN BOW (Mup) -->
+<!ENTITY upbow          "&#x1D1AB;"> <!-- MUSICAL SYMBOL COMBINING UP BOW (Mup) -->
+<!ENTITY harm           "&#x1D1AC;"> <!-- MUSICAL SYMBOL COMBINING HARMONIC -->
+<!ENTITY snap           "&#x1D1AD;"> <!-- MUSICAL SYMBOL COMBINING SNAP PIZZICATO -->
+
+<!-- Pedals -->
+<!ENTITY ped            "&#x1D1AE;"> <!-- MUSICAL SYMBOL PEDAL MARK (Mup) -->
+<!ENTITY pedup          "&#x1D1AF;"> <!-- MUSICAL SYMBOL PEDAL UP MARK (Mup) -->
+<!ENTITY halfped        "&#x1D1B0;"> <!-- MUSICAL SYMBOL HALF PEDAL MARK (Mup) -->
+
+<!-- Miscellaneous symbols -->
+<!ENTITY gliss          "&#x1D1B1;"> <!-- MUSICAL SYMBOL GLISSANDO UP -->
+<!ENTITY glissdn        "&#x1D1B2;"> <!-- MUSICAL SYMBOL GLISSANDO DOWN -->
+<!ENTITY fnail          "&#x1D1B3;"> <!-- MUSICAL SYMBOL WITH FINGERNAILS -->
+<!ENTITY damp           "&#x1D1B4;"> <!-- MUSICAL SYMBOL DAMP -->
+<!ENTITY dampall        "&#x1D1B5;"> <!-- MUSICAL SYMBOL DAMP ALL -->
+
+<!-- Mensural Notation -->
+<!ENTITY maxima         "&#x1D1B6;"> <!-- MUSICAL SYMBOL MAXIMA -->
+<!ENTITY longa          "&#x1D1B7;"> <!-- MUSICAL SYMBOL LONGA -->
+<!ENTITY brevis         "&#x1D1B8;"> <!-- MUSICAL SYMBOL BREVIS -->
+<!ENTITY semibrw        "&#x1D1B9;"> <!-- MUSICAL SYMBOL SEMIBREVIS WHITE -->
+<!ENTITY semibrb        "&#x1D1BA;"> <!-- MUSICAL SYMBOL SEMIBREVIS BLACK -->
+<!ENTITY minima         "&#x1D1BB;"> <!-- MUSICAL SYMBOL MINIMA : 1D1B9 1D165 -->
+<!ENTITY minimab        "&#x1D1BC;"> <!-- MUSICAL SYMBOL MINIMA BLACK : 1D1BA 1D165 -->
+<!ENTITY semiminw       "&#x1D1BD;"> <!-- MUSICAL SYMBOL SEMIMINIMA WHITE : 1D1BB 1D16E -->
+<!ENTITY semiminb       "&#x1D1BE;"> <!-- MUSICAL SYMBOL SEMIMINIMA BLACK : 1D1BC 1D16E -->
+<!ENTITY fusaw          "&#x1D1BF;"> <!-- MUSICAL SYMBOL FUSA WHITE : 1D1BB 1D16F -->
+<!ENTITY fusab          "&#x1D1C0;"> <!-- MUSICAL SYMBOL FUSA BLACK : 1D1BC 1D16F -->
+
+<!-- Mensural Rests -->
+<!ENTITY rlongaperf     "&#x1D1C1;"> <!-- MUSICAL SYMBOL LONGA PERFECTA REST -->
+<!ENTITY rlongaimperf   "&#x1D1C2;"> <!-- MUSICAL SYMBOL LONGA IMPERFECTA REST -->
+<!ENTITY rbrevis        "&#x1D1C3;"> <!-- MUSICAL SYMBOL BREVIS REST -->
+<!ENTITY rsemibr        "&#x1D1C4;"> <!-- MUSICAL SYMBOL SEMIBREVIS REST -->
+<!ENTITY rminima        "&#x1D1C5;"> <!-- MUSICAL SYMBOL MINIMA REST -->
+<!ENTITY rsemimin       "&#x1D1C6;"> <!-- MUSICAL SYMBOL SEMIMINIMA REST -->
+
+<!-- Mensural Prolations -->
+<!ENTITY tppp           "&#x1D1C7;"> <!-- MUSICAL SYMBOL TEMPUS PERFECTUM CUM PROLATIONE PERFECTA -->
+<!ENTITY tppi           "&#x1D1C8;"> <!-- MUSICAL SYMBOL TEMPUS PERFECTUM CUM PROLATIONE IMPERFECTA -->
+<!ENTITY tpppd1         "&#x1D1C9;"> <!-- MUSICAL SYMBOL TEMPUS PERFECTUM CUM PROLATIONE PERFECTA DIMINUTION-1 -->
+<!ENTITY tipp           "&#x1D1CA;"> <!-- MUSICAL SYMBOL TEMPUS IMPERFECTUM CUM PROLATIONE PERFECTA -->
+<!ENTITY tipi           "&#x1D1CB;"> <!-- MUSICAL SYMBOL TEMPUS IMPERFECTUM CUM PROLATIONE IMPERFECTA -->
+<!ENTITY tipid1         "&#x1D1CC;"> <!-- MUSICAL SYMBOL TEMPUS IMPERFECTUM CUM PROLATIONE IMPERFECTA DIMINUTION-1 -->
+<!ENTITY tipid2         "&#x1D1CD;"> <!-- MUSICAL SYMBOL TEMPUS IMPERFECTUM CUM PROLATIONE IMPERFECTA DIMINUTION-2 -->
+<!ENTITY tipid3         "&#x1D1CE;"> <!-- MUSICAL SYMBOL TEMPUS IMPERFECTUM CUM PROLATIONE IMPERFECTA DIMINUTION-3 -->
+
+<!-- Miscellaneous symbols -->
+<!ENTITY croix          "&#x1D1CF;"> <!-- MUSICAL SYMBOL CROIX -->
+
+<!-- Gregorian notation -->
+<!ENTITY grCclef        "&#x1D1D0;"> <!-- MUSICAL SYMBOL GREGORIAN C CLEF -->
+<!ENTITY grFclef        "&#x1D1D1;"> <!-- MUSICAL SYMBOL GREGORIAN F CLEF -->
+<!ENTITY sqB            "&#x1D1D2;"> <!-- MUSICAL SYMBOL SQUARE B -->
+<!ENTITY virga          "&#x1D1D3;"> <!-- MUSICAL SYMBOL VIRGA -->
+<!ENTITY podatus        "&#x1D1D4;"> <!-- MUSICAL SYMBOL PODATUS -->
+<!ENTITY clivis         "&#x1D1D5;"> <!-- MUSICAL SYMBOL CLIVIS -->
+<!ENTITY scandicus      "&#x1D1D6;"> <!-- MUSICAL SYMBOL SCANDICUS -->
+<!ENTITY climacus       "&#x1D1D7;"> <!-- MUSICAL SYMBOL CLIMACUS -->
+<!ENTITY torculus       "&#x1D1D8;"> <!-- MUSICAL SYMBOL TORCULUS -->
+<!ENTITY porrectus      "&#x1D1D9;"> <!-- MUSICAL SYMBOL PORRECTUS -->
+<!ENTITY porrectusflex  "&#x1D1DA;"> <!-- MUSICAL SYMBOL PORRECTUS FLEXUS -->
+<!ENTITY scandicusflex  "&#x1D1DB;"> <!-- MUSICAL SYMBOL SCANDICUS FLEXUS -->
+<!ENTITY torculusresup  "&#x1D1DC;"> <!-- MUSICAL SYMBOL TORCULUS RESUPINUS -->
+<!ENTITY pessubpunct    "&#x1D1DD;"> <!-- MUSICAL SYMBOL PES SUBPUNCTIS -->

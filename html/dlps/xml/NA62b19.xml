@@ -1,0 +1,334 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0083 SYSTEM "000000766_0083" NDATA jpg>
+<!ENTITY DSSR_000000766_0084 SYSTEM "000000766_0084" NDATA jpg>
+<!ENTITY DSSR_000000766_0085 SYSTEM "000000766_0085" NDATA jpg>
+<!ENTITY DSSR_000000766_0086 SYSTEM "000000766_0086" NDATA jpg>
+
+<!--<!ENTITY NA62b19a SYSTEM "NA62b19a.jpg" NDATA jpg>
+<!ENTITY NA62b19b SYSTEM "NA62b19b.jpg" NDATA jpg>
+<!ENTITY NA62b19c SYSTEM "NA62b19c.jpg" NDATA jpg>
+<!ENTITY NA62b19d SYSTEM "NA62b19d.jpg" NDATA jpg>-->
+
+<!ENTITY longs "s" >
+<!-- long s -->
+]>
+
+<TEI.2 id="NA62b19">
+
+
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-02-19"
+      >1862 February 19</date></title>
+    <author>Case, Adelaide E.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Valeria Gauz, John Carter Brown Library, Brown University</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>University of Virginia Library Electronic Text Center.</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">14</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NA62b19</idno>
+    <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+    <date value="2000">2000</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+
+   <notesStmt>
+    <note>
+     <p>Page images have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Adelaide E. Case to Charles N. Tenney, 1862 February 19</title>
+
+
+      <author>Adelaide E. Case</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 pp.</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p>Corine Carr Nettleton Civil War Collection </p>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p>Letter does not finish on p. 4: it continues on margins of p. 1.</p>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p>All unambiguous end-of-line hyphens have been retained.</p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings.</p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-02-19">1862-02-19</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>feminine</term>
+     <term>American Civil War/Women Writers/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2001-05">May 2001</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Carolyn Fay, Electronic Text Center</name>
+    </respStmt>
+    <item>Updated TEI header and tags. </item>
+   </change>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-03">November 3rd, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">September 30, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-02-19">1862-02-19</date>
+
+      <title>Letter from Adelaide E. Case to Charles N. Tenney, February 19, 1862.</title>
+     </bibl>
+    </head>
+
+    <p>Writing from the schoolroom, Addie relates a nightmare she had about Charlie being ill and
+     delirious. She is worried about him because she has not heard from him in quite some time.
+     Refering to the recent Union victory at Fort Donelson, Addie writes about the atrocities of
+     war.</p>
+
+   </div1>
+  </front>
+  <body id="d4">
+
+
+   <div1 type="letter" n="1" id="d5">
+    <pb n="1" entity="DSSR_000000766_0083"/>
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-02-19">1862 February
+      19</date></head>
+    <opener>
+     <dateline>Mecca Feb. 19<hi rend="super">th</hi> 1862.</dateline>
+     <salute>
+      <name type="person">Dearest Charlie</name>
+     </salute>
+
+    </opener>
+
+    <p> I can not refrain from<lb/> penning you a few lines even if my<lb/> worthy teacher should
+     censure me for<lb/> I am now in the schoolroom.<lb/> So long a time has elapsed since<lb/> I
+     have received any thing from you<lb/> that I fear you are ill. Oh! I had<lb/> such a strange
+     dream last night.<lb/> I shudder even now when I think of it.<lb/> You are lying ill and
+     delirious<lb/> where I could both see and hear you.<lb/> You calling for me and yet I <pb n="2"
+      entity="DSSR_000000766_0084"/> could not go to you. I struggled<lb/> long earnestly and in
+     vain, but there<lb/> seemed some great obstacle between<lb/> us which I could not
+     surmount.<lb/> And the more aggravating it was<lb/> that these, were all whom I had ever had
+     the<lb/> least feeling of anger toward making me. One thing makes it<lb/> almost
+      laughable. <abbr expan="Colonel">Col.</abbr> Tyler was one<lb/> of them. I awoke completely
+     exhausted<lb/> and - do not laugh, dearest - weeping.<lb/> Be assured, my darling, there was
+     no<lb/> more rest for me. Why bless your<lb/> dearest. I have not read a letter from<lb/> you
+     for two weeks, and it is no<lb/> wonder that such dreams, as the<lb/> above come to torture me
+     when<lb/> you, before, have written so often.</p>
+    <p> Why! I believe the tortures of the rack<lb/> can be nothing to the <orig reg="imaginings"
+      >imaginnings</orig> of<lb/> such dreams.</p>
+    <p>Has <abbr expan="Captain">Capt</abbr> Asper arrived yet? I sent<lb/> a letter by him or
+     rather, Hallie gave <pb n="3" entity="DSSR_000000766_0085"/> it to him enclosed in it was<lb/>
+     a portrait of "Your Addie" as you persist<lb/> in calling her. Oh! I can not<lb/> drive that
+     ugly dream from my<lb/> mind. It has given me that detestable desease commonly termed<lb/> "the
+     blues" and I do not think that<lb/> there is a thing which will relieve me<lb/> except a letter
+     from you. Now please<lb/> write will you not? as soon as you<lb/> receive this</p>
+    <p> Darling, do you not think "Julius" a<lb/> beautiful signature? Questions such as<lb/> this
+     "who is there in <abbr expan="Company">Co.</abbr> <unclear>H</unclear>
+      <unclear>7th</unclear> Ohio <abbr expan="Regiment">Reg't</abbr><lb/> by the name of "Julius"?
+     Bless you<lb/> dearest the same beautiful flow<lb/> of thoughts: the same dear form<lb/> of
+     writing, and the same formal<lb/> manner of writing are visible in<lb/> "Julius" letters as in
+     "Charlie's".<lb/> I could distinguished it among<lb/> a thousand others letters.</p>
+    <p> Darling how difficult it is to write in a <pb n="4" entity="DSSR_000000766_0086"/> a school
+     room. In imagination picture a<lb/> school room by fifty scholars ranging in<lb/> age from the
+     blooming girl of twenty down to<lb/> the lisping child of four years. Some engaged<lb/> in
+     studying - perhaps their lessons and perhaps<lb/> not - some in whispering and others is -
+     sitting<lb/> still, looking at the next on one side of the<lb/> room sits our young teacher,
+     before a little<lb/> boy who is reciting his Geography lesson, in<lb/> a kind of "dont care"
+     way, and then for the<lb/> busily writing, as - one of our scholars<lb/> says, "writing to her
+     beloved of ". Well I don't<lb/> know as I have any reason to doubt upon it. While<lb/> such ...
+     as that ... from lips to me.</p>
+    <p> Add! Let me see it when you get it finished. I<lb/> want to learn how to write "Love". "Add
+     I will tell<lb/> the teacher". you will pardon my poor<lb/> composition after reading this will
+     you not?</p>
+    <p>
+     <name type="person">Hal</name> is well perfectly so, with the exception of<lb/> his cold. The
+     same feeling seems to pervade <unclear>Hal</unclear><lb/> that does human beings. That of liking
+     him<lb/> if friends were always as faithful as is his<lb/> cold I presume he could have more
+     than he now<lb/> does. But he has enough. Our sleighing has all gone<lb/> and left us. It
+     lasted four days. I can assure you<lb/> that was well <unclear>improved</unclear>. There is to
+     be a donation<lb/> for our pastor, Mr. Arnold, this evening. I shall not<lb/> attend if I do
+     not feel more cheerful than at the<lb/> present hour.</p>
+    <p> Oh, what a buzzing zing there is around me<lb/> it sounds more like a swarm of bees than
+     like human<lb/> beings. How do you get along for reading, do you have<lb/> enough? If not write
+     me and let me know and I will<lb/> send you some by <unclear/>. Hal and Laurie went to<lb/>
+     Bristol last week to see<name type="person">Charlie Brooks</name>, and <name type="person">Mr
+      Miller</name>.<lb/> He thinks Mr Miller will not live long. Charles Brooks<lb/> starts soon
+     for his <abbr expan="Company">Co.</abbr>. If I can I will send some<lb/> papers, and books by
+     him. What a victory our troops<lb/> won at Fort Donaldson<ref target="n1" n="1">[1]</ref>. How
+     have the <unclear>particulins</unclear> have gone not; and still at what a cost. We lost
+     heavily. And yet we must expect it<lb/> How barbarous it does seem to fight as they died, yet
+     it is necessary. People say they can<lb/> read of such battles now with out a shudder, but I
+     can scarcely believe it. Think of hundreds<lb/> (I move to first page)<ref target="n2" n="2"
+      >[2]</ref><lb/>
+    </p>
+    <p> of souls entering the dread within a few short hours, and hundreds of<lb/> others lying
+     wounded and writhing in their <unclear>gone</unclear>. Oh, it is horrible to think<lb/> of say
+     nothing of the sight. Dear Charlie this question<lb/> involuntarily rises<lb/> to my lips. And
+     they<lb/> preferred to die!<lb/> What an<lb/> important<lb/> and fearful<lb/> question, and yet
+     how little is<lb/> thought of it, My darling I do not profess<lb/> to be a christian, and yet I
+     know there is<lb/> such a thing as religion. There is something in true religion which I would
+     give worlds to<lb/> possess, but I do not I have no hesitancy in<lb/> saying that I do not
+     believe that one half<lb/> who profess to love their Savior know any thing<lb/> about it. And
+     yet I know there is a God who<lb/> is there that can look on this beautiful world<lb/> and
+     doubt it. Everything declares it<lb/> I do not think Religion consists in putting on<lb/> long
+     faces and looking as if the world<lb/> were coming to an end if we laugh where<lb/> I do not
+     think Christ intended we should<lb/> give up all pleasure here for him. But<lb/> what
+      a <unclear>strain</unclear> of thought I have been<ref target="n3" n="3">[3]</ref><lb/>
+    </p>
+
+    <p> let into It is almost noon and I must close "Remember me for all of the<lb/> boys and write
+     soon very very soon will you not dearest? Please do not keep Addie in suspense.<ref target="n4"
+      n="4">[4]</ref><lb/>
+    </p>
+    <closer>
+     <salute> Yours, now, and forever</salute>
+     <signed>Addie</signed>
+
+     <ref target="n5" n="5">[5]</ref>
+     <lb/>
+    </closer>
+   </div1>
+  </body>
+
+  <back id="d6">
+
+
+   <div1 type="notes" n="1" id="d7">
+    <head>Notes</head>
+    <note id="n1" place="end" n="1"><seg type="note-symbol">[1]</seg>
+     <p> The Battle of Fort Donelson took place between the 13th and 16th of February. This was an
+      important Union victory, led by General Ulysses S. Grant, who demanded immediate and
+      unconditional surrender from Confederate General Buckner.</p>
+    </note>
+    <note id="n2" place="end" n="2"><seg type="note-symbol">[2]</seg>
+     <p> The preceding paragraph is written along the left margin of page four.</p>
+    </note>
+    <note id="n3" place="end" n="3"><seg type="note-symbol">[3]</seg>
+     <p> The preceding paragraph is written along the left margin of page one.</p>
+    </note>
+    <note id="n4" place="end" n="4"><seg type="note-symbol">[4]</seg>
+     <p> The preceding paragraph is written along the left margin of page two.</p>
+    </note>
+    <note id="n5" place="end" n="5"><seg type="note-symbol">[5]</seg>
+     <p> The preceding paragraph is written along the left margin of page three.</p>
+    </note>
+   </div1>
+  </back>
+
+
+ </text>
+</TEI.2>

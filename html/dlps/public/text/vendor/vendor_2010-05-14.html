@@ -1,0 +1,1972 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TEI Encoding Guidelines for Keyboarding Vendors</title>
+<link rel="stylesheet" type="text/css" href="examples/examples.css" />
+</head>
+<body>
+<h1>TEI Encoding Guidelines for Keyboarding Vendors</h1>
+<p><b>University of Virginia Library</b></p>
+
+<h2>About This Document</h2>
+
+<p>This document describes the markup practices for
+keyboarding/encoding vendors to follow when producing TEI documents
+for the University of Virginia Library.</p>
+
+<p>Sections added or revised since the last major version of these
+guidelines are <span class="revised">highlighted with a light blue
+background.</span></p>
+
+<table>
+<tr>
+<td><b>Title:</b></td>
+<td>TEI Encoding Guidelines for Keyboarding Vendors</td>
+</tr>
+<tr>
+<td><b>Author:</b></td>
+<td>Greg Murray, University of Virginia Library</td>
+</tr>
+<tr>
+<td><b>URL:</b></td>
+<td>http://pogo.lib.virginia.edu/dlps/public/text/vendor/vendor.html</td>
+</tr>
+<tr>
+<td><b>Last modified:</b></td>
+<td>2010-05-14</td>
+</tr>
+</table>
+
+<hr />
+<h2>Contents</h2>
+
+<ul>
+<li><a href="#I">I. Introduction</a>
+  <ul>
+  <li class="revised"><a href="#dtd">The DTD</a></li>
+  <li><a href="#general">General Guidelines</a></li>
+  </ul>
+</li>
+<li><a href="#II">II. Major Structure</a>
+  <ul>
+  <li><a href="#structure">Essential Structure</a></li>
+  <li><a href="#div">Structural Divisions</a></li>
+  <li class="revised"><a href="#front">Front and Back Matter</a></li>
+  </ul>
+</li>
+<li><a href="#III">III. Genres</a>
+  <ul>
+  <li><a href="#letters">Letters</a></li>
+  <li><a href="#verse">Verse</a></li>
+  <li><a href="#drama">Drama</a></li>
+  <li><a href="#newspapers">Newspapers</a></li>
+  <li><a href="#articles">Journal Articles</a></li>
+  <li><a href="#encyc_dict">Encyclopedias and Dictionaries</a></li>
+  </ul>
+</li>
+<li><a href="#IV">IV. Block-level Features</a>
+  <ul>
+  <li><a href="#q">Block Quotations</a></li>
+  <li><a href="#figure">Figures</a></li>
+  <li><a href="#table">Tables</a></li>
+  <li><a href="#list">Lists</a></li>
+  <li class="revised"><a href="#note">Notes</a></li>
+  <li><a href="#other">Other Features</a></li>
+  </ul>
+</li>
+<li><a href="#V">V. Phrase-level Features</a>
+  <ul>
+  <li><a href="#typeface">Changes in Typeface</a></li>
+  <li><a href="#align">Alignment and Indentation</a></li>
+  <li><a href="#foreign">Foreign Phrases</a></li>
+  <li><a href="#punctuation">Punctuation</a></li>
+  </ul>
+</li>
+<li><a href="#VI">VI. Reference Systems</a>
+  <ul>
+  <li><a href="#pb">Page Breaks</a></li>
+  <li><a href="#cb">Column Breaks</a></li>
+  <li><a href="#lb">Line Breaks</a></li>
+  </ul>
+</li>
+<li><a href="#VII">VII. Special Considerations</a>
+  <ul>
+  <li><a href="#gapunclear">Gaps and Uncertainties</a></li>
+  <li><a href="#ab_seg">Arbitrary Sections</a></li>
+  <li><a href="#charent">Special Characters</a></li>
+  <li><a href="#final">Final Steps</a></li>
+  </ul>
+</li>
+</ul>
+
+
+<hr />
+<h2><a name="I"></a>I. Introduction</h2>
+
+<h3><a name="dtd"></a>The DTD</h3>
+
+<p>The University of Virginia Library (U.Va. Library) uses a customization of
+TEI version P4.</p>
+
+<p><b>Note:</b> This document only describes encoding practices
+specific to U.Va. Library. It is not a tutorial on TEI encoding.</p>
+
+<div class="revised">
+
+<p><b>Obtaining the DTD:</b> We recommend using URLs for validating
+XML documents produced for us, but if you prefer to use local copies
+of our DTD-related files rather than URLs, download copies of the
+files as follows:</p>
+
+<blockquote>
+<ul>
+<li>Download current version of U.Va. Library modification files (one .ent file and one .dtd file):
+  <ul>
+  <li><a href="http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">uva-dl-tei.ent</a></li>
+  <li><a href="http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">uva-dl-tei.dtd</a></li>
+  </ul>
+</li>
+
+<li>Download TEI P4 files: 
+<a href="tei-p4.zip">tei-p4.zip</a></li>
+
+<li>Download our character entity sets:
+<a href="uva-charent.zip">uva-charent.zip</a></li>
+</ul>
+</blockquote>
+
+<p><b>Invoking the DTD:</b> The main DTD driver file is
+<b>tei2.dtd</b>. The required U.Va.-specific modification files are
+<b>uva-dl-tei.ent</b> and <b>uva-dl-tei.dtd</b>. Together they
+constitute a customization of TEI P4. To invoke the DTD, refer to the
+main DTD driver file in the DOCTYPE declaration, and include ENTITY
+declarations for the modification files in the internal subset:</p>
+
+<blockquote><pre>
+&lt;!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+&lt;!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+&lt;!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+]>
+</pre></blockquote>
+
+or, if you are using local copies of our DTD-related files:
+
+<blockquote><pre>
+&lt;!DOCTYPE TEI.2 SYSTEM "tei-p4/tei2.dtd" [
+&lt;!ENTITY % TEI.extensions.ent SYSTEM "uva-dl-tei/uva-dl-tei.ent">
+&lt;!ENTITY % TEI.extensions.dtd SYSTEM "uva-dl-tei/uva-dl-tei.dtd">
+]>
+</pre></blockquote>
+
+<p>As the preceding example declaration shows, the U.Va. Library
+modification files and the TEI P4 files (which are unmodified; they
+remain exactly as originally downloaded from www.tei-c.org) can reside
+in different directories .</p>
+
+</div>
+
+<p><b>uva-dl-tei vs. TEI Lite</b>: Encoders familiar with 
+<a href="http://www.tei-c.org/Lite/">TEI Lite</a> (or with unmodified
+<a href="http://www.tei-c.org/P4X/">TEI P4</a>) will notice that our
+DTD (uva-dl-tei) is generally more rigorous or strict than TEI
+Lite. For example:</p>
+
+<ul>
+
+<li>The content models for essential structural elements (text, group,
+front, body, and back) are significantly simplified.<br /><br /></li>
+
+<li>All content must be encoded within a &lt;div1> or lower-level
+division. No content is allowed directly within &lt;front>, &lt;body>,
+or &lt;back>. The &lt;div> and &lt;div0> elements are not
+used.<br /><br /></li>
+
+<li>uva-dl-tei disallows most of the logical elements normally used to
+encode the semantic meaning of highlighted words and phrases (such as
+emph, distinct, soCalled, term, mentioned). Instead, changes in
+typeface must be encoded with the appropriate physical element (using
+convenience elements &lt;i> for italic, &lt;b> for bold, etc.). The
+exception to this practice is foreign words or phrases, which should
+be encoded using the usual &lt;foreign> element.<br /><br /></li>
+
+<li>Many elements in uva-dl-tei have required attributes, where
+in TEI Lite the same attributes are optional (for example, the type
+attribute on &lt;div#> elements).<br /><br /></li>
+
+<li>Many attributes in uva-dl-tei have enumerated vocabularies
+of allowed values, where in TEI Lite the same attributes can take any
+value (again, the type attribute on &lt;div#> elements is a good
+example).<br /><br /></li>
+
+<li>In TEI Lite, the global <b>rend</b> attribute can contain any
+value. In uva-dl-tei, the global rend attribute is limited to
+indicating display ("block" or "inline"), alignment ("center", "left",
+or "right"), and indentation ("indent", "indent2" etc., or "hang")
+&mdash; not typographic changes. For example, where TEI Lite allows
+&lt;p rend="italic">...&lt;/p> (or rend="italics" or rend="ital" or
+rend="i"), uva-dl-tei requires
+&lt;p>&lt;i>...&lt;/i>&lt;/p>.<br /><br /></li>
+
+<li>For elements that require additional values for the <b>rend</b>
+attribute, such as &lt;hi>, the possible values are still limited to
+an enumerated list. If none of the allowed values is applicable, use
+the value "other" and use the <b>other</b> attribute to supply the
+needed value, as in &lt;hi rend="other" other="...">.</li>
+
+</ul>
+
+<p>uva-dl-tei also adds several convenience elements not available in
+TEI Lite:</p>
+
+<ul>
+
+<li>&lt;i>, &lt;b>, etc. for italics, bold, and other typographic
+changes</li>
+
+<li>&lt;cb> for column breaks, and &lt;cols> for marking abrupt
+changes in columnar layout</li>
+
+<li>&lt;quotedLetter> for block quotations requiring an &lt;opener>
+and/or &lt;closer></li>
+
+<li>&lt;ps> for postscripts in letters</li>
+
+</ul>
+
+
+<hr class="subsection" />
+<h3><a name="general"></a>General Guidelines</h3>
+
+<p><b>XML:</b> All documents should be encoded in the XML expression
+of TEI (not SGML).</p>
+
+<p><b>The transcription:</b> The electronic text should contain an exact
+character-for-character transcription of the text of the print
+source.</p>
+
+<p><b>Including all content:</b> With very few exceptions (see <a
+href="#exceptions">Exceptions</a> immediately below), <em>all</em>
+content from the print source must be included in the electronic
+text. All textual data must be included in the transcription, and all
+non-textual data must be included in the markup as <a
+href="#figure">figures</a>.</p>
+
+<p><a name="exceptions"></a><b>Exceptions:</b> The only exceptions to
+the "include all content" rule are:</p>
+
+<ul>
+
+<li><b>Running page headers:</b> Exclude the running headers that
+often appear at the top of each page in a printed book. (These headers
+are typically very repetitive and only contain content already
+available elsewhere in the electronic transcription, such as the title
+of the book or the title of the current chapter.)
+
+<blockquote><p><b>Note:</b> In rare cases, running page headers will
+contain unique content (such as a summary of the content of the
+current page). In such cases U.Va. Library will require that the running
+headers be included in the electronic text. See <a href="#pb">Page
+Breaks</a> for information on encoding running headers.</p></blockquote>
+
+</li>
+
+<li><b>Gaps:</b> Gaps in the transcription are necessary in some
+cases, typically either because a passage is missing from the print
+source (due to a missing or torn page, for example), or because the
+print source contains non-Western characters. Any such omissions in
+the transcription must be indicated by the &lt;gap/> element. See
+<a href="#gapunclear">Gaps and Uncertainties</a>.</li>
+</ul>
+
+<p><a name="notesdoc"></a><b>Providing notes:</b> While transcribing
+and encoding even the most typical, straightforward materials, some
+problems or uncertainties are likely to arise. Any unusual
+circumstances encountered in the transcription or encoding process
+should be noted in a document that gets delivered to U.Va. Library along with
+the encoded XML files themselves. We prefer to receive one such
+"Notes" document for each electronic text (rather than one document
+for an entire encoding project). The document should include
+information on these kinds of situations:</p>
+
+<ul>
+<li>oddities, errors, or unusual features in the print source, and how
+they have been handled in the electronic text</li>
+
+<li>non-obvious markup decisions, such as decisions on how to encode
+ambiguous or problematic parts of the printed text</li>
+</ul>
+
+
+
+<hr />
+<h2><a name="II"></a>II. Major Structure</h2>
+
+<h3><a name="structure"></a>Essential Structure</h3>
+
+<p>Follow the essential structural markup common to most TEI
+documents:</p>
+
+<blockquote><pre>
+&lt;TEI.2>
+    &lt;teiHeader>
+        . . . [metadata section supplied by U.Va. Library to the keyboarding vendor]
+    &lt;/teiHeader>
+    &lt;text>
+        &lt;front>
+            . . . [front matter: title page, acknowledgments, dedication, table of contents, preface, etc.]
+        &lt;/front>
+        &lt;body>
+            . . . [main body of text]
+        &lt;/body>
+        &lt;back>
+            . . . [back matter: endnotes, index, appendices, etc.]
+        &lt;/back>
+    &lt;/text>
+&lt;/TEI.2>
+</pre></blockquote>
+
+<p><b>TEI header:</b> The &lt;teiHeader> element will be supplied by
+U.Va. Library to the keyboarding vendor.</p>
+
+<p><b>Composite texts:</b> In rare cases, U.Va. Library will request that a
+particular document be marked as a composite text, in which the usual
+&lt;body> element is replaced with the &lt;group> element, which then
+contains multiple &lt;text> elements, each with its own &lt;front>,
+&lt;body>, and &lt;back>. (This can occur with anthologies or
+collected works, where each work has its own front and/or back
+matter.)</p>
+
+<blockquote><pre>
+&lt;TEI.2>
+    &lt;teiHeader>
+        . . . [metadata section supplied by U.Va. Library to the keyboarding vendor]
+    &lt;/teiHeader>
+    &lt;text>
+        &lt;front> . . . [front matter for the collection] &lt;/front>
+        &lt;group>
+            &lt;text>
+                &lt;front> . . . [front matter of first text] &lt;/front>
+                &lt;body> . . . [main body of first text] &lt;/body>
+                &lt;back> . . . [back matter of first text] &lt;/back>
+            &lt;/text>
+            &lt;text>
+                &lt;front> . . . [front matter of second text] &lt;/front>
+                &lt;body> . . . [main body of second text] &lt;/body>
+                &lt;back> . . . [back matter of second text] &lt;/back>
+            &lt;/text>
+        &lt;/group>
+        &lt;back> . . . [back matter for the collection] &lt;/back>
+    &lt;/text>
+&lt;/TEI.2>
+</pre></blockquote>
+
+<p>This kind of structure should be used <em>only</em> when
+specifically requested by U.Va. Library for a particular document.</p>
+
+
+<hr class="subsection" />
+<h3><a name="div"></a>Structural Divisions</h3>
+
+<p><b>Starting with &lt;div1>:</b> Although TEI Lite allows them, we
+do not use the &lt;div> or &lt;div0> elements. Instead, top-level
+structural divisions must be encoded as &lt;div1>.</p>
+
+<p><b>All content within a div:</b> The &lt;front>, &lt;body>, and
+&lt;back> elements must contain only &lt;div1> elements. That is, all
+content must be enclosed by a &lt;div1> or lower-level division, not
+placed directly within the &lt;front>, &lt;body>, or &lt;back>
+elements. This holds true even for <a href="#pb">page breaks</a>.</p>
+
+<p><b>Determining division boundaries:</b> When determining the start-
+and end-points of divisions and the nesting of lower-level divisions,
+refer to the printed table of contents for the work. Typically the
+table of contents is an accurate guide to the hierarchical structure
+of the work.</p>
+
+<p><b>type attribute:</b> Each &lt;div#> tag must have a <b>type</b>
+attribute indicating the kind of division. If the division has no
+obvious type, the generic term "section" may be used; if "section" has
+already been used for a higher-level division, use "subsection".
+Typical <b>type</b> values for divisions within &lt;body> are:</p>
+
+<ul>
+<li>act</li>
+<li>article</li>
+<li>book</li>
+<li>chapter</li>
+<li>editorial &mdash; for opinion pieces in newspapers</li>
+<li>entry &mdash; for journal entries or encyclopedia/dictionary entries</li>
+<li>essay</li>
+<li>letter</li>
+<li>part</li>
+
+<li>plates &mdash; one or more full-page illustrations, often
+unnumbered or numbered independently of main pagination</li>
+
+<li>poem</li>
+<li>scene</li>
+<li>section</li>
+
+<li>speech &mdash; for a transcript of an oration, not for a piece of
+dialog in a dramatic work (for which use &lt;sp>)</li>
+
+<li>story</li>
+<li>subsection</li>
+<li>volume</li>
+<li>work</li>
+</ul>
+
+<p>Some <b>type</b> values are appropriate within &lt;body> or
+&lt;front>, depending on context:</p>
+
+<ul>
+<li>abstract</li>
+<li>prologue</li>
+</ul>
+
+<p>Others are appropriate within &lt;body> or &lt;back>, depending on
+context:</p>
+
+<ul>
+<li>epilogue</li>
+<li>notes</li>
+<li>summary</li>
+</ul>
+
+<p><b>n attribute:</b> If the division is numbered
+or otherwise labeled in the print source, record the number or label
+in the n attribute. Typically the number associated with a division is
+obvious from the division's header. If the division does not have a
+number associated with it, do not include the n attribute.</p>
+
+<p><a href="examples/divn.html">[example of a
+straightforward div structure]</a></p>
+
+<p><b>Division headings:</b> A division will usually (though not
+always) have a heading that announces it. The heading should, of
+course, be marked with &lt;head>.</p>
+
+<p>It is fairly common for a division to have more than one
+heading. In such cases, use multiple &lt;head> elements, and include
+the <b>type</b> attribute to distinguish the headings and identify
+their roles. Use the same <b>type</b> values used for the <a
+href="#titlePart_type">&lt;titlePart></a> element, namely "main",
+"sub", "desc" (for descriptive), and "alt" (for alternative).</p>
+
+<p>When a division has only one &lt;head>, it is necessarily the main
+one, so the <b>type</b> attribute is unnecessary and should not be
+used.</p>
+
+<p><a href="examples/head.html">[example]</a></p>
+
+
+<p><b>Half-titles, fly-titles, and divisional titles:</b> A common
+feature in many books is a separate page containing the title of the
+work (or the title of a section of the work). There are three main
+types of such features:</p>
+
+<ul>
+<li>A page preceding the title page and bearing the title of the work,
+perhaps with a series title or volume number, is a "half-title" and
+should be marked as &lt;div1 type="half-title"> within
+&lt;front>.</li>
+
+<li>A page similar to a half-title page but occuring between the front
+matter and the body is a "fly-title" and should be marked as &lt;div1
+type="fly-title"> as the last division within &lt;front> (not as the
+first division of the &lt;body>).</li>
+
+<li>A page, or just an initial heading preceding other headings,
+similar to a half-title but occuring <em>within the body</em> of the
+work, to announce the beginning of a major section, is a "divisional
+title". In contrast to half-title and fly-title pages within the front
+matter, a divisional title should <em>not</em> be marked with its own
+&lt;div#>. Instead, the divisional title should be incorporated
+<em>into</em> the &lt;div#> that it precedes, as a &lt;head>
+element.</li>
+</ul>
+
+<p><a href="examples/fly-title.html">[example
+showing a fly-title and a divisional title]</a></p>
+
+
+<p><a name="informal_divs"></a>
+<b>Informal divisions:</b> It is fairly common (especially in
+poems, but also in prose works) to see informal divisions, indicated
+by a string of asterisks or periods, or by a horizontal
+line. Normally, such features do <em>not</em> indicate the beginning
+of a new &lt;div#>. Instead, mark them as &lt;ornament/> elements.</p>
+
+<p>For strings of asterisks, periods, etc., set the <b>type</b>
+attribute to "characters", and include the characters as the content
+of the &lt;ornament> element. For example:</p>
+
+<blockquote><pre>
+&lt;ornament type="characters">*&amp;emsp;*&amp;emsp;*&amp;emsp;*&amp;emsp;*&amp;emsp;*&amp;emsp;*&amp;emsp;*&lt;/ornament>
+</pre></blockquote>
+
+<p>For horizontal lines, set <b>type</b> to "line" and leave the
+content of the element empty:</p>
+
+<blockquote><pre>
+&lt;ornament type="line"/>
+</pre></blockquote>
+
+<p>The same approach should be used for <a href="#ornaments">printer's
+ornaments</a>.</p>
+
+<p><b>Quotations of verse within prose:</b> In cases where a brief
+section of <a href="#verse">verse</a> is quoted within a predominantly
+prose text, the verse should be marked as a <a href="#q">block
+quotation</a> (&lt;q>), <em>not</em> as a distinct &lt;div#>.</p>
+
+
+<hr class="subsection" />
+<h3><a name="front"></a>Front and Back Matter</h3>
+
+<p>Use &lt;div1> to mark the main sections of the front matter and
+back matter. The exception to this rule is the main title page of the
+work, for which the &lt;titlePage> element is used. Use the
+<b>type</b> attribute on the &lt;div1> element to indicate the type of
+division. Typical values for front matter include:</p>
+
+<ul>
+<li>acknowledgements</li>
+<li>advertisement</li>
+<li>book-plate</li>
+<li>castlist &mdash; for list of characters preceding a dramatic work</li>
+<li>chronology &mdash; for biographical or historical timelines</li>
+<li>contents &mdash; for tables of contents <em>and</em> for lists of illustrations, etc.</li>
+<li>dedication</li>
+<li>errata &mdash; for lists of printing errors; also called corrigenda</li>
+
+<li>fly-title &mdash; like a half-title page, but occurs between the
+front matter and the body; treat as last page of front matter (not
+first page of body)</li>
+
+<li>foreword</li>
+
+<li>frontispiece &mdash; technically, an illustration facing the title
+page; may also be used for any full-page illustration in the front
+matter, or for an illustration facing the first page of a major
+division within the body</li>
+
+<li>half-title &mdash; a page preceding the title page bearing the
+title of the work, perhaps with a series title or volume number</li>
+
+<li>introduction</li>
+
+<li>masthead &mdash; a block of matter in a newspaper or other
+periodical indicating title of publication, address, list of editors
+or other contributors, etc.</li>
+
+<li>preface</li>
+</ul>
+
+<p>Typical <b>type</b> values for back matter include:</p>
+
+<ul>
+<li>advertisement</li>
+<li>appendix</li>
+<li>bibliography</li>
+<li>bio &mdash; for brief biographic sketches of authors or other contributors</li>
+
+<li>colophon &mdash; a section at or near the end of a book,
+containing printing information such as name of printer (as distinct
+from publisher), typefaces used, etc.</li>
+
+<li>glossary</li>
+<li>index</li>
+</ul>
+
+<h4 class="revised"><a name="spine"></a>Images for Book Spine, Covers, and Edges</h4>
+
+<p class="revised">Normally, the page images delivered to the
+keyboarding vendor by UVa Library will include images of the spine,
+front cover, back cover, top edge, bottom edge, and front edge. Each
+of these images should be marked as a &lt;pb/> element immediately
+following the opening &lt;front> tag. For example:</p>
+
+<blockquote class="revised"><pre>
+&lt;front>
+&lt;pb n="Spine"/>
+&lt;pb n="Front Cover"/>
+&lt;pb n="Back Cover"/>
+&lt;pb n="Top Edge"/>
+&lt;pb n="Bottom Edge"/>
+&lt;pb n="Front Edge"/>
+</pre></blockquote>
+
+<h4>Title Page</h4>
+
+<p>Within &lt;front>, the title page is, of course, marked up using
+the &lt;titlePage> element rather than &lt;div1>.</p>
+
+<p><a name="titlePart_type"></a>
+<b>Title types:</b> When using the &lt;titlePart> element to mark
+the parts of the title, include the <b>type</b> attribute, assigning
+one of these values:</p>
+
+<ul>
+<li>main &mdash; main title of the work</li>
+<li>sub &mdash; subtitle</li>
+<li>desc &mdash; descriptive title</li>
+<li>alt &mdash; alternative title</li>
+<li>volume &mdash; volume information</li>
+</ul>
+
+<p><b>Include verso:</b> The content on the verso (reverse side) of
+the title page should be included within the &lt;titlePage>
+element.</p>
+
+<p><b>Volume information:</b> The volume information should go in a
+&lt;titlePart type="volume">. This is true even if the volume
+information is separated from the title by the byline or other
+elements (&lt;titlePart> is allowed outside &lt;docTitle>).</p>
+
+<blockquote><pre>
+. . . &lt;/docTitle>
+&lt;byline>By &lt;docAuthor>BOOKER T. WASHINGTON&lt;/docAuthor>&lt;/byline>
+&lt;titlePart type="volume">VOLUME I&lt;/titlePart>
+</pre></blockquote>
+
+<p><a href="examples/titlePage.html">[example: complete title page with verso]</a>
+<br />
+<a href="examples/titlePage2.html">[another example]</a>
+</p>
+
+
+
+<hr />
+<h2><a name="III"></a>III. Genres</h2>
+
+<h3><a name="letters"></a>Letters</h3>
+
+<p>When encoding letters, prefaces, and other such personal writings,
+use the appropriate elements for the opening and closing sections:</p>
+
+<ul>
+<li><b>opener</b> &mdash; groups together dateline, salutation,
+etc. at the beginning of a letter or other division</li>
+
+<li><b>closer</b> &mdash; groups together salutation, signature,
+etc. at the end of a letter or other division</li>
+</ul>
+
+<p>Openers and closers, in turn, contain one or more of these
+elements:</p>
+
+<ul>
+
+<li><b>dateline</b> &mdash; contains a brief description of the place,
+date, time, etc., the letter, preface, etc. was written</li>
+
+<li><b>date</b> &mdash; contains a date in any format. Use the
+<b>value</b> attribute to provide the date in standard yyyy-mm-dd
+format. If part of the date is unknown, omit that part.
+
+<blockquote><pre>
+&lt;date value="1901-08-04">4 Aug., 1901&lt;/date>
+&lt;date value="1870-03">March 1870&lt;/date>
+</pre></blockquote>
+
+</li>
+
+<li><b>name</b> &mdash; contains a proper name; use the <b>type</b>
+attribute to indicate "person" or "place".</li>
+
+<li><b>salute</b> &mdash; salutation at the beginning (e.g. "Dear
+Sir") or end (e.g. "Yours sincerely") of a letter</li>
+
+<li><b>signed</b> &mdash; signature at the end of a letter, preface,
+etc.</li>
+
+<li><b>ps</b> &mdash; postscripts</li>
+
+</ul>
+
+<p><a href="examples/letter.html">[example: letter with opener and closer, including a postscript]</a></p>
+
+
+<hr class="subsection" />
+<h3><a name="verse"></a>Verse</h3>
+
+<p><b>Line groups:</b> All verse &mdash; including poems without
+distinct stanzas, as well as verse quoted within a block of prose
+&mdash; should be encoded with the &lt;lg> element. The <b>type</b>
+attribute is required; if the lines of verse have no obvious grouping
+(such as "stanza"), use type="group".</p>
+
+<p><b>Indentation:</b> If a line of verse is indented more than the
+surrounding lines, use &lt;l rend="indent">...&lt;/l>.
+<a href="examples/verse.html">[example]</a></p>
+
+<p><b>Line breaks:</b> When encoding verse it is important to
+distinguish between logical lines of verse and the physical
+presentation of those lines on the printed page. In cases where a line
+of verse is too long to fit on the printed page, and for that reason
+is continued on a second line, use &lt;l> to mark the logical line of
+verse and &lt;lb/> to mark the physical line break.
+<a href="examples/verse_lb.html">[example]</a></p>
+
+
+<hr class="subsection" />
+<h3><a name="drama"></a>Drama</h3>
+
+<p>Use the standard TEI elements for encoding dramatic works:</p>
+
+<ul>
+<li>act and scene divisions should be marked with &lt;div#> elements</li>
+<li>speeches should be marked with &lt;sp> elements, with speakers marked as &lt;speaker></li>
+<li>stage directions should be marked with &lt;stage></li>
+<li>castlists should be marked as &lt;div# type="castlist"></li>
+</ul>
+
+
+<hr class="subsection" />
+<h3><a name="newspapers"></a>Newspapers</h3>
+
+<p><a href="examples/newspaper.html">[Newspaper markup example]</a></p>
+
+<p><b>Files and file naming:</b> Each issue (each day) of the
+newspaper should be encoded as a single <tt>&lt;TEI.2></tt> document
+contained in a single XML file. For the Cavalier Daily project, each
+file should be named "CavDaily_yyyymmdd.xml". For example, the issue
+for March 11, 1969 would be named:</p>
+
+<blockquote><pre>
+CavDaily_19690311.xml
+</pre></blockquote>
+
+<p>In cases where the vendor creates page images from microfilm, the
+page images should be named with the same base filename as the issue
+to which the page images pertain, followed by a two-digit page
+sequence number. For example:</p>
+
+<blockquote><pre>
+CavDaily_19690311_01.tif
+CavDaily_19690311_02.tif
+CavDaily_19690311_03.tif
+CavDaily_19690311_04.tif
+</pre></blockquote>
+
+<p><b>ENTITY declaration:</b> When declaring the DTD, include an
+ENTITY declaration named NEWSPAPER with value "INCLUDE". This enables
+the newspaper-specific features of the DTD, which are disabled by
+default.</p>
+
+<blockquote><pre>
+&lt;!DOCTYPE TEI.2 SYSTEM "tei-p4/tei2.dtd" [
+&lt;!ENTITY % TEI.extensions.ent SYSTEM "uva-dl-tei/uva-dl-tei.ent">
+&lt;!ENTITY % TEI.extensions.dtd SYSTEM "uva-dl-tei/uva-dl-tei.dtd">
+&lt;!ENTITY % NEWSPAPER "INCLUDE">
+</pre></blockquote>
+
+<p><b>TEI header:</b> For the Cavalier Daily project, use the
+following TEI header template. This template can be inserted into the
+TEI file without any modifications or enhancements:</p>
+
+<blockquote><pre>
+&lt;teiHeader>
+&lt;fileDesc>
+&lt;titleStmt>
+&lt;title>The Cavalier Daily&lt;/title>
+&lt;/titleStmt>
+&lt;publicationStmt>
+&lt;publisher>University of Virginia Library&lt;/publisher>
+&lt;/publicationStmt>
+&lt;sourceDesc>&lt;bibl/>&lt;/sourceDesc>
+&lt;/fileDesc>
+&lt;profileDesc>
+&lt;langUsage>
+&lt;language id="eng">English&lt;/language>
+&lt;/langUsage>
+&lt;/profileDesc>
+&lt;/teiHeader>
+</pre></blockquote>
+
+<p><b>Page layout:</b> The columnar layout of a newspaper page is
+typically very complex, with multiple levels of column breaks. The
+<em>column</em> breaks should <em>not</em> be recorded. Instead, all
+<em>page</em> breaks must be recorded, and the articles and other
+content on that page should be transcribed in the order in which they
+appear on the page, moving primarily from top to bottom and
+secondarily from left to right.</p>
+
+<p>In other words, transcribe all the pieces along the top of the page
+first, moving left to right; then the pieces in the various
+mid-sections (there will usually be more than one level) of the page,
+moving left to right; and finally the pieces along the bottom of the
+page, moving left to right.</p>
+
+<p><a href="examples/newspaper_layout.html">[Example of page layout sequence]</a></p>
+
+<p><b>Associating related sections:</b> Because newspaper articles are
+often broken up and printed in two (or more) sections on
+different pages, it is necessary to associate the first section
+of the article with the subsequent section(s). Use the <b>id</b>,
+<b>next</b> and <b>prev</b> attributes on &lt;div#> to achieve
+this.</p>
+
+<blockquote><pre>
+&lt; -- start tag for first part of article -->
+&lt;div1 type="article" id="a1.2" next="a3.1">
+
+&lt; -- start tag for second part of article -->
+&lt;div1 type="article" id="a3.1" prev="a1.2">
+</pre></blockquote>
+
+<p>When assigning identifiers for the <b>id</b> attribute, use this
+scheme:</p>
+
+<ul>
+<li>Begin the ID with "a" (for "article")</li>
+<li>Provide the page number, followed by a dot</li>
+<li>Assign a sequence number to the article indicating whether it is
+the first article to be encoded for that page, the second article, the
+third, etc.</li>
+</ul>
+
+<p>For example, the first article (or partial article) on the first
+page should be assigned <tt>id="a1.1"</tt>. On the third page, the
+fourth article (or partical article) to be encoded for that page
+(moving from left to right and from top to bottom, as instructed
+above) should be assigned <tt>id="a3.4"</tt>. Please assign an ID to
+all &lt;div1 type="article"> elements, even if the article is not
+split into two non-contiguous sections. (Other division types do not
+require an ID.)</p>
+
+<p>When an article is broken into two or more sections on different
+pages, each section of the article must be enclosed in its own
+&lt;div1&gt; element. This is necessary because other articles or
+partial articles will occur between the two sections.</p>
+
+<p>The "jump" line -- the phrase indicating where to look for the
+continuation of the article -- should be encoded in a
+<tt>&lt;ref></tt> element, with a <tt>target</tt> attribute containing
+the ID of the <tt>div1</tt> containing the article continuation.</p>
+
+<blockquote><pre>
+&lt;ab type="ref">&lt;ref target="a3.1">(see Players, p. 3)&lt;/ref>&lt;/ab>
+&lt;/div1>
+&lt;!-- Intervening content... -->
+&lt;div1 type="article" id="a3.1" prev="a1.2">
+&lt;pb n="3"/>
+&lt;head type="main">Players Present Grievances Tonight&lt;/head>
+&lt;ab type="ref" rend="center">&lt;ref target="a1.2">(continued from p.1)&lt;/ref>&lt;/ab>
+</pre></blockquote>
+
+<p><b>Photographs:</b> When encoding photographs, illustrations, or
+other graphic elements using &lt;figure>, the &lt;figure> should be
+placed in its own &lt;div1> if the photograph is not contained within
+a particular article. (See example markup, photo on page 1 with
+caption "Bill Gibson Encourages His Players...".) If the photograph
+appears within the text of a particular article (usually contained
+within a single column of text), then the &lt;figure> should be
+encoded directly within the &lt;div#> in which it occurs. (See markup
+example, photo on page 3 with caption "Coach Bill Gibson".)</p>
+
+<p>The credit or byline accompanying a photograph or other graphic
+should be encoded with a &lt;byline> element within &lt;figure>, for
+example:</p>
+
+<blockquote><pre>
+&lt;figure>
+&lt;byline>Joe Smith&lt;/byline>
+&lt;head>THE ROTUNDA AT DAWN&lt;/head>
+&lt;p>Students converse on steps as sun rises.&lt;/p>
+&lt;/figure>
+</pre></blockquote>
+
+
+<p><b>Division types:</b> When encoding newspapers, the most common
+kind of major structural division will be "article" (not "story",
+which is intended for encoding prose fiction short stories).</p>
+
+<blockquote><pre>
+&lt;div1 type="article">
+</pre></blockquote>
+
+<p>A brief section (typically only one or two paragraphs) enclosed in
+a box and placed at the end of a column of text is called a "filler"
+and should be marked as &lt;div1&nbsp;type="filler">. (See newspaper markup
+example for two examples of this.)</p>
+
+<p>The main heading on the top of the first page, showing the name of
+the newspaper, is called a "nameplate" and should be marked as
+&lt;div1&nbsp;type="nameplate">. The details of publication should be
+marked as follows:</p>
+
+<table cellpadding="4" border="1">
+<tr>
+<td>volume number (sometimes expressed as a year, as in "79th Year")</td>
+<td>&lt;num type="volume" value="...">...&lt;/num></td>
+</tr>
+<tr>
+<td>place of publication</td>
+<td>&lt;name type="place">...&lt;/name></td>
+</tr>
+<tr>
+<td>date of publication</td>
+<td>&lt;date value="yyyy-mm-dd">...&lt;/date></td>
+</tr>
+<tr>
+<td>issue number</td>
+<td>&lt;num type="number" value="...">...&lt;/num></td>
+</tr>
+</table>
+
+<blockquote><pre>
+&lt;text>
+&lt;body>
+&lt;div1 type="nameplate">
+&lt;pb/>
+&lt;head>THE CAVALIER DAILY&lt;/head>
+&lt;ab>&lt;num type="volume" value="79">79th YEAR&lt;/num> 
+&lt;name type="place">UNIVERSITY OF VIRGINIA, CHARLOTTESVILLE&lt;/name>, 
+&lt;date value="1969-03-11">TUESDAY, MARCH 11, 1969&lt;/date> 
+&lt;num type="number" value="92">NUMBER 92&lt;/num>&lt;/ab>
+&lt;/div1>
+</pre></blockquote>
+
+<p>The blocks of content appearing on the editorial page of the
+newspaper &mdash; which is almost always the second page of the
+newspaper &mdash; require special division types:</p>
+
+<ul>
+
+<li>The listing of newspaper staff should be marked as &lt;div1
+type="masthead">.
+
+<blockquote><p>For the Cavalier Daily project, the masthead is often
+divided into two parts, although both appear on the same page (page
+2). In these cases, both parts should be marked as <code>div1
+type="masthead"</code>, but they should also have an <code>id</code>
+attribute and use the <code>next</code> and <code>prev</code>
+attributes to indicate that they are related:</p>
+
+<blockquote><pre>
+&lt;div1 type="masthead" id="m1" next="m2">
+...
+&lt;/div1>
+.
+.
+.
+&lt;div1 type="masthead" id="m2" prev="m1">
+...
+&lt;/div1>
+</pre></blockquote>
+</blockquote>
+</li>
+
+<li>The section with the heading "Letters to the Editor" should be
+marked as &lt;div 1 type="op-ed">, while each individual letter should
+be marked &lt;div2 type="letter">.
+
+<blockquote><pre>
+&lt;div1 type="op-ed">
+&lt;head>Letters To The Editor&lt;/head>
+&lt;div2 type="letter">
+&lt;opener>
+&lt;salute>Dear Sir:&lt;/salute>
+&lt;/opener>
+...
+&lt;/div2>
+&lt;-- more &lt;div2 type="letter"> divisions here... --&gt;
+&lt;/div1>
+</pre></blockquote>
+</li>
+
+<li>Other pieces on the editorial page should be marked as &lt;div1 type="op-ed">
+("op-ed" is short for opinion/editorial).</li>
+</ul>
+
+<p>For the Cavalier Daily project, most issues will have a "University
+Notices" section and a classified advertisements section. These
+sections are handled similarly. The "University Notices" typically
+appear first and should be marked as &lt;div1
+type="univ-notices">. Each category, such as "TODAY" or
+"MISCELLANEOUS" should be marked as &lt;div2 type="section">, and then
+each individual notice should be marked with &lt;p>. For example:</p>
+
+<blockquote><pre>
+&lt;div1 type="univ-notices">
+&lt;head>&lt;i>University Notices&lt;/i>&lt;/head>
+&lt;div2 type="section">
+&lt;head>TODAY&lt;/head>
+&lt;p>FELLOWSHIP of Christian Ath- &lt;lb/>
+letes meeting at 7:30 p.m., Wesley &lt;lb/>
+Foundation.&lt;/p>
+</pre></blockquote>
+
+<p>Similary, the classifieds section should be marked as &lt;div1
+type="classifieds">. Each category, such as "FOR SALE" or "WANTED",
+should be marked as &lt;div2 type="section">, and then each individual
+classified ad should be marked as &lt;p>. For example:</p>
+
+<blockquote><pre>
+&lt;div1 type="classifieds">
+&lt;head>CLASSIFIEDS&lt;/head>
+&lt;div2 type="section">
+&lt;head>FOR RENT&lt;/head>
+&lt;p>Apartment for rent...&lt;/p>
+</pre></blockquote>
+
+<p>If, but only if, none of the division types described above is
+appropriate to a particular block of content, use the generic type
+"section" (or, if "section" has already been used for a higher-level
+division, use "subsection").</p>
+
+<p><b>Special kinds of gaps:</b> When encoding newspapers, some kinds
+of content should be excluded from the electronic transcription (due
+to copyright restrictions or other editorial reasons not pertaining to
+physical damage to the print source). Rather than using &lt;gap
+desc="..."  reason="editorial"/> for these gaps, use the special
+convenience elements provided by the DTD:</p>
+
+<table cellpadding="4">
+<tr>
+<td><b>&lt;ad/></b></td>
+<td>for advertisements</td>
+</tr><tr>
+<td><b>&lt;cartoon/></b></td>
+<td>for cartoons appearing in a single frame or box</td>
+</tr><tr>
+<td><b>&lt;comicStrip/></b></td>
+<td>for cartoons appearing in multiple frames or boxes</td>
+</tr><tr>
+<td><b>&lt;puzzle/></b></td>
+<td>for crossword or other puzzles</td>
+</tr><tr>
+<td><b>&lt;wireArticle/></b></td>
+<td>for articles with a wire-service credit</td>
+</tr><tr>
+<td><b>&lt;wirePhoto/></b></td>
+<td>for photographs with a wire-service credit</td>
+</tr>
+</table>
+
+<p>Wire-service articles and photographs are identified by one of the
+following phrases in the byline or dateline:</p>
+
+<ul>
+<li>AP</li>
+<li>Associated Press</li>
+<li>UPI</li>
+<li>United Press International</li>
+<li>UP</li>
+<li>United Press</li>
+</ul>
+
+<p>Such phrases are usually enclosed in parentheses. The following
+article dateline is typical:</p>
+
+<blockquote><pre>
+WASHINGTON (UPI)
+</pre></blockquote>
+
+<p>Wire-service articles are a special case. Instead of replacing the
+entire article with a &lt;wireArticle/> element (in the spot where a
+&lt;div1 type="article"> element would go if it were not a
+wire-service article), we want to capture the headline, but not the
+article content. For example:</p>
+
+<blockquote><pre>
+&lt;div1 type="article" id="a1.4">
+&lt;head>Finch Warns Cut-Off &lt;lb/>
+Of Grants to Rioters&lt;/head>
+&lt;wireArticle/>
+&lt;p/>
+&lt;/div1>
+</pre></blockquote>
+
+<p><a href="examples/newspaper.html">[Newspaper markup example]</a></p>
+
+
+<hr class="subsection" />
+<h3><a name="articles"></a>Journal Articles</h3>
+
+<p>[No special encoding requirements for journal articles at this
+time.]</p>
+
+
+<hr class="subsection" />
+<h3><a name="encyc_dict"></a>Encyclopedias and Dictionaries</h3>
+
+<h4>Encyclopedias</h4>
+
+<p>Encyclopedia entries typically consist mainly of prose paragraphs
+and do not normally pose any special markup issues. Each encyclopedia
+entry is a &lt;div#> containing one or more headings followed by
+paragraphs.</p>
+
+<h4>Dictionaries</h4>
+
+<p>Dictionary entries should be encoded using the TEI additional
+tagset for print dictionaries. For detailed information on the use of
+these elements, see <a href="http://www.tei-c.org/P4X/DI.html">Chapter
+12, Print Dictionaries</a> in the TEI Guidelines.</p>
+
+<p>To enable the dictionary-specific features of the DTD, declare an
+entity named DICTIONARY with value "INCLUDE", like this:</p>
+
+<blockquote><pre>
+&lt;!DOCTYPE TEI.2 SYSTEM "tei-p4/tei2.dtd" [
+&lt;!ENTITY % TEI.extensions.ent SYSTEM "uva-dl-tei/uva-dl-tei.ent">
+&lt;!ENTITY % TEI.extensions.dtd SYSTEM "uva-dl-tei/uva-dl-tei.dtd">
+&lt;!ENTITY % DICTIONARY "INCLUDE">
+</pre></blockquote>
+
+<p>In the simplest case, a dictionary entry has minimal grammatical
+information and only one definition:</p>
+
+<blockquote><p><b>After-night,</b> <i>n.</i> &nbsp; The time after
+it becomes night.</p></blockquote>
+
+<blockquote><pre>
+&lt;entry>
+&lt;form>&lt;orth>&lt;b>After-night,&lt;/b>&lt;/orth>&lt;/form>
+&lt;gramGrp>&lt;pos>&lt;i>n.&lt;/i>&lt;/pos>&lt;/gramGrp>
+&lt;def>The time after it becomes night.&lt;/def>
+&lt;/entry>
+</pre></blockquote>
+
+<p>An entry may include alternative spellings for the main word, in
+which case the alternative spellings should be marked with
+&lt;orth&nbsp;type="alt">:</p>
+
+<blockquote><p><b>Again,</b> <i>conj. &nbsp; Agen; agin:</i> By the time
+that, untill: "I'll have<br />&nbsp; &nbsp; &nbsp; &nbsp; it ready
+<i>agin</i> you come."</p></blockquote>
+
+<blockquote><pre>
+&lt;entry rend="hang">
+&lt;form>&lt;orth>&lt;b>Again,&lt;/b>&lt;/orth>&lt;/form>
+&lt;gramGrp>&lt;pos>&lt;i>conj.&lt;/i>&lt;/pos>&lt;/gramGrp>
+&lt;form>&lt;orth type="alt">&lt;i>Agen; agin:&lt;/i>&lt;/orth>&lt;/form>
+&lt;def>By the time that, untill:&lt;/def>
+&lt;eg>&lt;q rend="inline">"I'll have &lt;lb/>
+it ready &lt;i>agin&lt;/i> you come."&lt;/q>&lt;/eg>
+&lt;/entry>
+</pre></blockquote>
+
+<p>The preceding example also includes a usage example, marked with
+&lt;eg>. The &lt;eg> element does not allow character data; instead,
+&lt;eg> must contain &lt;q> (for examples with no attributed source)
+or &lt;cit> (for examples that include an attribution of the author or
+source text).</p>
+
+<blockquote><p><b>Note:</b> Because U.Va. Library normally uses &lt;q> only for
+block quotations, when using &lt;q> in a dictionary entry please
+indicate &lt;q&nbsp;rend="inline">, as shown above.</p></blockquote>
+
+<p>More complex dictionary entries may include more than one form of
+the same word &mdash; that is, multiple homographs (words identical in
+spelling but different in meaning or pronunciation), each marked with
+&lt;hom>. Entries may also include more than one meaning for the same
+word, in which case the information (definitions, examples, etc.) for
+each meaning should be grouped as a &lt;sense>. If the senses are
+labeled with numbers or letters in the print source, include the label
+in the <b>n</b> attribute:</p>
+
+<blockquote><p><b>Against,</b> <i>prep.</i> &nbsp; In resistance to; or defense from "They<br />
+&nbsp; &nbsp; &nbsp; &nbsp; marched <i>against</i> the Spaniards." (2.) Opposite. "Over<br />
+&nbsp; &nbsp; &nbsp; &nbsp; <i>against</i> a point called Sandy Point." Against, <i>conj.</i> "Keep<br />
+&nbsp; &nbsp; &nbsp; &nbsp; 'em <i>against</i> I come."</p></blockquote>
+
+<blockquote><pre>
+&lt;entry rend="hang">
+&lt;hom>
+&lt;form>&lt;orth>&lt;b>Against,&lt;/b>&lt;/orth>&lt;/form>
+&lt;gramGrp>&lt;pos>&lt;i>prep.&lt;/i>&lt;/pos>&lt;/gramGrp>
+&lt;sense>
+&lt;def>In resistance to; or defense from&lt;/def>
+&lt;eg>&lt;q rend="inline">"They &lt;lb/>
+marched &lt;i>against&lt;/i> the Spaniards."&lt;/q>&lt;/eg>
+&lt;/sense>
+&lt;sense n="2">
+(2.) &lt;def>Opposite.&lt;/def>
+&lt;eg>&lt;q rend="inline">"Over &lt;lb/>
+&lt;i>against&lt;/i> a point called Sandy Point."&lt;/q>&lt;/eg>
+&lt;/sense>
+&lt;/hom>
+&lt;hom>
+&lt;form>&lt;orth>Against,&lt;/orth>&lt;/form>
+&lt;gramGrp>&lt;pos>&lt;i>conj.&lt;/i>&lt;/pos>&lt;/gramGrp>
+&lt;eg>&lt;q rend="inline">"Keep &lt;lb/>
+'em &lt;i>against&lt;/i> I come."&lt;/q>&lt;/eg>
+&lt;/hom>
+&lt;/entry>
+</pre></blockquote>
+
+<p><a href="examples/dict_entry.html">[page image
+for the preceding examples]</a></p>
+
+<p>In cases where words with identical spellings (homographs) receive
+separate entries in the dictionary (rather than being included within
+a single entry), each entry should be marked as an &lt;entry> as
+usual, but then the group of entries should be wrapped in a
+&lt;superEntry> element.
+<a href="examples/dict_superEntry.html">[example]</a></p>
+
+
+<hr />
+<h2><a name="IV"></a>IV. Block-level Features</h2>
+
+<h3><a name="q"></a>Block Quotations</h3>
+
+<p>The &lt;q> element should be used to mark quotations that are set
+off typographically from the surrounding text (not quotations that are
+printed in the same typographic style and are indicated only by double
+quotation marks), as indicated by one or more of these typographic
+changes:</p>
+
+<ul>
+<li>set off from the surrounding text by line breaks</li>
+<li>indented more than the surrounding text</li>
+<li>in a smaller typeface than the surrounding text</li>
+</ul>
+
+<p>The &lt;q> element should never be used to replace quotation
+marks. If the quotation is both set off from the surrounding text and
+enclosed in quotation marks, use the &lt;q> element and also include
+the quotation marks.</p>
+
+<p><a href="examples/q.html">[example]</a></p>
+
+<p><b>Block quotations with openers and closers:</b> If a block
+quotation contains an opener and/or closer, as in the case of quoted
+letters, newspaper articles, etc., use the &lt;quotedLetter>
+element. (The &lt;q> element does not allow &lt;opener> or
+&lt;closer>.) <a href="examples/quotedLetter.html">[example]</a></p>
+
+<p>See also <a href="#letters">Letters</a></p>
+
+
+<hr class="subsection" />
+<h3><a name="figure"></a>Figures</h3>
+
+<p><b>Captions and associated text:</b> When using the &lt;figure>
+element to indicate non-textual content (illustrations, photographs,
+maps, etc.), use the &lt;head> element to record the caption of the
+figure (if any). Use the &lt;p> element to record text (if any) that
+is associated with the figure but is not part of the caption. <a
+href="examples/figure.html">[example]</a></p>
+
+<p><a name="ornaments"></a>
+<b>Printer's ornaments:</b> Printer's ornaments do not qualify as
+figures. Instead, ornaments should be marked with:</p>
+
+<blockquote><pre>
+&lt;ornament type="ornament"/>
+</pre></blockquote>
+
+<p>See also <a href="#informal_divs">Informal divisions</a>.</p>
+
+
+<hr class="subsection" />
+<h3><a name="table"></a>Tables</h3>
+
+<p><b>Header cells:</b> For cells that contain a label or heading,
+rather than data, use &lt;cell role="label">. (For cells containing
+data, there is no need to include the role attribute; "data" is the
+default.)</p>
+
+<p><b>Spanning rows or columns:</b> If a cell occupies more than one
+row or column, use the <b>rows</b> or <b>cols</b> attribute,
+respectively, on the &lt;cell> start-tag. (This is equivalent to the
+use of the rowspan and colspan attributes on &lt;td> in HTML.)</p>
+
+<p><b>Tables vs. lists:</b> In some cases, the choice between
+&lt;table> and &lt;list> may not be obvious, but typically any items
+of text that are intended to line up vertically should be encoded as a
+&lt;table>. A table of contents, list of illustrations, etc. should
+almost always be marked up as a table. Ask U.Va. Library for further guidance
+if needed.</p>
+
+<p><a href="examples/table.html">[example]</a></p>
+
+
+<hr class="subsection" />
+<h3><a name="list"></a>Lists</h3>
+
+<p>Note that lists can be nested (a list &lt;item> can contain a
+&lt;list>). A common use of nested lists is for indexes where each
+entry contains indented sub-entries.
+<a href="examples/list.html">[example]</a></p>
+
+
+<hr class="subsection" />
+<h3><a name="note"></a>Notes</h3>
+
+<p><b>Note reference vs. note body:</b> By <i>note reference</i> we mean
+the anchor point for the annotation within the flow of the main
+text, typically indicated with a superscript number or symbol. By <i>note body</i> we mean
+the content of the annotation. The most common locations for the note
+body are:</p>
+
+<ul>
+<li>the bottom margin of the page (footnotes)</li>
+<li>a separate "Notes" section at the end of a major structural division (endnotes)</li>
+<li>the left or right margin of the page (marginal notes)</li>
+</ul>
+
+<h4>Marking the note reference</h4>
+
+<p>In cases where the note reference is indicated by a number or
+symbol, as is almost always true of footnotes and endnotes, use
+&lt;ref> to encode the note reference.  <a
+href="examples/footnote.html">[example]</a></p>
+
+<p>In cases where no number or other referencing symbol is present
+&mdash; as is common for marginal notes, where the physical placement
+of the note on the page indicates which line or paragraph the
+annotation refers to &mdash; use &lt;ptr/> to supply an anchor point
+for the annotation. <!--When using &lt;ptr/>, the encoder must
+<i>supply</i> a sequential number for the annotation and record this
+number in the <b>n</b> attribute. Also record this number in the
+<b>n</b> attribute of the corresponding &lt;note>.--> 
+<a href="examples/marginal_note.html">[example]</a></p>
+
+<p>Whether using &lt;ref> or &lt;ptr/>, always use the <b>target</b>
+attribute, the value of which must match the <b>id</b> attribute of
+the corresponding &lt;note>.</p>
+
+<h4>Marking the note body</h4>
+
+<p>Use &lt;note> to encode the note body.</p>
+
+<p><b>Location within the XML document:</b> With the exception of
+endnotes, which are already located in a separate section and should
+not be moved, the &lt;note> element should occur at the point of the
+note's attachment in the main text &mdash; that is, immediately after
+the &lt;ref> or &lt;ptr/> element.</p>
+
+<p class="revised"><b>Note symbols:</b> When the note body includes
+the referencing symbol (a number, *, &dagger;, etc.), record this
+symbol using &lt;seg type="note-symbol"> as the first element within
+&lt;note>.</p>
+
+<p><a href="examples/footnote.html">[example]</a></p>
+
+<p><b>Required attributes:</b> Always include the <b>id</b> attribute,
+which must contain an ID that is unique within the XML document, and
+the <b>place</b> attribute, indicating the placement of the note on
+the printed page:</p>
+
+<ul>
+<li><b>end</b> &mdash; note appears in a separate division containing all the notes for a given section</li>
+<li><b>foot</b> &mdash; note appears in bottom margin</li>
+<li><b>left</b> &mdash; note appears in left margin</li>
+<li><b>right</b> &mdash; note appears in right margin</li>
+<li><b>head</b> &mdash; note appears in top margin</li>
+<li><b>inline</b> &mdash; note appears within the main body of the text</li>
+<li><b>above</b> &mdash; note appears between the lines of the main text, above the line to which it refers</li>
+<li><b>below</b> &mdash; note appears between the lines of the main text, below the line to which it refers</li>
+</ul>
+
+<blockquote><p><b>Note:</b> When creating IDs for notes, use a simple,
+human-readable numbering scheme. For notes that are already numbered
+in the print source, include the number in the ID. For example:</p>
+
+<ul>
+<li>If the notes are numbered sequentially throughout the entire work,
+use "n1", "n2", etc. (where "n" is short for "note").</li>
+
+<li>If the note numbering starts over at 1 in each chapter, create a
+unique ID by including the chapter number as well as the note
+number. For example, the note IDs for the third chapter would be
+"n3.1", "n3.2", etc.</li>
+
+<li>If the note numbers or symbols start over on each page, create a
+unique ID by numbering the notes sequentially within each chapter. For
+example, if the 35th footnote in chapter VI is indicated by an
+asterisk (*), the note body would be marked: <tt>&lt;note id="n6.35"
+place="foot">&lt;ns>*&lt;/ns>...&lt;/note></tt></li>
+</ul>
+
+</blockquote>
+
+<p><b>Unanchored notes:</b> If the note body has no corresponding
+referencing symbol (notes for which &lt;ptr/> is used for the note
+reference, rather than &lt;ref>; typically marginal notes), include
+the <b>anchored</b> attribute with a value of "no". <a
+href="examples/marginal_note.html">[example]</a></p>
+
+<p><b>Multiple references to a single note:</b> In cases where a
+printed note (typically a footnote) is pointed to by more than one
+note reference, the printed note should be transcribed once
+(immediately following the first &lt;ref> element), with the remaining
+&lt;ref> elements pointing to that single &lt;note> element. The
+&lt;note> element should <em>not</em> be repeated for each &lt;ref>
+element. <a href="examples/multiple_refs.html">[example]</a></p>
+
+
+<hr class="subsection" />
+<h3><a name="other"></a>Other Features</h3>
+
+<p>Arguments, bibliographic citations, epigraphs, and trailers should
+be encoded as such using the appropriate TEI elements.</p>
+
+<p>For example, an epigraph containing a quotation and a citation of
+its source should be marked up in this manner:</p>
+
+<blockquote><pre>
+&lt;epigraph>
+&lt;cit>
+&lt;q>"I have sworn upon the altar of God &lt;lb/>
+eternal hostility against every form of tyranny &lt;lb/>
+over the mind of man."&lt;/q>
+&lt;bibl>&lt;author> &amp;mdash; &lt;i>Thomas Jefferson.&lt;/i>&lt;/author>&lt;/bibl>
+&lt;/cit>
+&lt;/epigraph>
+</pre></blockquote>
+
+<p>An argument (a leading section containing a summary of the content
+that follows it) is often presented as a series of topics separated by
+long dashes. An argument should be marked as an &lt;argument>, not as
+a second &lt;head>. <a href="examples/argument.html">[example]</a></p>
+
+
+<hr />
+<h2><a name="V"></a>Phrase-level Features</h2>
+
+<h3><a name="typeface"></a>Changes in Typeface</h3>
+
+<p>With one exception, changes in typeface should be marked with the
+appropriate <i>physical</i> element, not with a <i>logical</i> element
+such as &lt;emph>, &lt;title>, &lt;term>, &lt;mentioned>, etc. The
+exception is foreign phrases, which should be marked with &lt;foreign>
+(see <a href="#foreign">Foreign Phrases</a>). When marking changes in
+typeface, use the following elements:</p>
+
+<ul>
+<li>&lt;i> ... &lt;/i> : <i>italics</i><br /><br /></li>
+<li>&lt;b> ... &lt;/b> : <b>bold</b><br /><br /></li>
+<li>&lt;u> ... &lt;/u> : <span style="text-decoration: underline">underline</span><br /><br /></li>
+<li>&lt;sup> ... &lt;/sup> : <sup>superscript</sup><br /><br /></li>
+<li>&lt;sub> ... &lt;/sub> : <sub>subscript</sub><br /><br /></li>
+<li>&lt;smcap> ... &lt;/smcap> : <span style="font-variant: small-caps">Small Caps</span><br /><br /></li>
+<li>&lt;hi rend="..."> ... &lt;/hi> : All other typographic changes</li>
+</ul>
+
+<blockquote><p><b>Note on &lt;smcap>:</b> Text that is printed in small
+caps should be transcribed using both upper-case and lower-case
+letters, <i>not</i> all upper-case letters. 
+<a href="examples/smcap.html">[example]</a></p></blockquote>
+
+<p>When using &lt;hi> for changes in typeface, use one of the
+following values for the <b>rend</b> attribute:</p>
+
+<ul>
+<li>gothic</li>
+<li>line-through</li>
+<li>overline</li>
+<li>red-letter</li>
+<li>roman - assumed and not normally necessary</li>
+<li>other - indicate rendering using the <b>other</b> attribute, as
+in: <tt>&lt;hi rend="other" other="..."></tt></li>
+</ul>
+
+<p><a href="examples/hi.html">[example of gothic typeface]</a></p>
+
+
+<hr class="subsection" />
+<h3><a name="align"></a>Alignment and Indentation</h3>
+
+<p>When indicating alignment or indentation, use the globally
+available <b>rend</b> attribute, either on structural elements
+(&lt;p>, &lt;l>, &lt;cell>, &lt;item>, etc.) or on &lt;hi>, as
+appropriate to the situation.</p>
+
+<p>For indicating alignment, the <b>rend</b> value may be:</p>
+
+<ul>
+<li>center</li>
+<li>left - assumed and not normally necessary</li>
+<li>right</li>
+</ul>
+
+<p>For indicating indentation, <b>rend</b> may be:</p>
+
+<ul>
+<li>indent</li>
+
+<li>indent2, indent3, indent4, indent5 - for cases where more than one
+level of indentation needs to be recorded (Use these values sparingly,
+and only when "indent" has already been used. Normally these values
+are only needed when encoding lines of verse.)</li>
+
+<li>hang - for hanging indentation</li>
+</ul>
+
+<p><b>Default alignment:</b> Some elements have a presumed or default
+alignment and do not normally require explicit alignment markup:</p>
+
+<ul>
+<li><b>head</b> - center</li>
+<li><b>table</b> - center</li>
+<li><b>figure</b> - center</li>
+<li>elements within &lt;titlePage> - center</li>
+<li><b>trailer</b> - center</li>
+<li><b>ornament</b> - center</li>
+<li><b>dateline</b> - right</li>
+<li><b>salute</b> within &lt;opener> - left</li>
+<li><b>salute</b> within &lt;closer> - right, with some indentation toward the left</li>
+<li><b>signed</b> - right</li>
+<li>all other elements - left</li>
+</ul>
+
+<p>These elements should contain alignment markup <em>only</em> when
+the layout of the element on the printed page differs from the
+defaults listed above.</p>
+
+
+<hr class="subsection" />
+<h3><a name="foreign"></a>Foreign Phrases</h3>
+
+<p><b>Using &lt;foreign>:</b> Words or phrases that are both (a)
+typographically distinct (usually in italics), and (b) not in the main
+language of the text (almost always English), should be marked with
+the &lt;foreign> element. Whenever possible, include the <b>lang</b>
+attribute, using one of the standard
+<a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO
+639-2 three-character language codes</a>. Occasionally, the language
+will not be obvious, in which case encode the phrase with &lt;foreign>
+but without the <b>lang</b> attribute. Commonly used ISO 639-2 codes
+include:</p>
+
+<table border="1" cellpadding="3">
+<tr>
+<td>fre</td><td>French</td>
+</tr><tr>
+<td>ger</td><td>German</td>
+</tr><tr>
+<td>grc</td><td>Greek, ancient (to 1453)</td>
+</tr><tr>
+<td>gre</td><td>Greek, modern (1453- )</td>
+</tr><tr>
+<td>heb</td><td>Hebrew</td>
+</tr><tr>
+<td>ita</td><td>Italian</td>
+</tr><tr>
+<td>lat</td><td>Latin</td>
+</tr><tr>
+<td>rus</td><td>Russian</td>
+</tr><tr>
+<td>spa</td><td>Spanish</td>
+</tr>
+</table>
+
+<p>Each language identified by a <b>lang</b> attribute (on
+&lt;foreign>, or on any other element) must be declared in a
+&lt;language> element within
+&lt;teiHeader>&lt;profileDesc>&lt;langUsage> in order for the XML
+document to validate.</p>
+
+<p><a href="examples/foreign.html">[example]</a></p>
+
+<p><b>Retaining typographic distinction:</b> Using the &lt;foreign>
+element does not obviate the need to encode the change in
+typeface. Since foreign phrases are usually italicized, typical markup
+for a foreign phrase will be: &lt;foreign
+lang="...">&lt;i>...&lt;/i>&lt;/foreign></p>
+
+<p><b>Not roman but not Asian:</b> Languages such as Greek, Hebrew,
+and Russian fall into a special category. They require non-roman
+characters, but they are alphabetic, not ideographic. If the language
+is within the vendor's capabilities, the foreign phrase should be
+transcribed using either the appropriate character entities, or XML
+character references with Unicode hexadecimal values:</p>
+
+<table border="1" cellpadding="3">
+<tr>
+<td>Greek</td>
+<td>Use the <a
+href="http://www.oasis-open.org/docbook/specs/wd-docbook-xmlcharent-0.3.html#isogrk1">iso-grk1.ent character entities</a>, supplemented as
+needed by the accented characters in iso-grk2.ent</td>
+</tr><tr>
+<td>Hebrew</td>
+<td>Use the Hebrew block of Unicode (0590 - 05FF): &amp;#x05D0; for aleph,
+&amp;#x05D1; for beth, etc.</td>
+</tr><tr>
+<td>Russian</td><td>Use the Cyrillic block of Unicode (0400 - 04FF)</td>
+</tr>
+</table>
+
+<p>If the language is <i>not</i> within the vendor's capabilities,
+omit the characters from the transcription and use the &lt;gap/>
+element.</p>
+
+<p>Ask U.Va. Library for further guidance if needed.</p>
+
+<p>See also <a href="#gap">Gaps and Uncertainties: &lt;gap/></a> and <a
+href="#charent">Special Characters</a>.</p>
+
+
+<hr class="subsection" />
+<h3><a name="punctuation"></a>Punctuation</h3>
+
+<p><b>Standard keyboard punctuation:</b> Most common punctuation
+characters can and should be represented using their normal keyboard
+characters:</p>
+
+<ul>
+<li>exclamation point !</li>
+<li>dollar sign $</li>
+<li>percent sign %</li>
+<li>asterisk *</li>
+<li>opening and closing parentheses ( )</li>
+<li>hyphen -</li>
+<li>opening and closing square brackets [ ]</li>
+<li>opening and closing braces { }</li>
+<li>colon :</li>
+<li>semicolon ;</li>
+<li>double quotation mark "</li>
+<li>single quotation mark and apostrophe '</li>
+<li>comma ,</li>
+<li>period .</li>
+<li>solidus (forward slash) /</li>
+<li>question mark ?</li>
+</ul>
+
+<p><b>Use of entities:</b> Other marks of punctuation must be
+represented using their standard character entities:</p>
+
+<ul>
+<li>ampersand &amp;amp; (as required by XML)</li>
+
+<li>em dash &amp;mdash; (long dash)</li>
+
+<li>en dash &amp;ndash; (medium-length dash, often used to indicate a
+range, e.g. 1783&amp;ndash;1804)</li>
+</ul>
+
+<p>An ellipse &mdash; a series of dots or asterisks indicating
+deliberately omitted text &mdash; should be indicated by a series of
+keyboard-character periods or asterisks. Simply use the same number of
+periods or asterisks used in the print source.</p>
+
+<p>If the print source contains an exceptionally long space that needs
+to be preserved (for example, to indicate a word deliberately omitted
+by the author), use a series of &amp;emsp; (em space) entities.</p>
+
+<p>Other marks of punctuation are available in the iso-num.ent,
+iso-pub.ent, and iso-tech.ent character entity sets. See <a
+href="#charent">Special Characters</a> below.</p>
+
+<p><b>Spacing between sentences:</b> Use one space character between
+sentences, not two, regardless of the apparent spacing in the print
+source.</p>
+
+
+
+<hr />
+<h2><a name="VI"></a>VI. Reference Systems</h2>
+
+<h3><a name="pb"></a>Page Breaks</h3>
+
+<p>Use &lt;pb/> to mark page breaks &mdash; that is, to mark the point
+at which a page begins.</p>
+
+<p><b>Always at top of page:</b> The &lt;pb/> element should always be
+placed at the top or beginning of the page, regardless of the position
+of the printed page number in the print source.</p>
+
+<p><b>Page numbers:</b> If the page contains a printed page number,
+record it in the <b>n</b> attribute; if not, do not include the
+<b>n</b> attribute. <span class="revised"><b>Exception:</b>For &lt;pb/> elements indicating spine, covers, and edges, include the <b>n</b> with an appropriate label, such as <code>n="Front Cover"</code>. See <a href="#spine">Images for Book Spine, Covers, and Edges</a>.</span></p>
+
+<p><b>Always within a div:</b> Page breaks must be placed
+<em>within</em> a &lt;div#> element, never between
+divisions. Therefore, when a division starts on a new page, the
+&lt;pb/> is the first element in the division, immediately following
+the opening &lt;div#> tag (preceding even the division &lt;head>, if
+there is one). For example:</p>
+
+<blockquote><pre>
+&lt;/div2>
+&lt;div2 type="chapter" n="II">
+<span class="hi">&lt;pb/></span>
+&lt;head>II&amp;mdash;APPELLATIONS.&lt;/head>
+</pre></blockquote>
+
+<p><b>Blank pages:</b> There must be one &lt;pb/> element for every
+page in the set of page images for the work. This is true even for
+pages that have no text or other printed content on them.</p>
+
+<p>If the blank page occurs between divs, place the blank page's
+&lt;pb/> element as the last page of the preceding div, not as the
+first page of the new div.</p>
+
+<blockquote><pre>
+&lt;!-- end of last chapter -->&lt;/p>
+<span class="hi">&lt;pb/></span> &lt;!-- blank page between last chapter and bibliography -->
+&lt;/div1>
+&lt;/body>
+&lt;back>
+&lt;div1 type="bibliography">
+&lt;pb/>
+&lt;head>BIBLIOGRAPHY&lt;/head>
+</pre></blockquote>
+
+<p><b>Running page headers:</b> Normally running page headers should
+be excluded from the electronic text (see <a
+href="#exceptions">Exceptions</a>).  In some cases, however, U.Va. Library will
+specifically request that the running headers be preserved for a
+particular book. To encode the running headers, use &lt;fw
+type="header"> within &lt;pb>:</p>
+
+<blockquote><pre>
+&lt;pb n="99">&lt;fw type="header">APPEAL TO CHURCHES OF MASSACHUSETTS&lt;/fw>&lt;/pb>
+</pre></blockquote>
+
+
+<hr class="subsection" />
+<h3><a name="cb"></a>Column Breaks</h3>
+
+<p>Use the &lt;cb/> element to mark column breaks &mdash; that is, to
+mark the point at which a column of text begins. Of course, many books
+have a single-column layout, in which case it is not necessary to mark
+the column at all. Other materials, however, such as dictionaries,
+encyclopedias, newspapers, and journals, are commonly printed in
+multiple columns and require the use of &lt;cb/> to indicate the
+layout.</p>
+
+<p><b>Always at top:</b> Like <a href="#pb">page breaks</a>
+(&lt;pb/>), which should always be placed at the top of the page,
+&lt;cb/> should always mark the top or beginning of the column of
+text.</p>
+
+<p><b>n attribute:</b> For &lt;cb/>, use the n attribute to record the
+number of the column on the page. If each page contains two columns,
+the first (leftmost) column on each page is &lt;cb n="1"/>, and the
+second column is &lt;cb n="2"/>.</p>
+
+<p><b>Mixed column layouts:</b> In cases where the number of columns
+changes mid-page, use the &lt;cols/> element to indicate the point at
+which the number of columns changes. Use the <b>n</b> attribute to
+indicate the number of columns in the section that follows the
+&lt;cols/> tag. For example, if the page layout shifts from
+single-column to double-column in the midst of the page, use &lt;cols
+n="2"/> to indicate the point at which double-column layout begins
+(and then use &lt;cb n="1"/> and &lt;cb n="2"/> to mark the columns,
+as usual). At the point where the layout shifts back to single-column
+text, use &lt;cols n="1"/> (after which no &lt;cb/> elements are
+necessary, since the layout is single-column). <a
+href="examples/mixedcol.html">[example]</a></p>
+
+<blockquote><p><b>Note:</b> A division &lt;head> followed by a
+multi-column layout does <em>not</em> indicate a mixed-column layout
+and does not require &lt;cols&nbsp;n="..."/>.
+<a href="examples/cb.html">[example]</a></p></blockquote>
+
+
+<hr class="subsection" />
+<h3><a name="lb"></a>Line Breaks</h3>
+
+<p>Line breaks in running prose should be preserved in the electronic
+transcription by marking the end of each printed line with the
+standard &lt;lb/> element.</p>
+
+
+
+<hr />
+<h2><a name="VII"></a>Special Considerations</h2>
+
+<h3><a name="gapunclear"></a>Gaps and Uncertainties</h3>
+
+<p>The &lt;unclear> and &lt;gap/> elements should be used as follows:</p>
+
+<p><a name="unclear"></a><b>&lt;unclear>:</b> Use &lt;unclear> to mark
+passages that cannot be transcribed with certainty, as happens when a
+letter/word/phrase is physically present on the page but is
+<b>unreadable</b> (due to a printing error, physical damage to the
+page such as readers' marks, or a bad scan).</p>
+
+<p>When marking an illegible letter/word/phrase as unclear, transcribe
+the readable characters, omit the unreadable characters, and mark the
+<em>entire</em> word or phrase with &lt;unclear>...&lt;/unclear>. For
+example:</p>
+
+<blockquote><p><b>Correct:</b></p>
+<pre>lost, wounded or captured in a fruitless and &lt;lb/>
+&lt;unclear>opeless&lt;/unclear> assault. &lt;lb/> </pre>
+
+<p><b class="hi"><i>Wrong:</i></b></p>
+<pre>lost, wounded or captured in a fruitless and &lt;lb/>
+&lt;unclear/>opeless assault. &lt;lb/> </pre>
+</blockquote>
+
+<p><b>Note:</b> If one or more illegible characters come immediately before or after
+an end-of-line hyphen, include the <em>entire</em> hyphenated word
+within the &lt;unclear> element. For example:</p>
+
+<blockquote><p><b>Correct:</b></p>
+<pre>cleared his throat, and quietly withdrew, &lt;unclear>maintain- &lt;lb/>
+ing&lt;/unclear> to the last his unprejudiced demeanour.&lt;/p></pre>
+
+<p><b class="hi"><i>Wrong:</i></b></p>
+<pre>cleared his throat, and quietly withdrew, maintain- &lt;lb/>
+&lt;unclear>ing&lt;/unclear> to the last his unprejudiced demeanour.&lt;/p></pre>
+</blockquote>
+
+<p>If a word or phrase is so illegible that none of its characters can
+be read with certainty, use an empty &lt;unclear/> element to mark the
+point at which the word or phrase occurs:</p>
+
+<blockquote><pre>
+instead of his sargeant; and therefore no regiment &lt;lb/>
+&lt;unclear/> to be seen in which there are not soldiers in &lt;lb/>
+</pre></blockquote>
+
+<p><a name="gap"></a><b>&lt;gap/>:</b> Use &lt;gap/> to mark any
+section (character, word, passage, page, etc.) that is being
+<b>omitted</b> from the transcription. There are two reasons for such
+omissions: the section is missing (as happens with torn or missing
+pages), or it has been excluded deliberately for editorial reasons. In
+particular, a block of non-Western characters in a language outside
+the vendor's capabilities should be marked as a &lt;gap/>. Use one
+&lt;gap/> element for each unbroken section of content that is being
+excluded from the electronic transcription. (See also <a
+href="#charent">Special Characters</a>.)</p>
+
+<p>When using the &lt;gap/> element, include the <b>desc</b> (short
+for "description") and <b>reason</b> attributes. The <b>reason</b>
+attribute accepts these values:</p>
+
+<ul>
+<li>editorial - the section is omitted deliberately for editorial
+reasons (for example, non-Western characters)</li>
+
+<li>damage - the section is omitted because of damage to the physical
+page (for example, a torn page)</li>
+
+<li>missing - the section is missing entirely (for example, a missing page)</li>
+
+<li>other - indicate the reason in the "other" attribute, as in:
+<tt>&lt;gap desc="..." reason="other" other="..."/></tt></li>
+</ul>
+
+<blockquote><p>Examples:</p>
+<pre>
+&lt;gap desc="Chinese characters" reason="editorial"/>
+
+&lt;gap desc="page 43, line 17 to end of page" reason="damage"/>
+</pre>
+</blockquote>
+
+
+<hr class="subsection" />
+<h3><a name="ab_seg"></a>Arbitrary Sections</h3>
+
+<p>In texts with complex structure or layout, the encoder is likely to
+encounter block-level sections or phrase-level passages that are
+difficult to fit into any of the standard TEI elements. In such cases,
+it may be best to take advantage of TEI's elements for arbitrary
+sections:</p>
+
+<ul>
+<li><b>&lt;ab></b> - (anonymous block) occurs at the block level (at
+same level as &lt;p>, &lt;table>, &lt;list>, etc.)</li>
+
+<li><b>&lt;seg></b> - (segment) occurs at the phrase level (within
+&lt;p>, table cells, list items, etc.)</li>
+</ul>
+
+<p>Both of these elements accept the <b>type</b> attribute with any
+value (no predefined vocabulary).</p>
+
+<p>Although these elements should be used sparingly, they are very
+useful when genuinely needed.</p>
+
+<blockquote><p>
+<span class="hi"><b>IMPORTANT:</b></span> It is better to use
+&lt;ab> or &lt;seg>, when appropriate, than to inject inappropriate
+markup &mdash; such as &lt;div#> elements that do not truly reflect
+the major structural divisions of the work, or &lt;p> elements that
+are not really paragraphs &mdash; for the sake of "making it parse."
+</p></blockquote>
+
+<p>If a work contains a particularly problematic feature for which the
+preferred encoding is not clear, ask U.Va. Library for further guidance.</p>
+
+
+<hr class="subsection" />
+<h3><a name="charent"></a>Special Characters</h3>
+
+<p>Character-entity sets are not declared in the external
+DTD. Instead, you will need to declare and invoke any entity sets
+required by a given document in the document's internal subset:</p>
+
+<blockquote><pre>
+&lt;?xml version='1.0'?>
+&lt;!DOCTYPE TEI.2 SYSTEM '<i>[path]</i>/tei2.dtd' [
+&lt;!ENTITY % TEI.extensions.ent SYSTEM '<i>[path]</i>/uva-dl-tei.ent'>
+&lt;!ENTITY % TEI.extensions.dtd SYSTEM '<i>[path]</i>/uva-dl-tei.dtd'>
+
+&lt;!ENTITY % ISOlat1 SYSTEM '<i>[path]</i>/iso-lat1.ent'>%ISOlat1;
+&lt;!ENTITY % ISOlat2 SYSTEM '<i>[path]</i>/iso-lat2.ent'>%ISOlat2;
+&lt;!ENTITY % ISOnum  SYSTEM '<i>[path]</i>/iso-num.ent'>%ISOnum;
+&lt;!ENTITY % ISOpub  SYSTEM '<i>[path]</i>/iso-pub.ent'>%ISOpub;
+&lt;!ENTITY % ISOtech SYSTEM '<i>[path]</i>/iso-tech.ent'>%ISOtech;
+]>
+</pre></blockquote>
+
+<p>The usual ISO 8879 (SGML) entity sets are included with the
+uva-dl-tei DTD files (see <a href="#dtd">The DTD</a> above). Please do
+not use your own, local versions of the ISO 8879 entity sets, as our
+versions may include corrections, as well as a supplementary set
+containing characters not available in the standard sets
+(uva-supp.ent).</p>
+
+<p>Use the named (mnemonic) entities from the U.Va.-supplied entity sets
+whenever possible. In working with XML character-entity sets, you may
+want to refer to the following resources:</p>
+
+<ul>
+<li><cite>XML Character Entities</cite><br />
+<a href="http://www.oasis-open.org/docbook/specs/wd-docbook-xmlcharent-0.3.html">http://www.oasis-open.org/docbook/specs/wd-docbook-xmlcharent-0.3.html</a>
+<br />
+Conveniently lists the characters in the standard ISO 8879 entity
+sets, <i>with graphics showing the typical appearance of each
+character</i>.<br /><br /></li>
+
+<li><cite>Unicode Code Charts</cite><br />
+<a href="http://www.unicode.org/charts/">http://www.unicode.org/charts/</a>
+<br />
+Contains links to PDF code charts of Unicode characters, organized by
+category (that is, by Unicode block).</li>
+</ul>
+
+<p><b>Characters not in a standard entity set:</b> If a character is
+not in one of the U.Va.-supplied entity sets (don't forget to check
+uva-supp.ent as well as the ISO 8879 sets), it may nevertheless be
+available as a Unicode character. In such cases, identify the correct
+Unicode character and declare it as an entity with an appropriate
+human-readable name.</p>
+
+<p><b>Characters not in Unicode:</b> In some cases, a particular
+character may not be available in Unicode. It is usually possible,
+however, to create the needed character by using the Unicode combining
+diacritics.</p>
+
+<p><a href="examples/charent.html">[example]</a></p>
+
+<p>Any such entity declarations outside the U.Va.-supplied entity sets
+should be noted in the encoder's notes to U.Va. Library (see <a
+href="#notesdoc">Providing notes</a>).</p>
+
+
+<hr class="subsection" />
+<h3><a name="final"></a>Final Steps</h3>
+
+<p><b>Line endings:</b> If the XML files contain two-byte line endings
+(carriage return + linefeed), please convert them to Unix-style,
+one-byte line endings (linefeed character) before delivering the
+finished files to U.Va. Library.</p>
+
+</body>
+</html>

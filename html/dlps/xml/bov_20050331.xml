@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+
+<!ENTITY % xref 'INCLUDE'>
+<!ATTLIST xref url CDATA #IMPLIED>
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with
+                        local customizations)</resp>
+                    <name>University of Virginia Library</name>
+                </respStmt>
+                <biblScope type="date">
+                    <date value="2005-03-31">March 31, 2005</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">16</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2009">2009</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the
+                        University of Virginia</p>
+                    <p n="access">Publicly accessible</p>
+                </availability>
+                <idno type="DLPS ID">bov_20050331</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors
+                            minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of
+                            Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors
+                            meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2005-03-31">March 31, 2005</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information. Access to
+                                minutes containing salary information will be granted only under the
+                                procedures of the Virginia Freedom of Information Act (Code of
+                                Virginia-2.1-340 ff.) or if permission is granted by the Secretary
+                                of the Board. Researchers interested in obtaining access to these
+                                records should direct a request in writing to the Office of the
+                                Legal Adviser, Madison Hall, University of Virginia. These public
+                                minutes have had salary information deleted and bear no
+                                restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special
+                                Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body
+                                which is the legal owner and operator of the institution. Recorded
+                                in the minutes are appointments and other personnel decisions
+                                concerning faculty, decisions about construction of facilities,
+                                gifts to the university, and all other board actions, decisions and
+                                resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction;
+                &editorial_normalization; &editorial_hyphenation; &editorial_quotation;
+                &editorial_stdVals; </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language id="eng" n="008" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+    </teiHeader>
+
+
+    <text id="d1">
+        <body id="d2">
+
+            <div1 id="d3" type="memorandum">
+                <head type="divisional">
+                    <date value="2005-03-31">March 31, 2005 </date>
+                </head>
+                <head type="main">MEMORANDUM</head>
+
+                <p>
+                    <table cols="3" rows="15">
+                        <row>
+                            <cell role="label">TO:</cell>
+                            <cell cols="2">The Board of Visitors:</cell>
+                        </row>
+                        <row>
+                            <cell cols="3"/>
+                            </row>
+                    
+                        <row>
+                            <cell/>
+                            <cell cols="2">
+                                <name>Gordon F. Rainey, Jr., Rector</name>
+                            </cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell>
+                                <name>Thomas F. Farrell, II, Vice Rector</name>
+                            </cell>
+                            <cell>
+                                <name>Vincent J. Mastracco, Jr.</name>
+                            </cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell>
+                                <name>A. MacDonald Caputo</name>
+                            </cell>
+                            <cell>
+                                <name>Lewis F. Payne</name>
+                            </cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell>
+                                <name>Alan A. Diamonstein</name>
+                            </cell>
+                            <cell>
+                                <name>Don R. Pippin</name>
+                            </cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell>
+                                <name>Susan Y. Dorsey</name>
+                            </cell>
+                            <cell>
+                                <name>Warren M. Thompson</name>
+                            </cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell>
+                                <name>G. Slaughter Fitz-Hugh, Jr.</name>
+                            </cell>
+                            <cell>
+                                <name>E. Darracott Vaughan, Jr.</name>
+                            </cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell>
+                                <name>W. Heywood Fralin</name>
+                            </cell>
+                            <cell>
+                                <name>Georgia M. Willis</name>
+                            </cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell>
+                                <name>Glynn D. Key</name>
+                            </cell>
+                            <cell>
+                                <name>John O. Wynne</name>
+                            </cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell>
+                                <name>Mark J. Kington</name>
+                            </cell>
+                            <cell>
+                                <name>James W. Head</name>
+                            </cell>
+                        </row>
+                   
+                        <row>
+                            <cell role="label">FROM:</cell>
+                            <cell cols="2">
+                                <name>Alexander G. Gilliam, Jr.</name>
+                            </cell>
+                        </row>
+                        <row>
+                            <cell role="label">SUBJECT:</cell>
+                            <cell cols="2">Minutes of the Orientation Session for New Board Members on <date
+                                    value="2005-03-31">March 31, 2005</date></cell>
+                        </row>
+                    </table>
+                </p>
+
+
+                <p>An orientation session for new Board Members was conducted, in Open
+                    Session, from 11:10 a.m. to 12:35 p.m. in the Lower West Oval Room of the
+                    Rotunda on Thursday, <date value="2005-03-31">March 31, 2005</date>. The new
+                    Members were <name>A. Macdonald Caputo, Alan A. Diamonstein, and Vincent J.
+                        Mastracco, Jr., as well as Ms. Catherine Neale</name>, the Student
+                    Member-elect. The session was conducted by <name>Gordon F. Rainey, Jr., Rector,
+                        John T. Casteen, III</name>, President of the University, <name>Leonard W.
+                        Sandridge, Executive Vice President and Chief Operating Officer, Paul J.
+                        Forch, General Counsel, Gene D. Block</name>, Vice President and Provost,
+                    and ,<name>Alexander G. Gilliam</name>, Jr., Secretary to the Board. <name>Don
+                        R. Pippin</name>, Member of the Board, was present as well.</p>
+                <div2 id="d4" type="section">
+
+                    <p>
+                      The general topics discussed at the orientation were as follows:</p>
+                        <list>
+                            <item rend="indent">Overall view of the Board, its Committee structure
+                                and its workings. (The Rector)</item>
+                            <lb/>
+                            <item rend="indent">The duties and workings of the Board in the context
+                                of the Virginia Freedom of Information Act. Cautions on conflicts of
+                                interest. (<name>Mr. Forch</name>) </item>
+                            <lb/>
+                            <item rend="indent">The University and State appropriations. (The
+                                President and <name>Mr. Sandridge</name>)</item>
+                            <lb/>
+                        </list>
+            
+                    <pb n="2"/>
+                   
+                        <p>Orientation Session - <date value="2005-03-31">March 31, 2005</date></p>
+                    
+                    <list>
+                        <item rend="indent">The making of the University budget: timetable of the
+                            budget making process and the Board’s involvement in the process.
+                                (<name>Mr. Sandridge</name>)</item>
+                        <lb/>
+
+                        <item rend="indent">The University’s overall rankings in comparison with its
+                            peers, together with its aspirations in this regard; the determining
+                            factors and the Board’s role. (The President)</item>
+                    </list>
+
+                    <p rend="indent">In addition, the new Members were given written summaries of
+                        each Vice President’s areas of responsibilities.</p>
+                 
+                        <table cols="2" rows="2">
+                            <row>
+                                <cell>AGG:lah</cell>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell role="label">Copies to:</cell>
+                                <cell> <name>John T. Casteen, III</name><lb/>
+                                        <name>Leonard W. Sandridge</name><lb/>
+                                    <name>Ms. Catherine S. Neale</name></cell>
+                            </row>
+                        </table>
+            
+                <trailer>These minutes have been posted to the University of Virginia’s Board of
+                    Visitors website. <lb/><xref url="http://www.virginia.edu/bov/publicminutes.html"
+                        >http://www.virginia.edu/bov/publicminutes.html</xref></trailer>
+                </div2>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

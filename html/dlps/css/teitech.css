@@ -1,0 +1,199 @@
+/*
+  teitech.css - styles for technical documentation
+*/
+
+/*------------*/
+/* TAG STYLES */
+/*------------*/
+
+a:link {
+  color: blue;
+}
+
+a:visited {
+  color: blue;
+}
+
+body, th, td {
+  background-color: white;
+  color: black;
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+}
+
+code {
+  background-color: #EEEEEE;   /* light gray */
+  font-family: monospace;
+  padding-top: 4px;
+  padding-right: 4px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  white-space: nowrap;
+}
+
+div {
+  border: 2px solid;
+  margin-top: 20px;
+  margin-right: 5%;
+  margin-bottom: 10px;
+  margin-left: 5%;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+span {
+  font-weight: bold;
+}
+
+div.fyi {
+  border-color: gray;
+}
+span.fyi {
+  color: gray;
+}
+
+div.BOV {
+  border-color: #BDB76B;  /* dark khaki */
+}
+span.BOV {
+  color: #BDB76B;
+}
+
+div.EAF {
+  border-color: #FF8C00;  /* dark orange */
+}
+span.EAF {
+  color: #FF8C00;
+}
+
+div.important {
+  border-color: #CC0000;  /* red */
+}
+span.important {
+  color: #CC0000;
+}
+
+div.note {
+  border-color: #0000CC;  /* blue */
+}
+span.note {
+  color: #0000CC;
+}
+
+div.special {
+  border-color: #0000CC;  /* blue */
+}
+span.special {
+  color: #0000CC;
+}
+
+div.text-only {
+  border-color: purple;
+}
+span.text-only {
+  color: purple;
+}
+
+div.tip {
+  border-color: #007722;  /* green */
+}
+span.tip {
+  color: #007722;
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+  color: #000099;
+}
+
+li {
+  margin-top: 8px;
+}
+
+pre {
+  font-family: monospace;
+  background-color: #EEEEEE;  /* light gray */
+  padding: 10px;
+  margin-right: 1em;
+  margin-left: 3em;
+}
+
+table {
+  margin-bottom: 10px;
+}
+
+table.metadata {
+  border: 1px solid black;
+}
+
+
+/*---------*/
+/* CLASSES */
+/*---------*/
+
+.center {
+  text-align: center;
+}
+
+.gap {
+  color: #CC0000;
+}
+
+.gothic {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.hang {
+  margin-left: 2em;
+  text-indent: -2em;
+}
+
+.indent {
+  text-indent: 2em;
+}
+.indent2 {
+  text-indent: 4em;
+}
+.indent3 {
+  text-indent: 6em;
+}
+.indent4 {
+  text-indent: 8em;
+}
+.indent5 {
+  text-indent: 10em;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.salute_closer {
+  text-align: right;
+}
+
+.signed {
+  text-align: right;
+}
+
+.smcap {
+  font-variant: small-caps;
+
+  /* here underlining is used as an additional indicator for
+     small-caps, since browsers don't always render it correctly */
+  text-decoration: underline;
+}
+
+.unclear {
+  color: #CC0000;
+}
+
+.unknown {
+  /* here line-through is used for <hi rend="..."> values not
+     handled by the XSLT stylesheet, as a debugging aid */
+  text-decoration: line-through;
+}

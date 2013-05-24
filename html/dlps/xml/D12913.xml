@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % ISOtech SYSTEM "http://text.lib.virginia.edu/charent/iso-tech.ent"> %ISOtech;
+
+<!ENTITY DSSR_000004971_0009 SYSTEM "000004398_04971_0009" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0010 SYSTEM "000004398_04971_0010" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0011 SYSTEM "000004398_04971_0011" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0012 SYSTEM "000004398_04971_0012" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0013 SYSTEM "000004398_04971_0013" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0014 SYSTEM "000004398_04971_0014" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0015 SYSTEM "000004398_04971_0015" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0016 SYSTEM "000004398_04971_0016" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0017 SYSTEM "000004398_04971_0017" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0018 SYSTEM "000004398_04971_0018" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0019 SYSTEM "000004398_04971_0019" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0020 SYSTEM "000004398_04971_0020" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0021 SYSTEM "000004398_04971_0021" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0022 SYSTEM "000004398_04971_0022" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0023 SYSTEM "000004398_04971_0023" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0024 SYSTEM "000004398_04971_0024" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0025 SYSTEM "000004398_04971_0025" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0026 SYSTEM "000004398_04971_0026" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0027 SYSTEM "000004398_04971_0027" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0028 SYSTEM "000004398_04971_0028" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0029 SYSTEM "000004398_04971_0029" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0030 SYSTEM "000004398_04971_0030" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0031 SYSTEM "000004398_04971_0031" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0032 SYSTEM "000004398_04971_0032" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0033 SYSTEM "000004398_04971_0033" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0034 SYSTEM "000004398_04971_0034" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0035 SYSTEM "000004398_04971_0035" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0036 SYSTEM "000004398_04971_0036" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0037 SYSTEM "000004398_04971_0037" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0038 SYSTEM "000004398_04971_0038" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0039 SYSTEM "000004398_04971_0039" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0040 SYSTEM "000004398_04971_0040" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0041 SYSTEM "000004398_04971_0041" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0042 SYSTEM "000004398_04971_0042" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0043 SYSTEM "000004398_04971_0043" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0044 SYSTEM "000004398_04971_0044" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0045 SYSTEM "000004398_04971_0045" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0046 SYSTEM "000004398_04971_0046" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0047 SYSTEM "000004398_04971_0047" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0048 SYSTEM "000004398_04971_0048" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0049 SYSTEM "000004398_04971_0049" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0050 SYSTEM "000004398_04971_0050" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0051 SYSTEM "000004398_04971_0051" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0052 SYSTEM "000004398_04971_0052" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0053 SYSTEM "000004398_04971_0053" NDATA uvaHighRes>
+<!ENTITY DSSR_000004971_0054 SYSTEM "000004398_04971_0054" NDATA uvaHighRes>
+]>
+
+
+
+<TEI.2 id="D12913">
+    <teiHeader type="AACR2">
+
+        <fileDesc>
+            <titleStmt>
+
+                <title type="main">Diary of John Ward, 102nd Pennsylvania</title>
+
+                <author>Ward, John</author>
+                <respStmt>
+                    <resp>Creation of machine-readable version: </resp>
+                    <name>Digital Curation Services , University of Virginia Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Digital Curation Services</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Creation of digital images:</resp>
+                    <name>Digitization Services, University of Virginia Library</name>
+                </respStmt>
+
+            </titleStmt>
+
+            <extent>ca. <num type="kilobytes">50</num> kilobytes</extent>
+
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia </pubPlace>
+                <idno type="DCS">D12913</idno>
+                <date value="2009">2009</date>
+            </publicationStmt>
+            
+            <seriesStmt>                
+                <title>University of Virginia Library, Text collection</title>                
+                <idno type="uva-set">UVA-LIB-Text</idno>           
+                <idno type="uva-set">UVA-LIB-CivilWar</idno>                
+            </seriesStmt>
+
+            <sourceDesc>
+
+                <biblFull>
+                    <titleStmt>
+                        <title type="main">Diary of John Ward [manuscript], <dateRange
+                                from="1862-10-18" to="1862-12-30">1862 October 18 to December
+                            30.</dateRange></title>
+                        <title type="sort">diary of john ward, <dateRange from="1862-10-18"
+                                to="1862-12-30">1862 october 18 to december 30.</dateRange></title>
+                        <author>Ward, John, fl. <date value="1862">1862.</date></author>
+                    </titleStmt>
+                    <extent>1 vol.</extent>
+                    <publicationStmt>
+                        <idno type="callNo">mss 12913</idno>
+                        <idno type="Virgo ID">4003602-1001</idno>
+                        <idno type="title control number">a4003602</idno>
+                        <availability>
+                            <p> Albert &amp; Shirley Small Special Collections, University of
+                                Virginia Library, Charlottesville, Virginia, USA</p>
+                        </availability>
+                    </publicationStmt>
+                </biblFull>
+
+            </sourceDesc>
+
+
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <!-- Per Matt we need to work on this statement-->
+                <p> Prepared for the University of Virginia Library by Digital Curation Services
+                    staff and volunteer Mary Roy Dawson Edwards, Transcriber. June 2005..</p>
+            </projectDesc>
+        </encodingDesc>
+
+        <profileDesc>
+            <langUsage>
+                <language id="eng" usage="main">English</language>
+            </langUsage>
+            <handList>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+        </profileDesc>
+
+    </teiHeader>
+
+    <text id="d1">
+        <body id="d2">
+            <div1 id="d3" type="part">
+                <head>Diary of John Ward, 102nd Pennsylvania</head>                
+                <div2 id="d4" type="section">
+                    <head>1862</head>
+                    <div3 id="d5" type="entry">
+                        <pb entity="DSSR_000004971_0009" n="np"/>
+                        <head>John Wards Book of the 102 P V </head>
+                        <p/>
+                    </div3>
+                    <div3 id="d6" type="entry">
+                        <pb entity="DSSR_000004971_0010" n="np"/>
+                        <head>
+                            <date value="1862-10-18">Oct 18<hi rend="super">th</hi> /62</date>
+                        </head>
+                        <p>the Regt was payd of to day Oct the 18/62 up to the first of Sept Reced a
+                            letter from home Nove 4 <hi rend="super">th</hi> Reced a letter 14<hi
+                                rend="super">th</hi> Sent a letter 19<hi rend="super">th</hi> Recd a
+                            letter to day <add hand="author" place="top">27</add> Date of the 18
+                            Sent a letter 27<hi rend="super">th</hi> Sent a letter 30 Dec 2 Recd a
+                            letter of Nov 21 Dec 4 Recd a letter Date Dec 7<hi rend="super">th</hi>
+                            Dec Sent a letter Date 9<hi rend="super">th</hi> Dec 17<hi rend="super"
+                                >th</hi> Recd a letter Date 7 Dec sent a letter 1.9 Dec 20 Recd
+                            letter sent 13</p>
+                    </div3>
+                    <pb entity="DSSR_000004971_0011" n="np"/>
+                    <div3 id="d7" type="entry">
+                        <head>
+                            <date value="1862-10-19">Oct 19<hi rend="super">th</hi> 62</date>
+                        </head>
+                        <p>Left camp this moringin at Six Oclock Near Clear Springs at the foot of
+                            the North Mountins In Washington Co Md a Rived at Hancock at 7 PM and in
+                            camp for the Night Oct 20<hi rend="super">th</hi> Sent $40 Dollars home
+                            to day by <unclear>Admay</unclear> Expres With Henry Lightle Post Master
+                            for the Regt Sent a letter <del hand="author">
+                                <unclear>
+                                    <hi rend="line-through">[word lined out]</hi>
+                                </unclear>
+                            </del> Home to Day by Mail Whe leade in this Camp until the morning of
+                            the 21<hi rend="super">st</hi> Oct</p>
+                        <pb entity="DSSR_000004971_0012" n="np"/>
+                    </div3>
+
+                    <div3 id="d8" type="entry">
+                        <head>
+                            <date value="1862-10-22">Oct 22<hi rend="super">nd</hi> /62</date>
+                        </head>
+                        <p>Left camp near Hancock this <del hand="author">
+                                <hi rend="line-through">moringin</hi>
+                            </del> affter none at 4&frac12; oclock and march a 11 miles to Indeman House on
+                            top of the North Mounten and camp 6 hours</p>
+                    </div3>
+
+                    <div3 id="d9" type="entry">
+                        <head>
+                            <date value="1862-10-23">Oct 23<hi rend="super">d</hi></date>
+                        </head>
+                        <p>Left camp and Went back to Slipe Creek 6 miles from Hancock <add
+                                hand="author" place="top">Md</add> north </p>
+                    </div3>
+
+
+                    <div3 id="d10" type="entry">
+                        <head>
+                            <date value="1862-10-24">Oct 24</date>
+                        </head>
+                        <p>- at the point of the <unclear>
+                                <hi rend="line-through">[word lined out]</hi>
+                            </unclear> Receved Orders to mouve at Daybreak t The ordered then
+                            countermanded and whe stade all Night Whe Captured 12 of Sturds Cav</p>
+                        <pb entity="DSSR_000004971_0013" n="np"/>
+                    </div3>
+
+                    <div3 id="d11" type="entry">
+                        <head>
+                            <date value="1862-10-25">Oct 25<hi rend="super">th</hi></date>
+                        </head>
+                        <p> firing was hard this morning at Chiney Creek 5 miles
+                            <unclear>[-]</unclear> the Regt Captured 21 of Sturds
+                            cavil<unclear>[-]</unclear> to Day and to the Provest Marched Receved 2
+                            letters Frome home to Day</p>
+                    </div3>
+
+                    <div3 id="d12" type="entry">
+                        <head>
+                            <date value="1862-10-31">Oct 31<hi rend="super">st</hi></date>
+                        </head>
+                        <p> Whe in Camp Nere The Batle grawn of antedays <del hand="author">
+                                <unclear>
+                                    <hi rend="line-through">[word lined out]</hi>
+                                </unclear>
+                            </del> return the mountains</p>
+                        <pb entity="DSSR_000004971_0014" n="np"/>
+                    </div3>
+
+                    <div3 id="d13" type="entry">
+                        <head>
+                            <date value="1862-10-26">Oct 26<hi rend="super">th</hi> Sunday</date>
+                        </head>
+                        <p>The is verey Reney to Day it comince 3 A.M. Whe was still at mill Stone
+                            Point Money Mareyland Sent home the Rect For Nancy</p>
+                    </div3>
+
+                    <div3 id="d14" type="entry">
+                        <head>
+                            <date value="1862-10-27">Oct 27<hi rend="super">th</hi></date>
+                        </head>
+                        <p>left Camp at Mill Stone Point at 9 A.M. and march to Willimport a distons
+                            of 20 miles and Reued Camp at 4 P.M. then saw the Rebles Pickets on the
+                            other side of the river at Williamport on the 26<hi rend="super">th</hi>
+                            and Whe in Camp 2 miles from Williamport to Night With the hauld
+                            Divishon</p>
+                        <pb entity="DSSR_000004971_0015" n="np"/>
+                    </div3>
+
+                    <div3 id="d15" type="entry">
+                        <head>
+                            <date value="1862-10-28">Oct 28<hi rend="super">th</hi>/62</date>
+                        </head>
+                        <p>Camp Near William <add hand="author" place="top">port</add> Md the Regt
+                            got Vere Close to Day</p>
+                    </div3>
+
+                    <div3 id="d16" type="entry">
+                        <head>
+                            <date value="1862-10-29">Oct 29<hi rend="super">th</hi></date>
+                        </head>
+                        <p>Camp Nere Williamport the Regt Was Inspected to Day By Col Rusall of the
+                                7<hi rend="super">th</hi> Mass. Whe Recivd orders to march at 2
+                            oclock and Whe march to Downintwon 4 miles and in Camp Col Rowley got to
+                            the Regt to Day</p>
+                    </div3>
+
+                    <div3 id="d17" type="entry">
+                        <head>
+                            <date value="1862-10-30">Oct 30<hi rend="super">th</hi></date>
+                        </head>
+                        <p>Whe stade in Camp to Day Received orders at 6 oclock to march at 4 A.M.</p>
+                        <pb entity="DSSR_000004971_0016" n="np"/>
+                    </div3>
+
+                    <div3 id="d18" type="entry">
+                        <head>
+                            <date value="1862-10-31">Oct 31<hi rend="super">st</hi></date>
+                        </head>
+                        <p> March at 4 oclock thes morning on for Bonsbroo Pass thau Bonsbro to one
+                            mile on the other sidy of Bornvillie and camp for the Night there<lb/> M
+                                20<ref n="1" target="n1">{1}</ref></p>
+                    </div3>
+
+                    <div3 id="d19" type="entry">
+                        <head>
+                            <date value="1862-11-01">Nov 1<hi rend="super">st</hi></date>
+                        </head>
+                        <p>left this morng at 3 oclock to wards <unclear>[-]</unclear> ferey Whe
+                            cras over the Batle field of South Montin Near Bregettown this moring at
+                            10 oclock A.M to the Pint of Recks Whe Pass thouth Binben at 12 None <pb
+                                entity="DSSR_000004971_0017" n="np"/> and in Camp one mile below on
+                            the Calnoel and along Side of the Potmoc River 8 miles from Hopers farey
+                            Batle there as a going on for tow Days at Charlstown Whe march 16 miles
+                            to<lb/> Day The Rebls omestion tren to Night <ref n="2" target="n2"
+                            >{2}</ref>
+                        </p>
+                    </div3>
+
+                    <div3 id="d20" type="entry">
+                        <head>
+                            <date value="1862-11-02">Nov. 2<hi rend="super">nd</hi></date>
+                        </head>
+                        <p>at Camp Nere Boodien <add hand="author" place="top">Md</add> the firing
+                            cominske this mornegin at 8 oclock at Chalis Wown Va the trops was
+                            croeng the Potmac Revor all Night and amgneshan town <pb
+                                entity="DSSR_000004971_0018" n="np"/> Pass over the Rever last Night
+                            into Via and Whe are Readey At a montes Notice To march With Thre Days
+                            Reshone in our averscake genl Mclallan moved is queaters over the Rever
+                            to Day into Viregna the Crased at 9 A.M. at Berlen on the Potomac Rever
+                            Genl <unclear>[--]</unclear> crossed to Day at 7 A.M. into via at Berlen
+                            across the Potomac Rever at 9 oclock the fringing is verey havey at this
+                            time 9 A.M. <pb entity="DSSR_000004971_0019" n="np"/> Brought over Nov
+                                2<hi rend="super">d</hi> /62 Sent a leter Home to Day the fight to
+                            Day was at Smikers Gap in the Blew mountins Whe Reccced orders March to
+                            morrow Morngn at <del hand="author">
+                                <unclear>
+                                    <hi rend="line-through">[number lined out]</hi>
+                                </unclear>
+                            </del> 8 oclock A.M.<lb/> "The Regt got New Clouse to Day."<ref n="3"
+                                target="n3">{3}</ref>
+                        </p>
+                    </div3>
+
+                    <div3 id="d21" type="entry">
+                        <head>
+                            <date value="1862-11-03">Nov 3<hi rend="super">d</hi></date>
+                        </head>
+                        <p>Left Camp at 8 Oclock for to Cros the Potomac Rever at Berlien On the
+                            Ponton Bridge into Vagana Whe went To lovitesville and Stops until the
+                                <unclear>[-]</unclear> Whent Pass and Whent thow Whiteland 2 miles
+                                <pb entity="DSSR_000004971_0020" n="np"/> Genl Bunsides tuck Comand
+                            of the armey of the Potmac Nov the 8<hi rend="super">th</hi>/62 and
+                            Relived McCallan Sent a letter home to Day</p>
+                    </div3>
+
+                    <div3 id="d22" type="entry">
+                        <head>
+                            <date value="1862-11-11">Nov 11<hi rend="super">th</hi></date>
+                        </head>
+                        <p>there Was nathunk ocordere to Day</p>
+                    </div3>
+                    <div3 id="d23" type="entry">
+                        <head>
+                            <date value="1862-11-12">Nov 12<hi rend="super">th</hi></date>
+                        </head>
+                        <p/>
+                    </div3>
+
+                    <div3 id="d24" type="entry">
+                        <head>
+                            <date value="1862-11-16">Nov 16<hi rend="super">th</hi></date>
+                        </head>
+                        <p>Left Compe at 7 oclock A.M. and Pass Chatlates Stshan to Wevervill and
+                            camp for the Night Genl Burnside Was With us to Day<lb/> "Whe march 15
+                            miles to Day"<ref n="4" target="n4">{4}</ref>
+                        </p>
+                        <pb entity="DSSR_000004971_0021" n="np"/>
+                    </div3>
+
+                    <div3 id="d25" type="entry">
+                        <head>
+                            <date value="1862-11-17">Nov 17<hi rend="super">th</hi></date>
+                        </head>
+                        <p>Recd Orders To march at 7 Oclock to Wards Freadeckburgh march 12 miles
+                            and Camp for the <add hand="author" place="top">Night</add> Camp at
+                            Ceder crick</p>
+                    </div3>
+
+                    <div3 id="d26" type="entry">
+                        <head>
+                            <date value="1862-11-18">Nov 18<hi rend="super">th</hi></date>
+                        </head>
+                        <p>March at 6 am and march to With in 2 miles of Stafford C House And camp
+                            for 2 Day the camp 3 miles from the Rail Road crose auck quer creek to
+                            Day march 12 miles to Day</p>
+                    </div3>
+
+                    <div3 id="d27" type="entry">
+                        <head>
+                            <date value="1862-11-19">Nov 19</date>
+                        </head>
+                        <p>camp <del hand="author">
+                                <hi rend="line-through">Nere</hi>
+                            </del>2 miles Stafford C House Stay in camp to Day</p>
+                        <pb entity="DSSR_000004971_0022" n="np"/>
+                    </div3>
+
+                    <div3 id="d28" type="entry">
+                        <head>
+                            <date value="1862-11-20">Nov 20<hi rend="super">th</hi></date>
+                        </head>
+                        <p> Camp Nere Staffard it Rean all Day and Night the Wether was verey Bad
+                            and disagrebl</p>
+                    </div3>
+
+                    <div3 id="d29" type="entry">
+                        <head>
+                            <date value="1862-11-21">Nov 21<hi rend="super">st</hi></date>
+                        </head>
+                        <p> At the same Camp The Rebles are Reported to be 6 miles from this Camp in
+                            foresee Whe are in camp 5 miles from Aquir Creek and 5 miles from the
+                            Potomac Rever</p>
+                    </div3>
+
+                    <div3 id="d30" type="entry">
+                        <head>
+                            <date value="1862-11-22">Nov 22<hi rend="super">nd</hi></date>
+                        </head>
+                        <p>Remaine in Camp to day</p>
+                        <pb entity="DSSR_000004971_0023" n="np"/>
+                    </div3>
+
+                    <div3 id="d31" type="entry">
+                        <head>
+                            <date value="1862-11-23">Nov 23<hi rend="super">d</hi> Sunday</date>
+                        </head>
+                        <p>Receved orders to march to Aquai Creek at the mouth of the Rever Pass
+                            thouth Stafford this mormging on Rever in camp at aquice crick to Night
+                            after a march of 10 miles</p>
+                    </div3>
+
+                    <div3 id="d32" type="entry">
+                        <head>
+                            <date value="1862-11-24">Nov 24<hi rend="super">th</hi></date>
+                        </head>
+                        <p>A C Day Queater master came To Headquaters and <unclear>[-]</unclear> in
+                            major Patterson of the Breadge house this was a fine Day</p>
+                    </div3>
+
+                    <div3 id="d33" type="entry">
+                        <head>
+                            <date value="1862-11-25">Nov 25<hi rend="super">th</hi></date>
+                        </head>
+                        <p>this a verey Nice morngin</p>
+                    </div3>
+
+                    <div3 id="d34" type="entry">
+                        <head>
+                            <date value="1862-11-26">Nov 26<hi rend="super">th</hi> Wensdray</date>
+                        </head>
+                        <p>Genl Burnerdiz Was at aquia Creik to Day</p>
+                        <pb entity="DSSR_000004971_0024" n="np"/>
+                    </div3>
+
+                    <div3 id="d35" type="entry">
+                        <head><date value="1862-11-27">Nov 27<hi rend="super">th</hi></date> tusrday </head>
+                        <p>the Present oft the Unigite States was at the Landing to day and left for
+                            Washington City this moning on the mial Boat Baltimore Genl Burnside and
+                            Lincon held a consulton on the mail Boat at the landing at aquice crick
+                            on the 26<hi rend="super">th</hi> Mrs Burnside Was Left for Washigton
+                            City to Day</p>
+                    </div3>
+
+                    <div3 id="d36" type="entry">
+                        <head><date value="1862-11-28">Nov 28<hi rend="super">th</hi></date> Friday</head>
+                        <p>Nothink of Note to Day the army moved forawdrd to Day<lb/> Genl Burnside
+                            Went to Washonton City<ref n="5" target="n5">{5}</ref>
+                            <pb entity="DSSR_000004971_0025" n="np"/> Genl Burnside Returned from
+                            Washington to Day</p>
+                    </div3>
+
+                    <div3 id="d37" type="entry">
+                        <head>
+                            <date value="1862-11-29">Nov 29<hi rend="super">th</hi> Satardy</date>
+                        </head>
+                        <p>this is a verey Nice Day for this time of the year Capt Mcgloring
+                            &amp; Luts W Day came to the Regt to Day</p>
+                    </div3>
+                    <div3 id="d38" type="entry">
+                        <head><date value="1862-11-30">Nov 30<hi rend="super">th</hi></date> Sunday</head>
+                        <p>Recd orders to march to morrow to Foyen the Brdge tomorrow moring 2 miles
+                            from Stafford</p>
+                    </div3>
+                    <div3 id="d39" type="entry">
+                        <head><date value="1862-12-01">Dec 1<hi rend="super">st</hi></date> Monday</head>
+                        <p>Left aquce crick Landing this Moring at 8 oclok around at camp 2 &frac12; mile
+                            from Stafford C House and in Camp there<lb/> march 10 miles to Day<ref
+                                n="6" target="n6">{6}</ref>
+                        </p>
+                        <pb entity="DSSR_000004971_0026" n="np"/>
+                    </div3>
+                    <div3 id="d40" type="entry">
+                        <head><date value="1862-12-02">Dec 2<hi rend="super">nd</hi></date> Thusday </head>
+                        <p>Camp 2 1/2 miles from Stafford C H Recd some New Closes to Day I had the
+                            plesher Of Reading the Presandants Massage to Night in camp Nere
+                            Stafford C. H.</p>
+                    </div3>
+
+                    <div3 id="d41" type="entry">
+                        <head><date value="1862-12-03">Dec 3<hi rend="super">rd</hi></date> Wensday</head>
+                        <p>Recd ordards to march tomoren morngn at Dalilite to Bell Planes</p>
+                    </div3>
+
+                    <div3 id="d42" type="entry">
+                        <head><date value="1862-12-04">Dec 4<hi rend="super">th</hi></date> turesday </head>
+                        <p>left camp at 8 oclock A M Col Kenkead comeand the Brigade</p>
+                        <pb entity="DSSR_000004971_0027" n="np"/>
+                    </div3>
+
+                    <div3 id="d43" type="entry">
+                        <head><date value="1862-12-05">Dec 4<hi rend="super">th</hi></date> tursday </head>
+                        <p>Genl Rawley as Comond of a Disvishon of ten Regt of infinertar and 4 Regt
+                            of Caverley &amp; 2 Batteres of artrelery and form the Rear gard of
+                            the armey of the Patomac on this march it is rumerd that Genl Burnside
+                            as Reseind and Genl Hooker as the comand of the armey of the Potomac Whe
+                            Whe left camp this moring at 8 oclock Col Kenkard Comand of the Bradge
+                                <pb entity="DSSR_000004971_0028"/> Whe march to Potomac Creek and in
+                            Camp for the Night march 10 miles</p>
+                    </div3>
+
+                    <div3 id="d44" type="entry">
+                        <head>
+                            <date value="1862-12-05">Dec 5<hi rend="super">th</hi></date>
+                        </head>
+                        <p>Fireday Recd orders to and march at 6 oclock A M towards Freedeckbugh whe
+                            in camp below <del hand="author">
+                                <hi rend="line-through">to Night</hi>
+                            </del> Frecdekburgh Six miles and 3 miles from the Potomac Rever. Whe
+                            had a verey euerce Snow strom to Day and Night</p>
+                    </div3>
+                    <div3 id="d45" type="entry">
+                        <head><date value="1862-12-06">Dec 6<hi rend="super">th</hi></date> Satarday</head>
+                        <p>Whe Stade in Camp to Day</p>
+                        <pb entity="DSSR_000004971_0029" n="np"/>
+                    </div3>
+                    <div3 id="d46" type="entry">
+                        <head>
+                            <hi rend="line-through">Dec. 4<hi rend="super">th</hi> Thureday</hi>
+                        </head>
+                        <p>
+                            <hi rend="line-through">Genl Rawley Commend a disveshon Of ten Regt of
+                                infanty and fore of Caveldry and 2 Battery and from the Rear
+                            Gard</hi>
+                        </p>
+                    </div3>
+                    <div3 id="d47" type="entry">
+                        <head>Sunday <date value="1862-12-07">Dec 7<hi rend="super">th</hi></date></head>
+                        <p>Still in camp and verey cold and fresene With Snow on the grown this Camp
+                            is 3 miles from Ball Polenus Landing on the Potomac Croek</p>
+                    </div3>
+                    <div3 id="d48" type="entry">
+                        <head>Monday <date value="1862-12-08">Dec 8<hi rend="super">th</hi></date></head>
+                        <p>verey find Day sent my Pappers for my Discharge to Day<lb/> to the Bridge
+                                Docter<ref n="7" target="n7">{7}</ref></p>
+                        <pb entity="DSSR_000004971_0030" n="np"/>
+                    </div3>
+
+                    <div3 id="d49" type="entry">
+                        <head>Tuesday <date value="1862-12-09">Dec 9<hi rend="super">th</hi></date></head>
+                        <p>Recd orders to march tomorow moringen 12 Oclock None and have not march
+                            yet</p>
+                    </div3>
+
+                    <div3 id="d50" type="entry">
+                        <head>Dec <date value="1862-12-10">Wensday 10<hi rend="super">th</hi></date></head>
+                        <p>and a verey find Day</p>
+                    </div3>
+
+                    <div3 id="d51" type="entry">
+                        <head>
+                            <date value="1862-12-11">Dec trus-day 11<hi rend="super">th</hi></date>
+                        </head>
+                        <p> March at 6 Oclock the furingin Comance this morng at 6 oclock at
+                            Freckburgh <del hand="author">
+                                <unclear>
+                                    <hi rend="line-through">[word lined out]</hi>
+                                </unclear>
+                            </del> Armey Whe in camp with the <unclear>[-]</unclear>
+                            <unclear>[-]</unclear> 5 miles from Freedburgh to Night <pb
+                                entity="DSSR_000004971_0031" n="np"/> at Wiete Glok Church the Army
+                            crose into Fredburgh to Night 30 000 the over 5 Pontons Bridge Whe Burnd
+                            the City hour 50 Bradge Went over the Rever to Frickburgh at 7 Oclock on
+                            the moringin of the 12<hi rend="super">th</hi> Genl Rowley get is
+                            comishen this armey nice Day</p>
+                    </div3>
+
+                    <div3 id="d52" type="entry">
+                        <head>
+                            <date value="1862-12-12">Dec Trusday the 12<hi rend="super"
+                            >th</hi></date>
+                        </head>
+                        <p>hoar Brigde Went over the Rever at 7 Oclock this mornigin ther as bing
+                            fahting all Day and the Rebeles are failing Back the Rebeles Sharp
+                            Shuters Was behind the Chimles and Genl Burnside orders to Burn the City
+                            this was a verey Nise Day <pb entity="DSSR_000004971_0032" n="np"/> ther
+                            was from fiffty to sexty of our men keld and wonded Wile laing down the
+                            Pontune Bridges the was 25 man Whent into a Boat and 20 of the Same Was
+                            kill and the other five charge on the Rebs and <unclear>[-]</unclear>
+                            them throuth the town and got Back Safe <del hand="author">
+                                <hi rend="line-through">the Fightin lested untll 7 oclock at Night
+                                    ther was a grat dill of musket firing affer Dorek </hi>
+                            </del></p>
+                        <pb entity="DSSR_000004971_0033" n="np"/>
+                    </div3>
+                    <div3 id="d53" type="entry">
+                        <head>
+                            <date value="1862-12-13">Dec Fairdeay 13<hi rend="super">th</hi></date>
+                        </head>
+                        <p>the arttlery cormence this moning at 10 oclock and it strifeak the Batle
+                            became Genaral in 30 minets after the fireng began and affter one hore
+                            the fireng slaking as if Rebeles Was given way the firingen was terrffer
+                            for one hour Bouth of artlire and mustecket <del hand="author">
+                                <hi rend="line-through">*the gun Boats in* the Rever assisted the
+                                    Soud force in this *Days Batle*</hi>
+                            </del> this is a verey Nise Day - the Sun Shine Butfill the Batle Was
+                            With left Greand Divrhon Gen Franklin the firingen is more <pb
+                                entity="DSSR_000004971_0034" n="np"/> Reapitt at 11 &frac12; oclock at 12
+                            the muscket firing was trifice on the Right and then on the left the
+                            Senter apering to not be in gastge at this time at 15 minets affter 12
+                            the Batle apers to be Come Generel all long the lines the musket firng
+                            on the Right verey houve at 20 minets affter 12 the musket firing is the
+                            hardes on the left and is tricfice all along lines and apers to be verey
+                            Generel all aglong the lines on the left the Rebs apere to fall Back at
+                            30 Minets the firrin apers to Slaken some <pb
+                                entity="DSSR_000004971_0035" n="3"/> the musket firing is not so
+                            fast the artillery is verey trffic at 35. minets the Rebs apere to be
+                            given Back all a long ther lines the artilery slacken a litle at 40
+                            minets the must of made a charge on the Right and left as musket firing
+                            became verey triffic on both Right and left this most triffic Batle that
+                            I have ever seine it is verey heveay on the left now and most trriffic
+                            on the Right and Senter it is offoull it now becomes offoull all a long
+                            the lines <pb entity="DSSR_000004971_0036" n="4"/> for one hour the the
+                            musket seces for a short time it be came verey havey on the left and
+                            then on the Right the Rebs apeare to faull Back on the left it now
+                            apeare the Rebels are gevene Why all along the lines it apeares to be
+                            the be verey on the Senter and on the Right for a Short time but the
+                            Rebs must be given Back for the left apeare to a firene
+                                <unclear>Dorscerce</unclear> from Wher I am at 10 minets letter <pb
+                                entity="DSSR_000004971_0037" n="5"/> it appears to be heaver on the
+                            left it now apeares to be haver on the Right the sentrally must be
+                            Driving the Rebs Back at 1 &frac12; oclock the battle Was triefick all along
+                            the lines at 2 &frac12; oclock I Was Sadsfide the Rebeles Was going Back the
+                            fireng Was father of all thought it was verey hard on the Right the left
+                            having Drove the Right of the Rebles at 4 am it aperd to be verey livey
+                            on the right the Rebs going Back fast at this time <pb
+                                entity="DSSR_000004971_0038" n="6"/> it has bing verey <add
+                                hand="author" place="top">hard</add> for the last 4 hours both
+                            artilery and Infrantery. 4.15 minets the firing Slackens some and get
+                            father of at 10 minets affter the Infantry firing becomes verey trifick
+                            at a father Distanc of on the Right at 4:30 minets the firing on the
+                            Right sackens some at this time I chould not herea aney firing on the
+                            Left and it gating father of on the Right at 35 affter I here firing no
+                            the left along whay of the firing on the left was trifick <pb
+                                entity="DSSR_000004971_0039" n="np"/> Just as at Sun Down it Seme to
+                            Slaken on the Right And Was verey hevist on the left at 50 the firing of
+                            artillery is verey have all aglong line the fightng Did not Stop untll 7
+                            oclock ther was a good Dill of musket fighting affter Dark oure Bridge
+                            Was order under fier about 2 &frac12; Genl Jackson of Pittburgh Was Kill to Day
+                            and Genl Bayard the P V Recevers Sufferd verey much in this Days Batle
+                            at Freckburgh <pb entity="DSSR_000004971_0040" n="8"/> it is Reported
+                            that Whe hav lost in thei Batle fiftane thousand man 15000 In kild and
+                            wonded and the Rebls lost by ther hone account fore thousand 4000 But it
+                            must have bing mare it Was Jackson that faught aganct Franklin on the
+                            left the 62 PV Col Blacks Regt lost 78 Killd and wonded and missingin
+                            Gen Burnside Reaport is in Killd 1152, and wonded about 9000 missing
+                            about 900 the have al bing Proulld <pb entity="DSSR_000004971_0041"
+                                n="np"/> ther is in the Hospotle abut Six thousand Wonded at the
+                            Batle of Freckburgh Akorden to Gen Burnside Afushal Report our lost Will
+                            not be over ten thousand </p>
+                        <pb entity="DSSR_000004971_0042" n="np"/>
+                        <pb entity="DSSR_000004971_0043" n="np"/>
+                    </div3>
+                    <div3 id="d54" type="entry">
+                        <head><date value="1862-12-14">Dec 14<hi rend="super">th</hi></date> Sunday</head>
+                        <p> the fight comince this mornig at about 5 oclock on the left the was not
+                            verey reapped it aperes that the Rebs is goone Back the Rebls have not
+                            gone back the armeys hold the same ground to Day as yesterday the firig
+                            to Day Was nothing but <unclear>[-]</unclear> the fring seese this after
+                            none and the fighting dose not a amount to much to Day the Northan
+                            Littes verey Butfoull to Night for thre houres</p>
+                        <pb entity="DSSR_000004971_0044" n="np"/>
+                        <pb entity="DSSR_000004971_0045" n="np"/>
+                    </div3>
+                    <div3 id="d55" type="entry">
+                        <head><date value="1862-12-15">Dec 15<hi rend="super">th</hi></date> Monday</head>
+                        <p>The firing begune At 7 AM the army of the fall Back to the Side of the
+                            Rever on the Night of the 15<hi rend="super">th</hi> the was all over in
+                            in moring by day lite on the moring of the 16<hi rend="super">th</hi>
+                            Col Rowley take command of the Regt to Day and Genl Weatdan tuck Command
+                            of the Bredge and Releve Col Rowley</p>
+                        <pb entity="DSSR_000004971_0046" n="np"/>
+                    </div3>
+                    <div3 id="d56" type="entry">
+                        <head><date value="1862-12-16">Dec 16<hi rend="super">th</hi></date> tuesday</head>
+                        <p>this moning the armey Down the on this Side the Rever towards St Gorge Ch
+                            the Rebles shalling us as the Went Whe had a verey storm of Rien this
+                            morng for about thee hours</p>
+                        <pb entity="DSSR_000004971_0047" n="np"/>
+                    </div3>
+
+                    <div3 id="d57" type="entry">
+                        <head><date value="1862-12-17">Dec 17<hi rend="super">th</hi></date> wansday </head>
+                        <p>Whe left comp at White Oak chirch and went to the regt this moring Nears
+                            Falmouth</p>
+                    </div3>
+
+                    <div3 id="d58" type="entry">
+                        <head>
+                            <date value="1862-12-18">Dec 18<hi rend="super">th</hi> tursthday</date>
+                        </head>
+                        <p>Recd orders to March this moring At 7 Oclock Whe moved this moring 10
+                            miles Nerer to and within 2 Miles of Bell Poling and in camp</p>
+                        <pb entity="DSSR_000004971_0048" n="np"/>
+                    </div3>
+
+                    <div3 id="d59" type="entry">
+                        <head><date value="1862-12-19">Dec 19<hi rend="super">th</hi></date> Friday</head>
+                        <p>camp neres Ball Planes</p>
+                    </div3>
+
+                    <div3 id="d60" type="entry">
+                        <head><date value="1862-12-20">Dec 20<hi rend="super">th</hi></date>
+                            Satarday</head>
+                        <p>Whe Remane in camp to Day</p>
+                    </div3>
+
+                    <div3 id="d61" type="entry">
+                        <head><date value="1862-12-21">Dec 21<hi rend="super">st</hi></date> Sunday</head>
+                        <p>all quite along the lines this morengin</p>
+                    </div3>
+
+                    <div3 id="d62" type="entry">
+                        <head><date value="1862-12-22">Dec <add hand="author" place="top">22<hi
+                                        rend="super">d</hi></add></date> Monday</head>
+                        <p>moringin Whe are Still in camp and a verey fine moringin</p>
+                        <pb entity="DSSR_000004971_0049" n="np"/>
+                    </div3>
+
+                    <div3 id="d63" type="entry">
+                        <head>
+                            <date value="1862-12-23">Dec Tuesday 23<hi rend="super">d</hi></date>
+                        </head>
+                        <p>at the camp Camp this was a verey Beaffall Day the sun was verey warm and
+                            Plasant</p>
+                    </div3>
+
+                    <div3 id="d64" type="entry">
+                        <head><date value="1862-12-24">Dec 24</date> Wensday</head>
+                        <p>Still im Camp all right this moringin</p>
+                    </div3>
+
+                    <div3 id="d65" type="entry">
+                        <head><date value="1862-12-25">Dec 25<hi rend="super">th</hi></date> tursday
+                            Crushmas <add hand="author" place="top">Day</add></head>
+                        <p>Whe are stil in camp and a verey find moringin all is quitee along the
+                            Lines cristhonas Pass of all night <lb/>
+                            <ref n="7" target="n7">{7}</ref></p>
+                        <pb entity="DSSR_000004971_0050" n="np"/>
+                    </div3>
+
+                    <div3 id="d66" type="entry">
+                        <head><date value="1862-12-26">Dec 26<hi rend="super">th</hi></date> Friday</head>
+                        <p>all right along the lines this moringin E R Brontus the present of the
+                            Santy Cemater of Alleghney Couty Arrived of Camp to Day and Same Was
+                            here to Day</p>
+                    </div3>
+
+                    <div3 id="d67" type="entry">
+                        <head><date value="1862-12-27">Dec 27</date> Satarday</head>
+                        <p>all quity along the Lines Recd my Descharge this affternon</p>
+                    </div3>
+
+                    <div3 id="d68" type="entry">
+                        <head><date value="1862-12-28">Dec 28<hi rend="super">th</hi></date> Sunday</head>
+                        <p>I left the Regt this moringin got to aquiere crick Landng <pb
+                                entity="DSSR_000004971_0051" n="np"/> this affternon left for
+                            Washigton City at <unclear>[hour not discernable]</unclear> colack G to
+                            Washigton City on the moringin of the 29 and Was Paid of on the 30<hi
+                                rend="super">th</hi> Day of December and left Washington City for
+                            home and got home on the Night of the 30<hi rend="super">th</hi> at
+                            2 colack in the moringin I Red my Pay of Weagirs up to the time of my
+                            Discharge $72.85 but no <pb entity="DSSR_000004971_0052" n="np"/> Bounty
+                            or Pansian Recd I was in seperes 16 month and 2 day Was Dis Charge at
+                            Camp nere Falmouth Via </p>
+                    </div3>
+                </div2>
+            </div1>
+          
+
+            <div1 id="d69" type="note">
+                <head>Note</head>
+                <p>This diary is covered in black leather and measures 3" X 5 &frac34;".
+                    It appears to be written in pencil.</p>
+                <p>[Transcription Notes:
+                                 As you see, spelling is a problem for this diarist.  However, this 
+                            may furnish a clue to his pronunciation.  Every attempt has been 
+                            made to transcribe this diary as close to the original as possible.  
+                            Spelling and punctuation are reproduced as found.  If a word 
+                            cannot be discerned, a hyphen is inserted for each missing word.  
+                            For example, [--] indicates two missing words.  The diarist's 
+                            spelling is inconsistent and quite poor.  Sometimes, for clarification, 
+                            the correct spelling is inserted in square brackets. 
+                                 If the author inserts words above the line, the symbol "^" is used 
+                            with the inserted words bracketed.  Thus, if 'in this case' is written 
+                            above the line, it would appear as ^ 'in this case'.
+                                 To make reading this diary easier, where punctuation and or 
+                            capitalization have not been used by the author, three spaces are 
+                            used to denote the end of one thought and the beginning of another.]
+                            
+                                              <!-- -Mary Roy Dawson Edwards, Transcriber   June 2005.]
+                            12913
+                            Page 1--></p>
+
+                <note id="n1" n="1" place="end">
+                    <seg type="note-symbol">{1}</seg>
+                    <p>[Written in the left margin: "M20"]</p>
+                </note>
+
+                <note id="n2" n="2" place="end">
+                    <seg type="note-symbol">{2}</seg>
+                    <p>[Written in the margin: "The Rebls omestion tren to Night"]</p>
+                </note>
+
+                <note id="n3" n="3" place="end">
+                    <seg type="note-symbol">{3}</seg>
+                    <p>[Written in the margin: "The Regt got New Clouse to Day."]</p>
+                </note>
+
+                <note id="n4" n="4" place="end">
+                    <seg type="note-symbol">{4}</seg>
+                    <p>[Written in the margin: "Whe march 15 miles to Day"]</p>
+                </note>
+
+                <note id="n5" n="5" place="end">
+                    <seg type="note-symbol">{5}</seg>
+                    <p>[Written in the margin: "Genl Burnside Went to Washonton City"] </p>
+                </note>
+
+                <note id="n6" n="6" place="end">
+                    <seg type="note-symbol">{6}</seg>
+                    <p>[Written in margin: "march 10 miles to Day"]</p>
+                </note>
+
+                <note id="n7" n="7" place="end">
+                    <seg type="note-symbol">{7}</seg>
+                    <p>[Written in margin: I curyde ]</p>
+                </note>
+
+            </div1>
+        </body>
+    </text>
+</TEI.2>
+

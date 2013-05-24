@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0227 SYSTEM "000000766_0227" NDATA jpg>
+<!ENTITY DSSR_000000766_0228 SYSTEM "000000766_0228" NDATA jpg>
+<!ENTITY DSSR_000000766_0229 SYSTEM "000000766_0229" NDATA jpg>
+<!ENTITY DSSR_000000766_0230 SYSTEM "000000766_0230" NDATA jpg>
+
+<!--<!ENTITY NA62k09a SYSTEM "NA62k09a.jpg" NDATA jpg>
+<!ENTITY NA62k09b SYSTEM "NA62k09b.jpg" NDATA jpg>
+<!ENTITY NA62k09c SYSTEM "NA62k09c.jpg" NDATA jpg>
+<!ENTITY NA62k09d SYSTEM "NA62k09d.jpg" NDATA jpg>
+<!ENTITY N621109a SYSTEM "621109a.jpg" NDATA jpg>
+<!ENTITY N621109b SYSTEM "621109b.jpg" NDATA jpg>
+<!ENTITY N621109c SYSTEM "621109c.jpg" NDATA jpg>
+<!ENTITY N621109d SYSTEM "621109d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NA62k09">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-11-09">November 9, 1862</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Susan E. Wells</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Susan E. Wells</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">15</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62k09</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, November 9, 1862</title>
+
+
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p> </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-11-09">1862-11-09</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War / Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-10">November 10th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 7th, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+            <div1 type="summary" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1862-11-09">November 11, 1862</date>
+
+                        <title>Letter from Addie to Charlie, November 9, 1862</title>
+                    </bibl>
+                </head>
+                <p/>
+            </div1>
+        </front>
+
+
+        <body id="d4">
+
+
+
+
+            <div1 type="letter" n="1" id="d5">
+                <pb n="1" entity="DSSR_000000766_0227"/>
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-11-09"
+                        >November 9, 1862</date></head>
+
+
+                <opener>
+                    <dateline>
+                        <name type="place">Mecca</name>
+                        <date value="1862-11-09">Nov. 9<hi rend="super">th</hi> 1862</date>
+                    </dateline>
+
+                    <salute>My own darling Charlie</salute>
+
+                </opener>
+
+                <p> I am going to<lb/> try and write you a cheerful letter<lb/>
+                    <orig reg="today">to day</orig>. I say <hi rend="underline">cheerful</hi>, and
+                    mind<lb/> you if it is <hi rend="underline">not</hi>, it is no fault<lb/> of
+                    mine. You will conclude and<lb/>
+                    <hi rend="underline">rightly</hi> that I have had a <orig reg="dreadful"
+                        >dread-<lb/> ful.</orig> (please excuse the division of that<lb/> word)
+                    attack of the &ldquo;<orig reg="blues.">blues</orig>&rdquo; You
+                    will<lb/> now wish to know the cause. Well,<lb/> as you are my <hi
+                        rend="underline">confidante</hi> I will<lb/> tell <hi rend="underline"
+                    >you</hi>. The first; (you <orig reg="won't">wont</orig> tell<lb/>
+                    <orig reg="anybody">any-body</orig>?) I have not heard one<lb/> word from <name
+                        type="person">C. M. Tenney</name>, <hi rend="underline">for</hi> <hi
+                        rend="underline">almost</hi><lb/>
+                    <hi rend="underline">two</hi> <hi rend="underline">weeks</hi>. (listen now) and
+                    when<lb/> he last wrote me, <hi rend="underline">he</hi> <hi rend="underline"
+                        >was</hi> <hi rend="underline">not</hi><lb/>
+                    <hi rend="underline">able</hi> <hi rend="underline">to</hi> <hi rend="underline"
+                        >go</hi> <hi rend="underline">with</hi> <hi rend="underline">the</hi> <hi
+                        rend="underline"><abbr expan="regiment">regt</abbr>.</hi> I do so<lb/> hope
+                    he is not so ill as not to<lb/> be able to write to &mdash; to &mdash;
+                    Addie <pb n="2" entity="DSSR_000000766_0228"/> But what does it mean. He is
+                    always<lb/> so prompt in writing when he is<lb/> not well. Can not <hi
+                        rend="underline">you</hi> tell me<lb/> where he is. and how? If you can<lb/>
+                    I shall be a thousand times obliged.<lb/></p>
+                <p> Another,, I wish the 12th of Nov. was<lb/> pa&longs;sed. Dear Charlie, I
+                    almost feel<lb/> as if instead of gaining a <hi rend="underline"
+                    >brother</hi><lb/> I shall lose a <hi rend="underline">sister</hi>. I know
+                    not<lb/> why I feel so but it always seems<lb/> as if sisters did not bear
+                        the <del hand="h1">sam</del><lb/> same relation to each other after they<lb/>
+                    are married as <orig reg="before;">before,</orig> they never<lb/> seem to give
+                    each other that confi-<lb/> dence that they did before, but<lb/> I can not write
+                    freely upon this<lb/> subject even to you, dear. I only wish<lb/> that you could
+                    be here <hi rend="underline">then</hi>. <orig reg="That">that</orig><lb/> is if <hi
+                        rend="underline">I</hi> must go and <name type="person">Laurie</name>
+                    says<lb/> I <hi rend="underline">must</hi>. Here she sits now writing<lb/>
+                    &ldquo;farewell letters&rdquo; &mdash; as she says &mdash; to
+                    her<lb/> friends. Dear girl! She seems to look<lb/> forward with an air of
+                    resignation <pb n="3" entity="DSSR_000000766_0229"/> rather than
+                    happine&longs;s. Oh Charlie<lb/>
+                    <hi rend="underline">my</hi> heart aches for <hi rend="underline">
+                        <orig reg="her.">her</orig>
+                    </hi> But I<lb/> will not write this to you <hi rend="underline">my own</hi>
+                </p>
+                <p> You are glad <name type="person">
+                        <hi rend="underline">Valandingham</hi>
+                    </name> was<lb/> defeated. <hi rend="underline">So</hi> <hi rend="underline"
+                        >was</hi> <hi rend="underline">I</hi>. What an in<del hand="h1"
+                    >s</del>&mdash;<lb/> sult to <name type="person">Chio's</name> brave soldiers
+                    was the<lb/> nomination of such a man &mdash; no<lb/> not a <hi
+                        rend="underline">man</hi> &mdash; a traitor as Valan-<lb/> dingham. He
+                    is now &mdash; and always<lb/> has been working against us &mdash;<lb/>
+                    working with all the energy of<lb/> which demons are capable to<lb/> destroy
+                    this noble republic.</p>
+
+                <p>And how many more &ldquo;Valandinghams&rdquo;<lb/> have we here <orig
+                        reg="in">at</orig> the <orig reg="north?">north</orig><lb/> Treason is not
+                        confined <del hand="h1">here</del>in<lb/> the south. Even here in Mecca<lb/>
+                    are &ldquo;Knights of the Golden Circle&rdquo;<lb/> bound by the most
+                    solemn obliga-<lb/> tions to aid the rebels in<lb/> erecting an institution the
+                    chief<lb/> corner stone of which is <hi rend="underline">Slavery</hi><lb/> Shall
+                    they succeed in their <pb n="4" entity="DSSR_000000766_0230"/> purposes: No.
+                    never. True Freedom<lb/> and Slavery are drawing <orig reg="together">to
+                    gether</orig><lb/> and will soon engage in a dread-<lb/> ful conflict. God only
+                    knows which<lb/> will conquer. but we hope and<lb/> trust that America may
+                    come<lb/> forth with <hi rend="underline">more</hi> than<add hand="h1"
+                        place="supralinear">her</add> original<lb/> purity and have her <hi
+                        rend="underline">truly</hi> <hi rend="underline">free</hi><lb/> May God be
+                    with us in our<lb/> great conflict, and may we ever<lb/> look to him as our <hi
+                        rend="underline">nations</hi><lb/>
+                    <hi rend="underline">savior</hi></p>
+
+                <p>But you will pardon me for<lb/> not writing a longer letter will<lb/> you not
+                    dearest? I must write<lb/> to <name type="person">Dora</name> <orig reg="today">to
+                        day</orig>. I forgot to tell<lb/> you that I attended the funeral<lb/> of
+                    Capt. L.D. Kee last <orig reg="Tuesday.">tuesday</orig> <orig reg="He"
+                    >he</orig><lb/> was killed at <name type="place">Perryville</name><ref
+                        target="n1" n="1">1</ref><lb/> He was buried according to the<lb/> Masonic
+                    order. Laura is telling<lb/> me a good lot to write you such<lb/> as "I wish he
+                    was home", "I am a<lb/> Case yet." "I've got a <unclear>hard cold</unclear>"
+                    <lb/> &amp;c. &amp;c..</p>
+
+                <closer>
+                    <salute>But I must bid you the<lb/> wish of success and goodbye,<lb/>
+                        <hi rend="underline">Please</hi> write <hi rend="underline">very</hi> soon to
+                        your own</salute>
+                    <signed>Adeli</signed>
+                </closer>
+            </div1>
+        </body>
+
+
+        <back id="d6">
+
+            <div1 type="notes" n="1" id="d7">
+                <head>Notes</head>
+                <note id="n1" place="end" n="1"><seg type="note-symbol">1</seg>
+                    <p>Captain Leander Dwight Kee was killed in the battle at Perryville, Kentucky,
+                        October 8, 1862. The Perryville Battle had an estimated 7,407
+                    casaulties.</p>
+                </note>
+            </div1>
+        </back>
+    </text>
+
+</TEI.2>

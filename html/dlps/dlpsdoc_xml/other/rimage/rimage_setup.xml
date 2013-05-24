@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+
+<!-- =============================================================== -->
+<!-- NOTE: Update last modified date manually when editing this file -->
+<!-- =============================================================== -->
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % TEI.extensions.ent SYSTEM "http://pogo.lib.virginia.edu/dlps/dtd/tei/teitech/teitech.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://pogo.lib.virginia.edu/dlps/dtd/tei/teitech/teitech.dtd">
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+
+<!ENTITY baseUrl "http://pogo.lib.virginia.edu/dlps/dlpsdoc_xml/other/rimage">
+<!ENTITY rarr "&#x2192;"><!-- rightward arrow -->
+]>
+<TEI.2>
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Setup for Rimage Systems</title>
+<author>Greg Murray (gpm2a@virginia.edu), Digital Library Production Services</author>
+</titleStmt>
+<publicationStmt>
+<publisher>Digital Library Production Services, University of Virginia Library</publisher>
+</publicationStmt>
+</fileDesc>
+</teiHeader>
+
+<text id="d1">
+<body id="d2">
+<argument>
+
+<p>This document describes the setup requirements for the Rimage DVD
+recorders at Digital Library Production Services (DLPS), University of
+Virginia Library. It is intended for use by internal DLPS staff.</p>
+
+<p><hi rend="bold">Note:</hi> This documentation pertains to version
+6.5 of the Rimage OfficeNet software.</p>
+
+<!-- =============================================================== -->
+<!-- NOTE: Update last modified date manually when editing this file -->
+<!-- =============================================================== -->
+
+<p><hi rend="bold">Last modified:</hi> <date type="last-modified" value="2006-11-16">11/16/2006</date></p>
+</argument>
+
+<div1 id="d3">
+<head>Setup Requirements</head>
+
+<p>DLPS has two Rimage systems for burning and reading DVDs &mdash;
+the Desktop 1500 and the Rimage 2000i. Both systems use the same
+software and have the same setup requirements.</p>
+
+<list>
+<label>Rimage software</label>
+
+<item>The Rimage software is called OfficeNet and is available on CD
+from the Rimage company. Ask your LSP to install the Rimage software
+on the Rimage PC.
+
+<admon type="note"><p>Because DLPS has a maintenance contract with
+Rimage, Rimage will periodically send us a software upgrade on
+CD. Installation is straightforward. Install the upgrade on both of
+the Rimage PCs in DLPS.</p>
+
+<p>Rimage also makes service packs and minor updates available on
+<xref url="http://www.rimage.com/" type="external">the Rimage web
+site</xref>. As of 11/16/2006, both systems have been updated with
+Rimage Software Suite 6.5 Service Pack 4.</p></admon> </item>
+
+<label>Perl</label>
+
+<item>The standard port of Perl for Windows is called ActivePerl and
+is available 
+<xref url="&baseUrl;/software/perl/ActivePerl-5.8.2.808-MSWin32-x86.msi">here</xref> 
+(right-click and select <gizmo>Save Target As...</gizmo>), or as a
+free download from <lb/><lb/>
+
+<xref url="http://www.activestate.com/Products/ActivePerl/" type="external">http://www.activestate.com/Products/ActivePerl/</xref><lb/><lb/>
+
+Ask your LSP to install Perl. To test the installation, open a command
+window and enter: <command>perl -v</command></item>
+
+<label>Java runtime</label>
+
+<item>Under the hood, <command>rimage.pl</command> actually runs a
+Java program to handle communication with the Rimage system, so the
+Java Runtime Environment (JRE) must be present. The JRE is available
+<xref url="&baseUrl;/software/java/jre/jre-1_5_0_02-windows-i586-p.exe">here</xref>, or
+as a free download from <lb/><lb/>
+
+<xref url="http://java.com/" type="external">http://java.com/</xref><lb/><lb/>
+
+Ask your LSP to install Java. To test the installation, open a command
+window and enter: <command>java -version</command></item>
+
+<label>Supporting Java classes</label>
+
+<item>
+<p>Additional Java software required for communicating with the Rimage
+system comes from several sources:</p>
+
+  <list>
+  <label>Rimage classes</label>
+
+  <item>The Rimage .jar files are installed with the other Rimage
+  software (see C:\Program Files\Rimage\Messaging\Lib).</item>
+
+  <label>JAXP (Java API for XML Processing)</label>
+
+  <item>Facilitates reading XML documents via Java. Available 
+  <xref url="&baseUrl;/software/java/jaxp/java_xml_pack-summer02_01.zip">here</xref>, or from 
+  <xref url="http://java.sun.com/xml/jaxp/index.jsp" type="external">http://java.sun.com/xml/jaxp/index.jsp</xref></item>
+
+  <label>JMS (Java Message Service)</label>
+
+  <item>A standard for sending/receiving messages between software
+  components. Available <xref url="&baseUrl;/software/java/jms/jms-1_1-fr-apidocs.zip">here</xref>, or from
+  <xref url="http://java.sun.com/products/jms/" type="external">http://java.sun.com/products/jms/</xref></item>
+
+  <label>JDOM (Java Document Object Model)</label>
+
+  <item>Facilitates building XML documents in Java. Available
+  <xref url="&baseUrl;/software/java/jdom/jdom-b9.zip">here</xref>, or from
+  <xref url="http://jdom.org/" type="external">http://jdom.org/</xref></item>
+
+  </list>
+
+</item>
+
+<label>Other required files</label>
+
+<item>
+
+<p>Several other files, which are available for download <xref
+url="&baseUrl;/software/dlps/dlps_rimage.zip">here</xref>, are also required:</p>
+
+<p>The following files must be in the <path>C:\Rimage</path> directory
+on the Rimage PC:
+
+  <list>
+  <item>DLPSRimageConfig.dtd</item>
+  <item>DLPSRimageConfig.xml</item>
+  <item>log.properties</item>
+  </list>
+</p>
+
+<p>The following files must be in the <path>C:\DLPS\rimage</path>
+directory on the Rimage PC:
+
+  <list>
+  <item>rimage.pl</item>
+  <item>dlpsRimage.jar</item>
+  </list>
+</p>
+
+<p>This file must be in the <path>C:\Rimage\Labels</path> directory on
+the Rimage PC:
+
+  <list>
+  <item>DEFAULT.btw</item>
+  </list>
+</p>
+</item>
+
+<label>CLASSPATH</label>
+
+<item>
+
+<p>The .jar files for the various Java technologies need to be
+included in the CLASSPATH environment variable. To add or edit
+environment variables, go to Start &rarr; Control Panel &rarr; System
+&rarr; Advanced tab &rarr; Environment Variables.</p>
+
+<admon type="tip"><p>In Windows, there are two types of environment
+variables: <term>user</term> and <term>system</term>. For use with the
+Rimage, the CLASSPATH variable needs to be set system-wide. To add or
+edit system variables, you must be logged into Windows as a user with
+<term>Administrator</term> privileges.</p></admon>
+
+<p>For convenience, set up some new environment variables to specify
+the directories where the .jar files reside. For example:</p>
+
+<p>
+<table>
+<row>
+<cell role="label">Variable</cell>
+<cell role="label">Value</cell>
+</row>
+<row>
+<cell>RIMAGE_JARS</cell>
+<cell>C:\Program Files\Rimage\Messaging\Lib</cell>
+</row>
+<row>
+<cell>JAXP_HOME</cell>
+<cell>C:\Java\jaxp-1.2_01</cell>
+</row>
+<row>
+<cell>JMS_HOME</cell>
+<cell>C:\Java\jms1.1\lib</cell>
+</row>
+</table>
+</p>
+
+<p>Then copy and paste the following into the CLASSPATH environment
+variable:<lb/><lb/>
+
+<val>%RIMAGE_JARS%\activation.jar;%RIMAGE_JARS%\AdminApi.jar;%RIMAGE_JARS%\ClientApi.jar;%RIMAGE_JARS%\CommonApp.jar;%RIMAGE_JARS%\log4j-1.2.7.jar;%RIMAGE_JARS%\MsgApi.jar;%RIMAGE_JARS%\sonic_Client.jar;%RIMAGE_JARS%\sonic_Selector.jar;%RIMAGE_JARS%\tools.jar;%JAXP_HOME%\dom.jar;%JAXP_HOME%\jaxp-api.jar;%JAXP_HOME%\sax.jar;%JAXP_HOME%\xalan.jar;%JAXP_HOME%\xercesImpl.jar;%JAXP_HOME%\xsltc.jar;%JMS_HOME%\javax.jms.jar;%JMS_HOME%\jms.jar;C:\Java\jdom-1.0\build\jdom.jar;C:\DLPS\rimage\dlpsRimage.jar</val>
+
+<lb/><lb/>which breaks down as follows:
+
+  <list>
+  <label>Rimage classes</label>
+  <item>
+    <list>
+    <item>%RIMAGE_JARS%\activation.jar</item>
+    <item>%RIMAGE_JARS%\AdminApi.jar</item>
+    <item>%RIMAGE_JARS%\ClientApi.jar</item>
+    <item>%RIMAGE_JARS%\CommonApp.jar</item>
+    <item>%RIMAGE_JARS%\log4j-1.2.7.jar</item>
+    <item>%RIMAGE_JARS%\MsgApi.jar</item>
+    <item>%RIMAGE_JARS%\sonic_Client.jar</item>
+    <item>%RIMAGE_JARS%\sonic_Selector.jar</item>
+    <item>%RIMAGE_JARS%\tools.jar</item>
+    </list>
+  </item>
+
+  <label>JAXP classes</label>
+  <item>
+    <list>
+    <item>%JAXP_HOME%\dom.jar</item>
+    <item>%JAXP_HOME%\jaxp-api.jar</item>
+    <item>%JAXP_HOME%\sax.jar</item>
+    <item>%JAXP_HOME%\xalan.jar</item>
+    <item>%JAXP_HOME%\xercesImpl.jar</item>
+    <item>%JAXP_HOME%\xsltc.jar</item>
+    </list>
+  </item>
+
+  <label>JMS classes</label>
+  <item>
+    <list>
+    <item>%JMS_HOME%\javax.jms.jar</item>
+    <item>%JMS_HOME%\jms.jar</item>
+    </list>
+  </item>
+
+  <label>JDOM classes</label>
+  <item>
+    <list>
+    <item>C:\Java\jdom-1.0\build\jdom.jar</item>
+    </list>
+  </item>
+
+  <label>the DLPS Rimage Java application</label>
+  <item>
+    <list>
+    <item>C:\DLPS\rimage\dlpsRimage.jar</item>
+    </list>
+  </item>
+  </list>
+</p>
+
+</item>
+
+</list>
+</div1>
+</body>
+</text>
+</TEI.2>

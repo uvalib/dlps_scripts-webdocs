@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0139 SYSTEM "000000766_0139" NDATA jpg>
+<!ENTITY DSSR_000000766_0140 SYSTEM "000000766_0140" NDATA jpg>
+<!ENTITY DSSR_000000766_0141 SYSTEM "000000766_0141" NDATA jpg>
+<!ENTITY DSSR_000000766_0142 SYSTEM "000000766_0142" NDATA jpg>
+
+<!--<!ENTITY NA62e26a SYSTEM "NA62e26a.jpg" NDATA jpg>
+<!ENTITY NA62e26b SYSTEM "NA62e26b.jpg" NDATA jpg>
+<!ENTITY NA62e26c SYSTEM "NA62e26c.jpg" NDATA jpg>
+<!ENTITY NA62e26d SYSTEM "NA62e26d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NA62e26">
+
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-05-26"
+      >May 26<hi rend="super">th</hi> 1862</date></title>
+
+    <author>Case, Adelaide E.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Janet Catterall</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>University of Saskatchewan Library Special Collections</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">12</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NA62e26</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2004">2004</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title/>
+      <author/>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 pp.</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p>All unambiguous end-of-line hyphens have been retained.</p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings.</p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-05-26">1862-05-26</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>feminine</term>
+     <term>American Civil War/Women Writers/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-09">November 9th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-05-26">May 26<hi rend="super">th</hi>, 1862</date>
+
+      <title>Letter from Adelaide E. Case to Charles N. Tenney.</title>
+     </bibl>
+    </head>
+    <p> Adelle has not heard from Charles in three weeks and fears the worst. She laments that her
+     dreams may prove true, that he has been killed, and prefers death for herself rather than the
+     intolerable suspense of not knowing. Trying to end the letter more on a more positive note, she
+     goes talks about her enjoyment of school teaching. Finally she indicates at the end of the
+     letter that she has just received two letters from Charlie. </p>
+   </div1>
+  </front>
+
+  <body id="d4">
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-05-26">May 26<hi rend="super">th</hi>
+     1862</date></head>
+    <pb n="1" entity="DSSR_000000766_0139"/>
+    <opener>
+     <dateline>
+      <name type="place">My school room</name>
+      <date value="1862-05-26">May 26<hi rend="super">th</hi> 1862.</date>
+     </dateline>
+
+     <salute>Dearest Charlie</salute>
+
+    </opener>
+
+    <p> My school room is unoccupied<lb/> with the exception of one lonely being and<lb/> how
+     thankful she is to obtain that solitude for which<lb/> she has all day wished, But is it right
+     for her<lb/> to be alone? Alone to those torturing thoughts<lb/> which cling to her sleeping or
+     waking. and which<lb/> nothing but a letter from that idolized being can<lb/> drive away? Oh
+     Charlie! My own loved one. if it<lb/> is in your power. why do you not break the silence<lb/>
+     between us Three long lingering weeks have <orig reg="passed">pa&longs;sed</orig> since<lb/>
+     last I heard from you and God only know how<lb/> much longer time will <orig reg="pass"
+      >pa&longs;s</orig> before I shall. Are<lb/>
+     <pb n="2" entity="DSSR_000000766_0140"/> you ill darling and not able to write. If so why<lb/>
+     not let me know. I could bear <hi rend="underline">that</hi> Or - Oh. <unclear>no</unclear><lb/>
+     I will never write that thought, If I did<lb/> I should feel every letter sinking into my
+     heart.<lb/> as if written with a pen of fire, Ah! those tears thank<lb/> heaven for them,, But
+     they are but few to what I<lb/> have shed over my dreams. The thoughts while waking<lb/> are
+     not enough to torture my poor heart but dreams.<lb/> frightful dreams! Oh I can not think of
+     them,<lb/> If the cruel monster <hi rend="underline">Death</hi> - My God <hi rend="underline"
+      >must</hi><lb/> I write it - has done his work. why do I not know<lb/> it for then yes then. I
+     might die. Die! Ah. what is<lb/> death to this fearful suspense. It is nought. And<lb/> then I
+     might meet my idol, Here again I am<lb/> thinking that it <hi rend="underline">must</hi> be so.
+     just as my dreams<lb/> picture to me. and not only thinking but writing<lb/> it, Is this <orig
+      reg="madness">madne&longs;s</orig>? or is it caused by <unclear>short And</unclear><lb/>
+     yet at times sharp pain around my heart<lb/>
+    </p>
+
+    <p> My own precious friend why do you not come home<lb/> or else write. would that you could
+     experience for<lb/> one moment the anguish which I do. But<del hand="h1">
+       <unclear>not</unclear>
+     </del><lb/>
+     <pb n="3" entity="DSSR_000000766_0141"/> no, not for one moment would I wish it. I would<lb/>
+     spare you that my darling. But I must stop<lb/> and seek society or I shall go mad. May heaven
+     grant<lb/> tonight that boon I so much crave - a word from<lb/> Charlie. or I could almost say
+     - death,<lb/>
+    </p>
+
+   </div1>
+
+   <div1 type="letter" n="2" id="d6">
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, Morning of the 27<hi rend="super"
+     >th</hi></head>
+    <opener>
+     <dateline>
+      <date value="1862-05-27">Morning 27<hi rend="super">th</hi>.</date>
+     </dateline>
+    </opener>
+
+    <p> Darling Charlie. I fear you will be frightened<lb/> when you read this. I felt very<sic
+      corr="melancholy">melancholly</sic> last eve<lb/> when I wrote this above. and even now do not
+     feel<lb/> much better, but &ldquo;I live in hope&rdquo; Ah! that <orig reg="blessed"
+      >ble&longs;sed</orig><lb/> word &ldquo;Hope&rdquo; How many poor mortals would
+     have been<lb/> driven to desperation did not Hope whisper to<lb/> them so tenderly, Dearest can
+     you tell why I am<lb/> not happy? I ought to be had I not? At times<lb/> darling, I am very
+     very lonely. although so much beauty<lb/> and <orig reg="loveliness">loveline&longs;s</orig>
+     surround me yet I can not banish<lb/> my fears caused by this silence. While in company<lb/> I
+     can appear happy, but <unclear>ohi</unclear> that pain in my<lb/> heart. Night after night I<sic
+      corr="receive">recieve</sic> the same answer. &ldquo;No<lb/> letter for you&rdquo; and
+     turn to hide the tears that will<lb/> come, and then so anxiously wait watch and pray only<lb/>
+     <pb n="4" entity="DSSR_000000766_0142"/> to be disappointed. Charlie I came to my school
+     room<lb/> this morning with the determination that I would finish<lb/> this in a more cheerful
+     mood than I commenced it<lb/> but I believe I am incapable of doing it<lb/> Would you like to
+     know how my school is <orig reg="progressing">progre&longs;sing</orig>?<lb/> I have now
+     thirty scholars, and a pleasanter school I could<lb/> not wish for, Charlie I do not flatter
+     myself one bit when<lb/> I say. I have not a scholar that would willingly<lb/> disregard my
+     slightest wish. for I know I have not,<lb/> I sometimes wonder how they came to love me so,
+     You<lb/> remember what you wrote me before my school commenced<lb/> that if my experience could
+     be like yours I would<lb/> find the bitter with the sweet. I <orig reg="guess"
+     >gue&longs;s</orig> mine is not like<lb/> yours darling. for as yet but little of the
+     bitter has been<lb/> found, Teaching. so far has been a very pleasant employment<lb/> and I am
+     now teaching the fourth week. Time flies<lb/> swiftly while I am in the school room. I would
+     like<lb/> to have you visit my school this summer, wish you could<lb/> see me now sitting here
+     no one near. for it is yet scarcely<lb/> eight o'clock. writing very busily while at my right
+     hand<lb/> lies my Bible. I have been reading in it darling<lb/>
+    </p>
+
+    <p> How much I am in need of that wisdom and strength<lb/> so clearly spoken of in that <orig
+      reg="blessed">ble&longs;sed</orig> Book, How soon<lb/> shall I<sic corr="receive">
+     recieve</sic> it. I do not know. But it is time<lb/> to call school, <orig reg="Bless"
+      >Ble&longs;s</orig> you a thousand times my own<lb/> darling. Ashley Armstrong has just
+     handed me<lb/> two letters in the well know hand writing of my<lb/> Charlie. I will read them
+     and answer<corr sic="tonight" resp="unknown">to night</corr><lb/>
+    </p>
+
+    <closer> Your unchanging<lb/>
+     <name type="sender">Addie</name>
+    </closer>
+    <lb/>
+   </div1>
+
+  </body>
+
+
+ </text>
+
+</TEI.2>

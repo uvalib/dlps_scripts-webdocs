@@ -1,0 +1,200 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Rimage Workflow for Batch-Reading Archival Discs</title>
+<link rel="stylesheet" type="text/css" href="/dlps/css/teitech.css">
+</head>
+<body>
+<h1>Rimage Workflow for Batch-Reading Archival Discs</h1>
+
+<p>This document describes the workflow for reading a batch of
+archival discs using the Rimage system at Digital Library Production
+Services (DLPS), University of Virginia Library. It is intended for
+use by internal DLPS staff.</p>
+
+<p>This workflow makes it possible to transfer large sets of data from
+CDs or DVDs to a hard disk (or any disk or server accessible to the
+Rimage PC) with minimal effort.</p>
+
+<p><b>Note:</b> This documentation pertains to version
+6.5 of the Rimage OfficeNet software.</p>
+
+
+
+
+
+<p><b>Last modified:</b> 11/16/2006</p>
+<hr>
+<h2>Contents</h2>
+<ul>
+<li><a href="#d3">Set Up</a></li>
+<li><a href="#d4">Read Discs</a></li>
+</ul>
+
+
+
+<hr>
+<a name="d3"><h2>Set Up</h2></a>
+<ul>
+<li>Open the Rimage System Manager (Start → All Programs →
+Rimage → Rimage System Manager).</li>
+<li>Check the current setting for media type:
+
+  <ul>
+<li>Click the main <b>Settings...</b> button near the
+  picture of the Rimage 2000i (or the picture of the Desktop 1500, as
+  the case may be).</li>
+<li>In the <b>Bins/Media</b> tab, under the
+  <b>Media:</b> section, check the <b>Media type</b>
+  setting. It will be set to either DVDR or CDR.</li>
+<li>If the setting already corresponds to the type of discs you will
+  be burning, then just click <b>OK</b>. If it doesn't, you
+  <em>must</em> set it to the type of media you will be using:
+
+    <ul>
+<li>Click <b>Cancel</b> to close the settings
+    window.</li>
+<li>Pause the Production Server by clicking its "pause" button
+    (looks like a VCR pause button with the || symbol).</li>
+<li>Click the main <b>Settings...</b> button near the
+    picture of the Rimage 2000i (or the picture of the Desktop 1500,
+    as the case may be).</li>
+<li>In the <b>Bins/Media</b> tab, under the
+    <b>Media:</b> section, change the <b>Media
+    type</b> setting to DVDR or CDR as appropriate.</li>
+<li>Click <b>OK</b> to save the settings and close the
+    settings window.</li>
+<li>Click the "resume server" button for the Production Server
+    (looks like a VCR play button with a green triangle).</li>
+</ul>
+
+  </li>
+</ul>
+</li>
+<li>Pause the production server (if you haven't done so already in a
+previous step) by clicking the "pause" button (looks like a VCR pause
+button with the || symbol).</li>
+<li>Click the <b>Settings...</b> button for the Production
+Server.</li>
+<li>If the <b>Server</b> and <b>Reading</b> tabs are
+not visible, click the <b>More&gt;&gt;</b> button.</li>
+<li>Set the following options:<br><br>
+
+<table border="1" cellpadding="6">
+<tr>
+<th>Tab</th>
+<th>Option</th>
+<th>Setting to use</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><b>Server</b></td>
+<td><b>Operating Mode</b></td>
+
+<td><b>Automatic Bulk Read</b></td>
+
+<td>This puts the Production Server in automated batch-reading
+mode.</td>
+</tr>
+<tr>
+<td><b>Server</b></td>
+<td><b>Use FIFO mode</b></td>
+<td>Checked, if disc order is relevant</td>
+
+<td>If maintaining the original sequence of the discs is important,
+check this checkbox to enable first-in-first-out (FIFO) mode, so that
+the discs are output in the same order by which they were input. If
+the original disc sequence is irrelevant, you can leave this checkbox
+cleared to increase the overall speed of the process.</td>
+</tr>
+<tr>
+<td><b>Reading</b></td>
+<td><b>Base Folder for Images</b></td>
+
+<td>Any valid path, such as <code>C:\temp</code> — though
+normally you will want to use an external drive with plenty of free
+disk space, typically <code>E:\</code>
+</td>
+
+<td>This is the location to which folders and files from the disc
+will be copied.</td>
+</tr>
+<tr>
+<td><b>Reading</b></td>
+<td><b>Use Volume ID ... as Image Folder Name</b></td>
+
+<td>Checked</td>
+
+<td>For each disc, a new folder with the same name as the disc name
+will be created to contain the folders/files from that disc.</td>
+</tr>
+<tr>
+<td><b>Reading</b></td>
+<td><b>Extract ISO9660 Images to Folders and Files</b></td>
+
+<td>Checked</td>
+
+<td>As each disc is read, the data from that disc will be copied as
+actual folders and files, rather than as a single large disc image
+(.img) file containing the entire contents of the disc.</td>
+</tr>
+</table>
+</li>
+<li>Click <b>OK</b> to save the settings and close the
+settings window.</li>
+</ul>
+
+
+<hr>
+<a name="d4"><h2>Read Discs</h2></a>
+
+<ul>
+<li>Load the input bin with the DVDs or CDs to be read. (On the
+Desktop 1500, the input bin is the one with the three prongs to hold
+the discs. On the 2000i, the input bin is the left bin.)
+
+<div class="tip">
+<span class="tip">TIP</span><p>If you have enabled FIFO (first-in-first-out)
+mode (see above for details), you can place the discs in the input bin
+in reverse order, and when reading is complete they will be in the
+desired order. For example, if you have three discs to read, put disc
+1 on the bottom of the stack, disc 2 in the middle, and disc 3 on
+top. Disc 3 will be picked up and read first, and placed on the ouput
+spindle first. Disc2 will be output second, and disc 1 will be output
+last, so that it is on top of the output stack. That way, the discs
+are in the correct order at the end of the process.</p>
+</div>
+
+</li>
+<li>To begin reading discs, click the "resume server" button (looks
+like a VCR play button with a green triangle) for the Production
+Server. The arm of the Rimage will place a disc in each of the two
+CD/DVD drives and begin reading the discs.</li>
+<li>While the discs are being read, you can click the
+<b>Server Orders</b> tab to view the status of the current
+discs, and for any error messages.</li>
+<li>When all discs in the input bin have been retrieved, the Rimage
+System Manager will display an error dialog saying that there are no
+more discs in the input bin. If there are more discs to be read, put
+them in the input bin and click <b>Retry</b>. If you're
+finished, click <b>Stop Line</b>.</li>
+<li>When you're finished reading all discs, return the Production
+Server to its normal state:
+
+  <ul>
+<li>Click the "pause" button (looks like a VCR pause button with
+  the || symbol) for the Production Server.</li>
+<li>Click the <b>Server Settings...</b> button.</li>
+<li>On the <b>Server</b> tab, set the <b>Operating
+  Mode</b> to <b>Normal</b>. Click
+  <b>OK</b>.</li>
+<li>Click the "resume server" button (looks like a VCR play button
+  with a green triangle).</li>
+</ul>
+
+</li>
+</ul>
+
+
+</body>
+</html>

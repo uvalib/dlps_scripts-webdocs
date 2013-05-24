@@ -1,0 +1,1553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % ISOtech SYSTEM "http://text.lib.virginia.edu/charent/iso-tech.ent"> %ISOtech;
+<!ENTITY DSSR_000004396_0001 SYSTEM "000004396_0001" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0002 SYSTEM "000004396_0002" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0003 SYSTEM "000004396_0003" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0004 SYSTEM "000004396_0004" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0005 SYSTEM "000004396_0005" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0006 SYSTEM "000004396_0006" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0007 SYSTEM "000004396_0007" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0008 SYSTEM "000004396_0008" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0009 SYSTEM "000004396_0009" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0010 SYSTEM "000004396_0010" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0011 SYSTEM "000004396_0011" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0012 SYSTEM "000004396_0012" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0013 SYSTEM "000004396_0013" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0014 SYSTEM "000004396_0014" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0015 SYSTEM "000004396_0015" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0016 SYSTEM "000004396_0016" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0017 SYSTEM "000004396_0017" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0018 SYSTEM "000004396_0018" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0019 SYSTEM "000004396_0019" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0020 SYSTEM "000004396_0020" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0021 SYSTEM "000004396_0021" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0022 SYSTEM "000004396_0022" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0023 SYSTEM "000004396_0023" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0024 SYSTEM "000004396_0024" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0025 SYSTEM "000004396_0025" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0026 SYSTEM "000004396_0026" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0027 SYSTEM "000004396_0027" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0028 SYSTEM "000004396_0028" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0029 SYSTEM "000004396_0029" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0030 SYSTEM "000004396_0030" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0031 SYSTEM "000004396_0031" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0032 SYSTEM "000004396_0032" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0033 SYSTEM "000004396_0033" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0034 SYSTEM "000004396_0034" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0035 SYSTEM "000004396_0035" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0036 SYSTEM "000004396_0036" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0037 SYSTEM "000004396_0037" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0038 SYSTEM "000004396_0038" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0039 SYSTEM "000004396_0039" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0040 SYSTEM "000004396_0040" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0041 SYSTEM "000004396_0041" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0042 SYSTEM "000004396_0042" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0043 SYSTEM "000004396_0043" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0044 SYSTEM "000004396_0044" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0045 SYSTEM "000004396_0045" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0046 SYSTEM "000004396_0046" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0047 SYSTEM "000004396_0047" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0048 SYSTEM "000004396_0048" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0049 SYSTEM "000004396_0049" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0050 SYSTEM "000004396_0050" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0051 SYSTEM "000004396_0051" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0052 SYSTEM "000004396_0052" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0053 SYSTEM "000004396_0053" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0054 SYSTEM "000004396_0054" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0055 SYSTEM "000004396_0055" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0056 SYSTEM "000004396_0056" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0057 SYSTEM "000004396_0057" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0058 SYSTEM "000004396_0058" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0059 SYSTEM "000004396_0059" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0060 SYSTEM "000004396_0060" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0061 SYSTEM "000004396_0061" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0062 SYSTEM "000004396_0062" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0063 SYSTEM "000004396_0063" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0064 SYSTEM "000004396_0064" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0065 SYSTEM "000004396_0065" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0066 SYSTEM "000004396_0066" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0067 SYSTEM "000004396_0067" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0068 SYSTEM "000004396_0068" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0069 SYSTEM "000004396_0069" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0070 SYSTEM "000004396_0070" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0071 SYSTEM "000004396_0071" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0072 SYSTEM "000004396_0072" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0073 SYSTEM "000004396_0073" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0074 SYSTEM "000004396_0074" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0075 SYSTEM "000004396_0075" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0076 SYSTEM "000004396_0076" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0077 SYSTEM "000004396_0077" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0078 SYSTEM "000004396_0078" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0079 SYSTEM "000004396_0079" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0080 SYSTEM "000004396_0080" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0081 SYSTEM "000004396_0081" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0082 SYSTEM "000004396_0082" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0083 SYSTEM "000004396_0083" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0084 SYSTEM "000004396_0084" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0085 SYSTEM "000004396_0085" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0086 SYSTEM "000004396_0086" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0087 SYSTEM "000004396_0087" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0088 SYSTEM "000004396_0088" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0089 SYSTEM "000004396_0089" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0090 SYSTEM "000004396_0090" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0091 SYSTEM "000004396_0091" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0092 SYSTEM "000004396_0092" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0093 SYSTEM "000004396_0093" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0094 SYSTEM "000004396_0094" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0095 SYSTEM "000004396_0095" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0096 SYSTEM "000004396_0096" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0097 SYSTEM "000004396_0097" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0098 SYSTEM "000004396_0098" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0099 SYSTEM "000004396_0099" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0100 SYSTEM "000004396_0100" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0101 SYSTEM "000004396_0101" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0102 SYSTEM "000004396_0102" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0103 SYSTEM "000004396_0103" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0104 SYSTEM "000004396_0104" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0105 SYSTEM "000004396_0105" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0106 SYSTEM "000004396_0106" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0107 SYSTEM "000004396_0107" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0108 SYSTEM "000004396_0108" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0109 SYSTEM "000004396_0109" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0110 SYSTEM "000004396_0110" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0111 SYSTEM "000004396_0111" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0112 SYSTEM "000004396_0112" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0113 SYSTEM "000004396_0113" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0114 SYSTEM "000004396_0114" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0115 SYSTEM "000004396_0115" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0116 SYSTEM "000004396_0116" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0117 SYSTEM "000004396_0117" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0118 SYSTEM "000004396_0118" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0119 SYSTEM "000004396_0119" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0120 SYSTEM "000004396_0120" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0121 SYSTEM "000004396_0121" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0122 SYSTEM "000004396_0122" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0123 SYSTEM "000004396_0123" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0124 SYSTEM "000004396_0124" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0125 SYSTEM "000004396_0125" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0126 SYSTEM "000004396_0126" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0127 SYSTEM "000004396_0127" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0128 SYSTEM "000004396_0128" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0129 SYSTEM "000004396_0129" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0130 SYSTEM "000004396_0130" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0131 SYSTEM "000004396_0131" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0132 SYSTEM "000004396_0132" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0133 SYSTEM "000004396_0133" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0134 SYSTEM "000004396_0134" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0135 SYSTEM "000004396_0135" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0136 SYSTEM "000004396_0136" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0137 SYSTEM "000004396_0137" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0138 SYSTEM "000004396_0138" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0139 SYSTEM "000004396_0139" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0140 SYSTEM "000004396_0140" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0141 SYSTEM "000004396_0141" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0142 SYSTEM "000004396_0142" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0143 SYSTEM "000004396_0143" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0144 SYSTEM "000004396_0144" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0145 SYSTEM "000004396_0145" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0146 SYSTEM "000004396_0146" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0147 SYSTEM "000004396_0147" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0148 SYSTEM "000004396_0148" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0149 SYSTEM "000004396_0149" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0150 SYSTEM "000004396_0150" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0151 SYSTEM "000004396_0151" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0152 SYSTEM "000004396_0152" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0153 SYSTEM "000004396_0153" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0154 SYSTEM "000004396_0154" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0155 SYSTEM "000004396_0155" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0156 SYSTEM "000004396_0156" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0157 SYSTEM "000004396_0157" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0158 SYSTEM "000004396_0158" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0159 SYSTEM "000004396_0159" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0160 SYSTEM "000004396_0160" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0161 SYSTEM "000004396_0161" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0162 SYSTEM "000004396_0162" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0163 SYSTEM "000004396_0163" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0164 SYSTEM "000004396_0164" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0165 SYSTEM "000004396_0165" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0166 SYSTEM "000004396_0166" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0167 SYSTEM "000004396_0167" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0168 SYSTEM "000004396_0168" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0169 SYSTEM "000004396_0169" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0170 SYSTEM "000004396_0170" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0171 SYSTEM "000004396_0171" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0172 SYSTEM "000004396_0172" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0173 SYSTEM "000004396_0173" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0174 SYSTEM "000004396_0174" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0175 SYSTEM "000004396_0175" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0176 SYSTEM "000004396_0176" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0177 SYSTEM "000004396_0177" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0178 SYSTEM "000004396_0178" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0179 SYSTEM "000004396_0179" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0180 SYSTEM "000004396_0180" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0181 SYSTEM "000004396_0181" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0182 SYSTEM "000004396_0182" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0183 SYSTEM "000004396_0183" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0184 SYSTEM "000004396_0184" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0185 SYSTEM "000004396_0185" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0186 SYSTEM "000004396_0186" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0187 SYSTEM "000004396_0187" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0188 SYSTEM "000004396_0188" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0189 SYSTEM "000004396_0189" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0190 SYSTEM "000004396_0190" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0191 SYSTEM "000004396_0191" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0192 SYSTEM "000004396_0192" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0193 SYSTEM "000004396_0193" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0194 SYSTEM "000004396_0194" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0195 SYSTEM "000004396_0195" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0196 SYSTEM "000004396_0196" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0197 SYSTEM "000004396_0197" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0198 SYSTEM "000004396_0198" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0199 SYSTEM "000004396_0199" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0200 SYSTEM "000004396_0200" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0201 SYSTEM "000004396_0201" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0202 SYSTEM "000004396_0202" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0203 SYSTEM "000004396_0203" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0204 SYSTEM "000004396_0204" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0205 SYSTEM "000004396_0205" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0206 SYSTEM "000004396_0206" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0207 SYSTEM "000004396_0207" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0208 SYSTEM "000004396_0208" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0209 SYSTEM "000004396_0209" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0210 SYSTEM "000004396_0210" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0211 SYSTEM "000004396_0211" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0212 SYSTEM "000004396_0212" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0213 SYSTEM "000004396_0213" NDATA uvaHighRes>
+<!ENTITY DSSR_000004396_0214 SYSTEM "000004396_0214" NDATA uvaHighRes>
+]>
+
+<TEI.2 id="D12456">
+    <teiHeader type="AACR2">
+
+        <fileDesc>
+            <titleStmt>
+
+                <title type="main">DIARY OF CLARA SHAFER</title>
+                <author>Shafer, Clara</author>
+                <respStmt>
+                    <resp>Creation of machine-readable version: </resp>
+                    <name>Digital Curation Services , University of Virginia Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Digital Curation Services</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Creation of digital images:</resp>
+                    <name>Digitization Services, University of Virginia Library</name>
+                </respStmt>
+
+            </titleStmt>
+
+            <extent>ca. <num type="kilobytes">82</num> kilobytes</extent>
+
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia </pubPlace>
+                <idno type="DCS">D12456</idno>
+                <date value="2009">2009</date>
+            </publicationStmt>
+            
+            <seriesStmt>                
+                <title>University of Virginia Library, Text collection</title>                
+                <idno type="uva-set">UVA-LIB-Text</idno>               
+                <idno type="uva-set">UVA-LIB-CivilWar</idno>                
+            </seriesStmt>
+
+            <sourceDesc>
+
+                <biblFull>
+                    <titleStmt>
+                        <title type="main">Diary of Clara Shafer [manuscript], 
+                            <dateRange  from="1865-01-01" to="1865-04-30">1865 January 1-April 30.</dateRange></title>
+                        <title type="sort">diary of clara shafer, <dateRange from="1865-01-01" to="1865-04-30">1865 january 1-april 30.</dateRange></title>
+                        <author>Shafer, Clara, fl. 1865.</author>
+                    </titleStmt>
+                    <extent>1 vol.</extent>
+                    <publicationStmt>
+                        <idno type="Assession No.">mss12456</idno>
+                        <idno type="Virgo ID">3907622-1001</idno>
+                        <idno type="title control number">a3907622</idno>
+                        <availability>
+                            <p> Albert &amp;amp; Shirley Small Special Collections, University
+                                of Virginia Library, Charlottesville, Virginia, USA</p>
+                        </availability>
+                    </publicationStmt>
+                </biblFull>
+
+            </sourceDesc>
+
+
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <!-- Per Matt we need to work on this statement-->
+                <p> Prepared for the University of Virginia Library by Digital Curation Services
+                    staff and volunteer Mary Roy Dawson Edwards, Transcriber. June 2003.</p>
+            </projectDesc>
+        </encodingDesc>
+
+        <profileDesc>
+            <langUsage>
+                <language id="eng" usage="main">English</language>
+            </langUsage>
+            <handList>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+        </profileDesc>
+
+    <revisionDesc>
+<change>
+<date value="2010-08-31">August 31, 2010</date>
+<respStmt>
+<name id="lsc6v">Lorrie Chisholm, University of Virginia Library</name>
+<resp>corrector</resp>
+</respStmt>
+    <item>Minor corrections to student mark-up.</item>
+</change>
+        <change>
+            <date value="2010-09-28">Sept. 28, 2010</date>
+            <respStmt>
+                <name id="mss7h">Michelle Steely, University of Virginia Library</name>
+                <resp>corrector</resp>
+            </respStmt>
+            <item>Minor corrections to volunteer transcription. Recommendations to transcription changes from L. Chisholm and Ann Southwell, Manuscripts Cataloger.</item>
+        </change>
+</revisionDesc>
+</teiHeader>
+    <text id="d1">
+                <body id="d2">
+            <div1 id="d3" type="part">
+                 
+                <head>DIARY OF CLARA SHAFER<lb/>
+                    <dateRange from="1865-01-01" to="1865-04-30">January 1 - April 30, 1865 </dateRange></head>
+
+                <!--<p><handShift resp="cataloger"/>[Shafer's diary, kept during the final four months
+                    of the Civil War, includes a first-hand account of the burning and fall of
+                    Richmond, Virginia and its occupation by Union troops. Topics include social
+                    calls paid by Varina Howell Davis and General and Mrs. Richard S. Ewell. Also
+                    mentioned is the behavior of the freedmen. See transcription notes at the end.]
+                    <handShift/></p>-->
+                
+                <pb entity="DSSR_000004396_0001" n="Spine"/> 
+                <pb entity="DSSR_000004396_0002" n="Cover"/> 
+                <pb entity="DSSR_000004396_0003" n="Back"/> 
+                <pb entity="DSSR_000004396_0004" n="Head"/> 
+                <pb entity="DSSR_000004396_0005" n="Tail"/> 
+                <pb entity="DSSR_000004396_0006" n="Foredge"/> 
+                <pb entity="DSSR_000004396_0007" n="np"/> 
+                <pb entity="DSSR_000004396_0008" n="np"/> 
+                <pb entity="DSSR_000004396_0009" n="np"/> 
+                <pb entity="DSSR_000004396_0010" n="np"/> 
+                <pb entity="DSSR_000004396_0011" n="np"/> 
+                <pb entity="DSSR_000004396_0012" n="np"/> 
+                <pb entity="DSSR_000004396_0013" n="np"/> 
+                <div2 id="d4" type="entry">
+                    
+                    <pb entity="DSSR_000004396_0014" n="np"/> 
+                    <head>1864</head>
+                    <div3 id="d5" type="poem">
+                        <head>n.d.</head>
+                        <p rend="indent5">"Tis the work<lb/> 
+                            Of many an hour, and of many a prayer<lb/>
+                            To bring the heart back from our infant gone! <lb/>
+                            Hope  must give in, and busy fancy blot <lb/>
+                            Its images from all the silent rooms,<lb/>
+                            And every sight and sound familiar to her <lb/>
+                            Undo its sweetest link, and so  at last, <lb/>
+                            The fountain that, once loosed, must flow forever, <lb/>
+                            Will hide, and wait in silence When the smile <lb/>
+                            Steals to her pallid lips again, and spring <lb/>
+                            Wakins its buds above thee, we will come, <lb/>
+                            And, standing by the music-haunted grave <lb/>
+                            Look in each other cheerfully, and say <lb/>
+                            A child that  we have loved is gone to heav<add hand="author" place="top">en</add> <lb/>
+                            And by this gate of flowers she passed away."</p>
+                    </div3>
+                    <div3 id="d6" type="poem">
+                        <head>
+                            <date value="1864-08-19">August 19<hi rend="super">th</hi> 1864</date>
+                        </head>
+                        <lg type="stanza">
+                        <l>"Oh! the lost, still unforgotten, </l>
+                         <l rend="indent"> Though the world be oft forgot:</l>
+                          <l>  Oh! the shrouded and the lonely, </l>
+                           <l rend="indent"> In our hearts they perish not. </l>
+                            <pb entity="DSSR_000004396_0015" n="np"/> 
+                        <l> She sits beside the cradle.</l>
+                          <l rend="indent">  And her beats are streaming fast, </l>
+                         <l> For she sees the present only, </l>
+                          <l rend="indent">  While she thinks of all the past; </l>
+                         <l> Of the days so full of gladness </l>
+                          <l rend="indent">  When her first-born's answering kiss </l>
+                          <l> Filled her soul with such a rapture </l>
+                           <l rend="indent"> That it knew no other bliss, O! those happy happy moments! </l>
+                           <l>They but deepen her despair, </l>
+                            <l rend="indent"> For she bends above the cradle </l>
+                           <l> And her baby <hi rend="underline">is</hi> <hi rend="underline">not</hi> <hi rend="underline">there</hi></l>
+                        </lg>
+                        <lg type="stanza">
+                        <l>There are words of comfort spoken, </l>
+                         <l rend="indent"> And the leaden clouds of grief,</l> 
+                         <l> Wear the smiling <unclear>bow</unclear> of promise.</l> 
+                          <l rend="indent">And she feels a sad relief;</l> 
+                          <l> But her wavering thoughts will wander </l>
+                          <l rend="indent">Till they settle on the scene </l>
+                           <l> Of the dark and silent chamber </l>
+                           <l rend="indent"> And of all that might have been!</l>
+                           <l> For a little vacant garment, </l>
+                           <l> Or a shining tress of hair,</l> 
+                           <l rend="indent">Tells her heart in tones of anguish </l>
+                            <l>That her baby is not there &mdash;</l>
+                            </lg>
+                        <closer>
+                            <signed>R. E. Chilton</signed>
+                        </closer>
+                         </div3>
+                    <div3 id="d7" type="poem"> 
+                        <pb entity="DSSR_000004396_0016" n="np"/>
+                        <head>n.d.</head>
+                        <p rend="indent5">Ye who mourn <lb/>
+                            Whene'er yon vacant cradle, or the robes <lb/>
+                            That decked the  lost-one's form call back a tide <lb/>
+                            Of alienated joy, can ye not trust <lb/>
+                            Your treasure to this <unclear>[-]</unclear>, whole changeless care <lb/>
+                            Passeth a  Mother's love? Can ye not hope, <lb/>
+                            When a few wasting years their course have run <lb/>
+                            To go to him, though he no more on earth <lb/>
+                            Returns to you?</p>
+                        <p>And when glad faith doth catch <lb/>
+                            Some echo of celestial harmonies,<lb/>
+                            Archangels' praises, with the high suspense <lb/>
+                            Of cherubin and seraphim, O think &mdash;<lb/>
+                            <hi rend="underline">Your</hi> <hi rend="underline">babe</hi> <hi rend="underline">is</hi> <hi rend="underline">there</hi>! </p>
+                            <closer>
+                                <signed>Mrs L. H. Sigourney</signed>
+                            </closer>
+                            
+                        <pb entity="DSSR_000004396_0017" n="np"/>
+                    </div3>
+                    <div3 id="d8" type="poem">
+                        <pb entity="DSSR_000004396_0018" n="np"/>
+                        <head>n.d.</head>
+                        <lg type="stanza">
+                            <l>Young Mother! what can feeble friendship say,<lb/>
+                            </l><l>To soothe the anguish of this mournful day? <lb/>
+                            </l><l> They, they alone, whose hearts like thine have <lb/>
+                            </l><l rend="indent">bled,</l>
+                        </lg>
+                        <lg type="stanza">
+                            <l> Know how the living mourn for the dead; <lb/>
+                            </l><l> Each tutored voice that seeks such <lb/>
+                            </l><l rend="indent">grief to cheer, </l>
+                        </lg>
+                        <lg type="stanza">
+                            <l>Thinks cold upon the weeping parents care; 
+                            </l><l> I've felt it all - alas! too well I know 
+                            </l><l>How rain all earthly power to hush thy woe 
+                            </l><l>God cheer thee childless Mother! tis not given 
+                            </l><l> For man to ward the blow, that falls from 
+                           </l><l rend="indent"> Heaven.</l> 
+                        </lg>
+                        <lg type="stanza">
+                            <l>I've felt it all &mdash; as thou art feeling<lb/>
+                            </l><l> now Like thee with stricken heart &amp;amp; aching brow, I've sat<lb/>
+                            </l><l>and watched by dying beauty's bed, And burning tears of hopeless anquish<lb/>
+                            </l><l>shed I've gazed upon the sweet-but pallid face And vainly tried some<lb/>
+                            </l><l>comfort there to trace; I've listened to the short &amp; struggling<lb/>
+                            </l><l>breath; I've seen the cherub eye grow dim in death; Like thee I've<lb/>
+                            </l><l>veiled my heart in speechless <lb/>
+                            </l><l rend="indent">gloom, </l>
+                        </lg>
+                        <lg type="stanza">
+                            <l>And laid my first-born in the silent <lb/>
+                            </l><l rend="indent">tomb. </l>
+                            </lg>
+                        <closer>
+                            <signed>Charles Sprayum</signed>
+                        </closer>
+                        <pb entity="DSSR_000004396_0019" n="np"/>
+                    </div3>
+                </div2>
+                <div2 id="d9" type="section">
+                    <head>1865</head>
+                    <div3 id="d10" type="entry">
+                        <pb entity="DSSR_000004396_0020" n="np"/>
+                        <head>Friday <date value="1865-01-01">Jan 1<hi rend="super">st</hi>. <hi rend="underline">1865</hi></date></head>
+                        <p>Among the great resolutions formed to-day for the "<hi rend="underline">New Year</hi>" is one to
+                            keep a "daily <hi rend="underline">account of events</hi>". Thinking it may prove useful, pleasant
+                            &amp; improving, I hope I may find myself possessed of sufficient
+                            perseverance for the task &mdash; (<hi rend="underline">doubtful</hi>)</p>
+                        <p>This time last week our little Millie was very ill &mdash; commenced Christmas
+                            eve! to spit blood &amp; continued to do so for three days &amp;
+                            nights &mdash; but to-day she is bright &amp; apparently quite well, but
+                            confined to bed for fear of a relapse. </p>
+                        <p>Tuesday last <add hand="author" place="top">Dec 27<hi rend="super">th</hi></add>
+                        	Sister &amp; Temple came up to spend the remainder of
+                            the holidays </p>
+                        <p>Thursday eve Maj. Page took tea with us &mdash;
+                            Yesterday (Saturday) it snowed nearly all day &mdash; This morning it is clear
+                            but very cold &mdash; &amp; the walking such as to prevent our attending
+                            Church.</p>
+                    </div3>
+                    <div3 id="d11" type="entry">
+                        <head><date value="1865-01-02">Jan 2</date><hi rend="super">nd</hi>.</head>
+                        <p>Clear but very cold &mdash; Sister &amp; Temple left for Craighton &mdash;
+                            commenced my German lessons again. </p>
+                        <pb entity="DSSR_000004396_0021" n="np"/>
+                    </div3>
+                    <div3 id="d12" type="entry">
+                        <head><date value="1865-01-03">Jan 3</date><hi rend="super">rd</hi>.</head>
+                        <p>Snowed nearly all day. Took no German lesson &mdash;Ma resigned the
+                            <hi rend="underline">house-keeping</hi> M<hi rend="super">r</hi> S. wrote to William.</p>
+                    </div3>
+                    <div3 id="d13" type="entry">
+                        <head><date value="1865-01-04">Jan. 4</date><hi rend="super">th</hi>.</head>
+                        <p>Rode into the city with Charlie The streets were so slippery that the old
+                            Grey fell on his <hi rend="underline">nose once</hi> &amp; was in constant danger of repeating
+                            the act, all the way down &amp; back. &mdash; Mrs <unclear>Yalty</unclear>
+                            died this morning &mdash;</p>
+                    </div3>
+                    <div3 id="d14" type="entry">
+                        <head><date value="1865-01-05">Jan 5</date><hi rend="super">th</hi>.</head>
+                        <p>- Took no German lesson. Charlie commenced school with Aunty Mr. S.
+                            &amp; Charlie spent the eve. at Capt. W.'s.</p>
+                    </div3>
+                    <div3 id="d15" type="entry">
+                        <head><date value="1865-01-06">Jan 6</date><hi rend="super">th</hi>.</head>
+                        <p>Rained nearly all day</p>
+                    </div3>
+                    <div3 id="d16" type="entry">
+                        <head><date value="1865-01-07">Jan 7</date><hi rend="super">th</hi>.</head>
+                        <p>Weather very fitful &mdash; the early morning &mdash;pleasant as spring &mdash; but before
+                            noon it rained quite heavily then snowed a little &amp; at sunset
+                            all was clear again &mdash; Spent the day at Mrs L's &mdash; Took no German
+                        Lesson.</p>
+                    </div3>
+                    <div3 id="d17" type="entry">
+                        <head><date value="1865-01-08">Jan 8</date><hi rend="super">th</hi>.</head>
+                        <p>Clear but very cold &mdash; Mr S. Ma and I went to church, heard an excellent
+                            sermon from dear Mr P.<ref n="1" target="n1">{1}</ref> on the 9<hi rend="super">th</hi> V. 39<hi
+                                rend="super">th</hi> Psalm &mdash; In the eve. walked to Hollywood. Milly
+                            came down stairs to-day the first time since <hi rend="underline">Christmas eve</hi>. </p>
+                        <pb entity="DSSR_000004396_0022" n="np"/>
+                    </div3>
+                    <div3 id="d18" type="entry">
+                        <head>Monday <date value="1865-01-09">Jan 9</date><hi rend="super">th</hi>.</head>
+                        <p><hi rend="underline">Killed the calf</hi>. M<hi rend="super">r.</hi> Angerer started for S.C. &mdash; </p>
+                    </div3>
+                    <div3 id="d19" type="entry">
+                        <head>Tuesday <date value="1865-01-10">Jan 10</date><hi rend="super">th</hi>.</head>
+                        <p>Rained all day A visit in the eve' from Mr Holmes who gives a very gloomy
+                            account of "<hi rend="underline">the times</hi>" in the country &mdash; thinks the Confederacy nearly at
+                            an end &mdash; gives it <hi rend="underline">four months longer</hi>. The <hi rend="underline">evacuation</hi> of R<hi rend="underline">___</hi>d &mdash;
+                            &amp; the emancipation question form the chief topics of
+                            conversation. Commenced giving <hi rend="underline">Milly Cod liver Oil</hi>.</p>
+                    </div3>
+                    <div3 id="d20" type="entry">
+                        <head>Wednesday <date value="1865-01-11">11</date><hi rend="super">th</hi>.</head>
+                        <p>Heard from William &mdash; He sailed from N. Y. for Germany &mdash; <hi rend="underline"><date
+                                value="1864-12-17">Dec. 17<hi rend="super">th</hi> 1864</date></hi>. A
+                            visit in the eve' from Mrs. Fourqureau &amp; Mrs Evins &mdash;</p>
+                    </div3>
+                    <div3 id="d21" type="entry">
+                        <head>Thursday <date value="1865-01-12">12</date><hi rend="super">th</hi></head>
+                        <p>commenced knitting for the Soldiers &mdash; <hi rend="underline">Opened a barrel</hi> of <hi rend="underline">flour</hi>. Our old
+                            neighbor Mr. Overly &amp; Son dined with us &mdash; Louisa sick in bed
+                        </p>
+                    </div3>
+                    <div3 id="d22" type="entry">
+                        <head>Friday <date value="1865-01-13">13</date><hi rend="super">th</hi>.</head>
+                        <p>Wrote to William. Millie Went to walk &mdash; Weather delightful The government
+                            was borrowing flour today <add hand="author" place="top">from the
+                                citizens of Rd'</add> to feed the Army! </p>
+                    </div3>
+                    <div3 id="d23" type="entry">
+                        <head>Saturday <date value="1865-01-14">14</date><hi rend="super">th</hi></head>
+                        <p>Wilmington attacked by the Yankee fleet &mdash; the second time. Very cold and
+                            cloudy.</p>
+                        <pb entity="DSSR_000004396_0023" n="np"/>
+                    </div3>
+                    <div3 id="d24" type="entry">
+                        <head>Sunday <date value="1865-01-15">Jan 15</date><hi rend="super">th</hi>.</head>
+                        <p>Aunty M<hi rend="super">r.</hi> S. and Self went to Church &mdash; M<hi rend="super">r.</hi> Peterkin preached from 
+                        	2<hi rend="super">nd</hi> V 2<hi rend="super">nd</hi> chp 1<hi rend="super">st</hi> Cor. 
+                        	Found Sister &amp; Temple at home when we returned &mdash;</p>
+                    </div3>
+                    <div3 id="d25" type="entry">
+                        <head>Monday <date value="1865-01-16">Jan 16</date><hi rend="super">th</hi>.</head>
+                        <p>The news received of the fall of Ft. Fisher &mdash; a very serious and
+                            unexpected loss to the Confeder<add hand="author" place="top">a</add>cy &mdash; 
+                            Gold selling for &#x0024;70. for &#x0024;1. Sister &amp; T. left for
+                            Craighton &mdash; Had four barrels flour brought down from the Kitchen</p>
+                    </div3>
+                    <div3 id="d26" type="entry">
+                        <head>Tuesday <date value="1865-01-17">17</date><hi rend="super">th</hi>.</head>
+                        <p>Flour &#x0024;800. for barrel! meal &#x0024;100 per bushel. Bought 1 bu. turnips &mdash; 2
+                            bu. Meal. Opened box of Soap. Cloudy &mdash; &amp; snowing a little now
+                            and then. Mr. S. &amp; I went to the Evins' in the eve' &mdash;</p>
+                    </div3>
+                    <div3 id="d27" type="entry">
+                        <head>Wednesday <date value="1865-01-18">18</date><hi rend="super">th</hi></head>
+                        <p>Bought a pr. morocco shoes at &#x0024;175. Ms Lloyd
+                            &amp; Minnie came in the evg' &mdash; </p>
+                    </div3>
+                    <div3 id="d28" type="entry">
+                        <head>Thursday <date value="1865-01-19">19</date><hi rend="super">th</hi>.</head>
+                        <p>Cut Charlies's hair, Went to see Mrs. W. had a visit From Mrs. F.
+                            &amp; H. also Mrs Ewell M<hi rend="super">r</hi> S &amp; I went to Mrs L's in the
+                        eve'</p>
+                    </div3>
+                    <div3 id="d29" type="entry">
+                        <head>Friday <date value="1865-01-20">20</date><hi rend="super">th</hi></head>
+                        <p>Bought 1 cd, wood &#x0024;120.</p>
+                    </div3>
+                    <div3 id="d30" type="entry">
+                        <head>Saturday <date value="1865-01-21">21</date><hi rend="super">st</hi>.</head>
+                        <p>Weather terrible raining &amp; freezing as fast as it falls Gold
+                            <hi rend="underline">fallen</hi> to &#x0024;50 for &#x0024;1.2 lbs. Sugar. <pb entity="DSSR_000004396_0024"
+                                n="np"/> bought on <hi rend="underline">trial</hi>&#x0024;16. per lb.</p>
+                    </div3>
+                    <div3 id="d31" type="entry">
+                        <head>Sunday <date value="1865-01-22">Jan 22</date><hi rend="super">nd</hi>.</head>
+                        <p>Weather still very bad, the trees all ready to break with their weight of
+                            icicles &mdash; present a very beautiful appearance</p>
+                    </div3>
+                    <div3 id="d32" type="entry">
+                        <head>Monday <date value="1865-01-23">Jan 23</date><hi rend="super">rd</hi>.</head>
+                        <p>Rained nearly all day &mdash; M<hi rend="super">r</hi> Crouch came home from the army. Sent shoes to
+                            be mended. Made a straw hat for myself. Finished <add hand="author"
+                                place="top"> the</add> 3<add hand="author" place="top">rd</add> pr
+                            socks for Soldiers.</p>
+                    </div3>
+                    <div3 id="d33" type="entry">
+                        <head>Tuesday <date value="1865-01-24">24</date><hi rend="super">th</hi>.</head>
+                        <p>Weather delightful but the walking very bad. Bought 2 gals. Eclactic oil 
+                            &#x0024;90 pr gal 4 chimneys for lamps &#x0024;12-a piece Mrs Lloyd dined with us &mdash;
+                            M<hi rend="super">r.</hi> S. &amp; I went to M<hi rend="super">r</hi> L's in the eve M<hi rend="super">r</hi> S intending to call on
+                            Gen. Ewell but found the Gen &amp; his lady there was much pleased
+                            with him &mdash; he has a noble head &mdash; fine eyes &mdash; rather sharp features &mdash;
+                            wears a moustache is very affable &amp; amusing in con-versation &mdash;
+                            the loss of his limb is not atall perceptible until he attempts to walk
+                            &mdash; Gold &#x0024;45 for &#x0024;1.</p>
+                    </div3>
+                    <div3 id="d34" type="entry">
+                        <head>Wednesday <date value="1865-01-25">25</date><hi rend="super">th</hi>.</head>
+                        <p>Clear but very cold M<hi rend="super">r</hi>. Crouch dined with us. M<hi rend="super">r</hi> Shafer Charlie &amp;
+                            I went in the eve. to Centenary 
+                            <pb entity="DSSR_000004396_0025" n="np"/> 
+                            Church to see Lieut. <corr sic="Wersiger" resp="lsc6v">Wiesiger</corr> and Emma Tyler united in the <hi rend="underline">holy bonds
+                            of Matrimony</hi>&mdash; </p>
+                    </div3>
+                    <div3 id="d35" type="entry">
+                        <head>Thursday <date value="1865-01-26">Jan 26</date><hi rend="super">th</hi></head>
+                        <p>Very cold &mdash; Walked down to <unclear>Rees's</unclear> Daguer<add hand="author" place="top"
+                            >r</add>ean Galery sat for my photograph Called on Mrs James but did not
+                            find her at home &mdash; Paid my first visit to Mrs Mitchel &amp; Mrs Dr
+                            Harrison &mdash; Mrs M. was quite sick Called on Mrs Davis she was <hi rend="underline">out</hi> as
+                            usual &mdash; Sent Margarette to Hills with my hat &mdash; will not be able to get
+                            it until next Friday a week </p>
+                    </div3>
+                    <div3 id="d36" type="entry">
+                        <head>Friday <date value="1865-01-27">27</date><hi rend="super">th</hi></head>
+                        <p>M<hi rend="super">r</hi> S. spent last eve' at M<hi rend="super">r</hi> Morriss' did not get home until 2 o'clock
+                            this morn.! Last night was the coldest we have had 
+                        	<del hand="author" rend="line-through">this winter</del>
+                        	the water froze in the pitchers for the first time this Winter &mdash;
+                            M<hi rend="super">r</hi> S &mdash; sent home &frac12; a beef &amp; bushel Meal I breadfasted at <hi rend="underline">12
+                            o'clock</hi> this morn. </p>
+                    </div3>
+                    <div3 id="d37" type="entry">
+                        <head>Saturday.</head>
+                        <p>The Thermometer at 10&#x00B0; said to be the coldest
+                            weather here since <date value="1857">1857</date>. <hi rend="underline">M<hi rend="super">r</hi> Conner arrived</hi>
+                        	&mdash; M<hi rend="super">r</hi>. Evins &mdash; came a little
+                            before 9 o'clock to spend the eve'. It is reported the other peace
+                            commissioners have been sent to W&mdash; </p>
+                        <pb entity="DSSR_000004396_0026" n="np"/>
+                    </div3>
+                    <div3 id="d38" type="entry">
+                        <head>Sunday <date value="1865-01-29">29</date><hi rend="super">th</hi> Jan.</head>
+                        <p>It was too windy this morning to walk to Church &mdash; M<hi rend="super">r</hi>. Thompson &amp;
+                            I Overby spent the eve'</p>
+                    </div3>
+                    <div3 id="d39" type="entry">
+                        <head>Monday <date value="1865-01-30">Jan 30</date><hi rend="super">th</hi></head>
+                        <p>Spent the day with Elvira Nimmo. Mrs Cottrell &amp;  Mrs <unclear>
+                            Loring</unclear> Called while I was away &mdash; M<hi rend="super">r</hi> &amp; Mrs L
+                            &amp; Minnie spent the eve. Got our shoes that were sent to be
+                            mended Weather delightful</p>
+                    </div3>
+                    <div3 id="d40" type="entry">
+                        <head>Tuesday <date value="1865-01-31">Jan 31</date><hi rend="super">st</hi></head>
+                        <p>M<hi rend="super">r</hi> Peterkin spent the eve &mdash; with us &mdash; Aunty bought 3 lbs butter &#x0024;15. per
+                            lb. </p>
+                    </div3>
+                    <div3 id="d41" type="entry">
+                        <head>Wednesday <date value="1865-02-01">Feb 1<hi rend="super">st</hi> 1865</date></head>
+                        <p>- Weather delightful &mdash; quite Spring-like&mdash; Aunty &amp; M<hi rend="super">r</hi> S. wrote to
+                            William. A visit from Mrs Squire &mdash;</p>
+                    </div3>
+                    <div3 id="d42" type="entry">
+                        <head>Thursday. <date value="1865-02-02">Feb 2</date><hi rend="super">nd</hi></head>
+                        <p>Borrowed &#x0024;50 from Ma. Called on Mrs Boidkin &mdash; M<hi rend="super">r</hi>. S &amp; I spent the
+                            eve. at Gen Ewell's. </p>
+                    </div3>
+                    <div3 id="d43" type="entry">
+                        <head>Friday <date value="1865-02-03">Feb 3</date></head>
+                        <p>- Got &frac12; Cd. Pine Wood 2 lbs. Sugar &mdash; M<hi rend="super">r</hi> Lloyd took supper </p>
+                    </div3>
+                    <div3 id="d44" type="entry">
+                        <head>Saturday <date value="1865-02-04">Feb 4</date><hi rend="super">th</hi></head>
+                        <p>Heard the sad news of Dr Conway's death &mdash; Sister &amp; Granper <ref
+                            n="2" target="n2">{2}</ref> came out to see me &mdash; The old Gray died.
+                            Nannie Kepler &amp; D<hi rend="super">r</hi>. Gable called &mdash; </p>
+                        <pb entity="DSSR_000004396_0027" n="np"/>
+                    </div3>
+                    <div3 id="d45" type="entry">
+                        <head>Sunday <date value="1865-02-05">Feb 5</date><hi rend="super">th</hi></head>
+                        <p>Weather delightful Ma M<hi rend="super">r</hi> S &amp; I went to Church &mdash; M<hi rend="super">r</hi> Peterkin
+                            preached from 7<hi rend="super">th</hi> C. 17<hi rend="super">th</hi> ve
+                            of St John. Sister M<hi rend="super">r</hi>. C &amp; Temple dined with us &mdash; M<hi rend="super">r</hi>. S
+                            &amp; I went to M<hi rend="super">r</hi> Ritter's after tea &mdash; </p>
+                    </div3>
+                    <div3 id="d46" type="entry">
+                        <head>Monday. <date value="1865-02-06">Feb 6</date><hi rend="super">th</hi>.</head>
+                        <p>Weather cold but clear &mdash; Aunty M<hi rend="super">r</hi>. S &amp; I went to poor D<hi rend="super">r</hi>.
+                            Conway's funeral &mdash; St Paul's Church was crowded &amp; the services
+                            were very imposing. What a loss our city has sus-tained in the death of
+                            so able a Phy-sician! M<hi rend="super">r</hi> S. &amp; I called on Leut <corr sic="Wersiger" resp="lsc6v">Wiesiger</corr>
+                            &amp; his bride. Mrs. L started for Sephards <add hand="author"
+                                place="top">Town</add></p>
+                    </div3>
+                    <div3 id="d47" type="entry">
+                        <head>Tuesday <date value="1865-02-07">Feb 7</date><hi rend="super">th</hi>.</head>
+                        <p>The ground covered with snow this morning &mdash; which was very unexpected as
+                            every one thought the cold weather was over &mdash; Snowed and sleeted all day &mdash;There was a fight near
+                            Petersburg to day in which Gen Pegram was killed &mdash; he was married <add
+                                hand="author" place="top">only</add> a few weeks since to the
+                            beautiful Miss Cary! The particulars of the fight not yet known.</p>
+                    </div3>
+                    <div3 id="d48" type="entry">
+                        <head>Wednesday <date value="1865-02-08">Feb 8</date><hi rend="super">th</hi>.</head>
+                        <p>Weather delight-ful again &mdash; The walking dreadful. Bought 1 Lb. butter
+                            &#x0024;15.</p>
+                        <pb entity="DSSR_000004396_0028" n="np"/>
+                    </div3>
+                    <div3 id="d49" type="entry">
+                        <head>Thursday <date value="1865-02-09">Feb. 9</date><hi rend="super">th</hi>.</head>
+                        <p>M<hi rend="super">r</hi> Angerer re-turned Aunty &mdash; received a letter from Mrs. <unclear>Habard</unclear> &mdash; Alice
+                            wakes early this morn &mdash; with a very <hi rend="underline">_____</hi> cough. Milly spit a little
+                            blood &mdash; </p>
+                    </div3>
+                    <div3 id="d50" type="entry">
+                        <head>Friday <date value="1865-02-10">10</date><hi rend="super">th</hi>.</head>
+                        <p>M<hi rend="super">r</hi> A took breakfast with us &mdash; Aunty  &mdash; bought 4 lbs &mdash; Butter &#x0024;60. 3 qts
+                            wheat &#x0024;15. Paid Ma &#x0024;50. borrowed money. Weather very cold. Gold &#x0024;60
+                            for &#x0024;1. Charlie wrote to M<hi rend="super">r</hi> Martin &mdash; </p>
+                    </div3>
+                    <div3 id="d51" type="entry">
+                        <head>Saturday <date value="1865-02-11">Feb 11</date><hi rend="super">th</hi></head>
+                        <p>M<hi rend="super">r</hi> S. sent home 2 bu. Meal 3 bu. Potatoes 6 &frac12; lbs butter. Aunty bought a
+                            turkey &mdash; &#x0024;37. M<hi rend="super">r</hi> Angerer took tea &mdash; sent us a nice dish of sausage
+                            &amp; a small bag of onions &mdash; which was very acceptable as onions
+                            are &#x0024;1 a piece. Sister M<hi rend="super">r</hi> C Lucy C. &amp; Temple called. Temple
+                            stayed all night.</p>
+                    </div3>
+                    <div3 id="d52" type="entry">
+                        <head>Sunday <date value="1865-02-12">12</date><hi rend="super">th</hi>.</head>
+
+                        <p>Too windy &amp; muddy to go to Church &mdash; M<hi rend="super">r</hi> Lloyd called Commenced
+                            mixing wheat with our Coffee &mdash; began on a pound of Coffee M<hi rend="super">r</hi> Crouch took
+                            tea &mdash;</p>
+                        <pb entity="DSSR_000004396_0029" n="np"/>
+                    </div3>
+                    <div3 id="d53" type="entry">
+                        <head>Monday <date value="1865-02-13">Feb 13</date><hi rend="super">th</hi>.</head>
+                        <p>Said to be the coldest day we have had this winter. M<hi rend="super">r</hi>. Dabney lent us 5
+                            bu. brown <unclear>stuff</unclear> Went to Mrs W.'s for a few minutes
+                            M<hi rend="super">r</hi>. S. bought a confederate paper &frac12; Cord (Oak wood &#x0024;64.) </p>
+                    </div3>
+                    <div3 id="d54" type="entry">
+                        <head>Tuesday <date value="1865-02-14">F 14</date><hi rend="super">th</hi>.</head>
+                        <p>Sister went back to Craighton &mdash; Bought bag Potatoes from Dabney's &mdash; Sent
+                            Mrs Walder's dinner home &mdash; Went to M<hi rend="super">r</hi> Lloyd's It is a week today since
+                            it snowed and there is still much of it to be seen &mdash;</p>
+                    </div3>
+                    <div3 id="d55" type="entry">
+                        <head>Wednesday <date value="1865-02-15">Feb. 15</date><hi rend="super">th</hi>.</head>
+                        <p>It has rained nearly all day. Aunt wrote to Mrs Hubard. M<hi rend="super">r</hi>. S complains
+                            of not feeling well. Charley was sent to bed without his supper.</p>
+                    </div3>
+                    <div3 id="d56" type="entry">
+                        <head>Thursday <date value="1865-02-16">Feb. 16</date><hi rend="super">th</hi>.</head>
+                        <p>Weather much warmer &mdash; but still not pleasant &mdash; Traces of Snow yet to be
+                            seen. Bought 10 gals Sorghum &mdash; &#x0024;70. a gal. M<hi rend="super">r</hi> Lloyd spent the eve' &mdash; </p>
+                    </div3>
+                    <div3 id="d57" type="entry">
+                        <head>Friday</head>
+                        <p>- It has rained, snowed &amp; hailed to-day &mdash; cleared off a little
+                            towards night &mdash; M<hi rend="super">r</hi> Angerer took tea &mdash; Bought 50 lbs crushed sugar &#x0024;19.
+                            per lb </p>
+                        <pb entity="DSSR_000004396_0030" n="np"/>
+                    </div3>
+                    <div3 id="d58" type="entry">
+                        <head>Saturday <date value="1865-02-18">Feb. 18</date><hi rend="super">th</hi>.</head>
+                        <p>Clear &amp; pleasant &mdash; Minnie Lloyd dined with us &mdash; Ma spent the
+                            morning with Mrs Evins. Aunty bought a turkey <add hand="author"
+                                place="top">for</add> &#x0024;50. &mdash; commenced cooking in <hi rend="underline">range</hi> </p>
+                    </div3>
+                    <div3 id="d59" type="entry">
+                        <head>Sunday <date value="1865-02-19">Feb. 19</date><hi rend="super">th</hi>.</head>
+                        <p>Did not go to Church &mdash; M<hi rend="super">r</hi> Lloyd called, Weather delightful &mdash; The bad news
+                            of the fall of Columbia was received yesterday &mdash;</p>
+                    </div3>
+                    <div3 id="d60" type="entry">
+                        <head>Monday <date value="1865-02-20">Feb 20</date><hi rend="super">th</hi>.</head>
+                        <p>We heard to-day that Charleston was evacuated last Tuesday! South
+                            Carolina seems dormant &mdash; Weather very pleasant &mdash; M<hi rend="super">r</hi> Lloyd &amp; M<hi rend="super">r</hi>
+                            Angerer took tea &mdash; Ma &amp; I went to Mrs Walder's in the eve'&mdash;</p>
+                    </div3>
+                    <div3 id="d61" type="entry">
+                        <head>Tuesday <date value="1865-02-21">Feb. 21</date><hi rend="super">st</hi>.</head>
+                        <p>Moved our store-room upstairs &mdash; its contents are as follows 3 hams &mdash; 3
+                            sides &mdash; 2 shoulders, 6 bu. meal &mdash; 55 lbs coffee &mdash; 60 <add hand="author"
+                                place="top"> lbs</add> sugar 1 box soap 1 box onions &mdash; 5 bottles
+                            catsup &mdash; Had a visit from Mrs <corr sic="Wersiger" resp="lsc6v">Wiesiger</corr> &mdash; (the bride) Mrs Tyler &amp;
+                            Miss W &mdash; A most terrible fire took place last night &mdash; in which a family
+                            of five persons was burned <pb entity="DSSR_000004396_0031" n="np"/> to
+                            death &mdash; M<hi rend="super">r</hi> &amp; Mrs Stebins <del hand="author">
+                                <hi rend="line-through">b</hi>
+                            </del> &amp; 3 children &mdash; one a beautiful girl of 19 years &mdash; and to
+                            have been married in the Fall </p>
+                    </div3>
+                    <div3 id="d62" type="entry">
+                        <head>Wednesday <date value="1865-02-22">Feb 22</date><hi rend="super">nd</hi></head>
+                        <p>Washington's birth-day! &amp; <unclear>[-]</unclear> poorly
+                            celebrated only the report of a few cannon to mark the great event.
+                            Elvira Nimmo called in the morning After she left I went over to Mrs
+                            Evins' &mdash; Mrs Dickenson and Mary Taylor were here when I returned Mrs
+                            Davis called before they left Gen. &amp; Mrs Ewell came in after tea
+                            &mdash; The Gen. is very gloomy about the times &mdash; wanted to know if we had
+                            disposed of our <hi rend="underline">Silver</hi>, fortunately we have not much to trouble
+                            ourselves about </p>
+                    </div3>
+                    <div3 id="d63" type="entry">
+                        <head>Thursday <date value="1865-02-23">Feb 23</date><hi rend="super">rd</hi>.</head>
+                        <p>Has been rain-ing all-day &mdash; Browned coffee &mdash; Charlie commenced his music
+                            lessons, With M<hi rend="super">r</hi> Angerer again &mdash; last Satur-day &mdash; took a lesson to-day &mdash;
+                        </p>
+                    </div3>
+                    <div3 id="d64" type="entry">
+                        <head>Friday <date value="1865-02-24">Feb 24</date><hi rend="super">th</hi></head>
+                        <p>Brought 2 barrels of flour down from the kitchen M<hi rend="super">r</hi> Crouch dined with us
+                            &mdash;. <pb entity="DSSR_000004396_0032" n="np"/> M<hi rend="super">r</hi> Angerer took tea &mdash;
+                            bought 1 lb hops <add hand="author" place="top">&#x0024;10</add>. 3 qts &mdash;
+                            wheat-&#x0024;15. </p>
+                    </div3>
+                    <div3 id="d65" type="entry">
+                        <head>Saturday <date value="1865-02-25">Feb 25</date><hi rend="super">th</hi>.</head>
+                        <p>Rained nearly all day &mdash; Aunty went to market came home drenched &mdash; and
+                            very little in the market-basket to make up for it &mdash; two heads of
+                            cabbage for &#x0024;10 &mdash; etc etc &mdash; meat &#x0024;7. &amp; &#x0024;8. per lb. Bought 2
+                            small brooms for &#x0024;12. &mdash; Mr Conner paid a short visit &mdash; Charlie went to
+                            the Theatre performance commencing at 12 o'clock M<hi rend="super">r</hi>. C took a music
+                            lesson, Finished a calico dress for Alice &mdash; </p>
+                    </div3>
+                    <div3 id="d66" type="entry">
+                        <head>Sunday <date value="1865-02-26">Feb 26</date><hi rend="super">th</hi>.</head>
+                        <p>Rained until near church time &mdash; none of us went to church except Charlie
+                            &mdash; Aunty - &amp; Alice went to Evening service &mdash; M<hi rend="super">r</hi> S. had company in
+                            the afternoon </p>
+                    </div3>
+                    <div3 id="d67" type="entry">
+                        <head>Monday <date value="1865-02-27"> Feb. 27</date><hi rend="super">th</hi></head>
+                        <p>Rained again today until afternoon &mdash; &frac12; Cord Wood &mdash; came. &#x0024;75. Minnie
+                            Lloyd &amp; M<hi rend="super">r</hi> Angerer took tea &mdash; Mrs Fourqu-rean &amp; Joseph
+                            &mdash; spent the eve</p>
+                    </div3>
+                    <div3 id="d68" type="entry">
+                        <head>Tuesday <date value="1865-02-28">Feb 28</date><hi rend="super">th</hi>.</head>
+                        <p>Rained a little this morning cloudy all day M<hi rend="super">r</hi>. Charlie took a music
+                            lesson Sister &amp; Mr. Crouch took tea &mdash; Mr. C &mdash; leaves in the
+                            morning for the army. </p>
+                        <pb entity="DSSR_000004396_0033" n="np"/>
+                    </div3>
+                    <div3 id="d69" type="entry">
+                        <head>Wednesday - <date value="1864-03-01"><date value="1865-03-01">March 1</date><hi rend="super">st</hi>.
+                                1864</date></head>
+                        <p>This is Ash Wednesday &mdash; I was sorry not to be able to attend Church.
+                            Sister &amp; Temple spent the day went to Mrs Walder's in the eve'
+                            M<hi rend="super">r</hi> S. spent the eve at Mr Lloyds</p>
+                    </div3>
+                    <div3 id="d70" type="entry">
+                        <head>Thursday <date value="1865-03-02">March 2</date><hi rend="super">nd</hi>.</head>
+                        <p>Rained nearly all-day-Charles took a music lesson.</p>
+                    </div3>
+                    <div3 id="d71" type="entry">
+                        <head>Friday <date value="1865-03-03">Mch. 3</date><hi rend="super">rd</hi></head>
+                        <p>Rained a little again today</p>
+                    </div3>
+                    <div3 id="d72" type="entry">
+                        <head>Saturday <date value="1865-03-04">March 4</date><hi rend="super">th</hi></head>
+                        <p> bought 4 lbs. <unclear>[-]</unclear> &#x0024;14. pr lb. Sister spent the day
+                            will stay until Monday. Fannie Bernard is with us tonight is looking
+                            very well &mdash; Rained very hard this morn &mdash; but cleared off beautifully
+                            about noon. <add hand="author" place="top">Bot.</add> 3 lbs butter</p>
+                    </div3>
+                    <div3 id="d73" type="entry">
+                        <head>Sunday <date value="1865-03-05">March 5</date><hi rend="super">th</hi></head>
+                        <p>Did not at-tend Church M<hi rend="super">r</hi>. S. and Ma were there &mdash; Sister &amp;
+                            Fannie B. kept me company at home &mdash; M<hi rend="super">r</hi>. Conner called &mdash; 
+                        </p>
+                    </div3>
+                    <div3 id="d74" type="entry">
+                        <head>Monday-  [n.d.]</head> 
+                        <p>weather pleasant Sister left for Craigton after dinner &mdash; Mrs Mahony &amp;
+                            Lizzie spent the morning &mdash; Mr S. &amp; I spent the eve' at Mrs
+                            Walder's &mdash; <pb entity="DSSR_000004396_0034" n="np"/> Received &frac12; cord Oak
+                            Wood. </p>
+                    </div3>
+                    <div3 id="d75" type="entry">
+                        <head>Tuesday <date value="1865-03-07">March 7</date><hi rend="super">th</hi></head>
+                        <p>M<hi rend="super">r</hi> Angerer came to give C. a lesson &mdash; but he was not at home. Killed the
+                            kid. Received a letter from William dated <hi rend="underline">Bremen <date value="1865-01-02">Jan. 2<hi rend="super"
+                                >nd</hi> 1865</date></hi>. over which we all rejoiced &mdash; it being the first we
+                            have had from him since he left home 3 months ago. Wrote to William by
+                            an opportunity offered by Minnie Lloyd. 
+                        </p>
+                    </div3>
+                    <div3 id="d76" type="entry">
+                        <head>Wednesday-  [n.d.]</head>
+                            <p>Bot. 1 bu. <hi rend="underline">Blackeyed Peas</hi>
+                                Minnie helped us to make con-federate candles &mdash; Rained nearly all
+                                day &mdash; </p>
+                    </div3>
+                    <div3 id="d77" type="entry">
+                        <head>Thursday <date value="1865-03-09">March 9</date><hi rend="super">th</hi></head>
+                        <p>Minnie L &mdash; took tea &mdash; Rained in the eve</p>
+                    </div3>
+                    <div3 id="d78" type="entry">
+                        <head>Friday <date value="1865-03-10">March 10</date><hi rend="super">th</hi></head>
+                        <p>Day appropriated by President Davis &mdash; for fasting &amp; prayer &mdash; M<hi rend="super">r</hi>
+                            S. was at home all day spent a quiet day in our room as I was confined
+                            to bed nearly all day &mdash; M<hi rend="super">r</hi>. S wrote my name in a set of books persenten
+                            <hi rend="underline"><date value="1862-05">May 1862</date></hi> &mdash; M<hi rend="super">r</hi> Gibson M<hi rend="super">r</hi>
+                        	Lloyd &amp; M<hi rend="super">r</hi> Harwood called in the afternnoon M<hi rend="super">r</hi> H staid to tea &mdash; It
+                            rained -snowed &amp; hailed during the day. Eve. clear</p>
+                        <pb entity="DSSR_000004396_0035" n="np"/>
+                    </div3>
+                    <div3 id="d79" type="entry">
+                        <head><date value="1865-03-11">March 11</date><hi rend="super">th</hi></head>
+                        <p>Bot. Cord wood &mdash; &#x0024;100 -2 lbs. Butter &#x0024;30 -. Received letter from L. G.
+                            in which was en-closed two letters from William to him &mdash; Heard through
+                            Mr Von Groning that William was comfor-tably settled at D<hi rend="super">r</hi>. Fuhlraft's
+                            in Elherfeld Prussia &mdash; Fannie Bernard took tea with us will spend the
+                            night &mdash; Aunty's devoted friend and much ad-mired D<hi rend="super">r</hi>. Benson called day
+                            before yesterday &mdash;</p>
+                    </div3>
+                    <div3 id="d80" type="entry">
+                        <head>Sunday <date value="1865-03-12">March 12</date><hi rend="super">th</hi></head>
+                        <p>Weather delightful Aunty &amp; Ma went to Church. M<hi rend="super">r</hi> Von Groning
+                            &amp; a friend of his called just about church time Maj. Page called
+                            after dinner Had the pleasure of seeing Lieut. Benson &mdash; Fannie's <hi rend="underline">beau</hi> &mdash;
+                            was much pleased with his appearance &mdash; 
+                        </p>
+                        <p>We were wakened last night at one
+                            o'clock by the ringing of the door bell &mdash; M<hi rend="super">r</hi> S. enquired from the window
+                            who was there &mdash; found it was poor old M<hi rend="super">r</hi> Duval &amp; Son they had
+                            heard the Yankee's were very <pb entity="DSSR_000004396_0036" n="np"/>
+                            near them &mdash; and had brought their horses <del hand="author">
+                                <unclear>
+                                    [word lined out]
+                                </unclear>
+                            </del> and other valuables to town for protection. he went home to-day
+                            for another load &mdash; we have learned since he left that the enemy are not
+                            nearer than 30 miles &mdash; there was quite a <corr sic="comotion">commotion
+                            </corr> in town last night and today &mdash; bells ringing
+                            all the Departments ordered out etc etc</p>
+                    </div3>
+                    <div3 id="d81" type="entry">
+                        <head>Monday <date value="1865-03-13">March 13</date><hi rend="super">th</hi></head>
+                        <p>Every-thing begin-ning to look like Spring &mdash; Hyacinths and other little
+                            Spring flowers are in bloom - &amp; the trees budding out
+                            beautifully &mdash; Fannie left this morn' Sister sent the straw for Minnie's
+                            hat &mdash; </p>
+                    </div3>
+                    <div3 id="d82" type="entry">
+                        <head>Tuesday <date value="1865-03-14">March 14</date><hi rend="super">th</hi></head>
+                        <p>M<hi rend="super">r</hi> Angerer dined with us &mdash; did not give C. a music lesson &mdash; Fannie came
+                            out in the morning for a little while Aunty &amp; M<hi rend="super">r</hi>. S. wrote to
+                            William </p>
+                    </div3>
+                    <div3 id="d83" type="entry">
+                        <head>Wednesday <date value="1865-03-15">March 15</date><hi rend="super">th</hi></head>
+                        <p>&mdash; M<hi rend="super">r</hi>. S. did not get home until quite late &mdash; was growing very uneasy when
+                            he came in &mdash; Fannie B. and Lieut. Benson took tea. Fannie stayed all
+                            night. <hi rend="underline">Planted Peas</hi>. </p>
+                    </div3>
+                    <div3 id="d84" type="entry">
+                        <head>Thursday <date value="1865-03-16">16</date><hi rend="super">th</hi></head>
+                        <p>&mdash;The first violets in Bloom &mdash; Has been blowing quite a hurricane all
+                            day. Aunty Mr. S. &amp; C &mdash; <pb entity="DSSR_000004396_0037" n="np"
+                            /> started to a concert to night but turned back for fear of rain M<hi rend="super">r</hi>
+                            Lloyd &amp; Mr Evins called Had a visit this morn'. from the Rev.
+                            M<hi rend="super">r</hi>. Ryland &mdash; Bought 3 qts Wheat <add hand="author" place="top">&#x0024;15</add>. &amp; 1 lb Butter &#x0024;16. </p>
+                    </div3>
+                    <div3 id="d85" type="entry">
+                        <head>Friday <date value="1865-03-17">March 17</date><hi rend="super">th</hi>.</head>
+                        <p>Planted Potatoes &mdash; M<hi rend="super">r</hi>. S. bought a pair shoes for himself &mdash; Ma went to
+                            Church in the eve'. Weather delightful &mdash; </p>
+                    </div3>
+                    <div3 id="d86" type="entry">
+                        <head>Saturday <date value="1865-03-18">March 18</date><hi rend="super">th</hi></head>
+                        <p>Weather delightful &mdash; <del hand="author" rend="line-through">peach</del> Apricot trees in 
+                        	blossom Fannie B. and her <hi rend="underline">Lieut.</hi>
+                            came in the eve' &mdash; after I had retired and later Wills' &amp; a
+                            friend came in making quite a gay party &mdash; Fannie stayed all night 4 bus
+                            meal a bag of Rice came to day </p>
+                    </div3>
+                    <div3 id="d87" type="entry">
+                        <head>Sunday <date value="1865-03-19">March 19</date><hi rend="super">th</hi></head>
+                        <p>Was quite sick last night &mdash; did not go to Church &mdash; M<hi rend="super">r</hi> S. &amp; Ma
+                            went M<hi rend="super">r</hi>. Conner came before breakfast he - Fannie - Lieut B. &amp; Mr
+                            Angerer dined with us &mdash; Lieut Mr A &amp; Fannie took tea &mdash; after
+                            which they went to church &mdash; Mr S &mdash; Mr C &amp; A went to the Mr Von
+                            Gronings after dinner &mdash; </p>
+                        <pb entity="DSSR_000004396_0038" n="np"/>
+                    </div3>
+                    <div3 id="d88" type="entry">
+                        <head> Monday <date value="1865-03-20">March 20</date><hi rend="super">th</hi></head>
+                        <p>- Strawberries are now in bloom &mdash; Mr S. sent home two barrels of Potatoes
+                            - bought two lbs. of tea &mdash; &#x0024;100. pr lb. bought 1 lb <hi rend="underline">Butter</hi> &#x0024;16. the
+                            price of eggs is &#x0024;25 per doz.. M<hi rend="super">r</hi>. Colquitte sent day before yesterday
+                            <hi rend="underline">1 barrel flour</hi> Charlie brok a lamp shade &mdash; this eve.</p>
+                    </div3>
+                    <div3 id="d89" type="entry">
+                        <head>Tuesday <date value="1865-03-21">March 21</date><hi rend="super">st</hi></head>
+                        <p> Millie spit blood today - A cord of Wood came &#x0024;180. Rained this eve.
+                            Planted Radishes </p>
+                    </div3>
+                    <div3 id="d90" type="entry">
+                        <head>Wednesday <date value="1865-03-22">March 22</date><hi rend="super">nd</hi>.</head>
+                        <p>Elvira Nimmo called this morn' &mdash; Lousia H. has a fine son &mdash; D<hi rend="super">r</hi>. Wellford
+                            sent his son out to see Millie &mdash; she is much better, has spit no blood
+                            since 5 o'clock this morn &mdash; Minnie Lloyd called &mdash; Fannie B &amp; her
+                            brother took tea &mdash; F. will stay all night &mdash; Bought a lb. of butter from
+                            Mrs Walder. &frac12; Cord of wood came &mdash; </p>
+                    </div3>
+                    <div3 id="d91" type="entry">
+                        <head>Thursday <date value="1865-03-23">March 23</date><hi rend="super">rd</hi></head>
+                        <p>175 bu.s Coal came to day &mdash; Bought 1 lb. butter at Mrs Dennis' &mdash; M<hi rend="super">r</hi> Angerer
+                            spent the eve &mdash; Weather colder and very windy. Gave Millie the basket
+                            left for her <pb entity="DSSR_000004396_0039" n="np"/> by her Mother &mdash;
+                            making her very happy &mdash; </p>
+                    </div3>
+                    <div3 id="d92" type="entry">
+                        <head>Friday <date value="1865-03-24">March 24</date><hi rend="super">th</hi></head>
+                        <p>Mrs Fourqurean called this morn &mdash; Mrs &amp; Mr DuVal took dinner with
+                            us &mdash; took all their "<hi rend="underline">plunder</hi>" <add hand="author" place="top">home</add>
+                            except 1 barrel flour and 1 keg of Sugar &mdash; Weather much colder &mdash; a
+                            slight fall of snow to-day 
+                            </p><p>Fannie B. came to tea will stay all night &mdash;
+                            M<hi rend="super">r</hi> S. sent home 5 gals Sorghum. </p>
+                    </div3>
+                    <div3 id="d93" type="entry">
+                        <head>Saturday <date value="1865-03-25">March 25</date><hi rend="super">th</hi></head>
+                        <p>Weather disagreeable &mdash; Trimmed Aunty's' bonnet. Mrs Davis called &mdash; Fannie
+                            B. here yet &mdash; Willis B. spent the eve' &mdash; Millie spit more blood to-day &mdash;
+                            </p><p>3 loads of Coal came to-day &mdash; </p>
+                    </div3>
+                    <div3 id="d94" type="entry">
+                        <head>Sunday <date value="1865-03-26">March 26</date><hi rend="super">th</hi></head>
+                        <p>So windy to-day none of us could venture to Church, but Mr S. &mdash; Fannie
+                            was getting uneasy about the Lieut. When he stepped in Mr. Willis, B.
+                            &amp; Mr Lloyd were here to tea &mdash; I had the tooth ache all day.
+                            Millie has seemed better to-day. M<hi rend="super">r</hi> Angerer called in the eve' &mdash; 
+                            </p><p><hi rend="underline">Louisa sick</hi>.. </p>
+                        <pb entity="DSSR_000004396_0040" n="np"/>
+                    </div3>
+                    <div3 id="d95" type="entry">
+                        <head>Monday <date value="1865-03-27">March 27</date><hi rend="super">th</hi></head>
+                        <p>Fannie left to-day &mdash; expects to go home to-night &mdash; M<hi rend="super">r</hi> S. bought 5 gal.s
+                            Cerosine Oil &#x0024;200. per gal. &mdash; 1 load of coal came to-day &mdash; Millie had
+                            quite a severe attack this eve' D<hi rend="super">r</hi>. Wellford J<hi rend="super">r</hi> came out to see her &mdash;
+                            would that I had more faith in him! Weather more pleasant to-day &mdash;</p>
+                    </div3>
+                    <div3 id="d96" type="entry">
+                        <head>Tuesday <date value="1865-03-28">March 28</date><hi rend="super">th</hi></head>
+                        <p>Millie has spit a good deal of blood to-day. D<hi rend="super">r</hi>. W. Jr. came to see her
+                            this eve &mdash; ordered a mustard plaster to be applied to her chest and if
+                            she was no better - a <hi rend="underline">blister</hi> &mdash; M<hi rend="super">r</hi>. S. came home at 2&frac12; o'clock opened
+                            the sene oil &mdash; Mrs Bos-kin called &mdash; also Mrs Erins Mrs Colquitte
+                            stopped taking milk bought 1 lb butter from Mrs Walder &#x0024;20. The cherry
+                            trees are in bloom.</p>
+                    </div3>
+                    <div3 id="d97" type="entry">
+                        <head>Wednesday <date value="1865-03-29">March 29</date><hi rend="super">th</hi></head>
+                        <p>Millie better to-day &mdash; Mrs Dickenson call-ed &amp; brought her a
+                            little book &mdash; Bought another lb. of butter from Mrs Walder &#x0024;26. Weather
+                            pleasant </p>
+                        <pb entity="DSSR_000004396_0041" n="np"/>
+                    </div3>
+                    <div3 id="d98" type="entry">
+                        <head>Thursday <date value="1865-03-30">March 30</date><hi rend="super">th</hi>.</head>
+                        <p>Millie spit more blood today &mdash; is better to-night Asparagus made its
+                            first appearance &mdash; Rained nearly all day &mdash; M<hi rend="super">r</hi> Conner  Mr Angerer
+                            &amp; D<hi rend="super">r</hi>. Harring took tea &mdash; the latter played most delightfully on the piano &mdash; we were
+                            all charmed with him &mdash;Mr C. will stay all night &mdash;</p>
+                    </div3>
+                    <div3 id="d99" type="entry">
+                        <head>Friday <date value="1865-03-31">March 31</date><hi rend="super">st</hi>.</head>
+                        <p>Rained heavily again this morn' &mdash; but cleared away beautifully about noon
+                            Millie is better &mdash; M<hi rend="super">r</hi> Clark took tea &mdash; he will leave for Scotland on
+                            Monday &mdash; will take letters from Aunty Mr. S. C. &amp; A to
+                        William</p>
+                    </div3>
+                    <div3 id="d100" type="entry">
+                        <head>Saturday <date value="1965-04-01">April 1</date><hi rend="super">st</hi>.</head>
+                        <p>Millie has been better to-day &mdash; Weather delight-ful &mdash; Maj. Page called &mdash;
+                            Minnie Lloyd took tea &mdash; Mr. L - came after tea &amp; spent the eve'
+                            &mdash; Sister came in to-day for a little while &mdash; <pb
+                                entity="DSSR_000004396_0042" n="np"/>
+                        </p>
+                    </div3>
+                    <div3 id="d101" type="entry">
+                        <head>Tuesday <date value="1865-04-04">April 4</date><hi rend="super">th</hi>
+                        </head>
+                        <p>How am I to recount the events of the past two days? On Sunday morn' Aunt
+                            K. Ma &amp; Mr S. went to church &mdash; upon their return they heard
+                            Richmond was to be evacuated that night &mdash; the report was so sudden that
+                            we could not credit it at first &mdash; we thought we would have longer notice
+                            &mdash; and when we were told the Yankees would be in town the next morn' M<hi rend="super">r</hi>
+                            S. hooted at the idea &mdash; but soon a messenger came from the Clothing
+                            Dept. for M<hi rend="super">r</hi>. S. to go down immediately to assist in packing goods to be
+                            sent away that night. While he was gone Willis <unclear>Beman</unclear>
+                            came in &mdash; all excitement &mdash; and confirmed the worst reports we had
+                            heard &mdash; then came Mr Angerer who alarmed me very much by saying all the
+                            men from the Depts would be sent away that night &mdash; so fearing Mr S.
+                            would be one of the number and that he would not be allowed time to come
+                            home &mdash; Aunt K. and Charles very bravely started down to his de- <pb
+                                entity="DSSR_000004396_0043" n="np"/> partment about 9 o'clock at
+                            night fortunately it was bright moon-light and very mild and pleasant &mdash;
+                            but when they got to the Dept. they found Mr S. had just left for home -
+                            &amp; that he would not have to leave the city that night &mdash; so they
+                            started home with hearts much lighter than when they left &mdash; they got
+                            home a little while before Mr S. he having stopped at a friends they
+                            described the city as being a scene of confusion &mdash; men &amp; women
+                            hurrying to &amp; fro &amp; wagons &amp; carts crowding the
+                            streets &mdash; M<hi rend="super">r</hi> S. was considered by this time that the enemy would take
+                            possession of the city the next day &mdash; which banished sleep from our eyes
+                            &mdash; and as we had various matters to attend to, we did not retire until 4
+                            o'clock in the morn I never spent such a night and hope never may again
+                            &mdash; Our forces we<!--[re]--> leaving <add hand="author" place="top">the
+                                city</add> all night the last left about day-light after setting
+                            fire to all the buildings in which tobacco was stored, several mills,
+                            magazines, etc etc &mdash; by order <pb entity="DSSR_000004396_0044" n="np"/>
+                            it is said of Gen Ewell - So when the enemy entered the city they found
+                            many portions of it in flames &mdash; before the fire was ex-tinguished 16
+                            squares on Main St. <del hand="author">
+                                <hi rend="line-through">were</hi>
+                            </del> containing Richmond's finest stores &mdash; all the banks &mdash; the War
+                            Dept - &amp; the American Hotel were laid in ruins &mdash; one church also
+                            (Presbyterian) was burnt to the ground besides many private-dwellings
+                            the <corr sic="Arsinel">Arsenal</corr> of course, was fired &mdash; and one
+                            terrific explosion after an-other of shells &amp; other <corr sic="amunition">amunition</corr>
+                            added tenfold to the horrors of the scene -
+                            Such was the situation of Richmond &mdash; when on Monday morning <date value="1865-4-03">April 3<hi
+                                rend="super">rd</hi> 1865</date> the Yankees entered it, as its conquerors.
+                            </p><p>
+                            About 12 o'clock the Union flag was raised in Colquitts field in sight
+                            of our house &mdash; about two squares distant &mdash; and a compa-ny of
+                            sharpshooters stationed there for the day &mdash; but towards eve' &mdash; they left
+                            and the field taken <corr sic="posession">possession</corr>  of by <add
+                                hand="author" place="top">a</add> Negro Regt - with a number of
+                            covered wagons each drawn by six mules. We soon had the <add
+                                hand="author" place="top">comfort</add> of knowing that the enemy
+                            did not <pb entity="DSSR_000004396_0045" n="np"/> come with the
+                            intention to plun-der and burn as we had an-ticipated &mdash; but that the
+                            strictest order was maintained, &amp; private property respected &mdash;
+                            M<hi rend="super">r</hi> S. and other gentle-men in the neighborhood succeed-ed in having
+                            two soldiers detailed to stand guard with them during the night &mdash; so we
+                            slept feeling perfectly secure &mdash; though surrounded by our enemy &mdash; how
+                            much more terrible was the anticipation than the reality! This morning
+                            every-thing is quiet in the city, and the Ne-gro soldiers stepping
+                            about as grandly as possible.</p>
+                        <pb entity="DSSR_000004396_0046" n="np"/>
+                    </div3>
+                    <div3 id="d102" type="entry">
+                        <head>Wednesday <date value="1865-04-05">April 5</date><hi rend="super">th</hi></head>
+                        <p>The white units and covered wagons of the enemy are to be seen in all
+                            directions we are anoyed by visitors in the kitchen from the Negro camp
+                            &mdash; in as much as they keep our servants from their work, but as yet they
+                            have not behaved amiss &mdash; our servants seem to look upon it as a holiday
+                            frolic &mdash; but are respectful and do what they are told with apparent
+                            willingness &mdash; but how long will this last - ? 
+                        </p>
+                        <p>I must say I am agreeably
+                            surprised at the manner in which every thing is conducted &mdash; so quietly
+                            &amp; with so little pomp or parade the officers in command seem to
+                            be willing to do all in their power to secure the citizens from being
+                            molested by their soldiers &mdash; There was a paper printed in the city
+                            yesterday but we have not seen one &mdash; 
+                        </p>
+                        <p>M<hi rend="super">r</hi> Lincoln honoured Richmond
+                            yesterday with his presence &mdash; returned to W- to-day &mdash; We hear rumors of
+                            a dreadful battle having been fought <pb entity="DSSR_000004396_0047"
+                                n="np"/> but we do not know what to be-lieve &mdash; Mrs Hubard's house
+                            was again broken into last night and filled with Yankees to-day but
+                            through Aunt K-'s exertions it has been promised protection &mdash; Henry has
+                            taken possession of it to-day &mdash; 
+                            </p><p>M<hi rend="super">r</hi> S. stood guard all last night
+                            &amp; is to be but again to night until 1 o'clock &mdash; </p>
+                    </div3>
+                    <div3 id="d103" type="entry">
+                        <head>Thursday - <date value="1865-04-06">April 6</date><hi rend="super">th</hi></head>
+                        <p>As yet every thing is quiet &mdash; we have a guard night &amp; day to
+                            protect our prop-erty &mdash; while our situation is a de-plorable one <add
+                                hand="author" place="top">still</add> have much we have to be
+                                thankful for! &mdash; </p>
+                        <p>Killed our pig today &mdash;</p>
+                    </div3>
+                    <div3 id="d104" type="entry">
+                        <head>Friday <date value="1865-04-07">April 7</date><hi rend="super">th</hi></head>
+                        <p>Rained a little today M<hi rend="super">r</hi> Ritter is very sick Sister came in from Craigton
+                            with Temple &mdash; they have had a distressing time there &mdash; Mrs Christian
+                            servants refused to do any work took her mules and sold them and
+                            altogether behaved in such a way that she was afraid to stay there &mdash;
+                            <hi rend="underline">This <add hand="author" place="top">is not</add> Good Friday</hi>!</p>
+                        <pb entity="DSSR_000004396_0048" n="np"/>
+                    </div3>
+                    <div3 id="d105" type="entry">
+                        <head> Saturday <date value="1865-04-08">April 8</date><hi rend="super">th</hi></head>
+                        <p>Sister &amp; Ma went into the city this morn' to see Gen Cortz<ref
+                                n="3" target="n3">{3}</ref> as to whether he would furnish Mrs
+                            Christian with a guard and if not would he assist her in moving into the
+                            city &mdash; He was exceedingly polite &mdash; said he could not give her a guard
+                            but would send her a wagon to move into town if she found she could not
+                            stay where she is &mdash; Sister walked out to Craigton &mdash; to let Mrs C know
+                            the result of her visit &mdash; Ma came home very much pleased with Gen Cortz.
+                            Ma &amp; Aunty went up to see Minnie Lloyd after tea they met a big
+                            darkey on the way who instead of <corr sic="steping">stepping</corr>  aside
+                            to let them pass &mdash; gave Aunty a nock with his elbow, and walked on &mdash;
+                            Minnie  &amp; D<hi rend="super">r</hi> Harring came home with them &mdash;
+                            the latter cheered us with some of his delightful music. Mr S. is quite
+                            unwell tonight &mdash; </p>
+                        <pb entity="DSSR_000004396_0049" n="np"/>
+                    </div3>
+                    <div3 id="d106" type="entry">
+                        <head> Sunday <date value="1865-04-09">April 9</date><hi rend="super">th</hi></head>
+                        <p>Aunt K. and Ma &mdash; went to Church to-day the prayer for the President was
+                            omitted &mdash; Sister came in from Craigton to-day with her trunks Mrs C.
+                            concluded to come to town D<hi rend="super">r</hi> Wellford was to see M<hi rend="super">r</hi> S. Thought he would
+                            be up tomorrow Poor M<hi rend="super">r</hi> Ritter is very ill &mdash;</p>
+                    </div3>
+                    <div3 id="d107" type="entry">
+                        <head>Monday <date value="1865-04-10">April 10</date><hi rend="super">th</hi>
+                        </head>
+                        <p>This is Charlie birth-day &mdash; The unwelcome news of the surrender of Gen
+                            Lee's army reached us this morn' the shock was a terrible one &mdash; the only
+                            consolation is that so many preci-ous lives may be saved &mdash; the news was
+                            received here last eve and greeted by a salute of 100 guns at 9 o'clock
+                            P.M. another at 12 o'clock and another at day break &mdash; our curiosity was
+                            much excited to know what had happened but we knew it was something, <hi rend="underline">we</hi>
+                            would not be to glad to hear. Our old neighbor M<hi rend="super">r</hi> Ritter died last night
+                            after a week's illness &mdash; Mr S. is better &mdash; this eve &mdash; M<hi rend="super">r</hi> Evins spent the
+                            eve' Rained a good deal to day &mdash; </p>
+                        <pb entity="DSSR_000004396_0050" n="np"/>
+                    </div3>
+                    <div3 id="d108" type="entry">
+                        <head>Tuesday <date value="1865-04-11">April 11</date><hi rend="super">th</hi></head>
+                        <p> Raining again to-day &mdash; M<hi rend="super">r</hi> Ritter was buried at 12 o'clock &mdash; Ma Mr S.
+                            &amp; Charlie went to his funeral. Sister went to Church with Minnie
+                            Lloyd &mdash; </p>
+                    </div3>
+                    <div3 id="d109" type="entry">
+                        <head>Sunday <date value="1865-04-16">April 16</date><hi rend="super">th</hi></head>
+                        <p> Every-thing has been quiet since I wrote last &mdash; M<hi rend="super">r</hi> S. mailed a letter
+                            to-day to William &mdash; Aunty recd. a letter from Uncle Alfred the first
+                            since the war Mary left us <del hand="author" rend="line-through">this</del><add hand="author" place="top"
+                                >yesterday</add> morning &mdash; Mr Angerer left for parts unknown last
+                            Thursday &mdash; after selling five boxes of Tobacco belonging to M<hi rend="super">r</hi> Shafer -
+                            and pocketing the money &mdash; there is no end to the mean things he did
+                            before he left. Rained Friday &amp; Saturday This has been a
+                            beautiful day </p>
+                    </div3>
+                    <div3 id="d110" type="entry">
+                        <head>Monday <date value="1865-04-17">April 17</date><hi rend="super">th</hi></head>
+                        <p>The shocking news of the assassination of Lincoln in the Theatre at
+                            Washington arrived here to-day &mdash; it took place Friday night he died the
+                            next day &mdash; Booth a brother <pb entity="DSSR_000004396_0051" n="np"/> of
+                            the great <corr sic="tradgedian">tragedian</corr>  is suspect-ed of being
+                            the assassin &mdash; an attempt to murder Seward was made at the same time &mdash;
+                            but it is thought he will recover from his wounds 
+                            </p><p>Gen. Ripley's aid' &mdash; called to-day To know if we could let the 
+                            Gen Have rooms here &mdash; "we
+                            thanked him <hi rend="underline">No</hi>" &mdash; Sister has gone to Miss Temple's -&mdash; <add hand="author"
+                                place="top">she</add> called this eve with Bethe Wallace &amp;
+                            Lucy Crouch </p>
+                    </div3>
+                    <div3 id="d111" type="entry">
+                        <head>Tuesday <date value="1865-04-18">April 18</date><hi rend="super">th</hi></head>
+                        <p>Mrs Crump &amp; Fannie called also Minnie Lloyd &mdash; Capt <corr sic="Wersiger" resp="lsc6v">Wiesiger</corr> Lieut
+                            Rice Mr Purcell &amp; others Sister was here for a little while left
+                            Temple &mdash;  Rained a little &amp; blew a great deal &mdash;</p>
+                    </div3>
+                    <div3 id="d112" type="entry">
+                        <head>Wednesday <date value="1865-04-19">April 19</date><hi rend="super">th</hi></head>
+                        <p>We have our stable full of horses <hi rend="underline">once more</hi> &mdash; but un-fortunately they
+                            belong to the Yankee's &mdash; and not to us. Gen Ripleys &amp; <corr sic="staf">staff</corr>
+                             have taken rooms at Mr Ritter's &mdash; have
+                            raised their <hi rend="underline">flag</hi> &mdash; and have music from a band every eve.</p>
+                        <pb entity="DSSR_000004396_0052" n="np"/>
+                    </div3>
+                    <div3 id="d113" type="entry">
+                        <head>Thursday <date value="1865-04-20">April 20</date><hi rend="super">th</hi></head>
+                        <p>Millie spit blood to-day &mdash; had been very <unclear>[-]</unclear>
+                            <unclear>[-]</unclear> all morning &mdash; M<hi rend="super">r</hi>. S. bought one bu meal one ham
+                            one shoulder Sold 1 bunch asparagus. 25 cts has memorable
+                        "<hi rend="underline">green-back</hi>"</p>
+                    </div3>
+                    <div3 id="d114" type="entry">
+                        <head>Friday <date value="1865-04-21">April 21</date><hi rend="super">st</hi></head>
+                        <p>Millie rested well last night but has had several attacks to-day &mdash; Planted
+                            Potatoes &mdash; Mr Crouch arrived this eve' a paroled prisoner &mdash; Weather
+                            very warm</p>
+                    </div3>
+                    <div3 id="d115" type="entry">
+                        <head>Saturday <date value="1865-04-22">April 22</date><hi rend="super">nd</hi>
+                        </head>
+                        <p>D<hi rend="super">r</hi>. Wellford Jr &mdash; came out to see Millie she is better &mdash; Mr Crouch Sister
+                            &amp; G. are here </p>
+                    </div3>
+                    <div3 id="d116" type="entry">
+                        <head>Sunday <date value="1865-04-23">April 23</date><hi rend="super">rd</hi>
+                        </head>
+                        <p>Millie has had quite a severe attack to-day D<hi rend="super">r</hi> Wellford Sr. came to see
+                            her &mdash; ordered a large blister &mdash; Weather quite cold again M<hi rend="super">r</hi>. S.
+                            &amp; I unfortunately changed our flannel shirts</p>
+                    </div3>
+                    <div3 id="d117" type="entry">
+                        <head>Monday. <date value="1865-04-24">April 24</date><hi rend="super">th</hi></head>
+                        <p>M<hi rend="super">r</hi> L set up with Millie all night she seems better D<hi rend="super">r</hi>. W. Jr. called <pb
+                                entity="DSSR_000004396_0053" n="np"/> Minnie Lloyd &amp; D<hi rend="super">r</hi>
+                            Harring were here this eve &mdash; Weather still cool. Had a visit from Mrs
+                            Harwood &mdash; </p>
+                    </div3>
+                    <div3 id="d118" type="entry">
+                        <head>Tuesday <date value="1865-04-25">April 25</date><hi rend="super">th</hi></head>
+                        <p>D<hi rend="super">r</hi>. W. Jr. called. M<hi rend="super">r</hi>. C Sister &amp; Temple went to Craigton &mdash; Gen
+                            Rip-ley etc etc left for Manchester without many regrets &mdash; </p>
+                    </div3>
+                    <div3 id="d119" type="entry">
+                        <head>Wednesday <date value="1865-04-26">April 26</date><hi rend="super">th</hi></head>
+                        <p>Millie had another attack last night &mdash;</p>
+                    </div3>
+                    <div3 id="d120" type="entry">
+                        <head>Sunday <date value="1865-04-30">April 30</date><hi rend="super">th</hi></head>
+                        <p>Nothing of any moment having transpired I have omitted writing for the
+                            last two or three days &mdash; Millie has been improving since Wednes-day &mdash;
+                            M<hi rend="super">r</hi>. S. renewed his allegiance to the U. S.'s last Thursday &mdash; Mrs Lloyd
+                            returned last night I long to see her. M<hi rend="super">r</hi> Peterkin had services in his
+                            church to-day the prayer for the president of the U.S. was offered!
+                            Rained heavily last night &mdash;</p>
+                    </div3>
+                	
+                	<pb entity="DSSR_000004396_0054" n="np"/>
+                	<pb entity="DSSR_000004396_0055" n="np"/>
+                	<pb entity="DSSR_000004396_0056" n="np"/>
+                	<pb entity="DSSR_000004396_0057" n="np"/>
+                	<pb entity="DSSR_000004396_0058" n="np"/>
+                	<pb entity="DSSR_000004396_0059" n="np"/>
+                	<pb entity="DSSR_000004396_0060" n="np"/>
+                	<pb entity="DSSR_000004396_0061" n="np"/>
+                	<pb entity="DSSR_000004396_0062" n="np"/>
+                	<pb entity="DSSR_000004396_0063" n="np"/>
+                	<pb entity="DSSR_000004396_0064" n="np"/>
+                	<pb entity="DSSR_000004396_0065" n="np"/>
+                	<pb entity="DSSR_000004396_0066" n="np"/>
+                	<pb entity="DSSR_000004396_0067" n="np"/>
+                	<pb entity="DSSR_000004396_0068" n="np"/>
+                	<pb entity="DSSR_000004396_0069" n="np"/>
+                	<pb entity="DSSR_000004396_0070" n="np"/>
+                	<pb entity="DSSR_000004396_0071" n="np"/>
+                	<pb entity="DSSR_000004396_0072" n="np"/>
+                	<pb entity="DSSR_000004396_0073" n="np"/>
+                	<pb entity="DSSR_000004396_0074" n="np"/>
+                	<pb entity="DSSR_000004396_0075" n="np"/>
+                	<pb entity="DSSR_000004396_0076" n="np"/>
+                	<pb entity="DSSR_000004396_0077" n="np"/>
+                	<pb entity="DSSR_000004396_0078" n="np"/>
+                	<pb entity="DSSR_000004396_0079" n="np"/>
+                	<pb entity="DSSR_000004396_0080" n="np"/>
+                	<pb entity="DSSR_000004396_0081" n="np"/>
+                	<pb entity="DSSR_000004396_0082" n="np"/>
+                	<pb entity="DSSR_000004396_0083" n="np"/>
+                	<pb entity="DSSR_000004396_0084" n="np"/>
+                	<pb entity="DSSR_000004396_0085" n="np"/>
+                	<pb entity="DSSR_000004396_0086" n="np"/>
+                	<pb entity="DSSR_000004396_0087" n="np"/>
+                	<pb entity="DSSR_000004396_0088" n="np"/>
+                	<pb entity="DSSR_000004396_0089" n="np"/>
+                	<pb entity="DSSR_000004396_0090" n="np"/>
+                	<pb entity="DSSR_000004396_0091" n="np"/>
+                	<pb entity="DSSR_000004396_0092" n="np"/>
+                	<pb entity="DSSR_000004396_0093" n="np"/>
+                	<pb entity="DSSR_000004396_0094" n="np"/>
+                	<pb entity="DSSR_000004396_0095" n="np"/>
+                	<pb entity="DSSR_000004396_0096" n="np"/>
+                	<pb entity="DSSR_000004396_0097" n="np"/>
+                	<pb entity="DSSR_000004396_0098" n="np"/>
+                	<pb entity="DSSR_000004396_0099" n="np"/>
+                	<pb entity="DSSR_000004396_0100" n="np"/>
+                	<pb entity="DSSR_000004396_0101" n="np"/>
+                	<pb entity="DSSR_000004396_0102" n="np"/>
+                	<pb entity="DSSR_000004396_0103" n="np"/>
+                	<pb entity="DSSR_000004396_0104" n="np"/>
+                	<pb entity="DSSR_000004396_0105" n="np"/>
+                	<pb entity="DSSR_000004396_0106" n="np"/>
+                	<pb entity="DSSR_000004396_0107" n="np"/>
+                	<pb entity="DSSR_000004396_0108" n="np"/>
+                	<pb entity="DSSR_000004396_0109" n="np"/>
+                	<pb entity="DSSR_000004396_0110" n="np"/>
+                	<pb entity="DSSR_000004396_0111" n="np"/>
+                	<pb entity="DSSR_000004396_0112" n="np"/>
+                	<pb entity="DSSR_000004396_0113" n="np"/>
+                	<pb entity="DSSR_000004396_0114" n="np"/>
+                	<pb entity="DSSR_000004396_0115" n="np"/>
+                	<pb entity="DSSR_000004396_0116" n="np"/>
+                	<pb entity="DSSR_000004396_0117" n="np"/>
+                	<pb entity="DSSR_000004396_0118" n="np"/>
+                	<pb entity="DSSR_000004396_0119" n="np"/>
+                	<pb entity="DSSR_000004396_0120" n="np"/>
+                	<pb entity="DSSR_000004396_0121" n="np"/>
+                	<pb entity="DSSR_000004396_0122" n="np"/>
+                	<pb entity="DSSR_000004396_0123" n="np"/>
+                	<pb entity="DSSR_000004396_0124" n="np"/>
+                	<pb entity="DSSR_000004396_0125" n="np"/>
+                	<pb entity="DSSR_000004396_0126" n="np"/>
+                	<pb entity="DSSR_000004396_0127" n="np"/>
+                	<pb entity="DSSR_000004396_0128" n="np"/>
+                	<pb entity="DSSR_000004396_0129" n="np"/>
+                	<pb entity="DSSR_000004396_0130" n="np"/>
+                	<pb entity="DSSR_000004396_0131" n="np"/>
+                	<pb entity="DSSR_000004396_0132" n="np"/>
+                	<pb entity="DSSR_000004396_0133" n="np"/>
+                	<pb entity="DSSR_000004396_0134" n="np"/>
+                	<pb entity="DSSR_000004396_0135" n="np"/>
+                	<pb entity="DSSR_000004396_0136" n="np"/>
+                	<pb entity="DSSR_000004396_0137" n="np"/>
+                	<pb entity="DSSR_000004396_0138" n="np"/>
+                	<pb entity="DSSR_000004396_0139" n="np"/>
+                	<pb entity="DSSR_000004396_0140" n="np"/>
+                	<pb entity="DSSR_000004396_0141" n="np"/>
+                	<pb entity="DSSR_000004396_0142" n="np"/>
+                	<pb entity="DSSR_000004396_0143" n="np"/>
+                	<pb entity="DSSR_000004396_0144" n="np"/>
+                	<pb entity="DSSR_000004396_0145" n="np"/>
+                	<pb entity="DSSR_000004396_0146" n="np"/>
+                	<pb entity="DSSR_000004396_0147" n="np"/>
+                	<pb entity="DSSR_000004396_0148" n="np"/>
+                	<pb entity="DSSR_000004396_0149" n="np"/>
+                	<pb entity="DSSR_000004396_0150" n="np"/>
+                	<pb entity="DSSR_000004396_0151" n="np"/>
+                	<pb entity="DSSR_000004396_0152" n="np"/>
+                	<pb entity="DSSR_000004396_0153" n="np"/>
+                	<pb entity="DSSR_000004396_0154" n="np"/>
+                	<pb entity="DSSR_000004396_0155" n="np"/>
+                	<pb entity="DSSR_000004396_0156" n="np"/>
+                	<pb entity="DSSR_000004396_0157" n="np"/>
+                	<pb entity="DSSR_000004396_0158" n="np"/>
+                	<pb entity="DSSR_000004396_0159" n="np"/>
+                	<pb entity="DSSR_000004396_0160" n="np"/>
+                	<pb entity="DSSR_000004396_0161" n="np"/>
+                	<pb entity="DSSR_000004396_0162" n="np"/>
+                	<pb entity="DSSR_000004396_0163" n="np"/>
+                	<pb entity="DSSR_000004396_0164" n="np"/>
+                	<pb entity="DSSR_000004396_0165" n="np"/>
+                	<pb entity="DSSR_000004396_0166" n="np"/>
+                	<pb entity="DSSR_000004396_0167" n="np"/>
+                	<pb entity="DSSR_000004396_0168" n="np"/>
+                	<pb entity="DSSR_000004396_0169" n="np"/>
+                	<pb entity="DSSR_000004396_0170" n="np"/>
+                	<pb entity="DSSR_000004396_0171" n="np"/>
+                	<pb entity="DSSR_000004396_0172" n="np"/>
+                	<pb entity="DSSR_000004396_0173" n="np"/>
+                	<pb entity="DSSR_000004396_0174" n="np"/>
+                	<pb entity="DSSR_000004396_0175" n="np"/>
+                	<pb entity="DSSR_000004396_0176" n="np"/>
+                	<pb entity="DSSR_000004396_0177" n="np"/>
+                	<pb entity="DSSR_000004396_0178" n="np"/>
+                	<pb entity="DSSR_000004396_0179" n="np"/>
+                	<pb entity="DSSR_000004396_0180" n="np"/>
+                	<pb entity="DSSR_000004396_0181" n="np"/>
+                	<pb entity="DSSR_000004396_0182" n="np"/>
+                	<pb entity="DSSR_000004396_0183" n="np"/>
+                	<pb entity="DSSR_000004396_0184" n="np"/>
+                	<pb entity="DSSR_000004396_0185" n="np"/>
+                	<pb entity="DSSR_000004396_0186" n="np"/>
+                	<pb entity="DSSR_000004396_0187" n="np"/>
+                	<pb entity="DSSR_000004396_0188" n="np"/>
+                	<pb entity="DSSR_000004396_0189" n="np"/>
+                	<pb entity="DSSR_000004396_0190" n="np"/>
+                	<pb entity="DSSR_000004396_0191" n="np"/>
+                	<pb entity="DSSR_000004396_0192" n="np"/>
+                	<pb entity="DSSR_000004396_0193" n="np"/>
+                	<pb entity="DSSR_000004396_0194" n="np"/>
+                	<pb entity="DSSR_000004396_0195" n="np"/>
+                	<pb entity="DSSR_000004396_0196" n="np"/>
+                	<pb entity="DSSR_000004396_0197" n="np"/>
+                	<pb entity="DSSR_000004396_0198" n="np"/>
+                	<pb entity="DSSR_000004396_0199" n="np"/>
+                	<pb entity="DSSR_000004396_0200" n="np"/>
+                	<pb entity="DSSR_000004396_0201" n="np"/>
+                	<pb entity="DSSR_000004396_0202" n="np"/>
+                	<pb entity="DSSR_000004396_0203" n="np"/>
+                	<pb entity="DSSR_000004396_0204" n="np"/>
+                	<pb entity="DSSR_000004396_0205" n="np"/>
+                	<pb entity="DSSR_000004396_0206" n="np"/>
+                	<pb entity="DSSR_000004396_0207" n="np"/>
+                	<pb entity="DSSR_000004396_0208" n="np"/>
+                	<pb entity="DSSR_000004396_0209" n="np"/>
+                	<pb entity="DSSR_000004396_0210" n="np"/>
+                	<pb entity="DSSR_000004396_0211" n="np"/>
+                	<pb entity="DSSR_000004396_0212" n="np"/>
+                	<pb entity="DSSR_000004396_0213" n="np"/>
+                	<pb entity="DSSR_000004396_0214" n="np"/>
+                	
+                	               	
+                </div2>
+            </div1>
+            <div1 id="d121" type="note">
+                <head>Notes</head>
+                	
+                	<note id="n1" n="1" place="end">
+                    <seg type="note-symbol">{1}</seg>
+                    <p>[Rev. Joshua Peterkin of St. James Episcopal Church. Well known in his day.]</p>
+                </note>
+                	
+                   <note id="n2" n="2" place="end">
+                    <seg type="note-symbol">{2}</seg>
+                    <p>[or Granpa]</p>
+                </note>
+
+                <note id="n3" n="3" place="end">
+                    <seg type="note-symbol">{3}</seg>
+                    <p>["General Cortz"  is undoubtedly General August V. Kautz.  Major-General Kautz was with the Union occupying force and had his headquarters across the 
+                        street from the Governor's mansion at the corner of Governor and Ross Streets.  Identification by Richmond National Battlefield Park director Robert E. L. Krick.]</p>
+                </note>
+            </div1>
+        </body>
+    </text>
+</TEI.2>
+

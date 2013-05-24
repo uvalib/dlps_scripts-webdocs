@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0163 SYSTEM "000000766_0163" NDATA jpg>
+<!ENTITY DSSR_000000766_0164 SYSTEM "000000766_0164" NDATA jpg>
+<!ENTITY DSSR_000000766_0165 SYSTEM "000000766_0165" NDATA jpg>
+<!ENTITY DSSR_000000766_0166 SYSTEM "000000766_0166" NDATA jpg>
+
+<!--<!ENTITY NA62g02a SYSTEM "NA62g02a.jpg" NDATA jpg>
+<!ENTITY NA62g02b SYSTEM "NA62g02b.jpg" NDATA jpg>
+<!ENTITY NA62g02c SYSTEM "NA62g02c.jpg" NDATA jpg>
+<!ENTITY NA62g02d SYSTEM "NA62g02d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NA62g02">
+
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-07-02">July 2, 1862</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Lynn M. Fahy</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Lynn M. Fahy</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">14</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62g02</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2004">2004</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Illustrations have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney,</title>
+                        <author>Adelaide E. Case</author>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-07-02">1862-07-02</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Women Writers/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-09">November 9th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1862-07-02">July 2, 1862</date>
+                        <date value="1862-07-03">July 3, 1862</date>
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+
+                <p> Addie writes to Charlie on July 2nd about conflicting reports in the newspaper
+                    that Richmond had fallen or was again Uncle Sam's. She wishes for peace to be
+                    declared on "that memorable day," the 4th. Her letter writing, which was
+                    interrupted by the coming of her scholars, continues on July 3rd. Addie has
+                    heard "that desperate fighting was going on at Richmond. that 1200 of our brave
+                    men were already lying cold and insensible on the field", yet she yearns to be
+                    with him. </p>
+
+            </div1>
+
+        </front>
+
+        <body id="d4">
+
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-07-02"
+                        >July 2, 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0163"/>
+                <opener>
+                    <dateline>
+                        <name type="place">East Claridon</name>
+                        <date value="1862-07-02">July 2<hi rend="super">nd</hi> 1862</date>
+                    </dateline>
+                    <salute>My darling,</salute>
+                </opener>
+
+                <p> If I thought there<lb/> was so much happiness for me as the<lb/> probability of
+                    soon seeing my loved Charlie<lb/> I would not write this morning but<lb/> as
+                    every thing generally goes contrary to<lb/> our wishes and expectations. I doubt
+                    not<lb/> but that such will prove to be the case<lb/> now. I do not know why I
+                    had so<lb/> anxiously waited and looked for your<lb/> return, this 4<hi
+                        rend="super">th</hi> but as the drowning man<lb/> catches at a straw. I
+                    clung to the<lb/> little encouragement. Lieut <unclear>Brisvine</unclear>
+                    gave<lb/> you. and even now I shudder at the<lb/> thought of abandoning that
+                    hope.<lb/> There is scarcely a day but that I hear<lb/> of some soldier coming
+                    home to meet his<lb/> friends, and when I think of Charlie<lb/>
+                    <pb n="2" entity="DSSR_000000766_0164"/> so long absent. I find myself
+                    fervently<lb/> wishing that others were obliged to stay away<lb/> as long as he.
+                    I know it is a cruel<lb/> wicked wish. but it is perfectly natural<lb/> for
+                    human beings to wish for someone<lb/> to share their trials as well as
+                    their<lb/> joys or at least to sympathize with<lb/> them and when I see others
+                    so happy<lb/> because a dear friend has returned from<lb/> from the wars, I
+                    wonder why such<lb/> happiness is given to some and denied<lb/> to others. You
+                    will call me an "ungrate-<lb/> ful little minx" as Hallie says. but<lb/> refer
+                    the case to yourself. Look way down<lb/> in the naughty corners. (If you
+                    have<lb/> such) of your heart and if you do not<lb/> find just such rebellious
+                    thoughts,<lb/> striving so hard to get the control. then<lb/> call me a poor
+                    judge. But you will<lb/> say I am arguing both sides will you<lb/> not?</p>
+
+                <p>I am<q>dying to hear</q> the news in<lb/>
+                    <pb n="3" entity="DSSR_000000766_0165"/> yesterdays paper. The report in
+                    mondays<lb/> paper was that Richmond had fallen.<lb/> or --risen. I guess the
+                    latter. at least that<lb/> Uncle Sam had/has it again. and I wish<lb/> so much
+                    to have it confirmed. I can<lb/> hardly wait to hear, Would that peace<lb/>
+                    could be declared the fourth. would<lb/> not that memorable day be doubly
+                    dear?<lb/> Dear Charlie. my scholars are coming and<lb/> making such a noise
+                    that I must cease<lb/> writing for the present. </p>
+
+                <closer>
+                    <salute>Accept the love<lb/> and blessings of your Addie</salute>
+                </closer>
+            </div1>
+
+            <div1 type="letter" n="2" id="d6">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, No Date</head>
+
+
+                <opener>
+                    <dateline>
+                        <date value="1862-07-03">July 3<hi rend="super">rd</hi></date>
+                    </dateline>
+                    <lb/>
+                    <salute>My darling:</salute>
+                </opener>
+
+                <p>Conflicting emotions<lb/> are now raging in my heart. Last<lb/> night I heard
+                        the<del hand="h1">m</del> news. that desperate<lb/> fighting was going on at
+                    Richmond.<lb/> that 1200 of our brave men were already<lb/> lying cold and
+                    insensible upon the field<lb/> and what is worse. not an inch has<lb/> been
+                    gained, For a few days dearest. I<lb/> have lost all knowledge of your
+                    position<lb/> and who knows. oh heaven forbid. but<lb/>
+                    <pb n="4" entity="DSSR_000000766_0166"/> that you are there sharing the
+                    perils<lb/> of the battle field. Oh. Charlie. why<lb/> does cruel fate thus
+                    separate us.<lb/> Why are you so far away. suffering often<lb/> for want of the
+                    comforts of life. alone<lb/> while I can remain at home in<lb/> security
+                    surrounded by kind friends<lb/> all striving to make my life a happy<lb/> one.
+                    but dearest I am far from happy this<lb/> morning. Could I but be with you.
+                    even<lb/> on the dreaded battle field. I should be<lb/> happier than now. Bitter
+                    very bitter are<lb/> my feelings this morning. darling. but<lb/> I can not
+                    control them. I am not fit<lb/> to discharge the duties lying before me to-<lb/>
+                    day. for I have no control o<unclear>v</unclear>er my feelings<lb/> whatever. If
+                    there would but come a shower<lb/> thunder. lightning and rain mingle
+                    together<lb/> in one great storm and commotion. I should<lb/> feel better. but
+                    the sun shines just as bright<lb/> the birds sing just as sweetly and all
+                    nature<lb/> is just as gay as if no pitiless war was<lb/> raging over our land
+                    leaving desolate hearths<lb/> sobbing children and broken hearted wives.<lb/> in
+                    all parts of the <sic corr="United">Unitid</sic> states. It<lb/> seems so like
+                    mockery. this beautiful<lb/> morn. when my poor heart aches so hard<lb/> But
+                    these fears may be all unfounded<lb/> and you may laugh--no you will never<lb/>
+                    do that dearest.- but if they are unfounded<lb/> I thank God for it. But dear, I
+                    must<lb/> close as it is near school time.</p>
+
+                <closer>
+                    <salute>Trusting in the guardianship of a<lb/> wise and good Savior I remain
+                        ever</salute>
+                    <signed>Your Addie</signed>
+                </closer>
+
+            </div1>
+
+        </body>
+
+
+    </text>
+
+</TEI.2>

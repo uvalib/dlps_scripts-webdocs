@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0191 SYSTEM "000000766_0191" NDATA jpg>
+<!ENTITY DSSR_000000766_0192 SYSTEM "000000766_0192" NDATA jpg>
+<!ENTITY DSSR_000000766_0193 SYSTEM "000000766_0193" NDATA jpg>
+<!ENTITY DSSR_000000766_0194 SYSTEM "000000766_0194" NDATA jpg>
+
+<!--<!ENTITY NA62i10a SYSTEM "NA62i10a.jpg" NDATA jpg>
+<!ENTITY NA62i10b SYSTEM "NA62i10b.jpg" NDATA jpg>
+<!ENTITY NA62i10c SYSTEM "NA62i10c.jpg" NDATA jpg>
+<!ENTITY NA62i10d SYSTEM "NA62i10d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NA62i10">
+
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <dateRange
+                        from="1862-09-10" to="1862-09-11">1862 September 10-11</dateRange></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Manon Th&eacute;roux, Yale University Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Manon Th&eacute;roux, Yale University Library</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">16</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62i10</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, 1862 September
+                            10-11</title>
+
+
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p>The Corinne Carr Nettleton Civil War Collection</p>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-09-10">1862-09-10</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War Women Writers Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2001-06">June 2001</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Carolyn Fay, Electronic Text Center</name>
+                </respStmt>
+                <item>Updated TEI header and tags. </item>
+            </change>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-10">November 10th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 7th, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <dateRange from="1862-09-10" to="1862-09-11">1862-09-10 - 1862-09-11</dateRange>
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+
+                <p>Writing from East Claridon, Ohio, where she works as a schoolteacher, Addie
+                    expresses her despondancy at not receiving letters from Charlie and her
+                    discouragement at news of recent advances by Confederate forces in Maryland,
+                    Ohio, and Washington, D.C. She relates her neighbors' comments about the War and
+                    expresses her frustration at their pessimism. She looks forward to her brother's
+                    return home in a few days, expresses her love for Charlie, and wishes that he,
+                    too, could return home soon.</p>
+
+            </div1>
+        </front>
+
+        <body id="d4">
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-09-10"
+                        >September 10<hi rend="super">th</hi> 1862 </date></head>
+                <pb n="1" entity="DSSR_000000766_0191"/>
+
+                <opener>
+                    <dateline>
+                        <name type="place">East Claridon</name>. <date value="1862-09-10">September
+                                10<hi rend="super">th</hi> 1862 </date>
+                    </dateline>
+                    <lb/>
+                    <salute>My darling<name type="recipient">
+                            <orig reg="Charlie,">Charlie</orig>
+                        </name>
+                    </salute>
+                </opener>
+
+                <p> Although but two days<lb/> have passed since I <del hand="h1">since I</del> last
+                    wrote you <del hand="h1">yet</del> and as<lb/> I have not heard from you for so
+                    long a time<lb/> I am going to give you some more &ldquo;spoiled <orig
+                        reg="paper.">paper</orig>&rdquo;<lb/> You must not act upon the
+                    principle that the<lb/> longer you neglect writing, the oftener I will<lb/>
+                    <orig reg="write,">write.</orig> for it is a poor <orig reg="principle."
+                        >principle,</orig> You do not<lb/> know how it grieves me when I do not
+                    hear<lb/> from you for so long a time. None but <name type="person"
+                    >Dora</name><lb/> understand the sorrowful disappointed look<lb/> which I <orig
+                        reg="cannot">can not</orig> <orig reg="suppress">supress</orig> when day
+                    after<lb/> day the same answer &ldquo;no letter&rdquo; reaches <orig
+                        reg="me.">me,</orig><lb/> I can not help at times but feel dejected <pb
+                        n="2" entity="DSSR_000000766_0192"/> and despairing, wondering if God <hi
+                        rend="underline">does</hi> regard<lb/> the prayer which so often ascends in
+                    behalf<lb/> of that absent loved one, --my idolized <name type="recipient"
+                        >Charlie</name>.<lb/> But I attach no blame to you darling,<lb/> because I
+                    know that you write just as often<lb/> as you can, so don't think I have
+                    forgotten<lb/> my promise-- to scold you no more. </p>
+
+                <p>
+                    <name type="recipient">Charlie</name>, what will become of our <orig
+                        reg="country?">country,</orig><lb/> It seems as if the rebels were gaining
+                    ground<lb/> every day. I am not entirely discouraged<lb/> but when we read
+                        &ldquo; <name type="place">Washington</name> in danger&rdquo;<lb/>
+                    &ldquo;Rebels in force in <name type="place">Maryland</name>&rdquo;
+                        &ldquo; <name type="place">Ohio</name> invaded<lb/>
+                    &amp;c.&rdquo; it is really discouraging. And then to<lb/> see how the
+                    people here receive such news-- with<lb/> nothing but a remark such as
+                        &ldquo; <name type="person">Lincoln</name> means<lb/> to let them whip
+                    us&rdquo; or &ldquo;Well when we are<lb/> completely lost our troops
+                    will begin to act&rdquo;<lb/> never entertaining the idea that they
+                    could<lb/> be of any help. Why <name type="recipient">Charlie</name> I verily
+                    believe<lb/> that there are men here at the worst who,<lb/> if they had an
+                    opportunity, would surrender<lb/> themselves to the rebel army with nothing<lb/>
+                    but a remark such as &ldquo;I expected it&rdquo; or <pb n="3"
+                        entity="DSSR_000000766_0193"/> the like, never dreaming that there is such
+                    a<lb/> thing as <hi rend="underline">resistance</hi> in <name type="place">
+                        <orig reg="America.">America</orig>
+                    </name> &ldquo;Oh! it makes<lb/> me so angry to meet with some whom I
+                    have<lb/> hitherto conversed with upon the subject of<lb/> rebellion. They will
+                    come up with that <orig reg="indifferent">indiffer-<lb/> ent</orig> air, which
+                    they alone can wear so becomingly<lb/> and <orig reg="it's">its</orig>
+                    &ldquo;W-e-l-l, <name type="sender">Miss Case</name>-- don't you think<lb/>
+                    we're getting ready to take a good <hi rend="underline"
+                    >licking</hi>&rdquo;?<lb/> They will drawl it out and speak it so<lb/>
+                    impulsively just because <del hand="h1">of</del> they know I have<lb/> always
+                    adhered to the fact that our <hi rend="underline">men<lb/> never will be
+                        conquered</hi>. I sometimes find<lb/> it difficult to subdue the wish that
+                    I<lb/> would enjoy seeing them &ldquo;take the good licking&rdquo; </p>
+            </div1>
+
+            <div1 type="letter" n="2" id="d6">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, Morning.<date
+                        value="1862-09-11"><abbr expan="September">Sept.</abbr> 11<hi rend="super"
+                            >th</hi></date></head>
+
+                <opener>
+                    <dateline> Morning.<date value="1862-09-11"><abbr expan="September">Sept.</abbr>
+                                11<hi rend="super">th</hi></date>
+                    </dateline>
+                </opener>
+
+                <p>Is not this a lovely morning darling?<lb/>
+                    <orig reg="Just">just</orig> warm enough to be comfortable and<lb/>
+                    <orig reg="everything">every thing</orig> so silent up here in the<lb/>
+                    <orig reg="woods.">woods,</orig> All save the <del hand="h1">crickets</del>
+                    crickets are<lb/> silent as if they had forgotten <hi rend="underline">to
+                    be</hi>.<lb/> What an hour for meditation. <orig reg="Indeed">indeed</orig><lb/>
+                    dearest, I feel more like lounging into<lb/> one of my dreamy fits, forgetting
+                    all <pb n="4" entity="DSSR_000000766_0194"/> the world in that one blissful thought<lb/>
+                    <hi rend="underline">Charlie's true love</hi>. What need I of anything<lb/> save
+                    the presence of that dear one to complete<lb/> my happiness. May you be spared,
+                    my own<lb/> darling, so that I may show you how fondly<lb/> devotedly your <name
+                        type="sender">Addie</name> can and does love <orig reg="you."
+                    >you,</orig><lb/> Surely man was never more worthy of my<lb/> love than my noble
+                    true hearted <name type="recipient">Charlie</name>.<lb/> But here come my
+                    scholars and my dream<lb/> is <orig reg="disturbed.">disturbed,</orig> In a very
+                    few days my<lb/> darling <name type="person">brother</name> will <orig
+                        reg="return.">return,</orig> I suppose he was<lb/> mustered out yesterday,
+                    then we shall all<lb/> rejoice. but how much more should I rejoice<lb/> if <name
+                        type="recipient">Charlie</name> also could come. But it is<lb/> nearly
+                    school time and I must <orig reg="close.">close</orig>
+                </p>
+
+                <closer> Remember me to the boys, all that I<lb/> know and so many more as you see
+                    fit.<lb/> God bless thee noble darling <name type="recipient">Charlie</name> is
+                    the<lb/> hourly prayer of your own<lb/>
+                    <signed>
+                        <name type="sender">Addie</name>
+                    </signed>
+                </closer>
+
+            </div1>
+        </body>
+    </text>
+</TEI.2>

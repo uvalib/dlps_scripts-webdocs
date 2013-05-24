@@ -1,0 +1,78 @@
+
+<!-- mupchar.ent - music characters found in Mup
+Perry Roland <pdr4h@virginia.edu>
+Written: 2006/08/29
+Last modified: 2006/08/29 
+-->
+
+<!-- ====================================================================== -->
+<!-- music characters available in Mup -->
+<!-- ====================================================================== -->
+
+<!ENTITY dalsegno       "D.S.">        <!-- MUSICAL SYMBOL DAL SEGNO -->
+<!ENTITY dacapo         "D.C.">        <!-- MUSICAL SYMBOL DA CAPO -->
+<!ENTITY segno          "\(sign)">     <!-- MUSICAL SYMBOL SEGNO (Mup) -->
+<!ENTITY coda           "\(coda)">     <!-- MUSICAL SYMBOL CODA (Mup) -->
+<!ENTITY rptfig2        "\(measrpt)">  <!-- MUSICAL SYMBOL REPEATED FIGURE-2 (Mup) -->
+<!ENTITY ferm           "\(ferm)">     <!-- MUSICAL SYMBOL FERMATA (Mup) -->
+<!ENTITY fermbelow      "\(uferm)">    <!-- MUSICAL SYMBOL FERMATA BELOW (Mup) -->
+<!ENTITY caesura        "\(rr)">       <!-- MUSICAL SYMBOL CAESURA (Mup) -->
+
+<!ENTITY Gclef          "\(gclef)">    <!-- MUSICAL SYMBOL G CLEF (Mup) -->
+<!ENTITY Cclef          "\(cclef)">    <!-- MUSICAL SYMBOL C CLEF (Mup) -->
+<!ENTITY Fclef          "\(fclef)">    <!-- MUSICAL SYMBOL F CLEF (Mup) -->
+
+<!ENTITY flat           "\(flat)">     <!-- MUSIC FLAT SIGN -->
+<!ENTITY nat            "\(nat)">      <!-- MUSIC NATURAL SIGN -->
+<!ENTITY sharp          "\(sharp)">    <!-- MUSIC SHARP SIGN -->
+<!ENTITY dblsharp       "\(dblsharp)"> <!-- MUSICAL SYMBOL DOUBLE SHARP (Mup) -->
+<!ENTITY dblflat        "\(dblflat)">  <!-- MUSICAL SYMBOL DOUBLE FLAT (Mup) -->
+
+<!ENTITY common         "\(com)">      <!-- MUSICAL SYMBOL COMMON TIME (Mup) -->
+<!ENTITY cut            "\(cut)">      <!-- MUSICAL SYMBOL CUT TIME (Mup) -->
+
+<!ENTITY _8va           "8va">         <!-- MUSICAL SYMBOL OTTAVA ALTA -->
+<!ENTITY _8vb           "8vb">         <!-- MUSICAL SYMBOL OTTAVA BASSA -->
+<!ENTITY _15va          "15va">        <!-- MUSICAL SYMBOL QUINDICESIMA ALTA -->
+<!ENTITY _15vb          "15vb">        <!-- MUSICAL SYMBOL QUINDICESIMA BASSA -->
+
+<!ENTITY rest1          "\(1rest)">    <!-- MUSICAL SYMBOL WHOLE REST (Mup) -->
+<!ENTITY rest2          "\(2rest)">    <!-- MUSICAL SYMBOL HALF REST (Mup) -->
+<!ENTITY rest4          "\(4rest)">    <!-- MUSICAL SYMBOL QUARTER REST (Mup) -->
+<!ENTITY rest8          "\(8rest)">    <!-- MUSICAL SYMBOL EIGHTH REST (Mup) -->
+<!ENTITY rest16         "\(16rest)">   <!-- MUSICAL SYMBOL SIXTEENTH REST (Mup) -->
+<!ENTITY rest32         "\(32rest)">   <!-- MUSICAL SYMBOL THIRTY-SECOND REST (Mup) -->
+<!ENTITY rest64         "\(64rest)">   <!-- MUSICAL SYMBOL SIXTY-FOURTH REST (Mup) -->
+<!ENTITY rest128        "\(128rest)">  <!-- MUSICAL SYMBOL ONE HUNDRED TWENTY-EIGHTH REST (Mup) -->
+
+<!-- Notes -->
+<!ENTITY breve          "\(dblwhole)"> <!-- MUSICAL SYMBOL BREVE (Mup) -->
+<!ENTITY note1          "\(1n)">       <!-- MUSICAL SYMBOL WHOLE NOTE (Mup) -->
+<!ENTITY note2          "\(up2n)">     <!-- MUSICAL SYMBOL HALF NOTE : 1D157 1D165 (Mup) -->
+<!ENTITY note4          "\(up4n)">     <!-- MUSICAL SYMBOL QUARTER NOTE : 1D158 1D165 (Mup) -->
+<!ENTITY note8          "\(up8n)">     <!-- MUSICAL SYMBOL EIGHTH NOTE : 1D15F 1D16E (Mup) -->
+<!ENTITY note16         "\(up16n)">    <!-- MUSICAL SYMBOL SIXTEENTH NOTE : 1D15F 1D16F (Mup) -->
+<!ENTITY note32         "\(up32n)">    <!-- MUSICAL SYMBOL THIRTY-SECOND NOTE : 1D15F 1D170 (Mup) -->
+<!ENTITY note64         "\(up64n)">    <!-- MUSICAL SYMBOL SIXTY-FOURTH NOTE : 1D15F 1D171 (Mup) -->
+<!ENTITY note128        "\(up128n)">   <!-- MUSICAL SYMBOL ONE HUNDRED TWENTY-EIGHTH NOTE : 1D15F 1D172 (Mup) -->
+
+<!ENTITY dot            "\(dot)">      <!-- MUSICAL SYMBOL COMBINING AUGMENTATION DOT (Mup) -->
+
+<!ENTITY acc            "\(acc_gt)">   <!-- MUSICAL SYMBOL COMBINING ACCENT (Mup) -->
+<!ENTITY ten            "\(leg)">      <!-- MUSICAL SYMBOL COMBINING TENUTO (Mup) -->
+<!ENTITY stacciss       "\(uwedge)">   <!-- MUSICAL SYMBOL COMBINING STACCATISSIMO (Mup) -->
+<!ENTITY marc           "\(acc_uhat)"> <!-- MUSICAL SYMBOL COMBINING MARCATO (Mup) -->
+
+<!ENTITY tr             "\(tr)">       <!-- MUSICAL SYMBOL TR (Mup) -->
+<!ENTITY turn           "\(turn)">     <!-- MUSICAL SYMBOL TURN (Mup) -->
+<!ENTITY invturn        "\(invturn)">  <!-- MUSICAL SYMBOL INVERTED TURN (Mup) -->
+
+<!ENTITY degslash       "\(halfdim)">  <!-- MUSICAL SYMBOL DEGREE SLASH (Mup) -->
+
+<!ENTITY dnbow          "\(dnbow)">    <!-- MUSICAL SYMBOL COMBINING DOWN BOW (Mup) -->
+<!ENTITY upbow          "\(upbow)">    <!-- MUSICAL SYMBOL COMBINING UP BOW (Mup) -->
+
+<!-- Pedals -->
+<!ENTITY ped            "\(begped)">   <!-- MUSICAL SYMBOL PEDAL MARK (Mup) -->
+<!ENTITY pedup          "\(endped)">   <!-- MUSICAL SYMBOL PEDAL UP MARK (Mup) -->
+<!ENTITY halfped        "\(pedal)">    <!-- MUSICAL SYMBOL HALF PEDAL MARK (Mup) -->

@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0079 SYSTEM "000000766_0079" NDATA jpg>
+<!ENTITY DSSR_000000766_0080 SYSTEM "000000766_0080" NDATA jpg>
+<!ENTITY DSSR_000000766_0081 SYSTEM "000000766_0081" NDATA jpg>
+<!ENTITY DSSR_000000766_0082 SYSTEM "000000766_0082" NDATA jpg>
+
+<!--<!ENTITY NA62b13a SYSTEM "NA62b13a.jpg" NDATA jpg>
+<!ENTITY NA62b13e SYSTEM "NA62b13e.jpg" NDATA jpg>-->
+
+<!ENTITY longs "s" >
+<!-- long s -->
+]>
+
+<TEI.2 id="NA62b13">
+
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-02-13">February 13th, 1862</date></title>
+
+                <author>Case, Adeline E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Stacey Herbert, State University of New York at Buffalo</name>
+                    <resp>Creation of digital images:</resp>
+                    <name>University of Virginia Library Electronic Text Center</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Stacey Herbert, State University of New York at Buffalo</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">13</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62b13</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2001">2001</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, February 13th,
+                            1862</title>
+
+
+                        <author>Adeline E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>All unambiguous end-of-line hyphens have been retained.</p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings.</p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-02-13">1862-02-13</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Women Writers/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-03">November 3rd, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">September 30, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent> 4pp.</extent>
+                        <date value="1862-02-13">February 13th, 1962</date>
+
+                    </bibl>
+                </head>
+                <p>Addie describes her recent activities and her preoccupation with Charlie. She
+                    conveys hometown news, including the murder of woman by her husband, thanks
+                    Charlie for a portrait he sent her, and encloses a portrait of herself.</p>
+            </div1>
+
+        </front>
+
+
+        <body id="d4">
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-02-13"
+                        >February 13th, 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0079"/>
+
+
+                <opener>
+                    <dateline>Mecca February 13th '62</dateline>
+                    <salute>Dearest Charlie</salute>
+                </opener>
+
+                <p>Art happy to night <lb/>my darling: I trust you are, and <lb/>comfortable too. It
+                    would seem almost <lb/>impossible to be comfortable this <lb/>cold night, but as
+                    I have been <lb/>riding all the afternoon.<del hand="h1">and</del>
+                    <lb/>I feel the cold more for that. <lb/>Dora and I went to <name
+                        type="geographic">Claridon</name><ref target="n1" n="1">1</ref>
+                    <lb/>tuesday and returned to day. <lb/>We had a pleasant ride and <lb/>also
+                    visit, but my thoughts <lb/>would wander from my ride <lb/>and even from the
+                    beautiful </p>
+
+                <pb n="2" entity="DSSR_000000766_0080"/>
+                <p>scenery twixt here and there <lb/>to the dearest of human beings <lb/>and I
+                    imagined, (rather strange <lb/>was it not darling!) that if Charlie <lb/>were
+                    with us that ----<hi rend="underline">I</hi> should <lb/>enjoy myself a trifle
+                    better <lb/><name type="name">Hallie</name> is not at home to <lb/>night. How
+                    lonesome I get when <lb/>he is absent, but a short time. <lb/>Well it gives me a
+                    good opportunity <lb/>to write you which is a pleasant <lb/>substitute. I was
+                    passing through <lb/>the center of <name type="geographic">Colebrook</name><ref
+                        target="n2" n="2">2</ref> yesterday <lb/>and noticed an artists car. I
+                    <lb/>know not how else I could better <lb/>express my thanks for your kindness
+                    <lb/>in sending me your <unclear>Mine Truly</unclear>
+                    <lb/>than to send you my portrait, <lb/>therefore I will enclose it in
+                        <lb/>this.<ref target="n3" n="3">3</ref> If you enjoy the sight of it
+                    <lb/>as much as I do that of yours <lb/>I shall be trebly repaid for it
+                        <lb/><ref target="n4" n="4">4</ref>I am obliged to resort to the </p>
+
+                <pb n="3" entity="DSSR_000000766_0081"/>
+                <p>pencil to finish this for my pens I find are almost <lb/>worn out. <lb/>I believe
+                    I will make this a <lb/>news letter if I can find enough <lb/>to fill it for my
+                    muse is rather <lb/>dull, and I am somewhat tired. <lb/>Our sleighing has been
+                    home on <lb/>furlough of two or three days for <lb/>several times, still I have
+                    not <lb/>enjoyed it much. At present, there <lb/>is about three inches of snow
+                    <lb/>on the ground. The sleighing month <lb/>of here is very good. <lb/>There
+                    was a donation party for <lb/><name type="name">Elder Higbee</name> at his home
+                    last <lb/>evening. he recieved over forty <lb/>dollars, about two thirds of it
+                    <lb/>in coin. There have been several deaths <lb/>in town during the first two
+                    months <lb/>one lady died at the age of <lb/>eighteen. she was married when but
+                    <lb/>fourteen. how cruel it seems for <pb n="4" entity="DSSR_000000766_0082"/>
+                    <lb/>girls to marry so <lb/>young. I would much <lb/>rather go to war. </p>
+
+                <p>In <name type="geographic">New Lyme</name><ref target="n5" n="5">5</ref>, a man
+                    hung <lb/>his wife last week or they <lb/>supposed that he did they <lb/>have
+                    been married but <lb/>three months and he <lb/>killed her, such is the
+                    <lb/>bliss of married life. <lb/>He is now awaiting his trial <lb/>Do you not
+                    think he "loved" that <lb/>one whom he vowed to protect and <lb/>cherish? I
+                    should dread to possess <lb/>his heart or conscience either. <lb/>But I am alone
+                    and the hour <lb/>is getting late therefore I am compelled <lb/>to bid you good
+                    night. You will <lb/>think this a poor apology for a letter I know you will You
+                    will <lb/>write soon and often will you not <lb/>dearest? Our Father in Heaven
+                    preserve <lb/>thee my darling and guide you near to Him </p>
+                <closer> Your own<signed>Addie</signed>
+                </closer>
+            </div1>
+        </body>
+
+        <back id="d6">
+            <div1 type="notes" n="1" id="d7">
+                <head>Notes</head>
+
+                <note id="n1" place="end" n="1"> <seg type="note-symbol">1</seg>
+                    <p>Claridon is 30 miles northwest of Mecca.</p>
+                </note>
+                <note id="n2" place="end" n="2"><seg type="note-symbol">2</seg>
+                    <p>Colebrook is 10 miles north of Mecca.</p>
+                </note>
+                <note id="n3" place="end" n="3"><seg type="note-symbol">3</seg>
+                    <p>Perhaps the portraits exchanged were those archived in Special
+                        Collections.<!--<figure rend="page" entity="NA62b13e">
+                            <figDesc>Portrait of Adeline E. Chase</figDesc>
+                        </figure>--></p>
+                </note>
+                <note id="n4" place="end" n="4"><seg type="note-symbol">4</seg>
+                    <p>The letter, previously in ink, continues in pencil</p>
+                </note>
+                <note id="n5" place="end" n="5"><seg type="note-symbol">5</seg>
+                    <p>New Lyme is 15 miles north of Addie's home town of Mecca.</p>
+                </note>
+
+            </div1>
+
+        </back>
+    </text>
+
+</TEI.2>

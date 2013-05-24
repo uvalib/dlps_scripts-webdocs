@@ -1,0 +1,3066 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % ISOtech SYSTEM "http://text.lib.virginia.edu/charent/iso-tech.ent"> %ISOtech;
+
+<!ENTITY DSSR_000004400_0014 SYSTEM "DSSR_000004000_0014" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0015 SYSTEM "DSSR_000004000_0015" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0016 SYSTEM "DSSR_000004000_0016" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0017 SYSTEM "DSSR_000004000_0017" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0018 SYSTEM "DSSR_000004000_0018" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0019 SYSTEM "DSSR_000004000_0019" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0020 SYSTEM "DSSR_000004000_0020" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0021 SYSTEM "DSSR_000004000_0021" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0022 SYSTEM "DSSR_000004000_0022" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0023 SYSTEM "DSSR_000004000_0023" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0024 SYSTEM "DSSR_000004000_0024" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0025 SYSTEM "DSSR_000004000_0025" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0026 SYSTEM "DSSR_000004000_0026" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0027 SYSTEM "DSSR_000004000_0027" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0028 SYSTEM "DSSR_000004000_0028" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0029 SYSTEM "DSSR_000004000_0029" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0030 SYSTEM "DSSR_000004000_0030" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0031 SYSTEM "DSSR_000004000_0031" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0032 SYSTEM "DSSR_000004000_0032" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0033 SYSTEM "DSSR_000004000_0033" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0034 SYSTEM "DSSR_000004000_0034" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0035 SYSTEM "DSSR_000004000_0035" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0036 SYSTEM "DSSR_000004000_0036" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0037 SYSTEM "DSSR_000004000_0037" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0038 SYSTEM "DSSR_000004000_0038" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0039 SYSTEM "DSSR_000004000_0039" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0040 SYSTEM "DSSR_000004000_0040" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0041 SYSTEM "DSSR_000004000_0041" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0042 SYSTEM "DSSR_000004000_0042" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0043 SYSTEM "DSSR_000004000_0043" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0044 SYSTEM "DSSR_000004000_0044" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0045 SYSTEM "DSSR_000004000_0045" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0046 SYSTEM "DSSR_000004000_0046" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0047 SYSTEM "DSSR_000004000_0047" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0048 SYSTEM "DSSR_000004000_0048" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0049 SYSTEM "DSSR_000004000_0049" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0050 SYSTEM "DSSR_000004000_0050" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0051 SYSTEM "DSSR_000004000_0051" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0052 SYSTEM "DSSR_000004000_0052" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0053 SYSTEM "DSSR_000004000_0053" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0054 SYSTEM "DSSR_000004000_0054" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0055 SYSTEM "DSSR_000004000_0055" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0056 SYSTEM "DSSR_000004000_0056" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0057 SYSTEM "DSSR_000004000_0057" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0058 SYSTEM "DSSR_000004000_0058" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0059 SYSTEM "DSSR_000004000_0059" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0060 SYSTEM "DSSR_000004000_0060" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0061 SYSTEM "DSSR_000004000_0061" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0062 SYSTEM "DSSR_000004000_0062" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0063 SYSTEM "DSSR_000004000_0063" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0064 SYSTEM "DSSR_000004000_0064" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0065 SYSTEM "DSSR_000004000_0065" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0066 SYSTEM "DSSR_000004000_0066" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0067 SYSTEM "DSSR_000004000_0067" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0068 SYSTEM "DSSR_000004000_0068" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0069 SYSTEM "DSSR_000004000_0069" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0070 SYSTEM "DSSR_000004000_0070" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0071 SYSTEM "DSSR_000004000_0071" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0072 SYSTEM "DSSR_000004000_0072" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0073 SYSTEM "DSSR_000004000_0073" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0074 SYSTEM "DSSR_000004000_0074" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0075 SYSTEM "DSSR_000004000_0075" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0076 SYSTEM "DSSR_000004000_0076" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0077 SYSTEM "DSSR_000004000_0077" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0078 SYSTEM "DSSR_000004000_0078" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0079 SYSTEM "DSSR_000004000_0079" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0080 SYSTEM "DSSR_000004000_0080" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0081 SYSTEM "DSSR_000004000_0081" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0082 SYSTEM "DSSR_000004000_0082" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0083 SYSTEM "DSSR_000004000_0083" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0084 SYSTEM "DSSR_000004000_0084" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0085 SYSTEM "DSSR_000004000_0085" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0086 SYSTEM "DSSR_000004000_0086" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0087 SYSTEM "DSSR_000004000_0087" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0088 SYSTEM "DSSR_000004000_0088" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0089 SYSTEM "DSSR_000004000_0089" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0090 SYSTEM "DSSR_000004000_0090" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0091 SYSTEM "DSSR_000004000_0091" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0092 SYSTEM "DSSR_000004000_0092" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0093 SYSTEM "DSSR_000004000_0093" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0094 SYSTEM "DSSR_000004000_0094" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0095 SYSTEM "DSSR_000004000_0095" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0096 SYSTEM "DSSR_000004000_0096" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0097 SYSTEM "DSSR_000004000_0097" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0098 SYSTEM "DSSR_000004000_0098" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0099 SYSTEM "DSSR_000004000_0099" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0100 SYSTEM "DSSR_000004000_0100" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0101 SYSTEM "DSSR_000004000_0101" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0102 SYSTEM "DSSR_000004000_0102" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0103 SYSTEM "DSSR_000004000_0103" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0104 SYSTEM "DSSR_000004000_0104" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0105 SYSTEM "DSSR_000004000_0105" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0106 SYSTEM "DSSR_000004000_0106" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0107 SYSTEM "DSSR_000004000_0107" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0108 SYSTEM "DSSR_000004000_0108" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0109 SYSTEM "DSSR_000004000_0109" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0110 SYSTEM "DSSR_000004000_0110" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0111 SYSTEM "DSSR_000004000_0111" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0112 SYSTEM "DSSR_000004000_0112" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0113 SYSTEM "DSSR_000004000_0113" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0114 SYSTEM "DSSR_000004000_0114" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0115 SYSTEM "DSSR_000004000_0115" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0116 SYSTEM "DSSR_000004000_0116" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0117 SYSTEM "DSSR_000004000_0117" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0118 SYSTEM "DSSR_000004000_0118" NDATA uvaHighRes>
+<!ENTITY DSSR_000004400_0119 SYSTEM "DSSR_000004000_0119" NDATA uvaHighRes>
+
+
+]>
+
+<TEI.2 id="D13406">
+    <teiHeader type="AACR2">
+
+        <fileDesc>
+            <titleStmt>
+
+                <title type="main">Diary of Captain Zachariah Heed</title>
+
+                <author>Heed, Zachariah</author>
+                <respStmt>
+                    <resp>Creation of machine-readable version: </resp>
+                    <name>Digital Curation Services , University of Virginia Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Digital Curation Services</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Creation of digital images:</resp>
+                    <name>Digitization Services, University of Virginia Library</name>
+                </respStmt>
+
+            </titleStmt>
+
+            <extent>ca. <num type="kilobytes">185</num> kilobytes</extent>
+
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia </pubPlace>
+                <idno type="DCS">D13406</idno>
+                <date value="2009">2009</date>
+            </publicationStmt>
+            
+            <seriesStmt>                
+                <title>University of Virginia Library, Text collection</title>                
+                <idno type="uva-set">UVA-LIB-Text</idno>                
+                <idno type="uva-set">UVA-LIB-CivilWar</idno>                
+            </seriesStmt>
+
+            <sourceDesc>
+
+                <biblFull>
+                    <titleStmt>
+                        <title type="main">Civil War diaries and photographs of Captain Zachariah
+                            Heed [manuscript], <dateRange from="1863" to="1864">1863, 1864,</dateRange>
+                            <date value="1886"> 1886</date></title>
+                        <title type="sort">civil war diaries and photographs of captain zachariah
+                            heed, 1863, 1864, 1886</title>
+                        <author>Heed, Zachariah, <dateRange from="1835" to="1902"
+                            >1835-1902</dateRange></author>
+                    </titleStmt>
+                    <extent>1 vol.</extent>
+                    <publicationStmt>
+                        <idno type="Accession No.">mss 13406</idno>
+                        <idno type="Virgo ID">4303071-1001</idno>
+                        <idno type="title control number">a4303071</idno>
+                        <availability>
+                            <p> Albert &amp; Shirley Small Special Collections, University of
+                                Virginia Library, Charlottesville, Virginia, USA</p>
+                        </availability>
+                    </publicationStmt>
+                </biblFull>
+
+            </sourceDesc>
+
+
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <!-- Per Matt we need to work on this statement-->
+                <p> Prepared for the University of Virginia Library by Digital Curation Services
+                    staff and volunteer Mary Roy Dawson Edwards, Transcriber. June 2007.</p>
+            </projectDesc>
+        </encodingDesc>
+
+        <profileDesc>
+            <langUsage>
+                <language id="eng" usage="main">English</language>
+            </langUsage>
+            <handList>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+        </profileDesc>
+
+    </teiHeader>
+    <text id="d1">
+        <body id="d2">
+            <div1 id="d3" type="part">
+                <head>Diary of Captain Zachariah Heed, 91st Regiment, Ohio Infantry</head>
+                <div2 id="d4" type="section">
+                    <head>1863</head>
+                    <div3 id="d5" type="entry">
+                        <pb entity="DSSR_000004400_0014" n="np"/>
+                        <head>
+                            <date value="1863-01-01">JANUARY<lb/> 1.</date>
+                        </head>
+                        <p>Fayetteville, Va, Thursday morning, Weather rather cold, Evening, cold
+                            took Dinner at Dr. J. B. Warwick's Office, at the Hospital, first rate
+                            Dinner, and good Supper. Splendid Oysters Chicken Peaches &amp;
+                            Butter.</p>
+                    </div3>
+                    <div3 id="d6" type="entry">
+                        <head>
+                            <date value="1963-01-02">2.<ref target="n1" n="1">{1}</ref></date>
+                        </head>
+                        <p>Fayetteville Va, Friday Morning. Weather cold, twenty eight years old to
+                            day, a grand Dinner at my Quarters to day. Evening weather Still cold,
+                            with Snow.</p>
+                    </div3>
+                    <div3 id="d7" type="entry">
+                        <head>
+                            <date value="1863-01-03">3.</date>
+                        </head>
+                        <p>Fayetteville Va, Saturday morning. Weather Some warmer than yesterday.
+                            Snow melting Some. Dress parade to day the first-time for Several Days.
+                        </p>
+                    </div3>
+                    <div3 id="d8" type="entry">
+                        <pb entity="DSSR_000004400_0015" n="np"/>
+                        <head>
+                            <date value="1863-01-04">JANUARY<lb/> 4.</date>
+                        </head>
+                        <p>Fayetteville, Va. Sunday morning, weather cold. Entered my Duties as
+                            Field Officer, of the Day, bad day for riding, visited the Pickets twice
+                            in the Day, and once at Night.</p>
+                    </div3>
+                    <div3 id="d9" type="entry">
+                        <head>
+                            <date value="1863-01-05">5.</date>
+                        </head>
+                        <p>Fayetteville Va. Monday morning, weather cold. Some more Snow Blowing in
+                            my Quarters through the roof, could not Sleep much during the night on
+                            account of the Snow.</p>
+                    </div3>
+                    <div3 id="d10" type="entry">
+                        <head>
+                            <date value="1863-01-06">6.</date>
+                        </head>
+                        <p>Fayetteville Va. Tuesday morning, weather cold more Snow, looks Something
+                            like rain, Afternoon, Slight rain, weather moderating. </p>
+                    </div3>
+                    <div3 id="d11" type="entry">
+                        <pb entity="DSSR_000004400_0016" n="np"/>
+                        <head>
+                            <date value="1863-01-07">JANUARY<lb/> 7.</date>
+                        </head>
+                        <p>Fayetteville Va. Wednesday morning. Snow is a melting fast, weather
+                            rather warm, Everything quiet in Camp. Afternoon getting Some Colder,
+                            the wind a raising. 9 oclock P.M. very Dark.</p>
+                    </div3>
+                    <div3 id="d12" type="entry">
+                        <head>
+                            <date value="1863-01-08">8.</date>
+                        </head>
+                        <p>Fayetteville Va, Thursday morning. weather getting Still colder. Snow all
+                            gone. Enterd on my Duty as Regimental Officer of the Day, in camp.
+                            Everything quiet, 12 oclock P.M. Very Dark, &amp; Cold.</p>
+                    </div3>
+                    <div3 id="d13" type="entry">
+                        <head>
+                            <date value="1863-01-09">9.</date>
+                        </head>
+                        <p>Fayetteville, Va. Friday morning, weather very cold, with wind a blowing
+                            Strong. Afternoon wind has ceased blowing, 9 oclock P.M. Dark. </p>
+                    </div3>
+                    <div3 id="d14" type="entry">
+                        <pb entity="DSSR_000004400_0017" n="np"/>
+                        <head>
+                            <date value="1863-01-10">JANUARY<lb/> 10.</date>
+                        </head>
+                        <p>Fayetteville, Va. Saturday morning, weather Some warmer, than yesterday,
+                            received Calmet Moore's Discharge papers, Afternoon, Signs of snow, 9
+                            oclock P.M. quite Dark.</p>
+                    </div3>
+                    <div3 id="d15" type="entry">
+                        <head>
+                            <date value="1863-01-11">11.</date>
+                        </head>
+                        <p>Fayetteville, Va. Sunday morning, weather damp. Signs of Snow or Rain,
+                            have made out Calmet Moore's Discharge papers. Afternoon Some Snow 8
+                            oclock P.M. Still Snowing. </p>
+                    </div3>
+                    <div3 id="d16" type="entry">
+                        <head>
+                            <date value="1863-01-12">12.</date>
+                        </head>
+                        <p>Fayetteville, Va. Monday morning. Snow Some four or five Inches, on the
+                            ground Blowed in my quarters all Night. 6 P.M. Stoped Snowing </p>
+                    </div3>
+                    <div3 id="d17" type="entry">
+                        <pb entity="DSSR_000004400_0018" n="np"/>
+                        <head>
+                            <date value="1863-01-13">JANUARY<lb/> 13.</date>
+                        </head>
+                        <p>Fayetteville, Va. Tuesday morning, weather moderating. Rumord in camp we
+                            will be attacked here before long. Afternoon Reported we will have an
+                            attack to Night. 9 oclock P.M. Artillery in motion.</p>
+                    </div3>
+                    <div3 id="d18" type="entry">
+                        <head>
+                            <date value="1863-01-14">14.</date>
+                        </head>
+                        <p>Fayetteville, Va. Wednesday morning. no attack last Night, everything on
+                            the qui vive in camp Snow melting Slowly, 2. P.M. things quiet in camp.
+                            6 P.M. another report the Rebs are advancing 10. oclock P.M. all
+                        quiet</p>
+                    </div3>
+                    <div3 id="d19" type="entry">
+                        <head>
+                            <date value="1865-01-15">15.</date>
+                        </head>
+                        <p>Fayetteville Va. Thursday morning, now all gone. No at[t]ack yet Picket
+                            force Strengthend. 2. oclock P.M. quite warm, 8 oclock P.M. Sky
+                        clear.</p>
+                    </div3>
+                    <div3 id="d20" type="entry">
+                        <pb entity="DSSR_000004400_0019" n="np"/>
+                        <head>
+                            <date value="1863-01-16">JANUARY<lb/> 16.</date>
+                        </head>
+                        <p>Fayetteville Va. Friday morning, weather cold and clear, Enterd on my
+                            Duties, as Regimental Officer of the Day. the a[t]ack by the Rebs played
+                            out. Guards doing good Duty. Orders to Shoot the first Sentinel found
+                            asleep</p>
+                    </div3>
+                    <div3 id="d21" type="entry">
+                        <head>
+                            <date value="1863-01-17">17.</date>
+                        </head>
+                        <p>Fayetteville Va. Saturday morning, weather cold and windy, mud drying up.
+                            Seven Rebel Prisoners, Started for Camp Chase, 2. P.M. wind raising. 8
+                            oclock P.M. all is quiet</p>
+                    </div3>
+                    <div3 id="d22" type="entry">
+                        <head>
+                            <date value="1863-01-18">18.</date>
+                        </head>
+                        <p>Fayetteville Va. Sunday morning, weather quite cold, everything quiet in
+                            camp. 3 oclock P.M. Sky Cloudy. 7 oclock P.M. wind raising again. </p>
+                    </div3>
+                    <div3 id="d23" type="entry">
+                        <pb entity="DSSR_000004400_0020" n="np"/>
+                        <head>
+                            <date value="1863-01-19">JANUARY<lb/> 19.</date>
+                        </head>
+                        <p>Fayetteville Va. Monday morning, weather quite cold. nothing new in camp.
+                            not very well to day 2 oclock P.M. cloudy 5 oclock P.M. wind a blowing
+                            Strong. 8 oclock P.M. dark &amp; windy </p>
+                    </div3>
+                    <div3 id="d24" type="entry">
+                        <head>
+                            <date value="1863-01-20">20.</date>
+                        </head>
+                        <p>Fayetteville Va. Tuesday morning, a perfect Hurricane last night Several
+                            tents blowed from Stockades, in the camps of 12th &amp; 34th O.V.I.
+                            2 oclock P.M. wind is still raging, 8 &frac12; oclock P.M. wind getting worse
+                        </p>
+                    </div3>
+                    <div3 id="d25" type="entry">
+                        <head>
+                            <date value="1863-01-21">21.</date>
+                        </head>
+                        <p>Fayetteville Va. Wednesday morning. wind Still raging, getting colder,
+                            all quiet in camp. 2 oclock P.M. wind not So Strong., 8 Oclock P.M. wind
+                            quieted down </p>
+                    </div3>
+                    <div3 id="d26" type="entry">
+                        <pb entity="DSSR_000004400_0021" n="np"/>
+                        <head>
+                            <date value="1863-01-22">JANUARY<lb/> 22.</date>
+                        </head>
+                        <p>Fayetteville Va. Thursday morning. Some Snow, a blowing in my quarters.
+                            one inch on the floor. 2 oclock P.M. quit Snowing. 8 oclock P.M. Dark
+                            and Cloudy. </p>
+                    </div3>
+                    <div3 id="d27" type="entry">
+                        <head>
+                            <date value="1863-01-23">23.</date>
+                        </head>
+                        <p>Fayetteville Va. Friday morning, cold and cloudy, Enterd on my Duties as
+                            the Regimental Officer of the Day. all is quiet in camp 1 oclock A.M.
+                            cold and Cloudy. </p>
+                    </div3>
+                    <div3 id="d28" type="entry">
+                        <head>
+                            <date value="1863-01-24">24.</date>
+                        </head>
+                        <p>Fayetteville Va. Saturday morning clear and cold. freezing fast 2 oclock
+                            P.M. very cold. 8 oclock P.M. Still freezing </p>
+                    </div3>
+                    <div3 id="d29" type="entry">
+                        <pb entity="DSSR_000004400_0022" n="np"/>
+                        <head>
+                            <date value="1863-01-25">JANUARY<lb/> 25.</date>
+                        </head>
+                        <p>Fayetteville Va. Sunday morning, clear and cold, bad Day for Inspection 2
+                            oclock P.M. Still cold. 8 oclock P.M. cold not very well. </p>
+                    </div3>
+                    <div3 id="d30" type="entry">
+                        <head>
+                            <date value="1863-01-26">26.</date>
+                        </head>
+                        <p>Fayetteville Va, Monday morning, weather moderating, ground getting very
+                            mudy 2 oclock P.M. getting quite warm. 8 oclock P.M. Some colder than
+                            during the Day. </p>
+                    </div3>
+                    <div3 id="d31" type="entry">
+                        <head>
+                            <date value="1863-01-27">27.</date>
+                        </head>
+                        <p>Fayetteville Va. Tuesday morning very mudy, and getting warmer, 2 oclock,
+                            wind is rasing 8 oclock P.M. wind blowing freely </p>
+                    </div3>
+                    <div3 id="d32" type="entry">
+                        <pb entity="DSSR_000004400_0023" n="np"/>
+                        <head>
+                            <date value="1863-01-28">JANUARY<lb/> 28.</date>
+                        </head>
+                        <p>Fayetteville Va. Jan Wednesday morning mud and rain, predominating 2
+                            oclock P.M. Still Raining, 8 Oclock P.M. all quiet but Raining.</p>
+                    </div3>
+                    <div3 id="d33" type="entry">
+                        <head>
+                            <date value="1863-01-29">29.</date>
+                        </head>
+                        <p>Fayetteville Va. Thursday morning. no Rain but wind is raising pretty
+                            freely. 2 oclock P.M. cold and windy. 8 oclock P.M. cloudy with wind,
+                            Indications of Snow. </p>
+                    </div3>
+                    <div3 id="d34" type="entry">
+                        <head>
+                            <date value="1863-01-28">30.</date>
+                        </head>
+                        <p>Fayetteville Va. Friday morning. Some Snow falling but is melting as fast
+                            as it falls. 2 oclock colder. 8 oclock, P.M. freezing </p>
+                    </div3>
+                    <div3 id="d35" type="entry">
+                        <pb entity="DSSR_000004400_0024" n="np"/>
+                        <head>
+                            <date value="1863-01-31">JANUARY<lb/> 31.</date>
+                        </head>
+                        <p>Fayetteville Va Saturday Morning Entered on my duty as Officer of the
+                            Day, cold and rough. Some Snow on the ground the guards are attending to
+                            their respective duty I relieved Capt Culbertson as Officer of the Day,
+                            weather rather mild, very mudy, Leiut - Crawford, Officer of the
+                        Guard.</p>
+                    </div3>
+                    <div3 id="d36" type="entry">
+                        <pb entity="DSSR_000004400_0025" n="np"/>
+                        <head>
+                            <date value="1863-02-01">FEBRUARY<lb/> 1.</date>
+                        </head>
+                        <p>Sunday morning cold and snowing, was relieved by Capt Cropley as Officer
+                            of the day; afternoon Snow is melting, mud very deep.</p>
+                    </div3>
+                    <div3 id="d37" type="entry">
+                        <head>
+                            <date value="1863-02-02">2.</date>
+                        </head>
+                        <p>Camp Fayetteville Va Monday Snow is melting fast with considerable rain,
+                            this morning. Afternoon, Snow all gone, have been Franking Letters and
+                            Valentines very near all Day. </p>
+                    </div3>
+                    <div3 id="d38" type="entry">
+                        <head>
+                            <date value="1863-02-03">3.</date>
+                        </head>
+                        <p>Fayetteville Va. Tuesday Morning cold and Snowing again wind blowing very
+                            hard Ceased Snowing in the afternoon, getting very cold.</p>
+                    </div3>
+                    <div3 id="d39" type="entry">
+                        <pb entity="DSSR_000004400_0026" n="np"/>
+                        <head>
+                            <date value="1863-02-04">FEBRUARY<lb/> 4.</date>
+                        </head>
+                        <p>Fayetteville Va Wednesday Morning, very cold, last night was the coldest
+                            we have had this winter, this far. Snow betwen two and three Inches. to
+                            cold to drill, Six Four months in Service to day, received Letter from
+                            home </p>
+                    </div3>
+                    <div3 id="d40" type="entry">
+                        <head>
+                            <date value="1863-02-05">5.</date>
+                        </head>
+                        <p>Thursday. Fayetteville Va a wind Storm last night. very Severe, this
+                            morning two Canon left for Piatt, yesterday evening and Afternoon
+                            moderating very fast. Snow all gone. everything quiet in camp.</p>
+                    </div3>
+                    <div3 id="d41" type="entry">
+                        <head>
+                            <date value="1863-02-06">6.</date>
+                        </head>
+                        <p>Fayetteville Va Friday morning, received an order to Report, at
+                            Charleston Va. before the examing Board, wether moderating Still. </p>
+                    </div3>
+                    <div3 id="d42" type="entry">
+                        <pb entity="DSSR_000004400_0027" n="np"/>
+                        <head>
+                            <date value="1863-02-07">FEBRUARY<lb/> 7.</date>
+                        </head>
+
+                        <p>Fayetteville Va Saturday will Start this morning for Charleston Va, go in
+                            an ambulance, Afternoon, Roads very bad; over Cotton Mountain. cross the
+                            Ferry and find Roads worse. Stop, for the night at Widow Larkins </p>
+                    </div3>
+                    <div3 id="d43" type="entry">
+                        <head>
+                            <date value="1863-02-08">8.</date>
+                        </head>
+                        <p> Widow H. Larkins, Sunday morning. Start in an ambulance for Camp Piatt,
+                            ar<!--[r]-->ive at Piatt, between three and four oclock. Meet Major B.
+                            R. Cowan Paymaster, on his road to pay of troops at Fayettesville, 12th
+                            -34th and <add hand="author" place="top">O.V. I.</add> 91st. </p>
+                    </div3>
+                    <div3 id="d44" type="entry">
+                        <head>
+                            <date value="1863-02-09">9.</date>
+                        </head>
+                        <p>Piatt Monday morning Start for Charleston Va, at five oclock A.M. get to
+                            Charleston at half past Six oclock A.M. on board of News Boy. </p>
+                    </div3>
+                    <div3 id="d45" type="entry">
+                        <pb entity="DSSR_000004400_0028" n="np"/>
+                        <head>
+                            <date value="1863-02-10">FEBRUARY<lb/> 10.</date>
+                        </head>
+                        <p>Charleston, Kanawha Co. Va. Tuesday morning, appeared before
+                            E<!--[x]-->amining Board. Col C. B. White, Lieut Col Cromley, Major E.
+                            M. Carey, examined in the Regulations in the forenoon. Tactics in the
+                            Afternoon.</p>
+                    </div3>
+                    <div3 id="d46" type="entry">
+                        <head>
+                            <date value="1863-02-11">11.</date>
+                        </head>
+                        <p>Charleston Va Wednesday morning, passed the Examination all right was
+                            told by the President I had answered all of the questions better than
+                            any Officer who had been before the Board. </p>
+                    </div3>
+                    <div3 id="d47" type="entry">
+                        <head>
+                            <date value="1863-02-12">12.</date>
+                        </head>
+                        <p>Charleston Va. Thursday morning. Lieut Crossland Started for the 91st
+                            Regt at Fayetteville Va, weather warm and mild, indications of Rain,
+                            Streets mudy </p>
+                    </div3>
+                    <div3 id="d48" type="entry">
+                        <pb entity="DSSR_000004400_0029" n="np"/>
+                        <head>
+                            <date value="1863-02-13">FEBRUARY<lb/> 13.</date>
+                        </head>
+                        <p>Charleston Va. Friday morning, Slightly cold, mud Eighteen Inches deep on
+                            the Streets. Afternoon weather moderating. Evening met Dr. E. C.
+                            Kreider, of Lancaster Ohio. men are employd throwing mud of[f]
+                            Sidewalks.</p>
+                    </div3>
+                    <div3 id="d49" type="entry">
+                        <head>
+                            <date value="1863-02-14">14.</date>
+                        </head>
+                        <p>Charleston Va. Saturday morning, weather mild. Col J. A. Turley, before
+                            the military Examining Board. mud getting still deeper, Afternoon Rain,
+                            trial of Provost Marshall's between John Thaxton &amp; Ben Murphy,
+                            on Seccission proclivities.<ref target="n2" n="2">{2}</ref> 
+                        </p>
+                    </div3>
+                    <div3 id="d50" type="entry">
+                        <head>
+                            <date value="1863-02-15">15.</date>
+                        </head>
+                        <p>Charleston Va, Sunday, morning, been raining all night, River on the
+                            rise, Dr. E. C. Kreider, Started for Lancaster Ohio 8 &frac12; P.M. Clear
+                            &amp; cold, Freezeing. not well..</p>
+                    </div3>
+                    <div3 id="d51" type="entry">
+                        <pb entity="DSSR_000004400_0030" n="np"/>
+                        <head>
+                            <date value="1863-02-16">FEBRUARY<lb/> 16.</date>
+                        </head>
+                        <p>Charleston Va. Monday morning, clear &amp; cold, not very well this
+                            morning 3 oclock P.M. Received from Col White 12th O.V.I. four hundred
+                            and Thirty Dollars, to hand to S. M. Barrett, Sutler of 12th O.V.I. 8 &frac12;
+                            oclock P.M. Sky cloudy </p>
+                    </div3>
+                    <div3 id="d52" type="entry">
+                        <head>
+                            <date value="1863-02-17">17.</date>
+                        </head>
+                        <p>Charleston Va. Tuesday morning. Raining, five men brought from the
+                            Nei<!--[gh]-->borhood of Buffalo, as Hostages, for Deputy Sheriff of
+                            Putnam County Captured by the Rebels. 2 oclock P.M. Raining 8 &frac12; oclock
+                            P.M. Still Raining</p>
+                    </div3>
+                    <div3 id="d53" type="entry">
+                        <head>
+                            <date value="1863-02-18">18.</date>
+                        </head>
+                        <p>Charleston Va. Wednesday morning, Met Major Cowan Paymaster, out of funds
+                            E.P. Stout, Sutler of 91st O.V.I. on his road to Cincinnati Raining, mud
+                            one foot on the Streets, a Slush. </p>
+                    </div3>
+                    <div3 id="d54" type="entry">
+                        <pb entity="DSSR_000004400_0031" n="np"/>
+                        <head>
+                            <date value="1863-02-19">FEBRUARY<lb/> 19.</date>
+                        </head>
+                        <p>Charleston Va. Thursday morning. cloudy and muddy, Served on a court
+                            Martial, trying Major E.M. Carey, 2 oclock. Sun Shining 6 oclock P.M.
+                            met Aelin Colvin, on his road Home. Discharged. </p>
+                    </div3>
+                    <div3 id="d55" type="entry">
+                        <head>
+                            <date value="1863-02-20">20.</date>
+                        </head>
+                        <p>Charleston Va Friday morning. Raining. Met Huchinson on his road to
+                            Pallissolis <!--[or "Pallifolis"]-->, 2 oclock P.M. turning cold. Paitt
+                            8 oclock P.M. Ar<!--[r]-->ived here from Charleston at 6 oclock P.M.
+                        </p>
+                    </div3>
+                    <div3 id="d56" type="entry">
+                        <head>
+                            <date value="1863-02-21">21.</date>
+                        </head>
+                        <p>Piatt Va Saturday morning, cold &amp; cloudy 2 oclock P.M. Start for
+                            camp. Carrelton Va 10 oclock Foggy, boat cannot run, 11 oclock P.M.
+                            Snowing, lay up for the night. </p>
+                    </div3>
+                    <div3 id="d57" type="entry">
+                        <pb entity="DSSR_000004400_0032" n="np"/>
+                        <head>
+                            <date value="1863-02-22">FEBRUARY<lb/> 22.</date>
+                        </head>
+                        <p>Carrelton Va. Sunday morning, cold and snowing. Start this morning for
+                            Fayetteville on Victor No. 2. Loop Creek, 10 oclock, A.M. reach
+                            Fayetteville at 5. P.M. 8 oclock P.M. returned from Dr. J. B. Warwick's.
+                            Cold and cloudy. Snow.</p>
+                    </div3>
+                    <div3 id="d58" type="entry">
+                        <head>
+                            <date value="1863-02-23">23.</date>
+                        </head>
+                        <p>Fayetteville Va. Monday morning, cold &amp; cloudy, was visited by
+                            Dr. J. B. Warwick, 1 oclock P.M. cold and windy. Lieut Stroup and Kisler
+                            <unclear>[?]</unclear> Start home tomorrow, 12 &frac12; oclock wind blowing Cold. Sky
+                            clear.</p>
+                    </div3>
+                    <div3 id="d59" type="entry">
+                        <head>
+                            <date value="1863-02-24">24.</date><ref target="n3" n="3">{3}</ref>
+                        </head>
+                        <p>Fayetteville, W. Va. Tuesday morning, cloudy and mild. Lieut W. S.
+                            Underwood. Started for Home, Snow melting 8 &frac12; oclock P.M. Raining. not
+                            very well </p>
+                    </div3>
+                    <div3 id="d60" type="entry">
+                        <pb entity="DSSR_000004400_0033" n="np"/>
+                        <head>
+                            <date value="1863-02-25">FEBRUARY<lb/> 25.</date>
+                        </head>
+                        <p>Fayettevile W Va, Wednesday morning. Raining, Lieut W. S. Underwood's
+                            Resignation acceptance came in the mail, 2 oclock P.M. Ceased raining, 6
+                            oclock P.M. not well retire to Bed </p>
+                    </div3>
+                    <div3 id="d61" type="entry">
+                        <head>
+                            <date value="1863-02-26">26.</date>
+                        </head>
+                        <p>Fayetteville W Va. Thursday morning, Raining been Raining all night feel
+                            better this morning 2 oclock P.M. receive new Arms. Springfeild Rifled
+                            musket. Raining 8 Oclock P.M. Sky clear, not well, retire to bed Sick
+                        </p>
+                    </div3>
+                    <div3 id="d62" type="entry">
+                        <head>
+                            <date value="1863-02-27">27.</date>
+                        </head>
+                        <p>Fayetteville W. Va. Friday morning. Sun Shining. return Austrian Rifled
+                            Muskets, not well to day. 8 oclock P.M. clear and wind blowing retire to
+                            bed Some better February </p>
+                    </div3>
+                    <div3 id="d63" type="entry">
+                        <pb entity="DSSR_000004400_0034" n="np"/>
+                        <head>
+                            <date value="1863-02-28">FEBRUARY<lb/> 28.</date>
+                        </head>
+                        <p>Fayetteville W Va. Saturday morning. muster for Pay, two months pay due
+                            Regt to day. wind blowing cold, 2 oclock P.M Still cold this month going
+                            out very rough. 8 oclock P.M. cold. </p>
+                    </div3>
+                    <div3 id="d64" type="entry">
+                        <head>
+                            <date value="1863-02-29">29</date>.
+                        </head>
+                        <p>I have not received any pay from the Gover<!--[n]-->ment, Since I have
+                            been in the Service. I Shall Rec<!--[c]-->omend 2nd. Lt. J. M. White, to
+                            be Promoted to be 1st. Lt. of Co. A. and Orderly W. A. Donohoe, to be
+                            2nd Lt. of Co. G. this is to fill the vacancies Occasioned by the
+                            Resignation of Lt. Underwood. I am Sorry to part with him he is a good
+                            Officer. </p>
+                    </div3>
+                    <div3 id="d65" type="entry">
+                        <pb entity="DSSR_000004400_0035" n="np"/>
+                        <head>
+                            <date value="1863-03-01">MARCH<lb/> 1.</date>
+                        </head>
+                        <p>Fayetteville W Va. Sunday morning. weather very cold. getting cloudy.
+                            Everything quiet in camp. 2 oclock P.M. com<!--[m]-->encing to Snow. Joe
+                            Chaney brought me Some Eggs, from Cassidays 8 oclock P.M. moderating
+                        </p>
+                    </div3>
+                    <div3 id="d66" type="entry">
+                        <head>
+                            <date value="1863-03-02">2.</date>
+                        </head>
+                        <p>Fayetteville W Va. Monday morning. cloudy and quite pleasaent, Death in
+                            the 12th Regt O.V.I. on Committee of Thanks to Gov Tod, for New Arms. 2
+                            oclock P.M. Sun Shining quite warm, 8 oclock P.M. Cloudy with Snow. </p>
+                    </div3>
+                    <div3 id="d67" type="entry">
+                        <head>
+                            <date value="1863-03-03">3.</date>
+                        </head>
+                        <p>Fayetteville W Va. Tuesday morning, cloudy &amp; Snow, another Death
+                            in the 12th Regt O.V. I. 2 P.M. more Snow falling, 7 oclock P.M. Snow
+                            &amp; wind not very well, retire early. </p>
+                    </div3>
+                    <div3 id="d68" type="entry">
+                        <pb entity="DSSR_000004400_0036" n="np"/>
+                        <head>
+                            <date value="1863-03-04">MARCH<lb/> 4.</date>
+                        </head>
+                        <p>Fayetteville, W Va. Wednesday morning. Snow two Inches on the ground.
+                            made out final Statement and Description List of Aaron Whaley, who Died
+                            in Hospital at Gallipole's Ohio. Received my Dress Suit from Home, Seven
+                            months in Service to day</p>
+                    </div3>
+                    <div3 id="d69" type="entry">
+                        <head>
+                            <date value="1863-03-05">5.</date>
+                        </head>
+                        <p>Fayetteville W Va. Thursday morning, clear and rather warm. Regiment
+                            Shooting Target. Co. G beat all of the Companies Shooting, as we always
+                            have done. 2 oclock P.M. Sun Shining. 8 oclock P.M. Clouds looks like
+                            Rain.</p>
+                    </div3>
+                    <div3 id="d70" type="entry">
+                        <head>
+                            <date value="1863-03-06">6.</date>
+                        </head>
+                        <p>Fayetteville W Va. Friday morning, Raining, been Raining Since 12 oclock
+                            P.M. 2 oclock P.M. cold and Raining. 9 &frac14; P.M. getting cold. not very
+                            well. heard Paymaster was coming</p>
+                    </div3>
+                    <div3 id="d71" type="entry">
+                        <pb entity="DSSR_000004400_0037" n="np"/>
+                        <head>
+                            <date value="1863-03-07">MARCH<lb/> 7.</date>
+                        </head>
+                        <p>Fayetteville W Va. Saturday morning, Raining and mud<!--[d]-->y. George
+                            A. Stockam, a member of my Company, Died in Regimental Hospital, 2
+                            oclock P.M. Still Raining. Samuel M. Wiles very Sick in Hospital, 8
+                            oclock P.M. Raining.</p>
+                    </div3>
+                    <div3 id="d72" type="entry">
+                        <head>
+                            <date value="1863-03-08">8.</date>
+                        </head>
+                        <p>Fayetteville W. Va, Sunday morning, clear and warm, Sent the Deceased
+                            body of George A. Stockam's Home, in charge of Mr Hughes, of Portsmouth,
+                            O, 2 oclock P.M. warm Sun Shining, took an Inventory of George A.
+                            Stockam's Effects, 7 oclock P.M. Raining. </p>
+                    </div3>
+                    <div3 id="d73" type="entry">
+                        <head>
+                            <date value="1863-03-09">9.</date>
+                        </head>
+                        <p>Fayetteville W Va, Monday morning. cold and Raining, been Raining and
+                            Snowing all Night, 12 oclock A.M. clear and cold. 4 oclock P.M. clear
+                            and cold. 8 oclock P.M. cold &amp; clear, 12&frac12; P.M. cold &amp;
+                            cloudy</p>
+                    </div3>
+                    <div3 id="d74" type="entry">
+                        <pb entity="DSSR_000004400_0038" n="np"/>
+                        <head>
+                            <date value="1863-03-10">MARCH<lb/> 10.</date>
+                        </head>
+                        <p>Fayetteville W. Va. Tuesday morning 8 oclock. Snow one and a half Inch on
+                            the ground. 10 oclock A.M. snow three Inches on grou<!--[n]-->d. 12
+                            oclock A.M. cold &amp; Raining 2 oclock P.M. moderating 5 oclock
+                            P.M. Still Raining. 10&frac12; P.M. Raining hard. </p>
+                    </div3>
+                    <div3 id="d75" type="entry">
+                        <head>
+                            <date value="1863-03-11">11.</date>
+                        </head>
+                        <p>Fayetteville West Va. Wendesday 7 oclock A.M. clear &amp; cold. been
+                            Snowing, during the Night. 10 oclock A.M. Sun a shining, 2 oclock P.M.
+                            cold and Snowing, 5 oclock. P.M. cold and windy. 8 oclock P.M. cold and
+                            freezing. not very well. retire to bed early,</p>
+                    </div3>
+                    <div3 id="d76" type="entry">
+                        <head>
+                            <date value="1863-03-12">12.</date>
+                        </head>
+                        <p>Fayetteville West Va. Thursday 7 oclock A.M. cold and windy. Snow
+                            disappeared. feel Some better this morning. 9&frac14; A.M. Snowing pretty
+                            freely. 6.P.M. cold and windy. 9&frac12; oclock P.M. cold and Snowing. </p>
+                    </div3>
+                    <div3 id="d77" type="entry">
+                        <pb entity="DSSR_000004400_0039" n="np"/>
+                        <head>
+                            <date value="1863-03-13">MARCH<lb/> 13.</date>
+                        </head>
+                        <p>Fayetteville West Va. Friday 7 oclock A.M. very cold and windy.
+                            Mejors<unclear>[?]</unclear>, Brill, James, and Laughlin, arrived here from Ohio, on
+                            a visit to Some of my Company. 6 oclock Still cold. 10 oclock P.M.
+                            getting Still colder. Retire to bed very cold.</p>
+                    </div3>
+                    <div3 id="d78" type="entry">
+                        <head>
+                            <date value="1863-03-14">14.</date>
+                        </head>
+                        <p>Fayetteville West Va. Saturday. 6 oclock A.M. clear and cold. Making out
+                            quarterly Returns of clothing, to Dec 31st 1862. 11 oclock A.M. getting
+                            warm. 2 P.M. quite warm, was paid a visit by Lieut Merry of the 34th
+                            O.V. I. 10 oclock P.M. clear and quite warm.</p>
+                    </div3>
+                    <div3 id="d79" type="entry">
+                        <head>
+                            <date value="1863-03-15">15.</date>
+                        </head>
+                        <p>Fayetteville West Va. Sunday, 6 oclock A.M. cloudy and warm. 10 oclock
+                            A.M. Received orders to pack all camp and Garrison equipage, ready for a
+                            move. 1&frac12; oclock P.M. Start for Gauley, Roads Muddy Camp Fenwick. 6
+                            oclock P.M. Raining </p>
+                    </div3>
+                    <div3 id="d80" type="entry">
+                        <pb entity="DSSR_000004400_0040" n="np"/>
+                        <head>
+                            <date value="1865-03-16">MARCH<lb/> 16.</date>
+                        </head>
+                        <p>Camp Fenwick Va. Monday 5 oclock A.M. cloudy and warm, been Raining
+                            during the Night Will Start for Gauley as Soon as we get Breakfast, eat
+                            Supper, with Lieut White at Mr E.B. Lawrences, last Night Camp Gauley,
+                            Va, 11&frac12; oclock A.M. found better quarters than we left</p>
+                    </div3>
+                    <div3 id="d81" type="entry">
+                        <head>
+                            <date value="1863-03-17">17.</date>
+                        </head>
+                        <p>Camp Gauley West Va. Tuesday 6 oclock A.M. clear and warm. 8&frac12; oclock A.M.
+                            Enter on my Duties as Regimental Officer of the Day. Visited guards, met
+                            Capt Boyd, of the 34th <unclear>[?]</unclear> O.V.I. fine weather roads drying, 3
+                            oclock P.M. this is a Splended Day, 12 oclock, M, Returned from visiting
+                            Pickets. </p>
+                    </div3>
+                    <div3 id="d82" type="entry">
+                        <head>
+                            <date value="1863-03-18">18.</date>
+                        </head>
+                        <p>Camp Gauley West Va, Wednesday 6 oclock A.M. Raining Slightly, 9 oclock
+                            A.M. Releived by Capt. Wicoff, as Officer of the Day. 3 oclock P.M.
+                            clear and mild, Capt Clarks, q<!--[u]-->arters mashed by a Log, rolling down
+                            Cotton Mountain </p>
+                    </div3>
+                    <div3 id="d83" type="entry">
+                        <pb entity="DSSR_000004400_0041" n="np"/>
+                        <head>
+                            <date value="1863-03-19">MARCH<lb/> 19.</date>
+                        </head>
+                        <p>Camp Gauley W Va, Thursday, 6 oclock A.M. cloudy, looks like Rain. 8
+                            oclock A.M. Raining was fishing but Caught nothing. 1&frac12; oclock P.M.
+                            Raining very hard Sent a map of Fayetteville W. Va. to R.M. Clake.
+                            Lancaster O. 8&frac12; P.M. Still Raining, cold. </p>
+                    </div3>
+                    <div3 id="d84" type="entry">
+                        <head>
+                            <date value="1863-03-20">20.</date>
+                        </head>
+                        <p>Camp Gauley W Va. Friday 7 oclock A.M. Raining very hard, quite cold.
+                            been Raining all Night. 9 oclock A.M. cold and cloudy. 11 oclock A.M.
+                            Raining again 2 oclock P.M. Hail with Rain. 5 oclock P.M. Raining. 8
+                            oclock P.M. Raining Slightly </p>
+                    </div3>
+                    <div3 id="d85" type="entry">
+                        <head>
+                            <date value="1863-03-21">21.</date>
+                        </head>
+                        <p>Camp Gauley W Va. Saturday 6 oclock A.M. cloudy &amp; cold, 8&frac12; oclock
+                            A.M. Enterd on my Duty as Officer of the Day, Releived Capt S. E. Clark.
+                            2 oclock P.M. clearing of<!--[f]--> in the west. 12. P.M. clear
+                            &amp; cold.</p>
+                    </div3>
+                    <div3 id="d86" type="entry">
+                        <pb entity="DSSR_000004400_0042" n="np"/>
+                        <head>
+                            <date value="1863-03-22">MARCH<lb/> 22.</date>
+                        </head>
+                        <p>Camp Gauley West Va. Sunday 6 oclock A.M. clear and quite warm, 8&frac12; oclock
+                            A.M. was Releived by Capt L. G. Cadot<unclear>[?]</unclear>, as Officer of the Day.
+                            10 oclock A.M> Regt on Dress Parade, to hear the proce<!--[e]-->dings of
+                            Court Martial read, a pleasant day 8&frac12; P.M. moon, Shining &amp; warm.
+                        </p>
+                    </div3>
+                    <div3 id="d87" type="entry">
+                        <head>
+                            <date value="1863-03-23">23.</date>
+                        </head>
+                        <p>Camp Gauley West Va. Monday 6&frac12; oclock A.M. cloudy, looks like Rain, 10
+                            oclock A.M. clear and warm 1. oclock P.M. clear, Sun shining very warm.
+                            Sent Maj H. C. Whiting, <unclear>[-]</unclear>, check for $26 - , 10
+                            oclock P.M. cloudy, wind blowing warm </p>
+                    </div3>
+                    <div3 id="d88" type="entry">
+                        <head>
+                            <date value="1863-03-23">24.</date>
+                        </head>
+                        <p>Camp Gauley West Va, Tuesday 7 oclock A.M. warm and Raining. 10 oclock
+                            A.M. received Orders to move to Gauley Bridge, Kanawha River is rising
+                            rapidly Ferry Boat cannot run. 11 P.M. cloudy</p>
+                    </div3>
+                    <div3 id="d89" type="entry">
+                        <pb entity="DSSR_000004400_0043" n="np"/>
+                        <head>
+                            <date value="1863-03-25">MARCH<lb/> 25.</date>
+                        </head>
+                        <p>Camp Reynolds West Va. Wednesday 7 oclock A.M. Raining Slightly Kanawha,
+                            Still on the rise. this camp is &frac12; a mile below the Kanawha Falls. Lieut
+                            Merry R.Q.M. 34th O.V.I. took Dinner with me to Day. 4 oclock P.M. Rain
+                            and Hail. 8&frac12; oclock P.M. Dark and Raining, Kanawha Still Rising.</p>
+                    </div3>
+                    <div3 id="d90" type="entry">
+                        <head>
+                            <date value="1863-03-26">26.</date>
+                        </head>
+                        <p>Camp Reynolds West Va. Thursday 6&frac12; oclock A.M. cold, and Snowing. I was
+                            Presented with an elegant Sword, by Sergeant A.M. Scott, on behalf of
+                            the members of my Company, it cost two Hundred and Thirty Dollars, Belt
+                            and Sash with it 10 oclock P.M. clear and cold, freezing </p>
+                    </div3>
+                    <div3 id="d91" type="entry">
+                        <head>
+                            <date value="1863-03-27">27.</date>
+                        </head>
+                        <p>Camp Reynolds W Va. Friday. 7 oclock A.M. clear and cold. Kanawha River
+                            falling. 10. oclock A.M. Sun Shining warm, River falling fast 2 oclock
+                            P.M. warm, 10 oclock. P.M. cloudy looks like Rain,</p>
+                    </div3>
+                    <div3 id="d92" type="entry">
+                        <pb entity="DSSR_000004400_0044" n="np"/>
+                        <head>
+                            <date value="1863-04-01">APRIL<lb/> 1.</date>
+                        </head>
+                        <p>Gauley Bridge, W Va. Wednesday 8 oclock A.M. cold, and winday, Snow 1&frac12;
+                            Inches on the ground. All Fools Day, very dull here, 11 oclock A.M. Sun
+                            Shining, 1&frac14; oclock P.M. getting warm, Sun Shining. 5 oclock P.M. wind
+                            blowing cold. 9&frac12; oclock P.M. Beautiful moonlight night. </p>
+                    </div3>
+                    <div3 id="d93" type="entry">
+                        <head>
+                            <date value="1863-04-02">2.</date>
+                        </head>
+                        <p>Gauley Bridge W Va. Thursday 6&frac34; A.M. Cold, with a Strong wind. 10 oclock
+                            A.M. wind a blowing very hard, everything quiet on Gauley, 12 M. warm
+                            and mild. Just had a game of marbles, with Some of my Co. 2&frac14; P.M.
+                            Raining. 7&frac34; P.M. wind blowing cold. </p>
+                    </div3>
+                    <div3 id="d94" type="entry">
+                        <head>
+                            <date value="1863-04-03">3.</date>
+                        </head>
+                        <p>Gauley Bridge W Va. Friday 7&frac14; A.M. Cold, rough wind. 9. A.M. Raining
+                            Slightly. 11&frac12; A.M. cold wind blowing 2&frac14; P.M. Snowing &amp; wind
+                            blowing 8&frac12; P.M. Beautiful Moonlight Scenery, of Gauley Mountain.</p>
+                    </div3>
+                    <div3 id="d95" type="entry">
+                        <pb entity="DSSR_000004400_0045" n="np"/>
+                        <head>
+                            <date value="1863-04-04">APRIL<lb/> 4.</date>
+                        </head>
+                        <p>Gauley Bridge, W Va. Saturday 6&frac34; A.M. cold &amp; winday. 9 A.M.
+                            Telegraphed for my Wife to come here. Eight months , in Service to Day.
+                            1&frac12; P.M. mail to day. the first for Six Days. Windy and cold. 4. P.M.
+                            very cold. 8 oclock P.M. clear and cold.</p>
+                    </div3>
+                    <div3 id="d96" type="entry">
+                        <head>
+                            <date value="1863-04-05">5.</date>
+                        </head>
+                        <p>Gauley Bridge, W Va. Sunday 7&frac12; A.M. cold and clear. 9. A.M. Sun Shining
+                            bright, 10&frac12; A.M. received a visit from Lieuts. Atkinson and Crassford.
+                            91st O.V.I. they found me Sick in bed, 2 oclock P.M. a Beautiful Day,
+                            out of doors, but a dull day to me. 7. P.M. turning cold. </p>
+                    </div3>
+                    <div3 id="d97" type="entry">
+                        <head>
+                            <date value="1863-04-06">6.</date>
+                        </head>
+                        <p>Gauley Bridge W Va, Monday 5&frac12; A.M. feel Some better this morning. cold
+                            and Raining visited by Col Coates, at 10 oclock A.M. 2 P.M. getting
+                            Still colder and Raining <ref target="n4" n="4">{4}</ref> P.M. cold and blustery. </p>
+                    </div3>
+                    <div3 id="d98" type="entry">
+                        <pb entity="DSSR_000004400_0046" n="np"/>
+                        <head>
+                            <date value="1863-04-07">APRIL<lb/> 7.</date>
+                        </head>
+                        <p>Gauley Bridge W Va. Tuesday 8. A.M. Snow and Rain. 10 A.M. cold and
+                            winday feel much better this morning. 12. M. Sun Shining bright Col. B.
+                            F. Coates took the Command of this Post to Day. 2. P.M. weather Looking
+                            Fine. 7 P.M. clear and cold. </p>
+                    </div3>
+                    <div3 id="d99" type="entry">
+                        <head>
+                            <date value="1863-04-08">8.</date>
+                        </head>
+                        <p>Gauley Bridge, W Va. Wednesday 7. A.M. cold and cloudy 9. A.M. clearing
+                            up Some. Just heard of Thirty, of Jenkins, Cavalry was brought into
+                            Charleston Va. Prisoners. 2 P.M. Still cloudy and cold. 5. P.M. clouds
+                            clearing off. 8&frac12; P.M. clear, cold, and Starlight.
+                            <!--[Thirty of Jenkins Cavalry captured.]-->
+                        </p>
+                    </div3>
+                    <div3 id="d100" type="entry">
+                        <head>
+                            <date value="1863-04-09">9.</date>
+                        </head>
+                        <p>Gauley Bridge, W Va. Thursday. 6&frac12; A.M. clear and cold. 10. A.M. sun
+                            shining warm. Paid a visit to the camp of the 91st at Camp Reyonaldo. 4
+                            P.M. clear and warm. 9 &frac12; P.M. cold and Starlight.</p>
+                    </div3>
+                    <div3 id="d101" type="entry">
+                        <pb entity="DSSR_000004400_0047" n="np"/>
+                        <head>
+                            <date value="1863-04-10">APRIL<lb/> 10.</date>
+                        </head>
+                        <p>Gauley Bridge, W Va. Friday 7 &frac12; A.M. clear and warm. 9 &frac12; A.M. getting
+                            quite warm. Visit the Thompkins farm in company with Col. B. F. Coates.
+                            Thompkins is a Col in the Rebel Service. 1 &frac12; P.M. General Muster of all
+                            the United States Forces, to day. </p>
+                    </div3>
+                    <div3 id="d102" type="entry">
+                        <head>
+                            <date value="1863-04-11">11.</date>
+                        </head>
+                        <p>Gauley Bridge W Va. Saturday 6 &frac12; A.M. warm and hazy. 10. A.M. clear and
+                            warm. Just learned the Union Ticket was Triumphant in Ohio. Bully for
+                            Ohio. 2 P.M. warm. 4 &frac12; P.M. Received dispatch from My Wife, at
+                            Charleston on her way here. good for her. </p>
+                    </div3>
+                    <div3 id="d103" type="entry">
+                        <head>
+                            <date value="1863-04-12">12.</date>
+                        </head>
+                        <p>Gauley Bridge W. Va. Sunday 6. A.M. cloudy &amp; Raining. 9. A.M.
+                            Start for Cannelton, to meet my wife, 1 oclock P.M. take Dinner at the
+                            Riggs, opposite Cannelton. Stay all night with Jonas Likens. 9 P.M.
+                            clear</p>
+                    </div3>
+                    <div3 id="d104" type="entry">
+                        <head>
+                            <dateRange from="1863-04-13" to="1863-04-18">APRIL 13 - APRIL
+                            18<ref target="n5" n="5">{5}</ref></dateRange>
+                        </head>
+                        
+                        <p/>
+                    </div3>
+                    <div3 id="d105" type="entry">
+                        <pb entity="DSSR_000004400_0048" n="np"/>
+                        <head>
+                            <date value="1863-04-19">APRIL<lb/> 19.</date>
+                        </head>
+                        <p>Gauley Bridge W Va. Sunday 7. A.M. a beautiful Morning 9 &frac12; A.M. Start on
+                            a visit to See the Hawks Nest. meet a Flag of Truce, coming from the
+                            Rebel Army. Hawks Nest 8 miles from here. Col Coates Maj Carpenter,
+                            Capts Clarke Caldwell, Adjt Longbon. in company </p>
+                    </div3>
+                    <div3 id="d106" type="entry">
+                        <head>
+                            <date value="1863-04-20">20.</date>
+                        </head>
+                        <p>Gauley Bridge W Va Monday 6 &frac12; A.M. Sun Shining warm. Old man Manser
+                            &amp; wife. left for Cincinnati O Mrs Dunlap the wife of a Rebel
+                            Soldier came through the lines, on her way to New Hampshire 3 P.M. warm
+                            &amp; cloudy. 8 &frac12; P.M. wind blowing warm.</p>
+                    </div3>
+                    <div3 id="d107" type="entry">
+                        <head>
+                            <date value="1863-04-21">21.</date>
+                        </head>
+                        <p>Gauley Bridge W Va. Tuesday 7. A.M warm and pleasent. Election among the
+                            commissiond Officers for the Majorship, ballots to remain Sealed until
+                            the ballots arrive from the detachment at Summerville</p>
+                    </div3>
+                    <div3 id="d108" type="entry">
+                        <pb entity="DSSR_000004400_0049" n="np"/>
+                        <head>
+                            <date value="1863-04-22">APRIL<lb/> 22.</date>
+                        </head>
+                        <p>Gauley Bridge W Va. Wednesday 7 &frac12; A.M. cloudy &amp; warm. 9 A.M. A
+                            Deserter Just came in. he Deserted from the 22d. Virginia C.S.A. 3 &frac12;
+                            P.M. clearing up. 5. P.M. wind blowing. 8 &frac12; P.M. commenced to Rain</p>
+                    </div3>
+                    <div3 id="d109" type="entry">
+                        <head>
+                            <date value="1863-04-23">23.</date>
+                        </head>
+                        <p>Gauley Bridge W Va. Thursday 7 &frac14;. A.M. cloudy &amp; Raining. 9. A.M.
+                            Still Raining. Sent of<!--[f]--> an Application for Furlough, for Thos.
+                            Wilson. 11 &frac12;. A.M. Several Sick from Summerville Va on their road to
+                            Hospital. 2 P.M. Raining. 9 &frac12;. P.M. cloudy and damp</p>
+                    </div3>
+                    <div3 id="d110" type="entry">
+                        <head>
+                            <date value="1863-04-24">24.</date>
+                        </head>
+                        <p>Gauley Bridge W Va. Friday 7. A.M. Raining freely. 9 &frac12; A.M. clearing up,
+                            cold. Gauley and New Rivers, both on the Rise, E. P. Stout went to Cinti
+                            . 3 P.M. clear &amp; warm 8 P.M. Beautiful Moonlight Night</p>
+                    </div3>
+                    <div3 id="d111" type="entry">
+                        <pb entity="DSSR_000004400_0050" n="np"/>
+                        <head>
+                            <date value="1863-04-25">APRIL<lb/> 25.</date>
+                        </head>
+                        <p>Gauley Bridge W Va. Saturday 7. A.M. clear and warm. 9. A.M. two
+                            Deserters came in from Richmond, been four weeks coming. report great
+                            destitution, in the South. the Rebel Army on half Rations. Officer of
+                            the Day the first time, for a month. </p>
+                    </div3>
+                    <div3 id="d112" type="entry">
+                        <head>
+                            <date value="1863-04-26">26.</date>
+                        </head>
+                        <p>Gauley Bridge W Va. Sunday 7.A.M. a beautiful morning. 10.A.M. Irish
+                            Families moving within the lines. one man bringing five hundred pounds
+                            of Tobacco. Smugled it through the Rebel lines. A Flag of Truce, went to
+                            Lewisburg, under Lt. Ankrom. 2d Va. Cavl </p>
+                    </div3>
+                    <div3 id="d113" type="entry">
+                        <head>
+                            <date value="1863-04-27">27.</date>
+                        </head>
+                        <p>Gauley Bridge W Va. Monday 7.A.M. clear and warm. 8 &frac12;. A.M. Families,
+                            Still a Fleeing from Dixie. 3. P.M. getting cloudy, cavalry on road to
+                            Sumerville 81/2. P.M. cloudy, looks like Rain. </p>
+                    </div3>
+                    <div3 id="d114" type="entry">
+                        <pb entity="DSSR_000004400_0051" n="np"/>
+                        <head>
+                            <date value="1863-04-28">APRIL<lb/> 28.</date>
+                        </head>
+                        <p>Gauley Bridge W Va. Tuesday 6 &frac14;. A.M. Raining. 8.A.M. Enter on my Duty as
+                            Officer of the Day. Still raining 4.P.M. Loop creek. twenty Deserters,
+                            here, from the Rebel Army. They report great destitution among the
+                            Rebels. 9.A.M. Raining.</p>
+                    </div3>
+                    <div3 id="d115" type="entry">
+                        <head>
+                            <date value="1863-04-29">29.</date>
+                        </head>
+                        <p>Gauley Bridge, W Va, Wednesday 5.A.M. clear and warm. 7 &frac12;. A.M. Start
+                            with my Wife, in an Ambulance, for Loop creek. Roads very rough. Loop
+                            Creek 10. A.M. cloudy. Boat will not be there until Some time in the
+                            night. </p>
+                    </div3>
+                    <div3 id="d116" type="entry">
+                        <head>
+                            <date value="1863-04-30">30.</date>
+                        </head>
+                        <p>Loop Creek, W Va. Thursday 5 &frac14;. A.M. my wife Started for Cincinnati O.
+                            Col Paxton, starts for Lewisburg with the 2nd Va Cavalry, to attack the
+                            Rebels, under Col Edgar, 26th Va. Vol. </p>
+                    </div3>
+                    <div3 id="d117" type="entry">
+                        <head>MAY 1 - MAY 6 <ref target="n5" n="5">5</ref></head>
+                        <p/>
+                    </div3>
+                    <div3 id="d118" type="entry">
+                        <pb entity="DSSR_000004400_0052" n="np"/>
+                        <head>
+                            <date value="1863-05-07">MAY<lb/> 7. </date>
+                        </head>
+                        <p>Summerville W. Va. Thursday. 6 &frac14; A.M. cloudy and warm. Start for Gauley
+                            Bridge, Va. this morning looks like rain. Gauley Bridge 6 &frac12; P.M. arrived
+                            here wet completely through. been raining very near all Day. put up for
+                            the night at Mr Hills.</p>
+                    </div3>
+                    <div3 id="d119" type="entry">
+                        <head>
+                            <date value="1863-05-08">8.</date>
+                        </head>
+                        <p>Gauley Bridge W Va. Friday Mr. Hills warm and cloudy. Intend to visit
+                            Camp Reynolds this morning where the 34th O. V. I. are encamped 3 &frac12; P.M.
+                            Raining, quite hard. Just returned from Camp Reynolds, Saw Capt. Peck,
+                            Capt. West, Maj Shaw Lieut Clark, &amp;c </p>
+                    </div3>
+                    <div3 id="d120" type="entry">
+                        <head>
+                            <date value="1863-05-09">9.</date>
+                        </head>
+                        <p>Gauley Bridge W Va. Saturday 8. A.M. clear and warm, I intend to Start
+                            for Ohio to day, if I can get conveyance. met Lieut Taylor, on Guard
+                            everything quiet here, to day. Gauley &amp; New Rivers, Raising</p>
+                    </div3>
+                    <div3 id="d121" type="entry">
+                        <pb entity="DSSR_000004400_0053" n="np"/>
+                        <head>
+                            <date value="1863-05-10">MAY<lb/> 10.</date>
+                        </head>
+                        <p>Gauley Bridge W Va. Sunday 6 A.M. clear and warm. Start for Loop Creek,
+                            to day. Stopt at the camp of the 34th.O.V.I. Simmonds Battery moves to
+                            day. Loop Creek, 1 &frac12; P.M. Just arrived here met T. C. Hutchins, at Mrs
+                            Hudlestons, took Supper there. </p>
+                    </div3>
+                    <div3 id="d122" type="entry">
+                        <head>
+                            <date value="1863-05-11">11.</date>
+                        </head>
+                        <p>Loop Creek, W Va. Monday 5 &frac12; A.M. a Splendid morning. Met Capt. West,
+                            36th O.V.I. on his way to Charleston. to attend the Court Martial in
+                            Session there. waiting for a Boat here. 9 &frac12; A.M. Just heard that the
+                            91st O.V.I. has moved back to Gauley Bridge. </p>
+                    </div3>
+                    <div3 id="d123" type="entry">
+                        <head>
+                            <date value="1863-05-12">12.</date>
+                        </head>
+                        <p>Loop Creek W Va. Tuesday, the Gen. Meigs will Start down the River to
+                            Day. Charleston W Va. 8 A.M. met Capt. Jim Thomas. 91st O.V.I. &amp;
+                            Capt. Buck Smith, 12th O.V.I.</p>
+                    </div3>
+                    <div3 id="d124" type="entry">
+                        <pb entity="DSSR_000004400_0054" n="np"/>
+                        <head>
+                            <date value="1863-05-13">May<lb/> 13.</date>
+                        </head>
+                        <p>Galipolise O. Wednesday 1 oclock A.M. on Board of the Alleghanie Belle.
+                            bound down the Ohio River. I Shall get of<!--[f]--> at Portsmouth O. and
+                            go up the canal to Waverly, O. as I want to See Hon J. J. Green </p>
+                    </div3>
+                    <div3 id="d125" type="entry">
+                        <head>
+                            <date value="1863-05-14">14.</date>
+                        </head>
+                        <p>Waverly O. Thursday 6.A.M. everything looks Natural here. I See Several
+                            New Houses are being built here. Met very near all of my old
+                            acquaintances all looking well. looks as if it would be <add
+                                hand="author" place="top">warm to day</add></p>
+                    </div3>
+                    <div3 id="d126" type="entry">
+                        <head>
+                            <date value="1863-05-15">15.</date>
+                        </head>
+                        <p>Circleville O. Friday. 3. A.M. was awakened up, to go on the cars to
+                            Lancaster O. I have not been very well for Several days. I went to bed
+                            yesterday 5. P.M.</p>
+                    </div3>
+                    <div3 id="d127" type="entry">
+                        <pb entity="DSSR_000004400_0055" n="np"/>
+                        <head>
+                            <date value="1863-05-16">MAY<lb/> 16.</date>
+                        </head>
+                        <p>Lancaster O. Saturday I arrived here yesterday morning at half past five,
+                            with a pretty high Fever. Sent for Dr. O. E. Davis. who gave me Some
+                            Calomel, and quinine. he Says I am attacked with Fever. </p>
+                    </div3>
+                    <div3 id="d128" type="entry">
+                        <head>
+                            <date value="1863-05-17">17.</date>
+                        </head>
+                        <p>Lancaster O. Sunday Fever not quite So high and burning as yesterday. Dr
+                            Davis informes me he is a going to remove to Cinti - to practice his
+                            profession he will do well there </p>
+                    </div3>
+                    <div3 id="d129" type="entry">
+                        <head>
+                            <date value="1863-05-18">18.</date>
+                        </head>
+                        <p>Lancaster O. Monday Fever worse to Day. I have Sent for Dr. Wagenhals. to
+                            visit me as Dr. Davis has gone to Cincinnati O. was called on by Dr. P.
+                            M. Wagenhals</p>
+                    </div3>
+                    <div3 id="d130" type="entry">
+                        <pb entity="DSSR_000004400_0056" n="np"/>
+                        <head>
+                            <date value="1863-05-19">May<lb/> 19.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday Fever not near So heavy as it was on yesterday. I am
+                            Still taking a pretty large quantity of medicine. I have been visited by
+                            a good many of my acquaintances Since I came.</p>
+                    </div3>
+                    <div3 id="d131" type="entry">
+                        <head>
+                            <date value="1863-05-20">20.</date>
+                        </head>
+                        <p>Lancaster O Wednesday no Fever this morning, but last Night the Fever was
+                            very high worse than it has been sick. Since I have been taken Sick
+                            pulse quiet and easy this morning. </p>
+                    </div3>
+                    <div3 id="d132" type="entry">
+                        <head>
+                            <date value="1863-05-21">21.</date>
+                        </head>
+                        <p>Lancaster O. Thursday Fever all disapeard but am yet very weak. have
+                            eaten of nothing Since last Friday. been drinking Some wine, to day</p>
+                    </div3>
+                    <div3 id="d133" type="entry">
+                        <pb entity="DSSR_000004400_0057" n="np"/>
+                        <head>
+                            <date value="1863-05-22">May 22.</date>
+                        </head>
+                        <p>Lancaster O. Friday. am very weak yet. no Fever now. felt like eating
+                            Something this morning. am not taking any Medicine now. the weather is
+                            very warm and dry. </p>
+                    </div3>
+                    <div3 id="d134" type="entry">
+                        <head>
+                            <date value="1863-05-23">23.</date>
+                        </head>
+                        <p>Lancaster O. Saturday, much better this morning, but am quite weak. Shall
+                            take a ride up, Street to day. I think it will make me feel Some better.
+                            weather warm and dry yet. we need Rain.</p>
+                    </div3>
+                    <div3 id="d135" type="entry">
+                        <head>
+                            <date value="1863-05-24">24.</date>
+                        </head>
+                        <p>Lancaster O. Sunday feel pretty well this morning. a Ride on yesterday
+                            braced me up considerable. Met a number of my friends. All well.</p>
+                    </div3>
+                    <div3 id="d136" type="entry">
+                        <pb entity="DSSR_000004400_0058" n="np"/>
+                        <head>
+                            <date value="1863-05-25">MAY<lb/> 25.</date>
+                        </head>
+                        <p>Lancaster O. Monday, I am getting Some Stronger. I met John Collons, Late
+                            the Major of the 5th O.V. I. who had to Resign, on account of ill health
+                            also met Major Stafford, of the 1st O.V.I. looking well. weather warm
+                            and Dry.</p>
+                    </div3>
+                    <div3 id="d137" type="entry">
+                        <head>
+                            <date value="1863-05-26">26.</date>
+                        </head>
+                        <p>Lancaster o. Tuesday am Still gaining in Strength. Received information
+                            that Abram Heed , was wounded Sever<!--[e]-->y in the hip and Legs at
+                            the Battle of Chancelorsville Va. 25th Regt. O.V.I.</p>
+                    </div3>
+                    <div3 id="d138" type="entry">
+                        <head>
+                            <date value="1863-05-27">27.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday gaining in Strength, looks like Rain this morning.
+                            5 &frac14; P.M. very warm and dry. everything needs rain 8 P.M. clear and
+                        warm.</p>
+                    </div3>
+                    <div3 id="d139" type="entry">
+                        <pb entity="DSSR_000004400_0059" n="np"/>
+                        <head>
+                            <date value="1863-05-28">MAY<lb/> 28.</date>
+                        </head>
+                        <p>Lancaster O. Thursday. 7 &frac12; A.M. Feel much better this morning, a pleasant
+                            wind blowing. 11 &frac14; A.M. cloudy and warm. looks Something like Rain.
+                            1.P.M. very favorable news from Grants Army, in front of Vicksburg,
+                            Miss.</p>
+                    </div3>
+                    <div3 id="d140" type="entry">
+                        <head>
+                            <date value="1863-05-29">29.</date>
+                        </head>
+                        <p>Lancaster, O. Friday, 6 &frac12; A.M. am gaining Strength fast. cloudy and warm
+                            Slight rain. was visited by W. E. Mead, of Chillicothe O. Superintendent
+                            of the Ohio Canal. Shall Start for Columbus O. at 1 oclock P.M. with Col
+                            McVeigh. </p>
+                    </div3>
+                    <div3 id="d141" type="entry">
+                        <head>
+                            <date value="1863-05-30">30.</date>
+                        </head>
+                        <p>Columbus O. Saturday 5 &frac12; A.M. gaining Strength very fast. a Splendid
+                            morning. Rain last night. pretty lively here this morning. a Splendid
+                            morning </p>
+                    </div3>
+                    <div3 id="d142" type="entry">
+                        <head>
+                            <dateRange from="1863-06-01" to="1863-06-03">JUNE 1-3<ref target="n5"
+                                n="5">5</ref></dateRange>
+                        </head>
+                        <p/>
+                    </div3>
+                    <div3 id="d143" type="entry">
+                        <pb entity="DSSR_000004400_0060" n="np"/>
+                        <head>
+                            <date value="1863-06-04">JUNE<lb/> 4.</date>
+                        </head>
+                        <p>Lancaster O. Thursday 8 &frac14;. A.M. clear and warm. Col. Alfred McVeigh,
+                            Started for Philiadelphia, yesterday. 10.A.M. very warm. The Seventeen
+                            year Locust have made there appearance. 1 P.M. war news good to Day.
+                            7.P.M. warm.</p>
+                    </div3>
+                    <div3 id="d144" type="entry">
+                        <head>
+                            <date value="1863-06-05">5.</date>
+                        </head>
+                        <p>Lancaster O. Friday 8 &frac34;. A.M. warm &amp; dry. in very good health
+                            now. news very Stale from the Army. Judge W. W. Johnson, of Ironton, O.
+                            is here. he used to be a guest of mine at Waverly.</p>
+                    </div3>
+                    <div3 id="d145" type="entry">
+                        <head>
+                            <date value="1863-06-06">6.</date>
+                        </head>
+                        <p>Lancaster O. Saturday, 9.A.M. very dry. 1 &frac12; P.M. I Saw to day for the
+                            first time, Some men a wearing Butternutts, the cursed Rebels. worse
+                            than those in the South. </p>
+                    </div3>
+                    <div3 id="d146" type="entry">
+                        <pb entity="DSSR_000004400_0061" n="np"/>
+                        <head>
+                            <date value="1863-06-07">JUNE <lb/>7.</date>
+                        </head>
+                        <p>Lancaster O. Sunday 9 &frac12; A.M. the air this morning is quite cold, for this
+                            time of the year. 11.A.M. clear and cold. not very well. 1 &frac12;. P.M. more
+                            pleasant. 8 &frac12; P.M. getting quite cold.</p>
+                    </div3>
+                    <div3 id="d147" type="entry">
+                        <head>
+                            <date value="1863-06-08">8.</date>
+                        </head>
+                        <p>Lancaster O. Monday 8 1/2 .A.M. clear and quite cold. a pretty big frost
+                            last Night nipping of the Garden truck. I wrote to Col Turley, about my
+                            certificate, from the Quartermaster 6.P.M. cool.</p>
+                    </div3>
+                    <div3 id="d148" type="entry">
+                        <head>
+                            <date value="1863-06-09">9.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday. 7 &frac12;.A.M. clear and cool feel in good Spirits this
+                            morning over the news of the operation of Gen Banks, at Port Hudson,
+                            hope he will whip them </p>
+                    </div3>
+                    <div3 id="d149" type="entry">
+                        <pb entity="DSSR_000004400_0062" n="np"/>
+                        <head>
+                            <date value="1863-06-10">JUNE<lb/> 10.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday 7 &frac12;. A.M. clear &amp; warm. the air a little
+                            damp. feel first-rate this morning. 10.A.M. looks like Rain. 1 &frac12;. P.M.
+                            war news very good. no Rain yet. Some appearance of it however. </p>
+                    </div3>
+                    <div3 id="d150" type="entry">
+                        <head>
+                            <date value="1863-06-11">11.</date>
+                        </head>
+                        <p>Lancaster O. Thursday 8 A.M. Raining. has been raining Since yesterday in
+                            the evening. this is the first Rain, Since I have been at Home. The
+                            Gardens and fields look very healthy.</p>
+                    </div3>
+                    <div3 id="d151" type="entry">
+                        <head>
+                            <date value="1863-06-12">12.</date>
+                        </head>
+                        <p>Lancaster O. Friday 8 &frac12;. A.M. warm &amp; clear 10. A.M. received my
+                            certificate of Indebtedness to the Government, from Lt. A. D. Crossland,
+                            the R.Q.M. 91st Regt, O.V.I.</p>
+                    </div3>
+                    <div3 id="d152" type="entry">
+                        <pb entity="DSSR_000004400_0063" n="np"/>
+                        <head>
+                            <date value="1863-06-13">JUNE<lb/> 13.</date>
+                        </head>
+                        <p>Lancaster O. Saturday 8 &frac12;. A.M. warm &amp; cloudy. looks Something
+                            like rain 10. A.M. Just heard that the Democratic convention met at
+                            Columbus O. have Nominated C.L. Valandigham, for Gov, of Ohio. this will
+                            not Suit the Soldiers.</p>
+                    </div3>
+                    <div3 id="d153" type="entry">
+                        <head>
+                            <date value="1863-06-14">14.</date>
+                        </head>
+                        <p>Lancaster O. Sunday. 9. A.M. clear &amp; warm. no Rain on yesterday.
+                            the Union Party talk of Nominating John Brough, for the Gov of Ohio. he
+                            will be Elected Sure, if he is Nominated, 7. P.M. warm. </p>
+                    </div3>
+                    <div3 id="d154" type="entry">
+                        <head>
+                            <date value="1863-06-15">15.</date>
+                        </head>
+                        <p>Lancaster O. Monday 7 &frac12;. A.M. clear &amp; warm. the Gardens, and the
+                            crops in the Fields, look very well. the prospect is now, for a
+                            Bountiful harvest. </p>
+                    </div3>
+                    <div3 id="d155" type="entry">
+                        <pb entity="DSSR_000004400_0064" n="np"/>
+                        <head>
+                            <date value="1863-06-16">JUNE<lb/> 16.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday 8. A.M. warm &amp; hazey. Yesterday was the
+                            warmest day we have had So far this Season. 1 &frac12;. P.M. a Slight Sprinkle
+                            of Rain. the Oats, and hay crop will be Short this Season</p>
+                    </div3>
+                    <div3 id="d156" type="entry">
+                        <head>
+                            <date value="1863-06-17">17.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday 9. A.M. the convention of the Union Party meet at
+                            Columbus, O. to day. a great many of the Delegates, are passing through
+                            here. John Brough, will be Nominated for Gov. Sure. </p>
+                    </div3>
+                    <div3 id="d157" type="entry">
+                        <head>
+                            <date value="1963-06-18">18.</date>
+                        </head>
+                        <p>Lancaster O. Thursday 8 &frac12;. A.M. News came last Night, of Lee's Army a
+                            moving toward Pennsylvania &amp; Maryland Hooker, is also moving
+                            will be a Battle betwe<!--[e]-->n them</p>
+                    </div3>
+                    <div3 id="d158" type="entry">
+                        <pb entity="DSSR_000004400_0065" n="np"/>
+                        <head>
+                            <date value="1863-06-19">JUNE<lb/> 19.</date>
+                        </head>
+                        <p>Lancaster O. Friday 8. A.M. received news of John Brough's Nomination for
+                            Gov, he will Suit the Soldiers, and will be Elected by at least, from
+                            Seventy five, to Ninty thousand MaJority. Bully for him</p>
+                    </div3>
+                    <div3 id="d159" type="entry">
+                        <head>
+                            <date value="1863-06-20">20.</date>
+                        </head>
+                        <p>Lancaster O. Saturday 9 &frac12;. A.M. no positive news from Lee's army, Reble
+                            Cavalry in Penn &amp; Maryland, doing considirable damage. Col
+                            McVeigh arrived home from Washington City. my case under advisement
+                            there. </p>
+                    </div3>
+                    <div3 id="d160" type="entry">
+                        <head>
+                            <date value="1863-06-21">21.</date>
+                        </head>
+                        <p>Lancaster O. Sunday 9 &frac12;. A.M. warm and clear, grain looking very well, in
+                            the fields. no News of importance from Vicksburg or Hooker. </p>
+                    </div3>
+                    <div3 id="d161" type="entry">
+                        <pb entity="DSSR_000004400_0066" n="np"/>
+                        <head>
+                            <date value="1863-06-22">JUNE<lb/> 22.</date>
+                        </head>
+                        <p>Lancaster O. Monday 8.A.M. clear 7 warm 11 &frac12;. A.M. my Brother arrived at
+                            Home to day. he was wounded in the Battle of Chancellorsville. he is in
+                            the Army of the Potomic, under Gen Hooker.</p>
+                    </div3>
+                    <div3 id="d162" type="entry">
+                        <head>
+                            <date value="1863-06-23">23.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday 9. A.M. warm and cloudy. Abram Heed belongs to the
+                            25th Regt O.V.I. Army of the Potomic will take Dinner with me to day. he
+                            was wounded at Chancellorsville. Eastern Virginia.</p>
+                    </div3>
+                    <div3 id="d163" type="entry">
+                        <head>
+                            <date value="1863-06-24">24.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday 7. A.M. cool &amp; cloudy a very poor market
+                            here for this time of the year. they generally have a good market in
+                            this place. </p>
+                    </div3>
+                    <div3 id="d164" type="entry">
+                        <pb entity="DSSR_000004400_0067" n="np"/>
+                        <head>
+                            <date value="1863-06-25">JUNE<lb/> 25.</date>
+                        </head>
+                        <p>Lancaster O. Thursday 8 &frac12; A.M. cloudy and cool. the Locust are about all
+                            disappeared. Some Indications of Rain. they are trying to raise a
+                            company of Negroes for the war, in this County. good Luck Speed them
+                        </p>
+                    </div3>
+                    <div3 id="d165" type="entry">
+                        <head>
+                            <date value="1863-06-26">26.</date>
+                        </head>
+                        <p>Lancaster O. Friday 9. A.M. cool &amp; Raining has been Raining Since
+                            yesterday Evening. I am in tolerable good health at this time. the
+                            health of my Family, is very good. the war news rather exciting</p>
+                    </div3>
+                    <div3 id="d166" type="entry">
+                        <head>
+                            <date value="1863-06-27">27.</date>
+                        </head>
+                        <p>Lancaster O. Saturday 8 &frac12;. A.M. windy and cool. A good market this
+                            morning. 10 &frac12;. A.M. business pretty brisk to day, this is fine growing
+                            weather. </p>
+                    </div3>
+                    <div3 id="d167" type="entry">
+                        <head>
+                            <dateRange from="1863-06-28" to="1863-07-03">JUNE 28-JULY 3 <ref
+                                target="n5" n="5">5</ref></dateRange>
+                        </head>
+                        <p></p>
+                    </div3>
+                    <div3 id="d168" type="entry">
+                        <pb entity="DSSR_000004400_0068" n="np"/>
+                        <head>
+                            <date value="1863-07-04">JULY<lb/> 4.</date>
+                        </head>
+                        <p>Lancaster O. Saturday. 7 1/2 . A.M. a pleasant morning 10. A.M. there
+                            will not be any celebration here to day. too many of the Copperhead
+                            persuasion, in this County. Rain last night cooled of<!--[f]--> the
+                            atmosphere Locusts have all disappeard</p>
+                    </div3>
+                    <div3 id="d169" type="entry">
+                        <head>
+                            <date value="1863-07-05">5.</date>
+                        </head>
+                        <p>Lancaster O. Sunday. 8. A.M. clear and warm. a beautiful Rain yesterday.
+                            11 &frac12;. A.M. good news from the Potomac Army. the Rebels on the Retreat. a
+                            pleasant wind moving. Several Butternuts drunk yet from yesterday. </p>
+                    </div3>
+                    <div3 id="d170" type="entry">
+                        <head>
+                            <date value="1863-07-06">6.</date>
+                        </head>
+                        <p>Lancaster O. Monday 7 &frac12;. A.M. a. Beautifull morning. fine weather for
+                            cutting Hearvest. 1 &frac12;. P.M. news just came that Gen. Meade, has whipt
+                            Gen Lee, in Pennsylvania </p>
+                    </div3>
+                    <div3 id="d171" type="entry">
+                        <pb entity="DSSR_000004400_0069" n="np"/>
+                        <head>
+                            <date value="1863-07-07">JULY<lb/> 7.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday 7 &frac12;. A.M. warm and pleasant. looks like Rain. every
+                            person but the Butternuts are pleased about the news from the Army of
+                            the Potomac. 3. P.M. dispatch Says that Vicksburg has Surrenderd. </p>
+                    </div3>
+                    <div3 id="d172" type="entry">
+                        <head>
+                            <date value="1863-07-08">8.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday 8. A.M. very warm. A great Jolification, last
+                            Night. bonfires &amp; firing of Cannon, on the Surrender of
+                            Vicksburg with 26,000 Prisoners. Col John. A. Connell, of the 17th
+                            O.V.I. made a Speech</p>
+                    </div3>
+                    <div3 id="d173" type="entry">
+                        <head>
+                            <date value="1863-07-09">9.</date>
+                        </head>
+                        <p>Lancaster O. Thursday. 6 &frac12;. A.M. cloudy &amp; warm. another large
+                            meeting last night. Bonfires and fire works. Speaches &amp;c. I
+                            intend going to Cincinti in a few day to get my <add hand="author"
+                                place="top">pay</add>.</p>
+                    </div3>
+                    <div3 id="d174" type="entry">
+                        <pb entity="DSSR_000004400_0070" n="np"/>
+                        <head>
+                            <date value="1863-07-10">JULY<lb/> 10.</date>
+                        </head>
+                        <p>Lancaster O. Friday 8 &frac12;. A.M. warm and hazey. a Butternut meeting takes
+                            place here to Night they look very much discomfited and downhearted over
+                            the news from Gen. Meades Army and from Gen Grants Army </p>
+                    </div3>
+                    <div3 id="d175" type="entry">
+                        <head>
+                            <date value="1863-07-11">11.</date>
+                        </head>
+                        <p>Lancaster O. Saturday 6. A.M. weather hazey. a good market this morning.
+                            this is what I like to See. 2 1/2 . P.M. Charles Heed. Started for
+                            Columbus O. on the noon train, with Six more men, for his Company </p>
+                    </div3>
+                    <div3 id="d176" type="entry">
+                        <head>
+                            <date value="1863-06-12">12.</date>
+                        </head>
+                        <p>Lancaster O. Sunday. 9. A.M. cloudy &amp; cool. There has been hail
+                            Someplace, which has cooled the air. 1&frac14;. P.M. large numbers attended
+                            church to day, not very well</p>
+                    </div3>
+                    <div3 id="d177" type="entry">
+                        <pb entity="DSSR_000004400_0071" n="np"/>
+                        <head>
+                            <date value="1863-07-13">JULY<lb/> 13.</date>
+                        </head>
+                        <p>Lancaster O. Monday 7 &frac12;. A.M. cool and cloudy. 10. A.M. all of the
+                            Millitia called out to report at Columbus O. a great many Butternuts are
+                            Showing their weak Knees. one man was butted when he was young, by a
+                            Sheep. he cant <add hand="author" place="top">go</add>
+                        </p>
+                    </div3>
+                    <div3 id="d178" type="entry">
+                        <head>
+                            <date value="1863-07-14">14</date>
+                        </head>
+                        <p>Lancaster O. Tuesday. 8. A.M. Raining pretty hard, the Millitia leave to
+                            day for Columbus O. Morgan in Ohio, tearing up Rail Roads. 4. P.M. the
+                            Millitia Just leaft on three Canal Boats. a large number goes
+                        tomorrow.</p>
+                    </div3>
+                    <div3 id="d179" type="entry">
+                        <head>
+                            <date value="1863-07-15">15.</date>
+                        </head>
+                        <p>Lancaster, O. Wednesday 7. A.M. clear and warm I intend going to Columbus
+                            with the Millitia to day. 3 &frac12;. P.M. Sheriff Miller, John Rudolph, Henry
+                            Crammer, Charley Rainy &amp; myself start <add hand="author"
+                                place="top">for Columbus.</add></p>
+                    </div3>
+                    <div3 id="d180" type="entry">
+                        <pb entity="DSSR_000004400_0072" n="np"/>
+                        <head>
+                            <date value="1863-07-16">JULY<lb/> 16.</date>
+                        </head>
+                        <p>Columbus O. Thursday. 8 &frac12; A.M. warm and clear. Millitia, in evry
+                            direction you may look. The Gov. discharging half of all that have
+                            reported. twelve thousand reported up to this time. Staid all night with
+                            Ed Farmingham </p>
+                    </div3>
+                    <div3 id="d181" type="entry">
+                        <head>
+                            <date value="1863-07-17">17.</date>
+                        </head>
+                        <p>Lancaster O. Friday 9. A.M. clear and cool. arrived here last night. Just
+                            received the news that Morgan (the Reble) has burnt the Hotel, I kept in
+                            Waverly, with a number of other Houses, this is a great loss there </p>
+                    </div3>
+                    <div3 id="d182" type="entry">
+                        <head>
+                            <date value="1863-07-18">18.</date>
+                        </head>
+                        <p>Lancaster O. Saturday 8 &frac12; A.M. warm &amp; clear. A few Cavalry here
+                            watching for Morgan. 5. P.M. quite a muss between Some Butternuts and
+                            Some of the Cavalry one Cavalry man cut with a Knife </p>
+                    </div3>
+                    <div3 id="d183" type="entry">
+                        <pb entity="DSSR_000004400_0073" n="np"/>
+                        <head>
+                            <date value="1863-07-19">JULY<lb/> 19.</date>
+                        </head>
+                        <p>Lancaster O. Sunday. 8 1/2 . A.M. clear and warm. all of the Cavalry left
+                            last night. went in the direction of Marietta. it is reported that John
+                            Morgan will be there to day. Militia is moving on him from all of
+                            Southern Ohio. </p>
+                    </div3>
+                    <div3 id="d184" type="entry">
+                        <head>
+                            <date value="1863-07-20">20.</date>
+                        </head>
+                        <p>Lancaster O. Monday 9. A.M. cloudy &amp; cool. Morgan defeated in an
+                            attempt to cross the Ohio River, at Buffington Island. 150 Killed 1000.
+                            taken Prisoners. Capt. C. H. Heed. left Columbus for Cleaveland O last
+                            Saturday</p>
+                    </div3>
+                    <div3 id="d185" type="entry">
+                        <head>
+                            <date value="1873-07-21">21.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday 7 &frac12; A.M. cool and cloudy. Militia, all returning
+                            home to day. 8. P.M. Dispatch Just come Stating John Morgan's whole
+                            force has been captured him also </p>
+                    </div3>
+                    <div3 id="d186" type="entry">
+                        <pb entity="DSSR_000004400_0074" n="np"/>
+                        <head>
+                            <date value="1863-07-22">JULY<lb/> 22.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday 8 1/2 . A.M. clear and cool. everybody excited
+                            over the capture of John Morgans forces. 10. A.M. the reported capture
+                            of John Morgan was premature. he is at large with between ten and twelve
+                            hundred men.</p>
+                    </div3>
+                    <div3 id="d187" type="entry">
+
+                        <head>
+                            <date value="1863-07-23">23.</date>
+                        </head>
+                        <p>Lancaster O. Thursday 8 &frac12;.A.M. warm and clear. The Millitia, had all the
+                            Roads. Picketed last night about four hundred was encamped at the fair
+                            grounds. all Business is Suspended for the present. everybody laboring
+                            under excitem<add hand="author" place="top">ent</add></p>
+                    </div3>
+                    <div3 id="d188" type="entry">
+                        <head>
+                            <date value="1863-07-24">24.</date>
+                        </head>
+                        <p>Lancaster O. Friday. 9.A.M. clear and very warm. Business resumed again.
+                            A Democratic meeting here to day. 2 &frac34;. P.M. Some fighting on the Streets
+                            between some union men and Butternuts. </p>
+                    </div3>
+                    <div3 id="d189" type="entry">
+                        <pb entity="DSSR_000004400_0075" n="np"/>
+                        <head>
+                            <date value="1863-07-25">JULY<lb/> 25.</date>
+                        </head>
+                        <p>Lancaster O. Saturday. 8.A.M. warm and Raining. Morgan reported tearing
+                            up the Central O. Rail Road. was Just enformed that Col. Jno. T. Toland,
+                            34th O.V.I. was killed, at Wytheville Va. I am very Sorry for this he
+                            was a good and brave Soldier</p>
+                    </div3>
+                    <div3 id="d190" type="entry">
+                        <head>
+                            <date value="1863-07-26">26.</date>
+                        </head>
+                        <p>Lancaster O. Sunday. 9.A.M. cool and cloudy. Col Powell, 2nd Virginia
+                            Cavalry, another Brave Officer, was wounded at Wytheville Va. while
+                            destroying the Va. &amp; ten. R.R. Such men is a big loss to the
+                            Government. 3 &frac12;. P.M. nothing from Morgans forces to Day</p>
+                    </div3>
+                    <div3 id="d191" type="entry">
+                        <head>
+                            <date value="1863-07-27">27.</date>
+                        </head>
+                        <p>Lancaster O. Monday. 8 &frac12;.A.M. clear and cool. A Dispatch came last night
+                            that Morgan &amp; all of his force had been captured, in Columbiania
+                            County. I heard from my former Co. at Gauley Bridge. </p>
+                    </div3>
+                    <div3 id="d192" type="entry">
+                        <pb entity="DSSR_000004400_0076" n="np"/>
+                        <head>
+                            <date value="1863-07-28">JULY<lb/> 28.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday. 9.A.M. warm and clear. a few Cavalry here on their
+                            Road home, from the Morgan chase. 1 &frac12;.P.M. Morgan's capture is
+                            confirmed. he passed through Columbus O. yesterday. 8 &frac12;.P.M. quite a
+                            demonstration over <add hand="author" place="top">his Capture.</add>
+                        </p>
+                    </div3>
+                    <div3 id="d193" type="entry">
+                        <head>
+                            <date value="1863-07-29">29.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday 7.A.M. cloudy &amp; pleasant. a Splendid
+                            market this morning. a large quantity of Berries. Selling at from Six to
+                            ten cents for quart. 11 &frac12;. no war news of Importance to Day.</p>
+                    </div3>
+                    <div3 id="d194" type="entry">
+                        <head>
+                            <date value="1863-07-30">30.</date>
+                        </head>
+                        <p>Lancaster O. Thursday. 8 &frac12;.A.M. clear and warm. two of Gen. Morgan's
+                            (Rebel) Officers were Captured in this County yesterday, and brought
+                            here last night and put in Jail.</p>
+                    </div3>
+                    <div3 id="d195" type="entry">
+                        <pb entity="DSSR_000004400_0077" n="np"/>
+                        <head>
+                            <date value="1863-07-31">JULY<lb/> 31.</date>
+                        </head>
+                        <p>Lancaster O. Friday 6 &frac12;.A.M. Cloudy &amp; Raining - Gen. Morgan's two
+                            Officers, Capt Logan, and Lt. Rhea, were taken to Columbus O. on
+                            yesterday Afternoon. they belong to the (3rd ) Kentucky (Rebel) Cavalry.
+                            There is a few of Morgan's men Scattered around in the lower part of the
+                            State. They will all be picked up yet. I See by the Cincinnati Papers,
+                            that the 91st Regt. O.V.I. were after Morgan. should of liked to of been
+                            with them. I Shall probably go to Columbus O. tomorrow, with Sherriff
+                            James Miller. 1 &frac12;. P.M. a pleasant Shower is a falling. the crops need
+                            it, very badly. 10.P.M. Raining it has been Showery all Day.</p>
+                    </div3>
+                    <div3 id="d196" type="entry">
+                        <pb entity="DSSR_000004400_0078" n="np"/>
+                        <head>
+                            <date value="1863-08-01">AUGUST<lb/> 1.</date>
+                        </head>
+                        <p>Lancaster O. Saturday 6.A.M. warm and cloudy. met Judge Whitman, of
+                            Cincinnati O. this morning in market. he was formally Judge of the
+                            County Court, of this county. no war news of Importance to day. 7.P.M.
+                            extremely hot.</p>
+                    </div3>
+                    <div3 id="d197" type="entry">
+                        <head>
+                            <date value="1863-08-02">2.</date>
+                        </head>
+                        <p>Lancaster O. Sunday. 9.A.M. clear and hot. I will go to Cincinnati
+                            instead of Columbus, with Sherriff Miller. he is going with a lot of
+                            Government Horses. 3.P.M. an extremely hot day. the hottest of the Seas
+                                <add hand="author" place="top">on</add></p>
+                    </div3>
+                    <div3 id="d198" type="entry">
+                        <head>
+                            <date value="1863-08-03">3.</date>
+                        </head>
+                        <p>Lancaster O. Monday. 7 &frac12;.A.M. warm and cloudy. a great amount of Sickness
+                            prevailing through out the Country. will Start this evening at 7 oclock
+                            for Cincinnati O. </p>
+                    </div3>
+                    <div3 id="d199" type="entry">
+                        <pb entity="DSSR_000004400_0079" n="np"/>
+                        <head>
+                            <date value="1863-08-04">AUGUST<lb/> 4.</date>
+                        </head>
+                        <p>Cincinnati O. Tuesday 9. A.M. clear and warm. Just arrived here from
+                            Lancaster O. took Breakfast at Morrow. find quite a number of persons
+                            here I know. a Splendid market here this morning in fifth street market
+                            Space. </p>
+                    </div3>
+                    <div3 id="d200" type="entry">
+                        <head>
+                            <date value="1863-08-05">5.</date>
+                        </head>
+                        <p>Cincinnati O. Wednesday. 7.A.M. warm and cloudy. am Stoping at the
+                            Dennison, house, a pretty good House. 11 &frac12; A.M. Raining. it is very warm
+                            now a very large number of Horses, have been brought here. the market is
+                            overstocked </p>
+                    </div3>
+                    <div3 id="d201" type="entry">
+                        <head>
+                            <date value="1863-08-06">6.</date>
+                        </head>
+                        <p>Cincinnati O. Thursday. 6 &frac12;.A.M. cloudy and warm. new recruits coming in.
+                            10.A.M. This day is principally observed here. it is being Set apart by
+                            the President as a day of Thanksgiving for our victories. </p>
+                    </div3>
+                    <div3 id="d202" type="entry">
+                        <pb entity="DSSR_000004400_0080" n="np"/>
+                        <head>
+                            <date value="1863-08-07">AUGUST<lb/> 7.</date>
+                        </head>
+                        <p>Cincinnati O. Friday 8.A.M. warm and Sultry. Sheriff Miller, will have
+                            his Horses Inspected this morning. Met Lt. Burbage, of the 91st Regt
+                            O.V.I. on his road home recruiting. will Start for Home tomorrow, in the
+                            Evening </p>
+                    </div3>
+                    <div3 id="d203" type="entry">
+                        <head>
+                            <date value="1863-08-08">8.</date>
+                        </head>
+                        <p>Cincinnati O. Saturday 7.A.M. warm and cloudy, looks like Rain. 9.A.M.
+                            getting Still warmer. I am not very well. have Some Fever. Shall go to
+                            my Room and lay down. 3 &frac12;. P.M. will leave at 4 P.M. for Home fell
+                            better. </p>
+                    </div3>
+                    <div3 id="d204" type="entry">
+                        <head>
+                            <date value="1863-08-09">9.</date>
+                        </head>
+                        <p>Lancaster O. Sunday. 9.A.M. clear and warm. reached here at 5 &frac12;.A.M. had
+                            my Coat Stole, at Washington, last Night. Some Important papers were in
+                            it, &amp; my Commission</p>
+                    </div3>
+                    <div3 id="d205" type="entry">
+                        <pb entity="DSSR_000004400_0081" n="np"/>
+                        <head>
+                            <date value="1863-08-10">AUGUST<lb/> 10.</date>
+                        </head>
+                        <p>Lancaster O. Monday 10 &frac14;. A.M. cloudy and warm. I have written to the
+                            Sheriff of Fayette Co. about my Coat. advertised in Cinti Commercial,
+                            the Theif. have written to Head Quarters, for Duplicates, to all of my
+                            Papers. </p>
+                    </div3>
+                    <div3 id="d206" type="entry">
+                        <head>
+                            <date value="1863-08-11">11.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday. 9.A.M. very warm &amp; cloudy, am not well this
+                            morning. no Heves, but very weak. I think I have got the Fever broke.
+                            was attended by Dr. O. E. Davis, the best Phycian, in this County. </p>
+                    </div3>
+                    <div3 id="d207" type="entry">
+                        <head>
+                            <date value="1863-08-12">12.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday. 10 &frac12;. A.M. warm and clear. no heves at all. am
+                            Some Stronger. 3.P.M. received a Letter from Col C. B. White, Stating I
+                            was not preasent when Col. Turley made his Station<add hand="author"
+                                place="top">ends</add>
+                        </p>
+                    </div3>
+                    <div3 id="d208" type="entry">
+                        <pb entity="DSSR_000004400_0082" n="np"/>
+                        <head>
+                            <date value="1863-08-13">AUGUST<lb/> 13.</date>
+                        </head>
+                        <p>Lancaster O. Thursday, 9.A.M. warm &amp; Sultry: Some rain last
+                            night. I have heard nothing from my coat and my Papers, that was Stole.
+                            am recovering fast from my Sickness. I received a Letter from Lt
+                        Heed</p>
+                    </div3>
+                    <div3 id="d209" type="entry">
+                        <head>
+                            <date value="1863-08-14">14.</date>
+                        </head>
+                        <p>Lancaster O. Friday. 8 &frac12;.A.M. cloudy and warm. met Capt I. C. Hendly,
+                            this morning. Made arrangements to Send Lt. C. W. Heed a Brother of
+                            mine, a Sword from Columbus. he is at Cleaveland O. belongs to the 129th
+                            Regt O.V.I. Cp D.</p>
+                    </div3>
+                    <div3 id="d210" type="entry">
+
+                        <head>
+                            <date value="1863-08-15">15.</date>
+                        </head>
+                        <p> Lancaster O. Saturday 7.A.M. clear and cool. met Capt. I. W. Stinchcomb
+                            of the 17th O.V. I. looking well he is a noble hearted man and a man I
+                            like. He is frank, and Honest.</p>
+                    </div3>
+                    <div3 id="d211" type="entry">
+                        <pb entity="DSSR_000004400_0083" n="np"/>
+                        <head>
+                            <date value="1863-08-16">AUGUST<lb/> 16.</date>
+                        </head>
+                        <p>Lancaster O. Sunday. 9.A.M. clear and warm. Yesterday evening I received
+                            my Original Discharge from the War Department, with which to draw my
+                            Pay. will go to Cincinnati as Soon as I get my certificates. will take
+                            my wife along </p>
+                    </div3>
+                    <div3 id="d212" type="entry">
+                        <head>
+                            <date value="1863-08-17">17.</date>
+                        </head>
+                        <p>Lancaster O. Monday 7 &frac12;.A.M. cool and cloudy. not very well this morning.
+                            10.A.M. met Several of the Officers of the 17th. Regt O.V.I. they are
+                            here after conScripts to fill up the Regt. the Draft will take place
+                            Sometime this month.</p>
+                    </div3>
+                    <div3 id="d213" type="entry">
+                        <head>
+                            <date value="1863-08-18">18.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday 8 &frac12;.A.M. clear and cool. feel prety well this
+                            morning. 10.A.M. quite warm. it is very dry at present. no News from the
+                            Army. everything is very dull.</p>
+                    </div3>
+                    <div3 id="d214" type="entry">
+                        <pb entity="DSSR_000004400_0084" n="np"/>
+                        <head>
+                            <date value="1863-08-18">AUGUST<lb/> 19.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday 7. A.M. cloudy and warm. am beginning to feel like
+                            myself now, and glad am I. Capt Stinchcomb 17th O.V.I. is making Union
+                            Speaches, in evry township in the County. he is here after
+                        Conscripts.</p>
+                    </div3>
+                    <div3 id="d215" type="entry">
+                        <head>
+                            <date value="1863-08-20">20.</date>
+                        </head>
+                        <p>Lancaster O. Thursday 8 &frac12;. A.M. warm and clear. heard from the 91st.
+                            O.V.I. all is well there, but they want me back there. I am afraid, I
+                            could not Stand the Service, if I Should go back. I may go in another
+                            branch of the <add hand="author" place="top">Service</add>
+                        </p>
+                    </div3>
+                    <div3 id="d216" type="entry">
+                        <head>
+                            <date value="1863-08-21">21.</date>
+                        </head>
+                        <p>Lancaster O. Friday 7 &frac12;. A.M. clear and cool. a pleasant, balmy,
+                            &amp; refreshing morning. Just Such a morning as this I would like
+                            to attack the Rebels. could fight So well.</p>
+                    </div3>
+                    <div3 id="d217" type="entry">
+                        <pb entity="DSSR_000004400_0085" n="np"/>
+                        <head>
+                            <date value="1863-08-22">AUGUST<lb/> 22.</date>
+                        </head>
+                        <p>Lancaster O. Saturday. 8. A.M. clear and warm. we are having pleasant
+                            weather now. 10 &frac12;. A.M. met Alf Burnett, he is making a Tour throughout
+                            the State. Reciting Poems. he is a Sensible, good natured, cleaver
+                            hearted man </p>
+                    </div3>
+                    <div3 id="d218" type="entry">
+                        <head>
+                            <date value="1863-08-23">23.</date>
+                        </head>
+                        <p>Lancaster O. Sunday. 9. A.M. warm &amp; cloudy. my wife was Sick, all
+                            night. Some Kind of Fever, working on her. Just heard from Lt. C. W.
+                            Heed, 129th Regt O.V.I. they are at Nicholasville Ky. on their road to
+                            Cumber land <add hand="author" place="top">gap</add></p>
+                    </div3>
+                    <div3 id="d219" type="entry">
+                        <head>
+                            <date value="1863-08-24">24.</date>
+                        </head>
+                        <p>Lancaster O. Monday. 8. A.M. cloudy and cool. Alf Burnett, leaves this
+                            morning for Circleville 3. P.M. A Splendid rain is falling. my wife is
+                            very Sick, &amp; my youngest child. </p>
+                    </div3>
+                    <div3 id="d220" type="entry">
+                        <pb entity="DSSR_000004400_0086" n="np"/>
+                        <head>
+                            <date value="1863-08-25">AUGUST<lb/> 25.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday. 7 &frac12;. A.M. cloudy and very cool, for this time of
+                            the year. been Raining during the Night. was up very near all Night,
+                            with my wife and child. they are both better this morning they both have
+                            Fever. </p>
+                    </div3>
+                    <div3 id="d221" type="entry">
+                        <head>
+                            <date value="1864-08-26">26.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday 7. A.M. clear &amp; very cold. was up very
+                            near all night giving medicine to my Wife and Children. they are all
+                            better this morning. 1. P.M. Cincinnati papers, report Charleston is
+                            being Shelled and Sumpter is taken. </p>
+                    </div3>
+                    <div3 id="d222" type="entry">
+                        <head>
+                            <date value="1864-08-27">27.</date>
+                        </head>
+                        <p>Lancaster O. Thursday. 8. A.M. cold and cloudy. not very well this
+                            morning. my wifes health is getting better, She has about recovered from
+                            her attack of Fever. </p>
+                    </div3>
+                    <div3 id="d223" type="entry">
+                        <pb entity="DSSR_000004400_0087" n="np"/>
+                        <head>
+                            <date value="1864-08-28">AUGUST<lb/> 28.</date>
+                        </head>
+                        <p>Lancaster O. Friday. 10. A.M. clear and cool. There was quite a
+                            conflagration Last night, between Seven and eight oclock P.M. Several
+                            manufacturing Establishments Stables and ware Houses. I had a Severe
+                            Shake of the ague, at the time, &amp; didn't go.</p>
+                    </div3>
+                    <div3 id="d224" type="entry">
+                        <head>
+                            <date value="1864-08-29">29.</date>
+                        </head>
+                        <p>Lancaster O. Saturday. 9. A.M. cold and raining. don't feel as if I will
+                            Shake with the ague to day. my wife and children are well now. both of
+                            my children had the Fever and Ague. 3. P.M. it has been raining all day.
+                            3 &frac12;. P.M. a Shake coming </p>
+                    </div3>
+                    <div3 id="d225" type="entry">
+                        <head>
+                            <date value="1864-08-30">30.</date>
+                        </head>
+                        <p>Lancaster O. Sunday 8 &frac12;. A.M. cloudy and cold. I had quite a heavy Shake
+                            of Ague yesterday afternoon I don't think I will have it to day. Bront
+                            my youngest Son, had it last night.</p>
+                    </div3>
+                    <div3 id="d226" type="entry">
+                        <pb entity="DSSR_000004400_0088" n="np"/>
+                        <head>
+                            <date value="1863-08-31">AUGUST<lb/> 31.</date>
+                        </head>
+                        <p>Lancaster O. Monday 9. A.M. cold and cloudy. I missed having the Ague
+                            yesterday, and I thank God for it, for I never Sufferd So much with
+                            pain. (as I did on Saturday.) in all the Sickness I have ever had the
+                            pains were confined to my Head and Kidneys. God grant I may never put in
+                            another Such a day. I think I have broke now. I received a Letter from
+                            Lt. C. W. Heed, on Saturday they are on their road to Knoxville East
+                            Tenn via Cumberland Gap. this will relieve East Tennessee they are in
+                            Gen Burnsides Army. Forts Sumter and Wagner, are reported taken. the
+                            Confederacy is fast caving in. Shells were thrown into Charleston by Gen
+                            Gillmore, a distance of five miles, a great accomplish<add hand="author"
+                                place="top">ment</add>.</p>
+                    </div3>
+                    <div3 id="d227" type="entry">
+                        <pb entity="DSSR_000004400_0089" n="np"/>
+                        <head>
+                            <date value="1863-09-01">SEPTEMBER<lb/> 1.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday 8.A.M. clear and cool. I feel much better this
+                            morning. I have got the Ague broken. my Family are all well at present.
+                            Charleston is being Shelled with Greek fire. no other news of Importance
+                            from the <add hand="author" place="top">army </add></p>
+                    </div3>
+                    <div3 id="d228" type="entry">
+                        <head>
+                            <date value="1863-09-02">2.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday 7. A.M. cool and hazy feel pretty good now, only I
+                            am quite weak yet. this remarkably cold weather for this time of the
+                            year. a heavy frost a few mornings ago. destroyed a great deal of corn
+                            tobacco, &amp;c </p>
+                    </div3>
+                    <div3 id="d229" type="entry">
+                        <head>
+                            <date value="1863-09-03">3.</date>
+                        </head>
+                        <p>Lancaster O. Thursday 8. A.M. clear and cool. I am getting along first
+                            rate. I will Soon feel like myself, at this rate. my Family, are doing
+                            first rate too. </p>
+                    </div3>
+                    <div3 id="d230" type="entry">
+                        <head>
+                            <dateRange from="1863-09-04" to="1863-09-15">SEPTEMBER 4-15<ref
+                                target="n5" n="5">5</ref></dateRange>
+                        </head>
+                        <p></p>
+                    </div3>
+                    <div3 id="d231" type="entry">
+                        <pb entity="DSSR_000004400_0090" n="np"/>
+                        <head>
+                            <date value="1863-09-16">SEPTEMBER<lb/> 16.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday 7. A.M. cloudy and warm. do not feel very well
+                            this morning. A Small crowd at the Races. 1. P.M. Just seen two men bet
+                            on the weather, one bet it would rain before 4. P.M. the bet $5. a Side.
+                            2. P.M. Raining </p>
+                    </div3>
+                    <div3 id="d232" type="entry">
+                        <head>
+                            <date value="1863-09-17">17.</date>
+                        </head>
+                        <p>Lancaster O. Thursday 5 1/2. A.M. warm and cloudy the Fever appeared on
+                            me again yesterday evening. I am taking Quinine now to keep it
+                            of<!--[f]--> today. the Races proved to be a bore. 5.P.M. getting very
+                            cold. I don't feel well, not a bit. </p>
+                    </div3>
+                    <div3 id="d233" type="entry">
+                        <head>
+                            <date value="1863-09-18">18.</date>
+                        </head>
+                        <p>Lancaster O. Friday 8. A.M. cloudy and cold. I had some Fever last night
+                            again. am Still taking Quinine. 2 &frac12;. P.M. very Cold. feel Some better
+                            just now. the Fever left me at 11. A.M.</p>
+                    </div3>
+                    <div3 id="d234" type="entry">
+                        <pb entity="DSSR_000004400_0091" n="np"/>
+                        <head>
+                            <date value="1863-09-19">SEPTEMBER<lb/> 19.</date>
+                        </head>
+                        <p>Lancaster O. Saturday 7. A.M. cold and cloudy. feel Some better this
+                            morning. my wife is very Sick again. a heavy Over-Coat, feels very
+                            comfortable this morning, but many a poor devil, has none, and they must
+                            Suffer. I pity them Sure </p>
+                    </div3>
+                    <div3 id="d235" type="entry">
+                        <head>
+                            <date value="1863-09-20">20.</date>
+                        </head>
+                        <p>Lancaster O. Sunday 8 &frac12;. A.M. cloudy and cool. I am feeling first rate
+                            this morning. it is colder than I ever knew it, at this time of the
+                            year. heavy frosts at Night. 3. P.M. it is getting colder. 7 &frac12;. P.M.
+                            don't feel well. Shall retire to bed early</p>
+                    </div3>
+                    <div3 id="d236" type="entry">
+                        <head>
+                            <date value="1863-09-21">21.</date>
+                        </head>
+                        <p>Lancaster O. Monday 8. A.M. cold and cloudy, very bad weather. feel
+                            better now. my Wife is Still Indisposed. 10 &frac12;. A.M. reported Rosecrans
+                            is defeated. don't believe it. I don't think he can be whipt. </p>
+                    </div3>
+                    <div3 id="d237" type="entry">
+                        <pb entity="DSSR_000004400_0092" n="np"/>
+                        <head>
+                            <date value="1863-09-22">SEPTEMBER<lb/> 22.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday 8 &frac12;. A.M. cloudy and warm. I am not quite as well as
+                            I was yesterday morning. Rosecrans all right yet. 2. P.M. war news
+                            favorable. Rosey, being reinforced. 4. P.M. getting Some colder. I feel
+                            Some better now.</p>
+                    </div3>
+                    <div3 id="d238" type="entry">
+                        <head>
+                            <date value="1863-09-23">23.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday 6 &frac12;. A.M. cloudy and cold. I am feeling pretty
+                            good. this morning, the news from Rosecrans, is very favorable. he will
+                            whip them yet. Burnside is reinforcing him. My Brother is with Burnside.
+                        </p>
+                    </div3>
+                    <div3 id="d239" type="entry">
+                        <head>
+                            <date value="1863-09-24">24.</date>
+                        </head>
+                        <p>Lancaster O. Thursday. 8 &frac12;. A.M. cool and windy. not to well. have a
+                            Slight fever. my Wife Still Sick. 1. P.M. news from Gen Rosecrans, all
+                            right. he can hold his own, until Reinforced </p>
+                    </div3>
+                    <div3 id="d240" type="entry">
+                        <pb entity="DSSR_000004400_0093" n="np"/>
+                        <head>
+                            <date value="1863-09-25">SEPTEMBER<lb/> 25.</date>
+                        </head>
+                        <p>Lancaster O. Friday 7 &frac12;. A.M. clear and cold. I feel prety good now. my
+                            Wife is much better. I Just heard from my Brother Abe, who is at Folly
+                            Island, S.C. he is in good health. they will Soon be in Charleston City.
+                        </p>
+                    </div3>
+                    <div3 id="d241" type="entry">
+                        <head>
+                            <date value="1863-09-26">26.</date>
+                        </head>
+                        <p>Lancaster O. Saturday 9. A.M. cold and clear. a heavy frost last night. I
+                            feel first rate, better than I have for Some time. it feels very much
+                            like winter this Morning. the Millitia turn out today for Company drill.
+                        </p>
+                    </div3>
+                    <div3 id="d242" type="entry">
+                        <head>
+                            <date value="1863-09-27">27.</date>
+                        </head>
+                        <p>Lancaster O. Sunday 8. A.M. cloudy and warm. I am getting to feel much
+                            better. word from Genrl Rosecrans places him all right. General Hookers
+                            old Corps is to pass through Columbus to<add hand="author" place="top"
+                                >day</add>
+                        </p>
+                    </div3>
+                    <div3 id="d243" type="entry">
+                        <pb entity="DSSR_000004400_0094" n="np"/>
+                        <head>
+                            <date value="1863-09-28">SEPTEMBER<lb/> 28.</date>
+                        </head>
+                        <p>Lancaster O. Monday 7 &frac14;. A.M. warm and clear. feel Something like my Self
+                            now. I See there is to be a Butternut meeting here to day. 1 &frac12;. P.M. I
+                            Just counted the number in Procession. 5.76 Buggies and Wagons, and 2.33
+                            on Horses, it was not as large <add hand="author" place="top">as the
+                                Brough meeting.</add>
+                        </p>
+                    </div3>
+                    <div3 id="d244" type="entry">
+                        <head>
+                            <date value="1863-09-29">29.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday. 9. A.M. clear and warm. I feel very good Just now.
+                            my Wife has fully recovered. the Millitia, are called out to day for
+                            Regimental Drill. I have been asked to Drill the 1st Regiment. 6. P.M.
+                            have Just returned from drilling <add hand="author" place="top">am
+                                tired.</add></p>
+                    </div3>
+                    <div3 id="d245" type="entry">
+                        <head>
+                            <date value="1863-09-30">30.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday 7 &frac12;. A.M. warm and clear. am feeling first rate.
+                            Several wounded from the 17th. O.V. I. arrived, they were wounded in
+                            Georgia, in the battle between Rosecrans, and Bragg.</p>
+                    </div3>
+                    <div3 id="d246" type="entry">
+                        <pb entity="DSSR_000004400_0095" n="np"/>
+                        <head>
+                            <date value="1863-10-01">OCTOBER<lb/> 1.</date>
+                        </head>
+                        <p>Lancaster O. Thursday 10. A.M. cloudy and Raining I am not quite So well
+                            this morning, heavy reinforcements going to Gen Rosecrans, 1 &frac12;. P.M.
+                            nothing new from the Army to day. Raining prety freely, Just returned
+                            from the country with Dr. O. E. Davis</p>
+                    </div3>
+                    <div3 id="d247" type="entry">
+                        <head>
+                            <date value="1863-10-02">2.</date>
+                        </head>
+                        <p>Lancaster O. Friday 8 &frac12;. A.M. cool and cloudy. I feel Just moderate this
+                            morning. met Lt. Cornwell of the 17th. O.V.I. he was wounded at the
+                            Battle in Georgia. 11. A.M. getting warmer. I Just Issued an Order,
+                            concerning a Court of Inquiry for <add hand="author" place="top">Col
+                                    <unclear>[-]</unclear></add></p>
+                    </div3>
+                    <div3 id="d248" type="entry">
+                        <head>
+                            <date value="1863-10-03">3.</date>
+                        </head>
+                        <p>Lancaster O. Saturday. 5 &frac12;. A.M. clear and cool, feel in good condition,
+                            this morning. 1 &frac12;. P.M. nothing Special from the Army. 10. P.M. do not
+                            feel very well head ache.</p>
+                    </div3>
+                    <div3 id="d249" type="entry">
+                        <pb entity="DSSR_000004400_0096" n="np"/>
+                        <head>
+                            <date value="1863-10-04">OCTOBER<lb/> 4.</date>
+                        </head>
+                        <p>Lancaster O. Sunday 9. A.M. cold and windy. I am nothing like being well
+                            this morning. 10. P.M. the Ague returned on me about 11. A.M. Shook
+                            until 1 &frac12;. P.M. the Fever came on me prety heavy lasting until this
+                            time. it is leaving me now </p>
+                    </div3>
+                    <div3 id="d250" type="entry">
+                        <head>
+                            <date value="1863-10-05">5.</date>
+                        </head>
+                        <p>Lancaster O. Monday 10. A.M. wind and cold. I have been taking Quinine,
+                            Since early this morning. it is getting quite cold. 9 &frac12;. P.M. I had a
+                            slight chill about four oclock, and I have Some Fever now. getting Still
+                            colder. </p>
+                    </div3>
+                    <div3 id="d251" type="entry">
+                        <head>
+                            <date value="1864-10-06">6.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday. 8. A.M. cold and cloudy. I have commenced taking
+                            Quinine again. I intend to break the Ague to day if I can possibly do
+                            So. 8 &frac12;. P.M. missed it to day. </p>
+                    </div3>
+                    <div3 id="d252" type="entry">
+                        <pb entity="DSSR_000004400_0097" n="np"/>
+                        <head>
+                            <date value="1863-10-07">OCTOBER<lb/> 7.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday. 10. A.M. cold and raining. it has been raining
+                            all morning. I feel much better. I can eat Something, and I will Soon
+                            get Strength. this will be a bad day for the Brough meeting. the county
+                            Fair commences to day. bad time for <add hand="author" place="top"
+                            >it</add></p>
+                    </div3>
+                    <div3 id="d253" type="entry">
+                        <head>
+                            <date value="1863-10-08">8.</date>
+                        </head>
+                        <p>Lancaster O. Thursday 8 &frac12;. A.M. clear and cold. I feel pretty good this
+                            morning. I have got the miserable, and disagrable Ague broken, for how
+                            long I cant Say. I Suppose though until I get it again, I hope I Shant
+                            have it any Sooner. </p>
+                    </div3>
+                    <div3 id="d254" type="entry">
+                        <head>
+                            <date value="1863-10-09">9.</date>
+                        </head>
+                        <p>Lancaster O. Friday. 7. A.M. cold and cloudy. I am gaining Strength again
+                            and when I do get Strong I hope I may remain in that condition. 3 &frac12;.
+                            P.M. getting clear and colder.</p>
+                    </div3>
+                    <div3 id="d255" type="entry">
+                        <pb entity="DSSR_000004400_0098" n="np"/>
+                        <head>
+                            <date value="1863-10-10">OCTOBER<lb/> 10.</date>
+                        </head>
+                        <p>Lancaster O. Saturday 7 &frac12;. A.M. clear and cold. I will have to Serve on a
+                            Board, of Inquiry, to Investigate the leaves of Absent Officers, from
+                            drill at Camp Licking Newark Ohio. I am acting the Adjutant of the first
+                            Regt Fairfield County, Militia. </p>
+                    </div3>
+                    <div3 id="d256" type="entry">
+                        <head>
+                            <date value="1863-10-11">11.</date>
+                        </head>
+                        <p>Lancaster O. Sunday. 8 &frac12;. A.M. cold and clear. feel pretty good this
+                            morning, but am Still taking Quinine, of which Stuff I have taken about
+                            a car load. 10. A.M. a fine day the Streets full of People, going to
+                            meeting. </p>
+                    </div3>
+                    <div3 id="d257" type="entry">
+                        <head>
+                            <date value="1863-10-12">12.</date>
+                        </head>
+                        <p>Lancaster O. Monday 8. A.M. cold and clear a very heavy frost last night.
+                            I am gaining Some Strength now. my Brother, Lt. C. W. Heed, is laying
+                            Sick at Camp Nelson <unclear>[?]</unclear>, Ky.</p>
+                    </div3>
+                    <div3 id="d258" type="entry">
+                        <pb entity="DSSR_000004400_0099" n="np"/>
+                        <head>
+                            <date value="1863-10-13">OCTOBER<lb/> 13.<ref target="n6" n="6">{6}</ref></date>
+                        </head>
+                        <p>Lancaster O. Tuesday 7. A.M. clear and cool. This is the day when the
+                            People of Ohio will determine by their Ballots, whether they will
+                            Support our Glorious Government. they who vote for Vallandigham are not
+                            for sustaining our Govern<add hand="author" place="top">ment.</add></p>
+                    </div3>
+                    <div3 id="d259" type="entry">
+                        <head>
+                            <date value="1863-10-14">14.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday 9. A.M. cool and clear. The news from all parts of
+                            the State, Shows a large Union gain. Brough is Elected by at least Fifty
+                            thousand majority on the Home vote. Butternuts are looking Sick. Hurrah
+                            for Brough </p>
+                    </div3>
+                    <div3 id="d260" type="entry">
+                        <head>
+                            <date value="1863-10-15">15.</date>
+                        </head>
+                        <p>Lancaster O. Thursday, 8. A.M. clear and cool. Feel first rate.
+                            Co[p]perheads dead. the Government is to be Sustained. Union gain every
+                            where. the traitor Val will remain in Canada.</p>
+                    </div3>
+                    <div3 id="d261" type="entry">
+                        <head>
+                            <dateRange from="1863-10-16" to="1863-10-21">October 16-21.<ref
+                                target="n5" n="5">{5}</ref></dateRange>
+                        </head>
+                        <p/>
+                    </div3>
+                    <div3 id="d262" type="entry">
+                        <pb entity="DSSR_000004400_0100" n="np"/>
+                        <head>
+                            <date value="1863-10-22">OCTOBER <lb/>22.</date>
+                        </head>
+                        <p>Lancaster O. Thursday. 8. A.M. warm and clear, not well this morning. 2.
+                            P.M. Just had a chill with Some Fever. it was Slight. Army news. Lee on
+                            the retreat. Meade following 5. P.M. feel Some better looks as if it
+                            would rain.</p>
+                    </div3>
+                    <div3 id="d263" type="entry">
+                        <head>
+                            <date value="1863-10-23">23.</date>
+                        </head>
+                        <p>Lancaster O. Friday. 9. A.M. cloudy and raining it has been raining very
+                            near all Night. I feel Some better now. 2. P.M. it is still raining. in
+                            the 17th Regt. O.V.I. which is nearly all from this place., Vallindigham
+                            did not get a Single vote. </p>
+                    </div3>
+                    <div3 id="d264" type="entry">
+                        <head>
+                            <date value="1863-10-24">24.</date>
+                        </head>
+                        <p>Lancaster O. Saturday 8 &frac12;. A.M. clear and cool. I am gaining Strength
+                            once more. When I will be attacked again I cant Say. 2. P.M. met Col
+                            Niebling of the 21st Regt O.V.I. to Day. </p>
+                    </div3>
+                    <div3 id="d265" type="entry">
+                        <pb entity="DSSR_000004400_0101" n="np"/>
+                        <head>
+                            <date value="1863-10-25">OCTOBER <lb/>25.</date>
+                        </head>
+                        <p>Lancaster O. Sunday. 9. A.M. cloudy and cool. Am Still gaining Strength
+                            Lee, the Rebel Gen. is Still on the Retreat. Meade, is following. was
+                            told this morning that coal was Selling, at Seventy five cents in
+                            Cincinnati </p>
+                    </div3>
+                    <div3 id="d266" type="entry">
+                        <head>
+                            <date value="1863-10-26">26.</date>
+                        </head>
+                        <p>Lancaster O. Monday. 7. A.M. cold and cloudy. it is getting colder, no
+                            news from the Army, of Importance. fall Court, commences this morning.
+                            11.1/4. A.M. clear and cold. feel pretty well, to Day. 4. P.M. Very
+                            cold. </p>
+                    </div3>
+                    <div3 id="d267" type="entry">
+                        <head>
+                            <date value="1863-10-27">27.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday. 81/2. A.M. cool and clear I bought the Old Levering
+                            Farm, yesterday Evening, paying Seventy, twenty five per Acre. it is one
+                            mile from the city, 4. P.M. cold.</p>
+                    </div3>
+                    <div3 id="d268" type="entry">
+                        <head>
+                            <dateRange from="1863-10-28" to="1863-11-06">OCTOBER 28-NOVEMBER
+                            6<ref target="n6" n="6">{6}</ref></dateRange>
+                        </head>
+                        <p></p>
+                    </div3>
+                    <div3 id="d269" type="entry">
+                        <pb entity="DSSR_000004400_0102" n="np"/>
+                        <head>
+                            <date value="1865-11-07">NOVEMBER<lb/> 7.</date>
+                        </head>
+                        <p>Lancaster O. Saturday 6. &frac12;. A.M. clear and cold. Just returned from
+                            Market, which was very poor. Every body on the qui vive, over the
+                            expected, from Charleston, S. C. 11. A.M. getting quite warm 4. P.M.
+                            turning cold now.</p>
+                    </div3>
+                    <div3 id="d270" type="entry">
+                        <head>
+                            <date value="1865-11-08">8.</date>
+                        </head>
+                        <p>Lancaster O. Sunday. 9. A.M. clear and cold. a<!--[m]--> getting to feel
+                            much better. my Wife, is not very well this morning. 2. P.M. getting
+                            colder, and cloudy. my youngest Son Romanzo, De Bront, Heed has Just
+                            taken quite Sick. </p>
+                    </div3>
+                    <div3 id="d271" type="entry">
+                        <head>
+                            <date value="1865-11-09">9.</date>
+                        </head>
+                        <p>Lancaster O. Monday. 8. A.M. cloudy and is a Snowing. it looks very much
+                            like winter now. 1 &frac12;. P.M. Meade captured 1400 of Lee's Army, on
+                            Saturday. 3. P.M. Snowing faster. </p>
+                    </div3>
+                    <div3 id="d272" type="entry">
+                        <pb entity="DSSR_000004400_0103" n="np"/>
+                        <head>
+                            <date value="1865-11-10">NOVEMBER<lb/> 10.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday 7 &frac12;. A.M. very cold. My wife, was very Sick last
+                            night. a Slight Snow this morning. feel pretty well. 3. P.M. I Sold the
+                            Levering Farm. To James Miller. it lays one mile west of town. 7. P.M.
+                            cold.</p>
+                    </div3>
+                    <div3 id="d273" type="entry">
+                        <head>
+                            <date value="1865-11-11">11.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday. 8 &frac12;. A.M. cold and cloudy. fell pretty good this
+                            morning. a very poor market now. 2. P.M. clear and cold. Meade is
+                            chasing Lee, with a prospect of a heavy Engagement.</p>
+                    </div3>
+                    <div3 id="d274" type="entry">
+                        <head>
+                            <date value="1865-11-12">12.</date>
+                        </head>
+                        <p>Lancaster O. Thursday 7. A.M. cloudy and damp feel rather poorly. a
+                            Stretching and yawning with Soreness all over the body. 4. P.M. I am
+                            going to have a chill. </p>
+                    </div3>
+                    <div3 id="d275" type="entry">
+                        <pb entity="DSSR_000004400_0104" n="np"/>
+
+                        <head>
+                            <date value="1863-11-13">NOVEMBER<lb/> 13.</date>
+                        </head>
+                        <p>Lancaster O. Friday 9 &frac12;. A.M. cold and cloudy. feel very bad. I am quite
+                            weak. had a Fever chill yesterday afternoon. but not much Heve Fever, 2.
+                            P.M. have fifteen grains of Quinine in me. to break the Ague.</p>
+                    </div3>
+                    <div3 id="d276" type="entry">
+                        <head>
+                            <date value="1863-11-14">14.</date>
+                        </head>
+                        <p>Lancaster O. Saturday. 8. A.M. Raining. feel Some better. have no
+                            appetite. Slept very well last night. think I will miss the Ague to day.
+                            I hope So at least Reinforcements going to Chattanooga Ten<!--[n]--></p>
+                    </div3>
+                    <div3 id="d277" type="entry">
+                        <head>
+                            <date value="1863-11-15">15.</date>
+                        </head>
+                        <p>Lancaster O. Sunday 9 &frac12;. A.M. cloudy and raining Slightly. feel rather
+                            bad. my wife is not very well, either. both of my children are
+                            complaining Some.</p>
+                    </div3>
+                    <div3 id="d278" type="entry">
+                        <pb entity="DSSR_000004400_0105" n="np"/>
+                        <head>
+                            <date value="1863-11-16">NOVEMBER<lb/> 16.</date>
+                        </head>
+                        <p>Lancaster O. Monday. 8 &frac12;. A.M. cloudy and cold. feel devlish mean. mouth
+                            all Sore. Head ache. Back ache. Tooth ache and every other Kind of ache.
+                            I don't care much for writing. 3. P.M. better than this morning</p>
+                    </div3>
+                    <div3 id="d279" type="entry">
+                        <head>
+                            <date value="1863-11-17">17.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday 7 &frac14;. A.M. cold and cloudy. I feel Some better now.
+                            the army news is rather dull. my wife better, I have missed the Ague,
+                            Since last Thursday. 2. P.M. clearing off. 9. P.M. feeling bad. Shall
+                            retire to bed. </p>
+                    </div3>
+                    <div3 id="d280" type="entry">
+                        <head>
+                            <date value="1863-11-18">18.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday 8 &frac12;. A.M. clear and cool. feel pretty well this
+                            morning. my wife is better. no Stirring news this pleasant morning. 3.
+                            P.M. Pleasant.</p>
+                    </div3>
+                    <div3 id="d281" type="entry">
+                        <pb entity="DSSR_000004400_0106" n="np"/>
+                        <head>
+                            <date value="1963-11-19">NOVEMBER<lb/> 19.</date>
+                        </head>
+                        <p>Lancaster O. Thursday 8. A.M. clear and pleasant feel much better. my
+                            Family are all better. 12. M. a very pleasant day. looks, like a Spring
+                            morning Armies quiet I Seen the Provost Martial taking all the loose
+                                <add hand="author" place="top">military</add> Coats. </p>
+                    </div3>
+                    <div3 id="d282" type="entry">
+                        <head>
+                            <date value="1863-11-20">20.</date>
+                        </head>
+                        <p>Lancaster O. Friday 7 &frac12;. A.M. damp and wet. I am Improving very fast. my
+                            Wife is better. 11. A.M. Raining and cold. 3 &frac12;. P.M. Burnside attacked
+                            by Longstreet at Knoxville. it is Still Raining 8. P.M. Raining 21.
+                            Lancaster O. Saturday. 9. A.M. cloudy and drizling rain. feel pretty
+                            good. My wife is worse. 2. P.M. cold and clearing off. feel very well,
+                            but am weak. 11. P.M. cold &amp; clear.</p>
+                    </div3>
+                    <div3 id="d283" type="entry">
+                        <pb entity="DSSR_000004400_0107" n="np"/>
+                        <head>
+                            <date value="1863-11-22">NOVEMBER<lb/> 22.</date>
+                        </head>
+                        <p>Lancaster O. Sunday. 9 &frac12;. A.M. cool and clear. feel very well this
+                            morning. wife about the Same as yesterday. sun Shining bright. Received
+                            a Letter from Lt. C. H. Heed, in Command of Provost Guard at Crab
+                            Orchard, Ky. he is well.</p>
+                    </div3>
+                    <div3 id="d284" type="entry">
+                        <head>
+                            <date value="1863-11-23">23.</date>
+                        </head>
+                        <p>Lancaster O. Monday 9 &frac14;. A.M. cool and clear. I am gaining Some Strength.
+                            My Wife is better. Gen Burnside is all right at Knoxville Tenn. 3. P.M.
+                            clear and pleasant. Business rather dull. 7 &frac12;. P.M. cloudy and damp</p>
+                    </div3>
+                    <div3 id="d285" type="entry">
+                        <head>
+                            <date value="1863-11-24">24.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday. 7 1/2. A.M. cold and drizzling feel Just moderate.
+                            Armies are laying Still. 11 &frac12;. A.M. cold and cloudy. feel Some better
+                            than this morning.</p>
+                    </div3>
+                    <div3 id="d286" type="entry">
+                        <pb entity="DSSR_000004400_0108" n="np"/>
+                        <head>
+                            <date value="1863-11-25">NOVEMBER<lb/> 25.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday 8. A.M. cloudy and cool. feel prety well now.
+                            Grant moving on Bragg. Meade ready to move on Lee. 12. M. cold My Wife
+                            is better. 2. P.M. don't feel well one <add hand="author" place="top">of
+                                my tooth is aching Some.</add>
+                        </p>
+                    </div3>
+                    <div3 id="d287" type="entry">
+                        <head>
+                            <date value="1863-11-26">26.</date>
+                        </head>
+                        <p>Lancaster O. Thursday. 8 &frac12;. A.M. cold and clear. One of my teeth is
+                            aching. my face is Swelled. this is a National day of Thanksgiving. the
+                            Business Houses are all closed. Glorious news Grant has whipt Bragg.</p>
+                    </div3>
+                    <div3 id="d288" type="entry">
+                        <head>
+                            <date value="1873-11-27">27.</date>
+                        </head>
+                        <p>Lancaster O. Friday 9. A.M. cloudy and damp feel about as did on
+                            yesterday. nothing very particular from the <!--[Arm]-->y. my Wife is
+                            <!--[getting]--> better, 3. P.M. cold<ref target="n7" n="7">{7}</ref>
+                            </p>
+                    </div3>
+                    <div3 id="d289" type="entry">
+                        <pb entity="DSSR_000004400_0109" n="np"/>
+                        <head>
+                            <date value="1863-11-28">NOVEMBER<lb/> 28.</date>
+                        </head>
+                        <p>Lancaster O. Saturday 8 &frac12;. A.M. cold and Raining I feel much better. had
+                            my gums lanced by Dr. O. E. Davis. 10. A.M. dispatch came that Jno.
+                            Morgan, the Rebel Gen. escaped from the Penitentiary last night.</p>
+                    </div3>
+                    <div3 id="d290" type="entry">
+                        <head>
+                            <date value="1863-11-29">29.</date>
+                        </head>
+                        <p>Lancaster O. Monday, 9. A.M. clear and very cold. my Wife is very Sick
+                            was Sick all night was attended by Dr. <!--[O. E.]--> Davis. one of the
+                                <unclear>[-]</unclear> men living <ref target="n7" n="7">{7}</ref>
+                        </p>
+                    </div3>
+                    <div3 id="d291" type="entry">
+                        <pb entity="DSSR_000004400_0110" n="np"/>
+                        <head>
+                            <date value="1863-12-01">DECEMBER<lb/> 1.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday 9 &frac12;. A.M. cloudy &amp; cold. feel very bad this
+                            morning. my Wife is very Sick, worse than She has been Since the
+                            commencement of her Sickness both children Sick with the whooping cough
+                        </p>
+                    </div3>
+                    <div3 id="d292" type="entry">
+                        <head>
+                            <date value="1863-12-02">2.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday 10. A.M. damp &amp; cloudy am in poor health
+                            now. Wife Some better but is Still bedfast. Weather bad. 3. P.M. feel
+                            Some better now getting more pleasant out of doors. 8. P.M. cold. </p>
+                    </div3>
+                    <div3 id="d293" type="entry">
+                        <head>
+                            <date value="1863-12-03">3.</date>
+                        </head>
+                        <p>Lancaster O. Thursday 8. A.M. cold and rough feel better this morning
+                            Wife greatly Improved. children livelier 3. P.M. moderating Some Army
+                            news very dull.</p>
+                    </div3>
+                    <div3 id="d294" type="entry">
+                        <pb entity="DSSR_000004400_0111" n="np"/>
+                        <head>
+                            <date value="1863-12-04">DECEMBER<lb/> 4.</date>
+                        </head>
+                        <p>Lancaster O. Friday 9. A.M. Atmosphere hazey and pleasant. am feeling
+                            much better. Wife has a heavy Fever. pulse quick. 11 1/2. A.M. quite
+                            pleasant. looks like Spring. 9 &frac12;. P.M. pleasant.</p>
+                    </div3>
+                    <div3 id="d295" type="entry">
+                        <head>
+                            <date value="1863-12-05">5.</date>
+                        </head>
+                        <p>Lancaster O. Saturday 8. A.M. pleasant &amp; clear. feel first rate
+                            this morning. Wife is a great deal better. no Army news of any
+                            Importance. 3 &frac12;. P.M. clear and mild. feel bully. 6 &frac12;. P.M. pleasant</p>
+                    </div3>
+                    <div3 id="d296" type="entry">
+                        <head>
+                            <date value="1863-12-06">6.</date>
+                        </head>
+                        <p>Lancaster O. Sunday 8 &frac12;. A.M. clear and cold. don't feel So well this
+                            morning. Wife on the mend. 2. P.M. pleasant 7. P.M. feel like having the
+                            Ague. 11. P.M. feel better.</p>
+                    </div3>
+                    <div3 id="d297" type="entry">
+                        <pb entity="DSSR_000004400_0112" n="np"/>
+                        <head>
+                            <date value="1863-12-07">DECEMBER<lb/> 7.</date>
+                        </head>
+                        <p>Lancaster O. Monday 8. A.M. clear with a cold, Sharp wind blowing. feel
+                            pretty well now. My Wife is much better. Army news unimportant. 3 &frac14;.
+                            P.M. clear and cold. Wife is gaining in Strength. I feel better.</p>
+                    </div3>
+                    <div3 id="d298" type="entry">
+                        <head>
+                            <date value="1863-12-08">8.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday 7 &frac12;. A.M. cloudy and cold. looks like rain, or Snow.
+                            feel prety well this morning Wife is about the Same as yesterday.
+                            nothing new from the Army. 7. P.M. cold.</p>
+                    </div3>
+                    <div3 id="d299" type="entry">
+                        <head>
+                            <date value="1863-12-09">9.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday 9 &frac12;. A.M. cloudy with a damp wind blowing My Wife
+                            is worse this morning. I feel Just moderate. 3 &frac12;. P.M. cold and cloudy
+                        </p>
+                    </div3>
+                    <div3 id="d300" type="entry">
+                        <pb entity="DSSR_000004400_0113" n="np"/>
+                        <head>
+                            <date value="1863-12-10">DECEMBER<lb/> 10.</date>
+                        </head>
+                        <p>Lancaster O. Thursday 9. A.M. clear and pleasant. feel very well now. my
+                            Wife is much better. Some hopes of her getting well. for Several days it
+                            was doubtfull of her recovery. 6 &frac12;. P.M. cloudy &amp; cool. Wife
+                            gaining </p>
+                    </div3>
+                    <div3 id="d301" type="entry">
+                        <head>
+                            <date value="1863-12-11">11.</date>
+                        </head>
+                        <p>Lancaster O. Friday. 8 &frac12;. A.M. damp and cloudy. has been a raining during
+                            the night. My Wife is gaining pretty fast. I don't feel very well to
+                            day. nothing very Important from the Army</p>
+                    </div3>
+                    <div3 id="d302" type="entry">
+                        <head>
+                            <date value="1863-12-12">12.</date>
+                        </head>
+                        <p>Lancaster O. Saturday 8. A.M. cloudy with a drizling rain. feel Some
+                            better. my Wife is gaining Some in Strength. 1. P.M. clearing off Some.
+                            Business dull </p>
+                    </div3>
+                    <div3 id="d303" type="entry">
+                        <pb entity="DSSR_000004400_0114" n="np"/>
+                        <head>
+                            <date value="1863-12-13">DECEMBER<lb/> 13.</date>
+                        </head>
+                        <p>Lancaster O. Sunday. 10. A.M. cold. and cloudy. have been Sick all night.
+                            my Wife was able to be up out of bed to day, the first time for Several
+                            weeks. 7. P.M. Raining</p>
+                    </div3>
+                    <div3 id="d304" type="entry">
+                        <head>
+                            <date value="1863-12-14">14.</date>
+                        </head>
+                        <p>Lancaster O. Monday 11. A.M. Raining and blowing cold. I feel about the
+                            Same as Yesterday My Wife is Still gaining in Strength. She has been
+                            sitting up all morning. 3. P.M. cold </p>
+                    </div3>
+                    <div3 id="d305" type="entry">
+                        <head>
+                            <date value="1863-12-15">15.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday 10. A.M. cold and cloudy feel Some better. I have to
+                            be in Bed, very near all the time My Wife Still gaining in Strength. 8.
+                            P.M. cold.</p>
+                    </div3>
+                    <div3 id="d306" type="entry">
+                        <pb entity="DSSR_000004400_0115" n="np"/>
+                        <head>
+                            <date value="1863-12-16">DECEMBER<lb/> 16.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday 9 &frac12;. A.M. cloudy and Raining. am a great deal
+                            better, this morning. Shall venture out to day. my Wife, is gaining
+                            fast. 3. P.M. turning cold. 9 &frac12;. P.M. Raining and freezing as it
+                        fall.</p>
+                    </div3>
+                    <div3 id="d307" type="entry">
+                        <head>
+                            <date value="1863-12-17">17.</date>
+                        </head>
+                        <p>Lancaster O. Thursday 10. A.M. cloudy and moderating don't feel quite So
+                            well. my Wife is improving very well. 3. P.M. turning colder. had my
+                            butchering done to day. 8. P.M. clearing up, &amp; getting cold</p>
+                    </div3>
+                    <div3 id="d308" type="entry">
+                        <head>
+                            <date value="1863-12-18">18.</date>
+                        </head>
+                        <p>Lancaster O. Friday 9 &frac12;. A.M. cold and clear. I feel pretty well this
+                            morning. My Wife is near about well. 1. P.M. getting cloudy. </p>
+                    </div3>
+                    <div3 id="d309" type="entry">
+                        <pb entity="DSSR_000004400_0116" n="np"/>
+                        <head>
+                            <date value="1863-12-19">DECEMBER<lb/> 19.</date>
+                        </head>
+                        <p>Lancaster O. Saturday 9. A.M. cloudy and cold. freezing pretty hard.
+                            don't feel quite So well as was yesterday. my Wife is about well. 4.
+                            P.M. getting colder. no Army news of Importance.</p>
+                    </div3>
+                    <div3 id="d310" type="entry">
+                        <head>
+                            <date value="1863-12-20">20.</date>
+                        </head>
+                        <p>Lancaster O. Sunday 10. A.M. cold &amp; freezing. don't feel very
+                            well this morning. my Children both Sick. 1. P.M. getting colder.
+                            Business is pretty lively. 4. P.M. cold and freezing hard </p>
+                    </div3>
+                    <div3 id="d311" type="entry">
+                        <head>
+                            <date value="1863-12-21">21.</date>
+                        </head>
+                        <p>Lancaster O. Monday 8 &frac12;. A.M. cloudy and very cold. I feel worse than I
+                            did yesterday. it is colder now than it has been heretofore this
+                        winter.</p>
+                    </div3>
+                    <div3 id="d312" type="entry">
+                        <pb entity="DSSR_000004400_0117" n="np"/>
+                        <head>
+                            <date value="1863-12-22">DECEMBER<lb/> 22.</date>
+                        </head>
+                        <p>Lancaster O. Tuesday. 9. A.M. very cold and freezing Ice will Soon be
+                            thick enough, for to gather. had a chill last night. feel weak from the
+                            effect of it. both of my Children are better.</p>
+                    </div3>
+                    <div3 id="d313" type="entry">
+                        <head>
+                            <date value="1863-12-23">23.</date>
+                        </head>
+                        <p>Lancaster O. Wednesday. 10. A.M. clear &amp; cold. feel Sick, and
+                            weak. it appears, as if I will never get over the Ague. it hangs on very
+                            tenaciously I am getting weaker every <add hand="author" place="top"
+                                >time I have it</add>
+                        </p>
+                    </div3>
+                    <div3 id="d314" type="entry">
+                        <head>
+                            <date value="1863-12-24">24.</date>
+                        </head>
+                        <p>Lancaster O. Thursday, 9 &frac12;. A.M. cold and cloudy freezing hard. I feel
+                            about the Same as I did yesterday. people filling their Ice houses to
+                            day <ref target="n5" n="5">{5}</ref>
+                        </p>
+                    </div3>
+                    <div3 id="d315" type="entry">
+                        <pb entity="DSSR_000004400_0118" n="np"/>
+                        <head>
+                            <date value="1863-12-31">DECEMBER<lb/> 31.</date>
+                        </head>
+                        <p>Lancaster O. Thursday 8 &frac12;. A.M. damp and cloudy. looks like rain. feel
+                            pretty good this morning my children are both better. this day one year
+                            ago I was in the Army, at Fayetteville, West Virginia. was then in good
+                            health. and had a Splendid Company, and men that I liked better than any
+                            Set of men I ever was associated with. I receive Letters from them
+                            occasionally, wanting me to come back and take Command of them again,
+                            but I am not able, to do So. the Streets are very muddy the weather is
+                            very open for this time of the year. I Shall Soon leave here to hunt a
+                            new Home. if I was well enough I would again enter the army. the
+                            different Armies are going into winter quarters. the Regiment I was in
+                            went into Winter Quarters, on the 24th of December one year ago. at
+                            Fayetteville West Va. the mud around our quarters, we had Log Huts, four
+                            to a company and one for Head Quarters. Our Brigade, was Commanded by
+                            Col Toland, of the 34th <unclear>[?]</unclear> Regt. O. V. I. my Co then
+                            numbered 94 men. 1 &frac12; P.M. cloudy and cold. Business dull.
+                            peopl<!--[e]--> excited about the draft good bye old year.</p>
+                    </div3>
+                </div2>
+            </div1>
+            <div1 type="notes" id="d316">
+                <head>Notes</head>
+                <p>[This 1863 diary
+                    is the first of two diaries by Captain Heed. It measures 3 &frac34;" X 5 &frac34;" and is covered in
+                    black leather. It is written in ink on pages with the dates pre-printed. The leather
+                    cover is broken at the spine. Pages are loose from the spine.]</p>
+                <p>[Transcription Notes: Determining whether this diarist
+                    has used a comma or a period is often a guess. Three spaces are inserted by the
+                    transcriber when no period or comma are used. Sometimes a sentence with a capital and
+                    sometimes not. Spelling and punctuation are reproduced as found. When words are inserted
+                    above the line by the author, the symbol ^ is used with the inserted words bracketed. To
+                    denote a missing word, [-] is used. Every attempt has been made to transcribe this
+                    document exactly as found.]</p>
+               
+                <note place="end" id="n1" n="1">
+                    <seg type="note-symbol">{1}</seg>
+                    <p>[Jan. 2nd is Heed's twenty-eighth birthday.]</p>
+                </note>
+                <note place="end" id="n2" n="2">
+                    <seg type="note-symbol">{2}</seg>
+                    <p>["Murphy" is added in pencil.]</p>
+                </note>
+                <note place="end" id="n3" n="3">
+                    <seg type="note-symbol">{3}</seg>
+                    <p>[Note that on this date, 24 Feb. 1863, Heed begins calling his location West Virginia. West
+                                Virginia officially entered the Union as the 35th state on June 20,
+                                1863.]</p>
+                </note>
+                <note place="end" id="n4" n="4">
+                    <seg type="note-symbol">{4}</seg>
+                    <p>[page cut]</p>
+                </note>
+                <note place="end" id="n5" n="5">
+                    <seg type="note-symbol">{5}</seg>
+                    <p>(Pages missing.)</p>
+                </note>
+                <note place="end" id="n6" n="6">
+                    <seg type="note-symbol">{6}</seg>
+                    <p>[Oct. 13, 1863: "Ohio voters decisively defeated Clement L. Vallandigham, Democratic
+                                candidate for governor, in favor of War Democrat John Brough, who ran on the Republican
+                                or Union ticket." E. B. Long. Civil War Day by Day. Doubleday, New York, 1971. page
+                                421.]</p>
+                </note>
+                <note place="end" id="n7" n="7">
+                    <seg type="note-symbol">{7}</seg>
+                    <p>[page torn]</p></note>
+            </div1>
+            <!--Fayetteville, Virginia,
+                referred to below, is now in West Virginia, twenty miles north of Beckley, on Rt. #19.
+                See the list of names mentioned and transcription notes at the end of the
+                diary.]-->
+
+            <!-- List of names is not part of the Diary.  Compiled by Mary Edwards [PROPER NAMES
+                                APPEARING IN HEED'S 1863 DIARY Ankrom, Lieut. (2nd. Va. Cavalry) April 26 Atkinson,
+                                Lieut. April 5 Barrett, S.M. (Sutler) Feb. 16 Boyd, Captain Mar. 17 Bragg, General
+                                Braxton Nov. 25,26 Brough, John June 14, 19, Oct. 13 Burbage, Lt. Aug. 7 Burnett, Alf
+                                Aug. 22 Burnside, General Ambrose Nov. 20,23 Cadot, Captain L. G. Mar. 22 Caldwell,
+                                Captain April 19 Carey, Major E. M. Feb. 10,19 Carpenter, Major April 19 Clake, R. M.
+                                Mar. 19 Clark, Captain S. E. Mar, 21, April 19 Clark, Lieut. May 8 Coates, Colonel B. F.
+                                April 6, 10, 19 Collons, Major John May 25 Colvin, Aelin Feb. 19 Connell, Col. John A.
+                                (17th O.V.I.) July 8 Cowan, Major B. R. Feb. 8,18 Cramer, Henry July 15 Crawford, Lieut.
+                                Jan. 31, April 5 Cromley, Lieut. Colonel Feb. 10 Cropley, Captain Feb. 1 Crossland,
+                                Lieut. A. D. Feb. 12, June 12 Cultertson, Captain Jan. 31 Davis, Dr. O. E. May 16, Aug.
+                                11. Oct. 1, Nov. 30 Donohoe, Orderly W. A. Feb. 29 Dunlap, Mrs. (wife of Rebel soldier)
+                                April 20 Edgar, Col. (26th Va. Vol.) April 30 Farmingham, Ed July 16 Gillmore, General
+                                Aug. 31 Grant, General Ulysses Nov. 25,26 Green, Hon. J. J. May 13 Heed, Abram
+                                (Zachariah's brother) May 26, June 22, 23, Sept. 25 Heed, Bront (Zachariah's son) Aug.
+                                30, Nov. 8 Heed, Lt. Charles W. (Zachariah's brother) July 11, 20, Aug. 13, 14, 23, 31,
+                                Nov. 22, Hendly, Capt. I. C. Aug. 14 Hughes Mar. 8 Hutchins, T.C. May 10 Hutchinson Feb.
+                                20 Johnson, Judge W. W. June 5 Kirker [?], Lieut. Feb. 23 Kreider, Dr. E. C. Feb. 13, 15
+                                Lee, Gen. R. E. Nov. 25 Logan, Capt. (Officer of Gen. Morgan's) July 31 Longbon, Adjt.
+                                April 19 Longstreet, General James McVeigh, Col. Alfred May 29, June 4,20 Manser
+                                &amp; wife April 20 Mead, W. E. May 29 Meade, Gen. George G. Nov. 25 Merry,
+                                Lieut.(Regimental Quarter Master) Mar. 14,25 Miller, Sheriff James July 15,31, Aug.2,7,
+                                Nov. 10 Morgan, Gen. John July 14, 17, 18,19, 20, 21, 22, Nov. 28 Murphy, Ben Feb. 14
+                                Neibling, Col. Oct. 24 Peck, Capt. May 8 Rainy, Charley July 15 Rhea, Lt. (Officer of
+                                Gen. Morgan's) July 31 Rudolph, John July 15 Scott, Sergeant A.M. Mar. 26 Shaw, Major
+                                May 8 Smith, Capt. Buck May 12 Stafford, Major May 25 Stichcomb, Capt. I. W. Aug. 15, 19
+                                Stockam, George A. Mar. 7 Stout, E. P. (Sutler) Feb. 18, April 24 Stroup, Lieut. Feb. 23
+                                Thaxton, John Feb. 14 Thomas, Capt. Jim May 12 Toland, Colonel John T. July 25 Turley,
+                                Colonel J. A. Feb. 14, Aug. 12 Underwood, Lieut. W. S. Feb. 24, 25 Vanlindigham, C. L.
+                                June 13 Wagenhals, Dr. P. M. May 18 Warwick, Dr. J. B. Feb. 22 West, Capt. May 8 Whaley,
+                                Aaron Mar. 4 White, Colonel C. B. Feb. 10, Aug. 12 White, Lieut. J. M. Feb. 29, Mar. 16
+                                Whiting, Major H. C. Mar. 23 Whitman, Judge Aug. 1 Wicoff, Capt. Mar. 18 Wiles, Samuel
+                                M. Mar. 7 Wilson, Thomas April 23  -Mary Roy Dawson Edwards, Transcriber June 2007 13406 Page 1-->
+        </body>
+    </text>
+</TEI.2>

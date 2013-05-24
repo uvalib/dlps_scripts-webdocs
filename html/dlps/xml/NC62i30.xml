@@ -1,0 +1,393 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0643 SYSTEM "000000766_0643" NDATA jpg>
+<!ENTITY DSSR_000000766_0644 SYSTEM "000000766_0644" NDATA jpg>
+<!ENTITY DSSR_000000766_0645 SYSTEM "000000766_0645" NDATA jpg>
+<!ENTITY DSSR_000000766_0646 SYSTEM "000000766_0646" NDATA jpg>
+<!ENTITY longs "s" >
+
+<!--<!ENTITY NC62i30a SYSTEM "NC62i30a.jpg" NDATA jpg>
+<!ENTITY NC62i30b SYSTEM "NC62i30b.jpg" NDATA jpg>
+<!ENTITY NC62i30c SYSTEM "NC62i30c.jpg" NDATA jpg>
+<!ENTITY NC62i30d SYSTEM "NC62i30d.jpg" NDATA jpg>
+<!ENTITY longs "s" >
+<!NOTATION html SYSTEM "HTML">
+<!ENTITY N620909 SYSTEM "620909.html" NDATA html>
+<!ENTITY longs "s" >-->
+]>
+
+<TEI.2 id="NC62i30">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date
+                        value="1862-09-30">September 30, 1862</date></title>
+
+                <author>Tenney, Charles</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Jennifer J. Vinopal</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Jennifer J. Vinopal</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">19</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NC62i30</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Charles N. Tenney to Adelaide E. Case, September 30, 1862</title>
+
+
+                        <author>Charles Tenney</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pp.</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p/>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-09-30">1862-09-30</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+                <language id="fre">French</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>masculine</term>
+                    <term>American Civil War / Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-16">November 16th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">October 14th, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1862-09-30">September 30, 1862</date>
+
+                        <title>Letter from Charlie to Addie</title>
+                    </bibl>
+                </head>
+
+                <p>Charlie writes to Addie from London Heights, Virginia, mostly of "political"
+                    matters, for which he apologizes at the end. He tells about politics within the
+                    regiment, the movement of enemy troops in the region, and their likelihood of
+                    success in the war. He also supports the abolishment of slavery and comments on
+                    the rumor that England has officially recognized the confederacy.</p>
+
+            </div1>
+        </front>
+
+        <body id="d4">
+
+
+            <div1 type="letter" n="1" id="d5">
+
+                <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-09-30"
+                        >September 30, 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0643"/>
+                <opener>
+                    <dateline>
+                        <name type="place">London Heights <abbr expan="Virginia">Va.</abbr></name>
+                        <date value="1862-09-30">
+                            <abbr expan="September">Sept.</abbr> 30<hi rend="super">th</hi>,
+                        1862.</date>
+                    </dateline>
+
+                    <salute> My own loved <name type="person">Addie</name>; </salute>
+                </opener>
+
+                <p> How do you do this beautiful <orig reg="morning">morn=<lb/> ing</orig>? Didn't we
+                    have a splendid view of "the Sacred soil"<lb/> at sunrise? (I mean "us
+                    fellows.") How I wish you had been<lb/> here for about an hour. But then<sic
+                        corr="it's">its</sic> of no use wishing,<lb/> for you wouldn't come if the
+                        Rebs <hi rend="underline">hadn't</hi> burned the bridge<add place="inline"
+                        hand="h1">s</add><lb/> on the B. &amp; O. R. R. above <name type="place"
+                        >Martinsburg</name>. </p>
+
+                <p> You will think<lb/> I am in good spirits this morning, will you not? I have<lb/>
+                    reasons for being so, I can a&longs;sure you, for it should be my duty<lb/>
+                    to always rejoice. </p>
+
+                <p> I received your most excellent and<lb/> very interesting letter of the 22<hi
+                        rend="super">d</hi> Saturday evening, and have<lb/> been unable to reply
+                    until now, for you must know that<lb/> even on <name type="place">London
+                    Heights</name> there are military duties to be performed<lb/> to the utter
+                    exclusion of private enjoyments, and sometimes to the<lb/> extreme annoyance of
+                        "<hi rend="underline">our dear selves</hi>;" but <name type="person"><abbr
+                            expan="General">Gen.</abbr> Geary</name> will not<lb/> surrender <name
+                        type="place">Harper's Ferry</name> as did <name type="person"><abbr
+                            expan="Colonel">Col.</abbr> Miles</name>. By the way, was not<lb/> that
+                    the most disgraceful affair of the campaign? A soldier's death<lb/> was the most
+                    fortunate thing that could possibly have happened to<lb/> him. It certainly
+                    shielded his name from disgrace and dishonor.<lb/> I trust a full examination
+                    will be made of the cases of <name type="person">White</name> and <add
+                        place="inline" hand="h1">
+                        <name type="person">Ford</name>
+                    </add>. </p>
+
+                <pb n="2" entity="DSSR_000000766_0644"/>
+                <p> Although <name type="person"><abbr expan="General">Gen.</abbr> Geary</name> has
+                    returned and outranks <name type="person"><abbr expan="General">Gen.</abbr>
+                        Green<lb/> &mdash; Night-hawk &mdash;</name><ref target="n1" n="1"
+                    >1</ref> yet he does not take command of the division<lb/> as he assumes command
+                    of the port at <name type="place">
+                        <sic corr="Harper's Ferry">Harper'sFerry</sic>
+                    </name>, and he is<lb/> very active in putting everything in a healthy state,
+                    both for<lb/> offensive and defensive operations. </p>
+
+                <p> "Night-hawk<ref target="n1">2</ref>," since the<lb/> battle of <name type="place"
+                        >Antietam</name> has been comparatively quiet, and in <orig reg="consequence"
+                        >conse=<lb/> quence</orig>, the boys have not been so fierce for "hitting
+                    him with<lb/> a <orig reg="brick.&rdquo;">brick".</orig> He was very cool
+                    and collected on the field, and after<lb/> we had driven the enemy
+                    acro&longs;s the bloody cornfield, he told<lb/> our brigade he should
+                    remember "the Ohio boys for what we had<lb/> done." </p>
+
+                <p> "<name type="person"><unclear>Bob</unclear> Green</name>" is as delicate as
+                    ever, and says "Pa, I<sic corr="can't">cant</sic><lb/> drink my coffee without
+                    milk." On the field he rendered very<lb/> efficient service, as aide-de-camp to
+                    his father. </p>
+
+                <p> While I am speaking of "Big-<orig reg="bugs,&rdquo;">bugs",</orig> I may as
+                    well go the roun<add place="inline" hand="h1">ds</add><lb/>
+                    <name type="Abraham Lincoln">Uncle Abe</name> is all right, having concluded
+                    that the slaves in the<lb/> rebellious states after <abbr expan="January"
+                    >Jany.</abbr> 1<hi rend="super">st</hi> 1863, shall be <hi rend="underline"
+                        >forever free</hi>. This is the<lb/> manifest destiny of slavery &mdash;
+                    that shrine to which so many <orig reg="thousands">thou=<lb/> sands</orig> have
+                    knelt and paid homage. Its days are numbered, and<lb/> America must be its
+                    sepulchre. </p>
+
+                <p>
+                    <name type="person"><abbr expan="General">Gen.</abbr> M<hi rend="super"
+                        >c</hi>Clellan</name> is at<lb/>
+                    <name type="place">Sharpsburg</name>, and though the Government has not yet
+                    tendered<lb/> its thanks to him, or hardly recognizes the late battles as a
+                    victory<lb/> and a succe&longs;s to our arms, in ridding <name type="place"
+                        >Maryland</name> this summarily,<lb/> he has faith in "God and the Good
+                    Cause," and that ere long<lb/>
+                    <pb n="3" entity="DSSR_000000766_0645"/> the Nation will give "honor to whom
+                    honor is due." Few men<lb/> labor under such disadvantages as does, <hi
+                        rend="underline">and has</hi> <name type="person"><abbr expan="General"
+                        >Gen.</abbr> M<hi rend="super">c</hi>Clellan</name><orig reg="."
+                    >.</orig><lb/> Devotion to his country seems to be his <hi rend="underline"
+                    >crime</hi>, which he must<lb/> expiate on the scaffold of "political <orig
+                        reg="fanaticism,&rdquo;">fanaticism",</orig> but thank Heaven, he<lb/>
+                    is out of reach of the <add place="inline" hand="h1">keener</add> weapons of
+                    malice. </p>
+
+                <p> Now of that other "<orig reg="popular">pop=<lb/> ular</orig>
+                        individual,"&mdash; <name type="person">
+                        <hi rend="underline"><abbr expan="Charles">Chas.</abbr> N. Tenney</hi>
+                    </name>&mdash; I have only to say that he is<lb/> well, and like <hi
+                        rend="underline">some one else</hi>, is patiently waiting. </p>
+
+                <p> I am very glad you consider <name type="place">Ohio</name> and particularly<lb/>
+                    <name type="place">
+                        <unclear>Trumbull</unclear>
+                         <abbr expan="County">Co.</abbr>
+                    </name> safe from invasion, I have myself entertained<lb/> very serious doubts
+                    as to the ability of the "<unclear>Butternuts</unclear>" to <del hand="h1"
+                    >invade</del><lb/> cro&longs;s the " <hi rend="underline">
+                        <foreign lang="fre">La belle Riviere</foreign>
+                    </hi>," and invade our beautiful <name type="place">Ohio</name>. </p>
+
+                <p> I have been wondering what <name type="person"><abbr expan="General">Gen.</abbr>
+                        Lee's</name>'s army of "ragamuffins"<lb/> will say, and do, when they
+                    comprehend that a heavy force has<lb/> cut off their direct communication
+                        with <name type="place">Richmond</name>. I learn<lb/> from various sources
+                    that a large force under <unclear>
+                        <name type="person">Sigel</name>
+                    </unclear> and<lb/>
+                    <unclear>
+                        <name type="person">Heintzlerman</name>
+                    </unclear> has gone to <name type="place">Warrenton</name> to destroy the <orig
+                        reg="communications">communica=<lb/> tions</orig> between <name type="place"
+                        >the Valley</name> and <name type="place">Richmond</name> via the above
+                        place, <name type="place">Little<lb/> Washington</name>, <name type="place"
+                        >Sperryville</name> and <name type="place">Thornton's Gap</name>. If
+                    succe&longs;sful, as I<lb/> hope it will be, the expedition will make short
+                    work in <name type="place">Upper<lb/> Virginia</name>, and much sooner than the
+                    Rebs anticipate, our army<lb/> will be thundering against the walls of the rebel Capital.<lb/>
+                     <name type="place">Richmond</name> once in our hands, and the cause of
+                    Sece&longs;sion<lb/> is forever hopele&longs;s. </p>
+
+                <pb n="4" entity="DSSR_000000766_0646"/>
+                <p> We have rumors that <name type="place">England</name> has recognized the
+                    independence<lb/> of the Confederate States, but it produces no feeling beyond
+                    that of<lb/> contempt, for our boys seem impre&longs;sed with the belief
+                    that if<lb/>
+                    <name type="place">England</name> should be so imprudent as to commit such an
+                    act,<lb/> that it would result in good for the Union cause rather than<lb/>
+                    otherwise. For <name type="place">Canada</name> would not long remain inactive,
+                    nor<lb/> would <name type="place">Ireland</name>. </p>
+
+                <p> I have just reviewed this, and the idea has occurred<lb/> to me that I may be
+                    too political in my letters, and that<lb/> they may be not so interesting to
+                    you, as they otherwise might<lb/> be. If so, my love, do not hesitate to tell me
+                    and I will not<lb/> write in such a reportorial manner. </p>
+
+                <p> As to <hi rend="underline">your</hi> letters,<lb/> darling, <hi rend="underline"
+                        >any</hi> letter from you is interesting and is very dear to<lb/> me, and
+                    the longer they are the better. </p>
+
+
+                <closer> I must close this now as I wish to write a line to<lb/>
+                    <name type="person">Hal</name>, and to send in <orig reg="today's"
+                    >to-day's</orig> mail.<lb/> Write very soon to,<lb/>
+                    <salute>Your true</salute>
+                    <signed>
+                        <name type="person">Charlie</name>
+                    </signed>.<lb/>
+                    <address>
+<addrLine>Addre&longs;s-</addrLine>
+
+<addrLine><abbr expan="Company">Co.</abbr>
+H. 7<hi rend="super">th</hi> Ohio <abbr expan="Regiment">Regt.</abbr>
+</addrLine>
+
+<addrLine>1<hi rend="super">st</hi> <abbr expan="Brigade">Brig.</abbr>,
+2<hi rend="super">d</hi> <abbr expan="Division">Div.</abbr>,
+12<hi rend="super">th</hi> <abbr>A.C.</abbr></addrLine>
+
+<addrLine><name type="place">Washington, D. C.</name></addrLine>
+
+</address>
+                </closer>
+
+            </div1>
+        </body>
+
+        <back id="d6">
+            <div1 type="notes" n="1" id="d7">
+                <head>Notes</head>
+                <note id="n1" place="end" n="1">
+                    <seg type="note-symbol">1</seg>
+                    <p>The soldiers in Charlie's regiment call General Green "Night-Hawk" because he
+                        often changes the regiment's position at night. See Charlie's letter dated
+                        Sept 9, 1862.</p>
+                </note>
+
+            </div1>
+        </back>
+
+    </text>
+</TEI.2>

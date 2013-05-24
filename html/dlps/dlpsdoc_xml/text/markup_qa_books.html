@@ -1,0 +1,418 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Markup QA Workflow for Books</title>
+<link rel="stylesheet" type="text/css" href="/dlps/css/teitech.css">
+</head>
+<body>
+<h1>Markup QA Workflow for Books</h1>
+<p>This document describes the workflow for in-house markup QA and
+correction of electronic texts digitized from printed books by
+keyboarding vendors for Digital Library Production Services (DLPS),
+University of Virginia Library. It is intended for use by internal
+DLPS staff.</p>
+
+
+
+
+
+<p><b>Last modified:</b> 1/29/2007</p>
+<hr>
+<h2>Contents</h2>
+<ul>
+<li><a href="#d3">Preliminaries</a></li>
+<li><a href="#d8">Div structure</a></li>
+<li><a href="#d11">Notes</a></li>
+<li><a href="#d12">QA Programs</a></li>
+</ul>
+
+
+
+<hr>
+<a name="d3"><h2>Preliminaries</h2></a>
+
+
+<a name="d4"><h3>Initial steps</h3></a>
+<ul>
+<li>To see which files are ready for markup QA, look in
+<code>59processed</code>. <em>Move</em> (do not copy) files from
+<code>59processed</code> to
+<code>/shares/text/04postkb/60being_markup_checked/to_be_checked</code>
+</li>
+<li>To begin working on an individual file, <em>move</em> (do
+not copy) the file from <code>to_be_checked</code> to your working
+directory</li>
+<li>Open the file in oXygen. Validate the document and fix any
+errors.</li>
+<li>Check the vendor's "readme" file (if any) for problems the
+vendor encountered. Fix as needed. (These files can be found in a
+subdirectory of <code>10received</code> and are named
+<code>[ID]_readme.txt</code>, but they are present only if the vendor
+had any problems worth noting; otherwise, there won't be a readme
+file at all.)
+</li>
+</ul>
+
+
+<div class="EAF">
+<span class="EAF">SPECIAL INSTRUCTIONS: EAF</span><p>When working with EAF files,
+check the EAF readme file in
+<code>04postkb/10received/eaf1_public</code> (or other subdirectory,
+as appropriate) and follow the instructions given there.</p>
+</div>
+
+
+
+<a name="d7"><h3>Additions to TEI header</h3></a>
+
+<div class="EAF">
+<span class="EAF">SPECIAL INSTRUCTIONS: EAF</span><p>When working with EAF XML
+files, skip this section. Proceed to "Unclosed end-of-line unclears"
+below.</p>
+</div>
+
+<ul><li>
+<b>Revision history</b> &mdash; Add <code>&lt;revisionDesc&gt;</code> to the TEI header: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#revdesc" target="scripts">revdesc</a> <i>*.xml</i></code>
+
+<div class="note">
+<span class="note">NOTE</span><p>This script uses the boilerplate description
+"Minor corrections to vendor markup." If you make significant changes
+to the markup, edit the file to change the <code>&lt;revisionDesc&gt;</code> as
+appropriate.</p>
+</div>
+
+<div class="fyi">
+<span class="fyi">FYI</span><p>If run successfully, this script automatically
+updates the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> to indicate completion of this step
+(Markup QA Workflow → Add revision history).</p>
+</div>
+
+</li></ul>
+
+
+
+<a name=""><h3>Unclosed end-of-line unclears</h3></a>
+<ul>
+<li>To find unclosed <code>&lt;unclear&gt;</code> tags occurring at the end of a
+line (which the <b>Unclears</b> report from the
+post-keyboarding workflow does not include), run this command from the
+Unix command line:
+
+<pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#find_unclosed_unclears" target="scripts">find_unclosed_unclears</a> <i>filename</i></pre>
+
+For each occurrence, this command displays the filename, the line
+number, and the actual line from the text.</li>
+<li>Locate the line, compare the page image, and correct the
+<code>&lt;unclear&gt;</code> markup as needed.</li>
+</ul>
+
+
+
+
+<a name="d5"><h3>Unknown characters</h3></a>
+
+<p>Apex uses <code>[UNK]</code> or <code>&amp;unknown;</code> to indicate
+unknown characters — characters that the keyboarders were unable
+to identify.</p>
+
+<ul>
+<li>To find unknown characters, choose one of the following:
+  <ul>
+<li>If working from the command line: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#find_unknown_chars" target="scripts">find_unknown_chars</a> <i>*.xml</i></code>
+</li>
+<li>If working in oXygen:
+    <ul>
+<li>Search for <code>[UNK]</code>
+</li>
+<li>Search for <code>&amp;lsqb;UNK&amp;rsqb;</code>
+</li>
+<li>Search for <code>&amp;unknown;</code>
+</li>
+</ul>
+  </li>
+</ul>
+</li>
+<li>If any unknown characters are found:
+
+  <ul>
+<li>View the page image to see what the character looks like</li>
+<li>Refer to the Unicode code charts at
+  <a href="http://www.unicode.org/charts/" target="_blank">http://www.unicode.org/charts/</a>
+  and identify the appropriate Unicode character.
+
+  <div class="tip">
+<span class="tip">TIP</span>
+  <p>Often you can tell which code chart(s) to look in first simply by
+  reading the names of the code charts. For example, if you know it's a
+  Greek character, look at the <b>Greek and Coptic</b> code
+  chart.</p>
+
+  <p>If you can't find the character, try searching the
+  <a href="http://www.unicode.org/Public/UNIDATA/NamesList.txt" target="_blank">Unicode Names List</a>
+  for a word that would likely be in the character description.</p>
+  </div>
+  </li>
+<li>When you find the character in the Unicode system, make a note
+  of its numeric code. (If you can't find the character in
+  Unicode, please contact Greg; there may be other ways of tracking it
+  down.)</li>
+<li>
+  In the XML file, replace the <code>[UNK]</code> or
+  <code>&amp;unknown;</code> marker with the Unicode numeric code,
+  preceded by <code>&amp;#x</code> and followed by a semicolon
+  <code>;</code>.
+
+  <p>For example, if you determine that the unknown character is the
+  Arabic alef character, you would look in the <b>Arabic</b>
+  Unicode code chart, where the character described as "ARABIC LETTER
+  ALEF" is assigned the numeric code of 0627, so you would replace the
+  <code>[UNK]</code> marker with <code>&amp;#x0627;</code></p>
+  </li>
+<li>Validate, and fix any validation errors</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> to indicate completion of this
+  step (Markup QA Workflow → Fix unknown characters):
+  <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> -s chars <i>*.xml</i></code>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+<hr>
+<a name="d8"><h2>Div structure</h2></a>
+<ul>
+<li>
+<b>Overall div structure</b> &mdash; Check/correct the vendor's overall div choices.
+  <ul>
+<li>To see the document's current div structure, run this command
+  from the Unix command line:
+
+  <pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#refresh_preview" target="scripts">refresh_preview</a> <i>filename</i></pre>
+
+  (This command copies your file where the TEI Preview tool can
+  display it.) Then use <a href="/cgi-dlps/dlps-only/preview/list.pl" target="_blank">TEI Preview</a> to view the div
+  structure.</li>
+<li>To assess what the div structure <em>should</em> be, refer
+  to the printed table of contents and other page images using the
+  <a href="/cgi-dlps/uva-only/proofreader/start.pl" target="_blank">Proofreader image viewer</a>.</li>
+</ul>
+</li>
+<li>
+<b>Div types</b> &mdash; Check/correct <code>type</code> attribute values.
+
+  The keyboarding vendor does not always make good choices when
+  determining the <code>type</code> of a structural division. In
+  particular, watch for problems with the generic type values
+  <code>section</code> and <code>subsection</code>:
+
+  <ul>
+<li>In some cases, the vendor will use <code>section</code> or
+  <code>subsection</code> when a more specific label (such as
+  <code>chapter</code>, <code>foreword</code>, <code>bibliography</code>,
+  etc. etc.) is applicable. In this case, use the more specific
+  label.</li>
+<li>In other cases, the vendor will assign a specific label when
+  the label is not really applicable. In this case, use
+  <code>section</code> or, if <code>section</code> has already been used
+  for a higher-level div, use <code>subsection</code>.</li>
+</ul>
+</li>
+<li>
+<b>Front matter</b> &mdash; Check front matter fairly carefully;
+correct markup as needed (since front matter tends to be much more
+miscellaneous than body; div problems are likely)</li>
+<li>
+<b>Book-plate</b> &mdash; Check for presence of a book-plate (usually the first page
+image), which the vendor will omit from the electronic text. (The page
+with the book-plate will be represented in the XML as a blank page
+— a <code>&lt;pb&gt;</code> tag with nothing after it.) If present, add the
+book-plate as the first <code>&lt;div1&gt;</code> within <code>&lt;front&gt;</code>. For
+example:
+
+<pre>
+&lt;front&gt;
+&lt;div1 type="book-plate"&gt;
+&lt;pb entity="b123456789_0001"/&gt;
+&lt;p rend="center"&gt;LIBRARY OF THE &lt;lb/&gt;
+UNIVERSITY OF VIRGINIA &lt;lb/&gt;
+&lt;figure entity="b123456789_0001" rend="block"/&gt;
+DONATION OF &lt;lb/&gt;
+. . .&lt;/p&gt;
+&lt;pb entity="b123456789_0002"/&gt;
+&lt;/div1&gt;
+</pre>
+
+
+If the book-plate has a blank page after it, be sure to put the page
+break for the blank page as the last <code>&lt;pb&gt;</code> within the <code>&lt;div1
+type="book-plate"&gt;</code>, as in the example above.</li>
+<li>
+<b>View changes</b> &mdash; 
+  <ul>
+<li>If you made any changes to the div structures, update the div
+IDs with this command-line script: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#div_ids" target="scripts">div_ids</a>
+<i>filename</i></code>
+</li>
+<li>To see your changes, run <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#refresh_preview" target="scripts">refresh_preview</a>
+<i>filename</i></code> to re-copy your file to the TEI
+Preview directory, and then use <a href="/cgi-dlps/dlps-only/preview/list.pl" target="_blank">TEI Preview</a> to view the div
+structure</li>
+</ul>
+</li>
+<li>
+<b>Update tracking system</b> &mdash; Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> to indicate completion of this
+step (Markup QA Workflow → Fix div structure):
+<code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> -s divs <i>*.xml</i></code>
+</li>
+</ul>
+
+
+<hr>
+<a name="d11"><h2>Notes</h2></a>
+
+<p>To determine whether the document contains any footnotes, endnotes,
+or marginal notes, search for <code>&lt;note</code> with "Find in
+tags" checked. If there are any notes:</p>
+
+<div class="EAF">
+<span class="EAF">SPECIAL INSTRUCTIONS: EAF</span><p>When working on EAF 1 Private
+files, verify (using the <a href="/cgi-dlps/uva-only/proofreader/start.pl" target="_blank">Proofreader image viewer</a> to view the page images)
+that the type of notes used in the book are footnotes. If not, change
+the <code>place</code> attribute value as appropriate. (This step is
+necessary because <code>place="foot"</code> has been added to all
+<code>&lt;note&gt;</code> tags in these files programmatically.)</p>
+</div>
+
+<ul>
+<li>
+<b>Supply sequential numbers for notes</b> &mdash; Run this command-line script to supply sequential note numbers
+within each <code>&lt;div1&gt;</code> element:
+<pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#notes_n" target="scripts">notes_n</a> -d div1 <i>*.xml</i></pre>
+</li>
+<li>
+<b>Update tracking system</b> &mdash; Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> to indicate completion of this
+step (Markup QA Workflow → Update notes):
+<code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> -s notes <i>*.xml</i></code>
+</li>
+</ul>
+
+
+<hr>
+<a name="d12"><h2>QA Programs</h2></a>
+<ul>
+<li>
+<b>Command-line QA programs</b> &mdash; 
+  <ul>
+<li>Save and validate the file in oXygen (if open)</li>
+<li>From the Unix command line, run the following script:
+
+  <pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#qa_books" target="scripts">qa_books</a> <i>filename</i></pre>
+
+  
+Messages with <code>WARNING</code> indicate possible problems that
+should be investigated, and fixed if necessary. <code>ERROR</code>
+messages indicate markup errors that should always be fixed.
+
+<div class="important">
+<span class="important">IMPORTANT</span><p>An <code>ERROR</code> message from a QA
+script should be considered <em>just as serious</em> as a
+validation error from the XML parser. The only difference is that some
+markup rules are enforced by the DTD, while others are enforced by the
+QA programs.</p>
+</div>
+
+
+  <div class="fyi">
+<span class="fyi">FYI</span><p>If run successfully, the
+  <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#qa_books" target="scripts">qa_books</a></code> script automatically
+  updates the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> to indicate completion of this step
+  (Markup QA Workflow → Run command-line programs).</p>
+</div>
+
+  <div class="EAF">
+<span class="EAF">SPECIAL INSTRUCTIONS: EAF</span>
+    <p>When processing EAF XML files, also run this additional script:
+    <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#qa_eaf_pb" target="scripts">qa_eaf_pb</a> <i>filename</i></code></p>
+
+    <p>The script finds consecutive page breaks, which typically
+    indicate a page of missing text content. Check the XML file at the
+    line numbers indicated in the <code>WARNING</code> messages. For
+    each page of missing text content, insert a <code>&lt;gap/&gt;</code> tag in
+    the XML file. In the <code>desc</code> attribute, indicate the
+    printed page number of the page for which the text content is missing
+    from the electronic text; for the <code>reason</code>, use
+    <code>unknown</code>. For example:
+
+    <pre>&lt;gap desc="page 17" reason="unknown"/&gt;</pre></p>
+  </div>
+
+  </li>
+</ul>
+</li>
+<li>
+<b>Web-based QA programs</b> &mdash; 
+  <ul>
+<li>Make the current version of the XML file available to the
+  web-based markup QA programs:
+
+  <pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#refresh_preview" target="scripts">refresh_preview</a> <i>filename</i></pre>
+
+  </li>
+<li>In a web browser, go to <a href="/cgi-dlps/dlps-only/markupQA/list.pl" target="_blank">Markup QA Programs</a> and select your file.
+  
+Messages with <code>WARNING</code> indicate possible problems that
+should be investigated, and fixed if necessary. <code>ERROR</code>
+messages indicate markup errors that should always be fixed.
+
+<div class="important">
+<span class="important">IMPORTANT</span><p>An <code>ERROR</code> message from a QA
+script should be considered <em>just as serious</em> as a
+validation error from the XML parser. The only difference is that some
+markup rules are enforced by the DTD, while others are enforced by the
+QA programs.</p>
+</div>
+
+  </li>
+<li>After making corrections, run <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#refresh_preview" target="scripts">refresh_preview</a>
+<i>filename</i></code>, then re-run the web-based QA
+programs</li>
+<li>Continue this process until everything that should be fixed
+has been fixed</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> to indicate completion of this step
+(Markup QA Workflow → Run web-based programs):
+<code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> -s web <i>*.xml</i></code>
+</li>
+</ul>
+</li>
+<li>
+<b>Final steps</b> &mdash; 
+  <ul>
+<li>Save, validate, and close the file in oXygen (if open)</li>
+<li>
+<em>Move</em> the file from your working directory to
+  <code>/shares/text/04postkb/60markup_checked</code>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+<a name=""><h3>Copy to 69processed</h3></a>
+<ul>
+<li>Regardless of what the last step was for a particular file (for
+example, newspapers receive spell-checking, most other files do not),
+always <em>copy</em> the last version of the file to
+<code>69processed</code>.</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a>: Navigate to <code>69processed</code>
+and run this command: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> <i>*.xml</i></code>
+</li>
+</ul>
+
+
+
+
+</body>
+</html>

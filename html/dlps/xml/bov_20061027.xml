@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> %UVAsupp;
+
+<!ENTITY % xref 'INCLUDE'>
+<!ATTLIST xref url CDATA #IMPLIED>
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with
+                        local customizations)</resp>
+                    <name>University of Virginia Library</name>
+                </respStmt>
+                <biblScope type="date">
+                    <date value="2006-10-27">October 27, 2006</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">17</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2009">2009</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the
+                        University of Virginia</p>
+                    <p n="access">Publicly accessible</p>
+                </availability>
+                <idno type="DLPS ID">bov_20061027</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors
+                            minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of
+                            Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors
+                            meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2006-10-27">October 27, 2006</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information. Access to
+                                minutes containing salary information will be granted only under the
+                                procedures of the Virginia Freedom of Information Act (Code of
+                                Virginia-2.1-340 ff.) or if permission is granted by the Secretary
+                                of the Board. Researchers interested in obtaining access to these
+                                records should direct a request in writing to the Office of the
+                                Legal Adviser, Madison Hall, University of Virginia. These public
+                                minutes have had salary information deleted and bear no
+                                restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special
+                                Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body
+                                which is the legal owner and operator of the institution. Recorded
+                                in the minutes are appointments and other personnel decisions
+                                concerning faculty, decisions about construction of facilities,
+                                gifts to the university, and all other board actions, decisions and
+                                resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction;
+                &editorial_normalization; &editorial_hyphenation; &editorial_quotation;
+                &editorial_stdVals; </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language id="eng" n="008" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+    </teiHeader>
+
+    <text id="d1">
+        <body id="d2">
+            <div1 type="memorandum"  id="d3" >
+                <pb n="7217"/>
+                <head type="main">
+                    <date value="2006-10-27">October 27, 2006</date>
+                    <lb/>
+                    <lb/> MEMORANDUM </head>
+       
+                    <table cols="3" rows="14">
+                        <row>
+                            <cell role="label">TO:</cell>
+                            <cell>The Board of Visitors:</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell cols="3"/>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell><name>Thomas F. Farrell, II</name>, Rector</cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell><name>W. Heywood Fralin</name>, Vice Rector</cell>
+                            <cell>
+                                <name>Vincent J. Mastracco, Jr.</name>
+                            </cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell>
+                                <name>Daniel R. Abramson</name>
+                            </cell>
+                            <cell>
+                                <name>Lewis F. Payne</name>
+                            </cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell>
+                                <name>A. Macdonald Caputo</name>
+                            </cell>
+                            <cell>
+                                <name>Don R. Pippin</name>
+                            </cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell>
+                                <name>Alan A. Diamonstein</name>
+                            </cell>
+                            <cell>
+                                <name>Gordon F. Rainey, Jr.</name>
+                            </cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell>
+                                <name>Susan Y. Dorsey</name>
+                            </cell>
+                            <cell>
+                                <name>Warren M. Thompson</name>
+                            </cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell>
+                                <name>Georgia Willis Fauber</name>
+                            </cell>
+                            <cell>
+                                <name>E. Darracott Vaughan, Jr.</name>
+                            </cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell>
+                                <name>G. Slaughter Fitz-Hugh, Jr.</name>
+                            </cell>
+                            <cell>
+                                <name>John O. Wynne</name>
+                            </cell>
+                        </row>
+                        <row>
+                            <cell/>
+                            <cell>
+                                <name>Glynn D. Key</name>
+                            </cell>
+                            <cell>
+                                <name>Anne Elizabeth Mullen</name>
+                            </cell>
+                        </row>
+                        <row>
+                            <cell cols="3"/>
+                        </row>
+                        <row>
+                            <cell role="label">FROM:</cell>
+                            <cell>
+                                <name>Alexander G. Gilliam, Jr.</name>
+                            </cell>
+                            <cell/>
+                        </row>
+                        <row>
+                            <cell role="label">SUBJECT:</cell>
+                            <cell cols="2">Amendment of the September 29-30 Board Minutes</cell>
+                        </row>
+                    </table>
+              
+               <p>In a poll, conducted by telephone on <date value="2006-10-26"
+                        >October 26</date>, and <date value="2006-10-27">27, 2006</date>, the Board
+                    of Visitors of the University of Virginia agreed to amend the resolution,
+                    “Commending <name>Leonard W. Sandridge</name>; Naming the <name>Leonard W.
+                        Sandridge</name> Portal at the <name>John Paul Jones</name> Arena and
+                    Sandridge Road,” adopted by the Board on <date value="2006-09-30">September 30,
+                        2006</date>. The amended resolution changes “<name>Leonard W.
+                    Sandridge</name> Portal” to “<name>Leonard W. Sandridge</name> Hall,” and
+                    “Sandridge Road” to “<name>Leonard W. Sandridge</name> Road.” </p>
+                <p rend="indent">The amended resolution reads as follows:</p>
+                <div2 type="resolution" id="d4">
+                    <head type="main"> COMMENDING <name>LEONARD W. SANDRIDGE</name>; NAMING THE
+                            <name>LEONARD W.<lb/> SANDRIDGE</name> HALL AT THE <name>JOHN PAUL
+                        JONES</name> ARENA AND <name>LEONARD W.<lb/> SANDRIDGE</name> ROAD </head>
+               
+                            <p> WHEREAS, <name>Leonard W. Sandridge</name>, First
+                                Citizen of Crozet, began his long and illustrious career at the
+                                University of Virginia in 1967 as an Internal Auditor; and </p>
+                     
+                        <pb n="7218"/>
+                      
+                            <p> WHEREAS, <name>Mr. Sandridge</name> advanced
+                                through the ranks, always holding positions of responsibility, to
+                                his present job as Executive Vice President and Chief Operating
+                                Officer of the University, a title that describes only in small part
+                                his duties and can only hint at what he does for the University, day
+                                in and day out; and </p>
+                           
+                            <p> WHEREAS, <name>Mr. Sandridge</name> has served four
+                                Presidents of the University, under two of them as a Vice President,
+                                and has been relied upon by all four of them for his probity, good
+                                sense, sound vision, and competence; and </p>
+                          
+                            <p> WHEREAS, <name>Mr. Sandridge</name> is known and
+                                respected throughout the University for his hard work, his fair
+                                mindedness and his devotion above all to the good of the
+                                institution; and </p>
+                            
+                            <p> WHEREAS, <name>Mr. Sandridge</name> is known, too,
+                                for his modesty and his reluctance to claim credit for the things he
+                                does; and </p>
+                           
+                            <p> WHEREAS, admirers of <name>Mr. Sandridge</name>
+                                have banded together to make possible a naming in his honor,
+                                suggesting a portion of the <name>John Paul Jones</name> Arena; </p>
+                          
+                            <p> RESOLVED, the Board of Visitors names the entrance
+                                to the <name>John Paul Jones</name> Arena, <name>Leonard W.
+                                    Sandridge</name> Hall; further, the Board names the access road
+                                from the By-Pass to Massie Road, <name>Leonard W. Sandridge</name>
+                                Road; and </p>
+                           
+                            <p> RESOLVED FURTHER, in so doing, the Board salutes
+                                the First Citizen of Crozet and joins the entire community in
+                                thanking him for all he has done, and continues to do, for the
+                                University of Virginia. </p>
+                      
+                </div2>
+                <trailer> AGG:jb<lb/> These minutes have been posted to the University of Virginia’s
+                    Board of Visitors website. <lb/>
+                    <xref url="http://www.virginia.edu/bov/publicminutes.html"
+                        >http://www.virginia.edu/bov/publicminutes.html</xref>
+                </trailer>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

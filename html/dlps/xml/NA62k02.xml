@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0223 SYSTEM "000000766_0223" NDATA jpg>
+<!ENTITY DSSR_000000766_0224 SYSTEM "000000766_0224" NDATA jpg>
+<!ENTITY DSSR_000000766_0225 SYSTEM "000000766_0225" NDATA jpg>
+<!ENTITY DSSR_000000766_0226 SYSTEM "000000766_0226" NDATA jpg>
+
+<!--<!ENTITY NA62k02a SYSTEM "NA62k02a.jpg" NDATA jpg>
+<!ENTITY NA62k02b SYSTEM "NA62k02b.jpg" NDATA jpg>
+<!ENTITY NA62k02c SYSTEM "NA62k02c.jpg" NDATA jpg>
+<!ENTITY NA62k02d SYSTEM "NA62k02d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NA62k02">
+    <teiHeader type="migrated">
+        <!-- todo -->
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-11-02">2 November 1862</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor/>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>David Seaman</name>
+                    <resp>Creation of digital images:</resp>
+                    <name>University of Virginia Library Electronic Text Center</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>ETC</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">12</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62k02</idno>
+                <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+                <date value="2001">2001</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Illustrations have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, 2 November 1862</title>
+                        <author>Adelaide E. Case</author>
+                        <editor/>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p/>
+                    </editionStmt>
+                    <extent>4 pages</extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p/>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+            </projectDesc>
+            <editorialDecl>
+                <p> </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p/>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-11-02">1862-11-02</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English</language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-10">November 10th, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+        <front id="d2">
+
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+                        <date value="1862-11-02">2 November 1862</date>
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+                <p/>
+            </div1>
+        </front>
+        <body id="d4">
+            <div1 type="letter" n="1" id="d5">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-11-02">2
+                        November 1862</date></head>
+                <pb n="1" entity="DSSR_000000766_0223"/>
+                <opener>
+                    <dateline>
+                        <name type="place">Mecca </name>
+                        <date value="1862-11-02">Nov 2<hi rend="super">nd</hi> 1862</date>
+                    </dateline>
+                    <salute>My own darling</salute>
+                </opener>
+
+                <p>You will me for writinng with a pencil will <lb/> you not? I should have written
+                    sooner <lb/> but with Hal's company and visiting <lb/> my time has been
+                    occupied. <lb/>
+                </p>
+                <p> And even now, my conscience reproving me <lb/> for neglecting thee so long. I am
+                    obliged <lb/> to steal away for a few moments to <lb/> write you a few words..
+                    Hal's friend <lb/> Dwight Wilber is here. going to Cleveland <lb/> with Hal
+                    tomorrow to enter the Law office <lb/> consequently I must "expedite" Hal is not
+                    <lb/> going in to the service again as recruiting <lb/> was so difficult and he
+                    had no desire <lb/> so to do.. The 8<hi rend="super">th</hi> and 122<hi
+                        rend="super">th</hi> have <lb/>
+                    <pb n="2" entity="DSSR_000000766_0224"/> been consolidated.. Hal is going to
+                    enter <lb/> the regular "Law school" and graduate <lb/> next June.. So you see
+                    he is going to <lb/> "shout right ahead" But this is not <lb/> answering thy
+                    darling letter which I <lb/> happily recieved last evening. I have been <lb/> in
+                    Colbrook with Dora for the past few <lb/> days until friday consequently I did <unclear/>
+                    <lb/> your letter until I came hime. <lb/>
+                </p>
+                <p> When I read your letter darling.--shall <lb/> I tell you I wept? I did long very
+                    long <lb/> Not altoghther a sorrowful weeping but partly joyful. Tears fell in
+                    sympathy for <hi rend="underline">thee <lb/> -best-beloved</hi>--that you should
+                    have suffered <lb/> so much. Oh! how I thank you for <lb/> unburdening your
+                    thoughts to me, darling <lb/>
+                    <hi rend="underline">Always</hi> let me share your <hi rend="underline"
+                    >sorrow</hi> as <lb/> well as joy.. How could parents act so <lb/> indifferently
+                    about--but hush Addie <lb/> is not for you to censure- "God <lb/> is just and
+                        <hi rend="underline">every wrong shall die</hi>" <lb/> Addie will not
+                    withold the fervent <lb/> "<hi rend="underline">God bless thee my Charlie</hi>" <lb/>
+                    <pb n="3" entity="DSSR_000000766_0225"/> Joyful tears flowed that I had ever
+                    <lb/> made thee happy. God helping me <lb/> you never shall regert loving Addie
+                    <lb/> And God <hi rend="underline">will</hi> help me darling for <lb/>
+                    <hi rend="underline">I have asked him to</hi>. <lb/> Are you so very happy <hi
+                        rend="underline">dearest</hi> when <lb/> you meditate upon my love? I have
+                    <lb/> often wondered if ever mortal was <lb/> so happy as I. but you seem to
+                        <unclear>breathe</unclear>
+                    <lb/> my very thoughts. <lb/>
+                </p>
+                <p> I trust you have entirely recovered <lb/> from your illness. It troubled me a
+                    <lb/> good deal and I shall be very anxious <lb/> to hear from you again. Pardon
+                    me <lb/> dear but I feared you would not <lb/> tell me just exactly how ill you
+                    were, <lb/> I know it was a naughty thought <lb/> but I--could not help it. You
+                    will <lb/> forgive me dear? <lb/>
+                </p>
+                <p> You loved "the Corsair"? So do I <lb/> very much. I love to read Byron's <lb/>
+                    miscellaneous poems, very much.. <lb/> I have not time now darling to <lb/>
+                    <pb n="4" entity="DSSR_000000766_0226"/> make any comment upon your <lb/>
+                    political sentiments besides I <hi rend="underline">hate</hi>
+                    <lb/> politics as much as you do <lb/> How much I enjoyed <hi rend="underline"
+                        >uor</hi> visit <lb/> to the Hospital. I should love to <lb/> see your
+                    friend Bob. Murry and Geo. Moor[e?] <lb/> remember me to them both please. <lb/>
+                    What a pity that I was so "long sighted" <lb/> when were <unclear/> .. </p>
+                <p> I commence going to school two weeks <lb/> from next tueseday. I go to
+                    Farmington <lb/> so you will direct your next letter <lb/> to Farmington
+                    Trumbill Co. Ohio <lb/> Please excuse me from writing longer <lb/> for Hal. is
+                    calling Ad--die! and I <lb/> must go I will write again soon <lb/>
+                    <unclear>that</unclear> "<hi rend="underline">loving</hi> kiss" and good bye </p>
+                <closer>
+                    <salute>Love ever <unclear>and</unclear> now your true</salute>
+                    <lb/>
+                    <signed>Addie</signed>
+                </closer>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

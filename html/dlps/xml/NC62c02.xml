@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+
+
+<!--<!ENTITY NC62c02a SYSTEM "NC62c02a.jpg" NDATA jpg>
+<!ENTITY NC62c02b SYSTEM "NC62c02b.jpg" NDATA jpg>
+<!ENTITY NC62c02c SYSTEM "NC62c02c.jpg" NDATA jpg>
+<!ENTITY NC62c02d SYSTEM "NC62c02d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NC62c02">
+ <teiHeader type="migrated">
+  <!-- todo -->
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-03-02">2
+      March 1862</date></title>
+
+    <author>Tenney, Charles N.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>David Seaman</name>
+     <resp>Creation of digital images:</resp>
+     <name>University of Virginia Library Electronic Text Center</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>ETC</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">9</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="ETC">NC62c02</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Charles N. Tenney to Adelaide E. Case, 2 March 1862</title>
+      <author>Charles N. Tenney</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 pages</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p> </p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings. </p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-03-02">1862-03-02</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>masculine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-12">November 12th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-03-02">2 March 1862</date>
+
+      <title>Letter from Charles Tenney to Adelaide Case</title>
+     </bibl>
+    </head>
+    <p/>
+   </div1>
+  </front>
+  <body id="d4">
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-03-02">2 March
+     1862</date></head>
+    <pb n="1"/>
+    <opener>
+     <dateline>
+      <name type="place"> Camp Pine ridge, 7 miles from <del hand="h1">Tlyl</del> Camp Tyler.</name>
+     </dateline>
+     <salute>My dear Addie:</salute>
+    </opener>
+
+    <p> I am going to write you a funny <lb/> letter, in the form of a Diary. hoping it will <lb/>
+     interest you, and to give you a slight notion, as <lb/> to how we live while on an expidition
+     of this kind <lb/>
+    </p>
+
+    <p>Charlie. </p>
+
+    <p>March 2nd, 1862.-- We recieved orders yesterday <lb/> morning at 4 A.M. to cook 3 days
+     rations &amp; prepare to <lb/> march at 7 oclock. We were ready at the specified time,
+     <lb/> but did not start, After "lying around loose," all day <lb/> we left Camp Tyler. at 4.
+     P.M. and started toward <lb/>
+     <unclear>St Cucapon</unclear> River. which we crossed about half past <lb/> seven. The 8th Ohio
+     had come in advance and built <lb/> a bridge on which we crossed. This bridge is made of <lb/>
+     wagond, (13 in number) on the top of which were laid boards <lb/> It is a very good way of
+     bridging shallow streams. </p>
+
+    <p>We immediately commenced ascending a mountain <lb/> which we contunued about a mile, when
+     near the <lb/> summit, we halted. and camped for the night. <lb/> Luckily, there were plenty of
+     rails. so we kept warm <pb n="2"/> After our usual cup of Coffee. we set about making <lb/> our
+     beds. This was accomplished by first laying large <lb/> brush on the ground, covering them the
+     tufts of <lb/> pine pushed. This forming a good springy mattress, we next <lb/> spread, a
+     blaket down to lie upon. Taking off all outer <lb/> clothing, covered with two good blankets
+     and our overcoats <lb/> we passed the night comfortable. "Tired Nature's sweet <lb/> restorer,
+     Balmy sleep," <unclear>coming</unclear> to our relief, we were <lb/> soon in the lands of
+     dreams. What is more pleasant than <lb/> this? "Now when fair morn orient in heaven appeared </p>
+
+    <p>Up rose" your honorable servant, and to breakfast <lb/> went, after he prepared it, &amp;
+     never tasted hard bread &amp; <lb/> coffee sweeter. We are now waiting orders but I do not
+     <lb/> think we will move before evening, some of the boys <lb/> are building huts of pine
+     brush. intending to live <lb/> as comfortable as possible, &amp; I must join them
+     [squiggle] <lb/> 10 Oclock, Just got the shanty done, and it <unclear>moves</unclear>
+     <lb/> very hard, it will serve to keep of part of <lb/> the storm. Capt Asper has just <del
+      hand="h1">just</del> informed <lb/> me of the illness of Gen. Lander: this has <del hand="h1"
+      >called</del>
+     <lb/> caused the delay. We will not move on until <lb/> he is better. My dinner is cooking. A
+     dirk of <lb/> soup, made of three pints of water, a piece of salt <lb/>
+     <pb n="3"/> pork an inch square, some cracker (hard-bread) <lb/> crumbs, and a little salt. Not
+     exactly according <lb/> to "Soyer's Rules," but palatable, if you cant get any <lb/> thing
+     else. 'Tis done, and I must eat it. <lb/>
+    </p>
+    <p>7.30 P.M. In camp. At 3 oclock, we recieved orders <lb/> to fall in, and return to camp, at
+     quarter past 3 <lb/> we started. The road was very slippery, and difficult <lb/>
+      marching<unclear>s</unclear> but the march was made in good time, <lb/> arriving here just at
+     dark. When about a mile <lb/> back, we were informed that Gen. Lander was <lb/> dead. Hence our
+     recall. He died sometimes today. <lb/> As might be expected, every one is commenting, and <lb/>
+     predicting who will be our commander, some say- <lb/> ing Rosecrans, some Farmont, others
+     Sedgwick, Manks <lb/> &amp; numerous others. For myself, I say nothing, becuase <lb/> I
+     know nothing. </p>
+
+    <p>Thus you see it is, dear Addie, God disposes what <lb/> man proposes, I supposed when I
+     commenced this, that <lb/> we were going to have a "scout," &amp; I was going to give <lb/>
+     you all of the particulars, Gen. Lauden's sudden death <lb/> prevented us from going further.
+     We will undoubt <lb/> edly stay here some time. not, until we have a new <lb/> Gen. Coming. I
+     hope Tyler wont get the position. <lb/>
+     <pb n="4"/> But I must close this "thing," as it is getting <lb/> somewhat late. and I am
+     rather tired. </p>
+
+    <p>You must write very often. don't I? <lb/> Give my love to Hallie &amp; Laurie, &amp;
+     tell Hal that <lb/> I have not recieved a line from him since Feb 6th </p>
+
+    <closer><salute>Believe me, my Addie, I am <lb/> Your ever and devotedly</salute>
+     <lb/>
+     <signed>Charlie</signed>. <lb/> Camp Tyler. Ca. Mar 2nd 1862. </closer>
+   </div1>
+  </body>
+ </text>
+</TEI.2>

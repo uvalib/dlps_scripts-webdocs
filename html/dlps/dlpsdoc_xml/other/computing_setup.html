@@ -1,0 +1,132 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Computing Setup for New Staff Members</title>
+<link rel="stylesheet" type="text/css" href="/dlps/css/teitech.css">
+</head>
+<body>
+<h1>Computing Setup for New Staff Members</h1>
+
+<p>This document describes the steps needed to set up the computing
+environment for new staff members in Digital Library Production
+Services (DLPS), University of Virginia Library. It is intended for
+use by internal DLPS staff.</p>
+
+
+
+
+
+<p><b>Last modified:</b> 7/7/2006</p>
+<hr>
+<h2>Contents</h2>
+<ul>
+<li><a href="#">Unix Environment Setup</a></li>
+<li><a href="#">Other Setup</a></li>
+</ul>
+
+
+
+<hr>
+<a name=""><h2>Unix Environment Setup</h2></a>
+
+
+<a name=""><h3>Unix Accounts</h3></a>
+
+<ul>
+<li>Request a Unix account for each new staff member. Library IT
+Systems (LITS) handles the creation of accounts; they have a web form at
+
+<a href="http://staff.lib.virginia.edu/systems/libsys/help-request.php" target="_blank">http://staff.lib.virginia.edu/systems/libsys/help-request.php</a>
+
+for submitting such requests.
+
+  <ul>
+<li>Provide the new user's UVa computing ID (email ID)</li>
+<li>Request that <code>dlpswg</code> (DLPS working group) should be
+  the new user's default Unix group</li>
+<li>Request that the new user get added to the <code>htaccess</code>
+  permissions for web-based tools/documentation under
+  <code>/www/doc/dlps/dlps-only</code> on <code>pogo.lib</code>
+</li>
+<li>If (and <em>only</em> if) this staff member needs to run
+  the <code>dlps2ReadyRepo</code> script, then request that this user get
+  added to the Unix group <code>repo</code>
+
+  <div class="important">
+<span class="important">IMPORTANT</span><p>Adding a user to <code>repo</code> grants that
+  user write permissions (including delete permissions) to the entire
+  repository hand-off point under <code>/cenrepo/ReadyRepo</code>.
+  Only request this if you're certain it is needed. If in doubt, don't
+  add the user to <code>repo</code> initially; this request can always be
+  made later.</p>
+</div>
+
+  </li>
+</ul>
+</li>
+<li>When the account is created, LITS will notify you that the
+account is ready and tell you how to proceed. Normally the first step
+is to have the new user log onto <code>viva.lib</code> and change the
+default password.</li>
+<li>At this point the new user should be able to log into the
+Library's Unix servers, including the Linux server we use for our
+digital production work, <code>pogo.lib</code> (also known as
+<code>alioth.lib</code>).</li>
+</ul>
+
+
+
+
+
+<a name=""><h3>Environment Variables</h3></a>
+
+<p>To work effectively from the Unix command line, each user needs
+to set a few environment variables:</p>
+
+<ul>
+<li>Have the new user log in using his/her username and
+password. After login, you should be in the user's home
+directory.</li>
+<li>Using Jove (or some other text editor), open the user's
+initialization file. Normally you'll want to edit the
+<code>.variables.ksh</code> file, since <code>ksh</code> is the default
+shell (command interpreter).</li>
+<li>Add the following lines at the end of the initialization file:
+<pre>
+# add DLPS bin directory to path
+PATH=/shares/admin/bin:/shares/admin/bin/text:/shares/admin/bin/image:${PATH}
+
+# set umask to 002 to grant group write permission on new
+# files/directories; this sets default permissions to 664 (rw-rw-r--)
+# for new files, 775 (rwxrwxr-x) for new directories
+umask 002
+</pre>
+</li>
+<li>Save and close the initialization file.</li>
+<li>Log off and then log back in (necessary for the new setup to
+take effect).</li>
+<li>To test the new settings, enter:
+
+<pre>echo $PATH</pre>
+
+You should see a colon-delimited list of paths, starting with the
+paths you added to the initialization file in the preceding
+step.</li>
+</ul>
+
+
+
+<hr>
+<a name=""><h2>Other Setup</h2></a>
+
+
+<a name=""><h3>DLPS Tracking System</h3></a>
+
+<p>Write the DLPS tracking system administrator (Greg) to request a
+username and password for the tracking system.</p>
+
+
+
+
+</body>
+</html>

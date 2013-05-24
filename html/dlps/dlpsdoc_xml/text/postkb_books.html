@@ -1,0 +1,951 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Post-keyboarding Workflow for Books</title>
+<link rel="stylesheet" type="text/css" href="/dlps/css/teitech.css">
+</head>
+<body>
+<h1>Post-keyboarding Workflow for Books</h1>
+
+<p>This document describes the workflow for in-house processing of
+electronic texts digitized from printed books by keyboarding vendors
+for Digital Library Production Services (DLPS), University of Virginia
+Library. It is intended for use by internal DLPS staff.</p>
+
+<div class="EAF">
+<span class="EAF">SPECIAL INSTRUCTIONS: EAF</span><p>When processing EAF (Early
+American Fiction) XML files, begin with the <a href="#scripts">Scripts</a>
+section.</p>
+</div>
+
+
+
+
+
+<p><b>Last modified:</b> 5/25/2010</p>
+<hr>
+<h2>Contents</h2>
+<ul>
+<li><a href="#d3">Prepare Files for Vendor</a></li>
+<li><a href="#d8">Prepare Full TEI Header</a></li>
+<li><a href="#d9">Retrieve from Vendor</a></li>
+<li><a href="#scripts">Scripts</a></li>
+<li><a href="#d11">Synchronizing Page Breaks and Page Images</a></li>
+<li><a href="#web_reports">Web Reports</a></li>
+<li><a href="#d23">Markup QA and Correction</a></li>
+<li><a href="#d24">Insert Full TEI Headers</a></li>
+<li><a href="#d25">Finalize</a></li>
+<li><a href="#d26">Copy to ReadyRepo</a></li>
+</ul>
+
+
+
+<hr>
+<a name="d3"><h2>Prepare Files for Vendor</h2></a>
+
+
+
+
+<a name="d5"><h3>Prepare image files to be sent to vendor</h3></a>
+<ul>
+<li>Copy each folder of image files from <code>50QAed_IN</code> to
+<code>50QAed_OUT</code>
+</li>
+<li>Set the group to 'dlpswg' and grant group write permissions on
+all folders and files: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#change_group" target="scripts">change_group</a> -g dlpswg -p *</code>
+</li>
+<li>Create minimal TEI headers:
+<code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#make_minheaders" target="scripts">make_minheaders</a> -v</code> <br>
+
+This script looks in <code>50QAed_OUT</code>, and for each
+subdirectory found there, it creates a .header file in that
+subdirectory. (It also copies the .doc file for that DLPS ID to the
+same subdirectory.)</li>
+</ul>
+
+<p>An automated script (cron job) will run overnight to zip the files
+for uploading to the vendor. After you receive email notification that
+the script has run successfully:</p>
+
+<ul>
+<li>Inspect the .zip file to verify that all files are present and
+accounted for</li>
+<li>If the .zip file is ok, delete the corresponding folder from
+<code>50QAed_IN</code>
+</li>
+</ul>
+
+
+
+<a name="d6"><h3>Upload</h3></a>
+<ul>
+<li>Open an FTP program
+(if you're on a Windows workstation,
+<a href="http://www.itc.virginia.edu/desktop/securefx/securefx.html" target="_blank">SecureFX</a>
+is recommended)</li>
+<li>Connect to the keyboarding vendor's FTP server</li>
+<li>Connect to the DLPS server</li>
+<li>Transfer the .zip files from the DLPS server to vendor's FTP server</li>
+<li>Close connections and exit the FTP program</li>
+</ul>
+
+
+
+<a name="d7"><h3>Notify vendor</h3></a>
+<ul><li>E-mail the vendor to notify them that the files have been uploaded.</li></ul>
+
+
+
+<hr>
+<a name="d8"><h2>Prepare Full TEI Header</h2></a>
+
+<p>The preparation of full (bibliographic) TEI headers is normally
+performed by Cataloging and is documented separately. For details, see
+<a href="/dlps/public/text/teiHeader/teiHeader.html">Preparing
+Full TEI Headers</a>.</p>
+
+
+
+<hr>
+
+<a name="d9"><h2>Retrieve from Vendor</h2></a>
+<p>The keyboarding vendor will send us a delivery notification by
+e-mail when a batch of files is finished and ready for us to
+retrieve.</p>
+
+<a name=""><h3>Download</h3></a>
+<ul>
+<li>Open an FTP program
+(if you're on a Windows workstation, 
+<a href="http://www.itc.virginia.edu/desktop/securefx/securefx.html" target="_blank">SecureFX</a>
+is recommended)</li>
+<li>Connect to the keyboarding vendor's FTP server</li>
+<li>Connect to the DLPS server</li>
+<li>Transfer files from the vendor's FTP server to <code>/shares/text/04postkb/10being_received</code>
+</li>
+<li>Close connections and exit the FTP program</li>
+<li>If the downloaded files are contained within .zip archive(s):
+  <ul>
+<li>In Windows, open the DLPS text workspace as a mapped network
+drive, then right-click the .zip file(s) and select <b>WinZip
+→ Extract to here</b>
+</li>
+<li>Delete the .zip file(s)</li>
+</ul>
+</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a>: From the Unix command line, navigate
+to <code>10being_received</code> and run this command:
+<code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> <i>*.xml</i></code>
+</li>
+</ul>
+
+
+
+
+<a name=""><h3>Initial QA</h3></a>
+<ul><li>From the Unix command line, run this command: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#non-ascii" target="scripts">non-ascii</a> <i>*.xml</i></code> <br>
+
+This script checks for unexpected characters in the XML file and
+displays error messages if any are found. The error messages specify
+exactly where each unexpected character occurs (line number, and
+character position within the line). If any errors are found, take
+appropriate action, which typically means asking the vendor to fix the
+files according to our <a href="http://pogo.lib.virginia.edu/dlps/public/text/vendor/vendor.html#charent">vendor
+encoding guidelines for handling special characters</a>.
+
+</li></ul>
+
+
+
+<a name=""><h3>Validate</h3></a>
+<ul>
+<li>
+<em>Copy</em> the XML files from
+<code>10being_received</code> to <code>10parse</code>
+</li>
+<li>From the Unix command line, navigate to <code>10parse</code> and
+run this command: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#replace_system_paths" target="scripts">replace_system_paths</a> <i>*.xml</i></code>
+</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>*.xml</i></code>
+</li>
+<li>If errors occur, contact Greg</li>
+<li>If the files are valid:
+  <ul>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a>: From <code>10parse</code>, run
+    this command: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> <i>*.xml</i></code>
+</li>
+<li>Delete the files in <code>10parse</code>: <code>rm <i>*.xml</i></code>
+</li>
+<li>
+<em>Move</em> the files from <code>10being_received</code>
+    to <code>10received/<i>subdirectory</i></code>, where
+    <i>subdirectory</i> is a directory for grouping and
+    identifying this particular set of XML files</li>
+</ul>
+</li>
+</ul>
+
+
+
+<a name=""><h3>Write-protect</h3></a>
+<ul><li>In <code>10received/<i>subdirectory</i></code>, make
+the files read-only for all users: <code>chmod 444 <i>*.xml</i></code>
+</li></ul>
+
+
+
+
+<hr>
+
+<a name="scripts"><h2>Scripts</h2></a>
+
+<a name=""><h3>Copy to processing directory</h3></a>
+<ul>
+<li>
+<em>Copy</em> files to <code>20being_scripted</code> <br>
+  <ul>
+<li>First, check directory <code>11postvendor_fixed</code> for the
+file(s) to be processed; if present, copy the files from
+<code>11postvendor_fixed</code> to <code>20being_scripted</code>
+  </li>
+<li>Otherwise, copy the file(s) from <code>10received/<i>subdirectory</i></code>
+to <code>20being_scripted</code>
+  </li>
+</ul>
+</li>
+<li>Grant write permissions for yourself and group: <code>chmod 664 <i>*.xml</i></code>
+</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>*.xml</i></code>
+</li>
+<li>Fix parsing errors, if any</li>
+</ul>
+
+
+
+<a name=""><h3>Run scripts</h3></a>
+<ul>
+<li>Run the main post-keyboarding script.
+  <ul>
+<li>If the texts are mainly in English: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#postkb" target="scripts">postkb</a> <i>*.xml</i></code>
+</li>
+<li>If the texts are mainly in a foreign language: <code>postkb -f <i>*.xml</i></code> (where -f indicates foreign-language input files; the end-of-line hyphenation does not get collapsed)</li>
+</ul>
+
+  <div class="tip">
+<span class="tip">TIP</span><p>If you prefer to see a status message
+indicating each script being run against each input file, use the -v
+(verbose) option: <code>postkb -v <i>*.xml</i></code></p>
+</div>
+
+</li>
+<li>Check the script's screen messages for errors and warnings; take appropriate action</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>*.xml</i></code>
+</li>
+<li>Fix parsing errors, if any</li>
+<li>
+<em>Move</em> files to <code>20scripted</code>
+</li>
+</ul>
+
+
+
+
+
+
+<hr>
+<a name="d11"><h2>Synchronizing Page Breaks and Page Images</h2></a>
+
+<div class="text-only">
+<span class="text-only">SPECIAL INSTRUCTIONS: Text-only (no page images)</span><p>When processing text-only
+texts, skip this section entirely and proceed to
+<a href="#web_reports">Web Reports</a> below.</p>
+</div>
+
+<ul>
+<li>
+<em>Copy</em> files to <code>30being_pbsynced</code>
+</li>
+<li>Make the XML files available to the Proofreader web application:
+<code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#refresh_proofreader" target="scripts">refresh_proofreader</a> <i>*.xml</i></code>
+
+<div class="EAF">
+<span class="EAF">SPECIAL INSTRUCTIONS: EAF</span>
+<p>When processing EAF XML files, also run the following additional
+scripts:</p>
+<ul>
+<li><code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#eaf_fixes" target="scripts">eaf_fixes</a> <i>eaf*.xml</i></code></li>
+<li>
+<code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#refresh_proofreader" target="scripts">refresh_proofreader</a> <i>eaf*.xml</i></code> (to copy the corrected files to Proofreader)</li>
+</ul>
+<p>(It is preferable to run these two additional scripts at this
+point, even if <code>refresh_proofreader</code> generated
+warning messages.)</p>
+</div>
+
+</li>
+<li>The script issues warning messages if the number of page breaks
+(<code>&lt;pb&gt;</code> tags) in the XML file does not match the number of
+page-image files, or if the page-image files appear not to be named
+sequentially. If this occurs, the warning messages should help you
+pinpoint the nature of the problem (whether the XML file contains too
+many or too few page breaks) and where the problem begins, so you can
+take corrective action.</li>
+<li>If warning messages occur, follow this procedure:
+  <ul>
+<li>Use <a href="/cgi-dlps/uva-only/proofreader/start.pl" target="_blank">Proofreader image viewer</a> to verify the problem.</li>
+<li>If the discrepancy is due to missing or extra <code>&lt;pb&gt;</code> tags in the XML file:
+    <ul>
+<li>Open the XML file for editing</li>
+<li>Insert <code>&lt;pb n="..."/&gt;</code> (where ... is the printed page
+number), or remove unwanted <code>&lt;pb&gt;</code> tags as needed</li>
+<li>Re-copy the XML file to Proofreader: <code>refresh_proofreader <i>filename.xml</i></code>
+</li>
+</ul>
+  </li>
+<li>If the discrepancy is due to an image problem (missing image or duplicate image):
+    <ul>
+<li>Correct the problem in the original TIFF images</li>
+<li>Re-derive the GIF images for Proofreader</li>
+</ul>
+  </li>
+<li>Repeat until all pages are in sync when viewed in Proofreader</li>
+</ul>
+</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>*.xml</i></code>
+</li>
+<li>Fix parsing errors, if any</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a>: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> <i>*.xml</i></code>
+</li>
+<li>
+<em>Move</em> files to <code>30pbsynced</code>
+</li>
+</ul>
+
+
+<hr>
+<a name="web_reports"><h2>Web Reports</h2></a>
+
+<a name="d14"><h3>Generate the web reports</h3></a>
+<ul>
+<li>
+<em>Copy</em> files to <code>40being_reports_run</code>
+</li>
+<li>Run the reports that can be generated at this point:
+
+  <ul>
+<li>If the texts are mainly in English: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#run_reports" target="scripts">run_reports</a> <i>*.xml</i></code>
+</li>
+<li>If the texts are mainly in a foreign language: <code>run_reports -f <i>*.xml</i></code> (where -f indicates foreign-language input files; the Rehyphenate report is not generated)</li>
+</ul>
+
+  <div class="tip">
+<span class="tip">TIP</span><p>If you prefer to see a status message
+indicating each report being generated for each input file, use the -v
+(verbose) option: <code>run_reports -v <i>*.xml</i></code></p>
+</div>
+
+  <div class="note">
+<span class="note">NOTE</span><p>The web-based (HTML) reports generated by default are:
+  <ul>
+<li>
+<b>Rehyphenate</b> &mdash; shows words for which the end-of-line hyphen,
+    programmatically collapsed previously by the <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#postkb" target="scripts">postkb</a></code>
+    script, may need to be restored</li>
+<li>
+<b>Figures: Rendering</b> &mdash; allows indicating whether illustrations are rendered on the
+    printed page as full-page, block, or inline</li>
+</ul>
+  </p>
+</div>
+</li>
+<li>To determine whether the <b>Unclears</b> report should
+be generated for one or more texts:
+
+<pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#count_unclears" target="scripts">count_unclears</a> <i>*.xml</i></pre>
+
+If the script reports <em>25 or more</em> <code>&lt;unclear&gt;</code> tags
+for one or more files, generate the unclears report for those files
+only:
+
+<pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#report_unclears" target="scripts">report_unclears</a> <i>filenames</i></pre>
+</li>
+<li>
+<em>Move</em> files to <code>40reports_run</code>
+</li>
+</ul>
+
+
+
+<a name="d15"><h3>Fill out and submit the web reports</h3></a>
+<ul>
+<li>For each file, go to <br><br>
+<a href="/cgi-dlps/dlps-only/workreports/list.pl" target="_blank">http://pogo.lib.virginia.edu/cgi-dlps/dlps-only/workreports/list.pl</a> <br><br>
+and view the <b>Rehyphenate</b> and <b>Figures:
+Rendering</b> reports</li>
+<li>For each report, follow the instructions at the top of the
+report. Fill out the report, and save the data when finished.</li>
+<li>Also fill out the <b>Unclears</b> report, if it exists</li>
+</ul>
+
+
+
+<a name="d16"><h3>Commit the changes</h3></a>
+
+<a name="d17"><h4>Rehyphenate</h4></a>
+<ul>
+<li>
+<em>Copy</em> files to <code>51being_rehyphenated</code>
+</li>
+<li>Update the XML files: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#commit_rehyphenate" target="scripts">commit_rehyphenate</a> <i>*.xml</i></code>
+</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>*.xml</i></code>
+</li>
+<li>Fix parsing errors, if any</li>
+<li>
+<em>Move</em> files to <code>51rehyphenated</code>
+</li>
+</ul>
+
+
+
+<a name="d18"><h4>Unclears (if applicable)</h4></a>
+<ul>
+<li>
+<em>Copy</em> files to <code>52being_unclears_fixed</code>
+</li>
+<li>Update the XML files: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#commit_unclears" target="scripts">commit_unclears</a> <i>*.xml</i></code>
+</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>*.xml</i></code>
+</li>
+<li>Fix parsing errors, if any</li>
+<li>
+<em>Move</em> files to 52unclears_fixed</li>
+</ul>
+
+
+
+<a name="d19"><h4>Figures: Rendering</h4></a>
+<ul>
+<li>
+<em>Copy</em> files to <code>53being_figures_rend</code>
+</li>
+<li>Update the XML files: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#commit_figures_rend" target="scripts">commit_figures_rend</a> <i>*.xml</i></code>
+
+<div class="text-only">
+<span class="text-only">SPECIAL INSTRUCTIONS: Text-only (no page images)</span><p>When processing text-only
+texts, skip the <code>figure_entities</code> and
+<code>declare_entities</code> scripts below.</p>
+</div>
+
+</li>
+<li>Add entity attribute on figure tags: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#figure_entities" target="scripts">figure_entities</a> <i>*.xml</i></code>
+</li>
+<li>Refresh references to image files: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#declare_entities" target="scripts">declare_entities</a> <i>*.xml</i></code>
+</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>*.xml</i></code>
+</li>
+<li>Fix parsing errors, if any</li>
+<li>
+<em>Move</em> files to <code>53figures_rend</code>
+</li>
+</ul>
+
+
+
+
+<a name="d20"><h3>Generate the Figures: Filenames report</h3></a>
+
+<div class="EAF">
+<span class="EAF">SPECIAL INSTRUCTIONS: EAF</span><p>When processing EAF files, skip
+the "Figures: Filenames" steps. Proceed to
+<a href="#copy59processed">Copy to 59processed</a> below.</p>
+</div>
+
+<div class="text-only">
+<span class="text-only">SPECIAL INSTRUCTIONS: Text-only (no page images)</span><p>When processing text-only
+files, skip the "Figures: Filenames" steps. Proceed to
+<a href="#copy59processed">Copy to 59processed</a> below.</p>
+</div>
+
+<p>Having updated the XML file with figure-rendering information, it
+is now possible to generate the second figure-related report, which
+pertains to the filenames of the figure-image files.</p>
+<ul>
+<li>
+<em>Copy</em> files to <code>54being_figures_filenames</code>
+</li>
+<li>Generate the report: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#report_figures_filenames" target="scripts">report_figures_filenames</a> <i>*.xml</i></code>
+</li>
+</ul>
+
+
+
+<a name="d21"><h3>Fill out and submit the Figures: Filenames report</h3></a>
+<ul>
+<li>For each file, go to <br><br>
+<a href="/cgi-dlps/dlps-only/workreports/list.pl" target="_blank">http://pogo.lib.virginia.edu/cgi-dlps/dlps-only/workreports/list.pl</a> <br><br>
+and view the <b>Figures: Filenames</b> report</li>
+<li>Follow the instructions at the top of the report. Fill out the
+report, and save the data when finished.</li>
+</ul>
+
+
+
+<a name="d22"><h3>Commit the changes from the Figures: Filenames report</h3></a>
+<ul>
+<li>Update the XML files: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#commit_figures_filenames" target="scripts">commit_figures_filenames</a> <i>*.xml</i></code>
+</li>
+<li>Refresh references to image files: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#declare_entities" target="scripts">declare_entities</a> <i>*.xml</i></code>
+</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>*.xml</i></code>
+</li>
+<li>Fix parsing errors, if any</li>
+<li>
+<em>Move</em> files to <code>54figures_filenames</code>
+</li>
+</ul>
+
+
+
+
+<a name="copy59processed"><h3>Copy to 59processed</h3></a>
+<ul>
+<li>Regardless of what the last step was for a particular file (for
+example, some files do not have figures and do not require completing
+the figure-related web reports), always <em>copy</em> the last
+version of the file to <code>59processed</code>.</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a>: Navigate to <code>59processed</code>
+and run this command: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> <i>*.xml</i></code>
+</li>
+</ul>
+
+
+
+
+<div class="fyi">
+<span class="fyi">FYI</span>
+<p>For each file processed successfully, the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> gets
+updated automatically as follows:</p>
+
+<table border="1" cellpadding="6">
+<tr>
+<td><code>run_reports</code></td>
+<td>Post-keyboarding Workflow → Generate reports</td>
+</tr>
+<tr>
+<td><code>report_figures_filenames</code></td>
+<td>Post-keyboarding Workflow → Generate figures-filenames report</td>
+</tr>
+<tr>
+<td>Save a web report</td>
+<td>Post-keyboarding Workflow → Submit <i>[report-type]</i> report</td>
+</tr>
+<tr>
+<td><code>commit_<i>[report-type]</i></code></td>
+<td>Post-keyboarding Workflow → Commit <i>[report-type]</i> changes</td>
+</tr>
+</table>
+</div>
+
+
+
+<hr>
+<a name="d23"><h2>Markup QA and Correction</h2></a>
+<p>The markup QA/correction workflow is documented separately. See
+<a href="/cgi-dlps/saxon/SaxonCGI.pl?source=http://pogo.lib.virginia.edu/dlps/dlpsdoc_xml/text/markup_qa_books.xml&amp;style=http://pogo.lib.virginia.edu/dlps/xsl/teitech.xsl&amp;filename=markup_qa_books.xml">Markup
+QA and Correction for Books</a>.</p>
+
+
+<hr>
+<a name="d24"><h2>Insert Full TEI Headers</h2></a>
+<ul>
+<li>
+<em>Move</em> files from <code>69processed</code> to
+<code>70being_fullheaders_added</code>
+</li>
+<li>Replace the minimal TEI header already in the XML file with the
+full TEI header: <pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#replace_teiHeader" target="scripts">replace_teiHeader</a> <i>*.xml</i></pre>
+
+If no full TEI header file exists for a particular ID,
+<code>replace_teiHeader</code> will display a warning.
+
+<div class="note">
+<span class="note">NOTE</span><p>This assumes that the full TEI header files are
+located in <code>/shares/text/05teiHeader/80final</code>. If not,
+specify the directory with the -d option, for example:
+<pre>replace_teiHeader -d '/shares/text/04postkb/<i>whatever</i>' <i>*.xml</i></pre></p>
+</div>
+
+<div class="EAF">
+<span class="EAF">SPECIAL INSTRUCTIONS: EAF</span><p>When processing EAF XML files,
+you <em>must</em> use the -E option, for example:
+<pre>replace_teiHeader -E -d '/shares/text/05teiHeader/80final/EAF/EAF1Public/individualHeaders' <i>eaf*.xml</i></pre></p>
+</div>
+
+<div class="BOV">
+<span class="BOV">SPECIAL INSTRUCTIONS: BOV</span><p>When processing BOV (Board of
+Visitors) XML files, use the -t (template) option and specify the
+appropriate template file, as follows:</p>
+
+<table border="1" cellpadding="6">
+<tr>
+<td>Filenames indicate dates from 1817 – April 28, 1928 <br>
+OR from October 8, 1965 – present</td>
+<td>Use "public" template: <code>bov_header_public.xml</code>
+</td>
+</tr>
+<tr>
+<td>Filenames indicate dates from June 1928 – June 1965</td>
+<td>Use "official" template: <code>bov_header_official.xml</code>
+</td>
+</tr>
+</table>
+
+<pre>replace_teiHeader -t '/shares/text/05teiHeader/BOV/production/bov_header_public.xml' <i>bov_*.xml</i></pre>
+
+<p>Then update the TEI header with data (date, page count, etc.)
+specific to each particular file:
+<pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_teiHeader_bov" target="scripts">update_teiHeader_bov</a> <i>bov_*.xml</i></pre></p>
+
+</div>
+
+</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>*.xml</i></code>
+</li>
+<li>Fix parsing errors, if any</li>
+<li>Run this command to normalize line endings: <code>dos2unix <i>*.xml</i></code>
+</li>
+<li>Update the access status (public, UVA only, etc.) recorded in
+the TEI header: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_teiHeader_access" target="scripts">update_teiHeader_access</a> <i>*.xml</i></code>
+
+<div class="tip">
+<span class="tip">TIP</span>
+<p>If the XML files don't have corresponding records in the DLPS
+Tracking System, use the <code>-F</code> option — for example:
+
+<pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_teiHeader_access" target="scripts">update_teiHeader_access</a> -F public <i>*.xml</i></pre>
+
+</p>
+</div>
+</li>
+<li>Update the file size recorded in the TEI header: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#refresh_filesize" target="scripts">refresh_filesize</a> <i>*.xml</i></code>
+</li>
+<li>Correct common problems with date values (carried over from the MARC record used to create the TEI header): <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#header_date_values" target="scripts">header_date_values</a> <i>*.xml</i></code>
+</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>*.xml</i></code>
+</li>
+<li>Fix parsing errors, if any</li>
+<li>Run QA checks on the TEI header: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#qa_super" target="scripts">qa_super</a> -h <i>*.xml</i></code>
+</li>
+<li>Fix problems, if any; this may require working with Cataloging to assess/fix the problems</li>
+<li>
+<em>Move</em> files to <code>70fullheaders_added</code>
+</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a>: Navigate to <code>70fullheaders_added</code>
+and run this command: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> <i>*.xml</i></code>
+</li>
+</ul>
+
+<div class="fyi">
+<span class="fyi">FYI</span>
+<p>For each file processed successfully, the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> gets
+updated automatically as follows:</p>
+<table border="1" cellpadding="6">
+<tr>
+<td><code>replace_teiHeader</code></td>
+<td>Finalization Workflow → Replace TEI header</td>
+</tr>
+<tr>
+<td><code>update_teiHeader_access</code></td>
+<td>Finalization Workflow → Update access level</td>
+</tr>
+<tr>
+<td><code>qa_super -h</code></td>
+<td>Finalization Workflow → QA TEI header</td>
+</tr>
+</table>
+</div>
+
+
+<hr>
+
+<a name="d25"><h2>Finalize</h2></a>
+<ul>
+<li>
+<em>Copy</em> files to <code>80being_finalized</code>
+</li>
+<li>Run a few final scripts:
+
+  <ul>
+<li>Eliminate an outdated markup practice:
+  <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#strip_fw_pageno" target="scripts">strip_fw_pageno</a> <i>*.xml</i></code>
+</li>
+<li>Convert numeric character entities to mnemonic/named character
+  entities (from <code>&amp;#xA9;</code> to <code>&amp;copy;</code> for
+  example):
+  <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#flipent" target="scripts">flipent</a> <i>*.xml</i></code>
+</li>
+<li>Convert certain character entities back to normal characters:
+  <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#restore_regexp_chars" target="scripts">restore_regexp_chars</a> <i>*.xml</i></code>
+</li>
+</ul>
+
+</li>
+<li>Verify that an image file exists for each image entity
+referenced in the XML file: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#qa_entities" target="scripts">qa_entities</a> <i>*.xml</i></code>
+</li>
+<li>Fix problems, if any; this may require working with Kristy to
+assess/fix the problems</li>
+<li>Run the following scripts to supply PIDs (persistent IDs) to the XML files:
+<pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#tei_pidder" target="scripts">tei_pidder</a> <i>*.xml</i>
+<a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#pid_attributes" target="scripts">pid_attributes</a> <i>*.xml</i>
+</pre>
+</li>
+<li>Run the comprehensive QA program: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#qa_super" target="scripts">qa_super</a> -E -Z <i>*.xml</i></code>
+</li>
+<li>Fix errors, if any</li>
+<li>Update the file size recorded in the TEI header: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#refresh_filesize" target="scripts">refresh_filesize</a> <i>*.xml</i></code>
+</li>
+<li>Validate: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#xparse" target="scripts">xparse</a> <i>*.xml</i></code>
+</li>
+<li>Fix parsing errors, if any</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a>: From <code>80being_finalized</code>,
+run this command: <code><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#update_tracksys" target="scripts">update_tracksys</a> <i>*.xml</i></code>
+
+<div class="important">
+<span class="important">IMPORTANT</span><p>Running <code>update_tracksys</code>
+here updates the tracking system to indicate that the files specified
+have been moved to <code>80final</code>. It is essential to
+immediately proceed to the next step and actually move the files to
+<code>80final</code>.</p>
+</div>
+</li>
+<li>
+<em>Move</em> files to
+<code>80final/<i>subdirectory</i></code>, substituting the
+appropriate subdirectory:
+  <ul>
+<li>For most books received from Apex, use <code>80final/apex</code>
+</li>
+<li>For Cavalier Daily files, use <code>80final/cavdaily</code>
+</li>
+<li>For EAF files, use <code>80final/eaf</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="fyi">
+<span class="fyi">FYI</span>
+<p>For each file processed successfully, the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> gets
+updated automatically as follows:</p>
+<table border="1" cellpadding="6">
+<tr>
+<td><code>qa_entities</code></td>
+<td>Finalization Workflow → Verify image files</td>
+</tr>
+<tr>
+<td><code>tei_pidder</code></td>
+<td>Finalization Workflow → Add PIDs</td>
+</tr>
+<tr>
+<td><code>qa_super -Z</code></td>
+<td>Finalization Workflow → Run QA program</td>
+</tr>
+</table>
+</div>
+
+
+
+<hr>
+<a name="d26"><h2>Copy to ReadyRepo</h2></a>
+<ul>
+<li>
+<code>cd</code> into
+<code>80final/<i>subdirectory</i></code>, substituting the
+appropriate subdirectory</li>
+<li>
+
+To copy the finalized items to ReadyRepo (the hand-off point
+between DLPS and the central repository), run this command:
+
+<pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#dlps2ReadyRepo" target="scripts">dlps2ReadyRepo</a> -p <i>project-name</i> <i>*.xml</i></pre>
+
+where <i>project-name</i> is the name of the "project"
+directory (either new or existing) to which the items should be copied
+within ReadyRepo. Normally, this should be a "monthly" directory,
+named with the 4-digit year, then an underscore, then a 2-digit number
+for the current month.
+
+<p>For example, for May 2006, you would use <code>-p 2006_05</code>:
+
+<pre>dlps2ReadyRepo -p 2006_05 <i>*.xml</i></pre>
+</p>
+
+<p><code>dlps2ReadyRepo</code> is a large and complex script
+that performs several important tasks:
+  <ul>
+<li>Copies XML file to <code>ReadyRepo</code>
+</li>
+<li>Creates web-deliverable derivatives of page-image TIFFs and
+      figure-image TIFFs (GIFs for bitonal TIFFs, JPEGs for
+      color/grayscale TIFFs), and puts them in place in the
+      <code>ReadyRepo</code> directory structure</li>
+<li>Archives XML file to
+      <code>/shares/text/04xmlArchive/10final/</code> and archives TIFF
+      files to <code>/shares/image1/09archive/</code>
+</li>
+<li>If entire process succeeds, deletes page images, figure
+      images, and XML file from their original locations</li>
+</ul>
+</p>
+
+<p>For further information, see the online scripts documentation for
+<a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#dlps2ReadyRepo" target="scripts">dlps2ReadyRepo</a>.</p>
+
+<div class="note">
+<span class="note">NOTE</span><p>The creation of web-deliverable derivatives
+takes a <em>long</em> time. You should expect that
+<code>dlps2ReadyRepo</code> will run for several hours, and that
+it will likely need to run overnight.</p>
+</div>
+
+<div class="tip">
+<span class="tip">TIP</span>
+<p>If you experience script timeouts while running
+<code>dlps2ReadyRepo</code>, try running the process in the
+background:
+
+<pre>nohup dlps2ReadyRepo -p <i>project-name</i> <i>*.xml</i> &amp;</pre>
+
+The <code>nohup</code> (no hangup) command allows you to log out
+of the terminal without interrupting the script, while the
+<code>&amp;</code> at the end tells the Unix shell to run the
+process in the background.</p>
+
+<p>When running <code>dlps2ReadyRepo</code> in this way, status
+messages will not appear on screen. To check the status of the
+process, use the <code>ps</code> command to see which processes
+are running under your user ID:
+
+<pre>ps -ef | grep <i>user-id</i></pre>
+
+Alternatively, you can look in an output directory such as:
+
+<pre>/cenrepo/ReadyRepo/image/<i>project-name/dlps-id</i>/uvaHighRes/max</pre>
+
+for example:
+
+<pre>/cenrepo/ReadyRepo/image/2006_05/b000123456/uvaHighRes/max</pre>
+
+to see how many derivative images have been created so far for that
+ID.</p>
+</div>
+
+<div class="tip">
+<span class="tip">TIP</span>
+
+<p>If <code>dlps2ReadyRepo</code> fails to process a particular
+ID, it may be possible to complete the processing without starting
+over from the beginning. (Such a failure typically occurs when the
+MrSID encoder fails to process a particular image file. MrSID is only
+used for color images, namely figure images and color page
+images.)</p>
+
+  <ul>
+<li>Using the on-screen feedback or the log file, determine the
+  file for which processing failed.</li>
+<li>Manually delete the <em>output</em> file (<em>not</em>
+  the source TIFF) for which processing failed, since it may be
+  incomplete or corrupt. (Normally this will be the last .sid
+  derivative image file to be generated, and will be found in
+  <code>/cenrepo/ReadyRepo/image/<i>project-name/dlps-id</i>/uvaHighRes/max</code>.)</li>
+<li>Determine whether any instances of
+  <code>mrsidgeoencoder</code> (the MrSID encoder) are still
+  running:
+
+  <pre>ps -ef | grep <i>user-id</i></pre>
+
+  This will provide a list of currently running processes that you
+  initiated. Kill instances of <code>mrsidgeoencoder</code>
+  using the Unix <code>kill</code> command.</li>
+<li>Return to the directory containing the XML file, such as
+  <code>/shares/text/04postkb/80final/apex</code>
+</li>
+<li>Run <code>dlps2ReadyRepo</code> again, this time using
+  the -R (resume) option:
+  <pre>dlps2ReadyRepo -R -p <i>project-name</i> <i>dlps-id.xml</i></pre>
+  </li>
+</ul>
+
+</div>
+</li>
+<li>
+<code>cd</code> to the directory containing the XML files
+you just copied to the repository:
+
+<pre>cd /cenrepo/ReadyRepo/text/<i>project-name</i>/uvaBook/tei</pre>
+
+In some cases, you will use <code>uvaGenText</code> or
+<code>uvaPageBook</code> instead of <code>uvaBook</code>.</li>
+<li>Verify that all image files are present and accounted for within
+the <code>ReadyRepo</code> directory structure:
+
+<pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#qa_entities" target="scripts">qa_entities</a> -E -R <i>project-name</i> <i>*.xml</i></pre>
+</li>
+<li>Fix problems, if any</li>
+<li>Run the web-based cleanup script:
+
+  <ul>
+<li>Generate a semicolon-delimited list of DLPS IDs
+    corresponding to the items you copied to <code>ReadyRepo</code> in
+    a previous step:
+
+    <pre><a href="http://pogo.lib.virginia.edu/dlps/dlps-only/dlpsdoc/text/scripts/dlpsTextScripts.html#listBaseNames" target="scripts">listBaseNames</a> -d ';' <i>*.xml</i></pre>
+
+    Copy the list to the clipboard; you'll need it in a moment.</li>
+<li>Go to the web-based
+    <a href="/cgi-dlps/dlps-only/cleanup/dirman.pl" target="_blank">Cleanup Manager</a>
+</li>
+<li>Paste the semicolon-separated list of the DLPS IDs you
+    generated earlier, then click <b>Search</b>
+</li>
+<li>Review the files and directories found, and check those you
+    want to remove. Normally you will check all checkboxes.</li>
+<li>Click <b>Remove</b>. The files and directories you
+    checked will be deleted when the cleanup script runs
+    overnight (cron job).</li>
+<li>Update the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a>:
+      <ul>
+<li>Use the semicolon-separated list of the DLPS IDs generated
+      earlier (with the <code>listBaseNames</code> script) to
+      search for these items in the tracking system</li>
+<li>In the <b>Finalization</b> workflow view, check
+      the <b>Run cleanup script</b> step for these items,
+      <em>and also mark them as <b>FINISHED</b></em>
+</li>
+</ul>
+    </li>
+</ul>
+</li>
+</ul>
+
+<div class="fyi">
+<span class="fyi">FYI</span>
+<p>For each file processed successfully, the <a href="/dlps/uva-only/tracksys/" target="_blank">DLPS tracking system</a> gets
+updated automatically as follows:</p>
+<table border="1" cellpadding="6">
+<tr>
+<td><code>dlps2ReadyRepo</code></td>
+<td>Finalization Workflow → Run dlps2ReadyRepo</td>
+</tr>
+<tr>
+<td><code>qa_entities -R</code></td>
+<td>Finalization Workflow → Verify image files (ReadyRepo)</td>
+</tr>
+</table>
+</div>
+
+
+</body>
+</html>

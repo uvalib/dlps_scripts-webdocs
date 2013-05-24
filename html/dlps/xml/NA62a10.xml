@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0035 SYSTEM "000000766_0035" NDATA jpg>
+<!ENTITY DSSR_000000766_0036 SYSTEM "000000766_0036" NDATA jpg>
+<!ENTITY DSSR_000000766_0037 SYSTEM "000000766_0037" NDATA jpg>
+<!ENTITY DSSR_000000766_0038 SYSTEM "000000766_0038" NDATA jpg>
+
+<!--<!ENTITY NA62a10a SYSTEM "NA62a10a.jpg" NDATA jpg>
+<!ENTITY NA62a10b SYSTEM "NA62a10b.jpg" NDATA jpg>
+<!ENTITY NA62a10c SYSTEM "NA62a10c.jpg" NDATA jpg>
+<!ENTITY NA62a10d SYSTEM "NA62a10d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NA62a10">
+    <teiHeader type="migrated">
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+                        value="1862-01-10">1862 January 10</date></title>
+
+                <author>Case, Adelaide E.</author>
+                <editor> </editor>
+                <respStmt>
+                    <resp/>
+                    <name/>
+                    <resp>Creation of machine-readable version:</resp>
+                    <name>Rare Book School 2001 Introduction to Electronic Texts, University of
+                        Virginia</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>University of Virginia Library Electronic Text Center.</name>
+                </respStmt>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">13</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <idno type="etext">NA62a10</idno>
+                <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+                <date value="2000">2000</date>
+            </publicationStmt>
+            <seriesStmt>
+                <title>The Corinne Carr Nettleton Civil War Collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+                <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+            </seriesStmt>
+            <notesStmt>
+                <note>
+                    <p>Page images have been included from the original source.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney, 1862 January 10</title>
+
+
+                        <author>Adelaide E. Case</author>
+                        <editor> </editor>
+                        <respStmt>
+                            <resp/>
+                            <name/>
+                        </respStmt>
+                    </titleStmt>
+                    <editionStmt>
+                        <p> </p>
+                    </editionStmt>
+                    <extent>4 p. </extent>
+                    <publicationStmt>
+                        <publisher/>
+                        <pubPlace/>
+                        <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+                            Nettleton Civil War Collection, Department of Special Collections,
+                            Alderman Library, UVa.</idno>
+                    </publicationStmt>
+                    <seriesStmt>
+                        <p> </p>
+                    </seriesStmt>
+                    <notesStmt>
+                        <note>
+                            <p/>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Prepared for the University of Virginia Library Electronic Text Center. </p>
+            </projectDesc>
+            <editorialDecl>
+                <p>Original lineation has been maintained. </p>
+                <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+                    aid in establishing analytical groupings. </p>
+            </editorialDecl>
+            <refsDecl>
+                <p> </p>
+            </refsDecl>
+
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date value="1862-01-10">1862-01-10</date>
+            </creation>
+            <langUsage>
+                <language id="eng">English </language>
+            </langUsage>
+            <handList>
+                <hand id="h1"/>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+            <textClass>
+                <keywords>
+                    <term>nonfiction</term>
+                    <term>prose</term>
+                    <term>feminine</term>
+                    <term>American Civil War/Special Collections</term>
+                </keywords>
+                <keywords>
+                    <term type="Field650">LCSH</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2001-05">May 2001</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Carolyn Fay, Electronic Text Center</name>
+                </respStmt>
+                <item>Updated TEI header and tags.</item>
+            </change>
+            <change>
+                <date value="2005-07">July 2005</date>
+                <respStmt>
+                    <resp>Corrector</resp>
+                    <name>John Ivor Carlson</name>
+                </respStmt>
+                <item>Converted to XML and/or checked tags.</item>
+            </change>
+            <change>
+                <date value="2009-11-03">November 3rd, 2009</date>
+                <respStmt>
+                    <resp>corrector</resp>
+                    <name>Digital Curation Services Staff</name>
+                </respStmt>
+                <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+                    (uva-dl-tei).</item>
+            </change>
+            <change>
+                <date value="2010-09-30">September 30, 2010</date>
+                <respStmt>
+                    <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+                    <resp>corrector</resp>
+                </respStmt>
+                <item>Minor corrections to spacing.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text id="d1">
+        <front id="d2">
+            <div1 type="summary" n="1" id="d3">
+                <head>
+                    <bibl>
+                        <abbr>ALS</abbr>
+                        <extent>4 pp.</extent>
+
+                        <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+                    </bibl>
+                </head>
+
+                <p> Addie sits with an ill schoolmate. She catches Charlie up on news of mutual
+                    acquaintances. In addition to answering several of Charlie's questions about
+                    Mecca and her social life, she thanks him for the picture he sent her. </p>
+            </div1>
+        </front>
+        <body id="d4">
+            <div1 type="letter" n="1862-01-10" id="d5">
+                <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-01-10"
+                        >1862 January 10</date></head>
+                <pb entity="DSSR_000000766_0035"/>
+                <opener>
+                    <dateline><name type="place">Mecca</name> January 10<hi rend="super">th</hi> 1862</dateline>
+
+                    <salute>Friend and Brother</salute>
+                </opener>
+                <p> Your list of unanswered<lb/> letters shall be diminished by one if<lb/>
+                    <name type="sender">Addie's</name> pen and hand can accomplish<lb/> the work.
+                    But I fear that it will be a<lb/> difficult task this morning. How is <name
+                        type="person">Hallie</name>?<lb/> I trust he is better. why <name
+                        type="recipient">Charlie</name> you do not<lb/> know how alarmed I was about
+                    my brother. </p>
+
+                <p> If I did not know that Hal had a<lb/> friend in <name type="recipient"
+                    >Charlie</name>, and that that friend would<lb/> exert every nerve for his
+                    comfort. I doubt<lb/> that I could feel as contented as I now do<lb/> I am with
+                    one of my schoolmates, she<lb/> is quite ill I fear that she is not long for<lb/>
+                    <pb n="2" entity="DSSR_000000766_0036"/> this dreary world. her name
+                        is <name>Sarah</name><lb/>
+                    <unclear>Hezles</unclear> I remained with her last night<lb/> therefore you need
+                    not wonder if my thoughts<lb/> are not very connected. I am with her now.<lb/>
+                    What a gloomy dismal day this is<lb/> a foggy vapor hangs over the earth
+                    and<lb/> finds every thing in obscurity that is<lb/> not near you. We have not
+                    had much<lb/> sleighing a few have ventured out but as<lb/> Laurie says they are
+                    slaying instead of sleighing<lb/> Oh <name type="recipient">Charlie</name>!
+                        <name>James Beele</name> was married last New<lb/> Years to <name>Miss
+                            Almeda <unclear>Schoville</unclear></name> of <name type="place"
+                    >Mecca</name> she<lb/> has always lived in <name type="place">Mecca</name>. It is
+                    just<lb/> about silly and joined to gether </p>
+                <p> The young ladies had a day of mourning<lb/> and concluded to dress in crape
+                    thirty days<lb/> Dear <name type="recipient">Charlie</name> don't you wish you
+                    could be here<lb/> next <unclear>Thursday</unclear> eve I meant that for
+                    thursday,<lb/> Your correspondent Miss Case Esq. intends opening<lb/> his <add
+                        place="inline" hand="h1">printing</add> office
+                    and <unclear>convince</unclear> the printing of the<lb/> "Offering" Do you not
+                    think that <name type="sender">Addie</name> will<lb/> produce an effect worth
+                    seeing. or do you think<lb/> that I am inefficacious. </p>
+
+                <pb n="3" entity="DSSR_000000766_0037"/>
+                <p> Well dear <name type="recipient">Charlie</name> I am going to be<lb/> late for
+                    school this morning but I<lb/> shall charge it to you would not you! I must<lb/>
+                        thank <add hand="h1" place="supralinear">again</add> you for your picture
+                    that you so kindly sent<lb/> me. You ask me about <name type="place">Mecca</name>
+                        or <name type="place">Oiltown</name><lb/> Well <name type="place"
+                    >Oiltown</name> is once again known as <name type="place">Mecca</name><lb/>
+                    although some of the most ambitious of Adams<lb/> race still strive to maintain
+                    the title of <name type="place">Oiltown</name><lb/> in the south part of the
+                    town. But I fear that<lb/> they have but from sustenance. You ask also<lb/> if I
+                    attend many parties. No indeed, there<lb/> are none to attend. We are reserving
+                    our party<lb/> times until the return of those who are<lb/> worthy of a party.
+                    But there was a <unclear>donations</unclear><lb/> in <name type="place"
+                    >Johnston</name> for our minister last night<lb/>
+                    <name type="person">Laurie</name> went but I concluded that it was<lb/> my duty
+                        to <add hand="h1" place="supralinear">stay with</add> Sadie (There are so
+                    many<lb/> talking that I can not write </p>
+                <p> You must take care good care of my<lb/> brother and cure him for I want<lb/>
+                    both of you to come home before<lb/> I go to <name type="place">Oberlin</name>. I
+                    will write again<lb/> in a few days meanwhile I shall<lb/>
+                    <pb n="4" entity="DSSR_000000766_0038"/> look anxiously for a letter from
+                    you<lb/> informing me that Hal has recovered<lb/> at present I must bid you <orig
+                        reg="good-bye">good by </orig></p>
+
+                <closer>
+                    <salute>As ever your sister</salute>
+
+
+                    <signed>
+                        <name type="sender">Addie</name>
+                    </signed>
+
+                    <seg type="postscript">P. S. I received a letter from <name>Dora</name> Wednesday</seg>
+
+                </closer>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

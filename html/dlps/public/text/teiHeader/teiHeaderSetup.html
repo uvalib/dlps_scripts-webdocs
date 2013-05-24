@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>Setup for TEI Header Workflow - DLPS</title>
+<link rel="stylesheet" type="text/css" href="/dlps/css/dlpsdoc.css">
+</head>
+<body>
+<h1>Setup for TEI Header Workflow</h1>
+<p><b>Digital Library Production Services, University of Virginia Library</b></p>
+
+<!-- UPDATE DATE MANUALLY WHEN MODIFYING THIS FILE ************************ -->
+<p><b>Last modified:</b> November 2, 2006</p>
+
+<p><b>Overview:</b> The DLPS workflow for creating full TEI headers
+requires certain software to be present on the user's local PC. This
+document details the requirements.</p>
+
+<hr>
+
+<ul>
+
+<li><b>Perl</b> &mdash; Have your LSP install Perl. The standard port
+of Perl for Windows is called ActivePerl and is available as a free
+download from
+
+<blockquote><a href="http://www.activestate.com/Products/ActivePerl/">http://www.activestate.com/Products/ActivePerl/</a></blockquote>
+
+To test the installation, open a command window (Start &rarr; Programs
+&rarr; Accessories &rarr; Command Prompt) and enter: <tt>perl
+-v</tt></li>
+
+
+<li><b>Java</b> &mdash; Have your LSP install the Java Runtime
+Environment, available as a free download from
+
+<blockquote><a href="http://java.com/">http://java.com/</a></blockquote>
+
+(Just click the <b>Get It Now</b> button.) To test the installation,
+open a command window (Start &rarr; Programs &rarr; Accessories &rarr;
+Command Prompt) and enter: <tt>java -version</tt><br><br></li>
+
+
+<li><b>Oxygen</b> &mdash; The preferred XML editor is Oxygen. It's a
+commercial product (DLPS and Cataloging have licenses for the
+workstations where Oxygen is installed), but the latest version of
+Oxygen is available as a free download from
+
+<blockquote><a href="http://www.oxygenxml.com/">http://www.oxygenxml.com/</a></blockquote></li>
+
+<li><b>Setup for the MARC-to-TEI conversion script</b>
+
+  <ul>
+
+  <li>If you don't already have a folder named <tt>C:\temp</tt> on
+  your computer, create it. (This folder is needed for temporary files.)</li>
+
+  <li>Make sure you have write permission on folder <tt>C:\temp</tt>
+  and on whatever folder you use for the output file.</li>
+
+  <li>Map the DLPS workspace <tt>\\pogo.lib.virginia.edu\text</tt> as
+  a network drive, using any available drive letter.</li>
+
+  <li>Download the file <a href="marc2tei.vbs">marc2tei.vbs</a>
+  (right-click and choose <b>Save Target As...</b>, then for file
+  type, select "All files") and save it to any convenient
+  location. You may want to create a folder such as
+  <tt>C:\marc2tei</tt> for this purpose.</li>
+
+  </ul>
+
+</li>
+
+<li><b>Oxygen setup</b> (optional)
+
+  <ul>
+
+  <li>Open Oxygen; go to Tools &rarr; External Tools &rarr; Preferences</li>
+
+  <li>Click <b>New</b> to set up a new external tool</li>
+
+  <li>Under "Name", enter "MARC to TEI" (or other suitable name)</li>
+
+  <li>Under "Command line" enter "WScript.exe" followed by the full
+  path to this script file. For example: <code>WScript.exe C:\marc2tei\marc2tei.vbs</code></li>
+
+  <li>Click <b>OK</b>; click <b>OK</b> again to dismiss the Preferences window</li>
+
+  <li>The MARC-to-TEI conversion script is now available within
+  Oxygen. Go to Tools &rarr; External Tools &rarr; MARC to TEI, or
+  just click "MARC to TEI" in the main Oxygen toolbar.</li>
+
+  </ul>
+
+  <b>Note:</b> When the MARC-to-TEI conversion is complete, the script
+  attempts to open the TEI XML output file in your preferred XML
+  editor. The default editor is Oxygen 7.2:
+
+  <blockquote><code>C:\Program Files\Oxygen XML Editor 7.2\oxygen7.2.exe</code></blockquote>
+
+  If this program doesn't exist on your computer, the script will
+  alert you and give you the opportunity to find your preferred XML
+  editor using a standard file-selection window. The script will save
+  the location of your preferred editor for future use.
+
+  <lb><lb>
+
+  If you upgrade to a later version of Oxygen, you will need to edit
+  the script's configuration file (named <code>marc2tei.ini</code> and
+  located in the same folder as the <code>marc2tei.vbs</code> script
+  file). The last line of the file contains the path to the preferred
+  XML editor; change it to point to the latest version of Oxygen.
+
+</li>
+
+</ul>
+
+</body>
+</html>

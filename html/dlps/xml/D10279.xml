@@ -1,0 +1,1642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % ISOtech SYSTEM "http://text.lib.virginia.edu/charent/iso-tech.ent"> %ISOtech;
+
+<!ENTITY DSSR_000001125_0308 SYSTEM "000002759_0308" NDATA uvaHighRes>
+]>
+
+<TEI.2 id="D10279">
+    <teiHeader type="AACR2">
+
+        <fileDesc>
+            <titleStmt>
+
+                <title type="main">MICAJAH WOODS JOURNAL</title>
+
+                <author>Woods, Micajah, 1844-1911</author>
+                <respStmt>
+                    <resp>Creation of machine-readable version: </resp>
+                    <name>Digital Curation Services , University of Virginia Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Digital Curation Services</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Creation of digital images:</resp>
+                    <name>Digitization Services, University of Virginia Library</name>
+                </respStmt>
+
+            </titleStmt>
+
+            <extent>ca. <num type="kilobytes"></num> kilobytes</extent>
+
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia </pubPlace>
+                <idno type="DCS">D10279</idno>
+                <date value="2010">2010</date>
+            </publicationStmt>
+            
+            <seriesStmt>                
+                <title>University of Virginia Library, Text collection</title>                
+                <idno type="uva-set">UVA-LIB-Text</idno>                  
+                <idno type="uva-set">UVA-LIB-CivilWar</idno>                
+            </seriesStmt>
+
+            <sourceDesc>
+
+                <biblFull>
+                    <titleStmt>
+                        <title type="main">Papers of Micajah Woods [manuscript], 1847-1926.</title>
+                        <title type="sort">papers of micajah woods [manuscript], 1847-1926.</title>
+                        <author>Robinson, S. Pearl</author>
+                    </titleStmt>
+                    <extent>1 vol.</extent>
+                    <publicationStmt>
+                        <idno type="Accession No.">mss 10279</idno>
+                        <idno type="Virgo ID">X030018856</idno>
+                        <idno type="title control number">AKE7497</idno>
+                        <availability>
+                            <p> Albert &amp;Shirley Small Special Collections, University
+                                of Virginia Library, Charlottesville, Virginia, USA</p>
+                        </availability>
+                    </publicationStmt>
+                </biblFull>
+
+            </sourceDesc>
+
+
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <!-- Per Matt we need to work on this statement-->
+                <p> Prepared for the University of Virginia Library by Digital Curation Services
+                    staff and volunteer Mary Roy Dawson Edwards, Transcriber. April 2000.</p>
+            </projectDesc>
+        </encodingDesc>
+
+        <profileDesc>
+            <langUsage>
+                <language id="eng" usage="main">English</language>
+            </langUsage>
+            <handList>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+        </profileDesc>
+
+    </teiHeader>
+	<text>
+
+
+	<front>
+		<pb n="Spine"/>
+		<pb n="Front Cover"/>
+		<pb n="Back Cover"/>
+		<pb n="Top Edge"/>
+		<pb n="Bottom Edge"/>
+		<pb n="Front Edge"/>
+<div1 type="fly-title">
+		<pb n="fly-leaf"/>
+<head type="main">MICAJAH WOODS JOURNAL</head>
+
+<note>This diary is written on the blank pages in an Almanac and Memoranda Book for 1864.</note>
+
+
+<!--Appearing on the fly-leaf:-->
+
+               
+                       <p><hi rend="center">Micajah Woods<lb/>
+                          1st Lieut. Jr. Jacksons<lb/>
+                          <unclear>[line unreadable]</unclear><lb/>
+     								<lb/>
+                          Jackson’s Battery<lb/>
+                          Jackson’s Brigade<lb/>
+                          Army Western Va.<lb/>
+									<lb/>
+                          Bought in Charlottesville<lb/>
+                          February 5th. 1864<lb/>
+                          50 cts.</hi></p>
+	<pb/>
+	<pb n="2"/>
+	<pb n="3"/>
+	<pb n="4"/>
+	<pb n="5"/>
+	<pb n="6"/>
+	<pb n="7"/>
+	<pb n="8"/>
+	<pb n="9"/>
+	<pb n="10"/>
+	<pb n="11"/>
+	<pb n="12"/>
+	<pb n="13"/>
+	<pb n="14"/>
+	<pb n="15"/>
+	<pb n="16"/>
+	<pb n="17"/>
+	<pb n="18"/>
+	<pb n="19"/>
+	<pb n="20"/>
+	<pb n="21"/>
+	<pb n="22"/>
+	<pb n="23"/>
+	<pb/>
+</div1>
+		</front>
+	<body>      	
+                	<div1 type="section">
+                		<pb n="25"/>
+                		<head type="main">NOTE FROM TRANSCRIBER</head> <!-- header added by DCS staff -->
+
+<p rend="indent">Micajah Woods used this almanac as a daily journal. However, thru the Gettysburg campaign, 
+the printed almanac page dates have no relationship to the actual dates of this Civil War Journal. 
+The events Micajah Woods are recording in this Journal begin in May 1863.  Therefore, since the 
+date on the almanac is 1864 but the Gettysburg campaign occurs in 1863, Micajah must have copied 
+his entries from another source. When the actual date is mentioned in this Journal or can be 
+determined by the event recorded,  it is enclosed in brackets at the beginning of the entry in 
+bold. See also Micajah Wood’s notation on March 31st, 1864.</p>
+             
+	<div2 type="entry">
+		<head type="main">n.d.</head><!-- Friday, January 1st. -->
+<p rend="indent">Returned to camp in <unclear>Morome [?]</unclear> Draft after an absence of three days 
+	at Uncle David’s  &mdash; Mrs. Mahala S Heb<unclear>_____[?]</unclear> 
+		spent last night most charmingly in company with cousins Mag.  Mary &amp; Sallie Price &amp; Maj. Eakle at Mr. Price’s &mdash; 
+		Coldest day I ever experienced in the Army &mdash;</p>
+	</div2>
+          		
+	<div2 type="entry">
+		<head type="main">n.d.</head><!-- Saturday, 2nd. -->
+<p>Had 13 blankets over me last night &amp; failed to sleep a wink &mdash; <unclear>___________</unclear> around the log fire all night &mdash; the coldest
+since the war began &mdash; Greenbrier River frozen over several inches thick &mdash; wagons or <unclear>croping [?]</unclear></p>
+	</div2>
+                	
+	<div2 type="entry">
+		<head type="main">n.d. <!-- Sunday, 3rd. --></head>
+<p>our whole Battery has been protected by nothing in the world but flies &mdash; with fires built in front &mdash; the men suffer
+terribly &mdash; This company has never been in Winter Quarter   It was organized on the <date value="1863-05-02">2<hi rend="super">nd</hi> May  	
+	<!-- Monday, 4th. -->
+1863</date> near  <unclear>_____</unclear> Va. Capt. Thomas E.  Jackson of Kanawha being unanimously elected captain.  R. H. Blair 1st Lt. Sr. 
+Mr. Woods 1st. Lt. Jr. and
+	
+ <pb n="26"/>
+		
+	<!--  Tuesday, 5th. -->
+R. B. Wortham of Caroline Corp  2nd Lt. Sr. &amp; H. S. Norton of Kana-wha 2<hi rend="super">nd</hi> Lt. Jr. <unclear>_____</unclear>
+of the men were members of Jackson’s old Battery captured at Donald-
+	
+	<!-- Wednesday, 6th. -->
+son. The rest were from Tazewell &amp; Russel principally &mdash; soon after the organization we were 
+ordered to New River Bridge and their <unclear>renamed [?]</unclear> 
+                		
+	<!-- Thursday, 7th. --><note> [<date value="1863-06-01">June 1, 1863</date>] </note> <lb/>
+till after June 1<hi rend="super">st</hi> when were ordered to form our Brigade in the Lower Valley of the Shenandoah.  I took 
+	charge of a position &amp; went 
+
+	<!-- Friday, 8th. -->
+by Rail through Lynchburg Charlottesville to Staunton where were joined in a few days by the portion that came 
+	overland by way of Lexington
+	
+	<!-- Saturday, 9th.-->
+under Jackson &amp; Blair Thence we marched to Winchester &amp; crossed the Potomac with Longstreet’s<lb/> 
+
+	<!-- Sunday, 10th. --><note> [<date value="1863-06-26">June 26, 1863</date>]</note> <lb/>   
+Corps at Williamsport on the 26<hi rend="super">th</hi> June &mdash; thence made forced marches till we came up
+	with our Brigade. Jenkins 4 miles from Harrisburg Pa.
+	
+	<!-- Monday, 11th. -->
+where we entered out first engagement &mdash; driving the Enemy Batteries from the field &mdash; We
+	remained there fighting every day for four days when we
+	
+	<!-- Tuesday, 12th. -->
+were ordered to join the  main army at Gettysburg which place we reached on July 1<hi rend="super">st</hi>.   
+	After the first battle was over in the evening &mdash; 
+	
+	<!--  Wednesday, 13th.--> <note>[<date value="1863-07-02">July 2, 1863</date>]</note> <lb/> 
+all day Thursday <note>[<date value="1864-07-02">July 2nd, 1864</date>]</note> we were in line of Battle opposite the Enemy’s centre &mdash; and part of 
+	the time under fire &mdash; but took no active part 
+	
+	<!-- Thursday, 14th. --> <note>[<dateRange from="1863-07-02" to="1863-07-03">July 2 &amp; 3, 1863</dateRange>]</note> <lb/>   
+in magnificent &amp; splendid Battle which we had a commanding view of &mdash; Friday morning <note>[<date value="1864-07-03">July 3rd, 1864</date>]</note> 
+we moved to the left with Genl. Stuart’s whole command to resist 
+	
+	<!--  Friday, 15th.-->
+an attack on our left wing &mdash; We encountered a long round Battery at the distance of 1 1/4 miles 
+	which <unclear>_____</unclear> disabled our 
+	
+	<!-- Saturday, 16th. -->
+Battery &amp; compelled it to retire under orders. Ours were 3 Dalghren Bout Howi-tzers and one Three inch 
+	Richmond Rifle &mdash; a very
+
+		<pb n="28"/>
+		
+	<!--  Sunday, 17th.-->
+inferior gun but longer ranged than the others &mdash; I had charge of <unclear> [lined through text] </unclear> 
+	a large bout Howitzers in action &mdash;
+
+	<!-- Monday, 18th. -->
+We had in a few minutes 7 horses killed &amp; two men wounded. A Shell had scraped my leg &mdash; but
+	
+	<!-- Tuesday, 19th. -->
+left me uninjured beyond a small scratch &amp; bruises. Falling back from Gettysburg with Stuarts Division 
+	via Emmitsburg we reached Will-iamsport <unclear>Maryland [?]</unclear> where we
+
+	<!--  Wednesday, 20th. -->
+were in action again with the evening &mdash; also the same day at Hagerstown &mdash; We recrossed 
+	the Potomac &mdash; marched to Staunton where we secured our 3 in <note>[inch]</note> Yankee Rife <note>[Rifle]</note> &amp;
+
+	<!-- Thursday, 21st. -->
+one 10 <unclear>____</unclear> Yankee Parrott and two Georgia 3 in. <note>[inch]</note> <unclear>cannon [?]</unclear> &mdash; The last we left 
+	not having horses to pull them &mdash;
+
+	<!--  Friday, 22nd. -->
+We marched with the Brigade to Highland, <unclear>then [?]</unclear> to the neighborhood of Lewis-burg &mdash; and participated
+	actively at Droop Moun-tain &mdash; My 3 in <note>[inch]</note> gun firing 192 rounds and
+		
+		<pb n="29"/>
+		
+	<!--  Saturday, 23rd. -->   
+with the assistance of our Parrott driving two of the enemy’s battery from the field &mdash; Wintered in that vicinity till about<lb/>
+	
+	<!-- Sunday, 24th. --> <note>[ <date value="1864-01-15">January 15, 1864</date>]  </note>   
+<date value="1864-01-15">Jan. 15<hi rend="super">th</hi> 1864</date> when we marched to Dublin &amp; took up  winter quarters 
+	on Walkers Creek, Giles Co.,Va &mdash;</p> 
+	</div2>
+                		<div2 type="entry">
+		<head type="main">n.d. <!-- Monday, 25th. --></head>
+                			<p>started home from Dublin &mdash; left Bole in charge of Strickler sold Scrub<ref n="1" target="n1">1</ref><note id="n1" n="1" place="end">
+                				<seg type="note-symbol">1</seg><p>[a horse?]</p></note> for &#x0024;400 &mdash; Reached
+	Lynchburg , sojourned at Va.  <unclear>_____</unclear> house &mdash; Patterson set out today Walker’s Creek</p>
+	</div2>
+                		
+	<div2 type="entry">
+		<head type="main">n.d. <!-- Tuesday, 26th. --></head> 
+		<!-- [The entry for this date is scratched out.] -->
+		<p>I started from Dublin Depot home on leave for 20 days &mdash;  <!-- missing line of text --> to do winter encampment on 
+			Walker’s Creek.</p>
+	</div2>
+                		
+	<div2 type="entry">
+     <head type="main">Wednesday, 26th.</head> 
+<p>purchased in Lynchburg cloth for uniform complete &amp; trimmings &mdash; Reached home today &mdash; found all well &amp; happy &mdash;</p> 
+	</div2>
+                		
+	<div2 type="entry">
+     <head type="main">n.d. <!-- Thursday, 28th. --></head>
+<p>Spent a quiet pleasant day at home &mdash; talking over the prospect &amp; past  with my dear Father &mdash; Mother &mdash;brothers</p>
+			
+		<pb n="30"/>
+	</div2>
+                		<div2 type="entry">
+     <head type="main">n.d. <!-- Friday, 29th. --></head>
+<p>Started to Richmond to day &mdash; to see Col. Shields. Conscript officers &amp; make purchases for comfort in the Army &mdash;</p>
+                		</div2>
+                		
+	<div2 type="entry">
+     <head type="main">n.d. <!-- Saturday, 30th. --></head>
+<p>Spent to day in City &mdash; eat oysters &amp; ice cream &amp; went to Theatre &mdash; attended to all business &mdash;</p>
+	</div2>
+                		
+	<div2 type="entry">
+     <head type="main">n.d. <!-- Sunday, 31st. --></head>
+<p>Came home today &mdash; damp raw day &mdash; caught severe cold &mdash; found Cousins Carrie Mafair &amp; Julie at Holkham&mdash;</p>
+	
+<p>The early part of this month was spent in Monroe Draft where Battery was camped &mdash; My time passed pleasantly
+in this vicinity &mdash; My relatives &amp; friends treating me with great kindness &amp; consideration &mdash; 
+On reaching Dublin I went immediately to Albemarle whither I had not been for more than four months &mdash; Vide
+Memorandum for expenses incurred on trip home &mdash;</p>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="31"/>
+		
+     <head type="main">n.d. <!-- Monday, February 1st. --></head>
+<p>Spent at Holkham.</p>
+	</div2>
+                		
+	<div2 type="entry">
+     <head type="main">n.d. <!-- Tuesday, 2nd. --></head> 
+<p>Miss Mary Woodson reached Holkham escorted by Lt. Chas. Christian &mdash; I suffer terribly from severe cold&mdash;</p>
+	</div2>
+                		
+	<div2 type="entry">
+     <head type="main">n.d. <!-- Wednesday, 3rd. --></head>
+<p>Can scarcely articulate on account of cold in chest &mdash;</p>
+	</div2>
+                	
+	 
+	<div2 type="entry">
+     <head type="main">n.d. <!-- Thursday, 4th. Friday, 5th. Saturday, 6th.--></head>
+		 
+
+<p>Nearly the whole of my leave was spent quietly at home &mdash; The whole of our family were at home &mdash; Scarce-ly a day
+passed that the old mansion was not filled with company &mdash; Miss Mary Woodson &amp; Miss Carrie Massie remained about
+10 days &mdash; Dr. Lewis  Capt. Pleasants &amp; Chas Christian &amp; Henry Massie spent several days
+
+		<pb n="32"/>
+	
+with us &mdash; Nightingale, Hunter 
+Powell &amp; Lieut Ro. E. Lee son of Genl Lee visited me &mdash; besides several other old school mates &mdash; Capt &mdash; Chew
+of Chews Horse Artillery &amp; Louis <unclear>Monell [?]</unclear> also spent a night with us &mdash; Lieut. Thadeus <unclear>Mc Learty [?]</unclear> came
+from Lee’s Army &amp; stayed a night with us also &mdash; seeing these old friends revived many pleasing &amp; glorious 
+appreciations &mdash; My Fathers 20 yr. old liquor was used freely&mdash; a great rarity &mdash; for these times when liquor 
+<unclear>mean[?]</unclear> is worth <unclear>&#x0024;75 [?]</unclear> per gallon</p>	
+		<!-- <note>Page 32 &amp; 33. Feb. 7th thru 18th.</note> -->
+	<pb n="33"/>
+		
+    
+     
+<p>The County of Albemarle is but one scene of gayety &amp; <unclear>revelry [?]</unclear> &mdash; Fitz Lee’s Cavalry Division has been spending
+most of the winter in this section &mdash; The ladies think of nothing but beaus &mdash; The officers &amp; men devote their
+time to visiting &mdash; drinking &amp; dancing. &mdash; Charlottesville had two grand military balls a few days   before I
+reached The County.   In my neighborhood were the Tusses <unclear>Strict [?]</unclear> of Richmond whom I called upon &mdash; Miss 
+Betty  Price &mdash; among the ladies I called upon were Misses Lydia Wood &mdash; Nannie Maury &mdash; Betty Colston &mdash; Mary 
+Fife &mdash; Eugenia Lewis &mdash; Miss Lucilla Wood &amp; Mrs. Harper &mdash; Miss Hattie Howe came to Holkham with Cousin Carrie
+M. &amp; spent several days &mdash; she is quite a smart &amp; intelligent young lady &mdash;</p>
+
+
+<pb n="34"/>
+
+		<!-- <note>Page 34. [ On the Friday and Saturday spaces, the writing is perpendicular ]</note> --> 
+     
+<p>My leave expired on the 16<hi rend="super">th</hi> Just &mdash; I had it exten-ded for seven days on condition I would furnish enough socks
+for the winter Battery &mdash; which Mother agreed &amp; present from her own wool &mdash; Lee’s Genl. Stuart in Charlottesville
+thanked me for the great kindness &amp; politeness &mdash; Every body at home were so kind &amp; affection-ate that my heart
+almost bleeds to have to leave them for the winter <unclear>_____</unclear> &mdash;</p>
+</div2>
+<div2 type="entry">
+	
+	<head type="main">Sunday,  February 21st.</head>
+<!--	
+<note>[In the Almanac, beginning with the 21st. of February 1864, Lt. Micajah Woods starts being very particular
+about writing in each day’s space and also begins drawing lines between the day’s spaces. Therefore, it may be
+that this is where he begins to make entries according to the correct date.]</note>-->
+      
+<p>Spent last night at Mr. <unclear>Critman’s [?]</unclear> &mdash; attended Episcopal Church with Carrie Massie &mdash; accused by 
+	friends of intending to marry her to my anxious Lieut  &mdash; came home this evening</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Monday, 22nd.</head>
+<p>Professors Johns, <unclear>Gillensburg [?]</unclear> &amp; Munkin dined with me to day &mdash; splendid repast &mdash; wine port 
+	&amp; also whiskey in profusion &mdash; busy preparing to start tomorrow morning &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Tuesday, 23rd.</head>
+<p>Set out for camp &mdash; with charge of Miss Annie M. Garland &amp; Sallie Carr en route for Dublin &mdash; reached 
+Lynchburg &mdash; all went to Piedmont House &mdash; Subscribed for Daily <unclear>Republican [?]</unclear> til 
+	June 11<hi rend="super">th</hi> &mdash;</p> 
+	</div2>
+	<div2 type="entry">
+     <head type="main">Wednesday, 24th.</head>
+<p>Reached Dublin <unclear>_____</unclear> with ladies &mdash; came at once to camp 15 miles, on Walkers Creek   found everything
+well fixed   Men comfortable &amp; contented &mdash; <unclear>Blair [?]</unclear> gone to Richmond &amp; Staunton 
+	<unclear>_______</unclear> &mdash;</p> 
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="35"/>
+		
+     <head type="main">Thursday, 25th.</head>
+<p>Lt. Wortham goes on leave of 5 days. to Lynchburg &mdash; Presented 48 pair socks to men &mdash; all very glad 
+to see me &mdash; Day occupied in settling myself &mdash; Wall tent with chimney all ready
+	 &amp; very comfortable &mdash; My horse looks well &dash;</p> 
+	</div2>
+	<div2 type="entry">
+    <head type="main">Friday, 26th.</head>
+<p>Commenced discharge of camp duty &mdash; Maj. McLaughlin breakfasted with me &mdash; Rode with Captain Jackson 
+to Samul. Banes &mdash; took tea &mdash; saw splendid stal-lion &mdash; price &#x0024;1000. &mdash; Laid in supply of mess 
+eatibles &mdash; Stricker nabbed bridle off as usual &mdash; gave me <unclear>usable [?]</unclear> &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Saturday, 27th.</head>
+<p>Mrs. Carr murdered in the neighborhood last night &mdash; atrocious case &mdash; Capt. Minor    Capt. 
+Jackson made trial officers to day &mdash; sent letter to Father.   Read “Merry Wives of Windsor” &mdash; and
+not like the play &mdash; Mat. 1 &amp; 2</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Sunday, 28th.</head> 
+<p>No church today &mdash; Remained in camp &mdash; Read “Lucky Night or What you will” &amp; reviewed 
+“Merry Wives of Windsor”&mdash; Received handsome letter from Unl. J. B. Stuart requesting staff position.   
+also letter from home &mdash; called on Mrs. Lampkin &amp; Edward, sick at Mrs. Brown’s in the evening &mdash; Mat. # 18-IV</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Monday, 29th.</head>
+<p>Rode in morning with Capt. Jackson to Saml. Banes &mdash; Drew stationary to day from Major <unclear>Porom [?]</unclear> &mdash; Wrote
+a long letter home &mdash;scarcely any-thing else done &mdash; shame upon me &mdash; I will spend no more such days &mdash; Read Mat. V&mdash;</p>
+		
+<p>This month has been one of the pleasantest of my life &mdash; I said to a lady on the 23rd what I never had 
+the boldness to say before &mdash; would not you like to know what it was &amp;  the reply.</p>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="36"/>
+		
+     <head type="main">March. 1864.<lb/>
+     Tuesday,  1st.</head>
+<p>weighed to day 160 lbs &mdash; spent most of day in making draft of 3 in. Rifle gun by measurement<ref target="n2">2</ref> 
+<note id="n2" n="2">[make a measured drawing ?]</note> for Capt. C. L. C. Minor.   Very raw, &amp; unwholesome 
+	atmosphere raining &amp; snowing &mdash; Read Mat. VI &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Wednesday, 2nd.</head>
+<p>Spent nearly all day in writing&mdash; letter to Maj. Jenkins, Capt. Lyle &mdash; Aunt Freston &mdash; Cousin Mag 
+Price &amp; Capt. Harris &mdash; Lieut. Wortham returned to camp commenced Alsop’s Algebra. Mat. VII</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Thursday, 3rd.</head>
+<p>Morning spent in reviewing elementary rules of Algebra &mdash; Capt. Jackson set out for Lewis-burg on 
+leave &mdash; leaves me in command of Battery. Read “Comedy of Errors” &amp; “Taming of Shrew” Mat. VII-IX</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Friday, 4th.</head>
+<p>Spent nearly all day in studying Alsop’s Algebra   &mdash; read also “Mid Summer Nights Dream”  Received
+letter from Father &amp; Lt. Langhorne &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Saturday, 5th.</head>
+<p>Rode to Dublin today. Saw Major Dorman about conscripts &mdash; Bought bucket, cap &amp; <unclear>_____</unclear> from Maj. Brown 
+Invited by Maj. Carr to spend night at his house where several ladies were staying &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Sunday, 6th.</head>
+<p>Spent last night at Maj. Carrs &mdash; saw Miss.  McHarland, Carr, Lewis, Jackson, Alesander &amp; Watson &mdash; Returned
+to camp &mdash; Wortham had sent off two furloughs &mdash; Received letter from home giving account of raid &mdash;
+	Read Mat X &amp; XI &mdash;</p> 
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="37"/>
+		
+     <head type="main">Monday, 7th.</head>
+<p>Took leave of Mrs. Lampkin House sent to Dublin after beef &amp; bucket &mdash; Tested today Stallion of 
+Bane in morning &mdash; wrote letter to Lieut Horner, Col. Shields &amp; long one to Father giving account 
+of horse &mdash; gave &#x0024;200 to Rider to pay forage &mdash; Read Mat. XII &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Tuesday, 8th.</head>
+<p>Forwarded acknowledgement of three men from Camp Lee &mdash; with letter to Maj Peyton &mdash; also letter
+to Thos. Farrish   Received letter from Lt. Blain from Richmond. Made arrangements to get 
+plank &mdash; Read “As You Like It” and Mat. XIII &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Wednesday, 9th.</head>
+<p>Sent Sergt. Van Matre to Dublin to get ordinance supplies &mdash; took dinner at Maj. 
+Browns &mdash; with ten men eat sugar [?] Capt. Jackson arrived &mdash; from Lewisburg &mdash; 
+Lieut <unclear>_____</unclear> from Richmond &mdash; Remodeled  my tent arrangement &mdash; Read Mat. XIV &mdash;</p> 
+	</div2>
+	<div2 type="entry">
+     <head type="main">Thursday, 10th.</head>
+<p>Spent day in camp &mdash; had stable covered   Studied Algebra a little &amp; read Two Gentlemen
+of Verona   The Capt. Wortham &amp; Blain dined out. Capt. Ferguson came to my quarters &mdash; Mat V &mdash;</p> 
+	</div2>
+	<div2 type="entry">
+     <head type="main">Friday, 11th.</head>
+<p>Did nothing particular in morning.   Took dinner at Maj. Brown’s &mdash; very nice one &mdash; made
+arangements to get cloth for pants &amp; vest at 8 <unclear>c. [?]</unclear> per yard &mdash; found mess 
+	supplied <unclear>_____</unclear>. Received letter from Tom Bouldin</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Saturday, 12th.</head>
+<p>Turned over &#x0024;600 govt. funds to Capt. Jackson &mdash; sent long letter to Capt. Meyer &mdash; Read 
+‘Much ado about Nothing’  Commenced last days of <unclear>inspection [?]</unclear>  Received &#x0024;100 from Maj. 
+Jenkins &mdash; Visited by Ned Stalnaker &mdash; Kavanaugh reported to Company &mdash; Issued valises 
+tents &amp; halters &mdash; <unclear>____</unclear> dined on nothing  now for two days but “Rice &amp; flour”</p>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="38"/>
+		
+     <head type="main">Sunday, 13th.</head>
+<p>Attended Church at Banesville &mdash; Dined at Esq. Bane’s &mdash; good meal &mdash; had nothing in camp for
+several days but ‘bread &amp; rice) Paid <unclear>_____</unclear> &#x0024;10 &amp; Warren &#x0024;10 &mdash; Read Mat. XVI &amp; XVII &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Monday, 14th.</head>
+<p>Road to Dublin accompanied by Bob to make purchases for my new miss &mdash; Spent &#x0024;53. Received 
+long letter from home &mdash; William started to school. Eat first meal in new mess &mdash; Read Mat. XVIII &amp; XIX</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Tuesday, 15th.</head>
+<p>Sent Bob after flour &mdash; suffered from headache &mdash; wrote letter home accounting for leaving 
+old mess &mdash; Read in Last Days of Pompeii &mdash; Mat. XX &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Wednesday, 16th.</head> 
+<p>Officer of Day &mdash; Spent whole day in reading “Last Days Pompeii”  Capt. &amp; Lt. Wortham left
+camp for Dublin.   Had visit from Mr. Wm. Bane and Major Brown &mdash; <unclear>with [?]</unclear> measurement of 3 in. Rifle gun. Read Mat. XXI &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Thursday, 17th.</head>
+<p>Spent morning in camp &mdash; and finished “Last Days of Pompeii”   Dined at Major Browns.   
+Received Pendulum Hausse from Capt. Minor. Wharton made application to enlist &mdash;</p>
+	</div2>
+	<div2 type="entry">
+		<head type="main">Friday, 18th.</head> <!-- <note> [See below: “strong March wind all morn -”] </note> -->
+<p>Strong March wind all morn &mdash; we walked to Sam Bane’s Mill.  Took dinner at his house &mdash; 
+Sergt. Lampkin reported to Company with servant &mdash; Captain objects to his messing with me &mdash; injurious to discipline of Battery.</p>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="39"/>
+		
+     <head type="main">Saturday, 19th.</head>
+<p>Spent day in camp &mdash; Mr. Miller enlisted &mdash; Kavnaugh reported &mdash; Segt. Lamplin came to 
+mess &amp; took first meal   bought pure coffee for us &mdash; Read “King John” &amp; Mat. XIII &amp; IV &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Sunday, 20th.</head>
+<p>Walked with Kavanaugh to Sam Bane’s &mdash; Lampkin brought contents of <unclear>base [?]</unclear> from Dublin &mdash; 
+sugar, honey   ham &mdash; peaches &mdash; chesnuts  pickle &mdash; cake &amp; etc.   Read Richard II and Mat. XVI &amp; XVII &mdash; finished it.</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Monday, 21st.</head>
+<p>Wrote letter to Father acknowledging receipt of &#x0024;100 yesterday &mdash; Rode to Dublin &mdash; purchased 
+in Newbern utensils for me &#x0024;17 &mdash; Road to Mr. Bell’s 10 miles &mdash;</p> 
+	</div2>
+	<div2 type="entry">
+     <head type="main">Tuesday, 22nd.</head>
+<p>Spent last night at Mr. Bell’s very pleasantly &mdash; Miss Ellen Lewis not there &mdash; plenty of 
+Silver to be seen   Left in morning &mdash; soon after snow storm commenced had terrible ride 
+in snow &amp; wind a <unclear>____</unclear> <unclear>_____</unclear> to camp.  Received letter from Father &#x0024;50.</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Wednesday, 23rd.</head>
+<p>Snow over the earth 8 inches deep &mdash; in morning &mdash; warm day &mdash; had soon disappeared &mdash; Had 
+delicious turkey for dinner &mdash; out at night feasted on snow cream &mdash; Sweetened with maple 
+sugar &mdash; Received light saddle from Depot &mdash; Read nothing &mdash; to <unclear>___</unclear></p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Thursday, 24th.</head>
+<p>Wrote letter to Father acknowledging receipt of &#x0024;50. Received book and interesting letter 
+from Capt. Meyer from Wytheville.  Snow melted somewhat &mdash; uncertain day &mdash; sun out 
+occasionally &amp; raining at times.   Two recruits today &mdash; Commenced Reading ‘Alone’</p>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="40"/>
+		
+     <head type="main">Friday, 25th.</head>
+<p>Rain snow &amp; fair weather struggling with each other all day &mdash;Confined entirely to my 
+tent &mdash; Finished <unclear>______</unclear>  well pleased Read richard 2<hi rend="super">nd</hi> Received 
+	first <unclear>_____</unclear> of Whi<unclear>____</unclear> 23<hi rend="super">rd</hi> &amp; 24<hi rend="super">th</hi></p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Saturday, 26th.</head>
+<p>Weather disagreeable but warmer.  Wrote letter to Capt. Meyer &amp; Tom Bouldin   Received
+one from Cousin Mag. Price &mdash; Commenced reading Paul Clifford &mdash;</p>    
+	</div2>
+	<div2 type="entry">
+     <head type="main">Sunday, 27th.</head>
+<p>Read 1st. Chap. Mark in the morning and attended church &mdash; heard Rev. Mr. Bibb &mdash; Spent
+evening reading Pual Clifford  No mail today</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Monday, 28th.</head>
+<p>Eleven men reported from Maj. Dorman &mdash; Read Paul Clifford in morning &mdash; wrote long letter
+home to Mother &mdash; Bright clear day &mdash; had regular <unclear>arile [?]</unclear> &mdash; new instance of
+	<unclear>____</unclear> ill <unclear>breathing[?]</unclear> &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Tuesday, 29th.</head>
+<p>Rained again nearly all day   Read Paul Clifford in morning and “The Way it all 
+ended” &mdash; a miserable effusion &mdash; in the evening.</p> 
+	</div2>
+	<div2 type="entry">
+     <head type="main">Wednesday, 30th.</head>
+<p>Spent day in camp &mdash; sent Bob to Dublin after first issue of rations to officers. Finished
+reading Paul Clifford &mdash; splendid novel. Joe Irving left camp for Dublin &mdash; after staying with 
+Blair’s three days &mdash;</p>
+	</div2>
+	<div2 type="entry">
+
+		<pb n="41"/>
+
+     <head type="main">Thursday, 31st.</head>
+<p>Wrote the short sketch of the movements of this battery in the first of this book &mdash; commenced reading
+Bulwers ‘Disowned’ &mdash; Drilled the company morning &amp; evening &mdash; Sergt. Lam<unclear>____</unclear> &amp; Bob went out 
+foraging &amp; brought back 5 lbs. butter, 1 1/2 doz eggs. </p>
+
+<p>This month has been thoroughly March, winds, snow &amp; rain have <unclear>_____</unclear> &amp; in turn held sway.  Our 
+Battery has been increased by the acceptance of 30 men   With our ranks full we will better
+prepared than ever before to take the field.  My new mess has been a complete success &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">April 1864.<lb/>
+     Friday, 1st.</head>
+<p>This day had been a cold &amp; <unclear>_____</unclear> one &mdash; rain &amp; snow &mdash; the latter during the whole morning fell.  
+The company resumed full <unclear>____</unclear> today. Commenced reading the Disowned. &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Saturday, 2nd.</head>
+<p>Rained again this morning and windy all day. Cut up Bulwer into detached volumns and bound 
+them myself &mdash; Made off a muster roll for the Captain &mdash; Read for awhile the Disowned &mdash;</p> 
+	</div2>
+	<div2 type="entry">
+     <head type="main">Sunday, 3rd.</head>
+<p>Received a heavy mail last night &amp; spent all morning in reading newspapers &mdash; Read also 4 
+chapters in St. Mark &mdash; took long walk in evening &amp; met mail received a letter from Major 
+Jenkins regarding cloth &mdash; Finished “Disowned”</p>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="42"/>
+		
+     <head type="main">Monday, 4th.</head>
+<p>Capt. Jackson &amp; Wortham started to Christiansburg &mdash; Very bad day &mdash; rain &amp; snow &mdash; received 
+a letter from Capt. Meyer &amp; wrote long one to Cousin Mary <unclear>Areigh.[?]</unclear></p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Tuesday, 5th.</head>
+<p>Snow on the grounds this morning 7 inches deep &mdash; by night mostly all melted.   Received
+long letter from Tom Bouldin.   Read a part of  “Pilgrims of the Rhine” &mdash; Capt. Wortham returned &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Wednesday, 6th.</head>
+<p>Started Bob to Dublin after Capt. Meyer and for 25 lbs. rice from Cavanaugh 
+and <unclear>_tmead __</unclear>. Capt. Meyer did not arrive &mdash; Read little in Pilgrims of Rhine &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Thursday, 7th.</head>
+<p>weighed 167 lbs. Capt. Jackson ordered me on an Impressing expedition &mdash; consumed
+nearly all day   impressed 150 bus. of Mrs. Banes &mdash; corn  <unclear>_____16</unclear> due, Miller &amp; Allew.   
+	Found Capt. Meyer in camp on return &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Friday, 8th.</head>
+<p>Spent day in camp &mdash; Day of Fasting and prayer throughout Confederacy   Capt. 
+Meyer &amp; myself talked over old times.   Bob brought in 17 lbs. bacon, 4 doz. 
+eggs &amp; 4 lbs. lard in exchange for 25 lbs. rice &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Saturday, 9th.</head>
+<p>Raining almost constantly last two days.   Capt. Jackson went to Dublin with 
+detail to try our new 3 inch Guns.   Capt. Meyer stayed with me &mdash; Received communication 
+from Lieut. Blain. &mdash; Read some in Pilgrims of the Rhine &mdash; Lieut <unclear>_____</unclear> started this 
+morning for <unclear>Salem [?]</unclear> &amp; Lynchburg &mdash; 1<hi rend="super">st</hi> furlough since war.</p>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="43"/>
+		
+     <head type="main">Sunday, 10th.</head>
+<p>Capt. Meyer left this morning for Wytheville visit of three days &mdash; Sergt. Lampkin left 
+for Dublin &mdash; Read in Mark from Ch. IV-XM &mdash;  Our two new 3 in. guns reached camp this
+evening in charge of the Captain &mdash; with 34 new horses &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Monday, 11th.</head>
+<p>This is the first day the Sun has shown  his face for an hour for nearly two weeks   
+Nothing but rain   Tried our two new guns today firing 5 shots from each &mdash; result 
+satisfactory &mdash; Asbury &amp; Carter reported absent without leave &mdash; sent Bannon, Light &amp; Carter
+to arrest them.   Sergt. Lampkin returned from Lynchburg whither he had gone on a 24 
+hour pass much to the displeasure of the Captain  Read Mark XII &amp; XIII</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Tuesday, 12th.</head>
+<p>Asbury returned to duty this morning; Carter not heard from.   Ward sent off for ten
+days for having exposed himself to the small-pox.   Went on an impressing expedition &mdash; impressed
+corn of Ira Hall, William Sifford, Hiram Stinson, Mrs. Rebecca Stinson, Jno. Bogle and Mrs. Eton.  
+Rained most of last night and cloudy &amp; rainy all day.   Such a wet spring has not been 
+experienced for 30 or 40 years in this region.   Roads terrible.   Geo. W. <unclear>Lasiter [?]</unclear> 
+accompanied me while impressing &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Wednesday, 13th.</head>
+<p>Spent day in camp &mdash; clear &amp; pleasant &mdash; Had toothache for first time since war began &mdash;
+Studied Algebra &amp; Analytical geometry in the evening &mdash; Received two Whigs &amp; a Republican &mdash;
+read them at night.   Sergt. Lampkin brought with him a camp candle with 40 yds. of wick.   
+Two new men joined Battery, Clan &amp; Shankler.</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Thursday, 14th.</head>
+<p>All horses in Battery branded with I.H.A. this morning. &mdash; Started on an impressing 
+expedition this morning &mdash; went to C. K. Crockett’s &mdash; found his wife a perfect virago &mdash; 
+or rather Hyena.   Not only unwilling to share her grain with the Government, but endeavoring
+to misrepresent and villify her neighbors &mdash; Returned to camp after a ride of 26 miles &mdash; 
+Bought 1 bus. potatoes &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Friday, 15th.</head>
+<p>Another long day of rain and clouds.   Suffered the whole morning with tooth ache &mdash; 
+In evening studied Algebra &amp; Geometry.   Courier brought no mail from Dublin.   
+Private Davis afforded us great amusement in rescuing his halter from Davidson &mdash; 
+Heretofore he has caused merriment by asking to draw cards &amp; bread trays from 
+the Captain &mdash;  Read Mark XVI, XV</p>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="44"/>
+		
+     <head type="main">Saturday, 16th.</head>
+<p>Snowed considerable to day.   The mountains around are covered with snow.   
+	Forwarded application <add hand="author" place="top">to</add> exchange my horse for a Government do. <!-- <note>[ditto]</note> --> to  Maj. 
+McLaughlin &mdash; received letter from him &mdash; Wrote a long letter to Brother William &mdash; now
+at Hillsborough, N.C. Studied Algebra \ Suras &amp; Imaginary Quantitive and Ana. Geometry.</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Sunday, 17th.</head>
+<p>&mdash; A day long to be remembered &mdash;
+The morning past in doing nothing &mdash; About 12 o’clock Dr. Martin tried to extract 
+a jaw tooth &mdash; after two efforrts in which his whole strength was exerted, the case was 
+given up &mdash; My nervous system was completely shocked &amp; prostrated &mdash; Such intense and 
+withering suffering I never experienced before &mdash; <!-- two words omitted here --></p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Monday, 18th.</head>
+<p>Snowing and raining all day.   No drill &mdash; Suffered severely from my mouth &mdash; Did 
+nothing &mdash; Received <unclear>_____</unclear> &mdash; read it attentively at night and retired early, having
+slept scarcely at all last night on account of tooth.</p>
+	</div2>
+	<div2 type="entry">
+
+     <head type="main">Tuesday, 19th.</head>
+<p>Clouds overcast the sky &mdash; occasional dashes of rain and snow &mdash; a real winter day.  
+Sent Israel to Newberne after rice.   Wrote to Maj. Jenkins on closing pay account for March &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Wednesday, 20th.</head>
+<p>Received two long letters from Father giving account of  absconding of Wormley and
+misbehaviour of Fleming &mdash; Two letters from William &mdash; Death of Burly at home.   Day 
+cloudy, but no rain &mdash; a rarity.   Sent application to exchange horses with Government to Maj. McLaughlin.</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Thursday, 21st.</head>
+<p>Bright beautiful spring day.   The first we have had.   Spent the day in writing 
+letters to Col. W. S. Jackson &mdash; Thompson, Fontaine &mdash; and Capt. R.H. Catlet &amp; Branham
+&amp; Lt. Jackson.   Man found dead in the road a few hundred yds. from camp &mdash; Died from epilepsey &mdash;.</p>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="45"/>
+		
+     <head type="main">Friday, 22nd.</head>
+<p>Bright spring day &mdash; Received letters from  Maj. Jenkins, Capt. Meyer &amp; Father &mdash; Wrote
+Father a very long one, giving him my views about the affairs of the country &mdash; Wrote 
+also to Capt. Catlett &amp; Lt. Jackson &mdash; Much cheered by news from Plymouth &mdash; Fort Pillow
+&amp; Trans &mdash; Mississippi.   Battery received orders to be in readiness to march.</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Saturday, 23rd.</head>
+<p>Impressed corn of <unclear>Slinfason [?]</unclear> Underwood and Mr. Stephens &mdash; both told great lies
+&amp; the former concealed 70 bus. &amp; lied about it &mdash; took 30 &mdash; Rev. Mr. Bibb preached 
+to the Battery &mdash; 1st sermon delivered to our men in camp since the war &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Sunday, 24th.</head>
+<p>Considerable amount of rain to day &mdash; Received an order from Dublin authorizing an 
+exchange of horses.   Read to Chap. X in St. Luke &mdash; Dr. Martin made application to <unclear>_____</unclear> our mess &mdash;</p> 
+	</div2>
+	<div2 type="entry">
+     <head type="main">Monday, 25th.</head>
+<p>Made trial of Stricker in gun &mdash; worked quite well &mdash; Made selection of another 
+horse &mdash; took them to Dublin had them valued &mdash; made even exchange &mdash; My present horse valued
+at &#x0024;866 by Capt. Carr, Capt. Payne &amp; Maj. King &mdash; Very much pained at parting with Stricker &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Tuesday, 26th.</head>
+<p>Spent day in camp &mdash; took long walk in evening by myself.   Received letter from 
+Father &mdash; and wrote him a long one by candle light.   Our new recruit arrived, Cox of Kanawha &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Wednesday, 27th.</head>
+<p>Beautiful and bright day &mdash; Sent my horse out to graze &mdash; Wrote a long letter to 
+Cousin Mag. P &mdash;  Drilled N. C. officers in sabre exercise in evening &mdash; Commenced rereading Rienzi &mdash;</p> 
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="46"/>
+		
+     <head type="main">Thursday, 28th.</head>
+<p>Had review of Battery this evening &mdash; Capt. J. acting Inspecting Officer &mdash; Had a 
+man named Clymer at our Quarters most of the day &mdash; Read a portion of Rienzi.</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Friday, 29th.</head>
+<p>Prepared early to go to Sugar Run with Landes to impress corn &mdash; Failed however 
+to go. Spent the day in reading “Rienzi” the 2<hi rend="super">nd</hi> <unclear>_____</unclear> &mdash; interest not abated.</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Saturday, 30th.</head>
+<p>Started early with Linder to secure corn &mdash; impressed 70 bus. of corn. Fanning &mdash; 
+Mrs. Stevens &mdash; Newton Woodyard &mdash; Mrs. Stevenson and Ira Hull &mdash; Took dinner at Hall’s &mdash; a very nice one “molasses &amp; pie”</p>
+	</div2>
+                <div2 type="entry">		
+                		<!--  At the end of the above entry, a line is drawn across the page and the following entry appears:  -->
+<head type="main">n.d.</head>
+<p>This month has certainly not been the April whose showers bring May flowers &mdash; So 
+much snow &mdash; rain &amp; cold weather has not been experienced for 30 years &mdash; The Battery
+has prospered in spite of adverse elements   Our total no. of enlisted men in 
+April 1st was 84    on the 30th was 98, gaining us an aggregate of 103 men in 
+our rolls &mdash; We are in thorough preparation for the spring campaign &mdash; 4 rifled 
+guns in <unclear>park [?]</unclear> and 10 of horses &mdash; We are daily expecting and anxiously awaiting
+orders to take the field against our hated foe &mdash;</p>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="47"/>
+		
+     <head type="main">May. 1864.<lb/>
+     	Sunday, 1st.</head>
+<p>A cool day &amp; rain threatening &mdash; attended church &mdash; heard Mr. Bibb preach and saw 
+the health and beauty (?) of the whole valley assembled &mdash; Received of Maj. McLaughlin
+&#x0024;100 pay for March &mdash; Read Chap. XI Luke &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Monday, 2nd.</head>
+<p>This day one year ago this Company was organized at <unclear>Salem [?]</unclear> &mdash; The same officers
+are all present as then &mdash; and not a single man has been killed in battle and only
+one man Parker has died &mdash; Since then we have travelled 1100+ miles exclusive of rail
+road &mdash; a greater distance perhaps than any other command in the service &mdash; Cold, 
+windy, snowy day</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Tuesday, 3rd.</head>
+<p>Made an impressing expedition &mdash; obtained 12 bus. of William Sifford &mdash; Sergt. 
+Lampkins box came from Dublin containing bacon  sugar  lard  dried peaches  molasses &amp; etc &mdash; a real December day.</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Wednesday, 4th.</head>
+<p>Started early this morning on an impressing &mdash; obtained 10 bus. of Henderson. 20 bus.
+of Jos. Stafford &mdash; 30 bus. of D. R. Cecil &mdash; 30 bus. of R. Stafford &mdash; and 10 bus. 
+perhaps of Jas. P. Johnson &mdash; Received of Maj. Jenkins &#x0024;100. pay for April &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Thursday, 5th.</head>
+<p>Orders reached camp at 1 o’clock   9th to report immediately to Genl. Wharton at 
+Narrows New River   Started at 3.   prepared for campaign &mdash; great rejoicing at 
+breaking winter quarters &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Friday, 6th.</head>
+<p>Marched the whole of last night &mdash; fed at <unclear>_____</unclear> reached Narrows &amp; reported to Genl. 
+Wharton at daylight &mdash; crossed river and  <unclear>__moved</unclear> till 1 o’clock &mdash; marched on old valley 
+road and camped about 8 miles from Narrows &mdash; learned our destination through Sergt.
+Lampkin &mdash; Saw Wharton &amp; Breckinridge &mdash; More trouble in marching today than ever since 
+Battery was organized &mdash; great deal of  <unclear>________</unclear></p>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="48"/>
+		
+     <head type="main">Saturday, 7th.</head>
+ <p>Camped last night 6 miles from Grey <unclear>Sulkhim [?]</unclear> &mdash; reached camp about 12 o’clock.
+ had no blankets.  <unclear>tented [?]</unclear> early.  marched to within 3 miles of Gap Mills &mdash; had 
+ a difficult march over bad roads   had <unclear>_____</unclear> with Capt. Jackson about method 
+ of <unclear>_________</unclear> trains &mdash; distance about 17 miles.</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Sunday, 8th.</head>
+<p>Cooked before day and started at Day &mdash; light    heard through Bright &amp; <unclear>_____</unclear> Haus 
+ford of the Battle near Chancellorsville &mdash; in great suspense about result &mdash; passed Sweet
+Springs about 2 o’clock &mdash; <unclear>____</unclear> to the <unclear>right [?]</unclear> at Crow’s <unclear>____</unclear> Dunlap Creek, camped 
+within 3 miles of Callaghan’s &mdash; distance marched 21 miles &mdash; horses <unclear>grazed [?]</unclear> <unclear>_____</unclear> saw Col. Jackson</p>
+	</div2>
+	<div2 type="entry">
+
+     <head type="main">Monday, 9th.</head>
+<p>Grazed and fed all about 10 o’clock &mdash; then marched near Covington &amp; grazed awhile &mdash; camped 
+near Jackson River Depot &mdash; heard additional news from Lee’s army &mdash; had an interview 
+with Genl. Wharton &mdash; introduced to Col. Clark &mdash; Saw Mrs Estill &amp; Dr. Hunter &amp; cooked
+them days rations. caisson<ref target="n3" n="3">3</ref><note id="n3" n="3">[a two-wheeled vehicle carrying a chest of ammunition to serve a gun]</note> axle broke &mdash;</p>  
+	</div2>
+	<div2 type="entry">
+     <head type="main">Tuesday, 10th.</head>
+<p>Took the train early this morning at Jackson River Depot &mdash; our horses sent by land 
+to Staunton &mdash; Capt. Jackson in charge &mdash; Reached Staunton about Sun Set &mdash; Gen’l. Wharton 
+gave me permission to run the blockade home &mdash;</p> 
+	</div2>
+	<div2 type="entry">
+     <head type="main">Wednesday, 11th.</head>
+<p>Left Staunton on freight train about 10 o’clock P.M. Reached home about 3 A.M. 
+Slept on porch till awakened by servants in the morning &mdash; Great rejoicing &mdash; Returned 
+to Staunton on 3 o’clock train &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Thursday, 12th.</head>
+<p>Capt. Jackson in charge of horses arrived this morning &mdash; we fed &amp; turned out near old
+camping ground &mdash; Received orders in evening to cook two days rations and be ready to
+move at daylight in morning &mdash;</p>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="49"/>
+		
+     <head type="main">Friday, 13th.</head>
+<p>Marched this morning in column with Wharton’s &amp; Echol’s Brigades &mdash; The reserve
+militia and the corps of cadets. Chapman’s Battery &mdash; ours &amp; one section from the
+institute &mdash; camped five miles from Harrisonburg at Mount Crawford where I had considerable
+fun with some young  ladies &mdash;</p> 
+	</div2>
+	<div2 type="entry">
+     <head type="main">Saturday, 14th.</head>
+<p>Marched early with whole command &mdash; through rain camped 5 miles from 
+New Market &mdash; Enemy in our front under <unclear>Sigel [?]</unclear> 7000 strong. expect to <unclear>____</unclear> 
+	<unclear>___</unclear> <unclear>____</unclear> <unclear>___</unclear> <unclear>____</unclear></p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Sunday, 15th.<ref target="n4">4</ref></head> <note id="n4" n="4">[Battle of New Market]</note>
+<p>Started at day light &mdash; commenced attack about 11 0’clock A.M Chapman &amp; 
+McLaughlan opened fire on right wing &mdash; The Cadet Section &amp; our Battery on 
+left &mdash; a glorious victory &mdash; men acted well &amp; enemy completely whipped &mdash;</p> 
+	</div2>
+	<div2 type="entry">
+     <head type="main">Monday, 16th.</head>
+<p>Layed in camp on Rude’s Hill &mdash; till late in morning when we moved near New Market 
+and camped for the night &mdash; I took dinner with some old friends near the town &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Tuesday, 17th.</head>
+<p>Marched all day &mdash; Camped near Harrisonburg &mdash; the enemy gone &amp; moving down the Valley &mdash;</p> 
+	</div2>
+	<div2 type="entry">
+     <head type="main">Wednesday, 18th.</head>
+<p>Marched till we came within one mile of Staunton   camped for the night &mdash; ordered to be ready to move in the morning &mdash;</p>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="50"/>
+		
+     <head type="main">Thursday, 19th.</head>
+<p>Marched to Staunton early in morning to take the train with the Division 
+<unclear>____</unclear> <unclear>____</unclear> <unclear>_____</unclear> all day &mdash; I had charge of all the 
+	horses with drivers &mdash; started about Sun Set after great trouble &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Friday, 20th.</head> 
+<p>Passed <unclear>____</unclear> Depot this morning about daybreak &mdash; left a trunk &amp; <unclear>___</unclear> with negro &mdash; had
+great trouble during night at Waynesboro with horses &mdash; reached Junction about 4 o’clock P.M.</p>
+	</div2>
+	<div2 type="entry">
+
+     <head type="main">Saturday, 21th.</head>
+<p><unclear>_____</unclear> camp near Junction &mdash; Battery held in readiness to march all day &mdash; 
+	<unclear>_____</unclear> <unclear>_____</unclear> train
+of wounded &mdash; passed <unclear>_________</unclear> &mdash; Pickets <unclear>_____</unclear> 
+	<unclear>___</unclear> <unclear>____</unclear> <unclear>_____</unclear> &mdash; Heavy canons &mdash; <!-- <note>{next two lines not discernable]</note> --></p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Sunday, 22nd.</head>
+<p>Moved camp in morning about one mile with Division &mdash; <unclear>____</unclear> <unclear>_____</unclear> concentrating rapidly 
+at this point &mdash; caused by great <unclear>_______</unclear> movement around to the right &mdash;</p> 
+	</div2>
+	<div2 type="entry">
+     <head type="main">Monday, 23rd.<ref target="n5">5</ref></head> <note id="n5" n="5">[Battle of the North Anna]</note>
+<p>Whole Division &amp; McLaughlan’s Battalion marched to Hanover C. H. &mdash; went into position
+about 11 o’clock P.M.&mdash; Slept very little &mdash; no grass for horses &mdash; Heavy firing <unclear>_____</unclear></p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Tuesday, 24th.</head>
+<p>Marched back to Hanover Junction   whole army in line of battle &mdash; Grant crossing his forces
+over the North Anna above the Junction &mdash; Our Division on the right   General engagement 
+expected tomorrow.   Heavy <unclear>_________</unclear> all evening</p>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="51"/>
+		
+     <head type="main">Wednesday, 25th.</head>
+<p>Battery held <unclear>_____</unclear> <unclear>____</unclear> rear of line of battle at the Junction &mdash; Considerable skirmishing
+along the line but no battle &mdash; Write a long letter home &mdash; Moved about two miles, to 
+rear and in the evening <unclear>____</unclear> <unclear>_____</unclear> active</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Thursday, 26th.<ref target="n6">6</ref></head> <note id="n6" n="6" place="end">[end of North Anna Battle]</note>
+<p>Spent the whole day  in bivouac 2 miles to the rear on the Telegraph road &mdash; &mdash; Rode to 
+Taylorsville in the morning <unclear>_____</unclear> <unclear>______</unclear> papers <unclear>_____</unclear> <unclear>__________</unclear></p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Friday, 27th.</head>
+<p>Marched this morning about 9 o’clock on the Telegraph road toward Richmond &mdash; the whole
+army going in the same direction to <unclear>_____</unclear> Grant’s  <unclear>____________________________________________________</unclear></p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Saturday, 28th.<ref target="n7">7</ref></head> 
+<note id="n7" n="7" place="end">[ The entry on this date is not legible.]</note>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Sunday, 29th.<ref target="n8">8</ref></head>
+<note id="n8" n="8" place="end">[The entry on this date is not legible.]</note>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Monday, 30th.<ref target="n9">9</ref></head>
+<note id="n9" n="9" place="end">[The entry on this date is not legible.]</note>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="52"/>
+		
+     <head type="main">Tuesday, 31st.</head>
+<p>Moved to better position about 700 yds to rear and commenced fortifying with 
+infantry line &mdash; Enemy advanced to within 500 yds of our front <unclear>______</unclear> <unclear>_______</unclear> sharp 
+shooting. We gave them shell &amp; canister &mdash; My gunner <unclear>_____</unclear> Crist <unclear>________</unclear> was killed 
+almost instantly by a minieball &mdash; a noble &amp; faithful young man &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">June, 1864.<lb/>
+     	Wednesday, 1st.</head>
+<p>Buried gunner Crist last night.&mdash; Straightened my <unclear>_______</unclear> an Alabama <unclear>_____</unclear>  <unclear>______</unclear> place 
+of Wharton’s <unclear>____</unclear> <unclear>____</unclear> support &mdash; Quite heavy firing at times</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Thursday, 2nd.</head>
+<p>Withdrew from our works last night &mdash; another Battery taking our place &mdash; We move to 
+relieve <unclear>___</unclear> <unclear>_____</unclear> on our right <unclear>____</unclear> <unclear>_____</unclear> 
+	<unclear>_____</unclear> <unclear>____</unclear> <unclear>____</unclear></p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Friday, 3rd.<ref target="n10">10</ref></head> <note id="n10" n="10">[Cold Harbor]</note>
+<p>Took position just after nine &amp; under fire in front of Enemy on our right &mdash; About 
+Sun rise every <unclear>_____</unclear> <unclear>_____</unclear> <unclear>_____</unclear> <unclear>_____</unclear> slaughter and little loss</p>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="53"/>
+		
+     <head type="main">Saturday, 4th.</head>
+<p>Relieved last night by Macintosh’s <unclear>____</unclear> came to the rear &mdash; and rested all day. Not
+much firing along the line until just <unclear>___</unclear> <unclear>____</unclear> <unclear>____</unclear></p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Sunday, 5th.</head>
+<p>A quiet day along the lines &mdash; Nothing but sharp shooters &mdash; our Battery in reserve 
+about 400 yds in rear of lines &mdash; an acceptable rest &mdash; Write long letter home &mdash; Night attack 
+again on <unclear>Mahone’s [?]</unclear> line &mdash; Grant <unclear>____</unclear> &mdash; shells fell near in camp &mdash; Letter from home &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Monday, 6th.</head>
+<p>Our Battery still resting in rear &mdash; Sharpshooting &amp; occasional cannonading along the 
+line &mdash; night attack on Kershaw last night &mdash; grazed my horses in morning &mdash; Sent to Col.
+Conley:  <unclear>one[?]</unclear> in evening &mdash; Received order to march to Richmond at once &mdash;</p> 
+	</div2>
+	<div2 type="entry">
+     <head type="main">Tuesday, 7th.</head>
+<p>Marched all last night and at day break halted near the outer works on the Mechanicksburg 
+road &mdash; en route for Hewlet’s <unclear>_____</unclear>, to meet Hunter, Crooks, &amp; Co &mdash; in Valley.   Col. <unclear>Fentress [?]</unclear>
+	and I eat ice cream</p> 
+	</div2>
+	<div2 type="entry">
+     <head type="main">Wednesday, 8th.</head>
+<p>Camped last night about 2 miles from Hanover Junction after a long &amp; tedious march &mdash; Took 
+train that evening at Hewlets &mdash; started for Charlottesville &mdash; rest of Division already gone &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Thursday, 9th.</head>
+<p>Father met me this morning at Keswick &mdash; reached Charlottesville about 1 o’clock P. M.
+Obtained permission from Maj. McLaughlin to ride home with Father and spend the night &mdash; 
+borrowed a horse from Capt. Millen.   found all well &mdash; Miss Mcdowell and two Miss Carrington’s there &mdash;</p>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="54"/>
+		
+     <head type="main">Friday, 10th.</head>
+<p>Remained at home till about 2 1/2 o’clock P. M.   had a good time &mdash; then rode to 
+<unclear>Charsville [?]</unclear>  &mdash; Soon after arriving Capt. Jackson with horses came &mdash; Saw Mr. Cochran’s 
+family &mdash; and Miss Lydia &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Saturday, 11th.</head>
+<p>Loaded horses on trains last night at 12 <unclear>_____</unclear> and started for Waynesborough in charge 
+of Battery trains &mdash; <unclear>arrived [?]</unclear> at Depot before Day reached <unclear>_______</unclear> <unclear>_______</unclear> 
+	early &mdash; unloaded &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Sunday, 12th.</head>
+<p>camped last night in hill above Waynesborough.  Near about Sun  rise &mdash; took Greenville
+road for eight miles &mdash; then took to left on the Howardsville <unclear>___</unclear> camped at foot of Blue Ridge &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Monday, 13th.</head>
+<p>Crossed Blue Ridge early &mdash; into Nelson &mdash; Stopped a while at Sam Woods &mdash; Marched 
+till 2 o’clock at night &mdash; Horses &amp; men utterly exhausted &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Tuesday, 14th.</head>
+<p>Rested to day just after crossing mountain from <unclear>_____</unclear> <unclear>______</unclear> &mdash; till 4 o’clock 
+P.M. &mdash; then moved to river &mdash; Heard of Father’s loss &amp; the execution of Mr. D. C.</p>
+	</div2>
+	<div2 type="entry">
+     
+     <head type="main">Wednesday, 15th.</head>
+<p>Marched early this morning in direction of Lynchburg &mdash; Stopped at Jacob Warwicks
+&amp; dined  &mdash; Spent a delightful day &mdash; Mint Julip in abundance &mdash; overtook  command 
+near Amherst C. H. <ref target="n11">11</ref><note id="n11" n="11">[courthouse]</note>, &amp; camped near Mosby’s &mdash;</p>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="55"/>
+		
+     <head type="main">Thursday, 16th.</head>
+<p>Took up march at 3 o’clock &amp; we reached Lynchburg about 9 1/2 A.M. and parked
+Battery about one mile from town &mdash; Took tea at Mr. Lampkins &mdash; and called on Maj. Glass &mdash;</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Friday, 17th.</head>
+<p>Took up position this morning on <corr sic="Cemetary">Cemetary</corr>  Hill &amp; commenced fortifying &mdash; 
+worked all day &mdash; dined at Mr. Lampkins</p>
+	</div2>
+            <!--     		
+	<div2 type="entry">
+     <head type="main">Saturday, 18th.</head>
+<note>[No entry on this day.]</note>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Sunday, 19th.</head>
+<note>[No entry on this day.]</note>
+	</div2>
+            -->
+	<div2 type="entry">
+     <head type="main">Monday, 20th.</head>
+<p>Took up line of march from Liberty &mdash; with main column after marching all night with cavalry 
+horses &amp; men exhausted</p>
+	</div2>
+	<div2 type="entry">
+     <head type="main">Tuesday, 21st.</head>
+<p>Marched early this morning from Buford’s Gap under orders to hurry &mdash; The whole 
+column &mdash; close in the the enemy cavalry attacked their column   captured 10 
+pieces artillery    Infantry came too late   many escaped &mdash;</p>
+	</div2>
+	<div2 type="entry">
+		
+		<pb n="56"/>
+		
+     <head type="main">Wednesday, 22nd.</head>
+<p>Remained in camp to day   5 miles from Salem &amp; rested &mdash; obtained some new horses
+and visited the scene of yesterday’s engagement &mdash;</p>
+<!-- 
+	<note>[Though this almanac covers the entire year, Micajah Woods makes no more daily entries.]</note> -->
+		
+		<pb n="57"/>
+		<pb n="58"/>
+		<pb n="59"/>
+		<pb n="60"/>
+		<pb n="61"/>
+		<pb n="62"/>
+		<pb n="63"/>
+		<pb n="64"/>
+		<pb n="65"/>
+		<pb n="66"/>
+		<pb n="67"/>
+		<pb n="68"/>
+		<pb n="69"/>
+		<pb n="70"/>
+		<pb n="71"/>
+		<pb n="72"/>
+		<pb n="73"/>
+		<pb n="74"/>
+		<pb n="75"/>
+		<pb n="76"/>
+		<pb n="77"/>
+		<pb n="78"/>
+		<pb n="79"/>
+		<pb n="80"/>
+		<pb n="81"/>
+		<pb n="82"/>
+		<pb n="83"/>
+		<pb n="84"/>
+		<pb n="85"/>
+		<pb n="86"/>
+		<pb n="87"/>
+		<pb n="88"/>
+		<pb n="89"/>
+	</div2>
+                		<div2 type="entry">
+                			<head type="main">n.d.</head>
+		<pb n="90"/>
+
+                			<!-- <note>[In the rear of this almanac, in the Memoranda section, is the following:]</note> -->
+
+<p>I left Dublin for Albemarle on 25th of January - Before that time I kept no account of my expenses &mdash;</p>
+		
+	</div2>
+	<div2 type="entry">
+<head type="main">Expenses incurred on leave of absence &mdash;</head>
+		
+		<table>
+			<row>
+				<cell cols="3"><date value="01-25">Jany. 25<hi rend="super">th</hi></date></cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>Fare to Lynchburg &mdash;</cell>
+				<cell>&#x0024; 8.50</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>cloth &amp; trimmings for uniform &mdash;</cell>
+				<cell>&#x0024; 342.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>Hotel Bill</cell>
+				<cell>11.50</cell>
+			</row>
+			<row>
+				<cell cols="3">&#x3003; 26<hi rend="super">th.</hi></cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>Fare to Char:ville</cell>
+				<cell>4.50</cell>
+			</row>
+			<row>
+				<cell cols="3">&#x3003; 29<hi rend="super">th.</hi></cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>Fare to Richmond</cell>
+				<cell>4.00</cell>
+			</row>
+			<!-- Re: missing text from transcription added in by DCS" 30th &amp; - Richmond -->
+			<row>
+				<cell>&#x3003; 30<hi rend="super">th</hi>&amp; &mdash;<lb/>31st &amp; 3</cell>
+				<cell>Richmond</cell>
+				</row>
+				<row>
+				<cell/>
+				<cell>1 Bridle</cell>
+				<cell>45.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>2 Blankets</cell>
+				<cell>20.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>1 Haversack</cell>
+				<cell>15.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>1 Hat</cell>
+				<cell>90.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>1 Hat Chord</cell>
+				<cell>12.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>1 Neck tye</cell>
+				<cell>5.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>Red trimming</cell>
+				<cell>6.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>Refreshments</cell>
+				<cell>20.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>Theatre</cell>
+				<cell>3.40</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>Music</cell>
+				<cell>4.50</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>2nd Year of War</cell>
+				<cell>5.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>Camp Lee trip</cell>
+				<cell>1.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>Hotel Bill</cell>
+				<cell>20.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>Fare to Ivy Depot</cell>
+				<cell>3.50</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>&#x0024; 632.50 &mdash; for January &mdash;</cell>
+				<cell>&#x0024; 632.50</cell>
+			</row>
+		</table>
+		
+		<pb n="92"/>
+		
+		<table>
+			<row>
+				<cell cols="3">Febry &mdash; 1-22nd.</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>Making of Uniform<lb/>
+				Traveling on cars &mdash;</cell>
+				<cell>75.00</cell>
+			</row>
+			<row>
+				<cell cols="3">Feby. 22nd</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>Fare to Lynchbg</cell>
+				<cell>4.00</cell>
+			</row>
+			<row>
+				<cell cols="3">23rd.</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>Hotel Bill<lb/>
+				Fare to Dublin</cell>
+				<cell>25.00</cell>
+			</row>
+			<row>
+				<cell cols="3">Feby. 25th</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>For flour. mess &mdash;</cell>
+				<cell>5.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>For having clothes washed</cell>
+				<cell>1.40</cell>
+			</row>
+			<row>
+				<cell><unclear> scratched out text omitted here? </unclear></cell>
+			</row>
+			<row>
+				<cell/>
+				<cell/>
+				<cell>&#x0024; 110.00</cell>
+			</row>
+		</table>
+		
+		<table>
+			<row>
+				<cell cols="3">March 1st.</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>Flour, Beef, Salt [for] mess</cell>
+				<cell>12.50</cell>
+			</row>
+			<row>
+				<cell>x &mdash;    6th.</cell>
+				<cell>one bucket</cell>
+				<cell>2.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>one cap</cell>
+				<cell>2.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell><unclear>_____</unclear> hinges</cell>
+				<cell>.95</cell>
+			</row>
+			<row>
+				<cell>x &mdash;     7th.</cell>
+				<cell>for Beef [for] mess</cell>
+				<cell>10.00</cell>
+			</row>
+			<row>
+				<cell>6th</cell>
+				<cell>to servant at Carrs</cell>
+				<cell>1.00</cell>
+			</row>
+			<row>
+				<cell>x &mdash;     12th.</cell>
+				<cell><unclear>_____</unclear> Thomas</cell>
+				<cell>10.00</cell>
+			</row>
+			<row>
+				<cell>13th</cell>
+				<cell><unclear>_____</unclear> Warren</cell>
+				<cell>10.00</cell>
+			</row>
+			<row>
+				<cell cols="3">14th</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>oven &amp; pot &mdash;</cell>
+				<cell>11.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>10 lbs. bacon</cell>
+				<cell>12.50</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>10 lbs. rice</cell>
+				<cell>2.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>5 lbs. soap</cell>
+				<cell>2.50</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>10 lbs. salt</cell>
+				<cell>1.00</cell>
+			</row>
+		</table>
+		
+		<pb n="93"/>
+		
+		<table>
+			 <row>
+			 	<cell>March 14th.</cell>
+			 	<cell>Two tin plates</cell>
+			 	<cell>8.00</cell>
+			 </row>
+			<row>
+				<cell/>
+				<cell>1 1/2 lbs. Soda</cell>
+				<cell>7.50</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>Knife &amp; fork &mdash;</cell>
+				<cell>5.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>2 spoons</cell>
+				<cell>1.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>1 inkstand</cell>
+				<cell>3.00</cell>
+			</row>
+			<row>
+				<cell>15th.</cell>
+				<cell>flour &amp; meal</cell>
+				<cell>6.00</cell>
+			</row>
+			<row>
+				<cell>16th.</cell>
+				<cell>to negro for chair &mdash;</cell>
+				<cell>5.00</cell>
+			</row>
+			<row>
+				<cell>"</cell>
+				<cell>For having clothes washed</cell>
+				<cell>2.50</cell>
+			</row>
+			<row>
+				<cell><!-- text for 20th missing --></cell>
+			</row>
+			<row>
+				<cell>21st.</cell> 
+          	<cell>2 plates &mdash;</cell>
+				<cell>10.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>1 knife &amp; fork</cell>
+				<cell>5.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>4 spoons</cell>
+				<cell>2.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>1 glass</cell>
+				<cell>3.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>1 paper pins</cell>
+				<cell>4.00</cell>
+			</row>
+			<row>
+				<cell>22nd.</cell>
+				<cell>to boy at Bell’s</cell>
+				<cell>1.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>to Maj. Carr - Bacon,</cell>
+				<cell>20.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>"    "     "    Flour</cell>
+				<cell>5.00</cell>
+			</row>
+			<row>
+				<cell>21st.</cell>
+				<cell>"    "      "   Bacon</cell>
+				<cell>10.00</cell>
+			</row>
+			<row>
+				<cell/>
+				<cell>"    "      "   <unclear>_____</unclear></cell>
+				<cell>5.00</cell>
+			</row>
+			<row>
+				<cell>26th</cell>
+				<cell>Paid Lampkin for mule -</cell>
+				<cell>20.00</cell>
+			</row>
+			<row>
+				<cell><!-- missing text for 25th --></cell>
+			</row>
+			<row>
+				<cell/>
+				<cell/>
+				<cell>&#x0024; 231.95</cell>
+			</row>
+		</table>
+		
+		<table>
+			<row>
+				<cell cols="3">April</cell>
+			</row>
+			<row>
+				<cell>6th</cell>
+				<cell>Paid Lampkin - in part for mule</cell>
+				<cell>15.00</cell>
+			</row>
+			<row>
+				<cell>6th</cell>
+				<cell>Paid Cavanaugh for rice</cell>
+				<cell>11.00</cell>
+			</row>
+			<row>
+				<cell>6th</cell>
+				<cell>"     "     thread &amp; needles</cell>
+				<cell>5.00</cell>
+			</row>
+			<row>
+				<cell>14th.</cell>
+				<cell>"  Mrs. Mustard for potatoes</cell>
+				<cell>4.00</cell>
+			</row>
+			<row>
+				<cell>"</cell>
+				<cell>"    "     "   for dinner</cell>
+				<cell>1.00</cell>
+			</row>
+		</table>
+		
+<pb n="94"/>
+		
+<note>[The following appears on the last page.]</note>
+
+<table>
+	<row>
+		<cell><unclear>Stauntons [?]</unclear> dinner</cell>
+		<cell>&#x0024;6</cell>
+	</row>
+	<row>
+		<cell>breakfast &mdash;</cell>
+		<cell>&#x0024;9</cell>
+	</row>
+	<row>
+		<cell>Blacking shoes</cell>
+		<cell>&#x0024;2</cell>
+	</row>
+	<row>
+		<cell>Papers</cell>
+		<cell>&#x0024;2</cell>
+	</row>
+</table>
+		
+
+
+<note>Transcript by Mary D. Edwards  April 2000</note>
+		
+	</div2>
+                	</div1>
+		
+	
+	</body>
+	</text>
+	</TEI.2>

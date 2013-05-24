@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0269 SYSTEM "000000766_0269" NDATA jpg>
+<!ENTITY DSSR_000000766_0270 SYSTEM "000000766_0270" NDATA jpg>
+<!ENTITY DSSR_000000766_0271 SYSTEM "000000766_0271" NDATA jpg>
+<!ENTITY DSSR_000000766_0272 SYSTEM "000000766_0272" NDATA jpg>
+<!ENTITY DSSR_000000766_0273 SYSTEM "000000766_0273" NDATA jpg>
+<!ENTITY DSSR_000000766_0274 SYSTEM "000000766_0274" NDATA jpg>
+
+
+<!--<!ENTITY NA61f23a SYSTEM "NA61f23a.jpg" NDATA jpg>
+<!ENTITY NA61f23b SYSTEM "NA61f23b.jpg" NDATA jpg>
+<!ENTITY NA61f23c SYSTEM "NA61f23c.jpg" NDATA jpg>
+<!ENTITY NA61f23d SYSTEM "NA61f23d.jpg" NDATA jpg>
+<!ENTITY NA61f23e SYSTEM "NA61f23e.jpg" NDATA jpg>
+<!ENTITY NA61f23f SYSTEM "NA61f23f.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NA61f23">
+	<teiHeader type="migrated">
+		<fileDesc>
+			<titleStmt>
+				<title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date
+						value="1861-06-23">1861, June 23</date>.</title>
+				<author>Case, Adelaide</author>
+				<editor/>
+				<respStmt>
+					<resp/>
+					<name/>
+					<resp>Creation of machine-readable version:</resp>
+					<name>Jayme Schwartzberg, Electronic Text Center at the University of Virginia</name>
+					<resp>Conversion to TEI.2-conformant markup:</resp>
+					<name>University of Virginia Library Electronic Text Center.</name>
+				</respStmt>
+			</titleStmt>
+			<extent>ca. <num type="kilobytes">11</num> kilobytes</extent>
+			<publicationStmt>
+				<publisher>University of Virginia Library</publisher>
+				<pubPlace>Charlottesville, Virginia</pubPlace>
+				<idno type="etext">NA61f23</idno>
+				<idno type="callNo">MSS 11616</idno>
+				<availability>
+					<p n="access">Publicly accessible</p>
+					<!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+					<p n="copyright"/>
+				</availability>
+				<date value="2001">2001</date>
+			</publicationStmt>
+			<seriesStmt>
+				<title>The Corinne Carr Nettleton Civil War Collection</title>
+				<idno type="uva-set">UVA-LIB-Text</idno>
+				<idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+			</seriesStmt>
+			<notesStmt>
+				<note>
+					<p>Images have been included of the original source.</p>
+				</note>
+			</notesStmt>
+			<sourceDesc>
+				<biblFull>
+					<titleStmt>
+						<title>Nettleton Civil War Collection: Letter from Adelaide E. Case to
+							Charles N. Tenney, 1861, June 23.</title>
+
+
+						<author>Case, Adelaide</author>
+						<editor/>
+						<respStmt>
+							<resp/>
+							<name/>
+						</respStmt>
+					</titleStmt>
+					<editionStmt>
+						<p/>
+					</editionStmt>
+					<extent>unpublished letter</extent>
+					<publicationStmt>
+						<publisher/>
+						<pubPlace/>
+						<idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr
+							Nettleton Civil War Collection, Department of Special Collections,
+							Alderman Library, UVa.</idno>
+					</publicationStmt>
+					<seriesStmt>
+						<p/>
+					</seriesStmt>
+					<notesStmt>
+						<note/>
+					</notesStmt>
+				</biblFull>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<projectDesc>
+				<p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+			</projectDesc>
+			<editorialDecl>
+				<p> </p>
+				<p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to
+					aid in establishing analytical groupings. </p>
+			</editorialDecl>
+			<refsDecl>
+				<p/>
+			</refsDecl>
+
+		</encodingDesc>
+		<profileDesc>
+			<creation>
+				<date value="1861-06-23">1861-06-23</date>
+			</creation>
+			<langUsage>
+				<language id="eng">English</language>
+			</langUsage>
+			<handList>
+				<hand id="h1"/>
+				<hand id="author"/>
+				<hand id="unknown"/>
+				<hand id="cataloger"/>
+			</handList>
+			<textClass>
+				<keywords>
+					<term>nonfiction</term>
+					<term>prose</term>
+					<term>feminine</term>
+					<term>American Civil War/Special Collections</term>
+				</keywords>
+				<keywords>
+					<term type="Field650">LCSH</term>
+				</keywords>
+			</textClass>
+		</profileDesc>
+
+		<revisionDesc>
+			<change>
+				<date value="2005-07">July 2005</date>
+				<respStmt>
+					<resp>Corrector</resp>
+					<name>John Ivor Carlson</name>
+				</respStmt>
+				<item>Converted to XML and/or checked tags.</item>
+			</change>
+			<change>
+				<date value="2009-11-02">November 2nd, 2009</date>
+				<respStmt>
+					<resp>corrector</resp>
+					<name>Digital Curation Services Staff</name>
+				</respStmt>
+				<item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+					(uva-dl-tei).</item>
+			</change>
+		</revisionDesc>
+	</teiHeader>
+
+	<text id="d1">
+		<body id="d2">
+
+			<div1 type="letter" n="1861-06-23" id="d3">
+				<pb n="1" entity="DSSR_000000766_0269"/>
+				<head>Letter, June 23, 1861, from Adelaide E. Case to Charles Tenney</head>
+				<opener>
+					<dateline>
+						<name type="place">Mecca</name>
+						<date value="1861-06-23">June 23<hi rend="super">rd</hi>, /61</date>
+					</dateline>
+				</opener>
+
+				<salute>Dear Friend</salute>
+				<lb/>
+				<p>After receiving your very<lb/> welcome letter last evening, I <unclear
+						cert="decent">seal</unclear><lb/> myself to comply with your request<lb/> to
+					write you. Your letter gave some<lb/> very plea<unclear cert="ok">sant</unclear>
+					feelings and again it<lb/>
+					<unclear/> some feelings amounting almost<lb/> to pain. because I thought there
+					was<lb/> a little <unclear>consider</unclear>able,, of flattery <unclear
+						cert="low">min-</unclear><lb/> gled with it. Perhaps if you had<lb/> been in
+					the room when I read your<lb/> letter, you might have seen me<lb/> indulge a <hi
+						rend="underline">very little</hi> in that<lb/> feminine weakness of
+					blushing<lb/> for indeed I was surprised. There is always<lb/> some thing so
+					disgusting to <unclear/> flattery<lb/> in any form and especially when it<lb/>
+					<pb n="2" entity="DSSR_000000766_0270"/> from those that I wish to call by
+					the<lb/> endering name of friend that for the<lb/> moment it creates within my
+					heart a<lb/> strange sensation that is hard to conquer<lb/> I do not say this as
+					a reproof. but that I<lb/> may be understood. you may not have meant<lb/> it for
+					flattery but I took it as such,<lb/> so if you value my friendship please
+					do<lb/> avoid flattery in every form towards me.<lb/>
+				</p>
+				<p>Although our acquaintance has been very<lb/> short it has been. to me, very
+					pleasant. I shall<lb/> ever rem<add hand="h1" place="inline">em</add>ber with
+					feelings of gratitude your<lb/> short visit at our home and I sincerely<lb/>
+					hope that <hi rend="underline">sometime</hi> in the future it<lb/> will be
+					repeated. Thus it is with life.<lb/> Today we form some agreeable and<orig
+						reg="profitable">prof-<lb/> itable</orig> acquaintance that perchance
+					tomorrow<lb/> may <unclear cert="ok">sever</unclear> forever. When I think of this<lb/>
+					<unclear/> cast a gloom upon my feelings, that is<lb/>
+					<pb n="3" entity="DSSR_000000766_0271"/> hard to dispel. I have sometimes
+					thought<lb/> that I would form no more acquaintances. but<lb/> a desire for
+					sympathy obliges me to succumb.<lb/>
+				</p>
+				<p>As I opened your<del hand="h1" rend="script">your</del> letter, my eye
+					rested<lb/> upon the portrait of Col Elsworth. For a short<lb/> time I sat spell
+					bound. and gazed with<lb/> admiration. then almost unconsciously I<lb/>
+					exclamed.&mdash;Oh! that he should die. and such<lb/> a death. Cousin Jennie
+					Case who was with<lb/> me immediately sprang to my side and<lb/> inquired what
+					was the matter. thinking only<lb/> of my brother Hallie or Brig. but when I<lb/>
+					showed her the portrait, she too was possessed<lb/> with the same feelings. Me
+					dear friend<lb/> how shall I ever thank you for that<lb/> portrait. there was <hi
+						rend="underline">nothing</hi> that I could<lb/> have wished for more. but
+					let us turn<lb/> to something else.<lb/>
+				</p>
+				<p>You spoke in very glowing<lb/>
+					<pb n="4" entity="DSSR_000000766_0272"/> terms of my borther. I can but thank
+					you<lb/> for in my opinion he merits it all<lb/>
+				</p>
+				<p>You say that you dare not hope that I<lb/> think more of you than a common
+					friend.<lb/> No, I do not. how could you expect me to,<lb/> to be sure there are
+					those I have known for years<lb/> that I have no kinder feelings
+						for <unclear>them</unclear><lb/> nor as kind as<add hand="h1" place="inline"
+						>I have</add> for you and have denied<lb/> them the request that to you I
+					granted<lb/> still I wish for no <unclear>nearer</unclear> tie <unclear/>
+					outside<lb/> of my home. than a true and warm-<lb/> hearted friends. perhaps you
+					will ask me<lb/> why it is if you do I will answer you.<lb/> You also ask if I
+					have objections to our<lb/> changing ambrotypes? I most assuredly<lb/> have.
+					That was one of the sentences which<lb/> gave me pain. You may think me a<lb/>
+					<unclear>queer</unclear> girl&mdash;but I have several reasons<lb/> for
+					refusing that request. one is this.<lb/>
+					<pb n="5" entity="DSSR_000000766_0273"/> our acquaintance has been very
+					short.<lb/> But do not think that I deem that<lb/> a sufficient reason. far from
+					it. If you<lb/> had heard the low vulgar expressions I<lb/> once heard uttered
+					by a youth while<lb/> gazing at a likeness of a pure minded<lb/> noble girl. you
+					would not wonder that<lb/> I then made a vow to never let my<lb/> portrait go
+					into the hands of a gentleman<lb/> when he was nothing more than a<lb/> common
+					friend. Do not imagine that<lb/> I think you would be guilty of such a<lb/> base
+					act. no. never If I did Addie would<lb/> be the wrong one to be writing to you
+					now<lb/> But that vow is made and cannot be<lb/> broken. I think that where a
+					gantleman<lb/> and lady are engaged, <hi rend="underline">then</hi> they
+					should<lb/> change portraits. for then it is a sacred<lb/>
+					<pb n="6" entity="DSSR_000000766_0274"/> gift but not till then. Now you
+					have<lb/> my reasons in full In your letter you<lb/> spoke of that insurrection.
+					and of your being<lb/> the second man in line. It would do no<lb/> good for me
+					to praise you. but there was a<lb/> feeling of pride kindled in my bosom<lb/>
+					when I read it. You asked if Laura knew<lb/> that you corresponded with me? Yes
+					she does<lb/> there are but few things or secrets of mine<lb/> that she does not
+					know. she sends her<lb/> respects to you and says tell him to<lb/> always do
+					what he knows to be right. Is not<lb/> that godd advice? I understood that the
+						7<hi rend="super">th</hi><lb/>
+					<unclear/> had left Camp therefore I hardly<lb/> know where to send this. But my
+					letter<lb/> is getting some what lengthy so I will<lb/> close with the request
+					to write soon (what<lb/> a miserable pen this is) Yours in friendship<lb/>
+				</p>
+				<closer>
+					<signed>Addie <unclear/> Case</signed>
+				</closer>
+			</div1>
+		</body>
+	</text>
+</TEI.2>

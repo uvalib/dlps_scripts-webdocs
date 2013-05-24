@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0301 SYSTEM "000000766_0301" NDATA jpg>
+<!ENTITY DSSR_000000766_0302 SYSTEM "000000766_0302" NDATA jpg>
+<!ENTITY DSSR_000000766_0303 SYSTEM "000000766_0303" NDATA jpg>
+<!ENTITY DSSR_000000766_0304 SYSTEM "000000766_0304" NDATA jpg>
+
+<!--<!ENTITY NA61j16a SYSTEM "NA61j16a.jpg" NDATA jpg>
+<!ENTITY NA61j16b SYSTEM "NA61j16b.jpg" NDATA jpg>
+<!ENTITY NA61j16c SYSTEM "NA61j16c.jpg" NDATA jpg>
+<!ENTITY NA61j16d SYSTEM "NA61j16d.jpg" NDATA jpg>-->
+]>
+
+<TEI.2 id="NA61j16">
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date value="1861-10-16"
+      >16 October 1861</date></title>
+    <author>Case, Adelaide E.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Espinosa, Robert J.</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>Robert J. Espinosa, University of Virginia Library Electronic Text Center.</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">12</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NA61j16</idno>
+    <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton/</p>-->
+                    <p n="copyright"/>
+                </availability>
+    <date value="2000">2000</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Page images have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Adelaide E. Case to Charles N. Tenney, 16 October 1861</title>
+
+
+      <author>Adelaide E. Case</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 p.</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p>[Notes about the original source]</p>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p>All unambiguous end-of-line hyphens have been retained.</p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings.</p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1861-10-16">1861-10-16</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>feminine</term>
+     <term>American Civil War:Women Writers:Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-02">November 2nd, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">September 30, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+ <text id="d1">
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1861-10-16">October 16th, 1861</date>
+
+      <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+     </bibl>
+    </head>
+
+    <p>Adelaide apologizes for not writing and says she has been very busy, including having just
+     returned from the funeral of her uncle, "Old Squire Sperry". She recounts the first snowfall,
+     lamenting the fact that sleigh-rides and "kissing parties" are not possible because the snow
+     doesn't last. She asks Charlie's opinion concerning an incident involving General Fremont and
+     remarks that she believes he has been wronged. Although she complains mildly of having to write
+     to so many correspondents, she tells Charlie that he is her favorite, and would not dream of
+     burning his letters, as he has suggested, but rather saves them in a special location in her
+     trunk. She laments the fact that her friend Dora has gone to Colebrook to visit her sister and
+     that she will miss her, and she reveals that she shares some passages of Charlie's letters with
+     Dora. She admonishes Charlie to take good care of his health, otherwise she would want to
+     attend to his needs, which would be quite impossible. She remarks that she has recently been to
+     a musical concert, and has learned a new song, &ldquo;Mother Dear O! Pray for
+     Me&rdquo;which she would like to play for him. She sends her salutation, calling Charlie
+     "Sojor Boy".</p>
+   </div1>
+  </front>
+  <body id="d4">
+
+
+   <div1 type="letter" n="1861-10-16" id="d5">
+    <pb n="1" entity="DSSR_000000766_0301"/>
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1861-10-16">16 October
+      1861</date></head>
+    <opener>
+     <dateline>
+      <name type="place">Mecca.</name>
+      <date value="1861-10-16">October 16, 1861</date>
+     </dateline>
+    </opener>
+    <salute>Dear <hi rend="underline">Friend</hi> Charlie</salute>
+    <p>Is not Addie rather<lb/> dilatory about writing to her absent but<lb/> never forgotten
+     friend? If you knew how<lb/> busy she had been you would not wonder.<lb/> We have been bereft
+     of a kind and<lb/> dear old uncle during the week and<lb/> I have just returned from his <orig
+      reg="funeral.">funeral</orig><lb/> You doubtless, while in <abbr expan="North Carolina"
+     >NC</abbr> heard<lb/> of &ldquo;Old Squire Sperry&rdquo; as he was <orig reg="called"
+      >called</orig><lb/> We feel his loss most deeply but still<lb/> we could not wish to prolong
+     his stay and<lb/> see him suffer as he has during the past<lb/>
+      <orig reg="month.">month</orig><lb/>
+    </p>
+    <p>What a dreary dismal day this <orig reg="is.">is</orig> The<lb/> S snow has fell, almost
+     unceasingly all<lb/>
+     <pb n="2" entity="DSSR_000000766_0302"/><orig reg="day.">day</orig> It is the first that
+     we<lb/> have had and it comes so driving<lb/> as if old winter's anger was roused at<lb/> the
+     delay and wished [n]to throw it's<lb/> vengeance on the innocent and <orig reg="receding"
+      >recding</orig><lb/> fall. And then you <hi rend="super">know</hi> how aggravating it is<lb/>
+     when we are imagining sleigh-rides and<lb/> kissing parties (redicolous) and all
+      &ldquo;su<del hand="h1">g</del>ch good<lb/> things&rdquo; to have the snow melt as
+     fast as<lb/> it comes. But let us change the <orig reg="discourse.">discourse</orig><lb/>
+    </p>
+    <p>What do you think of the supersession of<lb/> General <orig reg="Fremont.">Fremont</orig> I
+     think it a shame to<lb/> this <orig reg="Government.">Government</orig> I think Fremont
+     will<lb/> demand an <orig reg="investigation.">investigation</orig> I hope so at <orig
+      reg="least.">least</orig><lb/> I think he is better capable of the affair<lb/> than Hunter
+     although the latter may be<lb/> a prudent <orig reg="man.">man</orig><lb/>
+    </p>
+    <p> I almost envy you your situation<lb/> if you have but one correspondent for<lb/> I have so
+     many that I often neglect <orig reg="them.">them</orig><lb/> And Charlie is neglected the least
+      of <orig reg="any.">any</orig><lb/> I always take pleasure in writing to you<lb/> more so than
+     any other of my <orig reg="correspondents.">correspondents</orig><lb/>
+     <pb n="3" entity="DSSR_000000766_0303"/> except Kallie</p>
+    <p>What a foolish request you made in<lb/> your last letter, for me to burn your <orig
+      reg="letter.">letter</orig><lb/> Why dear Charlie you did not mean it did<lb/>
+     <orig reg="you?">you.</orig> I did not <orig reg="comply.">comply</orig> If you could see<lb/>
+     the little box with Charlies letters in it<lb/> stowed away in one corner of my trunk<lb/> you
+     would not wish me to leave a<lb/> vacant place. But it is so dark I can<lb/> not see the<orig
+      reg="lines.">lines</orig><lb/>
+    </p>
+    <p> Dear Charlie, I see that I have<lb/> made some ludicrous blunders trying to<lb/> write when
+     I could not see, but I will<lb/> take it for granted that you have<lb/> excused them and drop
+      the <orig reg="subject.">subject</orig></p>
+    <p> Charlie, perhaps Addie is not quite as<lb/> deficient in the knowlede of Military<lb/>
+     language as you may imagine, although<lb/> I confess my ignorance in that respect<lb/> to a
+     great extent still I flatter<lb/> myself that I know more about it<lb/> now than I did one
+      year <orig reg="ago.">ago</orig></p>
+    <p> My little wife (Dora I mean) is up in <pb n="4" entity="DSSR_000000766_0304"/> Cole-brook to
+      her <orig reg="sisters.">sisters</orig> I was up there<lb/> and made her a visit last
+     saturday<lb/> and staid until monday. she intends<lb/> remain<hi rend="super">in</hi>g (I can
+     not spell) there during the<lb/>
+     <orig reg="winter.">winter</orig> I shall be very lonesome with out<lb/> her merry <orig
+      reg="laugh.">laugh</orig> I always feel better<lb/> when I am with <orig reg="her.">her</orig>
+     And you must excuse<lb/> me if I do wrong but I let her blue<lb/> eye peep into your letters
+      some<orig reg="times.">times</orig><lb/>
+    </p>
+    <p> She must see some passages at <orig reg="least.">least</orig><lb/> How is your health now
+      dear <orig reg="Charlie?">Charlie</orig> You must<lb/> be <hi rend="underline">very</hi> careful
+     and prudent in regard<lb/> to your health for if I should learn that<lb/> you were ill I should
+     so {underline} long to be with<lb/> you and supply your wants and you know<lb/> that it would
+     not be very convenient<lb/> if you was way down in <orig reg="Charleston."
+     >Charleston</orig><lb/> Is Camp Warren located as beautifully<lb/> as Camp <orig reg="Dennison?"
+      >Dennison</orig><lb/>
+    </p>
+    <p> I attended a musical concert a few evenings<lb/> ago. You know that I am a great lover of
+     music<lb/> therefore it is needless for me to tell how<lb/> much I enjoyed it. I have learned a
+     new piece<lb/> of music entitled "Mother dear O! pray for me"<lb/> I think it grand. Would that
+     you were here<lb/> I would play it for you. Do you not like the <orig reg="title?"
+     >title</orig><lb/> If you can make out this long lingo I will call<lb/> you an uncommon smart
+     "Sojor boy"<lb/>
+    </p>
+    <closer>The Good Bye lingers but I must give it<lb/> Please write soon to your "Ohio Sister"<lb/>
+     <signed>Addie</signed><seg type="postscript">"Heavens choisest blessings be thine dear<lb/>
+      Charlie" involuntarily escapes from the lips of<lb/> Addie</seg></closer>
+   </div1>
+  </body>
+ </text>
+</TEI.2>

@@ -1,0 +1,100 @@
+html {
+	margin: 0px;
+	padding: 0px;
+	background: #336;
+}
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	padding: 0px;
+	margin: 0px;
+	text-align: center; /* to center page in ie */
+	margin-left:auto;
+	margin-right:auto;
+	width:90%;
+	background-color:white;
+}
+
+p, td, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5 {
+	font-family: Arial, san-serif;
+}
+
+#navmenu  {
+	list-style-type: none;
+}
+
+/*
+#navmenu {
+	position: relative;
+	width: 140px;
+	margin: 0;
+	padding: 2px;
+	background-color: #CCC;
+	border: 1px solid #000;
+}
+
+#navmenu li {
+	list-style: none;
+	margin: 0px;
+	font-size: 90%;
+}
+
+#navmenu li div {
+	margin: 0;
+}
+*/
+
+ul.subnav {
+	display: none;
+}
+
+.hide {
+	display: none;
+}
+
+h1, h2, h3, h4, p, ul, ol, blockquote, td, div {
+	text-align: left; /*to avoid center-aligned text in NS4 */
+}  
+
+h1 {
+	font-size: 165%;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 140%;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 115%;
+	font-weight: bold;
+}
+
+h4 {
+ font-weight: bold;
+}
+
+a:link  {
+    color:  #039;
+    }
+    
+a:visited   {
+    color:  #333;
+    }
+    
+a:active    {
+    color:  #036;
+    }
+    
+a:hover {
+    color:  #03C;
+    }
+
+div#footer, div#footer-object {
+	font-size: 80%;
+}
+
+div#css-select {
+	display: none;
+}

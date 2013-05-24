@@ -1,0 +1,1937 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % ISOtech SYSTEM "http://text.lib.virginia.edu/charent/iso-tech.ent"> %ISOtech;
+<!ENTITY DSSR_000004399_0001 SYSTEM "000004399_0001" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0002 SYSTEM "000004399_0002" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0003 SYSTEM "000004399_0003" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0004 SYSTEM "000004399_0004" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0005 SYSTEM "000004399_0005" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0006 SYSTEM "000004399_0006" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0007 SYSTEM "000004399_0007" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0008 SYSTEM "000004399_0008" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0009 SYSTEM "000004399_0009" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0010 SYSTEM "000004399_0010" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0011 SYSTEM "000004399_0011" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0012 SYSTEM "000004399_0012" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0013 SYSTEM "000004399_0013" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0014 SYSTEM "000004399_0014" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0015 SYSTEM "000004399_0015" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0016 SYSTEM "000004399_0016" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0017 SYSTEM "000004399_0017" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0018 SYSTEM "000004399_0018" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0019 SYSTEM "000004399_0019" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0020 SYSTEM "000004399_0020" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0021 SYSTEM "000004399_0021" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0022 SYSTEM "000004399_0022" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0023 SYSTEM "000004399_0023" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0024 SYSTEM "000004399_0024" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0025 SYSTEM "000004399_0025" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0026 SYSTEM "000004399_0026" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0027 SYSTEM "000004399_0027" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0028 SYSTEM "000004399_0028" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0029 SYSTEM "000004399_0029" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0030 SYSTEM "000004399_0030" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0031 SYSTEM "000004399_0031" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0032 SYSTEM "000004399_0032" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0033 SYSTEM "000004399_0033" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0034 SYSTEM "000004399_0034" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0035 SYSTEM "000004399_0035" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0036 SYSTEM "000004399_0036" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0037 SYSTEM "000004399_0037" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0038 SYSTEM "000004399_0038" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0039 SYSTEM "000004399_0039" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0040 SYSTEM "000004399_0040" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0041 SYSTEM "000004399_0041" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0042 SYSTEM "000004399_0042" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0043 SYSTEM "000004399_0043" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0044 SYSTEM "000004399_0044" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0045 SYSTEM "000004399_0045" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0046 SYSTEM "000004399_0046" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0047 SYSTEM "000004399_0047" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0048 SYSTEM "000004399_0048" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0049 SYSTEM "000004399_0049" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0050 SYSTEM "000004399_0050" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0051 SYSTEM "000004399_0051" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0052 SYSTEM "000004399_0052" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0053 SYSTEM "000004399_0053" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0054 SYSTEM "000004399_0054" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0055 SYSTEM "000004399_0055" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0056 SYSTEM "000004399_0056" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0057 SYSTEM "000004399_0057" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0058 SYSTEM "000004399_0058" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0059 SYSTEM "000004399_0059" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0060 SYSTEM "000004399_0060" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0061 SYSTEM "000004399_0061" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0062 SYSTEM "000004399_0062" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0063 SYSTEM "000004399_0063" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0064 SYSTEM "000004399_0064" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0065 SYSTEM "000004399_0065" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0066 SYSTEM "000004399_0066" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0067 SYSTEM "000004399_0067" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0068 SYSTEM "000004399_0068" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0069 SYSTEM "000004399_0069" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0070 SYSTEM "000004399_0070" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0071 SYSTEM "000004399_0071" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0072 SYSTEM "000004399_0072" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0073 SYSTEM "000004399_0073" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0087 SYSTEM "000004399_0087" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0091 SYSTEM "000004399_0091" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0092 SYSTEM "000004399_0092" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0093 SYSTEM "000004399_0093" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0123 SYSTEM "000004399_0123" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0124 SYSTEM "000004399_0124" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0125 SYSTEM "000004399_0125" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0139 SYSTEM "000004399_0139" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0140 SYSTEM "000004399_0140" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0141 SYSTEM "000004399_0141" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0142 SYSTEM "000004399_0142" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0147 SYSTEM "000004399_0147" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0148 SYSTEM "000004399_0148" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0151 SYSTEM "000004399_0151" NDATA uvaHighRes>
+<!ENTITY DSSR_000004399_0153 SYSTEM "000004399_0153" NDATA uvaHighRes>
+
+]>
+
+<TEI.2 id="D13390">
+    <teiHeader type="AACR2">
+
+        <fileDesc>
+            <titleStmt>
+
+                <title type="main">DIARY OF S. PEARL ROBINSON</title>
+
+                <author>Robinson, S. Pearl</author>
+                <respStmt>
+                    <resp>Creation of machine-readable version: </resp>
+                    <name>Digital Curation Services , University of Virginia Library</name>
+                    <resp>Conversion to TEI.2-conformant markup:</resp>
+                    <name>Digital Curation Services</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Creation of digital images:</resp>
+                    <name>Digitization Services, University of Virginia Library</name>
+                </respStmt>
+
+            </titleStmt>
+
+            <extent>ca. <num type="kilobytes">96</num> kilobytes</extent>
+
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia </pubPlace>
+                <idno type="DCS">D13390</idno>
+                <date value="2009">2009</date>
+            </publicationStmt>
+            
+            <seriesStmt>                
+                <title>University of Virginia Library, Text collection</title>                
+                <idno type="uva-set">UVA-LIB-Text</idno>                  
+                <idno type="uva-set">UVA-LIB-CivilWar</idno>                
+            </seriesStmt>
+
+            <sourceDesc>
+
+                <biblFull>
+                    <titleStmt>
+                        <title type="main">Diary of S. Pearl Robinson [manuscript], 1865 January to
+                            June.</title>
+                        <title type="sort">diary of s. pearl, 1865 january to june</title>
+                        <author>Robinson, S. Pearl</author>
+                    </titleStmt>
+                    <extent>1 vol.</extent>
+                    <publicationStmt>
+                        <idno type="Accession No.">mss 13390</idno>
+                        <idno type="Virgo ID">4298719-1001</idno>
+                        <idno type="title control number">a4298719</idno>
+                        <availability>
+                            <p> Albert &amp;amp; Shirley Small Special Collections, University
+                                of Virginia Library, Charlottesville, Virginia, USA</p>
+                        </availability>
+                    </publicationStmt>
+                </biblFull>
+
+            </sourceDesc>
+
+
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <!-- Per Matt we need to work on this statement-->
+                <p> Prepared for the University of Virginia Library by Digital Curation Services
+                    staff and volunteer Mary Roy Dawson Edwards, Transcriber. March 2007.</p>
+            </projectDesc>
+        </encodingDesc>
+
+        <profileDesc>
+            <langUsage>
+                <language id="eng" usage="main">English</language>
+            </langUsage>
+            <handList>
+                <hand id="author"/>
+                <hand id="unknown"/>
+                <hand id="cataloger"/>
+            </handList>
+        </profileDesc>
+
+    </teiHeader>
+    <text id="d1">
+        <body id="d2">
+            <div1 id="d3" type="part">
+                <pb n="np"/>
+                <head>Diary of S. Pearl Robinson[manuscript]<lb/> 1865 January to June.<lb/></head>
+                <div2 id="d4" type="section">
+                    <head>1865</head>
+                    <div3 id="d5" type="entry">
+                        <head>Entry 1</head>
+                        <p>S. Pearl Robinson Co. D 10 Reg Vt</p>
+                    </div3>
+                    <div3 id="d6" type="entry">
+                        <pb entity="DSSR_000004399_0014" n="np"/>
+                        <head>
+                            <date value="1865-01-01">January<lb/> 1.</date>
+                        </head>
+                        <p>Cold and Clear. I was on Picket. </p>
+                    </div3>
+                    <div3 id="d7" type="entry">
+                        <head>
+                            <date value="1865-01-02">2.</date>
+                        </head>
+                        <p>Warm growing Came off picket </p>
+                    </div3>
+                    <div3 id="d8" type="entry">
+                        <head>
+                            <date value="1865-01-03">3.</date>
+                        </head>
+                        <p>mild and cloudy snowing in the evening.</p>
+                    </div3>
+                    <div3 id="d9" type="entry">
+                        <pb entity="DSSR_000004399_0015" n="np"/>
+                        <head>
+                            <date value="1865-01-04">January<lb/> 4.</date>
+                        </head>
+                        <p>clear and cold</p>
+                    </div3>
+                    <div3 id="d10" type="entry">
+                        <head>
+                            <date value="1865-01-05">5.</date>
+                        </head>
+                        <p>in Camp pleasant and Warming </p>
+                    </div3>
+                    <div3 id="d11" type="entry">
+                        <head>
+                            <date value="1865-01-06">6.</date>
+                        </head>
+                        <p>on fatique [-] warm and rained</p>
+                    </div3>
+                    <div3 id="d12" type="entry">
+                        <pb entity="DSSR_000004399_0016" n="np"/>
+                        <head>
+                            <date value="1865-01-07">January<lb/> 7.</date>
+                        </head>
+                        <p>in quarters</p>
+                    </div3>
+                    <div3 id="d13" type="entry">
+                        <head>
+                            <date value="1865-01-08">8.</date>
+                        </head>
+                        <p>clear and cold, on Camp guard at Fort <unclear>[-]</unclear></p>
+                    </div3>
+                    <div3 id="d14" type="entry">
+                        <head>
+                            <date value="1865-01-09">9.</date>
+                        </head>
+                        <p>warm of ground and went into Camp line or tacked on our left Dress parade
+                            in the evening</p>
+                    </div3>
+                    <div3 id="d15" type="entry">
+                        <pb entity="DSSR_000004399_0017" n="np"/>
+                        <head>
+                            <date value="1865-01-10">January<lb/>10.</date>
+                        </head>
+                        <p>rained hard during the day </p>
+                    </div3>
+                    <div3 id="d16" type="entry">
+                        <head>
+                            <date value="1865-01-11">11.</date>
+                        </head>
+                        <p>clear and pleasant</p>
+                    </div3>
+                    <div3 id="d17" type="entry">
+                        <head>
+                            <date value="1865-01-12">12.</date>
+                        </head>
+                        <p>pleasant</p>
+                    </div3>
+                    <div3 id="d18" type="entry">
+                        <pb entity="DSSR_000004399_0018" n="np"/>
+                        <head>
+                            <date value="1865-01-13">January<lb/> 13.</date>
+                        </head>
+                        <p>pleasant</p>
+                    </div3>
+                    <div3 id="d19" type="entry">
+                        <head>
+                            <date value="1865-01-14">14.</date>
+                        </head>
+                        <p>clear &amp; cold. went on picket on reserve Capt. Davis and Crane
+                            went home on furlough</p>
+                    </div3>
+                    <div3 id="d20" type="entry">
+                        <head>
+                            <date value="1865-01-15">15.</date>
+                        </head>
+                        <p>cold and chilly relieved from picket dress parade in the evening</p>
+                    </div3>
+                    <div3 id="d21" type="entry">
+                        <pb entity="DSSR_000004399_0019" n="np"/>
+                        <head>
+                            <date value="1865-01-16">January<lb/>16.</date>
+                        </head>
+                        <p>very pleasant drill. one hour dress parade</p>
+                    </div3>
+                    <div3 id="d22" type="entry">
+                        <head>
+                            <date value="1865-01-17">17.</date>
+                        </head>
+                        <p>cold on fatigue</p>
+                    </div3>
+                    <div3 id="d23" type="entry">
+                        <head>
+                            <date value="1865-01-18">18.</date>
+                        </head>
+                        <p>quite pleasant inspecting quarters</p>
+                    </div3>
+                    <div3 id="d24" type="entry">
+                        <pb entity="DSSR_000004399_0020" n="np"/>
+                        <head>
+                            <date value="1865-01-19">January<lb/> 19.</date>
+                        </head>
+                        <p>cloudy dress parade one half hour drill</p>
+                    </div3>
+                    <div3 id="d25" type="entry">
+                        <head>
+                            <date value="1865-01-20">20.</date>
+                        </head>
+                        <p>cold went on picket</p>
+                    </div3>
+                    <div3 id="d26" type="entry">
+                        <head>
+                            <date value="1865-01-21">21.</date>
+                        </head>
+                        <p>cold rained all day came of<!--[f]--> picket </p>
+                    </div3>
+                    <div3 id="d27" type="entry">
+                        <pb entity="DSSR_000004399_0021" n="np"/>
+                        <head>
+                            <date value="1865-01-22">January<lb/> 22.</date>
+                        </head>
+                        <p>cloudy</p>
+                    </div3>
+                    <div3 id="d28" type="entry">
+                        <head>
+                            <date value="1865-01-23">23.</date>
+                        </head>
+                        <p>rained boys on picket I was on fatigue </p>
+                    </div3>
+                    <div3 id="d29" type="entry">
+                        <head>
+                            <date value="1865-01-24">24.</date>
+                        </head>
+                        <p>pleasant come of<!--[f]--> picket</p>
+                    </div3>
+                    <div3 id="d30" type="entry">
+                        <pb entity="DSSR_000004399_0022" n="np"/>
+                        <head>
+                            <date value="1865-01-25">January<lb/> 25.</date>
+                        </head>
+                        <p>cold. Batteryline drill two hours</p>
+                    </div3>
+                    <div3 id="d31" type="entry">
+                        <head>
+                            <date value="1865-01-26">26.</date>
+                        </head>
+                        <p>cold</p>
+                    </div3>
+                    <div3 id="d32" type="entry">
+                        <head>
+                            <date value="1865-01-27">27.</date>
+                        </head>
+                        <p>cold as the Devil</p>
+                    </div3>
+                    <div3 id="d33" type="entry">
+                        <pb entity="DSSR_000004399_0023" n="np"/>
+                        <head>
+                            <date value="1865-01-28">January<lb/> 28.</date>
+                        </head>
+                        <p>cold and windy </p>
+                    </div3>
+                    <div3 id="d34" type="entry">
+                        <head>
+                            <date value="1865-01-29">29.</date>
+                        </head>
+                        <p>cold went on picket </p>
+                    </div3>
+                    <div3 id="d35" type="entry">
+                        <head>
+                            <date value="1865-01-30">30.</date>
+                        </head>
+                        <p>warm came of<!--[f]--> picket. Brig<!--[ade]--> dress parade</p>
+                    </div3>
+                    <div3 id="d36" type="entry">
+                        <pb entity="DSSR_000004399_0024" n="np"/>
+                        <head>
+                            <date value="1865-01-31">January<lb/> 31.</date>
+                        </head>
+                        <p>Very pleasant company drill in afternoon.</p>
+                    </div3>
+                    <div3 id="d37" type="entry">
+                        <pb entity="DSSR_000004399_0025" n="np"/>
+                        <head>
+                            <date value="1865-02-01">February<lb/> 1.</date>
+                        </head>
+                        <p>cold company drill in the morning </p>
+                    </div3>
+                    <div3 id="d38" type="entry">
+                        <head>
+                            <date value="1865-02-02">2.</date>
+                        </head>
+                        <p>clear on fatigue at Fort Wadsworth<ref target="n1" n="1">{1}</ref></p>
+                    </div3>
+                    <div3 id="d39" type="entry">
+                        <head>
+                            <date value="1865-02-03">3.</date>
+                        </head>
+                        <p><unclear>[-]</unclear> warm company drill in morning Battallion drill
+                            rained and snowed</p>
+                    </div3>
+                    <div3 id="d40" type="entry">
+                        <pb entity="DSSR_000004399_0026" n="np"/>
+                        <head>
+                            <date value="1865-02-04">February<lb/> 4.</date>
+                        </head>
+                        <p>Clear and plesant Battallion drill one hour dress paraid <!--[parade]-->
+                            <unclear>reten</unclear> a letter to Leucia</p>
+                    </div3>
+                    <div3 id="d41" type="entry">
+                        <head>
+                            <date value="1865-02-05">5.</date>
+                        </head>
+                        <p>Clear and Cold orders to march but did not go hard fiting
+                            <!--[fighting]--> on the left this after noon Orders to march at a
+                            moment notis <!--[notice]--></p>
+                    </div3>
+                    <div3 id="d42" type="entry">
+                        <head>
+                            <date value="1865-02-06">6. </date>
+                        </head>
+                        <p>clear and plesant Dress praid <!--[parade]-->
+                        </p>
+                    </div3>
+                    <div3 id="d43" type="entry">
+                        <pb entity="DSSR_000004399_0027" n="np"/>
+                        <head>
+                            <date value="1865-03-07">February<lb/> 7.</date>
+                        </head>
+                        <p>Clear and pleasant going on picket Stormy as the Devil rained all day
+                            hard fight on the left at nite</p>
+                    </div3>
+                    <div3 id="d44" type="entry">
+                        <head>
+                            <date value="1865-03-08">8.</date>
+                        </head>
+                        <p>clear but very cold came off picket</p>
+                    </div3>
+                    <div3 id="d45" type="entry">
+                        <head>
+                            <date value="1865-02-09">9.</date>
+                        </head>
+                        <p>Cold and Cloudy </p>
+                    </div3>
+                    <div3 id="d46" type="entry">
+                        <pb entity="DSSR_000004399_0028" n="np"/>
+                        <head>
+                            <date value="1865-02-10">February<lb/> 10.</date>
+                        </head>
+                        <p>Cold and Cloudy </p>
+                    </div3>
+                    <div3 id="d47" type="entry">
+                        <head>
+                            <date value="1865-02-11">11.</date>
+                        </head>
+                        <p>warm and pleasant</p>
+                    </div3>
+                    <div3 id="d48" type="entry">
+                        <head>
+                            <date value="1865-02-12">12.</date>
+                        </head>
+                        <p>Wind blows hard and very cold </p>
+                    </div3>
+                    <div3 id="d49" type="entry">
+                        <pb entity="DSSR_000004399_0029" n="np"/>
+                        <head>
+                            <date value="1865-02-13">February<lb/> 13.</date>
+                        </head>
+                        <p>clear and cold Went on picket changed coffee for
+                            <!--[Robinson exchanges coffee for tobacco with rebels.]--> tobackto
+                            <!--[tobacco]--> With the rebs</p>
+                    </div3>
+                    <div3 id="d50" type="entry">
+                        <head>
+                            <date value="1865-02-14">14.</date>
+                        </head>
+                        <p>cold and cloudy came of<!--[f]--> picket</p>
+                    </div3>
+                    <div3 id="d51" type="entry">
+                        <head>
+                            <date value="1865-02-15">15.</date>
+                        </head>
+                        <p>cold and rainy all day </p>
+                    </div3>
+                    <div3 id="d52" type="entry">
+                        <pb entity="DSSR_000004399_0030" n="np"/>
+                        <head>
+                            <date value="1865-02-16">February<lb/> 16.</date>
+                        </head>
+                        <p>Warm and pleasant in Camp all day monthly in specttion </p>
+                    </div3>
+                    <div3 id="d53" type="entry">
+                        <head>
+                            <date value="1865-02-17">17.</date>
+                        </head>
+                        <p>cold and rainy all day on fituege <!--[fatigue]--> at fort fisher
+                            <!--[Fort Fisher]--></p>
+                    </div3>
+                    <div3 id="d54" type="entry">
+                        <head>
+                            <date value="1865-02-18">18.</date>
+                        </head>
+                        <p>clear and plesant in Camp all day</p>
+                    </div3>
+                    <div3 id="d55" type="entry">
+                        <pb entity="DSSR_000004399_0031" n="np"/>
+                        <head>
+                            <date value="1865-02-19">February<lb/> 19.</date>
+                        </head>
+                        <p>clear and plesant all day on pickett</p>
+                    </div3>
+                    <div3 id="d56" type="entry">
+                        <head>
+                            <date value="1865-02-20">20.</date>
+                        </head>
+                        <p>clear and warm came off picket Brigaid Review in the afternoon a letter
+                            from home </p>
+                    </div3>
+                    <div3 id="d57" type="entry">
+                        <head>
+                            <date value="1865-02-21">21.</date>
+                        </head>
+                        <p>Clear and plesant on guard</p>
+                    </div3>
+                    <div3 id="d58" type="entry">
+                        <pb entity="DSSR_000004399_0032" n="np"/>
+                        <head>
+                            <date value="1865-02-22">February<lb/> 22.</date>
+                        </head>
+                        <p>Clear and pleasant came off guard Divis<!--[i]-->on Review at half past
+                            two </p>
+                    </div3>
+                    <div3 id="d59" type="entry">
+                        <head>
+                            <date value="1865-02-23">23.</date>
+                        </head>
+                        <p>Warm and rainy all day on fitueg <!--[fatigue]--></p>
+                    </div3>
+                    <div3 id="d60" type="entry">
+                        <head>
+                            <date value="1865-02-23">24.</date>
+                        </head>
+                        <p>Warm and Cloudy Signed the pay rolls this after no<!--[o]-->n</p>
+                    </div3>
+                    <div3 id="d61" type="entry">
+                        <pb entity="DSSR_000004399_0033" n="np"/>
+                        <head>
+                            <date value="1865-02-25">February<lb/> 25.</date>
+                        </head>
+                        <p>Cloudy and rainy all day on fitueg <!--[fatigue]--> at fort fisher paid
+                            <!--[Fort Fisher]--> off for four mont<!--[h]-->s sent twenty dollars
+                            home by G. E. Davis 26. cloudy and Winday </p>
+                    </div3>
+                    <div3 id="d62" type="entry">
+                        <head>
+                            <date value="1865-02-27">27.</date>
+                        </head>
+                        <p>Clear and plesant on fitueg <!--[fatigue]--> all day at fort fisher
+                            <!--[Fort
+                         Fisher]--></p>
+                    </div3>
+                    <div3 id="d63" type="entry">
+                        <pb entity="DSSR_000004399_0034" n="np"/>
+                        <head>
+                            <date value="1865-02-28">February<lb/> 28.</date>
+                        </head>
+                        <p>Rainy all day on picket </p>
+                    </div3>
+                    <div3 id="d64" type="entry">
+                        <pb entity="DSSR_000004399_0035" n="np"/>
+                        <head>
+                            <date value="1865-03-01">March 1.</date>
+                        </head>
+                        <p>Warm and Cloudy came off picket dress praid <!--[parade]--></p>
+                    </div3>
+                    <div3 id="d65" type="entry">
+                        <head>
+                            <date value="1865-03-02">2.</date>
+                        </head>
+                        <p>Warm and Cloudy rainy on fitueg <!--[fatigue]--> at fort fisher
+                            <!--[Fort Fisher]--></p>
+                    </div3>
+                    <div3 id="d66" type="entry">
+                        <head>
+                            <date value="1865-03-03">3.</date>
+                        </head>
+                        <p>Warm and Cloudy went over to the old Brigaid </p>
+                    </div3>
+                    <div3 id="d67" type="entry">
+                        <pb entity="DSSR_000004399_0036" n="np"/>
+                        <head>
+                            <date value="1865-03-04">March 4.</date>
+                        </head>
+                        <p>Warm and Cloudy on picket</p>
+                    </div3>
+                    <div3 id="d68" type="entry">
+                        <head>
+                            <date value="1865-03-05">5.</date>
+                        </head>
+                        <p>Clear and plesant came of<!--[f]--> picket</p>
+                    </div3>
+                    <div3 id="d69" type="entry">
+                        <head>
+                            <date value="1865-03-05">6.</date>
+                        </head>
+                        <p>Clear and plesant on fitueg <!--[fatigue]--> at fort Fisher
+                            <!--[Fort Fisher]--></p>
+                    </div3>
+                    <div3 id="d70" type="entry">
+                        <pb entity="DSSR_000004399_0037" n="np"/>
+                        <head>
+                            <date value="1865-03-07">March<lb/> 7.</date>
+                        </head>
+                        <p>Clear and plesant in camp all day</p>
+                    </div3>
+                    <div3 id="d71" type="entry">
+                        <head>
+                            <date value="1865-03-08">8.</date>
+                        </head>
+                        <p>Warm and Cloudy rained in the after noon </p>
+                    </div3>
+                    <div3 id="d72" type="entry">
+                        <head>
+                            <date value="1865-03-09">9.</date>
+                        </head>
+                        <p>Cloudy in the morning rained in the after noon on Picket</p>
+                    </div3>
+                    <div3 id="d73" type="entry">
+                        <pb entity="DSSR_000004399_0038" n="np"/>
+                        <head>
+                            <date value="1865-03-10">March<lb/> 10.</date>
+                        </head>
+                        <p>Clear and Warm came off Picket</p>
+                    </div3>
+                    <div3 id="d74" type="entry">
+                        <head>
+                            <date value="1865-03-11">11.</date>
+                        </head>
+                        <p>Clear and Plesant one man shot in our Divis<!--[i]-->on to day one
+                            <!--[h]-->ours drill in the after noon</p>
+                    </div3>
+                    <div3 id="d75" type="entry">
+                        <head>
+                            <date value="1865-03-12">12.</date>
+                        </head>
+                        <p>Clear and Plesant on picket</p>
+                    </div3>
+                    <div3 id="d76" type="entry">
+                        <pb entity="DSSR_000004399_0039" n="np"/>
+                        <head>
+                            <date value="1865-03-13">March<lb/> 13.</date>
+                        </head>
+                        <p>Clear and Plesant Came off Picket on fitueg <!--[fatigue]--> in the after
+                            noon had a letter from Mary </p>
+                    </div3>
+                    <div3 id="d77" type="entry">
+                        <head>
+                            <date value="1865-03-14">14.</date>
+                        </head>
+                        <p>Warm and plesant on camp Guard writin a letter to Charley monthily in
+                            Spection orders to move at a moment notis </p>
+                    </div3>
+                    <div3 id="d78" type="entry">
+                        <head>
+                            <date value="1865-03-15">15.</date>
+                        </head>
+                        <p>Warm and Cloudy in Camp all day</p>
+                    </div3>
+                    <div3 id="d79" type="entry">
+                        <pb entity="DSSR_000004399_0040" n="np"/>
+                        <head>
+                            <date value="1865-03-16">March<lb/> 16.</date>
+                        </head>
+                        <p>Wind blue like hell all day and rained in the evening on picket</p>
+                    </div3>
+                    <div3 id="d80" type="entry">
+                        <head>
+                            <date value="1865-03-17">17.</date>
+                        </head>
+                        <p>Clear and pleasant Came off picket </p>
+                    </div3>
+                    <div3 id="d81" type="entry">
+                        <head>
+                            <date value="1865-03-18">18.</date>
+                        </head>
+                        <p>Clear and plesant in camp all day</p>
+                    </div3>
+                    <div3 id="d82" type="entry">
+                        <pb entity="DSSR_000004399_0041" n="np"/>
+                        <head>
+                            <date value="1865-03-19">March<lb/> 19.</date>
+                        </head>
+                        <p>Clear and plesant on picket five rebs came in last nite on the next post
+                            to me </p>
+                    </div3>
+                    <div3 id="d83" type="entry">
+                        <head>
+                            <date value="1865-03-20">20.</date>
+                        </head>
+                        <p>Clear and plesant came off picket</p>
+                    </div3>
+                    <div3 id="d84" type="entry">
+                        <head>
+                            <date value="1865-03-21">21.</date>
+                        </head>
+                        <p>Warm and winday in the morning rained in the after noon and
+                            ev<!--[e]-->ning</p>
+                    </div3>
+                    <div3 id="d85" type="entry">
+                        <pb entity="DSSR_000004399_0042" n="np"/>
+                        <head>
+                            <date value="1865-03-22">March<lb/> 22.</date>
+                        </head>
+                        <p>Clear and pleasant on fitueg <!--[fatigue]--> in the Woods</p>
+                    </div3>
+                    <div3 id="d86" type="entry">
+                        <head>
+                            <date value="1865-03-23">23.</date>
+                        </head>
+                        <p>Clear but very Winday in the morning Winday all day</p>
+                    </div3>
+                    <div3 id="d87" type="entry">
+                        <head>
+                            <date value="1865-03-24">24.</date>
+                        </head>
+                        <p>Clear and <unclear>[-]</unclear> Cold Went on picket</p>
+                    </div3>
+                    <div3 id="d88" type="entry">
+                        <pb entity="DSSR_000004399_0043" n="np"/>
+                        <head>
+                            <date value="1864-03-25">March<lb/> 25.</date>
+                        </head>
+                        <p>heavy attack on the <!--[U.S. attack at Fort Fisher]--> write
+                            <!--[right]--> and soon the whole length of the line carr<!--[i]-->ed
+                            the first line of the Rebs Works With a very little loss a letter from
+                            home</p>
+                    </div3>
+                    <div3 id="d89" type="entry">
+                        <head>26.</head>
+                        <p>Clear and cold Just came off picket evry thing all quiet</p>
+                    </div3>
+                    <div3 id="d90" type="entry">
+                        <head>27.</head>
+                        <p>Clear and cold Just came off picket Clear and Warm going on picket to
+                            nite</p>
+                    </div3>
+                    <div3 id="d91" type="entry">
+                        <pb entity="DSSR_000004399_0044" n="np"/>
+                        <head>
+                            <date value="1865-03-28">March<lb/> 28.</date>
+                        </head>
+                        <p>Clear and plesant came off picket </p>
+                    </div3>
+                    <div3 id="d92" type="entry">
+                        <head>
+                            <date value="1865-03-29">29.</date>
+                        </head>
+                        <p>Clear and plesant broke Camp in the four <!--[fore]--> noon and Went down
+                            on the left in the works heavy canena <add hand="author" place="top">d</add>
+                            <add hand="author" place="top">ing</add>
+                            <!--[Fighting continues]--> on the left</p>
+                    </div3>
+                    <div3 id="d93" type="entry">
+                        <head>
+                            <date value="1865-03-30">30.</date>
+                        </head>
+                        <p>rainy all day laying in the Works hard fi<!--[gh]-->ting on the left
+                            car<!--[ri]-->ed two lines of the rebels works</p>
+                    </div3>
+                    <div3 id="d94" type="entry">
+                        <pb entity="DSSR_000004399_0045" n="np"/>
+                        <head>
+                            <date value="1865-03-31">March<lb/> 31.</date>
+                        </head>
+                        <p>clear and pleasant Went in the camp at three O clock the 24 Corps is a
+                            going to charge the works to nite if they get repulced <!--[repulsed]-->
+                            we will hafto <!--[have to]--> go and give it a try sent a letter home
+                            to nite</p>
+                    </div3>
+                    <div3 id="d95" type="entry">
+                        <pb entity="DSSR_000004399_0046" n="np"/>
+                        <head>
+                            <date value="1865-04-01">April<lb/> 1.</date>
+                        </head>
+                        <p>Clear and plesant in Camp inspection at ten it is all quiet on the
+                        lines</p>
+                    </div3>
+                    <div3 id="d96" type="entry">
+                        <head>
+                            <date value="1865-04-02">2.</date>
+                        </head>
+                        <p>Clear and plesant We <ref target="n2" n="2">{2}</ref>
+                            charged the rebels works at four P.M. and car<!--[ri]-->ed them took a
+                            lot of pris<!--[o]-->ners Charles Sawyer wounded and
+                            <unclear>[-]</unclear></p>
+                    </div3>
+                    <div3 id="d97" type="entry">
+                        <head>
+                            <date value="1865-04-03">3.</date>
+                        </head>
+                        <p>started on a march to foll<!--[ow]--> the rebs Richmon<!--[d]--> is ours
+                            this morning at 8 P.M. and Petersburg<ref target="n3" n="3">{3}</ref>
+                        </p>
+                    </div3>
+                    <div3 id="d98" type="entry">
+                        <pb entity="DSSR_000004399_0047" n="np"/>
+                        <head>
+                            <date value="1865-04-04">April<lb/> 4.</date>
+                        </head>
+                        <p>Cloudy and Warm marched about 5 miles Drew three day rations Started
+                            marching about 8 <!--[or 7]--> miles halting at 9 Oclock for the Night
+                        </p>
+                    </div3>
+                    <div3 id="d99" type="entry">
+                        <head>
+                            <date value="1865-04-05">5.</date>
+                        </head>
+                        <p>Started marching about marching about 5 miles halting &amp; Drew 3
+                            days rations Started marching about 12 miles halting about 8 Oclock for
+                            the night</p>
+                    </div3>
+                    <div3 id="d100" type="entry">
+                        <head>
+                            <date value="1865-04-06">6.</date>
+                        </head>
+                        <p>Started at 6 6 Oclock A.M. marching about 18 miles forming line of Battle
+                            and Charging the enemy Driving them in confusion 9000 prisoners 16
+                            pieces Arty &amp; G Ewell
+                            Captured<ref target="n4" n="4">{4}</ref></p>
+                    </div3>
+                    <div3 id="d101" type="entry">
+                        <pb entity="DSSR_000004399_0048" n="np"/>
+                        <head>
+                            <date value="1865-04-07">April<lb/>7.</date>
+                        </head>
+                        <p>Started marching about 3 miles halting for Dinner Started marching 5
+                            miles halting near Farmingstown also crossing the Appomattux River
+                            rained Some Gen Custer and Staff passed
+                            <!--[Gen. Custer has
+                            30 Confederate battle flags.]-->
+                            bearing 30 Rebel battle flags</p>
+                    </div3>
+                    <div3 id="d102" type="entry">
+                        <head>
+                            <date value="1865-04-08">8.</date>
+                        </head>
+                        <p>pleasant, broke Camp at 8 O clock halted two hours in forenoon to draw
+                            Rations, drew three days Orders they are to last six, Camped at 9 O
+                            clock P.M. having marched twelve miles, no signs of the enemy,</p>
+                    </div3>
+                    <div3 id="d103" type="entry">
+                        <head>
+                            <date value="1865-04-09">9.</date>
+                        </head>
+                        <p>pleasant. left Camp in the morning marched 8 miles Genl. Lee surrendered
+                            up <!--[Lee
+                            surrenders.]--> his whole forces
+                            to Gen Grant they was great rejoicing among the troops on both sides</p>
+                    </div3>
+                    <div3 id="d104" type="entry">
+                        <pb entity="DSSR_000004399_0049" n="np"/>
+                        <head>
+                            <date value="1865-04-10">April<lb/> 10.</date>
+                        </head>
+                        <p>Cloudy &amp; rainy laid in Camp all day for the first time since
+                            started on the Campaign Mail went out for the first time also, order to
+                            move at 6 Oclock in the morning, wrete <!--[write]--> Home</p>
+                    </div3>
+                    <div3 id="d105" type="entry">
+                        <head>
+                            <date value="1865-04-11">11.</date>
+                        </head>
+                        <p>Cloudy and rainy, broke Camp at 6 Oclock A.M. marched back the same road
+                            we went, Camped for the night in a piece of Woods 8 miles from
+                            Farmville, having marched eighteen miles, roads very muddy</p>
+                    </div3>
+                    <div3 id="d106" type="entry">
+                        <head>
+                            <date value="1865-04-12">12.</date>
+                        </head>
+                        <p>Clear and plesant started at 6 O clock A.M. march back the same road We
+                            went Camped for the nite about two milds <!--[miles]--> from rices
+                            station <ref target="n5" n="5">{5}</ref></p>
+                    </div3>
+                    <div3 id="d107" type="entry">
+                        <pb entity="DSSR_000004399_0050" n="np"/>
+                        <head>
+                            <date value="1865-04-13">April<lb/> 13.</date>
+                        </head>
+                        <p>Cloudy and rainy started about 10 A.M. marched to burk station the
+                            distons <!--[distance]--> about 12 miles went into Camp Druemasions
+                             <ref target="n6" n="6">{6}</ref>
+                            for four days at night two <add hand="author" place="top">letters</add>
+                            from Charley </p>
+                    </div3>
+                    <div3 id="d108" type="entry">
+                        <head>
+                            <date value="1865-04-14">14.</date>
+                        </head>
+                        <p>Clear and plesant fixed up camp dress praid <!--[parade]--> at night 1
+                            letter from home 1 letter from Lucia</p>
+                    </div3>
+                    <div3 id="d109" type="entry">
+                        <head>
+                            <date value="1865-04-15">15.</date>
+                        </head>
+                        <p>Cloudy and rainy all day in Camp went over to the old Brigaid at nite</p>
+                    </div3>
+                    <div3 id="d110" type="entry">
+                        <pb entity="DSSR_000004399_0051" n="np"/>
+                        <head>
+                            <date value="1865-04-16">April<lb/> 16.</date>
+                        </head>
+                        <p>Clear and plesant Regimental inspection at 10 A.M. drespraid
+                            <!--[dress
+                         parade]--> at 5 P.M.</p>
+                    </div3>
+                    <div3 id="d111" type="entry">
+                        <head>
+                            <date value="1865-04-17">17.</date>
+                        </head>
+                        <p>Clear and plesant in camp all day drespraid at five O Clock</p>
+                    </div3>
+                    <div3 id="d112" type="entry">
+                        <head>
+                            <date value="1865-04-18">18.</date>
+                        </head>
+                        <p>Clear and plesant drespraid at five OClock sent a letter to Charley</p>
+                    </div3>
+                    <div3 id="d113" type="entry">
+                        <pb entity="DSSR_000004399_0052" n="np"/>
+                        <head>
+                            <date value="1865-04-19">April<lb/> 19.</date>
+                        </head>
+                        <p>Clear and plesant in Camp all day Went over to the old Brigaid at
+                        nite</p>
+                    </div3>
+                    <div3 id="d114" type="entry">
+                        <head>
+                            <date value="1865-04-20">20.</date>
+                        </head>
+                        <p>Cloudy and rainy all day Went ou <add hand="author" place="top">o</add>t
+                            a forigen <unclear>[?]</unclear> Came in at twelve at nite</p>
+                    </div3>
+                    <div3 id="d115" type="entry">
+                        <head>
+                            <date value="1865-04-21">21.</date>
+                        </head>
+                        <p>Clear and plesant Went on picket in the after noon</p>
+                    </div3>
+                    <div3 id="d116" type="entry">
+                        <pb entity="DSSR_000004399_0053" n="np"/>
+                        <head>
+                            <date value="1865-04-22">April<lb/> 22.</date>
+                        </head>
+                        <p>pleasant. Regiment relieved from Picket in the evening</p>
+                    </div3>
+                    <div3 id="d117" type="entry">
+                        <head>
+                            <date value="1865-04-23">23.</date>
+                        </head>
+                        <p>pleasant. broke Camp at daylight and moved in the direction of
+                            Danvill,
+                            marched <!-- [near
+                            Danville, Va.]-->
+                            near the Rail-Road Camped at 6 Oclock for the night </p>
+                    </div3>
+                    <div3 id="d118" type="entry">
+                        <head>
+                            <date value="1865-04-24">24.</date>
+                        </head>
+                        <p>pleasant, broke Camp at 7 A.M. marched in the same direction as
+                            yesterday, halted near the Staunton River at night </p>
+                    </div3>
+                    <div3 id="d119" type="entry">
+                        <pb entity="DSSR_000004399_0054" n="np"/>
+                        <head>
+                            <date value="1865-04-25">April<lb/> 25.</date>
+                        </head>
+                        <p>pleasant, Crossed the River on a Pontoon Bridge in the morning marched in
+                            the same direction Crossed the Bannister River<ref target="n7"
+                                n="7">{7}</ref> halted
+                            near it for the night </p>
+                    </div3>
+                    <div3 id="d120" type="entry">
+                        <head>
+                            <date value="1865-04-26">26.</date>
+                        </head>
+                        <p>pleasant, through the Town of Bannister in the morning, "Band playing"
+                            &amp;c Stars &amp; Stripes floating from the "Court=House" a
+                            very pleasant Country we are passing through now, have passed Several
+                            larg Mansions.</p>
+                    </div3>
+                    <div3 id="d121" type="entry">
+                        <head>
+                            <date value="1865-04-27">27.</date>
+                        </head>
+                        <p>pleasant, reached Danville today <!-- [in Danville, Va.]--> at 8.
+                            O.clock P.M. having been on the march five days and traveled over one
+                            hundred Miles.</p>
+                    </div3>
+                    <div3 id="d122" type="entry">
+                        <pb entity="DSSR_000004399_0055" n="np"/>
+                        <head>
+                            <date value="1865-04-28">April<lb/> 28.</date>
+                        </head>
+                        <p>pleasant, lay out our camp in a piece of woods two miles from the Town.
+                            "Official -Despatch," came today of the "Surrender" of Johnson
+                            <!--[Johnson
+                                surrenders.]--> the day
+                            spent in pitching our tents and Policing our Camp</p>
+                    </div3>
+                    <div3 id="d123" type="entry">
+                        <head>
+                            <date value="1865-04-29">29.</date>
+                        </head>
+                        <p>pleasant, in the forenoon, cloudy in the afternoon, rained towards night,
+                            for the first time since the 15th Inst. Policing our Camp &amp; same
+                            as yesterday</p>
+                    </div3>
+                    <div3 id="d124" type="entry">
+                        <head>
+                            <date value="1865-04-30">30.</date>
+                        </head>
+                        <p>pleasant, part of the Regiment on Picket, "Muster-Day". Policing after
+                            Muster</p>
+                    </div3>
+                    <div3 id="d125" type="entry">
+                        <pb entity="DSSR_000004399_0056" n="np"/>
+                        <head>
+                            <date value="1865-05-01">May<lb/> 1.</date>
+                        </head>
+                        <p>warm &amp; pleasant, Regt relieved from Picket. all quiet, nothing
+                            new,</p>
+                    </div3>
+                    <div3 id="d126" type="entry">
+                        <head>
+                            <date value="1865-05-02">2.</date>
+                        </head>
+                        <p>pleasant, Mail came for the first time since we got to this place.
+                            No-News,</p>
+                    </div3>
+                    <div3 id="d127" type="entry">
+                        <head>
+                            <date value="1865-05-03">3.</date>
+                        </head>
+                        <p>pleasant, obtained a "Pass" to go to the Town, all quiet there bought
+                            some Sugar &amp;c, </p>
+                    </div3>
+                    <div3 id="d128" type="entry">
+                        <pb entity="DSSR_000004399_0057" n="np"/>
+                        <head>
+                            <date value="1865-05-04">May<lb/> 4.</date>
+                        </head>
+                        <p>pleasant in the forenoon, rain in the afternoon, one year ago today we
+                            started on the Cam-paign<ref target="n8" n="8">{8}</ref>
+                            through the "Wilderness" &amp;c from "Culpepper",</p>
+                    </div3>
+                    <div3 id="d129" type="entry">
+                        <head>
+                            <date value="1865-05-05">5.</date>
+                        </head>
+                        <p>pleasant in the forenoon Cloudy in the afternoon on picket evry thing all
+                            quiet now news the last of the first Divison Went this morning </p>
+                    </div3>
+                    <div3 id="d130" type="entry">
+                        <head>
+                            <date value="1865-05-06">6.</date>
+                        </head>
+                        <p>Clear and pleasant Came of<!--[f]--> picket</p>
+                    </div3>
+                    <div3 id="d131" type="entry">
+                        <pb entity="DSSR_000004399_0058" n="np"/>
+                        <head>
+                            <date value="1865-05-07">May <lb/>7.</date>
+                        </head>
+                        <p>Clear and plesant in camp all day no news to day.</p>
+                    </div3>
+                    <div3 id="d132" type="entry">
+                        <head>
+                            <date value="1865-05-08">8.</date>
+                        </head>
+                        <p>Cloud and rained in the afternoon on fitueg <!--[fatigue]--> about to
+                            <!--[two]--> ours <!--[hours]--> in the afternoon riten a letter to
+                            Father</p>
+                    </div3>
+                    <div3 id="d133" type="entry">
+                        <head>
+                            <date value="1865-05-09">9.</date>
+                        </head>
+                        <p>Clear and plesant in camp all day evry thing all quiet received a letter
+                            from home</p>
+                    </div3>
+                    <div3 id="d134" type="entry">
+                        <pb entity="DSSR_000004399_0059" n="np"/>
+                        <head>
+                            <date value="1865-04-10">April<lb/> 10.</date>
+                        </head>
+                        <p>Cloudy and looks very much like rain the most of the regiment went on
+                            picket I went down to Danvill to day </p>
+                    </div3>
+                    <div3 id="d135" type="entry">
+                        <head>
+                            <date value="1865-04-11">11.</date>
+                        </head>
+                        <p>clear and plesant in camp all day riten a letter to Father to day and one
+                            to Charley, </p>
+                    </div3>
+                    <div3 id="d136" type="entry">
+                        <head>
+                            <date value="1865-04-12">12.</date>
+                        </head>
+                        <p>Clear and plesant Went over to the fifth Regiment Gerome went into the
+                            pineers <!--[pioneers]--> to day There is know <!--[no]--> news</p>
+                    </div3>
+                    <div3 id="d137" type="entry">
+                        <pb entity="DSSR_000004399_0060" n="np"/>
+                        <head>
+                            <date value="1865-04-13">May<lb/> 13.</date>
+                        </head>
+                        <p>Clear and plesant went on fitueg in the afternoon </p>
+                    </div3>
+                    <div3 id="d138" type="entry">
+                        <head>
+                            <date value="1865-04-14">14.</date>
+                        </head>
+                        <p>Clear and plesant inspection at 11 A.M. of every thing Brigaid dress
+                            praid at 6 O clock P.M. riten a letter to Margaret
+                            <unclear>[?]</unclear></p>
+                    </div3>
+                    <div3 id="d139" type="entry">
+                        <head>
+                            <date value="1865-04-15">15.</date>
+                        </head>
+                        <p>Clear and very Warm air this afternoon Went on picket came off at nite
+                            Dryl <!--[draw]--> four days rasions <!--[rations]--> to nite</p>
+                    </div3>
+                    <div3 id="d140" type="entry">
+                        <pb entity="DSSR_000004399_0061" n="np"/>
+                        <head>
+                            <date value="1865-05-16">May<lb/> 16.</date>
+                        </head>
+                        <p>Clear and plesant broak Camp at 6 A.M. marched to Danvill<!--[e]--> took
+                            the cars at 10 A.M. and ar<!--[r]-->ived at Burkstation at 6 P.M. know
+                            <!--[no]--> news </p>
+                    </div3>
+                    <div3 id="d141" type="entry">
+                        <head>
+                            <date value="1865-05-17">17.</date>
+                        </head>
+                        <p>Clear and very Warm arrived at Richmond at 7 A.M. and went into Camp in
+                            the afternoon the three rite compinys the rest of the Regiment has not
+                            come up</p>
+                    </div3>
+                    <div3 id="d142" type="entry">
+                        <head>
+                            <date value="1865-05-18">18.</date>
+                        </head>
+                        <p>Clear and plesant I went down to Manchester in the afternoon</p>
+                    </div3>
+                    <div3 id="d143" type="entry">
+                        <pb entity="DSSR_000004399_0062" n="np"/>
+                        <head>
+                            <date value="1865-05-19">May<lb/> 19.</date>
+                        </head>
+                        <p>Cloudy in the morn ing and rained in the afternoon know <!--[no]--> news
+                            to day</p>
+                    </div3>
+                    <div3 id="d144" type="entry">
+                        <head>
+                            <date value="1865-05-20">20.</date>
+                        </head>
+                        <p>Clear and plesant in the Morning showers in the afternoon Dress praid at
+                            6 P.M.</p>
+                    </div3>
+                    <div3 id="d145" type="entry">
+                        <head>
+                            <date value="1865-05-21">21.</date>
+                        </head>
+                        <p>Very warm and plesant all day in Camp</p>
+                    </div3>
+                    <div3 id="d146" type="entry">
+                        <pb entity="DSSR_000004399_0063" n="np"/>
+                        <head>
+                            <date value="1865-05-22">May<lb/> 22.</date>
+                        </head>
+                        <p>Warm and cloudy Very heavy thunder in the eavning Went down to Manchester
+                            ordiers <!--[orders]--> to march at 4 A.M. on guard </p>
+                    </div3>
+                    <div3 id="d147" type="entry">
+                        <head>
+                            <date value="1865-05-23">23.</date>
+                        </head>
+                        <p>Clear and plesant orders to march was counterd manded
+                            <!--[countermanded]--> came of guard </p>
+                    </div3>
+                    <div3 id="d148" type="entry">
+                        <head>
+                            <date value="1865-05-24">24.</date>
+                        </head>
+                        <p>Clear and plesant Started to march at 5 A.M. and past review in Richmond
+                            by Geniral Hallock
+                            <!--[General Henry
+                                Wager Hallock]--> and
+                            marched twenty milds <!--[miles]--> from Richmond </p>
+                    </div3>
+                    <div3 id="d149" type="entry">
+                        <pb entity="DSSR_000004399_0064" n="np"/>
+                        <head>
+                            <date value="1865-05-25">May<lb/> 25.</date>
+                        </head>
+                        <p>Clear and warm as the Devil Started at 6 A.M. from Hanover Courthous
+                            halted for the nite at Chester field Station the distan<add
+                                hand="author" place="top">ce</add> about 11 miles </p>
+                    </div3>
+                    <div3 id="d150" type="entry">
+                        <head>
+                            <date value="1865-05-26">26.</date>
+                        </head>
+                        <p>Rainy all day started marching at 7 A.M. marched about 10 miles and went
+                            into camp in the fields</p>
+                    </div3>
+                    <div3 id="d151" type="entry">
+                        <head>
+                            <date value="1865-05-27">27.</date>
+                        </head>
+                        <p>Cloudy and rainy all day laid in Camp <!--[-]--> days rations know
+                            <!--[no]--> news</p>
+                    </div3>
+                    <div3 id="d152" type="entry">
+                        <pb entity="DSSR_000004399_0065" n="np"/>
+                        <head>May<lb/> 28.</head>
+                        <p>Clear and plesant in camp </p>
+                    </div3>
+                    <div3 id="d153" type="entry">
+                        <head>
+                            <date value="1865-05-29">29.</date>
+                        </head>
+                        <p>Clear and plesant break camp at five A.M. and marched to this Fredhkburg
+                            <!--[Fredricksburg]--> the Distance is about 22 milds <!--[miles]-->
+                            marched it in 8 ours <!--[hours]--> went into camp at 1 P.M. </p>
+                    </div3>
+                    <div3 id="d154" type="entry">
+                        <head>
+                            <date value="1865-05-30">30.</date>
+                        </head>
+                        <p>plesant, broke Camp at 7 O,clk passed through the City and crossed the
+                            Rappahannock River on a Pontoon Bridge , also crossed Acqruer
+                            <!--[Aquia]--> Creek, camped at 5 O,clk</p>
+                    </div3>
+                    <div3 id="d155" type="entry">
+                        <pb entity="DSSR_000004399_0066" n="np"/>
+                        <head>
+                            <date value="1865-05-31">May <lb/>31.</date>
+                        </head>
+                        <p>plesant, broke Camp at 6 O,clk fell out of the Ranks at noon &amp;
+                            made Coffee. Colume halted at 1, O,clk for the day.</p>
+                    </div3>
+                    <div3 id="d156" type="entry">
+                        <pb entity="DSSR_000004399_0067" n="np"/>
+                        <head>
+                            <date value="1865-06-01">June 1.</date>
+                        </head>
+                        <p>pleasant, broke Camp at 6 O,clock, crossed "Wolf-Run" "Shoals," halted at
+                            noon for Coffee. Camped at Fairfax Station for the night </p>
+                    </div3>
+                    <div3 id="d157" type="entry">
+                        <head>
+                            <date value="1865-06-02">2.</date>
+                        </head>
+                        <p>pleasant, broke Camp at 6 O,clock passed Fairfax Court=House arrived at
+                            Baileys Cross Roads at 2 O,clk P.M. where we are to Camp for the
+                            present.</p>
+                    </div3>
+                    <div3 id="d158" type="entry">
+                        <head>
+                            <date value="1865-06-03">3.</date>
+                        </head>
+                        <p>pleasant, lay out our Camp &amp;c. very warm &amp; uncomfortable
+                            weather now</p>
+                    </div3>
+                    <div3 id="d159" type="entry">
+                        <pb entity="DSSR_000004399_0068" n="np"/>
+                        <head>
+                            <date value="1865-06-04">June<lb/> 4.</date>
+                        </head>
+                        <p>pleasant, Regimental Inspection in afternoon nothing of importance going
+                            on. a good many Visitors from the City here</p>
+                    </div3>
+                    <div3 id="d160" type="entry">
+                        <head>
+                            <date value="1865-06-05">5.</date>
+                        </head>
+                        <p>pleasant, Orders. - Two Dress Parades daily. one at 9 Oclock A.M.
+                            &amp; one at Retreat. had both today, some signs of rain this eve,
+                            dress Clothing </p>
+                    </div3>
+                    <div3 id="d161" type="entry">
+                        <head>
+                            <date value="1865-06-06">6.</date>
+                        </head>
+                        <p>Cloudy &amp; quite cool. Two "dress -Parades" Orders all Vermont
+                            Troops to be Reviewed tomorrow by Gov. Smith. We are to move at 8 .oc
+                        </p>
+                    </div3>
+                    <div3 id="d162" type="entry">
+                        <pb entity="DSSR_000004399_0069" n="np"/>
+                        <head>
+                            <date value="1865-06-07">June<lb/> 7.</date>
+                        </head>
+                        <p>pleasant, moved at 8, Oclock A.M. in "light marching orders" to Baileys-
+                            Cross Roads where we were reviewed by Gov. Smith, The Old Vermont
+                            Brigade 1st Vt Cavelry &amp; 8th Infantry there</p>
+                    </div3>
+                    <div3 id="d163" type="entry">
+                        <head>
+                            <date value="1865-06-08">8.</date>
+                        </head>
+                        <p>pleasant, moved at 4 O,clock in "light=marching Order" to Washington,
+                            Reviewed &amp; back to Camp at 2,Ock. P.M. a very hot day.
+                            Ambulances filled with Soldiers who were played-out </p>
+                    </div3>
+                    <div3 id="d164" type="entry">
+                        <head>
+                            <date value="1865-06-09">9.</date>
+                        </head>
+                        <p>pleasant, a very quiet day Regimental Dress-Parade at 6 Oclock P.M. </p>
+                    </div3>
+                    <div3 id="d165" type="entry">
+                        <pb entity="DSSR_000004399_0070" n="np"/>
+                        <head>
+                            <date value="1865-06-10">June<lb/> 10.</date>
+                        </head>
+                        <p>pleasant in forenoon, rainy in afternoon Washed my clothes &amp;c,
+                            nothing new in Camp.</p>
+                    </div3>
+                    <div3 id="d166" type="entry">
+                        <head>
+                            <date value="1865-06-11">11.</date>
+                        </head>
+                        <p>pleasant in Camp all day </p>
+                    </div3>
+                    <div3 id="d167" type="entry">
+                        <head>
+                            <date value="1865-06-12">12.</date>
+                        </head>
+                        <p>pleasant a very quiet day Regimental Dress Parade at 6 O clock P.M.</p>
+                    </div3>
+                    <div3 id="d168" type="entry">
+                        <pb entity="DSSR_000004399_0071" n="np"/>
+                        <head>
+                            <date value="1865-06-13">June<lb/> 13.</date>
+                        </head>
+                        <p>Cloudy in the fournoon <!--[forenoon]--> and reigned <!--[rained]--> in
+                            the after noon nothing new </p>
+                    </div3>
+                    <div3 id="d169" type="entry">
+                        <head>
+                            <date value="1865-06-14">14.</date>
+                        </head>
+                        <p>pleasant all day, no news, </p>
+                    </div3>
+                    <div3 id="d170" type="entry">
+                        <head>
+                            <date value="1865-06-15">15.</date>
+                        </head>
+                        <p>rained all night, cloudy &amp; cool today, Sanitary-Commision gave us
+                            many articles of clothing today, </p>
+                    </div3>
+                    <div3 id="d171" type="entry">
+                        <pb entity="DSSR_000004399_0072" n="np"/>
+                        <head>
+                            <date value="1865-06-15">June<lb/> 16.</date>
+                        </head>
+                        <p>cloudy in forenoon, pleasant in afternoon, Van Deusen &amp; Dimmick
+                            of this Company enlisted in the Regular Service today </p>
+                    </div3>
+                    <div3 id="d172" type="entry">
+                        <head>
+                            <date value="1865-06-17">17.</date>
+                        </head>
+                        <p>pleasant, Obrien enlisted today no news </p>
+                    </div3>
+                    <div3 id="d173" type="entry">
+                        <head>
+                            <date value="1865-06-18">18.</date>
+                        </head>
+                        <p>pleasant, Company Inspection this afternoon</p>
+                    </div3>
+                    <div3 id="d174" type="entry">
+                        <pb entity="DSSR_000004399_0073" n="np"/>
+                        <head>
+                            <date value="1865-06-19">June<lb/> 19.</date>
+                        </head>
+                        <p>plesant, 14th Jersey Regiment of the Brigade mustered out this afternoon.
+                            a light-shower this evening </p>
+                    </div3>
+                    <div3 id="d175" type="entry">
+                        <head>
+                            <date value="1865-06-20">20.</date>
+                        </head>
+                        <p>pleasant in forenoon a very heavy Thunder Shower this afternoon </p>
+                    </div3>
+                    <div3 id="d176" type="entry">
+                        <head>
+                            <date value="1865-06-21">21.</date>
+                        </head>
+                        <p>pleasant, the "muster out" - "Rools" <!--[rules ?]--> of the Regiment,
+                            examined by the "mustering out" Officer today<ref target="n9"
+                                n="9">{9}</ref>
+                           </p>
+                    </div3>
+                </div2>
+                <div2 id="d177" type="section">
+                    <head>1867</head>
+                    <div3 id="d178" type="entry">
+                        <pb entity="DSSR_000004399_0087" n="np"/>
+                        <head>
+                            <date value="1867-01-18">Jan 18, 1867</date>
+                        </head>
+                        <p>started for the woods time commenced this morning
+                            !!!!!!1/3!!*111111*111111* !!!!!!*111111*</p>
+                    </div3>
+                    <div3 id="d179" type="entry">
+                        <pb entity="DSSR_000004399_0091" n="np"/>
+                        <head>August <lb/> 10.<ref target="n10" n="10">{10}</ref></head>
+                        <p>Commenced work this 5 day of April 1866 <unclear>[This line not
+                            legible.]</unclear> Received 6 &frac12; Dollars recived 1 Dollar recived 5
+                            Dollars recived 1 Dollar </p>
+                    </div3>
+                    <div3 id="d180" type="entry">
+                        <head>11.</head>
+                        <p>3.75 paid recived 15 Dollars recived 4 Dollars recived 6.00 Dollars
+                            recived 1.00 Dollar recived pay 1.00 recived 5.00 Dollars </p>
+                    </div3>
+                    <div3 id="d181" type="entry">
+                        <head>12.</head>
+                        <p>recived <!--[-]--> Dollars</p>
+                    </div3>
+                    <div3 id="d182" type="entry">
+                        <pb entity="DSSR_000004399_0092" n="np"/>
+                        <head>August<lb/> 13,14, &amp; 14<ref target="n11" n="11">{11}</ref></head>
+                        <p/>
+                    </div3>
+                    <div3 id="d183" type="entry">
+                        <pb entity="DSSR_000004399_0093" n="np"/>
+                        <head>August<lb/>16.</head>
+                        <p> 1 day lost half day lost 6 days lost </p>
+                    </div3>
+
+
+                    <div3 id="d184" type="entry">
+                        <pb entity="DSSR_000004399_0123" n="np"/>
+                        <head>
+                            <date value="1867-11-11">November<lb/> 10.</date>
+                        </head>
+                        <p>Roberts 5<lb/> Roberts</p>
+                    </div3>
+                    <div3 id="d185" type="entry">
+                        <pb entity="DSSR_000004399_0124" n="np"/>
+                        <head>
+                            <date n="np" value="1867-11-13">November<lb/> 13. </date>
+                        </head>
+                        <p>Mibills 2</p>
+                        <p>Mibills 2</p>
+                        <p>Mibills 1</p>
+                    </div3>
+                    <div3 id="d186" type="entry">
+                        <pb entity="DSSR_000004399_0125" n="np"/>
+                        <head>November<ref target="n12" n="12">{12}</ref><lb/></head>
+                        <p>16. 1 Mors</p>
+                        <p>2 Mors 2</p>
+                    </div3>
+                    <div3 id="d187" type="entry">
+                        <pb entity="DSSR_000004399_0139" n="np"/>
+                        <p>Colby &frac12; lb of tobaco .50 Crossed 2 lb of baken <!--[bacon]--> To Wit 5 lb
+                            of flour .50 </p>
+                    </div3>
+
+                    <div3 id="d188" type="entry">
+                        <pb entity="DSSR_000004399_0140" n="np"/>
+                        <head>Cash Account - January</head>
+                        <table>
+                            <row>
+                                <cell>Date</cell>
+                                <cell/>
+                                <cell cols="2">Rec's.</cell>
+                                <cell cols="2">Paid.</cell>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Golooly</cell>
+                                <cell>1</cell>
+                                <cell>25</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Sutilar</cell>
+                                <cell>17</cell>
+                                <cell>00</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Casivant</cell>
+                                <cell>12</cell>
+                                <cell>50 </cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                        </table>
+                        <p>April 21 Borod [<!--borrowed]--> 10 Dollars of John Dolan</p>
+                    </div3>
+                    <div3 id="d189" type="entry">
+                        <pb entity="DSSR_000004399_0141" n="np"/>
+                        <head>Cash Account. - February</head>
+                        <table>
+                            <row>
+                                <cell>Date</cell>
+                                <cell/>
+                                <cell cols="2">Rec'd.</cell>
+                                <cell cols="2">Paid</cell>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Golooly</cell>
+                                <cell>1.</cell>
+                                <cell>25</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Sutilar</cell>
+                                <cell>18.</cell>
+                                <cell>50 </cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Casivant</cell>
+                                <cell>2</cell>
+                                <cell>50</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell>18</cell>
+                                <cell><unclear>Pooby</unclear> Hay</cell>
+                                <cell>1</cell>
+                                <cell>25</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                        </table>
+                        <p/>
+                    </div3>
+                    <div3 id="d190" type="entry">
+                        <pb entity="DSSR_000004399_0142" n="np"/>
+                        <head>Cash Account. - March</head>
+                        <table>
+                            <row>
+                                <cell>Date</cell>
+                                <cell/>
+                                <cell cols="2">Rec'd</cell>
+                                <cell cols="2">Paid</cell>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>John Daly</cell>
+                                <cell>7.</cell>
+                                <cell>75</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Pool</cell>
+                                <cell>2.</cell>
+                                <cell>50 </cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Garo Co J</cell>
+                                <cell>2.</cell>
+                                <cell>30</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>
+                                    <del hand="author">
+                                        <hi rend="line-through">[line scratched out]</hi>
+                                    </del>
+                                </cell>
+                                <cell/>
+                                <cell>X</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Washburn</cell>
+                                <cell>1.</cell>
+                                <cell>25</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Dailey</cell>
+                                <cell>1.</cell>
+                                <cell>25</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Colby</cell>
+                                <cell/>
+                                <cell>.50</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Cross Co J</cell>
+                                <cell>1</cell>
+                                <cell>.15</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                        </table>
+                    </div3>
+                    <div3 id="d191" type="entry">
+                        <pb entity="DSSR_000004399_0147" n="np"/>
+                        <head>Cash Account. -August.</head>
+                        <table>
+                            <row>
+                                <cell>Date</cell>
+                                <cell/>
+                                <cell cols="2">Rec'd</cell>
+                                <cell cols="2">Paid</cell>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Rubber</cell>
+                                <cell>4</cell>
+                                <cell>40</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Pants, Infts</cell>
+                                <cell>4</cell>
+                                <cell>75 </cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Shoes</cell>
+                                <cell>2</cell>
+                                <cell>70</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Blouses </cell>
+                                <cell>4 </cell>
+                                <cell>80</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Over Coat </cell>
+                                <cell>12</cell>
+                                <cell>00</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Blouses </cell>
+                                <cell>4 </cell>
+                                <cell>80</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Wool Blanket</cell>
+                                <cell>7 </cell>
+                                <cell>00</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Shirts</cell>
+                                <cell>2</cell>
+                                <cell>32</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Drawers</cell>
+                                <cell>1</cell>
+                                <cell>60</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Socks</cell>
+                                <cell/>
+                                <cell>48</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell/>
+                                <cell>Poncho's</cell>
+                                <cell>5</cell>
+                                <cell>50</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                        </table>
+                    </div3>
+                    <div3 id="d192" type="entry">
+                        <pb entity="DSSR_000004399_0148" n="np"/>
+                        <head>Cash Account. - September</head>
+                        <table>
+                            <row>
+                                <cell>Date</cell>
+                                <cell/>
+                                <cell cols="2">Rec'd</cell>
+                                <cell cols="2">Paid</cell>
+                            </row>
+                            <row>
+                                <cell></cell>
+                                <cell>A C Moody Cash</cell>
+                                <cell></cell>
+                                <cell></cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                        </table>
+                    </div3>
+                    <div3 id="d193" type="entry">
+                        <pb entity="DSSR_000004399_0151" n="np"/>
+                        <head>Account - December</head>
+                        <table>
+                            <row>
+                                <cell>Date</cell>
+                                <cell>Carpenter</cell>
+                                <cell cols="2">Rec'd</cell>
+                                <cell cols="2">Paid</cell>
+                            </row>
+                            <row>
+                                <cell>1</cell>
+                                <cell>half day</cell>
+                                <cell>2.</cell>
+                                <cell>00</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell>1</cell>
+                                <cell>day</cell>
+                                <cell>4.</cell>
+                                <cell>00</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell>1</cell>
+                                <cell>day</cell>
+                                <cell>4.</cell>
+                                <cell>00</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell>1</cell>
+                                <cell>4<!--[th]--> day</cell>
+                                <cell>1.</cell>
+                                <cell>00</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell>1</cell>
+                                <cell>half day</cell>
+                                <cell>2.</cell>
+                                <cell>00 </cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                            <row>
+                                <cell>1</cell>
+                                <cell>day</cell>
+                                <cell>4.</cell>
+                                <cell>00</cell>
+                                <cell/>
+                                <cell/>
+                            </row>
+                        </table>
+                    </div3>
+                    <div3 id="d194" type="entry">
+                        <pb entity="DSSR_000004399_0153" n="np"/>
+                        <head>n.d.</head>
+                        <p><unclear>Mours</unclear> 10 loads of Wood<lb/> 5 loads of Wood </p>
+                    </div3>
+                </div2>
+            </div1>
+            <!--On April
+                7th, (see page 10), Robinson notes, "General Custer and Staff passed bearing 30 Rebel
+                battle flags". On page eleven, Robinson writes of "Camp Druemaisions". Not able to
+                identify or find a reference to it, I asked Bobby Lee Krick, Historian of the Richmond
+                Battlefield Parks. Bobby replied, "Camps usually (but not always) bore the names of
+                either some local person or farm; or, they took the name of a prominent person
+                associated with the regiment (the colonel, or the colonel's wife, or some popular member
+                recently killed in action). I looked at the best map of Nottoway County and failed to
+                find any likely options among the names of local farmers and property owners. I also
+                skimmed the 10th Vermont's roster looking for some similar names and failed there, too.
+                I expect that Robinson misspelled it somehow, and even if it was spelled perfectly the
+                word might not be meaningful to us at this late date." Nottoway County is due west of
+                Petersburg, Virginia. Robinson mentions that he was in the engagement at the Wilderness.
+                On May 4, 1865 (see page 14), he writes, "one year ago today we started on the Campaign
+                through the "Wilderness" &amp;c from "Culpepper"." He was also in the engagement at
+                Fort Fisher, N. C., and Sayler's Creek, Va. where General Ewell was captured (see April
+                6th.) Mary Roy Dawson Edwards, Transcriber March 2007 13390 Page 1 -->
+            
+            <div1 type="note" id="d195">
+                <head>Notes</head>
+                <p>[Transcription Notes: Mary Jo
+                    Kline's transcription style as suggested in her A Guide to Documentary Editing,
+                    Baltimore: The Johns Hopkins Press, 1987, has been followed for S. Pearl Robinson's
+                    Diary. The diary measures 3" X 4 &frac12;". The cover is black leather. The paper is lined. The
+                    dates are pre-printed. Every attempt has been made to transcribe this document
+                    literally. Spelling and punctuation are reproduced as found. Robinson often spells as he
+                    hears a word when he is not sure of the correct spelling. For example, "fatigue" is
+                    spelled "fitueg". Since punctuation and capitalization are seldom used by the author,
+                    three spaces are inserted to denote the end of one thought and the beginning of another.
+                    When words are inserted above the line by the author, the symbol "^" is used with the
+                    inserted words enclosed is apostrophes, such as ^ 'this'. Comments by the transcriber
+                    are placed within square brackets. To denote a word that cannot be discerned, [-] is
+                    used. If a word or a proper name is unclear, a question mark is used, thus [?].</p>
+                <note place="end" id="n1" n="1">
+                    <seg type="note-symbol">{1}</seg>
+                    <p>[Fort Wadsworth is at East Verrazano Narrows,  near
+                    Staten Island, N. Y.]</p>
+                </note>
+                <note place="end" id="n2" n="2">
+                    <seg type="note-symbol">{2}</seg>
+                    <p>[U.S. captures Confederate works]</p>
+                </note>
+                <note place="end" id="n3" n="3">
+                    <seg type="note-symbol">{3}</seg>
+                    <p>[The handwriting on this page is somewhat different.]</p>
+                </note>
+                <note place="end" id="n4" n="4">
+                    <seg type="note-symbol">{4}</seg>
+                    <p>[General Ewell captured at Sayler's Creek, Va.]</p>
+                </note>
+                <note place="end" id="n5" n="5">
+                    <seg type="note-symbol">{5}</seg>
+                    <p>[Rice Station, Va.]</p>
+                </note>
+                <note place="end" id="n6" n="6">
+                    <seg type="note-symbol">{6}</seg>
+                    <p>[See transcription notes at the end of this
+                            transcription.]</p>
+                </note>
+                <note place="end" id="n7" n="7">
+                    <seg type="note-symbol">{7}</seg>
+                    <p>[Banister River is in
+                            Pittsylvania Co., Va.]</p>
+                </note>
+                <note place="end" id="n8" n="8">
+                    <seg type="note-symbol">{8}</seg>
+                    <p>[Robinson in the Wilderness
+                            Campaign]</p>
+                </note>
+                <note place="end" id="n9" n="9">
+                    <seg type="note-symbol">{9}</seg>
+                    <p> [There are no further entries until 1867 when he writes in
+                            pencil on the July 31st page.]</p>
+                </note>
+                <note place="end" id="n10" n="10">
+                    <seg type="note-symbol">{10}</seg>
+                    <p>[On the August 10-11-12 pages, he
+                    writes in pencil.]</p>
+                </note>
+                <note place="end" id="n11" n="11">
+                    <seg type="note-symbol">{11}</seg>
+                    <p>[August 13, 14, &amp; 15
+                    contain notations of dollar amounts but no mention of for what.]</p>
+                </note>
+                <note place="end" id="n12" n="12">
+                    <seg type="note-symbol">{12}</seg>
+                    <p>[At the end of the diary are the
+                        following notations:]</p>
+                </note>
+            </div1>
+
+        </body>
+    </text>
+</TEI.2>

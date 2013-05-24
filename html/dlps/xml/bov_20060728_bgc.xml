@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> 
+%dlps-teiHeader;
+
+<!ENTITY % ISOnum  SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent">  %ISOnum;
+<!ENTITY % ISOpub  SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent">  %ISOpub;
+<!ENTITY % UVAsupp SYSTEM "http://text.lib.virginia.edu/charent/uva-supp.ent"> 
+%UVAsupp;
+]>
+
+
+<TEI.2>
+    <teiHeader type="AACR2">
+        <fileDesc>
+            <titleStmt>
+                <title n="245|a" type="main">Board of Visitors minutes</title>
+                <title type="sort">board of visitors minutes</title>
+                <title n="246" type="alternate">Public minutes of meeting of the Board of Visitors</title>
+                <title n="246" type="alternate">Public minutes of the Board of Visitors meeting</title>
+                <author n="110">
+                    <name n="110|a" type="corporate">University of Virginia</name>
+                    <name n="110|b" type="sub-unit">Board of Visitors</name>
+                </author>
+                <respStmt>
+                    <resp>Creation of electronic transcription and uva-dl-tei markup (TEI P4 with
+                        local customizations)</resp>
+                    <name>University of Virginia Library</name>
+                </respStmt>
+                <biblScope type="date">
+                    <date value="2006-07-28">July 28, 2006</date>
+                </biblScope>
+            </titleStmt>
+            <extent>ca. <num type="kilobytes">25</num> kilobytes</extent>
+            <publicationStmt>
+                <publisher>University of Virginia Library</publisher>
+                <pubPlace>Charlottesville, Virginia</pubPlace>
+                <date value="2009">2009</date>
+                <availability status="public">
+                    <p n="copyright">Copyright &copy; 2008 by the Rector and Visitors of the
+                        University of Virginia</p>
+                    <p n="access">Publicly accessible</p>
+                </availability>
+                <idno type="DLPS ID">bov_20060728_bgc</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title>University of Virginia Library, Text collection</title>
+                <idno type="uva-set">UVA-LIB-Text</idno>
+            </seriesStmt>
+
+
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title n="245|a" type="main">Board of Visitors minutes</title>
+                        <title type="sort">board of visitors minutes</title>
+                        <title n="246" type="alternate">Minutes of the Board of Visitors</title>
+                        <title n="246" type="alternate">BOV minutes</title>
+                        <title n="246" type="alternate">University of Virginia Board of Visitors
+                            minutes</title>
+                        <title n="246" type="alternate">Public minutes of meeting of the Board of
+                            Visitors</title>
+                        <title n="246" type="alternate">Public minutes of the Board of Visitors
+                            meeting</title>
+                        <author n="110">
+                            <name n="110|a" type="corporate">University of Virginia</name>
+                            <name n="110|b" type="sub-unit">Board of Visitors</name>
+                        </author>
+                        <biblScope type="date">
+                            <date value="2006-07-28">July 28, 2006</date>
+                        </biblScope>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Public minutes</edition>
+                    </editionStmt>
+                    <extent n="300">?? pages</extent>
+                    <publicationStmt>
+                        <idno n="090" type="UVa call number">Accession# RG-1/1/</idno>
+                        <idno type="UVa Title Control Number">a2846310</idno>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note n="500">
+                            <p n="500|a">The official minutes contain salary information. Access to
+                                minutes containing salary information will be granted only under the
+                                procedures of the Virginia Freedom of Information Act (Code of
+                                Virginia-2.1-340 ff.) or if permission is granted by the Secretary
+                                of the Board. Researchers interested in obtaining access to these
+                                records should direct a request in writing to the Office of the
+                                Legal Adviser, Madison Hall, University of Virginia. These public
+                                minutes have had salary information deleted and bear no
+                                restrictions.</p>
+                        </note>
+                        <note n="524">
+                            <p n="524|a">Board of Visitors' minutes, Accession # RG-1/1/, Special
+                                Collections Dept., University of Virginia, Charlottesville, Va.</p>
+                        </note>
+                        <note n="520">
+                            <p n="520|a">Minutes of meetings of the university's governing body
+                                which is the legal owner and operator of the institution. Recorded
+                                in the minutes are appointments and other personnel decisions
+                                concerning faculty, decisions about construction of facilities,
+                                gifts to the university, and all other board actions, decisions and
+                                resolutions.</p>
+                        </note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc> &projectDesc; <editorialDecl> &editorial_correction;
+                &editorial_normalization; &editorial_hyphenation; &editorial_quotation;
+                &editorial_stdVals; </editorialDecl>
+            <classDecl>
+                <taxonomy id="LCSH">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+                <taxonomy id="AAT">
+                    <bibl>Art &amp; Architecture Thesaurus</bibl>
+                </taxonomy>
+                <taxonomy id="uva-form">
+                    <bibl>UVa Library Form Categories</bibl>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language n="008" id="eng" usage="main">English</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="LCSH">
+                    <term n="610">University of Virginia</term>
+                </keywords>
+                <keywords scheme="AAT">
+                    <term n="655">Minutes</term>
+                </keywords>
+                <keywords scheme="uva-form">
+                    <term>serial volume</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+    </teiHeader>
+    
+    <text>
+        <body id="d1"> 
+            <div1 type="report" id="d2">
+                <pb n="Page 1 of 4"/>
+                <head>Buildings and Grounds Committee<lb/>
+                2006-07 Goals and Work Plan</head>
+                <div2 type="section" id="d3">
+                    <head>GOALS</head>
+                    <div3 type="statement" id="d4">
+                        <head rend="left">1. Historic asset management</head>
+                        <p>Currently UVa has one of nations most eminent collections
+                            of historic buildings and landscapes, and it is the only UNESCO designated World
+                            Heritage Site campus in the United States. A historic resources plan has been developed
+                            to ensure that the Academical Village receives preservation treatment which conforms to
+                            the highest international standards. The recently completed Historic Preservation
+                            Framework Plan has been disseminated recently, and will help to inform decision-making
+                            as work is proposed on the post-Jefferson buildings on Grounds.</p>
+                        <p><hi rend="underline">Planned Results:</hi> The
+                            completed Historic Preservation Framework Plan has been submitted to the Department of
+                            Historic Resources (DHR) for review and eventual incorporation into a Memorandum of
+                            Understanding with DHR that would ensure the States concurrence with its findings. It
+                            will continue to help to inform decision-making as work is proposed on the
+                            post-Jefferson buildings on Grounds. Based on the knowledge learned from our first tax
+                            credit application (Varsity Hall), we plan to seek approval for historic tax credits to
+                            defray a noteable percentage (+/- 20%) of the costs for the renewal of the Rugby Faculty
+                            Apartments and other appropriate historic projects. In addition, we will continue to
+                            develop Historic Structure Reports on the various components of the Academical Village,
+                            including the Rotunda and Hotel A.</p>
+                    </div3>
+                    <div3 type="statement" id="d5">
+                        <head rend="left">2. Environmental sustainability</head>
+                        <p>Given Jeffersons
+                            intention that UVa's buildings would serve a didactic, as well as a practical, role in
+                            every day life, it would seem appropriate that design of our current buildings do the
+                            same in terms of demonstrating principles of environmental sustainability. While many
+                            other leading universities have been very active in regard to "green building", we have
+                            made only modest efforts to date. Our initial efforts have been directed toward
+                            developing a pragmatic set of design guidelines tailored to the UVa context and its
+                            natural climatic setting; and identification of best management practices as they relate
+                            to the university-at-large.</p>
+                        <p><hi rend="underline">Planned Results:</hi> We will see significant progress in the
+                            area of environmental sustainability. Based on our experience with incorporating LEED
+                            equivalency criteria into selected projects this year, we will focus on ways to
+                            integrate all LEED criteria into the design of all major new buildings. </p>
+                        <p>We are also
+                            underway with a sustainability assessment of existing University efforts in all
+                            operational areas, so that we can promote awareness and encourage the coordination among
+                            sustainability program efforts at the University, ranging from water quality to
+                            recycling. The data collection phase of the assessment will take place this summer, with
+                            the summary report due in September 06. This will lead to the development of a
+                            collaborative network of committed staff, students and faculty already involved in
+                            sustainable practices.</p>
+                        
+                    </div3>
+                    <div3 type="statement" id="d6">
+                        <pb n="Page 2 of 4"/>
+                        <head rend="left">3. Land use: work plan, data analysis &amp; enhanced process</head>
+                        <p>
+                        Though UVa owns more than 5,000 acres beyond its Central Grounds, we
+                        have only just begun efforts to assess comprehensively the natural systems, current
+                        uses, land use constraints, etc., with the long-term goal of more strategic management
+                        of existing lands and the acquisition process through a collaborative approach of the
+                        Office of the Architect and the University of Virginia Foundation. This in turn will
+                        provide for better decision making, stewardship, and future flexibility in the
+                        institutions land use and planning. </p>
+                        <p>
+                        <hi rend="underline">Planned Results:</hi> Much of the preliminary support
+                        work required for the Grounds Plan has been completed and we are well positioned to
+                        develop a full draft of the UVa Grounds Plan in 2007. We have retained a biodiversity
+                        consultant to conduct an analysis of UVa natural systems, and plan to work with
+                        specialty consultants for other systems components of the Grounds Plan including
+                        transportation and circulation infrastructure. As the multiple components of the Grounds
+                        Plan are developed, we will synthesize them through an iterative process to develop
+                        several Grounds Plans alternatives. Development of the draft Grounds Plan is a major and
+                        significant focus of our land use team in 06-07.</p>
+                    </div3>
+                    <div3 type="statement" id="d7">
+                        <head rend="left">4. Process Improvement (new goal for 2006-2007)</head>
+                        <p>
+                        We are initiating a new goal for 2006-2007 with an interdepartmental Process
+                        Improvement emphasis. Within this goal are three new, discrete tasks: implementation of
+                        a Grounds Improvement fund; implementation of a collaborative peer review / value
+                        management practice into the building design process; and standardization of the cost
+                        estimate templates for all new buildings.</p>
+                        <p>
+                        <hi rend="italic">Grounds Improvement Fund:</hi> With its colonnades,
+                        gardens and overall landscape, the Lawn served as the focus of community life in
+                        Jeffersons Academical Village. The larger University landscape provides the connective
+                        tissue that links individual areas and facilities, providing opportunities for
+                        circulation, community gatherings, events and recreation. As such, the quality of the
+                        outdoor environment reflects the overall vitality of the institution. Currently there is
+                        no consistent source of funding for improvements to the landscape infrastructure of the
+                        University other than the 6-year capital program, which is almost exclusively focused on
+                        building construction and renovation. Implementation of the Grounds Improvement Fund
+                        will provide a mechanism to ensure that this community infrastructure system will be
+                        (re)developed as necessary to improve its appearance, functionality, and safety and to
+                        promote conservation in both land use and resources utilization.</p>
+                        <p><hi rend="italic">Value Management / Cost Control:</hi>
+                            With spiraling construction costs, we have recognized a need to refine the
+                            Value Management program and to develop a prototype process for developing and
+                            implementing improved cost models. Our goal is to partner with Facilities Management to
+                            better incorporate value management into the design process, through a systematic and
+                            collaborative peer review at both schematic and design development stages.</p>
+                        <pb n="Page 3 of 4"/>
+                        <p>Results: <lb/>
+                        <hi rend="italic">Grounds Improvement Fund:</hi> A defined percentage contribution applied to the
+                        total construction cost for all approved capital projects will provide the funding to
+                        support a University-wide program that corresponds to a typical municipal public works
+                        program, including upgrades to paths, bus and bicycle facilities, outdoor spaces,
+                        lighting, signs, site furnishings, and public art.</p>
+                        <p><hi rend="italic">Value Management Process:</hi> A
+                        collaborative workshop process involving members and outside peer reviewers will develop
+                        innovative, cost and quality conscious options for managing budget and schedule as well
+                        as improving each of our major capital projects.</p>
+                        <p><hi rend="italic">Cost Estimating Templates:</hi> By
+                        standardizing the reports for each cost consultant on every major project, we will not
+                        only be more capable of making strong managerial decisions for current work, but also
+                        more able to refine our project-type benchmarking information for planning future
+                        development.</p>
+                    </div3>
+                    <div3 type="statement" id="d8">
+                        <head rend="left">5. Safety &amp; Security (new goal for 2006-2007)</head>
+                        <p>The most important
+                            assets of the University are its students, faculty and staff; its facilities and
+                            grounds; and its information. These assets are at risk from both natural and man- made
+                            disasters. The University must endeavor to discover and to assess its vulnerabilities,
+                            to protect its assets with prevention measures, to develop a plan of action to follow if
+                            an event does occur, and to ensure resiliency of the organization in the aftermath of
+                            such an event. The physical environment plays an enormous role in the development of a
+                            comprehensive security plan.</p>
+                        <p>
+                            <hi rend="underline">Results:</hi> A detailed assessment of current issues and
+                            settings will lead to the development of a set of security guidelines to direct the
+                            design of all new major building and landscape projects.</p>
+                       
+                    </div3>
+                </div2>
+                <div2 type="section" id="d9">
+                    <head>WORK PLAN </head>
+                    <pb n="Page 4 of 4"/>
+                    <div3 type="statement" id="d10">
+                        <head rend="left">1. Historic asset management</head>
+                            <list>
+                                <item rend="indent"><hi rend="bold">January 2007</hi>: Approval of first tax credit application
+                                (Varsity Hall); completed outline for second application (Rugby Faculty Apts).</item><lb/>
+                                <item rend="indent"><hi rend="bold">June 2007</hi>: Completion of restoration study, 
+                                    design drawings and specifications, and cost
+                                    study for Pavilion X, Lawn Rooms and adjacent Colonnades.</item><lb/>
+                                <item rend="indent"><hi rend="bold">April 2007</hi>: Completion of
+                                    Historic Structure Report for Rotunda </item><lb/>
+                                <item rend="indent"><hi rend="bold">June 2007</hi>: Draft agreement with Thomas Jefferson
+                                    Foundation regarding a joint building conservation institute and related conservation
+                                    facility completed.</item><lb/>
+                                <item rend="indent"><hi rend="bold">December 2007</hi>: Completion of Historic Structure Report for Hotel A.</item><lb/>
+                                <item rend="indent"><hi rend="bold">December 2007</hi>: Construction of alleyway and pavilion courtyard paving and lighting
+                                prototype area complete.</item>
+                            </list></div3>
+                    <div3 type="statement" id="d11">
+                        <head rend="left">2. Environmental sustainability</head>
+                            <list>
+                                <item rend="indent"><hi rend="bold">December 2006</hi>: Completion of
+                                    LEED certification criteria checklist and cost benefit analysis with users incorporated
+                                    into design phase of all major new buildings.</item><lb/>
+                                <item rend="indent"><hi rend="bold">June 2007</hi>: Web-based system for regular
+                                    communication and information among sustainability proponents established.</item><lb/>
+                                <item rend="indent"><hi rend="bold">October 2007</hi>:
+                                Completion of inventory of existing University sustainability program efforts.</item><lb/>
+                            </list>
+                    </div3>
+                    <div3 type="statement" id="d12">
+                        <head rend="left">3. Land use: Work plan, data analysis and enhanced process</head>
+                            <list>
+                                <item rend="indent"><hi rend="bold">October 2006</hi>: Completion of
+                                    consultant study analysis of UVa natural systems.</item><lb/>
+                                <item rend="indent"><hi rend="bold">December 2006</hi>: With Institutional
+                                    Planning and Provosts Office, completion of analysis of programming projections (supply
+                                    and demand ratio of space needs); analysis needed to develop Grounds Plan carrying
+                                    capacity options.</item><lb/>
+                                <item rend="indent"><hi rend="bold">
+                                    April 2007</hi>: Bicycle and pedestrian plans developed in coordination
+                                    with City and County staff. </item><lb/>
+                                <item rend="indent"><hi rend="bold">June 2007</hi>: Draft UVa Transportation Management Plan
+                                    developed with Parking &amp; Transportation.</item><lb/>
+                                <item rend="indent"><hi rend="bold">August 2007</hi>: Development of draft Grounds
+                                    Plan report and appropriate constituent groups engaged in review process.</item><lb/>
+                            </list></div3>
+                    <div3 type="statement" id="d13">
+                        <head rend="left">4. Process Improvement</head>
+                            <list>
+                                <item rend="indent"><hi rend="bold">December 2006</hi>: Completion of prototype testing and analyses of revised and
+                                    improved Value Management Program for all new building designs in concert with
+                                    Facilities Management.</item><lb/>
+                                <item rend="indent"><hi rend="bold">February 2007</hi>: Completion of standardized cost estimating format
+                                    for all new projects in concert with Facilities Management.</item><lb/>
+                                <item rend="indent"><hi rend="bold">March 2007</hi>: Approved
+                                    surcharge system for funding infrastructure and grounds improvement projects.</item><lb/>
+                                <item rend="indent"><hi rend="bold">July 2007</hi>:
+                                Completed draft design guidelines for the Health System.</item>
+                            </list>
+                    </div3>
+                    <div3 type="statement" id="d14">
+                        <head rend="left">5. Safety &amp; Security</head>
+                            <list>
+                                <item rend="indent"><hi rend="bold">
+                                    July 2007</hi>: Security component incorporated into building and landscape guidelines for
+                                    academic and Health System. </item><lb/>
+                            </list>
+                        </div3>
+                </div2>
+            </div1>
+        </body>
+    </text>
+</TEI.2>

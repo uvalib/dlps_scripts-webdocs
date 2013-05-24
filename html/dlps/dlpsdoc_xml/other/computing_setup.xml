@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+
+<!-- =============================================================== -->
+<!-- NOTE: Update last modified date manually when editing this file -->
+<!-- =============================================================== -->
+
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % TEI.extensions.ent SYSTEM "http://pogo.lib.virginia.edu/dlps/dtd/tei/teitech/teitech.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://pogo.lib.virginia.edu/dlps/dtd/tei/teitech/teitech.dtd">
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+
+<!ENTITY rarr "&#x2192;"><!-- rightward arrow -->
+]>
+<TEI.2>
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Computing Setup for New Staff Members</title>
+<author>Greg Murray (gpm2a@virginia.edu), Digital Library Production Services</author>
+</titleStmt>
+<publicationStmt>
+<publisher>Digital Library Production Services, University of Virginia Library</publisher>
+</publicationStmt>
+</fileDesc>
+<revisionDesc>
+<change>
+<date value="2005-10-28">October 28, 2005</date>
+<respStmt>
+<name id="gpm2a">Greg Murray (Digital Library Production Services)</name>
+<resp>Maintainer</resp>
+</respStmt>
+<item>Updated "Unix Environment" section to pertain to pogo.lib.</item>
+</change>
+<change>
+<date value="2006-04-14">April 14, 2006</date>
+<respStmt>
+<name>Greg Murray (Digital Library Production Services)</name>
+<resp>Maintainer</resp>
+</respStmt>
+<item>Added: Request htaccess permissions. Request DLPS tracking
+system access.</item>
+</change>
+<change>
+<date value="2006-07-07">July 7, 2006</date>
+<respStmt>
+<name>Greg Murray (Digital Library Production Services)</name>
+<resp>Maintainer</resp>
+</respStmt>
+<item>Added: If (and only if) staff member needs to run dlps2ReadyRepo
+script, request that LITS include the user in group 'repo'.</item>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text id="d1">
+<body id="d2">
+<argument>
+
+<p>This document describes the steps needed to set up the computing
+environment for new staff members in Digital Library Production
+Services (DLPS), University of Virginia Library. It is intended for
+use by internal DLPS staff.</p>
+
+<!-- =============================================================== -->
+<!-- NOTE: Update last modified date manually when editing this file -->
+<!-- =============================================================== -->
+
+<p><hi rend="bold">Last modified:</hi> <date type="last-modified" value="2006-07-07">7/7/2006</date></p>
+</argument>
+
+<div1>
+<head>Unix Environment Setup</head>
+
+<div2>
+<head>Unix Accounts</head>
+
+<list>
+
+<item>Request a Unix account for each new staff member. Library IT
+Systems (LITS) handles the creation of accounts; they have a web form at
+
+<xref type="external" url="http://staff.lib.virginia.edu/systems/libsys/help-request.php">http://staff.lib.virginia.edu/systems/libsys/help-request.php</xref>
+
+for submitting such requests.
+
+  <list>
+  <item>Provide the new user's UVa computing ID (email ID)</item>
+
+  <item>Request that <kw>dlpswg</kw> (DLPS working group) should be
+  the new user's default Unix group</item>
+
+  <item>Request that the new user get added to the <kw>htaccess</kw>
+  permissions for web-based tools/documentation under
+  <path>/www/doc/dlps/dlps-only</path> on <kw>pogo.lib</kw></item>
+
+  <item>If (and <emph>only</emph> if) this staff member needs to run
+  the <kw>dlps2ReadyRepo</kw> script, then request that this user get
+  added to the Unix group <kw>repo</kw>
+
+  <admon type="important"><p>Adding a user to <kw>repo</kw> grants that
+  user write permissions (including delete permissions) to the entire
+  repository hand-off point under <path>/cenrepo/ReadyRepo</path>.
+  Only request this if you're certain it is needed. If in doubt, don't
+  add the user to <kw>repo</kw> initially; this request can always be
+  made later.</p></admon>
+
+  </item>
+  </list>
+</item>
+
+<item>When the account is created, LITS will notify you that the
+account is ready and tell you how to proceed. Normally the first step
+is to have the new user log onto <kw>viva.lib</kw> and change the
+default password.</item>
+
+<item>At this point the new user should be able to log into the
+Library's Unix servers, including the Linux server we use for our
+digital production work, <kw>pogo.lib</kw> (also known as
+<kw>alioth.lib</kw>).</item>
+
+</list>
+</div2>
+
+<!-- ====================================================================== -->
+
+<div2>
+<head>Environment Variables</head>
+
+<p>To work effectively from the Unix command line, each user needs
+to set a few environment variables:</p>
+
+<list>
+
+<item>Have the new user log in using his/her username and
+password. After login, you should be in the user's home
+directory.</item>
+
+<item>Using Jove (or some other text editor), open the user's
+initialization file. Normally you'll want to edit the
+<path>.variables.ksh</path> file, since <kw>ksh</kw> is the default
+shell (command interpreter).</item>
+
+<item>Add the following lines at the end of the initialization file:
+<eg>
+# add DLPS bin directory to path
+PATH=/shares/admin/bin:/shares/admin/bin/text:/shares/admin/bin/image:${PATH}
+
+# set umask to 002 to grant group write permission on new
+# files/directories; this sets default permissions to 664 (rw-rw-r--)
+# for new files, 775 (rwxrwxr-x) for new directories
+umask 002
+</eg>
+</item>
+
+<item>Save and close the initialization file.</item>
+
+<item>Log off and then log back in (necessary for the new setup to
+take effect).</item>
+
+<item>To test the new settings, enter:
+
+<eg>echo $PATH</eg>
+
+You should see a colon-delimited list of paths, starting with the
+paths you added to the initialization file in the preceding
+step.</item>
+
+</list>
+</div2>
+</div1>
+
+<div1>
+<head>Other Setup</head>
+
+<div2>
+<head>DLPS Tracking System</head>
+
+<p>Write the DLPS tracking system administrator (Greg) to request a
+username and password for the tracking system.</p>
+
+</div2>
+</div1>
+</body>
+</text>
+</TEI.2>

@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0199 SYSTEM "000000766_0199" NDATA jpg>
+<!ENTITY DSSR_000000766_0200 SYSTEM "000000766_0200" NDATA jpg>
+<!ENTITY DSSR_000000766_0201 SYSTEM "000000766_0201" NDATA jpg>
+<!ENTITY DSSR_000000766_0202 SYSTEM "000000766_0202" NDATA jpg>
+<!ENTITY DSSR_000000766_0203 SYSTEM "000000766_0203" NDATA jpg>
+<!ENTITY DSSR_000000766_0204 SYSTEM "000000766_0204" NDATA jpg>
+<!ENTITY DSSR_000000766_0205 SYSTEM "000000766_0205" NDATA jpg>
+<!ENTITY DSSR_000000766_0206 SYSTEM "000000766_0206" NDATA jpg>
+
+<!--<!ENTITY NA62i22a SYSTEM "NA62i22a.jpg" NDATA jpg>
+<!ENTITY NA62i22b SYSTEM "NA62i22b.jpg" NDATA jpg>
+<!ENTITY NA62i22c SYSTEM "NA62i22c.jpg" NDATA jpg>
+<!ENTITY NA62i22d SYSTEM "NA62i22d.jpg" NDATA jpg>
+<!ENTITY NA62i22e SYSTEM "NA62i22e.jpg" NDATA jpg>
+<!ENTITY NA62i22f SYSTEM "NA62i22f.jpg" NDATA jpg>
+<!ENTITY NA62i22g SYSTEM "NA62i22g.jpg" NDATA jpg>
+<!ENTITY NA62i22h SYSTEM "NA62i22h.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+
+<TEI.2 id="NA62i22">
+ <teiHeader type="migrated">
+  <!-- todo -->
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-09-22"
+      >22 September 1862</date></title>
+
+    <author>Case, Adelaide E.</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>David Seaman</name>
+     <resp>Creation of digital images:</resp>
+     <name>University of Virginia Library Electronic Text Center</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>ETC</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">13</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NA62i22</idno>
+    <idno type="callNo">MSS 11616</idno>
+                <availability>
+                    <p n="access">Publicly accessible</p>
+                    <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+                    <p n="copyright"/>
+                </availability>
+    <date value="2001">2001</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Illustrations have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Adelaide E. Case to Charles N. Tenney, 22 September 1862</title>
+      <author>Adelaide E. Case</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>8 pages</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p> </p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings. </p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-09-22">1862-09-22</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>feminine</term>
+     <term>American Civil War/Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-10">November 10th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+
+ <text id="d1">
+  <front id="d2">
+
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>8 pp.</extent>
+      <date value="1862-09-22">22 September 1862</date>
+
+      <title>Letter from Adelaide E. Case to Charles N. Tenney</title>
+     </bibl>
+    </head>
+    <p/>
+   </div1>
+  </front>
+  <body id="d4">
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Adelaide E. Case to Charles N. Tenney, <date value="1862-09-22">22 September
+      1862</date></head>
+    <pb n="1" entity="DSSR_000000766_0199"/>
+    <opener>
+     <dateline>
+      <name type="place">At Dora's <add place="inline" hand="h1">Home</add> school. </name> Monday
+       <date value="1862-09-22">Sept., 22<hi rend="super">nd</hi>
+       <add place="inline" hand="h1">1862</add></date>
+     </dateline>
+     <salute>Loved Charlie</salute>
+    </opener>
+
+
+
+
+    <p>I am going to write <lb/> you a <hi rend="underline">good</hi> long letter to day. for I
+     expect <lb/> it will be the last one I shall write you <lb/> while I remain in Claridon, (<hi
+      rend="underline">Charlie</hi> Charlie <lb/> make Dora go away, she is emphasizing <lb/> my
+      "<hi rend="underline">good</hi> letters"..) So you thought my <lb/> letter of Aug, 18<hi
+      rend="super">th</hi>
+     <hi rend="underline">short</hi> did you dear? <lb/> I am sure I know not what I <unclear/> on
+     <lb/> the lengrh of it, but I guess this will <lb/> be long enough to make up for past <lb/>
+     <unclear>deficeincies</unclear>. I am going to answer your <lb/>
+     <pb n="2" entity="DSSR_000000766_0200"/> dear letter of the 9<hi rend="super">th</hi> in every
+     particular, <lb/> so here goes. certainly I will forgive you <lb/> for writing on such poor
+     paper, but do not <lb/> think that I care for the paper, no. no. if <lb/> your's are only such
+     dear kind letters are you <lb/> only and always do write, they will be a precious <lb/>
+     treasure to me. even if writeen on poor paper <lb/> remember I am thankful for even one word
+     from <lb/> you. come what way it may, (My hand trembles <lb/> this morning for some reason. I
+     guess it is because <lb/> I have been walking.) I was very glad to learn <lb/> that your health
+     was so good. I sometimes won= <lb/> der why it is that you retain such good health <lb/> while
+     others, who evidently enjoyed just as good <lb/> health as you when they entered the service.
+     have <lb/> come home many of them with shattered constit= <lb/> tions. others--to die, Yes
+     darling, I have often <lb/> very often wondered at this, and while thus <lb/> wondering, evne
+     my rebellious heart looks up <lb/> with a sweet assurance and murmurs, "God <lb/> is very good"
+     May you still continue to recieve <lb/> that blessing. for blessing it is <lb/>
+     <pb n="3" entity="DSSR_000000766_0201"/> I was pleased with the <hi rend="underline"
+     >resume</hi>. you gave me. <lb/> In reference to your diet. you have something <lb/> new for
+     breakfast every <sic>moring</sic> do you not? <lb/> Coffee. meat. and crackers. also crackers
+     meat <lb/> and coffee, quite a variety. nevertheless I am <lb/> fearful that <add
+      place="inline" hand="h1">i</add> should soon become tired of it. <lb/> Time <hi
+      rend="underline">must</hi> pass very wearily with you. would <lb/> that I could <del hand="h1"
+      >pass</del> spend a few hours with you <lb/> daily. in useful and interesting conversation,
+     <lb/> But think you not love that. with me time <lb/> also passes very wearily? The same weary
+     waiting. <lb/> watching with longing eyes for the time when <lb/> peace shall be restored, and.
+     Charlie can come home <lb/> to--me. May God preserve thee darling. till that <lb/> hope shall
+     be realized. </p>
+    <p> In speaking of your Gen's they also have to "run <lb/> the gauntlet" of a rigid criticism
+     here in the north <lb/> The late movements in Maryland and Virgin- <lb/> =ia have thrown a
+     different aspect over military <lb/>
+     <unclear>matters</unclear>. Those who have always believed in <lb/> McClellans loyalty are
+     perfectly jubilant while <lb/> those who have showered the most abusive <lb/>
+     <pb n="4" entity="DSSR_000000766_0202"/> invectives are sullen and silent looking forward <lb/>
+     and almost wishing that McCl<del hand="h1">l</del>ellan may be <lb/> defeated <del hand="h1"
+     >if</del> and brought to sidgrace if for nothing <lb/> more than to prove that their former
+     assertions <lb/> were not wholly untrue.. How does "Night Hawk" <lb/> take now. I enjoyed quite
+     a hearty lauch over <lb/> that "scandal" and <sic>especialy</sic> over that "adored <lb/>
+     mustache." You say you wish I could hear the <lb/> rumors of the army for one day, I can not
+     say that <lb/> I have any particular <add place="inline" hand="h1">desire</add> to hear them
+     for the rumors <lb/> here keep<del hand="h1">s</del> me in a perfect<del hand="h1">ly</del>
+     whirl of excitement <lb/> indeed I believe if I had not been a girl of pretty <lb/> strong mind
+     I should have been whirled our of <lb/> the state of Ohio, for many men (and you know <lb/>
+     they are of stronget mind than the women) <add place="inline" hand="h1">not a bit of it
+     Dora</add> have <lb/> been seen "whirling" for Canada as fast as their <lb/> feet could carry
+     them, and did not stop <lb/> till they were saluted <sic>whith</sic>, "Have you a pass" <lb/>
+     Then their consternation is wonderful and even <lb/> laughable to behold. You ask me if I am
+     not <lb/> fearful some daring rebel will not make a <lb/> raid up into good old Trumbull Co.?
+     No, <lb/> not a bit. If they did I am certain that they <lb/> would meet with such a
+     reception--perhaps of <lb/> cold lead, that they would soon have to retreat <lb/> to the sunny
+     south again to obtain warmth <lb/> enough to keep them alive. Old Trumbull has <lb/> enough men
+     to stand her ground against quite <lb/> a host of rebels yet, and when her sons fail <lb/> her
+     daughters will then take the field. there <lb/> are enough and brage hearts left in Ohio <lb/>
+     yet to defend her soil, and it will be defende[d] <lb/> if it is at the cost of losing every
+     boy <unclear>al</unclear> man <lb/> of which she can boast. Oh! it would have <lb/> done your
+     heart good to have seen the <lb/>
+     <pb n="5" entity="DSSR_000000766_0203"/> men starting. <add place="inline" hand="h1">with</add>
+     musket. shot-gun or any <lb/> thing defensive which could be found. <lb/> for Cincinnati when
+     the startling news <lb/> arrived the the "Queen City of the West" was <lb/> being shelled.
+     Little boys of the age of ten or <lb/> twelve years, would run with determined <lb/>
+     countenances and ask, "Mother can't I go and <lb/> help fight. Husbands and fathers would leave
+     <lb/> their homes and families, with hearts too <lb/> full for utterance to repeat the word
+     "Good- <lb/> =bye." exclaming "a rebels foot shall never <lb/> desecrate our own our beautiful
+     Ohio." <lb/> While others.--painful sight. would shudder, <lb/> stand back and sullenly
+     exclaim. "Enough <lb/> with out me" But I am happy to say that <lb/> there were but few of this
+     latter chaps. Soon <lb/> the joyful news arrived that the rebels were fast <lb/> retreating.
+     and those who had left their homes so <lb/> hastily were permitted to return again. </p>
+    <p>Oh! Charlie: Laura has just come and I am <pb n="6" entity="DSSR_000000766_0204"/> compelled
+     to close I will write again <lb/> as soon as I get home My love to all <lb/> and write soon to
+     your own <lb/>
+    </p>
+    <closer>
+     <signed>Addie</signed>
+    </closer>
+
+    <pb entity="DSSR_000000766_0205"/>
+    <pb entity="DSSR_000000766_0206"/>
+
+   </div1>
+  </body>
+ </text>
+
+</TEI.2>

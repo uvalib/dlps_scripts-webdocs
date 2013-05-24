@@ -1,0 +1,296 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "http://text.lib.virginia.edu/dtd/tei/tei-p4/tei2.dtd" [
+<!ENTITY % POSTKB "INCLUDE">
+<!ENTITY % MANUSCRIPT "INCLUDE">
+<!NOTATION jpg SYSTEM "JPEG">
+<!ENTITY % TEI.extensions.ent SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.ent">
+<!ENTITY % TEI.extensions.dtd SYSTEM "http://text.lib.virginia.edu/dtd/tei/uva-dl-tei/uva-dl-tei.dtd">
+<!ENTITY % dlps-teiHeader SYSTEM "http://text.lib.virginia.edu/ent/dlps-teiHeader.ent"> %dlps-teiHeader;
+<!ENTITY % ISOlat1 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat1.ent"> %ISOlat1;
+<!ENTITY % ISOpub SYSTEM "http://text.lib.virginia.edu/charent/iso-pub.ent"> %ISOpub;
+<!ENTITY % ISOnum SYSTEM "http://text.lib.virginia.edu/charent/iso-num.ent"> %ISOnum;
+<!ENTITY % ISOlat2 SYSTEM "http://text.lib.virginia.edu/charent/iso-lat2.ent"> %ISOlat2;
+
+<!ENTITY DSSR_000000766_0661 SYSTEM "000000766_0661" NDATA jpg>
+<!ENTITY DSSR_000000766_0662 SYSTEM "000000766_0662" NDATA jpg>
+<!ENTITY DSSR_000000766_0663 SYSTEM "000000766_0663" NDATA jpg>
+<!ENTITY DSSR_000000766_0664 SYSTEM "000000766_0664" NDATA jpg>
+
+<!--<!ENTITY NC62k25a SYSTEM "NC62k25a.jpg" NDATA jpg>
+<!ENTITY NC62k25b SYSTEM "NC62k25b.jpg" NDATA jpg>
+<!ENTITY NC62k25c SYSTEM "NC62k25c.jpg" NDATA jpg>
+<!ENTITY NC62k25d SYSTEM "NC62k25d.jpg" NDATA jpg>-->
+<!ENTITY longs "s" ><!-- long s -->
+]>
+<TEI.2 id="NC62k25">
+ <teiHeader type="migrated">
+  <fileDesc>
+   <titleStmt>
+    <title type="main">Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-11-25"
+      >25 November 1862</date></title>
+
+    <author>Tenney, Charles</author>
+    <editor/>
+    <respStmt>
+     <resp/>
+     <name/>
+     <resp>Creation of machine-readable version:</resp>
+     <name>Ewbank, Linda C.</name>
+     <resp>Conversion to TEI.2-conformant markup:</resp>
+     <name>Linda C. Ewbank, University of Virginia Library Electronic Text Center.</name>
+    </respStmt>
+   </titleStmt>
+   <extent>ca. <num type="kilobytes">13</num> kilobytes</extent>
+   <publicationStmt>
+    <publisher>University of Virginia Library</publisher>
+    <pubPlace>Charlottesville, Virginia</pubPlace>
+    <idno type="etext">NC62k25</idno>
+    <idno type="callNo">MSS 11616</idno>
+    <availability>
+     <p n="access">Publicly accessible</p>
+     <!--<p n="public">URL: http://etext.lib.virginia.edu/civilwar/nettleton </p>-->
+     <p n="copyright"/>
+    </availability>
+    <date value="2000">2000</date>
+   </publicationStmt>
+   <seriesStmt>
+    <title>The Corinne Carr Nettleton Civil War Collection</title>
+    <idno type="uva-set">UVA-LIB-Text</idno>
+    <idno type="uva-set">UVA-LIB-Nettletoncivilwarletters</idno>
+   </seriesStmt>
+   <notesStmt>
+    <note>
+     <p>Page images have been included from the original source.</p>
+    </note>
+   </notesStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Letter from Charles N. Tenney to Adelaide E. Case, 25 November 1862</title>
+
+
+      <author>Charles Tenney</author>
+      <editor/>
+      <respStmt>
+       <resp/>
+       <name/>
+      </respStmt>
+     </titleStmt>
+     <editionStmt>
+      <p/>
+     </editionStmt>
+     <extent>4 p.</extent>
+     <publicationStmt>
+      <publisher/>
+      <pubPlace/>
+      <idno type="callNo">Source copy consulted: Manuscript letter, Corinne Carr Nettleton Civil War
+       Collection, Department of Special Collections, Alderman Library, UVa.</idno>
+     </publicationStmt>
+     <seriesStmt>
+      <p/>
+     </seriesStmt>
+     <notesStmt>
+      <note>
+       <p/>
+      </note>
+     </notesStmt>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <projectDesc>
+    <p>Prepared for the University of Virginia Library Electronic Text Center.</p>
+   </projectDesc>
+   <editorialDecl>
+    <p>All unambiguous end-of-line hyphens have been retained.</p>
+    <p id="ETC">Some keywords in the header are a local Electronic Text Center scheme to aid in
+     establishing analytical groupings.</p>
+   </editorialDecl>
+   <refsDecl>
+    <p/>
+   </refsDecl>
+
+  </encodingDesc>
+  <profileDesc>
+   <creation>
+    <date value="1862-11-25">1862-11-25</date>
+   </creation>
+   <langUsage>
+    <language id="eng">English</language>
+   </langUsage>
+   <handList>
+    <hand id="h1"/>
+    <hand id="author"/>
+    <hand id="unknown"/>
+    <hand id="cataloger"/>
+   </handList>
+   <textClass>
+    <keywords>
+     <term>nonfiction</term>
+     <term>prose</term>
+     <term>masculine</term>
+     <term>American Civil War; Special Collections</term>
+    </keywords>
+    <keywords>
+     <term type="Field650">LCSH</term>
+    </keywords>
+   </textClass>
+  </profileDesc>
+  <revisionDesc>
+   <change>
+    <date value="2005-07">July 2005</date>
+    <respStmt>
+     <resp>Corrector</resp>
+     <name>John Ivor Carlson</name>
+    </respStmt>
+    <item>Converted to XML and/or checked tags.</item>
+   </change>
+   <change>
+    <date value="2009-11-16">November 16th, 2009</date>
+    <respStmt>
+     <resp>corrector</resp>
+     <name>Digital Curation Services Staff</name>
+    </respStmt>
+    <item>Converted markup (originally TEI Lite) to comply with the UVa Library TEI DTD
+     (uva-dl-tei).</item>
+   </change>
+   <change>
+    <date value="2010-09-30">October 21st, 2010</date>
+    <respStmt>
+     <name id="jkl8b">Julie Lim, University of Virginia Library</name>
+     <resp>corrector</resp>
+    </respStmt>
+    <item>Minor corrections to spacing.</item>
+   </change>
+  </revisionDesc>
+ </teiHeader>
+ <text id="d1">
+  <front id="d2">
+   <div1 type="summary" n="1" id="d3">
+    <head>
+     <bibl>
+      <abbr>ALS</abbr>
+      <extent>4 pp.</extent>
+      <date value="1862-11-25">November 25, 1862</date>
+
+      <title>Letter from Charles N. Tenney to Adelaide E. Case</title>
+     </bibl>
+    </head>
+    <p>Charley apologizes for not writing, reassures Addie that he is in good health, and explains
+     that he has been unusually busy with his clerical work. It is late at night and raining
+     heavily; he wishes he could be with Addie, and asks whether she thinks he should request a
+     discharge. He wishes he could have attended Laurie's wedding and hopes she will be happy. He
+     has not received any letters from Hal, and has heard only from Addie about Hal's departure for
+     Michigan. He comments on General McClellan's removal from the command of the Army of the
+     Potomac and on his admirable qualities, and hopes that General Burnside will be more successful
+     (while pointing out the circumstances that may prevent this). He asks for a description of
+     Thanksgiving dinner and wishes Addie pleasant dreams and happiness.</p>
+   </div1>
+  </front>
+  <body id="d4">
+
+
+   <div1 type="letter" n="1" id="d5">
+    <head>Letter from Charles N. Tenney to Adelaide E. Case, <date value="1862-11-25">25 November
+      1862</date></head>
+    <pb n="1" entity="DSSR_000000766_0661"/>
+
+    <opener><dateline><address><addrLine><abbr expan="Provost">Pro.</abbr> Marshal's Office,</addrLine></address><date
+       value="1862-11-25">Nov. 25, 1862</date>.</dateline><lb/>
+     <salute>My own loved <name type="person">Addie</name></salute> &mdash;<lb/>
+    </opener>
+    <p>Does my chirography look<lb/> familiar to you? or has it been so long since<lb/> you had the
+     pleasure of seeing a specimen that<lb/> you fail? But I have just <orig reg="received"
+     >recieved</orig> two<lb/> darling letters from you dated <abbr expan="November">Nov.</abbr> 9th
+     &amp; 16th, in<lb/> both of which you complain of not <orig reg="receiving">recieving</orig>
+     a<lb/> letter from <name type="person">&ldquo;Charley&rdquo;</name> for<q>two-three
+      weeks.</q> I do<lb/> not wonder that you begin to feel alarmed about<lb/> him, but calm your
+     fears my love, I am neither<lb/> dead nor changed, &amp; I am enjoying better health<lb/>
+     than I have for three weeks past, and am<lb/> steadily gaining, so that I think there is
+     no<lb/> immediate danger of my demise nor consignment<lb/> to the Hospital.&mdash; I must
+     apologize for not<lb/> writing within the past week as I promised<lb/> to do.&mdash; We
+     have changed the <abbr expan="Provost">Pro</abbr> Marshal, and<lb/> with the change came a great
+     deal of work for<lb/>
+     <hi rend="underline">&ldquo;us four clerks&rdquo;,</hi> and we have had to keep
+     hard<lb/> at work from dawn of day until half past ten at night.<lb/>
+     <pb n="2" entity="DSSR_000000766_0662"/>Thus you see but very little time for letter
+      writing <add hand="h1" place="supralinear">remained for us</add>.<lb/> Will you not pardon me
+     under the circumstances?<lb/>
+    </p>
+    <p>It is now ten at night, and the rain is falling<lb/> heavily&mdash; as it comes dashing
+     down upon the<lb/> pavement, the sound awakens many thoughts<lb/> which might otherwise lie in
+     the deep recesses of<lb/> the mind. No doubt but it <hi rend="underline">snows</hi> heavily
+     upon<lb/> the <name type="place">&ldquo;Lake shore&rdquo;</name>, and you will soon
+     enjoy all<lb/> the joyous pleasures of <hi rend="underline">&ldquo;Sleigh-riding.&rdquo;
+      Would I<lb/> could be with you.</hi> Darling&mdash;how much&mdash;Oh!<lb/> how much I
+     wish to see you, to fold thee to my<lb/> heart and gaze into those loving eyes&mdash;the
+     windows<lb/> of thy noble soul&mdash;to hear thy gentle voice as <del hand="h1"
+      rend="line-through">it</del> in<lb/> accents full of love and tenderne&longs;s, thou
+      sayest <hi rend="underline">
+      <q>I love<lb/> you.</q>
+     </hi> But the plash of the rain falls upon my ear<lb/> and I am &ldquo;far
+     away.&rdquo;&mdash;the pleasure is denied me.<lb/> and I still toil on&mdash;a
+     soldier in the good cause.<lb/>
+    </p>
+    <p><name type="person">Addie</name>&mdash;what would you say if I were to<lb/> accept a
+     discharge from the Army, and should<lb/> come home? Would you say<q>yes</q>, or would<lb/> you
+     prefer that I should remain in the &ldquo;Noble <name type="regiment"
+     >7th&rdquo;</name><lb/> until it comes home to <name type="place">Cleveland</name> with <del
+      hand="h1" rend="line-through">in</del> the &ldquo;honors<lb/>
+     <pb n="3" entity="DSSR_000000766_0663"/>of war&rdquo;, and as one of the 1040 who who
+      left <name type="place">Cleveland</name> &ldquo;for<lb/> the war&rdquo;? Is it a funny
+     question? But what<lb/> do <hi rend="underline">you</hi> say? Perhaps I might get discharged, if
+     I<lb/> should desire it.<lb/>
+    </p>
+    <p>Yes, I would have given much to have<lb/> been present at <name type="person">Laurie</name>'s
+      wedding. <hi rend="underline">God grant<lb/> she may be happy.</hi> Let us hope she may yet<lb/>
+     <hi rend="underline">love as she lives,</hi> and the past may be forgotten.<lb/>
+    </p>
+    <p>You committed no act calling my pardon<lb/> in reading my note to <name type="person"
+     >Hal</name>, and as to the &ldquo;question&rdquo;<lb/> as you will imagine, I have long
+     since made<lb/> up my mind. The time for enlisting has<lb/> pas&longs;ed, and I am yet a <hi
+      rend="underline">volunteer.</hi> Your<lb/> information regarding <name type="person"
+     >Hal</name>'s going to <name type="place">
+      <abbr expan="Michigan">Mich.</abbr>
+     </name> was<lb/> the first I had <orig reg="received">recieved</orig>. I thought it <orig
+      reg="somewhat">some-<lb/> what</orig> strange that I <orig reg="received">recieved</orig> no
+     tidings from<lb/> him, but I hope soon to <orig reg="receive">recieve</orig> a letter.<lb/>
+    </p>
+    <p>Although <name type="person"><abbr expan="General">Gen.</abbr> McClellan</name> has been
+     removed<lb/> I do not think his career is thus briefly ended.<lb/> The patient resignation and
+     alacrity to obey even<lb/> such an unpleasant order, manifested by him<lb/> has gone very far
+     to win himself many friends.<lb/>
+     <pb n="4" entity="DSSR_000000766_0664"/> It is true that he sometimes was apparently
+     inactive<lb/> but when a move was made, it was <hi rend="underline">well</hi> made<lb/> and, as
+     you rema<del hand="h1" rend="overline">k</del>rked <add hand="h1" place="supralinear"><orig
+       reg="Isn't">Isnt</orig>-that-pretty?</add>,<q>had it not been for the<lb/> politicians,</q>
+     he would have silenced all<lb/> slanderers by succe&longs;s, where they by <hi
+      rend="underline">their treason</hi><lb/> defeated <del hand="h1" rend="line-through">them</del>
+     him. I do not think <name type="person"><abbr expan="General">Gen.</abbr><lb/> Burnside</name>
+     has been as &ldquo;active&rdquo; as many prophesied<lb/> nor do I think he <hi
+      rend="underline">will</hi> be soon, in point of<lb/> fact it is a difficult matter to move a
+     body of<lb/> men as large as the <name type="army">Army of the Potomac</name>, much<lb/> more so
+     than a few thousand such as <name type="person">&ldquo;Stonewall<lb/>
+     Jackson</name>'s&rdquo; army. <orig reg="A">a</orig>nd people will find it so.<lb/> But at
+     all events, &ldquo;Succe&longs;s to <name type="person"><abbr expan="General"
+      >Gen.</abbr> Burnside</name>.&rdquo;<lb/>
+    </p>
+    <p>But it is getting quite late, and yet it<lb/> rains. We will have muddy roads tomorrow<lb/>
+     Oh! do tell me all about Thanksgiving-dinner<lb/> and all. How I would enjoy a piece of<lb/>
+     mince or pumpkin pie, but I must content<lb/> myself with <hi rend="underline">"Hard-tack,
+     etc."</hi></p>
+    
+    <closer>I must now close<lb/> for tonight. Good night, <hi rend="underline">love,</hi>
+     pleasant<lb/> dreams be thine, and happine&longs;s.<lb/> Write soon<lb/> to your own loving
+     and true 
+     
+     <signed><name type="person">Charley</name>.</signed>
+     <seg type="postscript">Direct.<del
+       hand="h1" rend="line-through">to</del> Care of <abbr expan="Provost">Pro.</abbr>
+       Marshal&mdash; <name type="place">Harper's Ferry, <abbr expan="Virginia"
+      >Va.</abbr></name><lb/> Please excuse the blots, on this, My love to all.</seg>
+    </closer>
+   </div1>
+  </body>
+ </text>
+</TEI.2>
