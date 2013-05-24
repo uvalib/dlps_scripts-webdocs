@@ -1,0 +1,4 @@
+AuthName "DLPS"
+AuthType Basic
+AuthUserFile /etc/httpd/auth/cgi-dlps.pass
+require valid-user
